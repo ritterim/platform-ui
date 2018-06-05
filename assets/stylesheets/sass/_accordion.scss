@@ -1,0 +1,146 @@
+// master accordion styling
+.ui.accordion:not(.unique),
+.ui.styled.accordion {
+  border-radius: 0;
+  margin-bottom: 1rem;
+  @include transition;
+  &:hover {
+    @include focus($color-link, "main");
+  }
+  .transparent.button {
+    float: right;
+  }
+  .header {
+    font-size: 110% !important;
+    i.small.circular.icon {
+      padding: .5em !important;
+    }
+  }
+
+  // .hidden.divider is not hidden when .transition is in play
+  .inner-hidden,
+  .inner-hidden.transition.visible {
+    visibility: hidden !important;
+  }
+  .label:not(.result-label) {
+    margin: .15rem;
+  }
+  .right.floated.archive {
+    float: right;
+  }
+  .lightgrey {
+    color: $grey-light !important;
+  }
+  span:not(.contract-status), span:not(.close-div) {
+    color: $grey-medium;
+    display: block;
+    flex-direction: column;
+    width: 100%;
+  }
+  > .title {
+    border-bottom: 1px solid $grey-light;
+    color: $grey-dark !important;
+    font-weight: lighter;
+    .column {
+      align-items: center;
+      .ui.empty.circular.label,
+      .ui.empty.circular.labels .label {
+        vertical-align: text-bottom;
+        margin-right: .3rem;
+      }
+    }
+  }
+}
+
+// trash/add button display based on form method
+form[method="put"] {
+  .title {
+    button.transparent {
+      display: inline-block;
+    }
+    .add.icon {
+      display: none;
+    }
+  }
+}
+
+form[method="post"] {
+  .title {
+    button.transparent {
+      display: none;
+    }
+    .add.icon {
+      display: inline-block;;
+    }
+  }
+}
+
+// for exposing another div _above_ .title
+.ui.accordion {
+  &:hover,
+  &.active {
+    .pre-title {
+      box-shadow: none;
+    }
+  }
+  .pre-title {
+    color: $color-white;
+    box-shadow: 0 0 0 1px $grey-light;
+    padding: .1rem 1rem;
+    @include rgba-background-color($color-menu-bkg, .7);
+    .ui.menu {
+      flex-wrap: wrap;
+    }
+    &:hover {
+      box-shadow: none;
+    }
+    .modified {
+      @extend %top-bottom-padding;
+    }
+  }
+}
+
+// independent from div itself
+.pre-title {
+  .history.icon {
+    align-items: center;
+    display: inline-flex;
+    float: right;
+    margin: .7rem 0;
+  }
+  .ui.dropdown:not(.inline) {
+    float: right;
+    .ellipsis {
+      margin-top: 1rem;
+    }
+  }
+  .history {
+    color: $grey-light;
+    display: none;
+    .table {
+      border: none;
+    }
+  }
+  .contract-status {
+    align-items: baseline;
+    color: $grey-light;
+    display: inline-flex;
+    padding: 1rem 0;
+  }
+  .inline.dropdown {
+    color: $color-white;
+    font-weight: lighter;
+    padding-left: 1rem;
+  }
+  .ui.form.create {
+    .olive.button {
+      margin: 5px auto;
+    }
+  }
+}
+
+.ui.form .accordion .disabled.field,
+.ui.form .accordion .disabled.fields .field,
+.ui.form .accordion .field :disabled {
+  opacity: 1 !important;
+}

@@ -1,0 +1,103 @@
+.ui.table {
+  caption {
+    border-left: .5rem solid $color-cyan;
+    font-weight: 400;
+    font-size: 120%;
+    margin-bottom: 1rem;
+    padding-left: .5rem;
+    text-align: left;
+  }
+  thead th {
+    color: $grey;
+  }
+  span {
+    color: $grey-medium;
+    display: block;
+    line-height: 2rem;
+    &:first-of-type {
+      padding-top: 0.5rem;
+    }
+    &.inverted {
+      a {
+        color: $color-yellow;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  // link underlines for first column in a table only
+  td:first-child {
+    a {
+      border-bottom: 1px solid transparent;
+      @include transition;
+      &:hover,
+      &:focus {
+        border-bottom: 1px solid $color-link;
+      }
+    }
+  }
+
+  // inputs in a table
+  .field {
+    input {
+      @include square(100%);
+      border: none ;
+      @include transition;
+    }
+  }
+
+  &.member {
+    margin-bottom: 0;
+  }
+
+  &.archive {
+    span {
+      display: block;
+      &:not(:only-child):last-child {
+        color: $color-menu-sub;
+      }
+    }
+    thead {
+      th {
+       font-weight: 700;
+      }
+    }
+    tbody {
+      color: $grey;
+    }
+  }
+}
+
+.accordion.permission {
+  .ui.title {
+    overflow: hidden;
+    &.negative {
+      background: lighten($color-pink, 20%) !important;
+    }
+    .fields {
+      margin-top: -1rem;
+    }
+  }
+  .grid>.column.confirm {
+    color: $color-red;
+    display: none;
+    text-transform: uppercase;
+    button {
+      text-transform: uppercase;
+    }
+    input::-webkit-input-placeholder {
+      text-transform: uppercase;
+    }
+  }
+  .secret-key {
+    .key {
+      display: none;
+    }
+  }
+  .table {
+   display: none;
+   tbody {
+     display: none;
+   }
+ }
+}

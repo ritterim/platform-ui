@@ -1,0 +1,81 @@
+// add to any button trapped below a form
+.above {
+  position: relative;
+  z-index: 100;
+}
+
+// used where actual <button> is needed for .icon
+.transparent.button {
+  background: transparent;
+  box-shadow: none !important;
+  &:hover,
+  &:focus {
+    background: transparent;
+  }
+}
+
+// .small does not exist with .circular
+i.small.circular.icon {
+  border-radius: 50% !important;
+  width: 1.9em !important;
+  height: 1.9em !important;
+  box-shadow: 0 0 0 1px darken($color-yellow, 5%);
+  @include scale(1.2);
+  .item & {
+    font-size: smaller;
+  }
+}
+
+// reference buttons used in messages only
+.reference {
+  background: $color-white;
+  border: 1px solid $grey-light;
+  border-radius: 3px;
+  color: $grey-light;
+  display: inline-block;
+  font-size: 80% !important;
+  letter-spacing: 0;
+  line-height: 1.5rem;
+  padding: 0.1rem 0.3rem;
+  text-align: center;
+  white-space: nowrap;
+  &.key {
+    padding: 0.1rem;
+    @include square(25px);
+  }
+  &.rounded {
+    border-radius: 15px;
+  }
+  .icon {
+    color: $grey-light;
+    margin-right: 0;
+    &:hover {
+      cursor: default;
+    }
+  }
+}
+
+// common ui button animations
+// overrides opacity transition on .ui.button>.icon
+
+.ui.form.create {
+  .ui.basic.button {
+    @include transition;
+    &:hover {
+      background: $color-olive !important;
+      color: $color-white !important;
+      text-shadow: 1px 1px 2px black;
+    }
+  }
+}
+
+.trash,
+.ui.button>.red.trash,
+.remove {
+  @include scale(1.2);
+}
+
+.ui.button>.yellow.write,
+.write {
+  @include scale(1.7);
+}

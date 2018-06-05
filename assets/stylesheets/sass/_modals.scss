@@ -1,0 +1,41 @@
+.ui.modal {
+  &.modal-confirm {
+    text-align: center;
+    padding: 2rem;
+  }
+
+  &.modal-server {
+    background: $grey-lightest;
+    border: 1px solid $grey-light;
+    .column:last-of-type {
+      color: $color-blue;
+      font-size: 3.2rem;
+      font-weight: lighter;
+      line-height: 3.8rem;
+      padding: 2rem;
+      text-align: left;
+    }
+  }
+
+  &.modal-notes {
+    padding-top: 6rem;
+    .ui.note.card {
+      border: none;
+    }
+  }
+}
+
+.close {
+  &-modal {
+    color: $color-pink !important;
+    cursor: pointer;
+    font-size: 200%;
+    font-weight: lighter;
+    float: right;
+    margin: 1rem;
+  }
+  &-div {
+    @extend .close-modal;
+    margin: 0;
+  }
+}

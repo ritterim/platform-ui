@@ -1,0 +1,173 @@
+.ui.grid>[class*="five wide"].column {
+  &.notes {
+    position: relative;
+  }
+  // not supported in IE 11 :P
+  .note-container {
+    -webkit-postion: sticky;
+    position: sticky;
+    top: 11.5rem;
+  }
+}
+
+.notes {
+  .message.helpbox {
+    margin-top: 6rem;
+  }
+  .lightgrey {
+    color: $grey-light !important;
+  }
+  .note-stat {
+    align-items: center;
+    color: $color-yellow;
+    display: flex;
+    font-size: 140%;
+    margin-right: .5rem;
+  }
+  .contextual-note {
+    h3 {
+      color: $grey;
+      font-size: medium;
+      font-weight: normal;
+      margin-top: 1rem;
+    }
+
+    .ui.note.card {
+      background: $color-white;
+      border: 1px solid $grey-lighter;
+    }
+  }
+  .ui.note.card {
+    background-color: lighten($color-note,5%);
+    border: 1px solid lighten($color-menu-sub, 30%);
+    padding: 2rem inherit;
+    border-radius: 0;
+    box-shadow: none;
+    &.negative.message {
+      background-color: lighten($color-red, 42%);
+      box-shadow: inherit;
+    }
+    .note-body {
+      white-space: pre-line;
+      max-height: 80px;
+      overflow-y: auto;
+    }
+    &> .content {
+      padding: 2rem 1rem 1rem;
+      .divider {
+        opacity: 0.5;
+      }
+      .meta {
+        margin-top: -.3rem;
+        padding-bottom: 1rem;
+        .circular.icon {
+          margin-top: -.5rem;
+        }
+        .avatar {
+          margin-right: 0.5rem;
+        }
+      }
+      .ui.negative.message {
+        border-radius: 0 !important;
+      }
+    }
+    &.no-notes {
+      p {
+        color: $color-menu-sub;
+        line-height: 2rem;
+        padding: 2rem;
+        text-align: center;
+      }
+    }
+    &.edit {
+      background-color: $color-white;
+      .ui.form {
+        textarea {
+          border: none;
+          resize: none;
+        }
+      }
+    }
+    .corner.icon {
+      color: $color-yellow;
+      transform: scale(1.5);
+    }
+    .note-footer {
+      align-items: baseline;
+      display: flex;
+      padding: 0 1rem .5rem;
+      .footer-column {
+        display: flex;
+        .footer-menu {
+          order: 1;
+        }
+        .footer-tags {
+          order: 2;
+        }
+      }
+      .ten.wide.column {
+        padding-right: 0;
+      }
+      .basic.label {
+        background: transparent !important;
+        &.yellow {
+          background: transparent !important;
+        }
+        .hover {
+          display: none;
+          @include transition;
+        }
+        &:hover {
+          .hover {
+            display: inline-block;
+            margin-right: -.3rem;
+          }
+        }
+      }
+      // .actions removed
+    }
+  }
+}
+
+.no-notes {
+    color: $help-text;
+    padding-top: 1rem;
+}
+
+#app:not(.contextual-note) .text.menu {
+  margin-top: 0;
+}
+
+.fixed-note {
+  display: flex;
+  margin-top: 1rem !important;
+  position: fixed;
+  z-index: 1;
+  justify-content: flex-end;
+  pointer-events: none;
+}
+
+#tag-filter-cmp {
+  width: 100%;
+}
+
+
+.ui.noteboard.notes button.missing-tags {
+  background-color: $color-olive;
+  &.active {
+    background-color: darken($color-olive, 10%);
+  }
+}
+
+.disabled {
+  color: $grey !important;
+}
+// duplicated in rams;
+.transparent.button {
+  background: transparent;
+  box-shadow: none;
+  &:hover,
+  &:focus {
+    background: transparent;
+  }
+}

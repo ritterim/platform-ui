@@ -1,0 +1,431 @@
+// main menu
+.main {
+  &.ui.inverted.menu {
+    background: $color-menu-bkg;
+    font-size: 120%;
+    font-weight: 100;
+    @media (max-width: 1220px) {
+      font-size: 110%;
+    }
+    @media (max-width: 1140px) {
+      font-size: 100%;
+    }
+    .item:first-of-type {
+      .ui.large.circular.label {
+        font-weight: lighter;
+        height: 0;
+        line-height: 0;
+        overflow: hidden;
+        padding: 50% 0 50% 0 !important;
+        width: 100%;
+      }
+    }
+    &.fixed {
+      z-index: 1003;
+    }
+  }
+  .outer-pane {
+      width: 100%;
+  }
+  &.ui.menu {
+    .item {
+      &.admin {
+        color: $color-cyan;
+      }
+      &.recent {
+        height: 65px;
+        color: $grey;
+      }
+      &.active {
+        font-weight: 100;
+      }
+      &:hover {
+        .angle.down,
+        .plus {
+          animation: bounce 1s;
+        }
+      }
+      .spin {
+        animation: spin 1s;
+      }
+      > .icon {
+        cursor: pointer;
+      }
+      &.dropdown {
+        &:hover {
+          >.menu {
+            display: block;
+          }
+        }
+      }
+    }
+    .header {
+      font-size: larger;
+      // admin label when present.
+      // usage:
+      // <div class="header">
+      //   Hello John <i class="inverted grey setting icon"></i>
+      //   <!-- show role when above staff -->
+      //   <small>Administrator</small>
+      // </div>
+      small {
+        color: $color-cyan;
+        font-size: small;
+      }
+    }
+    .icon.input {
+      font-size: large;
+      font-weight: lighter;
+    }
+    .search.item {
+      flex-grow: 1;
+      &.search-flash {
+        animation: background 300ms;
+      }
+    }
+    // add/plus menu specific
+    .right.menu.slide {
+      .item {
+        width: 0;
+        overflow: hidden;
+        padding: 0;
+        @include transition(all, 0.1s);
+        &.open {
+          width: auto;
+          min-width: 50px;
+          overflow: visible;
+          padding: 1rem;
+        }
+        &.remove {
+          color: $color-red;
+          justify-content: center;
+        }
+      }
+    }
+
+    .inverted.dropdown.item {
+      .menu {
+        background: $color-menu-bkg;
+        z-index: 2000;
+        &>.item {
+          color: $color-white !important;
+          font-weight: lighter !important;
+        }
+      }
+    }
+  }
+}
+
+// agent menu
+.agent {
+  &.ui.inverted.menu {
+    .account-name {
+      display: inline-block;
+      max-width: 25rem;
+      overflow: hidden;
+      padding-right: .5rem;
+      text-overflow: ellipsis;
+      vertical-align: middle;
+      white-space: nowrap;
+      @media (max-width: 1280px) {
+        max-width: 10rem;
+      }
+    }
+    .ui.inverted.dropdown.item {
+      .menu {
+        background: lighten($color-menu-bkg,5%);
+        display: block;
+        >.item {
+          color: $color-white !important;
+          text-decoration: none;
+          &.active,
+          &:hover {
+            background: rgba($color-white, .15) !important;
+          }
+        }
+      }
+    }
+    background: lighten($color-menu-bkg,5%);
+    border-radius: 0;
+    font-size: 110%;
+    font-weight: 100;
+    // margin-top: .5rem;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    .item:first-of-type {
+      .ui.large.circular.label {
+        font-weight: lighter;
+      }
+    }
+    &.fixed {
+      z-index: 1003;
+    }
+    .item {
+      &:last-child {
+        padding-right: 1.5rem;
+      }
+      &.compliance {
+        .cases {
+          display: flex;
+          padding-right: 1.5rem;
+          .compliance-group {
+            color: $color-white;
+            display: flex;
+            font-size: 80%;
+            text-align: center;
+            >.item {
+              height: 1.5rem;
+              padding: .3rem .5rem;
+              position: relative;
+              &:first-child {
+                border-top-left-radius: 5rem;
+                border-bottom-left-radius: 5rem;
+              }
+              &:last-child {
+                border-top-right-radius: 5rem;
+                border-bottom-right-radius: 5rem;
+              }
+            }
+            .ctm {
+              background: $color-red;
+            }
+            .grievance {
+              background: $color-pink;
+            }
+            .soa {
+              background: lighten($color-purple, 10%);
+            }
+            .issue {
+              background: $color-purple;
+            }
+          }
+        }
+      }
+      span {
+        align-items: center;
+        color: $color-cyan;
+        display: inline-flex;
+        font-size: 90%;
+        font-weight: lighter;
+        margin: 0 .5rem;
+        .label {
+          margin-right: .5rem;
+        }
+      }
+    }
+    .dropdown.item:first-of-type {
+      flex-grow: 1;
+      a {
+        color: $color-cyan;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  &.ui.menu {
+    .item {
+      &.admin {
+        color: $color-cyan;
+      }
+      &.recent {
+        color: $grey;
+      }
+      &.active {
+        font-weight: 100;
+      }
+      &:hover {
+        .angle.down,
+        .plus {
+          animation: bounce 1s;
+        }
+      }
+      .spin {
+        animation: spin 1s;
+      }
+      > .icon {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.app.body {
+  .agent.menu {
+    left: 0;
+    top: 4.5rem;
+    + .stackable.grid {
+      // margin-top: 7.5rem;
+    }
+    .header {
+      .agent-icon + .label {
+        margin-left: .5rem;
+      }
+    }
+  }
+}
+
+
+.app.body {
+  .stackable.grid {
+    padding-top: 2rem;
+  }
+}
+// end agent
+
+//ellipsis hover effect to show menu
+.dropdown {
+  &:hover {
+    >.menu {
+      display: block;
+    }
+  }
+}
+
+.ui.secondary.menu {
+  .item {
+    background-color: transparent;
+    color: $grey-light;
+    &.active {
+      color: inherit;
+    }
+  }
+}
+
+// left menu. Not always present
+.ui.sidebar.menu {
+  font-size: 100%;
+}
+
+.ui.left.fixed.menu {
+  background: lighten($color-menu-sub-bkg, 5%);
+  font-weight: lighter !important;
+  padding-top: 65px;
+  z-index: inherit;
+  .agent-highlight {
+    color: $color-white;
+    background: $color-menu-sub;
+  }
+  :not(.agent-highlight) .icon {
+    color: $color-menu-sub;
+  }
+}
+
+// User profile gear
+// not active
+// usage:
+//Hello John <i class="inverted grey setting icon"></i>
+.setting.icon {
+  cursor: pointer;
+  &:hover {
+    animation: spin 2s linear;
+  }
+}
+
+.agent.container {
+  padding-top: 60px;
+  padding-left: 60px;
+  .column .header {
+    color: lighten($color-menu-sub,15%);
+    font-size: 150%;
+    margin-bottom: 2rem;
+  }
+}
+
+// dropdown '...' menu using <button> delete instead of <a>
+// used in <table> menus
+.ellipsis {
+  + .menu {
+    button.ui.icon.button {
+      border-radius: 0;
+      box-shadow: none;
+      color: rgba($grey-dark,.84) !important;
+      text-align: left;
+      padding: .7rem 1.2rem;
+      width: 100%;
+      &:hover {
+        background: rgba($grey-dark,.05) !important;
+      }
+      .icon {
+        margin-right: .7rem;
+        margin-top: .2rem;
+      }
+    }
+  }
+}
+
+#view-recent-items {
+  >.item {
+    .left.menu {
+      display: none;
+    }
+    &:hover {
+      .left.menu {
+        display: flex;
+        flex-grow: 0;
+        right: 100% !important;
+      }
+    }
+  }
+}
+
+// icon mapping for recent
+.contracts.icon:before {
+  font-family: "icons";
+  content: "\f15c";
+}
+
+.agent.icon:before,
+.associate.icon:before {
+  font-family: "icons";
+  content: "\f007";
+}
+
+.agencies.icon:before {
+  @extend .agency-icon;
+}
+
+.company.icon:before,
+.business.icon:before,
+.carrier.icon:before, {
+  font-family: "icons";
+  content: "\f275"
+}
+
+.role.icon:before {
+  font-family: "icons";
+  content: "\f013";
+}
+
+@media (max-width: 1300px) {
+  .ui.main.menu {
+    .main.header {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 1220px) {
+  .ui.main.menu {
+    font-size: 110% !important;
+  }
+}
+@media (max-width: 1140px) {
+  .ui.main.menu {
+    font-size: 100% !important;
+  }
+}
+
+// agent/crm menu
+
+.ui.menu .ui.dropdown .profile.menu>.item {
+  color: $grey !important;
+  font-size: 90% !important;
+  line-height: 1.5rem;
+}
+
+.ui.basic.circular.yellow.label.transparent {
+  background: $color-menu-bkg !important;
+  background-color: $color-menu-bkg !important;
+}

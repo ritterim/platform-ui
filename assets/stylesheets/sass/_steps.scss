@@ -1,0 +1,94 @@
+.ui.steps {
+  @include transition;
+  margin: 0 !important;
+  &.vertical.fluid {
+    .step:after {
+      display: none;
+    }
+  }
+  &.ps-active {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    .step:first-of-type {
+      border-bottom-left-radius: 0;
+    }
+  }
+  .step {
+    display: flex;
+    flex-grow: 1;
+    padding: .5rem 1.3rem 1rem;
+    &:hover,
+    &:focus {
+      .title {
+        color: $color-link;
+      }
+    }
+    .product-level {
+      color: $color-link;
+      font-size: 220%;
+    }
+    .title {
+      border-top: none;
+      flex-wrap: wrap;
+      flex-grow: 1;
+      font-size: 120%;
+      padding: 0;
+      .field {
+        margin: 0 !important;
+      }
+    }
+    .description {
+      color: $grey-dark;
+      &.downlines {
+        color: $color-link;
+        cursor: pointer;
+      }
+    }
+    .extra {
+      align-items: flex-end;
+      display: flex;
+      margin-top: .7rem;
+      margin-bottom: -1rem;
+      .ui.basic.yellow.button {
+        box-shadow: none !important;
+      }
+      // edit buttons
+      a {
+        &.button {
+          border-radius: 0;
+          padding: .3rem;
+        }
+        &:not(:last-of-type) {
+          border-right: 1px solid $grey-light;
+          margin-right: 0rem;
+        }
+      }
+    }
+  }
+}
+
+.downline-step {
+  @include rgba-background-color($color-menu-bkg, .7);
+  border: 1px solid rgba($grey-dark,.15);
+  border-bottom-left-radius: .3rem;
+  border-bottom-right-radius: .3rem;
+  table {
+    border-top: none !important;
+  }
+  .close-div, .copy-div {
+    padding: 1rem;
+  }
+}
+
+.pl-toggle {
+  &.step {
+    padding-left: 0;
+  }
+  input.product-level {
+    background-color: transparent !important;
+    border: none !important;
+    overflow: visible;
+    padding: 0 !important;
+    width: 2rem !important;
+  }
+}

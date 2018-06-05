@@ -1,0 +1,82 @@
+$card-height: 18rem;
+$number-of-rows: 2;
+
+.agent-view {
+  .advertisement {
+    background: url(https://rimritterim.blob.core.windows.net/public-assets/medicarefulhugecampaign20170815homepagebanner4loggedin-636443676944039519.jpg);
+    background-size: cover;
+    height: $card-height;
+    max-height: $card-height;
+    margin-top: 0;
+    margin-left: calc(-1rem + 2px);
+    margin-right: -1rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    width: calc(100% + 2rem - 6px);
+  }
+  .ui.four.cards {
+    &.tall {
+      >.card {
+        height: calc(#{$card-height} * 2);
+        max-height: calc(#{$card-height} * 2);
+      }
+    }
+    &.mixed {
+      flex-direction: column;
+      flex-wrap: wrap;
+      height: calc(#{$card-height} * #{$number-of-rows});
+      max-height: calc(#{$card-height} * #{$number-of-rows});
+      >.card {
+        &.double.vertical {
+          height: calc(#{$card-height} * 2);
+          max-height: calc(#{$card-height} * 2);
+        }
+      }
+    }
+    >.card {
+      border-radius: 0;
+      height: $card-height;
+      max-height: $card-height;
+      margin: 0;
+      overflow-y: scroll;
+      width: 25%;
+      .ui.thin.header {
+        color: $help-text;
+        font-size: 150%;
+        font-weight: lighter;
+        margin-top: .5rem;
+      }
+      .ui.feed {
+        .event {
+          border-bottom: rgba($grey-light, .5) 1px solid;
+          margin-bottom: .5rem;
+          padding-bottom: .5rem;
+          .positive {
+            color: $color-olive;
+          }
+          .negative {
+            color: $color-pink;
+          }
+          .empty.label {
+            margin: 0;
+            .positive {
+              background: $color-olive;
+            }
+            .negative {
+              background: $color-pink;
+            }
+          }
+        }
+      }
+    }
+  }
+  .dash {
+    &-tasks {
+      background: lighten(cornsilk, 5%) !important;
+    }
+    &-leads {
+    }
+    &-appointments {
+    }
+  }
+}

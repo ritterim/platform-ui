@@ -1,0 +1,11 @@
+// maintain all states of 'empty'
+.empty {
+  display: none;
+}
+
+ul.message,
+ul {
+  &:empty {
+    @extend .empty;
+  }
+}

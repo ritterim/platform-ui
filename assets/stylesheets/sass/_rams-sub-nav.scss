@@ -1,0 +1,58 @@
+.ui {
+    &.vertical.subnav-fixed {
+        background: rgba($color-white, 0) !important;
+        display: flex !important;
+        right: 0;
+        top: calc(50% - 3em);
+        position: fixed;
+
+        .item {
+            display: flex;
+            &.disabled {
+                height: 0;
+                padding: 0;
+                .icon {
+                    display: none !important;
+                }
+            }
+        }
+
+        button {
+            align-self: flex-end;
+            background: rgba($color-menu-bkg,.9) !important;
+            border: none !important;
+            border-radius: 0 !important;
+            white-space: nowrap;
+            @include transition;
+
+            &:hover {
+                background-color: rgba($color-yellow,1) !important;
+
+                &:after {
+                    padding-left: .3rem;
+                    text-transform: capitalize;
+                }
+
+                &:not(.disabled)[data-menu="save"]:after {
+                    content: "save";
+                }
+
+                &[data-menu="note"]:after {
+                    content: "add";
+                }
+
+                &[data-menu="trash"]:after {
+                    content: "delete";
+                }
+
+                &[data-menu="admin"]:after {
+                    content: "admin override";
+                }
+
+                &#ko-control-bar-save-without-validation {
+                  background-color: rgba($color-red, 1) !important;
+                }
+            }
+        }
+    }
+}

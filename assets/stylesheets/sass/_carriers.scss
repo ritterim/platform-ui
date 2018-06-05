@@ -1,0 +1,216 @@
+
+.ui.accordion.contract-container {
+    border-radius: 0 !important;
+    margin-bottom: 1rem;
+    @include transition;
+
+    &:hover {
+        @include focus($color-link, "main");
+    }
+
+    &.add-contract {
+        .title {
+            display: none;
+        }
+    }
+
+    .certifications-container {
+        .certification-form {
+            display: block !important;
+            padding-bottom: 5px;
+        }
+
+        .hidden-button {
+            display: none;
+        }
+
+        .certification-block {
+            display: inline-block;
+            margin-right: 5px !important;
+        }
+    }
+
+    .error-icon {
+        margin-bottom: 5px;
+        margin-top: -10px;
+    }
+
+    .title {
+        color: $grey-dark;
+        .red.trash {
+            margin-top: -.5rem;
+        }
+    }
+
+    .transparent.button {
+        float: right;
+    }
+
+    .header {
+        font-size: 110% !important;
+
+        i.small.circular.icon {
+            padding: .5em !important;
+        }
+    }
+
+    .label:not(.result-label) {
+        margin: .15rem;
+    }
+
+    .right.floated.archive {
+        float: right;
+    }
+
+    .checkbox {
+        .checkbox-inline {
+            display: inline;
+            font-weight: normal;
+        }
+    }
+
+    .contract-products {
+        &.side.active {
+            // hides create button while products are being added
+            + button[type="submit"] {
+                display: none;
+            }
+        }
+
+        .inline-block {
+            display: inline-block;
+        }
+
+        .product-container:not(.add-states) {
+            .add-product, .product-selection {
+                display: none;
+            }
+        }
+
+        .trash.icon {
+            margin: 0 0 0 1rem !important;
+
+            &:before {
+                border-left: 1px solid $color-white;
+                padding-left: .5rem;
+            }
+
+            &:hover {
+                color: $color-red;
+            }
+        }
+
+
+        .tabular.menu {
+            flex-wrap: wrap;
+
+            .add.icon {
+                margin: .7rem 0 0 .2rem;
+            }
+
+            .item {
+                background: transparent;
+                border: 1px solid $grey;
+                margin-bottom: .5rem;
+
+                &.active {
+                    background: rgba($color-yellow, .4);
+                    border: 1px solid $color-yellow-dark;
+                    border-radius: .3rem !important;
+                    color: $color-yellow-dark;
+                    font-weight: inherit;
+                }
+            }
+        }
+    }
+}
+
+.states,
+.add-contract .states {
+    &.add-states {
+      .label {
+        box-shadow: 0 0 0 1px $grey-light;
+        color: $grey;
+        margin-right: .3rem;
+        margin-bottom: .4rem;
+        overflow: hidden;
+        position: relative;
+        .licensed {
+          background: $color-green;
+          color: $color-white;
+          bottom: 0;
+          right: 0;
+          height: 1.6rem;
+          margin-right: -.1rem;
+          margin-bottom: -.5rem;
+          padding-top: .2rem;
+          position: absolute;
+          transform: rotate(40deg);
+          i.icon {
+            transform: rotate(-40deg);
+          }
+        }
+        &.disabled {
+          color: $color-white;
+        }
+      }
+    }
+    .certification {
+        .label {
+            background: rgba($color-link, .8);
+            box-shadow: 0 0 0 1px $color-link;
+            color: $color-white;
+        }
+
+        .title {
+            color: $grey;
+            padding-bottom: .5rem;
+        }
+
+        .ui.label > .icon {
+            color: $grey-light;
+            margin: 0 0 0 .5rem !important;
+        }
+    }
+
+    .label.pressed {
+        background: rgba($color-link, .6);
+        border-radius: .3rem !important;
+        box-shadow: 0 0 0 1px $color-link;
+        color: $color-white;
+    }
+
+    .state-margin {
+        margin-right: 4px;
+    }
+}
+
+.add-contract {
+    display: none;
+    border: none;
+
+    .four.wide.column {
+        padding-top: 4.5rem;
+    }
+    .content {
+        border: none;
+
+        .header:not(.title) {
+            border-bottom: 1px dashed lighten($color-link, 25%);
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+        }
+    }
+
+    &:hover {
+        box-shadow: none;
+    }
+}
+
+// note component controls for contextual notes
+// lives in carrier contract section
+.note-actions {
+    .value {
+        padding-right: .3rem;
+    }
+}

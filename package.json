@@ -1,0 +1,30 @@
+{
+  "name": "rams-semantic-ui-sass",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "",
+    "start": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp-babel": "^6.1.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-eslint": "^4.0.0",
+    "gulp-mode": "^1.0.2",
+    "gulp-pleeease": "^2.0.2",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-uglify": "^3.0.0"
+  },
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-cache-bust": "^1.1.0",
+    "gulp-connect-php": "^1.0.1",
+    "gulp-sass": "^3.1.0",
+    "list-directory-contents": "0.0.3"
+  }
+}

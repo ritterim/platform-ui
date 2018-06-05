@@ -1,0 +1,87 @@
+.notes {
+  .tag-legend {
+    @include modal(11rem 2rem 2rem 3rem, 20%, .92, 1001);
+    display: block;
+    .ui.relaxed.list {
+      overflow: auto;
+    }
+    .tag-tab {
+      right: 2rem;
+      position: fixed;
+    }
+  }
+
+  .label {
+    margin-right: .5rem;
+    &.basic {
+      &.ui.yellow {
+        background-color: transparent !important;
+        &.missing-tags.active {
+          background-color: rgba($color-white,.7) !important;
+        }
+      }
+      background: transparent;
+      border: 1px solid $color-white;
+      color: $color-white;
+      .hover {
+        color: $grey-dark;
+        display: none;
+        @include transition;
+      }
+      &.active {
+        background-color: $color-yellow;
+        & .detail {
+          color: $grey-dark;
+        }
+      }
+    }
+    &.basic,
+    &.circular {
+      font-weight: lighter;
+    }
+    .detail {
+      color: $color-cyan;
+    }
+    .mobile.icon {
+      transform: scale(1.5);
+      margin-right: 1rem;
+    }
+  }
+}
+
+.tag-legend,
+.tags {
+  .ui.header {
+    color: $color-white !important;
+  }
+  .label {
+    &:hover {
+      background: rgba($color-yellow, .7) !important;
+      color: $color-white !important;
+      .hover {
+        display: inline;
+        padding-right: .25rem;
+      }
+      .icon:not(.hover) {
+        display: none;
+      }
+      .detail {
+        color: $grey-dark;
+      }
+    }
+  }
+}
+
+.tags {
+  .label {
+    &:hover {
+      .icon:not(.hover) {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+#tag-filter-cmp {
+  width: 100%;
+}

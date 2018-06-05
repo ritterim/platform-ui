@@ -1,0 +1,42 @@
+.ui.menu {
+  &.icon .item {
+    color: $grey;
+    @include transition;
+
+    & > .icon:not(.dropdown) {
+      margin: 0 .3em 0 0;
+    }
+  }
+  &.tabular {
+    &.secondary {
+      @media (max-width: 1200px) {
+        .add.icon {
+          margin-bottom: .5rem !important;
+        }
+        .item {
+          margin-bottom: .5rem;
+          display: block;
+          width: 100%;
+          &.active {
+            margin-bottom:.5rem;
+          }
+        }         
+      }
+    }
+    @media (max-width: 1200px) {
+      &:not(.secondary) {
+        .item {
+          font-size: 0;
+          @include transition;
+          .icon {
+            font-size: 1.2rem;
+            margin: 1rem !important;
+          }
+        }
+      }
+    }
+    .right.floated.item {
+      padding: 0;
+    }
+  }
+}

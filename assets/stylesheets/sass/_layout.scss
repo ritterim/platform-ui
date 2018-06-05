@@ -1,0 +1,125 @@
+// layout
+body > *,
+input,
+textarea {
+  font-family: $font--family;
+}
+
+.ui.menu {
+  &.main.inverted {
+    .item {
+      font-family: $font--family;
+      font-weight: 100;
+    }
+  }
+}
+
+body {
+  background: $color-background;
+}
+// top margin, negates menu
+.ui.fixed.menu+.app.body {
+  margin-top: 5rem;
+}
+
+.ui.dimmer {
+  background: rgba($color-menu-bkg, .85) !important;
+  &.inverted {
+    background: rgba($color-white, .85) !important;
+  }
+}
+.icon {
+  cursor: pointer;
+}
+
+.grey-light {
+  color: $grey-medium !important;
+}
+
+.pink,
+.ui.pink.icon {
+  color: $color-pink !important;
+  &.inverted {
+    color: $color-white !important;
+  }
+}
+
+.red,
+i.red.icon {
+  color: $color-pink !important;
+  &.inverted {
+    color: $color-white !important;
+  }
+}
+
+i.inverted.pink.icon,
+i.inverted.bordered.pink.icon,
+i.inverted.circular.pink.icon {
+  background-color: $color-pink !important;
+}
+
+
+h2.section-header {
+  color: $grey;
+}
+
+.add,
+.return {
+    &-action {
+      float: right;
+      margin-top: 1.5rem;
+    }
+}
+
+.results.transition.visible {
+  max-height: 800%;
+  overflow: auto;
+  &.master-upline {
+    max-height: 300%;
+  }
+}
+
+.hide {
+    display: none !important;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.right.floated {
+  float: right;
+}
+
+i.icon.ritter {
+  background: url(/Content/css/svg/ritter_white_logo.svg) no-repeat top center;
+  background-size: contain;
+  &:before {
+    // forces in-line with other semantic icons;
+    // they all expect a font value :before
+    content: ".";
+  }
+}
+
+mark,
+.date {
+  background: transparent;
+  color: $color-menu-sub;
+}
+
+.column {
+  &.no {
+    &.wrap {
+      white-space: nowrap;
+    }
+  }
+}
+
+.overflow {
+  overflow: visible;
+}
+
+
+.ui.message {
+  border-radius: 0;
+}

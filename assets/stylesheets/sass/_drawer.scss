@@ -1,0 +1,15 @@
+.drawer-open {
+  overflow: hidden
+}
+.drawer {
+  color: $grey;
+  display: block !important;
+  margin-top: 4.6rem;
+  @include modal(8rem 2rem, 100%, .95, 50);
+  @include transition;
+  @include hide-scrollbar(y);
+}
+.drawer-close {
+  width: 0vw;
+  right: -100vw;
+}

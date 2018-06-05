@@ -1,0 +1,88 @@
+// @mixins
+// NOTE: postCSS called via gulp; compiled CSS is browser prefixed.
+
+@mixin focus($color, $element:null) {
+  @if $element == 'main' {
+    border-color: $color;
+    box-shadow: 0 0 0 2px $color;
+  } @else {
+    border-bottom: 1px solid $color;
+    border-radius: 0;
+    box-shadow: 0 2px 0 $color;
+  }
+}
+
+@mixin scale($stop, $start:1) {
+  cursor: pointer;
+  @include transition;
+  transform: scale($start);
+  &:hover {
+    transform: scale($stop);
+  }
+}
+
+@mixin square($dim) {
+  width: $dim;
+  height: $dim;
+}
+
+// using defaults:
+// @include transition;
+@mixin transition($type:all, $duration: 0.2s, $timing-function:ease-in-out) {
+  transition: $type $duration $timing-function;
+}
+
+// adds a pre-title div to .ui.accordion
+//
+// div.pre-title
+// div.title
+// div.content
+@mixin rgba-background-color($color, $opacity) {
+  @if $color == 'none' {
+    background: $color;
+  } @else {
+    background: rgba($color, $opacity);
+  }
+}
+
+// mixing included in notes componenent
+// using for all overlays
+// omit last $arg if horizontal, for vertical set: false
+@mixin modal($padding, $xy, $alpha, $z, $horizontal:true) {
+  background: rgba($color-menu-bkg, $alpha);
+  color: $grey-light;
+  display: none;
+  font-weight: lighter;
+  flex-grow: 1;
+  padding: $padding;
+  position: fixed;
+  @if $horizontal == true {
+    top: 0;
+    right: 0;
+    width: $xy;
+    height: 100%;
+  } @else {
+    bottom: 0;
+    height: $xy;
+    width: 100%;
+  }
+  z-index: $z;
+}
+
+// hide scrollbar
+@mixin hide-scrollbar($xy:none) {
+  @if $xy == none {
+    overflow: none
+  } @else {
+    overflow-#{$xy}: auto
+  }
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+// status label colors
+@mixin status-color($color) {
+  background-color: $color !important;
+}
