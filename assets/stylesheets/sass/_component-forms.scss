@@ -1,0 +1,228 @@
+
+.ui.form {
+  &.loading.long:after {
+    border-color: $color-link rgba($color-link, 0.1) rgba($color-link, 0.1) rgba($color-link, 0.1);
+  }
+
+  .field {
+    position: relative;
+    width: 100%;
+
+    .trash &:not(.principal-remove) {
+      bottom: .7rem;
+      left: 0;
+      position: absolute;
+    }
+
+    &:not(.checkbox) {
+      margin-top: 1rem;
+      margin-bottom: 1.7rem;
+    }
+
+    label {
+      color: $grey-medium;
+      font-size: 80%;
+      position: absolute;
+      left: .7rem;
+      top: -1rem;
+      transition: .2s;
+    }
+
+    &.select {
+      display: flex;
+      &.inline {
+        display: inline-flex;
+        padding: 0 .5rem;
+        width: auto;
+      }
+      &.inverted {
+        select {
+          color: $color-white;
+          option {
+            color: $grey-dark;
+          }
+        }
+      }
+
+      &:after {
+        align-self: center;
+        color: $grey;
+        content: "\f107";
+        font-family: "Icons";
+        margin-left: -1rem;
+      }
+
+      &.loading {
+        &:after {
+          border-radius: 50%;
+          width: 1.25rem;
+          height: 1.25rem;
+          border: 2px solid rgba($grey, 0.3);
+          border-left: 2px solid rgba($color-white, 0.7);
+          transform: translateZ(0);
+          animation: rim-loader .7s infinite linear;
+          content: " ";
+        }
+
+        @keyframes rim-loader {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+      }
+
+      select {
+        background: transparent;
+        border: none;
+        border-bottom: 2px solid $grey-light;
+        padding: .7rem 2rem .41rem .7rem;
+        position: relative;
+        border-radius: 0;
+        // Chrome and Safari both ignore border-radius on <select>
+        // elements unless -webkit-appearance is overridden to an appropriate value.
+        // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        transition: .2s ease-in;
+
+        &:focus {
+          outline: none !important;
+          border-bottom: 1px solid $color-link !important;
+        }
+
+      }
+    }
+
+    input:not([type=checkbox]),
+    textarea {
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid lightgrey;
+      border-radius: 0;
+      padding: .7rem;
+      transition: .2s ease-in;
+
+
+      &[value=" "] {
+          background: $grey !important;
+        }
+
+      &:focus {
+        border-bottom: 2px solid dodgerblue;
+        outline: none;
+      }
+    }
+
+    &.checkbox {
+      align-items: center;
+      align-content: flex-start;
+      display: flex;
+      margin: .7rem 0;
+      position: relative;
+
+      &.disabled {
+        color: inherit;
+        input[type=checkbox] {
+          border: transparent;
+          &:checked {
+            &:before {
+              color: $grey-medium;
+            }
+          }
+        }
+      }
+
+      input[type=checkbox] {
+        padding: .7rem;
+        border: 1px solid $grey-light;
+        transition: .2s;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+
+        &:focus {
+          outline: none;
+        }
+
+        &:before {
+          color: $grey-dark;
+          content: "";
+          transition: .2s;
+        }
+
+        &:checked {
+          padding: .1rem .2rem;
+          &:before {
+            color: $color-link;
+            content: "\f00c";
+            font-family: "Icons";
+          }
+        }
+      }
+
+      // targets IE Edge to counter unsupported -webkit-appearance
+      @supports (-ms-ime-align:auto) {
+        input[type=checkbox] {
+          padding: 0 !important;
+          border: none !important;
+
+          &:checked {
+            padding: 0 !important;
+            &:before {
+              content: "";
+            }
+          }
+        }
+      }
+
+      label {
+        position: static;
+        margin-left: 1rem;
+        align-self: center;
+      }
+    }
+
+    .slider.checkbox {
+      input[type=checkbox] {
+        border: none;
+        &:before {
+          content: none;
+        }
+      }
+    }
+  }
+}
+
+.inline.checkbox.field {
+  align-items: center;
+  display: flex;
+}
+
+.checkbox.field {
+  display: flex;
+  align-items: middle;
+  &.right {
+      margin-top: -2.5rem;
+      justify-content: flex-end;
+  }
+  .fitted.toggle {
+    padding-left: .5rem;
+    >input:checked ~ label:before {
+      background-color: $color-olive !important;
+    }
+  }
+}
+
+.ui.toggle.checkbox input:focus:checked~.box:before,
+.ui.toggle.checkbox input:focus:checked~label:before,
+.ui.toggle.checkbox input:checked~.box:before,
+.ui.toggle.checkbox input:checked~label:before {
+  background-color: $color-olive !important;
+}
+
+// used with .add.toggle
+.field.toggle {
+  display: none;
+}

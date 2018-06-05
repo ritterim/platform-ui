@@ -1,0 +1,254 @@
+.file-drawer {
+  @extend .drawer;
+  @include transition;
+}
+attachment-cmp,
+#attachments {
+  h2 {
+    color: $color-white;
+  }
+  h3 {
+    font-weight: lighter;
+    color: $color-white;
+  }
+  .container {
+    margin: 3rem auto;
+  }
+  .basic.label {
+    background-color: transparent;
+    box-shadow: 0 0 0 1px $color-white;
+    color: $color-white;
+  }
+  .ui.search.field {
+    input {
+      color: $color-white !important;
+      & :focus {
+        color: $color-white !important;
+      }
+    }
+  }
+  .load-more {
+    background-color: transparent;
+    box-shadow: 0 0 0 1px $grey-light;
+    color: $grey-light;
+    font-size: 130%;
+    margin-top: 1rem;
+    width: 100%;
+    @include transition;
+  }
+  .filters {
+    overflow: auto;
+    height: 55vh;
+    .label {
+      font-weight: lighter;
+      text-transform: capitalize;
+      margin-bottom: 1px;
+    }
+  }
+  .upload.button {
+    margin-bottom: 1.5rem;
+    .cloud.upload {
+      box-shadow: 0 0 0 rgba($color-white,.4);
+      border-radius: 50%;
+      animation: pulse 3s;
+    }
+  }
+  .file-container {
+    max-height: 65vh !important;
+    padding-top: 10px;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    h3 {
+      text-align: center;
+    }
+  }
+  .file-list {
+    width: 100%;
+    margin: 0 auto;
+  }
+ .filter-list {
+    width: 145%;
+    margin-left: -10px;
+    max-height: 80vh !important;
+    .item {
+      .ui.basic.label.selected {
+        background-color: $color-yellow !important;
+      }
+      .ui.basic.label {
+        background-color: transparent !important;
+        color: $color-white;
+        border-color: $color-yellow-dark;
+      }
+    }
+  }
+  .upload.button {
+    margin-bottom: 5px;
+  }
+  .file-target {
+    display: none;
+  }
+  .file-count {
+    font-size: 1rem;
+  }
+  .close-modal {
+    float: right;
+  }
+  progress[value]{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    border-radius: 5px;
+  }
+  progress[value]::-webkit-progress-value {
+      background-color: $color-olive;
+      border-radius: 5px;
+  }
+  progress[value]::-webkit-progress-bar {
+      border-radius: 5px;
+  }
+  .ui.circular.labels .label {
+    cursor: pointer;
+    font-weight: normal;
+  }
+}
+
+.file {
+    background-color: transparent;
+    width: 100%;
+    @include transition;
+    &-row {
+      padding: 1rem .5rem;
+    }
+    &:not(:last-of-type) {
+      border-bottom: 1px solid rgba($color-white,.3);
+    }
+    @include scale(1);
+    &:hover {
+      background-color: rgba($color-white,.2);
+      box-shadow: 0 0 0 1px rgba($color-white,.8);
+      color: $color-white;
+      @include scale(1.02);
+      a {
+        color: $color-white;
+        transform: scale(1.5);
+      }
+    }
+    a {
+      color: $grey-light;
+    }
+    .ui.label {
+      font-weight: lighter;
+    }
+    .cloud.download {
+      color: $color-help;
+      vertical-align: middle;
+    }
+    .trash {
+      float: right;
+      vertical-align: middle;
+      color: $color-pink;
+    }
+    .file-tags {
+      margin-left: 1.8rem;
+      padding-top: .3rem;
+    }
+    .file-label {
+      display: block;
+      font-size: .75rem;
+      font-weight: bold;
+      text-align: center;
+    }
+    .filters .item span {
+      color: $color-cyan;
+      margin-left: 3px;
+    }
+    .red-icon {
+      color: $color-red;
+      font-size: 1.25em !important;
+    }
+  }
+
+  .add-tags {
+    background: $color-menu-bkg;
+    border-bottom: .5rem solid transparent;
+    padding: 1rem 1rem .5rem;
+    position: relative;
+    transition: all .1s ease-in-out;
+    &:before {
+      border-left: .5rem solid transparent;
+      border-right: .5rem solid transparent;
+      border-bottom: .5rem solid $color-menu-bkg;
+      content: "";
+      display: block;
+      position: absolute;
+      top: -.5rem;
+      width: 0;
+      height: 0;
+      margin-left: calc(50% - 2.5rem);
+    }
+    .close-icon {
+      color: $color-pink;
+      float: right;
+      font-size: 150%;
+      align-self: center;
+    }
+  }
+
+@each $extension, $icon in $filetype-icons {
+  a[href$='#{$extension}'],
+  .file-row[data-filename$='#{$extension}'] {
+    &:before {
+      content: "#{$icon}";
+      color: $help-text;
+      display: inline-flex;
+      font-family: "Icons";
+      text-decoration: none;
+      margin-right: .3rem;
+    }
+  }
+}
+
+.file-board {
+  display: flex;
+  .label {
+    margin-bottom: 1rem;
+  }
+  .upload-target {
+    border: 5px $grey-light dashed;
+    text-align: center;
+    padding: 3rem;
+    margin-right: 2rem;
+    margin-top: 2rem;
+  }
+}
+
+.close-modal,
+.close-div {
+  color: $color-pink;
+  cursor: pointer;
+  font-size: 200%;
+  font-weight: lighter;
+  float: right;
+  margin: 1rem;
+}
+
+.inline.widget {
+  .file {
+    // margin-left: -1rem;
+    &:not(:last-of-type) {
+      border-bottom: 1px solid rgba($grey-light,.3);
+    }
+    .cloud.icon {
+      color: $color-link;
+    }
+    &:hover {
+      background-color: rgba($grey-light,.2);
+      box-shadow: 0 0 0 1px rgba($grey,.8);
+      color: $grey-dark;
+    }
+    a {
+      color: $grey-dark;
+    }
+  }
+}

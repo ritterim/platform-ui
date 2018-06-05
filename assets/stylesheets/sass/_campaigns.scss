@@ -1,0 +1,42 @@
+.campaign {
+  &.accordion .content {
+    display: block !important; // <-- fighting semantic
+  }
+  .header {
+    margin-top: 1rem;
+  }
+  .trash.icon {
+    color: $color-pink;
+  }
+  .ui.vertical.segment {
+    background: transparent;
+    transition: .2s;
+    margin: 0 -1rem;
+    overflow: visible;
+    padding: 2rem 1rem 1rem;
+    &:first-of-type {
+      margin-top: -.5rem;
+    }
+  }
+  .header.expanded {
+    transform: rotate(-90deg);
+    position: absolute;
+    left: -5rem;
+    background: white;
+    padding: 1rem;
+    border: 1px lightgrey solid;
+    border-bottom: none;
+  }
+  .highlight {
+    background: aliceblue;
+    color: $help-text;
+  }
+  .enrolled {
+    color: $help-text;
+  }
+}
+
+
+#campaigns {
+  // see _submissions.scss
+}

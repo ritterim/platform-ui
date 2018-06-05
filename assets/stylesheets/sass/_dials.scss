@@ -1,0 +1,35 @@
+.dial-group {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  .dial-item {
+    background: $color-white;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px $grey-lighter, 0 1px 0 1px $grey-light;
+    color: $grey;
+    flex-direction: column;
+    height: 100px;
+    margin: .3rem;
+    text-align: center;
+    width: 100px;
+    @include transition;
+    &:hover,
+    &.active {
+      box-shadow: 0 0 0 2px lighten($color-link,15%);
+      margin-top: -.2rem;
+    }
+    .dial-value {
+      color: $color-link;
+      font-size: 3rem;
+      font-weight: lighter;
+      margin-top: 2rem;
+    }
+    .dial-label {
+      font-size: 90%;
+      font-weight: lighter;
+      letter-spacing: .5px;
+      line-height: 1rem;
+      padding-top: .7rem;
+    }
+  }
+}

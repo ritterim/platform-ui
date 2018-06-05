@@ -1,0 +1,301 @@
+.ui {
+  &.top.fixed.menu {
+    z-index: 1001;
+    input {
+        font-size: inherit;
+    }
+    .search-add {
+      background: $color-menu-bkg;
+      display: flex;
+      height: auto;
+      overflow: visible;
+      a.item {
+        color: $color-white !important;
+        &:hover {
+          color: $color-white !important;
+          background-color: lighten($color-menu-bkg, 7%) !important;
+        }
+      }
+    }
+  }
+  &.searching {
+    animation: fadeIn .2s;
+    &.dimmer {
+      background-color: rgba($grey-light, .98);
+      text-align: left;
+      overflow-y: scroll;
+      height: calc(100% - 4.6rem) !important;
+      top: 4.6rem !important;
+      padding: 3rem 0;
+    }
+  }
+}
+
+.compound-card {
+  cursor: auto;
+  display: flex;
+  max-width: 100%;
+  user-select: text;
+  .circular.icon.card-toggle:not(.active) {
+    display: none;
+    animation: fadeOut .3s;
+    transition: .2s;
+  }
+  &:hover {
+    .circular.icon.card-toggle {
+      animation: fadeIn .3s;
+      display: block;
+    }
+  }
+  &:focus{
+    outline: none;
+  }
+  .overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .five.cards & {
+      transition: .2s;
+      width: 20%;
+      @media (max-width: 1200px) {
+        width: calc(100% / 4);
+      }
+      // cards do not expand below 991
+      @media (max-width: 991px) {
+        width: calc(100% / 3);
+      }
+      @media (max-width: 768px) {
+        width: calc(100% / 2);
+      }
+      // not a size in semantic ui
+      @media (max-width: 571px) {
+        width: 100%;
+      }
+  }
+  >.card {
+    background: $color-white;
+    border-radius: 0;
+    color: darken($grey, 20%);
+    display: flex;
+    font-size: inherit;
+    flex-direction: column;
+    line-height: 1.5rem;
+    margin: .75rem .5rem;
+    padding: 0;
+    position: relative;
+    transition: .2s;
+    width: 100%;
+    min-width: calc(20% - 1rem);
+    z-index: 5;
+    .circular.icon.card-toggle {
+      &:not(.active) {
+        background: $color-yellow !important;
+      }
+      cursor: pointer;
+      position: absolute;
+      right: -1rem;
+      top: 50%;
+      transition: .2s;
+      @media (max-width: 991px) {
+        display: none;
+      }
+    }
+    .content {
+      flex-grow: 1;
+      font-size: smaller;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      padding: 1rem;
+      .icon:not(.circular) {
+        color: $grey-light;
+      }
+      .header {
+        display: block !important;
+        font-size: initial;
+        overflow: hidden;
+        text-decoration: none;
+        text-overflow: ellipsis;
+        transition: .2s;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      .meta {
+        color: $grey;
+        font-weight: lighter;
+        + .description {
+          margin-top: .5rem;
+        }
+      }
+      .description {
+        @extend .overflow;
+      }
+    }
+    .extra {
+      background: lighten($color-light-blue,17%);
+      border-top: 1px solid rgba($grey,.15);
+      color: $grey;
+      flex-grow: 1;
+      max-width: 100%;
+      position: static;
+      width: auto;
+      margin: 0;
+      padding: .75em 1em;
+      top: 0;
+      left: 0;
+      transition: color .1s ease;
+    }
+  }
+  .expanded {
+    background: gainsboro;
+    display: none;
+    flex-grow: 1;
+    flex: 1;
+    flex-flow: column;
+    margin: .8rem -.65rem .8rem;
+    transition: .2s ease-in-out;
+    @media (max-width: 991px) {
+      display: none;
+    }
+    .content {
+      display: flex;
+      flex-direction: row;
+      flex-grow: 1;
+      .main {
+        font-family: $font--family;
+        font-size: 85%;
+        flex: 2;
+        padding: 1rem;
+        .header {
+          color: $grey;
+          font-weight: bold;
+          font-size: 100%;
+        }
+        .extra.content {
+          padding-top: 1rem;
+          color: $grey-dark;
+          flex-wrap: wrap;
+          line-height: 1.7rem;
+          .label {
+            margin-bottom: .3rem;
+          }
+          ul {
+            list-style: none;
+            -webkit-margin-before: 0;
+            -webkit-margin-after: 0;
+            -webkit-padding-start: 0;
+            padding-left: 0;
+          }
+        }
+      }
+    }
+    .bar {
+        background: rgba($color-menu-bkg, .8);
+        display: inline-flex;
+        font-family: $font--family;
+        font-size: 80%;
+        max-height: 4rem;
+        padding: 1rem;
+        .label {
+          margin-right: .5rem;
+          margin-bottom: 0;
+        }
+        .action-panel {
+          margin-left: auto;
+        }
+      }
+    .card-menu {
+      display: flex;
+      flex-direction: column;
+    }
+    &.expanding {
+      animation: flexGrow .2s ease-in-out forwards;
+      display: flex;
+      width: 80%;
+    }
+  }
+}
+
+.keyboard-navigating {
+  .compound-card{
+    &.selected{
+      .circular.icon.card-toggle {
+        animation: fadeIn .3s;
+        display: block;
+      }
+    }
+    &:not(.selected){
+      &:not(.spotlight){
+        opacity: .4;
+      }
+    }
+  }
+}
+
+.spotlight {
+  width: calc(100% - .75rem) !important;
+  max-width: 100%;
+  position: relative;
+  z-index: 100;
+  >.card {
+    max-width: calc(20% - .75rem) !important;
+    box-shadow: .5rem 0 1rem rgba($grey-dark, .2);
+  }
+}
+
+.dimmed {
+  opacity: .1;
+}
+
+// for inline searching
+.ui.search>.results .result {
+  &.close {
+    padding: 0;
+    .close-div {
+      padding-right: 1rem;
+      text-align: right;
+    }
+  }
+  .labels {
+    display: flex;
+    .label.result-label {
+      height: auto;
+      margin-bottom: 0;
+    }
+  }
+  .content {
+    padding: 0;
+    .title {
+      border: none;
+      font-weight: lighter;
+      padding: 0;
+    }
+  }
+}
+
+.ui.dropdown {
+  .rim-full-width {
+    .close {
+      &:before {
+        content: "\00D7";
+        color: $color-pink;
+        font-size: 150%;
+      }
+      &.search.icon:before {
+        content: "";
+      }
+    }
+    >.menu.visible.map-menu {
+      background: $color-menu-bkg;
+      border-radius: 0;
+      max-height: inherit;
+      overflow: visible;
+      z-index: 1001;
+      >.item {
+        color: $color-white !important;
+      }
+    }
+  }
+}

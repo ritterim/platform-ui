@@ -1,0 +1,39 @@
+.hierarchy {
+  .tabular span {
+    margin-left: 3px;
+  }
+  .ui.warning.message {
+    display: block;
+  }
+  .downlines, .uplines {
+    margin-left: 25px;
+  }
+  .row:not(:first-child) {
+    padding: 0 !important;
+  }
+  i {
+    margin-left: .3rem;
+  }
+  .hierarchy-path {
+    float: left;
+    a,span {
+      float: left;
+    }
+    span {
+      margin-left: 3px;
+      width: 1.4rem !important;
+    }
+  }
+  .product-label {
+    display: inline-flex;
+    padding: .3rem .5rem;
+    margin-right: .5rem;
+  }
+  .products p {
+    float: left;
+    margin-right: 3px;
+  }
+  .ui.list {
+    margin: 0;
+  }
+}
