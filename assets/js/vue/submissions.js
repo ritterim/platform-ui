@@ -28,12 +28,3 @@ new Vue({
     }
   }
 });
-
-new Vue({
-  el: '#flow',
-  data: function() {
-    return {
-      showSidemenuDefault: false
-    }
-  }
-});
