@@ -52,10 +52,14 @@
 
 
 #submissions,
-#campaigns {
+#campaigns,
+#uploads {
   .pre-title {
     color: $color-white;
     padding: 1rem;
+    .row + .row {
+      padding-top: 1rem;
+    }
     .label {
       cursor: pointer;
     }

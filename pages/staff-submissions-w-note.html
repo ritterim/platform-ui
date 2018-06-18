@@ -101,7 +101,6 @@
 
   <!-- app body -->
   <div class="ui container app body">
-
     <!-- agent menu -->
     <div id="agent-menu">
       <div class="ui inverted agent menu">
@@ -189,7 +188,6 @@
             <transition name="slide-down">
               <div class="ui basic segment form" v-show="showAddSubmission">
                 <span class="close-div" @click="showAddSubmission = !showAddSubmission">&times;</span>
-
                   <div class="row">
                     <div class="ui grey header">
                       New Submission
@@ -216,6 +214,49 @@
                       <select></select>
                     </div>
                   </div>
+                  <div class="four fields">
+                    <div class="field ui search">
+                      <div class="ui icon input">
+                        <input type="text" class="prompt">
+                        <i class="grey search icon"></i>
+                      </div>
+                      <label>Agent</label>
+                    </div>
+                    <div class="field ui search">
+                      <div class="ui icon input">
+                        <input type="text" class="prompt">
+                        <i class="grey search icon"></i>
+                      </div>
+                      <label>Downline Agent</label>
+                    </div>
+                    <div class="field">
+                      <label>Client Name</label>
+                      <input type="text">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="ui grey header">
+                      Check all that apply
+                    </div>
+                  </div>
+                  <div class="four fields">
+                    <div class="checkbox field">
+                      <input type="checkbox">
+                      <label>Follow up</label>
+                    </div>
+                    <div class="checkbox field">
+                      <input type="checkbox">
+                      <label>Application</label>
+                    </div>
+                    <div class="checkbox field">
+                      <input type="checkbox">
+                      <label>Cover sheet</label>
+                    </div>
+                    <div class="checkbox field">
+                      <input type="checkbox">
+                      <label>Scope of appointment</label>
+                    </div>
+                  </div>
                   <div class="ui grey header">
                     Attachments
                     <small>
@@ -238,10 +279,9 @@
             </transition>
           </div>
 
-          <!-- add contract -->
+          <!-- add submission -->
           <div class="ui basic segment form">
             <div class="right floated">
-              <i class="small circular yellow inverted list icon" @click="showInfo = !showInfo"></i> Key detail &nbsp;
               <i class="small circular yellow inverted add icon" @click="showAddSubmission = !showAddSubmission"></i> Submission
             </div>
             <div class="eight wide field ui search">
@@ -280,7 +320,7 @@
                     <span>Aetna
 
                       <!-- show if enrolled -->
-                      <i class="olive checkmark icon"></i>
+                      <!-- <i class="olive checkmark icon"></i> -->
 
                     </span>
                     Aetna Medicare Silver Plan
@@ -555,9 +595,10 @@
 
                   <div class="ui vertical segment">
 
-                    <div class="ui positive  message">
+                    <!-- show if enrolled -->
+                    <!-- <div class="ui positive  message">
                       Policy No: 5524638 | Accepted 00/00/2018
-                    </div>
+                    </div> -->
 
                     <i class="right floated large yellow history icon" @click="showHistory = !showHistory"></i>
                     <div class="history-container">
@@ -735,6 +776,18 @@
               <transition name="slide-up">
                 <div class="ui form pre-title" v-show="showActions">
                   <div class="row">
+                    <div class="ui toggle checkbox">
+                      <input type="checkbox" name="public">
+                      <label>Hold</label>
+                    </div>
+                    <i class="small circular yellow inverted keyboard icon"></i>
+                    Key entry
+                    <div class="audit-key">
+                      <i class="small circular yellow inverted pencil icon" @click="auditMode()"></i>
+                      Audit
+                    </div>
+                  </div>
+                  <div class="row">
                     Carrier
 
                     <div class="inline select field">
@@ -746,7 +799,8 @@
 
                     Template
 
-                    <div class="inline select field">
+                    <div class="inline
+                     select field">
                       <select>
                         <option></option>
                       </select>
@@ -783,15 +837,15 @@
                   </div>
 
                 </div>
-                <!-- <transition name="slide-down">
-                  <div v-show="showInfo" class="row highlight">
+                <transition name="slide-down">
+                  <div v-show="showActions" class="row highlight">
                     <div class="five wide column">
                       <span>Agent</span>
                       <a href="#">Craig James Ritter</a>
                     </div>
                     <div class="column">
                       <span>Processor</span>
-                      Tim Graham
+                      <i class="ban icon"></i>
                     </div>
                     <div class="column">
                       <span>Source</span>
@@ -799,14 +853,14 @@
                     </div>
                     <div class="column">
                       <span>Signature</span>
-                      2/23/2018
+                      <i class="ban icon"></i>
                     </div>
                     <div class="column">
                       <span>Keyed</span>
-                      2/23/2018
+                      <i class="ban icon"></i>
                     </div>
                   </div>
-                </transition> -->
+                </transition>
               </div>
             </div>
             <div class="animation-container">
