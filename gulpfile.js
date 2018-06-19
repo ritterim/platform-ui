@@ -18,7 +18,7 @@ var PleeeaseOptions = {
     };
 
 gulp.task('sass', function() {
-    return gulp.src('assets/stylesheets/sass/')
+    return gulp.src('assets/stylesheets/sass/main.scss')
         .pipe(sass()
           .on('error', sass.logError))
         .pipe(pleeease(PleeeaseOptions))
