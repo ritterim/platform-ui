@@ -316,12 +316,14 @@
             <div class="ui title" @click="toggleForm">
               <div class="ui equal width grid">
                 <div class="row">
+                  <a @click.stop="toggleDuplicates" class="ui bottom right corner label">
+                    <i class="grey flag icon"></i>
+                  </a>
                   <div class="five wide column">
                     <span>Aetna
 
                       <!-- show if enrolled -->
                       <!-- <i class="olive checkmark icon"></i> -->
-
                     </span>
                     Aetna Medicare Silver Plan
                     <mark>(HMO)</mark>
@@ -342,15 +344,15 @@
                     <span>Validity <i class="ui circular tiny empty label positive"></i></span>
                     Complete
                   </div>
-                  <div class="two wide column middle aligned states">
+                  <div class="column middle aligned states">
                     <div class="ui icon label pressed">
                       PA
                     </div>
                     <div class="ui right floated">
                       <i class="trash icon"></i>
                     </div>
-                  </div>
 
+                  </div>
                 </div>
                 <transition name="slide-down">
                   <div v-show="showInfo" class="row highlight">
@@ -377,6 +379,15 @@
                   </div>
                 </transition>
               </div>
+            </div>
+            <div class="animation-container">
+              <transition name="slide-down">
+                <div v-if="showDuplicates" class="ui grid content">
+                  <div class="ui vertical segment">
+                    showDuplicates
+                  </div>
+                </div>
+              </transition>
             </div>
             <div class="animation-container">
               <transition name="slide-down">
