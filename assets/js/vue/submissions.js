@@ -12,7 +12,8 @@ new Vue({
       showModal: false,
       showInlinePDF: false,
       showActions: false,
-      showSidemenuDefault: false
+      showSidemenuDefault: false,
+      showDuplicates: false
     }
   },
   methods: {
@@ -22,6 +23,9 @@ new Vue({
       if (!this.showInfo || !this.showAccordion) {
         this.showInfo = !this.showInfo;
       }
+    },
+    toggleDuplicates: function() {
+      this.showDuplicates = !this.showDuplicates;
     },
     auditMode: function() {
       this.showModal = !this.showModal;

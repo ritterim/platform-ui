@@ -1,8 +1,5 @@
 .submission {
   &.stub {
-    .title {
-      border-left: .3rem solid $color-pink;
-    }
     .vertical.segment {
       border-bottom: none;
       width: 100%;
@@ -85,6 +82,11 @@
       align-items: baseline;
     }
   }
+  .title {
+    .corner.label {
+      margin: 0;
+    }
+  }
 }
 
 .history-container {
@@ -123,89 +125,5 @@
   }
   .close-div {
     padding: 1rem 0;
-  }
-}
-
-
-// additions for campaigns
-.campaign {
-  .pre-title {
-    margin-bottom: -1rem !important;
-    input[type=date],
-    label {
-      color: $color-white !important;
-      font-weight: normal !important;
-      margin-left: .5rem;
-    }
-  }
-  .flow-highlight {
-    margin-top: -2rem;
-    padding: 0 !important;
-  }
-  .positive {
-    color: $color-olive;
-    display: inline-flex;
-    font-size: 130%;
-    font-weight: bold;
-  }
-  .ui.toggle.checkbox {
-    border-right: none !important;
-    margin-top: 1.5rem;
-    margin-right: 0 !important;
-    padding-right: 0 !important;
-    >label {
-      &:before {
-        background: rgba($color-menu-bkg, .4);
-      }
-    }
-  }
-  &.neutral {
-    .title {
-      background: lighten($grey-light, 15%);
-    }
-  }
-  // see _vars for icon map
-  .icon {
-    @each $campaignType, $icon in $campaign-type-icons {
-      &.#{$campaignType}-icon:before {
-        font-family: "icons";
-        color: $grey-light;
-        content: "#{$icon}";
-      }
-    }
-  }
-  .campaign-conflict {
-    background: lighten($color-menu-sub, 35%);
-    border-bottom: 1px solid lighten($color-menu-sub, 18%);
-    color: darken($color-menu-sub, 20%);
-    display: flex;
-    margin: 0 -1rem;
-    padding: 1rem 0 1rem 1rem;
-    position: relative;
-    .concurrent {
-      background: repeating-linear-gradient(
-        -55deg,
-        lighten($color-menu-sub, 15%),
-        lighten($color-menu-sub, 15%) 10px,
-        lighten($color-menu-sub, 20%) 10px,
-        lighten($color-menu-sub, 20%) 20px
-      );
-      color: $color-white;
-      display: flex;
-      flex-direction: column-reverse;
-      justify-content: space-around;
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      top: 0;
-      text-align: center;
-      .rotate {
-        font-weight: bold;
-        position: relative;
-        text-shadow: 0 0 2px darken($color-menu-sub, 20%);
-        text-transform: uppercase;
-        transform: rotate(270deg) !important;
-      }
-    }
   }
 }
