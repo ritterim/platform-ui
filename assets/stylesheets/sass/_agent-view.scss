@@ -2,6 +2,9 @@ $card-height: 18rem;
 $number-of-rows: 2;
 
 .agent-view {
+  .column {
+    background: $color-white;
+  }
   .advertisement {
     background: url(https://rimritterim.blob.core.windows.net/public-assets/medicarefulhugecampaign20170815homepagebanner4loggedin-636443676944039519.jpg);
     background-size: cover;

@@ -6,7 +6,9 @@ new Vue({
       showAccordion: false,
       showAddLead: false,
       showPreTitle: false,
-      currentView: 'leads'
+      currentView: 'leads',
+      showFileTags: false,
+      showInlinePDF: false
     }
   },
   methods: {
