@@ -1,2 +1,0 @@
-"ID","Company","ClientFirst","ClientLast","HICN","EffDate","AgentName","Product","PlanID","PolicyNumber","State","AcceptDate","Status","NPN","AgentStsId"
-1234567,,"Mary","Contrary",,1/1/2014 0:00:00,"Jacob Marley","H1234","37",,,,"51","9876543","555-666-777-888-999"
