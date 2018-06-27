@@ -14,7 +14,7 @@
 
 </head>
 
-<body id="cie">
+<body>
 
   <!-- main menu -->
   <div class="ui top fixed inverted icon menu main">
@@ -105,35 +105,305 @@
   <div class="ui container app body">
     <!-- agent menu -->
 
-    <div class="ui stackable grid">
+    <div class="ui stackable grid" id="submissions">
       <div class="column">
-        <div class="ui hidden divider"></div>
-        <div class="ui hidden divider"></div>
 
         <!-- tabs -->
         <div class="ui top attached tabular icon menu">
-          <a class="item active">
+          <a class="item" :class="{ 'active': currentView == 'exports' }" @click="currentView = 'exports'">
             <i class="upload cloud icon"></i> Export to Carrier
           </a>
-          <a class="item">
+          <a class="item" :class="{ 'active': currentView == 'imports' }" @click="currentView = 'imports'">
+            <div class="ui tiny negative circular label">1</div>
             <i class="download icon"></i> Import Enrollments
           </a>
         </div>
 
-        <div id="submissions" class="ui bottom attached tab segment active">
+        <div class="ui bottom attached tab segment" :class="{ 'active': currentView == 'exports' }" v-show="currentView == 'exports'">
+
+            <div class="animation-container">
+              <transition name="slide-down">
+                <div class="ui basic segment form" v-show="addExport">
+                  <span class="close-div" @click="addExport = !addExport">&times;</span>
+                  <div class="ui grey header">
+                    Select an Export
+                  </div>
+                  <div class="two fields">
+                    <div class="field select">
+                      <select>
+                        <option></option>
+                        <option>Capital BlueCross Medicare (MA/MAPD)</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </transition>
+            </div>
+
+            <!-- add submission -->
+            <div class="ui basic segment form">
+              <div class="right floated">
+                <i class="small circular yellow inverted add icon" @click="addExport = !addExport"></i> Export
+              </div>
+            </div>
+
+            <div class="ui hidden divider"></div>
+            <div class="ui fluid styled accordion submission">
+              <div class="animation-container">
+                <transition name="slide-up">
+                  <div class="ui form pre-title" v-show="showPreTitle">
+                    <div class="row">
+                      <i class="small circular yellow inverted upload icon"></i>
+                      Send to carrier
+                      <!-- other available options -->
+                      <!-- <i class="small circular yellow inverted add icon"></i>
+                      Add ready submissions
+                      <i class="small circular yellow inverted cloud upload icon"></i>
+                      Create export file -->
+                    </div>
+                  </div>
+                </transition>
+              </div>
+
+              <div class="ui title" @click="toggleForm">
+                <div class="ui equal width grid">
+                  <div class="row">
+                    <div class="five wide column">
+                      <span>
+                        Capital BlueCross Medicare <mark>(MA/MAPD)</mark>
+                      </span>
+                    </div>
+                    <div class="column">
+                      <span>Created by</span>
+                      Tim Graham
+                    </div>
+                    <div class="column">
+                      <span>Created date</span>
+                      6/1/2018
+                    </div>
+                    <div class="column">
+                      <span>Status</span>
+                      Sent to Carrier
+                    </div>
+                    <div class="column">
+                      <span>Submissions</span>
+                      <div class="ui positive circular label">7</div>
+                      <div class="ui negative circular label">3</div>
+                    </div>
+                    <div class="column middle aligned">
+                      <div class="ui right floated">
+                        <i class="trash icon"></i>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="animation-container">
+                <transition name="slide-down">
+                  <div v-if="showAccordion" class="ui grid content form ">
+                    <div class="ui vertical segment">
+                      <div class="ui grey header">
+                        Attachments
+                        <small>
+                          <i class="ui small inverted yellow circular plus icon" onclick="document.getElementById('fileInput').click()"></i>
+                          <input id="fileInput" type="file" style="display: none">
+                        </small>
+                      </div>
+                      <div class="inline widget select transition visible">
+                        <div class="file-list">
+                          <div class="file">
+                            <!--  data-filename is a needed css hook -->
+                            <div class="file-row" data-filename="RIM_MA_MCENROLL_20180626P.txt">
+                              <i class="yellow eye icon" @click="showInlinePDF = !showInlinePDF"></i>
+                              <i class="trash icon"></i>
+                              RIM_MA_MCENROLL_20180626P.txt
+                              <div class="ui blue circular label">Carrier required<i class="delete icon"></i></div>
+                              <i class="yellow vertical ellipsis icon" @click="showFileTags = !showFileTags"></i>
+                              <div class="animation-container">
+                                <transition name="slide-down">
+                                  <div class="inline-pdf" v-show="showInlinePDF">
+                                    <div class="close-div" @click="showInlinePDF = !showInlinePDF">&times;</div>
+                                    <iframe class="viewer" src="/assets/RIM_MA_MCENROLL_20180626P.txt" width="100%"></iframe>
+                                  </div>
+                                </transition>
+                              </div>
+                            </div>
+                            <transition name="slide-down">
+                              <div class="add-tags" v-show="showFileTags">
+                                <div class="arrow-up"></div>
+                                <div class="ui circular labels">
+                                  <div class="close-div" @click="showFileTags = !showFileTags">&times;</div>
+                                  <div class="ui blue circular label">Application</div>
+                                  <div class="ui blue circular label">SOA</div>
+                                  <div class="ui blue circular label">Supplemental document</div>
+                                </div>
+                              </div>
+                            </transition>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="ui vertical segment">
+
+                      <i class="right floated large yellow history icon" @click="showHistory = !showHistory"></i>
+                      <div class="history-container">
+                        <div class="animation-container">
+                          <transition name="slide-down">
+                            <div v-show="showHistory" class="well">
+                              <div class="close-div" @click="showHistory = !showHistory">&times;</div>
+                              <table class="ui very basic inverted attached table">
+                                <thead>
+                                  <tr>
+                                    <th>Created</th>
+                                    <th>Created By</th>
+                                    <th>Event</th>
+                                    <th>New Status</th>
+                                    <th>Comment</th>
+                                  </tr>
+                                </thead>
+
+                                <tbody>
+                                  <tr>
+                                    <td>2018-06-26</td>
+                                    <td>Tim Graham</td>
+                                    <td>6/26/2018 9:05:07 PM +00:00</td>
+                                    <td>Ready to send</td>
+                                    <td></td>
+                                  </tr>
+                                  <tr>
+                                    <td>2018-06-26</td>
+                                    <td>Tim Graham</td>
+                                    <td>6/26/2018 9:05:07 PM +00:00</td>
+                                    <td>Adding submissions</td>
+                                    <td></td>
+                                  </tr>
+                                  <tr>
+                                    <td>2018-06-26</td>
+                                    <td>Tim Graham</td>
+                                    <td>6/26/2018 9:05:08 PM +00:00</td>
+                                    <td>Ready to send</td>
+                                    <td>Added 7 submission(s).</td>
+                                  </tr>
+                                  <tr>
+                                    <td>2018-06-26</td>
+                                    <td>Tim Graham</td>
+                                    <td>6/26/2018 9:05:48 PM +00:00</td>
+                                    <td>Creating export file</td>
+                                    <td></td>
+                                  </tr>
+                                  <tr>
+                                    <td>2018-06-26</td>
+                                    <td>Tim Graham</td>
+                                    <td>6/26/2018 9:05:49 PM +00:00</td>
+                                    <td>Export file created</td>
+                                    <td>Wrote 7 submissions(s) to export file.</td>
+                                  </tr>
+                                  <tr>
+                                    <td>2018-06-26</td>
+                                    <td>Tim Graham</td>
+                                    <td>6/26/2018 9:05:49 PM +00:00</td>
+                                    <td>Success</td>
+                                    <td>Automatic mark-as-sent</td>
+                                  </tr>
+                                  <tr>
+                                    <td>2018-06-26</td>
+                                    <td>Tim Graham</td>
+                                    <td>6/26/2018 9:05:49 PM +00:00</td>
+                                    <td>Success</td>
+                                    <td>SendToCarrierSuccess performed on 7 submission(s).</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </transition>
+                        </div>
+                      </div>
+
+                      <div class="ui grey header">
+                        Submissions
+                      </div>
+
+                      <div class="ui fluid styled accordion submission" style="border-radius: 0;">
+
+                        <div class="ui title" style="font-weight: normal">
+                          <div class="ui equal width grid">
+                            <div class="row">
+                              <div class="five wide column">
+                                <span>Aetna</span>
+                                Aetna Medicare Silver Plan
+                                <mark>(HMO)</mark>
+                              </div>
+                              <div class="column">
+                                <span>Client</span>
+                                Jane Hammond
+                              </div>
+                              <div class="column">
+                                <span>Effective</span>
+                                4/1/2018
+                              </div>
+                              <div class="column">
+                                <span>Status <i class="ui circular tiny empty label positive"></i></span>
+                                Sent to Carrier
+                              </div>
+                              <div class="column">
+                                <span>Validity <i class="ui circular tiny empty label positive"></i></span>
+                                Complete
+                              </div>
+                              <div class="column middle aligned states">
+                                <div class="ui icon label pressed">
+                                  PA
+                                </div>
+                                <div class="ui right floated">
+                                  <i class="trash icon"></i>
+                                </div>
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+
+
+                  </div>
+                </transition>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="ui bottom attached tab segment" :class="{ 'active': currentView == 'imports' }" v-show="currentView == 'imports'">
 
           <div class="animation-container">
             <transition name="slide-down">
               <div class="ui basic segment form" v-show="addExport">
                 <span class="close-div" @click="addExport = !addExport">&times;</span>
                 <div class="ui grey header">
-                  Select an Export
+                  Select a Carrier
                 </div>
                 <div class="two fields">
                   <div class="field select">
                     <select>
                       <option></option>
-                      <option>Capital BlueCross Medicare (MA/MAPD)</option>
+                      <option>Aetna</option>
+                      <option>Amerigroup</option>
+                      <option>Amerihealth</option>
+                      <option>AmerihealthCaritas</option>
+                      <option>Anthem</option>
+                      <option>CapitalBlueCross</option>
+                      <option>Clover</option>
+                      <option>Excellus</option>
+                      <option>HealthPartners</option>
+                      <option>IBC</option>
+                      <option>JohnsHopkins</option>
+                      <option>Piedmont</option>
+                      <option>Regence</option>
+                      <option>UMMS</option>
+                      <option>UnitedHealthCare</option>
                     </select>
                   </div>
                 </div>
@@ -143,62 +413,59 @@
 
           <!-- add submission -->
           <div class="ui basic segment form">
+            <div class="ui toggle checkbox">
+              <input type="checkbox">
+              <label>Successful</label>
+            </div>
             <div class="right floated">
-              <i class="small circular yellow inverted add icon" @click="addExport = !addExport"></i> Export
+              <i class="small circular yellow inverted add icon" @click="addExport = !addExport"></i> imports
             </div>
           </div>
 
-          <div class="ui hidden divider"></div>
-          <div class="ui fluid styled accordion submission">
+          <div class="ui fluid styled accordion submission stub">
             <div class="animation-container">
               <transition name="slide-up">
-                <div class="ui form pre-title" v-show="showPreTitle">
-                  <div class="row">
-                    <i class="small circular yellow inverted upload icon"></i>
-                    Send to carrier
-                  </div>
+                <div class="ui form pre-title" v-show="showActions">
+                  <i class="small circular yellow inverted refresh icon"></i>
+                  Resubmit
                 </div>
               </transition>
             </div>
 
-            <div class="ui title" @click="toggleForm">
+            <div class="ui title" @click="showActions = !showActions">
               <div class="ui equal width grid">
                 <div class="row">
-                  <div class="five wide column">
-                    <span>
-                      Capital BlueCross Medicare <mark>(MA/MAPD)</mark>
-                    </span>
+                  <div class="one wide column">
+                    <div class="ui tiny negative circular empty label"></div>
                   </div>
                   <div class="column">
-                    <span>Created by</span>
-                    Tim Graham
+                    <span>Carrier</span>
+                    Excellus
                   </div>
                   <div class="column">
-                    <span>Created date</span>
-                    6/1/2018
+                    <span>Date</span>
+                    6/2/2018
                   </div>
                   <div class="column">
-                    <span>Status</span>
-                    Sent to Carrier
+                    <span>Time</span>
+                    6:38 PM
                   </div>
                   <div class="column">
-                    <span>Submissions</span>
-                    <div class="ui positive circular label">7</div>
-                    <div class="ui negative circular label">3</div>
+                    <span>Processed</span>
+                    5,198 of <strong>20,277</strong> matches <mark>26%</mark>
                   </div>
-                  <div class="column middle aligned">
+                  <div class="two wide column middle aligned states">
                     <div class="ui right floated">
                       <i class="trash icon"></i>
                     </div>
-
                   </div>
+
                 </div>
               </div>
             </div>
-
             <div class="animation-container">
               <transition name="slide-down">
-                <div v-if="showAccordion" class="ui grid content form ">
+                <div v-if="showActions" class="ui grid content form ">
                   <div class="ui vertical segment">
                     <div class="ui grey header">
                       Attachments
@@ -211,17 +478,16 @@
                       <div class="file-list">
                         <div class="file">
                           <!--  data-filename is a needed css hook -->
-                          <div class="file-row" data-filename="RIM_MA_MCENROLL_20180626P.txt">
+                          <div class="file-row" data-filename="ExcellusEnrollment_Export.csv">
                             <i class="yellow eye icon" @click="showInlinePDF = !showInlinePDF"></i>
                             <i class="trash icon"></i>
-                            RIM_MA_MCENROLL_20180626P.txt
-                            <div class="ui blue circular label">Carrier required<i class="delete icon"></i></div>
+                            ExcellusEnrollment_Export.csv
                             <i class="yellow vertical ellipsis icon" @click="showFileTags = !showFileTags"></i>
                             <div class="animation-container">
                               <transition name="slide-down">
                                 <div class="inline-pdf" v-show="showInlinePDF">
                                   <div class="close-div" @click="showInlinePDF = !showInlinePDF">&times;</div>
-                                  <iframe class="viewer" src="/assets/RIM_MA_MCENROLL_20180626P.txt" width="100%"></iframe>
+                                  <iframe class="viewer" src="/assets/ExcellusEnrollment_Export.txt" width="100%"></iframe>
                                 </div>
                               </transition>
                             </div>
@@ -231,7 +497,7 @@
                               <div class="arrow-up"></div>
                               <div class="ui circular labels">
                                 <div class="close-div" @click="showFileTags = !showFileTags">&times;</div>
-                                <div class="ui blue circular label">Application</div>
+                                <div class="ui blue circular label">Carrier required</div>
                                 <div class="ui blue circular label">SOA</div>
                                 <div class="ui blue circular label">Supplemental document</div>
                               </div>
@@ -241,136 +507,13 @@
                       </div>
                     </div>
                   </div>
-
-                  <div class="ui vertical segment">
-
-                    <i class="right floated large yellow history icon" @click="showHistory = !showHistory"></i>
-                    <div class="history-container">
-                      <div class="animation-container">
-                        <transition name="slide-down">
-                          <div v-show="showHistory" class="well">
-                            <div class="close-div" @click="showHistory = !showHistory">&times;</div>
-                            <table class="ui very basic inverted attached table">
-                              <thead>
-                                <tr>
-                                  <th>Created</th>
-                                  <th>Created By</th>
-                                  <th>Event</th>
-                                  <th>New Status</th>
-                                  <th>Comment</th>
-                                </tr>
-                              </thead>
-
-                              <tbody>
-                                <tr>
-                                  <td>2018-06-26</td>
-                                  <td>Tim Graham</td>
-                                  <td>6/26/2018 9:05:07 PM +00:00</td>
-                                  <td>Ready to send</td>
-                                  <td></td>
-                                </tr>
-                                <tr>
-                                  <td>2018-06-26</td>
-                                  <td>Tim Graham</td>
-                                  <td>6/26/2018 9:05:07 PM +00:00</td>
-                                  <td>Adding submissions</td>
-                                  <td></td>
-                                </tr>
-                                <tr>
-                                  <td>2018-06-26</td>
-                                  <td>Tim Graham</td>
-                                  <td>6/26/2018 9:05:08 PM +00:00</td>
-                                  <td>Ready to send</td>
-                                  <td>Added 7 submission(s).</td>
-                                </tr>
-                                <tr>
-                                  <td>2018-06-26</td>
-                                  <td>Tim Graham</td>
-                                  <td>6/26/2018 9:05:48 PM +00:00</td>
-                                  <td>Creating export file</td>
-                                  <td></td>
-                                </tr>
-                                <tr>
-                                  <td>2018-06-26</td>
-                                  <td>Tim Graham</td>
-                                  <td>6/26/2018 9:05:49 PM +00:00</td>
-                                  <td>Export file created</td>
-                                  <td>Wrote 7 submissions(s) to export file.</td>
-                                </tr>
-                                <tr>
-                                  <td>2018-06-26</td>
-                                  <td>Tim Graham</td>
-                                  <td>6/26/2018 9:05:49 PM +00:00</td>
-                                  <td>Success</td>
-                                  <td>Automatic mark-as-sent</td>
-                                </tr>
-                                <tr>
-                                  <td>2018-06-26</td>
-                                  <td>Tim Graham</td>
-                                  <td>6/26/2018 9:05:49 PM +00:00</td>
-                                  <td>Success</td>
-                                  <td>SendToCarrierSuccess performed on 7 submission(s).</td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
-                        </transition>
-                      </div>
-                    </div>
-
-                    <div class="ui grey header">
-                      Submissions
-                    </div>
-
-                    <div class="ui fluid styled accordion submission" style="border-radius: 0;">
-
-                      <div class="ui title" style="font-weight: normal">
-                        <div class="ui equal width grid">
-                          <div class="row">
-                            <div class="five wide column">
-                              <span>Aetna</span>
-                              Aetna Medicare Silver Plan
-                              <mark>(HMO)</mark>
-                            </div>
-                            <div class="column">
-                              <span>Client</span>
-                              Jane Hammond
-                            </div>
-                            <div class="column">
-                              <span>Effective</span>
-                              4/1/2018
-                            </div>
-                            <div class="column">
-                              <span>Status <i class="ui circular tiny empty label positive"></i></span>
-                              Sent to Carrier
-                            </div>
-                            <div class="column">
-                              <span>Validity <i class="ui circular tiny empty label positive"></i></span>
-                              Complete
-                            </div>
-                            <div class="column middle aligned states">
-                              <div class="ui icon label pressed">
-                                PA
-                              </div>
-                              <div class="ui right floated">
-                                <i class="trash icon"></i>
-                              </div>
-
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                    </div>
-
-
+                  </transition>
                 </div>
               </transition>
             </div>
           </div>
 
         </div>
-      </div><!-- /.column -->
 
     </div><!-- /.ui.grid -->
 

@@ -3844,9 +3844,6 @@ ul.negative.message {
 .hierarchy .ui.list {
   margin: 0; }
 
-.submission .content .submission .title {
-  font-weight: normal; }
-
 .submission.stub .vertical.segment {
   border-bottom: none;
   width: 100%; }

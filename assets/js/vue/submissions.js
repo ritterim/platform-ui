@@ -14,7 +14,8 @@ new Vue({
       showActions: false,
       showSidemenuDefault: false,
       showDuplicates: false,
-      addExport: false
+      addExport: false,
+      currentView: 'exports'
     }
   },
   methods: {
