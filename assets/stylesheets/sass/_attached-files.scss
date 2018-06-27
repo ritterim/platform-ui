@@ -2,6 +2,12 @@
   @extend .drawer;
   @include transition;
 }
+
+.viewer {
+  background: $color-white;
+  border: 1px solid $grey-light;
+}
+
 attachment-cmp,
 #attachments {
   h2 {
