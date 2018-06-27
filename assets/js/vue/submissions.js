@@ -13,7 +13,8 @@ new Vue({
       showInlinePDF: false,
       showActions: false,
       showSidemenuDefault: false,
-      showDuplicates: false
+      showDuplicates: false,
+      addExport: false
     }
   },
   methods: {

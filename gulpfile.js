@@ -7,29 +7,13 @@ var gulp   = require('gulp'),
     concat = require('gulp-concat'),
     eslint = require('gulp-eslint'),
     uglify = require('gulp-uglify'),
-    sourcemaps = require('gulp-sourcemaps'),
-    pleeease = require('gulp-pleeease');
-
-
-var PleeeaseOptions = {
-    "rem": true,
-    "opacity": true,
-    "pseudoElements": true
-    };
+    sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('sass', function() {
     return gulp.src('assets/stylesheets/sass/main.scss')
         .pipe(sass()
           .on('error', sass.logError))
-        .pipe(pleeease(PleeeaseOptions))
         .pipe(gulp.dest('assets/stylesheets/'));
-});
-
-gulp.task('lint', function() {
-    return gulp.src('assets/js/vue/*.js')
-        .pipe(eslint())
-        .pipe(eslint.format())
-        .pipe(eslint.failAfterError());
 });
 
 gulp.task('scripts', function() {
@@ -56,10 +40,4 @@ gulp.task('connect', function() {
   });
 });
 
-gulp.task('watch', function() {
-  gulp.watch('/assets/js/vue/*.js', ['scripts']);
-  gulp.watch('/assets/stylesheets/sass/*.scss', ['sass']);
-});
-
-gulp.task('build', ['sass', 'watch']);
-gulp.task('default', ['build', 'watch', 'connect']);
+gulp.task('default', ['sass', 'scripts', 'connect']);
