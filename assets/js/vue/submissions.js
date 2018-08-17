@@ -15,7 +15,8 @@ new Vue({
       showSidemenuDefault: false,
       showDuplicates: false,
       addExport: false,
-      currentView: 'exports'
+      currentView: 'exports',
+      showMessages: false
     }
   },
   methods: {

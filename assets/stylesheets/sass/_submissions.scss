@@ -86,6 +86,15 @@
     .corner.label {
       margin: 0;
     }
+    .remove.icon {
+      color: $color-pink;
+    }
+  }
+  .content {
+    .ui.message {
+      box-shadow: none;
+      padding: 1rem;
+    }
   }
 }
 
@@ -104,7 +113,7 @@
   font-size: 150%;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 1rem;
+  margin: 1rem 0;
   padding: 2rem;
 }
 

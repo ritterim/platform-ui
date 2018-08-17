@@ -1,0 +1,35 @@
+.touches {
+  @include modal(11rem 2rem 2rem 3rem, 30%, .92, 1);
+  display: block;
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    margin-left: -3rem;
+    width: 120%;
+    .touch {
+      display: flex;
+      flex-direction: row;
+      @include dotted-border('top');
+      &:last-child {
+        @include dotted-border('bottom');
+      }
+      .date-time {
+        background: rgba($color-white, .2);
+        color: $color-menu-sub-bkg;
+        padding: 1rem;
+        width: 15rem;
+      }
+      .description {
+        display: flex;
+        flex-direction: column;
+        padding: 2rem 2rem 0 1rem;
+        .author {
+          background: rgba($color-menu-bkg, .8);
+          display: flex;
+          margin-top: 1rem;
+          padding: .5rem;
+        }
+      }
+    }
+  }
+}

@@ -156,11 +156,87 @@
                       <i class="small circular yellow inverted upload icon"></i>
                       Send to carrier
                       <!-- other available options -->
-                      <!-- <i class="small circular yellow inverted add icon"></i>
+                      <i class="small circular yellow inverted add icon"></i>
                       Add ready submissions
                       <i class="small circular yellow inverted cloud upload icon"></i>
-                      Create export file -->
+                      Create export file
+
+                      <i class="right floated large yellow history icon" @click="showHistory = !showHistory"></i>
+                      <div class="history-container">
+                        <div class="animation-container">
+                          <transition name="slide-down">
+                            <div v-show="showHistory" class="well">
+                              <div class="close-div" @click="showHistory = !showHistory">&times;</div>
+                              <table class="ui very basic inverted attached table">
+                                <thead>
+                                  <tr>
+                                    <th>Created</th>
+                                    <th>Created By</th>
+                                    <th>Event</th>
+                                    <th>New Status</th>
+                                    <th>Comment</th>
+                                  </tr>
+                                </thead>
+
+                                <tbody>
+                                  <tr>
+                                    <td>2018-06-26</td>
+                                    <td>Tim Graham</td>
+                                    <td>6/26/2018 9:05:07 PM +00:00</td>
+                                    <td>Ready to send</td>
+                                    <td></td>
+                                  </tr>
+                                  <tr>
+                                    <td>2018-06-26</td>
+                                    <td>Tim Graham</td>
+                                    <td>6/26/2018 9:05:07 PM +00:00</td>
+                                    <td>Adding submissions</td>
+                                    <td></td>
+                                  </tr>
+                                  <tr>
+                                    <td>2018-06-26</td>
+                                    <td>Tim Graham</td>
+                                    <td>6/26/2018 9:05:08 PM +00:00</td>
+                                    <td>Ready to send</td>
+                                    <td>Added 7 submission(s).</td>
+                                  </tr>
+                                  <tr>
+                                    <td>2018-06-26</td>
+                                    <td>Tim Graham</td>
+                                    <td>6/26/2018 9:05:48 PM +00:00</td>
+                                    <td>Creating export file</td>
+                                    <td></td>
+                                  </tr>
+                                  <tr>
+                                    <td>2018-06-26</td>
+                                    <td>Tim Graham</td>
+                                    <td>6/26/2018 9:05:49 PM +00:00</td>
+                                    <td>Export file created</td>
+                                    <td>Wrote 7 submissions(s) to export file.</td>
+                                  </tr>
+                                  <tr>
+                                    <td>2018-06-26</td>
+                                    <td>Tim Graham</td>
+                                    <td>6/26/2018 9:05:49 PM +00:00</td>
+                                    <td>Success</td>
+                                    <td>Automatic mark-as-sent</td>
+                                  </tr>
+                                  <tr>
+                                    <td>2018-06-26</td>
+                                    <td>Tim Graham</td>
+                                    <td>6/26/2018 9:05:49 PM +00:00</td>
+                                    <td>Success</td>
+                                    <td>SendToCarrierSuccess performed on 7 submission(s).</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </transition>
+                        </div>
+                      </div>
                     </div>
+
+
                   </div>
                 </transition>
               </div>
@@ -168,10 +244,9 @@
               <div class="ui title" @click="toggleForm">
                 <div class="ui equal width grid">
                   <div class="row">
+
                     <div class="five wide column">
-                      <span>
-                        Capital BlueCross Medicare <mark>(MA/MAPD)</mark>
-                      </span>
+                      Capital BlueCross Medicare <mark>(MA/MAPD)</mark>
                     </div>
                     <div class="column">
                       <span>Created by</span>
@@ -248,89 +323,18 @@
 
                     <div class="ui vertical segment">
 
-                      <i class="right floated large yellow history icon" @click="showHistory = !showHistory"></i>
-                      <div class="history-container">
-                        <div class="animation-container">
-                          <transition name="slide-down">
-                            <div v-show="showHistory" class="well">
-                              <div class="close-div" @click="showHistory = !showHistory">&times;</div>
-                              <table class="ui very basic inverted attached table">
-                                <thead>
-                                  <tr>
-                                    <th>Created</th>
-                                    <th>Created By</th>
-                                    <th>Event</th>
-                                    <th>New Status</th>
-                                    <th>Comment</th>
-                                  </tr>
-                                </thead>
-
-                                <tbody>
-                                  <tr>
-                                    <td>2018-06-26</td>
-                                    <td>Tim Graham</td>
-                                    <td>6/26/2018 9:05:07 PM +00:00</td>
-                                    <td>Ready to send</td>
-                                    <td></td>
-                                  </tr>
-                                  <tr>
-                                    <td>2018-06-26</td>
-                                    <td>Tim Graham</td>
-                                    <td>6/26/2018 9:05:07 PM +00:00</td>
-                                    <td>Adding submissions</td>
-                                    <td></td>
-                                  </tr>
-                                  <tr>
-                                    <td>2018-06-26</td>
-                                    <td>Tim Graham</td>
-                                    <td>6/26/2018 9:05:08 PM +00:00</td>
-                                    <td>Ready to send</td>
-                                    <td>Added 7 submission(s).</td>
-                                  </tr>
-                                  <tr>
-                                    <td>2018-06-26</td>
-                                    <td>Tim Graham</td>
-                                    <td>6/26/2018 9:05:48 PM +00:00</td>
-                                    <td>Creating export file</td>
-                                    <td></td>
-                                  </tr>
-                                  <tr>
-                                    <td>2018-06-26</td>
-                                    <td>Tim Graham</td>
-                                    <td>6/26/2018 9:05:49 PM +00:00</td>
-                                    <td>Export file created</td>
-                                    <td>Wrote 7 submissions(s) to export file.</td>
-                                  </tr>
-                                  <tr>
-                                    <td>2018-06-26</td>
-                                    <td>Tim Graham</td>
-                                    <td>6/26/2018 9:05:49 PM +00:00</td>
-                                    <td>Success</td>
-                                    <td>Automatic mark-as-sent</td>
-                                  </tr>
-                                  <tr>
-                                    <td>2018-06-26</td>
-                                    <td>Tim Graham</td>
-                                    <td>6/26/2018 9:05:49 PM +00:00</td>
-                                    <td>Success</td>
-                                    <td>SendToCarrierSuccess performed on 7 submission(s).</td>
-                                  </tr>
-                                </tbody>
-                              </table>
-                            </div>
-                          </transition>
-                        </div>
-                      </div>
-
                       <div class="ui grey header">
                         Submissions
                       </div>
 
                       <div class="ui fluid styled accordion submission" style="border-radius: 0;">
 
-                        <div class="ui title" style="font-weight: normal">
+                        <div class="ui title positive" style="font-weight: normal">
                           <div class="ui equal width grid">
                             <div class="row">
+                              <div class="one wide column">
+                                <div class="ui positive circular empty label" @click="showMessages = !showMessages"></div>
+                              </div>
                               <div class="five wide column">
                                 <span>Aetna</span>
                                 Aetna Medicare Silver Plan
@@ -345,29 +349,76 @@
                                 4/1/2018
                               </div>
                               <div class="column">
-                                <span>Status <i class="ui circular tiny empty label positive"></i></span>
-                                Sent to Carrier
+                                <span>Source </span>
+                                Medicareful
                               </div>
                               <div class="column">
-                                <span>Validity <i class="ui circular tiny empty label positive"></i></span>
-                                Complete
+                                <span>Carrier Status</span>
+                                	eligible (102396327)
                               </div>
                               <div class="column middle aligned states">
                                 <div class="ui icon label pressed">
                                   PA
                                 </div>
                                 <div class="ui right floated">
-                                  <i class="trash icon"></i>
+                                  <i class="yellow retweet icon"></i>
+                                  <i class="remove icon"></i>
                                 </div>
 
                               </div>
                             </div>
                           </div>
                         </div>
-
+                        <div class="content ui success message" v-if="showMessages">
+                          enrollment_id: 102396330, enrollment_response_status: eligible, StatusCode: 200, ReasonPhrase: OK
+                        </div>
                       </div>
 
+                      <div class="ui fluid styled accordion submission" style="border-radius: 0;">
 
+                        <div class="ui title positive" style="font-weight: normal">
+                          <div class="ui equal width grid">
+                            <div class="row">
+                              <div class="one wide column">
+                                <div class="ui negative circular empty label" @click="showMessages = !showMessages"></div>
+                              </div>
+                              <div class="five wide column">
+                                <span>Humana</span>
+                                HumanaChoice H5525-006
+                                <mark>(PPO)</mark>
+                              </div>
+                              <div class="column">
+                                <span>Client</span>
+                                Frank Hammond
+                              </div>
+                              <div class="column">
+                                <span>Effective</span>
+                                4/1/2018
+                              </div>
+                              <div class="column">
+                                <span>Source </span>
+                              </div>
+                              <div class="column">
+                                <span>Carrier Status</span>
+                                <i class="lightgrey ban icon"></i>
+                              </div>
+                              <div class="column middle aligned states">
+                                <div class="ui icon label pressed">
+                                  PA
+                                </div>
+                                <div class="ui right floated">
+                                  <i class="yellow retweet icon"></i>
+                                  <i class="remove icon"></i>
+                                </div>
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="content ui error message" v-if="showMessages">
+                          Humana Code: XB404, Humana Status: 404, Message: Agent SAN Not Found
+                        </div>
+                      </div>
                   </div>
                 </transition>
               </div>
