@@ -40,4 +40,9 @@ gulp.task('connect', function() {
   });
 });
 
-gulp.task('default', ['sass', 'scripts', 'connect']);
+gulp.task('watch', function(){
+  gulp.watch('assets/stylesheets/sass/*.scss', ['sass']);
+  gulp.watch('assets/js/vue/*.js', ['scripts']);
+})
+
+gulp.task('default', ['watch', 'connect']);

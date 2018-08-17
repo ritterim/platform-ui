@@ -8,7 +8,8 @@ new Vue({
       showPreTitle: false,
       currentView: 'leads',
       showFileTags: false,
-      showInlinePDF: false
+      showInlinePDF: false,
+      touches: true
     }
   },
   methods: {
@@ -18,6 +19,9 @@ new Vue({
       if (!this.showInfo || !this.showAccordion) {
         this.showInfo = !this.showInfo;
       }
+    },
+    toggleTouches: function() {
+      this.touches = !this.touches;
     }
   }
 });

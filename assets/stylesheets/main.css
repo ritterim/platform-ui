@@ -3931,6 +3931,17 @@ ul.negative.message {
 #uploads .title .corner.label {
   margin: 0; }
 
+#submissions .title .remove.icon,
+#campaigns .title .remove.icon,
+#uploads .title .remove.icon {
+  color: #ff8e7a; }
+
+#submissions .content .ui.message,
+#campaigns .content .ui.message,
+#uploads .content .ui.message {
+  box-shadow: none;
+  padding: 1rem; }
+
 .history-container {
   clear: both;
   margin: -1rem; }
@@ -3944,7 +3955,7 @@ ul.negative.message {
   font-size: 150%;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 1rem;
+  margin: 1rem 0;
   padding: 2rem; }
 
 .well {
@@ -4197,3 +4208,49 @@ ul.negative.message {
       text-shadow: 0 0 2px #86813c;
       text-transform: uppercase;
       transform: rotate(270deg) !important; }
+
+.touches {
+  background: rgba(0, 59, 104, 0.92);
+  color: #ccc;
+  display: none;
+  font-weight: lighter;
+  flex-grow: 1;
+  padding: 11rem 2rem 2rem 3rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 30%;
+  height: 100%;
+  z-index: 1;
+  display: block; }
+  .touches .timeline {
+    display: flex;
+    flex-direction: column;
+    margin-left: -3rem;
+    width: 120%; }
+    .touches .timeline .touch {
+      display: flex;
+      flex-direction: row;
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.8) 33%, rgba(255, 255, 255, 0) 0%);
+      background-position: "top";
+      background-size: .3rem .1rem;
+      background-repeat: repeat-x; }
+      .touches .timeline .touch:last-child {
+        background-image: linear-gradient(to right, rgba(255, 255, 255, 0.8) 33%, rgba(255, 255, 255, 0) 0%);
+        background-position: "bottom";
+        background-size: .3rem .1rem;
+        background-repeat: repeat-x; }
+      .touches .timeline .touch .date-time {
+        background: rgba(255, 255, 255, 0.2);
+        color: beige;
+        padding: 1rem;
+        width: 15rem; }
+      .touches .timeline .touch .description {
+        display: flex;
+        flex-direction: column;
+        padding: 2rem 2rem 0 1rem; }
+        .touches .timeline .touch .description .author {
+          background: rgba(0, 59, 104, 0.8);
+          display: flex;
+          margin-top: 1rem;
+          padding: .5rem; }
