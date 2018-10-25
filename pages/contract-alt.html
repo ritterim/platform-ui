@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Contracts</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.2.11/dist/semantic.min.css">
+  <link rel="stylesheet" href="/assets/stylesheets/main.css?t=1528209883595">
+  <link rel="canonical" href="http://localhost:8001/">
+
+</head>
+
+<body>
+  <!-- main menu -->
+  <div class="ui top fixed inverted icon menu main">
+    <div class="item">
+      <div class="ui avatar image">
+        <div class="ui large pink circular label">
+          KH
+        </div>
+      </div>
+      <div class="content">
+        <div class="header">
+          Hello Kevin
+        </div>
+      </div>
+    </div>
+    <div class="search item">
+      <div class="ui transparent inverted icon input">
+        <input type="text" placeholder="Type to search...">
+        <i class="search inverted link icon"></i>
+      </div>
+    </div>
+
+    <div class="right menu primary">
+
+      <div class="ui inverted dropdown item">
+        Agent
+        <i class="angle down icon"></i>
+        <div class="menu">
+          <a class="item" href="#">
+            <i class="id badge icon"></i>
+            Management
+          </a>
+          <a class="item" href="organizations.html">
+            <i class="money bill alternate outline icon"></i>
+            Payments
+          </a>
+        </div>
+      </div>
+      <a class="item">
+        Call Center
+      </a>
+      <a href="#" class="item">
+        CRM
+      </a>
+      <div class="ui inverted dropdown item">
+        Flow
+        <i class="angle down icon"></i>
+        <div class="menu">
+          <a class="item" href="#">
+            <i class="users icon"></i>
+            Agencies
+          </a>
+          <a class="item" href="#">
+            <i class="id badge icon"></i>
+            Agents
+          </a>
+          <a class="item" href="#">
+            <i class="text file icon"></i>
+            Contracts
+          </a>
+          <a class="item" href="#">
+            <i class="user icon"></i>
+            Prospects
+          </a>
+          <a class="item" href="#">
+            <i class="inbox icon"></i>
+            Submissions
+          </a>
+        </div>
+      </div>
+      <a href="#" class="item">
+        Maps
+      </a>
+      <div class="ui inverted right dropdown item recent">
+        Recent
+        <i class="angle down icon"></i>
+      </div>
+      <a class="item" href="#">
+        <img src="/assets/images/rimdev-icon-white.svg" alt="rimdev" style="width: 2rem">
+      </a>
+    </div>
+  </div>
+
+  <!-- app body -->
+  <div class="ui container app body">
+    <!-- agent menu -->
+    <div id="agent-menu">
+      <div class="ui inverted agent menu" style="top: 4rem;">
+        <div class="ui inverted dropdown item">
+          <div class="content">
+            <div class="header">
+              <i class="agent-icon circular icon id badge" style="background-color: rgb(88, 80, 126);"></i>
+              <div class="account-name" title="QA Sue">
+                QA Sue
+              </div>
+              <div class="ui active-status inverted tiny icon label">Active</div>
+              <div title="Communication type" class="ui tiny grey image label">
+                CT
+                <div class="detail">
+                  Email
+                </div>
+              </div>
+              <div title="Master Upline" class="ui tiny grey image label">
+                MU
+                <div class="detail"><a href="/producers/c057f20a-fbc8-403c-9777-9e0701310cf8"> Gregory J Gudis</a></div></div> <div title="Global product level" class="ui tiny grey image label">
+                  GPL
+                  <div class="detail">
+                    4
+                  </div>
+                </div>
+             </div>
+           </div>
+           <i class="angle down icon"></i>
+         </div>
+          <a class="item contracts-menu-tab active">
+            Contracts
+          </a>
+          <a class="item contracts-menu-tab">
+            Submissions
+          </a>
+          <a class="item contracts-menu-tab">
+            Hierarchy
+          </a>
+          <a class="item licenses-menu-tab">
+            Licenses
+          </a>
+          <a class="item licenses-menu-tab">
+            Reports
+          </a>
+          <a class="item">
+            <i class="large dodgerblue phone icon"></i>
+          </a>
+          <a class="item">
+            <i class="dodgerblue file alternate icon"></i>
+          </a>
+          <a class="item">
+            <i class="dodgerblue legal icon"></i>
+          </a>
+        </div>
+      </div>
+
+    <div class="ui hidden divider"></div>
+
+    <div class="ui stackable grid">
+      <div class="eleven wide column">
+        <div class="ui hidden divider"></div>
+
+        <!-- tabs -->
+        <div class="ui top attached tabular icon menu">
+          <a class="item active" data-tab="tab-ac-submissions">
+            <i class="open folder icon"></i> Active
+          </a>
+          <a class="item" data-tab="tab-ac-enrollments">
+            <i class="folder icon"></i> Inactive
+          </a>
+          <a class="item" data-tab="tab-ac-uploads">
+            <i class="users icon"></i> Downlines
+          </a>
+        </div>
+
+        <div id="contracts" class="ui bottom attached tab segment active" data-tab="tab-detail">
+
+          <div class="animation-container">
+            <transition name="slide-down">
+              <div class="ui basic segment form" v-show="showAddContract">
+                <span class="close-div" @click="showAddContract = !showAddContract">&times;</span>
+                  <div class="row">
+                    <div class="ui grey header">
+                      New Submission
+                    </div>
+                  </div>
+                  <div class="four fields">
+                    <div class="field ui search">
+                      <div class="ui icon input">
+                        <input type="text" class="prompt">
+                        <i class="grey search icon"></i>
+                      </div>
+                      <label>Carrier</label>
+                    </div>
+                    <div class="select field">
+                      <label>Template</label>
+                      <select></select>
+                    </div>
+                    <div class="select field">
+                      <label>Zipcode</label>
+                      <select></select>
+                    </div>
+                    <div class="select field">
+                      <label>County</label>
+                      <select></select>
+                    </div>
+                  </div>
+                  <div class="four fields">
+                    <div class="field ui search">
+                      <div class="ui icon input">
+                        <input type="text" class="prompt">
+                        <i class="grey search icon"></i>
+                      </div>
+                      <label>Agent</label>
+                    </div>
+                    <div class="field ui search">
+                      <div class="ui icon input">
+                        <input type="text" class="prompt">
+                        <i class="grey search icon"></i>
+                      </div>
+                      <label>Downline Agent</label>
+                    </div>
+                    <div class="field">
+                      <label>Client Name</label>
+                      <input type="text">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="ui grey header">
+                      Check all that apply
+                    </div>
+                  </div>
+                  <div class="four fields">
+                    <div class="checkbox field">
+                      <input type="checkbox">
+                      <label>Follow up</label>
+                    </div>
+                    <div class="checkbox field">
+                      <input type="checkbox">
+                      <label>Application</label>
+                    </div>
+                    <div class="checkbox field">
+                      <input type="checkbox">
+                      <label>Cover sheet</label>
+                    </div>
+                    <div class="checkbox field">
+                      <input type="checkbox">
+                      <label>Scope of appointment</label>
+                    </div>
+                  </div>
+
+                  <button type="submit" class="ui circular basic yellow icon button">
+                    <i class="checkmark icon"></i>
+                    Create
+                  </button>
+              </div>
+            </transition>
+          </div>
+
+          <!-- add submission -->
+
+
+        <div class="ui equal width grid form">
+          <div class="column">
+            <div class="ui search field">
+              <div class="ui icon input">
+                <input type="text" class="prompt">
+                <i class="grey search icon"></i>
+              </div>
+              <label>Filter</label>
+            </div>
+          </div>
+          <div class="two wide middle aligned column">
+            <i class="yellow vertical ellipsis icon"></i>
+            <i title="Clear Filters" class="small yellow inverted circular refresh icon"></i>
+          </div>
+          <div class="five wide column">
+            <div class="right floated">
+              <span class="d-block">
+                <i class="small circular yellow inverted add icon add-ac-contract"></i> Contract
+              </span>
+              <span class="d-block">
+                <i class="small circular inverted yellow icon download"></i> Export
+              </span>
+            </div>
+          </div>
+        </div>
+
+          <div class="ui fluid styled accordion submission">
+            <div class="animation-container">
+              <transition name="slide-up">
+                <div class="pre-title ui form" v-show="showPreTitle">
+                  Set contract status to
+                  <div class="field select inverted inline">
+                    <select>
+                      <option selected="selected" hidden="hidden" disabled="disabled" value="[object Object]">Initial
+                        <span>(2018-10-24)</span>
+                      </option>
+                      <option value="[object Object]">Appointed</option>
+                      <option value="[object Object]">Appointed - Overrides Only</option>
+                      <option value="[object Object]">Carrier Returned - Incomplete</option>
+                      <option value="[object Object]">Contracting Invite Sent</option>
+                      <option value="[object Object]">Contract Returned - Incomplete</option>
+                      <option value="[object Object]">Contract Returned</option>
+                      <option value="[object Object]">Follow Up Call Completed</option>
+                      <option value="[object Object]">Initial</option>
+                      <option value="[object Object]">Paperwork Mailed</option>
+                      <option value="[object Object]">Pending Business</option>
+                      <option value="[object Object]">Lost</option>
+                      <option value="[object Object]">Released</option>
+                      <option value="[object Object]">Sent to Carrier</option>
+                      <option value="[object Object]">Suspended</option>
+                      <option value="[object Object]">Terminated</option>
+                      <option value="[object Object]">Waiting on Certification</option>
+                      <option value="[object Object]">Pending Contract</option>
+                      <option value="[object Object]">Expired</option>
+                      <option value="[object Object]">Pending OIG</option>
+                      <option value="[object Object]">Pending Release</option>
+                    </select>
+                  </div>
+                  <div class="ui dropdown item">
+                    <i title="History" class="large yellow setting icon" @click="showForward = !showForward"></i>
+                  </div>
+                  <div class="ui dropdown item">
+                    <i title="History" class="large yellow history icon" @click="showHistory = !showHistory"></i>
+                  </div>
+                    <div class="row">
+                      <div class="animation-container">
+                        <transition name="slide-down">
+                          <div v-show="showHistory">
+                            <div class="close-div" @click="showHistory = !showHistory">&times;</div>
+                              <table class="ui very basic celled table inverted">
+                                <thead>
+                                  <tr>
+                                    <th>Status</th>
+                                    <th>Updated</th>
+                                    <th>Reason</th>
+                                    <th>Set By</th>
+                                  </tr>
+                                </thead>
+                                <tbody class="history-items">
+                                  <tr>
+                                    <td>
+                                      Initial
+                                    </td>
+                                    <td>
+                                      2018-10-24
+                                      <small class="right floated"><i class="tiny circular inverted yellow pencil icon"></i></small>
+                                      <!---->
+                                    </td>
+                                    <td> </td>
+                                    <td><a href="/admin/associates/aca752e4-f01f-4e0b-927e-a2f800e35a13/edit">Beth Warner</a></td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                        </transition>
+                      </div>
+                      <div class="animation-container">
+                        <transition name="slide-down">
+                          <div v-show="showForward">
+                            <div class="close-div" @click="showForward = !showForward">&times;</div>
+                              <div class="ui hidden divider"></div>
+                              <div class="row">
+                                <div class="three fields">
+                                  <div class="field select inverted inline">
+                                    <select>
+                                      <option>Future</option>
+                                      <option>Immediate</option>
+                                    </select>
+                                  </div>
+                                  <div class="field select inverted inline">
+                                    <select>
+                                      <option>Heirarchy</option>
+                                      <option>Level</option>
+                                      <option>Status</option>
+                                    </select>
+                                  </div>
+
+                                  <div class="field">
+                                    <input type="text" placeholder="Contract ID">
+                                  </div>
+                                  <div class="two wide field">
+                                    <input type="text" placeholder="Level">
+                                  </div>
+                                </div>
+                              </div>
+                            <div class="ui hidden divider"></div>
+                            <h3>Pending future actions</h3>
+                            <table class="ui very basic celled table inverted future-actions">
+                              <thead>
+                                <tr>
+                                  <th>Scheduled</th>
+                                  <th>Description</th>
+                                  <th>Set By</th>
+                                  <th>Date Set</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>
+                                    2019-10-24
+                                    <small class="right floated">
+                                      <i title="cancel scheduled action" class="small circular pink inverted minus icon"></i>
+                                    </small>
+                                  </td>
+                                  <td>
+                                    Heirarchy
+                                    <div class="ui tiny compact blue button">
+                                      <i class="long alternate right arrow icon"></i>
+                                      #20262 / L4
+                                    </div>
+                                  </td>
+                                  <td>
+                                    <a href="#">Kevin Hougasian</a>
+                                  </td>
+                                  <td>
+                                    2018-7-21
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    2019-7-5
+                                    <small class="right floated">
+                                      <i title="cancel scheduled action" class="small circular pink inverted minus icon"></i>
+                                    </small>
+                                  </td>
+                                  <td>
+                                    Status <div class="ui tiny compact blue button">Waiting on contract <i class="long alternate right arrow icon"></i> Appointed</div>
+                                  </td>
+                                  <td>
+                                    <a href="#">Kevin Hougasian</a>
+                                  </td>
+                                  <td>
+                                    2018-7-21
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    2019-01-13
+                                    <small class="right floated">
+                                      <i title="cancel scheduled action" class="small circular pink inverted minus icon"></i>
+                                    </small>
+                                  </td>
+                                  <td>
+                                    Level
+                                    <div class="ui tiny compact blue button">
+                                      2 <i class="long alternate right arrow icon"></i> 4</div>
+                                  </td>
+                                  <td>
+                                    <a href="#">Kevin Hougasian</a>
+                                  </td>
+                                  <td>
+                                    2018-7-21
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            </div>
+                        </transition>
+                      </div>
+                    </div>
+                  </div>
+              </transition>
+            </div>
+
+            <div class="ui title" @click="toggleForm">
+              <div class="ui equal width grid">
+                <div class="row">
+                  <div class="seven wide column">
+                    <span>anthem</span>
+                    Anthem Multi-State
+                  </div>
+                  <div class="column">
+                    <span>Status<i class="ui circular tiny empty label neutral"></i></span>
+                    Initial
+                  </div>
+                  <div class="column">
+                    <span>AWN</span>
+                    <i class="lightgrey ban icon"></i>
+                  </div>
+                  <div class="column">
+                    <span>Level</span>
+                    3
+                  </div>
+                </div>
+              </div>
+            </div>
+            <transition name="slide-down">
+              <div v-if="showInfo" class="ui content"><div data-v-a6ede330="" class="contract-detail-container transition visible">
+                <div data-v-a6ede330="">
+                  <!---->
+                  <div data-v-a6ede330="" class="ui form">
+                    <div data-v-a6ede330="" class="content">
+                      <!---->
+                      <div data-v-a6ede330="" class="ui inner-hidden divider"></div>
+                      <div data-v-a6ede330="" class="ui grid">
+                        <div data-v-a6ede330="" class="row">
+                          <div data-v-a6ede330="" class="six wide column">
+                            <div data-v-a6ede330="" class="field">
+                              <div data-v-a6ede330="" class="ui icon input"><label data-v-a6ede330="">
+                                  General AWN
+                                  <i data-v-a6ede330="" class="yellow vertical ellipsis icon awn-view"></i></label> <input data-v-a6ede330="" type="text" maxlength="50">
+                                <!---->
+                              </div>
+                            </div>
+                          </div>
+                          <div data-v-a6ede330="" class="four wide column">
+                            <div data-v-a6ede330="" class="field select"><select data-v-a6ede330="">
+                                <option data-v-a6ede330="" value=""></option>
+                                <option data-v-a6ede330="" value="Do not advance">Do not advance</option>
+                                <option data-v-a6ede330="" value="1 month">1 month</option>
+                                <option data-v-a6ede330="" value="2 months">2 months</option>
+                                <option data-v-a6ede330="" value="3 months">3 months</option>
+                                <option data-v-a6ede330="" value="4 months">4 months</option>
+                                <option data-v-a6ede330="" value="5 months">5 months</option>
+                                <option data-v-a6ede330="" value="6 months">6 months</option>
+                                <option data-v-a6ede330="" value="7 months">7 months</option>
+                                <option data-v-a6ede330="" value="8 months">8 months</option>
+                                <option data-v-a6ede330="" value="9 months">9 months</option>
+                                <option data-v-a6ede330="" value="10 months">10 months</option>
+                                <option data-v-a6ede330="" value="11 months">11 months</option>
+                                <option data-v-a6ede330="" value="12 months">12 months</option>
+                                <option data-v-a6ede330="" value="15 months">15 months</option>
+                                <option data-v-a6ede330="" value="18 months">18 months</option>
+                              </select> <label data-v-a6ede330="">Advance amount
+                                <!----></label></div>
+                          </div>
+                          <div data-v-a6ede330="" class="two wide column">
+                            <div data-v-a6ede330="" class="field select"><select data-v-a6ede330="">
+                                <option data-v-a6ede330="" value="0">0</option>
+                                <option data-v-a6ede330="" value="1">1</option>
+                                <option data-v-a6ede330="" value="2">2</option>
+                                <option data-v-a6ede330="" value="3">3</option>
+                                <option data-v-a6ede330="" value="4">4</option>
+                                <option data-v-a6ede330="" value="5">5</option>
+                                <option data-v-a6ede330="" value="6">6</option>
+                                <option data-v-a6ede330="" value="7">7</option>
+                                <option data-v-a6ede330="" value="8">8</option>
+                                <option data-v-a6ede330="" value="9">9</option>
+                                <option data-v-a6ede330="" value="10">10</option>
+                              </select> <label data-v-a6ede330="">Level
+                                <!----></label></div>
+                          </div>
+                          <div data-v-a6ede330="" class="four wide column">
+                            <div data-v-a6ede330="" class="field input"><label data-v-a6ede330="">Annual Rollover</label> <br data-v-a6ede330="">
+                              <div data-v-a6ede330="" class="ui toggle checkbox read-only"><input data-v-a6ede330="" type="checkbox" hidden="hidden"> <label data-v-a6ede330="">
+                                  No
+                                </label>
+                                <!---->
+                              </div>
+                            </div>
+                          </div>
+                          <!---->
+                        </div>
+                        <div data-v-a6ede330="" class="row">
+                          <div data-v-a6ede330="" class="animation-container sixteen wide column">
+                            <!---->
+                          </div>
+                        </div>
+                        <div data-v-a6ede330="" class="awn animation-container">
+                          <!---->
+                        </div>
+                        <div data-v-a6ede330="" class="row">
+                          <div data-v-a6ede330="" class="six wide column">
+                            <div data-v-a6ede330="" class="ui search field producers contract"><label data-v-a6ede330="">Upline</label>
+                              <div data-v-a6ede330="" class="ui icon input"><input data-v-a6ede330="" type="text" class="prompt upline-search-input"> <i data-v-a6ede330="" class="grey-light search icon"></i></div>
+                              <!---->
+                            </div>
+                          </div>
+                          <div data-v-a6ede330="" class="six wide column">
+                            <div data-v-a6ede330="" class="ui search field producers contract"><label data-v-a6ede330="">Signing Agent</label>
+                              <div data-v-a6ede330="" class="ui icon input"><input data-v-a6ede330="" type="text"> <i data-v-a6ede330="" class="grey-light search icon"></i></div>
+                              <!---->
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!---->
+                      <div data-v-a6ede330="">
+                        <div class="ui small steps three upline">
+                          <div class="active step pl-toggle">
+                            <div class="product-level">3</div>
+                            <div class="content">
+                              <div class="title">QA Sue Agent Testpass</div>
+                              <div class="description downlines"><i class="lightgrey users icon"></i>
+                                Downlines
+                              </div>
+                            </div>
+                          </div>
+                          <div class="step">
+                            <div class="product-level">10</div>
+                            <div class="content">
+                              <div class="title"><a href="/admin/producers/62f89954-d3ea-4d96-96d7-c98bbd2470ec">Ritter Insurance Marketing</a></div>
+                              <div class="description"><i class="lightgrey user icon"></i> <a href="/admin/agents/478d0a4f-4784-42fd-94c2-9e070129c799/edit">Craig Ritter</a></div>
+                              <div class="extra"><a href="/admin/producers/62f89954-d3ea-4d96-96d7-c98bbd2470ec/contracts/27542" class="ui transparent icon button"><i class="tiny circular yellow inverted pencil icon"></i>
+                                  Parent Contract
+                                  <div title="Appointed" class="ui circular tiny empty label positive"></div></a></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="post-step">
+                          <div class="animation-container">
+                            <!---->
+                          </div>
+                        </div>
+                      </div>
+                      <div data-v-a6ede330="" class="ui inner-hidden divider"></div>
+                      <div data-v-a6ede330="" class="contract">
+                        <div class="contract-products">
+                          <h3 class="ui grey header">Products
+                            <!---->
+                          </h3>
+                          <div class="ui secondary tabular icon product menu">
+                            <div class="item active">
+                              Medicare Advantage
+                            </div>
+                            <div class="item">
+                              Medicare Supplement
+                            </div>
+                            <div class="item">
+                              Prescription Drug Plan
+                            </div>
+                          </div>
+                          <div class="ui tab states add-states active"><label title="Colorado" class="ui icon label pressed">
+                              <div title="licensed in this state" class="licensed"><i class="tiny checkmark icon"></i></div>
+                              CO
+                            </label><label title="Indiana" class="ui icon label disabled">
+                              <!---->
+                              IN
+                            </label><label title="Kentucky" class="ui icon label disabled">
+                              <!---->
+                              KY
+                            </label><label title="Missouri" class="ui icon label disabled">
+                              <!---->
+                              MO
+                            </label><label title="Nevada" class="ui icon label disabled">
+                              <!---->
+                              NV
+                            </label><label title="Ohio" class="ui icon label disabled">
+                              <!---->
+                              OH
+                            </label><label title="Virginia" class="ui icon label pressed">
+                              <div title="licensed in this state" class="licensed"><i class="tiny checkmark icon"></i></div>
+                              VA
+                            </label><label title="Wisconsin" class="ui icon label disabled">
+                              <!---->
+                              WI
+                            </label>
+                            <div class="inline field">
+                              <div class="ui slider checkbox states-select">
+                                <!----> <input type="checkbox" disabled="disabled" class="hidden" checked="checked">
+                                <!----> <label>De-select all states</label></div>
+                            </div>
+                            <div class="ui hidden divider"></div>
+                            <div>
+                              <h3 class="ui grey header">
+                                Certifications
+                                <small><i class="small inverted yellow circular add icon add-ac-cert"></i></small></h3>
+                              <!---->
+                            </div>
+                            <!---->
+                            <!---->
+                            <div data-certification-year="2018">
+                              <div class="certification-container">
+                                <div class="inline certification field">
+                                  <div class="ui blue label">
+                                    HMO
+                                    <i class="delete icon"></i></div>
+                                  <div class="ui icon input"><input type="date">
+                                    <!---->
+                                  </div>
+                                </div>
+                                <div class="inline certification field">
+                                  <div class="ui blue label">
+                                    PPO
+                                    <i class="delete icon"></i></div>
+                                  <div class="ui icon input"><input type="date">
+                                    <!---->
+                                  </div>
+                                </div>
+                                <div class="inline certification field">
+                                  <div class="ui blue label">
+                                    SNP
+                                    <i class="delete icon"></i></div>
+                                  <div class="ui icon input"><input type="date">
+                                    <!---->
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div data-certification-year="2019">
+                              <div class="certification-container">
+                                <div class="inline certification field">
+                                  <div class="ui blue label">
+                                    HMO
+                                    <i class="delete icon"></i></div>
+                                  <div class="ui icon input"><input type="date">
+                                    <!---->
+                                  </div>
+                                </div>
+                                <div class="inline certification field">
+                                  <div class="ui blue label">
+                                    PPO
+                                    <i class="delete icon"></i></div>
+                                  <div class="ui icon input"><input type="date">
+                                    <!---->
+                                  </div>
+                                </div>
+                                <div class="inline certification field">
+                                  <div class="ui blue label">
+                                    SNP
+                                    <i class="delete icon"></i></div>
+                                  <div class="ui icon input"><input type="date">
+                                    <!---->
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!---->
+                      <h3 data-v-a6ede330="" class="ui small grey header">
+                        Request Contract Work
+                        <i data-v-a6ede330="" class="small inverted yellow circular add icon"></i></h3>
+                      <attachment-cmp data-v-a6ede330="" max-allowed-uploads="5" embed-type="widget" api-url="https://attachments-qa.ritterim.com" source="rams" type="contract" external-id="193346" account-ruid="7189a921-97d7-e811-8607-000d3a130a38" vce-ready="">
+                        <div>
+                          <div data-v-01488a82="" style="display: none;">
+                            <form data-v-01488a82=""><input data-v-01488a82="" type="file" class="main-file-target file-target" style="display: none;"></form>
+                            <div data-v-01488a82="" class="drop-target">
+                              Drag multiple files here or choose manually
+                              <i data-v-01488a82="" class="tiny circular yellow inverted cloud upload icon"></i></div>
+                          </div>
+                          <h3 class="ui small grey header">
+                            Attachments
+                            <i class="ui small inverted yellow circular plus icon"></i></h3>
+                          <div class="inline widget select transition visible">
+                            <div class="ui active centered inline loader" style="display: none;"></div>
+                            <!---->
+                            <!---->
+                            <div class="file-list">
+                              <h2 class="ui grey medium header">No files currently attached to this resource.</h2>
+                            </div>
+                          </div>
+                        </div>
+                      </attachment-cmp>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </transition>
+          </div>
+        </div>
+      </div><!-- /.column -->
+
+      <!-- notes -->
+      <div class="five wide column notes">
+        <div class="ui hidden divider"></div>
+        <!-- notes menu -->
+        <div class="ui text menu">
+          <a class="active item">
+            <i class="small circular inverted yellow add icon"></i>
+            Note
+          </a>
+          <div class="right menu">
+            <div class="ui right floated note-stat">
+              <i class="small lightgrey sticky note icon"></i>
+                0
+            </div>
+          </div>
+        </div>
+
+        <div class="ui divider"></div>
+
+        <div class="ui alert">
+          <div class="ui note fluid card no-notes">
+            <div class="content">
+              <p>
+                <i class="large sticky note outline icon"></i>
+                No notes exist.
+                </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- / note -->
+        <div class="ui hidden divider"></div>
+        <!-- notes menu -->
+        <div class="ui text menu">
+          <a class="active item">
+            <i class="small circular inverted yellow add icon"></i>
+            Contract Note
+          </a>
+          <div class="right menu">
+            <div class="ui right floated note-stat">
+              <i class="small lightgrey text file icon"></i>
+                0
+            </div>
+          </div>
+        </div>
+
+        <div class="ui divider"></div>
+
+        <div class="ui alert">
+          <div class="ui note fluid card no-notes">
+            <div class="content">
+              <p>
+                <i class="large sticky note outline icon"></i>
+                No notes exist.
+                </p>
+            </div>
+          </div>
+        </div>
+
+      </div><!--  /.notes -->
+
+    </div><!-- /.ui.grid -->
+
+  </div><!-- /.app.body -->
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.19.2/moment.min.js"></script>
+<script src="/assets/js/all.min.js?t=1528209883595"></script>
+
+</html>
