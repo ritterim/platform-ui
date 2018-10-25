@@ -1,0 +1,37 @@
+.request-side-menu {
+  position: fixed;
+  right: -30rem;
+  width: 30rem;
+  background: lighten($color-menu-bkg, 5%);
+  z-index: 1;
+  color: $color-white;
+  &.public {
+    height: calc(100% - 4.65rem);
+    top: 4.65rem;
+  }
+  &.admin {
+    height: calc(100% - 11rem);
+    top: 11rem;
+  }
+  &.active {
+    right: 0;
+  }
+
+  .ui.form {
+    width: 100%;
+    .field {
+      margin-top: 1.5rem;
+      input, textarea {
+        color: $color-white;
+      }
+      label {
+        color: $grey-light;
+      }
+    }
+  }
+
+  .menu-wrapper {
+    position: relative;
+    padding: 2rem;
+  }
+}

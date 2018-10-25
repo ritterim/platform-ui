@@ -1,0 +1,45 @@
+#account-menu {
+  .membership-search {
+    overflow: hidden;
+    .ui.warning.message {
+      display: block;
+    }
+  }
+  .loading.blurring {
+    position: absolute;
+    z-index: 20;
+    width: 100%;
+    height: 100%;
+  }
+  .ui.centered.inline.loader.active {
+    margin-top: 10%;
+  }
+  .slide-enter-active {
+    animation: Slide .2s;
+  }
+
+  .slide-leave-active {
+    animation: Slide .2s reverse;
+  }
+  #add-membership{
+    span {
+      display: initial;
+      color: $grey-medium;
+      font-weight: normal;
+    }
+  }
+  .ui.icon.input.contact {
+    width: 90% !important;
+  }
+  .marketing {
+    .ui.checkbox.vue {
+      width: 100%;
+    }
+  }
+  .ui.checkbox.field.right {
+    margin-top: 15px;
+  }
+  .content.block {
+    display: block !important;
+  }
+}
