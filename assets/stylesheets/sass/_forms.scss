@@ -241,7 +241,6 @@ form {
       }
 
       select {
-        background: transparent;
         border: none;
         border-bottom: 1px solid $grey-light;
         padding: .7rem 2rem .41rem .7rem;
@@ -288,5 +287,11 @@ input[type=range] {
   }
   &:focus {
     outline: none;
+  }
+}
+
+.stateSelect {
+  select {
+    height: fit-content;
   }
 }

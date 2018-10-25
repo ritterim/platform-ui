@@ -1,25 +1,35 @@
-// general charts
+// chartisJS and it's plugins
 .chart {
-  padding-left: 1rem;
+  padding-top: 0;
+  overflow: hidden;
   .ct-label {
     color: $grey;
   }
   text {
-    fill: white;
+    fill: $color-white;
     font-size: 100%;
   }
   line {
     stroke: $grey;
   }
+  table {
+    th {
+      color: $color-yellow;
+    }
+    td {
+      border-bottom: 1px solid rgba($color-white,.2);
+      color: $grey;
+    }
+  }
 }
 
 // legend plugin
 .ct-legend {
-  color: $grey;
-  display: block;
+  color: $color-white;
+  display: flex;
   font-size: 80%;
   justify-content: center;
-  padding: 1rem;
+  padding: 0;
   text-transform: capitalize;
   z-index: 10;
   @include hide-scrollbar(x);
@@ -40,6 +50,7 @@
     position: absolute;
     transition: .2s;
     width: 1rem;
+    padding-right: 0;
   }
   li.inactive:before {
     background: transparent;
@@ -54,6 +65,14 @@
       background-color: nth($ct-series-colors, $i + 1);
       border-color: nth($ct-series-colors, $i + 1);
     }
+  }
+}
+
+// matches class created in Regional dashboard
+  @for $i from 0 to length($ct-series-colors) {
+  .circular.label.ct-series-#{$i} {
+    background: nth($ct-series-colors, $i + 1) !important;
+    vertical-align: bottom !important;
   }
 }
 

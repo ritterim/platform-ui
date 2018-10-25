@@ -1,13 +1,25 @@
 .notes {
   .tag-legend {
-    @include modal(11rem 2rem 2rem 3rem, 20%, .92, 1001);
-    display: block;
+    @include modal(12rem 2rem 2rem 3rem, 30rem, .92, 1001);
+    display: flex;
+    flex-direction: column;
     .ui.relaxed.list {
       overflow: auto;
     }
     .tag-tab {
       right: 2rem;
       position: fixed;
+    }
+    .label-wrapper {
+      margin-right: .5rem;
+    }
+    .half-height {
+      height: 50%;
+      overflow-y: scroll;
+      display: block;
+    }
+    .ui.search.field input {
+      color: white !important;
     }
   }
 
@@ -58,12 +70,14 @@
     &:hover {
       background: rgba($color-yellow, .7) !important;
       color: $color-white !important;
-      .hover {
-        display: inline;
-        padding-right: .25rem;
-      }
-      .icon:not(.hover) {
-        display: none;
+      &.auto-hide-icon {
+        .hover {
+          display: inline;
+          padding-right: .25rem;
+        }
+        .icon:not(.hover) {
+          display: none;
+        }
       }
       .detail {
         color: $grey-dark;

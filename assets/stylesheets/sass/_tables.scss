@@ -1,14 +1,10 @@
 .ui.table {
-  caption {
-    border-left: .5rem solid $color-cyan;
-    font-weight: 400;
-    font-size: 120%;
-    margin-bottom: 1rem;
-    padding-left: .5rem;
-    text-align: left;
-  }
   thead th {
     color: $grey;
+  }
+  td:empty,
+  .td-empty {
+    background: $color-background;
   }
   span {
     color: $grey-medium;
@@ -50,6 +46,12 @@
     margin-bottom: 0;
   }
 
+  &.inverted {
+      td > a {
+        color: $color-yellow;
+      }
+  }
+
   &.archive {
     span {
       display: block;
@@ -66,38 +68,4 @@
       color: $grey;
     }
   }
-}
-
-.accordion.permission {
-  .ui.title {
-    overflow: hidden;
-    &.negative {
-      background: lighten($color-pink, 20%) !important;
-    }
-    .fields {
-      margin-top: -1rem;
-    }
-  }
-  .grid>.column.confirm {
-    color: $color-red;
-    display: none;
-    text-transform: uppercase;
-    button {
-      text-transform: uppercase;
-    }
-    input::-webkit-input-placeholder {
-      text-transform: uppercase;
-    }
-  }
-  .secret-key {
-    .key {
-      display: none;
-    }
-  }
-  .table {
-   display: none;
-   tbody {
-     display: none;
-   }
- }
 }

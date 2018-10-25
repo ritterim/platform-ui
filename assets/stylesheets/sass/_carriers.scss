@@ -4,10 +4,6 @@
     margin-bottom: 1rem;
     @include transition;
 
-    &:hover {
-        @include focus($color-link, "main");
-    }
-
     &.add-contract {
         .title {
             display: none;
@@ -77,10 +73,6 @@
             }
         }
 
-        .inline-block {
-            display: inline-block;
-        }
-
         .product-container:not(.add-states) {
             .add-product, .product-selection {
                 display: none;
@@ -148,6 +140,7 @@
           transform: rotate(40deg);
           i.icon {
             transform: rotate(-40deg);
+            margin: 0 .25rem 0 0;
           }
         }
         &.disabled {

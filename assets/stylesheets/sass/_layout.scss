@@ -33,7 +33,7 @@ body {
 }
 
 .grey-light {
-  color: $grey-medium !important;
+  color: $grey-light !important;
 }
 
 .pink,
@@ -92,13 +92,17 @@ h2.section-header {
 }
 
 i.icon.ritter {
-  background: url(/Content/css/svg/ritter_white_logo.svg) no-repeat top center;
+  background: url(/Content/css/svg/ritter_black_logo.svg) no-repeat top center;
   background-size: contain;
   &:before {
     // forces in-line with other semantic icons;
     // they all expect a font value :before
     content: ".";
   }
+}
+
+.inline-block {
+  display: inline-block;
 }
 
 mark,
@@ -119,7 +123,31 @@ mark,
   overflow: visible;
 }
 
+.spacer {
+  padding-right: 1rem;
+  &-left {
+    padding-right: 0;
+    padding-left: 1rem;
+  }
+}
 
-.ui.message {
-  border-radius: 0;
+input, select { 
+  &[readonly] {
+    color: $help-text !important;
+  }
+}
+
+i.dodgerblue {
+  color: dodgerblue !important;
+}
+
+.link-text {
+  color: $color-link !important;
+  &.ui.circular.label {
+    border-color: $color-link !important;
+  }
+}
+
+i.icon, i.label {
+  font-style: normal;
 }

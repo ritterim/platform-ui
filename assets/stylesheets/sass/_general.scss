@@ -1,16 +1,39 @@
-#account-menu-cmp {
-  .ui.icon.input.contact {
-    width: 90% !important;
-  }
-  .marketing {
-    .ui.checkbox.vue {
-      width: 100%;
+i {
+  &.icon {
+    margin: .25rem .4rem .25rem .25rem;
+    &.last {
+      margin-right: 0;
     }
   }
-  .ui.checkbox.field.right {
-    margin-top: 15px;
+}
+.ui {
+  &.header {
+    &.small {
+      i {
+        &.icon {
+          font-size: .75em;
+          margin: .25rem .4rem .25rem .25rem;
+        }
+      }
+    }
   }
-  .content.block {
-    display: block !important;
+}
+.icon-label {
+  &.left {
+    margin-left: .7rem;
+    margin-right: .2rem;
+    &.first {
+      margin-left: 0;
+    }
   }
+  &.right {
+    margin-left: .2rem;
+    margin-right: .7rem;
+    &.last {
+      margin-right: 0;
+    }
+  }
+}
+.d-block {
+  display: block;
 }

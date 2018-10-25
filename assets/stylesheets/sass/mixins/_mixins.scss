@@ -87,10 +87,10 @@
   background-color: $color !important;
 }
 
-// more defined dotted border
 @mixin dotted-border($topOrBottom, $color:$color-white) {
   background-image: linear-gradient(to right, rgba($color, .8) 33%, rgba($color, 0) 0%);
   background-position: $topOrBottom;
   background-size: .3rem .1rem;
   background-repeat: repeat-x;
 }
+

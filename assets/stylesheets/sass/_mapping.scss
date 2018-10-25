@@ -67,12 +67,42 @@
         background: rgba($color-menu-bkg, .7);
         margin: 0 -2rem;
         padding: 1rem 2rem 1rem 1rem;
+        .extra.content .icon {
+          cursor: pointer;
+          visibility: visible;
+        }
       }
       &:first-child {
         padding-top: 1rem;
       }
       .content {
         line-height: 1.5rem;
+        &.extra,
+        &.expanded {
+          padding-left: 2rem;
+          .header {
+            color: $color-white !important;
+            &:first-of-type {
+              .label {
+                cursor: pointer;
+              }
+            }
+            p {
+              font-size: 110%;
+              margin-bottom: 0;
+              margin-top: .1rem;
+            }
+            div {
+              color: $grey;
+              font-weight: lighter;
+            }
+          }
+        }
+        &.extra {
+          visibility: hidden;
+          text-align: center;
+          transition: .2s;
+        }
       }
       .header a {
         color: darken($color-help, 20%) !important;

@@ -18,7 +18,7 @@ $color-background:    $grey-lightest;
 $color-link:          cornflowerblue;
 $color-help:          aliceblue;
 $color-note:          cornsilk;
-$help-text:           darken($color-help, 20%);
+$help-text:           dodgerblue;
 
 $color-red:    darken(tomato, 10%);
 $color-olive:  #b5cc18;
@@ -33,7 +33,7 @@ $color-cyan:   cyan;
 $color-violet: #6435C9;
 $color-brown:  #A5673F;
 $color-blue:   $color-link;
-$color-green:  #21BA45;
+$color-green: #21BA45;
 $color-teal: teal;
 $color-light-blue: powderblue;
 $color-mildblack: rgba(51, 51, 34, 0.7);
@@ -63,23 +63,6 @@ $user-type-icons: (
   carrier:   "\f1ad"   //.building
 );
 
-$status-list:
-  deceased-status,
-  mga,
-  preferred-agent,
-  prospect-status,
-  protected,
-  agent-lead-status;
-
-// file extension map
-$filetype-icons: (
-  xls: "\f1c3",
-  pdf: "\f1c1",
-  txt: "\f0f6",
-  doc: "\f1c2",
-  docx:"\f1c2"
-);
-
 $campaign-type-icons: (
   digital:          "\f10a",  //.fa-tablet
   direct-mail:      "\f2b6",  //.fa-envelope-open
@@ -88,6 +71,25 @@ $campaign-type-icons: (
   phone:            "\f095",  //.fa-phone
   tradeshow-event:  "\f2b5",  //.fa-handshake-o
   webinar:          "\f108"   //.fa-desktop
+);
+
+$status-list:
+  deceased-status,
+  mga,
+  preferred-agent,
+  prospect-status,
+  new-lead-status,
+  protected,
+  agent-lead-status,
+  agency-lead-status;
+
+// file extension map
+$filetype-icons: (
+  xls: "\f1c3",
+  pdf: "\f1c1",
+  txt: "\f0f6",
+  doc: "\f1c2",
+  docx:"\f1c2"
 );
 
 // color array from chartist JS

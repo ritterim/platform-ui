@@ -52,6 +52,30 @@
         margin-left: -1rem;
       }
 
+      &.stateSelect {
+        select {
+          height: fit-content;
+        }
+        &:after {
+          margin-top: -2rem;
+        }
+      }
+
+      &.error {
+        select {
+          border-bottom: 2px solid #e0b4b4;
+          background: lighten($color-pink, 25%) !important;
+        }
+        &:after {
+          align-self: center;
+          color: #9f3a38;
+          content: "\f107";
+          font-family: "Icons";
+          margin-left: -1rem;
+          position: inherit;
+        }
+      }
+
       &.loading {
         &:after {
           border-radius: 50%;
@@ -192,6 +216,21 @@
         }
       }
     }
+
+    &.error {
+      .validation-error {
+        width: 100%;
+        display: block;
+        border-color: #e0b4b4;
+        color: #9f3a38;
+        padding: .1rem .7rem;
+        font-size: 90%;
+      }
+    }
+  }
+
+  .input-size {
+    padding: .7rem 2rem .7rem .7rem !important;
   }
 }
 
@@ -225,4 +264,12 @@
 // used with .add.toggle
 .field.toggle {
   display: none;
+}
+
+.fields {
+  .field:first-child {
+    label {
+      left: 1.2rem;
+    }
+  }
 }

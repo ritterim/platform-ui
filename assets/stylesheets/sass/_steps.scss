@@ -47,6 +47,7 @@
     .extra {
       align-items: flex-end;
       display: flex;
+      justify-content: center;
       margin-top: .7rem;
       margin-bottom: -1rem;
       .ui.basic.yellow.button {
@@ -54,6 +55,8 @@
       }
       // edit buttons
       a {
+        vertical-align: baseline;
+        white-space: nowrap;
         &.button {
           border-radius: 0;
           padding: .3rem;
@@ -77,6 +80,7 @@
   }
   .close-div, .copy-div {
     padding: 1rem;
+    color: white !important;
   }
 }
 

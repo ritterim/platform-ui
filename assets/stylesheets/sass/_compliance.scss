@@ -106,6 +106,9 @@
     &.soa {
       background: lighten($color-purple, 10%) !important;
     }
+    &.others {
+      background: lighten($color-violet, 5%) !important;
+    }
     &.active {
       border: 1px solid $color-yellow;
       &.ctm {
@@ -156,7 +159,7 @@
   }
   .case-box {
     background: $color-white;
-    height: 543px;
+    min-height: 543px;
     overflow: hidden;
     &.ui.segments {
       >.ui.segment {

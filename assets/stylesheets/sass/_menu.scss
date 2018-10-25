@@ -51,10 +51,44 @@
       > .icon {
         cursor: pointer;
       }
-      &.dropdown {
+      &.dropdown:not(.click) {
         &:hover {
           >.menu {
             display: block;
+          }
+        }
+      }
+      &.dropdown.click {
+        &.open {
+          >.menu {
+            display: block;
+          }
+        }
+        .admin.profile {
+          &.open {
+            display: block;
+          }
+          text-align: left;
+          min-width: 300px;
+          .item {
+            text-align: left;
+            .description {
+              white-space: pre-wrap;
+            }
+            color: $grey;
+            a {
+              color: $grey;
+            }
+          }
+        }
+      }
+    }
+    .ui.dropdown.item {
+      .profile {
+        line-height: 2rem;
+        .item {
+          a {
+            color: $grey;
           }
         }
       }
@@ -119,7 +153,11 @@
 // agent menu
 .agent {
   &.ui.inverted.menu {
+    .avatar-menu {
+      display: inline;
+    }
     .account-name {
+      cursor: pointer;
       display: inline-block;
       max-width: 25rem;
       overflow: hidden;
@@ -127,11 +165,16 @@
       text-overflow: ellipsis;
       vertical-align: middle;
       white-space: nowrap;
+      transition: .2s;
+      &:hover {
+        text-decoration: underline;
+      }
       @media (max-width: 1280px) {
         max-width: 10rem;
       }
     }
     .ui.inverted.dropdown.item {
+      cursor: default;
       .menu {
         background: lighten($color-menu-bkg,5%);
         display: block;
@@ -149,7 +192,7 @@
     border-radius: 0;
     font-size: 110%;
     font-weight: 100;
-    // margin-top: .5rem;
+    margin-top: .5rem;
     position: fixed;
     width: 100%;
     z-index: 100;
@@ -199,14 +242,15 @@
             .issue {
               background: $color-purple;
             }
+            .others {
+              background: lighten($color-violet, 5%);
+            }
           }
         }
       }
       span {
         align-items: center;
-        color: $color-cyan;
         display: inline-flex;
-        font-size: 90%;
         font-weight: lighter;
         margin: 0 .5rem;
         .label {
@@ -254,9 +298,9 @@
 .app.body {
   .agent.menu {
     left: 0;
-    top: 4.5rem;
+    top: 6rem;
     + .stackable.grid {
-      // margin-top: 7.5rem;
+      margin-top: 7.5rem;
     }
     .header {
       .agent-icon + .label {
@@ -269,16 +313,23 @@
 
 .app.body {
   .stackable.grid {
-    padding-top: 2rem;
+    padding-top: 4rem;
   }
 }
 // end agent
 
 //ellipsis hover effect to show menu
-.dropdown {
+.dropdown:not(.click) {
   &:hover {
     >.menu {
-      // display: block;
+      display: block;
+    }
+  }
+}
+.dropdown.click {
+  &.open {
+    >.menu {
+      display: block;
     }
   }
 }
@@ -415,17 +466,4 @@
   .ui.main.menu {
     font-size: 100% !important;
   }
-}
-
-// agent/crm menu
-
-.ui.menu .ui.dropdown .profile.menu>.item {
-  color: $grey !important;
-  font-size: 90% !important;
-  line-height: 1.5rem;
-}
-
-.ui.basic.circular.yellow.label.transparent {
-  background: $color-menu-bkg !important;
-  background-color: $color-menu-bkg !important;
 }
