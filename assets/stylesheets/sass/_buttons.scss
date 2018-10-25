@@ -20,6 +20,7 @@ i.small.circular.icon {
   width: 1.9em !important;
   height: 1.9em !important;
   box-shadow: 0 0 0 1px darken($color-yellow, 5%);
+  margin: .23rem;
   @include scale(1.2);
   .item & {
     font-size: smaller;
@@ -78,4 +79,23 @@ i.small.circular.icon {
 .ui.button>.yellow.write,
 .write {
   @include scale(1.7);
+}
+
+// Flow sorting buttons
+.row.sort {
+  .ui.mini.buttons {
+    margin-right: 1rem;
+    button.active {
+      background: $color-yellow !important;
+      color: $color-white !important;
+    }
+  }
+}
+
+.ui.very-tiny.button, .ui.very-tiny.buttons .button, .ui.very-tiny.buttons .or {
+  font-size: .65714286rem;
+}
+
+.button-inline-content {
+  display: inline !important;
 }

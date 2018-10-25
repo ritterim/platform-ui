@@ -1,4 +1,4 @@
-.animation-container {
+.animation-container:not(.allow-overflow) {
   overflow: hidden;
 }
 

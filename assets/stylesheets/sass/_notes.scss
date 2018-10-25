@@ -14,6 +14,9 @@
   .message.helpbox {
     margin-top: 6rem;
   }
+  .ui.shape {
+    width: 100%;
+  }
   .lightgrey {
     color: $grey-light !important;
   }
@@ -124,14 +127,18 @@
           }
         }
       }
-      // .actions removed
+      .actions {
+        margin-right: 0;
+        padding-right: .3rem;
+        button {
+          border-left: 1px solid $grey-lighter;
+          border-radius: 0;
+          margin: 0;
+        }
+
+      }
     }
   }
-}
-
-.no-notes {
-    color: $help-text;
-    padding-top: 1rem;
 }
 
 #app:not(.contextual-note) .text.menu {

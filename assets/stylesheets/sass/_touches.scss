@@ -1,33 +1,223 @@
+.close-note {
+  color: $color-pink !important;
+  cursor: pointer;
+  font-size: 200%;
+  font-weight: lighter;
+}
+
 .touches {
-  @include modal(11rem 2rem 2rem 3rem, 30%, .92, 1);
+  @include modal(0, 30%, .92, 1);
+  &.account {
+    top: 10.5rem;
+    height: calc(100% - 10.5rem);
+  }
+  &.lead {
+    top: 7rem;
+    height: calc(100% - 7rem);
+  }
+  .close-div {
+    margin-top: 1rem;
+    margin-right: 1rem;
+  }
   display: block;
+  overflow-x: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  .add.icon,
+  .sticky.note.icon {
+    cursor: pointer;
+  }
+  .add-touch {
+    margin-top: 2rem;
+    padding: 2rem;
+  }
+  .start-touch {
+    select {
+      color: $color-white;
+      option {
+        color: $color-black;
+      }
+    }
+    textarea {
+      background: rgba(white, .5);
+      border-radius: 0;
+      transition: .2s;
+      &:focus {
+        border-radius: 0;
+        background: rgba(white, .8);
+      }
+    }
+    .timer {
+      display: flex;
+      align-content: middle;
+      .counter {
+        font-size: 150%;
+        margin-left: 2rem;
+      }
+      .icon {
+        margin-left: .2rem;
+      }
+    }
+  }
   .timeline {
     display: flex;
     flex-direction: column;
-    margin-left: -3rem;
-    width: 120%;
+    width: 100%;
     .touch {
       display: flex;
-      flex-direction: row;
+      transition: .2s;
       @include dotted-border('top');
-      &:last-child {
-        @include dotted-border('bottom');
+      &:not(.recent) {
+        ul > li {
+          align-items: center;
+          display: flex;
+          height: 3rem;
+        }
       }
+      &.recent {
+        .date-time {
+          width: 3rem;
+          max-width: 3rem;
+          min-width: 3rem;
+        }
+        ul {
+          flex-direction: column;
+          height: 100%;
+          li {
+            flex-grow: 0;
+            &:nth-child(1) {
+              flex-grow: 1;
+            }
+            &:last-child {
+              flex-grow: 0;
+            }
+
+          }
+        }
+      }
+      .icons {
+        display: flex;
+        .corner {
+          font-size: 90%;
+          margin-right: 0rem;
+          &.positive {
+            color: $color-olive;
+          }
+          &.negative {
+            color: $color-pink;
+          }
+
+        }
+      }
+      &:hover {
+        .description .author {
+          color: rgba($grey-light, 1);
+        }
+      }
+
       .date-time {
-        background: rgba($color-white, .2);
         color: $color-menu-sub-bkg;
-        padding: 1rem;
-        width: 15rem;
+        width: 100%;
+        ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          li {
+            padding: .5rem;
+            margin: .1rem 0;
+            color: $color-white;
+            text-align: center;
+          }
+          li {
+            transition: .2s;
+            &:nth-child(1) {
+              background: rgba($color-white, .1);
+            }
+            &:nth-child(2) {
+              background: lighten($color-menu-bkg, 7%);
+            }
+            &:nth-child(3) {
+              background: lighten($color-menu-bkg, 9%);
+            }
+            &:nth-child(4) {
+              background: lighten($color-menu-bkg, 12%);
+              flex-grow: 1;
+              .icon {
+                margin: 0 .5rem;
+              }
+            }
+            &:last-child {
+              flex-grow: 1;
+            }
+          }
+        }
       }
       .description {
         display: flex;
         flex-direction: column;
-        padding: 2rem 2rem 0 1rem;
+        width: 100%;
+        .content {
+          height: 100%;
+          .summary {
+            padding: 1rem 1rem 0;
+            margin-bottom: 1rem;
+            .close-div {
+              margin: 0;
+            }
+            ul {
+              list-style: none;
+              margin: 0;
+              padding: 0;
+              line-height: 2rem;
+            }
+          }
+          textarea {
+            background: rgba(white, .5);
+            border: none;
+            border-radius: 0;
+            color: $color-menu-bkg;
+            height: 10rem;
+            line-height: 1.5rem;
+            padding: 1rem;
+            transition: .2s;
+            width: 100%;
+            + .ellips {
+              cursor: pointer;
+              display: none;
+            }
+            &.truncate {
+              background: transparent;
+              color: $grey-light;
+              height: 2.3rem;
+              margin-right: 0;
+              width: 95%;
+              + .ellips {
+                display: inline;
+              }
+
+            }
+            &::-webkit-scrollbar {
+              display: none;
+            }
+          }
+        }
         .author {
           background: rgba($color-menu-bkg, .8);
+          border-top-left-radius: .5rem;
+          border-top-right-radius: .5rem;
+          color: rgba($grey-light, .5);
           display: flex;
-          margin-top: 1rem;
-          padding: .5rem;
+          align-self: flex-end;
+          justify-content: center;
+          margin-right: 2rem;
+          padding: .5rem 1rem 1rem;
+          min-width: 50%;
+          transition: .2s;
+          .icon {
+            margin: 0 .5rem;
+          }
         }
       }
     }

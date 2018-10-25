@@ -2,14 +2,7 @@
   @extend .drawer;
   @include transition;
 }
-
-.viewer {
-  background: $color-white;
-  border: 1px solid $grey-light;
-}
-
-attachment-cmp,
-#attachments {
+attachment-cmp {
   h2 {
     color: $color-white;
   }
@@ -26,6 +19,25 @@ attachment-cmp,
     color: $color-white;
   }
   .ui.search.field {
+    margin-bottom: 1rem;
+    &:not(.full-width-search) {width: 50%;}
+    .prompt {
+      background: transparent;
+      border-radius: 0;
+      border: none;
+      border-bottom: 1px solid;
+      width: 50%;
+    }
+    .input {
+      width: 90%;
+    }
+    label {
+      color: rgba($color-white, .5);
+      font-size: 80%;
+      position: absolute;
+      left: .7rem;
+      top: -1rem;
+    }
     input {
       color: $color-white !important;
       & :focus {
@@ -43,8 +55,6 @@ attachment-cmp,
     @include transition;
   }
   .filters {
-    overflow: auto;
-    height: 55vh;
     .label {
       font-weight: lighter;
       text-transform: capitalize;
@@ -69,22 +79,25 @@ attachment-cmp,
     }
   }
   .file-list {
-    width: 100%;
     margin: 0 auto;
+
+    .file.file-accordion {
+      margin-left: 0;
+      .file-row {
+        .file-name {
+          display: inline;
+        }
+      }
+    }
   }
  .filter-list {
-    width: 145%;
-    margin-left: -10px;
-    max-height: 80vh !important;
-    .item {
-      .ui.basic.label.selected {
-        background-color: $color-yellow !important;
-      }
-      .ui.basic.label {
-        background-color: transparent !important;
-        color: $color-white;
-        border-color: $color-yellow-dark;
-      }
+    .ui.basic.label.selected {
+      background-color: $color-yellow !important;
+    }
+    .ui.basic.label {
+      background-color: transparent !important;
+      color: $color-white;
+      border-color: $color-yellow;
     }
   }
   .upload.button {
@@ -117,11 +130,8 @@ attachment-cmp,
     cursor: pointer;
     font-weight: normal;
   }
-}
-
-.file {
+  .file {
     background-color: transparent;
-    width: 100%;
     @include transition;
     &-row {
       padding: 1rem .5rem;
@@ -155,6 +165,9 @@ attachment-cmp,
       vertical-align: middle;
       color: $color-pink;
     }
+    .file-date {
+      display: inline;
+    }
     .file-tags {
       margin-left: 1.8rem;
       padding-top: .3rem;
@@ -173,88 +186,77 @@ attachment-cmp,
       color: $color-red;
       font-size: 1.25em !important;
     }
+    .ui.search>.results .result {
+      transform: none !important;
+    }
   }
-
-  .add-tags {
-    background: $color-menu-bkg;
+  .drawer-expanded-container {
+    @include rgba-background-color($color-menu-bkg, .7);
     border-bottom: .5rem solid transparent;
+    display: none;
     padding: 1rem 1rem .5rem;
     position: relative;
     transition: all .1s ease-in-out;
-    &:before {
-      border-left: .5rem solid transparent;
-      border-right: .5rem solid transparent;
-      border-bottom: .5rem solid $color-menu-bkg;
-      content: "";
-      display: block;
-      position: absolute;
-      top: -.5rem;
-      width: 0;
-      height: 0;
-      margin-left: calc(50% - 2.5rem);
-    }
     .close-icon {
       color: $color-pink;
       float: right;
       font-size: 150%;
       align-self: center;
     }
-  }
-
-@each $extension, $icon in $filetype-icons {
-  a[href$='#{$extension}'],
-  .file-row[data-filename$='#{$extension}'] {
-    &:before {
-      content: "#{$icon}";
-      color: $help-text;
-      display: inline-flex;
-      font-family: "Icons";
-      text-decoration: none;
-      margin-right: .3rem;
+    .history {
+      color: $grey-light;
+      a {
+        color: $color-yellow;
+      }
+      .table {
+        border: none;
+      }
     }
   }
-}
+  @each $extension, $icon in $filetype-icons {
+    a[href$='#{$extension}'] {
 
-.file-board {
-  display: flex;
-  .label {
-    margin-bottom: 1rem;
+      &:after {
+        content: "#{$icon}";
+        display: inline-flex;
+        font-family: "Icons";
+        text-decoration: none;
+        margin-left: .3rem;
+        padding-right: 1rem;
+      }
+    }
   }
-  .upload-target {
-    border: 5px $grey-light dashed;
-    text-align: center;
-    padding: 3rem;
-    margin-right: 2rem;
-    margin-top: 2rem;
+  .inline.widget {
+    .file {
+      margin-left: -1rem;
+      &:not(:last-of-type) {
+        border-bottom: 1px solid rgba($grey-light,.3);
+      }
+      &:hover {
+        background-color: rgba($grey-light,.2);
+        box-shadow: 0 0 0 1px rgba($grey,.8);
+        color: $grey-dark;
+      }
+    }
   }
-}
-
-.close-modal,
-.close-div {
-  color: $color-pink;
-  cursor: pointer;
-  font-size: 200%;
-  font-weight: lighter;
-  float: right;
-  margin: 1rem;
-}
-
-.inline.widget {
-  .file {
-    // margin-left: -1rem;
-    &:not(:last-of-type) {
-      border-bottom: 1px solid rgba($grey-light,.3);
+  @each $extension, $icon in $filetype-icons {
+    a[href$='#{$extension}'],
+    .file-row[data-filename$='#{$extension}'] {
+      &:before {
+        content: "#{$icon}";
+        color: $help-text;
+        display: inline-flex;
+        font-family: "Icons";
+        text-decoration: none;
+        margin-right: .3rem;
+      }
     }
-    .cloud.icon {
-      color: $color-link;
-    }
-    &:hover {
-      background-color: rgba($grey-light,.2);
-      box-shadow: 0 0 0 1px rgba($grey,.8);
-      color: $grey-dark;
-    }
-    a {
-      color: $grey-dark;
-    }
+  }
+  .viewer {
+    background: $color-white;
+    border: 1px solid $grey-light;
+  }
+  .inline.widget.select { 
+    padding: .75rem; 
   }
 }

@@ -1,6 +1,10 @@
 $card-height: 18rem;
 $number-of-rows: 2;
 
+.animated.button {
+  width: 100%;
+}
+
 .agent-view {
   .column {
     background: $color-white;

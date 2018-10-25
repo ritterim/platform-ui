@@ -32,6 +32,9 @@
   color: $color-white;
 }
 
+.status-date-update {
+  margin: .5em auto !important;
+}
 
 .ui.accordion.contract,
 // .styled.accordion makes accessible to producers > contracts
@@ -158,13 +161,21 @@
 // per-state awn
 .awn {
   &-view {
-    color: $grey-dark;
     cursor: pointer;
-    font-size: 95%;
-    padding: 1rem;
-    text-align: center;
+    &:after {
+      content: "view per state";
+      font-family: $font--family;
+      padding-left: .5rem;
+      white-space: nowrap;
+
+    }
+    &:before {
+      margin-left: .5rem;
+    }
   }
-  &.row {
+
+  &.row,
+  &-well {
     display: flex;
     padding: 1rem !important;
     h3 {
@@ -186,6 +197,17 @@
       }
       input {
         padding: 0 1rem !important;
+      }
+    }
+  }
+  &-well {
+    >.column {
+      width: 33% !important;
+      @media (max-width: 500px) {
+        width: 100% !important;
+      }
+      .form {
+        width: 70%;
       }
     }
   }
@@ -215,6 +237,26 @@
 
 .status.icon {
   margin: 3rem 0 0 -1rem;
+}
+
+.awn {
+  &.animation-container {
+    margin: 0 -1rem;
+  }
+  &-well {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -1rem;
+    padding: 1rem;
+    @include rgba-background-color($color-menu-bkg, .7);
+    input {
+      color: $grey-light !important;
+    }
+    .close-div {
+      position: absolute;
+      right: 1rem;
+    }
+  }
 }
 
 .status-filters {
@@ -270,14 +312,17 @@
   &.agency-accordion {
     .column:not(.menu-column) {
       @extend %truncate-with-ellipsis;
+      >* {
+        @extend %truncate-with-ellipsis;
+      }
+      .extra.content {
+        white-space: normal;
+      }
     }
   }
 }
 
 // flow filters
-.app.body .stackable.grid.flow {
-  padding-top: 6rem !important;
-}
 
 .filter {
   &-flow.ui.segment {
@@ -290,6 +335,7 @@
     left: 0;
     width: 100%;
     z-index: 1;
+    padding-bottom: 0;
 
     .ui.form {
       input,
@@ -297,13 +343,23 @@
         color: $grey !important;
       }
       .field.inline-error{
-        margin-bottom: .25rem;
+        margin-bottom: -1rem;
       }
     }
 
-    .two.fields {
-      margin-top: -1rem;
-      margin-bottom: -1.2rem;
+    .fields {
+      &.two {
+        margin-bottom: 0;
+        position: relative;
+      }
+      .fields-label {
+        font-size: 80%;
+        font-weight: 700;
+        position: absolute;
+        left: .3rem;
+        top: .2rem;
+        transition: .2s;
+      }
     }
 
     .image.label {
@@ -317,6 +373,78 @@
       &:hover {
         border-color: $color-yellow !important;
       }
+      &.compound {
+        align-items: stretch;
+        justify-content: center;
+        &.image {
+          padding: 0;
+        }
+        .stats {
+          display: flex;
+          flex-direction: column;
+          .count {
+            border-bottom: 1px solid rgba(204, 204, 204, 0.4);
+            flex-grow: 1;
+            text-align: center;
+            padding: .3rem .5rem;
+            width: 100%;
+          }
+          .breakdown {
+            display: flex;
+            .negative {
+              color: inherit;
+              padding: .3rem .5rem;
+            }
+            .positive {
+              color: inherit;
+              padding: .3rem .5rem;
+            }
+          }
+        }
+        .detail {
+          margin: 0;
+          padding: 1rem .7rem;
+          flex-grow: 1;
+        }
+      }
+      &.yellow {
+        .stats {
+          .count {
+            border-bottom: 1px solid darken(#fbbd08, 7%);
+          }
+          .breakdown {
+            .negative {
+              background: rgba(pink, 1);
+              color: darken(indianred, 20%);
+            }
+            .positive {
+              background: rgba(lighten(olive, 15%), 1);
+              color: white;
+            }
+          }
+        }
+      }
+    }
+
+    .chart {
+      padding-left: 0;
+      .ct-legend {
+        text-align: center;
+      }
+    }
+
+    .label {
+      &.basic {
+      background: transparent !important;
+      }
+      &.link {
+        cursor: pointer;
+      }
+    }
+
+    .column {
+      padding-left: .5rem;
+      padding-right: .5rem;
     }
   }
   &-status {
@@ -326,7 +454,7 @@
     flex-direction: row;
     justify-content: center;
     font-size: 125% !important;
-    padding: 1rem;
+    padding: 1rem 1rem;
     .undo.icon {
       align-self: end;
       margin-left: 1rem;
@@ -345,20 +473,6 @@
     .remove {
       color: $color-pink;
       padding-left: .3rem;
-    }
-  }
-  &-tab {
-    background: lighten($color-menu-bkg, 5%);
-    border-bottom-left-radius: .3rem;
-    border-bottom-right-radius: .3rem;
-    bottom: -1.2rem;
-    cursor: pointer;
-    left: calc(50% - 1.5rem);
-    padding: 0 .5rem .4rem;
-    position: absolute;
-    transition: .2s;
-    &:hover {
-      color: $color-yellow;
     }
   }
   &-item {
@@ -394,6 +508,9 @@
   flex-direction: column;
   margin: -1rem -2rem;
   padding: 1rem !important;
+  .column i:not(.grey-light) {
+    opacity: .5;
+  }
 }
 
 .flow {
@@ -408,6 +525,139 @@
     }
     .map-marker {
       margin-left: auto;
+    }
+  }
+  .ui.form {
+    .field {
+      &.search {
+        input {
+          padding-bottom: .41rem;
+        }
+      }
+      &:not(.checkbox) {
+        margin-bottom: .5rem;
+      }
+    }
+    &.row {
+      .ui.header:first-child {
+        margin-top: calc(2rem - 0.142857em);
+      }
+    }
+  }
+}
+
+.flow-side-menu {
+  height: calc(100% - 7rem);
+  position: fixed;
+  right: -30rem;
+  top: 7rem;
+  width: 30rem;
+  background: lighten($color-menu-bkg,5%);
+  overflow-y: scroll;
+  z-index: 1;
+  color: $color-white;
+  transition: .2s;
+  &.active {
+    right: 0;
+    .side-menu-tab {
+      right: 30rem;
+    }
+  }
+
+  .ui.form {
+    width: 100%;
+    .field {
+      margin-top: 1.5rem;
+    }
+  }
+
+  .inverted.table {
+    background: transparent;
+  }
+
+  .menu-wrapper {
+    position: relative;
+    padding: 2rem;
+  }
+
+  .side-menu-tab {
+    background: lighten($color-menu-bkg, 5%);
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    top: 50%;
+    cursor: pointer;
+    right: 0rem;
+    padding: .5rem;
+    padding-right: 0;
+    position: fixed;
+    transition: .2s;
+    i:hover, i.active {
+      color: $color-yellow;
+    }
+  }
+  .carrier-breakdown-tab {
+    background: lighten($color-menu-bkg, 5%);
+    border: none;
+    top: 25rem;
+    cursor: pointer;
+    right: -60rem;
+    padding: .75rem;
+    position: fixed;
+    transition: .2s;
+    i:hover, i.active {
+      color: $color-yellow;
+    }
+  }
+
+  &.two-columns {
+    right: -60rem;
+    width: 60rem;
+    &.active {
+      right: -30rem;
+      .carrier-breakdown-tab {
+        right: 0;
+      }
+      &.active-carrier-breakdown {
+        right: 0;
+        .side-menu-tab {
+          right: 60rem;
+        }
+        .carrier-breakdown-tab {
+          right: 30rem;
+        }
+      }
+    }
+  }
+  h4 {
+    margin: 0;
+  }
+}
+
+.contracts-container {
+  .ui.grid>.column:not(.row) {
+    position: initial;
+  }
+  .downline-menu {
+    .indent {
+      margin-left: 1.5rem;
+    }
+  }
+}
+
+
+.truncate-with-ellipsis {
+  @extend %truncate-with-ellipsis;
+}
+
+.indent {
+  margin-left: 1.5rem;
+}
+
+.future-actions {
+  .compact.button {
+    margin-left: .5rem;
+    .arrow.icon {
+      margin: 0 !important;
     }
   }
 }

@@ -8,6 +8,9 @@
   .downlines, .uplines {
     margin-left: 25px;
   }
+  .non-link {
+    display: inline;
+  }
   .row:not(:first-child) {
     padding: 0 !important;
   }
@@ -16,7 +19,7 @@
   }
   .hierarchy-path {
     float: left;
-    a,span {
+    a,span,p {
       float: left;
     }
     span {
@@ -36,4 +39,19 @@
   .ui.list {
     margin: 0;
   }
+  .icon {
+    cursor: default;
+  }
+  .accordion {
+    .load-more {
+      margin-top:  1.3rem;
+    }
+  }
+  .contracts span {
+    display: inline !important;
+  }
+  .contracts span:first-child {
+    display: block !important;
+  }
+
 }

@@ -1,12 +1,13 @@
 .dash-modal {
   @include modal(0, 100%, 0, 0);
-  background: darken($color-menu-bkg, 4%);
+  background: linear-gradient(lighten($color-menu-bkg, 9%), lighten($color-menu-bkg, 4%));
   display: block;
   left: 0;
 }
 
 .dashboard-menu {
   justify-content: center;
+  margin-bottom: 1.2rem !important;
   padding-top: 1rem;
   .item {
     padding: .5rem 1rem !important;
@@ -36,7 +37,7 @@
 
 .report {
   .file {
-    color: $grey;
+    color: rgba($color-white, .5);
     display: flex;
     justify-content: space-between;
     flex-direction: row;
@@ -66,224 +67,121 @@
   }
 }
 
-.ui.container.dashboard.grid {
-  .divider {
-    color: $grey;
-    margin: 1rem -1rem;
-  }
-  .column {
-    display: flex;
-    width: 100%;
-    padding: 0 !important;
-  }
-  .rotated {
-    bottom: 0;
-    position: absolute;
-    transform: rotate(-90deg);
+%card-hover {
+  box-shadow: 0 0 0 2px rgba(white, .5) !important;
+  transform: scale(1.05);
+}
+
+.dashboard {
+
+  .fluid.card {
+    background: darken($color-menu-bkg, 5%);
+    box-shadow: 0 0 0 1px transparent;
     transition: .2s;
-    width: 100%;
-  }
-  .statistics {
-    flex-grow: 1;
-    flex-wrap: nowrap;
-    &.new,
-    &.contract-status {
-      transform: scale(.98);
-      >.statistic {
-        .value {
-          span {
-            background: rgba($grey,.2);
-            border-radius: .1rem;
-            display: block;
-            font-size: 50%;
-            font-weight: lighter;
-            margin-bottom: 1rem;
-          }
-        }
-        small {
-          display: block;
-          font-size: 75%;
-        }
-        >.value + .label {
-          padding-top: 0;
-        }
-        >.label + .label {
-          padding-top: .5rem;
-        }
+    &:not(.dash-card) {
+      margin: .5rem 1rem;
+      width: calc(100% - 2rem);
+      + .fluid {
+        margin-top: 2rem;
       }
     }
-    &.contract-status {
-      .value + .label {
-        font-size: 80%;
-        height: 4rem;
-      }
+    &.dash-container {
+      background: rgba(#002744,.5);
     }
-  }
-  .statistic {
-    align-self: center;
-    margin: 0 1.0em 2em;
-    flex-grow: 1 !important;
-    &.positive {
-       .label,
-        .value {
-          color: green !important;
-        }
-      }
-      &.negative {
-     .label,
-      .value {
-        color: lighten(hotpink,10%) !important;
-      }
+    .content:not(:first-of-type) {
+      border-top: 1px solid rgba($color-white, .1);
     }
-    .positive,
-    .olive + span {
-      color: green;
-    }
-    .neutral {
-      color: $color-menu-bkg;
-    }
-    .negative,
-    .pink + span {
-      color: lighten(hotpink,10%);
-    }
-    .value + .label {
-      padding-top: 1rem;
-    }
-    >.label {
-      color: $grey !important;
-    }
-    &.left.floated {
-      border-right: 1px solid $color-menu-bkg;
-      >.value {
-        color: $color-white;
-      }
-      .label {
+    .content {
+      .header {
         color: $grey;
-      }
-    }
-  }
-  .ui.segment {
-    background: transparent;
-    border: none;
-    border-radius: 0 !important;
-    box-shadow: none;
-    display: flex;
-    flex-wrap: nowrap;
-    overflow: hidden;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-  }
-  .stage {
-    color: $grey;
-    cursor: pointer;
-    height: 20rem;
-    position: relative;
-    transition: .2s;
-    background: darken($color-menu-bkg, 7%);
-    width: 3rem;
-    &.flex-stage {
-      display: flex;
-    }
-    .summary-container {
-      vertical-align: middle;
-      width: 100%;
-    }
-    .title {
-      padding: 1rem;
-      @extend .rotated;
-      .ui.buttons {
-        display: none;
-      }
-      h3 {
-        white-space: nowrap;
-        span {
-          display: none;
+        transition: .2s;
+        text-transform: capitalize;
+        .meta {
+          color: rgba($color-white, .2);
+          font-size: 80%;
+          font-weight: normal;
+          transition: .2s;
         }
       }
     }
-    >.chart,
-    >.content,
-    .ct-legend {
-      display: none;
-    }
-    .right.angle.icon,
-    .remove.icon {
-      left: 1rem;
-      top: .5rem;
-      position: absolute;
-      transition: 2s;
-    }
-    .remove.icon:not(.right) {
-      color: lighten(hotpink,10%) !important;
-    }
-    &:not(:first-of-type) {
-      border-left: 1px solid $color-menu-bkg;
-    }
-    &.active {
-      background: rgba($color-menu-bkg,.2);
-      width: 100%;
-      .ct-legend {
-        display: block;
-      }
-      .chart,
-      .content {
-        display: flex;
-        height: 100%;
-        width: 100%;
-        &.flex-column {
-          flex-direction: column;
-          .row {
-            margin-top: 1rem;
-          }
+    &:first-of-type:hover {
+      box-shadow: 0 0 0 2px rgba($color-white, .5);
+      .header {
+        color: $color-yellow !important;
+        .meta {
+          color: rgba($color-white,.8) !important;
         }
       }
-      .chart {
-        flex-direction: column;
+    }
+  }
+
+  .three.cards {
+    .double.card {
+      width: calc(100% / 3 * 2 - 2rem);
+    }
+  }
+
+  .cards,
+  .card {
+    padding: 1rem;
+    .card {
+      background: rgba(black, .2) !important;
+      box-shadow: 0 0 0 0 transparent !important;
+      transform: scale(1);
+      transition: .2s;
+      &.fluid {
+        margin: .5rem 1rem;
+        width: calc(100% - 2rem);
       }
-      .right.angle.icon {
-         display: none;
-       }
-      .title {
-        align-content: center;
-        border-bottom: 1px solid $color-menu-bkg;
-        justify-content: flex-start;
+      .header {
+        color: $color-yellow !important;
+        text-align: center;
+      }
+      .extra.content {
         padding: 1rem;
-        top: 0;
-        transform: rotate(0deg);
-        .ui.buttons {
-          display: block;
-          margin: 0 0 .5rem;
-          .ui.button {
-            font-weight: 700;
-            &:hover:not(.active) {
-              background: none !important;
-              color: $color-white !important;
-            }
-          }
-          .active {
-            background: rgba($color-white, .8) !important;
-            color: $color-menu-bkg !important;
-          }
+        margin: .5rem -1rem -.5rem;
+      }
+      .statistic {
+        .label,
+        .value {
+          color: $grey;
+          transition: .2s;
+         &.negative {
+           color: $color-pink !important;
+         }
+         &.positive {
+           color: $color-olive !important;
+         }
         }
-        h3 {
-          align-self: flex-end;
-          color: $color-white;
-          padding-right: 1rem;
-          span {
-            display: inline-block;
-          }
-          &[data-date] {
-            &:before {
-              border-right: 1px solid darken($grey, 20%);
-              color: darken($grey, 20%);
-              content: attr(data-date);
-              margin-right: .5rem;
-              padding-right: .5rem;
-            }
+      }
+      &:hover:not(.fluid) {
+        @extend %card-hover;
+        .statistic {
+          .label,
+          .value {
+            color: rgba($color-white, .8);
+            transition: .2s;
           }
         }
       }
     }
+  }
+  .chart-totals {
+    padding: 1rem;
+    .grid {
+      &.stackable {
+        padding-bottom: 2rem;
+        .column {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+// center statistic in donut
+.ct-golden-section {
+  .statistic {
+    margin-top: 25% !important;
   }
 }
