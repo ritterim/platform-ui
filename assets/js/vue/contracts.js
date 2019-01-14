@@ -1,18 +1,12 @@
 new Vue({
-  el: '#contracts',
+  el: '#contracting',
   data: function() {
     return {
       showInfo: false,
-      showAccordion: false,
-      showHistory: false,
-      showForward: false,
-      showAddContract: false,
-      showPreTitle: false,
-      showFileTags: false,
-      toggleHold: false,
-      showModal: false,
-      currentView: 'exports',
-      showMessages: false
+      showLevels: false,
+      selectStates: false,
+      currentTab: 'tabOne',
+      verifyInformation: false
     }
   },
   methods: {
@@ -22,6 +16,12 @@ new Vue({
       if (!this.showInfo || !this.showAccordion) {
         this.showInfo = !this.showInfo;
       }
+    },
+    preFilledContracting: function() {
+
+    },
+    setCurrentTab: function(tab) {
+      this.currentTab = tab;
     }
   }
 });

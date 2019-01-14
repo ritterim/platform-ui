@@ -1,0 +1,101 @@
+.quote-drawer.oqe {
+  color: $grey;
+  display: block !important;
+  @include modal(8rem 2rem, 70%, .95, 50);
+  @include transition;
+  @include hide-scrollbar(y);
+  overflow-x: visible;
+  overflow-y: scroll;
+  // .accordion {
+  //   position: relative;
+  //   .ui.bottom.right.attached.label {
+  //     margin-bottom: -1px;
+  //   }
+  //   .content {
+  //     color: $grey-dark;
+  //     &.extra {
+  //       border-top: 1px solid $grey-light;
+  //       text-align: center;
+  //       .slider-container {
+  //         .slider {
+  //           margin-left: .7rem;
+  //         }
+  //       }
+  //     }
+  //     .chart {
+  //       padding-top: 2rem;
+  //     }
+  //     table {
+  //       font-size: 85%;
+  //       line-height: 1rem;
+  //       td {
+  //         &:first-child {
+  //           text-transform: uppercase;
+  //         }
+  //       }
+  //       span {
+  //         padding: 0;
+  //       }
+  //       i.icon {
+  //         display: inline;
+  //       }
+  //     }
+  //   }
+  //
+  //   span {
+  //     label {
+  //       color: $color-menu-sub !important;
+  //       display: inline-block;
+  //       min-width: 6rem;
+  //     }
+  //   }
+  //   .plan-type {
+  //     background: red;
+  //     left: 0;
+  //     top: 0;
+  //     height: 2rem;
+  //     position: absolute;
+  //     transform: rotate(-90deg);
+  //   }
+  //   .rating {
+  //     i.icon {
+  //       margin: 0;
+  //     }
+  //   }
+  // }
+
+  // label {
+  //   color: $color-white !important;
+  // }
+  // .corner.label {
+  //   margin: 0 !important;
+  // }
+  .ui.very.basic.table:not(.definition) {
+    background: rgba($color-white, .95);
+    border-radius: 0;
+    padding: 1rem;
+    tbody {
+    }
+    .label {
+      white-space: nowrap;
+    }
+    .rating {
+      white-space: nowrap;
+      i.icon {
+        margin: 0;
+      }
+    }
+  }
+}
+
+.ui.definition.table {
+  background: none;
+  thead {
+    th:first-child {
+      box-shadow: none !important;
+    }
+    td:first-child {
+      border: none;
+    }
+  }
+}
