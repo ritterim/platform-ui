@@ -1,8 +1,33 @@
 $card-height: 18rem;
 $number-of-rows: 2;
 
+.ui.menu.crm.main {
+  .item {
+    .transparent.yellow.circular.label {
+      background-color: transparent !important;
+    }
+    &.ui.dropdown {
+      menu>.item {
+        background: $color-menu-bkg;
+      }
+    }
+  }
+}
+
+.agent.dropdown.item {
+  span {
+    color: rgba($color-white, .6);
+    font: bold italic 120% times;
+    padding-right: .1rem;
+  }
+}
 .animated.button {
   width: 100%;
+}
+
+.ui.grid.agent-view>.column:only-child,
+.ui.grid.agent-view>.row>.column:only-child {
+  padding: 0;
 }
 
 .agent-view {
@@ -10,16 +35,27 @@ $number-of-rows: 2;
     background: $color-white;
   }
   .advertisement {
-    background: url(https://rimritterim.blob.core.windows.net/public-assets/medicarefulhugecampaign20170815homepagebanner4loggedin-636443676944039519.jpg);
-    background-size: cover;
-    height: $card-height;
+    height: $card-height * 1.5 !important;
     max-height: $card-height;
-    margin-top: 0;
     margin-left: calc(-1rem + 2px);
-    margin-right: -1rem;
     margin-bottom: 1rem;
-    padding: 1rem;
-    width: calc(100% + 2rem - 6px);
+    width: calc(100% + 2rem - 4px);
+
+    .flash {
+      align-items: center;
+      background: $help-text;
+      color: $color-white;
+      display: flex;
+      justify-content: center;
+      padding: 1rem;
+      .close-div {
+        position: absolute;
+        right: 0;
+      }
+      .button {
+        margin: 0 1rem;
+      }
+    }
   }
   .ui.four.cards {
     &.tall {
@@ -47,6 +83,17 @@ $number-of-rows: 2;
       margin: 0;
       overflow-y: scroll;
       width: 25%;
+
+      -ms-overflow-style: none;
+      overflow: -moz-scrollbars-none;
+      &::-webkit-scrollbar {
+        background: transparent;
+        width: 0px;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: red;
+      }
+
       .ui.thin.header {
         color: $help-text;
         font-size: 150%;

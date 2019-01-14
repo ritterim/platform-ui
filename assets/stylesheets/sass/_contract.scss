@@ -1,10 +1,29 @@
 .product-label {
   background: rgba($color-yellow, .4);
-  box-shadow: 0 0 1px $color-yellow-dark;
-  border-radius: .3rem !important;
-  color: darken($color-yellow-dark, 5%) !important;
+  box-shadow: 0 0 0 1px rgba($color-yellow-dark, .5);
+  border-radius: .3rem;
+  color: darken($color-yellow-dark, 7%);
+  display: inline-flex;
   font-weight: inherit;
-  margin-bottom: .5rem;
+  margin: .2rem .2rem .5rem .2rem;
+  padding: .3rem .5rem;
+  transition: .3s;
+  .menu & {
+    background: rgba($color-yellow, .2);
+    box-shadow: 0 0 0 1px rgba($color-yellow-dark, .5);
+    color: rgba($color-yellow-dark, .8);
+    &.active,
+    &:hover {
+      background: rgba($color-yellow, .4);
+      box-shadow: 0 0 0 1px $color-yellow-dark;
+      color: darken($color-yellow-dark, 7%);
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+
+  }
   .producer-contract &,
   .compliance-board & {
     display: inline-flex;

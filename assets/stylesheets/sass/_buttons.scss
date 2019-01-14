@@ -99,3 +99,43 @@ i.small.circular.icon {
 .button-inline-content {
   display: inline !important;
 }
+
+.action-group {
+  display: flex;
+  >i {
+    &.inverted {
+      background-color: $color-yellow;
+      font-size: .75rem;
+      line-height: 2.5;
+      box-shadow: 0 0 0 1px darken($color-yellow, 5%);
+      transition: all 0.2s ease-in-out;
+      width: 1.9rem;
+      height: 1.9rem;
+    }
+    &.ui.loader, &.ui.loader:after, &.ui.loader:before {
+      width: 1.9rem;
+      height: 1.9rem;
+    }
+    &.icon {
+      margin: 0;
+      &.disabled {
+        color: #fff !important;
+        pointer-events: none;
+      }
+    }
+    &:first-child {
+      border-top-left-radius: 5rem;
+      border-bottom-left-radius: 5rem;
+      padding-left: .15rem;
+    }
+    &:last-child {
+      border-top-right-radius: 5rem;
+      border-bottom-right-radius: 5rem;
+      padding-right: .15rem;
+    }
+    &:hover {
+      transform: scale(1.05);
+      background-color: darken($color-yellow, 4%);
+    }
+  }
+}

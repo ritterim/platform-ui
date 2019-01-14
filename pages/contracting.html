@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Contracting</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.2.11/dist/semantic.min.css">
+  <link rel="stylesheet" href="/assets/stylesheets/main.css?t=1528209883595">
+  <link rel="canonical" href="http://localhost:8001/">
+
+</head>
+
+<body>
+  <!-- main menu -->
+  <div class="ui top fixed inverted icon menu main">
+    <div class="item">
+      <div class="ui avatar image">
+        <div class="ui large pink circular label">
+          KH
+        </div>
+      </div>
+      <div class="content">
+        <div class="header">
+          Hello Kevin
+        </div>
+      </div>
+    </div>
+
+    <div class="right menu primary">
+
+      <div class="ui inverted dropdown item">
+        <i class="home icon"></i>
+      </div>
+      <a class="item active">
+        Contracts
+      </a>
+      <a href="#" class="item">
+        Submissions
+      </a>
+      <div class="item">
+        Register Downlines
+      </div>
+      <a href="#" class="item">
+        Hierarchy
+      </a>
+      <div class="item">
+        <i class="ticket icon"></i>
+      </div>
+    </div>
+  </div>
+
+  <!-- app body -->
+  <div class="ui container app body">
+    <div class="ui stackable grid">
+      <div class="eleven wide column">
+
+        <!-- tabs -->
+        <div class="ui top attached tabular icon menu">
+          <a class="item">
+            <i class="open folder icon"></i> Active
+          </a>
+          <a class="item">
+            <i class="folder icon"></i> Inactive
+          </a>
+          <a class="item">
+            <i class="users icon"></i> Downlines
+          </a>
+          <a class="item active">
+            <i class="plus cart icon"></i> Contracting
+            <div class="floating ui red label">2</div>
+          </a>
+        </div>
+
+        <div id="contracting" class="ui bottom attached tab segment active">
+
+          <div class="ui basic segment form">
+
+            <div class="row">
+              <div class="ui grey header">
+                Get Contracted
+              </div>
+              <div class="ui hidden divider"></div>
+            </div>
+            <div class="three fields">
+              <div class="field ui search">
+                <div class="ui icon input">
+                  <input type="text" class="prompt" value="Anthem">
+                  <i class="grey search icon"></i>
+                </div>
+                <label>Carrier</label>
+              </div>
+
+              <div class="select field">
+                <label>Contract</label>
+                <select>
+                  <option value="default"></option>
+                </select>
+              </div>
+
+              <div class="select three wide field">
+                <label>Level
+                  <i @click="showLevels = !showLevels" class="large blue help circle icon"></i>
+                  <div class="animation-container">
+                    <transition name="fade">
+                      <div v-if="showLevels" class="ui info message levels">
+                        <div class="ui header">
+                          My Highest Levels
+                          <span class="close-div" @click="showLevels = !showLevels">&times;</span>
+                        </div>
+                        <ul>
+                          <li>
+                            <div class="ui circular basic blue label">8</div> Global Level
+                          </li>
+                          <li>
+                            <div class="ui circular basic blue label">8</div> Accidental Death
+                          </li>
+                          <li>
+                            <div class="ui circular basic blue label">8</div> Annuity
+                          </li>
+                          <li>
+                            <div class="ui circular basic blue label">8</div> Continuous Premium Whole Life
+                          </li>
+                          <li>
+                            <div class="ui circular basic blue label">8</div> Final Expense
+                          </li>
+                          <li>
+                            <div class="ui circular basic blue label">8</div> Individual Life
+                          </li>
+                          <li>
+                            <div class="ui circular basic blue label">8</div> Medicare Supplement
+                          </li>
+                          <li>
+                            <div class="ui circular basic blue label">8</div> Single Premium Whole Life
+                          </li>
+                          <li>
+                            <div class="ui circular basic blue label">8</div> Term
+                          </li>
+                        </ul>
+                      </div>
+                    </transition>
+                  </div>
+                </label>
+                <select>
+                  <option value="default">Highest</option>
+                  <option value="7">7</option>
+                  <option value="6">6</option>
+                  <option value="5">5</option>
+                  <option value="4">4 (street)</option>
+                  <option value="3">3</option>
+                  <option value="2">2</option>
+                  <option value="1">1</option>
+                  <option value="0">0 (assignment)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="animation-container">
+
+              <div v-if="!verifyInformation" class="menu row">
+
+                <!-- NOTE: .menu class controls hover/active state on .product-label class -->
+
+                <div class="product-label" :class="{ 'active': currentTab == 'tabOne' }" @click="setCurrentTab('tabOne')">
+                  Medicare Advantage
+                </div>
+                <div class="product-label" :class="{ 'active': currentTab == 'tabTwo' }" @click="setCurrentTab('tabTwo')">
+                  Medicare Supplement
+                </div>
+                <div class="product-label" :class="{ 'active': currentTab == 'tabThree' }" @click="setCurrentTab('tabThree')">
+                  Final Expense
+                </div>
+
+              </div>
+              <div v-if="!verifyInformation">
+                <div class="animation-container">
+                  <transition name="slide-right">
+                    <div v-if="currentTab == 'tabOne'" class="row">
+
+                      <div class="ui hidden divider"></div>
+
+                      <div class="states add-states">
+                        <div title="Alabama" class="ui icon label disabled">AL <span title="Commission rate">31%</span></div>
+                        <div title="Arkansas" class="ui icon label disabled">AR</div>
+                        <div title="Arizona" class="ui icon label disabled">AZ</div>
+                        <div title="California" class="ui icon label disabled">CA</div>
+                        <div title="Colorado" class="ui icon label">
+                          <div title="licensed in this state" class="licensed"><i class="tiny checkmark icon"></i></div>
+                          CO
+                        </div>
+                        <div title="Connecticut" class="ui icon label disabled">CT</div>
+                        <div title="District of Columbia" class="ui icon label disabled">DC</div>
+                        <div title="Delaware" class="ui icon label disabled">DE</div>
+                        <div title="Florida" class="ui icon label disabled">FL</div>
+                        <div title="Georgia" class="ui icon label disabled">GA</div>
+                        <div title="Iowa" class="ui icon label disabled">IA</div>
+                        <div title="Idaho" class="ui icon label disabled">ID</div>
+                        <div title="Illinois" class="ui icon label disabled">IL</div>
+                        <div title="Indiana" class="ui icon label disabled">IN</div>
+                        <div title="Kansas" class="ui icon label disabled">KS</div>
+                        <div title="Kentucky" class="ui icon label disabled">KY</div>
+                        <div title="Louisiana" class="ui icon label disabled">LA</div>
+                        <div title="Massachusetts" class="ui icon label disabled">MA</div>
+                        <div title="Maryland" class="ui icon label pressed">
+                          <div title="licensed in this state" class="licensed"><i class="tiny checkmark icon"></i></div>
+                          MD <span title="Commission rate">28%</span>
+                        </div>
+                        <div title="Maine" class="ui icon label disabled">ME</div>
+                        <div title="Michigan" class="ui icon label disabled">MI</div>
+                        <div title="Minnesota" class="ui icon label disabled">MN <span title="Commission rate">42%</span></div>
+                        <div title="Missouri" class="ui icon label disabled">MO</div>
+                        <div title="Mississippi" class="ui icon label disabled">MS</div>
+                        <div title="North Carolina" class="ui icon label disabled">NC</div>
+                        <div title="North Dakota" class="ui icon label disabled">ND</div>
+                        <div title="Nebraska" class="ui icon label disabled">NE</div>
+                        <div title="New Hampshire" class="ui icon label disabled">NH</div>
+                        <div title="New Jersey" class="ui icon label">
+                          <div title="licensed in this state" class="licensed"><i class="tiny checkmark icon"></i></div>
+                          NJ <span title="Commission rate">31%</span>
+                        </div>
+                        <div title="New Mexico" class="ui icon label disabled">NM</div>
+                        <div title="Nevada" class="ui icon label disabled">NV</div>
+                        <div title="New York" class="ui icon label disabled">NY</div>
+                        <div title="Ohio" class="ui icon label disabled">OH</div>
+                        <div title="Oklahoma" class="ui icon label disabled">OK</div>
+                        <div title="Oregon" class="ui icon label disabled">OR</div>
+                        <div title="Pennsylvania" class="ui icon label pressed">
+                          <div title="licensed in this state" class="licensed"><i class="tiny checkmark icon"></i></div>
+                          PA
+                        </div>
+                        <div title="Rhode Island" class="ui icon label disabled">RI</div>
+                        <div title="South Carolina" class="ui icon label disabled">SC</div>
+                        <div title="South Dakota" class="ui icon label disabled">SD</div>
+                        <div title="Tennessee" class="ui icon label disabled">TN</div>
+                        <div title="Texas" class="ui icon label disabled">TX</div>
+                        <div title="Utah" class="ui icon label disabled">UT</div>
+                        <div title="Virginia" class="ui icon label pressed">
+                          <div title="licensed in this state" class="licensed"><i class="tiny checkmark icon"></i></div>
+                          VA
+                        </div>
+                        <div title="Vermont" class="ui icon label disabled">VT</div>
+                        <div title="Washington" class="ui icon label disabled">WA</div>
+                        <div title="Wisconsin" class="ui icon label disabled">WI</div>
+                        <div title="West Virginia" class="ui icon label disabled">WV</div>
+                        <div title="Wyoming" class="ui icon label">
+                          <div title="licensed in this state" class="licensed"><i class="tiny checkmark icon"></i></div>
+                          WY
+                        </div>
+                        <div class="ui positive message"><i class="large money bill alternate outline icon"></i>Commissions: All availible states at <strong>25%</strong> unless noted otherwise within the state.</div>
+                        <div class="ui info message"><i class="large circle outline help icon"></i>Already contracted in a state but it doesn't show<i class="green check circle icon"></i> Click <a href="#">licensing@ritterim.com</a> to let us know.</div>
+                        <div class="inline field">
+                          <div class="ui slider checkbox states-select"><input type="checkbox" disabled="disabled" class="hidden">
+                            <label>Select all licensed states</label>
+                          </div>
+                        </div>
+                        <div class="ui hidden divider"></div>
+
+                      </div>
+                    </div>
+                  </transition>
+                </div>
+                <div class="animation-container">
+                  <transition name="slide-right">
+                    <div v-if="currentTab == 'tabTwo'" class="row">
+
+                      <div class="ui hidden divider"></div>
+
+                      <div class="states add-states">
+                        <div title="Alabama" class="ui icon label disabled">AL</div>
+                        <div title="Arkansas" class="ui icon label disabled">AR</div>
+                        <div title="Arizona" class="ui icon label disabled">AZ</div>
+                        <div title="California" class="ui icon label disabled">CA</div>
+                        <div title="Colorado" class="ui icon label">
+                          <div title="licensed in this state" class="licensed"><i class="tiny checkmark icon"></i></div>
+                          CO
+                        </div>
+                        <div title="Connecticut" class="ui icon label disabled">CT</div>
+                        <div title="District of Columbia" class="ui icon label disabled">DC</div>
+                        <div title="Delaware" class="ui icon label disabled">DE</div>
+                        <div title="Florida" class="ui icon label disabled">FL</div>
+                        <div title="Georgia" class="ui icon label disabled">GA</div>
+                        <div title="Iowa" class="ui icon label disabled">IA</div>
+                        <div title="Idaho" class="ui icon label disabled">ID</div>
+                        <div title="Illinois" class="ui icon label disabled">IL</div>
+                        <div title="Indiana" class="ui icon label disabled">IN</div>
+                        <div title="Kansas" class="ui icon label disabled">KS</div>
+                        <div title="Kentucky" class="ui icon label disabled">KY</div>
+                        <div title="Louisiana" class="ui icon label disabled">LA</div>
+                        <div title="Massachusetts" class="ui icon label disabled">MA</div>
+                        <div title="Maryland" class="ui icon label">
+                          <div title="licensed in this state" class="licensed"><i class="tiny checkmark icon"></i></div>
+                          MD <span title="Commission rate">28%</span>
+                        </div>
+                        <div title="Maine" class="ui icon label disabled">ME</div>
+                        <div title="Michigan" class="ui icon label disabled">MI</div>
+                        <div title="Minnesota" class="ui icon label disabled">MN <span title="Commission rate">42%</span></div>
+                        <div title="Missouri" class="ui icon label disabled">MO</div>
+                        <div title="Mississippi" class="ui icon label disabled">MS</div>
+                        <div title="North Carolina" class="ui icon label disabled">NC</div>
+                        <div title="North Dakota" class="ui icon label disabled">ND</div>
+                        <div title="Nebraska" class="ui icon label disabled">NE</div>
+                        <div title="New Hampshire" class="ui icon label disabled">NH</div>
+                        <div title="New Jersey" class="ui icon label">
+                          <div title="licensed in this state" class="licensed"><i class="tiny checkmark icon"></i></div>
+                          NJ <span title="Commission rate">31%</span>
+                        </div>
+                        <div title="New Mexico" class="ui icon label disabled">NM</div>
+                        <div title="Nevada" class="ui icon label disabled">NV</div>
+                        <div title="New York" class="ui icon label disabled">NY</div>
+                        <div title="Ohio" class="ui icon label disabled">OH</div>
+                        <div title="Oklahoma" class="ui icon label disabled">OK</div>
+                        <div title="Oregon" class="ui icon label disabled">OR</div>
+                        <div title="Pennsylvania" class="ui icon label">
+                          <div title="licensed in this state" class="licensed"><i class="tiny checkmark icon"></i></div>
+                          PA
+                        </div>
+                        <div title="Rhode Island" class="ui icon label disabled">RI</div>
+                        <div title="South Carolina" class="ui icon label disabled">SC</div>
+                        <div title="South Dakota" class="ui icon label disabled">SD</div>
+                        <div title="Tennessee" class="ui icon label disabled">TN</div>
+                        <div title="Texas" class="ui icon label disabled">TX</div>
+                        <div title="Utah" class="ui icon label disabled">UT</div>
+                        <div title="Virginia" class="ui icon label">
+                          <div title="licensed in this state" class="licensed"><i class="tiny checkmark icon"></i></div>
+                          VA
+                        </div>
+                        <div title="Vermont" class="ui icon label disabled">VT</div>
+                        <div title="Washington" class="ui icon label disabled">WA</div>
+                        <div title="Wisconsin" class="ui icon label disabled">WI</div>
+                        <div title="West Virginia" class="ui icon label disabled">WV</div>
+                        <div title="Wyoming" class="ui icon label">
+                          <div title="licensed in this state" class="licensed"><i class="tiny checkmark icon"></i></div>
+                          WY
+                        </div>
+                        <div class="ui positive message"><i class="large money bill alternate outline icon"></i>Commissions: All availible states at <strong>25%</strong> unless noted otherwise within the state.</div>
+                        <div class="ui info message"><i class="large circle outline help icon"></i>Already contracted in a state but it doesn't show<i class="green check circle icon"></i> Click <a href="#">licensing@ritterim.com</a> to let us know.</div>
+                        <div class="inline field">
+                          <div class="ui slider checkbox states-select"><input type="checkbox" disabled="disabled" class="hidden">
+                            <label>Select all licensed states</label>
+                          </div>
+                        </div>
+                        <div class="ui hidden divider"></div>
+
+                      </div>
+                    </div>
+                  </transition>
+                </div>
+                <div class="animation-container">
+                  <transition name="slide-right">
+                    <div v-if="currentTab == 'tabThree'" class="row">
+
+                      <div class="ui hidden divider"></div>
+
+                      <div class="states add-states">
+                        <div title="Alabama" class="ui icon label disabled">AL</div>
+                        <div title="Arkansas" class="ui icon label disabled">AR</div>
+                        <div title="Arizona" class="ui icon label disabled">AZ</div>
+                        <div title="California" class="ui icon label disabled">CA</div>
+                        <div title="Colorado" class="ui icon label">
+                          <div title="licensed in this state" class="licensed"><i class="tiny checkmark icon"></i></div>
+                          CO
+                        </div>
+                        <div title="Connecticut" class="ui icon label disabled">CT</div>
+                        <div title="District of Columbia" class="ui icon label disabled">DC</div>
+                        <div title="Delaware" class="ui icon label disabled">DE</div>
+                        <div title="Florida" class="ui icon label disabled">FL</div>
+                        <div title="Georgia" class="ui icon label disabled">GA</div>
+                        <div title="Iowa" class="ui icon label disabled">IA</div>
+                        <div title="Idaho" class="ui icon label disabled">ID</div>
+                        <div title="Illinois" class="ui icon label disabled">IL</div>
+                        <div title="Indiana" class="ui icon label disabled">IN</div>
+                        <div title="Kansas" class="ui icon label disabled">KS <span title="Commission rate">63%</span></div>
+                        <div title="Kentucky" class="ui icon label disabled">KY <span title="Commission rate">63%</span></div>
+                        <div title="Louisiana" class="ui icon label disabled">LA</div>
+                        <div title="Massachusetts" class="ui icon label disabled">MA</div>
+                        <div title="Maryland" class="ui icon label">
+                          <div title="licensed in this state" class="licensed"><i class="tiny checkmark icon"></i></div>
+                          MD <span title="Commission rate">35%</span>
+                        </div>
+                        <div title="Maine" class="ui icon label disabled">ME</div>
+                        <div title="Michigan" class="ui icon label disabled">MI <span title="Commission rate">63%</span></div>
+                        <div title="Minnesota" class="ui icon label disabled">MN <span title="Commission rate">63%</span></div>
+                        <div title="Missouri" class="ui icon label disabled">MO <span title="Commission rate">63%</span></div>
+                        <div title="Mississippi" class="ui icon label disabled">MS</div>
+                        <div title="North Carolina" class="ui icon label disabled">NC</div>
+                        <div title="North Dakota" class="ui icon label disabled">ND</div>
+                        <div title="Nebraska" class="ui icon label disabled">NE</div>
+                        <div title="New Hampshire" class="ui icon label disabled">NH</div>
+                        <div title="New Jersey" class="ui icon label">
+                          <div title="licensed in this state" class="licensed"><i class="tiny checkmark icon"></i></div>
+                          NJ <span title="Commission rate">35%</span>
+                        </div>
+                        <div title="New Mexico" class="ui icon label disabled">NM</div>
+                        <div title="Nevada" class="ui icon label disabled">NV</div>
+                        <div title="New York" class="ui icon label disabled">NY</div>
+                        <div title="Ohio" class="ui icon label disabled">OH</div>
+                        <div title="Oklahoma" class="ui icon label disabled">OK</div>
+                        <div title="Oregon" class="ui icon label disabled">OR</div>
+                        <div title="Pennsylvania" class="ui icon label">
+                          <div title="licensed in this state" class="licensed"><i class="tiny checkmark icon"></i></div>
+                          PA
+                        </div>
+                        <div title="Rhode Island" class="ui icon label disabled">RI</div>
+                        <div title="South Carolina" class="ui icon label disabled">SC</div>
+                        <div title="South Dakota" class="ui icon label disabled">SD</div>
+                        <div title="Tennessee" class="ui icon label disabled">TN</div>
+                        <div title="Texas" class="ui icon label disabled">TX</div>
+                        <div title="Utah" class="ui icon label disabled">UT</div>
+                        <div title="Virginia" class="ui icon label">
+                          <div title="licensed in this state" class="licensed"><i class="tiny checkmark icon"></i></div>
+                          VA
+                        </div>
+                        <div title="Vermont" class="ui icon label disabled">VT</div>
+                        <div title="Washington" class="ui icon label disabled">WA</div>
+                        <div title="Wisconsin" class="ui icon label disabled">WI</div>
+                        <div title="West Virginia" class="ui icon label disabled">WV</div>
+                        <div title="Wyoming" class="ui icon label">
+                          <div title="licensed in this state" class="licensed"><i class="tiny checkmark icon"></i></div>
+                          WY
+                        </div>
+                        <div class="ui positive message"><i class="large money bill alternate outline icon"></i>Commissions: All availible states at <strong>25%</strong> unless noted otherwise within the state.</div>
+                        <div class="ui info message"><i class="large circle outline help icon"></i>Already contracted in a state but it doesn't show<i class="green check circle icon"></i> Click <a href="#">licensing@ritterim.com</a> to let us know.</div>
+                        <div class="inline field">
+                          <div class="ui slider checkbox states-select"><input type="checkbox" disabled="disabled" class="hidden">
+                            <label>Select all licensed states</label>
+                          </div>
+                        </div>
+                        <div class="ui hidden divider"></div>
+
+                      </div>
+                    </div>
+                  </transition>
+                </div>
+              </div>
+
+              <div class="row" v-if="verifyInformation">
+                <div class="ui grey header">
+                  Name
+                </div>
+                <div class="three fields">
+                  <div class="field">
+                    <div class="ui input">
+                      <input value="Bob">
+                    </div>
+                    <label>First name</label>
+                  </div>
+                  <div class="field">
+                    <label>Middle name</label>
+                    <div class="ui input">
+                      <input value="">
+                    </div>
+                  </div>
+                  <div class="field">
+                    <label>Last name</label>
+                    <div class="ui input">
+                      <input value="Ross">
+                    </div>
+                  </div>
+                </div>
+                <div class="three fields">
+                  <div class="field">
+                    <div class="ui input">
+                      <input value="agent@email.com">
+                    </div>
+                    <label>email</label>
+                  </div>
+                  <div class="field">
+                    <label>dob</label>
+                    <div class="ui input">
+                      <input value="10/29/1942">
+                    </div>
+                  </div>
+                  <div class="select field">
+                    <label>Gender</label>
+                    <select>
+                      <option value="default">male</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="three fields">
+                  <div class="field">
+                    <div class="ui input">
+                      <input value="1234567">
+                    </div>
+                    <label>NPN</label>
+                  </div>
+                  <div class="field">
+                    <label>SSN</label>
+                    <div class="ui input">
+                      <input type="password" value="1234567">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="ui form">
+                  <div class="ui grey header">Business Address</div>
+                  <div class="three fields">
+                    <div class="field">
+                      <label>Street Address</label>
+                      <div class="ui icon input">
+                        <input type="text" value="15 Union Hill Rd">
+                      </div>
+                    </div>
+                    <div class="field"><label>Address 2</label>
+                      <div class="ui icon input">
+                        <input type="text" value="2nd floor">
+                      </div>
+                    </div>
+                    <div class="field"><label>City</label>
+                      <div class="ui icon input">
+                        <input type="text" value="West Conshohocken">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="fields">
+                    <div class="three wide field"><label>Zipcode</label>
+                      <div class="ui icon input">
+                        <input type="text" value="19428">
+                      </div>
+                    </div>
+
+                    <div class="three wide field select">
+                      <label title="Select County to Set State">State</label>
+                      <select>
+                        <option selected="selected" value="PA">PA</option>
+                      </select></div>
+                  </div>
+                </div>
+                <div class="ui form">
+                  <div class="ui grey header">Residence Address</div>
+                  <div class="animation-container">
+                    <div class="block">
+                      <div class="three fields">
+                        <div class="field">
+                          <label>Street Address</label>
+                          <div class="ui icon input">
+                            <input type="text" value="300 West Redman Avenue">
+                          </div>
+                        </div>
+                        <div class="field"><label>Address 2</label>
+                          <div class="ui icon input">
+                            <input type="text" value="2nd floor">
+                          </div>
+                        </div>
+                        <div class="field"><label>City</label>
+                          <div class="ui icon input">
+                            <input type="text" value="Haddonfield">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="fields">
+                        <div class="three wide field"><label>Zipcode</label>
+                          <div class="ui icon input">
+                            <input type="text" value="08033">
+                          </div>
+                        </div>
+
+                        <div class="three wide field select">
+                          <label title="Select County to Set State">State</label>
+                          <select>
+                            <option selected="selected" value="NJ">NJ</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="ui form">
+                <div class="ui grey header">Banking</div>
+                <div class="three fields">
+                    <div class="field">
+                      <label>Institution</label>
+                      <div class="ui icon input">
+                        <input type="text" value="">
+                      </div>
+                    </div>
+                    <div class="field"><label>Account No.</label>
+                      <div class="ui icon input">
+                        <input type="text" value="">
+                      </div>
+                    </div>
+                    <div class="field"><label>Routing No.</label>
+                      <div class="ui icon input">
+                        <input type="text" value="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <button @click="verifyInformation = !verifyInformation" class="ui circular basic olive icon button">
+                Prefilled Contracting
+                <i class="right angle icon"></i>
+              </button>
+              <div class="ui hidden divider"></div>
+            </div>
+
+
+            <div class="row">
+              <div class="ui grey header">
+                Incomplete contracts
+              </div>
+              <div class="ui hidden divider"></div>
+
+            </div>
+
+            <div class="ui fluid styled accordion contract">
+              <div class="ui title" @click="showInfo = !showInfo">
+                <div class="ui equal width grid">
+                  <div class="row">
+                    <div class="five wide column">
+                      <span>Aetna</span>
+                      Aetna Health and Life
+                    </div>
+                    <div class="column">
+                      <span>Started</span>
+                      10/10/2018
+                    </div>
+                    <div class="column">
+                      <div class="product-label">
+                        Medicare Supplement
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="animation-container">
+                <transition name="slide-down">
+                  <div v-if="showInfo" class="ui content">
+                    <div class="ui hidden divider"></div>
+                    <div class="transition visible">
+
+                      <div class="states add-states">
+                        <label title="Connecticut" class="ui icon label disabled">CT</label>
+                        <label title="District of Columbia" class="ui icon label disabled">DC</label>
+                        <label title="Delaware" class="ui icon label disabled">DE</label>
+
+                        <label title="Maryland" class="ui icon label pressed">
+                          <div title="licensed in this state" class="licensed"><i class="tiny checkmark icon"></i></div>
+                          MD
+                        </label>
+                        <label title="New Jersey" class="ui icon label">
+                          <div title="licensed in this state" class="licensed"><i class="tiny checkmark icon"></i></div>
+                          NJ
+                        </label>
+                        <label title="New York" class="ui icon label disabled">NY</label>
+                        <label title="Pennsylvania" class="ui icon label pressed">
+                          <div title="licensed in this state" class="licensed"><i class="tiny checkmark icon"></i></div>
+                          PA
+                        </label>
+                        <label title="Rhode Island" class="ui icon label disabled">RI</label>
+                        <label title="Virginia" class="ui icon label pressed">
+                          <div title="licensed in this state" class="licensed"><i class="tiny checkmark icon"></i></div>
+                          VA <span title="Commission rate">35%</span>
+                        </label>
+                        <label title="Vermont" class="ui icon label disabled">VT</label>
+                        <label title="West Virginia" class="ui icon label">
+                          WV <span title="Commission rate">35%</span>
+                        </label>
+                        <div class="ui positive message"><i class="large money bill alternate outline icon"></i>Commissions: All availible states at <strong>41%</strong> unless noted otherwise within the state.</div>
+                        <div class="ui info message"><i class="large circle outline help icon"></i>Already contracted in a state but it doesn't show<i class="green check circle icon"></i> Click <a href="#">licensing@ritterim.com</a> to let us know.</div>
+                        <div class="inline field">
+                          <div class="ui slider checkbox states-select"><input type="checkbox" disabled="disabled" class="hidden">
+                            <label>Select all licensed states</label>
+                          </div>
+                        </div>
+                        <div class="ui hidden divider"></div>
+
+                      </div>
+
+                    </div>
+                  </div>
+                </transition>
+              </div>
+            </div>
+          </div>
+        </div><!-- /.column -->
+
+        <!-- notes -->
+        <div class="five wide column notes">
+          <div class="ui hidden divider"></div>
+          <!-- notes menu -->
+          <div class="ui text menu">
+            <a class="active item">
+              <i class="small circular inverted yellow add icon"></i>
+              Note
+            </a>
+            <div class="right menu">
+              <div class="ui right floated note-stat">
+                <i class="small lightgrey sticky note icon"></i>
+                0
+              </div>
+            </div>
+          </div>
+
+          <div class="ui divider"></div>
+
+          <div class="ui alert">
+            <div class="ui note fluid card no-notes">
+              <div class="content">
+                <p>
+                  <i class="large sticky note outline icon"></i>
+                  No notes exist.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div><!--  /.notes -->
+
+      </div><!-- /.ui.grid -->
+
+    </div><!-- /.app.body -->
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.19.2/moment.min.js"></script>
+<script src="/assets/js/all.min.js?t=1528209883595"></script>
+
+</html>
