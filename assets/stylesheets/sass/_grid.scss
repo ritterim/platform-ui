@@ -1,0 +1,31 @@
+.platform {
+  background-color: map-get($greyscale, 'lighter');
+  display: grid;
+  grid-template-rows: $menu-height auto;
+  grid-template-columns: 2fr 6fr;
+  header {
+    background-color: map-get($platform-colors, 'menu');
+    color: map-get($greyscale, 'white');
+    display: flex;
+    font-size: 120%;
+    height: $menu-height;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    nav {
+      display: flex;
+      flex-grow: 1;
+      width: 100%;
+      .item {
+        flex: 0 0 auto;
+        @extend %flex-center;
+        &.search {
+          flex-grow: 1;
+        }
+      }
+    }
+  }
+  main {
+    grid-row-start: 2;
+  }
+}

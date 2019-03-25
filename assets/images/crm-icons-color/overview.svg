@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="72" height="68.871" viewBox="0 0 72 68.871">
+  <g id="Group_23" data-name="Group 23" transform="translate(-70 -203)">
+    <circle id="Ellipse_12" data-name="Ellipse 12" cx="29.919" cy="29.919" r="29.919" transform="translate(71 203)" fill="#e9eaeb"/>
+    <line id="Line_106" data-name="Line 106" y2="14.677" transform="translate(129.71 256.065)" fill="none" stroke="#2a5082" stroke-miterlimit="10" stroke-width="2"/>
+    <line id="Line_107" data-name="Line 107" y1="14.677" transform="translate(106 256.065)" fill="none" stroke="#2a5082" stroke-miterlimit="10" stroke-width="2"/>
+    <rect id="Rectangle_27" data-name="Rectangle 27" width="44.032" height="36.129" transform="translate(94.71 216.548)" fill="#fff"/>
+    <path id="Path_54" data-name="Path 54" d="M92,229.677V215h44.032v36.129H92V242.1" transform="translate(2.71 1.548)" fill="none" stroke="#2a5082" stroke-miterlimit="10" stroke-width="2"/>
+    <path id="Path_55" data-name="Path 55" d="M82.081,229.174a5.137,5.137,0,0,0,5.081-5.316v-1.773a5.086,5.086,0,1,0-10.161,0v1.773A5.137,5.137,0,0,0,82.081,229.174Z" transform="translate(0.774 1.777)" fill="#fff" stroke="#2a5082" stroke-miterlimit="10" stroke-width="2"/>
+    <path id="Path_56" data-name="Path 56" d="M106,231H80.032C74.672,231,71,232.707,71,237.774v10.161a4.612,4.612,0,0,0,4.516,4.516H90.194V236.645h10.161A5.852,5.852,0,0,0,106,231Z" transform="translate(0 3.613)" fill="#91b9dc" stroke="#2a5082" stroke-miterlimit="10" stroke-width="2"/>
+    <rect id="Rectangle_28" data-name="Rectangle 28" width="13.548" height="30.484" transform="translate(76.645 241.387)" fill="#91b9dc"/>
+    <line id="Line_108" data-name="Line 108" y2="30.484" transform="translate(90.194 241.387)" fill="none" stroke="#2a5082" stroke-miterlimit="10" stroke-width="2"/>
+    <line id="Line_109" data-name="Line 109" y2="18.065" transform="translate(83.419 253.806)" fill="none" stroke="#2a5082" stroke-miterlimit="10" stroke-width="2"/>
+    <line id="Line_110" data-name="Line 110" y2="30.484" transform="translate(76.645 241.387)" fill="none" stroke="#2a5082" stroke-miterlimit="10" stroke-width="2"/>
+    <path id="Path_57" data-name="Path 57" d="M96,244.452h7.9l3.387-4.516h6.774l6.774-11.29h4.516L128.742,223H131" transform="translate(3.226 2.581)" fill="none" stroke="#2a5082" stroke-miterlimit="10" stroke-width="2"/>
+    <rect id="Rectangle_29" data-name="Rectangle 29" width="48.548" height="7.903" transform="translate(92.452 210.903)" fill="#e9eaeb" stroke="#2a5082" stroke-miterlimit="10" stroke-width="2"/>
+  </g>
+</svg>

@@ -1,0 +1,18 @@
+// make $brand-colors and $secondary colors available as text and background colors
+
+$all-colors: map-merge($brand-colors, $secondary-colors);
+
+@each $name, $color in $all-colors {
+  // text color
+  .#{$name}-text {
+    color: $color;
+    transition: .2s;
+  }
+  // background color
+  .#{$name} {
+    background-color: $color;
+    &.inverted {
+      color: map-get($greyscale, white);
+    }
+  }
+}

@@ -1,153 +1,34 @@
-// layout
-body > *,
-input,
-textarea {
-  font-family: $font--family;
+html {
+  font-family: map-get($fonts, 'base');
 }
-
-.ui.menu {
-  &.main.inverted {
-    .item {
-      font-family: $font--family;
-      font-weight: 100;
-    }
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: map-get($fonts, 'base-alt');
   }
 }
 
+html,
 body {
-  background: $color-background;
-}
-// top margin, negates menu
-.ui.fixed.menu+.app.body {
-  margin-top: 5rem;
-}
-
-.ui.dimmer {
-  background: rgba($color-menu-bkg, .85) !important;
-  &.inverted {
-    background: rgba($color-white, .85) !important;
-  }
-}
-.icon {
-  cursor: pointer;
+  box-sizing: border-box;
+  color: map-get($greyscale, 'dark');
+  font-size: map-get($fonts, 'size');
+  font-weight: 300;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-.grey-light {
-  color: $grey-light !important;
-}
-
-.pink,
-.ui.pink.icon {
-  color: $color-pink !important;
-  &.inverted {
-    color: $color-white !important;
+// set up h-tags
+@for $i from 1 through 6 {
+  h#{$i} {
+    color: map-get($brand-colors, 'teal-dark');
+    font-size: map-get($fonts, 'size') + $font-scale * (6 - $i);
+    margin: 0;
   }
 }
 
-.red,
-i.red.icon {
-  color: $color-pink !important;
-  &.inverted {
-    color: $color-white !important;
-  }
-}
-
-i.inverted.pink.icon,
-i.inverted.bordered.pink.icon,
-i.inverted.circular.pink.icon {
-  background-color: $color-pink !important;
-}
-
-
-h2.section-header {
-  color: $grey;
-}
-
-.add,
-.return {
-    &-action {
-      float: right;
-      margin-top: 1.5rem;
-    }
-}
-
-.results.transition.visible {
-  max-height: 800%;
-  overflow: auto;
-  &.master-upline {
-    max-height: 300%;
-  }
-}
-
-.hide {
-    display: none !important;
-}
-
-.text-right {
-    text-align: right;
-}
-
-.right.floated {
-  float: right;
-}
-
-i.icon.ritter {
-  background: url(/Content/css/svg/ritter_black_logo.svg) no-repeat top center;
-  background-size: contain;
-  &:before {
-    // forces in-line with other semantic icons;
-    // they all expect a font value :before
-    content: ".";
-  }
-}
-
-.inline-block {
-  display: inline-block;
-}
-
-mark,
-.date {
-  background: transparent;
-  color: $color-menu-sub;
-}
-
-.column {
-  &.no {
-    &.wrap {
-      white-space: nowrap;
-    }
-  }
-}
-
-.overflow {
-  overflow: visible;
-}
-
-.spacer {
-  padding-right: 1rem;
-  &-left {
-    padding-right: 0;
-    padding-left: 1rem;
-  }
-}
-
-input, select { 
-  &[readonly] {
-    color: $help-text !important;
-  }
-}
-
-i.dodgerblue {
-  color: dodgerblue !important;
-}
-
-.link-text {
-  color: $color-link !important;
-  &.ui.circular.label {
-    border-color: $color-link !important;
-  }
-}
-
-i.icon, i.label {
-  font-style: normal;
+a {
+  color: map-get($platform-colors, 'link');
+  text-decoration: none;
+  transition: $transitions;
 }
