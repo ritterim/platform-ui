@@ -1,469 +1,148 @@
-// main menu
-.main {
-  &.ui.inverted.menu {
-    background: $color-menu-bkg;
-    font-size: 120%;
-    font-weight: 100;
-    @media (max-width: 1220px) {
-      font-size: 110%;
-    }
-    @media (max-width: 1140px) {
-      font-size: 100%;
-    }
-    .item:first-of-type {
-      .ui.large.circular.label {
-        font-weight: lighter;
-        height: 0;
-        line-height: 0;
-        overflow: hidden;
-        padding: 50% 0 50% 0 !important;
-        width: 100%;
-      }
-    }
-    &.fixed {
-      z-index: 1003;
-    }
-  }
-  .outer-pane {
-      width: 100%;
-  }
-  &.ui.menu {
-    .item {
-      &.admin {
-        color: $color-cyan;
-      }
-      &.recent {
-        height: 65px;
-        color: $grey;
-      }
-      &.active {
-        font-weight: 100;
-      }
-      &:hover {
-        .angle.down,
-        .plus {
-          animation: bounce 1s;
-        }
-      }
-      .spin {
-        animation: spin 1s;
-      }
-      > .icon {
-        cursor: pointer;
-      }
-      &.dropdown:not(.click) {
-        &:hover {
-          >.menu {
-            display: block;
-          }
-        }
-      }
-      &.dropdown.click {
-        &.open {
-          >.menu {
-            display: block;
-          }
-        }
-        .admin.profile {
-          &.open {
-            display: block;
-          }
-          text-align: left;
-          min-width: 300px;
-          .item {
-            text-align: left;
-            .description {
-              white-space: pre-wrap;
-            }
-            color: $grey;
-            a {
-              color: $grey;
-            }
-          }
-        }
-      }
-    }
-    .ui.dropdown.item {
-      .profile {
-        line-height: 2rem;
-        .item {
-          a {
-            color: $grey;
-          }
-        }
-      }
-    }
-    .header {
-      font-size: larger;
-      // admin label when present.
-      // usage:
-      // <div class="header">
-      //   Hello John <i class="inverted grey setting icon"></i>
-      //   <!-- show role when above staff -->
-      //   <small>Administrator</small>
-      // </div>
-      small {
-        color: $color-cyan;
-        font-size: small;
-      }
-    }
-    .icon.input {
-      font-size: large;
-      font-weight: lighter;
-    }
-    .search.item {
-      flex-grow: 1;
-      &.search-flash {
-        animation: background 300ms;
-      }
-    }
-    // add/plus menu specific
-    .right.menu.slide {
-      .item {
-        width: 0;
-        overflow: hidden;
-        padding: 0;
-        @include transition(all, 0.1s);
-        &.open {
-          width: auto;
-          min-width: 50px;
-          overflow: visible;
-          padding: 1rem;
-        }
-        &.remove {
-          color: $color-red;
-          justify-content: center;
-        }
-      }
-    }
-
-    .inverted.dropdown.item {
-      .menu {
-        background: $color-menu-bkg;
-        z-index: 2000;
-        &>.item {
-          color: $color-white !important;
-          font-weight: lighter !important;
-        }
-      }
-    }
-  }
-}
-
-// agent menu
-.agent {
-  &.ui.inverted.menu {
-    .avatar-menu {
-      display: inline;
-    }
-    .account-name {
-      cursor: pointer;
-      display: inline-block;
-      max-width: 25rem;
-      overflow: hidden;
-      padding-right: .5rem;
-      text-overflow: ellipsis;
-      vertical-align: middle;
-      white-space: nowrap;
-      transition: .2s;
-      &:hover {
-        text-decoration: underline;
-      }
-      @media (max-width: 1280px) {
-        max-width: 10rem;
-      }
-    }
-    .ui.inverted.dropdown.item {
-      cursor: default;
-      .menu {
-        background: lighten($color-menu-bkg,5%);
-        display: block;
-        >.item {
-          color: $color-white !important;
-          text-decoration: none;
-          &.active,
-          &:hover {
-            background: rgba($color-white, .15) !important;
-          }
-        }
-      }
-    }
-    background: lighten($color-menu-bkg,5%);
-    border-radius: 0;
-    font-size: 110%;
-    font-weight: 100;
-    margin-top: .5rem;
-    position: fixed;
-    width: 100%;
-    z-index: 100;
-    .item:first-of-type {
-      .ui.large.circular.label {
-        font-weight: lighter;
-      }
-    }
-    &.fixed {
-      z-index: 1003;
-    }
-    .item {
-      &:last-child {
-        padding-right: 1.5rem;
-      }
-      &.compliance {
-        .cases {
-          display: flex;
-          padding-right: 1.5rem;
-          .compliance-group {
-            color: $color-white;
-            display: flex;
-            font-size: 80%;
-            text-align: center;
-            >.item {
-              height: 1.5rem;
-              padding: .3rem .5rem;
-              position: relative;
-              &:first-child {
-                border-top-left-radius: 5rem;
-                border-bottom-left-radius: 5rem;
-              }
-              &:last-child {
-                border-top-right-radius: 5rem;
-                border-bottom-right-radius: 5rem;
-              }
-            }
-            .ctm {
-              background: $color-red;
-            }
-            .grievance {
-              background: $color-pink;
-            }
-            .soa {
-              background: lighten($color-purple, 10%);
-            }
-            .issue {
-              background: $color-purple;
-            }
-            .others {
-              background: lighten($color-violet, 5%);
-            }
-          }
-        }
-      }
-      span {
-        align-items: center;
-        display: inline-flex;
-        font-weight: lighter;
-        margin: 0 .5rem;
-        .label {
-          margin-right: .5rem;
-        }
-      }
-    }
-    .dropdown.item:first-of-type {
-      flex-grow: 1;
-      a {
-        color: $color-cyan;
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-    }
-  }
-  &.ui.menu {
-    .item {
-      &.admin {
-        color: $color-cyan;
-      }
-      &.recent {
-        color: $grey;
-      }
-      &.active {
-        font-weight: 100;
-      }
-      &:hover {
-        .angle.down,
-        .plus {
-          animation: bounce 1s;
-        }
-      }
-      .spin {
-        animation: spin 1s;
-      }
-      > .icon {
-        cursor: pointer;
-      }
-    }
-  }
-}
-
-.app.body {
-  .agent.menu {
-    left: 0;
-    top: 6rem;
-    + .stackable.grid {
-      margin-top: 7.5rem;
-    }
-    .header {
-      .agent-icon + .label {
-        margin-left: .5rem;
-      }
-    }
-  }
-}
-
-
-.app.body {
-  .stackable.grid {
-    padding-top: 4rem;
-  }
-}
-// end agent
-
-//ellipsis hover effect to show menu
-.dropdown:not(.click) {
-  &:hover {
-    >.menu {
-      display: block;
-    }
-  }
-}
-.dropdown.click {
-  &.open {
-    >.menu {
-      display: block;
-    }
-  }
-}
-
-.ui.secondary.menu {
-  .item {
-    background-color: transparent;
-    color: $grey-light;
-    &.active {
+.menu {
+  .search {
+    color: map-get($greyscale, 'white');
+    @extend %flex-center;
+    input[type=text] {
+      background: transparent;
+      border: none;
       color: inherit;
-    }
-  }
-}
-
-// left menu. Not always present
-.ui.sidebar.menu {
-  font-size: 100%;
-}
-
-.ui.left.fixed.menu {
-  background: lighten($color-menu-sub-bkg, 5%);
-  font-weight: lighter !important;
-  padding-top: 65px;
-  z-index: inherit;
-  .agent-highlight {
-    color: $color-white;
-    background: $color-menu-sub;
-  }
-  :not(.agent-highlight) .icon {
-    color: $color-menu-sub;
-  }
-}
-
-// User profile gear
-// not active
-// usage:
-//Hello John <i class="inverted grey setting icon"></i>
-.setting.icon {
-  cursor: pointer;
-  &:hover {
-    animation: spin 2s linear;
-  }
-}
-
-.agent.container {
-  padding-top: 60px;
-  padding-left: 60px;
-  .column .header {
-    color: lighten($color-menu-sub,15%);
-    font-size: 150%;
-    margin-bottom: 2rem;
-  }
-}
-
-// dropdown '...' menu using <button> delete instead of <a>
-// used in <table> menus
-.ellipsis {
-  + .menu {
-    button.ui.icon.button {
-      border-radius: 0;
-      box-shadow: none;
-      color: rgba($grey-dark,.84) !important;
-      text-align: left;
-      padding: .7rem 1.2rem;
+      font-size: 1.3rem;
+      font-weight: lighter;
       width: 100%;
+      height: 100%;
+      outline: none;
+      &::placeholder {
+        color: map-get($greyscale, 'light');
+      }
+    }
+  }
+  .item {
+    border-left: 1px solid rgba(map-get($greyscale, 'light'), .5);
+    cursor: pointer;
+    display: flex;
+    line-height: 1.5;
+    padding: 0 2rem;
+    transition: $transitions;
+    &:hover:not(.search) {
+      background-color: rgba(map-get($greyscale, 'white'), .3);
+    }
+    &.dropdown {
+      position: relative;
       &:hover {
-        background: rgba($grey-dark,.05) !important;
+        .menu {
+          display: flex;
+        }
       }
-      .icon {
-        margin-right: .7rem;
-        margin-top: .2rem;
+      .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        .item {
+          border-left: 0;
+          justify-content: flex-start;
+          padding: 1rem 2rem;
+          &:not(:first-child) {
+            border-top: 1px solid rgba(map-get($greyscale, 'light'), .5);
+          }
+          i[class*="fa-"] {
+            padding-right: 1rem;
+            width: 1.2rem;
+            @extend %flex-center;
+          }
+
+        }
+      }
+    }
+  }
+  .my {
+    span {
+      font-family: serif;
+      font-size: 120%;
+      font-style: italic;
+      font-weight: bold;
+      opacity: .7;
+      padding-right: .2rem;
+    }
+  }
+}
+
+.crm-menu {
+  grid-row-start: 2;
+  nav {
+    flex-wrap: wrap;
+    @extend %flex-center;
+    .item {
+      background-color: map-get($greyscale, 'white');
+      box-sizing: border-box;
+      box-shadow: 0 0 0 0;
+      border-right: 1px solid rgba(map-get($greyscale, 'light'), .3);
+      border-top: 1px solid rgba(map-get($greyscale, 'light'), .3);
+      flex-direction: column;
+      padding: 2rem 0;
+      width: 50%;
+      max-height: 10rem;
+      transition: $transitions;
+      @extend %flex-center;
+      img {
+        margin-bottom: .5rem;
+      }
+      &:hover {
+        box-shadow: inset 0 0 0 2px map-get($brand-colors, 'salmon');
+        position: relative;
+        &:after {
+          color: map-get($brand-colors, 'salmon');
+          content: "\f058";
+          font-family: "Font awesome 5 free";
+          font-weight: bold;
+          font-size: 200%;
+          position: absolute;
+          right: -1rem;
+          z-index: 10;
+        }
       }
     }
   }
 }
 
-#view-recent-items {
-  >.item {
-    .left.menu {
-      display: none;
-    }
-    &:hover {
-      .left.menu {
-        display: flex;
-        flex-grow: 0;
-        right: 100% !important;
-      }
-    }
+.stats-header {
+  background-color: map-get($platform-colors, 'menu');
+  border-top: 1px solid rgba(map-get($greyscale, 'white'), .3);
+  color: map-get($greyscale, 'white');
+  display: flex;
+  flex-direction: column;
+  height: $menu-banner-height;
+  .header {
+    color: rgba(map-get($greyscale, 'white'), .6);
+    font-family: "Roboto Slab";
+    font-size: 150%;
+    padding: 1rem;
+    width: 100%;
+    @extend %flex-center;
   }
-}
-
-// icon mapping for recent
-.contracts.icon:before {
-  font-family: "icons";
-  content: "\f15c";
-}
-
-.agent.icon:before,
-.associate.icon:before {
-  font-family: "icons";
-  content: "\f007";
-}
-
-.agencies.icon:before {
-  @extend .agency-icon;
-}
-
-.company.icon:before,
-.business.icon:before,
-.carrier.icon:before, {
-  font-family: "icons";
-  content: "\f275"
-}
-
-.role.icon:before {
-  font-family: "icons";
-  content: "\f013";
-}
-
-@media (max-width: 1300px) {
-  .ui.main.menu {
-    .main.header {
-      display: none;
+  .stats-group {
+    border-bottom: 1px solid rgba(map-get($greyscale, 'white'), .3);
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem 0;
+    .stat {
+      align-items: center;
+      display: flex;
+      font-size: 175%;
+      font-weight: bold;
+      flex-direction: column;
+      text-transform: uppercase;
+    }
+    .stat-label {
+      color: rgba(map-get($greyscale, 'white'), .6);
+      font-size: 50% !important;
+      font-weight: normal;
+      text-align: center;
     }
   }
-}
-
-@media (max-width: 1220px) {
-  .ui.main.menu {
-    font-size: 110% !important;
-  }
-}
-@media (max-width: 1140px) {
-  .ui.main.menu {
-    font-size: 100% !important;
+  .today {
+    padding: 1rem;
+    @extend %flex-center;
   }
 }

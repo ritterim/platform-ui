@@ -1,0 +1,15 @@
+@each $prop, $letter in (margin: m, padding: p) {
+  @each $direction, $d in $xy-border {
+    @each $unit, $rem in $spacers {
+      .#{$letter}#{$d}-#{$unit} {
+        #{$prop}-#{$direction}: #{$rem};
+      }
+      .#{$letter}x-#{$unit} {
+        #{$prop}: 0 $rem;
+      }
+      .#{$letter}y-#{$unit} {
+        #{$prop}: $rem 0;
+      }
+    }
+  }
+}

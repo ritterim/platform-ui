@@ -1,0 +1,105 @@
+/*
+  Ritter Platform vars, UI v2
+  - removes use of Semantic UI
+  - incorporates Ritter 2019 brand colors
+  - Leveraging CSS Grid, Flexbox, stronger usage of SASS maps
+*/
+
+// Greyscale
+$greyscale: (
+  'white': white,
+  'lighter': #efefef,
+  'light': #999,
+  'base': #666,
+  'dark': #333,
+  'black': #222
+);
+
+// Ritter brand colors
+$brand-colors: (
+  'navy':   #003f70,
+  'skyblue':#91b9dc,
+  'lightblue': #E5F5FF,
+  'med-blue': #3f7bad,
+  'beige':  #ecd7b1,
+  'peach':  #dfa278,
+  'salmon': #e58967,
+  'brown':  #866657,
+  'orange': #f48418
+);
+
+// Theme colors
+$platform-colors: (
+  'menu': map-get($brand-colors, 'navy'),
+  'link': map-get($brand-colors, 'med-blue'),
+  'help': map-get($brand-colors, 'lightblue'),
+  'note': cornsilk,
+  'help-text': map-get($brand-colors, 'navy')
+);
+
+$secondary-colors: (
+  'red':    darken(tomato, 10%),
+  'olive':  #b5cc18,
+  'purple': lighten(purple, 10%),
+  'yellow': #FBBD08, // semantic-ui yellow
+  'pink': mistyrose,
+  'cyan':   cyan,
+  'violet': #6435C9,
+  'blue':   map-get($platform-colors, 'link'),
+  'green': #21BA45,
+  'teal': teal
+);
+
+$error-colors: (
+  'positive': map-get($secondary-colors, 'olive'),
+  'negative': map-get($secondary-colors, 'pink'),
+  'neutral': map-get($greyscale, 'base')
+);
+
+// Fonts
+$fonts: (
+  'base': #{'Inter UI', sans-serif},
+  'base-alt': #{'Inter UI var alt', sans-serif},
+  'color': map-get($greyscale, 'dark'),
+  'headline': #{'Roboto Slab', serif},
+  'size': 1rem
+);
+
+$font-scale: .5;
+
+// milliseconds; animations, transitions
+$duration: .2s;
+$transitions: .2s;
+
+// space
+$border-radius: 5rem;
+$menu-height: 4.5rem;
+$menu-banner-height: 14rem;
+
+
+// padding and margin
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: ($spacer * .25),
+  2: ($spacer * .5),
+  3: $spacer,
+  4: ($spacer * 2),
+  5: ($spacer * 3),
+  6: ($spacer * 4.5),
+  7: ($spacer * 6.5)
+);
+
+$xy-border: (
+  top: t,
+  bottom: b,
+  left: l,
+  right: r
+);
+
+$font-percentage: (
+  'xs': 70%,
+  'sm': 85%,
+  'lg': 125%,
+  'xl': 150%
+);

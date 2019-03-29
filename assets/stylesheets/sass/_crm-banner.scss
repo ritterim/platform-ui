@@ -1,0 +1,11 @@
+.crm-banner {
+  background-color: map-get($greyscale, 'base');
+  border-bottom: 1px solid map-get($brand-colors, 'skyblue');
+  box-sizing: border-box;
+  height: calc(#{$menu-banner-height} + 2px);
+  padding: 2rem;
+  position: relative;
+  p {
+    font-size: 120%;
+  }
+}

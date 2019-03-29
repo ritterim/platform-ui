@@ -1,64 +1,16 @@
-// vars/mixins
-@import "mixins/vars";
-@import "mixins/mixins";
-@import "mixins/animation";
-@import "mixins/extends";
-@import "mixins/user-type-icons";
+//   Ritter Platform, UI v2
+
+@import url('https://use.fontawesome.com/releases/v5.6.3/css/all.css');
+
+@import url('https://rsms.me/inter/inter-ui.css');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+
+@import "variables";
+@import "utilities";
 
 // sass
-@import "layout"; // sets base styling; do not move.
-@import "large-screen";
-@import "accordion";
-@import "agent-view";
-@import "agent";
-@import "attached-files";
-@import "processing-mode";
-@import "auth";
-@import "buttons";
-@import 'drawer';
-@import 'campaigns';
-@import "carriers";
-@import "chartist";
-@import "compliance";
-@import "component-forms";
-@import "contract";
-@import "dash";
-@import "dials";
-@import "empty";
-@import "errors";
-@import "environment";
-@import "general";
+@import "grid"; // sets base grids
 @import "labels";
-@import "license";
-@import "mapping";
-@import "members";
-@import "memberships";
+@import "layout";
 @import "menu";
-@import "modals";
-@import "multi-input-cmp";
-@import "nav-tabs";
-@import "noteboard";
-@import "notes";
-@import "pagination";
-@import "prospect";
-@import "permissions";
-@import "portal";
-@import "processing-mode.scss";
-@import "rams-sub-nav";
-@import "requests";
-@import "search";
-@import "searchable-select";
-@import "steps";
-@import "tables";
-@import "tabs";
-@import "tags";
-@import "touches";
-@import "vue-transitions";
-@import "submissions.scss";
-@import "form-builder";
-@import "basic-skin";
-@import "hierarchy";
-@import "reports";
-@import "contracting";
-@import "data-title";
-@import "quote";
+@import "crm-banner";
