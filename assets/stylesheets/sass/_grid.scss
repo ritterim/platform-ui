@@ -7,7 +7,7 @@
     background-color: map-get($platform-colors, 'menu');
     color: map-get($greyscale, 'white');
     display: flex;
-    font-size: 120%;
+    font-size: map-get($font-percentage, 'lg');
     height: $menu-height;
     position: fixed;
     width: 100%;

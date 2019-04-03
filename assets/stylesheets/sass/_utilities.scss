@@ -58,7 +58,7 @@
     padding: 0 .5rem;
     color: map-get($fonts, 'color');
     span {
-      font-size: 120%;
+      font-size: map-get($font-percentage, 'lg');
     }
   }
   @each $position in ('left', 'right') {
