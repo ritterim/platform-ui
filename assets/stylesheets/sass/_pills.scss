@@ -1,0 +1,29 @@
+// <div class="pill pill--split">
+//   <span class="pill__label">
+//     NPN:
+//   </span>
+//   123456789
+// </div>
+
+.pill {
+    background-color: transparent;
+    border: 1px solid map-get($greyscale, 'base');
+    border-radius: $border-radius;
+    color: map-get($greyscale, 'white');
+    display: flex;
+    font-size: map-get($fonts, 'size');
+    padding: .5rem .8rem;
+
+    &--split {
+      align-items: center;
+      display: inline-flex;
+      padding: 0 .3rem 0 0;
+    }
+
+    &__label {
+      background-color: rgba(map-get($greyscale, 'white'), .3);
+      border-radius: $border-radius 0 0 $border-radius;
+      margin-right: .3rem;
+      padding: .1rem .3rem;
+    }
+  }

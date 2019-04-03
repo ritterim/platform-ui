@@ -16,15 +16,16 @@
     "gulp-connect": "^5.7.0",
     "gulp-eslint": "^4.0.0",
     "gulp-mode": "^1.0.2",
-    "gulp-pleeease": "^2.0.2",
+    "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.0",
-    "gulp-uglify": "^3.0.0"
+    "gulp-uglify": "^3.0.0",
+    "kss": "^3.0.0-beta.25",
+    "node-sass": "^4.11.0"
   },
   "dependencies": {
-    "gulp": "^3.9.1",
+    "gulp": "^3.0.0",
     "gulp-cache-bust": "^1.4.0",
     "gulp-connect-php": "^1.0.1",
-    "gulp-sass": "^3.1.0",
     "list-directory-contents": "0.0.3"
   }
 }

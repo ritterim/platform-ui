@@ -1,0 +1,118 @@
+// Colors
+// 
+// DO NOT implement colors outside of these collections. All color should be called using:
+// 
+// `map-get($map, $key);`
+//
+// All color variations should be handled through `darken()`, `lighten()`, or `rgba` for alpha transparency.
+// 
+// Styleguide 1
+
+// Greyscale
+//
+// Colors:
+// white: #ffffff
+// lighter: #efefef
+// light: #999999
+// base: #666666
+// dark: #333333
+// black: #222222 
+// 
+// Styleguide 1.1
+
+$greyscale: (
+  'white': white,
+  'lighter': #efefef,
+  'light': #999,
+  'base': #666,
+  'dark': #333,
+  'black': #222 
+);
+
+// Brand Colors
+// 
+// Colors:
+// navy: #003f70
+// skyblue: #91b9dc
+// lightblue: #E5F5FF
+// med-blue: #3f7bad
+// beige: #ecd7b1
+// peach: #dfa278
+// salmon: #e58967
+// brown: #866657
+// orange: #f48418
+//
+// Styleguide 1.2
+
+$brand-colors: (
+  'navy':   #003f70,
+  'skyblue':#91b9dc,
+  'lightblue': #E5F5FF,
+  'med-blue': #3f7bad,
+  'beige':  #ecd7b1,
+  'peach':  #dfa278,
+  'salmon': #e58967,
+  'brown':  #866657,
+  'orange': #f48418
+);
+
+// Platform Colors
+//
+// Colors:
+// menu: #003f70 - navy
+// link: #3f7bad - med-blue
+// help: #E5F5FF - lightblue
+// note: cornsilk - cornsilk
+// help-text: #003f70 - navy
+//
+// Styleguide 1.3
+
+$platform-colors: (
+  'menu': map-get($brand-colors, 'navy'),
+  'link': map-get($brand-colors, 'med-blue'),
+  'help': map-get($brand-colors, 'lightblue'),
+  'note': cornsilk,
+  'help-text': map-get($brand-colors, 'navy')
+);
+
+// Secondary Colors
+//
+// Colors:
+// red: darken(tomato, 10%)
+// olive: #b5cc18
+// purple: lighten(purple, 10%)
+// yellow: #FBBD08
+// pink: mistyrose
+// cyan: cyan
+// violet: #6435C9
+// blue: #3f7bad
+// green: #21BA45
+// teal: teal
+//
+// Styleguide 1.4
+$secondary-colors: (
+  'red':    darken(tomato, 10%),
+  'olive':  #b5cc18,
+  'purple': lighten(purple, 10%),
+  'yellow': #FBBD08, // semantic-ui yellow
+  'pink': mistyrose,
+  'cyan':   cyan,
+  'violet': #6435C9,
+  'blue':   map-get($platform-colors, 'link'),
+  'green': #21BA45,
+  'teal': teal
+);
+
+// Error Colors
+// 
+// Colors:
+// positive: #b5cc18
+// negative: mistyrose
+// neutral: #666666
+// 
+// Styleguide 1.5
+$error-colors: (
+  'positive': map-get($secondary-colors, 'olive'),
+  'negative': map-get($secondary-colors, 'pink'),
+  'neutral': map-get($greyscale, 'base')
+);
