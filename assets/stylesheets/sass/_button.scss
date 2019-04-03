@@ -1,0 +1,26 @@
+// <div class="button button--plus">
+//   <span class="pill__label">
+//     NPN:
+//   </span>
+//   123456789
+// </div>
+
+.button {
+    background-color: transparent;
+    border: 1px solid map-get($greyscale, 'base');
+    border-radius: $border-radius;
+    color: map-get($greyscale, 'base');
+    font-size: map-get($fonts, 'size');
+    padding: .5rem .8rem;
+    @extend %flex-center;
+
+    &--plus {
+      &:before {
+        content; "";
+        //  include for family FAS
+      }
+      align-items: center;
+      display: inline-flex;
+      padding: 0 .3rem 0 0;
+    }
+  }

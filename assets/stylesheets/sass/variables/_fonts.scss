@@ -1,0 +1,10 @@
+// Fonts
+$fonts: (
+  'base': #{'Inter UI', sans-serif},
+  'base-alt': #{'Inter UI var alt', sans-serif},
+  'color': map-get($greyscale, 'dark'),
+  'headline': #{'Roboto Slab', serif},
+  'size': 1rem
+);
+
+$font-scale: .5;
