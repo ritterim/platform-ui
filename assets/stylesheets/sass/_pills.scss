@@ -6,24 +6,24 @@
 // </div>
 
 .pill {
-    background-color: transparent;
-    border: 1px solid map-get($greyscale, 'base');
-    border-radius: $border-radius;
-    color: map-get($greyscale, 'white');
-    display: flex;
-    font-size: map-get($fonts, 'size');
-    padding: .5rem .8rem;
+  background-color: transparent;
+  border: 1px solid map-get($greyscale, 'base');
+  border-radius: $border-radius;
+  color: map-get($greyscale, 'white');
+  display: flex;
+  font-size: map-get($fonts, 'size');
+  padding: map-get($spacers, 2) $spacer;
 
-    &--split {
-      align-items: center;
-      display: inline-flex;
-      padding: 0 .3rem 0 0;
-    }
-
-    &__label {
-      background-color: rgba(map-get($greyscale, 'white'), .3);
-      border-radius: $border-radius 0 0 $border-radius;
-      margin-right: .3rem;
-      padding: .1rem .3rem;
-    }
+  &--split {
+    align-items: center;
+    display: inline-flex;
+    padding: 0 map-get($spacers, 1) 0 0;
   }
+
+  &__label {
+    background-color: rgba(map-get($greyscale, 'white'), .3);
+    border-radius: $border-radius 0 0 $border-radius;
+    margin-right: map-get($spacers, 1);
+    padding: map-get($spacers, 1) map-get($spacers, 2);
+  }
+}

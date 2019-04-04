@@ -23,7 +23,7 @@
   border-right: 1px solid;
   border-color: #666; }
 
-.flex-align-center, .platform header nav .item, .menu .search, .menu .item.dropdown .menu .item i[class*="fa-"], .crm-menu nav, .crm-menu nav .item, .stats-header .header, .stats-header .today {
+.flex-align-center, .platform header nav .item, .menu .search, .menu .item.dropdown .menu .item i[class*="fa-"], .crm-menu nav, .crm-menu nav .item, .stats-header .header, .stats-header .today, .button {
   display: flex;
   align-items: center;
   justify-content: center; }
@@ -607,138 +607,138 @@
 .py-7 {
   padding: 6.5rem 0; }
 
-.navy-text {
-  color: #003f70;
+.text-navy {
+  color: #003f70 !important;
   transition: .2s; }
 
-.navy {
-  background-color: #003f70; }
+.background-navy {
+  background-color: #003f70 !important; }
 
-.skyblue-text {
-  color: #91b9dc;
+.text-skyblue {
+  color: #91b9dc !important;
   transition: .2s; }
 
-.skyblue {
-  background-color: #91b9dc; }
+.background-skyblue {
+  background-color: #91b9dc !important; }
 
-.lightblue-text {
-  color: #E5F5FF;
+.text-lightblue {
+  color: #E5F5FF !important;
   transition: .2s; }
 
-.lightblue {
-  background-color: #E5F5FF; }
+.background-lightblue {
+  background-color: #E5F5FF !important; }
 
-.med-blue-text {
-  color: #3f7bad;
+.text-med-blue {
+  color: #3f7bad !important;
   transition: .2s; }
 
-.med-blue {
-  background-color: #3f7bad; }
+.background-med-blue {
+  background-color: #3f7bad !important; }
 
-.beige-text {
-  color: #ecd7b1;
+.text-beige {
+  color: #ecd7b1 !important;
   transition: .2s; }
 
-.beige {
-  background-color: #ecd7b1; }
+.background-beige {
+  background-color: #ecd7b1 !important; }
 
-.peach-text {
-  color: #dfa278;
+.text-peach {
+  color: #dfa278 !important;
   transition: .2s; }
 
-.peach {
-  background-color: #dfa278; }
+.background-peach {
+  background-color: #dfa278 !important; }
 
-.salmon-text {
-  color: #e58967;
+.text-salmon {
+  color: #e58967 !important;
   transition: .2s; }
 
-.salmon {
-  background-color: #e58967; }
+.background-salmon {
+  background-color: #e58967 !important; }
 
-.brown-text {
-  color: #866657;
+.text-brown {
+  color: #866657 !important;
   transition: .2s; }
 
-.brown {
-  background-color: #866657; }
+.background-brown {
+  background-color: #866657 !important; }
 
-.orange-text {
-  color: #f48418;
+.text-orange {
+  color: #f48418 !important;
   transition: .2s; }
 
-.orange {
-  background-color: #f48418; }
+.background-orange {
+  background-color: #f48418 !important; }
 
-.red-text {
-  color: #ff3814;
+.text-red {
+  color: #ff3814 !important;
   transition: .2s; }
 
-.red {
-  background-color: #ff3814; }
+.background-red {
+  background-color: #ff3814 !important; }
 
-.olive-text {
-  color: #b5cc18;
+.text-olive {
+  color: #b5cc18 !important;
   transition: .2s; }
 
-.olive {
-  background-color: #b5cc18; }
+.background-olive {
+  background-color: #b5cc18 !important; }
 
-.purple-text {
-  color: #b300b3;
+.text-purple {
+  color: #b300b3 !important;
   transition: .2s; }
 
-.purple {
-  background-color: #b300b3; }
+.background-purple {
+  background-color: #b300b3 !important; }
 
-.yellow-text {
-  color: #FBBD08;
+.text-yellow {
+  color: #FBBD08 !important;
   transition: .2s; }
 
-.yellow {
-  background-color: #FBBD08; }
+.background-yellow {
+  background-color: #FBBD08 !important; }
 
-.pink-text {
-  color: mistyrose;
+.text-pink {
+  color: mistyrose !important;
   transition: .2s; }
 
-.pink {
-  background-color: mistyrose; }
+.background-pink {
+  background-color: mistyrose !important; }
 
-.cyan-text {
-  color: cyan;
+.text-cyan {
+  color: cyan !important;
   transition: .2s; }
 
-.cyan {
-  background-color: cyan; }
+.background-cyan {
+  background-color: cyan !important; }
 
-.violet-text {
-  color: #6435C9;
+.text-violet {
+  color: #6435C9 !important;
   transition: .2s; }
 
-.violet {
-  background-color: #6435C9; }
+.background-violet {
+  background-color: #6435C9 !important; }
 
-.blue-text {
-  color: #3f7bad;
+.text-blue {
+  color: #3f7bad !important;
   transition: .2s; }
 
-.blue {
-  background-color: #3f7bad; }
+.background-blue {
+  background-color: #3f7bad !important; }
 
-.green-text {
-  color: #21BA45;
+.text-green {
+  color: #21BA45 !important;
   transition: .2s; }
 
-.green {
-  background-color: #21BA45; }
+.background-green {
+  background-color: #21BA45 !important; }
 
-.teal-text {
-  color: teal;
+.text-teal {
+  color: teal !important;
   transition: .2s; }
 
-.teal {
-  background-color: teal; }
+.background-teal {
+  background-color: teal !important; }
 
 .text-uppercase {
   text-transform: uppercase; }
@@ -764,6 +764,9 @@
 .text-shadow-black {
   text-shadow: 0.3rem 0.3rem 0.5rem #222; }
 
+.font-xxs {
+  font-size: 50% !important; }
+
 .font-xs {
   font-size: 70% !important; }
 
@@ -776,18 +779,11 @@
 .font-xl {
   font-size: 150% !important; }
 
+.font-xxl {
+  font-size: 200% !important; }
+
 .text-uppercase {
   text-transform: uppercase; }
-
-.list {
-  list-style: none;
-  padding: 0;
-  line-height: 2; }
-  .list.inline {
-    display: flex;
-    justify-content: space-evenly; }
-    .list.inline.icon li {
-      margin-right: .5rem; }
 
 .rotate-45 {
   transform: rotate(-45deg); }
@@ -815,7 +811,7 @@
   padding: 0 .5rem;
   color: #333; }
   .crm-banner .close span {
-    font-size: 120%; }
+    font-size: 125%; }
 
 .close.left {
   position: absolute;
@@ -834,6 +830,9 @@
   overflow: hidden;
   position: absolute !important; }
 
+.font-xxs {
+  font-size: 50% !important; }
+
 .font-xs {
   font-size: 70% !important; }
 
@@ -846,6 +845,9 @@
 .font-xl {
   font-size: 150% !important; }
 
+.font-xxl {
+  font-size: 200% !important; }
+
 .platform {
   background-color: #efefef;
   display: grid;
@@ -855,7 +857,7 @@
     background-color: #003f70;
     color: white;
     display: flex;
-    font-size: 120%;
+    font-size: 125%;
     height: 4.5rem;
     position: fixed;
     width: 100%;
@@ -917,13 +919,16 @@ a {
   text-decoration: none;
   transition: 0.2s; }
 
+section {
+  padding: 1rem; }
+
 .menu .search {
   color: white; }
   .menu .search input[type=text] {
     background: transparent;
     border: none;
     color: inherit;
-    font-size: 1.3rem;
+    font-size: 125%;
     font-weight: lighter;
     width: 100%;
     height: 100%;
@@ -962,7 +967,7 @@ a {
 
 .menu .my span {
   font-family: serif;
-  font-size: 120%;
+  font-size: 125%;
   font-style: italic;
   font-weight: bold;
   opacity: .7;
@@ -1019,7 +1024,7 @@ a {
     .stats-header .stats-group .stat {
       align-items: center;
       display: flex;
-      font-size: 175%;
+      font-size: 200%;
       font-weight: bold;
       flex-direction: column;
       text-transform: uppercase; }
@@ -1039,7 +1044,59 @@ a {
   padding: 2rem;
   position: relative; }
   .crm-banner p {
-    font-size: 120%; }
+    font-size: 125%; }
+
+.button {
+  background-color: white;
+  border: 1px solid #666;
+  border-radius: 5rem;
+  color: #666;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.25rem 1rem;
+  transition: 0.2s; }
+  .button i {
+    margin: 0 0.25rem; }
+  .button:hover {
+    background-color: #e58967;
+    color: white; }
+  .button--secondary {
+    background-color: #e58967;
+    border: 1px solid #e58967;
+    color: white;
+    border-radius: 500rem;
+    padding: 0;
+    width: 2rem;
+    height: 2rem; }
+    .button--secondary:hover {
+      background-color: #de673b; }
+  .button--post {
+    background-color: #e58967;
+    border: 1px solid #e58967;
+    color: white;
+    font-size: 125%;
+    padding: 0.5rem 1rem; }
+    .button--post:hover {
+      background-color: #de673b; }
+
+.button-group {
+  display: flex; }
+  .button-group .button {
+    margin: 0 0.25rem; }
+    .button-group .button:first-child {
+      margin-left: 0; }
+    .button-group .button:last-child {
+      margin-right: 0; }
+
+.list {
+  list-style: none;
+  padding: 0;
+  line-height: 2; }
+  .list.inline {
+    display: flex;
+    justify-content: space-evenly; }
+    .list.inline.icon li {
+      margin-right: .5rem; }
 
 .pill {
   background-color: transparent;
@@ -1048,13 +1105,13 @@ a {
   color: white;
   display: flex;
   font-size: 1rem;
-  padding: .5rem .8rem; }
+  padding: 0.5rem 1rem; }
   .pill--split {
     align-items: center;
     display: inline-flex;
-    padding: 0 .3rem 0 0; }
+    padding: 0 0.25rem 0 0; }
   .pill__label {
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 5rem 0 0 5rem;
-    margin-right: .3rem;
-    padding: .1rem .3rem; }
+    margin-right: 0.25rem;
+    padding: 0.25rem 0.5rem; }

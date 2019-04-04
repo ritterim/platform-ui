@@ -5,9 +5,9 @@
   - Leveraging CSS Grid, Flexbox, stronger usage of SASS maps
 */
 
-@import "variables/_color.scss";
-@import "variables/_fonts.scss";
-@import "variables/_spacing.scss";
+@import "variables/color";
+@import "variables/fonts";
+@import "variables/spacing";
 
 
 // milliseconds; animations, transitions
@@ -19,11 +19,4 @@ $xy-border: (
   bottom: b,
   left: l,
   right: r
-);
-
-$font-percentage: (
-  'xs': 70%,
-  'sm': 85%,
-  'lg': 125%,
-  'xl': 150%
 );

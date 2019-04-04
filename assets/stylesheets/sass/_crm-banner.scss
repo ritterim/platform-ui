@@ -6,6 +6,6 @@
   padding: 2rem;
   position: relative;
   p {
-    font-size: 120%;
+    font-size: map-get($font-percentage, 'lg');
   }
 }

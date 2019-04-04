@@ -4,15 +4,12 @@ $all-colors: map-merge($brand-colors, $secondary-colors);
 
 @each $name, $color in $all-colors {
   // text color
-  .#{$name}-text {
-    color: $color;
+  .text-#{$name} {
+    color: $color !important;
     transition: .2s;
   }
   // background color
-  .#{$name} {
-    background-color: $color;
-    &.inverted {
-      color: map-get($greyscale, white);
-    }
+  .background-#{$name} {
+    background-color: $color !important;
   }
 }
