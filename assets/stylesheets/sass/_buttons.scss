@@ -11,7 +11,6 @@
   font-size: map-get($fonts, 'size');
   padding: map-get($spacers, 1) $spacer;
   transition: $duration;
-  @extend %flex-center;
   i {
     margin: 0 map-get($spacers, 1);
   }
@@ -27,6 +26,7 @@
     padding: 0;
     width: 2rem;
     height: 2rem;
+    @extend %flex-center;
     &:hover {
       background-color: darken(map-get($brand-colors, 'salmon'), 10%);
     }
@@ -35,11 +35,13 @@
     background-color: map-get($brand-colors, 'salmon');
     border: 1px solid map-get($brand-colors, 'salmon');
     color: map-get($greyscale, 'white');
-    font-size: map-get($font-percentage, 'lg');
-    padding: map-get($spacers, 2) $spacer;
     &:hover {
       background-color: darken(map-get($brand-colors, 'salmon'), 10%);
     }
+  }
+  &--lg {
+    font-size: map-get($font-percentage, 'lg');
+    padding: map-get($spacers, 2) $spacer;
   }
 }
 
