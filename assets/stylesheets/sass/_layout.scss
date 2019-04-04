@@ -32,3 +32,7 @@ a {
   text-decoration: none;
   transition: $transitions;
 }
+
+section {
+  padding: $spacer;
+}

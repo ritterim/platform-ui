@@ -1,0 +1,15 @@
+// list, list inline, icon list
+.list {
+    list-style: none;
+    padding: 0;
+    line-height: 2;
+    &.inline {
+      display: flex;
+      justify-content: space-evenly;
+      &.icon {
+        li {
+          margin-right: .5rem;
+        }
+      }
+    }
+  }

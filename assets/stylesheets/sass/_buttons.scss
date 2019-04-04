@@ -1,18 +1,57 @@
-// <div class="button button--plus">
-//   <span class="pill__label">
-//     NPN:
-//   </span>
+// <button class="button button--secondary">
 //   123456789
-// </div>
+// </button>
 
 .button {
-    background-color: map-get($greyscale, 'white');
-    border: 1px solid map-get($greyscale, 'base');
-    border-radius: $border-radius;
-    color: map-get($greyscale, 'base');
-    font-size: map-get($fonts, 'size');
-    padding: .5rem .8rem;
-    @extend %flex-center;
-    
-    
+  background-color: map-get($greyscale, 'white');
+  border: 1px solid map-get($greyscale, 'base');
+  border-radius: $border-radius;
+  color: map-get($greyscale, 'base');
+  cursor: pointer;
+  font-size: map-get($fonts, 'size');
+  padding: map-get($spacers, 1) $spacer;
+  transition: $duration;
+  @extend %flex-center;
+  i {
+    margin: 0 map-get($spacers, 1);
   }
+  &:hover {
+    background-color: map-get($brand-colors, 'salmon');
+    color: map-get($greyscale, 'white');
+  }
+  &--secondary {
+    background-color: map-get($brand-colors, 'salmon');
+    border: 1px solid map-get($brand-colors, 'salmon');
+    color: map-get($greyscale, 'white');
+    border-radius: $border-radius * 100;
+    padding: 0;
+    width: 2rem;
+    height: 2rem;
+    &:hover {
+      background-color: darken(map-get($brand-colors, 'salmon'), 10%);
+    }
+  }
+  &--post {
+    background-color: map-get($brand-colors, 'salmon');
+    border: 1px solid map-get($brand-colors, 'salmon');
+    color: map-get($greyscale, 'white');
+    font-size: map-get($font-percentage, 'lg');
+    padding: map-get($spacers, 2) $spacer;
+    &:hover {
+      background-color: darken(map-get($brand-colors, 'salmon'), 10%);
+    }
+  }
+}
+
+.button-group {
+  display: flex;
+  .button {
+    margin: 0 map-get($spacers, 1);
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
