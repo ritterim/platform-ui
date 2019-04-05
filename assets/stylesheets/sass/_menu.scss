@@ -102,7 +102,7 @@
           z-index: 5;
         }
         &:after {
-          color: map-get($brand-colors, 'navy');
+          color: map-get($brand-colors, 'salmon');
           content: "\f058";
           font-family: "Font awesome 5 free";
           font-weight: bold;

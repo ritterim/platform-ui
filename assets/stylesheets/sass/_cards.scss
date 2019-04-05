@@ -1,0 +1,17 @@
+// <div class="card">
+//   
+// </div>
+
+.card {
+    background-color: map-get($greyscale, 'white');
+    border: 1px solid map-get($greyscale, 'base');
+    padding: $spacer;
+
+    &___header {
+
+    }
+    
+    &__content {
+
+    }
+}
