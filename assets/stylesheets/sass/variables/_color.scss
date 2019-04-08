@@ -1,12 +1,12 @@
 // Colors
-// 
+//
 // DO NOT implement colors outside of these collections. All color should be called using:
-// 
+//
 // `map-get($map, $key);`
 //
 // All color variations should be handled through `darken()`, `lighten()`, or `rgba` for alpha transparency.
-// 
-// Styleguide 1
+//
+// Styleguide Color
 
 // Greyscale
 //
@@ -16,9 +16,9 @@
 // light: #999999
 // base: #666666
 // dark: #333333
-// black: #222222 
-// 
-// Styleguide 1.1
+// black: #222222
+//
+// Styleguide Color.Greyscale
 
 $greyscale: (
   'white': white,
@@ -26,11 +26,11 @@ $greyscale: (
   'light': #999,
   'base': #666,
   'dark': #333,
-  'black': #222 
+  'black': #222
 );
 
 // Brand Colors
-// 
+//
 // Colors:
 // navy: #003f70
 // skyblue: #91b9dc
@@ -42,7 +42,7 @@ $greyscale: (
 // brown: #866657
 // orange: #f48418
 //
-// Styleguide 1.2
+// Styleguide Color.BrandColors
 
 $brand-colors: (
   'navy':   #003f70,
@@ -65,7 +65,7 @@ $brand-colors: (
 // note: cornsilk - cornsilk
 // help-text: #003f70 - navy
 //
-// Styleguide 1.3
+// Styleguide Color.PlatformColors
 
 $platform-colors: (
   'menu': map-get($brand-colors, 'navy'),
@@ -89,7 +89,7 @@ $platform-colors: (
 // green: #21BA45
 // teal: teal
 //
-// Styleguide 1.4
+// Styleguide Color.SecondaryColors
 $secondary-colors: (
   'red':    darken(tomato, 10%),
   'olive':  #b5cc18,
@@ -104,13 +104,13 @@ $secondary-colors: (
 );
 
 // Error Colors
-// 
+//
 // Colors:
 // positive: #b5cc18
 // negative: mistyrose
 // neutral: #666666
-// 
-// Styleguide 1.5
+//
+// Styleguide Color.ErrorColors
 $error-colors: (
   'positive': map-get($secondary-colors, 'olive'),
   'negative': map-get($secondary-colors, 'pink'),

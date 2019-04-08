@@ -7,7 +7,18 @@ var gulp   = require('gulp'),
     concat = require('gulp-concat'),
     eslint = require('gulp-eslint'),
     uglify = require('gulp-uglify'),
-    sourcemaps = require('gulp-sourcemaps');
+    sourcemaps = require('gulp-sourcemaps'),
+    kss = require('kss');
+
+
+gulp.task('styleguide', function(){
+    return kss({
+      source: 'assets/stylesheets/',
+      destination: 'styleguide/',
+      builder: 'custom-builder',
+      css: '../assets/stylesheets/main.css'
+      });
+  });
 
 gulp.task('sass', function() {
     return gulp.src('assets/stylesheets/sass/main.scss')
@@ -41,8 +52,8 @@ gulp.task('connect', function() {
 });
 
 gulp.task('watch', function(){
-  gulp.watch('assets/stylesheets/sass/*.scss', ['sass']);
+  gulp.watch('assets/stylesheets/sass/*.scss', ['sass', 'styleguide']);
   gulp.watch('assets/js/vue/*.js', ['scripts']);
 })
 
-gulp.task('default', ['watch', 'connect']);
+gulp.task('default', ['watch', 'connect', 'styleguide']);
