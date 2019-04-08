@@ -34,11 +34,9 @@
 
 
 .pill {
-  $primary-background: map-get($greyscale, 'white');
   $primary-border: map-get($greyscale, 'white');
   $primary-color: map-get($greyscale, 'base');
 
-  background-color: $primary-background;
   border: 1px solid $primary-color;
   border-radius: $border-radius;
   color: $primary-color;
@@ -54,11 +52,13 @@
     padding: 0;
   }
 
+  &__content {
+    padding: map-get($spacers, 1) map-get($spacers, 1);
+  }
+
   &__label {
-    margin-right: map-get($spacers, 2);
-    padding: map-get($spacers, 1) map-get($spacers, 2);
-    background-color: rgba($primary-background, .3);
-    border-radius: $border-radius 0 0 $border-radius;
+    @extend .pill__content;
+    background-color: rgba(map-get($greyscale, 'white'), .3);
   }
 
 }
