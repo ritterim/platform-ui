@@ -1,0 +1,36 @@
+h1, h2, h3, h4, h5 {
+    color: map-get($brand-colors, 'navy');
+    font-family: map-get($fonts, 'headline');
+    font-weight: bold;
+}
+
+h1 {
+    font-size: map-get($font-percentage, 'xxl');
+    margin-bottom: map-get($spacers, 4);
+}
+
+h2 {
+    font-size: map-get($font-percentage, 'xl');
+    margin-bottom: map-get($spacers, 4);
+}
+
+h3 {
+    font-size: map-get($font-percentage, 'lg');
+    margin-bottom: map-get($spacers, 4);
+}
+
+h4 {
+    font-size: map-get($font-percentage, 'md');
+    margin-bottom: map-get($spacers, 3);
+}
+
+h5 {
+    font-size: map-get($fonts, 'size');
+}
+
+hr {
+    background-color: map-get($greyscale, 'base');
+    border: none;
+    height: 1px;
+    margin: $spacer 0;
+}
