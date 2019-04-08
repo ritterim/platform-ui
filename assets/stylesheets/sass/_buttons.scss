@@ -1,48 +1,73 @@
+// button-group
+//
+// Buttons
+//
+// Markup:
+//
 // <button class="button button--secondary">
 //   123456789
 // </button>
+//
+// Styleguide Buttons
 
 .button {
-  background-color: map-get($greyscale, 'white');
-  border: 1px solid map-get($greyscale, 'base');
+
+  $primary-background: map-get($greyscale, 'white');
+  $primary-color: map-get($greyscale, 'base');
+  $secondary-background: map-get($brand-colors, 'salmon');
+  $secondary-color: map-get($greyscale, 'white');
+
+  background-color: $primary-background;
+  border: 1px solid $primary-color;
   border-radius: $border-radius;
-  color: map-get($greyscale, 'base');
+  color: $primary-color;
   cursor: pointer;
   font-size: map-get($fonts, 'size');
   padding: map-get($spacers, 1) $spacer;
   transition: $duration;
+
   i {
     margin: 0 map-get($spacers, 1);
   }
+
   &:hover {
-    background-color: map-get($brand-colors, 'salmon');
-    color: map-get($greyscale, 'white');
+    background-color: $secondary-background;
+    border-color: inherit;
+    color: $secondary-color;
   }
+
   &--secondary {
-    background-color: map-get($brand-colors, 'salmon');
-    border: 1px solid map-get($brand-colors, 'salmon');
-    color: map-get($greyscale, 'white');
+    background-color: $secondary-background;
+    border: 1px solid $secondary-background;
+    color: $secondary-color;
     border-radius: $border-radius * 100;
     padding: 0;
     width: 2rem;
     height: 2rem;
     @extend %flex-center;
+
     &:hover {
-      background-color: darken(map-get($brand-colors, 'salmon'), 10%);
+      background-color: darken($secondary-background, $hue-threshold);
+      box-shadow: 0 0 0 .3rem lighten($secondary-background, $hue-threshold);
     }
   }
+
   &--post {
-    background-color: map-get($brand-colors, 'salmon');
-    border: 1px solid map-get($brand-colors, 'salmon');
-    color: map-get($greyscale, 'white');
+    background-color: $secondary-background;
+    border: 1px solid $secondary-background;
+    color: $secondary-color;
+    transition: $transitions;
     &:hover {
-      background-color: darken(map-get($brand-colors, 'salmon'), 10%);
+      background-color: darken($secondary-background, 10%);
+      background-image: linear-gradient(45deg, $secondary-background, darken($secondary-background, $hue-threshold * 2));
     }
   }
+
   &--lg {
     font-size: map-get($font-percentage, 'lg');
     padding: map-get($spacers, 2) $spacer;
   }
+
 }
 
 .button-group {

@@ -1165,6 +1165,7 @@ hr {
     margin: 0 0.25rem; }
   .button:hover {
     background-color: #e58967;
+    border-color: inherit;
     color: white; }
   .button--secondary {
     background-color: #e58967;
@@ -1175,13 +1176,16 @@ hr {
     width: 2rem;
     height: 2rem; }
     .button--secondary:hover {
-      background-color: #de673b; }
+      background-color: #de673b;
+      box-shadow: 0 0 0 0.3rem #ecab93; }
   .button--post {
     background-color: #e58967;
     border: 1px solid #e58967;
-    color: white; }
+    color: white;
+    transition: 0.2s; }
     .button--post:hover {
-      background-color: #de673b; }
+      background-color: #de673b;
+      background-image: linear-gradient(45deg, #e58967, #c44e22); }
   .button--lg {
     font-size: 125%;
     padding: 0.5rem 1rem; }
