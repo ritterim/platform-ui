@@ -5,10 +5,12 @@
         #{$prop}-#{$direction}: #{$rem};
       }
       .#{$letter}x-#{$unit} {
-        #{$prop}: 0 $rem;
+        #{$prop}-left: $rem;
+        #{$prop}-right: $rem;
       }
       .#{$letter}y-#{$unit} {
-        #{$prop}: $rem 0;
+        #{$prop}-top: $rem;
+        #{$prop}-bottom: $rem;
       }
     }
   }
