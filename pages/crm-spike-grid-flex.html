@@ -13,9 +13,9 @@
 </head>
 
 <body class="platform">
-  <header>
-    <nav class="menu">
-      <div class="item">
+  <header class="site-header">
+    <nav class="site-menu">
+      <div class="site-menu__item">
         <div class="label-purple circle mr-2">
           JH
         </div>
@@ -24,42 +24,40 @@
         </div>
       </div>
 
-      <div class="search item">
+      <div class="site-menu__item search">
         <i class="fas fa-search fa-sm"></i>
         <input class="ml-2" type="text" placeholder="Type to search...">
       </div>
-      <div class="ui dropdown item my">
+      <div class="site-menu__item dropdown my">
         <span>my</span> Ritter
         <i class="ml-2 fas fa-angle-down"></i>
-        <div class="menu background-navy">
-          <div class="item">
+        <div class="dropdown__menu background-navy">
+          <div class="dropdown__item">
             <i class="fas fa-file-alt"></i>
             Contracts
           </div>
-          <div class="item">
+          <div class="dropdown__item">
             <i class="fas fa-file-alt"></i>
             Submissions
           </div>
-          <div class="item">
+          <div class="dropdown__item">
             <i class="fas fa-users"></i>
             Register Downlines
           </div>
-          <div class="item">
+          <div class="dropdown__item">
             <i class="fas fa-users"></i>
             Hierarchy
           </div>
         </div>
       </div>
-      <div class="item">
+      <div class="site-menu__item">
         <i class="fas fa-ticket-alt rotate-45"></i>
       </div>
-      <div class="ui dropdown item">
+      <div class="site-menu__item dropdown">
         <i class="fas fa-cog"></i>
-        <div class="menu background-navy">
-
-          <!-- do not wrap profile info in .item div -->
-          <div class="profile px-4">
-            <div class="bold mt-3">
+        <div class="dropdown__menu background-navy">
+          <div class="dropdown__item profile">
+            <div class="bold">
               John Hammond
             </div>
             <div class="my-3">
@@ -78,10 +76,10 @@
             </span>
           </div>
 
-          <div class="item">
+          <div class="dropdown__item">
             <i class="fas fa-edit"></i>Edit profile
           </div>
-          <div class="item">
+          <div class="dropdown__item">
             <i class="fas fa-redo"></i>Reset password
           </div>
         </div>
