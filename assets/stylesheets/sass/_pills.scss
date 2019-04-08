@@ -1,29 +1,64 @@
+// Pill
+//
+// Pills represent rounded labels throughout the platform.
+// A pill can also have a label of it's own.
+// A pill can support color by adding a text or background modifier.
+//
+// Pills have no hover state.
+//
+// Markup:
+// Split with label:
 // <div class="pill pill--split">
 //   <span class="pill__label">
 //     NPN:
 //   </span>
 //   123456789
 // </div>
+// Split with label:
+// <div class="pill pill--split background-blue text-white">
+//   <span class="pill__label">
+//     NPN:
+//   </span>
+//   123456789
+// </div>
+// Pill:
+// <div class="pill">
+//   123456789
+// </div>
+// Colored pill:
+// <div class="pill background-navy text-white">
+//   123456789
+// </div>
+//
+// Styleguide Pill
+
 
 .pill {
-  background-color: transparent;
-  border: 1px solid map-get($greyscale, 'base');
+  $primary-background: map-get($greyscale, 'white');
+  $primary-border: map-get($greyscale, 'white');
+  $primary-color: map-get($greyscale, 'base');
+
+  background-color: $primary-background;
+  border: 1px solid $primary-color;
   border-radius: $border-radius;
-  color: map-get($greyscale, 'base');
+  color: $primary-color;
+  display: inline-flex;
   font-size: map-get($font-percentage, 'sm');
-  padding: map-get($spacers, 1) map-get($spacers, 3);
+  padding: map-get($spacers, 1) map-get($spacers, 2);
 
   &--split {
     align-items: center;
     display: inline-flex;
+    margin: map-get($spacers, 1) map-get($spacers, 1);
     overflow: hidden;
     padding: 0;
   }
-  &__content {
-    padding: map-get($spacers, 1) map-get($spacers, 1);
-  }
+
   &__label {
-    @extend .pill__content;
-    background-color: rgba(map-get($greyscale, 'white'), .3);
+    margin-right: map-get($spacers, 2);
+    padding: map-get($spacers, 1) map-get($spacers, 2);
+    background-color: rgba($primary-background, .3);
+    border-radius: $border-radius 0 0 $border-radius;
   }
+
 }

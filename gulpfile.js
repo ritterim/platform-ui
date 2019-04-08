@@ -52,7 +52,7 @@ gulp.task('connect', function() {
 });
 
 gulp.task('watch', function(){
-  gulp.watch('assets/stylesheets/sass/*.scss', ['sass']);
+  gulp.watch('assets/stylesheets/sass/*.scss', ['sass', 'styleguide']);
   gulp.watch('assets/js/vue/*.js', ['scripts']);
 })
 
