@@ -23,7 +23,7 @@
   border-right: 1px solid;
   border-color: #666; }
 
-.flex-align-center, .site-menu .search, .site-menu__item, .site-menu__item.dropdown .dropdown__menu .dropdown__item i[class*="fa-"], .crm-actions .crm-menu, .crm-actions .crm-menu__item, .crm-actions__stats--header, .crm-actions__stats .today, .button--secondary {
+.flex-align-center, .site-menu .search, .site-menu__item, .site-menu__item.dropdown .dropdown__menu .dropdown__item i[class*="fa-"], .crm-actions .crm-menu, .crm-actions .crm-menu__item, .crm-actions__stats--header, .crm-actions__stats .today, .button--secondary, .pill--circle {
   display: flex;
   align-items: center;
   justify-content: center; }
@@ -1356,6 +1356,10 @@ hr {
     display: inline-flex;
     overflow: hidden;
     padding: 0; }
+  .pill--circle {
+    border-radius: 500rem;
+    height: 3rem;
+    width: 3rem; }
   .pill__content, .pill__label {
     padding: 0.25rem 0.25rem; }
   .pill__label {

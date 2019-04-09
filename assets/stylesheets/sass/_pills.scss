@@ -3,32 +3,45 @@
 // Pills represent rounded labels throughout the platform.
 // A pill can also have a label of it's own.
 // A pill can support color by adding a text or background modifier.
+// A slight variation of a pill is a straight circle with a very small amount of content.
 //
 // Pills have no hover state.
 //
 // Markup:
 // Split with label:
-// <div class="pill pill--split">
+// <span class="pill pill--split">
 //   <span class="pill__label">
 //     NPN:
 //   </span>
+//   <span class="pill__content">
 //   123456789
-// </div>
+//   </span>
+// </span>
 // Split with label:
-// <div class="pill pill--split background-blue text-white">
+// <span class="pill pill--split background-blue text-white">
 //   <span class="pill__label">
 //     NPN:
 //   </span>
+//   <span class="pill__content">
 //   123456789
-// </div>
+//   </span>
+// </span>
 // Pill:
-// <div class="pill">
+// <span class="pill">
+//   <span class="pill__content">
 //   123456789
-// </div>
+//   </span>
+// </span>
 // Colored pill:
-// <div class="pill background-navy text-white">
+// <span class="pill background-navy text-white">
+//   <span class="pill__content">
 //   123456789
-// </div>
+//   </span>
+// </span>
+// Circle pill:
+// <span class="circle--pill background-purple text-white">
+//   123456789
+// </span>
 //
 // Styleguide Pill
 
@@ -49,6 +62,13 @@
     display: inline-flex;
     overflow: hidden;
     padding: 0;
+  }
+
+  &--circle {
+    border-radius: $border-radius * 100;
+    height: 3rem;
+    width: 3rem;
+    @extend %flex-center;
   }
 
   &__content {
