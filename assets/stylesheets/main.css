@@ -23,7 +23,7 @@
   border-right: 1px solid;
   border-color: #666; }
 
-.flex-align-center, .site-menu .search, .site-menu__item, .site-menu__item.dropdown .dropdown__menu .dropdown__item i[class*="fa-"], .crm-actions .crm-menu, .crm-actions .crm-menu__item, .crm-actions__stats--header, .crm-actions__stats .today, .button--secondary, .pill--circle {
+.flex-align-center, .site-menu .search, .site-menu__item, .site-menu__item.dropdown .dropdown__menu .dropdown__item i[class*="fa-"], .crm-actions .crm-menu, .crm-actions .crm-menu__item, .crm-actions__stats-header, .crm-actions__stats .today, .button--secondary, .pill--circle {
   display: flex;
   align-items: center;
   justify-content: center; }
@@ -1246,13 +1246,13 @@ hr {
   display: flex;
   flex-direction: column;
   height: 14rem; }
-  .crm-actions__stats--header {
+  .crm-actions__stats-header {
     color: rgba(255, 255, 255, 0.6);
     font-family: "Roboto Slab";
     font-size: 150%;
     padding: 1rem;
     width: 100%; }
-  .crm-actions__stats--group {
+  .crm-actions__stats-group {
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     display: flex;
     justify-content: space-around;
@@ -1264,7 +1264,7 @@ hr {
     font-weight: bold;
     flex-direction: column;
     text-transform: uppercase; }
-  .crm-actions__stats .crm-actions__stat--label {
+  .crm-actions__stats .crm-actions__stat-label {
     color: rgba(255, 255, 255, 0.6);
     font-size: 50% !important;
     font-weight: normal;

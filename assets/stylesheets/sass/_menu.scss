@@ -164,7 +164,7 @@
   flex-direction: column;
   height: $menu-banner-height;
 
-  &--header {
+  &-header {
     color: rgba(map-get($greyscale, 'white'), .6);
     font-family: "Roboto Slab";
     font-size: map-get($font-percentage, 'xl');
@@ -173,7 +173,7 @@
     @extend %flex-center;
   }
 
-  &--group {
+  &-group {
     border-bottom: 1px solid rgba(map-get($greyscale, 'white'), .3);
     display: flex;
     justify-content: space-around;
@@ -189,13 +189,13 @@
     text-transform: uppercase;
   }
 
-  .crm-actions__stat--label {
+  .crm-actions__stat-label {
     color: rgba(map-get($greyscale, 'white'), .6);
     font-size: map-get($font-percentage, 'xxs') !important;
     font-weight: normal;
     text-align: center;
   }
-  
+
   .today {
     padding: 1rem;
     @extend %flex-center;
