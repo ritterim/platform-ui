@@ -8,46 +8,37 @@
 // Pills have no hover state.
 //
 // Markup:
-// Split with label:
-// <span class="pill pill--split">
-//   <span class="pill__label">
-//     NPN:
-//   </span>
-//   <span class="pill__content">
-//   123456789
-//   </span>
-// </span>
-// Split with label:
-// <span class="pill pill--split background-blue text-white">
-//   <span class="pill__label">
-//     NPN:
-//   </span>
-//   <span class="pill__content">
-//   123456789
-//   </span>
-// </span>
-// Pill:
-// <span class="pill">
-//   <span class="pill__content">
-//   123456789
-//   </span>
-// </span>
-// Colored pill:
-// <span class="pill background-navy text-white">
-//   <span class="pill__content">
-//   123456789
-//   </span>
-// </span>
-// Circle pill:
-// <span class="circle--pill background-purple text-white">
-//   123456789
-// </span>
+// <div class="pill">
+//   Active
+// </div>
+// <div class="pill text-white background-navy">
+//   Active
+// </div>
+// <div class="pill text-white background-skyblue">
+//   Active
+// </div>
+// <div class="pill text-white background-salmon">
+//   Active
+// </div>
+// <div class="pill pill--split">
+//   <div class="pill__label">NPN:</div>
+//   <div class="pill__content">123456789</div>
+// </div>
+// <div class="pill pill--split text-white background-peach">
+//   <div class="pill__label text-brown">NPN:</div>
+//   <div class="pill__content">123456789</div>
+// </div>
+// <div class="pill pill--split text-white background-navy">
+//   <div class="pill__content background-green">1234589</div>
+//   <div class="pill__content background-olive">345789</div>
+//   <div class="pill__content background-skyblue">1289</div>
+// </div>
 //
 // Styleguide Pill
 
 
 .pill {
-  $primary-border: map-get($greyscale, 'white');
+  $primary-background: map-get($greyscale, 'white');
   $primary-color: map-get($greyscale, 'base');
 
   border: 1px solid $primary-color;
@@ -62,6 +53,9 @@
     display: inline-flex;
     overflow: hidden;
     padding: 0;
+    .pill__label {
+      background-color: rgba($primary-color, .3)
+    }
   }
 
   &--circle {
@@ -77,7 +71,8 @@
 
   &__label {
     @extend .pill__content;
-    background-color: rgba(map-get($greyscale, 'white'), .3);
+    background-color: rgba($primary-background, .3);
+    font-weight: 400;
   }
 
 }
