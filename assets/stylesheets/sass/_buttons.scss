@@ -67,6 +67,7 @@
     border: 1px solid $secondary-background;
     color: $secondary-color;
     transition: $transitions;
+    
     &:hover {
       background-color: darken($secondary-background, 10%);
       background-image: linear-gradient(45deg, $secondary-background, darken($secondary-background, $hue-threshold * 2));
@@ -77,16 +78,19 @@
     font-size: map-get($font-percentage, 'lg');
     padding: map-get($spacers, 2) $spacer;
   }
-
 }
 
 .button-group {
   display: flex;
+  align-items: center;
+
   .button {
     margin: 0 map-get($spacers, 1);
+
     &:first-child {
       margin-left: 0;
     }
+
     &:last-child {
       margin-right: 0;
     }

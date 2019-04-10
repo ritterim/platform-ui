@@ -7,10 +7,27 @@
     border: 1px solid map-get($greyscale, 'base');
     padding: $spacer;
 
-    &___header {
-
+    &__header {
+        color: map-get($greyscale, 'base');
+        display: flex;
+        justify-content: space-between;
     }
     
+    &__group {
+        @extend %flex-center;
+        * {
+            margin-right: map-get($spacers, 2);
+        }
+    }
+
+    &__title {
+        color: map-get($greyscale, 'base');
+        font-family: map-get($fonts, 'base');
+        font-size: 100%;
+        margin-bottom: 0;
+        text-transform: uppercase;
+    }
+
     &__content {
 
     }
