@@ -34,3 +34,51 @@ hr {
     height: 1px;
     margin: $spacer 0;
 }
+
+table {
+    width: 100%;
+    background-color: map-get($greyscale, 'white');
+    border: 1px solid map-get($greyscale, 'light');
+    border-collapse: collapse;
+
+    thead {
+        background-color: map-get($greyscale, 'lighter');
+        border-bottom: 1px solid map-get($greyscale, 'light');
+        font-weight: bold;
+        text-align: left;
+    }
+
+    tr {
+
+        &:hover {
+            background-color: map-get($greyscale, 'lighter');
+        }
+
+        th, td {
+            cursor: pointer;
+            padding: 1rem;
+        }
+
+        th {
+            &.sortable {
+                span {
+                    position: relative;
+                    &:before, &:after {
+                        font-family: "Font Awesome 5 Free";
+                        font-weight: 900;
+                        position: absolute;
+                        right: -$spacer;
+                    }
+                    &:before {
+                        content: '\f106';
+                        top: -(map-get($spacers, 1));
+                    }
+                    &:after {
+                        content: '\f107';
+                        top: map-get($spacers, 2);
+                    }
+                }
+            }
+        }
+    }
+}
