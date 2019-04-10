@@ -38,7 +38,7 @@
 .close {
   .crm-banner & {
     background-color: rgba(map-get($greyscale, 'white'), .7);
-    border-radius: $border-radius;
+    border-radius: map-get($radius, 'button');
     padding: 0 .5rem;
     color: map-get($fonts, 'color');
     span {
