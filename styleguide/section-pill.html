@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
   <meta charset="utf-8">
-  <title>RIMdev Style Guide</title>
+  <title>KSS Style Guide</title>
 
   <meta name="description" content="">
   <meta name="generator" content="kss-node">
@@ -16,7 +16,7 @@
 
 <div class="kss-sidebar kss-style">
   <header class="kss-header">
-    <h1 class="kss-doc-title">RIMdev Style Guide</h1>
+    <h1 class="kss-doc-title">KSS Style Guide</h1>
   </header>
   <nav class="kss-nav" aria-label="Style Guide">
     <ul class="kss-nav__menu">
@@ -32,13 +32,18 @@
         </a>
       </li>
       <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-buttons.html">
+          <span class="kss-nav__ref">2</span><span class="kss-nav__name">button-group</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
         <a class="kss-nav__menu-link" href="section-color.html">
-          <span class="kss-nav__ref">2</span><span class="kss-nav__name">Color</span>
+          <span class="kss-nav__ref">3</span><span class="kss-nav__name">Colors</span>
         </a>
       </li>
       <li class="kss-nav__menu-item">
         <a class="kss-nav__menu-link" href="section-pill.html">
-          <span class="kss-nav__ref">3</span><span class="kss-nav__name">Pill</span>
+          <span class="kss-nav__ref">4</span><span class="kss-nav__name">Pill</span>
         </a>
       </li>
     </ul>
@@ -53,7 +58,7 @@
         <h1 class="kss-title kss-title--level-1">
           <a class="kss-title__permalink" href="#kssref-pill">
             <span class="kss-title__ref">
-              3
+              4
               <span class="kss-title__permalink-hash">
                   #Pill
               </span>
@@ -116,7 +121,8 @@
           <div class="kss-description">
             <p>Pills represent rounded labels throughout the platform.
 A pill can also have a label of it's own.
-A pill can support color by adding a text or background modifier.</p>
+A pill can support color by adding a text or background modifier.
+A slight variation of a pill is a straight circle with a very small amount of content.</p>
 <p>Pills have no hover state.</p>
 
           </div>
@@ -131,27 +137,30 @@ A pill can support color by adding a text or background modifier.</p>
 
 
           <div class="kss-modifier__example">
-            Split with label:
+            <div class="pill">
+  Active
+</div>
+<div class="pill text-white background-navy">
+  Active
+</div>
+<div class="pill text-white background-skyblue">
+  Active
+</div>
+<div class="pill text-white background-salmon">
+  Active
+</div>
 <div class="pill pill--split">
-  <span class="pill__label">
-    NPN:
-  </span>
-  123456789
+  <div class="pill__label">NPN:</div>
+  <div class="pill__content">123456789</div>
 </div>
-Split with label:
-<div class="pill pill--split background-blue text-white">
-  <span class="pill__label">
-    NPN:
-  </span>
-  123456789
+<div class="pill pill--split text-white background-peach">
+  <div class="pill__label text-brown">NPN:</div>
+  <div class="pill__content">123456789</div>
 </div>
-Pill:
-<div class="pill">
-  123456789
-</div>
-Colored pill:
-<div class="pill background-navy text-white">
-  123456789
+<div class="pill pill--split text-white background-navy">
+  <div class="pill__content background-green">1234589</div>
+  <div class="pill__content background-olive">345789</div>
+  <div class="pill__content background-skyblue">1289</div>
 </div>
             <div class="kss-modifier__example-footer"></div>
           </div>
@@ -162,27 +171,30 @@ Colored pill:
             <summary>
                 Markup
             </summary>
-            <pre class="hljs"><code class="language-handlebars"><span class="xml">Split with label:
+            <pre class="hljs"><code class="language-handlebars"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"pill"</span>&gt;</span>
+  Active
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"pill text-white background-navy"</span>&gt;</span>
+  Active
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"pill text-white background-skyblue"</span>&gt;</span>
+  Active
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"pill text-white background-salmon"</span>&gt;</span>
+  Active
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"pill pill--split"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"pill__label"</span>&gt;</span>
-    NPN:
-  <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-  123456789
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"pill__label"</span>&gt;</span>NPN:<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"pill__content"</span>&gt;</span>123456789<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-Split with label:
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"pill pill--split background-blue text-white"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"pill__label"</span>&gt;</span>
-    NPN:
-  <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-  123456789
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"pill pill--split text-white background-peach"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"pill__label text-brown"</span>&gt;</span>NPN:<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"pill__content"</span>&gt;</span>123456789<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-Pill:
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"pill"</span>&gt;</span>
-  123456789
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-Colored pill:
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"pill background-navy text-white"</span>&gt;</span>
-  123456789
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"pill pill--split text-white background-navy"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"pill__content background-green"</span>&gt;</span>1234589<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"pill__content background-olive"</span>&gt;</span>345789<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"pill__content background-skyblue"</span>&gt;</span>1289<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span></code></pre>
           </details>
 
