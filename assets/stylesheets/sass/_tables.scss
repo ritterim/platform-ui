@@ -1,0 +1,92 @@
+// Table
+//
+// Default table.
+//
+// Adding sort icon: `<i class="fas fa-arrows-alt-v"></i>`
+//
+// Attach any `click` event directly to the `<th>` for a larger click target.
+//
+// Markup:
+// <table>
+//   <thead>
+//     <tr>
+//       <th>Company</th>
+//       <th>Contact <i class="fas fa-arrows-alt-v"></i></th>
+//       <th>Country <i class="fas fa-arrows-alt-v"></i></th>
+//     </tr>
+//   </thead>
+//   <tbody>
+//     <tr>
+//       <td>Alfreds Futterkiste</td>
+//       <td>Maria Anders</td>
+//       <td>Germany</td>
+//     </tr>
+//     <tr>
+//       <td>Centro comercial Moctezuma</td>
+//       <td>Francisco Chang</td>
+//       <td>Mexico</td>
+//     </tr>
+//     <tr>
+//       <td>Ernst Handel</td>
+//       <td>Roland Mendel</td>
+//       <td>Austria</td>
+//     </tr>
+//     <tr>
+//       <td>Island Trading</td>
+//       <td>Helen Bennett</td>
+//       <td>UK</td>
+//     </tr>
+//     <tr>
+//       <td>Laughing Bacchus Winecellars</td>
+//       <td>Yoshi Tannamuri</td>
+//       <td>Canada</td>
+//     </tr>
+//     <tr>
+//       <td>Magazzini Alimentari Riuniti</td>
+//       <td>Giovanni Rovelli</td>
+//       <td>Italy</td>
+//     </tr>
+//   </tbody>
+// </table>
+//
+// Styleguide Table
+
+
+
+table {
+
+  $border-radius: map-get($radius, 'default');
+
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid lighten(map-get($greyscale, 'light'), $hue-threshold * 2);
+  border-radius: $border-radius;
+  border-collapse: separate;
+  border-spacing: 0;
+
+  thead {
+    background-color: map-get($greyscale, 'lighter');
+    border-bottom: 1px solid map-get($greyscale, 'light');
+    color: map-get($greyscale, 'base');
+    font-weight: bold;
+    text-align: left;
+  }
+
+  tr {
+    background-color: transparent;
+    transition: $transitions * 3;
+    &:hover {
+      background-color: map-get($greyscale, 'lighter');
+    }
+
+    td,
+    th {
+      padding: 1rem;
+    }
+
+    th {
+      border-radius: $border-radius $border-radius 0 0;
+      cursor: pointer;
+    }
+  }
+}

@@ -38,6 +38,8 @@
 
 
 .pill {
+
+  $border-radius: map-get($radius, 'button');
   $primary-background: map-get($greyscale, 'white');
   $primary-color: map-get($greyscale, 'base');
 
@@ -54,7 +56,7 @@
     overflow: hidden;
     padding: 0;
     .pill__label {
-      background-color: rgba($primary-color, .3)
+      background-color: rgba($primary-color, .3);
     }
   }
 

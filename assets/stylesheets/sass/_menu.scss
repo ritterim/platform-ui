@@ -27,7 +27,7 @@
       width: 100%;
       height: 100%;
       outline: none;
-      
+
       &::placeholder {
         color: map-get($greyscale, 'light');
       }
@@ -129,7 +129,7 @@
 
         &:before {
           background-color: map-get($greyscale, 'white');
-          border-radius: $border-radius * 100;
+          border-radius: map-get($radius, 'button') * 100;
           content: "";
           height: 26px;
           width: 26px;
