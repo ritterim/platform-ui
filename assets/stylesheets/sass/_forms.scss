@@ -1,0 +1,228 @@
+// Form
+//
+// <form action="" class="crm-form">
+//     <div class="crm-form__field">
+//         <label for="first-name" class="crm-form__label">First Name</label>
+//         <input class="crm-form__input" id="first-name" type="text" placeholder="First Name">
+//     </div>
+//     <div class="crm-form__field">
+//         <label for="last-name" class="crm-form__label">Last Name</label>
+//         <input class="crm-form__input" id="last-name" type="text" placeholder="Last Name">
+//     </div>
+//     <div class="crm-form__field">
+//         <label for="dob" class="crm-form__label">Age or DOB</label>
+//         <input class="crm-form__input" id="dob" type="date" placeholder="DD/MM/YYYY">
+//     </div>
+//     <div class="crm-form__field">
+//         <label for="zipcode" class="crm-form__label">ZIP Code</label>
+//         <input class="crm-form__input" id="zipcode" type="tel" placeholder="e.g.90012" pattern="^\d{5,6}(?:[-\s]\d{4})?$">
+//     </div>
+//     <div class="crm-form__field crm-form__field--option">
+//         <span class="crm-form__label">Choose</span>
+//         <div class="crm-form__option-wrapper">
+//         <input class="crm-form__input" id="gender-this-one" type="checkbox">
+//         <label for="gender-this-one" class="crm-form__label">This One</label>
+//         </div>
+//         <div class="crm-form__option-wrapper">
+//         <input class="crm-form__input" id="gender-that-one" type="checkbox">
+//         <label for="gender-that-one" class="crm-form__label">That One</label>
+//         </div>
+//     </div>
+//     <div class="crm-form__field crm-form__field--option">
+//         <span class="crm-form__label">Gender</span>
+//         <div class="crm-form__option-wrapper">
+//         <input class="crm-form__input" id="gender-male" type="radio">
+//         <label for="gender-male" class="crm-form__label">Male</label>
+//         </div>
+//         <div class="crm-form__option-wrapper">
+//         <input class="crm-form__input" id="gender-female" type="radio">
+//         <label for="gender-female" class="crm-form__label">Female</label>
+//         </div>
+//     </div>
+//     <div class="crm-form__field">
+//         <label for="zipcode" class="crm-form__label">County</label>
+//         <div class="crm-form__select-wrapper">
+//         <select name="County Select" id="county">
+//             <option value="County1">County 1</option>
+//             <option value="County2">County 2</option>
+//             <option value="County3">County 3</option>
+//             <option value="County4">County 4</option>
+//             <option value="County5">County 5</option>
+//             <option value="County6">County 6</option>
+//         </select>
+//         </div>
+//     </div>
+//     <button class="crm-form__submit button">Quote Now</button>
+// </form>
+// 
+// Styleguide Form
+
+.crm-form {
+  display: flex;
+  flex-flow: row wrap;
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+
+    &--option {
+      flex-direction: row;
+      flex-flow: row wrap;
+
+      .crm-form__label {
+        flex: 1 100%;
+      }
+    }
+  }
+  
+  &__label {
+    color: map-get($greyscale, 'light' );
+    font-size: 80%;
+    margin-bottom: .5rem;
+  }
+
+  input[type="text"],
+  input[type="date"],
+  input[type="email"],
+  input[type="textarea"],
+  input[type="tel"],
+  input[type="password"],
+  select {
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-bottom-color: map-get($greyscale, 'light' );
+    box-sizing: border-box;
+    color: map-get($greyscale, 'base' );
+    font-family: map-get($fonts, 'base');
+    font-size: 90%;
+    height: 2rem;
+    padding: .25rem 0;
+
+    &:focus {
+      outline: none;
+      border-bottom-color: map-get($greyscale, 'light' );
+      box-shadow: 0 0 5px 0 map-get($greyscale, 'light' );
+      transition: box-shadow $duration, border-color $duration ease-in-out, border-width $duration ease;
+    }
+  }
+
+  &__option-wrapper {
+    align-items: flex-end;
+    display: flex;
+
+    &:not(:first-of-type()) {
+      margin-left: .5rem;
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+      -webkit-appearance: none;
+      appearance: none;
+      opacity: 0;
+      position: absolute;
+      visibility: hidden;
+
+      &:checked + label {
+        font-weight: 600;
+
+        &:after {
+          transform: scale(1);
+        }
+      }
+
+      + label {
+
+        &:after {
+          transform: scale(0);
+          transition: transform $duration ease;
+        }
+      }
+    }
+
+    input[type="checkbox"] {
+      
+      + label {
+
+        &:after {
+          color: map-get($greyscale, 'base');
+          content: '\f00c';
+          font-family: "Font Awesome 5 Free";
+          font-size: 90%;
+          font-weight: 900;
+          left: .1875rem;
+          top: 0; 
+        }
+      }
+    }
+
+    input[type="radio"] {
+      
+      + label { 
+
+        &:after {
+          background-color: map-get($greyscale, 'base' );
+          border-radius: 50%;
+          content: '';
+          height: .75rem;
+          left: .1875rem;
+          top: 0;
+          width: .75rem;
+        }
+      }
+    }
+
+    label {
+      color: map-get($greyscale, 'base');
+      display: inline-block;
+      height: 1rem;
+      margin: 0;
+      padding-left: 1.375rem;
+      position: relative;
+
+      &:before,
+      &:after {
+        position: absolute;   
+        display: inline-block;
+      }
+
+      &:before {
+        border: 1px solid map-get($greyscale, 'base');
+        border-radius: 50%;
+        content: '';
+        height: 1rem;
+        left: 0;
+        top: -.1875rem;
+        width: 1rem;
+      }
+    }
+  }
+
+  &__select-wrapper {
+    position: relative;
+
+    &:after {
+      border: 1px solid map-get($greyscale, 'base' );
+      border-width: 0 0 1px 1px;
+      content: '';
+      height: .3rem;
+      margin-top: -.125rem;
+      position: absolute;
+      right: .3rem;
+      top: 50%;
+      transform: rotate(-45deg);
+      width: .3rem;
+    }
+  }
+
+  select {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 0;
+    padding: .25rem 1rem .25rem 0;
+    width: 100%;
+  }
+}
+
+
