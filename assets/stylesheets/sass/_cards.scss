@@ -7,24 +7,44 @@
     border: 1px solid map-get($greyscale, 'base');
     padding: $spacer;
 
-    &--split {
-        display: flex;
-    }
-
     &__header {
         color: map-get($greyscale, 'base');
         display: flex;
         justify-content: space-between;
         margin-bottom: $spacer;
+        .card__group {
+            align-items: center;
+        }
     }
     
     &__group {
         display: flex;
-        align-items: center;
+
+        @include mobile {
+            display: block;
+        }
 
         &--vertical {
             align-items: flex-start;
             flex-direction: column;
+        }
+
+        &--split {
+            > :first-child {
+                width: 30%;
+
+                @include mobile {
+                    width: 100%;
+                }
+            }
+
+            > :last-child {
+                width: 70%;
+                
+                @include mobile {
+                    width: 100%;
+                }
+            }
         }
 
         > * {
@@ -47,15 +67,16 @@
     &__title-icon--small {
         font-size: map-get($font-percentage, 'small');
     }
-
-    &__content {
-
-    }
 }
 
 .image-link {
     display: flex;
     flex-direction: column;
+
+    img {
+        height: auto;
+        max-width: 100%;
+    }
 
     &-caption {
         padding: map-get($spacers, 2);

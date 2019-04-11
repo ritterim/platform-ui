@@ -23,3 +23,9 @@ $xy-border: (
   left: l,
   right: r
 );
+
+$breakpoints: (
+  'mobile': 768px,
+  'desktop': 1240px,
+  'xl': 1800px
+);
