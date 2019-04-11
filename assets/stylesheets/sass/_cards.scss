@@ -7,16 +7,28 @@
     border: 1px solid map-get($greyscale, 'base');
     padding: $spacer;
 
+    &--split {
+        display: flex;
+    }
+
     &__header {
         color: map-get($greyscale, 'base');
         display: flex;
         justify-content: space-between;
+        margin-bottom: $spacer;
     }
     
     &__group {
-        @extend %flex-center;
-        * {
-            margin-right: map-get($spacers, 2);
+        display: flex;
+        align-items: center;
+
+        &--vertical {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        > * {
+            margin-right: $spacer;
         }
     }
 
@@ -28,7 +40,25 @@
         text-transform: uppercase;
     }
 
+    &__title-icon--large {
+        font-size: map-get($font-percentage, 'xxl');
+    }
+
+    &__title-icon--small {
+        font-size: map-get($font-percentage, 'small');
+    }
+
     &__content {
 
+    }
+}
+
+.image-link {
+    display: flex;
+    flex-direction: column;
+
+    &-caption {
+        padding: map-get($spacers, 2);
+        text-align: center;
     }
 }
