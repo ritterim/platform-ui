@@ -1,15 +1,54 @@
-// list, list inline, icon list
-.list {
-    list-style: none;
-    padding: 0;
-    line-height: 2;
-    &.inline {
-      display: flex;
-      justify-content: space-evenly;
-      &.icon {
-        li {
-          margin-right: .5rem;
-        }
+ul {
+  margin: 0;
+  padding: 0 0 0 $spacer;
+
+  li {
+    margin: 0 0 map-get($spacers, 2);
+  }
+}
+
+.post-list {
+  list-style: none;
+  flex-grow: 1;
+  margin: 0 $spacer;
+  padding: 0 0 0 map-get($spacers, 4);
+
+  .post-item {
+    border-bottom: 1px solid map-get($greyscale, 'light');
+    margin: 0 0 $spacer;
+    padding: 0 0 $spacer;
+    position: relative;
+
+    &:before {
+      color: map-get($brand-colors, 'salmon');
+      content: '\f30b';
+      display: inline-block;
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      left: -(map-get($spacers, 4));
+      position: absolute;
+      transform: rotate(30deg);
+    }
+
+    .post-duration {
+      color: map-get($greyscale, 'light');
+      font-size: map-get($font-percentage, 'sm');
+      margin-bottom: map-get($spacers, 1);
+
+      &:before {
+        content: '\f017';
+        font-family: 'Font Awesome 5 Free';
+        margin: 0 map-get($spacers, 2) 0 0;
       }
     }
+
+    .post-title {
+      margin-bottom: map-get($spacers, 1);
+    }
+
+    .post-link {
+      font-size: map-get($font-percentage, 'sm');
+      font-weight: bold;
+    }
   }
+}

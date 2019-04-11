@@ -7,11 +7,79 @@
     border: 1px solid map-get($greyscale, 'base');
     padding: $spacer;
 
-    &___header {
-
+    &__header {
+        color: map-get($greyscale, 'base');
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: $spacer;
+        .card__group {
+            align-items: center;
+        }
     }
     
-    &__content {
+    &__group {
+        display: flex;
 
+        @include mobile {
+            display: block;
+        }
+
+        &--vertical {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        &--split {
+            > :first-child {
+                width: 30%;
+
+                @include mobile {
+                    width: 100%;
+                }
+            }
+
+            > :last-child {
+                width: 70%;
+                
+                @include mobile {
+                    width: 100%;
+                }
+            }
+        }
+
+        > * {
+            margin-right: $spacer;
+        }
+    }
+
+    &__title {
+        color: map-get($greyscale, 'base');
+        font-family: map-get($fonts, 'base');
+        font-size: 100%;
+        margin-bottom: 0;
+        text-transform: uppercase;
+    }
+
+    &__title-icon--large {
+        font-size: map-get($font-percentage, 'xxl');
+    }
+
+    &__title-icon--small {
+        font-size: map-get($font-percentage, 'small');
+    }
+}
+
+.image-link {
+    display: flex;
+    flex-direction: column;
+
+    img {
+        height: auto;
+        max-width: 100%;
+    }
+
+    &-caption {
+        padding: map-get($spacers, 2);
+        text-align: center;
     }
 }
