@@ -1,10 +1,37 @@
 // Buttons
 //
+// Each button has a default button style. Color can be added to any button using a combination of background and text utilities.
+//
+// Add icons to buttons using <a href="https://fontawesome.com/icons">Font Awesome</a> icons: `<i class="fas fa-plus"></i>`
+//
+// Weight: 1
+//
+// Styleguide Components.Buttons
+
+// Default
+//
+// The default platform button. Usually paired visually with an icon. Can be the default size or large.
+//
+// - .button
+// - .button .button--lg
 //
 // Markup:
+// <button class="button">Basic Button</button>
 // <button class="button">Add <i class="fas fa-plus"></i></button>
-// Markup:
 // <button class="button button--lg">Add <i class="fas fa-plus"></i></button>
+//
+// Weight: 2
+//
+// Styleguide Components.Buttons.Default
+
+// Secondary
+//
+// The secondary platform button. Always a round button paired witha Font Awesome icon. Can be the default size or large.
+//
+// - .button
+// - .button .button--secondary
+// - .button .button--secondary .button--lg
+//
 // Markup:
 // <button class="button button--secondary"><i class="fas fa-download"></i></button>
 // Markup:
@@ -17,7 +44,41 @@
 //   <a class="button button--secondary"><i class="fas fa-chart-line"></i></a>
 // </div>
 //
-// Styleguide Buttons
+// Weight: 3
+//
+// Styleguide Components.Buttons.Secondary
+
+// Post
+//
+// Used exclsively in Post, or blog, content imported into the platform. e.g., CRM dashboard.
+//
+// - .button .button--post
+// - .button .button--post .button--lg
+//
+// Markup:
+// <button class="button button--post">Post Button</button>
+// <button class="button button--post button--lg">Large Post Button</button>
+//
+// Weight: 4
+//
+// Styleguide Components.Buttons.Post
+
+// Group
+//
+// Evenly space any group of buttons.
+//
+// - .button--group
+//
+// Markup:
+// <div class="button-group">
+//   <a class="button button--secondary"><i class="fas fa-download"></i></a>
+//   <a class="button button--secondary"><i class="fas fa-chart-pie"></i></a>
+//   <a class="button button--secondary"><i class="fas fa-chart-line"></i></a>
+// </div>
+//
+// Weight: 5
+//
+// Styleguide Components.Buttons.Group
 
 .button {
 
