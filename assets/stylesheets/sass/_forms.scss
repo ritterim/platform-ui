@@ -65,7 +65,7 @@
     display: flex;
     flex-direction: column;
     flex: 1 1 8.75rem;
-    margin: 0 .25rem 1.5rem;
+    margin: 0 map-get($spacers, 1) map-get($spacers, 4);
     max-width: 18.75rem;
 
     &--option {
