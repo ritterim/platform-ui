@@ -52,3 +52,66 @@ ul {
     }
   }
 }
+
+.image-link-list {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+
+  li {
+    flex-grow: 1;
+    margin: 0 map-get($spacers, 2); 
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    .image-link {
+      display: flex;
+      flex-direction: column;
+
+      img {
+          height: auto;
+          max-width: 100%;
+      }
+      
+      &--video {
+        position: relative;
+
+        &:before {
+          background: rgba(0, 0, 0, .3);
+          content: '';
+          height: 100%;
+          position: absolute;
+          width: 100%;
+          z-index: 1;
+        }
+
+        &:after {
+          content: '\f144';
+          color: map-get($greyscale, 'white');
+          font-family: 'Font Awesome 5 Free';
+          font-size: map-get($font-percentage, 'xxl');
+          font-weight: 900;
+          left: 45%;
+          position: absolute;
+          top: 30%;
+          z-index: 2;
+        }
+      }
+      
+      &-caption {
+          height: map-get($spacers, 4);
+          padding: map-get($spacers, 2);
+          text-align: center;
+          z-index: 5;
+          @extend %flex-center;
+      }
+    }
+  }
+}

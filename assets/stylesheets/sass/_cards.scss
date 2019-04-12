@@ -29,24 +29,6 @@
             flex-direction: column;
         }
 
-        &--split {
-            > :first-child {
-                width: 30%;
-
-                @include mobile {
-                    width: 100%;
-                }
-            }
-
-            > :last-child {
-                width: 70%;
-                
-                @include mobile {
-                    width: 100%;
-                }
-            }
-        }
-
         > * {
             margin-right: $spacer;
         }
@@ -66,20 +48,5 @@
 
     &__title-icon--small {
         font-size: map-get($font-percentage, 'small');
-    }
-}
-
-.image-link {
-    display: flex;
-    flex-direction: column;
-
-    img {
-        height: auto;
-        max-width: 100%;
-    }
-
-    &-caption {
-        padding: map-get($spacers, 2);
-        text-align: center;
     }
 }
