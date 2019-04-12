@@ -61,7 +61,7 @@ ul {
 
   li {
     flex-grow: 1;
-    margin: 0 map-get($spacers, 2);
+    margin: 0 map-get($spacers, 2); 
 
     &:first-child {
       margin-left: 0;
@@ -106,9 +106,11 @@ ul {
       }
       
       &-caption {
+          height: map-get($spacers, 4);
           padding: map-get($spacers, 2);
           text-align: center;
           z-index: 5;
+          @extend %flex-center;
       }
     }
   }
