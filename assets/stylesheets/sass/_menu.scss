@@ -8,6 +8,7 @@
   width: 100%;
   z-index: 10;
 }
+
 .site-menu {
   display: flex;
   flex-grow: 1;
@@ -33,6 +34,7 @@
       }
     }
   }
+
   &__item {
     border-left: 1px solid rgba(map-get($greyscale, 'light'), .5);
     cursor: pointer;
@@ -90,7 +92,9 @@
       }
     }
   }
+
   .my {
+    
     span {
       font-family: serif;
       font-size: map-get($font-percentage, 'lg');
