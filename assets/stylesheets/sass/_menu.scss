@@ -1,4 +1,4 @@
-.site-header {
+.site-header {  
   background-color: map-get($platform-colors, 'menu');
   color: map-get($greyscale, 'white');
   display: flex;
@@ -10,6 +10,7 @@
 }
 
 .site-menu {
+  $dropdown-background: lighten(map-get($brand-colors, 'navy' ), 5%);
   display: flex;
   flex-grow: 1;
   width: 100%;
@@ -37,6 +38,7 @@
 
   &__item {
     border-left: 1px solid rgba(map-get($greyscale, 'light'), .5);
+    border-bottom: 1px solid transparent;
     cursor: pointer;
     display: flex;
     flex: 0 0 auto;
@@ -46,49 +48,144 @@
     @extend %flex-center;
 
     &:hover:not(.search) {
-      background-color: rgba(map-get($greyscale, 'white'), .3);
+      background-color: $dropdown-background;
     }
 
     &.has-dropdown {
       position: relative;
 
       &:hover {
-        .dropdown__menu {
-          display: flex;
+        border-bottom-color: rgba(map-get($greyscale, 'light'), .5);
+
+        .dropdown-menu {
+          opacity: 1;
+          visibility: visible;
         }
       }
+    }
+  }
 
-      .dropdown__menu {
-        display: none;
+  .dropdown-menu {
+    background-color: $dropdown-background;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 1px);
+    transition: opacity ease $duration, visibility ease $duration;
+    visibility: hidden;
+
+    &__item {
+      border-left: 0;
+      display: flex;
+      justify-content: flex-start;
+      padding: map-get($spacers, 3) map-get($spacers, 4);
+
+      &:hover {
+        background-color: rgba(map-get($greyscale, 'white'), .3);
+      }
+
+      &:not(:first-child) {
+        border-top: 1px solid rgba(map-get($greyscale, 'light'), .5);
+      }
+
+      &.profile {
         flex-direction: column;
-        position: absolute;
-        top: 100%;
-        right: 0;
+      }
 
-        .dropdown__item {
-          border-left: 0;
-          display: flex;
-          justify-content: flex-start;
-          padding: map-get($spacers, 3) map-get($spacers, 4);
+      i[class*="fa-"] {
+        padding-right: map-get($spacers, 3);
+        width: 1.2rem;
+        @extend %flex-center;
+      }
+    }
+  }
 
-          &:hover {
-            background-color: rgba(map-get($greyscale, 'white'), .3);
-          }
+  .agent-profile {
+    background-color: $dropdown-background; 
+    box-sizing: border-box;
+    color: map-get($greyscale, 'white' );
+    font-size: 80%;
+    left: 0;
+    padding: map-get($spacers, 3) map-get($spacers, 4) map-get($spacers, 4);
+    right: auto;
 
-          &:not(:first-child) {
-            border-top: 1px solid rgba(map-get($greyscale, 'light'), .5);
-          }
+    a {
+      color: map-get($greyscale, 'white' );
+      font-size: 100%;
+    }
 
-          &.profile {
-            flex-direction: column;
-          }
+    address {
+      font-style: normal;
+    }
 
-          i[class*="fa-"] {
-            padding-right: 1rem;
-            width: 1.2rem;
-            @extend %flex-center;
-          }
+    &__heading {
+      color: map-get($greyscale, 'white' );
+      font-family: map-get($fonts, 'base');
+      font-size: 100%;
+      line-height: 1;
+      margin-bottom: map-get($spacers, 3);
+    }
+
+    &__content-wrapper {
+      display: flex;
+      margin-left: -(map-get($spacers, 4));
+      width: calc(100% + #{map-get($spacers, 4)} * 2);
+    }
+
+    &__content {
+      padding: 0 map-get($spacers, 4);
+
+      &:nth-of-type(2) {
+        border-left: 1px solid map-get($brand-colors, 'med-blue' );
+      }
+
+      .pill {
+        color: $dropdown-background;
+        margin-bottom: 1rem;
+      }
+    }
+
+    &__info-list {
+      list-style-type: none;
+      padding: 0;
+
+      &-item {
+        margin-bottom: map-get($spacers, 3);
+        padding-left: map-get($spacers, 4);
+        position: relative;
+
+        &:last-of-type {
+          margin-bottom: 0;
         }
+
+        i {
+          left: 0;
+          position: absolute;
+          top: .375rem;
+        }
+      }
+    }
+
+    &__status-list {
+      margin: 0;
+    }
+
+    &__status-list-item {
+      display: flex;
+      margin-bottom: map-get($spacers, 3);
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+
+      dt {
+        margin-right: map-get($spacers, 3);
+        width: 3.125rem;
+      }
+
+      dd {
+        margin: 0;
+        white-space: nowrap;
       }
     }
   }
@@ -149,7 +246,7 @@
           font-weight: bold;
           font-size: map-get($font-percentage, 'xxl');
           position: absolute;
-          right: -1rem;
+          right: -(map-get($spacers, 3));
           z-index: 10;
         }
       }
@@ -173,7 +270,7 @@
     color: rgba(map-get($greyscale, 'white'), .6);
     font-family: "Roboto Slab";
     font-size: map-get($font-percentage, 'xl');
-    padding: 1rem;
+    padding: map-get($spacers, 3);
     width: 100%;
     @extend %flex-center;
   }
@@ -182,7 +279,7 @@
     border-bottom: 1px solid rgba(map-get($greyscale, 'white'), .3);
     display: flex;
     justify-content: space-around;
-    padding: 1rem 0;
+    padding: map-get($spacers, 3) 0;
   }
 
   .crm-actions__stat {
@@ -202,7 +299,7 @@
   }
 
   .today {
-    padding: 1rem;
+    padding: map-get($spacers, 3);
     @extend %flex-center;
   }
 }

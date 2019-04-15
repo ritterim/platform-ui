@@ -15,12 +15,61 @@
 <body class="platform">
   <header class="site-header">
     <nav class="site-menu">
-      <div class="site-menu__item">
+      <div class="site-menu__item has-dropdown">
         <span class="pill--circle background-purple mr-2">
           JH
         </span>
         <div class="font-lg">
-            Hello John
+          Hello John
+        </div>
+        <div class="dropdown-menu agent-profile open-for-testing">
+          <h2 class="agent-profile__heading">Profile</h2>
+          <div class="agent-profile__content-wrapper">
+            <div class="agent-profile__content">
+              <ul class="agent-profile__info-list">
+                <li class="agent-profile__info-list-item">
+                  <i class="fas fa-user"></i>
+                  <span>Gregory Gudis</span>
+                </li>
+                <li class="agent-profile__info-list-item">
+                  <i class="fas fa-home"></i>
+                  <address>
+                    51 Haddonfield Rd, <br>
+                    Cherry Hill, NJ 08002
+                  </address>
+                </li>
+                <li class="agent-profile__info-list-item">
+                  <i class="fas fa-paper-plane"></i>
+                  <a href="mailto:Greg.guids@bgaininsurance.net">Greg.guids@bgaininsurance.net</a>
+                </li>
+                <li class="agent-profile__info-list-item">
+                    <i class="fas fa-phone"></i>
+                  <a href="tel:610-828-3522x302">610-828-3522x302</a>
+                </li>
+                <li class="agent-profile__info-list-item">
+                    <i class="fas fa-sign-out-alt"></i>
+                  <a href="#">Sign Out</a>
+                </li>
+              </ul>
+            </div>
+            <div class="agent-profile__content">
+              <div class="pill background-olive">Active</div>
+              <dl class="agent-profile__status-list">
+                <div class="agent-profile__status-list-item">
+                  <dt>CT</dt><dd>Email</dd>
+                </div>
+                <div class="agent-profile__status-list-item">
+                  <dt>MU</dt><dd>Ritter Insurance Marketing</dd>
+                </div>
+                <div class="agent-profile__status-list-item">
+                  <dt>GPL</dt><dd>8</dd>
+                </div>
+                <div class="agent-profile__status-list-item">
+                  <dt>NPN</dt><dd>9006591</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -31,20 +80,20 @@
       <div class="site-menu__item has-dropdown my">
         <span>my</span> Ritter
         <i class="ml-2 fas fa-angle-down"></i>
-        <div class="dropdown__menu background-navy">
-          <div class="dropdown__item">
+        <div class="dropdown-menu">
+          <div class="dropdown-menu__item">
             <i class="fas fa-file-alt"></i>
             Contracts
           </div>
-          <div class="dropdown__item">
+          <div class="dropdown-menu__item">
             <i class="fas fa-file-alt"></i>
             Submissions
           </div>
-          <div class="dropdown__item">
+          <div class="dropdown-menu__item">
             <i class="fas fa-users"></i>
             Register Downlines
           </div>
-          <div class="dropdown__item">
+          <div class="dropdown-menu__item">
             <i class="fas fa-users"></i>
             Hierarchy
           </div>
@@ -52,37 +101,6 @@
       </div>
       <div class="site-menu__item">
         <i class="fas fa-ticket-alt rotate-45"></i>
-      </div>
-      <div class="site-menu__item has-dropdown">
-        <i class="fas fa-cog"></i>
-        <div class="dropdown__menu background-navy">
-          <div class="dropdown__item profile">
-            <div class="bold">
-              John Hammond
-            </div>
-            <div class="my-3">
-              123 street <br>
-              Suite 100 <br>
-              12345
-            </div>
-            <div class="mb-3">
-              <a class="lightblue-text" href="#">john@hammond.io</a>
-              <br>
-              <a class="peach-text" href="tel:1234567890">(123) 456-7890</a>
-            </div>
-            <span class="pill pill--split text-white">
-              <span class="pill__label">NPN:</span>
-              <span class="pill__content">123456789</span>
-            </span>
-          </div>
-
-          <div class="dropdown__item">
-            <i class="fas fa-edit"></i>Edit profile
-          </div>
-          <div class="dropdown__item">
-            <i class="fas fa-redo"></i>Reset password
-          </div>
-        </div>
       </div>
     </nav>
   </header>
