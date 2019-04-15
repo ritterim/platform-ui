@@ -73,6 +73,7 @@ legend {
     flex: 1 1 auto;
     font-size: map-get($font-percentage, 'sm');
     margin: 0 map-get($spacers, 2) map-get($spacers, 4);
+    max-width: 15.625rem;
 
     input {
       margin-top: .5rem;

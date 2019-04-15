@@ -1444,7 +1444,8 @@ legend {
   .crm-form__field {
     flex: 1 1 auto;
     font-size: 85%;
-    margin: 0 0.5rem 2rem; }
+    margin: 0 0.5rem 2rem;
+    max-width: 15.625rem; }
     .crm-form__field input {
       margin-top: .5rem;
       width: 100%; }
