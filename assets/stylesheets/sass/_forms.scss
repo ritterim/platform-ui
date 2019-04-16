@@ -7,7 +7,7 @@
 //     <label for="last-name" class="crm-form__field">Last Name
 //         <input id="last-name" type="text" placeholder="Last Name">
 //     </label>
-//     <label for="dob" class="crm-form__field">Age or DOB
+//     <label for="dob" class="crm-form__field">Age or DOB 
 //         <input id="dob" type="date" placeholder="DD/MM/YYYY">
 //     </label>
 //     <label for="zipcode" class="crm-form__field">ZIP Code
@@ -73,6 +73,7 @@ legend {
     flex: 1 1 auto;
     font-size: map-get($font-percentage, 'sm');
     margin: 0 map-get($spacers, 2) map-get($spacers, 4);
+    max-width: 15.625rem;
 
     input {
       margin-top: .5rem;
