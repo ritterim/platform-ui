@@ -99,8 +99,30 @@
           </div>
         </div>
       </div>
-      <div class="site-menu__item">
+      <div class="site-menu__item has-dropdown">
         <i class="fas fa-ticket-alt rotate-45"></i>
+        <div class="dropdown-menu agent-contact">
+          <form action="" class="crm-form crm-form--stacked crm-form--light">
+            <label for="agent-name" class="crm-form__field">Name
+              <input id="agent-name" type="text" placeholder="First and Last Name">
+            </label>
+            <label for="agent-email" class="crm-form__field">Email
+              <input id="agent-email" type="email" placeholder="geg.gudis@bgainsurances.net">
+            </label>
+            <label for="agent-phone" class="crm-form__field">Phone
+              <input id="agent-phone" type="tel" placeholder="(610) 828-3553x302">
+            </label>
+            <label for="subject" class="crm-form__field">Subject
+              <input id="subject" type="text" placeholder="">
+            </label>
+            <label for="message" class="crm-form__field">Message
+              <textarea id="message" name="message" rows="10" ></textarea>
+            </label>
+            <div class="crm-form__field crm-form__button-group">
+              <button class="button button--post button--lg">Submit</button>
+            </div>
+          </form>
+        </div>
       </div>
     </nav>
   </header>

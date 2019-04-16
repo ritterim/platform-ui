@@ -203,6 +203,17 @@
   }
 }
 
+.agent-contact {
+  box-sizing: border-box;
+  font-size: 80%;
+  padding: map-get($spacers, 4);
+  width: 25rem;
+
+  .crm-form__field {
+    margin-bottom: map-get($spacers, 3);
+  }
+}
+
 .crm-actions {
   grid-row-start: 2;
 

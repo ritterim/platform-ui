@@ -65,9 +65,79 @@ legend {
 }
 
 .crm-form {
+  $self: &;
   color: map-get($greyscale, 'light' );
   display: flex;
   flex-flow: row wrap;
+
+  &--stacked {
+    flex-flow: column;
+    
+    #{ $self }__field {
+      margin-left: 0;
+      margin-right: 0;
+      max-width: none;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    #{ $self }__button-group {
+      justify-content: center;
+
+      button {
+        max-width: none;
+      }
+    }
+
+    textarea {
+      min-height: 8rem;
+    }
+  }
+
+  &.crm-form--light {
+    color: map-get($greyscale, 'white' );
+
+    input[type="text"],
+    input[type="date"],
+    input[type="email"],
+    input[type="textarea"],
+    input[type="tel"],
+    input[type="password"],
+    textarea,
+    select {
+      border-bottom-color: map-get($greyscale, 'white' );
+      color: map-get($greyscale, 'white' );
+
+      &::-webkit-input-placeholder {
+        color: map-get($greyscale, 'white' );
+      }
+
+      &::-moz-placeholder {
+        color: map-get($greyscale, 'white' );
+      }
+
+      &:-ms-input-placeholder {
+        color: map-get($greyscale, 'white' );
+      }
+
+      &:-moz-placeholder {
+        color: map-get($greyscale, 'white' );
+      }
+    }
+
+    textarea {
+      border-color: map-get($greyscale, 'white' );
+    }
+
+    #{ $self }__select-wrapper {
+
+      &:after {
+        border-color: map-get($greyscale, 'white' );
+      }
+    }
+  }
 
   &__field {
     flex: 1 1 auto;
@@ -75,7 +145,8 @@ legend {
     margin: 0 map-get($spacers, 2) map-get($spacers, 4);
     max-width: 15.625rem;
 
-    input {
+    input,
+    textarea {
       margin-top: .5rem;
       width: 100%;
     }
@@ -104,6 +175,7 @@ legend {
   input[type="textarea"],
   input[type="tel"],
   input[type="password"],
+  textarea,
   select {
     background-color: transparent;
     border: 1px solid transparent;
@@ -114,7 +186,7 @@ legend {
     font-family: map-get($fonts, 'base');
     font-size: map-get($font-percentage, 'md');
     height: 2rem;
-    padding: .25rem 0;
+    padding: map-get($spacers, 1) 0;
 
     &:focus {
       outline: none;
@@ -122,6 +194,11 @@ legend {
       box-shadow: 0 0 5px 0 map-get($greyscale, 'light' );
       transition: box-shadow $duration, border-color $duration ease-in-out, border-width $duration ease;
     }
+  }
+
+  textarea {
+    border-color: map-get($greyscale, 'light' );
+    padding: map-get($spacers, 1);
   }
 
   input[type="checkbox"],
