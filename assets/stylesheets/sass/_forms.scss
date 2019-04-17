@@ -121,7 +121,7 @@ legend {
       border-color: map-get($greyscale, 'white' );
     }
 
-    #{ $self }__select-wrapper {
+    #{ $self }__select-wrapper { 
 
       &:after {
         border-color: map-get($greyscale, 'white' );
