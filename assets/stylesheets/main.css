@@ -1475,41 +1475,14 @@ legend {
     .crm-form.crm-form--light select {
       border-bottom-color: white;
       color: white; }
-      .crm-form.crm-form--light input[type="text"]::-webkit-input-placeholder,
-      .crm-form.crm-form--light input[type="date"]::-webkit-input-placeholder,
-      .crm-form.crm-form--light input[type="email"]::-webkit-input-placeholder,
-      .crm-form.crm-form--light input[type="textarea"]::-webkit-input-placeholder,
-      .crm-form.crm-form--light input[type="tel"]::-webkit-input-placeholder,
-      .crm-form.crm-form--light input[type="password"]::-webkit-input-placeholder,
-      .crm-form.crm-form--light textarea::-webkit-input-placeholder,
-      .crm-form.crm-form--light select::-webkit-input-placeholder {
-        color: white; }
-      .crm-form.crm-form--light input[type="text"]::-moz-placeholder,
-      .crm-form.crm-form--light input[type="date"]::-moz-placeholder,
-      .crm-form.crm-form--light input[type="email"]::-moz-placeholder,
-      .crm-form.crm-form--light input[type="textarea"]::-moz-placeholder,
-      .crm-form.crm-form--light input[type="tel"]::-moz-placeholder,
-      .crm-form.crm-form--light input[type="password"]::-moz-placeholder,
-      .crm-form.crm-form--light textarea::-moz-placeholder,
-      .crm-form.crm-form--light select::-moz-placeholder {
-        color: white; }
-      .crm-form.crm-form--light input[type="text"]:-ms-input-placeholder,
-      .crm-form.crm-form--light input[type="date"]:-ms-input-placeholder,
-      .crm-form.crm-form--light input[type="email"]:-ms-input-placeholder,
-      .crm-form.crm-form--light input[type="textarea"]:-ms-input-placeholder,
-      .crm-form.crm-form--light input[type="tel"]:-ms-input-placeholder,
-      .crm-form.crm-form--light input[type="password"]:-ms-input-placeholder,
-      .crm-form.crm-form--light textarea:-ms-input-placeholder,
-      .crm-form.crm-form--light select:-ms-input-placeholder {
-        color: white; }
-      .crm-form.crm-form--light input[type="text"]:-moz-placeholder,
-      .crm-form.crm-form--light input[type="date"]:-moz-placeholder,
-      .crm-form.crm-form--light input[type="email"]:-moz-placeholder,
-      .crm-form.crm-form--light input[type="textarea"]:-moz-placeholder,
-      .crm-form.crm-form--light input[type="tel"]:-moz-placeholder,
-      .crm-form.crm-form--light input[type="password"]:-moz-placeholder,
-      .crm-form.crm-form--light textarea:-moz-placeholder,
-      .crm-form.crm-form--light select:-moz-placeholder {
+      .crm-form.crm-form--light input[type="text"]::placeholder,
+      .crm-form.crm-form--light input[type="date"]::placeholder,
+      .crm-form.crm-form--light input[type="email"]::placeholder,
+      .crm-form.crm-form--light input[type="textarea"]::placeholder,
+      .crm-form.crm-form--light input[type="tel"]::placeholder,
+      .crm-form.crm-form--light input[type="password"]::placeholder,
+      .crm-form.crm-form--light textarea::placeholder,
+      .crm-form.crm-form--light select::placeholder {
         color: white; }
     .crm-form.crm-form--light textarea {
       border-color: white; }
@@ -1553,6 +1526,15 @@ legend {
     font-size: 115%;
     height: 2rem;
     padding: 0.25rem 0; }
+    .crm-form input[type="text"]::placeholder,
+    .crm-form input[type="date"]::placeholder,
+    .crm-form input[type="email"]::placeholder,
+    .crm-form input[type="textarea"]::placeholder,
+    .crm-form input[type="tel"]::placeholder,
+    .crm-form input[type="password"]::placeholder,
+    .crm-form textarea::placeholder,
+    .crm-form select::placeholder {
+      color: #666; }
     .crm-form input[type="text"]:focus,
     .crm-form input[type="date"]:focus,
     .crm-form input[type="email"]:focus,
