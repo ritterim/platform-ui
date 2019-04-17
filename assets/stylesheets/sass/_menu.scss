@@ -205,7 +205,7 @@
 
 .agent-contact {
   box-sizing: border-box;
-  font-size: 80%;
+  font-size: map-get($font-percentage, 'sm');
   padding: map-get($spacers, 4);
   width: 25rem;
 
