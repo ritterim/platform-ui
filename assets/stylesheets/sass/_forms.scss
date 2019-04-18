@@ -1,5 +1,6 @@
-// Form
+// Forms
 //
+// Markup:
 // <form action="" class="crm-form">
 //     <label for="first-name" class="crm-form__field">First Name
 //         <input id="first-name" type="text" placeholder="First Name">
@@ -7,7 +8,7 @@
 //     <label for="last-name" class="crm-form__field">Last Name
 //         <input id="last-name" type="text" placeholder="Last Name">
 //     </label>
-//     <label for="dob" class="crm-form__field">Age or DOB 
+//     <label for="dob" class="crm-form__field">Age or DOB
 //         <input id="dob" type="date" placeholder="DD/MM/YYYY">
 //     </label>
 //     <label for="zipcode" class="crm-form__field">ZIP Code
@@ -44,9 +45,10 @@
 //     <div class="crm-form__field crm-form__button-group">
 //         <button class="button button--post button--lg">Quote Now</button>
 //     </div>
+//     <button class="button">Quote Now</button>
 // </form>
-// 
-// Styleguide Form
+//
+// Styleguide Forms
 
 
 fieldset {
@@ -157,6 +159,12 @@ legend {
     }
   }
 
+  &__label {
+    color: map-get($greyscale, 'light' );
+    font-size: 80%;
+    margin-bottom: .5rem;
+  }
+
   input[type="text"],
   input[type="date"],
   input[type="email"],
@@ -202,11 +210,35 @@ legend {
     visibility: hidden;
     width: auto;
 
-    &:checked + label {
-      font-weight: 600;
+    input[type="checkbox"] {
 
-      &:after {
-        transform: scale(1);
+      + label {
+
+        &:after {
+          color: map-get($greyscale, 'base');
+          content: '\f00c';
+          font-family: "Font Awesome 5 Free";
+          font-size: 90%;
+          font-weight: 900;
+          left: .1875rem;
+          top: 0;
+        }
+      }
+    }
+
+    input[type="radio"] {
+
+      + label {
+
+        &:after {
+          background-color: map-get($greyscale, 'base' );
+          border-radius: 50%;
+          content: '';
+          height: .75rem;
+          left: .1875rem;
+          top: 0;
+          width: .75rem;
+        }
       }
     }
 
@@ -225,7 +257,7 @@ legend {
 
       &:before,
       &:after {
-        position: absolute;   
+        position: absolute;
         display: inline-block;
       }
 
@@ -247,7 +279,7 @@ legend {
   }
 
   input[type="checkbox"] {
-    
+
     + label {
 
       &:after {
@@ -263,8 +295,8 @@ legend {
   }
 
   input[type="radio"] {
-    
-    + label { 
+
+    + label {
 
       &:after {
         background-color: map-get($greyscale, 'base' );
@@ -305,5 +337,3 @@ legend {
     width: 100%;
   }
 }
-
-
