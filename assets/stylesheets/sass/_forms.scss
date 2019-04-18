@@ -117,6 +117,28 @@ legend {
       }
     }
 
+    input[type="checkbox"],
+    input[type="radio"] {
+
+      + label {
+        color: map-get($greyscale, 'white');
+  
+        &:before {
+          border: 1px solid map-get($greyscale, 'white');
+        }
+      }
+    }
+    
+    input[type="checkbox"] {
+
+      + label {
+  
+        &:after {
+          color: map-get($greyscale, 'white');
+        }
+      }
+    }
+
     textarea {
       border-color: map-get($greyscale, 'white' );
     }
@@ -210,35 +232,11 @@ legend {
     visibility: hidden;
     width: auto;
 
-    input[type="checkbox"] {
+    &:checked + label {
+      font-weight: 600;
 
-      + label {
-
-        &:after {
-          color: map-get($greyscale, 'base');
-          content: '\f00c';
-          font-family: "Font Awesome 5 Free";
-          font-size: 90%;
-          font-weight: 900;
-          left: .1875rem;
-          top: 0;
-        }
-      }
-    }
-
-    input[type="radio"] {
-
-      + label {
-
-        &:after {
-          background-color: map-get($greyscale, 'base' );
-          border-radius: 50%;
-          content: '';
-          height: .75rem;
-          left: .1875rem;
-          top: 0;
-          width: .75rem;
-        }
+      &:after {
+        transform: scale(1);
       }
     }
 

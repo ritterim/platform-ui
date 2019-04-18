@@ -1505,6 +1505,14 @@ legend {
       .crm-form.crm-form--light textarea::placeholder,
       .crm-form.crm-form--light select::placeholder {
         color: white; }
+    .crm-form.crm-form--light input[type="checkbox"] + label,
+    .crm-form.crm-form--light input[type="radio"] + label {
+      color: white; }
+      .crm-form.crm-form--light input[type="checkbox"] + label:before,
+      .crm-form.crm-form--light input[type="radio"] + label:before {
+        border: 1px solid white; }
+    .crm-form.crm-form--light input[type="checkbox"] + label:after {
+      color: white; }
     .crm-form.crm-form--light textarea {
       border-color: white; }
     .crm-form.crm-form--light .crm-form__select-wrapper:after {
@@ -1583,24 +1591,12 @@ legend {
     position: absolute;
     visibility: hidden;
     width: auto; }
-    .crm-form input[type="checkbox"] input[type="checkbox"] + label:after,
-    .crm-form input[type="radio"] input[type="checkbox"] + label:after {
-      color: #666;
-      content: '\f00c';
-      font-family: "Font Awesome 5 Free";
-      font-size: 90%;
-      font-weight: 900;
-      left: .1875rem;
-      top: 0; }
-    .crm-form input[type="checkbox"] input[type="radio"] + label:after,
-    .crm-form input[type="radio"] input[type="radio"] + label:after {
-      background-color: #666;
-      border-radius: 50%;
-      content: '';
-      height: .75rem;
-      left: .1875rem;
-      top: 0;
-      width: .75rem; }
+    .crm-form input[type="checkbox"]:checked + label,
+    .crm-form input[type="radio"]:checked + label {
+      font-weight: 600; }
+      .crm-form input[type="checkbox"]:checked + label:after,
+      .crm-form input[type="radio"]:checked + label:after {
+        transform: scale(1); }
     .crm-form input[type="checkbox"] + label,
     .crm-form input[type="radio"] + label {
       color: #666;
