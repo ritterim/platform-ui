@@ -12,6 +12,7 @@
 // flex and positioning
 .platform {
   aside {
+    margin-top: $menu-height;
     position: fixed;
     height: 100vh;
     width: 25vw;

@@ -12,8 +12,8 @@ $kss-colors-link-visited  : #0645ad;
 $kss-colors-link-hover    : lighten($kss-colors-link, 20%);
 $kss-colors-link-active   : #faa700;
 
-$kss-font-body            : Helvetica, 'Helvetica Neue', Arial, sans-serif;
-$kss-font-code            : Menlo, 'Ubuntu Mono', 'Lucida Console', 'Courier New', Courier, monospace;
+$kss-font-body            : Arial, sans-serif;
+$kss-font-code            : 'Lucida Console', 'Courier New', Courier, monospace;
 
 $kss-font-size            : 16px;
 $kss-vertical-rhythm      : $kss-font-size * 1.5;
@@ -208,11 +208,8 @@ $kss-vertical-rhythm      : $kss-font-size * 1.5;
       overflow: auto;
       padding: 0 10px 0 20px;
       border-bottom: 0;
-      background-image: url(noise-low.png), -ms-radial-gradient(#fff, #eee);
-      background-image: url(noise-low.png), -o-radial-gradient(#fff, #eee);
-      background-image: url(noise-low.png), -webkit-radial-gradient(#fff, #eee);
-      background-image: url(noise-low.png), radial-gradient(#fff, #eee);
-      box-shadow: inset -10px 0 10px -10px rgba(0,0,0,0.7);
+      background-image: linear-gradient(45deg, red, blue);
+      // box-shadow: inset -10px 0 10px -10px rgba(0,0,0,0.7);
     }
   }
 }
@@ -528,6 +525,7 @@ $kss-vertical-rhythm      : $kss-font-size * 1.5;
 
   .kss-modifier__wrapper {
     border: 1px solid #ccc;
+    border-radius: .3rem .3rem 0 0;
     padding: 0 10px 10px;
   }
   .is-fullscreen .kss-modifier__wrapper {
@@ -543,6 +541,7 @@ $kss-vertical-rhythm      : $kss-font-size * 1.5;
     margin: 0 -10px 10px -10px;
     padding: 10px;
     border-bottom: 1px solid #ccc;
+    border-radius: .3rem .3rem 0 0;
     background-color: #eee;
     font-weight: bold;
   }
