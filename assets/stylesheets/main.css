@@ -1052,6 +1052,7 @@
     grid-row-start: 2; }
 
 .platform aside {
+  margin-top: 4.5rem;
   position: fixed;
   height: 100vh;
   width: 25vw;
@@ -1377,7 +1378,7 @@ hr {
 
 .button {
   background-color: white;
-  border: 1px solid #666;
+  border: 1px solid #cccccc;
   border-radius: 5rem;
   color: #666;
   cursor: pointer;
@@ -1426,7 +1427,7 @@ hr {
 
 .card {
   background-color: white;
-  border: 1px solid #666;
+  border: 1px solid #cccccc;
   padding: 1rem; }
   .card__header {
     color: #666;
@@ -1750,7 +1751,7 @@ ul {
         z-index: 5; }
 
 .pill {
-  border: 1px solid #666;
+  border: 1px solid #cccccc;
   border-radius: 5rem;
   color: #666;
   display: inline-flex;
@@ -1797,3 +1798,27 @@ table {
     table tr th {
       border-radius: 0.3rem 0.3rem 0 0;
       cursor: pointer; }
+
+.crm-accordion {
+  background-color: white;
+  border: 1px solid #cccccc;
+  color: #666;
+  font-family: Inter UI, sans-serif;
+  font-size: 100%;
+  transition: 0.2s; }
+  .crm-accordion.active {
+    border: 2px solid #5c94c3; }
+    .crm-accordion.active .crm-accordion__title {
+      background-color: #efefef;
+      border-width: 0 0 1px 0; }
+    .crm-accordion.active .crm-accordion__content {
+      border: none; }
+  .crm-accordion__title {
+    display: flex;
+    padding: 1rem; }
+  .crm-accordion__content {
+    display: flex;
+    padding: 1rem; }
+  .crm-accordion__actions {
+    display: flex;
+    padding: 1rem; }

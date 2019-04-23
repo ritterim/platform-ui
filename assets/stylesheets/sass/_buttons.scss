@@ -1,4 +1,4 @@
-// Buttons
+// Button
 //
 // Each button has a default button style. Color can be added to any button using a combination of background and text utilities.
 //
@@ -6,7 +6,7 @@
 //
 // Weight: 1
 //
-// Styleguide Components.Buttons
+// Styleguide Components.Button
 
 // Default
 //
@@ -22,7 +22,7 @@
 //
 // Weight: 2
 //
-// Styleguide Components.Buttons.Default
+// Styleguide Components.Button.Default
 
 // Secondary
 //
@@ -37,7 +37,7 @@
 //
 // Weight: 3
 //
-// Styleguide Components.Buttons.Secondary
+// Styleguide Components.Button.Secondary
 
 // Post
 //
@@ -52,7 +52,7 @@
 //
 // Weight: 4
 //
-// Styleguide Components.Buttons.Post
+// Styleguide Components.Button.Post
 
 // Group
 //
@@ -69,7 +69,8 @@
 //
 // Weight: 5
 //
-// Styleguide Components.Buttons.Group
+// Styleguide Components.Button.Group
+
 
 .button {
 
@@ -80,7 +81,7 @@
   $secondary-color: map-get($greyscale, 'white');
 
   background-color: $primary-background;
-  border: 1px solid $primary-color;
+  border: 1px solid lighten(map-get($greyscale, 'light'), $hue-threshold * 2);
   border-radius: $border-radius;
   color: $primary-color;
   cursor: pointer;
