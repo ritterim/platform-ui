@@ -50,6 +50,7 @@
 
 .crm-accordion {
 
+  $self: &;
   $primary-color: map-get($greyscale, 'base');
   $primary-background: map-get($greyscale, 'white');
   $primary-border-color: lighten(map-get($greyscale, 'light'), $hue-threshold * 2);
@@ -64,7 +65,7 @@
 
   &.active {
     border: 2px solid $secondary-border-color;
-    .crm-accordion {
+    #{ $self } {
       &__title {
         background-color: map-get($greyscale, 'lighter');
         border-width: 0 0 1px 0;
