@@ -1,0 +1,91 @@
+// Accordion
+//
+// Accordion description
+//
+//
+// Weight: 1
+//
+// Styleguide Components.Accordion
+
+// Default
+//
+// The default platform button. Usually paired visually with an icon. Can be the default size or large.
+//
+// - .crm-accordion
+//
+// Markup:
+// <div class="crm-accordion">
+//   <div class="crm-accordion crm-accordion__title">
+//     title
+//   </div>
+//   <div class="crm-accordion crm-accordion__content">
+//     content
+//   </div>
+// </div>
+//
+// Weight: 2
+//
+// Styleguide Components.Accordion.Default
+
+// Active
+//
+// Adding `.active` changes the default title bar background and hover highlight
+//
+// - .crm_accordion .active
+//
+// Markup:
+// <div class="crm-accordion active">
+//   <div class="crm-accordion crm-accordion__title">
+//     title
+//   </div>
+//   <div class="crm-accordion crm-accordion__content">
+//     content
+//   </div>
+// </div>
+//
+// Weight: 3
+//
+// Styleguide Components.Accordion.Active
+
+.crm-accordion {
+
+  $primary-color: map-get($greyscale, 'base');
+  $primary-background: map-get($greyscale, 'white');
+  $primary-border-color: lighten(map-get($greyscale, 'light'), $hue-threshold * 2);
+  $secondary-border-color: lighten(map-get($brand-colors, 'med-blue'), $hue-threshold);
+
+  background-color: $primary-background;
+  border: 1px solid $primary-border-color;
+  color: $primary-color;
+  font-family: map-get($fonts, 'base');
+  font-size: 100%;
+  transition: $transitions;
+
+  &.active {
+    border: 2px solid $secondary-border-color;
+    .crm-accordion {
+      &__title {
+        background-color: map-get($greyscale, 'lighter');
+        border-width: 0 0 1px 0;
+      }
+      &__content {
+        border: none;
+      }
+    }
+  }
+
+  &__title {
+    display: flex;
+    padding: $spacer;
+  }
+
+  &__content {
+    display: flex;
+    padding: $spacer;
+  }
+
+  &__actions {
+    display: flex;
+    padding: $spacer;
+  }
+}
