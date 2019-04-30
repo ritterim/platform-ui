@@ -8,8 +8,8 @@
     "start": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Ritter Insurance Marketing",
+  "license": "UNLICENSED",
   "devDependencies": {
     "gulp-babel": "^6.1.2",
     "gulp-concat": "^2.6.1",
