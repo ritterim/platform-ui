@@ -1,0 +1,66 @@
+// Modal
+//
+// Modal default state is closed. Toggling `.modal__closed` on both the `.modal--overlay` and `.modal` will diplay the modal.
+//
+// ```css
+// <div class="modal--overlay modal__closed"></div>
+//
+// <div class="modal modal__closed">
+//   <div class="modal--inner">
+//   <button class="button float-right modal__close">Close <i class="fas fa-times"></i></button>
+//     <h1>Modal</h1>
+//     <p>This a modal example at 80vh x 80vw.</p>
+//   </div>
+// </div>
+// ```
+// <div class="modal--overlay modal__closed"></div>
+// <div class="modal modal__closed">
+//   <div class="modal--inner">
+//   <button class="button float-right modal__close">Close <i class="fas fa-times"></i></button>
+//     <h1>Modal</h1>
+//     <p>This a modal example at 80vh x 80vw.</p>
+//   </div>
+// </div>
+//
+// <button class="button button--post button--lg modal__open">Trigger modal</button>
+//
+// Styleguide Components.modal
+
+.modal {
+  background: map-get($greyscale, 'white');
+  display: flex;
+  // Probably need media queries or just a better way to handle
+  // small, medium, large??
+  height: 80vh;
+  max-height: 100%;
+  width: 80vw;
+  max-width: 100%;
+  position: fixed;
+  z-index: 500;
+
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  &--overlay {
+    background: rgba(map-get($platform-colors, 'menu'), $opacity);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 200;
+  }
+  &__closed {
+    display: none;
+  }
+  &--inner {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    padding: 2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
