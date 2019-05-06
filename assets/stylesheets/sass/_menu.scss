@@ -1,4 +1,4 @@
-.site-header {  
+.site-header {
   background-color: map-get($platform-colors, 'menu');
   color: map-get($greyscale, 'white');
   display: flex;
@@ -10,13 +10,16 @@
 }
 
 .site-menu {
+
+  $primary-color: map-get($greyscale, 'white');
+
   $dropdown-background: lighten(map-get($brand-colors, 'navy' ), 5%);
   display: flex;
   flex-grow: 1;
   width: 100%;
 
   .search {
-    color: map-get($greyscale, 'white');
+    color: $primary-color;
     flex-grow: 1;
     @extend %flex-center;
 
@@ -39,6 +42,7 @@
   &__item {
     border-left: 1px solid rgba(map-get($greyscale, 'light'), .5);
     border-bottom: 1px solid transparent;
+    color: $primary-color;
     cursor: pointer;
     display: flex;
     flex: 0 0 auto;
@@ -81,7 +85,7 @@
       padding: map-get($spacers, 3) map-get($spacers, 4);
 
       &:hover {
-        background-color: rgba(map-get($greyscale, 'white'), .3);
+        background-color: rgba($primary-color, .3);
       }
 
       &:not(:first-child) {
@@ -101,7 +105,7 @@
   }
 
   .agent-profile {
-    background-color: $dropdown-background; 
+    background-color: $dropdown-background;
     box-sizing: border-box;
     color: map-get($greyscale, 'white' );
     font-size: 80%;
@@ -110,7 +114,7 @@
     right: auto;
 
     a {
-      color: map-get($greyscale, 'white' );
+      color: $primary-color;
       font-size: 100%;
     }
 
@@ -119,7 +123,7 @@
     }
 
     &__heading {
-      color: map-get($greyscale, 'white' );
+      color: $primary-color;
       font-family: map-get($fonts, 'base');
       font-size: 100%;
       line-height: 1;
@@ -191,7 +195,7 @@
   }
 
   .my {
-    
+
     span {
       font-family: serif;
       font-size: map-get($font-percentage, 'lg');
@@ -215,9 +219,10 @@
 }
 
 .crm-actions {
-  background-color: map-get($greyscale, 'white');
-  grid-row-start: 2;
 
+  $primary-background: map-get($greyscale, 'white');
+  background-color: $primary-background;
+  grid-row-start: 2;
 
   .crm-menu {
     flex-wrap: wrap;
@@ -233,7 +238,7 @@
 
     &__item {
       align-items: center;
-      background-color: map-get($greyscale, 'white');
+      background-color: $primary-background;
       box-sizing: border-box;
       box-shadow: 0 0 0 0;
       border-right: 1px solid rgba(map-get($greyscale, 'light'), .3);
@@ -263,7 +268,7 @@
         position: relative;
 
         &:before {
-          background-color: map-get($greyscale, 'white');
+          background-color: $primary-background;
           border-radius: map-get($radius, 'button') * 100;
           content: "";
           height: 26px;
