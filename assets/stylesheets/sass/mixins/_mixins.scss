@@ -1,20 +1,144 @@
-// Mobile
-@mixin mobile {
-  @media screen and (max-width: map-get($breakpoints, 'mobile')) {
-      @content;
-  }
-}
+// Mixins
+//
+// Mixins for the platform
+//
+// Styleguide Mixins
 
-// Desktop
-@mixin desktop {
-  @media screen and (max-width: map-get($breakpoints, 'desktop')) {
-      @content;
-  }
-}
+// Media Queries 
+// 
+// With this mixin you can either use straigh px values or the preset breakpoints we set in the breakpoints map.  
+// Each time you use this mixin you will need the size value and a direction parameter (min, or max).
+//
+// To make a min-width media query 
+// ```css
+// .test {
+//   @include breakpoint(mobile, min) {
+//     display: none;
+//   }
+// }
+// ```
+//
+// Output
+// ```css
+// @media (min-width: 768px) {
+//   .test {
+//     display: none;
+//   }
+// }
+// ```
+// 
+//
+//
+// For a max-width media query
+// ```css
+// .test {
+//   @include breakpoint(laptop, max) {
+//     display: none;
+//   }
+// }
+// ```
+//
+// Output - Even though the `laptop` variable is set to 1240px, the max-width mixin substracts 1px.
+// ```css
+// @media (max-width: 1239px) {
+//   .test {
+//     display: none;
+//   }
+// }
+// ```
+//
+//
+//
+// If you need a min-width and max-width media query, you need to nest a max-width inside the min-width media query.
+// ```css
+// .test {
+//   @include breakpoint(mobile, min) {
+//     @include breakpoint(laptop, max) {
+//       display: none;
+//     }
+//   }
+// }
+// ```
+// 
+// Output
+// ```css
+// @media (min-width: 768px) and (max-width: 1239px) {
+//   .test {
+//     display: none;
+//   }
+// }
+// ```
+// 
+// You can also use this mixin with standard px values. 
+// ```css
+// .test {
+//   @include breakpoint(800px, min) {
+//     display: none;
+//   }
+// }
+// ```
+// Output
+// ```css
+// @media (min-width: 800px) {
+//   .test {
+//     display: none;
+//   }
+// }
+// ```
+// 
+// And a max-width media query. Note with a specific px value, the mixin will not subtract 1px from the value you use.
+// ```css
+// .test {
+//   @include breakpoint(1441px, max) {
+//     display: none;
+//   }
+// }
+// ```
+// Output
+// ```css
+// @media (max-width: 1441px) {
+//   .test {
+//     display: none;
+//   }
+// }
+// ```
+//
+//
+// Styleguide Mixins.MediaQuery
+$breakpoints: (
+  mobile: 768px,
+  laptop: 1240px,
+  desktop-lg: 1800px
+);
 
-// XL
-@mixin xl {
-  @media screen and (max-width: map-get($breakpoints, 'xl')) {
-      @content;
+@mixin breakpoint($breakpoint, $direction: null) {
+  @if map-has-key($breakpoints, $breakpoint) {
+
+    // Get the breakpoint value.
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+    
+    @if $direction == max {
+      @media (max-width: ($breakpoint-value - 1)) {
+        @content;
+      }
+    } @else if $direction == min {
+      // Write the media query.
+      @media (min-width: $breakpoint-value) {
+        @content;
+      }
+    }
+  
+  // If the breakpoint doesn't exist in the map.
+  } @else {
+    @if $direction == max {
+      @media (max-width: $breakpoint) {
+        @content;
+      }
+    } @else if $direction == min {
+      // Write the media query.
+      @media (min-width: $breakpoint) {
+        @content;
+      }
+    }
   }
 }
