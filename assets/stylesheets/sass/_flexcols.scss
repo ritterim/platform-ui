@@ -1,0 +1,48 @@
+// Flex columns
+//
+// Flex cols allow division of a section into halves, quarters, and thirds.
+//
+// `.flexcol__end` allows grouping to the right, or `end` of the section.
+//
+// Markup:
+// <div class="flexcol-full flex-align-center">Full width</div>
+// <div class="flexcol">
+//   <div class="flexcol-half flex-align-center">Half width</div>
+//   <div class="flexcol-half flexcol__end flex-align-center">Half width adding .flex__end</div>
+// </div>
+// <div class="flexcol">
+//   <div class="flexcol-third flex-align-center">Third width</div>
+//   <div class="flexcol-third flex-align-center">Third width</div>
+//   <div class="flexcol-third flex-align-center">Third width</div>
+// </div>
+// <div class="flexcol">
+//   <div class="flexcol-quarter flex-align-center">Quarter width</div>
+//   <div class="flexcol-quarter flex-align-center">Quarter width</div>
+//   <div class="flexcol-quarter flex-align-center">Quarter width</div>
+//   <div class="flexcol-quarter flex-align-center">Quarter width</div>
+// </div>
+//
+// Styleguide Layout.flexcol
+
+// This is fro style guide only
+.kss-modifier__example [class*="flexcol-"] {
+  border: 1px solid lighten(map-get($greyscale, 'light'), $hue-threshold);
+  margin: .5rem 0;
+  padding: 1rem;
+}
+
+// flex columns
+.flexcol {
+  $self: &;
+  display: flex;
+  @each $name in $flex-grid {
+    $i: index($flex-grid, $name);
+    &-#{$name} {
+      display: flex;
+      flex-basis: calc(100% / #{$i});
+      &#{$self}__end {
+        justify-content: flex-end;
+      }
+    }
+  }
+}
