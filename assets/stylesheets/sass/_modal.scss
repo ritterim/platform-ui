@@ -3,19 +3,19 @@
 // Modal default state is closed. Toggling `.modal__closed` on both the `.modal--overlay` and `.modal` will diplay the modal.
 //
 // ```css
-// <div class="modal--overlay modal__closed"></div>
+// <div class="modal--overlay modal--closed"></div>
 //
-// <div class="modal modal__closed">
-//   <div class="modal--inner">
+// <div class="modal modal--closed">
+//   <div class="modal__inner">
 //   <button class="button float-right modal__close">Close <i class="fas fa-times"></i></button>
 //     <h1>Modal</h1>
 //     <p>This a modal example at 80vh x 80vw.</p>
 //   </div>
 // </div>
 // ```
-// <div class="modal--overlay modal__closed"></div>
-// <div class="modal modal__closed">
-//   <div class="modal--inner">
+// <div class="modal--overlay modal--closed"></div>
+// <div class="modal modal--closed">
+//   <div class="modal__inner">
 //   <button class="button float-right modal__close">Close <i class="fas fa-times"></i></button>
 //     <h1>Modal</h1>
 //     <p>This a modal example at 80vh x 80vw.</p>
@@ -51,10 +51,10 @@
     left: 0;
     z-index: 200;
   }
-  &__closed {
+  &--closed {
     display: none;
   }
-  &--inner {
+  &__inner {
     height: 100%;
     width: 100%;
     overflow: auto;

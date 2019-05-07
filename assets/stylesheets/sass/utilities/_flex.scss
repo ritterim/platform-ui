@@ -9,10 +9,6 @@
   display: flex;
 }
 
-.flex__end {
-  justify-content: flex-end;
-}
-
 .flex-align-center {
   @extend %flex-center;
 }
