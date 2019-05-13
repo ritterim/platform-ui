@@ -13,8 +13,9 @@
   transform: rotate(-45deg);
 }
 
-.float-right {
-  float: right;
+// add-on to animate.css to speed up
+.animated.fastest {
+  animation-duration: $transitions;
 }
 
 .bold {
