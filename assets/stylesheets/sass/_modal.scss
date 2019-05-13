@@ -1,24 +1,36 @@
 // Modal
 //
-// Modal default state is closed. Toggling `.modal__closed` on both the `.modal--overlay` and `.modal` will diplay the modal.
+// Modal default state is closed. Toggling `.modal--closed` on both the `.modal--overlay` and `.modal` will diplay the modal.
+//
+// `.modal__close` on the close button is also a handle for JS.
+// 
+// Animation note: using `animated` must be placed on `.modal__inner` to maintain correct positioning.
 //
 // ```css
 // <div class="modal--overlay modal--closed"></div>
 //
-// <div class="modal modal--closed">
-//   <div class="modal__inner">
-//   <button class="button float-right modal__close">Close <i class="fas fa-times"></i></button>
-//     <h1>Modal</h1>
-//     <p>This a modal example at 80vh x 80vw.</p>
-//   </div>
+// <div class="modal modal--closed ">
+//     <div class="modal__inner animated slideInUp faster">
+//         <div class="modal__header">
+//             <button class="button float-right modal__close">Close <i class="fas fa-times"></i></button>
+//             <h2>Modal</h2>
+//          </div>
+//          <div class="modal__content">
+//             <p>Modal Content</p>
+//          </div>
+//     </div>
 // </div>
 // ```
 // <div class="modal--overlay modal--closed"></div>
-// <div class="modal modal--closed">
-//   <div class="modal__inner">
-//   <button class="button float-right modal__close">Close <i class="fas fa-times"></i></button>
-//     <h1>Modal</h1>
-//     <p>This a modal example at 80vh x 80vw.</p>
+// <div class="modal modal--closed ">
+//   <div class="modal__inner animated slideInUp faster">
+//     <div class="modal__header">
+//       <button class="button float-right modal__close">Close <i class="fas fa-times"></i></button>
+//       <h2>Modal</h2>
+//     </div>
+//     <div class="modal__content">
+//       <p>Modal Content</p>
+//     </div>
 //   </div>
 // </div>
 //
@@ -27,17 +39,17 @@
 // Styleguide Components.modal
 
 .modal {
-  background: map-get($greyscale, 'white');
+  $self: &;
   display: flex;
+  flex-direction: column;
   // Probably need media queries or just a better way to handle
   // small, medium, large??
-  height: 80vh;
+  height: 70vh;
   max-height: 100%;
   width: 80vw;
   max-width: 100%;
   position: fixed;
   z-index: 500;
-
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -54,13 +66,35 @@
   &--closed {
     display: none;
   }
+  &__open {
+    cursor: pointer;
+  }
   &__inner {
+    background: map-get($greyscale, 'white');
     height: 100%;
-    width: 100%;
-    overflow: auto;
+  }
+  &__header {
+    background-color: map-get($brand-colors, 'lightblue');
     padding: 2rem;
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
+    width: 100%;
+    #{$self}__close {
+      position: absolute;
+      right: -1rem;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  &__content {
+    padding: 2rem;
+    position: relative;
+    &--video {
+      display: flex;
+      height: 100%;
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+    }
   }
 }
