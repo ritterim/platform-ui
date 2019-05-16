@@ -103,6 +103,24 @@
 // }
 // ```
 //
+// You can make special media queries too. For example target a device orientation.
+//```css
+//.test {
+//  @include breakpoint(landscape, orientation) {
+//   font-weight: bold;
+//  }
+//}
+//```
+//
+// Output
+//```css
+// @media (orientation: landscape) {
+//   .test {
+//     font-weight: bold;
+//   }
+// }
+//```
+//
 //
 // Styleguide Mixins.MediaQuery
 $breakpoints: (
@@ -126,6 +144,10 @@ $breakpoints: (
       @media (min-width: $breakpoint-value) {
         @content;
       }
+    } @else {
+      @media ($direction: $breakpoint-value) {
+        @content;
+      }
     }
   
   // If the breakpoint doesn't exist in the map.
@@ -138,6 +160,10 @@ $breakpoints: (
       // Write the media query.
       @media (min-width: $breakpoint) {
         @content;
+      }
+    } @else {
+      @media ($direction: $breakpoint) {
+        @content
       }
     }
   }
