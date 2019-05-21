@@ -74,3 +74,42 @@
     font-size: $percentage !important;
   }
 }
+
+
+// Close X
+// -------
+
+.close-action {
+  height: 2rem;
+  position: absolute;
+  transform: rotate(45deg);
+  width: 2rem;
+
+  &:before,
+  &:after {
+    background-color: map-get($greyscale, 'base');
+    border-radius: 0.5rem;
+    content: '';
+    display: block;
+    position: absolute;
+    transition: all 0.2s;
+  }
+
+  &:before {
+    height: 4px;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+  }
+
+  &:after {
+    bottom: 0;
+    height: 100%;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 4px;
+  }
+}
