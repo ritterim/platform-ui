@@ -3,50 +3,68 @@
 //
 // Markup:
 // <form action="" class="rim-form">
-//     <label for="first-name" class="rim-form__field">First Name
-//         <input id="first-name" type="text" placeholder="First Name">
-//     </label>
-//     <label for="last-name" class="rim-form__field">Last Name
-//         <input id="last-name" type="text" placeholder="Last Name">
-//     </label>
-//     <label for="dob" class="rim-form__field">Age or DOB
-//         <input id="dob" type="date" placeholder="DD/MM/YYYY">
-//     </label>
-//     <label for="zipcode" class="rim-form__field">ZIP Code
-//         <input id="zipcode" type="tel" placeholder="e.g.90012" pattern="^\d{5,6}(?:[-\s]\d{4})?$">
-//     </label>
-//     <fieldset class="rim-form__field">
-//         <legend>Choose</legend>
-//         <div class="rim-form__option-group">
-//         <input id="gender-this-one" type="checkbox">
-//         <label for="gender-this-one">This One</label>
-//         <input id="gender-that-one" type="checkbox">
-//         <label for="gender-that-one">That One</label>
-//         </div>
-//     </fieldset>
-//     <fieldset class="rim-form__field">
-//         <legend>Gender</legend>
-//         <div class="rim-form__option-group">
-//         <input id="gender-male" type="radio" name="gender"><label for="gender-male">Male</label>
-//         <input id="gender-female" type="radio" name="gender"><label for="gender-female">Female</label>
-//         </div>
-//     </fieldset>
-//     <label for="zipcode" class="rim-form__field">County
-//         <div class="rim-form__select-wrapper">
-//         <select name="County Select" id="county">
-//             <option value="County1">County 1</option>
-//             <option value="County2">County 2</option>
-//             <option value="County3">County 3</option>
-//             <option value="County4">County 4</option>
-//             <option value="County5">County 5</option>
-//             <option value="County6">County 6</option>
-//         </select>
-//         </div>
-//     </label>
-//     <div class="rim-form__field rim-form__button-group">
-//         <button class="button button--post button--lg">Quote Now</button>
+//   <label for="first-name" class="rim-form__field">First Name
+//     <input id="first-name" type="text" placeholder="First Name">
+//   </label>
+//   <label for="last-name" class="rim-form__field">Last Name
+//     <input id="last-name" type="text" placeholder="Last Name">
+//   </label>
+//   <label for="dob" class="rim-form__field">Age or DOB
+//     <input id="dob" type="date" placeholder="DD/MM/YYYY">
+//   </label>
+//   <label for="zipcode" class="rim-form__field">ZIP Code
+//     <input id="zipcode" type="tel" placeholder="e.g.90012" pattern="^\d{5,6}(?:[-\s]\d{4})?$">
+//   </label>
+//   <fieldset class="rim-form__field">
+//     <legend>Choose</legend>
+//     <div class="rim-form__option-group">
+//       <input class="rim-form__checkbox" id="gender-this-one" type="checkbox">
+//       <label for="gender-this-one">This One</label>
+//       <input class="rim-form__checkbox" id="gender-that-one" type="checkbox">
+//       <label for="gender-that-one">That One</label>
 //     </div>
-//     <button class="button">Quote Now</button>
+//   </fieldset>
+//   <fieldset class="rim-form__field">
+//     <legend>Gender</legend>
+//     <div class="rim-form__option-group">
+//       <input class="rim-form__radio" id="gender-male" type="radio" name="gender">
+//       <label for="gender-male">Male</label>
+//       <input class="rim-form__radio" id="gender-female" type="radio" name="gender">
+//       <label for="gender-female">Female</label>
+//     </div>
+//   </fieldset>
+//   <label for="zipcode" class="rim-form__field">County
+//     <div class="rim-form__select-wrapper">
+//       <select name="County Select" id="county">
+//         <option value="County1">County 1</option>
+//         <option value="County2">County 2</option>
+//         <option value="County3">County 3</option>
+//         <option value="County4">County 4</option>
+//         <option value="County5">County 5</option>
+//         <option value="County6">County 6</option>
+//       </select>
+//     </div>
+//   </label>
+//   <fieldset class="rim-form__field">
+//     <legend>Are You</legend>
+//     <div class="rim-toggle">
+//       <div class="rim-toggle__content">
+//         <input class="rim-toggle__input" id="tall" type="radio" checked name="height">
+//         <label for="tall">Tall</label>
+//       </div>
+//       <div class="rim-toggle__content">
+//         <input class="rim-toggle__input" id="short" type="radio" name="height">
+//         <label for="short">Short</label>
+//       </div>
+//     </div>
+//   </fieldset>
+//   <label for="dob" class="rim-form__field has-icon">Application Date
+//     <input id="dob" type="date" placeholder="DD/MM/YYYY">
+//     <i class="fas fa-calendar-alt text-skyblue background-white"></i>
+//   </label>
+//   <div class="rim-form__field rim-form__button-group">
+//     <button class="button button--post button--lg">Quote Now</button>
+//   </div>
 // </form>
 //
 // Styleguide Forms
@@ -65,6 +83,99 @@ legend {
   max-width: 100%;
   padding: 0;
   white-space: normal;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+  opacity: 0;
+  position: absolute;
+  visibility: hidden;
+  width: auto;
+  
+  &:checked + label {
+    font-weight: 600;
+
+    &:after {
+      transform: scale(1);
+    }
+  }
+
+  + label {
+    color: map-get($greyscale, 'base');
+    cursor: pointer;
+    display: inline-block;
+    font-size: map-get($font-percentage, 'md');
+    font-weight: 400;
+    height: 1rem;
+    line-height: 1.2;
+    margin-right: .75rem;
+    margin-top: .75rem;
+    padding-left: 1.375rem;
+    position: relative;
+    vertical-align: baseline;
+
+    &:before,
+    &:after {
+      position: absolute;
+      display: inline-block;
+    }
+
+    &:before {
+      border: 1px solid map-get($greyscale, 'base');
+      border-radius: 50%;
+      content: '';
+      height: 1rem;
+      left: 0;
+      top: -.0625rem;
+      width: 1rem;
+    }
+
+    &:after {
+      transform: scale(0);
+      transition: transform $duration ease;
+    }
+  }
+}
+
+input[type="checkbox"] {
+
+  + label {
+
+    &:after {
+      color: map-get($greyscale, 'base');
+      content: '\f00c';
+      font-family: "Font Awesome 5 Free";
+      font-size: map-get($font-percentage, 'xs');
+      font-weight: 900;
+      left: .1875rem;
+      top: .0625rem;
+    }
+  }
+}
+
+input[type="radio"] {
+
+  &:checked + label {
+    cursor: default;
+  }
+
+  &.rim-form__radio {
+
+    + label {
+
+      &:after {
+        background-color: map-get($greyscale, 'base' );
+        border-radius: 50%;
+        content: '';
+        height: .75rem;
+        left: .1875rem;
+        top: .125rem;
+        width: .75rem;
+      }
+    }
+  }
 }
 
 .rim-form {
@@ -158,10 +269,33 @@ legend {
     margin: 0 map-get($spacers, 2) map-get($spacers, 4);
     max-width: 15.625rem;
 
-    input,
-    textarea {
+    input[type="text"],
+    input[type="date"],
+    input[type="email"],
+    input[type="textarea"],
+    input[type="tel"],
+    input[type="password"],
+    textarea,
+    #{ $self }__select-wrapper,
+    #{ $self }__option-group {
       margin-top: .5rem;
       width: 100%;
+    }
+
+    &.has-icon {
+      padding-left: 1rem;
+      position: relative;
+
+      i {
+        bottom: .5rem;
+        font-size: 1rem;
+        left: 0;
+        position: absolute;
+      }
+    }
+
+    &--full {
+      max-width: none;
     }
   }
 
@@ -224,91 +358,6 @@ legend {
     padding: map-get($spacers, 1);
   }
 
-  input[type="checkbox"],
-  input[type="radio"] {
-    -webkit-appearance: none;
-    appearance: none;
-    opacity: 0;
-    position: absolute;
-    visibility: hidden;
-    width: auto;
-
-    &:checked + label {
-      font-weight: 600;
-
-      &:after {
-        transform: scale(1);
-      }
-    }
-
-    + label {
-      color: map-get($greyscale, 'base');
-      display: inline-block;
-      font-size: map-get($font-percentage, 'md');
-      font-weight: 400;
-      height: 1rem;
-      line-height: 1.2;
-      margin-right: .75rem;
-      margin-top: .75rem;
-      padding-left: 1.375rem;
-      position: relative;
-      vertical-align: baseline;
-
-      &:before,
-      &:after {
-        position: absolute;
-        display: inline-block;
-      }
-
-      &:before {
-        border: 1px solid map-get($greyscale, 'base');
-        border-radius: 50%;
-        content: '';
-        height: 1rem;
-        left: 0;
-        top: -.0625rem;
-        width: 1rem;
-      }
-
-      &:after {
-        transform: scale(0);
-        transition: transform $duration ease;
-      }
-    }
-  }
-
-  input[type="checkbox"] {
-
-    + label {
-
-      &:after {
-        color: map-get($greyscale, 'base');
-        content: '\f00c';
-        font-family: "Font Awesome 5 Free";
-        font-size: map-get($font-percentage, 'xs');
-        font-weight: 900;
-        left: .1875rem;
-        top: .0625rem;
-      }
-    }
-  }
-
-  input[type="radio"] {
-
-    + label {
-
-      &:after {
-        background-color: map-get($greyscale, 'base' );
-        border-radius: 50%;
-        content: '';
-        height: .75rem;
-        left: .1875rem;
-        top: .125rem;
-        width: .75rem;
-      }
-    }
-  }
-
   &__select-wrapper {
     min-width: 9.375rem;
     position: relative;
@@ -334,5 +383,127 @@ legend {
     border-radius: 0;
     padding: .25rem 1rem .25rem 0;
     width: 100%;
+  }
+}
+
+// Togles
+// ------
+.rim-toggle {
+  border: 1px solid lighten(map-get($greyscale, 'light'), $hue-threshold * 2);
+  border-radius: map-get($radius, 'button');
+  display: flex;
+  justify-content: space-between;
+  margin-top: .5rem;
+  padding: .2rem;
+
+  &__content {
+    border-radius: map-get($radius, 'button');
+    flex: 1 1 auto;
+    font-size: map-get($font-percentage, 'sm');
+    overflow: hidden;
+    position: relative;
+  }
+
+  input.rim-toggle__input {
+
+    + label {
+      color: map-get($greyscale, 'base');
+      display: flex;
+      height: 100%;
+      justify-content: center;
+      margin: 0;
+      padding: map-get($spacers, 1) map-get($spacers, 2);
+      padding-left: 1.375rem;
+
+      &:before {
+        border: none;
+        content: '\f00c';
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        left: 6px;
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        visibility: hidden;
+      }
+
+      &:after {
+        content: '';
+        background-color: map-get($greyscale, 'white' );
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        transition: none;
+        z-index: -1;
+      }
+    }
+
+    &:checked + label {
+      color: map-get($greyscale, 'white' );
+      font-weight: inherit;
+
+      &:before {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      &:after {
+        background-color: map-get($platform-colors, 'link' );
+      }
+    }
+  }
+}
+
+
+// Pill type filter group
+// ----------------------
+.filter-group {
+  display: flex;
+  flex-flow: row wrap;
+  margin-left: -.25rem;
+  width: calc(100% + .25rem * 2);
+
+  input[type="checkbox"].filter-group__filter {    
+
+    + label {
+      background-color: map-get($greyscale, 'light' );
+      border-radius: map-get($radius, 'button');
+      color: map-get($greyscale, 'white');
+      display: flex;
+      flex: 1 1 auto;
+      height: 100%;
+      justify-content: center;
+      margin: .25rem;
+      max-width: 5rem;
+      padding: map-get($spacers, 2) 1.5rem;
+      transition: $transitions;
+
+      &:before {
+        display: none;
+      }
+
+      &:after {
+        color: map-get($greyscale, 'white');
+        left: .5rem;
+        opacity: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: visibility $duration ease, opacity $duration ease;
+        visibility: hidden;
+      }
+    }
+
+    &:checked + label {
+      background-color: map-get($platform-colors, 'link' );
+      font-weight: 400;
+
+      &:after {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
   }
 }

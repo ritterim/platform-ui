@@ -8,6 +8,7 @@
 
   <title>Welcome to Rams John</title>
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
   <link rel="stylesheet" href="/assets/stylesheets/main.css">
   <link rel="canonical" href="http://localhost:8001/">
 </head>
@@ -236,6 +237,85 @@
         <a class="button button--secondary"><i class="fas fa-chart-pie"></i></a>
         <a class="button button--secondary"><i class="fas fa-chart-line"></i></a>
       </div>
+      <hr>
+      <div class="button-group">
+        <div class="rim-info-box">
+          <a class="button button--secondary"><i class="fas fa-sliders-h"></i></a>
+          <div class="rim-info-box__content">
+            <button class="button rim-info-box__close">Close <i class="fas fa-times"></i></button>
+            <form action="" class="rim-info-box__inner rim-form">
+              <label for="dob" class="rim-form__field has-icon">Age or DOB
+                <input id="dob" type="date" placeholder="DD/MM/YYYY">
+                <i class="fas fa-calendar-alt text-skyblue background-white"></i>
+              </label>
+              <label for="dob" class="rim-form__field has-icon">Age or DOB
+                <input id="dob" type="date" placeholder="DD/MM/YYYY">
+                <i class="fas fa-calendar-alt text-skyblue background-white"></i>
+              </label>
+              <fieldset class="rim-form__field">
+                <legend>Rate Class</legend>
+                <div class="rim-toggle">
+                  <div class="rim-toggle__content">
+                    <input class="rim-toggle__input" id="smoking" type="radio" checked name="rate">
+                    <label for="smoking">Non-smoking</label>
+                  </div>
+                  <div class="rim-toggle__content">
+                    <input class="rim-toggle__input" id="non-smoking" type="radio" name="rate">
+                    <label for="non-smoking">Smoking</label>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset class="rim-form__field">
+                <legend>Marital Status</legend>
+                <div class="rim-toggle">
+                  <div class="rim-toggle__content">
+                    <input class="rim-toggle__input" id="Single" type="radio" checked name="household">
+                    <label for="Single">Single</label>
+                  </div>
+                  <div class="rim-toggle__content">
+                    <input class="rim-toggle__input" id="household" type="radio" name="household">
+                    <label for="household">Household</label>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset class="rim-form__field rim-form__field--full">
+                <legend>Plan</legend>
+                <div class="filter-group">
+                  <input class="filter-group__filter" id="a" type="checkbox" name="A">
+                  <label for="a">A</label>
+                  <input class="filter-group__filter" id="B" type="checkbox" name="A">
+                  <label for="B">B</label>
+                  <input class="filter-group__filter" id="C" type="checkbox" name="A">
+                  <label for="C">C</label>
+                  <input class="filter-group__filter" id="D" type="checkbox" name="A">
+                  <label for="D">D</label>
+                  <input class="filter-group__filter" id="F" type="checkbox" name="A">
+                  <label for="F">F</label>
+                  <input class="filter-group__filter" id="G" type="checkbox" name="A">
+                  <label for="G">G</label>
+                  <input class="filter-group__filter" id="Hi-F" type="checkbox" name="A">
+                  <label for="Hi-F">Hi-F</label>
+                  <input class="filter-group__filter" id="K" type="checkbox" name="A">
+                  <label for="K">K</label>
+                  <input class="filter-group__filter" id="L" type="checkbox" name="A">
+                  <label for="L">L</label>
+                  <input class="filter-group__filter" id="M" type="checkbox" name="A">
+                  <label for="M">M</label>
+                  <input class="filter-group__filter" id="N" type="checkbox" name="A">
+                  <label for="N">N</label>
+                  <input class="filter-group__filter" id="All" type="checkbox" name="A">
+                  <label for="All">All</label>
+                </div>
+              </fieldset>
+              <div class="rim-form__field rim-form__button-group">
+                <button class="button button--post button--lg">Apply Filters</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <a class="button button--secondary"><i class="fas fa-download"></i></a>
+        <a class="button button--secondary"><i class="fas fa-sync-alt"></i></a>
+      </div>
     </section>
     <section>
       <h2>Cards</h2>
@@ -393,17 +473,19 @@
         <fieldset class="rim-form__field">
           <legend>Choose</legend>
           <div class="rim-form__option-group">
-              <input id="gender-this-one" type="checkbox">
-              <label for="gender-this-one">This One</label>
-              <input id="gender-that-one" type="checkbox">
-              <label for="gender-that-one">That One</label>
+            <input class="rim-form__checkbox" id="gender-this-one" type="checkbox">
+            <label for="gender-this-one">This One</label>
+            <input class="rim-form__checkbox" id="gender-that-one" type="checkbox">
+            <label for="gender-that-one">That One</label>
           </div>
         </fieldset>
         <fieldset class="rim-form__field">
           <legend>Gender</legend>
           <div class="rim-form__option-group">
-            <input id="gender-male" type="radio" name="gender"><label for="gender-male">Male</label>
-            <input id="gender-female" type="radio" name="gender"><label for="gender-female">Female</label>
+            <input class="rim-form__radio" id="gender-male" type="radio" name="gender">
+            <label for="gender-male">Male</label>
+            <input class="rim-form__radio" id="gender-female" type="radio" name="gender">
+            <label for="gender-female">Female</label>
           </div>
         </fieldset>
         <label for="zipcode" class="rim-form__field">County
@@ -417,6 +499,23 @@
               <option value="County6">County 6</option>
             </select>
           </div>
+        </label>
+        <fieldset class="rim-form__field">
+          <legend>Are You</legend>
+          <div class="rim-toggle">
+            <div class="rim-toggle__content">
+              <input class="rim-toggle__input" id="tall" type="radio" checked name="height">
+              <label for="tall">Tall</label>
+            </div>
+            <div class="rim-toggle__content">
+              <input class="rim-toggle__input" id="short" type="radio" name="height">
+              <label for="short">Short</label>
+            </div>
+          </div>
+        </fieldset>
+        <label for="dob" class="rim-form__field has-icon">Application Date
+          <input id="dob" type="date" placeholder="DD/MM/YYYY">
+          <i class="fas fa-calendar-alt text-skyblue background-white"></i>
         </label>
         <div class="rim-form__field rim-form__button-group">
           <button class="button button--post button--lg">Quote Now</button>

@@ -132,6 +132,10 @@
     font-size: map-get($font-percentage, 'lg');
     padding: map-get($spacers, 2) $spacer;
   }
+
+  .fa-sliders-h {
+    transform: rotate(90deg);
+  }
 }
 
 .button-group {
