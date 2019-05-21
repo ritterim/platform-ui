@@ -159,9 +159,23 @@ legend {
     max-width: 15.625rem;
 
     input,
-    textarea {
+    textarea,
+    #{ $self }__select-wrapper,
+    #{ $self }__option-group {
       margin-top: .5rem;
       width: 100%;
+    }
+
+    &.has-icon {
+      padding-left: 1rem;
+      position: relative;
+
+      i {
+        bottom: .5rem;
+        font-size: 1rem;
+        left: 0;
+        position: absolute;
+      }
     }
   }
 
