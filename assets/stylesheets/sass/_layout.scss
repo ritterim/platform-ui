@@ -31,6 +31,19 @@ a {
   color: map-get($platform-colors, 'link');
   text-decoration: none;
   transition: $transitions;
+  i.fa-arrow-right,
+  i.fa-angle-right {
+    transition: $transitions;
+  }
+  &:hover {
+    i.fa-arrow-right {
+      transform: translate(.3rem);
+    }
+    i.fa-angle-right {
+      transform: translate(.5rem);
+    }
+  }
+
 }
 
 section {

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title></title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Raleway:400,800,900|Permanent+Marker" rel="stylesheet">
+  <link rel="stylesheet" href="https://beta.ritterim.com/scss/main.min.fb26487c6e15729fc32fa0862ada5e8e69915393de2207c79ee628cb60290116.css">
+
+  <link rel="canonical" href="http://localhost:8001/">
+  <style media="screen">
+    body {
+      height: 100vh;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid h-100 px-0">
+    <div class="row h-100">
+      <div class="col-5 lightblue-background h-100 d-flex justify-content-center">
+        <img src="/assets/images/registration-page.svg" alt="Please login">
+      </div>
+      <div class="col-7">
+        <div class="container-fluid d-flex justify-content-center flex-column">
+          <div class="row d-flex justify-content-center">
+            <h2 class="text-center">Login to <strong>Your Account</strong></h2>
+            <hr class=" mb-5 small ">
+          </div>
+          <div class="row px-5 mx-5">
+            <form class="form w-100" action="index.html" method="post">
+              <fieldset>
+                <div class="form-group">
+                  <label for="username">Email Address</label>
+                  <input required name="username" autofocus id="username" type="text" class="form-control" ng-model="model.username" maxlength="100">
+                </div>
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input required id="password" name="password" type="password" class="form-control" ng-model="model.password" maxlength="100">
+                </div>
+                <div class="form-group login-remember" ng-show="model.allowRememberMe">
+                  <label for="rememberMe">
+                    <input type="checkbox" id="rememberMe" name="rememberMe" ng-model="model.rememberMe" value="true">
+                    <strong>Remember Me</strong>
+                  </label>
+                </div>
+                <div class="form-group">
+                  <button class="btn btn-salmon" ng-disabled="form.$invalid">Login</button>
+                </div>
+              </fieldset>
+            </form>
+            <ul class="list-unstyled py-3">
+              <li ng-repeat="link in model.additionalLinks">
+                <a ng-href="{{link.href}}">{{link.text}}</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</body>
+</html>
