@@ -1,0 +1,38 @@
+// Drawer
+//
+// Styleguide Components.Drawer
+
+.drawer {
+  $self: &;
+  box-shadow: 0 -.5rem 2rem rgba(map-get($greyscale, 'black'), .5);
+  display: flex;
+  flex-direction: column;
+  height: 50vh;
+  width: 100%;
+  position: fixed;
+  z-index: 500;
+  &-bottom {
+    bottom: 0;
+    left: 0;
+  }
+  &__inner {
+    background: map-get($greyscale, 'white');
+    height: 100%;
+  }
+  &__header {
+    background-color: map-get($greyscale, 'white');
+    padding: 2rem;
+    position: relative;
+    width: 100%;
+    #{$self}__close {
+      position: absolute;
+      right: -1rem;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  &__content {
+    padding: 2rem;
+    position: relative;
+  }
+}

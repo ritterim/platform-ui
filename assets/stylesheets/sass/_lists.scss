@@ -7,17 +7,23 @@ ul {
   }
 }
 
-.post-list {
-  list-style: none;
-  flex-grow: 1;
-  margin: 0 $spacer;
-  padding: 0 0 0 map-get($spacers, 4);
+.post {
 
-  .post-item {
-    border-bottom: 1px solid map-get($greyscale, 'light');
+  &-list {
+    list-style: none;
+    flex-grow: 1;
+    margin: 0 $spacer;
+    padding: 0 0 0 map-get($spacers, 4);
+  }
+
+  &-item {
     margin: 0 0 $spacer;
     padding: 0 0 $spacer;
     position: relative;
+
+    &:not(:last-of-type) {
+      border-bottom: 1px solid map-get($greyscale, 'lighter');
+    }
 
     &:before {
       color: map-get($brand-colors, 'salmon');
@@ -30,7 +36,7 @@ ul {
       transform: rotate(30deg);
     }
 
-    .post-duration {
+    &__duration {
       color: map-get($greyscale, 'light');
       font-size: map-get($font-percentage, 'sm');
       margin-bottom: map-get($spacers, 1);
@@ -42,11 +48,11 @@ ul {
       }
     }
 
-    .post-title {
+    &__title {
       margin-bottom: map-get($spacers, 1);
     }
 
-    .post-link {
+    &__link {
       font-size: map-get($font-percentage, 'sm');
       font-weight: bold;
     }
@@ -61,7 +67,7 @@ ul {
 
   li {
     flex-grow: 1;
-    margin: 0 map-get($spacers, 2); 
+    margin: 0 map-get($spacers, 2);
 
     &:first-child {
       margin-left: 0;
@@ -72,15 +78,18 @@ ul {
     }
 
     .image-link {
+      background-color: map-get($brand-colors, 'med-blue');
       display: flex;
       flex: 1;
       flex-direction: column;
+      position: relative;
 
       img {
           height: auto;
           max-width: 100%;
+          opacity: .5;
       }
-      
+
       &--video {
         position: relative;
 
@@ -97,21 +106,37 @@ ul {
           content: '\f144';
           color: map-get($greyscale, 'white');
           font-family: 'Font Awesome 5 Free';
-          font-size: map-get($font-percentage, 'xxl');
+          font-size: map-get($font-percentage, 'lg') * 2;
           font-weight: 900;
           left: 45%;
           position: absolute;
           top: 30%;
+          text-shadow: 0 0 .5rem map-get($greyscale, 'black');
+          transition: $transitions;
           z-index: 2;
         }
+        &:hover {
+          &:after {
+            transform: scale(1.2);
+            text-shadow: 0 0 1rem map-get($greyscale, 'black');
+          }
+        }
       }
-      
+
       &-caption {
-          height: map-get($spacers, 4);
+          bottom: 0;
           padding: map-get($spacers, 2);
+          position: absolute;
           text-align: center;
+          width: 100%;
           z-index: 5;
           @extend %flex-center;
+      }
+      &__clear {
+        background-color: transparent;
+        img {
+          opacity: 1;
+        }
       }
     }
   }

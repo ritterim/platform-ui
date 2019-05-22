@@ -2,11 +2,14 @@
   background-color: map-get($platform-colors, 'menu');
   color: map-get($greyscale, 'white');
   display: flex;
-  font-size: map-get($font-percentage, 'lg');
+  font-size: map-get($font-percentage, 'md');
   height: $menu-height;
   position: fixed;
   width: 100%;
-  z-index: 10;
+  z-index: 100;
+  public-menu-cmp {
+    width: 100%;
+  }
 }
 
 .site-menu {
@@ -17,6 +20,7 @@
   display: flex;
   flex-grow: 1;
   width: 100%;
+  height: 100%;
 
   .search {
     color: $primary-color;
@@ -46,6 +50,7 @@
     cursor: pointer;
     display: flex;
     flex: 0 0 auto;
+    font-size: map-get($font-percentage, 'sm');
     line-height: 1.5;
     padding: 0 2rem;
     transition: $transitions;
@@ -53,6 +58,7 @@
 
     &:hover:not(.search) {
       background-color: $dropdown-background;
+      color: $primary-color;
     }
 
     &.has-dropdown {
@@ -108,14 +114,12 @@
     background-color: $dropdown-background;
     box-sizing: border-box;
     color: map-get($greyscale, 'white' );
-    font-size: 80%;
     left: 0;
     padding: map-get($spacers, 3) map-get($spacers, 4) map-get($spacers, 4);
     right: auto;
 
     a {
       color: $primary-color;
-      font-size: 100%;
     }
 
     address {
@@ -125,7 +129,6 @@
     &__heading {
       color: $primary-color;
       font-family: map-get($fonts, 'base');
-      font-size: 100%;
       line-height: 1;
       margin-bottom: map-get($spacers, 3);
     }
@@ -204,6 +207,13 @@
       opacity: .7;
       padding-right: .2rem;
     }
+
+    &:hover {
+      .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
   }
 }
 
@@ -221,11 +231,15 @@
 .crm-actions {
 
   $primary-background: map-get($greyscale, 'white');
+
   background-color: $primary-background;
   grid-row-start: 2;
+  height: calc(100% - #{$menu-height});
 
   .crm-menu {
-    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
     @extend %flex-center;
 
     &__group {
@@ -243,11 +257,12 @@
       box-shadow: 0 0 0 0;
       border-right: 1px solid rgba(map-get($greyscale, 'light'), .3);
       border-top: 1px solid rgba(map-get($greyscale, 'light'), .3);
-      display: flex;
-      flex-direction: row;
-
-      padding: 1.5rem 0;
+      color: map-get($greyscale, 'base' );
       cursor: pointer;
+      display: flex;
+      flex: 1;
+      font-weight: normal;
+      padding: 1.5rem 0;
       width: 100%;
       transition: $transitions;
 
@@ -255,16 +270,23 @@
         left: 1rem;
         margin-bottom: .5rem;
         max-width: 4rem;
-        padding: 0 1rem;
+        margin: 0 1.5rem;
       }
 
       i {
         padding: .5rem;
+        margin-top: -.2rem;
       }
 
-      &:hover,
+      &:hover {
+        box-shadow: inset 0 0 0 2px map-get($brand-colors, 'salmon');
+        text-shadow: 1px 0 0 currentColor;
+        position: relative;
+      }
+
       &.active {
         box-shadow: inset 0 0 0 2px map-get($brand-colors, 'salmon');
+        text-shadow: 1px 0 0 currentColor;
         position: relative;
 
         &:before {
@@ -299,7 +321,7 @@
   color: map-get($greyscale, 'white');
   display: flex;
   flex-direction: column;
-  height: $menu-banner-height;
+  height: 13rem;
 
   &-header {
     color: rgba(map-get($greyscale, 'white'), .6);

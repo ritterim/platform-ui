@@ -29,3 +29,16 @@
     width: 75vw;
   }
 }
+
+.login {
+  aside {
+    position: fixed;
+    height: 100vh;
+    width: 40vw;
+    z-index: 50;
+  }
+  main {
+    margin-left: 40vw;
+    width: 60vw;
+  }
+}
