@@ -94,6 +94,10 @@
     margin: 0 map-get($spacers, 1);
   }
 
+  [aria-hidden="hidden"] {
+    pointer-events: none;
+  }
+
   &:hover {
     background-color: $secondary-background;
     border-color: inherit;
