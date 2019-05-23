@@ -224,25 +224,37 @@
     </section>
     <section>
       <h2>Buttons</h2>
-      <button class="button">Add <i class="fas fa-plus"></i></button>
-      <button class="button button--lg">Add <i class="fas fa-plus"></i></button>
+      <button class="button">Add <i class="fas fa-plus" focusable="false" aria-hidden="hidden"></i></button>
+      <button class="button button--lg">Add <i class="fas fa-plus" focusable="false" aria-hidden="hidden"></i></button>
       <hr/>
-      <button class="button button--secondary"><i class="fas fa-download"></i></button>
+      <button class="button button--secondary" role="button" aria-label="Download">
+        <i class="fas fa-download" focusable="false" aria-hidden="hidden"></i>
+      </button>
       <hr/>
       <button class="button button--post">Get Contracted Now</button>
       <button class="button button--post button--lg">Get Contracted Now</button>
       <hr/>
       <div class="button-group">
-        <a class="button button--secondary"><i class="fas fa-download"></i></a>
-        <a class="button button--secondary"><i class="fas fa-chart-pie"></i></a>
-        <a class="button button--secondary"><i class="fas fa-chart-line"></i></a>
+        <a class="button button--secondary" role="button" aria-label="Download">
+          <i class="fas fa-download" focusable="false" aria-hidden="hidden"></i>
+        </a>
+        <a class="button button--secondary" role="button" aria-label="Pie Chart">
+          <i class="fas fa-chart-pie" focusable="false" aria-hidden="hidden"></i>
+        </a>
+        <a class="button button--secondary" role="button" aria-label="Chart Line">
+          <i class="fas fa-chart-line" focusable="false" aria-hidden="hidden"></i>
+        </a>
       </div>
       <hr>
       <div class="button-group">
         <div class="rim-info-box">
-          <a class="button button--secondary"><i class="fas fa-sliders-h"></i></a>
+          <a class="button button--secondary" role="button" aria-label="Toggle">
+            <i class="fas fa-sliders-h" focusable="false" aria-hidden="hidden"></i>
+          </a>
           <div class="rim-info-box__content">
-            <button class="button rim-info-box__close">Close <i class="fas fa-times"></i></button>
+            <button class="button rim-info-box__close">
+              Close <i class="fas fa-times" focusable="false" aria-hidden="hidden"></i>
+            </button>
             <form action="" class="rim-info-box__inner rim-form">
               <label for="dob" class="rim-form__field has-icon">Age or DOB
                 <input id="dob" type="date" placeholder="DD/MM/YYYY">
@@ -313,8 +325,12 @@
             </form>
           </div>
         </div>
-        <a class="button button--secondary"><i class="fas fa-download"></i></a>
-        <a class="button button--secondary"><i class="fas fa-sync-alt"></i></a>
+        <a class="button button--secondary" role="button" aria-label="Download">
+          <i class="fas fa-download" focusable="false" aria-hidden="hidden"></i>
+        </a>
+        <a class="button button--secondary" role="button" aria-label="Sync">
+          <i class="fas fa-sync-alt" focusable="false" aria-hidden="hidden"></i>
+        </a>
       </div>
     </section>
     <section>
@@ -326,8 +342,8 @@
             <h2 class="card__title">Appointments</h2>
           </div>
           <div class="card__group button-group">
-            <a class="button">Add <i class="fas fa-plus"></i></a>
-            <a class="button">View All <i class="fas fa-arrow-right"></i></a>
+            <a class="button">Add <i class="fas fa-plus" focusable="false" aria-hidden="hidden"></i></a>
+            <a class="button">View All <i class="fas fa-arrow-right" focusable="false" aria-hidden="hidden"></i></a>
           </div>
         </div>
         <div class="card__content">
