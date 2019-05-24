@@ -2,22 +2,21 @@
 //
 // Styleguide Components.Drawer
 
-.drawer {
+.rim-drawer {
   $self: &;
-  box-shadow: 0 -.5rem 2rem rgba(map-get($greyscale, 'black'), .5);
   display: flex;
   flex-direction: column;
-  height: 50vh;
   width: 100%;
   position: fixed;
   z-index: 500;
-  &-bottom {
     bottom: 0;
     left: 0;
-  }
+
   &__inner {
-    background: map-get($greyscale, 'white');
+    background: map-get($brand-colors, 'lightblue');
+    box-shadow: 0 -.5rem 2rem rgba(map-get($greyscale, 'black'), .5);
     height: 100%;
+    min-height: 50vh;
   }
   &__header {
     background-color: map-get($greyscale, 'white');
@@ -34,5 +33,40 @@
   &__content {
     padding: 2rem;
     position: relative;
+  }
+  &--closed {
+    display: none;
+  }
+  &__open {
+    cursor: pointer;
+    bottom: 1rem;
+    right: 1rem;
+    position: fixed;
+    z-index: 25;
+  }
+  &--list {
+    display: flex;
+    li {
+      display: flex;
+      flex-direction: column;
+      width: 256%;
+      margin: 0 .5rem;
+      padding: .5rem;
+      transition: $transitions;
+      &:hover {
+        transform: scale(1.05);
+      }
+      a {
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+      }
+      img {
+        max-height: 3rem;
+      }
+      h3, p {
+        text-align: center;
+      }
+    }
   }
 }

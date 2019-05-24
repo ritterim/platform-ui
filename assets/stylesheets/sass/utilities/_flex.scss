@@ -1,4 +1,3 @@
-
 %flex-center {
   display: flex;
   align-items: center;
@@ -7,8 +6,9 @@
 
 .flex {
   display: flex;
-}
-
-.flex-align-center {
-  @extend %flex-center;
+  &-align {
+    &__center {
+      @extend %flex-center;
+    }
+  }
 }

@@ -22,6 +22,18 @@
   width: 100%;
   height: 100%;
 
+  .agent-profile__gear {
+    .fa-cog {
+      opacity: $opacity / 2;
+    }
+    &:hover {
+      .fa-cog {
+        opacity: 1;
+        animation: spin $transitions * 4;
+      }
+    }
+  }
+
   .search {
     color: $primary-color;
     flex-grow: 1;
@@ -52,7 +64,7 @@
     flex: 0 0 auto;
     font-size: map-get($font-percentage, 'sm');
     line-height: 1.5;
-    padding: 0 2rem;
+    padding: 0 map-get($spacers, 4);
     transition: $transitions;
     @extend %flex-center;
 
@@ -148,7 +160,7 @@
 
       .pill {
         color: $dropdown-background;
-        margin-bottom: 1rem;
+        margin-bottom: $spacer;
       }
     }
 
@@ -223,7 +235,7 @@
   padding: map-get($spacers, 4);
   width: 25rem;
 
-  .rim-form__field {
+  .crm-form__field {
     margin-bottom: map-get($spacers, 3);
   }
 }
@@ -234,19 +246,32 @@
 
   background-color: $primary-background;
   grid-row-start: 2;
+  // must add .crm-actions__stats height
   height: calc(100% - #{$menu-height});
 
   .crm-menu {
     display: flex;
     flex-direction: column;
-    min-height: 100%;
-    @extend %flex-center;
+    flex: 1;
+    // justify-content: flex-start;
+    // min-height: 100%;
+    // @extend %flex-center;
 
     &__group {
       display: flex;
       width: 100%;
+      flex: 1;
       .crm-menu__item {
         flex-direction: column;
+        justify-content: space-around;
+        img {
+          margin-bottom: $spacer / 2;
+        }
+        &.active {
+          &:before, &:after {
+            top: 40%;
+          }
+        }
       }
     }
 
@@ -262,20 +287,17 @@
       display: flex;
       flex: 1;
       font-weight: normal;
-      padding: 1.5rem 0;
+      justify-content: center;
+      padding: $spacer 0;
       width: 100%;
       transition: $transitions;
 
       img {
-        left: 1rem;
-        margin-bottom: .5rem;
-        max-width: 4rem;
-        margin: 0 1.5rem;
-      }
-
-      i {
-        padding: .5rem;
-        margin-top: -.2rem;
+        left: $spacer;
+        margin-bottom: $spacer / 2;
+        max-width: $spacer * 4;
+        max-height: map-get($spacers, 5);
+        margin: 0 map-get($spacers, 2);
       }
 
       &:hover {
@@ -321,7 +343,7 @@
   color: map-get($greyscale, 'white');
   display: flex;
   flex-direction: column;
-  height: 13rem;
+  height: 100%;
 
   &-header {
     color: rgba(map-get($greyscale, 'white'), .6);

@@ -20,13 +20,16 @@
   aside {
     margin-top: $menu-height;
     position: fixed;
-    height: 100vh;
     width: 25vw;
     z-index: 50;
   }
   main {
     margin-left: 25vw;
     width: 75vw;
+    .vueport {
+      display: block;
+      padding: map-get($spacers, 4);
+    }
   }
 }
 
