@@ -9,7 +9,7 @@
 
 // text shadow using $greyscale
 @each $name, $color in $greyscale {
-  .text-shadow-#{$name} {
+  .text-shadow__#{$name} {
     text-shadow: .3rem .3rem .5rem $color;
   }
 }

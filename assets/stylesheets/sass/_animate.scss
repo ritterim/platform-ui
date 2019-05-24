@@ -37,3 +37,13 @@
 // <a target="_blank" href="https://daneden.github.io/animate.css/">Check out all the animations here!</a>
 //
 // Styleguide Animate
+
+// animate.css doesn't have spin?
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}

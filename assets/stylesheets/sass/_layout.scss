@@ -31,6 +31,7 @@ a {
   color: map-get($platform-colors, 'link');
   text-decoration: none;
   transition: $transitions;
+  // if arrow structure is on place
   i.fa-arrow-right,
   i.fa-angle-right {
     transition: $transitions;
@@ -48,4 +49,8 @@ a {
 
 section {
   padding: $spacer;
+}
+
+strong {
+  font-weight: bold;
 }

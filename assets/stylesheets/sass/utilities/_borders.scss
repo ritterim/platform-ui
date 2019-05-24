@@ -1,7 +1,0 @@
-// set solid borders
-@each $direction in $xy-border {
-  .border-#{nth($direction, 1)} {
-    border-#{nth($direction, 1)}: 1px solid;
-    border-color: map-get($greyscale, 'base');
-  }
-}

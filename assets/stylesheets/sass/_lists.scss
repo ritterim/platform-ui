@@ -14,6 +14,10 @@ ul {
     flex-grow: 1;
     margin: 0 $spacer;
     padding: 0 0 0 map-get($spacers, 4);
+    &__inline {
+      display: flex;
+      flex-wrap: wrap;
+    }
   }
 
   &-item {
