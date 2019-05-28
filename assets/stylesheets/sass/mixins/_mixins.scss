@@ -123,11 +123,6 @@
 //
 //
 // Styleguide Mixins.MediaQuery
-$breakpoints: (
-  mobile: 768px,
-  laptop: 1240px,
-  desktop-lg: 1800px
-);
 
 @mixin breakpoint($breakpoint, $direction: null) {
   @if map-has-key($breakpoints, $breakpoint) {
