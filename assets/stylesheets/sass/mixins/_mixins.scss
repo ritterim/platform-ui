@@ -123,11 +123,6 @@
 //
 //
 // Styleguide Mixins.MediaQuery
-$breakpoints: (
-  mobile: 768px,
-  laptop: 1240px,
-  desktop-lg: 1800px
-);
 
 @mixin breakpoint($breakpoint, $direction: null) {
   @if map-has-key($breakpoints, $breakpoint) {
@@ -157,14 +152,28 @@ $breakpoints: (
         @content;
       }
     } @else if $direction == min {
-      // Write the media query.
       @media (min-width: $breakpoint) {
         @content;
       }
     } @else {
       @media ($direction: $breakpoint) {
-        @content
+        @content;
       }
     }
   }
+}
+
+
+// Equal Height and Width
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+
+// Center with flex
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
