@@ -435,6 +435,10 @@
         @include breakpoint(desktop, min) {
             flex-basis: 33.33%;
         }
+
+        @include breakpoint(mobile, max) {
+            flex-basis: 100%;
+        }
     }
   
     .card {
@@ -497,10 +501,16 @@
 
     &__group {
         display: flex;
+        flex-wrap: wrap;
 
         &--split {
             > :first-child {
                 width: 35%;
+
+                @include breakpoint(mobile, max) {
+                    margin: 0 0 $spacer;
+                    width: auto;
+                  }
             }
         }
 

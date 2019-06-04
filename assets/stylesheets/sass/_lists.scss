@@ -14,6 +14,11 @@ ul {
     flex-grow: 1;
     margin: 0 $spacer;
     padding: 0 0 0 map-get($spacers, 4);
+
+    @include breakpoint(desktop, max) {
+      margin: 0;
+    }
+
     &__inline {
       display: flex;
       flex-wrap: wrap;
@@ -67,19 +72,8 @@ ul {
   padding: 0;
   list-style: none;
   display: flex;
-  justify-content: space-between;
 
   li {
-    flex-grow: 1;
-    margin: 0 map-get($spacers, 2);
-
-    &:first-child {
-      margin-left: 0;
-    }
-
-    &:last-child {
-      margin-right: 0;
-    }
 
     .image-link {
       background-color: map-get($brand-colors, 'med-blue');
