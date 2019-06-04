@@ -435,6 +435,10 @@
         @include breakpoint(desktop, min) {
             flex-basis: 33.33%;
         }
+
+        @include breakpoint(mobile, max) {
+            flex-basis: 100%;
+        }
     }
   
     .card {
