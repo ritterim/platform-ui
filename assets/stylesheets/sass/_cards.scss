@@ -501,10 +501,16 @@
 
     &__group {
         display: flex;
+        flex-wrap: wrap;
 
         &--split {
             > :first-child {
                 width: 35%;
+
+                @include breakpoint(mobile, max) {
+                    margin: 0 0 $spacer;
+                    width: auto;
+                  }
             }
         }
 
