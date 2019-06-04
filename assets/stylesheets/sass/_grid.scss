@@ -382,6 +382,8 @@
 .rim-block-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+  margin-left: -.5rem;
+  width: calc(100% + .5rem * 2);
 
   &__container {
     margin: 0;
