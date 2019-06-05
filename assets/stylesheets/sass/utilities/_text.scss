@@ -1,22 +1,31 @@
+// Text
+//
+//
+// ```html
+// 
+// ```
+//
+// ```
+//
+// Styleguide Utilities.Text
 
-.text-uppercase {
-  text-transform: uppercase;
-}
-
-.bold {
-  font-weight: bold;
-}
-
-// text shadow using $greyscale
-@each $name, $color in $greyscale {
-  .text-shadow__#{$name} {
-    text-shadow: .3rem .3rem .5rem $color;
+.text {
+  &--uppercase {
+    text-transform: uppercase;
   }
-}
-
-// font size based on percentages
-@each $name, $percentage in $font-percentage {
-  .font-#{$name} {
-    font-size: $percentage !important;
+  &--bold {
+    font-weight: bold;
+  }
+  // text shadow using $greyscale
+  @each $name, $color in $greyscale {
+    &--shadow-#{$name} {
+      text-shadow: .3rem .3rem .5rem $color;
+    }
+  }
+  // font size based on percentages
+  @each $name, $percentage in $font-percentage {
+    &--size-#{$name} {
+      font-size: $percentage !important;
+    }
   }
 }

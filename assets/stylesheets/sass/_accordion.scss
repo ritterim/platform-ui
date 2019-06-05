@@ -11,14 +11,14 @@
 //
 // The default platform button. Usually paired visually with an icon. Can be the default size or large.
 //
-// - .crm-accordion
+// - .rim-accordion
 //
 // Markup:
-// <div class="crm-accordion">
-//   <div class="crm-accordion crm-accordion__title">
+// <div class="rim-accordion">
+//   <div class="rim-accordion__title">
 //     title
 //   </div>
-//   <div class="crm-accordion crm-accordion__content">
+//   <div class="rim-accordion__content">
 //     content
 //   </div>
 // </div>
@@ -31,14 +31,14 @@
 //
 // Adding `.active` changes the default title bar background and hover highlight
 //
-// - .crm_accordion .active
+// - .rim_accordion .active
 //
 // Markup:
-// <div class="crm-accordion active">
-//   <div class="crm-accordion crm-accordion__title">
+// <div class="rim-accordion active">
+//   <div class="rim-accordion__title">
 //     title
 //   </div>
-//   <div class="crm-accordion crm-accordion__content">
+//   <div class="rim-accordion__content">
 //     content
 //   </div>
 // </div>
@@ -48,7 +48,7 @@
 // Styleguide Components.Accordion.Active
 
 
-.crm-accordion {
+.rim-accordion {
 
   $self: &;
   $primary-color: map-get($greyscale, 'base');

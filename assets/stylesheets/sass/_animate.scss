@@ -25,7 +25,9 @@
 // | `zoomOutDown`     | `zoomOutLeft`      | `zoomOutRight`      | `zoomOutUp`          |
 // | `slideInDown`     | `slideInLeft`      | `slideInRight`      | `slideInUp`          |
 // | `slideOutDown`    | `slideOutLeft`     | `slideOutRight`     | `slideOutUp`         |
-// | `heartBeat`       |
+// | `heartBeat`       | | | |
+// | *_Not in animate.css, but added here_*
+// | `spin`            | `pulse` |
 //
 // Full example:
 //
@@ -35,6 +37,8 @@
 // note: `Fastest` is an add-on for our system.
 //
 // <a target="_blank" href="https://daneden.github.io/animate.css/">Check out all the animations here!</a>
+//
+// ```
 //
 // Styleguide Animate
 
@@ -46,4 +50,16 @@
     to {
         transform:rotate(360deg);
     }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(map-get($greyscale, 'white'), 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(map-get($greyscale, 'white'), 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(map-get($greyscale, 'white'), 0);
+  }
 }

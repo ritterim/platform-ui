@@ -4,10 +4,6 @@
 @import "utilities/colors";
 @import "utilities/text";
 
-.text-uppercase {
-  text-transform: uppercase;
-}
-
 .rotate-45 {
   transform: rotate(-45deg);
 }
@@ -15,10 +11,6 @@
 // add-on to animate.css to speed up
 .animated.fastest {
   animation-duration: $transitions;
-}
-
-.bold {
-  font-weight: bold;
 }
 
 .no-border {
@@ -33,10 +25,6 @@
 .inverted {
   color: map-get($greyscale, 'white') !important;
   transition: $transitions;
-}
-
-.text-shadow {
-  text-shadow: .3rem .3rem .5rem map-get($greyscale, 'black');
 }
 
 .close-action {
@@ -64,11 +52,4 @@
   width: 1px;
   overflow: hidden;
   position: absolute !important;
-}
-
-// font size based on percentages
-@each $name, $percentage in $font-percentage {
-  .font-#{$name} {
-    font-size: $percentage !important;
-  }
 }
