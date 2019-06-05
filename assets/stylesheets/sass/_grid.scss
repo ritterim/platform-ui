@@ -45,3 +45,357 @@
     width: 60vw;
   }
 }
+
+
+
+// Grid
+//
+// This example contains a grid of cards. This grid is responsive 
+// and works well for examples like this where you need multiple blocks of content.
+//
+// Markup:
+// <section>
+//   <ul class="rim-block-grid">
+//     <li class="rim-block-grid__container">
+//       <div class="card alert">
+//         <div class="card__header">
+//           <div class="card__group">
+//             <div class="pill--circle background-red">
+//               <div class="card__header-icon-wrapper">  
+//                 <i class="fas fa-bell font-xl text-white"></i>
+//               </div>
+//             </div>
+//             <h2 class="card__title card__title--normal">Business Meeting</h2>
+//           </div>
+//           <div class="card__header-actions">
+//             <a href="#" class="card-action" role="button" aria-label="Remove">
+//               <i class="fas fa-trash-alt" aria-hidden="hidden"></i>
+//             </a>
+//             <a href="#" class="card-action" role="button" aria-label="Edit">
+//               <i class="fas fa-edit" aria-hidden="hidden"></i>
+//             </a>
+//           </div>
+//         </div>
+//         <div class="card__content">
+//           <p>
+//             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+//           </p>
+//         </div>
+//         <div class="card__footer card__footer">
+//           <div class="card__footer-time">
+//             <p>
+//               <i class="fas fa-calendar-alt"></i><time datetime="2019-05-10">10 May 2019</time>
+//             </p>
+//             <p>
+//               <i class="far fa-clock"></i><time datetime="13:00">1:00 PM</time>
+//             </p>
+//           </div>
+//           <div class="card__footer-status">
+//             <div class="card__check">
+//               <div class="pill pill--circle text-light">
+//                 <i class="fas fa-check"></i>
+//               </div>
+//               <p class="card__check-status">Complete</p>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </li>
+//     <li class="rim-block-grid__container">
+//       <div class="card alert completed">
+//         <div class="card__header">
+//           <div class="card__group">
+//             <div class="pill--circle background-red">
+//               <div class="card__header-icon-wrapper">  
+//                 <i class="fas fa-bell font-xl text-white"></i>
+//               </div>
+//             </div>
+//             <h2 class="card__title card__title--normal">Training</h2>
+//           </div>
+//           <div class="card__header-actions">
+//             <a href="#" class="card-action" role="button" aria-label="Remove">
+//               <i class="fas fa-trash-alt" aria-hidden="hidden"></i>
+//             </a>
+//             <a href="#" class="card-action" role="button" aria-label="Edit">
+//               <i class="fas fa-edit" aria-hidden="hidden"></i>
+//             </a>
+//           </div>
+//         </div>
+//         <div class="card__content">
+//           <p>
+//             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+//           </p>
+//         </div>
+//         <div class="card__footer card__footer">
+//           <div class="card__footer-time">
+//             <p>
+//               <i class="fas fa-calendar-alt"></i><time datetime="2019-05-10">10 May 2019</time>
+//             </p>
+//             <p>
+//               <i class="far fa-clock"></i><time datetime="13:00">1:00 PM</time>
+//             </p>
+//           </div>
+//           <div class="card__footer-status">
+//             <div class="card__check">
+//               <div class="pill pill--circle text-olive">
+//                 <i class="fas fa-check text-olive"></i>
+//               </div>
+//               <p class="card__check-status">Completed</p>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </li>
+//     <li class="rim-block-grid__container">
+//       <div class="card warning">
+//         <div class="card__header">
+//           <div class="card__group">
+//             <div class="pill--circle background-skyblue">
+//               <div class="card__header-icon-wrapper">  
+//                 <i class="fas fa-bell font-xl text-white"></i>
+//               </div>
+//             </div>
+//             <h2 class="card__title card__title--normal">New Agent Orientation</h2>
+//           </div>
+//           <div class="card__header-actions">
+//             <a href="#" class="card-action" role="button" aria-label="Remove">
+//               <i class="fas fa-trash-alt" aria-hidden="hidden"></i>
+//             </a>
+//             <a href="#" class="card-action" role="button" aria-label="Edit">
+//               <i class="fas fa-edit" aria-hidden="hidden"></i>
+//             </a>
+//           </div>
+//         </div>
+//         <div class="card__content">
+//           <p>
+//             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+//           </p>
+//         </div>
+//         <div class="card__footer card__footer">
+//           <div class="card__footer-time">
+//             <p>
+//               <i class="fas fa-calendar-alt"></i><time datetime="2019-05-10">10 May 2019</time>
+//             </p>
+//             <p>
+//               <i class="far fa-clock"></i><time datetime="13:00">1:00 PM</time>
+//             </p>
+//           </div>
+//           <div class="card__footer-status">
+//             <div class="card__check">
+//               <div class="pill pill--circle text-light">
+//                 <i class="fas fa-check"></i>
+//               </div>
+//               <p class="card__check-status">Complete</p>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </li>
+//     <li class="rim-block-grid__container">
+//       <div class="card warning">
+//         <div class="card__header">
+//           <div class="card__group">
+//             <div class="pill--circle background-skyblue">
+//               <div class="card__header-icon-wrapper">  
+//                 <i class="fas fa-bell font-xl text-white"></i>
+//               </div>
+//             </div>
+//             <h2 class="card__title card__title--normal">Meeting</h2>
+//           </div>
+//           <div class="card__header-actions">
+//             <a href="#" class="card-action" role="button" aria-label="Remove">
+//               <i class="fas fa-trash-alt" aria-hidden="hidden"></i>
+//             </a>
+//             <a href="#" class="card-action" role="button" aria-label="Edit">
+//               <i class="fas fa-edit" aria-hidden="hidden"></i>
+//             </a>
+//           </div>
+//         </div>
+//         <div class="card__content">
+//           <p>
+//             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+//           </p>
+//         </div>
+//         <div class="card__footer card__footer">
+//           <div class="card__footer-time">
+//             <p>
+//               <i class="fas fa-calendar-alt"></i><time datetime="2019-05-10">10 May 2019</time>
+//             </p>
+//             <p>
+//               <i class="far fa-clock"></i><time datetime="13:00">1:00 PM</time>
+//             </p>
+//           </div>
+//           <div class="card__footer-status">
+//             <div class="card__check">
+//               <div class="pill pill--circle text-light">
+//                 <i class="fas fa-check"></i>
+//               </div>
+//               <p class="card__check-status">Complete</p>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </li>
+//     <li class="rim-block-grid__container">
+//       <div class="card warning">
+//         <div class="card__header">
+//           <div class="card__group">
+//             <div class="pill--circle background-skyblue">
+//               <div class="card__header-icon-wrapper">  
+//                 <i class="fas fa-bell font-xl text-white"></i>
+//               </div>
+//             </div>
+//             <h2 class="card__title card__title--normal">Business Meeting</h2>
+//           </div>
+//           <div class="card__header-actions">
+//             <a href="#" class="card-action" role="button" aria-label="Remove">
+//               <i class="fas fa-trash-alt" aria-hidden="hidden"></i>
+//             </a>
+//             <a href="#" class="card-action" role="button" aria-label="Edit">
+//               <i class="fas fa-edit" aria-hidden="hidden"></i>
+//             </a>
+//           </div>
+//         </div>
+//         <div class="card__content">
+//           <p>
+//             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+//           </p>
+//         </div>
+//         <div class="card__footer card__footer">
+//           <div class="card__footer-time">
+//             <p>
+//               <i class="fas fa-calendar-alt"></i><time datetime="2019-05-10">10 May 2019</time>
+//             </p>
+//             <p>
+//               <i class="far fa-clock"></i><time datetime="13:00">1:00 PM</time>
+//             </p>
+//           </div>
+//           <div class="card__footer-status">
+//             <div class="card__check">
+//               <div class="pill pill--circle text-light">
+//                 <i class="fas fa-check"></i>
+//               </div>
+//               <p class="card__check-status">Complete</p>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </li>
+//     <li class="rim-block-grid__container">
+//       <div class="card">
+//         <div class="card__header">
+//           <div class="card__group">
+//             <div class="pill--circle background-olive">
+//               <div class="card__header-icon-wrapper">  
+//                 <i class="fas fa-bell font-xl text-white"></i>
+//               </div>
+//             </div>
+//             <h2 class="card__title card__title--normal">Business Meeting</h2>
+//           </div>
+//           <div class="card__header-actions">
+//             <a href="#" class="card-action" role="button" aria-label="Remove">
+//               <i class="fas fa-trash-alt" aria-hidden="hidden"></i>
+//             </a>
+//             <a href="#" class="card-action" role="button" aria-label="Edit">
+//               <i class="fas fa-edit" aria-hidden="hidden"></i>
+//             </a>
+//           </div>
+//         </div>
+//         <div class="card__content">
+//           <p>
+//             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+//           </p>
+//         </div>
+//         <div class="card__footer card__footer">
+//           <div class="card__footer-time">
+//             <p>
+//               <i class="fas fa-calendar-alt"></i><time datetime="2019-05-10">10 May 2019</time>
+//             </p>
+//             <p>
+//               <i class="far fa-clock"></i><time datetime="13:00">1:00 PM</time>
+//             </p>
+//           </div>
+//           <div class="card__footer-status">
+//             <div class="card__check">
+//               <div class="pill pill--circle text-light">
+//                 <i class="fas fa-check"></i>
+//               </div>
+//               <p class="card__check-status">Complete</p>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </li>
+//     <li class="rim-block-grid__container">
+//       <div class="card">
+//         <div class="card__header">
+//           <div class="card__group">
+//             <div class="pill--circle background-olive">
+//               <div class="card__header-icon-wrapper">  
+//                 <i class="fas fa-bell font-xl text-white"></i>
+//               </div>
+//             </div>
+//             <h2 class="card__title card__title--normal">Business Meeting</h2>
+//           </div>
+//           <div class="card__header-actions">
+//             <a href="#" class="card-action" role="button" aria-label="Remove">
+//               <i class="fas fa-trash-alt" aria-hidden="hidden"></i>
+//             </a>
+//             <a href="#" class="card-action" role="button" aria-label="Edit">
+//               <i class="fas fa-edit" aria-hidden="hidden"></i>
+//             </a>
+//           </div>
+//         </div>
+//         <div class="card__content">
+//           <p>
+//             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+//           </p>
+//         </div>
+//         <div class="card__footer card__footer">
+//           <div class="card__footer-time">
+//             <p>
+//               <i class="fas fa-calendar-alt"></i><time datetime="2019-05-10">10 May 2019</time>
+//             </p>
+//             <p>
+//               <i class="far fa-clock"></i><time datetime="13:00">1:00 PM</time>
+//             </p>
+//           </div>
+//           <div class="card__footer-status">
+//             <div class="card__check">
+//               <div class="pill pill--circle text-light">
+//                 <i class="fas fa-check"></i>
+//               </div>
+//               <p class="card__check-status">Complete</p>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </li>
+//   </ul>
+// </section>
+//
+// Weight: 3
+//
+// Styleguide Components.Grid
+
+// Block Grid
+.rim-block-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+  margin-left: -.5rem;
+  width: calc(100% + .5rem * 2);
+
+  &__container {
+    margin: 0;
+    padding: .5rem;
+  }
+}
+  
+ul.rim-block-grid {
+  list-style-type: none;
+  padding-left: 0;
+
+  li {
+    margin-bottom: 0;
+  }
+}
