@@ -490,11 +490,18 @@
   &__group {
       display: flex;
 
-      &--split {
-          > :first-child {
-              width: 35%;
-          }
-      }
+    &-action {
+        @extend %flex-center;
+        border-right: 1px solid map-get($greyscale, 'light');
+        color: lighten(map-get($greyscale, 'light'), 10%);
+        height: 1.5rem;
+        padding: 0 .5rem;
+        transition: $transitions;
+        width: 2rem;
+
+        &:hover {
+            color: map-get($greyscale, 'light');
+        }
 
       &--vertical {
           align-items: flex-start;

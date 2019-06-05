@@ -164,7 +164,13 @@
 }
 
 // Equal Height and Width
-@mixin square($size) {
-  width: $size;
-  height: $size;
+// Set 'min' or 'max' unless straight height, width
+@mixin square($size, $minMax:null) {
+  @if $minMax {
+    #{$minMax}-height: $size;
+    #{$minMax}-width: $size;
+  } @else {
+    width: $size;
+    height: $size;
+  }
 }

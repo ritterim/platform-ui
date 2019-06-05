@@ -45,6 +45,7 @@
 .flexcol {
   $self: &;
   display: flex;
+  flex-wrap: wrap;
   @each $key, $name in $flex-grid {
     &-#{$name} {
       display: flex;
