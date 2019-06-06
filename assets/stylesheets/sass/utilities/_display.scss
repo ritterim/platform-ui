@@ -1,0 +1,16 @@
+@each $breakpoint, $size in $breakpoints {
+    @each $display, $d in (s: show, h: hide) {
+        .#{$d}-#{$breakpoint} {
+            @if $d == hide {
+                @media screen and (max-width: ($size - 1)) {
+                    display: none !important;
+                }
+            }
+            @else if $d == show {  
+                @media screen and (min-width: ($size)) {
+                    display: block !important;
+                }  
+            }
+        }
+    }
+}
