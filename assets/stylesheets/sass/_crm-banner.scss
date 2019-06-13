@@ -4,7 +4,7 @@
   border-bottom: 1px solid map-get($brand-colors, 'skyblue');
   box-sizing: border-box;
   height: calc(#{$menu-banner-height} + 2px);
-  padding: 2rem;
+  padding: map-get($spacers, 4);
   position: relative;
   p {
     font-size: map-get($font-percentage, 'lg');
@@ -16,8 +16,8 @@
   &.collapsed {
     animation: slideInUp .2s;
     background-image: none !important;
-    height: 3rem;
-    padding: .5rem 1rem;
+    height: auto;
+    padding: map-get($spacers, 4) $spacer;
     h1, button {
       display: none;
     }

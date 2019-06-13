@@ -20,18 +20,18 @@
   }
   &__header {
     background-color: map-get($greyscale, 'white');
-    padding: 2rem;
+    padding: map-get($spacers, 4);
     position: relative;
     width: 100%;
     #{$self}__close {
       position: absolute;
-      right: -1rem;
+      right: -$spacer;
       top: 50%;
       transform: translate(-50%, -50%);
     }
   }
   &__content {
-    padding: 2rem;
+    padding: map-get($spacers, 4);
     position: relative;
   }
   &--closed {
@@ -50,8 +50,8 @@
       display: flex;
       flex-direction: column;
       width: 256%;
-      margin: 0 .5rem;
-      padding: .5rem;
+      margin: 0 map-get($spacers, 2);
+      padding: map-get($spacers, 2);
       transition: $transitions;
       &:hover {
         transform: scale(1.05);
