@@ -6,9 +6,9 @@
     border: 1px solid lighten(map-get($greyscale, 'light'), $hue-threshold * 2);
     box-shadow: 0 2px 4px 2px map-get($greyscale, 'lighter' );
     display: none;
-    margin-top: 1rem;
+    margin-top: $spacer;
     min-width: 20rem;
-    padding: 3rem 2rem;
+    padding: map-get($spacers, 5) map-get($spacers, 4);
     position: absolute;
     right: -4.5rem;
     z-index: 50;
