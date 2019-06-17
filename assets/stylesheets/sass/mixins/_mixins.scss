@@ -4,12 +4,12 @@
 //
 // Styleguide Mixins
 
-// Media Queries 
-// 
-// With this mixin you can either use straigh px values or the preset breakpoints we set in the breakpoints map.  
+// Media Queries
+//
+// With this mixin you can either use straigh px values or the preset breakpoints we set in the breakpoints map.
 // Each time you use this mixin you will need the size value and a direction parameter (min, or max).
 //
-// To make a min-width media query 
+// To make a min-width media query
 // ```css
 // .test {
 //   @include breakpoint(mobile, min) {
@@ -26,7 +26,7 @@
 //   }
 // }
 // ```
-// 
+//
 //
 //
 // For a max-width media query
@@ -59,7 +59,7 @@
 //   }
 // }
 // ```
-// 
+//
 // Output
 // ```css
 // @media (min-width: 768px) and (max-width: 1239px) {
@@ -68,8 +68,8 @@
 //   }
 // }
 // ```
-// 
-// You can also use this mixin with standard px values. 
+//
+// You can also use this mixin with standard px values.
 // ```css
 // .test {
 //   @include breakpoint(800px, min) {
@@ -85,7 +85,7 @@
 //   }
 // }
 // ```
-// 
+//
 // And a max-width media query. Note with a specific px value, the mixin will not subtract 1px from the value you use.
 // ```css
 // .test {
@@ -129,7 +129,7 @@
 
     // Get the breakpoint value.
     $breakpoint-value: map-get($breakpoints, $breakpoint);
-    
+
     @if $direction == max {
       @media (max-width: ($breakpoint-value - 1)) {
         @content;
@@ -144,7 +144,7 @@
         @content;
       }
     }
-  
+
   // If the breakpoint doesn't exist in the map.
   } @else {
     @if $direction == max {
@@ -163,17 +163,14 @@
   }
 }
 
-
 // Equal Height and Width
-@mixin square($size) {
-  width: $size;
-  height: $size;
-}
-
-
-// Center with flex
-@mixin flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+// Set 'min' or 'max' unless straight height, width
+@mixin square($size, $minMax:null) {
+  @if $minMax {
+    #{$minMax}-height: $size;
+    #{$minMax}-width: $size;
+  } @else {
+    width: $size;
+    height: $size;
+  }
 }

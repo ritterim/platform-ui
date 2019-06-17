@@ -1,31 +1,62 @@
-h1, h2, h3, h4, h5 {
+// Base Layout
+//
+//
+//
+// Styleguide Layout.Base
+
+
+html {
+  font-family: map-get($fonts, 'base');
+}
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: map-get($fonts, 'base-alt');
+  }
+}
+
+html,
+body {
+  box-sizing: border-box;
+  color: map-get($greyscale, 'dark');
+  font-size: map-get($fonts, 'size');
+  font-weight: 300;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+// set up h-tags
+@for $i from 1 through 6 {
+  h#{$i} {
     color: map-get($brand-colors, 'navy');
     font-family: map-get($fonts, 'headline');
-    font-weight: bold;
+    font-size: map-get($fonts, 'size') + $font-scale * (6 - $i);
+    margin: 0;
+  }
 }
 
-h1 {
-    font-size: map-get($font-percentage, 'xxl');
-    margin-bottom: map-get($spacers, 4);
+
+a {
+  color: map-get($platform-colors, 'link');
+  text-decoration: none;
+  transition: $transitions;
+  // if arrow structure is on place
+  i.fa-arrow-right,
+  i.fa-angle-right {
+    transition: $transitions;
+  }
+  &:hover {
+    i.fa-arrow-right {
+      transform: translate(.3rem);
+    }
+    i.fa-angle-right {
+      transform: translate(.5rem);
+    }
+  }
 }
 
-h2 {
-    font-size: map-get($font-percentage, 'xl');
-    margin-bottom: map-get($spacers, 4);
-}
-
-h3 {
-    font-size: map-get($font-percentage, 'lg');
-    margin-bottom: map-get($spacers, 4);
-}
-
-h4 {
-    font-size: map-get($font-percentage, 'md');
-    margin-bottom: map-get($spacers, 3);
-}
-
-h5 {
-    font-size: map-get($fonts, 'size');
+section {
+  padding: $spacer;
 }
 
 hr {

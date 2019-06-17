@@ -9,14 +9,18 @@
 
 @import url('https://rsms.me/inter/inter-ui.css');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css');
 
 @import "mixins";
 @import "variables";
 @import "utilities";
 
+// animation libs
+@import "animate";
+@import "vue-transitions";
+
 // sass
 @import "grid"; // sets base grids
-@import "layout";
 @import "base";
 @import "menu";
 @import "crm-banner";

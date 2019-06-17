@@ -1,0 +1,88 @@
+// Animate Vue
+//
+//
+// | Transition Name        |                    |                     |                      |
+// | ----------------- | ------------------ | ------------------- | -------------------- |
+// | `fade`          | `slide-iup`            | `slide-down`             | `slide-right`         |
+// | `slide-left`           | `flip-x`        | `flip-y`             | `               |
+//
+// Full example:
+//
+// ```html
+// <transition name="slide-up">
+//   ...
+// </transition>
+// ```
+//
+//
+// ```
+//
+// Styleguide Animate.Vue
+
+.animation-container:not(.allow-overflow) {
+  overflow: hidden;
+}
+
+.fade {
+  &-enter-active {
+    animation: fadeIn $transitions;
+  }
+  &-leave-active {
+    animation: fadeOut $transitions;
+  }
+}
+
+//Slide Up for Pre-Title
+.slide-up {
+  &-enter-active {
+    animation: SlideUp $transitions * 1.5;
+  }
+  &-leave-active {
+    animation: SlideUp $transitions reverse;
+  }
+}
+
+.slide-down {
+  &-enter-active {
+    animation: SlideDown $transitions;
+  }
+  &-leave-active {
+    animation: SlideClose $transitions;
+  }
+}
+
+.slide-right {
+  &-enter-active {
+    animation: slideInRight $transitions;
+  }
+  &-leave-active {
+    animation: slideInRight $transitions reverse;
+  }
+}
+
+.slide-left {
+  &-enter-active {
+    animation: slideOutLeft $transitions reverse;
+  }
+  &-leave-active {
+    animation: slideOutLeft $transitions;
+  }
+}
+
+.flip-x {
+  &-enter-active {
+    animation: flipOutX $transitions reverse;
+  }
+  &-leave-active {
+    animation:  flipOutX $transitions;
+  }
+}
+
+.flip-y {
+  &-enter-active {
+    animation: flipOutY $transitions reverse;
+  }
+  &-leave-active {
+    animation: flipOutY $transitions;
+  }
+}

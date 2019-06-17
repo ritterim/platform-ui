@@ -8,33 +8,57 @@
 
   <title></title>
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Raleway:400,800,900|Permanent+Marker" rel="stylesheet">
-  <link rel="stylesheet" href="https://beta.ritterim.com/scss/main.min.fb26487c6e15729fc32fa0862ada5e8e69915393de2207c79ee628cb60290116.css">
+  <link rel="stylesheet" href="https://beta.ritterim.com/scss/main.min.29cd1824ea148d63556fef60a0da92e3ef1e723d607215e91972ecb0885f53bf.css">
 
   <link rel="canonical" href="http://localhost:8001/">
   <style media="screen">
     body {
       height: 100vh;
     }
+    .logo {
+      height: 3rem;
+      position: absolute;
+      top: 1rem;
+      left: 2rem;
+      z-index: 10;
+    }
+    .scale {
+      transition: .2s;
+      transform: scale(1);
+    }
+    @media (min-width: 1800px) {
+      .scale {
+        transform: scale(1.5);
+      }
+    }
+
   </style>
 </head>
 
 <body>
   <div class="container-fluid h-100 px-0">
     <div class="row h-100">
-      <div class="col-5 lightblue-background h-100 d-flex justify-content-center">
-        <img src="/assets/images/registration-page.svg" alt="Please login">
+      <div class="col-5 d-none d-md-flex position-fixed lightblue-background h-100 justify-content-center">
+        <img class="logo" src="/assets/images/ritterinsurancelogo.svg" alt="Ritter Insurance Marketing">
+        <img class="scale" src="/assets/images/registration-page.svg" alt="Please login">
       </div>
-      <div class="col-7">
-        <div class="container-fluid d-flex justify-content-center flex-column">
+      <div class="col-5 d-none d-md-flex">
+        <!-- this div compensates for fixed position above  -->
+      </div>
+      <div class="col-md-7 col-12 d-flex align-items-center" ng-show="model.loginUrl">
+        <div class="container-fluid d-flex justify-content-center flex-column align-items-center">
           <div class="row d-flex justify-content-center">
             <h2 class="text-center">Login to <strong>Your Account</strong></h2>
-            <hr class=" mb-5 small ">
+            <hr class="mb-5 small clearfix">
+          </div>
+          <div class="row rounded-pill alert alert-danger" ng-show="model.errorMessage">
+            {{model.errorMessage}}
           </div>
           <div class="row px-5 mx-5">
-            <form class="form w-100" action="index.html" method="post">
+            <form class="form w-100" action="{{model.loginUrl}}" method="post">
               <fieldset>
                 <div class="form-group">
                   <label for="username">Email Address</label>
@@ -60,6 +84,20 @@
                 <a ng-href="{{link.href}}">{{link.text}}</a>
               </li>
             </ul>
+          </div>
+          <div class="row w-50" ng-show="model.externalProviders.length">
+            <ul class="list-unstyled w-100">
+                <li class="border-top border-bottom py-3" ng-repeat="provider in model.externalProviders">
+                    <a class="d-flex justify-content-center text-uppercase" href="{{provider.href}}" rel="{{provider.text}}" title="{{provider.text}}">
+                      <img class="mr-2" style="max-width: 1rem; max-height: 1.5rem;" src="/assets/images/rim-horse.svg" alt="Ritter Insurance Marketing">
+                      {{provider.text}}
+                    </a>
+                </li>
+            </ul>
+          </div>
+          <div class="row py-5 d-flex flex-column justify-content-center">
+            <p class="w-100 text-center">&copy; Ritter Insurance Marketing LLC</p>
+            <p class="w-100 text-center">1-800-769-1847</p>
           </div>
 
         </div>
