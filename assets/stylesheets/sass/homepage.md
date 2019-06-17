@@ -6,7 +6,7 @@ A summary of how we've decided to write/structure BEM
 
 ### Utility classes
 
-All utility classes _are_modifiers, underscores are not applied here.
+All utility classes _are_ modifiers, underscores are not applied here.
 ```
 flex--justify-center
 ```

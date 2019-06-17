@@ -11,6 +11,7 @@
   "author": "Ritter Insurance Marketing",
   "license": "UNLICENSED",
   "devDependencies": {
+    "@fortawesome/fontawesome-pro": "^5.9.0",
     "gulp-babel": "^6.1.2",
     "gulp-concat": "^2.6.1",
     "gulp-connect": "^5.7.0",

@@ -6,15 +6,15 @@
 //
 // Styleguide Components.Cards
 
-// Card
+// News Card
 //
-// Cards are Leveraged
+// This is a news card description
 //
 // Markup:
 // <div class="card">
 //   <div class="card__header">
 //     <div class="card__group">
-//      <i class="far fa-newspaper fa-2x"></i>
+//      <i class="far fa-newspaper card__title-icon--large"></i>
 //      <h2 class="card__title">Agent News</h2>
 //     </div>
 //   </div>
@@ -61,7 +61,7 @@
 // <div class="card">
 //   <div class="card__header">
 //     <div class="card__group">
-//       <i class="fas fa-film fa-2x"></i>
+//       <i class="fas fa-film card__title-icon--large"></i>
 //         <h2 class="card__title">Featured Videos</h2>
 //     </div>
 //   </div>
@@ -93,362 +93,12 @@
 //
 // Styleguide Components.Cards.Videos
 
-// Tasks
-//
-// These are tasks cards. These cards also have grid specific styles applied to them.
-//
-// Markup:
-    // <section>
-    //   <ul class="card-grid">
-    //     <li class="card-grid-wrapper">
-    //       <div class="card alert">
-    //         <div class="card__header">
-    //           <div class="card__group">
-    //             <div class="card__header-icon">
-    //               <div class="card__header-icon-wrapper">
-    //                 <i class="fas fa-bell"></i>
-    //               </div>
-    //             </div>
-    //             <h2 class="card__title card__title--normal">Business Meeting</h2>
-    //           </div>
-    //           <div class="card__header-actions">
-    //             <a href="#" class="card-action" role="button" aria-label="Remove">
-    //               <i class="fas fa-trash-alt" aria-hidden="hidden"></i>
-    //             </a>
-    //             <a href="#" class="card-action" role="button" aria-label="Edit">
-    //               <i class="fas fa-edit" aria-hidden="hidden"></i>
-    //             </a>
-    //           </div>
-    //         </div>
-    //         <div class="card__content">
-    //           <p>
-    //             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    //           </p>
-    //         </div>
-    //         <div class="card__footer task__footer">
-    //           <div class="task__footer-time">
-    //             <p>
-    //               <i class="fas fa-calendar-alt"></i><time datetime="2019-05-10">10 May 2019</time>
-    //             </p>
-    //             <p>
-    //               <i class="far fa-clock"></i><time datetime="13:00">1:00 PM</time>
-    //             </p>
-    //           </div>
-    //           <div class="task__footer-status">
-    //             <div class="task__check">
-    //               <div class="task__check-mark">
-    //                 <i class="fas fa-check"></i>
-    //               </div>
-    //               <p class="task__check-status">Complete</p>
-    //             </div>
-    //           </div>
-    //         </div>
-    //       </div>
-    //     </li>
-    //     <li class="card-grid-wrapper">
-    //       <div class="card alert completed">
-    //         <div class="card__header">
-    //           <div class="card__group">
-    //             <div class="card__header-icon">
-    //               <div class="card__header-icon-wrapper">
-    //                 <i class="fas fa-bell"></i>
-    //               </div>
-    //             </div>
-    //             <h2 class="card__title card__title--normal">Training</h2>
-    //           </div>
-    //           <div class="card__header-actions">
-    //             <a href="#" class="card-action" role="button" aria-label="Remove">
-    //               <i class="fas fa-trash-alt" aria-hidden="hidden"></i>
-    //             </a>
-    //             <a href="#" class="card-action" role="button" aria-label="Edit">
-    //               <i class="fas fa-edit" aria-hidden="hidden"></i>
-    //             </a>
-    //           </div>
-    //         </div>
-    //         <div class="card__content">
-    //           <p>
-    //             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    //           </p>
-    //         </div>
-    //         <div class="card__footer task__footer">
-    //           <div class="task__footer-time">
-    //             <p>
-    //               <i class="fas fa-calendar-alt"></i><time datetime="2019-05-10">10 May 2019</time>
-    //             </p>
-    //             <p>
-    //               <i class="far fa-clock"></i><time datetime="13:00">1:00 PM</time>
-    //             </p>
-    //           </div>
-    //           <div class="task__footer-status">
-    //             <div class="task__check">
-    //               <div class="task__check-mark">
-    //                 <i class="fas fa-check"></i>
-    //               </div>
-    //               <p class="task__check-status">Completed</p>
-    //             </div>
-    //           </div>
-    //         </div>
-    //       </div>
-    //     </li>
-    //     <li class="card-grid-wrapper">
-    //       <div class="card warning">
-    //         <div class="card__header">
-    //           <div class="card__group">
-    //             <div class="card__header-icon">
-    //               <div class="card__header-icon-wrapper">
-    //                 <i class="fas fa-bell"></i>
-    //               </div>
-    //             </div>
-    //             <h2 class="card__title card__title--normal">New Agent Orientation</h2>
-    //           </div>
-    //           <div class="card__header-actions">
-    //             <a href="#" class="card-action" role="button" aria-label="Remove">
-    //               <i class="fas fa-trash-alt" aria-hidden="hidden"></i>
-    //             </a>
-    //             <a href="#" class="card-action" role="button" aria-label="Edit">
-    //               <i class="fas fa-edit" aria-hidden="hidden"></i>
-    //             </a>
-    //           </div>
-    //         </div>
-    //         <div class="card__content">
-    //           <p>
-    //             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    //           </p>
-    //         </div>
-    //         <div class="card__footer task__footer">
-    //           <div class="task__footer-time">
-    //             <p>
-    //               <i class="fas fa-calendar-alt"></i><time datetime="2019-05-10">10 May 2019</time>
-    //             </p>
-    //             <p>
-    //               <i class="far fa-clock"></i><time datetime="13:00">1:00 PM</time>
-    //             </p>
-    //           </div>
-    //           <div class="task__footer-status">
-    //             <div class="task__check">
-    //               <div class="task__check-mark">
-    //                 <i class="fas fa-check"></i>
-    //               </div>
-    //               <p class="task__check-status">Complete</p>
-    //             </div>
-    //           </div>
-    //         </div>
-    //       </div>
-    //     </li>
-    //     <li class="card-grid-wrapper">
-    //       <div class="card warning">
-    //         <div class="card__header">
-    //           <div class="card__group">
-    //             <div class="card__header-icon">
-    //               <div class="card__header-icon-wrapper">
-    //                 <i class="fas fa-bell"></i>
-    //               </div>
-    //             </div>
-    //             <h2 class="card__title card__title--normal">Meeting</h2>
-    //           </div>
-    //           <div class="card__header-actions">
-    //             <a href="#" class="card-action" role="button" aria-label="Remove">
-    //               <i class="fas fa-trash-alt" aria-hidden="hidden"></i>
-    //             </a>
-    //             <a href="#" class="card-action" role="button" aria-label="Edit">
-    //               <i class="fas fa-edit" aria-hidden="hidden"></i>
-    //             </a>
-    //           </div>
-    //         </div>
-    //         <div class="card__content">
-    //           <p>
-    //             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    //           </p>
-    //         </div>
-    //         <div class="card__footer task__footer">
-    //           <div class="task__footer-time">
-    //             <p>
-    //               <i class="fas fa-calendar-alt"></i><time datetime="2019-05-10">10 May 2019</time>
-    //             </p>
-    //             <p>
-    //               <i class="far fa-clock"></i><time datetime="13:00">1:00 PM</time>
-    //             </p>
-    //           </div>
-    //           <div class="task__footer-status">
-    //             <div class="task__check">
-    //               <div class="task__check-mark">
-    //                 <i class="fas fa-check"></i>
-    //               </div>
-    //               <p class="task__check-status">Complete</p>
-    //             </div>
-    //           </div>
-    //         </div>
-    //       </div>
-    //     </li>
-    //     <li class="card-grid-wrapper">
-    //       <div class="card warning">
-    //         <div class="card__header">
-    //           <div class="card__group">
-    //             <div class="card__header-icon">
-    //               <div class="card__header-icon-wrapper">
-    //                 <i class="fas fa-bell"></i>
-    //               </div>
-    //             </div>
-    //             <h2 class="card__title card__title--normal">Business Meeting</h2>
-    //           </div>
-    //           <div class="card__header-actions">
-    //             <a href="#" class="card-action" role="button" aria-label="Remove">
-    //               <i class="fas fa-trash-alt" aria-hidden="hidden"></i>
-    //             </a>
-    //             <a href="#" class="card-action" role="button" aria-label="Edit">
-    //               <i class="fas fa-edit" aria-hidden="hidden"></i>
-    //             </a>
-    //           </div>
-    //         </div>
-    //         <div class="card__content">
-    //           <p>
-    //             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    //           </p>
-    //         </div>
-    //         <div class="card__footer task__footer">
-    //           <div class="task__footer-time">
-    //             <p>
-    //               <i class="fas fa-calendar-alt"></i><time datetime="2019-05-10">10 May 2019</time>
-    //             </p>
-    //             <p>
-    //               <i class="far fa-clock"></i><time datetime="13:00">1:00 PM</time>
-    //             </p>
-    //           </div>
-    //           <div class="task__footer-status">
-    //             <div class="task__check">
-    //               <div class="task__check-mark">
-    //                 <i class="fas fa-check"></i>
-    //               </div>
-    //               <p class="task__check-status">Complete</p>
-    //             </div>
-    //           </div>
-    //         </div>
-    //       </div>
-    //     </li>
-    //     <li class="card-grid-wrapper">
-    //       <div class="card">
-    //         <div class="card__header">
-    //           <div class="card__group">
-    //             <div class="card__header-icon">
-    //               <div class="card__header-icon-wrapper">
-    //                 <i class="fas fa-bell"></i>
-    //               </div>
-    //             </div>
-    //             <h2 class="card__title card__title--normal">Business Meeting</h2>
-    //           </div>
-    //           <div class="card__header-actions">
-    //             <a href="#" class="card-action" role="button" aria-label="Remove">
-    //               <i class="fas fa-trash-alt" aria-hidden="hidden"></i>
-    //             </a>
-    //             <a href="#" class="card-action" role="button" aria-label="Edit">
-    //               <i class="fas fa-edit" aria-hidden="hidden"></i>
-    //             </a>
-    //           </div>
-    //         </div>
-    //         <div class="card__content">
-    //           <p>
-    //             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    //           </p>
-    //         </div>
-    //         <div class="card__footer task__footer">
-    //           <div class="task__footer-time">
-    //             <p>
-    //               <i class="fas fa-calendar-alt"></i><time datetime="2019-05-10">10 May 2019</time>
-    //             </p>
-    //             <p>
-    //               <i class="far fa-clock"></i><time datetime="13:00">1:00 PM</time>
-    //             </p>
-    //           </div>
-    //           <div class="task__footer-status">
-    //             <div class="task__check">
-    //               <div class="task__check-mark">
-    //                 <i class="fas fa-check"></i>
-    //               </div>
-    //               <p class="task__check-status">Complete</p>
-    //             </div>
-    //           </div>
-    //         </div>
-    //       </div>
-    //     </li>
-    //     <li class="card-grid-wrapper">
-    //       <div class="card">
-    //         <div class="card__header">
-    //           <div class="card__group">
-    //             <div class="card__header-icon">
-    //               <div class="card__header-icon-wrapper">
-    //                 <i class="fas fa-bell"></i>
-    //               </div>
-    //             </div>
-    //             <h2 class="card__title card__title--normal">Business Meeting</h2>
-    //           </div>
-    //           <div class="card__header-actions">
-    //             <a href="#" class="card-action" role="button" aria-label="Remove">
-    //               <i class="fas fa-trash-alt" aria-hidden="hidden"></i>
-    //             </a>
-    //             <a href="#" class="card-action" role="button" aria-label="Edit">
-    //               <i class="fas fa-edit" aria-hidden="hidden"></i>
-    //             </a>
-    //           </div>
-    //         </div>
-    //         <div class="card__content">
-    //           <p>
-    //             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    //           </p>
-    //         </div>
-    //         <div class="card__footer task__footer">
-    //           <div class="task__footer-time">
-    //             <p>
-    //               <i class="fas fa-calendar-alt"></i><time datetime="2019-05-10">10 May 2019</time>
-    //             </p>
-    //             <p>
-    //               <i class="far fa-clock"></i><time datetime="13:00">1:00 PM</time>
-    //             </p>
-    //           </div>
-    //           <div class="task__footer-status">
-    //             <div class="task__check">
-    //               <div class="task__check-mark">
-    //                 <i class="fas fa-check"></i>
-    //               </div>
-    //               <p class="task__check-status">Complete</p>
-    //             </div>
-    //           </div>
-    //         </div>
-    //       </div>
-    //     </li>
-    //   </ul>
-    // </section>
-//
-// Weight: 4
-//
-// Styleguide Components.Cards.Tasks
 
-.card-grid {
-    display: flex;
-    flex-flow: row wrap;
-    margin-left: -.5rem;
-    width: calc(100% + .5rem * 2);
-
-    &-wrapper{
-        flex-basis: 50%;
-        padding: .5rem;
-
-        @include breakpoint(desktop, min) {
-            flex-basis: 33.33%;
-        }
-
-        @include breakpoint(mobile, max) {
-            flex-basis: 100%;
-        }
-    }
-
-    .card {
-         margin: 0;
-    }
-  }
-
-    ul.card-grid {
-        list-style-type: none;
-        padding-left: 0;
+.card {
+  background-color: map-get($greyscale, 'white');
+  border: 1px solid lighten(map-get($greyscale, 'light'), $hue-threshold * 2);
+  padding: $spacer;
+  // margin: 0 $spacer;
 
   &__header {
       color: map-get($greyscale, 'base');
@@ -470,13 +120,13 @@
   }
 
   &-action {
-      @include flex-center();
       border-right: 1px solid map-get($greyscale, 'light');
       color: lighten(map-get($greyscale, 'light'), 10%);
       height: 1.5rem;
       padding: 0 .5rem;
       transition: $transitions;
       width: 2rem;
+      @extend %flex-center;
 
       &:hover {
           color: map-get($greyscale, 'light');
@@ -490,18 +140,11 @@
   &__group {
       display: flex;
 
-    &-action {
-        @extend %flex-center;
-        border-right: 1px solid map-get($greyscale, 'light');
-        color: lighten(map-get($greyscale, 'light'), 10%);
-        height: 1.5rem;
-        padding: 0 .5rem;
-        transition: $transitions;
-        width: 2rem;
-
-        &:hover {
-            color: map-get($greyscale, 'light');
-        }
+      &--split {
+          > :first-child {
+              width: 35%;
+          }
+      }
 
       &--vertical {
           align-items: flex-start;
@@ -534,53 +177,14 @@
   }
 
   &__header-icon {
-    @include square(map-get($spacers, 5));
-    @include flex-center;
+
     background-color: darken(map-get($secondary-colors, 'olive' ), 10%);
     border-radius: 50%;
     margin-right: 1rem;
+    @include square(map-get($spacers, 5));
+    @extend %flex-center;
 
-    .alert & {
-      background-color: map-get($secondary-colors, 'red' );
-    }
-
-    .warning & {
-      background-color: map-get($brand-colors, 'skyblue' );
-    }
-
-    i {
-      color: map-get($greyscale, 'white');
-      font-size: map-get($font-percentage, 'xl' );
-    }
   }
-
-  &__header-icon-wrapper {
-    position: relative;
-
-    .alert &,
-    .warning & {
-      &:before,
-      &:after {
-          content: '"';
-          color: map-get($greyscale, 'white' );
-          position: absolute;
-          top: 0;
-      }
-
-      &:before {
-          left: -.3rem;
-      }
-
-      &:after {
-          right: -.3rem;
-      }
-    }
-
-    .alert & {
-      transform: rotate(-25deg);
-    }
-  }
-
 
   &__footer {
     align-items: flex-end;
@@ -595,10 +199,7 @@
         margin-bottom: 0;
       }
 
-      i {
-        color: map-get($brand-colors, 'skyblue' );
-        margin-right: map-get($spacers, 2 );
-      }
+
     }
   }
 
