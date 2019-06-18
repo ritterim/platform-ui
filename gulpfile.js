@@ -11,7 +11,7 @@ var gulp   = require('gulp'),
     kss = require('kss');
 
 
-gulp.task('styleguide', function(){
+gulp.task('styleguide', ['sass'], function(){
     return kss({
       source: 'assets/stylesheets/',
       destination: 'styleguide/',
@@ -24,7 +24,7 @@ gulp.task('sass', function() {
     return gulp.src('assets/stylesheets/sass/main.scss')
         .pipe(sass()
           .on('error', sass.logError))
-        .pipe(gulp.dest('assets/stylesheets/'));
+        .pipe(gulp.dest('assets/stylesheets'));
 });
 
 gulp.task('scripts', function() {
@@ -43,7 +43,7 @@ gulp.src('*.html')
     }))
     .pipe(gulp.dest('.'));
 
-gulp.task('connect', function() {
+gulp.task('connect', ['styleguide'], function() {
   connect.server({
     root: './',
     port: 8001,
@@ -52,8 +52,8 @@ gulp.task('connect', function() {
 });
 
 gulp.task('watch', function(){
-  gulp.watch('assets/stylesheets/sass/*.scss', ['sass', 'styleguide']);
+  gulp.watch('assets/stylesheets/sass/*.scss', ['styleguide']);
   gulp.watch('assets/js/vue/*.js', ['scripts']);
 })
 
-gulp.task('default', ['watch', 'connect', 'styleguide']);
+gulp.task('default', ['watch', 'connect']);
