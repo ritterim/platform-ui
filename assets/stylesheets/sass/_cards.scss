@@ -178,12 +178,12 @@
 
   &__header-icon {
 
-    background-color: darken(map-get($secondary-colors, 'olive' ), 10%);
-    border-radius: 50%;
-    margin-right: 1rem;
-    @include square(map-get($spacers, 5));
-    @extend %flex-center;
+    i {
 
+      .alert & {
+        transform: rotate(-25deg);
+      }
+    }
   }
 
   &__footer {
@@ -191,22 +191,15 @@
     display: flex;
     justify-content: space-between;
     margin-top: map-get($spacers, 3 );
-
-    p {
-      margin-bottom: map-get($spacers, 2 );
-
-      &:last-of-type {
-        margin-bottom: 0;
-      }
-
-
-    }
   }
+}
 
-  &__check {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-  }
+
+// Move into a base.scss file after merge
+
+.check-circle {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
