@@ -1,14 +1,18 @@
-let modal = document.querySelector('.modal');
-let modalOverlay = document.querySelector('.modal--overlay');
-let closeButton = document.querySelector('.modal__close');
-let openButton = document.querySelector('.modal__open');
+let modal = document.querySelector('.rim-modal');
+let modalOverlay = document.querySelector('.rim-modal--overlay');
+let closeButton = document.querySelector('.rim-modal__close');
+let openButton = document.querySelector('.rim-modal__open');
 
-closeButton.addEventListener('click', function() {
-  modal.classList.toggle('modal--closed');
-  modalOverlay.classList.toggle('modal--closed');
-});
+if(closeButton) { 
+  closeButton.addEventListener('click', function() {
+    modal.classList.toggle('rim-modal--closed');
+    modalOverlay.classList.toggle('rim-modal--closed');
+  });
+}
 
-openButton.addEventListener('click', function() {
-  modal.classList.toggle('modal--closed');
-  modalOverlay.classList.toggle('modal--closed');
-});
+if(openButton) {
+  openButton.addEventListener('click', function() {
+    modal.classList.toggle('rim-modal--closed');
+    modalOverlay.classList.toggle('rim-modal--closed');
+  });
+}
