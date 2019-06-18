@@ -174,3 +174,20 @@
     height: $size;
   }
 }
+
+
+// Messages Variant 
+@mixin message-variant($background, $color) {
+  background-color: $background;
+  border-color: darken($background, 20%);
+  color: $color;
+
+  * {
+    color: $color;
+  }
+
+  a {
+    color: darken($color, 10%);
+    font-weight: 700;
+  }
+}

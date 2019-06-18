@@ -23,6 +23,7 @@
 $greyscale: (
   'white': white,
   'lighter': #efefef,
+  'light-mid': #e2e3e5,
   'light': #999,
   'base': #666,
   'dark': #333,
@@ -110,9 +111,46 @@ $secondary-colors: (
 // negative: mistyrose
 // neutral: #666666
 //
-// Styleguide Color.ErrorColors
+// Styleguide Color.ErrorColors 
 $error-colors: (
   'positive': map-get($secondary-colors, 'olive'),
   'negative': map-get($secondary-colors, 'pink'),
   'neutral': map-get($greyscale, 'base')
 );
+
+// Message Colors
+//
+// Colors:
+// base-light: map-get($greyscale, 'light-mid')
+// base: map-get($greyscale, 'light')
+// base-dark: map-get($greyscale, 'base')
+// info-light: map-get($brand-colors, 'lightblue')
+// info: map-get($brand-colors, 'skyblue')
+// info-dark: map-get($brand-colors, 'med-blue')
+// warning-light: #fff3cd
+// warning: #ffeeba
+// warning-dark: #856404
+// error-light: #ffe5e0
+// error: #e5aaaa
+// error-dark: #a93434
+// success-light: #d4edda
+// success: #c3e6cb
+// success-dark: #155724
+
+$message-colors: (
+  'base-light': map-get($greyscale, 'light-mid'),
+  'base': map-get($greyscale, 'light'),
+  'base-dark': map-get($greyscale, 'base'),
+  'info-light': map-get($brand-colors, 'lightblue'),
+  'info': map-get($brand-colors, 'skyblue'),
+  'info-dark': map-get($brand-colors, 'med-blue'),
+  'warning-light': #fff3cd,
+  'warning': #ffeeba,
+  'warning-dark': #856404,
+  'error-light': #ffe5e0,
+  'error': #e5aaaa,
+  'error-dark': #a93434,
+  'success-light': #d4edda,
+  'success': #c3e6cb,
+  'success-dark': #155724
+)
