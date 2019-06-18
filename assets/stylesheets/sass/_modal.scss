@@ -1,44 +1,44 @@
 // Modal
 //
-// Modal default state is closed. Toggling `.modal--closed` on both the `.modal--overlay` and `.modal` will diplay the modal.
+// Modal default state is closed. Toggling `.rim-modal--closed` on both the `.rim-modal--overlay` and `.rim-modal` will diplay the modal.
 //
-// `.modal__close` on the close button is also a handle for JS.
+// `.rim-modal__close` on the close button is also a handle for JS.
 //
-// Animation note: using `animated` must be placed on `.modal__inner` to maintain correct positioning.
+// Animation note: using `animated` must be placed on `.rim-modal__inner` to maintain correct positioning.
 //
 // ```css
-// <div class="modal--overlay modal--closed"></div>
+// <div class="rim-modal--overlay rim-modal--closed"></div>
 //
-// <div class="modal modal--closed ">
-//     <div class="modal__inner animated slideInUp faster">
-//         <div class="modal__header">
-//             <button class="button float-right modal__close">Close <i class="fas fa-times"></i></button>
+// <div class="rim-modal rim-modal--closed ">
+//     <div class="rim-modal__inner animated slideInUp faster">
+//         <div class="rim-modal__header">
+//             <button class="button float-right rim-modal__close">Close <i class="fas fa-times"></i></button>
 //             <h2>Modal</h2>
 //          </div>
-//          <div class="modal__content">
+//          <div class="rim-modal__content">
 //             <p>Modal Content</p>
 //          </div>
 //     </div>
 // </div>
 // ```
-// <div class="modal--overlay modal--closed"></div>
-// <div class="modal modal--closed ">
-//   <div class="modal__inner animated slideInUp faster">
-//     <div class="modal__header">
-//       <button class="button float-right modal__close">Close <i class="fas fa-times"></i></button>
+// <div class="rim-modal--overlay rim-modal--closed"></div>
+// <div class="rim-modal rim-modal--closed ">
+//   <div class="rim-modal__inner animated slideInUp faster">
+//     <div class="rim-modal__header">
+//       <button class="button float-right rim-modal__close">Close <i class="fas fa-times"></i></button>
 //       <h2>Modal</h2>
 //     </div>
-//     <div class="modal__content">
+//     <div class="rim-modal__content">
 //       <p>Modal Content</p>
 //     </div>
 //   </div>
 // </div>
 //
-// <button class="button button--post button--lg modal__open">Trigger modal</button>
+// <button class="button button--post button--lg rim-modal__open">Trigger modal</button>
 //
 // Styleguide Components.modal
 
-.modal {
+.rim-modal {
   $self: &;
   display: flex;
   flex-direction: column;

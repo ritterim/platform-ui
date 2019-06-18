@@ -11,15 +11,15 @@
 // This is a news card description
 //
 // Markup:
-// <div class="card">
-//   <div class="card__header">
-//     <div class="card__group">
-//      <i class="far fa-newspaper card__title-icon--large"></i>
-//      <h2 class="card__title">Agent News</h2>
+// <div class="rim-card">
+//   <div class="rim-card__header">
+//     <div class="rim-card__group">
+//      <i class="far fa-newspaper rim-card__title-icon--large"></i>
+//      <h2 class="rim-card__title">Agent News</h2>
 //     </div>
 //   </div>
-//   <div class="card__content">
-//    <div class="card__group card__group--split">
+//   <div class="rim-card__content">
+//    <div class="rim-card__group rim-card__group--split">
 //      <ul class="image-link-list">
 //        <li>
 //          <a href="#" class="image-link">
@@ -58,14 +58,14 @@
 // This is a video card description
 //
 // Markup:
-// <div class="card">
-//   <div class="card__header">
-//     <div class="card__group">
-//       <i class="fas fa-film card__title-icon--large"></i>
-//         <h2 class="card__title">Featured Videos</h2>
+// <div class="rim-card">
+//   <div class="rim-card__header">
+//     <div class="rim-card__group">
+//       <i class="fas fa-film rim-card__title-icon--large"></i>
+//         <h2 class="rim-card__title">Featured Videos</h2>
 //     </div>
 //   </div>
-//   <div class="card__content">
+//   <div class="rim-card__content">
 //     <ul class="image-link-list">
 //       <li>
 //         <a href="#" class="image-link image-link--video">
@@ -94,7 +94,7 @@
 // Styleguide Components.Cards.Videos
 
 
-.card {
+.rim-card {
   background-color: map-get($greyscale, 'white');
   border: 1px solid lighten(map-get($greyscale, 'light'), $hue-threshold * 2);
   padding: $spacer;
@@ -107,7 +107,7 @@
       margin-bottom: $spacer;
       position: relative;
 
-      .card__group {
+      .rim-card__group {
           align-items: center;
       }
   }
