@@ -1,6 +1,9 @@
 node_modules/
-assets/*.pdf
-assets/*.csv
-assets/*.txt
-assets/stylesheets/main.css
+src/assets/*.pdf
+src/assets/*.csv
+src/assets/*.txt
+src/assets/js/platform-ui.min.js
+src/assets/stylesheets/platform-ui.min.css
+src/assets/stylesheets/sass/fontawesome
+src/assets/webfonts
 styleguide/
