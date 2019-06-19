@@ -1,59 +1,67 @@
-// Include gulp
-var gulp   = require('gulp'),
-    sass   = require('gulp-sass'),
-    cachebust = require('gulp-cache-bust'),
-    connect = require('gulp-connect'),
-    babel  = require('gulp-babel'),
-    concat = require('gulp-concat'),
-    eslint = require('gulp-eslint'),
-    uglify = require('gulp-uglify'),
-    sourcemaps = require('gulp-sourcemaps'),
-    kss = require('kss');
+const { src, dest, series, parallel } = require('gulp');
+const autoprefixer = require("autoprefixer");
+const concat = require('gulp-concat');
+const connect = require('gulp-connect');
+const kss = require('kss');
+const nano = require('cssnano');
+const postcss = require("gulp-postcss");
+const sass = require('gulp-sass');
+const { watch } = require('gulp');
 
+function copyFontAwesomeSCSS() {
+   return src('node_modules/@fortawesome/fontawesome-pro/scss/*')
+     .pipe(dest('src/assets/stylesheets/sass/fontawesome'))
+}
 
-gulp.task('styleguide', ['sass'], function(){
-    return kss({
-      source: 'assets/stylesheets/',
-      destination: 'styleguide/',
-      builder: 'custom-builder',
-      css: '../assets/stylesheets/main.css'
-      });
-  });
+function copyFontAwesomeFonts() {
+   return src('node_modules/@fortawesome/fontawesome-pro/webfonts/*')
+     .pipe(dest('src/assets/webfonts/'))
+     .pipe(dest('dist/'))
+ }
 
-gulp.task('sass', function() {
-    return gulp.src('assets/stylesheets/sass/main.scss')
-        .pipe(sass()
-          .on('error', sass.logError))
-        .pipe(gulp.dest('assets/stylesheets'));
-});
-
-gulp.task('scripts', function() {
-    return gulp.src('assets/js/vue/*.js')
-        .pipe(sourcemaps.init())
-        .pipe(babel())
-        .pipe(concat('all.min.js'))
-        .pipe(uglify())
-        .pipe(sourcemaps.write('.', {includeContent: true, sourceRoot: './'}))
-        .pipe(gulp.dest('assets/js'));
-});
-
-gulp.src('*.html')
-    .pipe(cachebust({
-        type: 'timestamp'
-    }))
-    .pipe(gulp.dest('.'));
-
-gulp.task('connect', ['styleguide'], function() {
+function serve() {
   connect.server({
     root: './',
     port: 8001,
     livereload: true
   });
-});
+}
 
-gulp.task('watch', function(){
-  gulp.watch('assets/stylesheets/sass/*.scss', ['styleguide']);
-  gulp.watch('assets/js/vue/*.js', ['scripts']);
-})
+function css() {
+  return src('src/assets/stylesheets/sass/main.scss')
+    .pipe(sass())
+    .pipe(concat('platform-ui.min.css'))
+    .pipe(postcss([autoprefixer(), nano()]))
+    .pipe(dest('src/assets/stylesheets/'))
+    .pipe(dest('dist/'))
+    .pipe(connect.reload())
+}
 
-gulp.task('default', ['watch', 'connect']);
+function js() {
+  return src('src/assets/js/src/*.js')
+    .pipe(concat('platform-ui.min.js'))
+    .pipe(dest('src/assets/js'))
+    .pipe(dest('dist/js'))
+    .pipe(connect.reload())
+}
+
+function styleguide() {
+  return kss({
+    source: 'src/assets/stylesheets/',
+    destination: 'styleguide/',
+    builder: 'custom-builder',
+    css: '../src/assets/stylesheets/main.css'
+  });
+}
+
+function watchFiles() {
+  watch("./src/assets/stylesheets/sass/*", css);
+  watch("./src/assets/js/src/*", js);
+}
+
+exports.css = css;
+exports.js = js;
+exports.styleguide = styleguide;
+exports.serve = serve;
+exports.build = parallel(copyFontAwesomeFonts, series(copyFontAwesomeSCSS, css));
+exports.default = parallel(css, js, styleguide, serve, watchFiles);

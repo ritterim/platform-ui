@@ -1,0 +1,48 @@
+// https://stackoverflow.com/questions/21406538/how-to-use-font-awesome-icons-from-node-modules#comment59999027_31720322
+$fa-font-path: "../webfonts";
+@import "fontawesome/brands";
+@import "fontawesome/fontawesome";
+@import "fontawesome/light";
+@import "fontawesome/regular";
+@import "fontawesome/solid";
+@import "fontawesome/v4-shims";
+
+/*!
+  # Platform UI
+
+  Author: Ritter Insurance Marketing Development (RIMdev)
+  https://github.com/ritterim/platform-ui
+  Released under the MIT license
+*/
+
+@import url('https://rsms.me/inter/inter-ui.css');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css');
+
+@import "variables";
+
+@import "mixins";
+@import "utilities";
+
+// animation libs
+@import "animate"; // leveraging animate.css
+@import "vue-transitions";
+
+// sass
+@import "grid";
+@import "base";
+@import "menu";
+@import "crm-banner";
+@import "buttons";
+@import "cards";
+@import "forms";
+@import "info-box";
+@import "lists";
+@import "messages";
+@import "pills";
+@import "posts";
+@import "tables";
+@import "accordion";
+@import "flexcols";
+@import "modal";
+@import "drawer";

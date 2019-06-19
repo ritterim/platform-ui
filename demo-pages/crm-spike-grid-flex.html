@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Welcome to Rams John</title>
+
+  <link rel="stylesheet" href="/src/assets/stylesheets/platform-ui.min.css">
+  <link rel="canonical" href="http://localhost:8001/">
+</head>
+
+<body class="platform">
+  <header class="site-header">
+    <nav class="site-menu">
+      <div class="site-menu__item has-dropdown" class="mb-2">
+        <span class="card__header-icon pill--circle background-purple mr-2 text-skyblue">
+          JH
+        </span>
+        <div class="font-lg">
+          Hello John
+        </div>
+        <div class="dropdown-menu agent-profile open-for-testing">
+          <h2 class="agent-profile__heading">Profile</h2>
+          <div class="agent-profile__content-wrapper">
+            <div class="agent-profile__content">
+              <ul class="agent-profile__info-list">
+                <li class="agent-profile__info-list-item">
+                  <i class="fas fa-user"></i>
+                  <span>Gregory Gudis</span>
+                </li>
+                <li class="agent-profile__info-list-item">
+                  <i class="fas fa-home"></i>
+                  <address>
+                    51 Haddonfield Rd, <br>
+                    Cherry Hill, NJ 08002
+                  </address>
+                </li>
+                <li class="agent-profile__info-list-item">
+                  <i class="fas fa-paper-plane"></i>
+                  <a href="mailto:Greg.guids@bgaininsurance.net">Greg.guids@bgaininsurance.net</a>
+                </li>
+                <li class="agent-profile__info-list-item">
+                    <i class="fas fa-phone"></i>
+                  <a href="tel:610-828-3522x302">610-828-3522x302</a>
+                </li>
+                <li class="agent-profile__info-list-item">
+                    <i class="fas fa-sign-out-alt"></i>
+                  <a href="#">Sign Out</a>
+                </li>
+              </ul>
+            </div>
+            <div class="agent-profile__content">
+              <div class="pill background-olive">Active</div>
+              <dl class="agent-profile__status-list">
+                <div class="agent-profile__status-list-item">
+                  <dt>CT</dt><dd>Email</dd>
+                </div>
+                <div class="agent-profile__status-list-item">
+                  <dt>MU</dt><dd>Ritter Insurance Marketing</dd>
+                </div>
+                <div class="agent-profile__status-list-item">
+                  <dt>GPL</dt><dd>8</dd>
+                </div>
+                <div class="agent-profile__status-list-item">
+                  <dt>NPN</dt><dd>9006591</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="site-menu__item search">
+      </div>
+      <div class="site-menu__item has-dropdown my">
+        <span>my</span> Ritter
+        <i class="ml-2 fas fa-angle-down"></i>
+        <div class="dropdown-menu">
+          <a class="dropdown-menu__item" href="#">
+            <i class="fas fa-file-alt"></i>
+            Contracts
+          </a>
+          <a class="dropdown-menu__item" href="#">
+            <i class="fas fa-file-alt"></i>
+            Submissions
+          </a>
+          <a class="dropdown-menu__item" href="#">
+            <i class="fas fa-users"></i>
+            Register Downlines
+          </a>
+          <a class="dropdown-menu__item" href="#">
+            <i class="fas fa-users"></i>
+            Hierarchy
+          </a>
+        </div>
+      </div>
+      <div class="site-menu__item has-dropdown">
+        <i class="fas fa-ticket-alt rotate-45"></i>
+        <div class="dropdown-menu agent-contact">
+          <form action="" class="rim-form rim-form--stacked rim-form--light">
+            <label for="agent-name" class="rim-form__field">Name
+              <input id="agent-name" type="text" placeholder="First and Last Name">
+            </label>
+            <label for="agent-email" class="rim-form__field">Email
+              <input id="agent-email" type="email" placeholder="geg.gudis@bgainsurances.net">
+            </label>
+            <label for="agent-phone" class="rim-form__field">Phone
+              <input id="agent-phone" type="tel" placeholder="(610) 828-3553x302">
+            </label>
+            <label for="subject" class="rim-form__field">Subject
+              <input id="subject" type="text" placeholder="">
+            </label>
+            <label for="message" class="rim-form__field">Message
+              <textarea id="message" name="message" rows="10" ></textarea>
+            </label>
+            <div class="rim-form__field rim-form__button-group">
+              <button class="button button--post button--lg">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <aside class="crm-actions">
+    <div class="crm-actions__stats">
+      <div class="crm-actions__stats-header">
+        Quick Numbers
+      </div>
+      <div class="crm-actions__stats-group">
+        <div class="crm-actions__stat">
+          38
+          <div class="crm-actions__stat-label">
+            leads
+          </div>
+        </div>
+        <div class="crm-actions__stat">
+          45
+          <div class="crm-actions__stat-label">
+            incomplete<br>submissions
+          </div>
+        </div>
+        <div class="crm-actions__stat">
+          8
+          <div class="crm-actions__stat-label">
+            tasks
+          </div>
+        </div>
+      </div>
+      <div class="today">
+        <script type="text/javascript">
+          var d = (new Date()).toString().split(' ').splice(1,3).join(' ');
+          document.write(d);
+        </script>
+      </div>
+    </div>
+    <nav class="crm-menu">
+      <div class="crm-menu__item active">
+        <img src="/src/assets/images/crm-icons-color/overview.svg" alt="Overview">
+        Overview
+      </div>
+      <!-- <div class="crm-menu__group">
+        <div class="crm-menu__item">
+          <img src="/src/assets/images/crm-icons-color/overview.svg" alt="Overview">
+          Overview
+        </div>
+        <div class="crm-menu__item">
+          <img src="/src/assets/images/crm-icons-color/tasks.svg" alt="Overview">
+          Tasks
+        </div>
+      </div> -->
+
+      <div class="crm-menu__item">
+        <img src="/src/assets/images/crm-icons-color/crm-dashboard.svg" alt="CRM Dashboard">
+        CRM Dashboard <i class="fas fa-external-link-alt text-light"></i>
+      </div>
+      <div class="crm-menu__item">
+        <img src="/src/assets/images/crm-icons-color/quote.svg" alt="Quote">
+        Quote
+      </div>
+      <div class="crm-menu__item">
+        <img src="/src/assets/images/crm-icons-color/commissions.svg" alt="Commissions">
+        Commissions
+      </div>
+      <div class="crm-menu__item">
+        <img src="/src/assets/images/crm-icons-color/contracts.svg" alt="Get Contracted">
+        Get Contracted <i class="fas fa-external-link-alt text-light"></i>
+      </div>
+    </nav>
+  </aside>
+  <main>
+    <div class="crm-banner"
+      style="background-image: url('/src/assets/images/nastuh-abootalebi-284882-unsplash.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center; opacity: .7">
+      <div class="close right">close <span>&times;</span></div>
+      <h1 class="inverted text-shadow__dark">Post Header</h1>
+      <p class="inverted text-shadow__dark">Really powerfull excerpt of an outstanding article.</p>
+    </div>
+    <section>
+      <h2>Pills</h2>
+      <span class="pill">
+        Active
+      </span>
+      <span class="pill text-white background-navy">
+        Active
+      </span>
+      <span class="pill background-skyblue">
+        Active
+      </span>
+      <span class="pill text-navy background-green">
+        Active
+      </span>
+      <span class="pill pill--split text-white background-navy">
+        <span class="pill__label">NPN:</span>
+        <span class="pill__content">123456789</span>
+      </span>
+      <span class="pill pill--split text-white background-navy">
+        <span class="pill__content background-green">1234589</span>
+        <span class="pill__content background-olive">345789</span>
+        <span class="pill__content background-skyblue">1289</span>
+      </span>
+    </section>
+    <section>
+      <h2>Buttons</h2>
+      <button class="button">Add <i class="fas fa-plus" focusable="false" aria-hidden="hidden"></i></button>
+      <button class="button button--lg">Add <i class="fas fa-plus" focusable="false" aria-hidden="hidden"></i></button>
+      <hr/>
+      <button class="button button--secondary" role="button" aria-label="Download">
+        <i class="fas fa-download" focusable="false" aria-hidden="hidden"></i>
+      </button>
+      <hr/>
+      <button class="button button--post">Get Contracted Now</button>
+      <button class="button button--post button--lg">Get Contracted Now</button>
+      <hr/>
+      <div class="button-group">
+        <a class="button button--secondary" role="button" aria-label="Download">
+          <i class="fas fa-download" focusable="false" aria-hidden="hidden"></i>
+        </a>
+        <a class="button button--secondary" role="button" aria-label="Pie Chart">
+          <i class="fas fa-chart-pie" focusable="false" aria-hidden="hidden"></i>
+        </a>
+        <a class="button button--secondary" role="button" aria-label="Chart Line">
+          <i class="fas fa-chart-line" focusable="false" aria-hidden="hidden"></i>
+        </a>
+      </div>
+      <hr>
+      <div class="button-group">
+        <div class="rim-info-box">
+          <a class="button button--secondary" role="button" aria-label="Toggle">
+            <i class="fas fa-sliders-h" focusable="false" aria-hidden="hidden"></i>
+          </a>
+          <div class="rim-info-box__content hidden">
+            <button class="button rim-info-box__close">
+              Close <i class="fas fa-times" focusable="false" aria-hidden="hidden"></i>
+            </button>
+            <form action="" class="rim-info-box__inner rim-form">
+              <label for="dob" class="rim-form__field has-icon">Age or DOB
+                <input id="dob" type="date" placeholder="DD/MM/YYYY">
+                <i class="fas fa-calendar-alt text-skyblue background-white"></i>
+              </label>
+              <label for="dob" class="rim-form__field has-icon">Age or DOB
+                <input id="dob" type="date" placeholder="DD/MM/YYYY">
+                <i class="fas fa-calendar-alt text-skyblue background-white"></i>
+              </label>
+              <fieldset class="rim-form__field">
+                <legend>Rate Class</legend>
+                <div class="rim-toggle">
+                  <div class="rim-toggle__content">
+                    <input class="rim-toggle__input" id="smoking" type="radio" checked name="rate">
+                    <label for="smoking">Non-smoking</label>
+                  </div>
+                  <div class="rim-toggle__content">
+                    <input class="rim-toggle__input" id="non-smoking" type="radio" name="rate">
+                    <label for="non-smoking">Smoking</label>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset class="rim-form__field">
+                <legend>Marital Status</legend>
+                <div class="rim-toggle">
+                  <div class="rim-toggle__content">
+                    <input class="rim-toggle__input" id="Single" type="radio" checked name="household">
+                    <label for="Single">Single</label>
+                  </div>
+                  <div class="rim-toggle__content">
+                    <input class="rim-toggle__input" id="household" type="radio" name="household">
+                    <label for="household">Household</label>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset class="rim-form__field rim-form__field--full">
+                <legend>Plan</legend>
+                <div class="filter-group">
+                  <input class="filter-group__filter" id="a" type="checkbox" name="A">
+                  <label for="a">A</label>
+                  <input class="filter-group__filter" id="B" type="checkbox" name="A">
+                  <label for="B">B</label>
+                  <input class="filter-group__filter" id="C" type="checkbox" name="A">
+                  <label for="C">C</label>
+                  <input class="filter-group__filter" id="D" type="checkbox" name="A">
+                  <label for="D">D</label>
+                  <input class="filter-group__filter" id="F" type="checkbox" name="A">
+                  <label for="F">F</label>
+                  <input class="filter-group__filter" id="G" type="checkbox" name="A">
+                  <label for="G">G</label>
+                  <input class="filter-group__filter" id="Hi-F" type="checkbox" name="A">
+                  <label for="Hi-F">Hi-F</label>
+                  <input class="filter-group__filter" id="K" type="checkbox" name="A">
+                  <label for="K">K</label>
+                  <input class="filter-group__filter" id="L" type="checkbox" name="A">
+                  <label for="L">L</label>
+                  <input class="filter-group__filter" id="M" type="checkbox" name="A">
+                  <label for="M">M</label>
+                  <input class="filter-group__filter" id="N" type="checkbox" name="A">
+                  <label for="N">N</label>
+                  <input class="filter-group__filter" id="All" type="checkbox" name="A">
+                  <label for="All">All</label>
+                </div>
+              </fieldset>
+              <div class="rim-form__field rim-form__button-group">
+                <button class="button button--post button--lg">Apply Filters</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <a class="button button--secondary" role="button" aria-label="Download">
+          <i class="fas fa-download" focusable="false" aria-hidden="hidden"></i>
+        </a>
+        <a class="button button--secondary" role="button" aria-label="Sync">
+          <i class="fas fa-sync-alt" focusable="false" aria-hidden="hidden"></i>
+        </a>
+      </div>
+    </section>
+    <section>
+      <h2>Cards</h2>
+      <div class="rim-card">
+        <div class="rim-card__header">
+          <div class="rim-card__group">
+            <i class="far fa-calendar-alt rim-card__title-icon--large"></i>
+            <h2 class="rim-card__title">Appointments</h2>
+          </div>
+          <div class="rim-card__group button-group">
+            <a class="button">Add <i class="fas fa-plus" focusable="false" aria-hidden="hidden"></i></a>
+            <a class="button">View All <i class="fas fa-arrow-right" focusable="false" aria-hidden="hidden"></i></a>
+          </div>
+        </div>
+        <div class="rim-card__content">
+
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="rim-card">
+        <div class="rim-card__header">
+          <div class="rim-card__group">
+            <i class="far fa-newspaper rim-card__title-icon--large"></i>
+            <h2 class="rim-card__title">Agent News</h2>
+          </div>
+        </div>
+        <div class="rim-card__content">
+          <div class="rim-card__group rim-card__group--split">
+            <ul class="image-link-list">
+              <li>
+                <a href="#" class="image-link">
+                  <img src="/src/assets/images/image-link.jpg" alt="image" />
+                  <span class="image-link-caption text-white background-skyblue">Go to Blog &raquo;</span>
+                </a>
+              </li>
+            </ul>
+            <ul class="post-list">
+              <li class="post-item">
+                <div class="post-duration">3 min read</div>
+                <div class="post-title">Ritter is Named One of the Best Places to Work in PA for 2018</div>
+                <a href="#" class="post-link">Read More &rsaquo;</a>
+              </li>
+              <li class="post-item">
+                <div class="post-duration">5 min read</div>
+                <div class="post-title">Ritter Insurance Marketing: An FMO That Helps You Grow</div>
+                <a href="#" class="post-link">Read More &rsaquo;</a>
+              </li>
+              <li class="post-item">
+                <div class="post-duration">2 min read</div>
+                <div class="post-title">February 2019 Memo: Errors & Omissions 101</div>
+                <a href="#" class="post-link">Read More &rsaquo;</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="rim-card">
+        <div class="rim-card__header">
+          <div class="rim-card__group">
+            <i class="fas fa-film rim-card__title-icon--large"></i>
+            <h2 class="rim-card__title">Featured Videos</h2>
+          </div>
+        </div>
+        <div class="rim-card__content">
+          <ul class="image-link-list rim-block-grid">
+            <li>
+              <a href="#" class="image-link image-link--video">
+                <img src="/src/assets/images/vid1.jpg" alt="image" />
+                <span class="image-link-caption text-white background-skyblue">A Medicare Quoting Tool - Medicare Walkthrough</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="image-link image-link--video">
+                <img src="/src/assets/images/vid2.jpg" alt="image" />
+                <span class="image-link-caption text-white background-skyblue">Enrollment on Medicareful</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="image-link image-link--video">
+                <img src="/src/assets/images/vid1.jpg" alt="image" />
+                <span class="image-link-caption text-white background-skyblue">A Medicare Quoting Tool - Medicare Walkthrough</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="rim-block-grid">
+
+        <div class="rim-card alert">
+          <div class="rim-card__header">
+            <div class="rim-card__group">
+              <div class="pill--circle background-red">
+                <i class="fas fa-bell font-xl text-white"></i>
+              </div>
+              <h2 class="rim-card__title rim-card__title--normal">Business Meeting</h2>
+            </div>
+            <div class="rim-card__header-actions">
+              <a href="#" class="rim-card-action" role="button" aria-label="Remove">
+                <i class="fas fa-trash-alt" aria-hidden="hidden"></i>
+              </a>
+              <a href="#" class="rim-card-action" role="button" aria-label="Edit">
+                <i class="fas fa-edit" aria-hidden="hidden"></i>
+              </a>
+            </div>
+          </div>
+          <div class="rim-card__content">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+          <div class="rim-card__footer">
+            <div>
+              <p class="mb-2">
+                <i class="fas fa-calendar-alt mr-2 text-skyblue"></i><time datetime="2019-05-10">10 May 2019</time>
+              </p>
+              <p>
+                <i class="far fa-clock mr-2 text-skyblue"></i><time datetime="13:00">1:00 PM</time>
+              </p>
+            </div>
+            <div>
+              <div class="check-circle">
+                <div class="pill pill--circle text-light">
+                  <i class="fas fa-check"></i>
+                </div>
+                <p class="check-circle__status">Complete</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="rim-card alert completed">
+          <div class="rim-card__header">
+            <div class="rim-card__group">
+              <div class="pill--circle background-red">
+                <i class="fas fa-bell font-xl text-white"></i>
+              </div>
+              <h2 class="rim-card__title rim-card__title--normal">Training</h2>
+            </div>
+            <div class="rim-card__header-actions">
+              <a href="#" class="rim-card-action" role="button" aria-label="Remove">
+                <i class="fas fa-trash-alt" aria-hidden="hidden"></i>
+              </a>
+              <a href="#" class="rim-card-action" role="button" aria-label="Edit">
+                <i class="fas fa-edit" aria-hidden="hidden"></i>
+              </a>
+            </div>
+          </div>
+          <div class="rim-card__content">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+          <div class="rim-card__footer">
+            <div>
+              <p class="mb-2">
+                <i class="fas fa-calendar-alt mr-2 text-skyblue"></i><time datetime="2019-05-10">10 May 2019</time>
+              </p>
+              <p>
+                <i class="far fa-clock mr-2 text-skyblue"></i><time datetime="13:00">1:00 PM</time>
+              </p>
+            </div>
+            <div>
+              <div class="check-circle">
+                <div class="pill pill--circle text-olive">
+                  <i class="fas fa-check text-olive"></i>
+                </div>
+                <p class="check-circle__status">Completed</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="rim-card warning">
+          <div class="rim-card__header">
+            <div class="rim-card__group">
+              <div class="pill--circle background-skyblue">
+                <i class="fas fa-bell font-xl text-white"></i>
+              </div>
+              <h2 class="rim-card__title rim-card__title--normal">New Agent Orientation</h2>
+            </div>
+            <div class="rim-card__header-actions">
+              <a href="#" class="rim-card-action" role="button" aria-label="Remove">
+                <i class="fas fa-trash-alt" aria-hidden="hidden"></i>
+              </a>
+              <a href="#" class="rim-card-action" role="button" aria-label="Edit">
+                <i class="fas fa-edit" aria-hidden="hidden"></i>
+              </a>
+            </div>
+          </div>
+          <div class="rim-card__content">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+          <div class="rim-card__footer">
+            <div>
+              <p class="mb-2">
+                <i class="fas fa-calendar-alt mr-2 text-skyblue"></i><time datetime="2019-05-10">10 May 2019</time>
+              </p>
+              <p>
+                <i class="far fa-clock mr-2 text-skyblue"></i><time datetime="13:00">1:00 PM</time>
+              </p>
+            </div>
+            <div>
+              <div class="check-circle">
+                <div class="pill pill--circle text-light">
+                  <i class="fas fa-check"></i>
+                </div>
+                <p class="check-circle__status">Complete</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="rim-card warning">
+          <div class="rim-card__header">
+            <div class="rim-card__group">
+              <div class="pill--circle background-skyblue">
+                <i class="fas fa-bell font-xl text-white"></i>
+              </div>
+              <h2 class="rim-card__title rim-card__title--normal">Meeting</h2>
+            </div>
+            <div class="rim-card__header-actions">
+              <a href="#" class="rim-card-action" role="button" aria-label="Remove">
+                <i class="fas fa-trash-alt" aria-hidden="hidden"></i>
+              </a>
+              <a href="#" class="rim-card-action" role="button" aria-label="Edit">
+                <i class="fas fa-edit" aria-hidden="hidden"></i>
+              </a>
+            </div>
+          </div>
+          <div class="rim-card__content">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+          <div class="rim-card__footer">
+            <div>
+              <p class="mb-2">
+                <i class="fas fa-calendar-alt mr-2 text-skyblue"></i><time datetime="2019-05-10">10 May 2019</time>
+              </p>
+              <p>
+                <i class="far fa-clock mr-2 text-skyblue"></i><time datetime="13:00">1:00 PM</time>
+              </p>
+            </div>
+            <div>
+              <div class="check-circle">
+                <div class="pill pill--circle text-light">
+                  <i class="fas fa-check"></i>
+                </div>
+                <p class="check-circle__status">Complete</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="rim-card warning">
+          <div class="rim-card__header">
+            <div class="rim-card__group">
+              <div class="pill--circle background-skyblue">
+                <i class="fas fa-bell font-xl text-white"></i>
+              </div>
+              <h2 class="rim-card__title rim-card__title--normal">Business Meeting</h2>
+            </div>
+            <div class="rim-card__header-actions">
+              <a href="#" class="rim-card-action" role="button" aria-label="Remove">
+                <i class="fas fa-trash-alt" aria-hidden="hidden"></i>
+              </a>
+              <a href="#" class="rim-card-action" role="button" aria-label="Edit">
+                <i class="fas fa-edit" aria-hidden="hidden"></i>
+              </a>
+            </div>
+          </div>
+          <div class="rim-card__content">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+          <div class="rim-card__footer">
+            <div>
+              <p class="mb-2">
+                <i class="fas fa-calendar-alt mr-2 text-skyblue"></i><time datetime="2019-05-10">10 May 2019</time>
+              </p>
+              <p>
+                <i class="far fa-clock mr-2 text-skyblue"></i><time datetime="13:00">1:00 PM</time>
+              </p>
+            </div>
+            <div>
+              <div class="check-circle">
+                <div class="pill pill--circle text-light">
+                  <i class="fas fa-check"></i>
+                </div>
+                <p class="check-circle__status">Complete</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="rim-card">
+          <div class="rim-card__header">
+            <div class="rim-card__group">
+              <div class="pill--circle background-olive">
+                <i class="fas fa-bell font-xl text-white"></i>
+              </div>
+              <h2 class="rim-card__title rim-card__title--normal">Business Meeting</h2>
+            </div>
+            <div class="rim-card__header-actions">
+              <a href="#" class="rim-card-action" role="button" aria-label="Remove">
+                <i class="fas fa-trash-alt" aria-hidden="hidden"></i>
+              </a>
+              <a href="#" class="rim-card-action" role="button" aria-label="Edit">
+                <i class="fas fa-edit" aria-hidden="hidden"></i>
+              </a>
+            </div>
+          </div>
+          <div class="rim-card__content">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+          <div class="rim-card__footer">
+            <div>
+              <p class="mb-2">
+                <i class="fas fa-calendar-alt mr-2 text-skyblue"></i><time datetime="2019-05-10">10 May 2019</time>
+              </p>
+              <p>
+                <i class="far fa-clock mr-2 text-skyblue"></i><time datetime="13:00">1:00 PM</time>
+              </p>
+            </div>
+            <div>
+              <div class="check-circle">
+                <div class="pill pill--circle text-light">
+                  <i class="fas fa-check"></i>
+                </div>
+                <p class="check-circle__status">Complete</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="rim-card">
+          <div class="rim-card__header">
+            <div class="rim-card__group">
+              <div class="pill--circle background-olive">
+                <i class="fas fa-bell font-xl text-white"></i>
+              </div>
+              <h2 class="rim-card__title rim-card__title--normal">Business Meeting</h2>
+            </div>
+            <div class="rim-card__header-actions">
+              <a href="#" class="rim-card-action" role="button" aria-label="Remove">
+                <i class="fas fa-trash-alt" aria-hidden="hidden"></i>
+              </a>
+              <a href="#" class="rim-card-action" role="button" aria-label="Edit">
+                <i class="fas fa-edit" aria-hidden="hidden"></i>
+              </a>
+            </div>
+          </div>
+          <div class="rim-card__content">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+          <div class="rim-card__footer">
+            <div>
+              <p class="mb-2">
+                <i class="fas fa-calendar-alt mr-2 text-skyblue"></i><time datetime="2019-05-10">10 May 2019</time>
+              </p>
+              <p>
+                <i class="far fa-clock mr-2 text-skyblue"></i><time datetime="13:00">1:00 PM</time>
+              </p>
+            </div>
+            <div>
+              <div class="check-circle">
+                <div class="pill pill--circle text-light">
+                  <i class="fas fa-check"></i>
+                </div>
+                <p class="check-circle__status">Complete</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h1>Heading 1</h1>
+      <h2>Heading 2</h2>
+      <h3>Heading 3</h3>
+      <h4>Heading 4</h4>
+      <h5>Heading 5</h5>
+    </section>
+    <section>
+      <table>
+        <thead>
+          <tr>
+            <th>Company</th>
+            <th>Contact</th>
+            <th>Country</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Alfreds Futterkiste</td>
+            <td>Maria Anders</td>
+            <td>Germany</td>
+          </tr>
+          <tr>
+            <td>Centro comercial Moctezuma</td>
+            <td>Francisco Chang</td>
+            <td>Mexico</td>
+          </tr>
+          <tr>
+            <td>Ernst Handel</td>
+            <td>Roland Mendel</td>
+            <td>Austria</td>
+          </tr>
+          <tr>
+            <td>Island Trading</td>
+            <td>Helen Bennett</td>
+            <td>UK</td>
+          </tr>
+          <tr>
+            <td>Laughing Bacchus Winecellars</td>
+            <td>Yoshi Tannamuri</td>
+            <td>Canada</td>
+          </tr>
+          <tr>
+            <td>Magazzini Alimentari Riuniti</td>
+            <td>Giovanni Rovelli</td>
+            <td>Italy</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section>
+      <form action="" class="rim-form">
+        <label for="first-name" class="rim-form__field">First Name
+          <input id="first-name" type="text" placeholder="First Name">
+        </label>
+        <label for="last-name" class="rim-form__field">Last Name
+          <input id="last-name" type="text" placeholder="Last Name">
+        </label>
+        <label for="dob" class="rim-form__field">Age or DOB
+          <input id="dob" type="date" placeholder="DD/MM/YYYY">
+        </label>
+        <label for="zipcode" class="rim-form__field">ZIP Code
+          <input id="zipcode" type="tel" placeholder="e.g.90012" pattern="^\d{5,6}(?:[-\s]\d{4})?$">
+        </label>
+        <fieldset class="rim-form__field">
+          <legend>Choose</legend>
+          <div class="rim-form__option-group">
+            <input class="rim-form__checkbox" id="gender-this-one" type="checkbox">
+            <label for="gender-this-one">This One</label>
+            <input class="rim-form__checkbox" id="gender-that-one" type="checkbox">
+            <label for="gender-that-one">That One</label>
+          </div>
+        </fieldset>
+        <fieldset class="rim-form__field">
+          <legend>Gender</legend>
+          <div class="rim-form__option-group">
+            <input class="rim-form__radio" id="gender-male" type="radio" name="gender">
+            <label for="gender-male">Male</label>
+            <input class="rim-form__radio" id="gender-female" type="radio" name="gender">
+            <label for="gender-female">Female</label>
+          </div>
+        </fieldset>
+        <label for="zipcode" class="rim-form__field">County
+          <div class="rim-form__select-wrapper">
+            <select name="County Select" id="county">
+              <option value="County1">County 1</option>
+              <option value="County2">County 2</option>
+              <option value="County3">County 3</option>
+              <option value="County4">County 4</option>
+              <option value="County5">County 5</option>
+              <option value="County6">County 6</option>
+            </select>
+          </div>
+        </label>
+        <fieldset class="rim-form__field">
+          <legend>Are You</legend>
+          <div class="rim-toggle">
+            <div class="rim-toggle__content">
+              <input class="rim-toggle__input" id="tall" type="radio" checked name="height">
+              <label for="tall">Tall</label>
+            </div>
+            <div class="rim-toggle__content">
+              <input class="rim-toggle__input" id="short" type="radio" name="height">
+              <label for="short">Short</label>
+            </div>
+          </div>
+        </fieldset>
+        <label for="dob" class="rim-form__field has-icon">Application Date
+          <input id="dob" type="date" placeholder="DD/MM/YYYY">
+          <i class="fas fa-calendar-alt text-skyblue background-white"></i>
+        </label>
+        <div class="rim-form__field rim-form__button-group">
+          <button class="button button--post button--lg">Quote Now</button>
+        </div>
+      </form>
+    </section>
+    <section>
+      <div class="crm-accordion active">
+        <div class="crm-accordion crm-accordion__title">
+          title
+        </div>
+        <div class="crm-accordion crm-accordion__content">
+          content
+        </div>
+      </div>
+    </section>
+    <section>
+      <h1>Messages</h1>
+      <div style="margin-bottom: 2rem">
+        <div class="rim-message">
+          <p>This is an example of a global message. This is a standard message. No warnings, no successes.</p>
+        </div>
+      </div>
+      <div style="margin-bottom: 2rem">
+        <div class="rim-message">
+          <h2 class="rim-message__heading">This Message has a heading</h2>
+          <p>This is an example of a global message. This is a standard message. No warnings, no successes. This message also has a <a href="#">Link in it</a>.</p>
+        </div>
+      </div>
+      <div style="margin-bottom: 2rem">
+        <div class="rim-message rim-message--error">
+          <p>This is an example of a message that fires after an error has occured. </p>
+        </div>
+      </div>
+      <div style="margin-bottom: 2rem">
+        <div class="rim-message rim-message--success">
+          <p>This is an example of a message that displays a success message. Congratulations! You're form has been submitted. </p>
+        </div>
+      </div>
+      <div style="margin-bottom: 2rem">
+        <div class="rim-message rim-message--warning">
+          <p>This is an example of a message that displays a warning but not necessarily an error.</p>
+          </div>
+        </div>
+      </div>
+      <div style="margin-bottom: 2rem">
+        <div class="rim-message rim-message--info">
+          <p>This is an example of a message that displays some simple information.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+
+  <script src="/assets/js/platform-ui.min.js"></script>
+</body>
+</html>
