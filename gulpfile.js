@@ -16,7 +16,7 @@ function copyFontAwesomeSCSS() {
 function copyFontAwesomeFonts() {
    return src('node_modules/@fortawesome/fontawesome-pro/webfonts/*')
      .pipe(dest('src/assets/webfonts/'))
-     .pipe(dest('dist/'))
+     .pipe(dest('dist/webfonts'))
  }
 
 function serve() {
@@ -64,4 +64,4 @@ exports.js = js;
 exports.styleguide = styleguide;
 exports.serve = serve;
 exports.build = parallel(copyFontAwesomeFonts, series(copyFontAwesomeSCSS, css));
-exports.default = parallel(css, js, styleguide, serve, watchFiles);
+exports.default = parallel(series(css, styleguide), js, serve, watchFiles);
