@@ -217,6 +217,7 @@ input[type="radio"] {
     input[type="textarea"],
     input[type="tel"],
     input[type="password"],
+    input[type="number"]
     textarea,
     select {
       border-bottom-color: map-get($greyscale, 'white' );
