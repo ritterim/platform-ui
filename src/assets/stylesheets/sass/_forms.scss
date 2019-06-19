@@ -448,53 +448,25 @@ input[type="radio"] {
 }
 
 
-// Pill type filter group
-// ----------------------
-.filter-group {
-  display: flex;
-  flex-flow: row wrap;
-  margin-left: -map-get($spacers, 1);
-  width: calc(100% + map-get($spacers, 1) * 2);
+[role="radio"],
+[role="checkbox"] {
+  position: relative;
+  transition: $transitions;
+  width: 100%;
 
-  input[type="checkbox"].filter-group__filter {    
-
-    + label {
-      background-color: map-get($greyscale, 'light' );
-      border-radius: map-get($radius, 'button');
-      color: map-get($greyscale, 'white');
-      display: flex;
-      flex: 1 1 auto;
-      height: 100%;
-      justify-content: center;
-      margin: map-get($spacers, 1);
-      max-width: 5rem;
-      padding: map-get($spacers, 2) $spacer * 1.5;
-      transition: $transitions;
-
-      &:before {
-        display: none;
-      }
-
-      &:after {
-        color: map-get($greyscale, 'white');
-        opacity: 0;
-        top: 50%;
-        transform: translate(50%, -50%);
-        transition: visibility $duration ease, opacity $duration ease;
-        visibility: hidden;
-      }
-    }
-
-    &:checked + label {
-      background-color: map-get($platform-colors, 'link' );
-      font-weight: 400;
-
-      &:after {
-        opacity: 1;
-        visibility: visible;
-      }
-    }
+  i {
+    left: .5rem;
+    position: absolute;
+    transform: scale(0);
+    transition: transform $duration ease;
   }
+
+  &[aria-checked="true"] {
+
+    i {
+      transform: scale(1);
+    }
+  }  
 }
 
 input[type="checkbox"].pill-filter, input[type="radio"].pill-filter {
