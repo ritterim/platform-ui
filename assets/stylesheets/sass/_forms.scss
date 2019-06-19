@@ -496,3 +496,46 @@ input[type="radio"] {
     }
   }
 }
+
+input[type="checkbox"].pill-filter, input[type="radio"].pill-filter {
+
+  + label {
+    background-color: map-get($greyscale, 'white');
+    border-radius: map-get($radius, 'button');
+    color: map-get($platform-colors, 'link');
+    border: 1px solid map-get($platform-colors, 'link');
+    height: auto;
+    justify-content: center;
+    margin: .25rem;
+    padding: map-get($spacers, 2) 1.5rem;
+    transition: $transitions;
+    i {
+      font-size: map-get($font-percentage, 'xs');
+    }
+
+    &:before {
+      display: none;
+    }
+
+    &:after {
+      color: map-get($greyscale, 'white');
+      left: .5rem;
+      opacity: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: visibility $duration ease, opacity $duration ease;
+      visibility: hidden;
+    }
+  }
+
+  &:checked + label {
+    background-color: map-get($platform-colors, 'link' );
+    font-weight: 400;
+    color: map-get($greyscale, 'white');
+
+    &:after {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
