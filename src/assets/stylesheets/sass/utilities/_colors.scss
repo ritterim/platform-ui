@@ -11,7 +11,17 @@ $all-colors: map-merge($brand-colors, $secondary-colors);
   }
   // background color
   .background-#{$name} {
-    background-color: $color !important;
+    background-color: $color !important; 
+
+    &.button {
+      
+      &.loading {
+  
+        &:before {
+          background-color: $color !important;
+        }
+      }
+    }
   }
 }
 
@@ -25,5 +35,15 @@ $all-colors: map-merge($brand-colors, $secondary-colors);
   // background color
   .background-#{$name} {
     background-color: $color !important;
+
+    &.button {
+
+      &.loading {
+  
+        &:before {
+          background-color: $color !important;
+        }
+      }
+    }
   }
 }
