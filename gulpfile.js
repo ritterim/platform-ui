@@ -50,7 +50,7 @@ function styleguide() {
     source: 'src/assets/stylesheets/',
     destination: 'styleguide/',
     builder: 'custom-builder',
-    css: '../src/assets/stylesheets/main.css'
+    css: '../src/assets/stylesheets/platform-ui.min.css'
   });
 }
 
