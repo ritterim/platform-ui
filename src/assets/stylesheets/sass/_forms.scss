@@ -207,18 +207,6 @@ legend {
         top: 50%;
         visibility: hidden;
       }
-
-      &:after {
-        content: '';
-        background-color: map-get($greyscale, 'white' );
-        position: absolute;
-        left: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        transition: none;
-        z-index: -1;
-      }
     }
 
     &:checked + label {
