@@ -628,3 +628,24 @@ legend {
     }
   }
 }
+
+[role="radio"],
+[role="checkbox"] {
+  position: relative;
+  transition: $transitions;
+  width: 100%;
+
+  i {
+    left: .5rem;
+    position: absolute;
+    transform: scale(0);
+    transition: transform $duration ease;
+  }
+
+  &[aria-checked="true"] {
+
+    i {
+      transform: scale(1);
+    }
+  }  
+
