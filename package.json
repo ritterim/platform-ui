@@ -6,17 +6,6 @@
   "files": [
     "/dist"
   ],
-  "dependencies": {
-    "autoprefixer": "^9.6.0",
-    "cssnano": "^4.1.10",
-    "gulp": "^4.0.2",
-    "gulp-concat": "^2.6.1",
-    "gulp-connect": "^5.7.0",
-    "gulp-postcss": "^8.0.0",
-    "gulp-sass": "^4.0.2",
-    "gulp-uglify": "^3.0.2",
-    "kss": "^3.0.0-beta.25"
-  },
   "scripts": {
     "start": "npm install && gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -41,5 +30,16 @@
   "bugs": {
     "url": "https://github.com/ritterim/platform-ui/issues"
   },
-  "homepage": "https://github.com/ritterim/platform-ui#readme"
+  "homepage": "https://github.com/ritterim/platform-ui#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.6.0",
+    "cssnano": "^4.1.10",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.7.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.2",
+    "kss": "^3.0.0-beta.25"
+  }
 }
