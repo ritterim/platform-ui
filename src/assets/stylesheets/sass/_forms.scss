@@ -235,15 +235,11 @@ input[type="radio"] {
 .rim-form {
   $self: &;
   color: map-get($greyscale, 'light' );
-  display: flex;
-  flex-flow: row wrap;
 
   &--stacked {
     flex-flow: column;
     
     #{ $self }__field {
-      margin-left: 0;
-      margin-right: 0;
       max-width: none;
 
       &:last-child {
@@ -319,10 +315,8 @@ input[type="radio"] {
   }  
 
   &__field {
-    flex: 1 1 auto;
+    display: block;
     font-size: map-get($font-percentage, 'sm');
-    margin: 0 map-get($spacers, 2) map-get($spacers, 4);
-    max-width: 15.625rem;
 
     input[type="text"],
     input[type="date"],

@@ -45,12 +45,97 @@
 .flexcol {
   $self: &;
   display: flex;
+  flex-wrap: wrap;
+
+  > .block { 
+    width: 100%;     
+  }
+
   @each $key, $name in $flex-grid {
     &-#{$name} {
       display: flex;
       flex-basis: calc(#{$key} * 100%);
       &#{$self}__end {
         justify-content: flex-end;
+      }
+    }
+  }
+
+  @each $prop, $letter in (margin: m, padding: p) {
+    @each $direction, $d in $xy-border {
+      @each $unit, $rem in $spacers {
+        &.block-#{$letter}#{$d}-#{$unit} {
+          > .block {
+            #{$prop}-#{$direction}: #{$rem};
+          }
+        }
+        &.block-#{$letter}-#{$unit} {
+          @if $letter == p {
+            margin-left: -#{$rem};
+            width: calc(100% + #{$rem} * 2);
+          }
+          > .block {
+            #{$prop}: $rem;
+          }
+        }
+        &.block-#{$letter}x-#{$unit} {
+          > .block {
+            #{$prop}-left: $rem;
+            #{$prop}-right: $rem;
+          }
+        }
+        &.block-#{$letter}y-#{$unit} {
+          > .block {
+            #{$prop}-top: $rem;
+            #{$prop}-bottom: $rem;
+          }
+        }
+      }
+    }
+  }
+
+  @each $name in $breakpoint-classes {
+    @for $i from 1 through 12 {
+      &.#{$name}-up-#{$i} {
+        
+        > .block {
+          @include breakpoint(#{$name}, min) {
+            width: calc(100% / #{$i});
+          }
+        }
+      }
+    }
+  }
+
+  @each $name in $breakpoint-classes {
+    @for $i from 1 through 12 {
+      .#{$name}-#{$i} {
+        @include breakpoint(#{$name}, min) {
+          width: calc(100% / #{$i});
+        }
+      }
+    }
+  }
+}
+
+
+@for $i from 1 through 50 {
+  .rim-grid-#{$i} {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(#{$i}rem, 1fr));
+    grid-gap: $spacer;
+
+    @each $unit, $rem in $spacers {
+      &.all-gap-#{$unit} {
+        grid-gap: #{$rem} !important;
+      }
+      
+      &.col-gap-#{$unit} {
+        grid-column-gap: #{$rem} !important;
+      }
+      
+      &.row-gap-#{$unit} {
+        grid-row-gap: #{$rem} !important;
       }
     }
   }
