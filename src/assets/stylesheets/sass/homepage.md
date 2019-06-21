@@ -4,6 +4,14 @@
 
 A summary of how we've decided to write/structure BEM
 
+### Font Awesome pro
+
+Include the following script tag to use font awesome pro.
+
+```
+<script src="https://kit.fontawesome.com/9adb49694f.js"></script>
+```
+
 ### Utility classes
 
 All utility classes _are_ modifiers, underscores are not applied here.

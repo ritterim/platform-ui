@@ -1,7 +1,7 @@
-let modal = document.querySelector('.modal');
-let modalOverlay = document.querySelector('.modal--overlay');
-let closeButton = document.querySelector('.modal__close');
-let openButton = document.querySelector('.modal__open');
+var modal = document.querySelector('.modal');
+var modalOverlay = document.querySelector('.modal--overlay');
+var closeButton = document.querySelector('.modal__close');
+var openButton = document.querySelector('.modal__open');
 
 closeButton.addEventListener('click', function() {
   modal.classList.toggle('modal--closed');
