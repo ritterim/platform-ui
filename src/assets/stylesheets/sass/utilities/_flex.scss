@@ -5,4 +5,7 @@
       @extend %flex-center;
     }
   }
+  &--column {
+    flex-direction: column;
+  }
 }
