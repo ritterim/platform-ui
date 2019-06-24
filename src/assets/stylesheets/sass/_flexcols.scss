@@ -67,6 +67,10 @@
         &.block-#{$letter}#{$d}-#{$unit} {
           > .block {
             #{$prop}-#{$direction}: #{$rem};
+
+            &--full {
+              width: 100% !important;
+            }
           }
         }
         &.block-#{$letter}-#{$unit} {
@@ -109,7 +113,7 @@
 
   @each $name in $breakpoint-classes {
     @for $i from 1 through 12 {
-      .#{$name}-#{$i} {
+      .block-#{$name}-#{$i} {
         @include breakpoint(#{$name}, min) {
           width: calc(100% / #{$i});
         }
@@ -119,23 +123,51 @@
 }
 
 
-@for $i from 1 through 50 {
-  .rim-grid-#{$i} {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(#{$i}rem, 1fr));
-    grid-gap: $spacer;
+@each $name in $breakpoint-classes {
+  @for $i from 1 through 50 {
+    .rim-grid-#{$i} {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(#{$i}rem, 1fr));
+      grid-gap: $spacer;      
 
-    @each $unit, $rem in $spacers {
-      &.all-gap-#{$unit} {
-        grid-gap: #{$rem} !important;
+      @each $unit, $rem in $spacers {
+        &.all-gap-#{$unit} {
+          grid-gap: #{$rem} !important;
+        }
+        
+        &.col-gap-#{$unit} {
+          grid-column-gap: #{$rem} !important;
+        }
+        
+        &.row-gap-#{$unit} {
+          grid-row-gap: #{$rem} !important;
+        }
       }
-      
-      &.col-gap-#{$unit} {
-        grid-column-gap: #{$rem} !important;
+    }
+
+    .rim-grid-#{$name}-#{$i} {
+      @include breakpoint(#{$name}, min) {
+        grid-template-columns: repeat(auto-fit, minmax(#{$i}rem), 1fr) !important;
       }
-      
-      &.row-gap-#{$unit} {
-        grid-row-gap: #{$rem} !important;
+
+      @each $unit, $rem in $spacers {
+        &.all-gap-#{$name}-#{$unit} {
+          @include breakpoint(#{$name}, min) {
+            grid-gap: #{$rem} !important;
+          }
+        }
+        
+        &.col-gap-#{$name}-#{$unit} {
+          @include breakpoint(#{$name}, min) {
+            grid-column-gap: #{$rem} !important;
+          }
+        }
+        
+        &.row-gap-#{$name}-#{$unit} {
+          @include breakpoint(#{$name}, min) {
+            grid-row-gap: #{$rem} !important;
+          }
+        }
       }
     }
   }
