@@ -18,7 +18,7 @@
     background-image: none !important;
     height: auto;
     padding: map-get($spacers, 4) $spacer;
-    h1, button {
+    h1, button, a.button {
       display: none;
     }
     p {
