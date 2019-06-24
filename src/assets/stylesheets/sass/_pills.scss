@@ -33,6 +33,10 @@
 //   <div class="pill__content background-olive">345789</div>
 //   <div class="pill__content background-skyblue">1289</div>
 // </div>
+// <div class="pill">
+//  <div class="pill__close"><i class="fas fa-times-circle"></i></div>
+//   Active
+// </div>
 //
 // Styleguide Components.Pill
 
@@ -48,6 +52,7 @@
   display: inline-flex;
   font-size: map-get($font-percentage, 'sm');
   padding: map-get($spacers, 1) map-get($spacers, 2);
+  position: relative;
 
   &--split {
     align-items: center;
@@ -68,6 +73,18 @@
 
   &__content {
     padding: map-get($spacers, 1) map-get($spacers, 1);
+  }
+
+  &__close {
+    position: absolute;
+    right: -.2rem;
+    top: -.6rem;
+    i {
+      font-size: 1.2rem;
+    }
+    :hover {
+      cursor: pointer;
+    }
   }
 
   &__label {
