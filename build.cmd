@@ -6,7 +6,7 @@ setlocal
 call npm install
 if %ERRORLEVEL% neq 0 goto BuildFail
 
-call npm run start
+call npm run build
 if %ERRORLEVEL% neq 0 goto BuildFail
 
 goto BuildSuccess

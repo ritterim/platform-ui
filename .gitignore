@@ -1,4 +1,5 @@
 node_modules/
+dist/
 src/assets/*.pdf
 src/assets/*.csv
 src/assets/*.txt
