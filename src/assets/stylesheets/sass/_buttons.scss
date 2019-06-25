@@ -71,6 +71,25 @@
 //
 // Styleguide Components.Button.Group
 
+// Loading
+//
+// Buttons with a loading icon. Example for form submissions
+//
+//
+// Markup:
+// <div class="button-group">
+//   <button class="button loading">Submit</button>
+//   <button class="button button--lg loading">Submit</button>
+//   <button class="button button--secondary loading" aria-label="Download">
+//     <i class="fas fa-download" focusable="false" aria-hidden="hidden"></i>
+//   </button>
+//   <button class="button button--post loading">Submit</button>
+// </div>
+// 
+// Weight: 7
+//
+// Styleguide Components.Button.Loading
+
 // Accessibility
 //
 // For our links that should look like buttons, and contain an icon, we need to add specific 
@@ -83,10 +102,13 @@
 //  <i class="fas fa-download" focusable="false" aria-hidden="hidden"></i>
 // </a>
 //
-// Weight: 6
+// Weight: 8
 //
 // Styleguide Components.Button.Accessibility
 
+@function color-contrast($color) {
+  @return if(lightness($color) < 51, #FFF, #000);
+}
 
 .button {
 
@@ -106,18 +128,50 @@
   padding: map-get($spacers, 1) $spacer;
   transition: $duration;
 
+  &:hover {
+    background-color: $secondary-background;
+    border-color: inherit;
+    color: $secondary-color;
+  }
+
+  &.loading {
+    align-items: center;
+    overflow: hidden;
+    pointer-events: none;
+    position: relative;
+
+    &:before {
+      background-color: $secondary-background;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    &:after {
+      @extend %loader;
+      @include square(1rem);
+      box-sizing: border-box;
+      content: '';
+      display: block;
+      border-color: $primary-background;
+      border-top-color: lighten(map-get($greyscale, 'base' ), 20%);
+      left: 50%;
+      margin-left: -.5rem;
+      margin-top: -.5rem;
+      position: absolute;
+      top: 50%;
+    }
+  }
+
   i {
     margin: 0 map-get($spacers, 1);
   }
 
   [aria-hidden="hidden"] {
     pointer-events: none;
-  }
-
-  &:hover {
-    background-color: $secondary-background;
-    border-color: inherit;
-    color: $secondary-color;
   }
 
   &--secondary {
@@ -134,6 +188,14 @@
       background-color: darken($secondary-background, $hue-threshold);
       box-shadow: 0 0 0 .3rem lighten($secondary-background, $hue-threshold);
     }
+
+    &.loading {
+  
+      &:before {
+        background-color: darken($secondary-background, $hue-threshold);
+        box-shadow: 0 0 0 .3rem lighten($secondary-background, $hue-threshold);
+      }
+    }
   }
 
   &--post {
@@ -146,11 +208,28 @@
       background-color: darken($secondary-background, 10%);
       background-image: linear-gradient(45deg, $secondary-background, darken($secondary-background, $hue-threshold * 2));
     }
+
+    &.loading {
+  
+      &:before {
+        background-color: darken($secondary-background, 10%);
+        background-image: linear-gradient(45deg, $secondary-background, darken($secondary-background, $hue-threshold * 2));
+      }
+    }
   }
 
   &--lg {
     font-size: map-get($font-percentage, 'lg');
     padding: map-get($spacers, 2) $spacer;
+
+    &.loading {
+  
+      &:after {
+        @include square(1.5rem);
+        margin-left: -.75rem;
+        margin-top: -.75rem;
+      }
+    }
   }
 
   .fa-sliders-h {

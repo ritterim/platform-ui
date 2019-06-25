@@ -235,6 +235,15 @@
       <button class="button button--post button--lg">Get Contracted Now</button>
       <hr/>
       <div class="button-group">
+        <button class="button loading">Submit</button>
+        <button class="button button--lg loading">Submit</button>
+        <button class="button button--secondary loading" aria-label="Download">
+          <i class="fas fa-download" focusable="false" aria-hidden="hidden"></i>
+        </button>
+        <button class="button button--post loading">Submit</button>
+      </div>
+      <hr>
+      <div class="button-group">
         <a class="button button--secondary" role="button" aria-label="Download">
           <i class="fas fa-download" focusable="false" aria-hidden="hidden"></i>
         </a>
@@ -863,6 +872,40 @@
         </label>
         <div class="rim-form__field rim-form__button-group">
           <button class="button button--post button--lg">Quote Now</button>
+        </div>
+      </form>
+    </section>
+    <section>
+      <form action="" class="rim-form">
+        <div class="rim-form__field rim-form__field--fancy">
+          <input id="first-name" type="text" required placeholder="Jane">
+          <label for="first-name">First Name</label>
+        </div>
+        <div class="rim-form__field rim-form__field--fancy">
+          <input id="last-name" type="text" required placeholder="Smith">
+          <label for="last-name">Last Name</label>
+        </div>
+        <div class="rim-form__field rim-form__field--fancy">
+          <input id="dob" type="date" required placeholder="01/23/1985">
+          <label for="dob">Age or DOB</label>
+        </div>
+        <div class="rim-form__field rim-form__field--fancy">
+          <input id="zipcode" type="tel" pattern="^\d{5,6}(?:[-\s]\d{4})?$" required placeholder="12345">
+          <label for="zipcode">ZIP Code</label>
+        </div>
+        <div class="rim-form__field rim-form__field--fancy">          
+          <div class="rim-form__select-wrapper">
+            <select name="County Select" id="county" required placeholder="County">
+              <option value=""></option>
+              <option value="County1">County 1</option>
+              <option value="County2">County 2</option>
+              <option value="County3">County 3</option>
+              <option value="County4">County 4</option>
+              <option value="County5">County 5</option>
+              <option value="County6">County 6</option>
+            </select>
+            <label for="county">County</label>
+          </div>
         </div>
       </form>
     </section>

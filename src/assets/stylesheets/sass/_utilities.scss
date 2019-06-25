@@ -53,3 +53,13 @@
   overflow: hidden;
   position: absolute !important;
 }
+
+%loader,
+.loader {
+  animation: rotation 1s infinite linear;
+  border: 2px solid rgba(160, 160, 160, 0.2);
+  border-radius: 50%;
+  border-top-color: rgba(160, 160, 160, 0.7);
+  height: 1.4em;
+  width: 1.4em;
+}
