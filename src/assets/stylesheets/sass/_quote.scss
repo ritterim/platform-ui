@@ -18,8 +18,8 @@ div.compare {
 .filter-group {
   display: flex;
   flex-flow: row wrap;
-  margin-left: -map-get($spacers, 1);
-  width: calc(100% + map-get($spacers, 1) * 2);
+  margin-left: map-get($spacers, 1);
+  width: calc(100% + #{map-get($spacers, 1)} * 2);
 
   input[type="checkbox"].filter-group__filter {
     + label {
