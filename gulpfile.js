@@ -50,6 +50,7 @@ function watchFiles() {
   watch("./src/assets/js/src/*", js);
 }
 
+exports.build = parallel(css, js);
 exports.css = css;
 exports.js = js;
 exports.styleguide = styleguide;
