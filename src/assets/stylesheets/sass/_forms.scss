@@ -78,21 +78,35 @@
 //
 // Markup:
 // <form action="" class="rim-form">
-//   <div for="first-name" class="rim-form__field rim-form__field--fancy">
-//     <input id="first-name" type="text" required>
-//     <label>First Name</label>
+//   <div class="rim-form__field rim-form__field--fancy">
+//     <input id="first-name" type="text" required placeholder="Jane">
+//     <label for="first-name">First Name</label>
 //   </div>
-//   <div for="last-name" class="rim-form__field rim-form__field--fancy">
-//     <input id="last-name" type="text" required>
-//     <label>Last Name</label>
+//   <div class="rim-form__field rim-form__field--fancy">
+//     <input id="last-name" type="text" required placeholder="Smith">
+//     <label for="last-name">Last Name</label>
 //   </div>
-//   <div for="dob" class="rim-form__field rim-form__field--fancy">
-//     <input id="dob" type="date" required>
-//     <label>Age or DOB</label>
+//   <div class="rim-form__field rim-form__field--fancy">
+//     <input id="dob" type="date" required placeholder="01/23/1985">
+//     <label for="dob">Age or DOB</label>
 //   </div>
-//   <div for="zipcode" class="rim-form__field rim-form__field--fancy">
-//     <input id="zipcode" type="tel" pattern="^\d{5,6}(?:[-\s]\d{4})?$" required>
-//     <label>ZIP Code</label>
+//   <div class="rim-form__field rim-form__field--fancy">
+//     <input id="zipcode" type="tel" pattern="^\d{5,6}(?:[-\s]\d{4})?$" required placeholder="12345">
+//     <label for="zipcode">ZIP Code</label>
+//   </div>
+//   <div class="rim-form__field rim-form__field--fancy">          
+//     <div class="rim-form__select-wrapper">
+//       <select name="County Select" id="county" required placeholder="County">
+//         <option value=""></option>
+//         <option value="County1">County 1</option>
+//         <option value="County2">County 2</option>
+//         <option value="County3">County 3</option>
+//         <option value="County4">County 4</option>
+//         <option value="County5">County 5</option>
+//         <option value="County6">County 6</option>
+//       </select>
+//       <label for="county">County</label>
+//     </div>
 //   </div>
 // </form>
 //
@@ -372,6 +386,21 @@ input[type="radio"] {
       input:focus::-webkit-datetime-edit,
       input:valid::-webkit-datetime-edit { 
         color: map-get($greyscale, 'base' );
+      }
+
+      ::-webkit-input-placeholder {
+        opacity: 0;
+        transition: inherit;
+      }
+
+      input:focus::-webkit-input-placeholder {
+        opacity: 1;
+      }
+
+      input:not(:placeholder-shown) + label,
+      input:focus + label {
+        transform: translate(0, 0) scale(1);
+        cursor: pointer;
       }
 
       #{ $self }__select-wrapper {
