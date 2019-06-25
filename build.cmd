@@ -6,7 +6,7 @@ setlocal
 call npm install
 if %ERRORLEVEL% neq 0 goto BuildFail
 
-call npm run webpack
+call npm run start
 if %ERRORLEVEL% neq 0 goto BuildFail
 
 goto BuildSuccess
