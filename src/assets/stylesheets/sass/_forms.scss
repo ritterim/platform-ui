@@ -373,6 +373,26 @@ input[type="radio"] {
       input:valid::-webkit-datetime-edit { 
         color: map-get($greyscale, 'base' );
       }
+
+      #{ $self }__select-wrapper {
+        position: static;
+      }
+
+      select {
+        padding-left: map-get($spacers, 1 );
+        
+        &:focus ~ label,
+        &:valid ~ label {
+          font-size: 80%;
+          top: -1rem;
+          left: 0;
+        }
+  
+        &:focus {
+          border-bottom-color: map-get($brand-colors, 'med-blue' ) !important;
+          outline: none !important;
+        }
+      }
   
       label {
         pointer-events: none;

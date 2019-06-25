@@ -877,21 +877,35 @@
     </section>
     <section>
       <form action="" class="rim-form">
-        <div for="first-name" class="rim-form__field rim-form__field--fancy">
+        <div class="rim-form__field rim-form__field--fancy">
           <input id="first-name" type="text" required>
-          <label>First Name</label>
+          <label for="first-name">First Name</label>
         </div>
-        <div for="last-name" class="rim-form__field rim-form__field--fancy">
+        <div class="rim-form__field rim-form__field--fancy">
           <input id="last-name" type="text" required>
-          <label>Last Name</label>
+          <label for="last-name">Last Name</label>
         </div>
-        <div for="dob" class="rim-form__field rim-form__field--fancy">
+        <div class="rim-form__field rim-form__field--fancy">
           <input id="dob" type="date" required>
-          <label>Age or DOB</label>
+          <label for="dob">Age or DOB</label>
         </div>
-        <div for="zipcode" class="rim-form__field rim-form__field--fancy">
+        <div class="rim-form__field rim-form__field--fancy">
           <input id="zipcode" type="tel" pattern="^\d{5,6}(?:[-\s]\d{4})?$" required>
-          <label>ZIP Code</label>
+          <label for="zipcode">ZIP Code</label>
+        </div>
+        <div class="rim-form__field rim-form__field--fancy">          
+          <div class="rim-form__select-wrapper">
+            <select name="County Select" id="county" required>
+              <option value=""></option>
+              <option value="County1">County 1</option>
+              <option value="County2">County 2</option>
+              <option value="County3">County 3</option>
+              <option value="County4">County 4</option>
+              <option value="County5">County 5</option>
+              <option value="County6">County 6</option>
+            </select>
+            <label for="county">County</label>
+          </div>
         </div>
       </form>
     </section>
