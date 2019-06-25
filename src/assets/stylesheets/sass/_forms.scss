@@ -69,6 +69,48 @@
 //
 // Styleguide Forms
 
+// Fancy Forms
+//
+// You want a fancy form that animates the `label`? You got it.
+// To get the animation, add the class `rim-form__field--fancy` to the `rim-form__field`. 
+// You will also need to change the markup slightly. Instead of a `label` the `rim-form__field` should now be a `div`
+// put the `label` under the `input` as a sibling of the `rim-form__field` `div`. See markup below.
+//
+// Markup:
+// <form action="" class="rim-form">
+//   <div for="first-name" class="rim-form__field rim-form__field--fancy">
+//     <input id="first-name" type="text" required>
+//     <label>First Name</label>
+//   </div>
+//   <div for="last-name" class="rim-form__field rim-form__field--fancy">
+//     <input id="last-name" type="text" required>
+//     <label>Last Name</label>
+//   </div>
+//   <div for="dob" class="rim-form__field rim-form__field--fancy">
+//     <input id="dob" type="date" required>
+//     <label>Age or DOB</label>
+//   </div>
+//   <div for="zipcode" class="rim-form__field rim-form__field--fancy">
+//     <input id="zipcode" type="tel" pattern="^\d{5,6}(?:[-\s]\d{4})?$" required>
+//     <label>ZIP Code</label>
+//   </div>
+// </form>
+//
+// Styleguide Forms.Fancy
+
+
+// KSS-Node specific stuff for forms 
+#kss-node {
+
+  #kssref-forms-fancy {
+
+    .kss-modifier__heading {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+
 
 fieldset {
   margin: 0;
@@ -260,7 +302,7 @@ input[type="radio"] {
         border-color: map-get($greyscale, 'white' );
       }
     }
-  }
+  }  
 
   &__field {
     flex: 1 1 auto;
@@ -296,6 +338,49 @@ input[type="radio"] {
 
     &--full {
       max-width: none;
+    }
+
+    // Fancy label animations
+    &--fancy {
+      position: relative;
+  
+      input:not([type=checkbox]),
+      input:not([type=radio]),
+      textarea {
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid map-get($greyscale, 'light' );
+        border-radius: 0;
+        color: map-get($greyscale, 'base' );
+        padding: map-get($spacers, 1 );
+        transition: .2s ease-in;
+  
+        &:focus ~ label,
+        &:valid ~ label {
+          font-size: 80%;
+          top: -1rem;
+          left: 0;
+        }
+  
+        &:focus {
+          border-bottom-color: map-get($brand-colors, 'med-blue' ) !important;
+          outline: none !important;
+        }
+      }
+  
+      input::-webkit-datetime-edit { color: transparent; }
+      input:focus::-webkit-datetime-edit,
+      input:valid::-webkit-datetime-edit { 
+        color: map-get($greyscale, 'base' );
+      }
+  
+      label {
+        pointer-events: none;
+        position: absolute;
+        left: .7rem;
+        top: .7rem;
+        transition: .2s ease-in;
+      }
     }
   }
 

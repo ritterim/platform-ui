@@ -876,6 +876,26 @@
       </form>
     </section>
     <section>
+      <form action="" class="rim-form">
+        <div for="first-name" class="rim-form__field rim-form__field--fancy">
+          <input id="first-name" type="text" required>
+          <label>First Name</label>
+        </div>
+        <div for="last-name" class="rim-form__field rim-form__field--fancy">
+          <input id="last-name" type="text" required>
+          <label>Last Name</label>
+        </div>
+        <div for="dob" class="rim-form__field rim-form__field--fancy">
+          <input id="dob" type="date" required>
+          <label>Age or DOB</label>
+        </div>
+        <div for="zipcode" class="rim-form__field rim-form__field--fancy">
+          <input id="zipcode" type="tel" pattern="^\d{5,6}(?:[-\s]\d{4})?$" required>
+          <label>ZIP Code</label>
+        </div>
+      </form>
+    </section>
+    <section>
       <div class="crm-accordion active">
         <div class="crm-accordion crm-accordion__title">
           title
