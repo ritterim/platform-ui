@@ -1,16 +1,44 @@
+// Spacers
+//
+// We've included spacing utilities for padding and margin that work almost the same as Bootstrap 4.x. These cover
+// left, right, x-axis (right _and_ left), and y-axis (top _and_ bottom).
+//
+// Usage:
+// `<p or m>< direction: l, r, x, y >-<key from $spacers map>`
+//
+// Example:
+// ```scss
+// .pl-2 // padding-left: .5rem;
+// .mx-3 // margin: 0 1rem;
+// ```
+//
+// Map:
+// ```scss
+// 0: 0,
+// 1: ($spacer * .25),
+// 2: ($spacer * .5),
+// 3: $spacer,
+// 4: ($spacer * 2),
+// 5: ($spacer * 3),
+// 6: ($spacer * 4.5),
+// 7: ($spacer * 6.5)
+// ```
+//
+// Styleguide Utilities.Spacers
+
 @each $prop, $letter in (margin: m, padding: p) {
   @each $direction, $d in $xy-border {
     @each $unit, $rem in $spacers {
       .#{$letter}#{$d}-#{$unit} {
-        #{$prop}-#{$direction}: #{$rem};
+        #{$prop}-#{$direction}: #{$rem} !important;
       }
       .#{$letter}x-#{$unit} {
-        #{$prop}-left: $rem;
-        #{$prop}-right: $rem;
+        #{$prop}-left: $rem !important;
+        #{$prop}-right: $rem !important;
       }
       .#{$letter}y-#{$unit} {
-        #{$prop}-top: $rem;
-        #{$prop}-bottom: $rem;
+        #{$prop}-top: $rem !important;
+        #{$prop}-bottom: $rem !important;
       }
     }
   }
