@@ -341,7 +341,7 @@ input[type="radio"] {
     }
 
     // Fancy label animations
-    &--fancy {
+    &#{ $self }__field--fancy {
       position: relative;
   
       input:not([type=checkbox]),
@@ -377,7 +377,7 @@ input[type="radio"] {
       label {
         pointer-events: none;
         position: absolute;
-        left: .7rem;
+        left: .25rem;
         top: .7rem;
         transition: .2s ease-in;
       }
