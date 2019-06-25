@@ -18,6 +18,7 @@ $all-colors: map-merge($brand-colors, $secondary-colors);
 @each $name, $color in $greyscale {
   // text color
   .text-#{$name} {
+    border-color: $color !important;    
     color: $color !important;
     transition: .2s;
   }

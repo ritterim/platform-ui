@@ -67,6 +67,12 @@
     );
   }
 
+  &__close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+
   &__heading {
     font-family: map-get($fonts, 'base-alt' );
     font-size: 150%;
