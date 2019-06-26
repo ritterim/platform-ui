@@ -437,7 +437,15 @@ input[type="radio"] {
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
+    &.option-group--block {
+      display: block;
+    }
+    &.option-group--overflow {
+      max-height: 20vh;
+      overflow: auto;
+    }
   }
+
 
   &__button-group {
     align-items: flex-end;

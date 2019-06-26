@@ -37,6 +37,16 @@
       top: -14px;
       z-index: 49;
     }
+    &.content--right {
+      /* for use if the button is affixed to the right side of the screen with nothing to buffer it */
+      right: -3rem;
+      &:before {
+        right: 59px;
+      }
+      &:after {
+        right: 57px;
+      }
+    }
   }
 
   &__close {
