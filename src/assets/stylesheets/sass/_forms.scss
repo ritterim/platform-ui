@@ -376,7 +376,8 @@ input[type="radio"] {
         }
       }
   
-      input::-webkit-datetime-edit { color: transparent; }
+      input::-webkit-datetime-edit { 
+        color: transparent; }
       input:focus::-webkit-datetime-edit,
       input:valid::-webkit-datetime-edit { 
         color: map-get($greyscale, 'base' );
@@ -389,12 +390,6 @@ input[type="radio"] {
 
       input:focus::-webkit-input-placeholder {
         opacity: 1;
-      }
-
-      input:not(:placeholder-shown) + label,
-      input:focus + label {
-        transform: translate(0, 0) scale(1);
-        cursor: pointer;
       }
 
       #{ $self }__select-wrapper {
@@ -421,8 +416,9 @@ input[type="radio"] {
         pointer-events: none;
         position: absolute;
         left: .25rem;
-        top: .7rem;
+        top: 50%;
         transition: .2s ease-in;
+        transform: translateY(-50%);
       }
     }
   }
