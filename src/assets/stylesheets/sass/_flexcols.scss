@@ -149,7 +149,23 @@
   flex-wrap: wrap;
 
   > .block { 
-    width: 100%;     
+    width: 100%;
+  }
+
+  @each $key, $val in $flex-grid-duex {
+    .block-#{$val} {
+      width: calc(100% / #{$val});
+    }
+  }
+
+  @each $name in $breakpoint-classes {
+    @each $key, $val in $flex-grid-duex {
+      .block-#{$name}-#{$val} {
+        @include breakpoint(#{$name}, min) {
+          width: calc(#{$key} * 100%);
+        }
+      }
+    }
   }
 
   @each $key, $name in $flex-grid {
@@ -171,7 +187,6 @@
         &.block-#{$letter}#{$d}-#{$unit} {
           > .block {
             #{$prop}-#{$direction}: #{$rem};
-            color: initial;
           }
         }
         
@@ -215,12 +230,12 @@
   // container to change the width of the block 
   // elements inside the flexcol container
   @each $name in $breakpoint-classes {
-    @for $i from 1 through 12 {
-      &.#{$name}-up-#{$i} {
+    @each $key, $val in $flex-grid-duex {
+      &.#{$name}-up-#{$val} {
         
         > .block {
           @include breakpoint(#{$name}, min) {
-            width: calc(100% / #{$i});
+            width: calc(100% / #{$val});
           }
 
           &--full {
