@@ -121,12 +121,12 @@ $error-colors: (
 // Message Colors
 //
 // Colors:
-// base-light: map-get($greyscale, 'light-mid')
-// base: map-get($greyscale, 'light')
-// base-dark: map-get($greyscale, 'base')
-// info-light: map-get($brand-colors, 'lightblue')
-// info: map-get($brand-colors, 'skyblue')
-// info-dark: map-get($brand-colors, 'med-blue')
+// base-light: #e2e3e5
+// base: #999
+// base-dark: #666
+// info-light: #E5F5FF
+// info: #91b9dc
+// info-dark: #3f7bad
 // warning-light: #fff3cd
 // warning: #ffeeba
 // warning-dark: #856404
@@ -136,6 +136,8 @@ $error-colors: (
 // success-light: #d4edda
 // success: #c3e6cb
 // success-dark: #155724
+// 
+// Styleguide Color.MessageColors
 
 $message-colors: (
   'base-light': map-get($greyscale, 'light-mid'),
