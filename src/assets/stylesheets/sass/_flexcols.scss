@@ -150,8 +150,19 @@
 
   > .block { 
     width: 100%;
-  }
 
+    &--full {
+      width: 100% !important;
+    }
+
+    &--fill {
+      flex-grow: 1;
+    }
+
+    &--shrink {
+      width: auto !important;
+    }
+  }
   @each $key, $val in $flex-grid-duex {
     .block-#{$val} {
       width: calc(100% / #{$val});
@@ -163,6 +174,18 @@
       .block-#{$name}-#{$val} {
         @include breakpoint(#{$name}, min) {
           width: calc(#{$key} * 100%);
+        }
+
+        &--full {
+          width: 100% !important;
+        }
+
+        &--fill {
+          flex-grow: 1;
+        }
+
+        &--shrink {
+          width: auto !important;
         }
       }
     }
@@ -236,10 +259,6 @@
         > .block {
           @include breakpoint(#{$name}, min) {
             width: calc(100% / #{$val});
-          }
-
-          &--full {
-            width: 100% !important;
           }
         }
       }
