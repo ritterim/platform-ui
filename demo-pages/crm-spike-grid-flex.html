@@ -235,13 +235,25 @@
       <button class="button button--post button--lg">Get Contracted Now</button>
       <hr/>
       <div class="button-group">
-        <button class="button loading">Submit</button>
-        <button class="button button--lg loading">Submit</button>
-        <button class="button button--secondary loading" aria-label="Download">
-          <i class="fas fa-download" focusable="false" aria-hidden="hidden"></i>
+        <button class="button loading" aria-label="Loading...">
+          Submit
+          <span class="sr-only">Loading...</span>
         </button>
-        <button class="button button--post loading">Submit</button>
+        <button class="button button--lg loading" aria-label="Loading...">
+          Submit
+          <span class="sr-only">Loading...</span>
+        </button>
+        <button class="button button--secondary loading" aria-label="Download" aria-label="Loading...">
+          <i class="fas fa-download" focusable="false" aria-hidden="hidden"></i>
+          <span class="sr-only">Loading...</span>
+        </button>
+        <button class="button button--post loading" aria-label="Loading...">
+          Submit
+          <span class="sr-only">Loading...</span>
+        </button>
       </div>
+      <hr>
+      <button class="button" disabled>Disabled</button>
       <hr>
       <div class="button-group">
         <a class="button button--secondary" role="button" aria-label="Download">
