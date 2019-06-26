@@ -413,6 +413,7 @@ input[type="radio"] {
       }
   
       label {
+        color: map-get($greyscale, 'light' );
         pointer-events: none;
         position: absolute;
         left: .25rem;
