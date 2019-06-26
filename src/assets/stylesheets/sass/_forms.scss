@@ -194,6 +194,7 @@ legend {
     @extend %hide-input;
 
     + label {
+      align-items: center;
       color: map-get($greyscale, 'base');
       display: flex;
       height: 100%;
