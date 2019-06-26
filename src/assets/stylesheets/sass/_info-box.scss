@@ -9,7 +9,7 @@
     min-width: 20rem;
     padding: map-get($spacers, 5) map-get($spacers, 4);
     position: absolute;
-    right: -4.5rem;
+    right: -3rem;
     z-index: 50;
 
     &:before {
@@ -20,7 +20,7 @@
       border-style: solid;
       border-width: 0 8px 12px 8px;
       border-color: transparent transparent map-get($greyscale, 'white') transparent;
-      right: 82px;
+      right: 59px;
       top: -12px;
       z-index: 51;
     }
@@ -33,7 +33,7 @@
       border-style: solid;
       border-width: 0 10px 14px 10px;
       border-color: transparent transparent lighten(map-get($greyscale, 'light'), $hue-threshold * 2);
-      right: 80px;
+      right: 57px;
       top: -14px;
       z-index: 49;
     }

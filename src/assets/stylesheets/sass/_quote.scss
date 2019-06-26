@@ -8,10 +8,14 @@ main.details-and-compare {
   width: auto;
 }
 
-div.compare {
-  align-items: center;
-  justify-content: flex-end;
-  margin-bottom: .3rem;
+.carrier {
+  label.rim-form__field {
+    margin: 0;
+  }
+}
+
+mark.stars {
+  color: map-get($secondary-colors, 'gold');
 }
 
 /* Temporarily added back for OQE compatibility - can rework OQE markup when a replacement is available */
