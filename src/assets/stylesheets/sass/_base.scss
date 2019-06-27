@@ -35,6 +35,9 @@ body {
   }
 }
 
+p {
+  margin: 0 0 map-get($spacers, 4) 0;
+}
 
 a {
   color: map-get($platform-colors, 'link');

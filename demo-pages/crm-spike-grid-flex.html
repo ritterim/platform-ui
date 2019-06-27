@@ -192,12 +192,41 @@
     </nav>
   </aside>
   <main>
-    <div class="crm-banner"
-      style="background-image: url('/src/assets/images/nastuh-abootalebi-284882-unsplash.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center; opacity: .7">
-      <div class="close right">close <span>&times;</span></div>
-      <h1 class="inverted text-shadow__dark">Post Header</h1>
-      <p class="inverted text-shadow__dark">Really powerfull excerpt of an outstanding article.</p>
-    </div>
+    <div class="crm-banner animated slideInDown fast" style="background-image: linear-gradient(to right, white, transparent), url('https://freephotos.cc/storage/preview/path/e0TY5dzjfyAcol92eAidR4ublvPlT2dBbmAGcqeN.jpeg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+      <div class="button button--sm close-action right">
+        collapse 
+        <i class="fas fa-angle-up" aria-hidden="true"></i>
+      </div> 
+      <h1 class="mb-2">Your dashboard got an upgrade!</h1> 
+      <p>
+        <i class="fas fa-bullhorn" aria-hidden="true"></i> 
+        Take a quick video tour to see the new features of your dashboard.
+      </p> 
+      <a data-modal="video-banner" class="button button--post button--lg rim-modal__open">
+        <i class="far fa-play-circle" aria-hidden="true"></i> 
+        Watch now
+      </a>
+    </div> 
+    <div class="rim-modal rim-modal--closed video-banner wistia">
+        <div class="rim-modal__inner animated slideInUp fastest">
+          <div class="rim-modal__header">
+            <button class="button float-right rim-modal__close">Close <i class="fas fa-times"></i></button>
+            <h2>Dashboard Walkthrough</h2>
+          </div>
+          <div class="rim-modal__content--video">
+            <div class="wistia_responsive_padding">
+              <div class="wistia_responsive_wrapper">
+                <div class="wistia_embed wistia_async_j2fu0dfabe videoFoam=true">
+                  <div class="wistia_swatch">
+                    <img src="https://fast.wistia.com/embed/medias/iimxpyroxy/swatch" alt="Dashboard walkthough" onload="this.parentNode.style.opacity=1;" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     <section>
       <h2>Pills</h2>
       <span class="pill">
@@ -971,5 +1000,6 @@
   </main>
 
   <script src="/assets/js/platform-ui.min.js"></script>
+  <script src="https://fast.wistia.com/assets/external/E-v1.js"></script>
 </body>
 </html>
