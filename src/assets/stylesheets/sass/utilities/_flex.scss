@@ -1,22 +1,43 @@
 .flex {
   display: flex;
+
   &--align {
+
+    // flex--align-center
     &-center {
       @extend %flex-center;
     }
   }
+
+  // flex--column
   &--column {
     flex-direction: column;
   }
-  &--justify {
-    &-between {
-      justify-content: space-between;
-    }
-    &-end {
-      justify-content: flex-end;
-    }
-  }
 }
+
+// Align Items
 .align-center {
   align-items: center;
+}
+
+
+// Justify Content
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-start {
+  justify-content: flex-start;
 }

@@ -163,14 +163,14 @@
       width: auto !important;
     }
   }
-  @each $key, $val in $flex-grid-duex {
+  @each $key, $val in $rim-grid {
     .block-#{$val} {
       width: calc(100% / #{$val});
     }
   }
 
   @each $name in $breakpoint-classes {
-    @each $key, $val in $flex-grid-duex {
+    @each $key, $val in $rim-grid {
       .block-#{$name}-#{$val} {
         @include breakpoint(#{$name}, min) {
           width: calc(#{$key} * 100%);
@@ -253,7 +253,7 @@
   // container to change the width of the block 
   // elements inside the flexcol container
   @each $name in $breakpoint-classes {
-    @each $key, $val in $flex-grid-duex {
+    @each $key, $val in $rim-grid {
       &.#{$name}-up-#{$val} {
         
         > .block {
