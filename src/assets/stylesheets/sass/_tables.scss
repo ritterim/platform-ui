@@ -6,45 +6,84 @@
 //
 // Attach any `click` event directly to the `<th>` for a larger click target.
 //
+// These tables are responsive. They get the mobile view below the mobile breakpoint.
+// You need to add the `data-label="{th - name}"` to the corresponding `<td>`. See the markup below.
+// 
 // Markup:
 // <table>
 //   <thead>
 //     <tr>
 //       <th>Company</th>
-//       <th>Contact <i class="fas fa-arrows-alt-v"></i></th>
-//       <th>Country <i class="fas fa-arrows-alt-v"></i></th>
+//       <th>Contact</th>
+//       <th>Country</th>
 //     </tr>
 //   </thead>
 //   <tbody>
 //     <tr>
-//       <td>Alfreds Futterkiste</td>
-//       <td>Maria Anders</td>
-//       <td>Germany</td>
+//       <td data-label="Company">
+//         <span class="td-inner">Alfreds Futterkiste</span>
+//       </td>
+//       <td data-label="Contact">
+//         <span class="td-inner">Maria Anders</span>
+//       </td>
+//       <td data-label="Country">
+//         <span class="td-inner">Germany</span>
+//       </td>
 //     </tr>
 //     <tr>
-//       <td>Centro comercial Moctezuma</td>
-//       <td>Francisco Chang</td>
-//       <td>Mexico</td>
+//       <td data-label="Company">
+//         <span class="td-inner">Centro comercial Moctezuma</span>
+//       </td>
+//       <td data-label="Contact">
+//         <span class="td-inner">Francisco Chang</span>
+//       </td>
+//       <td data-label="Country">
+//         <span class="td-inner">Mexico</span>
+//       </td>
 //     </tr>
 //     <tr>
-//       <td>Ernst Handel</td>
-//       <td>Roland Mendel</td>
-//       <td>Austria</td>
+//       <td data-label="Company">
+//         <span class="td-inner">Ernst Handel</span>
+//       </td>
+//       <td data-label="Contact">
+//         <span class="td-inner">Roland Mendel</span>
+//       </td>
+//       <td data-label="Country">
+//         <span class="td-inner">Austria</span>
+//       </td>
 //     </tr>
 //     <tr>
-//       <td>Island Trading</td>
-//       <td>Helen Bennett</td>
-//       <td>UK</td>
+//       <td data-label="Company">
+//         <span class="td-inner">Island Trading</span>
+//       </td>
+//       <td data-label="Contact">
+//         <span class="td-inner">Helen Bennett</span>
+//       </td>
+//       <td data-label="Country">
+//         <span class="td-inner">UK</span>
+//       </td>
 //     </tr>
 //     <tr>
-//       <td>Laughing Bacchus Winecellars</td>
-//       <td>Yoshi Tannamuri</td>
-//       <td>Canada</td>
+//       <td data-label="Company">
+//         <span class="td-inner">Laughing Bacchus Winecellars</span>
+//       </td>
+//       <td data-label="Contact">
+//         <span class="td-inner">Yoshi Tannamuri</span>
+//       </td>
+//       <td data-label="Country">
+//         <span class="td-inner">Canada</span>
+//       </td>
 //     </tr>
 //     <tr>
-//       <td>Magazzini Alimentari Riuniti</td>
-//       <td>Giovanni Rovelli</td>
-//       <td>Italy</td>
+//       <td data-label="Company">
+//         <span class="td-inner">Magazzini Alimentari Riuniti</span>
+//       </td>
+//       <td data-label="Contact">
+//         <span class="td-inner">Giovanni Rovelli</span>
+//       </td>
+//       <td data-label="Country">
+//         <span class="td-inner">Italy</span>
+//       </td>
 //     </tr>
 //   </tbody>
 // </table>
@@ -53,16 +92,25 @@
 
 
 
+
 table {
 
   $border-radius: map-get($radius, 'default');
+  $table-border: 1px solid lighten(map-get($greyscale, 'light'), $hue-threshold * 2);
+
+  $responsive-table-bottom-gap: $spacer * 1.5;
+  $responsive-table-label-bg: map-get($greyscale, 'lighter' );
 
   width: 100%;
   background-color: transparent;
-  border: 1px solid lighten(map-get($greyscale, 'light'), $hue-threshold * 2);
+  border: $table-border;
   border-radius: $border-radius;
   border-collapse: separate;
   border-spacing: 0;
+
+  @include breakpoint(mobile, max) {
+    border: none;
+  }
 
   thead {
     background-color: map-get($greyscale, 'lighter');
@@ -70,6 +118,11 @@ table {
     color: map-get($greyscale, 'base');
     font-weight: bold;
     text-align: left;
+
+    @include breakpoint(mobile, max) {
+      border: none;
+    }
+
     tr {
       border-radius: $border-radius $border-radius 0 0;
     }
@@ -78,9 +131,12 @@ table {
   tr {
     background-color: transparent;
     transition: $transitions * 3;
-    &:hover {
-      background-color: map-get($greyscale, 'lighter');
-    }
+
+    @include breakpoint(mobile, min) {
+      &:hover {
+        background-color: map-get($greyscale, 'lighter');
+      }
+    }    
 
     td,
     th {
@@ -89,6 +145,60 @@ table {
 
     th {
       cursor: pointer;
+    }
+  }
+
+  @include breakpoint(mobile, max) {
+    thead tr {
+      position: absolute;
+      top: -9999em;
+      left: -9999em;
+    }
+
+    tr {
+      border: $table-border;
+      border-bottom: none;
+      display: block;
+
+      td {
+        border: none;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        border-bottom: $table-border;
+        padding-left: 50%;
+        position: relative;
+  
+        &:before {
+          content: attr(data-label);
+          display: inline-block;
+          font-weight: bold;
+          line-height: 1.5;
+          margin-left: -100%;
+          width: 100%;
+          position: relative;
+          z-index: 1;
+        }
+  
+        &:after {
+          content: '';
+          position: absolute;
+          background: $responsive-table-label-bg;
+          width: 45%;
+          height: 100%;
+          left: 0;
+          z-index: 0;
+        }
+      }
+    }
+
+    tr + tr {
+      margin-top: $responsive-table-bottom-gap;
+    }
+    /* Get table cells to act like rows */
+
+    .td-inner {
+      width: 100%;
     }
   }
 }
