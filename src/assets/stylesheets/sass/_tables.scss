@@ -70,6 +70,9 @@ table {
     color: map-get($greyscale, 'base');
     font-weight: bold;
     text-align: left;
+    tr {
+      border-radius: $border-radius $border-radius 0 0;
+    }
   }
 
   tr {
@@ -85,7 +88,6 @@ table {
     }
 
     th {
-      border-radius: $border-radius $border-radius 0 0;
       cursor: pointer;
     }
   }
