@@ -264,16 +264,6 @@
       }
     }
   }
-
-  @each $name in $breakpoint-classes {
-    @for $i from 1 through 12 {
-      .block-#{$name}-#{$i} {
-        @include breakpoint(#{$name}, min) {
-          width: calc(100% / #{$i});
-        }
-      }
-    }
-  }
 }
 
 
