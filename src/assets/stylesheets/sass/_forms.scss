@@ -550,6 +550,7 @@ input[type="radio"] {
       margin: 0;
       padding: map-get($spacers, 1) map-get($spacers, 2);
       padding-left: $spacer * 1.25;
+      z-index: 10;
 
       &:before {
         border: none;
