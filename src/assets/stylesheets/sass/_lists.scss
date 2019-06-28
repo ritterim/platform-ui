@@ -73,12 +73,11 @@ ul {
   list-style: none;
 
   li {
+    width: 100%;
 
     .image-link {
       background-color: map-get($brand-colors, 'med-blue');
-      display: flex;
-      flex: 1;
-      flex-direction: column;
+      display: block;
       position: relative;
 
       img {

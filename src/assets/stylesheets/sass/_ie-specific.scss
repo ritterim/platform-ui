@@ -1,0 +1,19 @@
+// ie specific
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+
+  .platform {
+    main {
+      margin-top: $menu-height;
+    }
+  }
+
+  .image-link-list {
+    display: flex !important;
+    flex-flow: row wrap !important;
+  
+    li {
+      padding: 0 map-get($spacers, 1 );
+      width: 33%;
+    }
+  }
+}
