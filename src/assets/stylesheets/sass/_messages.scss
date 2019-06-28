@@ -82,4 +82,11 @@
   .button--close {
     float: right;
   }
+
+  p {
+    
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
 }
