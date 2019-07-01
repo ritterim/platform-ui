@@ -1,0 +1,16 @@
+@media print {
+  // initial print css to combat rams print css
+  body {
+    visibility: visible !important;
+    header, aside, .site-header {
+      display: none;
+    }
+  }
+  .platform {
+    display: block;
+    main {
+      margin: 0;
+      width: 100vw;
+    }
+  }
+}
