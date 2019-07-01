@@ -317,6 +317,11 @@ input[type="radio"] {
   &__field {
     display: block;
     font-size: map-get($font-percentage, 'sm');
+    margin-bottom: $spacer * 1.5;
+
+    .block & {
+      margin-bottom: 0;
+    }
 
     input[type="text"],
     input[type="date"],
