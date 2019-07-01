@@ -17,37 +17,36 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/src/assets/images/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="96x96" href="/src/assets/images/favicon/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/src/assets/images/favicon/favicon-16x16.png">
-  <link rel="manifest" href="/src/assets/images/favicon/site.webmanifest.json">
   <link rel="mask-icon" href="/src/assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
 </head>
-<body id="kss-node" class="platform platform-styleguide">
-  <header class="site-header platform-header">
+<body id="kss-node" class="platform rim-style">
+  <header class="site-header rim-style-header">
     <h2 class="site-header__title text-white">RIMdev Platform Style Guide</h2>
   </header>
-  <aside class="platform-aside px-2 py-3">
-    <nav class="kss-nav" aria-label="Style Guide">
-      <ul class="kss-nav__menu">
-        <li class="kss-nav__menu-item">
-          <a class="kss-nav__menu-link" href="./">
-            <span class="kss-nav__ref">0</span
-            ><span class="kss-nav__name">Overview</span>
+  <aside class="rim-style-aside">
+    <nav class="rim-style-nav" aria-label="Style Guide">
+      <ul class="rim-style-nav__menu">
+        <li class="rim-style-nav__menu-item{{#if template.isHomepage}} active{{/if}}">
+          <a class="rim-style-nav__menu-link" href="./">
+            <span class="rim-style-nav__ref">0</span
+            ><span class="rim-style-nav__name">Overview</span>
           </a>
         </li>
       {{#each menu}}
-        <li class="kss-nav__menu-item">
-          <a class="kss-nav__menu-link" href="section-{{referenceURI}}.html">
-            <span class="kss-nav__ref">{{referenceNumber}}</span><span class="kss-nav__name">{{header}}</span>
+        <li class="rim-style-nav__menu-item{{#if isActive}} active{{/if}}">
+          <a class="rim-style-nav__menu-link" href="section-{{referenceURI}}.html">
+            <span class="rim-style-nav__ref">{{referenceNumber}}</span><span class="rim-style-nav__name">{{header}}</span>
           </a>
           {{#if isActive}}
             {{#if children}}
-              <ul class="kss-nav__menu-child">
+              <ul class="rim-style-nav__menu-child">
               {{#each children}}
-                <li class="kss-nav__menu-item">
-                  <a class="kss-nav__menu-link" href="section-{{../referenceURI}}.html#kssref-{{referenceURI}}">
-                    <span class="kss-nav__ref {{#if isGrandChild}}kss-nav__ref-child{{/if}}">{{referenceNumber}}</span
-                    ><span class="kss-nav__name">{{header}}</span>
+                <li class="rim-style-nav__menu-child-item{{#if isActive}} active{{/if}}">
+                  <a class="rim-style-nav__menu-link" href="section-{{../referenceURI}}.html#kssref-{{referenceURI}}">
+                    <span class="rim-style-nav__ref {{#if isGrandChild}}rim-style-nav__ref-child{{/if}}">{{referenceNumber}}</span
+                    ><span class="rim-style-nav__name">{{header}}</span>
                   </a>
                 </li>
               {{/each}}
@@ -209,7 +208,7 @@
   <script src="kss-assets/modal.js"></script>
   <script>
     var spy = new ScrollSpy('#kss-node', {
-      nav: '.kss-nav__menu-child > li > a',
+      nav: '.rim-style-nav__menu-child > li > a',
       className: 'is-in-viewport'
     });
     var kssFullScreen = new KssFullScreen({
