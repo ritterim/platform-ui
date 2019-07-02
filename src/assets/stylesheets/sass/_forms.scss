@@ -484,8 +484,8 @@ input[type="radio"] {
 
     &:focus {
       outline: none;
-      border-bottom-color: map-get($greyscale, 'light' );
-      box-shadow: 0 0 5px 0 map-get($greyscale, 'light' );
+      border-bottom-color: map-get($platform-colors, 'focus' );
+      box-shadow: 0 0 2px 0 map-get($platform-colors, 'focus' );
       transition: box-shadow $duration, border-color $duration ease-in-out, border-width $duration ease;
     }
   }

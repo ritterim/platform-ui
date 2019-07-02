@@ -161,33 +161,21 @@ table {
       display: block;
 
       td {
-        border: none;
-        display: flex;
-        justify-content: flex-start;
         align-items: center;
+        border: none;
         border-bottom: $table-border;
-        padding-left: 50%;
-        position: relative;
+        display: flex;
+        justify-content: space-between;
+        text-align: right;
   
         &:before {
           content: attr(data-label);
           display: inline-block;
           font-weight: bold;
           line-height: 1.5;
-          margin-left: -100%;
-          width: 100%;
-          position: relative;
-          z-index: 1;
-        }
-  
-        &:after {
-          content: '';
-          position: absolute;
-          background: $responsive-table-label-bg;
-          width: 45%;
-          height: 100%;
-          left: 0;
-          z-index: 0;
+          min-width: 40%;
+          padding-right: map-get($spacers, 2 );
+          text-align: left;
         }
       }
     }
@@ -196,9 +184,5 @@ table {
       margin-top: $responsive-table-bottom-gap;
     }
     /* Get table cells to act like rows */
-
-    .td-inner {
-      width: 100%;
-    }
   }
 }
