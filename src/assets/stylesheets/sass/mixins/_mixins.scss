@@ -20,7 +20,7 @@
 //
 // Output
 // ```css
-// @media (min-width: 768px) {
+// @media only screen and (min-width: 768px) {
 //   .test {
 //     display: none;
 //   }
@@ -40,7 +40,7 @@
 //
 // Output - Even though the `laptop` variable is set to 1240px, the max-width mixin substracts 1px.
 // ```css
-// @media (max-width: 1239px) {
+// @media only screen and (max-width: 1239px) {
 //   .test {
 //     display: none;
 //   }
@@ -62,7 +62,7 @@
 //
 // Output
 // ```css
-// @media (min-width: 768px) and (max-width: 1239px) {
+// @media only screen and (min-width: 768px) and (max-width: 1239px) {
 //   .test {
 //     display: none;
 //   }
@@ -79,7 +79,7 @@
 // ```
 // Output
 // ```css
-// @media (min-width: 800px) {
+// @media only screen and (min-width: 800px) {
 //   .test {
 //     display: none;
 //   }
@@ -96,7 +96,7 @@
 // ```
 // Output
 // ```css
-// @media (max-width: 1441px) {
+// @media only screen and (max-width: 1441px) {
 //   .test {
 //     display: none;
 //   }
@@ -114,7 +114,7 @@
 //
 // Output
 //```css
-// @media (orientation: landscape) {
+// @media only screen and (orientation: landscape) {
 //   .test {
 //     font-weight: bold;
 //   }
@@ -131,16 +131,16 @@
     $breakpoint-value: map-get($breakpoints, $breakpoint);
 
     @if $direction == max {
-      @media (max-width: ($breakpoint-value - 1)) {
+      @media only screen and (max-width: ($breakpoint-value - 1)) {
         @content;
       }
     } @else if $direction == min {
       // Write the media query.
-      @media (min-width: $breakpoint-value) {
+      @media only screen and (min-width: $breakpoint-value) {
         @content;
       }
     } @else {
-      @media ($direction: $breakpoint-value) {
+      @media only screen and ($direction: $breakpoint-value) {
         @content;
       }
     }
@@ -148,15 +148,15 @@
   // If the breakpoint doesn't exist in the map.
   } @else {
     @if $direction == max {
-      @media (max-width: $breakpoint) {
+      @media only screen and (max-width: $breakpoint) {
         @content;
       }
     } @else if $direction == min {
-      @media (min-width: $breakpoint) {
+      @media only screen and (min-width: $breakpoint) {
         @content;
       }
     } @else {
-      @media ($direction: $breakpoint) {
+      @media only screen and ($direction: $breakpoint) {
         @content;
       }
     }

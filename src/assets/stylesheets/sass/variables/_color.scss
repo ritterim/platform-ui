@@ -69,6 +69,7 @@ $brand-colors: (
 // Styleguide Color.PlatformColors
 
 $platform-colors: (
+  'focus': dodgerblue,
   'menu': map-get($brand-colors, 'navy'),
   'link': map-get($brand-colors, 'med-blue'),
   'help': map-get($brand-colors, 'lightblue'),
