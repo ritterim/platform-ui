@@ -5,7 +5,7 @@ $kss-colors-background    : map-get($greyscale, 'white' );
 
 $kss-colors-foreground    : map-get($greyscale, 'dark' );
 $kss-colors-heading       : map-get($greyscale, 'black' );
-$kss-colors-quotes        : map-get($greyscale, 'base' );
+$kss-colors-base        : map-get($greyscale, 'base' );
 
 $kss-font-code            : Menlo,Ubuntu Mono,Lucida Console,Courier New,Courier,monospace;
 
@@ -19,31 +19,64 @@ $rim-stlye-nav-border     : 1px solid rgba(map-get($greyscale, 'white'), .3);
 .rim-style {
   $self: &;
 
+  background-color: map-get($greyscale, 'lighter' );
+
   // Header
   &-header {
     align-items: center;
     display: flex;
     padding: $spacer map-get($spacers, 2 );
+
+    background-color: #003f70;
+    color: #fff;
+    display: flex;
+    font-size: 115%;
+    height: $menu-height;
+    width: 100%;
+    z-index: 100;
+
+    @include breakpoint(mobile, min) {
+      position: fixed;
+      top: 0;
+    }
   }
 
   // Aside
   &-aside {
     background-color: map-get($platform-colors, 'menu' );
     border-top: 1px solid $rim-stlye-nav-border;
-    height: 100%;
+
+    @include breakpoint(mobile, min) {
+      height: 100%;
+      margin-top: $menu-height;
+      position: fixed;
+      width: 20vw;
+    }    
   }
 
   // Aside Navigation
   &-nav {
-    height: 100%;
-    overflow: scroll;
-    padding-bottom: $spacer * 9;
+    height: 100%;  
+
+    @include breakpoint(mobile, min) {
+      overflow: scroll;  
+      padding-bottom: $spacer * 9;
+    }
 
     ul {
+      @include breakpoint(mobile, max) {
+        display: flex;
+        flex-flow: row wrap;
+      }
+
       list-style-type: none;
-      padding: 0;
+      padding: 0;      
 
       ul {
+        @include breakpoint(mobile, max) {
+          display: none;
+        }
+
         padding-left: map-get($spacers, 1 );
       }
 
@@ -53,7 +86,10 @@ $rim-stlye-nav-border     : 1px solid rgba(map-get($greyscale, 'white'), .3);
     }
 
     &__menu-item {
-      border-bottom: 1px solid $rim-stlye-nav-border;
+
+      @include breakpoint(mobile, min) {
+        border-bottom: 1px solid $rim-stlye-nav-border;
+      }      
 
       &.active {
 
@@ -89,6 +125,150 @@ $rim-stlye-nav-border     : 1px solid rgba(map-get($greyscale, 'white'), .3);
     }
   }
 
+  // Style guide main
+  main {
+    @include breakpoint(mobile, min) {
+      margin-left: 20vw;
+    }
+  }
+  
+  &-section {
+
+    @include breakpoint(mobile, min) {
+      margin-bottom: $spacer;
+      padding: $menu-height + 1rem 0 0;
+    }
+  }
+
+
+  &-title {
+    margin-bottom: 0;
+
+    &__ref {
+      color: $kss-colors-base;
+      display: block;
+      font-size: map-get($font-percentage, 'xxs' );
+  
+      &:before {
+        content: 'Section ';
+      }
+    }
+  
+    &__permalink {
+      display: block;
+      color: #000;
+      text-decoration: none;
+  
+      &:hover,
+      &:focus,
+      &:active {
+        color: $kss-colors-link;
+  
+        @media screen and (min-width: 607px) {
+          #{$self}-title__permalink-hash {
+            display: inline;
+          }
+        }
+      }
+    }
+  
+    &__permalink-hash {
+      color: lighten(map-get($greyscale, 'light' ), 10%);
+      display: none;
+    }
+  }
+  
+
+  &-description {
+    margin-top: $spacer;
+
+    p {
+      line-height: 1.5;
+      margin-bottom: $spacer;
+
+      code {
+        background-color: #fdf6e3;
+        color: #586e75;
+        padding: map-get($spacers, 1 );
+      }
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+  }
+
+
+  // Example Section
+  &-modifier {
+    background-color: map-get($greyscale, 'white' );
+    border: 1px solid #ccc;
+    border-radius: .3rem .3rem 0 0;
+    margin: map-get($spacers, 4 ) 0;
+    padding: 0 10px 10px;
+
+    &__heading {
+      margin: 0 -10px 10px -10px;
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+      border-radius: .3rem .3rem 0 0;
+      background-color: #eee;
+      font-weight: bold;
+    }
+    
+    &__default-name {
+      font-weight: bold;
+      margin-bottom: map-get($spacers, 4 );
+    }
+    
+    &__name {
+      float: left;
+      padding-right: 10px;
+      font-weight: bold;
+    }
+    
+    &__description {
+      margin-bottom: map-get($spacers, 4 );
+    }
+    
+    &__example {
+      clear: left;
+      border: 2px dashed transparent;
+      position: relative; // Contain the example's absolute positioning.
+      z-index: 0; // Establishes a local stacking context.
+      margin: -2px -2px $spacer;
+  
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  
+    &__example-footer {
+      clear: both;
+    }
+  }
+
+  // Markup
+  &-markup {
+    background-color: #fdf6e3;
+    border: 1px solid #f7dac5;
+    margin-bottom: map-get($spacers, 4 );
+
+    &[open] summary {
+      border-bottom: 1px solid #f7dac5;
+    }
+
+    summary {
+      padding-left: 10px;
+    }
+
+    pre {
+      margin: 0;
+    }
+  }
+
+
   // Colors Section
   &-colors {
     list-style: none;
@@ -114,7 +294,7 @@ $rim-stlye-nav-border     : 1px solid rgba(map-get($greyscale, 'white'), .3);
   
   &-color {
     background: $kss-colors-background;
-    border: 1px solid #ccc;
+    border: 1px solid map-get($greyscale, 'light' );
     margin: 0;
     padding: 0;
   
@@ -133,7 +313,7 @@ $rim-stlye-nav-border     : 1px solid rgba(map-get($greyscale, 'white'), .3);
     }
   
     #{$self}-color__code {
-      color: $kss-colors-quotes;
+      color: $kss-colors-base;
       display: block;
       font-family: $kss-font-code;
     }
@@ -165,8 +345,13 @@ $rim-stlye-nav-border     : 1px solid rgba(map-get($greyscale, 'white'), .3);
     display: block;
     overflow-x: auto;
     padding: 0.5em;
-    background: #1E1E1E;
-    color: #DCDCDC
+    background: #fdf6e3;
+    color: #586e75;
+
+    &:not(.rim-style-markup__code-wrapper) {
+      border: 1px solid #f7dac5;
+      margin: map-get($spacers, 4 ) 0;
+    }    
   }
 
   .hljs-keyword,
@@ -248,13 +433,16 @@ $rim-stlye-nav-border     : 1px solid rgba(map-get($greyscale, 'white'), .3);
     font-weight: bold
   }
 
-  .hljs-bullet,
-  .hljs-selector-tag,
-  .hljs-selector-id,
-  .hljs-selector-class,
-  .hljs-selector-attr,
-  .hljs-selector-pseudo {
-    color: #D7BA7D
+  .language-css {
+
+    .hljs-bullet,
+    .hljs-selector-tag,
+    .hljs-selector-id,
+    .hljs-selector-class,
+    .hljs-selector-attr,
+    .hljs-selector-pseudo {
+      color: #D7BA7D
+    }
   }
 
   .hljs-addition {
@@ -269,5 +457,3 @@ $rim-stlye-nav-border     : 1px solid rgba(map-get($greyscale, 'white'), .3);
     width: 100%
   }
 }
-
-

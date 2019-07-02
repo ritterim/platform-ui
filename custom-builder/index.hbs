@@ -21,8 +21,8 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
 </head>
-<body id="kss-node" class="platform rim-style">
-  <header class="site-header rim-style-header">
+<body id="kss-node" class="rim-style">
+  <header class="rim-style-header">
     <h2 class="site-header__title text-white">RIMdev Platform Style Guide</h2>
   </header>
   <aside class="rim-style-aside">
@@ -62,7 +62,7 @@
     <article>
     {{#if template.isHomepage}}
       {{#if homepage}}
-        <div id="kssref-0" class="kss-section kss-section--depth-0 kss-overview kss-style">
+        <div id="kssref-0" class="rim-style-section rim-style-section--depth-0 kss-overview rim-style-content">
           {{{homepage}}}
         </div>
       {{/if}}
@@ -75,14 +75,14 @@
       the "#if @first" block as seen below.
     }}
     {{#each sections}}
-      <{{#if @first}}div{{else}}section{{/if}} id="kssref-{{referenceURI}}" class="kss-section kss-section--depth-{{depth}} {{#if @root.template.isItem}}is-fullscreen{{/if}}">
+      <{{#if @first}}div{{else}}section{{/if}} id="kssref-{{referenceURI}}" class="rim-style-section rim-style-section--depth-{{depth}} {{#if @root.template.isItem}}is-fullscreen{{/if}}">
 
-        <div class="kss-style">
-          <h{{depth}} class="kss-title kss-title--level-{{depth}}">
-            <a class="kss-title__permalink" href="#kssref-{{referenceURI}}">
-              <span class="kss-title__ref">
+        <div class="rim-style-content">
+          <h{{depth}} class="rim-style-title rim-style-title--level-{{depth}}">
+            <a class="rim-style-title__permalink" href="#kssref-{{referenceURI}}">
+              <span class="rim-style-title__ref">
                 {{referenceNumber}}
-                <span class="kss-title__permalink-hash">
+                <span class="rim-style-title__permalink-hash">
                   {{#if @root.hasNumericReferences}}
                     #permalink
                   {{else}}
@@ -95,7 +95,7 @@
           </h{{depth}}>
 
           {{#if description}}
-            <div class="kss-description">
+            <div class="rim-style-description">
               {{{description}}}
             </div>
           {{/if}}
@@ -143,38 +143,38 @@
         </div>
 
         {{#if example}}
-          <div class="card kss-modifier__wrapper">
-            <div class="kss-modifier__heading kss-style">
+          <div class="rim-style-modifier">
+            <div class="rim-style-modifier__heading rim-style-content">
               Example{{#if modifiers}}s{{/if}}
             </div>
 
             {{#if modifiers}}
-              <div class="kss-modifier__default-name kss-style">
+              <div class="rim-style-modifier__default-name rim-style-content">
                 Default styling
               </div>
             {{/if}}
 
-            <div class="kss-modifier__example">
+            <div class="rim-style-modifier__example">
               {{{example}}}
-              <div class="kss-modifier__example-footer"></div>
+              <div class="rim-style-modifier__example-footer"></div>
             </div>
 
             {{#each modifiers}}
-              <div class="kss-modifier__name kss-style">
+              <div class="rim-style-modifier__name rim-style-content">
                 {{name}}
               </div>
-              <div class="kss-modifier__description kss-style">
+              <div class="rim-style-modifier__description rim-style-content">
                 {{{description}}}
               </div>
-              <div class="kss-modifier__example">
+              <div class="rim-style-modifier__example">
                 {{{markup}}}
-                <div class="kss-modifier__example-footer"></div>
+                <div class="rim-style-modifier__example-footer"></div>
               </div>
             {{/each}}
           </div>
 
           {{#if markup}}
-            <details class="kss-markup kss-style" open>
+            <details class="rim-style-markup rim-style-content" open>
               <summary>
                 {{#if markupFile }}
                   Markup: <code>{{markupFile}}</code>
@@ -182,13 +182,13 @@
                   Markup
                 {{/if}}
               </summary>
-              <pre class="hljs"><code class="language-handlebars">{{{hljs markup 'handlebars'}}}</code></pre>
+              <pre class="rim-style-markup__code-wrapper hljs"><code class="language-handlebars">{{{hljs markup 'handlebars'}}}</code></pre>
             </details>
           {{/if}}
         {{/if}}
 
         {{#if source.filename}}
-          <div class="kss-source kss-style">
+          <div class="kss-source rim-style-content">
             Source: <code>{{source.filename}}</code>, line {{source.line}}
           </div>
         {{/if}}
