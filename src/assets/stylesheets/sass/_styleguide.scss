@@ -1,41 +1,39 @@
 // ------------------------------------------------------------------------------
 //   Variables - Colors, Fonts, etc.
 // ------------------------------------------------------------------------------
-$kss-colors-background    : #fff;
+$kss-colors-background    : map-get($greyscale, 'white' );
 
-$kss-colors-foreground    : #444;
-$kss-colors-heading       : #111;
-$kss-colors-quotes        : #666;
+$kss-colors-foreground    : map-get($greyscale, 'dark' );
+$kss-colors-heading       : map-get($greyscale, 'black' );
+$kss-colors-quotes        : map-get($greyscale, 'base' );
+
+$kss-font-code            : Menlo,Ubuntu Mono,Lucida Console,Courier New,Courier,monospace;
 
 $kss-colors-link          : #0645ad;
 $kss-colors-link-visited  : #0645ad;
 $kss-colors-link-hover    : lighten($kss-colors-link, 20%);
 $kss-colors-link-active   : #faa700;
 
-$kss-font-body            : Arial, sans-serif;
-$kss-font-code            : 'Lucida Console', 'Courier New', Courier, monospace;
-
-$kss-font-size            : 16px;
-$kss-vertical-rhythm      : $kss-font-size * 1.5;
-
-
 $rim-stlye-nav-border     : 1px solid rgba(map-get($greyscale, 'white'), .3);
 
 .rim-style {
   $self: &;
 
+  // Header
   &-header {
     align-items: center;
     display: flex;
     padding: $spacer map-get($spacers, 2 );
   }
 
+  // Aside
   &-aside {
     background-color: map-get($platform-colors, 'menu' );
     border-top: 1px solid $rim-stlye-nav-border;
     height: 100%;
   }
 
+  // Aside Navigation
   &-nav {
     height: 100%;
     overflow: scroll;
@@ -91,13 +89,67 @@ $rim-stlye-nav-border     : 1px solid rgba(map-get($greyscale, 'white'), .3);
     }
   }
 
+  // Colors Section
+  &-colors {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-wrap: wrap;
+    margin: 0 -.5em;
+  
+    > * {
+      flex: 0 0 auto;
+      padding: 0 .5em;
+      margin-bottom: 1em;
+      width: 16em;
+    }
+  
+    .rim-style-color {
+      height: 100%
+    }
+  }
+  
+  &-color {
+    background: $kss-colors-background;
+    border: 1px solid #ccc;
+    margin: 0;
+    padding: 0;
+  
+    &__figure {
+      height: 3em;
+    }
+  
+    &__caption {
+      padding: .5em;
+    }
+  
+    &__name {
+      display: block;
+      font-weight: bold;
+      color: $kss-colors-foreground;
+    }
+  
+    #{$self}-color__code {
+      color: $kss-colors-quotes;
+      display: block;
+      font-family: $kss-font-code;
+    }
+  
+    &__desc {
+      font-size: .875em;
+    }
+  }
+
   pre,
   code,
   kbd,
   samp {
-    font-family: $kss-font-code;
     color: mix($kss-colors-foreground, $kss-colors-heading, 50%);
-    font-size: 1em;
+    font-family: $kss-font-code;
+    font-weight: 500;
   }
 
   pre {
@@ -217,3 +269,5 @@ $rim-stlye-nav-border     : 1px solid rgba(map-get($greyscale, 'white'), .3);
     width: 100%
   }
 }
+
+

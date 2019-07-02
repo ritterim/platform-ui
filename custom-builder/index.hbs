@@ -101,19 +101,19 @@
           {{/if}}
 
           {{#if colors }}
-            <ul class="kss-colors">
+            <ul class="rim-style-colors">
               {{#each colors}}
                 <li>
-                  <figure class="kss-color">
-                    <div class="kss-color-figure" style="background-color:{{color}}"></div>
-                    <figcaption class="kss-color-caption">
+                  <figure class="rim-style-color">
+                    <div class="rim-style-color__figure" style="background-color:{{color}}"></div>
+                    <figcaption class="rim-style-color__caption">
                       {{#if name }}
-                        <strong class="kss-color-name">{{ color.name }}</strong>
+                        <strong class="rim-style-color__name">{{ color.name }}</strong>
                       {{/if}}
-                      <strong class="kss-color-name">{{name}}</strong>
-                      <code class="kss-color-code">{{color}}</code>
+                      <strong class="rim-style-color__name">{{name}}</strong>
+                      <code class="rim-style-color__code">{{color}}</code>
                       {{#if description}}
-                        <p class="kss-color-desc">{{description}}</p>
+                        <p class="rim-style-color__desc">{{description}}</p>
                       {{/if}}
                     </figcaption>
                   </figure>
