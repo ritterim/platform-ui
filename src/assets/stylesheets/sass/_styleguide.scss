@@ -5,7 +5,7 @@ $kss-colors-background    : map-get($greyscale, 'white' );
 
 $kss-colors-foreground    : map-get($greyscale, 'dark' );
 $kss-colors-heading       : map-get($greyscale, 'black' );
-$kss-colors-base        : map-get($greyscale, 'base' );
+$kss-colors-base          : map-get($greyscale, 'base' );
 
 $kss-font-code            : Menlo,Ubuntu Mono,Lucida Console,Courier New,Courier,monospace;
 
@@ -18,8 +18,6 @@ $rim-stlye-nav-border     : 1px solid rgba(map-get($greyscale, 'white'), .3);
 
 .rim-style {
   $self: &;
-
-  background-color: map-get($greyscale, 'lighter' );
 
   // Header
   &-header {
