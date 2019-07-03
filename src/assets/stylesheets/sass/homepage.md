@@ -2,7 +2,7 @@
 
 ## Overview
 
-A summary of how we've decided to write/structure BEM
+A summary of how we've decided to write/structure BEM.
 
 ### Font Awesome pro
 

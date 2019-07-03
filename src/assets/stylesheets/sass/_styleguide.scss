@@ -22,14 +22,12 @@ $rim-stlye-nav-border     : 1px solid rgba(map-get($greyscale, 'white'), .3);
   // Header
   &-header {
     align-items: center;
-    display: flex;
-    padding: $spacer map-get($spacers, 2 );
-
-    background-color: #003f70;
-    color: #fff;
+    background-color: map-get($brand-colors, 'navy' );
+    color: map-get($greyscale, 'white' );
     display: flex;
     font-size: 115%;
     height: $menu-height;
+    padding: $spacer map-get($spacers, 2 );
     width: 100%;
     z-index: 100;
 
@@ -91,8 +89,12 @@ $rim-stlye-nav-border     : 1px solid rgba(map-get($greyscale, 'white'), .3);
 
       &.active {
 
-       > .rim-style-nav__menu-link {
+        > .rim-style-nav__menu-link {
           color: map-get($greyscale, 'white' );
+
+          i {
+            transform: translateY(-50%) rotate(90deg);
+          }
         }
       }
     }
@@ -102,6 +104,7 @@ $rim-stlye-nav-border     : 1px solid rgba(map-get($greyscale, 'white'), .3);
       display: block;
       font-weight: 400;
       padding: map-get($spacers, 2 );
+      position: relative;
       transition: $transitions;
 
       &:hover {
@@ -110,6 +113,14 @@ $rim-stlye-nav-border     : 1px solid rgba(map-get($greyscale, 'white'), .3);
 
       &.is-in-viewport {
         color: map-get($greyscale, 'white' );
+      }
+
+      i {
+        position: absolute;
+        right: .5rem;
+        top: 50%;
+        transform: translateY(-50%) rotate(0deg);
+        transition: $transitions;
       }
     }
 
@@ -136,6 +147,10 @@ $rim-stlye-nav-border     : 1px solid rgba(map-get($greyscale, 'white'), .3);
       margin-bottom: $spacer;
       padding: $menu-height + 1rem 0 0;
     }
+
+    &__heading {
+      margin-bottom: $spacer * 1.5;
+    }
   }
 
 
@@ -153,8 +168,8 @@ $rim-stlye-nav-border     : 1px solid rgba(map-get($greyscale, 'white'), .3);
     }
   
     &__permalink {
+      color: map-get($brand-colors, 'navy' );
       display: block;
-      color: #000;
       text-decoration: none;
   
       &:hover,
@@ -200,18 +215,9 @@ $rim-stlye-nav-border     : 1px solid rgba(map-get($greyscale, 'white'), .3);
 
   // Example Section
   &-modifier {
-    background-color: map-get($greyscale, 'white' );
-    border: 1px solid #ccc;
-    border-radius: .3rem .3rem 0 0;
     margin: map-get($spacers, 4 ) 0;
-    padding: 0 10px 10px;
 
     &__heading {
-      margin: 0 -10px 10px -10px;
-      padding: 10px;
-      border-bottom: 1px solid #ccc;
-      border-radius: .3rem .3rem 0 0;
-      background-color: #eee;
       font-weight: bold;
     }
     
@@ -231,11 +237,6 @@ $rim-stlye-nav-border     : 1px solid rgba(map-get($greyscale, 'white'), .3);
     }
     
     &__example {
-      clear: left;
-      border: 2px dashed transparent;
-      position: relative; // Contain the example's absolute positioning.
-      z-index: 0; // Establishes a local stacking context.
-      margin: -2px -2px $spacer;
   
       &:last-child {
         margin-bottom: 0;
@@ -253,12 +254,8 @@ $rim-stlye-nav-border     : 1px solid rgba(map-get($greyscale, 'white'), .3);
     border: 1px solid #f7dac5;
     margin-bottom: map-get($spacers, 4 );
 
-    &[open] summary {
-      border-bottom: 1px solid #f7dac5;
-    }
-
     summary {
-      padding-left: 10px;
+      display: none;
     }
 
     pre {

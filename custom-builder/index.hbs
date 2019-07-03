@@ -24,7 +24,7 @@
 </head>
 <body id="kss-node" class="rim-style">
   <header class="rim-style-header">
-    <h2 class="site-header__title text-white">RIMdev Platform Style Guide</h2>
+    <p class="text-white mb-0">Ritter Platform Style Guide</p>
   </header>
   <aside class="rim-style-aside">
     <nav class="rim-style-nav" aria-label="Style Guide">
@@ -39,6 +39,7 @@
         <li class="rim-style-nav__menu-item{{#if isActive}} active{{/if}}">
           <a class="rim-style-nav__menu-link" href="section-{{referenceURI}}.html">
             <span class="rim-style-nav__ref">{{referenceNumber}}</span><span class="rim-style-nav__name">{{header}}</span>
+            {{#if children}}<i class="fas fa-chevron-right"></i>{{/if}}
           </a>
           {{#if isActive}}
             {{#if children}}
@@ -145,9 +146,9 @@
 
         {{#if example}}
           <div class="rim-style-modifier">
-            <div class="rim-style-modifier__heading rim-style-content">
-              Example{{#if modifiers}}s{{/if}}
-            </div>
+            <h4 class="rim-style-section__heading rim-style-content">
+              Example:{{#if modifiers}}s{{/if}}
+            </h4>
 
             {{#if modifiers}}
               <div class="rim-style-modifier__default-name rim-style-content">
@@ -175,6 +176,9 @@
           </div>
 
           {{#if markup}}
+            <h4 class="rim-style-section__heading rim-style-content">
+              Markup:
+            </h4>
             <details class="rim-style-markup rim-style-content" open>
               <summary>
                 {{#if markupFile }}
