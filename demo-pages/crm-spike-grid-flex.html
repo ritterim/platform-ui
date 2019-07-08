@@ -126,72 +126,72 @@
     </nav>
   </header>
   <aside class="crm-actions">
-    <div class="aside-tab"><i class="fas fa-chevron-left text-salmon"></i></div>
+    <div class="aside-tab"><i class="fas fa-chevron-left" aria-hidden="true"></i></div>
     <div class="crm-actions__stats">
-      <div class="crm-actions__stats-header">
-        Quick Numbers
-      </div>
-      <div class="crm-actions__stats-group">
-        <div class="crm-actions__stat">
-          38
-          <div class="crm-actions__stat-label">
-            leads
-          </div>
+        <!-- To be added back
+        <div class="crm-actions__stats-header">
+            Quick Numbers
         </div>
-        <div class="crm-actions__stat">
-          45
-          <div class="crm-actions__stat-label">
-            incomplete<br>submissions
-          </div>
+        <div class="crm-actions__stats-group">
+            <div class="crm-actions__stat">
+                45
+                <div class="crm-actions__stat-label">
+                    incomplete<br>submissions
+                </div>
+            </div>
         </div>
-        <div class="crm-actions__stat">
-          8
-          <div class="crm-actions__stat-label">
-            tasks
-          </div>
-        </div>
-      </div>
+     -->
       <div class="today">
         <script type="text/javascript">
           var d = (new Date()).toString().split(' ').splice(1,3).join(' ');
           document.write(d);
         </script>
       </div>
+      <nav class="crm-menu">
+        <div class="crm-menu__group">
+          <div href="/" class="crm-menu__item" data-view="overview" data-tooltip="Overview">
+            <img src="/src/assets/images/crm-icons-color/overview.svg" alt="">
+            Overview
+          </div>
+          <div class="crm-menu__item active" data-view="quote" data-tooltip="Quote">
+            <img src="/src/assets/images/crm-icons-color/quote.svg" alt="Quote">
+            Quote
+          </div>
+        </div>
+        <div class="crm-menu__group">
+          <div class="crm-menu__item" data-view="commissions" data-tooltip="Commissions">
+            <img src="/src/assets/images/crm-icons-color/commissions.svg" alt="">
+            Commissions
+          </div>
+          <a target="_blank" href="" class="crm-menu__item" data-tooltip="Get Contracted">
+            <img src="/src/assets/images/crm-icons-color/get-contracted.svg" alt="">
+            <span>Get Contracted <i class="fal fa-external-link-square fa-sm" aria-hidden="true"></i></span>
+          </a>
+        </div>
+        <div class="crm-menu__group">
+          <a target="_blank" href="" class="crm-menu__item" data-tooltip="CRM Dashboard">
+            <img src="/src/assets/images/crm-icons-color/crm-dashboard.svg" alt="">
+            <span>CRM Dashboard <i class="fal fa-external-link-square fa-sm" aria-hidden="true"></i></span>
+          </a>
+          <a target="_blank" href="" class="crm-menu__item">
+            <img src="/Content/svg/commissions.svg" alt="">
+            <span>Carriers <i class="fal fa-external-link-square fa-sm" aria-hidden="true"></i></span>
+          </a>
+        </div>
+        <div class="crm-menu__group">
+          <div class="crm-menu__item" data-view="contracts">
+            <img src="/src/assets/images/crm-icons-color/contracts.svg" alt="">
+            Contracts
+          </div>
+          <div class="crm-menu__item" data-view="submissions">
+            <img src="/src/assets/images/crm-icons-color/submissions.svg" alt="">
+            Submissions
+          </div>
+        </div>
+      </nav>
     </div>
-    <nav class="crm-menu">
-      <div class="crm-menu__item active">
-        <img src="/src/assets/images/crm-icons-color/overview.svg" alt="Overview">
-        Overview
-      </div>
-      <!-- <div class="crm-menu__group">
-        <div class="crm-menu__item">
-          <img src="/src/assets/images/crm-icons-color/overview.svg" alt="Overview">
-          Overview
-        </div>
-        <div class="crm-menu__item">
-          <img src="/src/assets/images/crm-icons-color/tasks.svg" alt="Overview">
-          Tasks
-        </div>
-      </div> -->
-
-      <div class="crm-menu__item">
-        <img src="/src/assets/images/crm-icons-color/crm-dashboard.svg" alt="CRM Dashboard">
-        CRM Dashboard <i class="fas fa-external-link-alt text-light"></i>
-      </div>
-      <div class="crm-menu__item">
-        <img src="/src/assets/images/crm-icons-color/quote.svg" alt="Quote">
-        Quote
-      </div>
-      <div class="crm-menu__item">
-        <img src="/src/assets/images/crm-icons-color/commissions.svg" alt="Commissions">
-        Commissions
-      </div>
-      <div class="crm-menu__item">
-        <img src="/src/assets/images/crm-icons-color/contracts.svg" alt="Get Contracted">
-        Get Contracted <i class="fas fa-external-link-alt text-light"></i>
-      </div>
-    </nav>
   </aside>
+
   <main>
     <div class="crm-banner animated slideInDown fast" style="background-image: linear-gradient(to right, white, transparent), url('https://freephotos.cc/storage/preview/path/e0TY5dzjfyAcol92eAidR4ublvPlT2dBbmAGcqeN.jpeg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
       <div class="button button--sm close-action right">

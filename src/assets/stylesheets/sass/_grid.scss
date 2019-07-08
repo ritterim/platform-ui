@@ -26,7 +26,8 @@
     background: map-get($greyscale, 'white');
     border-top-right-radius: 50%;
     border-bottom-right-radius: 50%;
-    border: 2px solid map-get($brand-colors, 'salmon');
+    border: 1px solid map-get($greyscale, 'light-mid');
+    color: map-get($greyscale, 'base');
     top: 50%;
     transform: translate(50%, 50%);
     cursor: pointer;
@@ -36,6 +37,9 @@
     position: fixed;
     transition: $transitions;
     z-index: -1;
+    &:hover {
+      color: map-get($brand-colors, 'salmon');
+    }
   }
   &.toggle {
     aside {
@@ -56,15 +60,13 @@
     transition: $transitions;
     width: 25vw;
     z-index: 50;
-    &.toggle {
-      margin-left: -20vw;
-    }
   }
   main {
     margin-left: 25vw;
     width: 75vw;
     transition: $transitions;
-    .vueport {
+    .vueport,
+    .overview {
       display: block;
       padding: map-get($spacers, 4);
     }

@@ -3,7 +3,9 @@
   body {
     visibility: visible !important; // this line counters existing print style sheet
     aside,
+    button,
     header,
+    .button,
     .crm-banner,
     .rim-drawer__open,
     .site-header {
@@ -15,6 +17,20 @@
     main {
       margin: 0;
       width: 100vw;
+    }
+  }
+  .quote {
+    border: none;
+    table {
+      border: none;
+      th, td {
+        &:first-of-type {
+          display: none;
+        }
+      }
+      td {
+        border-top: 1px solid map-get($greyscale, 'light-mid');
+      }
     }
   }
 }
