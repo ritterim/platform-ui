@@ -1,62 +1,70 @@
 // ------------------------------------------------------------------------------
 //   Variables - Colors, Fonts, etc.
 // ------------------------------------------------------------------------------
-$kss-colors-background    : map-get($greyscale, 'white' );
 
-$kss-colors-foreground    : map-get($greyscale, 'dark' );
-$kss-colors-heading       : map-get($greyscale, 'black' );
-$kss-colors-base          : map-get($greyscale, 'base' );
-
-$kss-font-code            : Menlo,Ubuntu Mono,Lucida Console,Courier New,Courier,monospace;
-
-$kss-colors-link          : #0645ad;
-$kss-colors-link-visited  : #0645ad;
-$kss-colors-link-hover    : lighten($kss-colors-link, 20%);
-$kss-colors-link-active   : #faa700;
-
-$rim-stlye-nav-border     : 1px solid rgba(map-get($greyscale, 'white'), .3);
 
 .rim-style {
   $self: &;
 
+  $background: map-get($greyscale, 'white' );
+  $foreground: map-get($greyscale, 'dark' );
+  $heading: map-get($greyscale, 'black' );
+  $light: map-get($greyscale, 'light' );
+  $base: map-get($greyscale, 'base' );
+
+  $font: Menlo,Ubuntu Mono,Lucida Console,Courier New,Courier,monospace;
+
+  $nav-border: 1px solid map-get($greyscale, 'white');
+  $nav-base: map-get($brand-colors, 'skyblue' );
+  $nav-color: map-get($greyscale, 'white' );
+
 
   // Aside
   &-aside {
-    border-right: 1px solid map-get($greyscale, 'base' );
 
     @include breakpoint(mobile, min) {
       height: 100%;
       position: fixed;
       width: 20vw;
+
+      &:after {
+        bottom: 0;
+        box-shadow: inset -10px 0 10px -10px $base;
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 1rem;
+      }
     }    
   }
 
   // site logo
   &-logo {
-    background-color: map-get($brand-colors, 'skyblue' );
-    border-bottom: 1px solid map-get($greyscale, 'white' );
+    background-color: $nav-base;
+    border-bottom: $nav-border;
     padding: $spacer map-get($spacers, 1 );
 
     &__link {
       display: block;
-      max-width: 12rem;
 
       img {
         width: 100%;
+        max-width: 12rem;
       }
     }
 
     &__copy {
       color: map-get($greyscale, 'white' );
       font-family: map-get($fonts, 'base' );
-      font-size: 1rem;
-      font-weight: 400;
+      font-weight: 300;
       margin: 0 0 0 map-get($spacers, 1 );
     }
   }
 
   // Aside Navigation
   &-nav {
+    background-color: $nav-base;
     height: 100%;  
 
     @include breakpoint(mobile, min) {
@@ -87,17 +95,17 @@ $rim-stlye-nav-border     : 1px solid rgba(map-get($greyscale, 'white'), .3);
     }
 
     &__menu-item {
-      background-color: map-get($brand-colors, 'skyblue' );
+      background-color: $nav-base;
 
       @include breakpoint(mobile, min) {
-        border-bottom: 1px solid map-get($greyscale, 'white');
+        border-bottom: $nav-border;
       }      
 
       &.active {
-        background-color: map-get($greyscale, 'white');
+        background-color: $nav-color;
 
         > #{$self}-nav__menu-link {
-          color: map-get($brand-colors, 'skyblue' );
+          color: $nav-base;
           font-weight: 600;
           opacity: 1;
 
@@ -109,17 +117,16 @@ $rim-stlye-nav-border     : 1px solid rgba(map-get($greyscale, 'white'), .3);
         #{$self}-nav__menu-child {
 
           #{$self}-nav__menu-link {
-            color: map-get($brand-colors, 'skyblue' );
+            color: $nav-base;
           }
         }
       }
     }
 
     &__menu-link {
-      color: map-get($greyscale, 'white');
+      color: $nav-color;
       display: block;
       font-weight: 400;
-      opacity: .7;
       padding: map-get($spacers, 2 );
       position: relative;
       transition: $transitions;
@@ -129,10 +136,27 @@ $rim-stlye-nav-border     : 1px solid rgba(map-get($greyscale, 'white'), .3);
         opacity: 1;
       }
 
+      &:before {
+        @include breakpoint(mobile, min) {
+          background-color: $nav-base;
+          bottom: .5rem;
+          content: ' ';
+          left: -.5rem;
+          position: absolute;
+          top: .5rem;
+          width: 0;
+        }
+      }
+
       &.is-in-viewport {
-        color: map-get($brand-colors, 'skyblue' );
+        color: $nav-base;
         font-weight: 600;
         opacity: 1;
+
+        &:before {
+          transition: $transitions;
+          width: .5rem;
+        }
       }
 
       i {
@@ -168,12 +192,12 @@ $rim-stlye-nav-border     : 1px solid rgba(map-get($greyscale, 'white'), .3);
     h4,
     h5,
     h6 {
-      color: map-get($greyscale, 'dark' );
+      color: $foreground;
     }
   }
   
   &-section {
-    border-bottom: 2px solid map-get($greyscale, 'base' );
+    border-bottom: 2px solid $base;
     margin-bottom: $spacer;
     padding: $spacer 0 $spacer * 2;
 
@@ -198,7 +222,7 @@ $rim-stlye-nav-border     : 1px solid rgba(map-get($greyscale, 'white'), .3);
     margin-bottom: 0;
 
     &__ref {
-      color: $kss-colors-base;
+      color: $base;
       display: block;
       font-size: map-get($font-percentage, 'xxs' );
   
@@ -208,14 +232,14 @@ $rim-stlye-nav-border     : 1px solid rgba(map-get($greyscale, 'white'), .3);
     }
   
     &__permalink {
-      color: map-get($greyscale, 'dark' );
+      color: $foreground;
       display: block;
       text-decoration: none;
   
       &:hover,
       &:focus,
       &:active {
-        color: lighten(map-get($greyscale, 'base' ), 10%);
+        color: lighten($base, 10%);
   
         @media screen and (min-width: 607px) {
           #{$self}-title__permalink-hash {
@@ -226,7 +250,7 @@ $rim-stlye-nav-border     : 1px solid rgba(map-get($greyscale, 'white'), .3);
     }
   
     &__permalink-hash {
-      color: lighten(map-get($greyscale, 'light' ), 10%);
+      color: lighten($light, 10%);
       display: none;
     }
   }
@@ -331,8 +355,8 @@ $rim-stlye-nav-border     : 1px solid rgba(map-get($greyscale, 'white'), .3);
   }
   
   &-color {
-    background: $kss-colors-background;
-    border: 1px solid map-get($greyscale, 'light' );
+    background: $background;
+    border: 1px solid $light;
     margin: 0;
     padding: 0;
   
@@ -347,13 +371,13 @@ $rim-stlye-nav-border     : 1px solid rgba(map-get($greyscale, 'white'), .3);
     &__name {
       display: block;
       font-weight: bold;
-      color: $kss-colors-foreground;
+      color: $foreground;
     }
   
     #{$self}-color__code {
-      color: $kss-colors-base;
+      color: $base;
       display: block;
-      font-family: $kss-font-code;
+      font-family: $font;
     }
   
     &__desc {
@@ -365,8 +389,8 @@ $rim-stlye-nav-border     : 1px solid rgba(map-get($greyscale, 'white'), .3);
   code,
   kbd,
   samp {
-    color: mix($kss-colors-foreground, $kss-colors-heading, 50%);
-    font-family: $kss-font-code;
+    color: mix($foreground, $heading, 50%);
+    font-family: $font;
     font-weight: 500;
   }
 
