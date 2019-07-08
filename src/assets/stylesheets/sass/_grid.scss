@@ -65,11 +65,7 @@
     margin-left: 25vw;
     width: 75vw;
     transition: $transitions;
-    .vueport {
-      display: block;
-      padding: map-get($spacers, 4);
-    }
-    .overview {
+    .crm-view_item {
       padding: map-get($spacers, 4);
     }
   }
