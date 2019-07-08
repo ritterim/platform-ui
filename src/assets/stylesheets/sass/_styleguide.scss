@@ -19,35 +19,40 @@ $rim-stlye-nav-border     : 1px solid rgba(map-get($greyscale, 'white'), .3);
 .rim-style {
   $self: &;
 
-  // Header
-  &-header {
-    align-items: center;
-    background-color: map-get($brand-colors, 'navy' );
-    color: map-get($greyscale, 'white' );
-    display: flex;
-    font-size: 115%;
-    height: $menu-height;
-    padding: $spacer map-get($spacers, 2 );
-    width: 100%;
-    z-index: 100;
-
-    @include breakpoint(mobile, min) {
-      position: fixed;
-      top: 0;
-    }
-  }
 
   // Aside
   &-aside {
-    background-color: map-get($platform-colors, 'menu' );
-    border-top: 1px solid $rim-stlye-nav-border;
+    border-right: 1px solid map-get($greyscale, 'base' );
 
     @include breakpoint(mobile, min) {
       height: 100%;
-      margin-top: $menu-height;
       position: fixed;
       width: 20vw;
     }    
+  }
+
+  // site logo
+  &-logo {
+    background-color: map-get($brand-colors, 'skyblue' );
+    border-bottom: 1px solid map-get($greyscale, 'white' );
+    padding: $spacer map-get($spacers, 1 );
+
+    &__link {
+      display: block;
+      max-width: 12rem;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    &__copy {
+      color: map-get($greyscale, 'white' );
+      font-family: map-get($fonts, 'base' );
+      font-size: 1rem;
+      font-weight: 400;
+      margin: 0 0 0 map-get($spacers, 1 );
+    }
   }
 
   // Aside Navigation
@@ -60,20 +65,20 @@ $rim-stlye-nav-border     : 1px solid rgba(map-get($greyscale, 'white'), .3);
     }
 
     ul {
+      list-style-type: none;
+      padding: 0;
+
       @include breakpoint(mobile, max) {
         display: flex;
         flex-flow: row wrap;
       }
 
-      list-style-type: none;
-      padding: 0;      
-
       ul {
+        padding-left: map-get($spacers, 1 );
+        
         @include breakpoint(mobile, max) {
           display: none;
         }
-
-        padding-left: map-get($spacers, 1 );
       }
 
       li {
@@ -82,37 +87,52 @@ $rim-stlye-nav-border     : 1px solid rgba(map-get($greyscale, 'white'), .3);
     }
 
     &__menu-item {
+      background-color: map-get($brand-colors, 'skyblue' );
 
       @include breakpoint(mobile, min) {
-        border-bottom: 1px solid $rim-stlye-nav-border;
+        border-bottom: 1px solid map-get($greyscale, 'white');
       }      
 
       &.active {
+        background-color: map-get($greyscale, 'white');
 
-        > .rim-style-nav__menu-link {
-          color: map-get($greyscale, 'white' );
+        > #{$self}-nav__menu-link {
+          color: map-get($brand-colors, 'skyblue' );
+          font-weight: 600;
+          opacity: 1;
 
           i {
             transform: translateY(-50%) rotate(90deg);
+          }
+        }
+
+        #{$self}-nav__menu-child {
+
+          #{$self}-nav__menu-link {
+            color: map-get($brand-colors, 'skyblue' );
           }
         }
       }
     }
 
     &__menu-link {
-      color: rgba(map-get($greyscale, 'white'), .6);
+      color: map-get($greyscale, 'white');
       display: block;
       font-weight: 400;
+      opacity: .7;
       padding: map-get($spacers, 2 );
       position: relative;
       transition: $transitions;
 
       &:hover {
-        color: map-get($greyscale, 'white' );
+        font-weight: 600;
+        opacity: 1;
       }
 
       &.is-in-viewport {
-        color: map-get($greyscale, 'white' );
+        color: map-get($brand-colors, 'skyblue' );
+        font-weight: 600;
+        opacity: 1;
       }
 
       i {
@@ -134,18 +154,38 @@ $rim-stlye-nav-border     : 1px solid rgba(map-get($greyscale, 'white'), .3);
     }
   }
 
-  // Style guide main
+  // main
   main {
+    padding: map-get($spacers, 3 );
+
     @include breakpoint(mobile, min) {
       margin-left: 20vw;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: map-get($greyscale, 'dark' );
     }
   }
   
   &-section {
+    border-bottom: 2px solid map-get($greyscale, 'base' );
+    margin-bottom: $spacer;
+    padding: $spacer 0 $spacer * 2;
 
     @include breakpoint(mobile, min) {
-      margin-bottom: $spacer;
-      padding: $menu-height + 1rem 0 0;
+      margin-bottom: $spacer * 2;
+      padding: $spacer 0 $spacer * 3;
+    }
+
+    &:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
     }
 
     &__heading {
@@ -168,14 +208,14 @@ $rim-stlye-nav-border     : 1px solid rgba(map-get($greyscale, 'white'), .3);
     }
   
     &__permalink {
-      color: map-get($brand-colors, 'navy' );
+      color: map-get($greyscale, 'dark' );
       display: block;
       text-decoration: none;
   
       &:hover,
       &:focus,
       &:active {
-        color: $kss-colors-link;
+        color: lighten(map-get($greyscale, 'base' ), 10%);
   
         @media screen and (min-width: 607px) {
           #{$self}-title__permalink-hash {
@@ -190,10 +230,13 @@ $rim-stlye-nav-border     : 1px solid rgba(map-get($greyscale, 'white'), .3);
       display: none;
     }
   }
+
+  &-title {
+    margin-bottom: $spacer;
+  }
   
 
   &-description {
-    margin-top: $spacer;
 
     p {
       line-height: 1.5;

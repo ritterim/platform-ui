@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
   <meta charset="utf-8">
-  <title>RIMdev Platform Style Guide</title>
+  <title>Ritter Insurance Marketing Style Guide</title>
 
   <meta name="description" content="">
   <meta name="generator" content="kss-node">
@@ -23,10 +23,15 @@
   <meta name="theme-color" content="#ffffff">
 </head>
 <body id="kss-node" class="rim-style">
-  <header class="rim-style-header">
-    <p class="text-white mb-0">Ritter Platform Style Guide</p>
-  </header>
   <aside class="rim-style-aside">
+    <div class="rim-style-logo">
+      <a href="./" class="rim-style-logo__link">
+        <img src="/src/assets/stylesheets/svg/RitterInsuranceLogo.svg" alt="Ritter Insurance Marketing">
+        <h2 class="rim-style-logo__copy">
+          Style Guide
+        </h2>
+      </a>
+    </div>
     <nav class="rim-style-nav" aria-label="Style Guide">
       <ul class="rim-style-nav__menu">
         <li class="rim-style-nav__menu-item{{#if template.isHomepage}} active{{/if}}">
@@ -39,7 +44,7 @@
         <li class="rim-style-nav__menu-item{{#if isActive}} active{{/if}}">
           <a class="rim-style-nav__menu-link" href="section-{{referenceURI}}.html">
             <span class="rim-style-nav__ref">{{referenceNumber}}</span><span class="rim-style-nav__name">{{header}}</span>
-            {{#if children}}<i class="fas fa-chevron-right"></i>{{/if}}
+            {{!-- {{#if children}}<i class="fas fa-chevron-right"></i>{{/if}} --}}
           </a>
           {{#if isActive}}
             {{#if children}}
@@ -60,7 +65,7 @@
       </ul>
     </nav>
   </aside>
-  <main class="platform-main px-3 py-3" aria-label="Content">
+  <main class="rim-style-main" aria-label="Content">
     <article>
     {{#if template.isHomepage}}
       {{#if homepage}}
