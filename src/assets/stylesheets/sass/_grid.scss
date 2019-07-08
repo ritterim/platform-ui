@@ -22,15 +22,48 @@
 
 // flex and positioning
 .platform {
+  .aside-tab {
+    background: map-get($greyscale, 'white');
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border: 2px solid map-get($brand-colors, 'salmon');
+    top: 50%;
+    transform: translate(50%, 50%);
+    cursor: pointer;
+    left: 24vw;
+    margin-left: -.2rem;
+    padding: .5rem;
+    position: fixed;
+    transition: $transitions;
+    z-index: -1;
+  }
+  &.toggle {
+    aside {
+      margin-left: -20vw;
+      .aside-tab {
+        left: 4vw;
+      }
+    }
+    main {
+      margin-left: 5vw;
+      width: 95vw;
+    }
+  }
+
   aside {
     margin-top: $menu-height;
     position: fixed;
+    transition: $transitions;
     width: 25vw;
     z-index: 50;
+    &.toggle {
+      margin-left: -20vw;
+    }
   }
   main {
     margin-left: 25vw;
     width: 75vw;
+    transition: $transitions;
     .vueport {
       display: block;
       padding: map-get($spacers, 4);
@@ -359,5 +392,5 @@
 .rim-block-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
-  grid-gap: $spacer; 
+  grid-gap: $spacer;
 }
