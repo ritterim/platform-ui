@@ -17,7 +17,7 @@
     animation: slideInUp .2s;
     background-image: none !important;
     height: auto;
-    padding: map-get($spacers, 4) $spacer;
+    padding: $spacer;
     h1, button, a.button {
       display: none;
     }
