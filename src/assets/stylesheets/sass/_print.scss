@@ -1,8 +1,12 @@
 @media print {
   // initial print css to combat rams print css
   body {
-    visibility: visible !important;
-    header, aside, .site-header {
+    visibility: visible !important; // this line counters existing print style sheet
+    aside,
+    header,
+    .crm-banner,
+    .rim-drawer__open,
+    .site-header {
       display: none;
     }
   }
@@ -13,4 +17,5 @@
       width: 100vw;
     }
   }
+
 }

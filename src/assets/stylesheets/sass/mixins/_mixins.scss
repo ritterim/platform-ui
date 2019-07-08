@@ -176,7 +176,7 @@
 }
 
 
-// Messages Variant 
+// Messages Variant
 @mixin message-variant($background, $color) {
   background-color: $background;
   border-color: darken($background, 20%);
