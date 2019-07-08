@@ -65,9 +65,11 @@
     margin-left: 25vw;
     width: 75vw;
     transition: $transitions;
-    .vueport,
-    .overview {
+    .vueport {
       display: block;
+      padding: map-get($spacers, 4);
+    }
+    .overview {
       padding: map-get($spacers, 4);
     }
   }
