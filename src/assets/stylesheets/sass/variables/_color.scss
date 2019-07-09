@@ -144,10 +144,10 @@ $error-colors: (
 $message-colors: (
   'base-light': map-get($greyscale, 'light-mid'),
   'base': map-get($greyscale, 'light'),
-  'base-dark': map-get($greyscale, 'base'),
+  'base-dark': darken(map-get($greyscale, 'base'), 10%),
   'info-light': map-get($brand-colors, 'lightblue'),
   'info': map-get($brand-colors, 'skyblue'),
-  'info-dark': map-get($brand-colors, 'med-blue'),
+  'info-dark': darken(map-get($brand-colors, 'med-blue'), 10%),
   'warning-light': #fff3cd,
   'warning': #ffeeba,
   'warning-dark': #856404,
