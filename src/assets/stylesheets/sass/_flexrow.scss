@@ -1,45 +1,9 @@
-// Flex columns
-//
-// Flex cols allow division of a section into halves, quarters, 3-quarter, thirds, and, 2 thirds. Wherever applied, each section must be wrapped in an initial `.flexcol` div.
-//
-// `.flexcol` alone produces a full-width column
-//
-// `.flexcol__end` allows grouping to the right, or `end` of the section.
-//
-// Markup:
-// <div class="flexcol flex-align__center">Full width (.flexcol alone)</div>
-// <div class="flexcol">
-//   <div class="flexcol-half flex-align__center">Half width</div>
-//   <div class="flexcol-half flexcol__end flex-align__center">Half width adding .flex__end</div>
-// </div>
-// <div class="flexcol">
-//   <div class="flexcol-third flex-align__center">Third width</div>
-//   <div class="flexcol-third flex-align__center">Third width</div>
-//   <div class="flexcol-third flex-align__center">Third width</div>
-// </div>
-// <div class="flexcol">
-//   <div class="flexcol-third flex-align__center">One Third width</div>
-//   <div class="flexcol-2-third flex-align__center">2 Third width</div>
-// </div>
-// <div class="flexcol">
-//   <div class="flexcol-quarter flex-align__center">Quarter width</div>
-//   <div class="flexcol-quarter flex-align__center">Quarter width</div>
-//   <div class="flexcol-quarter flex-align__center">Quarter width</div>
-//   <div class="flexcol-quarter flex-align__center">Quarter width</div>
-// </div>
-// <div class="flexcol">
-//   <div class="flexcol-3-quarter flex-align__center">3 Quarter width</div>
-//   <div class="flexcol-quarter flex-align__center">Quarter width</div>
-// </div>
-//
-// Styleguide Layout.flexcol
-
 // Flexcol Responsive
 // 
 // These classes make flexcol responsive by using our breakpoint classes to determin how wide the `.block`s will be.
 // 
 // Markup:
-// <div class="flexcol">
+// <div class="flexrow">
 //   <div class="rim-card block block-mobile-2 block-laptop-4">
 //     Test
 //   </div>
@@ -60,10 +24,10 @@
 
 // Flexcol Responsive Wrapper
 // 
-// You can add the resposinve classes to the `.flexcol` wrapper rather than the `.block` elements.
+// You can add the resposinve classes to the `.flexrow` wrapper rather than the `.block` elements.
 // 
 // Markup:
-// <div class="flexcol block-p-2 mobile-up-3 laptop-up-4">
+// <div class="flexrow block-p-2 mobile-up-3 laptop-up-4">
 //   <div class="block">
 //     <div class="rim-card">
 //       Test
