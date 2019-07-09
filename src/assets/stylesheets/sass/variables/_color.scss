@@ -142,9 +142,9 @@ $error-colors: (
 // Styleguide Color.MessageColors
 
 $message-colors: (
-  'base-light': map-get($greyscale, 'light-mid'),
+  'base-light': map-get($greyscale, 'lighter'),
   'base': map-get($greyscale, 'light'),
-  'base-dark': darken(map-get($greyscale, 'base'), 10%),
+  'base-dark': map-get($greyscale, 'base'),
   'info-light': map-get($brand-colors, 'lightblue'),
   'info': map-get($brand-colors, 'skyblue'),
   'info-dark': darken(map-get($brand-colors, 'med-blue'), 10%),
