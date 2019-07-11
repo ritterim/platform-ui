@@ -4,38 +4,38 @@
 //
 // `.flexcol` alone produces a full-width column
 //
-// `.flexcol__end` allows grouping to the right, or `end` of the section.
+// `.flex--justify-end` allows grouping to the right, or `end` of the section.
 //
 // Markup:
-// <div class="flexcol flex-align__center">Full width (.flexcol alone)</div>
+// <div class="flexcol flex--align-center">Full width (.flexcol alone)</div>
 // <div class="flexcol">
-//   <div class="flexcol-half flex-align__center">Half width</div>
-//   <div class="flexcol-half flexcol__end flex-align__center">Half width adding .flex__end</div>
+//   <div class="flexcol-half flex--align-center">Half width</div>
+//   <div class="flexcol-half flex--justify-end flex--align-center">Half width adding .flex--justify-end</div>
 // </div>
 // <div class="flexcol">
-//   <div class="flexcol-third flex-align__center">Third width</div>
-//   <div class="flexcol-third flex-align__center">Third width</div>
-//   <div class="flexcol-third flex-align__center">Third width</div>
+//   <div class="flexcol-third flex--align-center">Third width</div>
+//   <div class="flexcol-third flex--align-center">Third width</div>
+//   <div class="flexcol-third flex--align-center">Third width</div>
 // </div>
 // <div class="flexcol">
-//   <div class="flexcol-third flex-align__center">One Third width</div>
-//   <div class="flexcol-2-third flex-align__center">2 Third width</div>
+//   <div class="flexcol-third flex--align-center">One Third width</div>
+//   <div class="flexcol-2-third flex--align-center">2 Third width</div>
 // </div>
 // <div class="flexcol">
-//   <div class="flexcol-quarter flex-align__center">Quarter width</div>
-//   <div class="flexcol-quarter flex-align__center">Quarter width</div>
-//   <div class="flexcol-quarter flex-align__center">Quarter width</div>
-//   <div class="flexcol-quarter flex-align__center">Quarter width</div>
+//   <div class="flexcol-quarter flex--align-center">Quarter width</div>
+//   <div class="flexcol-quarter flex--align-center">Quarter width</div>
+//   <div class="flexcol-quarter flex--align-center">Quarter width</div>
+//   <div class="flexcol-quarter flex--align-center">Quarter width</div>
 // </div>
 // <div class="flexcol">
-//   <div class="flexcol-3-quarter flex-align__center">3 Quarter width</div>
-//   <div class="flexcol-quarter flex-align__center">Quarter width</div>
+//   <div class="flexcol-3-quarter flex--align-center">3 Quarter width</div>
+//   <div class="flexcol-quarter flex--align-center">Quarter width</div>
 // </div>
 //
 // Styleguide Layout.flexcol
 
 // This is for style guide only
-.rim-style-modifier__example [class*="flexcol"].flex-align__center {
+.rim-style-modifier__example [class*="flexcol"].flex--align-center {
   border: 1px solid lighten(map-get($greyscale, 'light'), $hue-threshold);
   margin: .5rem 0;
   padding: 1rem;

@@ -4,6 +4,16 @@
 //
 // Styleguide Layout.Base
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  &:before,
+  &:after {
+    box-sizing: border-box;
+  }
+}
 
 html {
   font-family: map-get($fonts, 'base');
