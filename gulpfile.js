@@ -41,7 +41,7 @@ function styleguide() {
     source: 'src/assets/stylesheets/',
     destination: 'styleguide/',
     builder: 'custom-builder',
-    css: '../src/assets/stylesheets/platform-ui.min.css'
+    css: '../custom-builder/kss-assets/kss.css'
   });
 }
 

@@ -19,8 +19,14 @@
       width: 100vw;
     }
   }
-  .quote {
+  .rim-card.quote {
     border: none;
+    .rim-form, .rim-card {
+      width: 100vw;
+    }
+    .rim-form__field {
+      margin: 0;
+    }
     table {
       border: none;
       th, td {
@@ -28,9 +34,19 @@
           display: none;
         }
       }
+      thead {
+        background: map-get($greyscale, 'dark');
+        color: map-get($greyscale, 'white');
+      }
       td {
         border-top: 1px solid map-get($greyscale, 'light-mid');
+        padding: .2rem .5rem;
       }
     }
+  }
+  .rim-message {
+    background-color: transparent !important;
+    border-color: map-get($greyscale, 'dark') !important;
+    color: map-get($greyscale, 'base') !important;;
   }
 }
