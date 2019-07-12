@@ -311,7 +311,7 @@
           <a class="button button--secondary" role="button" aria-label="Toggle">
             <i class="fas fa-sliders-h" focusable="false" aria-hidden="hidden"></i>
           </a>
-          <div class="rim-info-box__content hidden">
+          <div class="rim-info-box__content hidden--">
             <button class="button rim-info-box__close">
               Close <i class="fas fa-times" focusable="false" aria-hidden="hidden"></i>
             </button>
@@ -327,38 +327,26 @@
               <fieldset class="rim-form__field">
                 <legend>Rate Class</legend>
                 <div class="rim-toggle">
-                  <div class="rim-toggle__content--left">
-                    <input id="smoking" type="radio" checked name="rate">
-                    <label class="background-blue" for="smoking">
-                      <i class="fas fa-check"></i>
-                      Non-smoking
-                    </label>
+                  <div class="rim-toggle__content">
+                    <input class="rim-toggle__input" id="smoking" type="radio" checked name="rate">
+                    <label for="smoking">Non-smoking</label>
                   </div>
-                  <div class="rim-toggle__content--left">
-                    <input id="non-smoking" type="radio" name="rate">
-                    <label for="non-smoking">
-                      <i class="fas fa-check"></i>
-                      Smoking
-                    </label>
+                  <div class="rim-toggle__content">
+                    <input class="rim-toggle__input" id="non-smoking" type="radio" name="rate">
+                    <label for="non-smoking">Smoking</label>
                   </div>
                 </div>
               </fieldset>
               <fieldset class="rim-form__field">
                 <legend>Marital Status</legend>
                 <div class="rim-toggle">
-                  <div class="rim-toggle__content--right">
-                    <input id="Single" type="radio" checked name="household">
-                    <label class="background-blue" for="Single">
-                      <i class="fas fa-check"></i>
-                      Single
-                    </label>
+                  <div class="rim-toggle__content">
+                    <input class="rim-toggle__input" id="Single" type="radio" checked name="household">
+                    <label for="Single">Single</label>
                   </div>
-                  <div class="rim-toggle__content--right">
-                    <input id="household" type="radio" name="household">
-                    <label for="household">
-                      <i class="fas fa-check"></i>
-                      Household
-                    </label>
+                  <div class="rim-toggle__content">
+                    <input class="rim-toggle__input" id="Household" type="radio" name="household">
+                    <label for="Household">Household</label>
                   </div>
                 </div>
               </fieldset>
@@ -367,7 +355,7 @@
                 <div role="radiogroup" aria-labelledby="radio-heading">
                   <div class="flexcol">
                     <div class="flexcol-third my-2 px-1">
-                      <div class="pill background-light flex--align-center simple-check--left">
+                      <div class="pill background-light flex--align-center simple-check simple-check--left">
                         <input type="checkbox" id="A">
                         <label class="text-white" for="A" tabindex="0">
                           <i class="fas fa-check"></i>
@@ -376,7 +364,7 @@
                       </div>
                     </div>
                     <div class="flexcol-third my-2 px-1">
-                      <div class="pill background-light flex--align-center simple-check--left">
+                      <div class="pill background-light flex--align-center simple-check simple-check--left">
                         <input type="checkbox" id="B">
                         <label class="text-white" for="B" tabindex="0">
                           <i class="fas fa-check"></i>
@@ -385,7 +373,7 @@
                       </div>
                     </div>
                     <div class="flexcol-third my-2 px-1">
-                      <div class="pill background-light flex--align-center simple-check--left">
+                      <div class="pill background-light flex--align-center simple-check simple-check--left">
                         <input type="checkbox" id="C">
                         <label class="text-white" for="C" tabindex="0">
                           <i class="fas fa-check"></i>
@@ -396,7 +384,7 @@
                   </div>
                   <div class="flexcol">
                     <div class="flexcol-third my-2 px-1">
-                      <div class="pill background-light flex--align-center simple-check--left">
+                      <div class="pill background-light flex--align-center simple-check simple-check--left">
                         <input type="checkbox" id="D">
                         <label class="text-white" for="D" tabindex="0">
                           <i class="fas fa-check"></i>
@@ -405,7 +393,7 @@
                       </div>
                     </div>
                     <div class="flexcol-third my-2 px-1">
-                      <div class="pill background-light flex--align-center simple-check--left">
+                      <div class="pill background-light flex--align-center simple-check simple-check--left">
                         <input type="checkbox" id="F">
                         <label class="text-white" for="F" tabindex="0">
                           <i class="fas fa-check"></i>
@@ -414,7 +402,7 @@
                       </div>
                     </div>
                     <div class="flexcol-third my-2 px-1">
-                      <div class="pill background-light flex--align-center simple-check--left">
+                      <div class="pill background-light flex--align-center simple-check simple-check--left">
                         <input type="checkbox" id="G">
                         <label class="text-white" for="G" tabindex="0">
                           <i class="fas fa-check"></i>
@@ -425,7 +413,7 @@
                   </div>
                   <div class="flexcol">
                     <div class="flexcol-third my-2 px-1">
-                      <div class="pill background-light flex--align-center simple-check--left">
+                      <div class="pill background-light flex--align-center simple-check simple-check--left">
                         <input type="checkbox" id="Hi-F">
                         <label class="text-white" for="Hi-F" tabindex="0">
                           <i class="fas fa-check"></i>
@@ -434,7 +422,7 @@
                       </div>
                     </div>
                     <div class="flexcol-third my-2 px-1">
-                      <div class="pill background-light flex--align-center simple-check--left">
+                      <div class="pill background-light flex--align-center simple-check simple-check--left">
                         <input type="checkbox" id="K">
                         <label class="text-white" for="K" tabindex="0">
                           <i class="fas fa-check"></i>
@@ -443,7 +431,7 @@
                       </div>
                     </div>
                     <div class="flexcol-third my-2 px-1">
-                      <div class="pill background-light flex--align-center simple-check--left">
+                      <div class="pill background-light flex--align-center simple-check simple-check--left">
                         <input type="checkbox" id="L">
                         <label class="text-white" for="L" tabindex="0">
                           <i class="fas fa-check"></i>
@@ -454,7 +442,7 @@
                   </div>
                   <div class="flexcol">
                     <div class="flexcol-third my-2 px-1">
-                      <div class="pill background-light flex--align-center simple-check--left">
+                      <div class="pill background-light flex--align-center simple-check simple-check--left">
                         <input type="checkbox" id="M">
                         <label class="text-white" for="M" tabindex="0">
                           <i class="fas fa-check"></i>
@@ -463,7 +451,7 @@
                       </div>
                     </div>
                     <div class="flexcol-third my-2 px-1">
-                      <div class="pill background-light flex--align-center simple-check--left">
+                      <div class="pill background-light flex--align-center simple-check simple-check--left">
                         <input type="checkbox" id="N">
                         <label class="text-white" for="N" tabindex="0">
                           <i class="fas fa-check"></i>
@@ -472,7 +460,7 @@
                       </div>
                     </div>
                     <div class="flexcol-third my-2 px-1">
-                      <div class="pill background-light flex--align-center simple-check--left">
+                      <div class="pill background-light flex--align-center simple-check simple-check--left">
                         <input type="checkbox" id="All">
                         <label class="text-white" for="All" tabindex="0">
                           <i class="fas fa-check"></i>
@@ -1010,19 +998,13 @@
         <fieldset class="rim-form__field">
           <legend>Are You</legend>
           <div class="rim-toggle">
-            <div class="rim-toggle__content--left">
-              <input id="tall" type="radio" checked name="height">
-              <label class="background-blue" for="tall">
-                <i class="fas fa-check"></i>
-                Tall
-              </label>
+            <div class="rim-toggle__content">
+              <input class="rim-toggle__input" id="tall" type="radio" checked name="height">
+              <label for="tall">Tall</label>
             </div>
-            <div class="rim-toggle__content--left">
-              <input id="short" type="radio" name="height">
-              <label for="short">
-                <i class="fas fa-check"></i>
-                Short
-              </label>
+            <div class="rim-toggle__content">
+              <input class="rim-toggle__input" id="short" type="radio" name="height">
+              <label for="short">Short</label>
             </div>
           </div>
         </fieldset>
