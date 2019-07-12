@@ -22,6 +22,10 @@ $kss-vertical-rhythm      : $kss-font-size * 1.5;
 // Wrap all of this builder's base HTML styling inside a .kss-style selector.
 // ------------------------------------------------------------------------------
 
+.rim-style {
+  background: red;
+}
+
 .kss-style {
   color: $kss-colors-foreground;
   font-family: $kss-font-body;
