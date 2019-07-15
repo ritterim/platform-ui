@@ -3,7 +3,7 @@
 // These classes make flexcol responsive by using our breakpoint classes to determin how wide the `.block`s will be.
 // 
 // Markup:
-// <div class="flexrow">
+// <div class="block-container">
 //   <div class="rim-card block block-mobile-2 block-laptop-4">
 //     Test
 //   </div>
@@ -24,10 +24,10 @@
 
 // Flexcol Responsive Wrapper
 // 
-// You can add the resposinve classes to the `.flexrow` wrapper rather than the `.block` elements.
+// You can add the resposinve classes to the `.block-container` wrapper rather than the `.block` elements.
 // 
 // Markup:
-// <div class="flexrow block-p-2 mobile-up-3 laptop-up-4">
+// <div class="block-container block-p-2 mobile-up-3 laptop-up-4">
 //   <div class="block">
 //     <div class="rim-card">
 //       Test
@@ -59,7 +59,7 @@
 // These classes only need to be on the container.
 // 
 // Markup:
-// <div class="rim-grid-15 row-gap-4 col-gap-2">
+// <div class="rim-columns-15 row-gap-4 col-gap-2">
 //   <div class="rim-card">
 //     This is a grid item
 //   </div>
@@ -107,7 +107,7 @@
 }
 
 // flex columns
-.flexrow {
+.block-container {
   $self: &;
   display: flex;
   flex-wrap: wrap;
@@ -127,14 +127,14 @@
       width: auto !important;
     }
   }
-  @each $key, $val in $rim-grid {
+  @each $key, $val in $rim-columns {
     .block-#{$val} {
       width: calc(100% / #{$val});
     }
   }
 
   @each $name in $breakpoint-classes {
-    @each $key, $val in $rim-grid {
+    @each $key, $val in $rim-columns {
       .block-#{$name}-#{$val} {
         @include breakpoint(#{$name}, min) {
           width: calc(#{$key} * 100%);
@@ -155,47 +155,22 @@
     }
   }
 
-  @each $key, $name in $flex-grid {
-    &-#{$name} {
-      display: flex;
-      flex-basis: calc(#{$key} * 100%);
-      &#{$self}__end {
-        justify-content: flex-end;
-      }
-    }
-  }
-
   // Add padding and or margin to container 
   // as well as the blocks within the flexcol container
   @each $prop, $letter in (margin: m, padding: p) {
     @each $direction, $d in $xy-border {
       @each $unit, $rem in $spacers {
         // top, right, bottom, left
-        &.block-#{$letter}#{$d}-#{$unit} {
+        &.blocks-#{$letter}#{$d}-#{$unit} {
           > .block {
             #{$prop}-#{$direction}: #{$rem};
           }
         }
-        
-        // &.block-#{$letter}-#{$unit} {
-        //   // these if statements change ensure that the 
-        //   // flexcol wrapper receives the proper width and 
-        //   // negative margin to align the blocks
-        //   @if $letter == p {
-        //     margin-left: -#{$rem};
-        //     width: calc(100% + #{$rem} * 2);
-        //   }
-
-        //   > .block {
-        //     #{$prop}: $rem;
-        //   }
-        // }
 
         // left and right
-        &.block-#{$letter}x-#{$unit} {
+        &.blocks-#{$letter}x-#{$unit} {
           margin-left: -#{$rem};
           width: calc(100% + #{$rem} * 2);
-          
           > .block {
             #{$prop}-left: $rem;
             #{$prop}-right: $rem;
@@ -203,7 +178,7 @@
         }
 
         // top and bottom
-        &.block-#{$letter}y-#{$unit} {
+        &.blocks-#{$letter}y-#{$unit} {
           > .block {
             #{$prop}-top: $rem;
             #{$prop}-bottom: $rem;
@@ -217,64 +192,12 @@
   // container to change the width of the block 
   // elements inside the flexcol container
   @each $name in $breakpoint-classes {
-    @each $key, $val in $rim-grid {
+    @each $key, $val in $rim-columns {
       &.#{$name}-up-#{$val} {
         
         > .block {
           @include breakpoint(#{$name}, min) {
             width: calc(100% / #{$val});
-          }
-        }
-      }
-    }
-  }
-}
-
-
-// Grid classes
-@each $name in $breakpoint-classes {
-  @for $i from 1 through 50 {
-    .rim-grid-#{$i} {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(#{$i}rem, 1fr));
-      grid-gap: $spacer;      
-
-      @each $unit, $rem in $spacers {
-        &.all-gap-#{$unit} {
-          grid-gap: #{$rem} !important;
-        }
-        
-        &.col-gap-#{$unit} {
-          grid-column-gap: #{$rem} !important;
-        }
-        
-        &.row-gap-#{$unit} {
-          grid-row-gap: #{$rem} !important;
-        }
-      }
-    }
-
-    .rim-grid-#{$name}-#{$i} {
-      @include breakpoint(#{$name}, min) {
-        grid-template-columns: repeat(auto-fit, minmax(#{$i}rem), 1fr) !important;
-      }
-
-      @each $unit, $rem in $spacers {
-        &.all-gap-#{$name}-#{$unit} {
-          @include breakpoint(#{$name}, min) {
-            grid-gap: #{$rem} !important;
-          }
-        }
-        
-        &.col-gap-#{$name}-#{$unit} {
-          @include breakpoint(#{$name}, min) {
-            grid-column-gap: #{$rem} !important;
-          }
-        }
-        
-        &.row-gap-#{$name}-#{$unit} {
-          @include breakpoint(#{$name}, min) {
-            grid-row-gap: #{$rem} !important;
           }
         }
       }
