@@ -15,37 +15,7 @@
   }
 }
 
-// Align Items
-.align-center {
-  align-items: center;
-}
-
-.align-end {
-  align-items: flex-end;
-}
-
-.align-start {
-  align-items: flex-start;
-}
-
-
-// Justify Content
-.justify-around {
-  justify-content: space-around;
-}
-
-.justify-center {
-  justify-content: center;
-}
-
-.justify-between {
-  justify-content: space-between;
-}
-
-.justify-end {
-  justify-content: flex-end;
-}
-
-.justify-start {
-  justify-content: flex-start;
+// horizontaly and vertically center content
+.flex--center-content {
+  @extend %flex-center;
 }
