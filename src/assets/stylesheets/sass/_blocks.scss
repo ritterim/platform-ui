@@ -138,18 +138,18 @@
       .block-#{$name}-#{$val} {
         @include breakpoint(#{$name}, min) {
           width: calc(#{$key} * 100%);
-        }
 
-        &--full {
-          width: 100% !important;
-        }
+          &--full {
+            width: 100% !important;
+          }
 
-        &--fill {
-          flex-grow: 1;
-        }
+          &--fill {
+            flex-grow: 1;
+          }
 
-        &--shrink {
-          width: auto !important;
+          &--shrink {
+            width: auto !important;
+          }
         }
       }
     }
