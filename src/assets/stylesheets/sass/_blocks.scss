@@ -1,0 +1,161 @@
+// Blocks Responsive
+// 
+// These classes are for a responsive layout by using our breakpoint classes to determin how wide the `.block`s will be.
+// 
+// Markup:
+// <div class="block-container">
+//   <div class="rim-card block block-mobile-2 block-laptop-4">
+//     Test
+//   </div>
+//   <div class="rim-card block block-mobile-2 block-laptop-4">
+//     Test
+//   </div>
+//   <div class="rim-card block block-mobile-2 block-laptop-4">
+//     Test
+//   </div>
+//   <div class="rim-card block block-mobile-2 block-laptop-4">
+//     Test
+//   </div>
+// </div>
+// 
+// Weight: 4
+// 
+// Styleguide Layout.blocks
+
+// Blocks Responsive Wrapper
+// 
+// You can add the resposinve classes to the `.block-container` wrapper rather than the `.block` elements.
+// 
+// Markup:
+// <div class="block-container blocks-p-2 mobile-up-3 laptop-up-4">
+//   <div class="block">
+//     <div class="rim-card">
+//       Test
+//     </div>
+//   </div>
+//   <div class="block">
+//     <div class="rim-card">
+//       Test
+//     </div>
+//   </div>
+//   <div class="block">
+//     <div class="rim-card">
+//       Test
+//     </div>
+//   </div>
+//   <div class="block">
+//     <div class="rim-card">
+//       Test
+//     </div>
+//   </div>
+// </div>
+// 
+// Weight: 5
+// 
+// Styleguide Layout.blocks.Wrapper
+
+// This is for style guide only
+.kss-modifier__example [class*="flexcol"].flex-align__center {
+  border: 1px solid lighten(map-get($greyscale, 'light'), $hue-threshold);
+  margin: .5rem 0;
+  padding: 1rem;
+}
+
+// Block layout
+.block-container {
+  $self: &;
+  display: flex;
+  flex-wrap: wrap;
+
+  > .block { 
+    width: 100%;
+
+    &--full {
+      width: 100% !important;
+    }
+
+    &--fill {
+      flex-grow: 1;
+    }
+
+    &--shrink {
+      width: auto !important;
+    }
+  }
+  @each $key, $val in $rim-columns {
+    .block-#{$val} {
+      width: calc(100% / #{$val});
+    }
+  }
+
+  @each $breakpoint, $name in $breakpoints {
+    @each $key, $val in $rim-columns {
+      .block-#{$breakpoint}-#{$val} {
+        @include breakpoint(#{$name}, min) {
+          width: calc(#{$key} * 100%);
+
+          &--full {
+            width: 100% !important;
+          }
+
+          &--fill {
+            flex-grow: 1;
+          }
+
+          &--shrink {
+            width: auto !important;
+          }
+        }
+      }
+    }
+  }
+
+  // Add padding and or margin to container 
+  // as well as the blocks within the block-container
+  @each $prop, $letter in (margin: m, padding: p) {
+    @each $direction, $d in $xy-border {
+      @each $unit, $rem in $spacers {
+        // top, right, bottom, left
+        &.blocks-#{$letter}#{$d}-#{$unit} {
+          > .block {
+            #{$prop}-#{$direction}: #{$rem};
+          }
+        }
+
+        // left and right
+        &.blocks-#{$letter}x-#{$unit} {
+          margin-left: -#{$rem};
+          width: calc(100% + #{$rem} * 2);
+          > .block {
+            #{$prop}-left: $rem;
+            #{$prop}-right: $rem;
+          }
+        }
+
+        // top and bottom
+        &.blocks-#{$letter}y-#{$unit} {
+          > .block {
+            #{$prop}-top: $rem;
+            #{$prop}-bottom: $rem;
+          }
+        }
+      }
+    }
+  }
+
+  // Add these classes ex: mobile-up-2 to the 
+  // container to change the width of the block 
+  // elements inside the block-container
+  @each $breakpoint, $name in $breakpoints {
+    @each $key, $val in $rim-columns {
+      &.#{$breakpoint}-up-#{$val} {
+        
+        > .block {
+          @include breakpoint(#{$name}, min) {
+            width: calc(100% / #{$val});
+          }
+        }
+      }
+    }
+  }
+}

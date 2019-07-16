@@ -235,15 +235,11 @@ input[type="radio"] {
 .rim-form {
   $self: &;
   color: map-get($greyscale, 'light' );
-  display: flex;
-  flex-flow: row wrap;
 
   &--stacked {
     flex-flow: column;
     
     #{ $self }__field {
-      margin-left: 0;
-      margin-right: 0;
       max-width: none;
 
       &:last-child {
@@ -319,10 +315,13 @@ input[type="radio"] {
   }  
 
   &__field {
-    flex: 1 1 auto;
+    display: block;
     font-size: map-get($font-percentage, 'sm');
-    margin: 0 map-get($spacers, 2) map-get($spacers, 4);
-    max-width: 15.625rem;
+    margin-bottom: $spacer * 1.5;
+
+    .block & {
+      margin-bottom: 0;
+    }
 
     input[type="text"],
     input[type="date"],
@@ -382,7 +381,8 @@ input[type="radio"] {
         }
       }
   
-      input::-webkit-datetime-edit { color: transparent; }
+      input::-webkit-datetime-edit { 
+        color: transparent; }
       input:focus::-webkit-datetime-edit,
       input:valid::-webkit-datetime-edit { 
         color: map-get($greyscale, 'base' );
@@ -424,11 +424,13 @@ input[type="radio"] {
       }
   
       label {
+        color: map-get($greyscale, 'light' );
         pointer-events: none;
         position: absolute;
         left: .25rem;
-        top: .7rem;
+        top: 50%;
         transition: .2s ease-in;
+        transform: translateY(-50%);
       }
     }
   }
