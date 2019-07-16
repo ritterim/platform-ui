@@ -1,65 +1,114 @@
-// Blocks Responsive
+// Blocks
+//
+// In this section you will find options for your layout needs. To get a specific layout you will need to start with 
+// 2 classes. `block-container` and `block`. `block-container` is the wrapper class that contains the block or 
+// blocks depending on how many you have. `block` is the class that will be on the element inside the container.
+//
+// This layout is based on a 12 column grid. So if you want a `block` to take up half the width of the row it is on, you
+// would use the class `block-6`, 6 being half of 12. For a row containing 3 `blocks` you would use `block-4` and so on.
+// Each `block` has a default `width: 100%`. This width will change as you add different size classes to the `block`.
+// These classes can be added to any element, although in some cases you may need to wrap a specific element in a 
+// `<div class="block">`. 
 // 
-// These classes are for a responsive layout by using our breakpoint classes to determin how wide the `.block`s will be.
+// You can change the width of a block by using responsive size classes. These classes are tied to our `$breakpoints` map.
+// ```css
+// $breakpoints: (
+//   mobile: 768px,
+//   laptop: 1240px,
+//   desktop-lg: 1800px
+// );
+// ```
+// For example, if you wanted a block to take up 3 columns at the mobile breakpoint, you would add the class `block-mobile-3`
+//  to `block`. It's probably best to build these layouts thinking "mobile-first". So when you use the class `block-mobile-3` 
+// know that that will that effect from 768px up, or to put in media query terms. `@media(min-width: 768px) {}`.
+// 
+// Styleguide Blocks
+
+// Blocks Container
+// 
+// You can add the resposinve classes to the `.block-container` wrapper rather than the `.block` elements. This method is 
+// best used for a case where you need to build a grid of equal size blocks. By adding the classes to the `block-container` 
+// you do not need to add them the individual `block`s.
+// 
+// 
+// To make your grid responsive, you use classes that contain the names of our defined breakpoints. For example, if you want a grid 
+// with 3 columns at the `laptop` resolution, you would use the class, `laptop-up-3`. This says, at the `laptop` breakpoint and up, 
+// display the `block`s across 3 columns. 
+// 
+// 
+// To add padding to the `block`s, you also add utility classes to the `block-container`. These classes will tell 
+// each block how much `padding` or `margin` they should have. These utility classes work similar to our other spacing classes.
+// If you want each block to have padding of `1rem`, you would add the classes `blocks-px-3 blocks-py-3` to the `block-container`
+// If you need margin, you add `blocks-mx-3 blocks-my3` to the `block-container`. `X` is left and right, and `Y` is for top and bottom.
+// You can still use the other spacing utility classes on the `block-container` as well, if you need to add specific padding, or margin
+// to the `block-container`.
+// 
+// **Note:** Some examples also use the class `rim-card`. This is for style guide purposes only.
+// 
+// Markup:
+// <div class="block-container blocks-px-2 blocks-py-2 mobile-up-3 laptop-up-4">
+//   <div class="block">
+//     <div class="rim-card">
+//       Test
+//     </div>
+//   </div>
+//   <div class="block">
+//     <div class="rim-card">
+//       Test
+//     </div>
+//   </div>
+//   <div class="block">
+//     <div class="rim-card">
+//       Test
+//     </div>
+//   </div>
+//   <div class="block">
+//     <div class="rim-card">
+//       Test
+//     </div>
+//   </div>
+// </div>
+// 
+// Weight: 1
+// 
+// Styleguide Blocks.container
+
+// Blocks
+// 
+// If you need to make a layout where the blocks are not equal widths, you can instead add the size classes to 
+// the individual `block`s. 
+// 
+// 
+// Since the `block-container` is based on a 12 column grid, each class number represents how many columns the `block` 
+// will take up at that resolution. 
+// 
+// **Note:** Some examples also use the class `rim-card`. This is for style guide purposes only. In the example below 
+// 
 // 
 // Markup:
 // <div class="block-container">
-//   <div class="rim-card block block-mobile-2 block-laptop-4">
-//     Test
+//   <div class="rim-card block-6 block-mobile-8 block-laptop-9">
+//     block-mobile-8<br> block-laptop-9
 //   </div>
-//   <div class="rim-card block block-mobile-2 block-laptop-4">
-//     Test
+//   <div class="rim-card block-6 block-mobile-4 block-laptop-3">
+//     block-mobile-4<br> block-laptop-3
 //   </div>
+// </div>
+// <div class="block-container">
 //   <div class="rim-card block block-mobile-2 block-laptop-4">
-//     Test
+//     block-mobile-2 <br>block-laptop-4
 //   </div>
-//   <div class="rim-card block block-mobile-2 block-laptop-4">
-//     Test
+//   <div class="rim-card block block-mobile-10 block-laptop-8">
+//     block-mobile-10 <br>block-laptop-8
 //   </div>
 // </div>
 // 
-// Weight: 4
+// If you scale the screen you will see the change in width on the blocks.
 // 
-// Styleguide Layout.blocks
+// Weight: 2
+// 
+// Styleguide Blocks.Block
 
-// Blocks Responsive Wrapper
-// 
-// You can add the resposinve classes to the `.block-container` wrapper rather than the `.block` elements.
-// 
-// Markup:
-// <div class="block-container blocks-p-2 mobile-up-3 laptop-up-4">
-//   <div class="block">
-//     <div class="rim-card">
-//       Test
-//     </div>
-//   </div>
-//   <div class="block">
-//     <div class="rim-card">
-//       Test
-//     </div>
-//   </div>
-//   <div class="block">
-//     <div class="rim-card">
-//       Test
-//     </div>
-//   </div>
-//   <div class="block">
-//     <div class="rim-card">
-//       Test
-//     </div>
-//   </div>
-// </div>
-// 
-// Weight: 5
-// 
-// Styleguide Layout.blocks.Wrapper
-
-// This is for style guide only
-.kss-modifier__example [class*="flexcol"].flex-align__center {
-  border: 1px solid lighten(map-get($greyscale, 'light'), $hue-threshold);
-  margin: .5rem 0;
-  padding: 1rem;
-}
 
 // Block layout
 .block-container {
@@ -84,7 +133,7 @@
   }
   @each $key, $val in $rim-columns {
     .block-#{$val} {
-      width: calc(100% / #{$val});
+      width: calc(#{$key} * 100%);
     }
   }
 
@@ -93,18 +142,25 @@
       .block-#{$breakpoint}-#{$val} {
         @include breakpoint(#{$name}, min) {
           width: calc(#{$key} * 100%);
+        }
+      }
+    }
+  }
 
-          &--full {
-            width: 100% !important;
-          }
+  @each $breakpoint, $name in $breakpoints {
+    .block-#{$breakpoint} {
+      @include breakpoint(#{$name}, min) {
 
-          &--fill {
-            flex-grow: 1;
-          }
+        &--full {
+          width: 100% !important;
+        }
 
-          &--shrink {
-            width: auto !important;
-          }
+        &--fill {
+          flex-grow: 1;
+        }
+
+        &--shrink {
+          width: auto !important;
         }
       }
     }
