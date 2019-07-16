@@ -112,6 +112,33 @@
 //
 // Styleguide Forms.Fancy
 
+// Simple Check
+// 
+// In the following examples we have 2 checkboxes. In this case they look like pills with specific background 
+// utilities on them. We can make the simple check look different depending on the utilities you want.
+// The markup is key. We still want the semantic markup of an `input` with a `label`. All we really need to simplify 
+// the check is the class `simple-check` on a wrapper containing the `inout` and `label` with either `simple-check--left`
+//  or `simple-check--right` added for the placement of the icon. Inside the label you can add whatever font-icon you like. 
+// Depending on the direction modifier you add, that's where the icon will display when clicked.
+// 
+// Markup:
+// <div class="pill background-light flex--align-center simple-check simple-check--left">
+//   <input type="checkbox" id="A">
+//   <label class="text-white" for="A" tabindex="0">
+//     <i class="fas fa-check"></i>
+//     A
+//   </label>
+// </div>
+// <div class="pill background-light flex--align-center simple-check simple-check--right">
+//   <input type="checkbox" id="B">
+//   <label class="text-white" for="B" tabindex="0">
+//     <i class="fas fa-check"></i>
+//     B
+//   </label>
+// </div>
+// 
+// Styleguide Forms.Simple
+
 
 // KSS-Node specific stuff for forms 
 #kss-node {
@@ -293,7 +320,7 @@ input[type="radio"] {
       height: 100%;
       justify-content: center;
       margin: 0;
-      padding: map-get($spacers, 1) $spacer * 1.25;
+      padding: map-get($spacers, 1) $spacer * 1.5;
 
       &:hover {
         cursor: pointer;
