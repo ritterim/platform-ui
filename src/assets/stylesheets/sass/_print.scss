@@ -29,11 +29,6 @@
     }
     table {
       border: none;
-      th, td {
-        &:first-of-type {
-          display: none;
-        }
-      }
       thead {
         background: map-get($greyscale, 'dark');
         color: map-get($greyscale, 'white');
