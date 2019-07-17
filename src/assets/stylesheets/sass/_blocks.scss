@@ -203,6 +203,15 @@
   // Add these classes ex: tablet-up-2 to the 
   // container to change the width of the block 
   // elements inside the block-container
+  @each $key, $val in $rim-columns {
+    &.base-up-#{$val} {
+      
+      > .block {
+        width: calc(100% / #{$val});
+      }
+    }
+  }
+
   @each $breakpoint, $name in $breakpoints {
     @each $key, $val in $rim-columns {
       &.#{$breakpoint}-up-#{$val} {

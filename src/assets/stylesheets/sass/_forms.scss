@@ -282,10 +282,11 @@ input[type="radio"] {
     input {
 
       + label {
+        width: 100%;
 
         i {
-          left: -2px;
-          transform: translate(50%,-50%);
+          left: 4px;
+          transform: translate(0,-50%);
         }
       }
     }
@@ -296,10 +297,11 @@ input[type="radio"] {
     input {
 
       + label {
+        width: 100%;
 
         i {
-          right: -2px;
-          transform: translate(-50%,-50%);
+          right: 4px;
+          transform: translate(0,-50%);
         }
       }
     }
@@ -320,7 +322,7 @@ input[type="radio"] {
       height: 100%;
       justify-content: center;
       margin: 0;
-      padding: map-get($spacers, 1) $spacer * 1.5;
+      padding: map-get($spacers, 1) $spacer * 1.25;
 
       &:hover {
         cursor: pointer;
