@@ -117,23 +117,15 @@
 // In the following examples we have 2 checkboxes. In this case they look like pills with specific background 
 // utilities on them. We can make the simple check look different depending on the utilities you want.
 // The markup is key. We still want the semantic markup of an `input` with a `label`. All we really need to simplify 
-// the check is the class `simple-check` on a wrapper containing the `inout` and `label` with either `simple-check--left`
-//  or `simple-check--right` added for the placement of the icon. Inside the label you can add whatever font-icon you like. 
-// Depending on the direction modifier you add, that's where the icon will display when clicked.
+// the check is the class `simple-check` on a wrapper containing the `input` and `label`. Inside the label you can add 
+// whatever font-icon you like. 
 // 
 // Markup:
-// <div class="pill background-light flex--align-center simple-check simple-check--left">
+// <div class="pill background-light flex--align-center simple-check">
 //   <input type="checkbox" id="A">
 //   <label class="text-white" for="A" tabindex="0">
 //     <i class="fas fa-check"></i>
 //     A
-//   </label>
-// </div>
-// <div class="pill background-light flex--align-center simple-check simple-check--right">
-//   <input type="checkbox" id="B">
-//   <label class="text-white" for="B" tabindex="0">
-//     <i class="fas fa-check"></i>
-//     B
 //   </label>
 // </div>
 // 
@@ -277,36 +269,6 @@ input[type="radio"] {
     cursor: pointer;
   }
 
-  &--left {
-
-    input {
-
-      + label {
-        width: 100%;
-
-        i {
-          left: 4px;
-          transform: translate(0,-50%);
-        }
-      }
-    }
-  }
-
-  &--right {
-
-    input {
-
-      + label {
-        width: 100%;
-
-        i {
-          right: 4px;
-          transform: translate(0,-50%);
-        }
-      }
-    }
-  }
-
   &.pill {
     padding-left: 0;
     padding-right: 0;
@@ -323,6 +285,7 @@ input[type="radio"] {
       justify-content: center;
       margin: 0;
       padding: map-get($spacers, 1) $spacer * 1.25;
+      width: 100%;
 
       &:hover {
         cursor: pointer;
@@ -334,10 +297,12 @@ input[type="radio"] {
       }
 
       i {
+        left: 4px;
         opacity: 0;
         pointer-events: none;
         position: absolute;
         top: 50%;
+        transform: translate(0,-50%);
         visibility: hidden;
       }
     }
