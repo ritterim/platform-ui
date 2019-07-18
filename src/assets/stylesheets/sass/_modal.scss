@@ -44,7 +44,7 @@
   flex-direction: column;
   height: 50vh;
   max-height: 100%;
-  width: 40vw;
+  width: 80vw;
   max-width: 100%;
   position: fixed;
   z-index: 500;
@@ -52,28 +52,20 @@
   top: 50%;
   transform: translate(-50%, -50%);
 
-  @include breakpoint(tablet, max) {
-    width: 80vw;
-  }
-
   &--small {
-    width: 20vw;
-    @include breakpoint(tablet, max) {
-      width: 80vw;
+    @include breakpoint(tablet, min) {
+      width: 20vw;
     }
   }
 
   &--medium {
-    height: inherit;
-    width: inherit;
-    @include breakpoint(tablet, max) {
-      width: 80vw;
+    @include breakpoint(tablet, min) {
+      width: 40vw;
     }
   }
 
   &--large {
     height: 70vh;
-    width: 80vw;
   }
 
   &--overlay {
