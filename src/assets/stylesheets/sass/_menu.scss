@@ -208,25 +208,6 @@
       }
     }
   }
-
-  .my {
-
-    span {
-      font-family: serif;
-      font-size: map-get($font-percentage, 'lg');
-      font-style: italic;
-      font-weight: bold;
-      opacity: .7;
-      padding-right: .2rem;
-    }
-
-    &:hover {
-      .dropdown-menu {
-        opacity: 1;
-        visibility: visible;
-      }
-    }
-  }
 }
 
 .agent-contact {
