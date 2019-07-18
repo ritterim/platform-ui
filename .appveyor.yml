@@ -15,18 +15,41 @@ before_build:
 build_script:
   - ./build.cmd
 
+after_build:
+  - ps: ./after_build.ps1
+
 cache:
   - node_modules -> package.json, package-lock.json
 
 test: off
 
-deploy_script:
-  - ps: |
-      if ($ENV:CONFIGURATION -eq "publish")
-      {
-        "@ritterim:registry=https://ritterim.myget.org/F/npm/npm/`r`n//ritterim.myget.org/F/npm/npm/:_authToken=`$`{MYGET_TOKEN`}" | Out-File (Join-Path $ENV:APPVEYOR_BUILD_FOLDER ".npmrc") -Encoding UTF8
-        iex "npm pack"
-        iex "npm publish"
-      }
+artifacts:
+  - path: ./styleguide.zip
+    name: Styleguide
+    type: Zip
+
+deploy:
+  - provider: Environment
+    name: Azure App Service Zip (Development)
+    artifact: Styleguide
+    app_name: style
     on:
       branch: master
+
+  - provider: Environment
+    name: Azure App Service Zip (Development)
+    artifact: Styleguide
+    app_name: style
+    on:
+      branch: master
+
+after_deploy:
+    - ps: |
+        if ($ENV:CONFIGURATION -eq "publish")
+        {
+          "@ritterim:registry=https://ritterim.myget.org/F/npm/npm/`r`n//ritterim.myget.org/F/npm/npm/:_authToken=`$`{MYGET_TOKEN`}" | Out-File (Join-Path $ENV:APPVEYOR_BUILD_FOLDER ".npmrc") -Encoding UTF8
+          iex "npm pack"
+          iex "npm publish"
+        }
+      on:
+        branch: master
