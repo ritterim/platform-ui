@@ -42,11 +42,9 @@
   $self: &;
   display: flex;
   flex-direction: column;
-  // Probably need media queries or just a better way to handle
-  // small, medium, large??
-  height: 70vh;
+  height: 50vh;
   max-height: 100%;
-  width: 80vw;
+  width: 40vw;
   max-width: 100%;
   position: fixed;
   z-index: 500;
@@ -54,8 +52,32 @@
   top: 50%;
   transform: translate(-50%, -50%);
 
+  @include breakpoint(mobile, max) {
+    width: 80vw;
+  }
+
+  &--small {
+    width: 20vw;
+    @include breakpoint(mobile, max) {
+      width: 80vw;
+    }
+  }
+
+  &--medium {
+    height: inherit;
+    width: inherit;
+    @include breakpoint(mobile, max) {
+      width: 80vw;
+    }
+  }
+
+  &--large {
+    height: 70vh;
+    width: 80vw;
+  }
+
   &--overlay {
-    background: rgba(map-get($platform-colors, 'menu'), $opacity);
+    background: rgba(map-get($greyscale, 'base'), .5);
     height: 100%;
     width: 100%;
     position: fixed;
