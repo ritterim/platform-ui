@@ -32,16 +32,20 @@ deploy:
   - provider: Environment
     name: Azure App Service Zip (Development)
     artifact: Styleguide
-    app_name: style
+    slot: staging
+    app_name: rim-style-east-dev
     on:
       branch: master
+      configuration: publish
 
   - provider: Environment
     name: Azure App Service Zip (Development)
     artifact: Styleguide
-    app_name: style
+    slot: staging
+    app_name: rim-style-south-dev
     on:
       branch: master
+      configuration: publish
 
 after_deploy:
     - ps: |
