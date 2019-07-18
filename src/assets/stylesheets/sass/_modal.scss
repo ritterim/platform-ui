@@ -6,10 +6,12 @@
 //
 // Animation note: using `animated` must be placed on `.rim-modal__inner` to maintain correct positioning.
 //
+// The default size of the modal is `medium`, you can use `rim-modal--small` or `rim-modal--large` for different sized modals.
+//
 // ```html
 // <div class="rim-modal--overlay rim-modal--closed"></div>
 //
-// <div class="rim-modal rim-modal--closed ">
+// <div class="rim-modal rim-modal--closed">
 //     <div class="rim-modal__inner animated slideInUp faster">
 //         <div class="rim-modal__header">
 //             <button class="button float-right rim-modal__close">Close <i class="fas fa-times"></i></button>
@@ -22,10 +24,11 @@
 // </div>
 // ```
 // <div class="rim-modal--overlay rim-modal--closed"></div>
-// <div class="rim-modal rim-modal--closed ">
+//
+// <div id="default-modal" class="rim-modal rim-modal--closed ">
 //   <div class="rim-modal__inner animated slideInUp faster">
 //     <div class="rim-modal__header">
-//       <button class="button float-right rim-modal__close">Close <i class="fas fa-times"></i></button>
+//       <button class="button float-right rim-modal__close" data-modal="default-modal">Close <i class="fas fa-times"></i></button>
 //       <h2>Modal</h2>
 //     </div>
 //     <div class="rim-modal__content">
@@ -34,7 +37,31 @@
 //   </div>
 // </div>
 //
-// <button class="button button--post button--lg rim-modal__open">Trigger modal</button>
+// <div id="small-modal" class="rim-modal rim-modal--small rim rim-modal--closed ">
+//   <div class="rim-modal__inner animated slideInUp faster">
+//     <div class="rim-modal__header">
+//       <button class="button float-right rim-modal__close" data-modal="small-modal">Close <i class="fas fa-times"></i></button>
+//       <h2>Modal</h2>
+//     </div>
+//     <div class="rim-modal__content">
+//       <p>Modal Content</p>
+//     </div>
+//   </div>
+// </div>
+//
+// <div id="large-modal" class="rim-modal rim-modal--large rim rim-modal--closed ">
+//   <div class="rim-modal__inner animated slideInUp faster">
+//     <div class="rim-modal__header">
+//       <button class="button float-right rim-modal__close" data-modal="large-modal">Close <i class="fas fa-times"></i></button>
+//       <h2>Modal</h2>
+//     </div>
+//     <div class="rim-modal__content">
+//       <p>Modal Content</p>
+//     </div>
+//   </div>
+// </div>
+//
+// <button class="button button--post button--lg rim-modal__open" data-modal="default-modal">Trigger Modal</button> <button class="button button--post button--lg rim-modal__open" data-modal="small-modal">Small Modal</button> <button class="button button--post button--lg rim-modal__open" data-modal="large-modal">Large Modal</button>
 //
 // Styleguide Components.modal
 
@@ -52,20 +79,30 @@
   top: 50%;
   transform: translate(-50%, -50%);
 
-  &--small {
-    @include breakpoint(tablet, min) {
-      width: 20vw;
-    }
+  @include breakpoint(tablet, min) {
+    width: 65vw;
+  }
+  @include breakpoint(desktop, min) {
+    width: 45vw;
   }
 
-  &--medium {
+  &--small {
+    @include breakpoint(mobile, min) {
+      width: 80vw;
+    }
     @include breakpoint(tablet, min) {
       width: 40vw;
+    }
+    @include breakpoint(desktop, min) {
+      width: 20vw;
     }
   }
 
   &--large {
     height: 70vh;
+    @include breakpoint(tablet, min) {
+      width: 80vw;
+    }
   }
 
   &--overlay {
