@@ -638,7 +638,7 @@ input[type="radio"] {
       justify-content: center;
       margin: 0;
       padding: map-get($spacers, 1) map-get($spacers, 2);
-      padding-left: $spacer * 1.25;
+      padding-left: $spacer * 1.5;
       z-index: 10;
 
       &:before {
