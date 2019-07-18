@@ -27,7 +27,7 @@ artifacts:
   - path: ./styleguide.zip
     name: Styleguide
     type: Zip
-    
+
 deploy:
   - provider: Environment
     name: Azure App Service Zip (Development)
@@ -43,7 +43,7 @@ deploy:
     on:
       branch: master
 
-  after_deploy:
+after_deploy:
     - ps: |
         if ($ENV:CONFIGURATION -eq "publish")
         {
