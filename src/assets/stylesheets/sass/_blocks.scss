@@ -13,13 +13,14 @@
 // You can change the width of a block by using responsive size classes. These classes are tied to our `$breakpoints` map.
 // ```css
 // $breakpoints: (
-//   mobile: 768px,
+//   mobile: 0px,
+//   tablet: 768px,
 //   laptop: 1240px,
-//   desktop-lg: 1800px
+//   desktop: 1800px
 // );
 // ```
-// For example, if you wanted a block to take up 3 columns at the mobile breakpoint, you would add the class `block-mobile-3`
-//  to `block`. It's probably best to build these layouts thinking "mobile-first". So when you use the class `block-mobile-3` 
+// For example, if you wanted a block to take up 3 columns at the mobile breakpoint, you would add the class `block-tablet-3`
+//  to `block`. It's probably best to build these layouts thinking "tablet-first". So when you use the class `block-tablet-3` 
 // know that that will that effect from 768px up, or to put in media query terms. `@media(min-width: 768px) {}`.
 // 
 // Styleguide Blocks
@@ -46,7 +47,7 @@
 // **Note:** Some examples also use the class `rim-card`. This is for style guide purposes only.
 // 
 // Markup:
-// <div class="block-container blocks-px-2 blocks-py-2 mobile-up-3 laptop-up-4">
+// <div class="block-container blocks-px-2 blocks-py-2 tablet-up-3 laptop-up-4">
 //   <div class="block">
 //     <div class="rim-card">
 //       Test
@@ -87,19 +88,19 @@
 // 
 // Markup:
 // <div class="block-container">
-//   <div class="rim-card block-6 block-mobile-8 block-laptop-9">
-//     block-mobile-8<br> block-laptop-9
+//   <div class="rim-card block block-6 block-tablet-8 block-laptop-9">
+//     block-tablet-8<br> block-laptop-9
 //   </div>
-//   <div class="rim-card block-6 block-mobile-4 block-laptop-3">
-//     block-mobile-4<br> block-laptop-3
+//   <div class="rim-card block block-6 block-tablet-4 block-laptop-3">
+//     block-tablet-4<br> block-laptop-3
 //   </div>
 // </div>
 // <div class="block-container">
-//   <div class="rim-card block block-mobile-2 block-laptop-4">
-//     block-mobile-2 <br>block-laptop-4
+//   <div class="rim-card block block-tablet-2 block-laptop-4">
+//     block-tablet-2 <br>block-laptop-4
 //   </div>
-//   <div class="rim-card block block-mobile-10 block-laptop-8">
-//     block-mobile-10 <br>block-laptop-8
+//   <div class="rim-card block block-tablet-10 block-laptop-8">
+//     block-tablet-10 <br>block-laptop-8
 //   </div>
 // </div>
 // 
@@ -199,7 +200,7 @@
     }
   }
 
-  // Add these classes ex: mobile-up-2 to the 
+  // Add these classes ex: tablet-up-2 to the 
   // container to change the width of the block 
   // elements inside the block-container
   @each $breakpoint, $name in $breakpoints {

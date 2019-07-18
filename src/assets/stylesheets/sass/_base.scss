@@ -32,11 +32,21 @@ body {
 // set up h-tags
 @for $i from 1 through 6 {
   h#{$i} {
-    color: map-get($brand-colors, 'navy');
+    color: map-get($greyscale, 'base' );
     font-family: map-get($fonts, 'headline');
     font-size: map-get($fonts, 'size') + $font-scale * (6 - $i);
+    font-weight: 500;
     margin: 0;
+
+    .post & {
+      font-family: map-get($fonts, 'post-headline');
+    }
   }
+}
+
+h1 {
+  color: map-get($brand-colors, 'navy' );
+  font-family: map-get($fonts, 'headline-slab');
 }
 
 p {

@@ -1,7 +1,8 @@
 $breakpoints: (
-  mobile: 768px,
+  mobile: 0px,
+  tablet: 768px,
   laptop: 1240px,
-  desktop-lg: 1800px
+  desktop: 1800px
 );
 
 $max-height: 600px;
