@@ -52,13 +52,13 @@
   top: 50%;
   transform: translate(-50%, -50%);
 
-  @include breakpoint(mobile, max) {
+  @include breakpoint(tablet, max) {
     width: 80vw;
   }
 
   &--small {
     width: 20vw;
-    @include breakpoint(mobile, max) {
+    @include breakpoint(tablet, max) {
       width: 80vw;
     }
   }
@@ -66,7 +66,7 @@
   &--medium {
     height: inherit;
     width: inherit;
-    @include breakpoint(mobile, max) {
+    @include breakpoint(tablet, max) {
       width: 80vw;
     }
   }
