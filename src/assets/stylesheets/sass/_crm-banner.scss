@@ -1,3 +1,30 @@
+// CRM banner
+//
+// CRM banner is a blog-style section specifically for post and banners within the Ritter Agent CRM.
+//
+// It utilizes the `.post` class to isolate these styles as they are more webpage/blog than application centric.
+//
+//
+//
+// Markup:
+// <div class="crm-banner animated slideInDown fast" style="background-image: linear-gradient(to right, white, transparent), url('https://freephotos.cc/storage/preview/path/e0TY5dzjfyAcol92eAidR4ublvPlT2dBbmAGcqeN.jpeg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+//   <div class="button button--sm close-action right">
+//     collapse
+//     <i class="fas fa-angle-up" aria-hidden="true"></i>
+//   </div>
+//   <h1 class="mb-2">Your dashboard got an upgrade!</h1>
+//   <p>
+//     <i class="fas fa-bullhorn" aria-hidden="true"></i>
+//     Take a quick video tour to see the new features of your dashboard.
+//   </p>
+//   <a data-modal="video-banner" class="button button--post button--lg rim-modal__open">
+//     <i class="far fa-play-circle" aria-hidden="true"></i>
+//     Watch now
+//   </a>
+// </div>
+//
+// Styleguide CRM.Banner
+
 .crm-banner {
   animation: slideInDown .2s;
   background-color: map-get($brand-colors, 'skyblue');
