@@ -46,8 +46,14 @@
         flex-direction: row;
       }
       .crm-menu__item {
-        &[data-tooltip]:after {
-          display: none;
+        &[data-tooltip] {
+          &:hover:after {
+            background-color: inherit;
+            border-radius: inherit;
+            content: "\f058";
+            left: inherit;
+            padding: 0;
+          }
         }
         span {
           display: block;
@@ -63,6 +69,11 @@
           }
           &:not(.mini-image) {
             display: block;
+          }
+        }
+        &:not(.active) {
+          &[data-tooltip]:hover:after {
+            display: none;
           }
         }
         &.active {
