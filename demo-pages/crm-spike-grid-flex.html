@@ -85,28 +85,6 @@
 
       <div class="site-menu__item search">
       </div>
-      <div class="site-menu__item has-dropdown my">
-        <span>my</span> Ritter
-        <i class="ml-2 fas fa-angle-down"></i>
-        <div class="dropdown-menu">
-          <a class="dropdown-menu__item" href="#">
-            <i class="fas fa-file-alt"></i>
-            Contracts
-          </a>
-          <a class="dropdown-menu__item" href="#">
-            <i class="fas fa-file-alt"></i>
-            Submissions
-          </a>
-          <a class="dropdown-menu__item" href="#">
-            <i class="fas fa-users"></i>
-            Register Downlines
-          </a>
-          <a class="dropdown-menu__item" href="#">
-            <i class="fas fa-users"></i>
-            Hierarchy
-          </a>
-        </div>
-      </div>
       <div class="site-menu__item has-dropdown">
         <i class="fas fa-ticket-alt rotate-45"></i>
         <div class="dropdown-menu agent-contact">
@@ -160,17 +138,18 @@
         <div class="crm-menu__group">
           <div href="/" class="crm-menu__item" data-view="overview" data-tooltip="Overview">
             <img src="/src/assets/images/crm-icons-color/overview.svg" alt="">
-            Overview
+            <img class="mini-image" src="/src/assets/images/crm-icons-color/quote.svg" alt="">
+            <span>Overview</span>
           </div>
           <div class="crm-menu__item active" data-view="quote" data-tooltip="Quote">
             <img src="/src/assets/images/crm-icons-color/quote.svg" alt="Quote">
-            Quote
+            <span>Quote</span>
           </div>
         </div>
         <div class="crm-menu__group">
           <div class="crm-menu__item" data-view="commissions" data-tooltip="Commissions">
             <img src="/src/assets/images/crm-icons-color/commissions.svg" alt="">
-            Commissions
+            <span>Commissions</span>
           </div>
           <a target="_blank" href="" class="crm-menu__item" data-tooltip="Get Contracted">
             <img src="/src/assets/images/crm-icons-color/get-contracted.svg" alt="">
@@ -190,11 +169,11 @@
         <div class="crm-menu__group">
           <div class="crm-menu__item" data-view="contracts">
             <img src="/src/assets/images/crm-icons-color/contracts.svg" alt="">
-            Contracts
+            <span>Contracts</span>
           </div>
           <div class="crm-menu__item" data-view="submissions">
             <img src="/src/assets/images/crm-icons-color/submissions.svg" alt="">
-            Submissions
+            <span>Submissions</span>
           </div>
         </div>
       </nav>
@@ -970,12 +949,12 @@
           <label for="dob" class="rim-form__field">Age or DOB
             <input id="dob" type="date" placeholder="DD/MM/YYYY">
           </label>
-        </div>        
+        </div>
         <div class="block">
           <label for="zipcode" class="rim-form__field">ZIP Code
             <input id="zipcode" type="tel" placeholder="e.g.90012" pattern="^\d{5,6}(?:[-\s]\d{4})?$">
           </label>
-        </div>        
+        </div>
         <div class="block">
           <fieldset class="rim-form__field">
             <legend>Choose</legend>
@@ -986,7 +965,7 @@
               <label for="gender-that-one">That One</label>
             </div>
           </fieldset>
-        </div>        
+        </div>
         <div class="block">
           <fieldset class="rim-form__field">
             <legend>Gender</legend>
@@ -997,7 +976,7 @@
               <label for="gender-female">Female</label>
             </div>
           </fieldset>
-        </div>        
+        </div>
         <div class="block">
           <label for="zipcode" class="rim-form__field">County
             <div class="rim-form__select-wrapper">
@@ -1011,7 +990,7 @@
               </select>
             </div>
           </label>
-        </div>        
+        </div>
         <div class="block">
           <fieldset class="rim-form__field">
             <legend>Are You</legend>
@@ -1026,7 +1005,7 @@
               </div>
             </div>
           </fieldset>
-        </div>        
+        </div>
         <div class="block">
           <label for="dob" class="rim-form__field has-icon">Application Date
             <input id="dob" type="date" placeholder="DD/MM/YYYY">
@@ -1068,7 +1047,7 @@
           </div>
         </div>
         <div class="block block-laptop-6">
-          <div class="rim-form__field rim-form__field--fancy">          
+          <div class="rim-form__field rim-form__field--fancy">
             <div class="rim-form__select-wrapper">
               <select name="County Select" id="county" required placeholder="County">
                 <option value=""></option>

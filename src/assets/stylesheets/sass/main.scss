@@ -21,26 +21,31 @@
 @import "animate"; // leveraging animate.css
 @import "vue-transitions";
 
-// sass
+// initial structure
 @import "grid";
 @import "base";
-@import "menu";
-@import "crm-banner";
-@import "buttons";
-@import "cards";
-@import "forms";
-@import "info-box";
 @import "layout";
-@import "lists";
-@import "messages";
-@import "pills";
-@import "posts";
-@import "tables";
+
+// components, utilities, etc
 @import "accordion";
 @import "blocks";
-@import "modal";
+@import "buttons";
+@import "cards";
+@import "crm-banner";
 @import "drawer";
+@import "forms";
+@import "info-box";
+@import "lists";
+@import "messages";
+@import "menu";
+@import "modal";
+@import "pills";
+@import "posts";
 @import "quote";
-@import "wistia";
+@import "tables";
+@import "tooltip";
+
+// special and print
 @import "ie-specific";
 @import "print";
+@import "wistia";

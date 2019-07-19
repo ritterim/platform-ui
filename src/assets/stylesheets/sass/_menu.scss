@@ -208,25 +208,6 @@
       }
     }
   }
-
-  .my {
-
-    span {
-      font-family: serif;
-      font-size: map-get($font-percentage, 'lg');
-      font-style: italic;
-      font-weight: bold;
-      opacity: .7;
-      padding-right: .2rem;
-    }
-
-    &:hover {
-      .dropdown-menu {
-        opacity: 1;
-        visibility: visible;
-      }
-    }
-  }
 }
 
 .agent-contact {
@@ -265,13 +246,19 @@
 
     &__group {
       display: flex;
-      width: 100%;
       flex: 1;
+      flex-direction: column;
+      width: 100%;
+
       .crm-menu__item {
         flex-direction: column;
         justify-content: space-around;
         img {
           margin-bottom: $spacer / 2;
+          transition: $transitions;
+          &:not(.mini-image) {
+            display: none;
+          }
         }
         &.active {
           &:before, &:after {
@@ -299,11 +286,12 @@
       transition: $transitions;
 
       img {
-        left: $spacer;
-        margin-bottom: $spacer / 2;
-        max-width: $spacer * 4;
-        max-height: map-get($spacers, 5);
-        margin: 0 map-get($spacers, 2);
+        max-height: map-get($spacers, 4);
+        transition: $transitions;
+      }
+
+      span {
+        display: none;
       }
 
       &:hover {
@@ -316,28 +304,6 @@
         box-shadow: inset 0 0 0 2px map-get($brand-colors, 'salmon');
         text-shadow: 1px 0 0 currentColor;
         position: relative;
-
-        &:before {
-          background-color: $primary-background;
-          border-radius: map-get($radius, 'button') * 100;
-          content: "";
-          height: 26px;
-          width: 26px;
-          position: absolute;
-          right: -.8rem;
-          z-index: 5;
-        }
-
-        &:after {
-          color: map-get($brand-colors, 'salmon');
-          content: "\f058";
-          font-family: "Font Awesome 5 Pro";
-          font-weight: bold;
-          font-size: map-get($font-percentage, 'xxl');
-          position: absolute;
-          right: -(map-get($spacers, 3));
-          z-index: 10;
-        }
       }
     }
   }
@@ -384,7 +350,10 @@
   }
 
   .today {
-    padding: map-get($spacers, 3);
+    height: 12rem;
+    transform: rotate(-90deg);
+    transition: $transitions;
+    white-space: nowrap;
     @extend %flex-center;
   }
 }

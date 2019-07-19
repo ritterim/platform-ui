@@ -20,7 +20,7 @@
     top: 50%;
     transform: translate(50%, 50%);
     cursor: pointer;
-    left: 24vw;
+    left: 4vw;
     margin-left: -.2rem;
     padding: .5rem;
     position: fixed;
@@ -32,14 +32,79 @@
   }
   &.toggle {
     aside {
-      margin-left: -20vw;
+      margin-left: 0;
+      width: 25vw;
       .aside-tab {
-        left: 4vw;
+        left: 24vw;
+      }
+      .today {
+        height: auto;
+        padding: map-get($spacers, 3);
+        transform: rotate(0deg);
+      }
+      .crm-menu__group {
+        flex-direction: row;
+      }
+      .crm-menu__item {
+        &[data-tooltip] {
+          &:hover:after {
+            background-color: inherit;
+            border-radius: inherit;
+            content: "\f058";
+            left: inherit;
+            padding: 0;
+          }
+        }
+        span {
+          display: block;
+        }
+        img {
+          left: $spacer;
+          margin-bottom: $spacer / 2;
+          max-width: $spacer * 4;
+          max-height: map-get($spacers, 5);
+          margin: 0 map-get($spacers, 2);
+          &.mini-image {
+            display: none;
+          }
+          &:not(.mini-image) {
+            display: block;
+          }
+        }
+        &:not(.active) {
+          &[data-tooltip]:hover:after {
+            display: none;
+          }
+        }
+        &.active {
+          &:before {
+            background-color: map-get($greyscale, 'white');
+            border-radius: map-get($radius, 'button') * 100;
+            content: "";
+            height: 26px;
+            width: 26px;
+            position: absolute;
+            right: -.8rem;
+            z-index: 5;
+          }
+
+          &:after {
+            color: map-get($brand-colors, 'salmon');
+            content: "\f058";
+            font-family: "Font Awesome 5 Pro";
+            font-weight: bold;
+            font-size: map-get($font-percentage, 'xxl');
+            position: absolute;
+            right: -(map-get($spacers, 3));
+            z-index: 10;
+          }
+
+        }
       }
     }
     main {
-      margin-left: 5vw;
-      width: 95vw;
+      margin-left: 25vw;
+      width: 75vw;
     }
   }
 
@@ -47,15 +112,17 @@
     margin-top: $menu-height;
     position: fixed;
     transition: $transitions;
-    width: 25vw;
+    margin-left: 0;
+    width: 5vw;
     z-index: 50;
   }
   main {
-    margin-left: 25vw;
-    width: 75vw;
+    margin-left: 5vw;
+    width: 95vw;
     transition: $transitions;
-    .crm-view_item {
+    .crm-menu__item {
       padding: map-get($spacers, 4);
+
     }
   }
 }
