@@ -256,6 +256,9 @@
         img {
           margin-bottom: $spacer / 2;
           transition: $transitions;
+          &:not(.mini-image) {
+            display: none;
+          }
         }
         &.active {
           &:before, &:after {

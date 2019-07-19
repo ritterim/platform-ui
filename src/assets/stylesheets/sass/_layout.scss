@@ -46,8 +46,11 @@
         flex-direction: row;
       }
       .crm-menu__item {
+        &[data-tooltip]:after {
+          display: none;
+        }
         span {
-          display: flex;
+          display: block;
         }
         img {
           left: $spacer;
@@ -55,6 +58,12 @@
           max-width: $spacer * 4;
           max-height: map-get($spacers, 5);
           margin: 0 map-get($spacers, 2);
+          &.mini-image {
+            display: none;
+          }
+          &:not(.mini-image) {
+            display: block;
+          }
         }
         &.active {
           &:before {
