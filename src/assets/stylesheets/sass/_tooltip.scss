@@ -15,7 +15,7 @@
     background-color: map-get($greyscale, 'dark');
     border-radius: map-get($radius, 'default');
     color: map-get($greyscale, 'white');
-    content: attr(data-tooltip);
+    content: attr(data-rim-tooltip);
     font-size: map-get($font-percentage, 'sm');
     font-weight: normal;
     margin-left: .3rem;

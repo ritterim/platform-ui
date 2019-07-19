@@ -46,7 +46,7 @@
         flex-direction: row;
       }
       .crm-menu__item {
-        &[data-tooltip] {
+        &[data-rim-tooltip] {
           &:hover:after {
             background-color: inherit;
             border-radius: inherit;
@@ -72,7 +72,7 @@
           }
         }
         &:not(.active) {
-          &[data-tooltip]:hover:after {
+          &[data-rim-tooltip]:hover:after {
             display: none;
           }
         }
