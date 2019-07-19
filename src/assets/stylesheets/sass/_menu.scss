@@ -281,12 +281,12 @@
       flex: 1;
       font-weight: normal;
       justify-content: center;
-      padding: $spacer 0;
+      padding: 0;
       width: 100%;
       transition: $transitions;
 
       img {
-        max-height: map-get($spacers, 4);
+        max-height: $spacer * 1.5;
         transition: $transitions;
       }
 
