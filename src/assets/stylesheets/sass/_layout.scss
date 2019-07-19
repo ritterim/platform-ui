@@ -46,6 +46,7 @@
         flex-direction: row;
       }
       .crm-menu__item {
+        padding: $spacer 0;
         &[data-rim-tooltip] {
           &:hover:after {
             background-color: inherit;
