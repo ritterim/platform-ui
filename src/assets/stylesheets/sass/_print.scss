@@ -1,3 +1,7 @@
+.show-print {
+  display: none;
+}
+
 @media print {
   // initial print css to combat rams print css
   body {

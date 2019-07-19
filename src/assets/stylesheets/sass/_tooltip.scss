@@ -1,14 +1,14 @@
 // Tooltip
 //
 // This is a simple `data-attribute` alternative to the `title` tag.
-// Add your tooltip text to a `data-tooltip` attribute on any item you want a tooltip.
+// Add your tooltip text to a `data-rim-tooltip` attribute on any item you want a tooltip.
 //
 // Markup:
-// <div data-tooltip="This is really something!">Hover over me</div>
+// <div data-rim-tooltip="This is really something!">Hover over me</div>
 //
 // Styleguide Components.Tooltip
 
-[data-tooltip] {
+[data-rim-tooltip] {
   position: relative;
   transition: $transitions;
   &:hover:after {
