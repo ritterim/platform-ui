@@ -255,6 +255,7 @@
       .crm-menu__item {
         flex-direction: column;
         justify-content: space-around;
+
         img {
           margin-bottom: $spacer / 2;
           transition: $transitions;
@@ -283,7 +284,7 @@
       flex: 1;
       font-weight: normal;
       justify-content: center;
-      padding: 0;
+      padding: 0rem;
       width: 100%;
       transition: $transitions;
 
