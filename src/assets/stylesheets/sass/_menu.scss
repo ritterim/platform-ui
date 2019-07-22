@@ -234,11 +234,13 @@
     display: flex;
     flex-direction: column;
     flex: 1;
+    overflow: visible;
 
     @media (max-height: $max-height) {
       overflow-y: scroll;
       overflow: -moz-scrollbars-none;
       -ms-overflow-style: none;
+      overflow: visible;
       &::-webkit-scrollbar {
         width: 0 !important
         }
