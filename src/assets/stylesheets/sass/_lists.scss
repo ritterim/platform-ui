@@ -105,16 +105,17 @@ ul {
           font-family: 'Font Awesome 5 Pro';
           font-size: map-get($font-percentage, 'lg') * 2;
           font-weight: 900;
-          left: 45%;
+          left: 50%;
           position: absolute;
-          top: 30%;
+          top: 50%;
           text-shadow: 0 0 .5rem map-get($greyscale, 'black');
+          transform: translate(-50%, -50%);
           transition: $transitions;
           z-index: 2;
         }
         &:hover {
           &:after {
-            transform: scale(1.2);
+            transform: translate(-50%, -50%) scale(1.2);
             text-shadow: 0 0 1rem map-get($greyscale, 'black');
           }
         }
