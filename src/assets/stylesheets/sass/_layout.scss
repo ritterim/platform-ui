@@ -78,6 +78,7 @@
           }
         }
         &.active {
+          pointer-events: none;
           &:before {
             background-color: map-get($greyscale, 'white');
             border-radius: map-get($radius, 'button') * 100;
