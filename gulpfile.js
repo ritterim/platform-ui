@@ -17,6 +17,11 @@ function serve() {
   });
 }
 
+function copyStaticAssets() {
+  return src(['src/assets/images/**/*', 'src/assets/stylesheets/**/*', '!src/assets/stylesheets/sass/**'], { base: 'src/assets' })
+    .pipe(dest('./styleguide/site-assets'));
+}
+
 function css() {
   return src('src/assets/stylesheets/sass/main.scss')
     .pipe(sass())
@@ -50,9 +55,10 @@ function watchFiles() {
   watch("./src/assets/js/src/*", js);
 }
 
-exports.build = parallel(series(css, styleguide), js);
+exports.build = series(css, js, styleguide, copyStaticAssets);
 exports.css = css;
 exports.js = js;
 exports.styleguide = styleguide;
 exports.serve = serve;
-exports.default = parallel(series(css, styleguide), js, serve, watchFiles);
+exports.copyStaticAssets = copyStaticAssets;
+exports.default = parallel(series(css, styleguide, copyStaticAssets), js, serve, watchFiles);
