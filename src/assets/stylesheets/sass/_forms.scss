@@ -397,7 +397,6 @@ input[type="radio"] {
         opacity: 1;
       }
 
-      input:not(:placeholder-shown) + label,
       input:focus + label {
         transform: translate(0, 0) scale(1);
         cursor: pointer;

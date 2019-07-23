@@ -93,6 +93,151 @@
 //
 // Styleguide Components.Cards.Videos
 
+// Content Overflow
+// 
+// If you have a lot of content in a card that is causing other cards to grow too much, you could add the class
+// `rim-card__content--scroll` to the `rim-card__content` in order to set a hright and add an `overflow-y: scroll;`.
+// 
+// Markup:
+// <div class="block-container mobile-up-3">
+//   <div class="block">
+//     <div class="rim-card flex flex--column flex--justify-between">
+//         <div class="rim-card__header">
+//             <div class="rim-card__group">
+//                 <h2 class="rim-card__title rim-card__title--normal">Test header</h2>
+//             </div>
+//             <div class="rim-card__header-actions"><a role="button" aria-label="remove"
+//                     class="rim-card-action text-light"><i class="fas fa-trash-alt" aria-hidden="true"></i></a>
+//                 <a role="button" aria-label="edit" class="rim-card-action text-light"><i class="fas fa-edit"
+//                         aria-hidden="true"></i></a></div>
+//         </div>
+//         <div class="rim-card__content">
+//             <p>Yada Yada</p>
+//         </div>
+//         <div class="rim-card__footer rim-card__footer">
+//             <div>
+//                 <p><i class="fas fa-calendar-alt text-skyblue" aria-hidden="true"></i> <time
+//                         datetime="22 Jul 2019">22 Jul 2019</time></p>
+//                 <p><i class="fas fa-clock text-skyblue" aria-hidden="true"></i> <time datetime="9:15 am">9:15
+//                         am</time></p>
+//             </div>
+//             <div class="div-btn">
+//                 <div class="check-circle">
+//                     <div class="pill pill--circle text-light"><i class="fas fa-check" aria-hidden="true"></i>
+//                     </div>
+//                     <p class="check-circle__status">Complete</p>
+//                 </div>
+//             </div>
+//         </div>
+//         <div class="flex">
+//             <!---->
+//         </div>
+//     </div>
+//   </div>
+//   <div class="block">
+//     <div class="rim-card flex flex--column flex--justify-between">
+//         <div class="rim-card__header">
+//             <div class="rim-card__group">
+//                 <h2 class="rim-card__title rim-card__title--normal">Testing stuff</h2>
+//             </div>
+//             <div class="rim-card__header-actions"><a role="button" aria-label="remove"
+//                     class="rim-card-action text-light"><i class="fas fa-trash-alt" aria-hidden="true"></i></a>
+//                 <a role="button" aria-label="edit" class="rim-card-action text-light"><i class="fas fa-edit"
+//                         aria-hidden="true"></i></a></div>
+//         </div>
+//         <div class="rim-card__content rim-card__content--scroll">
+//             <p>Desc</p>
+//             <p>Desc</p>
+//             <p>Desc</p>
+//             <p>Desc</p>
+//             <p>Desc</p>
+//             <p>Desc</p>
+//             <p>Desc</p>
+//             <p>Desc</p>
+//             <p>Desc</p>
+//             <p>Desc</p>
+//             <p>Desc</p>
+//             <p>Desc</p>
+//             <p>Desc</p>
+//             <p>Desc</p>
+//             <p>Desc</p>
+//             <p>Desc</p>
+//             <p>Desc</p>
+//             <p>Desc</p>
+//             <p>Desc</p>
+//             <p>Desc</p>
+//             <p>Desc</p>
+//             <p>Desc</p>
+//             <p>Desc</p>
+//             <p>Desc</p>
+//             <p>Desc</p>
+//             <p>Desc</p>
+//             <p>Desc</p>
+//             <p>Desc</p>
+//             <p>Desc</p>
+//             <p>Desc</p>
+//             <p>Desc</p>
+//         </div>
+//         <div class="rim-card__footer rim-card__footer">
+//             <div>
+//                 <p><i class="fas fa-calendar-alt text-skyblue" aria-hidden="true"></i> <time
+//                         datetime="23 Jul 2019">23 Jul 2019</time></p>
+//                 <p><i class="fas fa-clock text-skyblue" aria-hidden="true"></i> <time datetime="12:00 am">12:00
+//                         am</time></p>
+//             </div>
+//             <div class="div-btn">
+//                 <div class="check-circle">
+//                     <div class="pill pill--circle text-light"><i class="fas fa-check" aria-hidden="true"></i>
+//                     </div>
+//                     <p class="check-circle__status">Complete</p>
+//                 </div>
+//             </div>
+//         </div>
+//         <div class="flex">
+//             <!---->
+//         </div>
+//     </div>
+//   </div>
+//   <div class="block">
+//     <div class="rim-card flex flex--column flex--justify-between">
+//         <div class="rim-card__header">
+//             <div class="rim-card__group">
+//                 <h2 class="rim-card__title rim-card__title--normal">Call Carol</h2>
+//             </div>
+//             <div class="rim-card__header-actions"><a role="button" aria-label="remove"
+//                     class="rim-card-action text-light"><i class="fas fa-trash-alt" aria-hidden="true"></i></a>
+//                 <a role="button" aria-label="edit" class="rim-card-action text-light"><i class="fas fa-edit"
+//                         aria-hidden="true"></i></a></div>
+//         </div>
+//         <div class="rim-card__content">
+//             <p>Carol from accounting need to get some updates.</p>
+//         </div>
+//         <div class="rim-card__footer rim-card__footer">
+//             <div>
+//                 <p><i class="fas fa-calendar-alt text-skyblue" aria-hidden="true"></i> <time
+//                         datetime="23 Jul 2019">23 Jul 2019</time></p>
+//                 <p><i class="fas fa-clock text-skyblue" aria-hidden="true"></i> <time datetime="6:30 pm">6:30
+//                         pm</time></p>
+//             </div>
+//             <div class="div-btn">
+//                 <div class="check-circle">
+//                     <div class="pill pill--circle text-light"><i class="fas fa-check" aria-hidden="true"></i>
+//                     </div>
+//                     <p class="check-circle__status">Complete</p>
+//                 </div>
+//             </div>
+//         </div>
+//         <div class="flex">
+//             <!---->
+//         </div>
+//     </div>
+//   </div>
+// </div>
+// 
+// Weight: 4
+// 
+// Styleguide Components.Cards.Overflow
+
 
 .rim-card {
   background-color: map-get($greyscale, 'white');
@@ -186,6 +331,14 @@
       .alert & {
         transform: rotate(-25deg);
       }
+    }
+  }
+
+  &__content {
+
+    &--scroll {
+      height: 10rem;
+      overflow-y: scroll;
     }
   }
 
