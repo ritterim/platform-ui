@@ -19,7 +19,8 @@ function serve() {
 
 function copyStaticAssets() {
   return src(['src/assets/images/**/*', 'src/assets/stylesheets/**/*', '!src/assets/stylesheets/sass/**'], { base: 'src/assets' })
-    .pipe(dest('./styleguide/site-assets'));
+    .pipe(dest('./styleguide/site-assets'))
+    .pipe(connect.reload());
 }
 
 function css() {
@@ -53,6 +54,7 @@ function styleguide() {
 function watchFiles() {
   watch("./src/assets/stylesheets/sass/*", css);
   watch("./src/assets/js/src/*", js);
+  watch(["./src/assets/js/src/*", "./src/assets/stylesheets/sass/*"], copyStaticAssets);
 }
 
 exports.build = series(css, js, styleguide, copyStaticAssets);
