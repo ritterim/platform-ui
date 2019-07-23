@@ -7,9 +7,9 @@
 //
 // `.flex--center-content` centers content horizontaly and vertically. it includes `display: flex`
 //
-// | Class Name             |                    |                     |                      |
-// | ---------------------- | ------------------ | ------------------- | -------------------- |
-// | `flex--align-center`   | `flex--column`     | `flex--justify-between` | `flex--justify-end` |
+// | Class Name             |                    |                     |                      |                      |
+// | ---------------------- | ------------------ | ------------------- | -------------------- | -------------------- |
+// | `flex--align-center`   | `flex--column`     | `flex--justify-between` | `flex--justify-end` | `flex--grow` |
 //
 // Styleguide Utilities.Flex
 .flex {
@@ -29,6 +29,9 @@
     &-end {
       justify-content: flex-end;
     }
+  }
+  &--grow {
+    flex-grow: 1;
   }
 }
 
