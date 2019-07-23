@@ -173,7 +173,7 @@
     }
 
     &:after {
-      @extend %loader;
+      @extend %rim-loader;
       @include square(1rem);
       box-sizing: border-box;
       content: '';
