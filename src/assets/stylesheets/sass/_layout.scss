@@ -18,10 +18,9 @@
     border: 1px solid map-get($greyscale, 'light-mid');
     color: map-get($greyscale, 'base');
     top: 50%;
-    transform: translate(50%, 50%);
     cursor: pointer;
-    left: 4vw;
-    margin-left: -.2rem;
+    left: 4rem;
+    margin-left: -1px;
     padding: .5rem;
     position: fixed;
     transition: $transitions;
@@ -35,7 +34,7 @@
       margin-left: 0;
       width: 25vw;
       .aside-tab {
-        left: 24vw;
+        left: 25vw;
       }
       .today {
         height: auto;
@@ -115,7 +114,7 @@
     position: fixed;
     transition: $transitions;
     margin-left: 0;
-    width: 5vw;
+    width: 4rem;
     z-index: 50;
   }
   main {
