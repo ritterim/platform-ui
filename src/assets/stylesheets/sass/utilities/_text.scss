@@ -40,6 +40,9 @@
   &--bold {
     font-weight: bold;
   }
+  &--nowrap {
+    white-space: nowrap;
+  }
   // text shadow using $greyscale
   @each $name, $color in $greyscale {
     &--shadow-#{$name} {
