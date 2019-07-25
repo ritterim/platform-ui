@@ -94,10 +94,10 @@
 // Styleguide Components.Cards.Videos
 
 // Content Overflow
-// 
+//
 // If you have a lot of content in a card that is causing other cards to grow too much, you could add the class
 // `rim-card__content--scroll` to the `rim-card__content` in order to set a hright and add an `overflow-y: scroll;`.
-// 
+//
 // Markup:
 // <div class="block-container mobile-up-3">
 //   <div class="block">
@@ -233,9 +233,9 @@
 //     </div>
 //   </div>
 // </div>
-// 
+//
 // Weight: 4
-// 
+//
 // Styleguide Components.Cards.Overflow
 
 
@@ -314,7 +314,6 @@
       font-size: 100%;
       margin-bottom: 0;
       text-transform: uppercase;
-      white-space: nowrap;
 
       &--normal {
           text-transform: none;
