@@ -1,0 +1,14 @@
+.icon {
+  &--svg {
+    height: map-get($spacers, 4);
+    &-small {
+      height: $spacer;
+    }
+    &-large {
+      height: map-get($spacers, 5);
+    }
+    &-xlarge {
+      height: map-get($spacers, 6);
+    }
+  }
+}
