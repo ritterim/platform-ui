@@ -81,34 +81,177 @@
 // 
 // 
 // Since the `block-container` is based on a 12 column grid, each class number represents how many columns the `block` 
-// will take up at that resolution. 
+// will take up at that resolution. If you want the blocks to take up an entire row, the values in the classes should 
+// equal 12. Each value represents the amount of columns the block will take up in the row.
 // 
 // **Note:** Some examples also use the class `rim-card`. This is for style guide purposes only. In the example below 
 // 
 // 
 // Markup:
 // <div class="block-container">
-//   <div class="rim-card block block-6 block-tablet-8 block-laptop-9">
-//     block-tablet-8<br> block-laptop-9
+//   <div class="rim-card block block-6">
+//     block-6
 //   </div>
-//   <div class="rim-card block block-6 block-tablet-4 block-laptop-3">
-//     block-tablet-4<br> block-laptop-3
+//   <div class="rim-card block block-6">
+//     block-6
 //   </div>
-// </div>
-// <div class="block-container">
-//   <div class="rim-card block block-tablet-2 block-laptop-4">
-//     block-tablet-2 <br>block-laptop-4
+//   <div class="rim-card block block-4">
+//     block-4
 //   </div>
-//   <div class="rim-card block block-tablet-10 block-laptop-8">
-//     block-tablet-10 <br>block-laptop-8
+//   <div class="rim-card block block-8">
+//     block-8
 //   </div>
 // </div>
-// 
-// If you scale the screen you will see the change in width on the blocks.
 // 
 // Weight: 2
 // 
 // Styleguide Blocks.Block
+
+// Responsive
+// 
+// You can build responsive layouts while making each blocks specific width at different resolutions. In order to do 
+// this you can leverage out `breakpoint` values within the block classes.
+// 
+// 
+// In the following example you will see a `form` that scales from the smallest screen up to larger screens. The
+// `.block` class has `width: 100%` alone, so on a mobile device the blocks will already be stacked. As we scale up 
+// and have more real estate, we can add different classes to change the layout of the `form`.
+// 
+// 
+// Markup:
+// <form action="" class="rim-form block-container blocks-px-2 blocks-mb-3">
+//   <div class="block block-tablet-6 block-laptop-4">
+//     <div class="rim-form__field rim-form__field--fancy">
+//       <input id="first-name" type="text" required placeholder="Jane">
+//       <label for="first-name">First Name</label>
+//     </div>
+//   </div>
+//   <div class="block block-tablet-6 block-laptop-4">
+//     <div class="rim-form__field rim-form__field--fancy">
+//       <input id="last-name" type="text" required placeholder="Smith">
+//       <label for="last-name">Last Name</label>
+//     </div>
+//   </div>
+//   <div class="block block-tablet-4">
+//     <div class="rim-form__field rim-form__field--fancy">
+//       <input id="dob" type="date" required placeholder="01/23/1985">
+//       <label for="dob">Age or DOB</label>
+//     </div>
+//   </div>
+//   <div class="block block-tablet-4">
+//     <div class="rim-form__field rim-form__field--fancy">
+//       <input id="time" type="time" required placeholder="10:00 AM">
+//       <label for="time">What Time</label>
+//     </div>
+//   </div>
+//   <div class="block block-tablet-4">
+//     <div class="rim-form__field rim-form__field--fancy">
+//       <input id="zipcode" type="tel" pattern="^\d{5,6}(?:[-\s]\d{4})?$" required placeholder="12345">
+//       <label for="zipcode">ZIP Code</label>
+//     </div>
+//   </div>
+//   <div class="block block-tablet-6 block-laptop-4">
+//     <div class="rim-form__field rim-form__field--fancy">
+//       <div class="rim-form__select-wrapper">
+//         <select name="County Select" id="county" required placeholder="County">
+//           <option value=""></option>
+//           <option value="County1">County 1</option>
+//           <option value="County2">County 2</option>
+//           <option value="County3">County 3</option>
+//           <option value="County4">County 4</option>
+//           <option value="County5">County 5</option>
+//           <option value="County6">County 6</option>
+//         </select>
+//         <label for="county">County</label>
+//       </div>
+//     </div>
+//   </div>
+// </form>
+// 
+// Weight: 3
+// 
+// Styleguide Blocks.Responsive
+
+// Spacing
+// 
+// The `.block` class has 0 padding and margin. The idea is to leverage our spacing utilities and be able to make 
+// as specific layouts as possible. You can use the spacing modifiers in 2 ways within the `block` layout.
+// 
+// Weight: 4
+// 
+// Styleguide Blocks.Spacing
+
+// Individual Blocks
+// 
+// The first option is to put the utility classes on the `.block` class itself. By doing this you can put different 
+// spacing utilities on each block.
+// 
+// Markup:
+// <div class="block-container">
+//   <div class="block block-6 px-3 my-3">
+//     <div class="rim-card"> 
+//       block-6
+//     </div>
+//   </div>
+//   <div class="block block-6 px-2 my-3">
+//     <div class="rim-card"> 
+//       block-6
+//     </div>
+//   </div>
+//   <div class="block block-4 px-2 my-3">
+//     <div class="rim-card"> 
+//       block-4
+//     </div>
+//   </div>
+//   <div class="block block-8 px-5 my-3">
+//     <div class="rim-card"> 
+//       block-8
+//     </div>
+//   </div>
+// </div>
+// 
+// Weight: 5
+// 
+// Styleguide Blocks.Spacing.Blocks
+
+// Container
+// 
+// The second option is to add a spacing utility to the `block-container`. This would be the best option if you 
+// wanted to build a layout where each `block` had the same padding and or margin. The specific classes you use 
+// start with `.blocks-` because, although you are adding the classes to the `block-container`, you're using these
+// classes to add spacing to the blocks. You can use these classes as well as the spacing utility right on the 
+// `block-container` if you need to give it some specific spacing as well. 
+// 
+// 
+// The example below gives each block `padding: .5rem;` and `margin-bottom: 1rem;`. 
+// 
+// Markup:
+// <div class="block-container blocks-px-2 blocks-mb-3">
+//   <div class="block block-6">
+//     <div class="rim-card"> 
+//       block-6
+//     </div>
+//   </div>
+//   <div class="block block-6">
+//     <div class="rim-card"> 
+//       block-6
+//     </div>
+//   </div>
+//   <div class="block block-4">
+//     <div class="rim-card"> 
+//       block-4
+//     </div>
+//   </div>
+//   <div class="block block-8">
+//     <div class="rim-card"> 
+//       block-8
+//     </div>
+//   </div>
+// </div>
+// 
+// Weight: 6
+// 
+// Styleguide Blocks.Spacing.Container
 
 
 // Block layout
