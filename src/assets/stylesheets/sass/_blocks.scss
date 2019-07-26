@@ -253,6 +253,106 @@
 // 
 // Styleguide Blocks.Spacing.Container
 
+// Block Utilities
+// 
+// By now you understand that the size of the blocks are based on the size classes we give them. But the content within 
+// the blocks may or may not have a set width. The block layout, for the most part looks pretty good. But there could 
+// be a situation where you may want one block to change. This would probably only be most useful for the layouts using 
+// the `{breakpoint}-up-{value}` classes.
+// 
+// 
+// The utility classes are `block--shrink` and `block--fill`. You can also you our breakpoint values on the class to make 
+// the block have the specific style at a different screen size. EXample: `block-tablet--shrink' would add `width: auto` 
+// to the `block` at the tablet width and up.
+// 
+// Weight: 7
+// 
+// Styleguide Blocks.Utility
+
+// Width Auto
+// 
+// So say you need a block to have `width: auto` so that it's the size of the content rather than matching the width of 
+// the other blocks in the list. For this example you could add the class `block--shrink` to the `block`.
+// 
+// 
+// Markup:
+// <div class="block-container blocks-px-2 blocks-py-2 tablet-up-3 laptop-up-4">
+//   <div class="block">
+//     <div class="rim-card">
+//       Test
+//     </div>
+//   </div>
+//   <div class="block">
+//     <div class="rim-card">
+//       Test
+//     </div>
+//   </div>
+//   <div class="block block--shrink">
+//     <div class="rim-card">
+//       Test
+//     </div>
+//   </div>
+//   <div class="block">
+//     <div class="rim-card">
+//       Test
+//     </div>
+//   </div>
+// </div>
+// 
+// Weight: 8
+// 
+// Styleguide Blocks.Utility.Shrink
+
+// Flex Grow
+// 
+// If you want to make a block fill any left over space there might be, you could add the class `block--fill`. This will 
+// add `flex-grow: 1` to the block.
+// 
+// 
+// Markup:
+// <div class="block-container blocks-px-2 blocks-py-2 tablet-up-3 laptop-up-4">
+//   <div class="block">
+//     <div class="rim-card">
+//       Test
+//     </div>
+//   </div>
+//   <div class="block">
+//     <div class="rim-card">
+//       Test
+//     </div>
+//   </div>
+//   <div class="block">
+//     <div class="rim-card">
+//       Test
+//     </div>
+//   </div>
+//   <div class="block">
+//     <div class="rim-card">
+//       Test
+//     </div>
+//   </div>
+//   <div class="block">
+//     <div class="rim-card">
+//       Test
+//     </div>
+//   </div>
+//   <div class="block">
+//     <div class="rim-card">
+//       Test
+//     </div>
+//   </div>
+//   <div class="block block--fill">
+//     <div class="rim-card">
+//       Test
+//     </div>
+//   </div>
+// </div>
+// 
+// 
+// Weight: 9
+// 
+// Styleguide Blocks.Utility.Fill
+
 
 // Block layout
 .block-container {
