@@ -1,211 +1,555 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Welcome to Rams John</title>
+    <title>Welcome to Rams John</title>
 
-  <link rel="stylesheet" href="/src/assets/stylesheets/platform-ui.min.css">
-  <link rel="canonical" href="http://localhost:8001/">
-</head>
+    <link rel="stylesheet" href="/src/assets/stylesheets/platform-ui.min.css">
+    <link rel="canonical" href="http://localhost:8001/">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/src/assets/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/src/assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/src/assets/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/src/assets/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/src/assets/images/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/src/assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <script src="https://kit.fontawesome.com/9adb49694f.js"></script>
+  </head>
 
 <body class="platform">
   <header class="site-header">
-    <nav class="site-menu">
-      <div class="site-menu__item has-dropdown">
-        <span class="pill--circle background-purple mr-2">
-          JH
-        </span>
-        <div class="font-lg">
-          Hello John
-        </div>
-        <div class="dropdown-menu agent-profile open-for-testing">
-          <h2 class="agent-profile__heading">Profile</h2>
-          <div class="agent-profile__content-wrapper">
-            <div class="agent-profile__content">
-              <ul class="agent-profile__info-list">
-                <li class="agent-profile__info-list-item">
-                  <i class="fas fa-user"></i>
-                  <span>Gregory Gudis</span>
-                </li>
-                <li class="agent-profile__info-list-item">
-                  <i class="fas fa-home"></i>
-                  <address>
-                    51 Haddonfield Rd, <br>
-                    Cherry Hill, NJ 08002
-                  </address>
-                </li>
-                <li class="agent-profile__info-list-item">
-                  <i class="fas fa-paper-plane"></i>
-                  <a href="mailto:Greg.guids@bgaininsurance.net">Greg.guids@bgaininsurance.net</a>
-                </li>
-                <li class="agent-profile__info-list-item">
-                    <i class="fas fa-phone"></i>
-                  <a href="tel:610-828-3522x302">610-828-3522x302</a>
-                </li>
-                <li class="agent-profile__info-list-item">
-                    <i class="fas fa-sign-out-alt"></i>
-                  <a href="#">Sign Out</a>
-                </li>
-              </ul>
-            </div>
-            <div class="agent-profile__content">
-              <div class="pill background-olive">Active</div>
-              <dl class="agent-profile__status-list">
-                <div class="agent-profile__status-list-item">
-                  <dt>CT</dt><dd>Email</dd>
-                </div>
-                <div class="agent-profile__status-list-item">
-                  <dt>MU</dt><dd>Ritter Insurance Marketing</dd>
-                </div>
-                <div class="agent-profile__status-list-item">
-                  <dt>GPL</dt><dd>8</dd>
-                </div>
-                <div class="agent-profile__status-list-item">
-                  <dt>NPN</dt><dd>9006591</dd>
-                </div>
-              </dl>
+      <nav class="site-menu">
+        <div class="site-menu__item has-dropdown" class="mb-2">
+          <span class="card__header-icon pill--circle background-purple mr-2 text-skyblue">
+            JH
+          </span>
+          <div class="font-lg">
+            Hello John
+          </div>
+          <div class="dropdown-menu agent-profile open-for-testing">
+            <h2 class="agent-profile__heading">Profile</h2>
+            <div class="agent-profile__content-wrapper">
+              <div class="agent-profile__content">
+                <ul class="agent-profile__info-list">
+                  <li class="agent-profile__info-list-item">
+                    <i class="fas fa-user"></i>
+                    <span>John Smith</span>
+                  </li>
+                  <li class="agent-profile__info-list-item">
+                    <i class="fas fa-home"></i>
+                    <address>
+                      123 Street, <br>
+                      City, ST 12345
+                    </address>
+                  </li>
+                  <li class="agent-profile__info-list-item">
+                    <i class="fas fa-paper-plane"></i>
+                    <a href="">email@email.net</a>
+                  </li>
+                  <li class="agent-profile__info-list-item">
+                      <i class="fas fa-phone"></i>
+                    <a href="tel:123-456-7890">123-456-7890</a>
+                  </li>
+                  <li class="agent-profile__info-list-item">
+                      <i class="fas fa-sign-out-alt"></i>
+                    <a href="#">Sign Out</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="agent-profile__content">
+                <div class="pill background-olive">Active</div>
+                <dl class="agent-profile__status-list">
+                  <div class="agent-profile__status-list-item">
+                    <dt>CT</dt><dd>Email</dd>
+                  </div>
+                  <div class="agent-profile__status-list-item">
+                    <dt>MU</dt><dd>Ritter Insurance Marketing</dd>
+                  </div>
+                  <div class="agent-profile__status-list-item">
+                    <dt>GPL</dt><dd>8</dd>
+                  </div>
+                  <div class="agent-profile__status-list-item">
+                    <dt>NPN</dt><dd>9006591</dd>
+                  </div>
+                </dl>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-
-      <div class="site-menu__item search">
-      </div>
-      <div class="site-menu__item has-dropdown my">
-        <span>my</span> Ritter
-        <i class="ml-2 fas fa-angle-down"></i>
-        <div class="dropdown-menu">
-          <a class="dropdown-menu__item" href="#">
-            <i class="fas fa-file-alt"></i>
-            Contracts
-          </a>
-          <a class="dropdown-menu__item" href="#">
-            <i class="fas fa-file-alt"></i>
-            Submissions
-          </a>
-          <a class="dropdown-menu__item" href="#">
-            <i class="fas fa-users"></i>
-            Register Downlines
-          </a>
-          <a class="dropdown-menu__item" href="#">
-            <i class="fas fa-users"></i>
-            Hierarchy
-          </a>
+  
+        <div class="site-menu__item search">
         </div>
-      </div>
-      <div class="site-menu__item has-dropdown">
-        <i class="fas fa-ticket-alt rotate-45"></i>
-        <div class="dropdown-menu agent-contact">
-          <form action="" class="rim-form rim-form--stacked rim-form--light">
-            <label for="agent-name" class="rim-form__field">Name
-              <input id="agent-name" type="text" placeholder="First and Last Name">
-            </label>
-            <label for="agent-email" class="rim-form__field">Email
-              <input id="agent-email" type="email" placeholder="geg.gudis@bgainsurances.net">
-            </label>
-            <label for="agent-phone" class="rim-form__field">Phone
-              <input id="agent-phone" type="tel" placeholder="(610) 828-3553x302">
-            </label>
-            <label for="subject" class="rim-form__field">Subject
-              <input id="subject" type="text" placeholder="">
-            </label>
-            <label for="message" class="rim-form__field">Message
-              <textarea id="message" name="message" rows="10" ></textarea>
-            </label>
-            <div class="rim-form__field rim-form__button-group">
-              <button class="button button--post button--lg">Submit</button>
-            </div>
-          </form>
+        <div class="site-menu__item has-dropdown">
+          <i class="fas fa-ticket-alt rotate-45"></i>
+          <div class="dropdown-menu agent-contact">
+            <form action="" class="rim-form rim-form--stacked rim-form--light">
+              <label for="agent-name" class="rim-form__field">Name
+                <input id="agent-name" type="text" placeholder="First and Last Name">
+              </label>
+              <label for="agent-email" class="rim-form__field">Email
+                <input id="agent-email" type="email" placeholder="geg.gudis@bgainsurances.net">
+              </label>
+              <label for="agent-phone" class="rim-form__field">Phone
+                <input id="agent-phone" type="tel" placeholder="(610) 828-3553x302">
+              </label>
+              <label for="subject" class="rim-form__field">Subject
+                <input id="subject" type="text" placeholder="">
+              </label>
+              <label for="message" class="rim-form__field">Message
+                <textarea id="message" name="message" rows="10" ></textarea>
+              </label>
+              <div class="rim-form__field rim-form__button-group">
+                <button class="button button--post button--lg">Submit</button>
+              </div>
+            </form>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
   </header>
   <aside class="crm-actions">
+    <div class="aside-tab"><i class="fas fa-chevron-left" aria-hidden="true"></i></div>
     <div class="crm-actions__stats">
-      <div class="crm-actions__stats-header">
-        Quick Numbers
-      </div>
-      <div class="crm-actions__stats-group">
-        <div class="crm-actions__stat">
-          38
-          <div class="crm-actions__stat-label">
-            leads
-          </div>
+        <!-- To be added back
+        <div class="crm-actions__stats-header">
+            Quick Numbers
         </div>
-        <div class="crm-actions__stat">
-          45
-          <div class="crm-actions__stat-label">
-            incomplete<br>submissions
-          </div>
+        <div class="crm-actions__stats-group">
+            <div class="crm-actions__stat">
+                45
+                <div class="crm-actions__stat-label">
+                    incomplete<br>submissions
+                </div>
+            </div>
         </div>
-        <div class="crm-actions__stat">
-          8
-          <div class="crm-actions__stat-label">
-            tasks
-          </div>
-        </div>
-      </div>
+      -->
       <div class="today">
         <script type="text/javascript">
           var d = (new Date()).toString().split(' ').splice(1,3).join(' ');
           document.write(d);
         </script>
       </div>
-    </div>
-    <nav class="crm-menu">
-      <div class="crm-menu__item active">
-        <img src="/assets/images/crm-icons-color/overview.svg" alt="Overview">
-        Overview
-      </div>
-      <!-- <div class="crm-menu__group">
-        <div class="crm-menu__item">
-          <img src="/assets/images/crm-icons-color/overview.svg" alt="Overview">
-          Overview
-        </div>
-        <div class="crm-menu__item">
-          <img src="/assets/images/crm-icons-color/tasks.svg" alt="Overview">
-          Tasks
-        </div>
-      </div> -->
+        <nav class="crm-menu">
+            <div class="crm-menu__group">
+                <div href="/" class="crm-menu__item active" data-view="overview" data-rim-tooltip="Overview">
+                    <img src="/src/assets/images/crm-icons-color/overview.svg" alt="">
+                    <img class="mini-image" src="/src/assets/images/crm-icons-color/bare/overview-bare.svg" alt="">
+                    <span>Overview</span>
+                </div>
+                <div class="crm-menu__item" data-view="quote" data-rim-tooltip="Quote">
+                    <img src="/src/assets/images/crm-icons-color/quote.svg" alt="Quote">
+                    <img class="mini-image" src="/src/assets/images/crm-icons-color/bare/quote-bare.svg" alt="Quote">
+                    <span>Quote</span>
+                </div>
+            </div>
+      
+                <div class="crm-menu__group">
+                    <div class="crm-menu__item" data-view="tasks" data-rim-tooltip="Tasks">
+                        <img src="/src/assets/images/crm-icons-color/tasks.svg" alt="Tasks">
+                        <img class="mini-image" src="/src/assets/images/crm-icons-color/bare/tasks-bare.svg" alt="Tasks">
+                        <span>Tasks</span>
+                    </div>
+                    <div class="crm-menu__item" data-view="clients" data-rim-tooltip="Clients">
+                        <img src="/src/assets/images/crm-icons-color/clients.svg" alt="Clients">
+                        <img class="mini-image" src="/src/assets/images/crm-icons-color/bare/clients-bare.svg" a-barelt="Clients">
+                        <span>Clients</span>
+                    </div>
+                </div>
 
-      <div class="crm-menu__item">
-        <img src="/assets/images/crm-icons-color/crm-dashboard.svg" alt="CRM Dashboard">
-        CRM Dashboard <i class="fas fa-external-link-alt text-light"></i>
-      </div>
-      <div class="crm-menu__item">
-        <img src="/assets/images/crm-icons-color/quote.svg" alt="Quote">
-        Quote
-      </div>
-      <div class="crm-menu__item">
-        <img src="/assets/images/crm-icons-color/commissions.svg" alt="Commissions">
-        Commissions
-      </div>
-      <div class="crm-menu__item">
-        <img src="/assets/images/crm-icons-color/contracts.svg" alt="Get Contracted">
-        Get Contracted <i class="fas fa-external-link-alt text-light"></i>
-      </div>
-    </nav>
+            <div class="crm-menu__group">
+                <div class="crm-menu__item" data-view="commissions" data-rim-tooltip="Commisions">
+                    <img src="/src/assets/images/crm-icons-color/commissions.svg" alt="">
+                    <img class="mini-image" src="/src/assets/images/crm-icons-color/bare/commissions-bare.svg" alt="">
+                    <span>Commissions</span>
+                </div>
+                <a target="_blank" href="@SiteConfiguration.ContractsUrl" class="crm-menu__item" data-rim-tooltip="Get Contracted">
+                    <img src="/src/assets/images/crm-icons-color/get-contracted.svg" alt="">
+                    <img class="mini-image" src="/src/assets/images/crm-icons-color/bare/get-contracted-bare.svg" alt="">
+                    <span>Get Contracted <i class="fal fa-external-link-square fa-sm"></i></span>
+                </a>
+            </div>
+            <div class="crm-menu__group">
+                <a target="_blank" href="@SiteConfiguration.CrmUrl" class="crm-menu__item" data-rim-tooltip="CRM Dashboard">
+                    <img src="/src/assets/images/crm-icons-color/crm-dashboard.svg" alt="">
+                    <img class="mini-image" src="/src/assets/images/crm-icons-color/bare/crm-dashboard-bare.svg" alt="">
+                    <span>CRM Dashboard <i class="fal fa-external-link-square fa-sm"></i></span>
+                </a>
+                <a target="_blank" href="@SiteConfiguration.DocSiteUrl/carriers/products/" class="crm-menu__item" data-rim-tooltip="Carriers">
+                    <img src="/src/assets/images/crm-icons-color/carriers.svg" alt="">
+                    <img class="mini-image" src="/src/assets/images/crm-icons-color/bare/carriers-bare.svg" alt="">
+                    <span>Carriers <i class="fal fa-external-link-square fa-sm"></i></span>
+                </a>
+            </div>
+            <div class="crm-menu__group">
+                <div class="crm-menu__item" data-view="contracts" data-rim-tooltip="Contracts">
+                    <img src="/src/assets/images/crm-icons-color/contracts.svg" alt="">
+                    <img class="mini-image" src="/src/assets/images/crm-icons-color/bare/contracts-bare.svg" alt="">
+                    <span>Contracts</span>
+                </div>
+                <div class="crm-menu__item" data-view="submissions" data-rim-tooltip="Submissions">
+                    <img src="/src/assets/images/crm-icons-color/submissions.svg" alt="">
+                    <img class="mini-image" src="/src/assets/images/crm-icons-color/bare/submissions-bare.svg" alt="">
+                    <span>Submissions</span>
+                </div>
+            </div>
+
+                <div class="crm-menu__group">
+                    <div class="crm-menu__item" data-view="downlines" data-rim-tooltip="Register Downlines">
+                        <img src="/src/assets/images/crm-icons-color/register-downlines.svg" alt="">
+                        <img class="mini-image" src="/src/assets/images/crm-icons-color/bare/register-downlines-bare.svg" alt="">
+                        <span>Register Downlines
+                    </div>
+                    <div class="crm-menu__item" data-view="hierarchy" data-rim-tooltip="Hierarchy">
+                        <img src="/src/assets/images/crm-icons-color/hierarchy.svg" alt="">
+                        <img class="mini-image" src="/src/assets/images/crm-icons-color/bare/hierarchy-bare.svg" alt="">
+                        <span>Hierarchy</span>
+                    </div>
+                </div>
+
+        </nav>
+    </div>
   </aside>
-  <main>
-    <section>
-      <div class="crm-accordion active">
-        <div class="crm-accordion crm-accordion__title">
-          title
+  <main class="rim-content-grid has-notes">
+    <h1 class="rim-content-grid__heading text--center">Contracts</h1>
+    <div class="rim-content-grid__content">
+      <div class="rim-card">
+        <div class="block-container flex--justify-end">
+          <div class="block block-2">
+            <button class="button button--secondary open-notes">
+              <i class="fal fa-sticky-note text-white"></i>
+            </button>
+          </div>
         </div>
-        <div class="crm-accordion crm-accordion__content">
-          content
+        <table>
+          <thead>
+            <tr>
+              <th>Company</th>
+              <th>Contact</th>
+              <th>Country</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Company">
+                Alfreds Futterkiste
+              </td>
+              <td data-label="Contact">
+                Maria Anders
+              </td>
+              <td data-label="Country">
+                Germany
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Company">
+                Centro comercial Moctezuma
+              </td>
+              <td data-label="Contact">
+                Francisco Chang
+              </td>
+              <td data-label="Country">
+                Mexico
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Company">
+                Ernst Handel
+              </td>
+              <td data-label="Contact">
+                Roland Mendel
+              </td>
+              <td data-label="Country">
+                Austria
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Company">
+                Island Trading
+              </td>
+              <td data-label="Contact">
+                Helen Bennett
+              </td>
+              <td data-label="Country">
+                UK
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Company">
+                Laughing Bacchus Winecellars
+              </td>
+              <td data-label="Contact">
+                Yoshi Tannamuri
+              </td>
+              <td data-label="Country">
+                Canada
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Company">
+                Magazzini Alimentari Riuniti
+              </td>
+              <td data-label="Contact">
+                Giovanni Rovelli
+              </td>
+              <td data-label="Country">
+                Italy
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="rim-notes">
+      <button class="button rim-notes__close">Close <i class="fas fa-times"></i></button>
+      <div class="rim-notes__header">
+        <div class="rim-notes__heading-wrapper">
+          <span class="pill pill--circle background-orange text-orange">
+            <i class="fal fa-sticky-note text-white fa-2x"></i>
+          </span>
+          <h2 class="rim-notes__heading">Notes</h2>
+        </div>
+        <div>
+          <button class="button">New <i class="far fa-plus"></i></button>
+          <button class="button">View All <i class="far fa-arrow-right"></i></button>
         </div>
       </div>
-    </section>
+      <ol class="rim-notes__list">
+        <li class="rim-note">
+          <div class="rim-note-toggle">
+            <div class="rim-note__header">
+              <i class="far fa-comment-alt-lines"></i>
+              <h3 class="rim-note__title">
+                Tiffaney Livingston 07/08/2019
+              </h3>
+            </div>
+            <p class="rim-note__content">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+          <div class="rim-note__actions">
+            <button class="rim-note__action open-note-tags" aria-label="Tags">
+              <i class="fas fa-tags" focusable="false" aria-hidden="hidden"></i>
+              <span class="sr-only">Tags</span>
+            </button>
+            <button class="rim-note__action" aria-label="Edit">
+              <i class="far fa-edit" focusable="false" aria-hidden="hidden"></i>
+              <span class="sr-only">Edit</span>
+            </button>
+            <button class="rim-note__action" aria-label="unlock">
+              <i class="fas fa-lock" focusable="false" aria-hidden="hidden"></i>
+              <span class="sr-only">unlock</span>
+            </button>
+            <button class="rim-note__action" aria-label="Delete">
+              <i class="far fa-trash-alt" focusable="false" aria-hidden="hidden"></i>
+              <span class="sr-only">Delete</span>
+            </button>
+          </div>
+          <div class="rim-note__tags closed fadeInDown animated fastest">
+            <div class="rim-note__tag-wrapper">
+              <button class="button rim-note__tag">Sales</button>
+            </div>
+            <div class="rim-note__tag-wrapper">
+              <button class="button rim-note__tag">Release</button>
+            </div>
+            <div class="rim-note__tag-wrapper">
+              <button class="button rim-note__tag">Production</button>
+            </div>
+          </div>
+          <button class="rim-note__close">
+            <i class="far fa-chevron-double-up"></i>
+          </button>
+        </li>
+        <li class="rim-note">
+          <div class="rim-note-toggle">
+            <div class="rim-note__header">
+              <i class="far fa-comment-alt-lines"></i>
+              <h3 class="rim-note__title">
+                Tiffaney Livingston 07/08/2019
+              </h3>
+            </div>
+            <p class="rim-note__content">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+          <div class="rim-note__actions">
+            <button class="rim-note__action open-note-tags" aria-label="Tags">
+              <i class="fas fa-tags" focusable="false" aria-hidden="hidden"></i>
+              <span class="sr-only">Tags</span>
+            </button>
+            <button class="rim-note__action" aria-label="Edit">
+              <i class="far fa-edit" focusable="false" aria-hidden="hidden"></i>
+              <span class="sr-only">Edit</span>
+            </button>
+            <button class="rim-note__action" aria-label="unlock">
+              <i class="fas fa-lock" focusable="false" aria-hidden="hidden"></i>
+              <span class="sr-only">unlock</span>
+            </button>
+            <button class="rim-note__action" aria-label="Delete">
+              <i class="far fa-trash-alt" focusable="false" aria-hidden="hidden"></i>
+              <span class="sr-only">Delete</span>
+            </button>
+          </div>
+          <div class="rim-note__tags closed fadeInDown animated fastest">
+            <div class="rim-note__tag-wrapper">
+              <button class="button rim-note__tag">Sales</button>
+            </div>
+            <div class="rim-note__tag-wrapper">
+              <button class="button rim-note__tag">Release</button>
+            </div>
+            <div class="rim-note__tag-wrapper">
+              <button class="button rim-note__tag">Production</button>
+            </div>
+          </div>
+          <button class="rim-note__close">
+            <i class="far fa-chevron-double-up"></i>
+          </button>
+        </li>
+        <li class="rim-note">
+          <div class="rim-note-toggle">
+            <div class="rim-note__header">
+              <i class="far fa-comment-alt-lines"></i>
+              <h3 class="rim-note__title">
+                Tiffaney Livingston 07/08/2019
+              </h3>
+            </div>
+            <p class="rim-note__content">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+          <div class="rim-note__actions">
+            <button class="rim-note__action open-note-tags" aria-label="Tags">
+              <i class="fas fa-tags" focusable="false" aria-hidden="hidden"></i>
+              <span class="sr-only">Tags</span>
+            </button>
+            <button class="rim-note__action" aria-label="Edit">
+              <i class="far fa-edit" focusable="false" aria-hidden="hidden"></i>
+              <span class="sr-only">Edit</span>
+            </button>
+            <button class="rim-note__action" aria-label="unlock">
+              <i class="fas fa-lock" focusable="false" aria-hidden="hidden"></i>
+              <span class="sr-only">unlock</span>
+            </button>
+            <button class="rim-note__action" aria-label="Delete">
+              <i class="far fa-trash-alt" focusable="false" aria-hidden="hidden"></i>
+              <span class="sr-only">Delete</span>
+            </button>
+          </div>
+          <div class="rim-note__tags closed fadeInDown animated fastest">
+            <div class="rim-note__tag-wrapper">
+              <button class="button rim-note__tag">Sales</button>
+            </div>
+            <div class="rim-note__tag-wrapper">
+              <button class="button rim-note__tag">Release</button>
+            </div>
+            <div class="rim-note__tag-wrapper">
+              <button class="button rim-note__tag">Production</button>
+            </div>
+          </div>
+          <button class="rim-note__close">
+            <i class="far fa-chevron-double-up"></i>
+          </button>
+        </li>
+        <li class="rim-note">
+          <div class="rim-note-toggle">
+            <div class="rim-note__header">
+              <i class="far fa-comment-alt-lines"></i>
+              <h3 class="rim-note__title">
+                Tiffaney Livingston 07/08/2019
+              </h3>
+            </div>
+            <p class="rim-note__content">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+          <div class="rim-note__actions">
+            <button class="rim-note__action open-note-tags" aria-label="Tags">
+              <i class="fas fa-tags" focusable="false" aria-hidden="hidden"></i>
+              <span class="sr-only">Tags</span>
+            </button>
+            <button class="rim-note__action" aria-label="Edit">
+              <i class="far fa-edit" focusable="false" aria-hidden="hidden"></i>
+              <span class="sr-only">Edit</span>
+            </button>
+            <button class="rim-note__action" aria-label="unlock">
+              <i class="fas fa-lock" focusable="false" aria-hidden="hidden"></i>
+              <span class="sr-only">unlock</span>
+            </button>
+            <button class="rim-note__action" aria-label="Delete">
+              <i class="far fa-trash-alt" focusable="false" aria-hidden="hidden"></i>
+              <span class="sr-only">Delete</span>
+            </button>
+          </div>
+          <div class="rim-note__tags closed fadeInDown animated fastest">
+            <div class="rim-note__tag-wrapper">
+              <button class="button rim-note__tag">Sales</button>
+            </div>
+            <div class="rim-note__tag-wrapper">
+              <button class="button rim-note__tag">Release</button>
+            </div>
+            <div class="rim-note__tag-wrapper">
+              <button class="button rim-note__tag">Production</button>
+            </div>
+          </div>
+          <button class="rim-note__close">
+            <i class="far fa-chevron-double-up"></i>
+          </button>
+        </li>
+        <li class="rim-note">
+          <div class="rim-note-toggle">
+            <div class="rim-note__header">
+              <i class="far fa-comment-alt-lines"></i>
+              <h3 class="rim-note__title">
+                Tiffaney Livingston 07/08/2019
+              </h3>
+            </div>
+            <p class="rim-note__content">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+          <div class="rim-note__actions">
+            <button class="rim-note__action open-note-tags" aria-label="Tags">
+              <i class="fas fa-tags" focusable="false" aria-hidden="hidden"></i>
+              <span class="sr-only">Tags</span>
+            </button>
+            <button class="rim-note__action" aria-label="Edit">
+              <i class="far fa-edit" focusable="false" aria-hidden="hidden"></i>
+              <span class="sr-only">Edit</span>
+            </button>
+            <button class="rim-note__action" aria-label="unlock">
+              <i class="fas fa-lock" focusable="false" aria-hidden="hidden"></i>
+              <span class="sr-only">unlock</span>
+            </button>
+            <button class="rim-note__action" aria-label="Delete">
+              <i class="far fa-trash-alt" focusable="false" aria-hidden="hidden"></i>
+              <span class="sr-only">Delete</span>
+            </button>
+          </div>
+          <div class="rim-note__tags closed fadeInDown animated fastest">
+            <div class="rim-note__tag-wrapper">
+              <button class="button rim-note__tag">Sales</button>
+            </div>
+            <div class="rim-note__tag-wrapper">
+              <button class="button rim-note__tag">Release</button>
+            </div>
+            <div class="rim-note__tag-wrapper">
+              <button class="button rim-note__tag">Production</button>
+            </div>
+          </div>
+          <button class="rim-note__close">
+            <i class="far fa-chevron-double-up"></i>
+          </button>
+        </li>
+      </ol>
+    </div>
 
   </main>
 
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.js"></script> -->
-  <!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.19.2/moment.min.js"></script> -->
-  <!-- <script src="/assets/js/all.min.js"></script> -->
+  <script src="/src/assets/js/platform-ui.min.js"></script>
+  <script src="https://fast.wistia.com/assets/external/E-v1.js"></script>
 </body>
 </html>
