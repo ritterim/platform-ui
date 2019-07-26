@@ -14,7 +14,7 @@
 // <div class="rim-card">
 //   <div class="rim-card__header">
 //     <div class="rim-card__group">
-//      <i class="far fa-newspaper rim-card__title-icon--large"></i>
+//      <i class="far fa-newspaper"></i>
 //      <h2 class="rim-card__title">Agent News</h2>
 //     </div>
 //   </div>
@@ -61,7 +61,7 @@
 // <div class="rim-card">
 //   <div class="rim-card__header">
 //     <div class="rim-card__group">
-//       <i class="fas fa-film rim-card__title-icon--large"></i>
+//       <i class="fas fa-film"></i>
 //         <h2 class="rim-card__title">Featured Videos</h2>
 //     </div>
 //   </div>
@@ -318,14 +318,6 @@
       &--normal {
           text-transform: none;
       }
-  }
-
-  &__title-icon--large {
-      font-size: map-get($font-percentage, 'xxl');
-  }
-
-  &__title-icon--small {
-      font-size: map-get($font-percentage, 'small');
   }
 
   &__header-icon {
