@@ -9,7 +9,8 @@
 //
 // | Class Name             |                    |                     |                      |                      |
 // | ---------------------- | ------------------ | ------------------- | -------------------- | -------------------- |
-// | `flex--align-center`   | `flex--column`     | `flex--justify-between` | `flex--justify-end` | `flex--grow` |
+// | `flex--align-center`   | `flex--column`     | `flex--justify-between` | `flex--justify-end` | `flex--justify-start` |
+// | `flex--wrap`   |   |  |  |  |
 //
 // Styleguide Utilities.Flex
 .flex {
@@ -26,9 +27,15 @@
     &-between {
       justify-content: space-between;
     }
+    &-start {
+      justify-content: flex-start;
+    }
     &-end {
       justify-content: flex-end;
     }
+  }
+  &--wrap {
+    flex-wrap: wrap;
   }
   &--grow {
     flex-grow: 1;

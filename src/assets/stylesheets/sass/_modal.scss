@@ -85,6 +85,10 @@
   @include breakpoint(desktop, min) {
     width: 45vw;
   }
+  
+  &--height-auto {
+    height: auto;
+  }
 
   &--small {
     @include breakpoint(mobile, min) {
