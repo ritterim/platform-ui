@@ -38,12 +38,24 @@
 }
 
 .rim-notes {
-  $orange:    map-get($brand-colors, 'orange' );
+  $orange:    map-get($brand-colors, 'salmon' );
 
   background-color: map-get($platform-colors, 'notes' );
-  padding: map-get($spacers, 5 ) map-get($spacers, 4 ) $spacer;
+  padding: map-get($spacers, 5 ) 0 $spacer;
 
-  @include breakpoint(desktop, max) {
+  &--preview {
+    @include breakpoint(desktop, max) {
+      display: none;
+    }    
+
+    @include breakpoint(desktop, min) {
+      align-self: baseline;
+      grid-column: 10/13;
+      grid-row: 2;
+    }
+  }
+
+  &--all {
     box-shadow: 0 -.5rem 2rem rgba(map-get($greyscale, 'black'), .5);
     right: -27rem;
     transition: all ease-in-out .3s;
@@ -62,23 +74,12 @@
     }
   }
 
-  @include breakpoint(desktop, min) {
-    align-self: baseline;
-    grid-column: 10/13;
-    grid-row: 2;
-  }
-
-  &__close {
-    position: absolute;
-    right: 1rem;
-    top: 1rem;
-  }
-
   &__header {
     align-items: center;
     display: flex;
     justify-content: space-between;
-    margin-bottom: $spacer;
+    padding: 0 map-get($spacers, 4 );
+    padding-bottom: $spacer;
   }
 
   &__heading-wrapper {
@@ -91,27 +92,37 @@
     margin-left: map-get($spacers, 2 );
   }
 
+  &__content {
+    height: 100%;
+    position: relative;
+  }
+
   &__list {
     list-style-type: none;
-    overflow-y: scroll;
+    padding: 0 map-get($spacers, 4 );
+
+    .rim-notes--all & {
+      overflow-y: scroll;
+      position: absolute;
+      padding-bottom: 1rem;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+    }
   }
 }
 
 .rim-note {
-  $orange:    map-get($brand-colors, 'orange' );
+  $orange:    map-get($brand-colors, 'salmon' );
 
   align-items: center;
-  border-top: 1px solid map-get($greyscale, 'base' );
+  border-top: 1px solid map-get($greyscale, 'light-mid' );
   display: flex;
   flex-direction: column;
-  margin-bottom: $spacer * 1.5;
-  padding: $spacer * 1.5 0 0;
-
-  // height animation stuff
-  height: auto;
-  max-height: 6rem;
-  transition: max-height .5s ease;
-  overflow: hidden;
+  padding: $spacer * 1.5 0 map-get($spacers, 4 );
+  position: relative;
+  transition: $transitions;
 
   &:hover {
     cursor: pointer;
@@ -119,11 +130,38 @@
     .rim-note__header i {
       color: $orange;
     }
+
+    &:not(.note-open) {
+
+      .rim-note__inner {
+        transform: translate(19px, 0) scale(1.1);
+      }
+    }
+
+    .rim-note__toggle {
+      color: $orange;
+      opacity: 1;
+      visibility: visible;
+    }
   }
 
-  &.note-open {
+  &.note-open:hover {
     cursor: default;
-    max-height: 60rem;
+  }
+
+  &__inner {
+  
+    // height animation stuff
+    height: auto;
+    max-height: 5.8rem;
+    transition: max-height $transitions, transform $transitions;
+    overflow: hidden;
+
+    .note-open & {
+      cursor: default;
+      max-height: 60rem;
+      transform: translate(19px, 0) scale(1.1);
+    }
   }
 
   &__header {
@@ -160,6 +198,7 @@
     display: flex;
     justify-content: center;
     margin-bottom: $spacer;
+    transform: translate(-19px, 0);
   }
 
   &__action {
@@ -213,16 +252,38 @@
     }
   }
 
-  &__close {
+  &__toggle {
     background-color: transparent;
     border: none;
     color: map-get($greyscale, 'light' );
     cursor: pointer;
     font-size: 100%;
-    transition: $transitions;
+    transition: all ease $transitions;
+    position: absolute;
+    bottom: .5rem;
+    opacity: 0;
+    visibility: hidden;
 
     &:hover {
       color: $orange;
     }
+
+    .note-open & {
+      opacity: 1;
+      transform: rotate(180deg);
+      visibility: visible;
+    }
   }
+}
+
+
+.rim-new-note {
+  border-top: 1px solid map-get($greyscale, 'light-mid' );
+  margin: 0 map-get($spacers, 4 );
+  padding: $spacer * 1.5 0 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
