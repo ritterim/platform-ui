@@ -34,7 +34,6 @@ body {
   h#{$i} {
     color: map-get($greyscale, 'base' );
     font-family: map-get($fonts, 'headline');
-    font-size: map-get($fonts, 'size') + $font-scale * (6 - $i);
     font-weight: 500;
     margin: 0;
 
@@ -46,7 +45,6 @@ body {
 
 h1 {
   color: map-get($brand-colors, 'navy' );
-  font-family: map-get($fonts, 'headline-slab');
 }
 
 p {
