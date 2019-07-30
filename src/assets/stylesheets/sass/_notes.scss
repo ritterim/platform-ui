@@ -244,11 +244,16 @@
   &__tag {
     background-color: transparent;
 
-    &.active,
     &:hover {
       background-color: transparent;
       border-color: $orange;
       color: $orange;
+    }
+
+    &.active {
+      background-color: $orange;
+      border-color: $orange;
+      color: map-get($greyscale, 'white' );
     }
   }
 
