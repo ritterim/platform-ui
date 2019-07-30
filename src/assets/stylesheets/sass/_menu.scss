@@ -353,6 +353,9 @@
   }
 
   .today {
+    @media (max-height: 600px) {
+      display: none;
+    }
     height: 12rem;
     transform: rotate(-90deg);
     transition: $transitions;
