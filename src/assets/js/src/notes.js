@@ -3,7 +3,7 @@ function animateCSS(element, animationName, callback) {
   node.classList.add('animated', animationName)
 
   function handleAnimationEnd() {
-      node.classList.remove('animated', animationName)
+      // node.classList.remove('animated', animationName)
       node.removeEventListener('animationend', handleAnimationEnd)
 
       if (typeof callback === 'function') callback()
@@ -26,29 +26,37 @@ closeNotes.addEventListener('click', function(){
 
 
 var rimNote = document.querySelector('.rim-note');
-var rimNoteToggle = document.querySelector('.rim-note-toggle');
-var showLessNote = document.querySelector('.rim-note__toggle');
+var rimNoteToggle = document.querySelector('.rim-note__toggle');
 var openTags = document.querySelector('.open-note-tags');
-var noteTags = document.querySelector('.rim-note__tags');
 
 [].forEach.call(document.querySelectorAll('.rim-note-toggle'), function(el) {
   el.addEventListener('click', function() {
     var parent = this.parentNode.parentNode;
-    console.log(parent);
 
     parent.classList.toggle('note-open');
   })
-})
+});
   
-showLessNote.addEventListener('click', function() {
-  rimNote.classList.toggle('note-open');
+
+[].forEach.call(document.querySelectorAll('.rim-note__toggle'), function(el) {
+  el.addEventListener('click', function() {
+    var note = this.parentNode;
+
+    note.classList.toggle('note-open');
+  })
+});
+  
+
+[].forEach.call(document.querySelectorAll('.open-note-tags'), function(el) {
+  el.addEventListener('click', function() {
+    var parent = this.parentNode;
+    var noteTags = parent.nextSibling.nextSibling;
+
+    noteTags.classList.toggle('closed');
+  })
 });
 
-openTags.addEventListener('click', function(){
-  noteTags.classList.toggle('closed');
-});
-
-var newButton = document.querySelector('.rim-note__new-action');
+var newButton = document.querySelector('.rim-notes__new-action');
 var allButton = document.querySelector('.rim-note__all-action');
 
 allButton.addEventListener('click', function() {
@@ -58,11 +66,27 @@ allButton.addEventListener('click', function() {
 var notesList = document.querySelector('.rim-notes__list');
 var newNoteForm = document.querySelector('.rim-new-note');
 
-var animationDuration = 500;
-
 newButton.addEventListener('click', function(){
-  newButton.classList.add('cancel-note');
-  animateCSS(notesList, 'flipOutY', function(){
-    newNoteForm.classList.toggle('hidden');
-  });
+  var _this = this;
+
+  if(_this.classList.contains('cancel-note')) {
+    console.log('has class');
+    newButton.classList.remove('cancel-note');
+    animateCSS('.rim-new-note', 'flipOutY', function(){
+      newNoteForm.classList.add('hidden');
+      newNoteForm.classList.remove('flipInY');
+      newNoteForm.classList.remove('flipOutY');
+      notesList.classList.remove('hidden');
+      animateCSS('.rim-notes__list', 'flipInY');
+    });
+  } else {
+    newButton.classList.add('cancel-note');
+    animateCSS('.rim-notes__list', 'flipOutY', function(){
+      newNoteForm.classList.remove('hidden');
+      animateCSS('.rim-new-note', 'flipInY');
+      notesList.classList.remove('flipOutY');
+      notesList.classList.add('hidden');
+    });
+  }
+  
 });
