@@ -79,25 +79,13 @@
     display: flex;
     justify-content: space-between;
     padding: 0 map-get($spacers, 4 );
-    padding-bottom: $spacer;
+    margin-bottom: $spacer * 1.5;
   }
 
   &__heading-wrapper {
-    display: flex;
     align-items: center;
-  }
-
-  &__new-action {
-
-    i {
-      transition: $transitions;
-    }    
-
-    &.cancel-note {
-      i {
-        transform: rotate(45deg);
-      }
-    }
+    display: flex;
+    position: relative;
   }
 
   &__heading {
@@ -132,7 +120,7 @@
   border-top: 1px solid map-get($greyscale, 'light-mid' );
   display: flex;
   flex-direction: column;
-  padding: $spacer * 1.5 0 map-get($spacers, 4 );
+  padding: map-get($spacers, 4 ) 0;
   position: relative;
   transition: $transitions;
 

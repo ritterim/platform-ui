@@ -479,9 +479,12 @@ input[type="radio"] {
     align-items: flex-end;
     display: flex;
     justify-content: flex-start;
+    margin-left: -.25rem;
+    width: calc(100% + .25rem * 2);
 
     button {
       flex-grow: 1;
+      margin: .25rem;
       max-width: 14.375rem;
     }
   }
