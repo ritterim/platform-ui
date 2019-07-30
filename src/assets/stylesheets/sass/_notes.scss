@@ -87,6 +87,19 @@
     align-items: center;
   }
 
+  &__new-action {
+
+    i {
+      transition: $transitions;
+    }    
+
+    &.cancel-note {
+      i {
+        transform: rotate(45deg);
+      }
+    }
+  }
+
   &__heading {
     color: map-get($brand-colors, 'navy' );
     margin-left: map-get($spacers, 2 );
@@ -116,7 +129,6 @@
 .rim-note {
   $orange:    map-get($brand-colors, 'salmon' );
 
-  align-items: center;
   border-top: 1px solid map-get($greyscale, 'light-mid' );
   display: flex;
   flex-direction: column;
@@ -134,6 +146,7 @@
     &:not(.note-open) {
 
       .rim-note__inner {
+        max-width: 90%;
         transform: translate(19px, 0) scale(1.1);
       }
     }
@@ -153,13 +166,14 @@
   
     // height animation stuff
     height: auto;
-    max-height: 5.8rem;
-    transition: max-height $transitions, transform $transitions;
+    max-height: 4.3rem;
+    transition: max-height $transitions, max-width $transitions, transform $transitions;
     overflow: hidden;
 
     .note-open & {
       cursor: default;
       max-height: 60rem;
+      max-width: 90%;
       transform: translate(19px, 0) scale(1.1);
     }
   }
@@ -198,7 +212,6 @@
     display: flex;
     justify-content: center;
     margin-bottom: $spacer;
-    transform: translate(-19px, 0);
   }
 
   &__action {
@@ -229,7 +242,6 @@
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 1rem;
-    width: calc(100% + .25rem * 2);
 
     &.closed {
       display: none;
@@ -261,6 +273,8 @@
     transition: all ease $transitions;
     position: absolute;
     bottom: .5rem;
+    left: 50%;
+    transform: translateX(-50%);
     opacity: 0;
     visibility: hidden;
 
