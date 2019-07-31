@@ -38,15 +38,6 @@ deploy:
       branch: master
       configuration: publish
 
-  - provider: Environment
-    name: Azure App Service Zip (Development)
-    artifact: Styleguide
-    slot: staging
-    app_name: rim-style-south-dev
-    on:
-      branch: master
-      configuration: publish
-
 after_deploy:
     - ps: |
         if ($ENV:CONFIGURATION -eq "publish")
