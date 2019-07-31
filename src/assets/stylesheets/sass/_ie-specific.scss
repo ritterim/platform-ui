@@ -2,9 +2,20 @@
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
 
   .platform {
-    main {
-      margin-top: $menu-height;
+    padding-top: $menu-height;
+
+    aside {
+      margin-top: 0;
     }
+
+    main {
+      display: block;
+      width: auto;
+    }
+  }
+
+  .site-header {
+    top: 0;
   }
 
   .image-link-list {
@@ -14,6 +25,13 @@
     li {
       padding: 0 map-get($spacers, 1 );
       width: 33%;
+    }
+  }
+
+  .rim-content-grid {
+
+    &__heading {
+      margin-bottom: map-get($spacers, 4 );
     }
   }
 }
