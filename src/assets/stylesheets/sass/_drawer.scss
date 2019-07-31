@@ -17,6 +17,12 @@
     box-shadow: 0 -.5rem 2rem rgba(map-get($greyscale, 'black'), .5);
     height: 100%;
     min-height: 50vh;
+
+    .rim-drawer-bottom & {
+      max-height: 25rem;
+      overflow-y: visible;
+      overflow-x: hidden;
+    }
   }
   &__header {
     background-color: map-get($greyscale, 'white');
