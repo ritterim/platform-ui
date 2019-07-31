@@ -44,10 +44,11 @@
 
   &__header {
     align-items: center;
+    border-bottom: 1px solid map-get($greyscale, 'light-mid' );
     display: flex;
     justify-content: space-between;
-    padding: 0 map-get($spacers, 4 );
-    margin-bottom: $spacer * 1.5;
+    margin: 0 map-get($spacers, 4 );
+    padding-bottom: $spacer * 1.5;
   }
 
   &__heading-wrapper {
@@ -112,6 +113,10 @@
       opacity: 1;
       visibility: visible;
     }
+  }
+
+  &:first-of-type {
+    border-top: none;
   }
 
   &.note-open:hover {
