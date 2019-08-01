@@ -126,6 +126,16 @@
     }
   }
 
+  &--full {
+    height: 100vh;
+    width: 100vh;
+    .rim-modal__content {
+      height: 100%;
+      overflow-y: auto;
+      padding-bottom: 6rem;
+    }
+  }
+
   &--overlay {
     background: rgba(map-get($greyscale, 'base'), .5);
     height: 100%;
