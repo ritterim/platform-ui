@@ -37,7 +37,7 @@
 //   </div>
 // </div>
 //
-// <div id="small-modal" class="rim-modal rim-modal--small rim rim-modal--closed ">
+// <div id="small-modal" class="rim-modal rim-modal--small rim-modal--closed ">
 //   <div class="rim-modal__inner animated slideInUp faster">
 //     <div class="rim-modal__header">
 //       <button class="button float-right rim-modal__close" data-modal="small-modal">Close <i class="fas fa-times"></i></button>
@@ -49,7 +49,7 @@
 //   </div>
 // </div>
 //
-// <div id="large-modal" class="rim-modal rim-modal--large rim rim-modal--closed ">
+// <div id="large-modal" class="rim-modal rim-modal--large rim-modal--closed ">
 //   <div class="rim-modal__inner animated slideInUp faster">
 //     <div class="rim-modal__header">
 //       <button class="button float-right rim-modal__close" data-modal="large-modal">Close <i class="fas fa-times"></i></button>
@@ -60,10 +60,10 @@
 //     </div>
 //   </div>
 // </div>
-// <div id="full-modal" class="rim-modal rim-modal--full rim rim-modal--closed ">
+// <div id="full-modal" class="rim-modal rim-modal--full rim-modal--closed ">
 //   <div class="rim-modal__inner animated slideInUp faster">
 //     <div class="rim-modal__header">
-//       <button class="button float-right rim-modal__close" data-modal="large-modal">Close <i class="fas fa-times"></i></button>
+//       <button class="button float-right rim-modal__close" data-modal="full-modal">Close <i class="fas fa-times"></i></button>
 //       <h2>Modal</h2>
 //     </div>
 //     <div class="rim-modal__content">
@@ -128,7 +128,7 @@
 
   &--full {
     height: 100vh;
-    width: 100vh;
+    width: 100vw;
     .rim-modal__content {
       height: 100%;
       overflow-y: auto;
