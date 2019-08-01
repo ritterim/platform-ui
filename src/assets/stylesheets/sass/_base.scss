@@ -38,7 +38,7 @@ body {
     margin: 0;
 
     .post & {
-      font-family: map-get($fonts, 'post-headline');
+      font-family: map-get($fonts, 'headline-slab');
     }
   }
 }
