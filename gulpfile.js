@@ -52,9 +52,9 @@ function styleguide() {
 }
 
 function watchFiles() {
-  watch("./src/assets/stylesheets/sass/*", css);
-  watch("./src/assets/js/src/*", js);
-  watch(["./src/assets/js/src/*", "./src/assets/stylesheets/sass/*"], copyStaticAssets);
+  watch('./src/assets/stylesheets/sass/*', css);
+  watch('./src/assets/js/src/*', js);
+  watch(['./src/assets/js/src/*', './src/assets/stylesheets/sass/*'], copyStaticAssets);
 }
 
 exports.build = series(css, js, styleguide, copyStaticAssets);
