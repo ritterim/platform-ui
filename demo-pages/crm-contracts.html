@@ -214,112 +214,395 @@
         </nav>
     </div>
   </aside>
-  <main class="rim-content-grid has-notes">
-    <h1 class="rim-content-grid__heading text--center">Contracts</h1>
-    <div class="rim-content-grid__content">
-      <div class="rim-card">
-        <div class="block-container flex--justify-end">
-          <div class="block block-2">
-            <button class="button button--secondary open-notes">
-              <i class="fal fa-sticky-note text-white"></i>
+  <main>
+    <div class="rim-content-grid has-side-content">
+      <h1 class="rim-content-grid__heading text--center">Contracts</h1>
+      <div class="rim-content-grid__content">
+        <div class="rim-card">
+          <div class="block-container flex--justify-end">
+            <div class="block block-2">
+              <button class="button button--secondary open-notes">
+                <i class="fal fa-sticky-note text-white"></i>
+              </button>
+            </div>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Company</th>
+                <th>Contact</th>
+                <th>Country</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Company">
+                  Alfreds Futterkiste
+                </td>
+                <td data-label="Contact">
+                  Maria Anders
+                </td>
+                <td data-label="Country">
+                  Germany
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Company">
+                  Centro comercial Moctezuma
+                </td>
+                <td data-label="Contact">
+                  Francisco Chang
+                </td>
+                <td data-label="Country">
+                  Mexico
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Company">
+                  Ernst Handel
+                </td>
+                <td data-label="Contact">
+                  Roland Mendel
+                </td>
+                <td data-label="Country">
+                  Austria
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Company">
+                  Island Trading
+                </td>
+                <td data-label="Contact">
+                  Helen Bennett
+                </td>
+                <td data-label="Country">
+                  UK
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Company">
+                  Laughing Bacchus Winecellars
+                </td>
+                <td data-label="Contact">
+                  Yoshi Tannamuri
+                </td>
+                <td data-label="Country">
+                  Canada
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Company">
+                  Magazzini Alimentari Riuniti
+                </td>
+                <td data-label="Contact">
+                  Giovanni Rovelli
+                </td>
+                <td data-label="Country">
+                  Italy
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="rim-notes rim-notes--all">
+        <div class="rim-notes__header">
+          <div class="rim-notes__heading-wrapper">
+            <button class="button button--secondary rim-notes__new-action">
+              <i class="far fa-plus"></i>
             </button>
+            <h2 class="rim-notes__heading">Notes</h2>
+          </div>
+          <div>
+            <button class="button rim-notes__close">Close <i class="fas fa-times"></i></button>
           </div>
         </div>
-        <table>
-          <thead>
-            <tr>
-              <th>Company</th>
-              <th>Contact</th>
-              <th>Country</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td data-label="Company">
-                Alfreds Futterkiste
-              </td>
-              <td data-label="Contact">
-                Maria Anders
-              </td>
-              <td data-label="Country">
-                Germany
-              </td>
-            </tr>
-            <tr>
-              <td data-label="Company">
-                Centro comercial Moctezuma
-              </td>
-              <td data-label="Contact">
-                Francisco Chang
-              </td>
-              <td data-label="Country">
-                Mexico
-              </td>
-            </tr>
-            <tr>
-              <td data-label="Company">
-                Ernst Handel
-              </td>
-              <td data-label="Contact">
-                Roland Mendel
-              </td>
-              <td data-label="Country">
-                Austria
-              </td>
-            </tr>
-            <tr>
-              <td data-label="Company">
-                Island Trading
-              </td>
-              <td data-label="Contact">
-                Helen Bennett
-              </td>
-              <td data-label="Country">
-                UK
-              </td>
-            </tr>
-            <tr>
-              <td data-label="Company">
-                Laughing Bacchus Winecellars
-              </td>
-              <td data-label="Contact">
-                Yoshi Tannamuri
-              </td>
-              <td data-label="Country">
-                Canada
-              </td>
-            </tr>
-            <tr>
-              <td data-label="Company">
-                Magazzini Alimentari Riuniti
-              </td>
-              <td data-label="Contact">
-                Giovanni Rovelli
-              </td>
-              <td data-label="Country">
-                Italy
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="rim-notes rim-notes--all">
-      <div class="rim-notes__header">
-        <div class="rim-notes__heading-wrapper">
-          <button class="button button--secondary rim-notes__new-action">
-            <i class="far fa-plus"></i>
-          </button>
-          <h2 class="rim-notes__heading">Notes</h2>
-        </div>
-        <div>
-          <button class="button rim-notes__close">Close <i class="fas fa-times"></i></button>
-        </div>
-      </div>
-      <div class="rim-notes__content">
-        <ol class="rim-notes__list animated">
-          <li class="rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
-            <div class="rim-note__inner">
+        <div class="rim-notes__content">
+          <ol class="rim-notes__list animated">
+            <li class="rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
+              <div class="rim-note__inner">
+                <div class="rim-note-toggle">
+                  <div class="rim-note__header">
+                    <i class="far fa-comment-alt-lines"></i>
+                    <h3 class="rim-note__title">
+                      Tiffaney Livingston 07/08/2019
+                    </h3>
+                  </div>
+                  <p class="rim-note__content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  </p>
+                </div>
+                <div class="rim-note__actions">
+                  <button class="rim-note__action open-note-tags" aria-label="Tags">
+                    <i class="fas fa-tags" focusable="false" aria-hidden="hidden"></i>
+                    <span class="sr-only">Tags</span>
+                  </button>
+                  <button class="rim-note__action" aria-label="Edit">
+                    <i class="far fa-edit" focusable="false" aria-hidden="hidden"></i>
+                    <span class="sr-only">Edit</span>
+                  </button>
+                  <button class="rim-note__action" aria-label="unlock">
+                    <i class="fas fa-lock" focusable="false" aria-hidden="hidden"></i>
+                    <span class="sr-only">unlock</span>
+                  </button>
+                  <button class="rim-note__action" aria-label="Delete">
+                    <i class="far fa-trash-alt" focusable="false" aria-hidden="hidden"></i>
+                    <span class="sr-only">Delete</span>
+                  </button>
+                </div>
+                <div class="rim-note__tags closed fadeInDown animated fastest">
+                  <div class="rim-note__tag-wrapper">
+                    <button class="button rim-note__tag">Sales</button>
+                  </div>
+                  <div class="rim-note__tag-wrapper">
+                    <button class="button rim-note__tag">Release</button>
+                  </div>
+                  <div class="rim-note__tag-wrapper">
+                    <button class="button rim-note__tag">Production</button>
+                  </div>
+                </div>
+              </div>
+              <button class="rim-note__toggle">
+                <i class="far fa-chevron-double-down"></i>
+              </button>
+            </li>
+            <li class="rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
+              <div class="rim-note__inner">
+                <div class="rim-note-toggle">
+                  <div class="rim-note__header">
+                    <i class="far fa-comment-alt-lines"></i>
+                    <h3 class="rim-note__title">
+                      Tiffaney Livingston 07/08/2019
+                    </h3>
+                  </div>
+                  <p class="rim-note__content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  </p>
+                </div>
+                <div class="rim-note__actions">
+                  <button class="rim-note__action open-note-tags" aria-label="Tags">
+                    <i class="fas fa-tags" focusable="false" aria-hidden="hidden"></i>
+                    <span class="sr-only">Tags</span>
+                  </button>
+                  <button class="rim-note__action" aria-label="Edit">
+                    <i class="far fa-edit" focusable="false" aria-hidden="hidden"></i>
+                    <span class="sr-only">Edit</span>
+                  </button>
+                  <button class="rim-note__action" aria-label="unlock">
+                    <i class="fas fa-lock" focusable="false" aria-hidden="hidden"></i>
+                    <span class="sr-only">unlock</span>
+                  </button>
+                  <button class="rim-note__action" aria-label="Delete">
+                    <i class="far fa-trash-alt" focusable="false" aria-hidden="hidden"></i>
+                    <span class="sr-only">Delete</span>
+                  </button>
+                </div>
+                <div class="rim-note__tags closed fadeInDown animated fastest">
+                  <div class="rim-note__tag-wrapper">
+                    <button class="button rim-note__tag">Sales</button>
+                  </div>
+                  <div class="rim-note__tag-wrapper">
+                    <button class="button rim-note__tag">Release</button>
+                  </div>
+                  <div class="rim-note__tag-wrapper">
+                    <button class="button rim-note__tag">Production</button>
+                  </div>
+                </div>
+              </div>
+              <button class="rim-note__toggle">
+                <i class="far fa-chevron-double-down"></i>
+              </button>
+            </li>
+            <li class="rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
+              <div class="rim-note__inner">
+                <div class="rim-note-toggle">
+                  <div class="rim-note__header">
+                    <i class="far fa-comment-alt-lines"></i>
+                    <h3 class="rim-note__title">
+                      Tiffaney Livingston 07/08/2019
+                    </h3>
+                  </div>
+                  <p class="rim-note__content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  </p>
+                </div>
+                <div class="rim-note__actions">
+                  <button class="rim-note__action open-note-tags" aria-label="Tags">
+                    <i class="fas fa-tags" focusable="false" aria-hidden="hidden"></i>
+                    <span class="sr-only">Tags</span>
+                  </button>
+                  <button class="rim-note__action" aria-label="Edit">
+                    <i class="far fa-edit" focusable="false" aria-hidden="hidden"></i>
+                    <span class="sr-only">Edit</span>
+                  </button>
+                  <button class="rim-note__action" aria-label="unlock">
+                    <i class="fas fa-lock" focusable="false" aria-hidden="hidden"></i>
+                    <span class="sr-only">unlock</span>
+                  </button>
+                  <button class="rim-note__action" aria-label="Delete">
+                    <i class="far fa-trash-alt" focusable="false" aria-hidden="hidden"></i>
+                    <span class="sr-only">Delete</span>
+                  </button>
+                </div>
+                <div class="rim-note__tags closed fadeInDown animated fastest">
+                  <div class="rim-note__tag-wrapper">
+                    <button class="button rim-note__tag">Sales</button>
+                  </div>
+                  <div class="rim-note__tag-wrapper">
+                    <button class="button rim-note__tag">Release</button>
+                  </div>
+                  <div class="rim-note__tag-wrapper">
+                    <button class="button rim-note__tag">Production</button>
+                  </div>
+                </div>
+              </div>
+              <button class="rim-note__toggle">
+                <i class="far fa-chevron-double-down"></i>
+              </button>
+            </li>
+            <li class="rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
+              <div class="rim-note__inner">
+                <div class="rim-note-toggle">
+                  <div class="rim-note__header">
+                    <i class="far fa-comment-alt-lines"></i>
+                    <h3 class="rim-note__title">
+                      Tiffaney Livingston 07/08/2019
+                    </h3>
+                  </div>
+                  <p class="rim-note__content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  </p>
+                </div>
+                <div class="rim-note__actions">
+                  <button class="rim-note__action open-note-tags" aria-label="Tags">
+                    <i class="fas fa-tags" focusable="false" aria-hidden="hidden"></i>
+                    <span class="sr-only">Tags</span>
+                  </button>
+                  <button class="rim-note__action" aria-label="Edit">
+                    <i class="far fa-edit" focusable="false" aria-hidden="hidden"></i>
+                    <span class="sr-only">Edit</span>
+                  </button>
+                  <button class="rim-note__action" aria-label="unlock">
+                    <i class="fas fa-lock" focusable="false" aria-hidden="hidden"></i>
+                    <span class="sr-only">unlock</span>
+                  </button>
+                  <button class="rim-note__action" aria-label="Delete">
+                    <i class="far fa-trash-alt" focusable="false" aria-hidden="hidden"></i>
+                    <span class="sr-only">Delete</span>
+                  </button>
+                </div>
+                <div class="rim-note__tags closed fadeInDown animated fastest">
+                  <div class="rim-note__tag-wrapper">
+                    <button class="button rim-note__tag">Sales</button>
+                  </div>
+                  <div class="rim-note__tag-wrapper">
+                    <button class="button rim-note__tag">Release</button>
+                  </div>
+                  <div class="rim-note__tag-wrapper">
+                    <button class="button rim-note__tag">Production</button>
+                  </div>
+                </div>
+              </div>
+              <button class="rim-note__toggle">
+                <i class="far fa-chevron-double-down"></i>
+              </button>
+            </li>
+            <li class="rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
+              <div class="rim-note__inner">
+                <div class="rim-note-toggle">
+                  <div class="rim-note__header">
+                    <i class="far fa-comment-alt-lines"></i>
+                    <h3 class="rim-note__title">
+                      Tiffaney Livingston 07/08/2019
+                    </h3>
+                  </div>
+                  <p class="rim-note__content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  </p>
+                </div>
+                <div class="rim-note__actions">
+                  <button class="rim-note__action open-note-tags" aria-label="Tags">
+                    <i class="fas fa-tags" focusable="false" aria-hidden="hidden"></i>
+                    <span class="sr-only">Tags</span>
+                  </button>
+                  <button class="rim-note__action" aria-label="Edit">
+                    <i class="far fa-edit" focusable="false" aria-hidden="hidden"></i>
+                    <span class="sr-only">Edit</span>
+                  </button>
+                  <button class="rim-note__action" aria-label="unlock">
+                    <i class="fas fa-lock" focusable="false" aria-hidden="hidden"></i>
+                    <span class="sr-only">unlock</span>
+                  </button>
+                  <button class="rim-note__action" aria-label="Delete">
+                    <i class="far fa-trash-alt" focusable="false" aria-hidden="hidden"></i>
+                    <span class="sr-only">Delete</span>
+                  </button>
+                </div>
+                <div class="rim-note__tags closed fadeInDown animated fastest">
+                  <div class="rim-note__tag-wrapper">
+                    <button class="button rim-note__tag">Sales</button>
+                  </div>
+                  <div class="rim-note__tag-wrapper">
+                    <button class="button rim-note__tag">Release</button>
+                  </div>
+                  <div class="rim-note__tag-wrapper">
+                    <button class="button rim-note__tag">Production</button>
+                  </div>
+                </div>
+              </div>
+              <button class="rim-note__toggle">
+                <i class="far fa-chevron-double-down"></i>
+              </button>
+            </li>
+            <li class="rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
+              <div class="rim-note__inner">
+                <div class="rim-note-toggle">
+                  <div class="rim-note__header">
+                    <i class="far fa-comment-alt-lines"></i>
+                    <h3 class="rim-note__title">
+                      Tiffaney Livingston 07/08/2019
+                    </h3>
+                  </div>
+                  <p class="rim-note__content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  </p>
+                </div>
+                <div class="rim-note__actions">
+                  <button class="rim-note__action open-note-tags" aria-label="Tags">
+                    <i class="fas fa-tags" focusable="false" aria-hidden="hidden"></i>
+                    <span class="sr-only">Tags</span>
+                  </button>
+                  <button class="rim-note__action" aria-label="Edit">
+                    <i class="far fa-edit" focusable="false" aria-hidden="hidden"></i>
+                    <span class="sr-only">Edit</span>
+                  </button>
+                  <button class="rim-note__action" aria-label="unlock">
+                    <i class="fas fa-lock" focusable="false" aria-hidden="hidden"></i>
+                    <span class="sr-only">unlock</span>
+                  </button>
+                  <button class="rim-note__action" aria-label="Delete">
+                    <i class="far fa-trash-alt" focusable="false" aria-hidden="hidden"></i>
+                    <span class="sr-only">Delete</span>
+                  </button>
+                </div>
+                <div class="rim-note__tags closed fadeInDown animated fastest">
+                  <div class="rim-note__tag-wrapper">
+                    <button class="button rim-note__tag">Sales</button>
+                  </div>
+                  <div class="rim-note__tag-wrapper">
+                    <button class="button rim-note__tag">Release</button>
+                  </div>
+                  <div class="rim-note__tag-wrapper">
+                    <button class="button rim-note__tag">Production</button>
+                  </div>
+                </div>
+              </div>
+              <button class="rim-note__toggle">
+                <i class="far fa-chevron-double-down"></i>
+              </button>
+            </li>
+            <li class="rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
+              <div class="rim-note__inner">
               <div class="rim-note-toggle">
                 <div class="rim-note__header">
                   <i class="far fa-comment-alt-lines"></i>
@@ -360,13 +643,13 @@
                   <button class="button rim-note__tag">Production</button>
                 </div>
               </div>
-            </div>
-            <button class="rim-note__toggle">
-              <i class="far fa-chevron-double-down"></i>
-            </button>
-          </li>
-          <li class="rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
-            <div class="rim-note__inner">
+              </div>
+              <button class="rim-note__toggle">
+                <i class="far fa-chevron-double-down"></i>
+              </button>
+            </li>
+            <li class="rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
+              <div class="rim-note__inner">
               <div class="rim-note-toggle">
                 <div class="rim-note__header">
                   <i class="far fa-comment-alt-lines"></i>
@@ -407,13 +690,13 @@
                   <button class="button rim-note__tag">Production</button>
                 </div>
               </div>
-            </div>
-            <button class="rim-note__toggle">
-              <i class="far fa-chevron-double-down"></i>
-            </button>
-          </li>
-          <li class="rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
-            <div class="rim-note__inner">
+              </div>
+              <button class="rim-note__toggle">
+                <i class="far fa-chevron-double-down"></i>
+              </button>
+            </li>
+            <li class="rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
+              <div class="rim-note__inner">
               <div class="rim-note-toggle">
                 <div class="rim-note__header">
                   <i class="far fa-comment-alt-lines"></i>
@@ -454,13 +737,13 @@
                   <button class="button rim-note__tag">Production</button>
                 </div>
               </div>
-            </div>
-            <button class="rim-note__toggle">
-              <i class="far fa-chevron-double-down"></i>
-            </button>
-          </li>
-          <li class="rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
-            <div class="rim-note__inner">
+              </div>
+              <button class="rim-note__toggle">
+                <i class="far fa-chevron-double-down"></i>
+              </button>
+            </li>
+            <li class="rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
+              <div class="rim-note__inner">
               <div class="rim-note-toggle">
                 <div class="rim-note__header">
                   <i class="far fa-comment-alt-lines"></i>
@@ -501,329 +784,94 @@
                   <button class="button rim-note__tag">Production</button>
                 </div>
               </div>
-            </div>
-            <button class="rim-note__toggle">
-              <i class="far fa-chevron-double-down"></i>
-            </button>
-          </li>
-          <li class="rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
-            <div class="rim-note__inner">
-              <div class="rim-note-toggle">
-                <div class="rim-note__header">
-                  <i class="far fa-comment-alt-lines"></i>
-                  <h3 class="rim-note__title">
-                    Tiffaney Livingston 07/08/2019
-                  </h3>
-                </div>
-                <p class="rim-note__content">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
               </div>
-              <div class="rim-note__actions">
-                <button class="rim-note__action open-note-tags" aria-label="Tags">
-                  <i class="fas fa-tags" focusable="false" aria-hidden="hidden"></i>
-                  <span class="sr-only">Tags</span>
-                </button>
-                <button class="rim-note__action" aria-label="Edit">
-                  <i class="far fa-edit" focusable="false" aria-hidden="hidden"></i>
-                  <span class="sr-only">Edit</span>
-                </button>
-                <button class="rim-note__action" aria-label="unlock">
-                  <i class="fas fa-lock" focusable="false" aria-hidden="hidden"></i>
-                  <span class="sr-only">unlock</span>
-                </button>
-                <button class="rim-note__action" aria-label="Delete">
-                  <i class="far fa-trash-alt" focusable="false" aria-hidden="hidden"></i>
-                  <span class="sr-only">Delete</span>
-                </button>
-              </div>
-              <div class="rim-note__tags closed fadeInDown animated fastest">
-                <div class="rim-note__tag-wrapper">
-                  <button class="button rim-note__tag">Sales</button>
-                </div>
-                <div class="rim-note__tag-wrapper">
-                  <button class="button rim-note__tag">Release</button>
-                </div>
-                <div class="rim-note__tag-wrapper">
-                  <button class="button rim-note__tag">Production</button>
-                </div>
-              </div>
-            </div>
-            <button class="rim-note__toggle">
-              <i class="far fa-chevron-double-down"></i>
-            </button>
-          </li>
-          <li class="rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
-            <div class="rim-note__inner">
-              <div class="rim-note-toggle">
-                <div class="rim-note__header">
-                  <i class="far fa-comment-alt-lines"></i>
-                  <h3 class="rim-note__title">
-                    Tiffaney Livingston 07/08/2019
-                  </h3>
-                </div>
-                <p class="rim-note__content">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-              </div>
-              <div class="rim-note__actions">
-                <button class="rim-note__action open-note-tags" aria-label="Tags">
-                  <i class="fas fa-tags" focusable="false" aria-hidden="hidden"></i>
-                  <span class="sr-only">Tags</span>
-                </button>
-                <button class="rim-note__action" aria-label="Edit">
-                  <i class="far fa-edit" focusable="false" aria-hidden="hidden"></i>
-                  <span class="sr-only">Edit</span>
-                </button>
-                <button class="rim-note__action" aria-label="unlock">
-                  <i class="fas fa-lock" focusable="false" aria-hidden="hidden"></i>
-                  <span class="sr-only">unlock</span>
-                </button>
-                <button class="rim-note__action" aria-label="Delete">
-                  <i class="far fa-trash-alt" focusable="false" aria-hidden="hidden"></i>
-                  <span class="sr-only">Delete</span>
-                </button>
-              </div>
-              <div class="rim-note__tags closed fadeInDown animated fastest">
-                <div class="rim-note__tag-wrapper">
-                  <button class="button rim-note__tag">Sales</button>
-                </div>
-                <div class="rim-note__tag-wrapper">
-                  <button class="button rim-note__tag">Release</button>
-                </div>
-                <div class="rim-note__tag-wrapper">
-                  <button class="button rim-note__tag">Production</button>
-                </div>
-              </div>
-            </div>
-            <button class="rim-note__toggle">
-              <i class="far fa-chevron-double-down"></i>
-            </button>
-          </li>
-          <li class="rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
-            <div class="rim-note__inner">
-            <div class="rim-note-toggle">
-              <div class="rim-note__header">
-                <i class="far fa-comment-alt-lines"></i>
-                <h3 class="rim-note__title">
-                  Tiffaney Livingston 07/08/2019
-                </h3>
-              </div>
-              <p class="rim-note__content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </div>
-            <div class="rim-note__actions">
-              <button class="rim-note__action open-note-tags" aria-label="Tags">
-                <i class="fas fa-tags" focusable="false" aria-hidden="hidden"></i>
-                <span class="sr-only">Tags</span>
+              <button class="rim-note__toggle">
+                <i class="far fa-chevron-double-down"></i>
               </button>
-              <button class="rim-note__action" aria-label="Edit">
-                <i class="far fa-edit" focusable="false" aria-hidden="hidden"></i>
-                <span class="sr-only">Edit</span>
-              </button>
-              <button class="rim-note__action" aria-label="unlock">
-                <i class="fas fa-lock" focusable="false" aria-hidden="hidden"></i>
-                <span class="sr-only">unlock</span>
-              </button>
-              <button class="rim-note__action" aria-label="Delete">
-                <i class="far fa-trash-alt" focusable="false" aria-hidden="hidden"></i>
-                <span class="sr-only">Delete</span>
-              </button>
-            </div>
-            <div class="rim-note__tags closed fadeInDown animated fastest">
-              <div class="rim-note__tag-wrapper">
-                <button class="button rim-note__tag">Sales</button>
+            </li>
+          </ol>
+          <div class="rim-new-note flipInY animated hidden">
+            <form action="" class="rim-form">
+              <label for="first-name" class="rim-form__field">First Name
+                <input id="first-name" type="text" placeholder="First Name">
+              </label>
+              <label for="last-name" class="rim-form__field">Last Name
+                <input id="last-name" type="text" placeholder="Last Name">
+              </label>
+              <label for="message" class="rim-form__field">Message
+                <textarea id="message" name="message" rows="10" ></textarea>
+              </label>
+              <div class="rim-form__field rim-form__button-group mb-0">
+                <button class="button button--lg rim-note__cancel-action" type="cancel">Cancel</button>
+                <button class="button button--post button--lg" type="submit">Save</button>
               </div>
-              <div class="rim-note__tag-wrapper">
-                <button class="button rim-note__tag">Release</button>
-              </div>
-              <div class="rim-note__tag-wrapper">
-                <button class="button rim-note__tag">Production</button>
-              </div>
-            </div>
-            </div>
-            <button class="rim-note__toggle">
-              <i class="far fa-chevron-double-down"></i>
-            </button>
-          </li>
-          <li class="rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
-            <div class="rim-note__inner">
-            <div class="rim-note-toggle">
-              <div class="rim-note__header">
-                <i class="far fa-comment-alt-lines"></i>
-                <h3 class="rim-note__title">
-                  Tiffaney Livingston 07/08/2019
-                </h3>
-              </div>
-              <p class="rim-note__content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </div>
-            <div class="rim-note__actions">
-              <button class="rim-note__action open-note-tags" aria-label="Tags">
-                <i class="fas fa-tags" focusable="false" aria-hidden="hidden"></i>
-                <span class="sr-only">Tags</span>
-              </button>
-              <button class="rim-note__action" aria-label="Edit">
-                <i class="far fa-edit" focusable="false" aria-hidden="hidden"></i>
-                <span class="sr-only">Edit</span>
-              </button>
-              <button class="rim-note__action" aria-label="unlock">
-                <i class="fas fa-lock" focusable="false" aria-hidden="hidden"></i>
-                <span class="sr-only">unlock</span>
-              </button>
-              <button class="rim-note__action" aria-label="Delete">
-                <i class="far fa-trash-alt" focusable="false" aria-hidden="hidden"></i>
-                <span class="sr-only">Delete</span>
-              </button>
-            </div>
-            <div class="rim-note__tags closed fadeInDown animated fastest">
-              <div class="rim-note__tag-wrapper">
-                <button class="button rim-note__tag">Sales</button>
-              </div>
-              <div class="rim-note__tag-wrapper">
-                <button class="button rim-note__tag">Release</button>
-              </div>
-              <div class="rim-note__tag-wrapper">
-                <button class="button rim-note__tag">Production</button>
-              </div>
-            </div>
-            </div>
-            <button class="rim-note__toggle">
-              <i class="far fa-chevron-double-down"></i>
-            </button>
-          </li>
-          <li class="rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
-            <div class="rim-note__inner">
-            <div class="rim-note-toggle">
-              <div class="rim-note__header">
-                <i class="far fa-comment-alt-lines"></i>
-                <h3 class="rim-note__title">
-                  Tiffaney Livingston 07/08/2019
-                </h3>
-              </div>
-              <p class="rim-note__content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </div>
-            <div class="rim-note__actions">
-              <button class="rim-note__action open-note-tags" aria-label="Tags">
-                <i class="fas fa-tags" focusable="false" aria-hidden="hidden"></i>
-                <span class="sr-only">Tags</span>
-              </button>
-              <button class="rim-note__action" aria-label="Edit">
-                <i class="far fa-edit" focusable="false" aria-hidden="hidden"></i>
-                <span class="sr-only">Edit</span>
-              </button>
-              <button class="rim-note__action" aria-label="unlock">
-                <i class="fas fa-lock" focusable="false" aria-hidden="hidden"></i>
-                <span class="sr-only">unlock</span>
-              </button>
-              <button class="rim-note__action" aria-label="Delete">
-                <i class="far fa-trash-alt" focusable="false" aria-hidden="hidden"></i>
-                <span class="sr-only">Delete</span>
-              </button>
-            </div>
-            <div class="rim-note__tags closed fadeInDown animated fastest">
-              <div class="rim-note__tag-wrapper">
-                <button class="button rim-note__tag">Sales</button>
-              </div>
-              <div class="rim-note__tag-wrapper">
-                <button class="button rim-note__tag">Release</button>
-              </div>
-              <div class="rim-note__tag-wrapper">
-                <button class="button rim-note__tag">Production</button>
-              </div>
-            </div>
-            </div>
-            <button class="rim-note__toggle">
-              <i class="far fa-chevron-double-down"></i>
-            </button>
-          </li>
-          <li class="rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
-            <div class="rim-note__inner">
-            <div class="rim-note-toggle">
-              <div class="rim-note__header">
-                <i class="far fa-comment-alt-lines"></i>
-                <h3 class="rim-note__title">
-                  Tiffaney Livingston 07/08/2019
-                </h3>
-              </div>
-              <p class="rim-note__content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </div>
-            <div class="rim-note__actions">
-              <button class="rim-note__action open-note-tags" aria-label="Tags">
-                <i class="fas fa-tags" focusable="false" aria-hidden="hidden"></i>
-                <span class="sr-only">Tags</span>
-              </button>
-              <button class="rim-note__action" aria-label="Edit">
-                <i class="far fa-edit" focusable="false" aria-hidden="hidden"></i>
-                <span class="sr-only">Edit</span>
-              </button>
-              <button class="rim-note__action" aria-label="unlock">
-                <i class="fas fa-lock" focusable="false" aria-hidden="hidden"></i>
-                <span class="sr-only">unlock</span>
-              </button>
-              <button class="rim-note__action" aria-label="Delete">
-                <i class="far fa-trash-alt" focusable="false" aria-hidden="hidden"></i>
-                <span class="sr-only">Delete</span>
-              </button>
-            </div>
-            <div class="rim-note__tags closed fadeInDown animated fastest">
-              <div class="rim-note__tag-wrapper">
-                <button class="button rim-note__tag">Sales</button>
-              </div>
-              <div class="rim-note__tag-wrapper">
-                <button class="button rim-note__tag">Release</button>
-              </div>
-              <div class="rim-note__tag-wrapper">
-                <button class="button rim-note__tag">Production</button>
-              </div>
-            </div>
-            </div>
-            <button class="rim-note__toggle">
-              <i class="far fa-chevron-double-down"></i>
-            </button>
-          </li>
-        </ol>
-        <div class="rim-new-note flipInY animated hidden">
-          <form action="" class="rim-form">
-            <label for="first-name" class="rim-form__field">First Name
-              <input id="first-name" type="text" placeholder="First Name">
-            </label>
-            <label for="last-name" class="rim-form__field">Last Name
-              <input id="last-name" type="text" placeholder="Last Name">
-            </label>
-            <label for="message" class="rim-form__field">Message
-              <textarea id="message" name="message" rows="10" ></textarea>
-            </label>
-            <div class="rim-form__field rim-form__button-group mb-0">
-              <button class="button button--lg rim-note__cancel-action" type="cancel">Cancel</button>
-              <button class="button button--post button--lg" type="submit">Save</button>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="rim-notes rim-notes--preview">
-      <div class="rim-notes__header">
-        <div class="rim-notes__heading-wrapper">
-          <button class="button button--secondary rim-notes__new-action">
-            <i class="far fa-plus"></i>
-          </button>
-          <h2 class="rim-notes__heading">Notes</h2>
+      <div class="rim-notes rim-content-grid__side-content">
+        <div class="rim-notes__header">
+          <div class="rim-notes__heading-wrapper">
+            <button class="button button--secondary rim-notes__new-action">
+              <i class="far fa-plus"></i>
+            </button>
+            <h2 class="rim-notes__heading">Notes</h2>
+          </div>
+          <div>
+            <button class="button rim-note__all-action">View All <span>27</span> <i class="far fa-arrow-right"></i></button>
+          </div>
         </div>
-        <div>
-          <button class="button rim-note__all-action">View All <span>27</span> <i class="far fa-arrow-right"></i></button>
-        </div>
-      </div>
-      <div class="rim-notes__content">
-        <ol class="rim-notes__list animated">
-          <li class="rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
-            <div class="rim-note__inner">
+        <div class="rim-notes__content">
+          <ol class="rim-notes__list animated">
+            <li class="rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
+              <div class="rim-note__inner">
+                <div class="rim-note-toggle">
+                  <div class="rim-note__header">
+                    <i class="far fa-comment-alt-lines"></i>
+                    <h3 class="rim-note__title">
+                      Tiffaney Livingston 07/08/2019
+                    </h3>
+                  </div>
+                  <p class="rim-note__content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  </p>
+                </div>
+                <div class="rim-note__actions">
+                  <button class="rim-note__action open-note-tags" aria-label="Tags">
+                    <i class="fas fa-tags" focusable="false" aria-hidden="hidden"></i>
+                    <span class="sr-only">Tags</span>
+                  </button>
+                  <button class="rim-note__action" aria-label="Edit">
+                    <i class="far fa-edit" focusable="false" aria-hidden="hidden"></i>
+                    <span class="sr-only">Edit</span>
+                  </button>
+                  <button class="rim-note__action" aria-label="unlock">
+                    <i class="fas fa-lock" focusable="false" aria-hidden="hidden"></i>
+                    <span class="sr-only">unlock</span>
+                  </button>
+                  <button class="rim-note__action" aria-label="Delete">
+                    <i class="far fa-trash-alt" focusable="false" aria-hidden="hidden"></i>
+                    <span class="sr-only">Delete</span>
+                  </button>
+                </div>
+                <div class="rim-note__tags closed fadeInDown animated fastest">
+                  <div class="rim-note__tag-wrapper">
+                    <button class="button rim-note__tag">Sales</button>
+                  </div>
+                  <div class="rim-note__tag-wrapper">
+                    <button class="button rim-note__tag">Release</button>
+                  </div>
+                  <div class="rim-note__tag-wrapper">
+                    <button class="button rim-note__tag">Production</button>
+                  </div>
+                </div>
+              </div>
+              <button class="rim-note__toggle">
+                <i class="far fa-chevron-double-down"></i>
+              </button>
+            </li>
+            <li class="rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
+              <div class="rim-note__inner">
               <div class="rim-note-toggle">
                 <div class="rim-note__header">
                   <i class="far fa-comment-alt-lines"></i>
@@ -864,216 +912,170 @@
                   <button class="button rim-note__tag">Production</button>
                 </div>
               </div>
-            </div>
-            <button class="rim-note__toggle">
-              <i class="far fa-chevron-double-down"></i>
-            </button>
-          </li>
-          <li class="rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
-            <div class="rim-note__inner">
-            <div class="rim-note-toggle">
-              <div class="rim-note__header">
-                <i class="far fa-comment-alt-lines"></i>
-                <h3 class="rim-note__title">
-                  Tiffaney Livingston 07/08/2019
-                </h3>
               </div>
-              <p class="rim-note__content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </div>
-            <div class="rim-note__actions">
-              <button class="rim-note__action open-note-tags" aria-label="Tags">
-                <i class="fas fa-tags" focusable="false" aria-hidden="hidden"></i>
-                <span class="sr-only">Tags</span>
+              <button class="rim-note__toggle">
+                <i class="far fa-chevron-double-down"></i>
               </button>
-              <button class="rim-note__action" aria-label="Edit">
-                <i class="far fa-edit" focusable="false" aria-hidden="hidden"></i>
-                <span class="sr-only">Edit</span>
-              </button>
-              <button class="rim-note__action" aria-label="unlock">
-                <i class="fas fa-lock" focusable="false" aria-hidden="hidden"></i>
-                <span class="sr-only">unlock</span>
-              </button>
-              <button class="rim-note__action" aria-label="Delete">
-                <i class="far fa-trash-alt" focusable="false" aria-hidden="hidden"></i>
-                <span class="sr-only">Delete</span>
-              </button>
-            </div>
-            <div class="rim-note__tags closed fadeInDown animated fastest">
-              <div class="rim-note__tag-wrapper">
-                <button class="button rim-note__tag">Sales</button>
+            </li>
+            <li class="rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
+              <div class="rim-note__inner">
+              <div class="rim-note-toggle">
+                <div class="rim-note__header">
+                  <i class="far fa-comment-alt-lines"></i>
+                  <h3 class="rim-note__title">
+                    Tiffaney Livingston 07/08/2019
+                  </h3>
+                </div>
+                <p class="rim-note__content">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
               </div>
-              <div class="rim-note__tag-wrapper">
-                <button class="button rim-note__tag">Release</button>
+              <div class="rim-note__actions">
+                <button class="rim-note__action open-note-tags" aria-label="Tags">
+                  <i class="fas fa-tags" focusable="false" aria-hidden="hidden"></i>
+                  <span class="sr-only">Tags</span>
+                </button>
+                <button class="rim-note__action" aria-label="Edit">
+                  <i class="far fa-edit" focusable="false" aria-hidden="hidden"></i>
+                  <span class="sr-only">Edit</span>
+                </button>
+                <button class="rim-note__action" aria-label="unlock">
+                  <i class="fas fa-lock" focusable="false" aria-hidden="hidden"></i>
+                  <span class="sr-only">unlock</span>
+                </button>
+                <button class="rim-note__action" aria-label="Delete">
+                  <i class="far fa-trash-alt" focusable="false" aria-hidden="hidden"></i>
+                  <span class="sr-only">Delete</span>
+                </button>
               </div>
-              <div class="rim-note__tag-wrapper">
-                <button class="button rim-note__tag">Production</button>
+              <div class="rim-note__tags closed fadeInDown animated fastest">
+                <div class="rim-note__tag-wrapper">
+                  <button class="button rim-note__tag">Sales</button>
+                </div>
+                <div class="rim-note__tag-wrapper">
+                  <button class="button rim-note__tag">Release</button>
+                </div>
+                <div class="rim-note__tag-wrapper">
+                  <button class="button rim-note__tag">Production</button>
+                </div>
               </div>
-            </div>
-            </div>
-            <button class="rim-note__toggle">
-              <i class="far fa-chevron-double-down"></i>
-            </button>
-          </li>
-          <li class="rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
-            <div class="rim-note__inner">
-            <div class="rim-note-toggle">
-              <div class="rim-note__header">
-                <i class="far fa-comment-alt-lines"></i>
-                <h3 class="rim-note__title">
-                  Tiffaney Livingston 07/08/2019
-                </h3>
               </div>
-              <p class="rim-note__content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </div>
-            <div class="rim-note__actions">
-              <button class="rim-note__action open-note-tags" aria-label="Tags">
-                <i class="fas fa-tags" focusable="false" aria-hidden="hidden"></i>
-                <span class="sr-only">Tags</span>
+              <button class="rim-note__toggle">
+                <i class="far fa-chevron-double-down"></i>
               </button>
-              <button class="rim-note__action" aria-label="Edit">
-                <i class="far fa-edit" focusable="false" aria-hidden="hidden"></i>
-                <span class="sr-only">Edit</span>
-              </button>
-              <button class="rim-note__action" aria-label="unlock">
-                <i class="fas fa-lock" focusable="false" aria-hidden="hidden"></i>
-                <span class="sr-only">unlock</span>
-              </button>
-              <button class="rim-note__action" aria-label="Delete">
-                <i class="far fa-trash-alt" focusable="false" aria-hidden="hidden"></i>
-                <span class="sr-only">Delete</span>
-              </button>
-            </div>
-            <div class="rim-note__tags closed fadeInDown animated fastest">
-              <div class="rim-note__tag-wrapper">
-                <button class="button rim-note__tag">Sales</button>
+            </li>
+            <li class="rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
+              <div class="rim-note__inner">
+              <div class="rim-note-toggle">
+                <div class="rim-note__header">
+                  <i class="far fa-comment-alt-lines"></i>
+                  <h3 class="rim-note__title">
+                    Tiffaney Livingston 07/08/2019
+                  </h3>
+                </div>
+                <p class="rim-note__content">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
               </div>
-              <div class="rim-note__tag-wrapper">
-                <button class="button rim-note__tag">Release</button>
+              <div class="rim-note__actions">
+                <button class="rim-note__action open-note-tags" aria-label="Tags">
+                  <i class="fas fa-tags" focusable="false" aria-hidden="hidden"></i>
+                  <span class="sr-only">Tags</span>
+                </button>
+                <button class="rim-note__action" aria-label="Edit">
+                  <i class="far fa-edit" focusable="false" aria-hidden="hidden"></i>
+                  <span class="sr-only">Edit</span>
+                </button>
+                <button class="rim-note__action" aria-label="unlock">
+                  <i class="fas fa-lock" focusable="false" aria-hidden="hidden"></i>
+                  <span class="sr-only">unlock</span>
+                </button>
+                <button class="rim-note__action" aria-label="Delete">
+                  <i class="far fa-trash-alt" focusable="false" aria-hidden="hidden"></i>
+                  <span class="sr-only">Delete</span>
+                </button>
               </div>
-              <div class="rim-note__tag-wrapper">
-                <button class="button rim-note__tag">Production</button>
+              <div class="rim-note__tags closed fadeInDown animated fastest">
+                <div class="rim-note__tag-wrapper">
+                  <button class="button rim-note__tag">Sales</button>
+                </div>
+                <div class="rim-note__tag-wrapper">
+                  <button class="button rim-note__tag">Release</button>
+                </div>
+                <div class="rim-note__tag-wrapper">
+                  <button class="button rim-note__tag">Production</button>
+                </div>
               </div>
-            </div>
-            </div>
-            <button class="rim-note__toggle">
-              <i class="far fa-chevron-double-down"></i>
-            </button>
-          </li>
-          <li class="rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
-            <div class="rim-note__inner">
-            <div class="rim-note-toggle">
-              <div class="rim-note__header">
-                <i class="far fa-comment-alt-lines"></i>
-                <h3 class="rim-note__title">
-                  Tiffaney Livingston 07/08/2019
-                </h3>
               </div>
-              <p class="rim-note__content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </div>
-            <div class="rim-note__actions">
-              <button class="rim-note__action open-note-tags" aria-label="Tags">
-                <i class="fas fa-tags" focusable="false" aria-hidden="hidden"></i>
-                <span class="sr-only">Tags</span>
+              <button class="rim-note__toggle">
+                <i class="far fa-chevron-double-down"></i>
               </button>
-              <button class="rim-note__action" aria-label="Edit">
-                <i class="far fa-edit" focusable="false" aria-hidden="hidden"></i>
-                <span class="sr-only">Edit</span>
-              </button>
-              <button class="rim-note__action" aria-label="unlock">
-                <i class="fas fa-lock" focusable="false" aria-hidden="hidden"></i>
-                <span class="sr-only">unlock</span>
-              </button>
-              <button class="rim-note__action" aria-label="Delete">
-                <i class="far fa-trash-alt" focusable="false" aria-hidden="hidden"></i>
-                <span class="sr-only">Delete</span>
-              </button>
-            </div>
-            <div class="rim-note__tags closed fadeInDown animated fastest">
-              <div class="rim-note__tag-wrapper">
-                <button class="button rim-note__tag">Sales</button>
+            </li>
+            <li class="rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
+              <div class="rim-note__inner">
+              <div class="rim-note-toggle">
+                <div class="rim-note__header">
+                  <i class="far fa-comment-alt-lines"></i>
+                  <h3 class="rim-note__title">
+                    Tiffaney Livingston 07/08/2019
+                  </h3>
+                </div>
+                <p class="rim-note__content">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
               </div>
-              <div class="rim-note__tag-wrapper">
-                <button class="button rim-note__tag">Release</button>
+              <div class="rim-note__actions">
+                <button class="rim-note__action open-note-tags" aria-label="Tags">
+                  <i class="fas fa-tags" focusable="false" aria-hidden="hidden"></i>
+                  <span class="sr-only">Tags</span>
+                </button>
+                <button class="rim-note__action" aria-label="Edit">
+                  <i class="far fa-edit" focusable="false" aria-hidden="hidden"></i>
+                  <span class="sr-only">Edit</span>
+                </button>
+                <button class="rim-note__action" aria-label="unlock">
+                  <i class="fas fa-lock" focusable="false" aria-hidden="hidden"></i>
+                  <span class="sr-only">unlock</span>
+                </button>
+                <button class="rim-note__action" aria-label="Delete">
+                  <i class="far fa-trash-alt" focusable="false" aria-hidden="hidden"></i>
+                  <span class="sr-only">Delete</span>
+                </button>
               </div>
-              <div class="rim-note__tag-wrapper">
-                <button class="button rim-note__tag">Production</button>
+              <div class="rim-note__tags closed fadeInDown animated fastest">
+                <div class="rim-note__tag-wrapper">
+                  <button class="button rim-note__tag">Sales</button>
+                </div>
+                <div class="rim-note__tag-wrapper">
+                  <button class="button rim-note__tag">Release</button>
+                </div>
+                <div class="rim-note__tag-wrapper">
+                  <button class="button rim-note__tag">Production</button>
+                </div>
               </div>
-            </div>
-            </div>
-            <button class="rim-note__toggle">
-              <i class="far fa-chevron-double-down"></i>
-            </button>
-          </li>
-          <li class="rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
-            <div class="rim-note__inner">
-            <div class="rim-note-toggle">
-              <div class="rim-note__header">
-                <i class="far fa-comment-alt-lines"></i>
-                <h3 class="rim-note__title">
-                  Tiffaney Livingston 07/08/2019
-                </h3>
               </div>
-              <p class="rim-note__content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </div>
-            <div class="rim-note__actions">
-              <button class="rim-note__action open-note-tags" aria-label="Tags">
-                <i class="fas fa-tags" focusable="false" aria-hidden="hidden"></i>
-                <span class="sr-only">Tags</span>
+              <button class="rim-note__toggle">
+                <i class="far fa-chevron-double-down"></i>
               </button>
-              <button class="rim-note__action" aria-label="Edit">
-                <i class="far fa-edit" focusable="false" aria-hidden="hidden"></i>
-                <span class="sr-only">Edit</span>
-              </button>
-              <button class="rim-note__action" aria-label="unlock">
-                <i class="fas fa-lock" focusable="false" aria-hidden="hidden"></i>
-                <span class="sr-only">unlock</span>
-              </button>
-              <button class="rim-note__action" aria-label="Delete">
-                <i class="far fa-trash-alt" focusable="false" aria-hidden="hidden"></i>
-                <span class="sr-only">Delete</span>
-              </button>
-            </div>
-            <div class="rim-note__tags closed fadeInDown animated fastest">
-              <div class="rim-note__tag-wrapper">
-                <button class="button rim-note__tag">Sales</button>
+            </li>
+          </ol>
+          <div class="rim-new-note flipInY animated hidden">
+            <form action="" class="rim-form">
+              <label for="first-name" class="rim-form__field">First Name
+                <input id="first-name" type="text" placeholder="First Name">
+              </label>
+              <label for="last-name" class="rim-form__field">Last Name
+                <input id="last-name" type="text" placeholder="Last Name">
+              </label>
+              <label for="message" class="rim-form__field">Message
+                <textarea id="message" name="message" rows="10" ></textarea>
+              </label>
+              <div class="rim-form__field rim-form__button-group mb-0">
+                <button class="button button--lg rim-note__cancel-action" type="cancel">Cancel</button>
+                <button class="button button--post button--lg" type="submit">Save</button>
               </div>
-              <div class="rim-note__tag-wrapper">
-                <button class="button rim-note__tag">Release</button>
-              </div>
-              <div class="rim-note__tag-wrapper">
-                <button class="button rim-note__tag">Production</button>
-              </div>
-            </div>
-            </div>
-            <button class="rim-note__toggle">
-              <i class="far fa-chevron-double-down"></i>
-            </button>
-          </li>
-        </ol>
-        <div class="rim-new-note flipInY animated hidden">
-          <form action="" class="rim-form">
-            <label for="first-name" class="rim-form__field">First Name
-              <input id="first-name" type="text" placeholder="First Name">
-            </label>
-            <label for="last-name" class="rim-form__field">Last Name
-              <input id="last-name" type="text" placeholder="Last Name">
-            </label>
-            <label for="message" class="rim-form__field">Message
-              <textarea id="message" name="message" rows="10" ></textarea>
-            </label>
-            <div class="rim-form__field rim-form__button-group mb-0">
-              <button class="button button--lg rim-note__cancel-action" type="cancel">Cancel</button>
-              <button class="button button--post button--lg" type="submit">Save</button>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
     </div>

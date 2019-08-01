@@ -11,30 +11,17 @@
   background-color: map-get($platform-colors, 'notes' );
   padding: map-get($spacers, 5 ) 0 $spacer;
 
-  &--preview {
-    @include breakpoint(desktop, max) {
-      display: none;
-    }    
-
-    @include breakpoint(desktop, min) {
-      align-self: baseline;
-      grid-column: 10/13;
-      grid-row: 2;
-    }
-  }
-
   &--all {
+    bottom: 0;
     box-shadow: 0 -.5rem 2rem rgba(map-get($greyscale, 'black'), .5);
-    right: -27rem;
-    transition: all ease-in-out .3s;
     display: flex;
     flex-direction: column;
-    width: 100%;
-    position: fixed;
-    z-index: 500;
-    bottom: 0;
     height: calc(100% - 4.5rem);
     left: unset;
+    position: fixed;
+    right: -30rem;
+    transition: all ease-in-out .3s;
+    z-index: 500;
     width: 27rem;
 
     &.open {
