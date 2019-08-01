@@ -1,11 +1,17 @@
 .platform {
   background-color: map-get($greyscale, 'lighter');
-  display: grid;
-  grid-template-rows: $menu-height auto;
-  grid-template-columns: 2fr 6fr;
+  overflow-x: hidden;
+
+  @supports(display: grid) {
+    display: grid;
+    grid-template-rows: $menu-height auto;
+    grid-template-columns: 4rem 1fr;
+  }  
 
   main {
-    grid-row-start: 2;
+    @supports(display: grid) {
+      grid-row-start: 2;
+    }
   }
 }
 
@@ -30,6 +36,10 @@
     }
   }
   &.toggle {
+    @supports(display: grid) {
+      grid-template-columns: 25vw 1fr;
+    }
+
     aside {
       margin-left: 0;
       width: 25vw;
@@ -104,8 +114,12 @@
       }
     }
     main {
-      margin-left: 25vw;
-      width: 75vw;
+      padding-left: 25vw;
+
+      @supports(display: grid) {
+        padding-left: 0;
+        width: auto;
+      }
     }
   }
 
@@ -116,11 +130,21 @@
     margin-left: 0;
     width: 4rem;
     z-index: 50;
+
+    @supports(display: grid) {
+      grid-column: 1;
+    }
   }
   main {
-    margin-left: 5vw;
-    width: 95vw;
+    padding-left: 4rem;
+    width: 100%;
     transition: $transitions;
+
+    @supports(display: grid) {
+      grid-column: 2;
+      padding-left: 0;
+      width: auto;
+    }
   }
 }
 
