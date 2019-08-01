@@ -6,7 +6,7 @@
 }
 
 .rim-notes {
-  $orange:    map-get($brand-colors, 'salmon' );
+  $orange: map-get($brand-colors, 'salmon' );
 
   background-color: map-get($platform-colors, 'notes' );
   padding: map-get($spacers, 5 ) 0 $spacer;
@@ -71,7 +71,7 @@
 }
 
 .rim-note {
-  $orange:    map-get($brand-colors, 'salmon' );
+  $orange: map-get($brand-colors, 'salmon' );
 
   border-top: 1px solid map-get($greyscale, 'light-mid' );
   display: flex;
