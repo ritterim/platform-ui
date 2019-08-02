@@ -28,7 +28,7 @@ var rimNote = document.querySelector('.rim-note');
 var rimNoteToggle = document.querySelector('.rim-note__toggle');
 var openTags = document.querySelector('.open-note-tags');
 
-[].forEach.call(document.querySelectorAll('.rim-note-toggle'), function(el) {
+[].forEach.call(document.querySelectorAll('.rim-note-toggle-wrapper'), function(el) {
   el.addEventListener('click', function() {
     var parent = this.parentNode.parentNode;
 
@@ -52,6 +52,7 @@ var openTags = document.querySelector('.open-note-tags');
     var noteTags = parent.nextSibling.nextSibling;
 
     noteTags.classList.toggle('closed');
+    document.querySelector('.rim-note__active-tags').classList.toggle('open');
   })
 });
   

@@ -97,8 +97,6 @@
 
     .rim-note__toggle {
       color: $orange;
-      opacity: 1;
-      visibility: visible;
     }
   }
 
@@ -111,16 +109,11 @@
   }
 
   &__inner {
-  
-    // height animation stuff
-    height: auto;
-    max-height: 4.3rem;
-    transition: max-height $transitions, max-width $transitions, transform $transitions;
+    transition: max-width $transitions, transform $transitions;
     overflow: hidden;
 
     .note-open & {
       cursor: default;
-      max-height: 60rem;
       max-width: 90%;
       transform: translate(19px, 0) scale(1.1);
     }
@@ -149,10 +142,30 @@
     margin-left: map-get($spacers, 2 );
   }
 
+  &-toggle-wrapper {
+
+    &--bottom {
+      display: none;
+
+      .note-open & {
+        display: block;
+      }
+    }
+  }
+
   &__content {
     color: map-get($greyscale, 'base' );
     font-weight: 400;
     margin-bottom: $spacer;
+  }
+
+  &__active-tags {
+    display: none;
+    flex-flow: row wrap;
+
+    &.open {
+      display: flex;
+    }
   }
 
   &__actions {
@@ -228,8 +241,6 @@
     bottom: .5rem;
     left: 50%;
     transform: translateX(-50%);
-    opacity: 0;
-    visibility: hidden;
 
     &:hover {
       color: $orange;
@@ -237,7 +248,7 @@
 
     .note-open & {
       opacity: 1;
-      transform: rotate(180deg);
+      transform: translateX(-50%) rotate(180deg);
       visibility: visible;
     }
   }

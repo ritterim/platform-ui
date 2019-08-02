@@ -108,7 +108,7 @@ table {
   border-collapse: separate;
   border-spacing: 0;
 
-  @include breakpoint(mobile, max) {
+  @include breakpoint(tablet, max) {
     border: none;
   }
 
@@ -119,7 +119,7 @@ table {
     font-weight: bold;
     text-align: left;
 
-    @include breakpoint(mobile, max) {
+    @include breakpoint(tablet, max) {
       border: none;
     }
 
@@ -132,7 +132,7 @@ table {
     background-color: transparent;
     transition: $transitions * 3;
 
-    @include breakpoint(mobile, min) {
+    @include breakpoint(tablet, min) {
       &:hover {
         background-color: map-get($greyscale, 'lighter');
       }
@@ -148,7 +148,7 @@ table {
     }
   }
 
-  @include breakpoint(mobile, max) {
+  @include breakpoint(tablet, max) {
     thead tr {
       position: absolute;
       top: -9999em;

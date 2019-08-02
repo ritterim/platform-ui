@@ -6,7 +6,7 @@
 //
 // Animation note: using `animated` must be placed on `.rim-modal__inner` to maintain correct positioning.
 //
-// The default size of the modal is `medium`, you can use `rim-modal--small` or `rim-modal--large` for different sized modals.
+// The default size of the modal is `medium`, you can use `rim-modal--small`, `rim-modal--large`, or `rim-modal--full` for different sized modals.
 //
 // ```html
 // <div class="rim-modal--overlay rim-modal--closed"></div>
@@ -37,7 +37,7 @@
 //   </div>
 // </div>
 //
-// <div id="small-modal" class="rim-modal rim-modal--small rim rim-modal--closed ">
+// <div id="small-modal" class="rim-modal rim-modal--small rim-modal--closed ">
 //   <div class="rim-modal__inner animated slideInUp faster">
 //     <div class="rim-modal__header">
 //       <button class="button float-right rim-modal__close" data-modal="small-modal">Close <i class="fas fa-times"></i></button>
@@ -49,7 +49,7 @@
 //   </div>
 // </div>
 //
-// <div id="large-modal" class="rim-modal rim-modal--large rim rim-modal--closed ">
+// <div id="large-modal" class="rim-modal rim-modal--large rim-modal--closed ">
 //   <div class="rim-modal__inner animated slideInUp faster">
 //     <div class="rim-modal__header">
 //       <button class="button float-right rim-modal__close" data-modal="large-modal">Close <i class="fas fa-times"></i></button>
@@ -60,8 +60,25 @@
 //     </div>
 //   </div>
 // </div>
+// <div id="full-modal" class="rim-modal rim-modal--full rim-modal--closed ">
+//   <div class="rim-modal__inner animated slideInUp faster">
+//     <div class="rim-modal__header">
+//       <button class="button float-right rim-modal__close" data-modal="full-modal">Close <i class="fas fa-times"></i></button>
+//       <h2>Modal</h2>
+//     </div>
+//     <div class="rim-modal__content">
+//       <h3>Full Screen Modal</h3>
+//       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eleifend convallis quam fermentum sagittis. Curabitur nec ullamcorper nibh, et rhoncus ipsum. Cras quam lacus, gravida id pharetra sit amet, eleifend vel enim. Donec non est ullamcorper tellus aliquam molestie. Morbi vitae nisi velit. Nam tincidunt justo eros, quis posuere quam condimentum ac. Curabitur mi diam, efficitur laoreet iaculis non, volutpat ac ligula. Nullam ut luctus arcu. Donec a turpis mi. Pellentesque fermentum, turpis at bibendum laoreet, lorem lorem tempor lectus, congue viverra nisi dui nec purus. Donec ultricies ut risus sit amet mollis.</p>
+//       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eleifend convallis quam fermentum sagittis. Curabitur nec ullamcorper nibh, et rhoncus ipsum. Cras quam lacus, gravida id pharetra sit amet, eleifend vel enim. Donec non est ullamcorper tellus aliquam molestie. Morbi vitae nisi velit. Nam tincidunt justo eros, quis posuere quam condimentum ac. Curabitur mi diam, efficitur laoreet iaculis non, volutpat ac ligula. Nullam ut luctus arcu. Donec a turpis mi. Pellentesque fermentum, turpis at bibendum laoreet, lorem lorem tempor lectus, congue viverra nisi dui nec purus. Donec ultricies ut risus sit amet mollis.</p>
+//       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eleifend convallis quam fermentum sagittis. Curabitur nec ullamcorper nibh, et rhoncus ipsum. Cras quam lacus, gravida id pharetra sit amet, eleifend vel enim. Donec non est ullamcorper tellus aliquam molestie. Morbi vitae nisi velit. Nam tincidunt justo eros, quis posuere quam condimentum ac. Curabitur mi diam, efficitur laoreet iaculis non, volutpat ac ligula. Nullam ut luctus arcu. Donec a turpis mi. Pellentesque fermentum, turpis at bibendum laoreet, lorem lorem tempor lectus, congue viverra nisi dui nec purus. Donec ultricies ut risus sit amet mollis.</p>
+//       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eleifend convallis quam fermentum sagittis. Curabitur nec ullamcorper nibh, et rhoncus ipsum. Cras quam lacus, gravida id pharetra sit amet, eleifend vel enim. Donec non est ullamcorper tellus aliquam molestie. Morbi vitae nisi velit. Nam tincidunt justo eros, quis posuere quam condimentum ac. Curabitur mi diam, efficitur laoreet iaculis non, volutpat ac ligula. Nullam ut luctus arcu. Donec a turpis mi. Pellentesque fermentum, turpis at bibendum laoreet, lorem lorem tempor lectus, congue viverra nisi dui nec purus. Donec ultricies ut risus sit amet mollis.</p>
+//       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eleifend convallis quam fermentum sagittis. Curabitur nec ullamcorper nibh, et rhoncus ipsum. Cras quam lacus, gravida id pharetra sit amet, eleifend vel enim. Donec non est ullamcorper tellus aliquam molestie. Morbi vitae nisi velit. Nam tincidunt justo eros, quis posuere quam condimentum ac. Curabitur mi diam, efficitur laoreet iaculis non, volutpat ac ligula. Nullam ut luctus arcu. Donec a turpis mi. Pellentesque fermentum, turpis at bibendum laoreet, lorem lorem tempor lectus, congue viverra nisi dui nec purus. Donec ultricies ut risus sit amet mollis.</p>
+//       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eleifend convallis quam fermentum sagittis. Curabitur nec ullamcorper nibh, et rhoncus ipsum. Cras quam lacus, gravida id pharetra sit amet, eleifend vel enim. Donec non est ullamcorper tellus aliquam molestie. Morbi vitae nisi velit. Nam tincidunt justo eros, quis posuere quam condimentum ac. Curabitur mi diam, efficitur laoreet iaculis non, volutpat ac ligula. Nullam ut luctus arcu. Donec a turpis mi. Pellentesque fermentum, turpis at bibendum laoreet, lorem lorem tempor lectus, congue viverra nisi dui nec purus. Donec ultricies ut risus sit amet mollis.</p>
+//     </div>
+//   </div>
+// </div>
 //
-// <button class="button button--post button--lg rim-modal__open" data-modal="default-modal">Trigger Modal</button> <button class="button button--post button--lg rim-modal__open" data-modal="small-modal">Small Modal</button> <button class="button button--post button--lg rim-modal__open" data-modal="large-modal">Large Modal</button>
+// <button class="button button--post button--lg rim-modal__open" data-modal="default-modal">Trigger Modal</button> <button class="button button--post button--lg rim-modal__open" data-modal="small-modal">Small Modal</button> <button class="button button--post button--lg rim-modal__open" data-modal="large-modal">Large Modal</button> <button class="button button--post button--lg rim-modal__open" data-modal="full-modal">Full Screen Modal</button>
 //
 // Styleguide Components.modal
 
@@ -106,6 +123,16 @@
     height: 70vh;
     @include breakpoint(tablet, min) {
       width: 80vw;
+    }
+  }
+
+  &--full {
+    height: 100vh;
+    width: 100vw;
+    .rim-modal__content {
+      height: 100%;
+      overflow-y: auto;
+      padding-bottom: 6rem;
     }
   }
 
