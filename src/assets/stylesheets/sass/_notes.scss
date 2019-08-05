@@ -204,6 +204,7 @@
     align-items: center;
     display: flex;
     flex-wrap: wrap;
+    margin-top: $spacer;
 
     &.closed {
       display: none;
@@ -211,7 +212,7 @@
   }
 
   &__tag-wrapper {
-    margin: map-get($spacers, 2 ) 0;
+    margin-bottom: map-get($spacers, 2 );
     padding: 0 map-get($spacers, 1 );
   }
 

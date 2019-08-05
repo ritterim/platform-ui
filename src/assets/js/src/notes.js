@@ -60,6 +60,13 @@ var openTags = document.querySelector('.open-note-tags');
     this.classList.toggle('active');
   })
 });
+  
+
+[].forEach.call(document.querySelectorAll('.rim-note__action'), function(el) {
+  el.addEventListener('click', function() {
+    this.classList.toggle('active');
+  })
+});
 
 var newButton = document.querySelector('.rim-notes__new-action');
 var allButton = document.querySelector('.rim-note__all-action');
