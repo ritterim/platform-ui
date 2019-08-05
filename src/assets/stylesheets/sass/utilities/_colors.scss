@@ -11,16 +11,23 @@ $all-colors: map-merge($brand-colors, $secondary-colors);
   }
   // background color
   .background-#{$name} {
-    background-color: $color !important; 
+    background-color: $color !important;
 
     &.button {
-      
+
       &.loading {
-  
+
         &:before {
           background-color: $color !important;
         }
       }
+    }
+  }
+  // hover colors
+  .hover-#{$name} {
+    transition: $transitions;
+    &:hover {
+      color: $color !important;
     }
   }
 }
@@ -28,7 +35,7 @@ $all-colors: map-merge($brand-colors, $secondary-colors);
 @each $name, $color in $greyscale {
   // text color
   .text-#{$name} {
-    border-color: $color !important;    
+    border-color: $color !important;
     color: $color !important;
     transition: .2s;
   }
@@ -39,7 +46,7 @@ $all-colors: map-merge($brand-colors, $secondary-colors);
     &.button {
 
       &.loading {
-  
+
         &:before {
           background-color: $color !important;
         }
