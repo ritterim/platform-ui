@@ -109,8 +109,9 @@
   }
 
   &__inner {
-    transition: max-width $transitions, transform $transitions;
     overflow: hidden;
+    padding: 0 0 1rem;
+    transition: max-width $transitions, transform $transitions;
 
     .note-open & {
       cursor: default;
@@ -146,6 +147,7 @@
 
     &--bottom {
       display: none;
+      margin-top: $spacer;
 
       .note-open & {
         display: block;
@@ -157,15 +159,15 @@
     color: map-get($greyscale, 'base' );
     font-weight: 400;
     margin-bottom: $spacer;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
   }
 
   &__active-tags {
-    display: none;
+    display: flex;
     flex-flow: row wrap;
-
-    &.open {
-      display: flex;
-    }
   }
 
   &__actions {
@@ -202,7 +204,6 @@
     align-items: center;
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 1rem;
 
     &.closed {
       display: none;
@@ -210,7 +211,7 @@
   }
 
   &__tag-wrapper {
-    margin-bottom: map-get($spacers, 2 );
+    margin: map-get($spacers, 2 ) 0;
     padding: 0 map-get($spacers, 1 );
   }
 

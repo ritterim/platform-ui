@@ -48,11 +48,9 @@ var openTags = document.querySelector('.open-note-tags');
 
 [].forEach.call(document.querySelectorAll('.open-note-tags'), function(el) {
   el.addEventListener('click', function() {
-    var parent = this.parentNode;
-    var noteTags = parent.nextSibling.nextSibling;
+    var noteTags = document.querySelector('.rim-note__tags');
 
     noteTags.classList.toggle('closed');
-    document.querySelector('.rim-note__active-tags').classList.toggle('open');
   })
 });
   
