@@ -16,11 +16,13 @@ var closeNotes = document.querySelector('.rim-notes__close');
 var notes = document.querySelector('.rim-notes--all');
 
 toggleNotes.addEventListener('click', function() {
-  notes.classList.add('open');
+  notes.classList.add('slide-right-enter-active');
+  notes.classList.remove('slide-right-leave-active');
 });
 
 closeNotes.addEventListener('click', function(){
-  notes.classList.remove('open');
+  notes.classList.add('slide-right-leave-active');
+  notes.classList.remove('slide-right-enter-active');
 });
 
 
@@ -33,6 +35,7 @@ var openTags = document.querySelector('.open-note-tags');
     var parent = this.parentNode.parentNode;
 
     parent.classList.toggle('note-open');
+    document.querySelector('.rim-note-toggle-wrapper--bottom').classList.toggle('slide-down-enter-active');   
   })
 });
   
@@ -42,15 +45,16 @@ var openTags = document.querySelector('.open-note-tags');
     var note = this.parentNode;
 
     note.classList.toggle('note-open');
+    document.querySelector('.rim-note-toggle-wrapper--bottom').classList.toggle('slide-down-enter-active');    
   })
 });
-  
+
 
 [].forEach.call(document.querySelectorAll('.open-note-tags'), function(el) {
   el.addEventListener('click', function() {
     var noteTags = document.querySelector('.rim-note__tags');
 
-    noteTags.classList.toggle('closed');
+    noteTags.classList.toggle('slide-down-enter-active');
   })
 });
   
@@ -76,28 +80,23 @@ var cancelNote = document.querySelector('.rim-note__cancel-action');
 
 function newNoteFormClose() {
   newButton.classList.remove('cancel-note');
-  animateCSS('.rim-new-note', 'flipOutY', function(){
-    newNoteForm.classList.add('closed');
-    newNoteForm.classList.remove('flipInY');
-    newNoteForm.classList.remove('flipOutY');
-    notesList.classList.remove('closed');
-    animateCSS('.rim-notes__list', 'flipInY');
-  });
+  newNoteForm.classList.add('flip-y-leave-active');
+  newNoteForm.classList.remove('flip-y-enter-active');
+  notesList.classList.add('flip-y-enter-active');
+  notesList.classList.remove('flip-y-leave-active');
 }
 
 function newNoteFormOpen() {
   newButton.classList.add('cancel-note');
-  animateCSS('.rim-notes__list', 'flipOutY', function(){
-    newNoteForm.classList.remove('closed');
-    notesList.classList.remove('flipOutY');
-    notesList.classList.remove('flipInY');
-    notesList.classList.add('closed');
-    animateCSS('.rim-new-note', 'flipInY');
-  });
+  newNoteForm.classList.add('flip-y-enter-active');
+  newNoteForm.classList.remove('flip-y-leave-active');
+  notesList.classList.add('flip-y-leave-active');
+  notesList.classList.remove('flip-y-add-active');
 }
 
 allButton.addEventListener('click', function() {
-  notes.classList.add('open');
+  notes.classList.add('slide-right-enter-active');
+  notes.classList.remove('slide-right-leave-active');
 });
 
 cancelNote.addEventListener('click', function(e){
