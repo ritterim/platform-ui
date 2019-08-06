@@ -2,6 +2,15 @@
 // 
 // Our display utilities allow you to show or hide code at specific resolutions.
 // 
+// The classes are broken down by a display prefix, a breakpoint value, and a 
+// directional suffix. The prefixes of show and hide represent the display value. Where `show-` will equal `display: block` 
+// and `hide-` equals `display: none`.
+// 
+// The breakpoint value represents where the style will be used. Think of the breakpoints being within the starting px 
+// value and the next breakpoint value. So `mobile` will be between `mobile` and `tablet`.
+// 
+// The suffix represents the direction of the media query. `-up` generates a `min-width` media query. `-down` generates a 
+// `max-width` media query. `-only` generates a `min-width` and `max-width` media query.
 // 
 // | Class Name                     | Display Value              | Generated Media Query                                                     |
 // | ------------------------------ | -------------------------- | ------------------------------------------------------------------------- |
@@ -28,16 +37,6 @@
 // | `hide-desktop-up`              | `diaplay: none;`           | `@media screen and (min-width: 1800px)`                                   |
 // | `hide-desktop-only`            | `diaplay: none;`           | `@media screen and (min-width: 1800px) and (max-width: 1799px)`           |
 // 
-// 
-// The classes are broken down by a display prefix, a breakpoint value, and a 
-// directional suffix. The prefixes of show and hide represent the display value. Where `show-` will equal `display: block` 
-// and `hide-` equals `display: none`.
-// 
-// The breakpoint value represents where the style will be used. Think of the breakpoints being within the starting px 
-// value and the next breakpoint value. So `mobile` will be between `mobile` and `tablet`.
-// 
-// The suffix represents the direction of the media query. `-up` generates a `min-width` media query. `-down` generates a 
-// `max-width` media query. `-only` generates a `min-width` and `max-width` media query.
 // 
 // Styleguide Utilities.Display
 
