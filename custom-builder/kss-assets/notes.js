@@ -73,10 +73,10 @@ var cancelNote = document.querySelector('.rim-note__cancel-action');
 function newNoteFormClose() {
   newButton.classList.remove('cancel-note');
   animateCSS('.rim-new-note', 'flipOutY', function(){
-    newNoteForm.classList.add('is-hidden');
+    newNoteForm.classList.add('closed');
     newNoteForm.classList.remove('flipInY');
     newNoteForm.classList.remove('flipOutY');
-    notesList.classList.remove('is-hidden');
+    notesList.classList.remove('closed');
     animateCSS('.rim-notes__list', 'flipInY');
   });
 }
@@ -84,10 +84,10 @@ function newNoteFormClose() {
 function newNoteFormOpen() {
   newButton.classList.add('cancel-note');
   animateCSS('.rim-notes__list', 'flipOutY', function(){
-    newNoteForm.classList.remove('is-hidden');
+    newNoteForm.classList.remove('closed');
     notesList.classList.remove('flipOutY');
     notesList.classList.remove('flipInY');
-    notesList.classList.add('is-hidden');
+    notesList.classList.add('closed');
     animateCSS('.rim-new-note', 'flipInY');
   });
 }
@@ -110,4 +110,3 @@ newButton.addEventListener('click', function(){
     newNoteFormOpen();
   }  
 });
-  
