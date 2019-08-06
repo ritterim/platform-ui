@@ -1,16 +1,125 @@
+// Display
+// 
+// Our display utilities allow you to show or hide code at specific resolutions.
+// 
+// 
+// | Class Name                     | Display Value              | Generated Media Query                                                     |
+// | ------------------------------ | -------------------------- | ------------------------------------------------------------------------- |
+// | `show-mobile-up`               | `diaplay: block;`          | `@media screen and (min-width: 0px)`                                      |
+// | `show-mobile-only`             | `diaplay: block;`          | `@media screen and (min-width: 0px) and (max-width: 767px)`               |
+// | `show-mobile-down`             | `diaplay: block;`          | `@media screen and (max-width: 767px)`                                    |
+// | `hide-mobile-up`               | `diaplay: none;`           | `@media screen and (min-width: 0px)`                                      |
+// | `hide-mobile-only`             | `diaplay: none;`           | `@media screen and (min-width: 0px) and (max-width: 767px)`               |
+// | `hide-mobile-down`             | `diaplay: none;`           | `@media screen and (max-width: 767px)`                                    |
+// | `show-tablet-up`               | `diaplay: block;`          | `@media screen and (min-width: 768px)`                                    |
+// | `show-tablet-only`             | `diaplay: block;`          | `@media screen and (min-width: 768px) and (max-width: 1239px)`            |
+// | `show-tablet-down`             | `diaplay: block;`          | `@media screen and (max-width: 1239px)`                                   |
+// | `hide-tablet-up`               | `diaplay: none;`           | `@media screen and (min-width: 768px)`                                    |
+// | `hide-tablet-only`             | `diaplay: none;`           | `@media screen and (min-width: 768px) and (max-width: 1239px)`            |
+// | `hide-tablet-down`             | `diaplay: none;`           | `@media screen and (max-width: 1239px)`                                   |
+// | `show-laptop-up`               | `diaplay: block;`          | `@media screen and (min-width: 1240px)`                                   |
+// | `show-laptop-only`             | `diaplay: block;`          | `@media screen and (min-width: 1240px) and (max-width: 1799px)`           |
+// | `show-laptop-down`             | `diaplay: block;`          | `@media screen and (max-width: 1799px)`                                   |
+// | `hide-laptop-up`               | `diaplay: none;`           | `@media screen and (min-width: 1240px)`                                   |
+// | `hide-laptop-only`             | `diaplay: none;`           | `@media screen and (min-width: 1240px) and (max-width: 1799px)`           |
+// | `hide-laptop-down`             | `diaplay: none;`           | `@media screen and (max-width: 1799px)`                                   |
+// | `show-desktop-up`              | `diaplay: block;`          | `@media screen and (min-width: 1800px)`                                   |
+// | `show-desktop-only`            | `diaplay: block;`          | `@media screen and (min-width: 1800px) and (max-width: 1799px)`           |
+// | `hide-desktop-up`              | `diaplay: none;`           | `@media screen and (min-width: 1800px)`                                   |
+// | `hide-desktop-only`            | `diaplay: none;`           | `@media screen and (min-width: 1800px) and (max-width: 1799px)`           |
+// 
+// 
+// The classes are broken down by a display prefix, a breakpoint value, and a 
+// directional suffix. The prefixes of show and hide represent the display value. Where `show-` will equal `display: block` 
+// and `hide-` equals `display: none`.
+// 
+// The breakpoint value represents where the style will be used. Think of the breakpoints being within the starting px 
+// value and the next breakpoint value. So `mobile` will be between `mobile` and `tablet`.
+// 
+// The suffix represents the direction of the media query. `-up` generates a `min-width` media query. `-down` generates a 
+// `max-width` media query. `-only` generates a `min-width` and `max-width` media query.
+// 
+// Styleguide Utilities.Display
+
+// Function the gets the next value in the map.
+@function nextKey($current-value, $mapped-list:$breakpoints) {
+  // get current key from list
+  $the-list: map-keys($mapped-list);
+
+  //find index of current value and add 1
+  $the-index: ( index( $the-list, $current-value) ) + 1;
+
+  // get value from list with new index
+  $new-value : nth($the-list, $the-index);
+
+  @return $new-value;
+}
+
+
 @each $breakpoint, $size in $breakpoints {
-    @each $display, $d in (s: show, h: hide) {
-        .#{$d}-#{$breakpoint} {
-            @if $d == hide {
-                @media screen and (max-width: ($size - 1)) {
-                    display: none !important;
-                }
-            }
-            @else if $d == show {  
-                @media screen and (min-width: ($size)) {
-                    display: block !important;
-                }  
-            }
+  @each $display, $d in (s: show, h: hide) {
+    .#{$d}-#{$breakpoint}-up {
+      @if $d == hide {
+        @media screen and (min-width: ($size)) {
+          display: none !important;
         }
+      }
+      @else if $d == show {  
+        @media screen and (min-width: ($size)) {
+          display: block !important;
+        }  
+      }
     }
+    
+    // return all keys from a map as a list
+    $mapped__keys : map-keys($breakpoints);
+    // get index of the current name passed
+    $index : (index($mapped__keys, $breakpoint));
+    
+    // Display utility for specific break point
+    // this will generate a min-width and max-width media query.
+    .#{$d}-#{$breakpoint}-only {
+      @if $index {
+        // if there is another key above the selected key, run this
+        @if $index < length($breakpoints) {
+          @media screen and (min-width : ($size)) and (max-width: map-get($breakpoints, nextKey($breakpoint) )  - 1 ) {
+            @if $d == hide {
+              display: none !important;
+            } 
+            @else {
+              display: block !important;
+            }
+          }
+        }
+        // For the desktop breakpoint value or the last breakpoint
+        // in the map.
+        @else if $index == length($breakpoints) {
+          @media screen and (min-width: ($size)) {
+            @if $d == hide {
+              display: none !important;
+            } 
+            @else {
+              display: block !important;
+            }
+          }
+        }
+      }
+    }
+    
+    // Display utility for a max-width media query
+    .#{$d}-#{$breakpoint}-down {
+      @if $index {
+        @if $index < length($breakpoints) {
+          @media (max-width: map-get($breakpoints, nextKey($breakpoint) )  - 1 ) {
+            @if $d == hide {
+              display: none !important;
+            } 
+            @else {
+              display: block !important;
+            }
+          }
+        }
+      }
+    }
+  }
 }
