@@ -1,3 +1,133 @@
+// Info Box
+// 
+// Click the button to toggle the infor box.
+// 
+// Markup:
+// <div class="rim-info-box">
+//   <a class="button button--secondary toggle-hidden" role="button" aria-label="Toggle">
+//     <i class="fas fa-sliders-h" focusable="false" aria-hidden="hidden"></i>
+//   </a>
+//   <div class="rim-info-box__content hidden">
+//     <button class="button rim-info-box__close">
+//       Close <i class="fas fa-times" focusable="false" aria-hidden="hidden"></i>
+//     </button>
+//     <form action="" class="block-container block-mb-4 rim-form">
+//       <label for="dob" class="block rim-form__field has-icon">Age or DOB
+//         <input id="dob" type="date" placeholder="DD/MM/YYYY">
+//         <i class="fas fa-calendar-alt text-skyblue background-white"></i>
+//       </label>
+//       <label for="dob" class="block rim-form__field has-icon">Age or DOB
+//         <input id="dob" type="date" placeholder="DD/MM/YYYY">
+//         <i class="fas fa-calendar-alt text-skyblue background-white"></i>
+//       </label>
+//       <fieldset class="block rim-form__field">
+//         <legend>Rate Class</legend>
+//         <div class="rim-toggle">
+//           <div class="rim-toggle__content">
+//             <input class="rim-toggle__input" id="smoking" type="radio" checked name="rate">
+//             <label for="smoking">Non-smoking</label>
+//           </div>
+//           <div class="rim-toggle__content">
+//             <input class="rim-toggle__input" id="non-smoking" type="radio" name="rate">
+//             <label for="non-smoking">Smoking</label>
+//           </div>
+//         </div>
+//       </fieldset>
+//       <fieldset class="block rim-form__field">
+//         <legend>Marital Status</legend>
+//         <div class="rim-toggle">
+//           <div class="rim-toggle__content">
+//             <input class="rim-toggle__input" id="Single" type="radio" checked name="household">
+//             <label for="Single">Single</label>
+//           </div>
+//           <div class="rim-toggle__content">
+//             <input class="rim-toggle__input" id="household" type="radio" name="household">
+//             <label for="household">Household</label>
+//           </div>
+//         </div>
+//       </fieldset>
+//       <fieldset class="block rim-form__field">
+//         <legend id="radio-heading">Plan</legend>
+//         <div class="block-container" role="radiogroup" aria-labelledby="radio-heading">
+//           <div class="block-3 my-2 px-1">
+//             <span class="pill background-light text-white flex--align-center" id="a" tabindex="0" role="radio" aria-checked="false">
+//               <i class="fas fa-circle"></i> A
+//             </span>
+//           </div>
+//           <div class="block-3 my-2 px-1">
+//             <span class="pill background-light text-white flex--align-center" id="B" tabindex="0" role="radio" aria-checked="false">
+//               <i class="fas fa-circle"></i> B
+//             </span>
+//           </div>
+//           <div class="block-3 my-2 px-1">
+//             <span class="pill background-light text-white flex--align-center" id="C" tabindex="0" role="radio" aria-checked="false">
+//               <i class="fas fa-circle"></i> C
+//             </span>
+//           </div>
+//           <div class="block-3 my-2 px-1">
+//             <span class="pill background-light text-white flex--align-center" id="D" tabindex="0" role="radio" aria-checked="false">
+//               <i class="fas fa-circle"></i> D
+//             </span>
+//           </div>
+//           <div class="block-3 my-2 px-1">
+//             <span class="pill background-light text-white flex--align-center" id="F" tabindex="0" role="radio" aria-checked="false">
+//               <i class="fas fa-circle"></i> F
+//             </span>
+//           </div>
+//           <div class="block-3 my-2 px-1">
+//             <span class="pill background-light text-white flex--align-center" id="G" tabindex="0" role="radio" aria-checked="false">
+//               <i class="fas fa-circle"></i> G
+//             </span>
+//           </div>
+//           <div class="block-3 my-2 px-1">
+//             <span class="pill background-light text-white flex--align-center" id="Hi-F" tabindex="0" role="radio" aria-checked="false">
+//               <i class="fas fa-circle"></i> Hi-F
+//             </span>
+//           </div>
+//           <div class="block-3 my-2 px-1">
+//             <span class="pill background-light text-white flex--align-center" id="K" tabindex="0" role="radio" aria-checked="false">
+//               <i class="fas fa-circle"></i> K
+//             </span>
+//           </div>
+//           <div class="block-3 my-2 px-1">
+//             <span class="pill background-light text-white flex--align-center" id="L" tabindex="0" role="radio" aria-checked="false">
+//               <i class="fas fa-circle"></i> L
+//             </span>
+//           </div>
+//           <div class="block-3 my-2 px-1">
+//             <span class="pill background-light text-white flex--align-center" id="M" tabindex="0" role="radio" aria-checked="false">
+//               <i class="fas fa-circle"></i> M
+//             </span>
+//           </div>
+//           <div class="block-3 my-2 px-1">
+//             <span class="pill background-light text-white flex--align-center" id="N" tabindex="0" role="radio" aria-checked="false">
+//               <i class="fas fa-circle"></i> N
+//             </span>
+//           </div>
+//           <div class="block-3 my-2 px-1">
+//             <span class="pill background-light text-white flex--align-center" id="All" tabindex="0" role="radio" aria-checked="false">
+//               <i class="fas fa-circle"></i> All
+//             </spann>
+//           </div>
+//         </div>
+//       </fieldset>
+//       <div class="rim-form__field rim-form__button-group">
+//         <button class="button button--post button--lg">Apply Filters</button>
+//       </div>
+//     </form>
+//   </div>
+// </div>
+// 
+// Styleguide Components.info
+
+
+.rim-style-modifier__example {
+
+  .rim-info-box {
+    width: 32px;
+  }
+}
+
 .rim-info-box {
   position: relative;
 
