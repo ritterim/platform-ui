@@ -43,6 +43,9 @@
   &--nowrap {
     white-space: nowrap;
   }
+  &--center {
+    text-align: center;
+  }
   // text shadow using $greyscale
   @each $name, $color in $greyscale {
     &--shadow-#{$name} {

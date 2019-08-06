@@ -479,9 +479,12 @@ input[type="radio"] {
     align-items: flex-end;
     display: flex;
     justify-content: flex-start;
+    margin-left: -.25rem;
+    width: calc(100% + .25rem * 2);
 
     button {
       flex-grow: 1;
+      margin: .25rem;
       max-width: 14.375rem;
     }
   }
@@ -504,7 +507,6 @@ input[type="radio"] {
     display: block;
     font-family: map-get($fonts, 'base');
     font-size: map-get($font-percentage, 'md');
-    height: 2rem;
     padding: map-get($spacers, 1) 0;
 
     &::placeholder {
