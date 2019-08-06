@@ -1,3 +1,10 @@
+// Content Grid
+// 
+// Content Grid stuff
+// 
+// 
+// Styleguide ContentGrid
+
 .platform {
   background-color: map-get($greyscale, 'lighter');
   overflow-x: hidden;
@@ -158,5 +165,61 @@
   main {
     margin-left: 40vw;
     width: 60vw;
+  }
+}
+
+
+.rim-content-grid {
+  padding: map-get($spacers, 5 ) $spacer;
+
+  @supports (display: grid) {
+    display: grid;
+    grid-gap: map-get($spacers, 5 ) $spacer;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: max-content;
+  }  
+
+  &__heading {
+    @supports (display: grid) {
+      grid-row: 1;
+      grid-column: 1/13;
+    }
+
+    .has-side-content & {
+      @include breakpoint(desktop, min) {
+        @supports (display: grid) {
+          grid-column: 1/10;
+        }
+      }
+    }
+  }
+
+  &__content {
+    @supports (display: grid) {
+      grid-row: 2;
+      grid-column: 1/13;
+    }
+
+    .has-side-content & {
+      @include breakpoint(desktop, min) {
+        @supports (display: grid) {
+          grid-column: 1/10;
+        }
+      }
+    }
+  }
+
+  &__side-content {
+    @supports (display: grid) {
+      @include breakpoint(desktop, max) {
+        display: none;
+      }
+
+      @include breakpoint(desktop, min) {      
+        align-self: baseline;
+        grid-column: 10/13;
+        grid-row: 2;
+      }
+    }
   }
 }

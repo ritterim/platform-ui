@@ -3,7 +3,7 @@
 //
 // | Transition Name        |                    |                     |                      |
 // | ----------------- | ------------------ | ------------------- | -------------------- |
-// | `fade`          | `slide-iup`            | `slide-down`             | `slide-right`         |
+// | `fade`          | `slide-up`            | `slide-down`             | `slide-right`         |
 // | `slide-left`           | `flip-x`        | `flip-y`             | `               |
 //
 // Full example:
@@ -44,10 +44,10 @@
 
 .slide-down {
   &-enter-active {
-    animation: SlideDown $transitions;
+    animation: slideInDown $transitions;
   }
   &-leave-active {
-    animation: SlideClose $transitions;
+    animation: slideInUp $transitions;
   }
 }
 
