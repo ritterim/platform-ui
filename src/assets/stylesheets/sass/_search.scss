@@ -1,0 +1,14 @@
+.rim-search {
+  display: flex;
+  &--results {
+    background: map-get($greyscale, 'light');
+    color: map-get($greyscale, 'white');
+    width: 3rem;
+    h2 {
+      color: map-get($greyscale, 'white');
+      font-size: map-get($font-percentage, 'xl');
+      font-weight: lighter;
+      transform: rotate(90deg);
+    }
+  }
+}

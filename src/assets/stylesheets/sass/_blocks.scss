@@ -1,15 +1,15 @@
 // Blocks
 //
-// In this section you will find options for your layout needs. To get a specific layout you will need to start with 
-// 2 classes. `block-container` and `block`. `block-container` is the wrapper class that contains the block or 
+// In this section you will find options for your layout needs. To get a specific layout you will need to start with
+// 2 classes. `block-container` and `block`. `block-container` is the wrapper class that contains the block or
 // blocks depending on how many you have. `block` is the class that will be on the element inside the container.
 //
 // This layout is based on a 12 column grid. So if you want a `block` to take up half the width of the row it is on, you
 // would use the class `block-6`, 6 being half of 12. For a row containing 3 `blocks` you would use `block-4` and so on.
 // Each `block` has a default `width: 100%`. This width will change as you add different size classes to the `block`.
-// These classes can be added to any element, although in some cases you may need to wrap a specific element in a 
-// `<div class="block">`. 
-// 
+// These classes can be added to any element, although in some cases you may need to wrap a specific element in a
+// `<div class="block">`.
+//
 // You can change the width of a block by using responsive size classes. These classes are tied to our `$breakpoints` map.
 // ```css
 // $breakpoints: (
@@ -20,32 +20,32 @@
 // );
 // ```
 // For example, if you wanted a block to take up 3 columns at the mobile breakpoint, you would add the class `block-tablet-3`
-//  to `block`. It's probably best to build these layouts thinking "tablet-first". So when you use the class `block-tablet-3` 
+//  to `block`. It's probably best to build these layouts thinking "tablet-first". So when you use the class `block-tablet-3`
 // know that that will that effect from 768px up, or to put in media query terms. `@media(min-width: 768px) {}`.
-// 
-// Styleguide Blocks
+//
+// Styleguide Layout.Blocks
 
 // Blocks Container
-// 
-// You can add the resposinve classes to the `.block-container` wrapper rather than the `.block` elements. This method is 
-// best used for a case where you need to build a grid of equal size blocks. By adding the classes to the `block-container` 
+//
+// You can add the resposinve classes to the `.block-container` wrapper rather than the `.block` elements. This method is
+// best used for a case where you need to build a grid of equal size blocks. By adding the classes to the `block-container`
 // you do not need to add them the individual `block`s.
-// 
-// 
-// To make your grid responsive, you use classes that contain the names of our defined breakpoints. For example, if you want a grid 
-// with 3 columns at the `laptop` resolution, you would use the class, `laptop-up-3`. This says, at the `laptop` breakpoint and up, 
-// display the `block`s across 3 columns. 
-// 
-// 
-// To add padding to the `block`s, you also add utility classes to the `block-container`. These classes will tell 
+//
+//
+// To make your grid responsive, you use classes that contain the names of our defined breakpoints. For example, if you want a grid
+// with 3 columns at the `laptop` resolution, you would use the class, `laptop-up-3`. This says, at the `laptop` breakpoint and up,
+// display the `block`s across 3 columns.
+//
+//
+// To add padding to the `block`s, you also add utility classes to the `block-container`. These classes will tell
 // each block how much `padding` or `margin` they should have. These utility classes work similar to our other spacing classes.
 // If you want each block to have padding of `1rem`, you would add the classes `blocks-px-3 blocks-py-3` to the `block-container`
 // If you need margin, you add `blocks-mx-3 blocks-my3` to the `block-container`. `X` is left and right, and `Y` is for top and bottom.
 // You can still use the other spacing utility classes on the `block-container` as well, if you need to add specific padding, or margin
 // to the `block-container`.
-// 
+//
 // **Note:** Some examples also use the class `rim-card`. This is for style guide purposes only.
-// 
+//
 // Markup:
 // <div class="block-container blocks-px-2 blocks-py-2 tablet-up-3 laptop-up-4">
 //   <div class="block">
@@ -69,24 +69,24 @@
 //     </div>
 //   </div>
 // </div>
-// 
+//
 // Weight: 1
-// 
-// Styleguide Blocks.container
+//
+// Styleguide Layout.Blocks.container
 
 // Blocks
-// 
-// If you need to make a layout where the blocks are not equal widths, you can instead add the size classes to 
-// the individual `block`s. 
-// 
-// 
-// Since the `block-container` is based on a 12 column grid, each class number represents how many columns the `block` 
-// will take up at that resolution. If you want the blocks to take up an entire row, the values in the classes should 
+//
+// If you need to make a layout where the blocks are not equal widths, you can instead add the size classes to
+// the individual `block`s.
+//
+//
+// Since the `block-container` is based on a 12 column grid, each class number represents how many columns the `block`
+// will take up at that resolution. If you want the blocks to take up an entire row, the values in the classes should
 // equal 12. Each value represents the amount of columns the block will take up in the row.
-// 
-// **Note:** Some examples also use the class `rim-card`. This is for style guide purposes only. In the example below 
-// 
-// 
+//
+// **Note:** Some examples also use the class `rim-card`. This is for style guide purposes only. In the example below
+//
+//
 // Markup:
 // <div class="block-container">
 //   <div class="rim-card block block-6">
@@ -102,22 +102,22 @@
 //     block-8
 //   </div>
 // </div>
-// 
+//
 // Weight: 2
-// 
-// Styleguide Blocks.Block
+//
+// Styleguide Layout.Blocks.Block
 
 // Responsive
-// 
-// You can build responsive layouts while making each blocks specific width at different resolutions. In order to do 
+//
+// You can build responsive layouts while making each blocks specific width at different resolutions. In order to do
 // this you can leverage out `breakpoint` values within the block classes.
-// 
-// 
+//
+//
 // In the following example you will see a `form` that scales from the smallest screen up to larger screens. The
-// `.block` class has `width: 100%` alone, so on a mobile device the blocks will already be stacked. As we scale up 
+// `.block` class has `width: 100%` alone, so on a mobile device the blocks will already be stacked. As we scale up
 // and have more real estate, we can add different classes to change the layout of the `form`.
-// 
-// 
+//
+//
 // Markup:
 // <form action="" class="rim-form block-container blocks-px-2 blocks-mb-3">
 //   <div class="block block-tablet-6 block-laptop-4">
@@ -167,114 +167,114 @@
 //     </div>
 //   </div>
 // </form>
-// 
+//
 // Weight: 3
-// 
-// Styleguide Blocks.Responsive
+//
+// Styleguide Layout.Blocks.Responsive
 
 // Spacing
-// 
-// The `.block` class has 0 padding and margin. The idea is to leverage our spacing utilities and be able to make 
+//
+// The `.block` class has 0 padding and margin. The idea is to leverage our spacing utilities and be able to make
 // as specific layouts as possible. You can use the spacing modifiers in 2 ways within the `block` layout.
-// 
+//
 // Weight: 4
-// 
-// Styleguide Blocks.Spacing
+//
+// Styleguide Layout.Blocks.Spacing
 
 // Individual Blocks
-// 
-// The first option is to put the utility classes on the `.block` class itself. By doing this you can put different 
+//
+// The first option is to put the utility classes on the `.block` class itself. By doing this you can put different
 // spacing utilities on each block.
-// 
+//
 // Markup:
 // <div class="block-container">
 //   <div class="block block-6 px-3 my-3">
-//     <div class="rim-card"> 
+//     <div class="rim-card">
 //       block-6
 //     </div>
 //   </div>
 //   <div class="block block-6 px-2 my-3">
-//     <div class="rim-card"> 
+//     <div class="rim-card">
 //       block-6
 //     </div>
 //   </div>
 //   <div class="block block-4 px-2 my-3">
-//     <div class="rim-card"> 
+//     <div class="rim-card">
 //       block-4
 //     </div>
 //   </div>
 //   <div class="block block-8 px-5 my-3">
-//     <div class="rim-card"> 
+//     <div class="rim-card">
 //       block-8
 //     </div>
 //   </div>
 // </div>
-// 
+//
 // Weight: 5
-// 
-// Styleguide Blocks.Spacing.Blocks
+//
+// Styleguide Layout.Blocks.Spacing.Blocks
 
 // Container
-// 
-// The second option is to add a spacing utility to the `block-container`. This would be the best option if you 
-// wanted to build a layout where each `block` had the same padding and or margin. The specific classes you use 
+//
+// The second option is to add a spacing utility to the `block-container`. This would be the best option if you
+// wanted to build a layout where each `block` had the same padding and or margin. The specific classes you use
 // start with `.blocks-` because, although you are adding the classes to the `block-container`, you're using these
-// classes to add spacing to the blocks. You can use these classes as well as the spacing utility right on the 
-// `block-container` if you need to give it some specific spacing as well. 
-// 
-// 
-// The example below gives each block `padding: .5rem;` and `margin-bottom: 1rem;`. 
-// 
+// classes to add spacing to the blocks. You can use these classes as well as the spacing utility right on the
+// `block-container` if you need to give it some specific spacing as well.
+//
+//
+// The example below gives each block `padding: .5rem;` and `margin-bottom: 1rem;`.
+//
 // Markup:
 // <div class="block-container blocks-px-2 blocks-mb-3">
 //   <div class="block block-6">
-//     <div class="rim-card"> 
+//     <div class="rim-card">
 //       block-6
 //     </div>
 //   </div>
 //   <div class="block block-6">
-//     <div class="rim-card"> 
+//     <div class="rim-card">
 //       block-6
 //     </div>
 //   </div>
 //   <div class="block block-4">
-//     <div class="rim-card"> 
+//     <div class="rim-card">
 //       block-4
 //     </div>
 //   </div>
 //   <div class="block block-8">
-//     <div class="rim-card"> 
+//     <div class="rim-card">
 //       block-8
 //     </div>
 //   </div>
 // </div>
-// 
+//
 // Weight: 6
-// 
-// Styleguide Blocks.Spacing.Container
+//
+// Styleguide Layout.Blocks.Spacing.Container
 
 // Block Utilities
-// 
-// By now you understand that the size of the blocks are based on the size classes we give them. But the content within 
-// the blocks may or may not have a set width. The block layout, for the most part looks pretty good. But there could 
-// be a situation where you may want one block to change. This would probably only be most useful for the layouts using 
+//
+// By now you understand that the size of the blocks are based on the size classes we give them. But the content within
+// the blocks may or may not have a set width. The block layout, for the most part looks pretty good. But there could
+// be a situation where you may want one block to change. This would probably only be most useful for the layouts using
 // the `{breakpoint}-up-{value}` classes.
-// 
-// 
-// The utility classes are `block--shrink` and `block--fill`. You can also you our breakpoint values on the class to make 
-// the block have the specific style at a different screen size. EXample: `block-tablet--shrink' would add `width: auto` 
+//
+//
+// The utility classes are `block--shrink` and `block--fill`. You can also you our breakpoint values on the class to make
+// the block have the specific style at a different screen size. EXample: `block-tablet--shrink' would add `width: auto`
 // to the `block` at the tablet width and up.
-// 
+//
 // Weight: 7
-// 
-// Styleguide Blocks.Utility
+//
+// Styleguide Layout.Blocks.Utility
 
 // Width Auto
-// 
-// So say you need a block to have `width: auto` so that it's the size of the content rather than matching the width of 
+//
+// So say you need a block to have `width: auto` so that it's the size of the content rather than matching the width of
 // the other blocks in the list. For this example you could add the class `block--shrink` to the `block`.
-// 
-// 
+//
+//
 // Markup:
 // <div class="block-container blocks-px-2 blocks-py-2 tablet-up-3 laptop-up-4">
 //   <div class="block">
@@ -298,17 +298,17 @@
 //     </div>
 //   </div>
 // </div>
-// 
+//
 // Weight: 8
-// 
-// Styleguide Blocks.Utility.Shrink
+//
+// Styleguide Layout.Blocks.Utility.Shrink
 
 // Flex Grow
-// 
-// If you want to make a block fill any left over space there might be, you could add the class `block--fill`. This will 
+//
+// If you want to make a block fill any left over space there might be, you could add the class `block--fill`. This will
 // add `flex-grow: 1` to the block.
-// 
-// 
+//
+//
 // Markup:
 // <div class="block-container blocks-px-2 blocks-py-2 tablet-up-3 laptop-up-4">
 //   <div class="block">
@@ -347,11 +347,11 @@
 //     </div>
 //   </div>
 // </div>
-// 
-// 
+//
+//
 // Weight: 9
-// 
-// Styleguide Blocks.Utility.Fill
+//
+// Styleguide Layout.Blocks.Utility.Fill
 
 
 // Block layout
@@ -360,7 +360,7 @@
   display: flex;
   flex-wrap: wrap;
 
-  > .block { 
+  > .block {
     width: 100%;
 
     &--full {
@@ -410,7 +410,7 @@
     }
   }
 
-  // Add padding and or margin to container 
+  // Add padding and or margin to container
   // as well as the blocks within the block-container
   @each $prop, $letter in (margin: m, padding: p) {
     @each $direction, $d in $xy-border {
@@ -443,13 +443,13 @@
     }
   }
 
-  // Add these classes ex: tablet-up-2 to the 
-  // container to change the width of the block 
+  // Add these classes ex: tablet-up-2 to the
+  // container to change the width of the block
   // elements inside the block-container
   @each $breakpoint, $name in $breakpoints {
     @each $key, $val in $rim-columns {
       &.#{$breakpoint}-up-#{$val} {
-        
+
         > .block {
           @include breakpoint(#{$name}, min) {
             width: calc(100% / #{$val});

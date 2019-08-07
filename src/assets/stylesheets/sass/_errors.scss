@@ -1,0 +1,56 @@
+// Errors
+//
+// Throughout the Platform, we leverage a concept of `positive`, `Negative`, and `Neutral` for success, errors, and no change, or neutral states.
+// These classes affect Pills and Text only.
+//
+// If you come across a scenario/combination where these are not applied, or not applied as expected, contact the Platform UI team.
+//
+// Styleguide Errors
+
+// Errors text
+//
+// Markup:
+// <p class="positive-text">Positive</p>
+// <p class="negative-text">Negative</p>
+// <p class="neutral-text">Neutral</p>
+//
+// Styleguide Errors.Text
+
+// Error Pills
+//
+// Throughout the Platform, we leverage a concept of `positive`, `Negative`, and `Neutral` for success, errors, and no change, or neutral states.
+//
+//
+// Markup:
+// <div class="pill pill--circle__empty positive"></div>
+// <div class="pill pill--circle__empty negative"></div>
+// <div class="pill pill--circle__empty neutral"></div>
+// <div class="pill pill--circle__empty--dot positive"></div>
+// <div class="pill pill--circle__empty--dot negative"></div>
+// <div class="pill pill--circle__empty--dot neutral"></div>
+// <br><br>
+// <div class="pill positive">
+//   Positive
+// </div>
+// <div class="pill negative">
+//   Negative
+// </div>
+// <div class="pill neutral">
+//   Neutral
+// </div>
+//
+// Styleguide Errors.Pills
+
+@each $error in (positive, negative, neutral) {
+  .#{$error}-text {
+    color: map-get($error-colors, #{$error}) !important;
+  }
+  // for pills
+  .pill {
+    &.#{$error} {
+      background: map-get($error-colors, #{$error}) !important;
+      border: none;
+      color: white !important;
+    }
+  }
+}

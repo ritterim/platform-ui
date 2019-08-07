@@ -1,11 +1,16 @@
 // Pill
 //
 // Pills represent rounded labels throughout the platform.
-// A pill can also have a label of it's own.
 // A pill can support color by adding a text or background modifier.
-// A slight variation of a pill is a straight circle with a very small amount of content.
 //
 // Pills have no hover state.
+//
+// Styleguide Components.Pill
+
+// Default
+//
+// A pill can also have a label of it's own.
+// A slight variation of a pill is a straight circle with a very small amount of content.
 //
 // Markup:
 // <div class="pill">
@@ -20,6 +25,12 @@
 // <div class="pill text-white background-salmon">
 //   Active
 // </div>
+//
+// Styleguide Components.Pill.Default
+
+// Split
+//
+// Markup:
 // <div class="pill pill--split">
 //   <div class="pill__label">NPN:</div>
 //   <div class="pill__content">123456789</div>
@@ -29,16 +40,49 @@
 //   <div class="pill__content">123456789</div>
 // </div>
 // <div class="pill pill--split text-white background-navy">
-//   <div class="pill__content background-green">1234589</div>
+//   <div class="pill__content background-salmon">1234589</div>
 //   <div class="pill__content background-olive">345789</div>
 //   <div class="pill__content background-skyblue">1289</div>
 // </div>
+//
+// Styleguide Components.Pill.Split
+
+// Close
+//
+// Markup:
 // <div class="pill">
-//  <div class="pill__close"><i class="fas fa-times-circle"></i></div>
+//  <div class="pill__close"><i class="fas fa-times-circle text-salmon"></i></div>
 //   Active
 // </div>
 //
-// Styleguide Components.Pill
+// Styleguide Components.Pill.Close
+
+// Circle
+//
+// Pills can be circular and have content.
+//
+// Markup:
+// <div class="pill pill--circle">
+//   33
+// </div>
+// <div class="pill pill--circle text-white background-salmon">
+//   33
+// </div>
+//
+// Styleguide Components.Pill.Circle
+
+// Dot
+//
+// A `.pill--circle` can also be empty. There is also a `--dot` variation.
+//
+// Markup:
+// <div class="pill pill--circle__empty negative"></div>
+// <div class="pill pill--circle__empty positive"></div>
+// <div class="pill pill--circle__empty--dot negative"></div>
+// <div class="pill pill--circle__empty--dot positive"></div>
+//
+// Styleguide Components.Pill.Dot
+
 
 .pill {
 
@@ -66,13 +110,21 @@
 
   &--circle {
     border-radius: $border-radius * 100;
-    height: 3rem;
-    width: 3rem;
+    padding: map-get($spacers, 1);
+    @include square($spacer * 1.5);
     @extend %flex-center;
+    &__empty {
+      @extend .pill--circle;
+      &--dot {
+        padding: 0;
+        @include square(map-get($spacers, 2));
+      }
+      @include square($spacer);
+    }
   }
 
   &__content {
-    padding: map-get($spacers, 1) map-get($spacers, 1);
+    padding: map-get($spacers, 1);
   }
 
   &__close {

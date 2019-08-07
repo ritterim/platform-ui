@@ -94,11 +94,11 @@ $platform-colors: (
 //
 // Styleguide Color.SecondaryColors
 $secondary-colors: (
-  'red':    darken(tomato, 10%),
+  'red':    tomato,
   'olive':  #b5cc18,
   'purple': lighten(purple, 10%),
   'yellow': #FBBD08, // semantic-ui yellow
-  'pink': mistyrose,
+  'pink': pink,
   'cyan':   cyan,
   'violet': #6435C9,
   'blue':   map-get($platform-colors, 'link'),
@@ -111,14 +111,14 @@ $secondary-colors: (
 //
 // Colors:
 // positive: #b5cc18
-// negative: mistyrose
-// neutral: #666666
+// negative: tomato
+// neutral: #999
 //
-// Styleguide Color.ErrorColors 
+// Styleguide Color.ErrorColors
 $error-colors: (
   'positive': map-get($secondary-colors, 'olive'),
-  'negative': map-get($secondary-colors, 'pink'),
-  'neutral': map-get($greyscale, 'base')
+  'negative': map-get($secondary-colors, 'red'),
+  'neutral': map-get($greyscale, 'light')
 );
 
 // Message Colors
@@ -139,7 +139,7 @@ $error-colors: (
 // success-light: #d4edda
 // success: #c3e6cb
 // success-dark: #155724
-// 
+//
 // Styleguide Color.MessageColors
 
 $message-colors: (
@@ -158,4 +158,4 @@ $message-colors: (
   'success-light': #d4edda,
   'success': #c3e6cb,
   'success-dark': #155724
-)
+);

@@ -1,5 +1,6 @@
 const { src, dest, series, parallel } = require('gulp');
 const autoprefixer = require("autoprefixer");
+const babel = require('gulp-babel');
 const concat = require('gulp-concat');
 const connect = require('gulp-connect');
 const kss = require('kss');
@@ -35,10 +36,14 @@ function css() {
 
 function js() {
   return src('src/assets/js/src/*.js')
+    .pipe(babel({
+      presets: ['@babel/env']
+    }))
     .pipe(concat('platform-ui.min.js'))
     .pipe(uglify())
     .pipe(dest('src/assets/js'))
     .pipe(dest('dist/js'))
+    .pipe(dest('custom-builder/kss-assets/'))
     .pipe(connect.reload())
 }
 

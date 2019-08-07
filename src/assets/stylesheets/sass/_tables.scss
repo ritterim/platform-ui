@@ -1,4 +1,4 @@
-// Table
+// Tables
 //
 // Default table.
 //
@@ -8,7 +8,7 @@
 //
 // These tables are responsive. They get the mobile view below the mobile breakpoint.
 // You need to add the `data-label="{th - name}"` to the corresponding `<td>`. See the markup below.
-// 
+//
 // Markup:
 // <table>
 //   <thead>
@@ -88,7 +88,7 @@
 //   </tbody>
 // </table>
 //
-// Styleguide Table
+// Styleguide Tables
 
 
 
@@ -136,7 +136,7 @@ table {
       &:hover {
         background-color: map-get($greyscale, 'lighter');
       }
-    }    
+    }
 
     td,
     th {
@@ -167,7 +167,7 @@ table {
         display: flex;
         justify-content: space-between;
         text-align: right;
-  
+
         &:before {
           content: attr(data-label);
           display: inline-block;

@@ -1,3 +1,25 @@
+// Print
+//
+// A dedicated `@media print` stylesheet is leveraged in Platform UI. It focused on the main view content and non print-centric artifacts (e.g., buttons).
+//
+// Main `body` items hidden from print:
+// ```scss
+// aside,
+// button,
+// header,
+// .button,
+// .crm-banner,
+// .rim-drawer__open,
+// .site-header
+// ```
+// There are also classes to `show` and `hide` during print:
+//
+// `.show-print`: only viewable on `@print`
+//
+// `.hide-print`: only viewable on `@screen`
+//
+// Styleguide Print
+
 .show-print {
   display: none;
 }
