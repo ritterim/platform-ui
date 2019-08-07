@@ -97,18 +97,18 @@
 // </div>
 //
 // Notice: For styleguide purposes all of the code is rendered here. The things that should be
-// toggled are the `aria-label="Loading"` and the text in the button. So for example, on 
-// submit, you would add `<span class="sr-only">Loading...</span>` the class 
+// toggled are the `aria-label="Loading"` and the text in the button. So for example, on
+// submit, you would add `<span class="sr-only">Loading...</span>` the class
 // `sr-only` is key to prevent the button from changin size.
-// 
+//
 // Weight: 7
 //
 // Styleguide Components.Button.Loading
 
 // Accessibility
 //
-// For our links that should look like buttons, and contain an icon, we need to add specific 
-// aria roles for accessibility. 
+// For our links that should look like buttons, and contain an icon, we need to add specific
+// aria roles for accessibility.
 // These are links that look like buttons but do not have the same html.
 //
 //
@@ -174,7 +174,7 @@
 
     &:after {
       @extend %rim-loader;
-      @include square(1rem);
+      @include square($spacer);
       box-sizing: border-box;
       content: '';
       display: block;
@@ -212,7 +212,7 @@
     }
 
     &.loading {
-  
+
       &:before {
         background-color: darken($secondary-background, $hue-threshold);
         box-shadow: 0 0 0 .3rem lighten($secondary-background, $hue-threshold);
@@ -232,7 +232,7 @@
     }
 
     &.loading {
-  
+
       &:before {
         background-color: darken($secondary-background, 10%);
         background-image: linear-gradient(45deg, $secondary-background, darken($secondary-background, $hue-threshold * 2));
@@ -245,9 +245,9 @@
     padding: map-get($spacers, 2) $spacer;
 
     &.loading {
-  
+
       &:after {
-        @include square(1.5rem);
+        @include square($spacer * 1.5);
         margin-left: -.75rem;
         margin-top: -.75rem;
       }

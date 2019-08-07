@@ -34,7 +34,7 @@
         top: 0;
         width: 1rem;
       }
-    }    
+    }
   }
 
   // site logo
@@ -63,10 +63,10 @@
   // Aside Navigation
   &-nav {
     background-color: $nav-base;
-    height: 100%;  
+    height: 100%;
 
     @include breakpoint(mobile, min) {
-      overflow: scroll;  
+      overflow: scroll;
       padding-bottom: $spacer * 9;
     }
 
@@ -81,7 +81,7 @@
 
       ul {
         padding-left: map-get($spacers, 1 );
-        
+
         @include breakpoint(mobile, max) {
           display: none;
         }
@@ -97,7 +97,7 @@
 
       @include breakpoint(mobile, min) {
         border-bottom: $nav-border;
-      }      
+      }
 
       &.active {
         background-color: $nav-color;
@@ -182,9 +182,9 @@
       margin-left: 20vw;
     }
   }
-  
+
   &-section {
-    border-bottom: 2px solid $base;
+    border-bottom: 2px solid $light;
     margin-bottom: $spacer;
     padding: $spacer 0 $spacer * 2;
 
@@ -212,22 +212,22 @@
       color: $base;
       display: block;
       font-size: map-get($font-percentage, 'xxs' );
-  
+
       &:before {
         content: 'Section ';
       }
     }
-  
+
     &__permalink {
       color: $foreground;
       display: block;
       text-decoration: none;
-  
+
       &:hover,
       &:focus,
       &:active {
         color: lighten($base, 10%);
-  
+
         @media screen and (min-width: 607px) {
           #{$self}-title__permalink-hash {
             display: inline;
@@ -235,7 +235,7 @@
         }
       }
     }
-  
+
     &__permalink-hash {
       color: lighten($light, 10%);
       display: none;
@@ -245,7 +245,7 @@
   &-title {
     margin-bottom: $spacer;
   }
-  
+
 
   &-description {
 
@@ -274,29 +274,29 @@
     &__heading {
       font-weight: bold;
     }
-    
+
     &__default-name {
       font-weight: bold;
       margin-bottom: map-get($spacers, 4 );
     }
-    
+
     &__name {
       float: left;
       padding-right: 10px;
       font-weight: bold;
     }
-    
+
     &__description {
       margin-bottom: map-get($spacers, 4 );
     }
-    
+
     &__example {
-  
+
       &:last-child {
         margin-bottom: 0;
       }
     }
-  
+
     &__example-footer {
       clear: both;
     }
@@ -328,45 +328,45 @@
     align-items: stretch;
     flex-wrap: wrap;
     margin: 0 -.5em;
-  
+
     > * {
       flex: 0 0 auto;
       padding: 0 .5em;
       margin-bottom: 1em;
       width: 16em;
     }
-  
+
     .rim-style-color {
       height: 100%
     }
   }
-  
+
   &-color {
     background: $background;
     border: 1px solid $light;
     margin: 0;
     padding: 0;
-  
+
     &__figure {
       height: 3em;
     }
-  
+
     &__caption {
       padding: .5em;
     }
-  
+
     &__name {
       display: block;
       font-weight: bold;
       color: $foreground;
     }
-  
+
     #{$self}-color__code {
       color: $base;
       display: block;
       font-family: $font;
     }
-  
+
     &__desc {
       font-size: .875em;
     }
@@ -400,7 +400,7 @@
     &:not(.rim-style-markup__code-wrapper) {
       border: 1px solid #f7dac5;
       margin: map-get($spacers, 4 ) 0;
-    }    
+    }
   }
 
   .hljs-keyword,

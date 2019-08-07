@@ -97,7 +97,7 @@
 // Fancy Forms
 //
 // You want a fancy form that animates the `label`? You got it.
-// To get the animation, add the class `rim-form__field--fancy` to the `rim-form__field`. 
+// To get the animation, add the class `rim-form__field--fancy` to the `rim-form__field`.
 // You will also need to change the markup slightly. Instead of a `label` the `rim-form__field` should now be a `div`
 // put the `label` under the `input` as a sibling of the `rim-form__field` `div`. See markup below.
 //
@@ -119,7 +119,7 @@
 //     <input id="zipcode" type="tel" pattern="^\d{5,6}(?:[-\s]\d{4})?$" required placeholder="12345">
 //     <label for="zipcode">ZIP Code</label>
 //   </div>
-//   <div class="rim-form__field rim-form__field--fancy">          
+//   <div class="rim-form__field rim-form__field--fancy">
 //     <div class="rim-form__select-wrapper">
 //       <select name="County Select" id="county" required placeholder="County">
 //         <option value=""></option>
@@ -138,7 +138,7 @@
 // Styleguide Forms.Fancy
 
 
-// KSS-Node specific stuff for forms 
+// KSS-Node specific stuff for forms
 #kss-node {
 
   #kssref-forms-fancy {
@@ -174,7 +174,7 @@ input[type="radio"] {
   position: absolute;
   visibility: hidden;
   width: auto;
-  
+
   &:checked + label {
     font-weight: 600;
 
@@ -209,7 +209,7 @@ input[type="radio"] {
       bottom: 0;
       content: '';
       left: 0;
-      @include square(1rem);
+      @include square($spacer);
     }
 
     &:after {
@@ -251,7 +251,7 @@ input[type="radio"] {
         bottom: 2px;
         content: '';
         left: 2px;
-        @include square(.75rem);
+        @include square($spacer * .75);
       }
     }
   }
@@ -263,7 +263,7 @@ input[type="radio"] {
 
   &--stacked {
     flex-flow: column;
-    
+
     #{ $self }__field {
       max-width: none;
 
@@ -311,17 +311,17 @@ input[type="radio"] {
 
       + label {
         color: map-get($greyscale, 'white');
-  
+
         &:before {
           border: 1px solid map-get($greyscale, 'white');
         }
       }
     }
-    
+
     input[type="checkbox"] {
 
       + label {
-  
+
         &:after {
           color: map-get($greyscale, 'white');
         }
@@ -332,13 +332,13 @@ input[type="radio"] {
       border-color: map-get($greyscale, 'white' );
     }
 
-    #{ $self }__select-wrapper { 
+    #{ $self }__select-wrapper {
 
       &:after {
         border-color: map-get($greyscale, 'white' );
       }
     }
-  }  
+  }
 
   &__field {
     display: block;
@@ -383,7 +383,7 @@ input[type="radio"] {
     // Fancy label animations
     &#{ $self }__field--fancy {
       position: relative;
-  
+
       input:not([type=checkbox]),
       input:not([type=radio]),
       textarea {
@@ -394,24 +394,24 @@ input[type="radio"] {
         color: map-get($greyscale, 'base' );
         padding: map-get($spacers, 1 );
         transition: .2s ease-in;
-  
+
         &:focus ~ label,
         &:valid ~ label {
           font-size: 80%;
           top: -1rem;
           left: 0;
         }
-  
+
         &:focus {
           border-bottom-color: map-get($brand-colors, 'med-blue' ) !important;
           outline: none !important;
         }
       }
-  
-      input::-webkit-datetime-edit { 
+
+      input::-webkit-datetime-edit {
         color: transparent; }
       input:focus::-webkit-datetime-edit,
-      input:valid::-webkit-datetime-edit { 
+      input:valid::-webkit-datetime-edit {
         color: map-get($greyscale, 'base' );
       }
 
@@ -435,20 +435,20 @@ input[type="radio"] {
 
       select {
         padding-left: map-get($spacers, 1 );
-        
+
         &:focus ~ label,
         &:valid ~ label {
           font-size: 80%;
           top: -1rem;
           left: 0;
         }
-  
+
         &:focus {
           border-bottom-color: map-get($brand-colors, 'med-blue' ) !important;
           outline: none !important;
         }
       }
-  
+
       label {
         color: map-get($greyscale, 'light' );
         pointer-events: none;
@@ -643,7 +643,7 @@ input[type="radio"] {
     i {
       transform: scale(1);
     }
-  }  
+  }
 }
 
 input[type="checkbox"].pill-filter, input[type="radio"].pill-filter {

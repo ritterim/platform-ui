@@ -1,9 +1,36 @@
 // Drawer
 //
+// Drawers slide up or in-from-right.
+//
+// Markup:
+// <button class="button button--post button--lg rim-drawer__open" data-drawer="default">Toggle default drawer</button>
+// <button class="button button--post button--lg rim-drawer__open" data-drawer="single-row">Toggle single row drawer</button>
+// <div id="default" class="rim-drawer rim-drawer-bottom rim-drawer--closed animated slideInUp fastest">
+//   <div class="rim-drawer__inner animated slideInUp fastest">
+//     <div class="rim-drawer__header">
+//       <button class="button rim-drawer__close" data-drawer="default">Close <i class="fas fa-times" aria-hidden="true"></i></button>
+//       <h3 class="mb-2">Header.</h3>
+//     </div>
+//     <div class="rim-drawer__content">
+//       <p>Content.</p>
+//     </div>
+//   </div>
+// </div>
+// <div id="single-row" class="rim-drawer rim-drawer-bottom--single-row rim-drawer--closed animated slideInUp fastest">
+//   <div class="rim-drawer__inner animated slideInUp fastest">
+//     <div class="rim-drawer__content">
+//       <button class="button rim-drawer__close" data-drawer="single-row">Close <i class="fas fa-times" aria-hidden="true"></i></button>
+//       <p>Single row drawer without a header.</p>
+//     </div>
+//   </div>
+// </div>
+//
 // Styleguide Components.Drawer
 
 .rim-drawer {
   $self: &;
+  background: transparent;
+  box-shadow: 0 -1rem 2rem rgba(map-get($greyscale, 'black'), .5);
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -11,25 +38,28 @@
   z-index: 500;
   bottom: 0;
   left: 0;
-
-  &--right {
-    height: calc(100% - 4.5rem);
-    left: unset;
-    right: 0;
-  }
+  overflow-y: scroll;
 
   &__inner {
     background: map-get($brand-colors, 'lightblue');
-    box-shadow: 0 -.5rem 2rem rgba(map-get($greyscale, 'black'), .5);
     height: 100%;
     min-height: 50vh;
+    overflow-y: visible;
+    overflow-x: hidden;
 
     .rim-drawer-bottom & {
       max-height: 80vh;
-      overflow-y: visible;
-      overflow-x: hidden;
     }
   }
+
+  &-bottom--single-row {
+    & {
+      #{$self}__inner {
+        min-height: 10rem !important;
+      }
+    }
+  }
+
   &__header {
     background-color: map-get($greyscale, 'white');
     padding: map-get($spacers, 4);
@@ -56,29 +86,12 @@
     position: fixed;
     z-index: 25;
   }
-  &--list {
-    display: flex;
-    li {
-      display: flex;
-      flex-direction: column;
-      width: 256%;
-      margin: 0 map-get($spacers, 2);
-      padding: map-get($spacers, 2);
-      transition: $transitions;
-      &:hover {
-        transform: scale(1.05);
-      }
-      a {
-        color: inherit;
-        display: flex;
-        flex-direction: column;
-      }
-      img {
-        max-height: 3rem;
-      }
-      h3, p {
-        text-align: center;
-      }
-    }
+}
+
+#kss-node {
+  .rim-drawer__open {
+    position: relative;
+    bottom: inherit;
+    right: inherit;
   }
 }
