@@ -143,10 +143,12 @@
   padding: map-get($spacers, 1) $spacer;
   transition: $duration;
 
-  &:hover {
-    background-color: $secondary-background;
-    border-color: inherit;
-    color: $secondary-color;
+  @media (pointer: fine) {
+    &:hover {
+      background-color: $secondary-background;
+      border-color: inherit;
+      color: $secondary-color;
+    }
   }
 
   &:disabled {
@@ -206,9 +208,11 @@
     height: 2rem;
     @extend %flex-center;
 
-    &:hover {
-      background-color: darken($secondary-background, $hue-threshold);
-      box-shadow: 0 0 0 .3rem lighten($secondary-background, $hue-threshold);
+    @media (pointer: fine) {
+      &:hover {
+        background-color: darken($secondary-background, $hue-threshold);
+        box-shadow: 0 0 0 .3rem lighten($secondary-background, $hue-threshold);
+      }
     }
 
     &.loading {
