@@ -75,9 +75,11 @@
       padding: 0 map-get($spacers, 3 );
     }
 
-    &:hover:not(.search) {
-      background-color: $dropdown-background;
-      color: $primary-color;
+    @media (pointer: fine) {
+      &:hover:not(.search) {
+        background-color: $dropdown-background;
+        color: $primary-color;
+      }
     }
 
     &.has-dropdown {
@@ -85,13 +87,25 @@
         position: relative;
       }      
 
-      &:hover {
-        border-bottom-color: rgba(map-get($greyscale, 'light'), .5);
+      @media (pointer: fine) {
+        &:hover {
+          border-bottom-color: rgba(map-get($greyscale, 'light'), .5);
 
-        .dropdown-menu {
-          opacity: 1;
-          visibility: visible;
+          .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+          }
         }
+      }
+    }
+
+    &.active {
+      background-color: $dropdown-background;
+      color: $primary-color;
+
+      .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
       }
     }
   }
@@ -106,7 +120,11 @@
     visibility: hidden;
 
     @include breakpoint(tablet, max) {
-      top: 100%;
+      height: calc(100vh - #{$menu-height});
+
+      // accounts for border-top
+      top: calc(#{$menu-height} + 1px);
+      width: 100%;
     }
 
     &__item {
@@ -142,10 +160,6 @@
     left: 0;
     padding: map-get($spacers, 3) map-get($spacers, 4) map-get($spacers, 4);
     right: auto;
-
-    @include breakpoint(tablet, max) {
-      width: 20rem;
-    }
 
     a {
       color: $primary-color;
@@ -246,10 +260,6 @@
   font-size: map-get($font-percentage, 'sm');
   padding: map-get($spacers, 4);
   width: 25rem;
-
-  @include breakpoint(tablet, max) {
-    width: 20rem;
-  }
 
   .crm-form__field {
     margin-bottom: map-get($spacers, 3);
