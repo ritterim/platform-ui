@@ -13,17 +13,75 @@
     display: grid;
     grid-template-rows: $menu-height auto;
     grid-template-columns: 4rem 1fr;
-  }  
 
-  main {
-    @supports(display: grid) {
-      grid-row-start: 2;
+    @include breakpoint(tablet, max) {
+      grid-template-columns: 1fr;
+
+      // add height of .today to header
+      grid-template-rows: $menu-height + 3.3125rem auto;
     }
   }
-}
 
-// flex and positioning
-.platform {
+  &.menu-open {
+    
+    aside {
+      left: 0rem;
+    }
+  }
+
+  main {
+    padding-left: 4rem;
+    width: 100%;
+    transition: $transitions;
+
+    @supports(display: grid) {
+      grid-column: 2;
+      grid-row: 2;
+      padding-left: 0;
+      width: auto;
+
+      @include breakpoint(tablet, max) {
+        grid-column: 1;
+      }
+    }
+
+    @include breakpoint(tablet, max) {
+      overflow-x: hidden;
+
+      // height of mobile button wrapper and half of button
+      padding-bottom: 4.75rem;
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  aside {
+    margin-top: $menu-height;
+    position: fixed;
+    transition: $transitions;
+    margin-left: 0;
+    width: 4rem;
+    z-index: 50;
+
+    @include breakpoint(tablet, max) {
+      // 100% - header + today - mobile-menu-action-wrapper
+      height: calc(100% - 7.8125rem - 3rem);
+      left: -100%;
+      margin-top: calc(#{$menu-height} + 3.3125rem);
+      transition: $transitions;
+      width: 100%;
+      z-index: 2;
+    }
+
+    @supports(display: grid) {
+      grid-column: 1;
+
+      @include breakpoint(tablet, max) {
+        grid-column: unset;
+      }
+    }
+  }
+
   .aside-tab {
     background: map-get($greyscale, 'white');
     border-top-right-radius: 50%;
@@ -38,13 +96,26 @@
     position: fixed;
     transition: $transitions;
     z-index: -1;
+
+    @include breakpoint(tablet, max) {
+      display: none;
+    }
+
     &:hover {
       color: map-get($brand-colors, 'salmon');
     }
   }
+}
+
+// flex and positioning
+.platform {
   &.toggle {
     @supports(display: grid) {
       grid-template-columns: 25vw 1fr;
+
+      @include breakpoint(tablet, max) {
+        grid-template-columns: 1fr;
+      }
     }
 
     aside {
@@ -53,72 +124,6 @@
       .aside-tab {
         left: 25vw;
       }
-      .today {
-        height: auto;
-        padding: map-get($spacers, 3);
-        transform: rotate(0deg);
-      }
-      .crm-menu__group {
-        flex-direction: row;
-      }
-      .crm-menu__item {
-        padding: $spacer 0;
-        &[data-rim-tooltip] {
-          &:hover:after {
-            background-color: inherit;
-            border-radius: inherit;
-            content: "\f058";
-            left: inherit;
-            padding: 0;
-          }
-        }
-        span {
-          display: block;
-        }
-        img {
-          left: $spacer;
-          margin-bottom: $spacer / 2;
-          max-width: $spacer * 4;
-          max-height: map-get($spacers, 5);
-          margin: 0 map-get($spacers, 2);
-          &.mini-image {
-            display: none;
-          }
-          &:not(.mini-image) {
-            display: block;
-          }
-        }
-        &:not(.active) {
-          &[data-rim-tooltip]:hover:after {
-            display: none;
-          }
-        }
-        &.active {
-          pointer-events: none;
-          &:before {
-            background-color: map-get($greyscale, 'white');
-            border-radius: map-get($radius, 'button') * 100;
-            content: "";
-            height: 26px;
-            width: 26px;
-            position: absolute;
-            right: -.8rem;
-            z-index: 5;
-          }
-
-          &:after {
-            color: map-get($brand-colors, 'salmon');
-            content: "\f058";
-            font-family: "Font Awesome 5 Pro";
-            font-weight: bold;
-            font-size: map-get($font-percentage, 'xxl');
-            position: absolute;
-            right: -(map-get($spacers, 3));
-            z-index: 10;
-          }
-
-        }
-      }
     }
     main {
       padding-left: 25vw;
@@ -126,31 +131,11 @@
       @supports(display: grid) {
         padding-left: 0;
         width: auto;
+
+        @include breakpoint(tablet, max) {
+          grid-column: 1;
+        }
       }
-    }
-  }
-
-  aside {
-    margin-top: $menu-height;
-    position: fixed;
-    transition: $transitions;
-    margin-left: 0;
-    width: 4rem;
-    z-index: 50;
-
-    @supports(display: grid) {
-      grid-column: 1;
-    }
-  }
-  main {
-    padding-left: 4rem;
-    width: 100%;
-    transition: $transitions;
-
-    @supports(display: grid) {
-      grid-column: 2;
-      padding-left: 0;
-      width: auto;
     }
   }
 }
