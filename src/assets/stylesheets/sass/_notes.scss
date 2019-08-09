@@ -30,7 +30,14 @@
 //
 // Markup:
 // <div class="presentation-only">
-// <div class="rim-notes">
+// <div class="block-container flex--justify-end">
+//   <div class="block block-2">
+//     <button class="button button--secondary open-notes">
+//       <i class="fal fa-sticky-note text-white"></i>
+//     </button>
+//   </div>
+// </div>
+// <div class="rim-notes styleguide-only">
 //   <div class="rim-notes__header">
 //     <div class="rim-notes__heading-wrapper">
 //       <button class="button button--secondary rim-notes__new-action">
@@ -253,12 +260,12 @@
 // </div>
 // </div>
 // 
-// Styleguide Notes
+// Styleguide Modules.Notes
 
 
 // specific code
 .rim-style-modifier__example {
-  .rim-notes {
+  .rim-notes.styleguide-only {
     display: block;
     width: 27rem;
 
