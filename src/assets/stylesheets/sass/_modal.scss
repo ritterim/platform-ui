@@ -8,21 +8,7 @@
 //
 // The default size of the modal is `medium`, you can use `rim-modal--small`, `rim-modal--large`, or `rim-modal--full` for different sized modals.
 //
-// ```html
-// <div class="rim-modal--overlay rim-modal--closed"></div>
-//
-// <div class="rim-modal rim-modal--closed">
-//     <div class="rim-modal__inner animated slideInUp faster">
-//         <div class="rim-modal__header">
-//             <button class="button rim-modal__close">Close <i class="fas fa-times"></i></button>
-//             <h2>Modal</h2>
-//          </div>
-//          <div class="rim-modal__content">
-//             <p>Modal Content</p>
-//          </div>
-//     </div>
-// </div>
-// ```
+// Markup:
 // <div class="rim-modal--overlay rim-modal--closed"></div>
 //
 // <div id="default-modal" class="rim-modal rim-modal--closed ">
@@ -36,7 +22,6 @@
 //     </div>
 //   </div>
 // </div>
-//
 // <div id="small-modal" class="rim-modal rim-modal--small rim-modal--closed ">
 //   <div class="rim-modal__inner animated slideInUp faster">
 //     <div class="rim-modal__header">
@@ -48,7 +33,6 @@
 //     </div>
 //   </div>
 // </div>
-//
 // <div id="large-modal" class="rim-modal rim-modal--large rim-modal--closed ">
 //   <div class="rim-modal__inner animated slideInUp faster">
 //     <div class="rim-modal__header">
@@ -77,7 +61,6 @@
 //     </div>
 //   </div>
 // </div>
-//
 // <button class="button button--post button--lg rim-modal__open" data-modal="default-modal">Trigger Modal</button> <button class="button button--post button--lg rim-modal__open" data-modal="small-modal">Small Modal</button> <button class="button button--post button--lg rim-modal__open" data-modal="large-modal">Large Modal</button> <button class="button button--post button--lg rim-modal__open" data-modal="full-modal">Full Screen Modal</button>
 //
 // Styleguide Components.modal
