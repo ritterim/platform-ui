@@ -22,15 +22,24 @@
   <meta name="theme-color" content="#ffffff">
 </head>
 <body id="kss-node" class="rim-style">
-  <aside class="rim-style-aside">
+  <header class="rim-style-header">
     <div class="rim-style-logo">
-      <a href="./" class="rim-style-logo__link">
+      <a href="/">
         <img src="site-assets/stylesheets/svg/RitterInsuranceLogo.svg" alt="Ritter Insurance Marketing">
-        <h2 class="rim-style-logo__copy">
-          Style Guide
-        </h2>
       </a>
     </div>
+    <nav>
+      <a href="https://docs.ritterim.com">
+        <img class="icon--svg-small" src="site-assets/stylesheets/svg/ritter-platform.svg" alt="">
+        Ritter Docs
+      </a>
+      <a href="https://ritterim.com">
+        <img class="icon--svg-small" src="site-assets/stylesheets/svg/ritter-website.svg" alt="">
+        Ritterim.com
+      </a>
+    </nav>
+  </header>
+  <aside class="rim-style-aside">
     <nav class="rim-style-nav" aria-label="Style Guide">
       <ul class="rim-style-nav__menu">
         <li class="rim-style-nav__menu-item{{#if template.isHomepage}} active{{/if}}">
@@ -43,6 +52,7 @@
         <li class="rim-style-nav__menu-item{{#if isActive}} active{{/if}}">
           <a class="rim-style-nav__menu-link" href="section-{{referenceURI}}.html">
             <span class="rim-style-nav__ref">{{referenceNumber}}</span><span class="rim-style-nav__name">{{header}}</span>
+            <i class="fal fa-angle-down fa-lg {{#if isActive}} fa-rotate-180{{/if}}"></i>
             {{!-- {{#if children}}<i class="fas fa-chevron-right"></i>{{/if}} --}}
           </a>
           {{#if isActive}}
@@ -235,14 +245,5 @@
   </script>
   {{{scripts}}}
 
-  {{! This will only be included in the demo page. }}
-  {{#if options.demo}}
-    <footer class="kss-github">
-      <!-- https://github.com/blog/273-github-ribbons -->
-      <a href="https://github.com/kss-node/kss-node"><img src="kss-assets/github-fork--black.png" alt="Fork me on GitHub"></a>
-    </footer>
-  {{/if}}
-
-  <!-- Automatically built using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
 </body>
 </html>
