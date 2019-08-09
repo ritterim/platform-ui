@@ -1,9 +1,492 @@
 // Content Grid
 // 
-// Content Grid stuff
+// So far the only instance where this layout is needed is for pages that contain a Notes module.
+// This layout uses `css grid`. All of the content on the page must be nested inside an element with 
+// the class `rim-content-grid`. From here, the heading of the page needs the class `rim-content-grid__heading`.
+// The main content needs the class `rim-content-grid__content`, where the side content, in this case
+// the Notes module, needs `rim-content-grid__side-content`.
+// 
+// `rim-content-grid`, by itself, will span the the width of all of the columns within the grid. In order to get
+// page to fit with `rim-content-grid__side-content`, you need to add the class `has-side-content` to 
+// `rim-content-grid`.
+// 
+// Below `1800px` or our `desktop` breakpoint, `rim-content-grid__content` will still span the entire width even if
+// `has-side-content` is applied. This is because the notes module is off the screen below this screen width but 
+// visible at higher resolutions.
+// 
+// **Note:** Do not use the `presentation-only` class on the container. That is specific to the testing environment.
 // 
 // 
-// Styleguide ContentGrid
+// Markup:
+// <div class="rim-content-grid has-side-content presentation-only">
+//   <h1 class="rim-content-grid__heading text--center">Contracts</h1>
+//   <div class="rim-content-grid__content">
+//     <div class="rim-card">
+//       <div class="block-container flex--justify-end">
+//         <div class="block block-2">
+//           <button class="button button--secondary open-notes">
+//             <i class="fal fa-sticky-note text-white"></i>
+//           </button>
+//         </div>
+//       </div>
+//       <table>
+//         <thead>
+//           <tr>
+//             <th>Company</th>
+//             <th>Contact</th>
+//             <th>Country</th>
+//           </tr>
+//         </thead>
+//         <tbody>
+//           <tr>
+//             <td data-label="Company">
+//               Alfreds Futterkiste
+//             </td>
+//             <td data-label="Contact">
+//               Maria Anders
+//             </td>
+//             <td data-label="Country">
+//               Germany
+//             </td>
+//           </tr>
+//           <tr>
+//             <td data-label="Company">
+//               Centro comercial Moctezuma
+//             </td>
+//             <td data-label="Contact">
+//               Francisco Chang
+//             </td>
+//             <td data-label="Country">
+//               Mexico
+//             </td>
+//           </tr>
+//           <tr>
+//             <td data-label="Company">
+//               Ernst Handel
+//             </td>
+//             <td data-label="Contact">
+//               Roland Mendel
+//             </td>
+//             <td data-label="Country">
+//               Austria
+//             </td>
+//           </tr>
+//           <tr>
+//             <td data-label="Company">
+//               Island Trading
+//             </td>
+//             <td data-label="Contact">
+//               Helen Bennett
+//             </td>
+//             <td data-label="Country">
+//               UK
+//             </td>
+//           </tr>
+//           <tr>
+//             <td data-label="Company">
+//               Laughing Bacchus Winecellars
+//             </td>
+//             <td data-label="Contact">
+//               Yoshi Tannamuri
+//             </td>
+//             <td data-label="Country">
+//               Canada
+//             </td>
+//           </tr>
+//           <tr>
+//             <td data-label="Company">
+//               Magazzini Alimentari Riuniti
+//             </td>
+//             <td data-label="Contact">
+//               Giovanni Rovelli
+//             </td>
+//             <td data-label="Country">
+//               Italy
+//             </td>
+//           </tr>
+//         </tbody>
+//       </table>
+//     </div>
+//   </div>
+//   <div class="rim-notes rim-notes--all">
+//     <div class="rim-notes__header">
+//       <div class="rim-notes__heading-wrapper">
+//         <button class="button button--secondary rim-notes__new-action">
+//           <i class="far fa-plus"></i>
+//         </button>
+//         <h2 class="rim-notes__heading">Notes</h2>
+//       </div>
+//       <div>
+//         <button class="button rim-notes__close">Close <i class="fas fa-times"></i></button>
+//       </div>
+//     </div>
+//     <div class="rim-notes__content">
+//       <ol class="rim-notes__list">
+//         <li class="rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
+//           <div class="rim-note__inner">
+//             <div class="rim-note-toggle-wrapper">
+//               <div class="rim-note__header">
+//                 <i class="far fa-comment-alt-lines"></i>
+//                 <h3 class="rim-note__title">
+//                   Tiffaney Livingston 07/08/2019
+//                 </h3>
+//               </div>
+//               <p class="rim-note__content">
+//                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+//               </p>
+//             </div>
+//             <div class="rim-note-toggle-wrapper--bottom">
+//               <div class="rim-note__actions">
+//                 <button class="rim-note__action open-note-tags" aria-label="Tags">
+//                   <i class="fas fa-tags" focusable="false" aria-hidden="hidden"></i>
+//                   <span class="sr-only">Tags</span>
+//                 </button>
+//                 <button class="rim-note__action" aria-label="Edit">
+//                   <i class="far fa-edit" focusable="false" aria-hidden="hidden"></i>
+//                   <span class="sr-only">Edit</span>
+//                 </button>
+//                 <button class="rim-note__action" aria-label="unlock">
+//                   <i class="fas fa-lock" focusable="false" aria-hidden="hidden"></i>
+//                   <span class="sr-only">unlock</span>
+//                 </button>
+//                 <button class="rim-note__action" aria-label="Delete">
+//                   <i class="far fa-trash-alt" focusable="false" aria-hidden="hidden"></i>
+//                   <span class="sr-only">Delete</span>
+//                 </button>
+//               </div>
+//               <div class="rim-note__active-tags">
+//                 <div class="rim-note__tag-wrapper">
+//                   <button class="button rim-note__tag active">Sales</button>
+//                 </div>
+//                 <div class="rim-note__tag-wrapper">
+//                   <button class="button rim-note__tag active">Release</button>
+//                 </div>
+//               </div>
+//               <div class="rim-note__tags">
+//                 <div class="rim-note__tag-wrapper">
+//                   <button class="button rim-note__tag">Production</button>
+//                 </div>
+//               </div>
+//             </div>              
+//           </div>
+//           <button class="rim-note__toggle">
+//             <i class="far fa-chevron-double-down"></i>
+//           </button>
+//         </li>
+//         <li class="rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
+//           <div class="rim-note__inner">
+//             <div class="rim-note-toggle-wrapper">
+//               <div class="rim-note__header">
+//                 <i class="far fa-comment-alt-lines"></i>
+//                 <h3 class="rim-note__title">
+//                   Tiffaney Livingston 07/08/2019
+//                 </h3>
+//               </div>
+//               <p class="rim-note__content">
+//                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+//               </p>
+//             </div>
+//             <div class="rim-note-toggle-wrapper--bottom">
+//               <div class="rim-note__actions">
+//                 <button class="rim-note__action open-note-tags" aria-label="Tags">
+//                   <i class="fas fa-tags" focusable="false" aria-hidden="hidden"></i>
+//                   <span class="sr-only">Tags</span>
+//                 </button>
+//                 <button class="rim-note__action" aria-label="Edit">
+//                   <i class="far fa-edit" focusable="false" aria-hidden="hidden"></i>
+//                   <span class="sr-only">Edit</span>
+//                 </button>
+//                 <button class="rim-note__action" aria-label="unlock">
+//                   <i class="fas fa-lock" focusable="false" aria-hidden="hidden"></i>
+//                   <span class="sr-only">unlock</span>
+//                 </button>
+//                 <button class="rim-note__action" aria-label="Delete">
+//                   <i class="far fa-trash-alt" focusable="false" aria-hidden="hidden"></i>
+//                   <span class="sr-only">Delete</span>
+//                 </button>
+//               </div>
+//               <div class="rim-note__active-tags">
+//                 <div class="rim-note__tag-wrapper">
+//                   <button class="button rim-note__tag active">Sales</button>
+//                 </div>
+//                 <div class="rim-note__tag-wrapper">
+//                   <button class="button rim-note__tag active">Release</button>
+//                 </div>
+//               </div>
+//               <div class="rim-note__tags">
+//                 <div class="rim-note__tag-wrapper">
+//                   <button class="button rim-note__tag">Production</button>
+//                 </div>
+//               </div>
+//             </div>              
+//           </div>
+//           <button class="rim-note__toggle">
+//             <i class="far fa-chevron-double-down"></i>
+//           </button>
+//         </li>
+//         <li class="rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
+//           <div class="rim-note__inner">
+//             <div class="rim-note-toggle-wrapper">
+//               <div class="rim-note__header">
+//                 <i class="far fa-comment-alt-lines"></i>
+//                 <h3 class="rim-note__title">
+//                   Tiffaney Livingston 07/08/2019
+//                 </h3>
+//               </div>
+//               <p class="rim-note__content">
+//                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+//               </p>
+//             </div>
+//             <div class="rim-note-toggle-wrapper--bottom">
+//               <div class="rim-note__actions">
+//                 <button class="rim-note__action open-note-tags" aria-label="Tags">
+//                   <i class="fas fa-tags" focusable="false" aria-hidden="hidden"></i>
+//                   <span class="sr-only">Tags</span>
+//                 </button>
+//                 <button class="rim-note__action" aria-label="Edit">
+//                   <i class="far fa-edit" focusable="false" aria-hidden="hidden"></i>
+//                   <span class="sr-only">Edit</span>
+//                 </button>
+//                 <button class="rim-note__action" aria-label="unlock">
+//                   <i class="fas fa-lock" focusable="false" aria-hidden="hidden"></i>
+//                   <span class="sr-only">unlock</span>
+//                 </button>
+//                 <button class="rim-note__action" aria-label="Delete">
+//                   <i class="far fa-trash-alt" focusable="false" aria-hidden="hidden"></i>
+//                   <span class="sr-only">Delete</span>
+//                 </button>
+//               </div>
+//               <div class="rim-note__active-tags">
+//                 <div class="rim-note__tag-wrapper">
+//                   <button class="button rim-note__tag active">Sales</button>
+//                 </div>
+//                 <div class="rim-note__tag-wrapper">
+//                   <button class="button rim-note__tag active">Release</button>
+//                 </div>
+//               </div>
+//               <div class="rim-note__tags">
+//                 <div class="rim-note__tag-wrapper">
+//                   <button class="button rim-note__tag">Production</button>
+//                 </div>
+//               </div>
+//             </div>              
+//           </div>
+//           <button class="rim-note__toggle">
+//             <i class="far fa-chevron-double-down"></i>
+//           </button>
+//         </li>
+//       </ol>
+//       <div class="rim-new-note">
+//         <form action="" class="rim-form">
+//           <label for="first-name" class="rim-form__field">First Name
+//             <input id="first-name" type="text" placeholder="First Name">
+//           </label>
+//           <label for="last-name" class="rim-form__field">Last Name
+//             <input id="last-name" type="text" placeholder="Last Name">
+//           </label>
+//           <label for="message" class="rim-form__field">Message
+//             <textarea id="message" name="message" rows="10" ></textarea>
+//           </label>
+//           <div class="rim-form__field rim-form__button-group mb-0">
+//             <button class="button button--lg rim-note__cancel-action" type="cancel">Cancel</button>
+//             <button class="button button--post button--lg" type="submit">Save</button>
+//           </div>
+//         </form>
+//       </div>
+//     </div>
+//   </div>
+//   <div class="rim-notes rim-content-grid__side-content">
+//     <div class="rim-notes__header">
+//       <div class="rim-notes__heading-wrapper">
+//         <button class="button button--secondary rim-notes__new-action">
+//           <i class="far fa-plus"></i>
+//         </button>
+//         <h2 class="rim-notes__heading">Notes</h2>
+//       </div>
+//       <div>
+//         <button class="button rim-note__all-action">View All <span>27</span> <i class="far fa-arrow-right"></i></button>
+//       </div>
+//     </div>
+//     <div class="rim-notes__content">
+//       <ol class="rim-notes__list">
+//         <li class="rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
+//           <div class="rim-note__inner">
+//             <div class="rim-note-toggle-wrapper">
+//               <div class="rim-note__header">
+//                 <i class="far fa-comment-alt-lines"></i>
+//                 <h3 class="rim-note__title">
+//                   Tiffaney Livingston 07/08/2019
+//                 </h3>
+//               </div>
+//               <p class="rim-note__content">
+//                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+//               </p>
+//             </div>
+//             <div class="rim-note-toggle-wrapper--bottom">
+//               <div class="rim-note__actions">
+//                 <button class="rim-note__action open-note-tags" aria-label="Tags">
+//                   <i class="fas fa-tags" focusable="false" aria-hidden="hidden"></i>
+//                   <span class="sr-only">Tags</span>
+//                 </button>
+//                 <button class="rim-note__action" aria-label="Edit">
+//                   <i class="far fa-edit" focusable="false" aria-hidden="hidden"></i>
+//                   <span class="sr-only">Edit</span>
+//                 </button>
+//                 <button class="rim-note__action" aria-label="unlock">
+//                   <i class="fas fa-lock" focusable="false" aria-hidden="hidden"></i>
+//                   <span class="sr-only">unlock</span>
+//                 </button>
+//                 <button class="rim-note__action" aria-label="Delete">
+//                   <i class="far fa-trash-alt" focusable="false" aria-hidden="hidden"></i>
+//                   <span class="sr-only">Delete</span>
+//                 </button>
+//               </div>
+//               <div class="rim-note__active-tags">
+//                 <div class="rim-note__tag-wrapper">
+//                   <button class="button rim-note__tag active">Sales</button>
+//                 </div>
+//                 <div class="rim-note__tag-wrapper">
+//                   <button class="button rim-note__tag active">Release</button>
+//                 </div>
+//               </div>
+//               <div class="rim-note__tags">
+//                 <div class="rim-note__tag-wrapper">
+//                   <button class="button rim-note__tag">Production</button>
+//                 </div>
+//               </div>
+//             </div>              
+//           </div>
+//           <button class="rim-note__toggle">
+//             <i class="far fa-chevron-double-down"></i>
+//           </button>
+//         </li>
+//         <li class="rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
+//           <div class="rim-note__inner">
+//             <div class="rim-note-toggle-wrapper">
+//               <div class="rim-note__header">
+//                 <i class="far fa-comment-alt-lines"></i>
+//                 <h3 class="rim-note__title">
+//                   Tiffaney Livingston 07/08/2019
+//                 </h3>
+//               </div>
+//               <p class="rim-note__content">
+//                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+//               </p>
+//             </div>
+//             <div class="rim-note-toggle-wrapper--bottom">
+//               <div class="rim-note__actions">
+//                 <button class="rim-note__action open-note-tags" aria-label="Tags">
+//                   <i class="fas fa-tags" focusable="false" aria-hidden="hidden"></i>
+//                   <span class="sr-only">Tags</span>
+//                 </button>
+//                 <button class="rim-note__action" aria-label="Edit">
+//                   <i class="far fa-edit" focusable="false" aria-hidden="hidden"></i>
+//                   <span class="sr-only">Edit</span>
+//                 </button>
+//                 <button class="rim-note__action" aria-label="unlock">
+//                   <i class="fas fa-lock" focusable="false" aria-hidden="hidden"></i>
+//                   <span class="sr-only">unlock</span>
+//                 </button>
+//                 <button class="rim-note__action" aria-label="Delete">
+//                   <i class="far fa-trash-alt" focusable="false" aria-hidden="hidden"></i>
+//                   <span class="sr-only">Delete</span>
+//                 </button>
+//               </div>
+//               <div class="rim-note__active-tags">
+//                 <div class="rim-note__tag-wrapper">
+//                   <button class="button rim-note__tag active">Sales</button>
+//                 </div>
+//                 <div class="rim-note__tag-wrapper">
+//                   <button class="button rim-note__tag active">Release</button>
+//                 </div>
+//               </div>
+//               <div class="rim-note__tags">
+//                 <div class="rim-note__tag-wrapper">
+//                   <button class="button rim-note__tag">Production</button>
+//                 </div>
+//               </div>
+//             </div>              
+//           </div>
+//           <button class="rim-note__toggle">
+//             <i class="far fa-chevron-double-down"></i>
+//           </button>
+//         </li>
+//         <li class="rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
+//           <div class="rim-note__inner">
+//             <div class="rim-note-toggle-wrapper">
+//               <div class="rim-note__header">
+//                 <i class="far fa-comment-alt-lines"></i>
+//                 <h3 class="rim-note__title">
+//                   Tiffaney Livingston 07/08/2019
+//                 </h3>
+//               </div>
+//               <p class="rim-note__content">
+//                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+//               </p>
+//             </div>
+//             <div class="rim-note-toggle-wrapper--bottom">
+//               <div class="rim-note__actions">
+//                 <button class="rim-note__action open-note-tags" aria-label="Tags">
+//                   <i class="fas fa-tags" focusable="false" aria-hidden="hidden"></i>
+//                   <span class="sr-only">Tags</span>
+//                 </button>
+//                 <button class="rim-note__action" aria-label="Edit">
+//                   <i class="far fa-edit" focusable="false" aria-hidden="hidden"></i>
+//                   <span class="sr-only">Edit</span>
+//                 </button>
+//                 <button class="rim-note__action" aria-label="unlock">
+//                   <i class="fas fa-lock" focusable="false" aria-hidden="hidden"></i>
+//                   <span class="sr-only">unlock</span>
+//                 </button>
+//                 <button class="rim-note__action" aria-label="Delete">
+//                   <i class="far fa-trash-alt" focusable="false" aria-hidden="hidden"></i>
+//                   <span class="sr-only">Delete</span>
+//                 </button>
+//               </div>
+//               <div class="rim-note__active-tags">
+//                 <div class="rim-note__tag-wrapper">
+//                   <button class="button rim-note__tag active">Sales</button>
+//                 </div>
+//                 <div class="rim-note__tag-wrapper">
+//                   <button class="button rim-note__tag active">Release</button>
+//                 </div>
+//               </div>
+//               <div class="rim-note__tags">
+//                 <div class="rim-note__tag-wrapper">
+//                   <button class="button rim-note__tag">Production</button>
+//                 </div>
+//               </div>
+//             </div>              
+//           </div>
+//           <button class="rim-note__toggle">
+//             <i class="far fa-chevron-double-down"></i>
+//           </button>
+//         </li>
+//       </ol>
+//       <div class="rim-new-note">
+//         <form action="" class="rim-form">
+//           <label for="first-name" class="rim-form__field">First Name
+//             <input id="first-name" type="text" placeholder="First Name">
+//           </label>
+//           <label for="last-name" class="rim-form__field">Last Name
+//             <input id="last-name" type="text" placeholder="Last Name">
+//           </label>
+//           <label for="message" class="rim-form__field">Message
+//             <textarea id="message" name="message" rows="10" ></textarea>
+//           </label>
+//           <div class="rim-form__field rim-form__button-group mb-0">
+//             <button class="button button--lg rim-note__cancel-action" type="cancel">Cancel</button>
+//             <button class="button button--post button--lg" type="submit">Save</button>
+//           </div>
+//         </form>
+//       </div>
+//     </div>
+//   </div>
+// </div>
+// 
+// Styleguide Layout.ContentGrid
+
+
 
 .platform {
   background-color: map-get($greyscale, 'lighter');
