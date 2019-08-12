@@ -412,7 +412,7 @@
     display: block;
     overflow-x: auto;
     padding: 0.5em;
-    background: linear-gradient(45deg, darken(map-get($brand-colors, 'navy'), 10%), lighten(map-get($brand-colors, 'navy'), 5%));
+    background: linear-gradient(45deg, map-get($brand-colors, 'navy'), lighten(map-get($brand-colors, 'navy'), 5%));
     color: map-get($greyscale, 'white');
 
     &:not(.rim-style-markup__code-wrapper) {
