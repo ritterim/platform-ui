@@ -1,0 +1,127 @@
+// Tabs
+// 
+// The content for a tabbed section needs to live inside the `.rim-tabs` class. The tabs should 
+// be added to a `.rim-card` with the class `has-tabs` added. 
+// 
+// Be sure that the `href` value on the `rim-tab__acnchor` matches that of the corresponding
+// `rim-tab-content` id.
+// 
+// The tabs themselves or the `.rim-tab` have a specific width of `16rem` as well as a specific
+// height of `4rem`. The width can be changed using the [blocks layout methoad](/styleguide/section-layout.html#kssref-layout-blocks).
+// 
+// Markup: 
+// <div class="rim-card has-tabs">
+//   <div class="rim-tabs">
+//     <ul class="rim-tab-list">
+//       <li class="rim-tab">
+//         <a href="#rim-tab-content-puppy" class="rim-tab__anchor">
+//           <i class="fas fa-folder-open"></i>Puppy
+//         </a>
+//       </li>
+//       <li class="rim-tab">
+//         <a href="#rim-tab-content-dog" class="rim-tab__anchor">
+//           <i class="fas fa-folder"></i>Dog
+//         </a>
+//       </li>
+//       <li class="rim-tab">
+//         <a href="#rim-tab-content-another" class="rim-tab__anchor">
+//           <i class="fad fa-users"></i>Another Dog
+//         </a>
+//       </li>
+//     </ul>
+//     <div class="rim-tab-content" id="rim-tab-content-puppy">
+//       <img src="https://placeimg.com/640/480/animals?t=1565635267224">
+//     </div>
+//     <div class="rim-tab-content" id="rim-tab-content-dog">
+//       <img src="https://placeimg.com/640/480/animals?t=1565635322782">
+//     </div>
+//     <div class="rim-tab-content" id="rim-tab-content-another">
+//       <img src="https://placeimg.com/640/480/animals?t=1565635383449">
+//     </div>
+//   </div>
+// </div>
+// 
+// 
+// Styleguide Components.Tabs
+
+$tab-height:          4rem;
+$tab-active-color:    map-get($brand-colors, 'navy' );
+
+.rim-card.has-tabs {
+  margin-top: $tab-height;
+}
+
+.rim-tab-list {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: $spacer; // makes up for .rim-card padding-top
+  margin-left: calc(-#{$spacer} - 1px); // .rim-card padding + 1px border
+  margin-top: calc(-#{$tab-height} - #{$spacer}); // .rim-tab height + .rim-card padding
+  width: calc(100% + (1rem + 1px) * 2);
+}
+
+.rim-tab {
+  height: $tab-height;
+  margin-bottom: 0;
+  position: relative;
+  width: 16rem;
+
+  &__anchor {
+    border: 1px solid transparent;
+    color: map-get($greyscale, 'light' );
+    height: 100%;
+    padding: map-get($spacers, 2 ) $spacer;
+    position: relative;
+    transition: background-color ease  $transitions;
+    width: 100%;
+    @extend %flex-center;
+
+    &:hover {
+      background-color: map-get($greyscale, 'white' );
+      border-color: lighten(map-get($greyscale, 'light'), $hue-threshold * 2);
+      border-bottom-color: map-get($greyscale, 'white' );
+      color: $tab-active-color;
+      font-weight: 600;
+    }
+
+    &.active {
+      background-color: map-get($greyscale, 'white' );
+      border: 1px solid lighten(map-get($greyscale, 'light'), $hue-threshold * 2);
+      border-bottom-color: map-get($greyscale, 'white' );
+      color: $tab-active-color;
+      font-weight: 600;
+      pointer-events: none;
+
+      &::before {
+        background-color: $tab-active-color;
+      }
+    }
+
+    &::before {
+      background-color: transparent;
+      content: '';
+      height: .3rem;
+      left: -1px;
+      position: absolute;
+      right: -1px;
+      top: 0;
+      transition: $transitions;
+      width: auto;
+      border: none;
+      border-radius: 0;
+    }
+  }
+
+  i {
+    margin-right: map-get($spacers, 2 );
+  }
+}
+
+.rim-tab-content {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
