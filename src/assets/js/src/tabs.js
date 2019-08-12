@@ -15,7 +15,6 @@ if (document.querySelectorAll('.rim-tabs').length) {
       }
     });
   } else {
-    console.log(childList[0].firstElementChild);
     childList[0].firstElementChild.classList.add('active');
     contentList[0].classList.add('active');
   }
