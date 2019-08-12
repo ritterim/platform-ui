@@ -234,106 +234,261 @@
       <h1 class="rim-content-grid__heading text--center">Contracts</h1>
       <div class="rim-content-grid__content rim-card has-tabs">
         <div class="rim-tabs">
-          <nav class="rim-tab-nav">
-            <ul class="rim-tab-list">
-              <li class="rim-tab">
-                <input type="radio" name="tab" class="rim-tab__input" checked id="rim-tab-active">
-                <label for="rim-tab-active" class="rim-tab__label">
-                  <i class="fas fa-folder-open"></i>Active
-                </label>
-              </li>
-              <li class="rim-tab">
-                <input type="radio" name="tab" class="rim-tab__input" id="rim-tab-inactive">
-                <label for="rim-tab-inactive" class="rim-tab__label">
-                  <i class="fas fa-folder"></i>Inactive
-                </label>
-              </li>
-              <li class="rim-tab">
-                <input type="radio" name="tab" class="rim-tab__input" id="rim-tab-downlines">
-                <label for="rim-tab-downlines" class="rim-tab__label">
-                  <i class="fad fa-users"></i>Downlines
-                </label>
-              </li>
-            </ul>
-          </nav>
+          <ul class="rim-tab-list">
+            <li class="rim-tab">
+              <a href="#rim-tab-content-active" class="rim-tab__anchor active">
+                <i class="fas fa-folder-open"></i>Active
+              </a>
+            </li>
+            <li class="rim-tab">
+              <a href="#rim-tab-content-inactive" class="rim-tab__anchor">
+                <i class="fas fa-folder"></i>Inactive
+              </a>
+            </li>
+            <li class="rim-tab">
+              <a href="#rim-tab-content-downlines" class="rim-tab__anchor">
+                <i class="fad fa-users"></i>Downlines
+              </a>
+            </li>
+          </ul>
+          <div class="rim-tab-content" id="rim-tab-content-active">
+            <table>
+              <thead>
+                <tr>
+                  <th>Active</th>
+                  <th>Active</th>
+                  <th>Active</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Company">
+                    Alfreds Futterkiste
+                  </td>
+                  <td data-label="Contact">
+                    Maria Anders
+                  </td>
+                  <td data-label="Country">
+                    Germany
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Company">
+                    Centro comercial Moctezuma
+                  </td>
+                  <td data-label="Contact">
+                    Francisco Chang
+                  </td>
+                  <td data-label="Country">
+                    Mexico
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Company">
+                    Ernst Handel
+                  </td>
+                  <td data-label="Contact">
+                    Roland Mendel
+                  </td>
+                  <td data-label="Country">
+                    Austria
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Company">
+                    Island Trading
+                  </td>
+                  <td data-label="Contact">
+                    Helen Bennett
+                  </td>
+                  <td data-label="Country">
+                    UK
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Company">
+                    Laughing Bacchus Winecellars
+                  </td>
+                  <td data-label="Contact">
+                    Yoshi Tannamuri
+                  </td>
+                  <td data-label="Country">
+                    Canada
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Company">
+                    Magazzini Alimentari Riuniti
+                  </td>
+                  <td data-label="Contact">
+                    Giovanni Rovelli
+                  </td>
+                  <td data-label="Country">
+                    Italy
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="rim-tab-content" id="rim-tab-content-inactive">
+            <table>
+              <thead>
+                <tr>
+                  <th>Inactive</th>
+                  <th>Inactive</th>
+                  <th>Inactive</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Company">
+                    Alfreds Futterkiste
+                  </td>
+                  <td data-label="Contact">
+                    Maria Anders
+                  </td>
+                  <td data-label="Country">
+                    Germany
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Company">
+                    Centro comercial Moctezuma
+                  </td>
+                  <td data-label="Contact">
+                    Francisco Chang
+                  </td>
+                  <td data-label="Country">
+                    Mexico
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Company">
+                    Ernst Handel
+                  </td>
+                  <td data-label="Contact">
+                    Roland Mendel
+                  </td>
+                  <td data-label="Country">
+                    Austria
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Company">
+                    Island Trading
+                  </td>
+                  <td data-label="Contact">
+                    Helen Bennett
+                  </td>
+                  <td data-label="Country">
+                    UK
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Company">
+                    Laughing Bacchus Winecellars
+                  </td>
+                  <td data-label="Contact">
+                    Yoshi Tannamuri
+                  </td>
+                  <td data-label="Country">
+                    Canada
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Company">
+                    Magazzini Alimentari Riuniti
+                  </td>
+                  <td data-label="Contact">
+                    Giovanni Rovelli
+                  </td>
+                  <td data-label="Country">
+                    Italy
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="rim-tab-content" id="rim-tab-content-downlines">
+            <table>
+              <thead>
+                <tr>
+                  <th>Downlines</th>
+                  <th>Downlines</th>
+                  <th>Downlines</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Company">
+                    Alfreds Futterkiste
+                  </td>
+                  <td data-label="Contact">
+                    Maria Anders
+                  </td>
+                  <td data-label="Country">
+                    Germany
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Company">
+                    Centro comercial Moctezuma
+                  </td>
+                  <td data-label="Contact">
+                    Francisco Chang
+                  </td>
+                  <td data-label="Country">
+                    Mexico
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Company">
+                    Ernst Handel
+                  </td>
+                  <td data-label="Contact">
+                    Roland Mendel
+                  </td>
+                  <td data-label="Country">
+                    Austria
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Company">
+                    Island Trading
+                  </td>
+                  <td data-label="Contact">
+                    Helen Bennett
+                  </td>
+                  <td data-label="Country">
+                    UK
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Company">
+                    Laughing Bacchus Winecellars
+                  </td>
+                  <td data-label="Contact">
+                    Yoshi Tannamuri
+                  </td>
+                  <td data-label="Country">
+                    Canada
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Company">
+                    Magazzini Alimentari Riuniti
+                  </td>
+                  <td data-label="Contact">
+                    Giovanni Rovelli
+                  </td>
+                  <td data-label="Country">
+                    Italy
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
-        <table>
-          <thead>
-            <tr>
-              <th>Company</th>
-              <th>Contact</th>
-              <th>Country</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td data-label="Company">
-                Alfreds Futterkiste
-              </td>
-              <td data-label="Contact">
-                Maria Anders
-              </td>
-              <td data-label="Country">
-                Germany
-              </td>
-            </tr>
-            <tr>
-              <td data-label="Company">
-                Centro comercial Moctezuma
-              </td>
-              <td data-label="Contact">
-                Francisco Chang
-              </td>
-              <td data-label="Country">
-                Mexico
-              </td>
-            </tr>
-            <tr>
-              <td data-label="Company">
-                Ernst Handel
-              </td>
-              <td data-label="Contact">
-                Roland Mendel
-              </td>
-              <td data-label="Country">
-                Austria
-              </td>
-            </tr>
-            <tr>
-              <td data-label="Company">
-                Island Trading
-              </td>
-              <td data-label="Contact">
-                Helen Bennett
-              </td>
-              <td data-label="Country">
-                UK
-              </td>
-            </tr>
-            <tr>
-              <td data-label="Company">
-                Laughing Bacchus Winecellars
-              </td>
-              <td data-label="Contact">
-                Yoshi Tannamuri
-              </td>
-              <td data-label="Country">
-                Canada
-              </td>
-            </tr>
-            <tr>
-              <td data-label="Company">
-                Magazzini Alimentari Riuniti
-              </td>
-              <td data-label="Contact">
-                Giovanni Rovelli
-              </td>
-              <td data-label="Country">
-                Italy
-              </td>
-            </tr>
-          </tbody>
-        </table>
       </div>
     </section>
   </main>

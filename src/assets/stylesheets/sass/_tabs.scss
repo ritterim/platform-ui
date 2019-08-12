@@ -7,17 +7,14 @@ $tab-active-color:    map-get($brand-colors, 'navy' );
   margin-top: $tab-height;
 }
 
-.rim-tabs {
-  margin-bottom: $spacer; // makes up for .rim-card padding-top
-  margin-left: calc(-#{$spacer} - 1px); // .rim-card padding + 1px border
-  margin-top: calc(-#{$tab-height} - #{$spacer}); // .rim-tab height + .rim-card padding
-  width: calc(100% + (1rem + 1px) * 2);
-}
-
 .rim-tab-list {
   display: flex;
   list-style-type: none;
   padding: 0;
+  margin-bottom: $spacer; // makes up for .rim-card padding-top
+  margin-left: calc(-#{$spacer} - 1px); // .rim-card padding + 1px border
+  margin-top: calc(-#{$tab-height} - #{$spacer}); // .rim-tab height + .rim-card padding
+  width: calc(100% + (1rem + 1px) * 2);
 }
 
 .rim-tab {
@@ -26,58 +23,59 @@ $tab-active-color:    map-get($brand-colors, 'navy' );
   position: relative;
   width: 16rem;
 
-  .rim-tab__input {
+  &__anchor {
+    color: map-get($greyscale, 'light' );
+    height: 100%;
+    padding: map-get($spacers, 2 ) $spacer;
+    position: relative;
+    transition: background-color ease  $transitions;
+    width: 100%;
+    @extend %flex-center;
 
-    &:checked {
-      
-      + label {
-        background-color: map-get($greyscale, 'white' );
-        border: solid lighten(map-get($greyscale, 'light'), $hue-threshold * 2);
-        border-width: 1px 1px 0;
-        color: $tab-active-color;
-        transition: $transitions;
+    &:hover {
+      background-color: map-get($greyscale, 'white' );
+      border: 1px solid lighten(map-get($greyscale, 'light'), $hue-threshold * 2);
+      border-bottom-color: map-get($greyscale, 'white' );
+      color: $tab-active-color;
+    }
 
-        &::before {
-          background-color: $tab-active-color;
-          content: '';
-          height: .3rem;
-          left: -1px;
-          position: absolute;
-          right: -1px;
-          top: 0;
-        }
+    &.active {
+      background-color: map-get($greyscale, 'white' );
+      border: 1px solid lighten(map-get($greyscale, 'light'), $hue-threshold * 2);
+      border-bottom-color: map-get($greyscale, 'white' );
+      color: $tab-active-color;
+      font-weight: 600;
+      pointer-events: none;
+
+      &::before {
+        background-color: $tab-active-color;
       }
     }
 
-    + label {
-      font-size: 100%;
-      height: 100%;
-      left: 0;
-      margin: 0;
-      padding: map-get($spacers, 2 ) $spacer;
+    &::before {
+      background-color: transparent;
+      content: '';
+      height: .3rem;
+      left: -1px;
       position: absolute;
-      right: 0;
+      right: -1px;
       top: 0;
       transition: $transitions;
-      @extend %flex-center;
-
-      &::before {
-        background-color: transparent;
-        content: '';
-        height: .3rem;
-        left: -1px;
-        position: absolute;
-        right: -1px;
-        top: 0;
-        transition: $transitions;
-        width: auto;
-        border: none;
-        border-radius: 0;
-      }
+      width: auto;
+      border: none;
+      border-radius: 0;
     }
   }
 
   i {
     margin-right: map-get($spacers, 2 );
+  }
+}
+
+.rim-tab-content {
+  display: none;
+
+  &.active {
+    display: block;
   }
 }
