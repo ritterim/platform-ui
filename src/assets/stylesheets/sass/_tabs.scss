@@ -24,6 +24,7 @@ $tab-active-color:    map-get($brand-colors, 'navy' );
   width: 16rem;
 
   &__anchor {
+    border: 1px solid transparent;
     color: map-get($greyscale, 'light' );
     height: 100%;
     padding: map-get($spacers, 2 ) $spacer;
@@ -34,9 +35,10 @@ $tab-active-color:    map-get($brand-colors, 'navy' );
 
     &:hover {
       background-color: map-get($greyscale, 'white' );
-      border: 1px solid lighten(map-get($greyscale, 'light'), $hue-threshold * 2);
+      border-color: lighten(map-get($greyscale, 'light'), $hue-threshold * 2);
       border-bottom-color: map-get($greyscale, 'white' );
       color: $tab-active-color;
+      font-weight: 600;
     }
 
     &.active {

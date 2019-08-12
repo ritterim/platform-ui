@@ -1,6 +1,6 @@
 // Rim Tabs
 if (document.querySelectorAll('.rim-tabs').length) {
-  let childList = document.querySelector('.rim-tabs').children;
+  let childList = document.querySelector('.rim-tab-list').children;
   let tabs = document.querySelectorAll('.rim-tabs li a');
   let contentList = document.querySelectorAll('.rim-tabs > div');
   if (window.location.hash) {
@@ -15,6 +15,7 @@ if (document.querySelectorAll('.rim-tabs').length) {
       }
     });
   } else {
+    console.log(childList[0].firstElementChild);
     childList[0].firstElementChild.classList.add('active');
     contentList[0].classList.add('active');
   }
