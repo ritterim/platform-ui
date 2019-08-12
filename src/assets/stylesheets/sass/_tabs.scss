@@ -1,5 +1,10 @@
 // Tabs
 // 
+// The content for a tabbed section needs to live inside the `.rim-tabs` class. The tabs should 
+// be added to a `.rim-card` with the class `has-tabs` added. 
+// 
+// Be sure that the `href` value on the `rim-tab__acnchor` matches that of the corresponding
+// `rim-tab-content` id.
 // 
 // Markup: 
 // <div class="rim-card has-tabs">
