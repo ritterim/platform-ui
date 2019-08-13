@@ -67,6 +67,10 @@ $tab-active-color:    map-get($brand-colors, 'navy' );
   position: relative;
   width: 16rem;
 
+  @include breakpoint(tablet, max) {
+    flex: 1 1 auto;
+  }
+
   &__anchor {
     background-color: transparent;
     border: 1px solid transparent;
@@ -80,12 +84,18 @@ $tab-active-color:    map-get($brand-colors, 'navy' );
     width: 100%;
     @extend %flex-center;
 
-    &:hover {
-      background-color: map-get($greyscale, 'white' );
-      border-color: lighten(map-get($greyscale, 'light'), $hue-threshold * 2);
-      border-bottom-color: map-get($greyscale, 'white' );
-      color: $tab-active-color;
-      font-weight: 600;
+    @media (pointer: fine) {
+      &:hover {
+        background-color: map-get($greyscale, 'white' );
+        border-color: lighten(map-get($greyscale, 'light'), $hue-threshold * 2);
+        border-bottom-color: map-get($greyscale, 'white' );
+        color: $tab-active-color;
+        font-weight: 600;
+      }
+    }
+
+    &:focus {
+      outline: none;
     }
 
     &[aria-selected="true"] {
@@ -98,6 +108,10 @@ $tab-active-color:    map-get($brand-colors, 'navy' );
 
       &::before {
         background-color: $tab-active-color;
+      }
+
+      i {
+        font-size: 100%;
       }
     }
 
@@ -117,14 +131,27 @@ $tab-active-color:    map-get($brand-colors, 'navy' );
   }
 
   i {
-    margin-right: map-get($spacers, 2 );
+    @include breakpoint(tablet, max) {
+      font-size: map-get($font-percentage, 'lg' );
+    }
+  }
+
+  &__title {
+    margin-left: map-get($spacers, 2 );
+
+    @include breakpoint(tablet, max) {
+      display: none;
+
+      [aria-selected="true"] & {
+        display: block;
+      }
+    }    
   }
 }
 
-// .rim-tab-panel {
-//   display: none;
-
-//   &.active {
-//     display: block;
-//   }
-// }
+.rim-tab-panel {
+  
+  &:focus {
+    outline: none;
+  }
+}
