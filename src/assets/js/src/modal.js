@@ -8,6 +8,7 @@ if(closeModal) {
       let modal = document.getElementById(el.dataset.modal);
       modal.classList.toggle('rim-modal--closed');
       modalOverlay.classList.toggle('rim-modal--closed');
+      document.body.classList.remove('modal-open');
     });
   });
 }
@@ -18,6 +19,9 @@ if(openModal) {
       let modal = document.getElementById(el.dataset.modal);
       modal.classList.toggle('rim-modal--closed');
       modalOverlay.classList.toggle('rim-modal--closed');
+      if(el.dataset.noScroll) { 
+        document.body.classList.add('modal-open');
+      }
     });
   });
 }
