@@ -1,30 +1,81 @@
-// Rim Tabs
-if (document.querySelectorAll('.rim-tabs').length) {
-  let childList = document.querySelector('.rim-tab-list').children;
-  let tabs = document.querySelectorAll('.rim-tabs li a');
-  let contentList = document.querySelectorAll('.rim-tabs > div');
+
+const tabs = document.querySelectorAll('[role="tab"]');
+const tabList = document.querySelector('[role="tablist"]');
+const tabPanel = document.querySelectorAll('[role="tabpanel"]');
+
+if(tabs) {
+  // Add a click event handler to each tab
+  tabs.forEach(tab => {
+    tab.addEventListener("click", changeTabs);
+  });
+
   if (window.location.hash) {
-    tabs.forEach(el => {
-      if (window.location.hash === el.hash) {
-        el.classList.add('active');
+    tabs.forEach(tab => {
+      if (window.location.hash === tab.hash) {
+        tab.setAttribute("aria-selected", true);
       }
     });
-    contentList.forEach(el => {
-      if (window.location.hash.replace('#', '') === el.id) {
-        el.classList.add('active');
+    tabPanel.forEach(panel => {
+      if (window.location.hash.replace('#', '') === panel.id) {
+        panel.removeAttribute("hidden");
       }
     });
   } else {
-    childList[0].firstElementChild.classList.add('active');
-    contentList[0].classList.add('active');
+    tabList.children[0].firstElementChild.setAttribute("aria-selected", true);
+    tabPanel[0].removeAttribute("hidden");
   }
-  tabs.forEach(el => el.addEventListener('click', function(event) {
-    const active = document.querySelectorAll('.rim-tabs .active');
-    if (active) active.forEach(el => el.classList.remove('active'));
-    event.currentTarget.classList.add('active');
-    let thisContent = document.querySelector(event.currentTarget.hash);
-    history.replaceState(null, '', event.currentTarget.hash);
-    thisContent.classList.add('active');
-    event.preventDefault();
-  }, false));
+
+  // Enable arrow navigation between tabs in the tab list
+  let tabFocus = 0;
+
+  tabList.addEventListener("keydown", e => {
+    // Move right
+    if (e.keyCode === 39 || e.keyCode === 37) {
+      tabs[tabFocus].setAttribute("tabindex", -1);
+      if (e.keyCode === 39) {
+        tabFocus++;
+        // If we're at the end, go to the start
+        if (tabFocus >= tabs.length) {
+          tabFocus = 0;
+        }
+        // Move left
+      } else if (e.keyCode === 37) {
+        tabFocus--;
+        // If we're at the start, move to the end
+        if (tabFocus < 0) {
+          tabFocus = tabs.length - 1;
+        }
+      }
+
+      tabs[tabFocus].setAttribute("tabindex", 0);
+      tabs[tabFocus].focus();
+    }
+  });
+
+  function changeTabs(e) {
+    const target = this;
+    const parent = target.parentNode;
+    const grandparent = parent.parentNode;
+
+    history.replaceState(null, '', e.currentTarget.hash);
+    e.preventDefault();
+
+    // Remove all current selected tabs
+    grandparent
+      .querySelectorAll('[aria-selected="true"]')
+      .forEach(t => t.setAttribute("aria-selected", false));
+
+    // Set this tab as selected
+    target.setAttribute("aria-selected", true);
+
+    // Hide all tab panels
+    grandparent.parentNode
+      .querySelectorAll('[role="tabpanel"]')
+      .forEach(p => p.setAttribute("hidden", true));
+
+    // Show the selected panel
+    grandparent.parentNode
+      .querySelector(`#${target.getAttribute("aria-controls")}`)
+      .removeAttribute("hidden");
+  }
 }
