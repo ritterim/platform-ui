@@ -234,24 +234,24 @@
       <h1 class="rim-content-grid__heading text--center">Contracts</h1>
       <div class="rim-content-grid__content rim-card has-tabs">
         <div class="rim-tabs">
-          <ul class="rim-tab-list">
+          <ul class="rim-tab-list" role="tablist" aria-label="Sample Tabs">
             <li class="rim-tab">
-              <a href="#rim-tab-content-active" class="rim-tab__anchor">
-                <i class="fas fa-folder-open"></i>Active
+              <a href="#contracts-active" class="rim-tab__anchor" role="tab" aria-selected="true" aria-controls="contracts-active" id="rim-tab-1" tabindex="0">
+                <i class="fas fa-folder-open" focusable="false" aria-hidden="hidden"></i><span class="rim-tab__title">Active</span>
               </a>
             </li>
             <li class="rim-tab">
-              <a href="#rim-tab-content-inactive" class="rim-tab__anchor">
-                <i class="fas fa-folder"></i>Inactive
+              <a href="#contracts-inactive" class="rim-tab__anchor" role="tab" aria-selected="false" aria-controls="contracts-inactive" id="rim-tab-2" tabindex="-1">
+                <i class="fas fa-folder" focusable="false" aria-hidden="hidden"></i><span class="rim-tab__title">Inactive</span>
               </a>
             </li>
             <li class="rim-tab">
-              <a href="#rim-tab-content-downlines" class="rim-tab__anchor">
-                <i class="fad fa-users"></i>Downlines
+              <a href="#contracts-downlines" class="rim-tab__anchor" role="tab" aria-selected="false" aria-controls="contracts-downlines" id="rim-tab-3" tabindex="-1">
+                <i class="fad fa-users" focusable="false" aria-hidden="hidden"></i><span class="rim-tab__title">Downlines</span>
               </a>
             </li>
           </ul>
-          <div class="rim-tab-content" id="rim-tab-content-active">
+          <div class="rim-tab-panel" id="contracts-active" role="tabpanel" tabindex="0" aria-labelledby="rim-tab-1">
             <table>
               <thead>
                 <tr>
@@ -330,7 +330,7 @@
               </tbody>
             </table>
           </div>
-          <div class="rim-tab-content" id="rim-tab-content-inactive">
+          <div class="rim-tab-panel" id="contracts-inactive" role="tabpanel" tabindex="0" aria-labelledby="rim-tab-2" hidden>
             <div class="block-container">
                 <div class="block block-laptop-4 mb-3">
                   <ul class="image-link-list">
@@ -363,7 +363,7 @@
                 </div>
               </div>
           </div>
-          <div class="rim-tab-content" id="rim-tab-content-downlines">
+          <div class="rim-tab-panel" id="contracts-downlines" role="tabpanel" tabindex="0" aria-labelledby="rim-tab-3" hidden>
             <ul class="image-link-list block-container blocks-py-2 blocks-px-2 tablet-up-2 laptop-up-3 desktop-up-4">
                 <li class="block">
                   <a href="#" class="image-link image-link--video">
