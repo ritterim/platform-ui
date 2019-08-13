@@ -12,11 +12,13 @@ if(tabs) {
   if (window.location.hash) {
     tabs.forEach(tab => {
       if (window.location.hash === tab.hash) {
+        tabList.children[0].firstElementChild.setAttribute("aria-selected", false);
         tab.setAttribute("aria-selected", true);
       }
     });
     tabPanel.forEach(panel => {
       if (window.location.hash.replace('#', '') === panel.id) {
+        tabPanel[0].setAttribute("hidden", true);
         panel.removeAttribute("hidden");
       }
     });

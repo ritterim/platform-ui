@@ -1,45 +1,138 @@
 // Tabs
 // 
 // The content for a tabbed section needs to live inside the `.rim-tabs` class. The tabs should 
-// be added to a `.rim-card` with the class `has-tabs` added. 
+// be added to a `.rim-card` with the class `has-tabs` added. This class gives the card the proper
+// margin-top necessary for the look of the tabs being outside the card.
+// 
+// The aria attributes are important to the funcationality of the tabs as well. The active tab styles
+// come from `aria-selected="true"` being set on the tab. The corresponding tab content is displayed
+// by the removal of the `hidden` attribute.
 // 
 // Be sure that the `href` value on the `rim-tab__acnchor` matches that of the corresponding
-// `rim-tab-panel` id.
+// `rim-tab-panel` id. This is key for links that contain the hash in the url.
 // 
 // The tabs themselves or the `.rim-tab` have a specific width of `16rem` as well as a specific
-// height of `4rem`. The width can be changed using the [blocks layout methoad](/styleguide/section-layout.html#kssref-layout-blocks).
+// height of `4rem`. The width can be changed using the [blocks layout method](/styleguide/section-layout.html#kssref-layout-blocks).
 // 
 // Markup: 
 // <div class="rim-card has-tabs">
 //   <div class="rim-tabs">
-//     <ul class="rim-tab-list">
-//       <li class="rim-tab">
-//         <a href="#rim-tab-panel-puppy" class="rim-tab__anchor">
-//           <i class="fas fa-folder-open"></i>Puppy
-//         </a>
-//       </li>
-//       <li class="rim-tab">
-//         <a href="#rim-tab-panel-dog" class="rim-tab__anchor">
-//           <i class="fas fa-folder"></i>Dog
-//         </a>
-//       </li>
-//       <li class="rim-tab">
-//         <a href="#rim-tab-panel-another" class="rim-tab__anchor">
-//           <i class="fad fa-users"></i>Another Dog
-//         </a>
-//       </li>
-//     </ul>
-//     <div class="rim-tab-panel" id="rim-tab-panel-puppy">
+//     <ul class="rim-tab-list" role="tablist" aria-label="Sample Tabs">
+//      <li class="rim-tab">
+//        <a href="#contracts-active" class="rim-tab__anchor" role="tab" aria-selected="true" aria-controls="contracts-active" id="rim-tab-1" tabindex="0">
+//          <i class="fas fa-folder-open" focusable="false" aria-hidden="hidden"></i><span class="rim-tab__title">Animal</span>
+//        </a>
+//      </li>
+//      <li class="rim-tab">
+//        <a href="#contracts-inactive" class="rim-tab__anchor" role="tab" aria-selected="false" aria-controls="contracts-inactive" id="rim-tab-2" tabindex="-1">
+//          <i class="fas fa-folder" focusable="false" aria-hidden="hidden"></i><span class="rim-tab__title">Another Animal</span>
+//        </a>
+//      </li>
+//      <li class="rim-tab">
+//        <a href="#contracts-downlines" class="rim-tab__anchor" role="tab" aria-selected="false" aria-controls="contracts-downlines" id="rim-tab-3" tabindex="-1">
+//          <i class="fad fa-users" focusable="false" aria-hidden="hidden"></i><span class="rim-tab__title">Third Animal</span>
+//        </a>
+//      </li>
+//    </ul>
+//     <div class="rim-tab-panel" id="contracts-active" role="tabpanel" tabindex="0" aria-labelledby="rim-tab-1">
 //       <img src="https://placeimg.com/640/480/animals?t=1565635267224">
 //     </div>
-//     <div class="rim-tab-panel" id="rim-tab-panel-dog">
+//     <div class="rim-tab-panel" id="contracts-inactive" role="tabpanel" tabindex="0" aria-labelledby="rim-tab-2" hidden>
 //       <img src="https://placeimg.com/640/480/animals?t=1565635322782">
 //     </div>
-//     <div class="rim-tab-panel" id="rim-tab-panel-another">
+//     <div class="rim-tab-panel" id="contracts-downlines" role="tabpanel" tabindex="0" aria-labelledby="rim-tab-3" hidden>
 //       <img src="https://placeimg.com/640/480/animals?t=1565635383449">
 //     </div>
 //   </div>
 // </div>
+// 
+// 
+// Example JS below.
+// This javascript is specific to changing the hash in the url. If that is the desired funtionality, this code might be helpful.
+// Regardles of whether or not we want to change the hash value in the url, we do want to change the value of the proper `aria`
+// roles in order to show the correct content.
+// ```js
+// const tabs = document.querySelectorAll('[role="tab"]');
+// const tabList = document.querySelector('[role="tablist"]');
+// const tabPanel = document.querySelectorAll('[role="tabpanel"]');
+// 
+// if(tabs) {
+//   // Add a click event handler to each tab
+//   tabs.forEach(tab => {
+//     tab.addEventListener("click", changeTabs);
+//   });
+// 
+//   if (window.location.hash) {
+//     tabs.forEach(tab => {
+//       if (window.location.hash === tab.hash) {
+//         tab.setAttribute("aria-selected", true);
+//       }
+//     });
+//     tabPanel.forEach(panel => {
+//       if (window.location.hash.replace('#', '') === panel.id) {
+//         panel.removeAttribute("hidden");
+//       }
+//     });
+//   } else {
+//     tabList.children[0].firstElementChild.setAttribute("aria-selected", true);
+//     tabPanel[0].removeAttribute("hidden");
+//   }
+// 
+//   // Enable arrow navigation between tabs in the tab list
+//   let tabFocus = 0;
+// 
+//   tabList.addEventListener("keydown", e => {
+//     // Move right
+//     if (e.keyCode === 39 || e.keyCode === 37) {
+//       tabs[tabFocus].setAttribute("tabindex", -1);
+//       if (e.keyCode === 39) {
+//         tabFocus++;
+//         // If we're at the end, go to the start
+//         if (tabFocus >= tabs.length) {
+//           tabFocus = 0;
+//         }
+//         // Move left
+//       } else if (e.keyCode === 37) {
+//         tabFocus--;
+//         // If we're at the start, move to the end
+//         if (tabFocus < 0) {
+//           tabFocus = tabs.length - 1;
+//         }
+//       }
+// 
+//       tabs[tabFocus].setAttribute("tabindex", 0);
+//       tabs[tabFocus].focus();
+//     }
+//   });
+// 
+//   function changeTabs(e) {
+//     const target = this;
+//     const parent = target.parentNode;
+//     const grandparent = parent.parentNode;
+// 
+//     history.replaceState(null, '', e.currentTarget.hash);
+//     e.preventDefault();
+// 
+//     // Remove all current selected tabs
+//     grandparent
+//       .querySelectorAll('[aria-selected="true"]')
+//       .forEach(t => t.setAttribute("aria-selected", false));
+// 
+//     // Set this tab as selected
+//     target.setAttribute("aria-selected", true);
+// 
+//     // Hide all tab panels
+//     grandparent.parentNode
+//       .querySelectorAll('[role="tabpanel"]')
+//       .forEach(p => p.setAttribute("hidden", true));
+// 
+//     // Show the selected panel
+//     grandparent.parentNode
+//       .querySelector(`#${target.getAttribute("aria-controls")}`)
+//       .removeAttribute("hidden");
+//   }
+// }
+// ```
 // 
 // 
 // Styleguide Components.Tabs
