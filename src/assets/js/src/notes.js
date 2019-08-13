@@ -6,27 +6,51 @@ if (rimNotes) {
     node.classList.add('animated', animationName)
   
     function handleAnimationEnd() {
-        node.removeEventListener('animationend', handleAnimationEnd)
-  
-        if (typeof callback === 'function') callback()
+      node.removeEventListener('animationend', handleAnimationEnd)
+
+      if (typeof callback === 'function') callback()
     }
   
     node.addEventListener('animationend', handleAnimationEnd)
   }
   
-  var toggleNotes = document.querySelector('.open-notes');
-  var closeNotes = document.querySelector('.rim-notes__close');
-  var notes = document.querySelector('.rim-notes--all');
-  
-  toggleNotes.addEventListener('click', function() {
-    notes.classList.add('slide-right-enter-active');
-    notes.classList.remove('slide-right-leave-active');
+  const drawerOpen = document.querySelectorAll('.js-open-right-drawer');
+  const drawerClose = document.querySelector('.js-drawer-right-close');
+  const rightDrawer = document.querySelector('.js-drawer-right');
+  const allButton = document.querySelectorAll('.js-show-all');
+
+  drawerOpen.forEach(open => {
+    open.addEventListener("click", openDrawer);
   });
+
+  allButton.forEach(button => {
+    button.addEventListener('click', openDrawer);
+  });  
   
-  closeNotes.addEventListener('click', function(){
-    notes.classList.add('slide-right-leave-active');
-    notes.classList.remove('slide-right-enter-active');
-  });
+  drawerClose.addEventListener('click', closeDrawer);
+  
+  function openDrawer() {
+    const target = this;
+    const targetOpen = target.getAttribute('data-open');
+
+    console.log(targetOpen);
+
+    rightDrawer.classList.add('slide-right-enter-active');
+    rightDrawer.classList.remove('slide-right-leave-active');
+
+    rightDrawer
+      .querySelectorAll('[data-inner]')
+      .forEach(inner => inner.setAttribute("hidden", true));
+
+    rightDrawer
+      .querySelector('[data-inner="'+targetOpen+'"]')
+      .forEach(inner => inner.setAttribute("hidden", true));
+  }
+
+  function closeDrawer() {
+    rightDrawer.classList.add('slide-right-leave-active');
+    rightDrawer.classList.remove('slide-right-enter-active');
+  }
   
   
   var rimNote = document.querySelector('.rim-note');
@@ -76,7 +100,6 @@ if (rimNotes) {
   });
   
   var newButton = document.querySelector('.rim-notes__new-action');
-  var allButton = document.querySelector('.rim-note__all-action');
   var notesList = document.querySelector('.rim-notes__list');
   var newNoteForm = document.querySelector('.rim-new-note');
   var cancelNote = document.querySelector('.rim-note__cancel-action');
@@ -96,11 +119,6 @@ if (rimNotes) {
     notesList.classList.add('flip-y-leave-active');
     notesList.classList.remove('flip-y-add-active');
   }
-  
-  allButton.addEventListener('click', function() {
-    notes.classList.add('slide-right-enter-active');
-    notes.classList.remove('slide-right-leave-active');
-  });
   
   cancelNote.addEventListener('click', function(e){
     e.preventDefault();
