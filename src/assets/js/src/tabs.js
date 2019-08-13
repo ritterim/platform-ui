@@ -6,31 +6,31 @@ const tabPanel = document.querySelectorAll('[role="tabpanel"]');
 if(tabs) {
   // Add a click event handler to each tab
   tabs.forEach(tab => {
-    tab.addEventListener("click", changeTabs);
+    tab.addEventListener('click', changeTabs);
   });
 
   if (window.location.hash) {
     tabs.forEach(tab => {
       if (window.location.hash === tab.hash) {
-        tabList.children[0].firstElementChild.setAttribute("aria-selected", false);
-        tab.setAttribute("aria-selected", true);
+        tabList.children[0].firstElementChild.setAttribute('aria-selected', false);
+        tab.setAttribute('aria-selected', true);
       }
     });
     tabPanel.forEach(panel => {
       if (window.location.hash.replace('#', '') === panel.id) {
-        tabPanel[0].setAttribute("hidden", true);
-        panel.removeAttribute("hidden");
+        tabPanel[0].setAttribute('hidden', true);
+        panel.removeAttribute('hidden');
       }
     });
   } else {
-    tabList.children[0].firstElementChild.setAttribute("aria-selected", true);
-    tabPanel[0].removeAttribute("hidden");
+    tabList.children[0].firstElementChild.setAttribute('aria-selected', true);
+    tabPanel[0].removeAttribute('hidden');
   }
 
   // Enable arrow navigation between tabs in the tab list
   let tabFocus = 0;
 
-  tabList.addEventListener("keydown", e => {
+  tabList.addEventListener('keydown', e => {
     // Move right
     if (e.keyCode === 39 || e.keyCode === 37) {
       tabs[tabFocus].setAttribute("tabindex", -1);
@@ -49,7 +49,7 @@ if(tabs) {
         }
       }
 
-      tabs[tabFocus].setAttribute("tabindex", 0);
+      tabs[tabFocus].setAttribute('tabindex', 0);
       tabs[tabFocus].focus();
     }
   });
@@ -65,19 +65,19 @@ if(tabs) {
     // Remove all current selected tabs
     grandparent
       .querySelectorAll('[aria-selected="true"]')
-      .forEach(t => t.setAttribute("aria-selected", false));
+      .forEach(t => t.setAttribute('aria-selected', false));
 
     // Set this tab as selected
-    target.setAttribute("aria-selected", true);
+    target.setAttribute('aria-selected', true);
 
     // Hide all tab panels
     grandparent.parentNode
       .querySelectorAll('[role="tabpanel"]')
-      .forEach(p => p.setAttribute("hidden", true));
+      .forEach(p => p.setAttribute('hidden', true));
 
     // Show the selected panel
     grandparent.parentNode
-      .querySelector(`#${target.getAttribute("aria-controls")}`)
-      .removeAttribute("hidden");
+      .querySelector(`#${target.getAttribute('aria-controls')}`)
+      .removeAttribute('hidden');
   }
 }
