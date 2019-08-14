@@ -222,6 +222,11 @@
         box-shadow: 0 0 0 .3rem lighten($secondary-background, $hue-threshold);
       }
     }
+
+    &.has-text {
+      padding: 0 map-get($spacers, 2 );
+      width: auto;
+    }
   }
 
   &--post {

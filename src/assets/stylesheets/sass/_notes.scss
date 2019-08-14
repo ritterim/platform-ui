@@ -286,80 +286,19 @@
   }
 }
 
-.rim-notes {
-  $orange: map-get($brand-colors, 'salmon' );
-
-  background-color: map-get($platform-colors, 'notes' );
-  padding: map-get($spacers, 5 ) 0 $spacer;
-
-  &--all {
-    bottom: 0;
-    box-shadow: 0 -.5rem 2rem rgba(map-get($greyscale, 'black'), .5);
-    display: none;
-    flex-direction: column;
-    height: calc(100% - 4.5rem);
-    left: unset;
-    position: fixed;
-    right: 0;
-    transition: all ease-in-out .3s;
-    z-index: 500;
-    width: 27rem;
-  }
-
-  &__inner {
-    height: 100%;
-  }
-
-  &__header {
-    align-items: center;
-    border-bottom: 1px solid map-get($greyscale, 'light-mid' );
-    display: flex;
-    justify-content: space-between;
-    margin: 0 map-get($spacers, 4 );
-    padding-bottom: $spacer * 1.5;
-  }
-
-  &__heading-wrapper {
-    align-items: center;
-    display: flex;
-    position: relative;
-  }
-
-  &__heading {
-    color: map-get($brand-colors, 'navy' );
-    margin-left: map-get($spacers, 2 );
-  }
-
-  &__content {
-    height: calc(100% - 4rem); //padding of container
-    position: relative;
-  }
-
-  &__list {
-    list-style-type: none;
-    padding: 0 map-get($spacers, 4 );
-
-    .rim-notes--all & {
-      overflow-y: scroll;
-      position: absolute;
-      padding-bottom: 1rem;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 100%;
-    }
-  }
-}
 
 .rim-note {
   $orange: map-get($brand-colors, 'salmon' );
 
-  border-top: 1px solid map-get($greyscale, 'light-mid' );
-  display: flex;
-  flex-direction: column;
-  padding: map-get($spacers, 4 ) 0;
-  position: relative;
-  transition: $transitions;
+  overflow: hidden;
+  padding: map-get($spacers, 4 ) 0 map-get($spacers, 5 );
+  transition: max-width $transitions, transform $transitions;
+
+  &.note-open {
+    cursor: default;
+    max-width: 90%;
+    transform: translate(19px, 0) scale(1.1);
+  }
 
   &:hover {
     cursor: pointer;
@@ -381,24 +320,8 @@
     }
   }
 
-  &:first-of-type {
-    border-top: none;
-  }
-
   &.note-open:hover {
     cursor: default;
-  }
-
-  &__inner {
-    overflow: hidden;
-    padding: 0 0 1rem;
-    transition: max-width $transitions, transform $transitions;
-
-    .note-open & {
-      cursor: default;
-      max-width: 90%;
-      transform: translate(19px, 0) scale(1.1);
-    }
   }
 
   &__header {
@@ -565,7 +488,7 @@
     }
   }
 
-  .rim-notes--all {
+  .rim-drawer-right {
 
     &.slide-right-enter-active {
       display: block;
@@ -600,4 +523,87 @@
       display: flex;
     }
   }
+}
+
+
+
+// side content stuff
+
+.side-content {
+  height: 100%;
+
+  &__header {
+    align-items: center;
+    border-bottom: 1px solid map-get($greyscale, 'light-mid' );
+    display: flex;
+    justify-content: space-between;
+    margin: 0 map-get($spacers, 4 );
+    padding-bottom: $spacer * 1.5;
+  }
+
+  &__inner {
+    height: 100%;
+  }
+
+  &__content {
+    height: calc(100% - 4rem);
+    position: relative;
+  }
+}
+
+.side-content__list {
+  border-top: 1px solid map-get($greyscale, 'light-mid' );
+  height: 100%;
+  list-style-type: none;
+  margin: 0 map-get($spacers, 4 );
+  overflow-y: visible;
+  overflow-x: hidden;
+}
+
+.side-content__list-item {
+  border-top: 1px solid map-get($greyscale, 'light-mid' );
+  position: relative;
+
+  &:first-of-type {
+    border-top: none;
+  }
+}
+
+
+
+// Tasks
+
+.rim-task {
+  color: map-get($greyscale, 'base' );
+  font-weight: 400;
+
+  .check-circle {
+
+    i {
+      font-size: 3rem;
+    }
+  }
+
+  &__title {
+    font-size: 100%;
+    font-weight: 400;
+  }
+
+  &-action {
+    border-right: 1px solid map-get($greyscale, 'base');
+    color: map-get($greyscale, 'base');
+    height: 1.5rem;
+    padding: 0 .5rem;
+    transition: $transitions;
+    width: 2rem;
+    @extend %flex-center;
+
+    &:hover {
+      color: map-get($greyscale, 'light');
+    }
+
+    &:last-of-type {
+      border-right: none;
+    }
+}
 }

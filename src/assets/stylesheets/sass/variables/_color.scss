@@ -73,8 +73,8 @@ $platform-colors: (
   'menu': map-get($brand-colors, 'navy'),
   'link': map-get($brand-colors, 'med-blue'),
   'help': map-get($brand-colors, 'lightblue'),
-  'note': cornsilk,
-  'notes': #FFFDF5,
+  'cornsilk': cornsilk,
+  'light-yellow': #FFFDF5,
   'help-text': map-get($brand-colors, 'navy')
 );
 

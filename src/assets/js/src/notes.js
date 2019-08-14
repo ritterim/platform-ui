@@ -15,41 +15,76 @@ if (rimNotes) {
   }
   
   const drawerOpen = document.querySelectorAll('.js-open-right-drawer');
-  const drawerClose = document.querySelector('.js-drawer-right-close');
+  const drawerClose = document.querySelectorAll('.js-drawer-right-close');
   const rightDrawer = document.querySelector('.js-drawer-right');
   const allButton = document.querySelectorAll('.js-show-all');
+  const drawerInner = rightDrawer.querySelectorAll('[data-inner]');
+  const sideContent = document.querySelector('.js-side-content');
+  const showContent = document.querySelectorAll('.js-show-content');
 
   drawerOpen.forEach(open => {
-    open.addEventListener("click", openDrawer);
+    open.addEventListener('click', openDrawer);
   });
 
   allButton.forEach(button => {
     button.addEventListener('click', openDrawer);
-  });  
-  
-  drawerClose.addEventListener('click', closeDrawer);
+  });
+
+  drawerClose.forEach(close => {
+    close.addEventListener('click', closeDrawer);
+  })
   
   function openDrawer() {
     const target = this;
     const targetOpen = target.getAttribute('data-open');
 
-    console.log(targetOpen);
-
     rightDrawer.classList.add('slide-right-enter-active');
     rightDrawer.classList.remove('slide-right-leave-active');
 
+    // hide all drawer content
     rightDrawer
       .querySelectorAll('[data-inner]')
-      .forEach(inner => inner.setAttribute("hidden", true));
+      .forEach(inner => inner.setAttribute('hidden', true));
 
+    // show selected content
     rightDrawer
       .querySelector('[data-inner="'+targetOpen+'"]')
-      .forEach(inner => inner.setAttribute("hidden", true));
+      .removeAttribute('hidden');
   }
 
   function closeDrawer() {
     rightDrawer.classList.add('slide-right-leave-active');
     rightDrawer.classList.remove('slide-right-enter-active');
+  }
+
+  showContent.forEach(show => {
+    show.addEventListener('click', showSideContent);
+  })
+
+  function showSideContent() {
+    const target = this;
+    const targetOpen = target.getAttribute('data-open');
+
+
+    // hide all drawer content
+    sideContent
+      .querySelectorAll('[data-content-inner]')
+      .forEach(inner => inner.setAttribute('hidden', true));
+
+    // show selected content
+    sideContent
+      .querySelector('[data-content-inner="'+targetOpen+'"]')
+      .removeAttribute('hidden');
+
+    // hide all drawer content
+    rightDrawer
+      .querySelectorAll('[data-inner]')
+      .forEach(inner => inner.setAttribute('hidden', true));
+
+    // show selected content
+    rightDrawer
+      .querySelector('[data-inner="'+targetOpen+'"]')
+      .removeAttribute('hidden');
   }
   
   
@@ -99,7 +134,7 @@ if (rimNotes) {
     })
   });
   
-  var newButton = document.querySelector('.rim-notes__new-action');
+  var newButton = document.querySelector('.js-toggle-form');
   var notesList = document.querySelector('.rim-notes__list');
   var newNoteForm = document.querySelector('.rim-new-note');
   var cancelNote = document.querySelector('.rim-note__cancel-action');

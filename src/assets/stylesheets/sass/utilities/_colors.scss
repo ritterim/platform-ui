@@ -54,3 +54,26 @@ $all-colors: map-merge($brand-colors, $secondary-colors);
     }
   }
 }
+
+@each $name, $color in $platform-colors {
+  // text color
+  .text-#{$name} {
+    border-color: $color !important;
+    color: $color !important;
+    transition: .2s;
+  }
+  // background color
+  .background-#{$name} {
+    background-color: $color !important;
+
+    &.button {
+
+      &.loading {
+
+        &:before {
+          background-color: $color !important;
+        }
+      }
+    }
+  }
+}
