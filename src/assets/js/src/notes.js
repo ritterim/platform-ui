@@ -76,15 +76,7 @@ if (rimNotes) {
       .querySelector('[data-content-inner="'+targetOpen+'"]')
       .removeAttribute('hidden');
 
-    // hide all drawer content
-    rightDrawer
-      .querySelectorAll('[data-inner]')
-      .forEach(inner => inner.setAttribute('hidden', true));
-
-    // show selected content
-    rightDrawer
-      .querySelector('[data-inner="'+targetOpen+'"]')
-      .removeAttribute('hidden');
+    closeDrawer();
   }
   
   
