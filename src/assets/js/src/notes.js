@@ -161,5 +161,32 @@ if (rimNotes) {
       newNoteFormOpen();
     }  
   });
+
+
+
+  // tasks stuff
+  const task = document.querySelectorAll('[data-task]');
+  const taskEdit = document.querySelectorAll('.js-edit-task');
+  const cancelTaskEdit = document.querySelectorAll('.js-cancel-task');
+  const saveTaskEdit = document.querySelectorAll('.js-save-task');
+
+  taskEdit.forEach(edit => {
+    edit.addEventListener('click', function() {
+      const target = this;
+      const targetOpen = target.getAttribute('data-edit');
+      console.log(target);
+      console.log(targetOpen);
+
+      // hide all drawer content
+      document
+        .querySelectorAll('[data-content-container="'+targetOpen+'"]')
+        .forEach(inner => inner.setAttribute('hidden', true));
+
+      // show selected content
+      document
+        .querySelector('[data-edit-container="'+targetOpen+'"]')
+        .removeAttribute('hidden');
+      })
+  });
   
 }
