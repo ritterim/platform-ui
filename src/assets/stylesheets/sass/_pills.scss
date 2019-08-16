@@ -71,6 +71,20 @@
 //
 // Styleguide Components.Pill.Circle
 
+// Circle Large
+//
+// If you want a larger circle use `pill--circle-large`.
+//
+// Markup:
+// <div class="pill pill--circle-large">
+//   33
+// </div>
+// <div class="pill pill--circle-large text-white background-salmon">
+//   33
+// </div>
+//
+// Styleguide Components.Pill.CircleLarge
+
 // Dot
 //
 // A `.pill--circle` can also be empty. There is also a `--dot` variation.
@@ -120,6 +134,11 @@
         @include square(map-get($spacers, 2));
       }
       @include square($spacer);
+    }
+
+    &-large {
+      @extend .pill--circle;
+      @include square(map-get($spacers, 5));
     }
   }
 
