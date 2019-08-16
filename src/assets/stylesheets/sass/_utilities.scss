@@ -72,3 +72,171 @@
 .pointer {
   cursor: pointer;
 }
+
+
+//Icon Menu
+// 
+// 
+// Markup:
+// <div class="icon-menu">
+//   <div class="icon-menu__item">
+//     <a href="#" class="icon-menu__action" role="button" aria-label="Remove">
+//       <i class="fas fa-trash-alt" aria-hidden="hidden"></i>
+//     </a>
+//   </div>
+//   <div class="icon-menu__item">
+//     <a href="#" class="icon-menu__action" role="button" aria-label="Edit">
+//       <i class="fas fa-edit" aria-hidden="hidden"></i>
+//     </a>
+//   </div>
+// </div>
+// 
+// Styleguide Components.IconMenu
+
+// icon menu 
+.icon-menu {
+  align-items: center;
+  display: flex;
+
+  &__item {
+    padding: 0 .5rem;
+    position: relative;
+
+    &::after {
+      background-color: map-get($greyscale, 'light' );
+      content: '';
+      position: absolute;
+      right: -1px;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+    }
+
+    &:first-of-type {
+      padding-left: 0;
+    }
+  
+    &:last-of-type {
+      padding-right: 0;
+      
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  &__action {
+    color: lighten(map-get($greyscale, 'light'), 10%);
+    height: 1.5rem;
+    transition: $transitions;
+    width: 2rem;
+    @extend %flex-center;
+  
+    &:hover {
+      color: map-get($brand-colors, 'orange');
+      transform: scale(1.1);
+    }
+  }
+}
+
+
+// Position
+// 
+// If you need to postion something absolute you can use the following classes.
+// 
+// Remember that when positioning an element absolute, the element will position
+// according to the closest parent element that has `position: relative`. For this
+// you can use the class `pos-rel` on the parent element you want to position the
+// absolute element to.
+// 
+// ``` css
+// .pos-rel {
+//   position: relative
+// }
+// 
+// .pin {
+//   position: absolute
+// }
+// 
+// .pin--top {
+//   top: 0
+// }
+// 
+// .pin--right {
+//   right: 0
+// }
+// 
+// .pin--bottom {
+//   bottom: 0
+// }
+// 
+// .pin--left {
+//   left: 0
+// }
+// 
+// .pin--center-top {
+//   top: 50%;
+//   transform: translateY(-50%)
+// }
+// 
+// .pin--center-right {
+//   right: 50%;
+//   transform: translateX(-50%)
+// }
+// 
+// .pin--center-bottom {
+//   bottom: 50%;
+//   transform: translateY(-50%)
+// }
+// 
+// .pin--center-left {
+//   left: 50%;
+//   transform: translateX(-50%)
+// }
+// ```
+// 
+// Styleguide Utilities.Position
+
+.pos-rel {
+  position: relative;
+}
+
+.pin {
+  position: absolute;
+
+  &--top {
+    top: 0;
+  }
+
+  &--right {
+    right: 0;
+  }
+
+  &--bottom {
+    bottom: 0;
+  }
+
+  &--left {
+    left: 0;
+  }
+
+  &--center-top {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &--center-right {
+    right: 50%;
+    transform: translateX(-50%);
+  }
+
+  &--center-bottom {
+    bottom: 50%;
+    transform: translateY(-50%);
+  }
+
+  &--center-left {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
