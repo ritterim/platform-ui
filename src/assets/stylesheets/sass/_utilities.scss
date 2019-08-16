@@ -140,3 +140,44 @@
 }
 
 
+// Position Absolute utilities
+
+.pin {
+  position: absolute;
+
+  &--top {
+    top: 0;
+  }
+
+  &--right {
+    right: 0;
+  }
+
+  &--bottom {
+    bottom: 0;
+  }
+
+  &--left {
+    left: 0;
+  }
+
+  &--center-top {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &--center-right {
+    right: 50%;
+    transform: translateX(-50%);
+  }
+
+  &--center-bottom {
+    bottom: 50%;
+    transform: translateY(-50%);
+  }
+
+  &--center-left {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
