@@ -279,26 +279,9 @@
   }
 }
 
-.open-notes {
-
-  @include breakpoint(desktop, min) {
-    display: none;
-  }
-}
-
 
 .rim-note {
   $orange: map-get($brand-colors, 'salmon' );
-
-  overflow: hidden;
-  padding: map-get($spacers, 4 ) 0 map-get($spacers, 5 );
-  transition: max-width $transitions, transform $transitions;
-
-  &.note-open {
-    cursor: default;
-    max-width: 90%;
-    transform: translate(19px, 0) scale(1.1);
-  }
 
   &:hover {
     cursor: pointer;
@@ -322,6 +305,17 @@
 
   &.note-open:hover {
     cursor: default;
+  }
+  
+  &__inner {
+    overflow: hidden;
+    transition: max-width $transitions, transform $transitions;
+
+    .note-open & {
+      cursor: default;
+      max-width: 90%;
+      transform: translate(19px, 0) scale(1.1);
+    }
   }
 
   &__header {
@@ -461,8 +455,6 @@
 
 
 .rim-new-note {
-  margin: 0 map-get($spacers, 4 );
-  padding: $spacer * 1.5 0 0;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -537,7 +529,6 @@
     border-bottom: 1px solid map-get($greyscale, 'light-mid' );
     display: flex;
     justify-content: space-between;
-    margin: 0 map-get($spacers, 4 );
     padding-bottom: $spacer * 1.5;
   }
 
@@ -555,7 +546,6 @@
   border-top: 1px solid map-get($greyscale, 'light-mid' );
   height: 100%;
   list-style-type: none;
-  margin: 0 map-get($spacers, 4 );
   overflow-y: visible;
   overflow-x: hidden;
 }
@@ -572,6 +562,82 @@
 
 
 // Tasks
+.rim-tasks {
+  
+  input[type=date],
+  select {
+    background-color: map-get($greyscale, 'white' );
+    border-color: map-get($greyscale, 'base' );
+    border-radius: .3rem;
+    font-size: 100%;
+  }
+
+  textarea {
+    background-color: map-get($greyscale, 'white' );
+    border: 1px solid transparent;
+    border-color: map-get($greyscale, 'light' );
+    border-radius: .3rem;
+    box-sizing: border-box;
+    color: map-get($greyscale, 'base' );
+    display: block;
+    font-size: 100%;
+    padding: map-get($spacers, 1);
+    width: 100%;
+
+    &:focus {
+      outline: none;
+      border-bottom-color: map-get($platform-colors, 'focus' );
+      box-shadow: 0 0 2px 0 map-get($platform-colors, 'focus' );
+      transition: box-shadow $duration, border-color $duration ease-in-out, border-width $duration ease;
+    }
+  }
+
+  input[type=date] {
+    position: relative;
+    width: 100%;
+
+    &::before,
+    &::after {
+      pointer-events: none;
+      position: absolute;
+    }
+
+    &:before {
+      background-color: map-get($greyscale, 'white' );
+      content: '';
+      bottom: 1px;
+      right: 1px;
+      top: 1px;
+      width: 4rem;
+      z-index: 1;
+    }
+
+    &:after {
+      content: '\f073';
+      font-family: "Font Awesome 5 Pro";
+      font-weight: 400;
+      right: .6rem;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+    }
+  }
+
+  select {
+    height: 100%;
+  }
+
+  .rim-form__select-wrapper:after {
+    color: map-get($greyscale, 'base' );
+    content: '\f017';
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 400;
+    height: auto;
+    width: auto;
+    border: none;
+    transform: rotate(0) translateY(-50%);
+  }
+}
 
 .rim-task {
   color: map-get($greyscale, 'base' );
@@ -607,72 +673,6 @@
 
     &:last-of-type {
       border-right: none;
-    }
-  }
-
-  &__content-update {
-
-    input[type=date],
-    select {
-      background-color: map-get($greyscale, 'white' );
-      border-color: map-get($greyscale, 'base' );
-      border-radius: .3rem;
-      font-size: 100%;
-    }
-
-    textarea {
-      background-color: map-get($greyscale, 'white' );
-      border: 1px solid transparent;
-      border-color: map-get($greyscale, 'light' );
-      border-radius: .3rem;
-      box-sizing: border-box;
-      color: map-get($greyscale, 'base' );
-      display: block;
-      font-size: 100%;
-      padding: map-get($spacers, 1);
-      width: 100%;
-
-      &:focus {
-        outline: none;
-        border-bottom-color: map-get($platform-colors, 'focus' );
-        box-shadow: 0 0 2px 0 map-get($platform-colors, 'focus' );
-        transition: box-shadow $duration, border-color $duration ease-in-out, border-width $duration ease;
-      }
-    }
-
-    input[type=date] {
-      position: relative;
-      width: 100%;
-
-      &::before,
-      &::after {
-        pointer-events: none;
-        position: absolute;
-      }
-
-      &:before {
-        background-color: map-get($greyscale, 'white' );
-        content: '';
-        bottom: 1px;
-        right: 1px;
-        top: 1px;
-        width: 4rem;
-        z-index: 1;
-      }
-
-      &:after {
-        content: '\f073';
-        font-family: "Font Awesome 5 Pro";
-        font-weight: 900;
-        right: .6rem;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 2;
-      }
-    }
-
-    select {
-      height: 100%;
     }
   }
 }

@@ -169,18 +169,17 @@ if (rimNotes) {
   const taskEdit = document.querySelectorAll('.js-edit-task');
   const cancelTaskEdit = document.querySelectorAll('.js-cancel-task');
   const saveTaskEdit = document.querySelectorAll('.js-save-task');
+  const deleteTask = document.querySelectorAll('.js-delete-task');
 
   taskEdit.forEach(edit => {
     edit.addEventListener('click', function() {
       const target = this;
       const targetOpen = target.getAttribute('data-edit');
-      console.log(target);
-      console.log(targetOpen);
 
       // hide all drawer content
       document
-        .querySelectorAll('[data-content-container="'+targetOpen+'"]')
-        .forEach(inner => inner.setAttribute('hidden', true));
+        .querySelector('[data-content-container="'+targetOpen+'"]')
+        .setAttribute('hidden', true);
 
       // show selected content
       document
@@ -188,5 +187,99 @@ if (rimNotes) {
         .removeAttribute('hidden');
       })
   });
+
+  cancelTaskEdit.forEach(cancel => {
+    cancel.addEventListener('click', function() {
+      const target = this;
+      const targetOpen = target.getAttribute('data-cancel');
+      // hide all drawer content
+      document
+        .querySelector('[data-content-container="'+targetOpen+'"]')
+        .removeAttribute('hidden');        
+
+      // show selected content
+      document
+        .querySelector('[data-edit-container="'+targetOpen+'"]')
+        .setAttribute('hidden', true);      
+    })
+  });
+
+  saveTaskEdit.forEach(cancel => {
+    cancel.addEventListener('click', function() {
+      const target = this;
+      const targetOpen = target.getAttribute('data-save');
+      // hide all drawer content
+      document
+        .querySelector('[data-content-container="'+targetOpen+'"]')
+        .removeAttribute('hidden');
+
+      // show selected content
+      document
+        .querySelector('[data-edit-container="'+targetOpen+'"]')
+        .setAttribute('hidden', true);
+    })
+  });
+
+  deleteTask.forEach(task => {
+    task.addEventListener('click', function(){
+      const target = this;
+      const targetOpen = target.getAttribute('data-delete');
+
+      animateCSS('[data-task="'+targetOpen+'"]', 'fadeOutUp', function() {
+        document
+          .querySelector('[data-task="'+targetOpen+'"]')
+          .remove()
+      })      
+    })
+  })
+
+  const toggleNewTask = document.querySelectorAll('.js-toggle-task');
+  const cancelNewTask = document.querySelector('.js-cancel-task-form');
+
+  toggleNewTask.forEach(elm => {
+    elm.addEventListener('click', function(){
+      const targetOpen = this.getAttribute('data-toggle');
+      const newTaskForm =  document.querySelector('[data-form="'+targetOpen+'"]');
+      const taskList =  document.querySelector('[data-list="'+targetOpen+'"]');
+
+      this.classList.toggle('cancel');
+      if(this.classList.contains('cancel')) {
+        document
+          .querySelector('[data-list="'+targetOpen+'"]')
+          .setAttribute('hidden', true);
   
+        // show selected content
+        document
+          .querySelector('[data-form="'+targetOpen+'"]')
+          .removeAttribute('hidden');        
+        
+        newTaskForm.classList.add('flip-y-enter-active');
+        taskList.classList.add('flip-y-enter-active');
+      } else {
+        document
+          .querySelector('[data-list="'+targetOpen+'"]')
+          .removeAttribute('hidden');
+  
+        // show selected content
+        document
+          .querySelector('[data-form="'+targetOpen+'"]')
+          .setAttribute('hidden', true);
+      }
+    })    
+  })
+
+    cancelNewTask.addEventListener('click', function(e){
+      const targetOpen = this.getAttribute('data-cancel');
+      let toggleNewTask = document.querySelector('.js-toggle-task');
+      e.preventDefault();
+      toggleNewTask.classList.remove('cancel');
+      document
+        .querySelector('[data-list="'+targetOpen+'"]')
+        .removeAttribute('hidden');
+
+      // show selected content
+      document
+        .querySelector('[data-form="'+targetOpen+'"]')
+        .setAttribute('hidden', true);
+    });
 }
