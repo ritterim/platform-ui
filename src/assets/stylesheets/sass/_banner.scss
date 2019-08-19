@@ -30,7 +30,6 @@
   background-color: map-get($brand-colors, 'skyblue');
   border-bottom: 1px solid map-get($brand-colors, 'skyblue');
   box-sizing: border-box;
-  height: calc(#{$menu-banner-height} + 2px);
   padding: map-get($spacers, 4);
   position: relative;
   &__teaser {
@@ -39,6 +38,9 @@
     .fas {
       display: none;
     }
+  }
+  &__content {
+    width: 80%;
   }
   // .collapsed hides everything but the teaser text in the <p> tag
   &.collapsed {
