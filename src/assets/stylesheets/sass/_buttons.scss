@@ -39,6 +39,23 @@
 //
 // Styleguide Components.Button.Secondary
 
+// Secondary - Text
+//
+// If you want to use the secondary button for the look and hover effect, but you need to include text, you can.
+// Include the class `has-text` on the secondary button. So the classes tould be, `button button--secondary has-text`.
+// What this does is add `width: auto` and a little padding for the text.
+//
+// - .button
+// - .button .button--secondary
+// - .button .button--secondary .has-text
+//
+// Markup:
+// <button class="button button--secondary has-text">Open <i class="fas fa-download"></i></button>
+//
+// Weight: 4
+//
+// Styleguide Components.Button.Secondary
+
 // Post
 //
 // Used exclsively in Post, or blog, content imported into the platform. e.g., CRM dashboard.
@@ -50,7 +67,7 @@
 // <button class="button button--post">Post Button</button>
 // <button class="button button--post button--lg">Large Post Button</button>
 //
-// Weight: 4
+// Weight: 5
 //
 // Styleguide Components.Button.Post
 
