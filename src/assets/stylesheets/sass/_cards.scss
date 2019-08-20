@@ -345,13 +345,3 @@
     margin-top: map-get($spacers, 3 );
   }
 }
-
-
-// Move into a base.scss file after merge
-
-.check-circle {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}

@@ -109,3 +109,44 @@
     right: inherit;
   }
 }
+
+
+// side content stuff
+
+.side-content {
+  height: 100%;
+
+  &__header {
+    align-items: center;
+    border-bottom: 1px solid map-get($greyscale, 'light-mid' );
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: $spacer * 1.5;
+  }
+
+  &__inner {
+    height: 100%;
+  }
+
+  &__content {
+    height: calc(100% - 4rem);
+    position: relative;
+  }
+}
+
+.side-content__list {
+  border-top: 1px solid map-get($greyscale, 'light-mid' );
+  height: 100%;
+  list-style-type: none;
+  overflow-y: visible;
+  overflow-x: hidden;
+}
+
+.side-content__list-item {
+  border-top: 1px solid map-get($greyscale, 'light-mid' );
+  position: relative;
+
+  &:first-of-type {
+    border-top: none;
+  }
+}

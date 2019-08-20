@@ -666,15 +666,19 @@
           <div class="side-content__content">
             <ol class="side-content__list" data-list="tasks">
               <li class="side-content__list-item" data-task="task-1">
-                <div class="rim-task py-3">
+                <div class="rim-task py-3 px-1">
                   <div class="rim-task__header flex flex--justify-between mb-2">
                     <div class="flex flex--align-center">
                       <i class="fal fa-bell"></i>
                       <h2 class="rim-task__title ml-2">Training</h2>
                     </div>
-                    <div class="rim-task__header-actions flex">
-                      <button aria-label="remove" class="rim-task-action pointer js-delete-task" data-delete="task-1"><i class="fas fa-trash-alt" aria-hidden="true"></i></button>
-                      <button aria-label="edit" class="rim-task-action pointer js-edit-task" data-edit="task-1"><i class="fas fa-edit" aria-hidden="true"></i></button>
+                    <div class="rim-task__header-actions flex icon-menu">
+                      <a href="#" aria-label="remove" class="icon-menu__action negative js-delete-task" data-delete="task-1">
+                        <i class="fas fa-trash-alt" aria-hidden="true"></i>
+                      </a>
+                      <a href="#" aria-label="edit" class="icon-menu__action positive js-edit-task" data-edit="task-1">
+                        <i class="fas fa-edit" aria-hidden="true"></i>
+                      </a>
                     </div>
                   </div>
                   <div class="rim-task__content" data-content-container="task-1">
@@ -688,10 +692,10 @@
                           <i class="far fa-clock text-skyblue" aria-hidden="true"></i> <time datetime="10:25 am">10:25am</time>
                         </div>
                       </div>
-                      <div class="check-circle positive-text">
+                      <button class="task-status flex flex--align-center flex--column positive-text js-task-status" aria-pressed="true">
                         <i class="fal fa-check-circle"></i>
-                        <p class="check-circle__status mb-0">Completed</p>
-                      </div>
+                        <p class="task-status__title js-task-status-title mb-0">Completed</p>
+                      </button>
                     </div>
                   </div>
                   <div class="rim-task__content-update rim-form" data-edit-container="task-1" hidden>
@@ -719,15 +723,19 @@
                 </div>
               </li>
               <li class="side-content__list-item" data-task="task-2">
-                <div class="rim-task py-3">
+                <div class="rim-task py-3 px-1">
                   <div class="rim-task__header flex flex--justify-between mb-2">
                     <div class="flex flex--align-center">
                       <i class="fal fa-bell"></i>
                       <h2 class="rim-task__title ml-2">Customer Meeting</h2>
                     </div>
-                    <div class="rim-task__header-actions flex">
-                      <button aria-label="remove" class="rim-task-action pointer js-delete-task" data-delete="task-2"><i class="fas fa-trash-alt" aria-hidden="true"></i></button>
-                      <button aria-label="edit" class="rim-task-action pointer js-edit-task" data-edit="task-2"><i class="fas fa-edit" aria-hidden="true"></i></button>
+                    <div class="rim-task__header-actions flex icon-menu">
+                      <a href="#" aria-label="remove" class="icon-menu__action negative js-delete-task" data-delete="task-1">
+                        <i class="fas fa-trash-alt" aria-hidden="true"></i>
+                      </a>
+                      <a href="#" aria-label="edit" class="icon-menu__action positive js-edit-task" data-edit="task-1">
+                        <i class="fas fa-edit" aria-hidden="true"></i>
+                      </a>
                     </div>
                   </div>
                   <div class="rim-task__content" data-content-container="task-2">
@@ -741,10 +749,10 @@
                           <i class="far fa-clock text-skyblue" aria-hidden="true"></i> <time datetime="10:25 am">10:25am</time>
                         </div>
                       </div>
-                      <div class="check-circle">
+                      <button class="task-status flex flex--align-center flex--column js-task-status" aria-pressed="false">
                         <i class="fal fa-check-circle"></i>
-                        <p class="check-circle__status mb-0">Complete</p>
-                      </div>
+                        <p class="task-status__title js-task-status-title mb-0">Complete</p>
+                      </button>
                     </div>
                   </div>
                   <div class="rim-task__content-update rim-form" data-edit-container="task-2" hidden>
@@ -772,15 +780,19 @@
                 </div>
               </li>
               <li class="side-content__list-item" data-task="task-3">
-                <div class="rim-task py-3">
+                <div class="rim-task py-3 px-1">
                   <div class="rim-task__header flex flex--justify-between mb-2">
                     <div class="flex flex--align-center">
                       <i class="fal fa-bell"></i>
                       <h2 class="rim-task__title ml-2">Agents</h2>
                     </div>
-                    <div class="rim-task__header-actions flex">
-                      <button aria-label="remove" class="rim-task-action pointer js-delete-task" data-delete="task-3"><i class="fas fa-trash-alt" aria-hidden="true"></i></button>
-                      <button aria-label="edit" class="rim-task-action pointer js-edit-task" data-edit="task-3"><i class="fas fa-edit" aria-hidden="true"></i></button>
+                    <div class="rim-task__header-actions flex icon-menu">
+                      <a href="#" aria-label="remove" class="icon-menu__action negative js-delete-task" data-delete="task-1">
+                        <i class="fas fa-trash-alt" aria-hidden="true"></i>
+                      </a>
+                      <a href="#" aria-label="edit" class="icon-menu__action positive js-edit-task" data-edit="task-1">
+                        <i class="fas fa-edit" aria-hidden="true"></i>
+                      </a>
                     </div>
                   </div>
                   <div class="rim-task__content" data-content-container="task-3">
@@ -794,10 +806,10 @@
                           <i class="far fa-clock text-skyblue" aria-hidden="true"></i> <time datetime="10:25 am">10:25am</time>
                         </div>
                       </div>
-                      <div class="check-circle positive-text">
+                      <button class="task-status flex flex--align-center flex--column positive-text js-task-status" aria-pressed="true">
                         <i class="fal fa-check-circle"></i>
-                        <p class="check-circle__status mb-0">Completed</p>
-                      </div>
+                        <p class="task-status__title js-task-status-title mb-0">Completed</p>
+                      </button>
                     </div>
                   </div>
                   <div class="rim-task__content-update rim-form" data-edit-container="task-3" hidden>
@@ -825,15 +837,19 @@
                 </div>
               </li>
               <li class="side-content__list-item" data-task="task-4">
-                <div class="rim-task py-3">
+                <div class="rim-task py-3 px-1">
                   <div class="rim-task__header flex flex--justify-between mb-2">
                     <div class="flex flex--align-center">
                       <i class="fal fa-bell"></i>
                       <h2 class="rim-task__title ml-2">Example</h2>
                     </div>
-                    <div class="rim-task__header-actions flex">
-                      <button aria-label="remove" class="rim-task-action pointer js-delete-task" data-delete="task-4"><i class="fas fa-trash-alt" aria-hidden="true"></i></button>
-                      <button aria-label="edit" class="rim-task-action pointer js-edit-task" data-edit="task-4"><i class="fas fa-edit" aria-hidden="true"></i></button>
+                    <div class="rim-task__header-actions flex icon-menu">
+                      <a href="#" aria-label="remove" class="icon-menu__action negative js-delete-task" data-delete="task-1">
+                        <i class="fas fa-trash-alt" aria-hidden="true"></i>
+                      </a>
+                      <a href="#" aria-label="edit" class="icon-menu__action positive js-edit-task" data-edit="task-1">
+                        <i class="fas fa-edit" aria-hidden="true"></i>
+                      </a>
                     </div>
                   </div>
                   <div class="rim-task__content" data-content-container="task-4">
@@ -847,10 +863,10 @@
                           <i class="far fa-clock text-skyblue" aria-hidden="true"></i> <time datetime="10:25 am">10:25am</time>
                         </div>
                       </div>
-                      <div class="check-circle positive-text">
+                      <button class="task-status flex flex--align-center flex--column positive-text js-task-status" aria-pressed="true">
                         <i class="fal fa-check-circle"></i>
-                        <p class="check-circle__status mb-0">Completed</p>
-                      </div>
+                        <p class="task-status__title js-task-status-title mb-0">Completed</p>
+                      </button>
                     </div>
                   </div>
                   <div class="rim-task__content-update rim-form" data-edit-container="task-4" hidden>
@@ -878,15 +894,19 @@
                 </div>
               </li>
               <li class="side-content__list-item" data-task="task-5">
-                <div class="rim-task py-3">
+                <div class="rim-task py-3 px-1">
                   <div class="rim-task__header flex flex--justify-between mb-2">
                     <div class="flex flex--align-center">
                       <i class="fal fa-bell"></i>
                       <h2 class="rim-task__title ml-2">Training</h2>
                     </div>
-                    <div class="rim-task__header-actions flex">
-                      <button aria-label="remove" class="rim-task-action pointer js-delete-task" data-delete="task-5"><i class="fas fa-trash-alt" aria-hidden="true"></i></button>
-                      <button aria-label="edit" class="rim-task-action pointer js-edit-task" data-edit="task-5"><i class="fas fa-edit" aria-hidden="true"></i></button>
+                    <div class="rim-task__header-actions flex icon-menu">
+                      <a href="#" aria-label="remove" class="icon-menu__action negative js-delete-task" data-delete="task-1">
+                        <i class="fas fa-trash-alt" aria-hidden="true"></i>
+                      </a>
+                      <a href="#" aria-label="edit" class="icon-menu__action positive js-edit-task" data-edit="task-1">
+                        <i class="fas fa-edit" aria-hidden="true"></i>
+                      </a>
                     </div>
                   </div>
                   <div class="rim-task__content" data-content-container="task-5">
@@ -900,10 +920,10 @@
                           <i class="far fa-clock text-skyblue" aria-hidden="true"></i> <time datetime="10:25 am">10:25am</time>
                         </div>
                       </div>
-                      <div class="check-circle">
+                      <button class="task-status flex flex--align-center flex--column js-task-status" aria-pressed="false">
                         <i class="fal fa-check-circle"></i>
-                        <p class="check-circle__status mb-0">Complete</p>
-                      </div>
+                        <p class="task-status__title js-task-status-title mb-0">Complete</p>
+                      </button>
                     </div>
                   </div>
                   <div class="rim-task__content-update rim-form" data-edit-container="task-5" hidden>
@@ -1165,15 +1185,19 @@
           <div class="side-content__content">
             <ol class="side-content__list" data-list="tasks">
               <li class="side-content__list-item" data-task="task-1">
-                <div class="rim-task py-3">
+                <div class="rim-task py-3 px-1">
                   <div class="rim-task__header flex flex--justify-between mb-2">
                     <div class="flex flex--align-center">
                       <i class="fal fa-bell"></i>
                       <h2 class="rim-task__title ml-2">Training</h2>
                     </div>
-                    <div class="rim-task__header-actions flex">
-                      <button aria-label="remove" class="rim-task-action pointer js-delete-task" data-delete="task-1"><i class="fas fa-trash-alt" aria-hidden="true"></i></button>
-                      <button aria-label="edit" class="rim-task-action pointer js-edit-task" data-edit="task-1"><i class="fas fa-edit" aria-hidden="true"></i></button>
+                    <div class="rim-task__header-actions flex icon-menu">
+                      <a href="#" aria-label="remove" class="icon-menu__action negative js-delete-task" data-delete="task-1">
+                        <i class="fas fa-trash-alt" aria-hidden="true"></i>
+                      </a>
+                      <a href="#" aria-label="edit" class="icon-menu__action positive js-edit-task" data-edit="task-1">
+                        <i class="fas fa-edit" aria-hidden="true"></i>
+                      </a>
                     </div>
                   </div>
                   <div class="rim-task__content" data-content-container="task-1">
@@ -1187,10 +1211,10 @@
                           <i class="far fa-clock text-skyblue" aria-hidden="true"></i> <time datetime="10:25 am">10:25am</time>
                         </div>
                       </div>
-                      <div class="check-circle positive-text">
+                      <button class="task-status flex flex--align-center flex--column positive-text js-task-status" aria-pressed="true">
                         <i class="fal fa-check-circle"></i>
-                        <p class="check-circle__status mb-0">Completed</p>
-                      </div>
+                        <p class="task-status__title js-task-status-title mb-0">Completed</p>
+                      </button>
                     </div>
                   </div>
                   <div class="rim-task__content-update rim-form" data-edit-container="task-1" hidden>
@@ -1218,15 +1242,19 @@
                 </div>
               </li>
               <li class="side-content__list-item" data-task="task-2">
-                <div class="rim-task py-3">
+                <div class="rim-task py-3 px-1">
                   <div class="rim-task__header flex flex--justify-between mb-2">
                     <div class="flex flex--align-center">
                       <i class="fal fa-bell"></i>
                       <h2 class="rim-task__title ml-2">Customer Meeting</h2>
                     </div>
-                    <div class="rim-task__header-actions flex">
-                      <button aria-label="remove" class="rim-task-action pointer js-delete-task" data-delete="task-2"><i class="fas fa-trash-alt" aria-hidden="true"></i></button>
-                      <button aria-label="edit" class="rim-task-action pointer js-edit-task" data-edit="task-2"><i class="fas fa-edit" aria-hidden="true"></i></button>
+                    <div class="rim-task__header-actions flex icon-menu">
+                      <a href="#" aria-label="remove" class="icon-menu__action negative js-delete-task" data-delete="task-1">
+                        <i class="fas fa-trash-alt" aria-hidden="true"></i>
+                      </a>
+                      <a href="#" aria-label="edit" class="icon-menu__action positive js-edit-task" data-edit="task-1">
+                        <i class="fas fa-edit" aria-hidden="true"></i>
+                      </a>
                     </div>
                   </div>
                   <div class="rim-task__content" data-content-container="task-2">
@@ -1235,15 +1263,15 @@
                       <div>
                         <div class="mb-3">
                           <i class="far fa-calendar-alt text-skyblue" aria-hidden="true"></i> <time datetime="14 Jul 2019">14 Jul 2019</time>
-                        </didiv>
+                        </div>
                         <div>
                           <i class="far fa-clock text-skyblue" aria-hidden="true"></i> <time datetime="10:25 am">10:25am</time>
-                        </didiv>
+                        </div>
                       </div>
-                      <div class="check-circle">
+                      <button class="task-status flex flex--align-center flex--column js-task-status" aria-pressed="false">
                         <i class="fal fa-check-circle"></i>
-                        <p class="check-circle__status mb-0">Complete</p>
-                      </div>
+                        <p class="task-status__title js-task-status-title mb-0">Complete</p>
+                      </button>
                     </div>
                   </div>
                   <div class="rim-task__content-update rim-form" data-edit-container="task-2" hidden>
