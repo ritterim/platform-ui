@@ -634,7 +634,7 @@
                 </button>
               </li>
             </ol>
-            <div class="rim-new-note pt-4">
+            <div class="rim-new-note pt-4" hidden>
               <form action="" class="rim-form">
                 <label for="first-name" class="rim-form__field">First Name
                   <input id="first-name" type="text" placeholder="First Name">
@@ -950,7 +950,7 @@
                   </div>
                 </div>
               </li>
-            </ol>            
+            </ol>
             <div class="new-task py-3" data-form="tasks" hidden>
               <form action="" class="rim-form">
                 <label for="first-name" class="rim-form__field">Comment
@@ -987,7 +987,7 @@
         </div>
       </div>
       <div class="rim-content-grid__side-content background-light-yellow pt-5 pb-3 px-4 js-side-content">
-        <div class="side-content rim-notes" data-content-inner="notes">
+        <div class="side-content rim-notes" data-inner="notes">
           <div class="side-content__header">
             <div class="flex flex--align-center">
               <button class="button button--secondary js-toggle-form">
@@ -1172,7 +1172,7 @@
             </div>
           </div>
         </div>
-        <div class="side-content" data-content-inner="tasks" hidden>
+        <div class="side-content rim-tasks" data-inner="tasks" hidden>
           <div class="side-content__header">
             <div class="flex flex--align-center">
               <button class="button button--secondary js-toggle-form">
@@ -1305,24 +1305,28 @@
                   <textarea name="Task Comment" id="task-comment" cols="30" rows="10"></textarea>
                 </label>
                 <div class="block-container mb-3">
-                  <div class="block-6 pr-2">
+                  <div class="block block-6 pr-2">
                     <label for="task-2-date" class="rim-form__field">Last Name
                       <input class="px-2" type="date" value="2019-07-14" id="task-2-date">
                     </label>
                   </div>
-                  <div class="rim-form__select-wrapper block-6 pl-2" id="task-2-time">
-                    <select class="px-2" name="Select a time" id="task-2-time-select">
-                      <option value="8:00 AM">8:00 AM</option>
-                      <option value="8:30 AM">8:30 AM</option>
-                      <option value="9:00 AM">9:00 AM</option>
-                      <option value="9:30 AM">9:30 AM</option>
-                      <option value="10:00 AM">10:00 AM</option>
-                      <option value="10:30 AM">10:30 AM</option>
-                    </select>
+                  <div class="block block-6 pl-2">
+                    <label for="task-2-time-select" class="rim-form__field">Time
+                      <div class="rim-form__select-wrapper" id="task-2-time">
+                        <select class="px-2" name="Select a time" id="task-2-time-select">
+                          <option value="8:00 AM">8:00 AM</option>
+                          <option value="8:30 AM">8:30 AM</option>
+                          <option value="9:00 AM">9:00 AM</option>
+                          <option value="9:30 AM">9:30 AM</option>
+                          <option value="10:00 AM">10:00 AM</option>
+                          <option value="10:30 AM">10:30 AM</option>
+                        </select>
+                      </div>
+                    </label>
                   </div>
                 </div>
                 <div class="rim-form__field rim-form__button-group mb-0">
-                  <button class="button button--lg js-cancel-task" type="cancel">Cancel</button>
+                  <button class="button button--lg js-cancel-task-form" type="cancel" data-cancel="tasks">Cancel</button>
                   <button class="button button--post button--lg" type="submit">Save</button>
                 </div>
               </form>

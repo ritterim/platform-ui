@@ -70,16 +70,20 @@ if (rimNotes) {
     newButton.classList.remove('cancel-note');
     newNoteForm.classList.add('flip-y-leave-active');
     newNoteForm.classList.remove('flip-y-enter-active');
+    newNoteForm.setAttribute('hidden', true);
     notesList.classList.add('flip-y-enter-active');
     notesList.classList.remove('flip-y-leave-active');
+    notesList.removeAttribute('hidden');
   }
   
   function newNoteFormOpen() {
     newButton.classList.add('cancel-note');
     newNoteForm.classList.add('flip-y-enter-active');
     newNoteForm.classList.remove('flip-y-leave-active');
+    newNoteForm.removeAttribute('hidden');
     notesList.classList.add('flip-y-leave-active');
     notesList.classList.remove('flip-y-add-active');
+    notesList.setAttribute('hidden', true);
   }
   
   cancelNote.addEventListener('click', function(e){

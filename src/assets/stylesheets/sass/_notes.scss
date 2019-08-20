@@ -491,23 +491,6 @@
     }
   }
 
-  .rim-notes__list {
-
-    &.flip-y-leave-active {
-      opacity: 0;
-      visibility: hidden;
-    }
-  }
-
-  .rim-new-note {    
-
-    &:not(.flip-y-enter-active) {
-      display: none;
-      opacity: 0;
-      visibility: hidden;
-    }
-  }
-
   .rim-note__tags {
     display: none;
 

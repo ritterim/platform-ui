@@ -74,12 +74,12 @@ if(rightDrawer) {
   
     // hide all drawer content
     sideContent
-      .querySelectorAll('[data-content-inner]')
+      .querySelectorAll('[data-inner]')
       .forEach(inner => inner.setAttribute('hidden', true));
   
     // show selected content
     sideContent
-      .querySelector('[data-content-inner="'+targetOpen+'"]')
+      .querySelector('[data-inner="'+targetOpen+'"]')
       .removeAttribute('hidden');
   
     closeDrawerRight();
