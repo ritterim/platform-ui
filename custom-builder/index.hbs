@@ -79,7 +79,7 @@
   {{/unless}}
   <main class="{{#if homepage}}rim-style-home{{else}}rim-style-main{{/if}}" aria-label="Content">
     {{#if homepage}}
-    <div class="crm-banner animated slideInDown fast flex--center-content flex--column pt-6" style="background-image: linear-gradient(to right, white, transparent), url('https://freephotos.cc/storage/preview/path/e0TY5dzjfyAcol92eAidR4ublvPlT2dBbmAGcqeN.jpeg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+    <div class="crm-banner animated slideInDown fast flex--center-content flex--column pt-6" style="background-image: linear-gradient(to right, white, transparent), url('site-assets/stylesheets/images/style-guide-background.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
       <h1 class="mb-2">Welcome to the Platform UI Style Guide</h1>
       <p>Platform UI is the CSS framework we've developed to maintain the Ritter Platform of agent tools.</p>
       <a href="/section-_contributing.html" class="button button--post button--lg">Get Started</a>
@@ -94,10 +94,10 @@
 
             {{#each menu}}
               <div class="block{{#if isActive}} active{{/if}}">
-                <a class="rim-card flex--center-content flex--column rounded-1" href="section-{{referenceURI}}.html">
+                <a class="rim-card flex--center-content flex--column rounded-1 text-salmon--hover" href="section-{{referenceURI}}.html">
                   <img class="py-2" src="site-assets/stylesheets/svg/{{header}}.svg" alt="">
-                  <span class="py-1" >{{header}}</span>
-                  <span class="py-1" >Learn More <i class="far fa-arrow-right"></i><i class="far fa-angle-right"></i></span>
+                  <span class="py-1">{{header}}</span>
+                  <span class="py-1">Learn More <i class="far fa-arrow-right"></i><i class="far fa-angle-right"></i></span>
                 </a>
               </div>
             {{/each}}
