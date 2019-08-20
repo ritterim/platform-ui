@@ -1,6 +1,6 @@
 // Blocks
 //
-// To get a specific layout you will need to start with 2 classes. `block-container` and `block`. `block-container` 
+// To get a specific layout you will need to start with 2 classes. `block-container` and `block`. `block-container`
 // is the wrapper class that contains the block or blocks depending on how many you have. `block` is the class that will
 // be on the element inside the container.
 //
@@ -70,8 +70,6 @@
 //   </div>
 // </div>
 //
-// Weight: 1
-//
 // Styleguide Layout.Blocks.container
 
 // Blocks
@@ -102,8 +100,6 @@
 //     block-8
 //   </div>
 // </div>
-//
-// Weight: 2
 //
 // Styleguide Layout.Blocks.Block
 
@@ -168,16 +164,12 @@
 //   </div>
 // </form>
 //
-// Weight: 3
-//
 // Styleguide Layout.Blocks.Responsive
 
 // Spacing
 //
 // The `.block` class has 0 padding and margin. The idea is to leverage our spacing utilities and be able to make
 // as specific layouts as possible. You can use the spacing modifiers in 2 ways within the `block` layout.
-//
-// Weight: 4
 //
 // Styleguide Layout.Blocks.Spacing
 
@@ -209,8 +201,6 @@
 //     </div>
 //   </div>
 // </div>
-//
-// Weight: 5
 //
 // Styleguide Layout.Blocks.Spacing.Blocks
 
@@ -249,8 +239,6 @@
 //   </div>
 // </div>
 //
-// Weight: 6
-//
 // Styleguide Layout.Blocks.Spacing.Container
 
 // Block Utilities
@@ -264,8 +252,6 @@
 // The utility classes are `block--shrink` and `block--fill`. You can also you our breakpoint values on the class to make
 // the block have the specific style at a different screen size. EXample: `block-tablet--shrink' would add `width: auto`
 // to the `block` at the tablet width and up.
-//
-// Weight: 7
 //
 // Styleguide Layout.Blocks.Utility
 
@@ -298,8 +284,6 @@
 //     </div>
 //   </div>
 // </div>
-//
-// Weight: 8
 //
 // Styleguide Layout.Blocks.Utility.Shrink
 
@@ -347,9 +331,6 @@
 //     </div>
 //   </div>
 // </div>
-//
-//
-// Weight: 9
 //
 // Styleguide Layout.Blocks.Utility.Fill
 

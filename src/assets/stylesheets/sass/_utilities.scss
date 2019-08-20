@@ -3,7 +3,7 @@
 @import "utilities/icons";
 @import "utilities/spacers";
 @import "utilities/colors";
-@import "utilities/text";
+@import "utilities/typography";
 
 .rotate-45 {
   transform: rotate(-45deg);
@@ -73,10 +73,9 @@
   cursor: pointer;
 }
 
-
 //Icon Menu
-// 
-// 
+//
+//
 // Markup:
 // <div class="icon-menu">
 //   <div class="icon-menu__item">
@@ -90,10 +89,10 @@
 //     </a>
 //   </div>
 // </div>
-// 
+//
 // Styleguide Components.IconMenu
 
-// icon menu 
+// icon menu
 .icon-menu {
   align-items: center;
   display: flex;
@@ -115,10 +114,10 @@
     &:first-of-type {
       padding-left: 0;
     }
-  
+
     &:last-of-type {
       padding-right: 0;
-      
+
       &::after {
         display: none;
       }
@@ -131,7 +130,7 @@
     transition: $transitions;
     width: 2rem;
     @extend %flex-center;
-  
+
     &:hover {
       color: map-get($brand-colors, 'orange');
       transform: scale(1.1);
@@ -141,60 +140,60 @@
 
 
 // Position
-// 
+//
 // If you need to postion something absolute you can use the following classes.
-// 
+//
 // Remember that when positioning an element absolute, the element will position
 // according to the closest parent element that has `position: relative`. For this
 // you can use the class `pos-rel` on the parent element you want to position the
 // absolute element to.
-// 
+//
 // ``` css
 // .pos-rel {
 //   position: relative
 // }
-// 
+//
 // .pin {
 //   position: absolute
 // }
-// 
+//
 // .pin--top {
 //   top: 0
 // }
-// 
+//
 // .pin--right {
 //   right: 0
 // }
-// 
+//
 // .pin--bottom {
 //   bottom: 0
 // }
-// 
+//
 // .pin--left {
 //   left: 0
 // }
-// 
+//
 // .pin--center-top {
 //   top: 50%;
 //   transform: translateY(-50%)
 // }
-// 
+//
 // .pin--center-right {
 //   right: 50%;
 //   transform: translateX(-50%)
 // }
-// 
+//
 // .pin--center-bottom {
 //   bottom: 50%;
 //   transform: translateY(-50%)
 // }
-// 
+//
 // .pin--center-left {
 //   left: 50%;
 //   transform: translateX(-50%)
 // }
 // ```
-// 
+//
 // Styleguide Utilities.Position
 
 .pos-rel {
@@ -238,5 +237,12 @@
   &--center-left {
     left: 50%;
     transform: translateX(-50%);
+  }
+}
+
+// rounded corners based on $spacers map
+@each $unit, $rem in $spacers {
+  .rounded-#{$unit} {
+    border-radius: #{$rem};
   }
 }

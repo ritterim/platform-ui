@@ -21,7 +21,7 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
 </head>
-<body id="kss-node" class="rim-style">
+<body id="kss-node" class="{{#unless homepage}}rim-style{{/unless}}">
   <header class="rim-style-header">
     <div class="rim-style-logo">
       <a href="/">
@@ -39,13 +39,15 @@
       </a>
     </nav>
   </header>
+
+  {{#unless template.isHomepage}}
   <aside class="rim-style-aside">
     <nav class="rim-style-nav" aria-label="Style Guide">
       <ul class="rim-style-nav__menu">
         <li class="rim-style-nav__menu-item{{#if template.isHomepage}} active{{/if}}">
           <a class="rim-style-nav__menu-link" href="./">
-            <span class="rim-style-nav__ref">0</span
-            ><span class="rim-style-nav__name">Overview</span>
+            <i class="fad fa-home"></i>
+            <span class="rim-style-nav__name">Home</span>
           </a>
         </li>
       {{#each menu}}
@@ -74,12 +76,32 @@
       </ul>
     </nav>
   </aside>
-  <main class="rim-style-main" aria-label="Content">
-    <article>
+  {{/unless}}
+  <main class="{{#if homepage}}rim-style-home{{else}}rim-style-main{{/if}}" aria-label="Content">
+    {{#if homepage}}
+    <div class="crm-banner animated slideInDown fast flex--center-content flex--column pt-6" style="background-image: linear-gradient(to right, white, transparent), url('https://freephotos.cc/storage/preview/path/e0TY5dzjfyAcol92eAidR4ublvPlT2dBbmAGcqeN.jpeg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+      <h1 class="mb-2">Welcome to the Platform UI Style Guide</h1>
+      <p>Platform UI is the CSS framework we've developed to maintain the Ritter Platform of agent tools.</p>
+      <a href="/section-_contributing.html" class="button button--post button--lg">Get Started</a>
+    </div>
+    {{/if}}
+    <article {{#if homepage}}class="block-container px-6 mx-6 py-4"{{/if}}>
     {{#if template.isHomepage}}
       {{#if homepage}}
-        <div id="kssref-0" class="rim-style-section rim-style-section--depth-0 kss-overview rim-style-content">
-          {{{homepage}}}
+        <div id="kssref-0">
+          <!-- {{{homepage}}} -->
+          <div class="block-container blocks-px-2 blocks-py-2 tablet-up-3 laptop-up-4">
+
+            {{#each menu}}
+              <div class="block{{#if isActive}} active{{/if}}">
+                <a class="rim-card flex--center-content flex--column rounded-1" href="section-{{referenceURI}}.html">
+                  <img class="py-2" src="site-assets/stylesheets/svg/{{header}}.svg" alt="">
+                  <span class="py-1" >{{header}}</span>
+                  <span class="py-1" >Learn More <i class="far fa-arrow-right"></i><i class="far fa-angle-right"></i></span>
+                </a>
+              </div>
+            {{/each}}
+          </div>
         </div>
       {{/if}}
     {{else}}

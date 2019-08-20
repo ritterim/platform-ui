@@ -1,43 +1,21 @@
 // make $brand-colors and $secondary colors available as text and background colors
 
-$all-colors: map-merge($brand-colors, $secondary-colors);
+$all-colors: map-merge(map-merge($brand-colors, $secondary-colors), $greyscale);
 
 @each $name, $color in $all-colors {
   // text color
   .text-#{$name} {
-    border-color: $color !important;
+    &.pill {
+      border-color: $color !important;
+    }
     color: $color !important;
     transition: .2s;
-  }
-  // background color
-  .background-#{$name} {
-    background-color: $color !important;
-
-    &.button {
-
-      &.loading {
-
-        &:before {
-          background-color: $color !important;
-        }
+    &--hover {
+      transition: $transitions;
+      &:hover {
+        color: $color !important;
       }
     }
-  }
-  // hover colors
-  .hover-#{$name} {
-    transition: $transitions;
-    &:hover {
-      color: $color !important;
-    }
-  }
-}
-
-@each $name, $color in $greyscale {
-  // text color
-  .text-#{$name} {
-    border-color: $color !important;
-    color: $color !important;
-    transition: .2s;
   }
   // background color
   .background-#{$name} {
