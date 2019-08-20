@@ -103,7 +103,7 @@ table, .rim-table {
 
   width: 100%;
   background-color: transparent;
-  border: $table-border;
+  // border: $table-border;
   border-radius: $border-radius;
   border-collapse: separate;
   border-spacing: 0;
@@ -156,7 +156,7 @@ table, .rim-table {
     }
 
     tr {
-      border: $table-border;
+      // border: $table-border;
       border-bottom: none;
       display: block;
 

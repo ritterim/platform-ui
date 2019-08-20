@@ -19,6 +19,9 @@
     padding-top: $menu-margin;
   }
 
+  &-home {
+    padding-top: 4rem;
+  }
 
   &-header {
     align-items: center;
@@ -275,15 +278,17 @@
   }
 
   &-description {
+    code {
+      background-color: map-get($brand-colors, 'lightblue');
+      border-bottom: 1px solid darken(map-get($brand-colors, 'lightblue'), 10%);
+      color: map-get($brand-colors, 'navy');
+      font-size: 85%;
+      padding: map-get($spacers, 1);
+    }
+
     p {
       line-height: 1.5;
       margin-bottom: $spacer;
-
-      code {
-        background-color: map-get($brand-colors, 'lightblue');
-        color: map-get($brand-colors, 'navy');
-        padding: map-get($spacers, 1);
-      }
     }
 
     ul {
@@ -404,7 +409,10 @@
     overflow: scroll;
 
     &.hljs code {
+      background-color: transparent;
+      border: none;
       color: inherit;
+      font-size: 1rem;
     }
   }
 
