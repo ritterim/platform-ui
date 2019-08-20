@@ -187,7 +187,6 @@ input[type="radio"] {
     color: map-get($greyscale, 'base');
     cursor: pointer;
     display: inline-block;
-    font-size: map-get($font-percentage, 'md');
     font-weight: 400;
     height: 1rem;
     line-height: 1.2;
@@ -342,7 +341,6 @@ input[type="radio"] {
 
   &__field {
     display: block;
-    font-size: map-get($font-percentage, 'sm');
     margin-bottom: $spacer * 1.5;
 
     .block & {
@@ -394,6 +392,7 @@ input[type="radio"] {
         color: map-get($greyscale, 'base' );
         padding: map-get($spacers, 1 );
         transition: .2s ease-in;
+        width: calc(100% - .5rem); // padding left and right
 
         &:focus ~ label,
         &:valid ~ label {
@@ -435,6 +434,7 @@ input[type="radio"] {
 
       select {
         padding-left: map-get($spacers, 1 );
+        width: calc(100% - 1.25rem); // accounts for padding left and right
 
         &:focus ~ label,
         &:valid ~ label {
@@ -502,11 +502,12 @@ input[type="radio"] {
     background-color: transparent;
     border: 1px solid transparent;
     border-bottom-color: map-get($greyscale, 'light' );
-    box-sizing: border-box;
+    box-sizing: content-box;
     color: map-get($greyscale, 'base' );
     display: block;
     font-family: map-get($fonts, 'base');
-    font-size: map-get($font-percentage, 'md');
+    font-size: map-get($fonts, 'size');
+    min-height: 1.5rem;
     padding: map-get($spacers, 1) 0;
 
     &::placeholder {
@@ -549,7 +550,7 @@ input[type="radio"] {
     appearance: none;
     border-radius: 0;
     padding: map-get($spacers, 1) $spacer map-get($spacers, 1) 0;
-    width: 100%;
+    width: calc(100% - #{$spacer}); // right-padding 
   }
 }
 
@@ -566,7 +567,7 @@ input[type="radio"] {
   &__content {
     border-radius: map-get($radius, 'button');
     flex: 1 1 auto;
-    font-size: map-get($font-percentage, 'sm');
+    // font-size: map-get($font-percentage, 'sm');
     overflow: hidden;
     position: relative;
   }
