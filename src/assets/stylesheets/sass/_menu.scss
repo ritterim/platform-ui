@@ -90,11 +90,6 @@
       @media (pointer: fine) {
         &:hover {
           border-bottom-color: rgba(map-get($greyscale, 'light'), .5);
-
-          .dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-          }
         }
       }
     }
@@ -102,22 +97,15 @@
     &.active {
       background-color: $dropdown-background;
       color: $primary-color;
-
-      .dropdown-menu {
-        opacity: 1;
-        visibility: visible;
-      }
     }
   }
 
   .dropdown-menu {
     background-color: $dropdown-background;
-    opacity: 0;
     position: absolute;
     right: 0;
     top: calc(100% + 1px);
     transition: opacity ease $duration, visibility ease $duration;
-    visibility: hidden;
 
     @include breakpoint(tablet, max) {
       height: calc(100vh - #{$menu-height});
