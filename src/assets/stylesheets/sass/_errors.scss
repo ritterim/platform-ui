@@ -10,9 +10,9 @@
 // Errors text
 //
 // Markup:
-// <p class="positive-text">Positive</p>
-// <p class="negative-text">Negative</p>
-// <p class="neutral-text">Neutral</p>
+// <p class="text-positive">Positive</p>
+// <p class="text-negative">Negative</p>
+// <p class="text-neutral">Neutral</p>
 //
 // Styleguide Errors.Text
 
@@ -42,7 +42,7 @@
 // Styleguide Errors.Pills
 
 @each $error in (positive, negative, neutral) {
-  .#{$error}-text {
+  .text-#{$error} {
     color: map-get($error-colors, #{$error}) !important;
   }
   // for pills

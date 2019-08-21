@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="61.799" height="55.568" viewBox="0 0 61.799 55.568">
+  <g id="Group_119" data-name="Group 119" transform="translate(814.273 249.065)">
+    <g id="Group_636" data-name="Group 636" transform="translate(-814.273 -249.065)">
+      <circle id="Ellipse_3" data-name="Ellipse 3" cx="26.402" cy="26.402" r="26.402" fill="#e9eaeb"/>
+    </g>
+    <rect id="Rectangle_6" data-name="Rectangle 6" width="50.809" height="39.654" rx="3.054" transform="translate(-804.283 -234.152)" fill="#fff" stroke="#2a5082" stroke-linejoin="round" stroke-width="2"/>
+    <path id="Rectangle_81" data-name="Rectangle 81" d="M2.1,0H46.573a2.1,2.1,0,0,1,2.1,2.1V7.335a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V2.1A2.1,2.1,0,0,1,2.1,0Z" transform="translate(-803.192 -233.101)" fill="#91b9dc"/>
+    <line id="Line_2" data-name="Line 2" x1="50.809" transform="translate(-804.283 -224.709)" fill="none" stroke="#2a5082" stroke-linejoin="round" stroke-width="2"/>
+    <line id="Line_63" data-name="Line 63" y2="30.076" transform="translate(-787.157 -224.488)" fill="none" stroke="#2a5082" stroke-miterlimit="10" stroke-width="2"/>
+    <line id="Line_64" data-name="Line 64" y2="30.076" transform="translate(-770.82 -224.55)" fill="none" stroke="#2a5082" stroke-miterlimit="10" stroke-width="2"/>
+    <line id="Line_65" data-name="Line 65" x1="49.526" transform="translate(-803.575 -214.298)" fill="none" stroke="#2a5082" stroke-miterlimit="10" stroke-width="2"/>
+    <line id="Line_66" data-name="Line 66" x1="49.526" transform="translate(-803.473 -204.108)" fill="none" stroke="#2a5082" stroke-miterlimit="10" stroke-width="2"/>
+  </g>
+</svg>

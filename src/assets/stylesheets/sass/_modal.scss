@@ -8,6 +8,8 @@
 //
 // The default size of the modal is `medium`, you can use `rim-modal--small`, `rim-modal--large`, or `rim-modal--full` for different sized modals.
 //
+// You may run into issues where the background scrolls while your modal is open. To prevent this behavior, add the `.modal-open` class to your body element when a modal is open. See demo below for example and note how adding the `.modal-open` class to the body on open makes the background scroll bar go away.
+//
 // Markup:
 // <div class="rim-modal--overlay rim-modal--closed"></div>
 // <div id="default-modal" class="rim-modal rim-modal--closed ">
@@ -60,7 +62,7 @@
 //     </div>
 //   </div>
 // </div>
-// <button class="button button--post button--lg rim-modal__open" data-modal="default-modal">Trigger Modal</button> <button class="button button--post button--lg rim-modal__open" data-modal="small-modal">Small Modal</button> <button class="button button--post button--lg rim-modal__open" data-modal="large-modal">Large Modal</button> <button class="button button--post button--lg rim-modal__open" data-modal="full-modal">Full Screen Modal</button>
+// <button class="button button--post button--lg rim-modal__open" data-modal="default-modal">Trigger Modal</button> <button class="button button--post button--lg rim-modal__open" data-modal="small-modal">Small Modal</button> <button class="button button--post button--lg rim-modal__open" data-modal="large-modal">Large Modal</button> <button class="button button--post button--lg rim-modal__open" data-modal="full-modal">Full Screen Modal</button> <button class="button button--post button--lg rim-modal__open" data-modal="full-modal" data-no-scroll="true">Full Screen Modal (No background scroll)</button>
 //
 // Styleguide Components.modal
 
@@ -161,4 +163,10 @@
       width: 100%;
     }
   }
+}
+
+body.modal-open {
+  // REF: https://css-tricks.com/prevent-page-scrolling-when-a-modal-is-open/#article-header-id-0
+  height: 100vh;
+  overflow-y: hidden;
 }

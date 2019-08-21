@@ -9,4 +9,4 @@ src/assets/stylesheets/sass/fontawesome
 src/assets/webfonts
 styleguide/
 ritterim-platform-ui-*.tgz
-custom-builder/kss-assets/platform.min.js
+custom-builder/kss-assets/platform-ui.min.js

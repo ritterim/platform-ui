@@ -1,8 +1,8 @@
 // Blocks
 //
-// In this section you will find options for your layout needs. To get a specific layout you will need to start with
-// 2 classes. `block-container` and `block`. `block-container` is the wrapper class that contains the block or
-// blocks depending on how many you have. `block` is the class that will be on the element inside the container.
+// To get a specific layout you will need to start with 2 classes. `block-container` and `block`. `block-container`
+// is the wrapper class that contains the block or blocks depending on how many you have. `block` is the class that will
+// be on the element inside the container.
 //
 // This layout is based on a 12 column grid. So if you want a `block` to take up half the width of the row it is on, you
 // would use the class `block-6`, 6 being half of 12. For a row containing 3 `blocks` you would use `block-4` and so on.
@@ -19,9 +19,9 @@
 //   desktop: 1800px
 // );
 // ```
-// For example, if you wanted a block to take up 3 columns at the mobile breakpoint, you would add the class `block-tablet-3`
-//  to `block`. It's probably best to build these layouts thinking "tablet-first". So when you use the class `block-tablet-3`
-// know that that will that effect from 768px up, or to put in media query terms. `@media(min-width: 768px) {}`.
+// It's best to think "mobile-first" when it comes to using this layout. Each block class that uses a specific breakpoint
+// value has it's code inside a `min-width media-query` for that breakpoint. Think small to large. So as the width of your
+// page increases, the next breakpoint value will override the previous. See an [example below](/styleguide/section-layout.html#kssref-layout-blocks-responsive)
 //
 // Styleguide Layout.Blocks
 
@@ -70,8 +70,6 @@
 //   </div>
 // </div>
 //
-// Weight: 1
-//
 // Styleguide Layout.Blocks.container
 
 // Blocks
@@ -103,14 +101,12 @@
 //   </div>
 // </div>
 //
-// Weight: 2
-//
 // Styleguide Layout.Blocks.Block
 
 // Responsive
 //
-// You can build responsive layouts while making each blocks specific width at different resolutions. In order to do
-// this you can leverage out `breakpoint` values within the block classes.
+// You can build responsive layouts while giving each blocks a specific width at different resolutions. In order to do
+// this you can leverage the `breakpoint` values within the block classes.
 //
 //
 // In the following example you will see a `form` that scales from the smallest screen up to larger screens. The
@@ -120,37 +116,37 @@
 //
 // Markup:
 // <form action="" class="rim-form block-container blocks-px-2 blocks-mb-3">
-//   <div class="block block-tablet-6 block-laptop-4">
+//   <div class="block block-6 block-tablet-3 block-laptop-4">
 //     <div class="rim-form__field rim-form__field--fancy">
 //       <input id="first-name" type="text" required placeholder="Jane">
 //       <label for="first-name">First Name</label>
 //     </div>
 //   </div>
-//   <div class="block block-tablet-6 block-laptop-4">
+//   <div class="block block-6 block-tablet-3 block-laptop-4">
 //     <div class="rim-form__field rim-form__field--fancy">
 //       <input id="last-name" type="text" required placeholder="Smith">
 //       <label for="last-name">Last Name</label>
 //     </div>
 //   </div>
-//   <div class="block block-tablet-4">
+//   <div class="block block-6 block-tablet-4">
 //     <div class="rim-form__field rim-form__field--fancy">
 //       <input id="dob" type="date" required placeholder="01/23/1985">
 //       <label for="dob">Age or DOB</label>
 //     </div>
 //   </div>
-//   <div class="block block-tablet-4">
+//   <div class="block block-6 block-tablet-4">
 //     <div class="rim-form__field rim-form__field--fancy">
 //       <input id="time" type="time" required placeholder="10:00 AM">
 //       <label for="time">What Time</label>
 //     </div>
 //   </div>
-//   <div class="block block-tablet-4">
+//   <div class="block block-6 block-tablet-4">
 //     <div class="rim-form__field rim-form__field--fancy">
 //       <input id="zipcode" type="tel" pattern="^\d{5,6}(?:[-\s]\d{4})?$" required placeholder="12345">
 //       <label for="zipcode">ZIP Code</label>
 //     </div>
 //   </div>
-//   <div class="block block-tablet-6 block-laptop-4">
+//   <div class="block block-6 block-tablet-3 block-laptop-4">
 //     <div class="rim-form__field rim-form__field--fancy">
 //       <div class="rim-form__select-wrapper">
 //         <select name="County Select" id="county" required placeholder="County">
@@ -168,16 +164,12 @@
 //   </div>
 // </form>
 //
-// Weight: 3
-//
 // Styleguide Layout.Blocks.Responsive
 
 // Spacing
 //
 // The `.block` class has 0 padding and margin. The idea is to leverage our spacing utilities and be able to make
 // as specific layouts as possible. You can use the spacing modifiers in 2 ways within the `block` layout.
-//
-// Weight: 4
 //
 // Styleguide Layout.Blocks.Spacing
 
@@ -209,8 +201,6 @@
 //     </div>
 //   </div>
 // </div>
-//
-// Weight: 5
 //
 // Styleguide Layout.Blocks.Spacing.Blocks
 
@@ -249,8 +239,6 @@
 //   </div>
 // </div>
 //
-// Weight: 6
-//
 // Styleguide Layout.Blocks.Spacing.Container
 
 // Block Utilities
@@ -264,8 +252,6 @@
 // The utility classes are `block--shrink` and `block--fill`. You can also you our breakpoint values on the class to make
 // the block have the specific style at a different screen size. EXample: `block-tablet--shrink' would add `width: auto`
 // to the `block` at the tablet width and up.
-//
-// Weight: 7
 //
 // Styleguide Layout.Blocks.Utility
 
@@ -298,8 +284,6 @@
 //     </div>
 //   </div>
 // </div>
-//
-// Weight: 8
 //
 // Styleguide Layout.Blocks.Utility.Shrink
 
@@ -347,9 +331,6 @@
 //     </div>
 //   </div>
 // </div>
-//
-//
-// Weight: 9
 //
 // Styleguide Layout.Blocks.Utility.Fill
 

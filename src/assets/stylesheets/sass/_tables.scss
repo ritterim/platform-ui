@@ -10,7 +10,7 @@
 // You need to add the `data-label="{th - name}"` to the corresponding `<td>`. See the markup below.
 //
 // Markup:
-// <table>
+// <table class="rim-table">
 //   <thead>
 //     <tr>
 //       <th>Company</th>
@@ -93,7 +93,7 @@
 
 
 
-table {
+table, .rim-table {
 
   $border-radius: map-get($radius, 'default');
   $table-border: 1px solid lighten(map-get($greyscale, 'light'), $hue-threshold * 2);
@@ -103,7 +103,7 @@ table {
 
   width: 100%;
   background-color: transparent;
-  border: $table-border;
+  // border: $table-border;
   border-radius: $border-radius;
   border-collapse: separate;
   border-spacing: 0;
@@ -156,7 +156,7 @@ table {
     }
 
     tr {
-      border: $table-border;
+      // border: $table-border;
       border-bottom: none;
       display: block;
 
