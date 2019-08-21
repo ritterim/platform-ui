@@ -16,10 +16,10 @@ Documentation for Platform UI is generated on every build using [KSS-Node](https
 - [ ] Documentation 📓
 - [ ] Tables
   - [ ] Responsive tables
-  - [ ] add dedicated `rim-table` class to `table`
+  - [x] add dedicated `rim-table` class to `table`
   - [ ] add alternate table styles i.e., borders, no-borders, alternating borders
-- [ ] Tab system v0.6
-  - [ ] Attaches to `rim-card`
+- [x] Tab system v0.6
+  - [x] Attaches to `rim-card`
 - [ ] Pez (rounded corner labels) v0.7
   - [ ] specifically to handle "states"
   - [ ] disabled, active
@@ -27,4 +27,4 @@ Documentation for Platform UI is generated on every build using [KSS-Node](https
 - [ ] Accordions v0.8
   - [ ] Refactor accordions visually to view more table-like
 - [ ] Search UI v0.9
-- [ ] Styleguide redesign v1.0 😃
+- [x] Styleguide redesign v1.0 😃
