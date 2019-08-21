@@ -40,6 +40,23 @@
 // 
 // Styleguide Utilities.Display
 
+
+.hidden {
+  display: none;
+}
+
+.show-print {
+  @media print {
+    display: block;
+  }
+}
+
+.hide-print {
+  @media print {
+    display: none;
+  }
+}
+
 // Function the gets the next value in the map.
 @function nextKey($current-value, $mapped-list:$breakpoints) {
   // get current key from list
