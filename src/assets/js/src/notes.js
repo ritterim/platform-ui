@@ -1,4 +1,4 @@
-var rimNotes = document.querySelector('.rim-notes');
+var rimNotes = document.querySelector('[data-inner="notes"]');
 
 if (rimNotes) {
   function animateCSS(element, animationName, callback) {
@@ -6,39 +6,31 @@ if (rimNotes) {
     node.classList.add('animated', animationName)
   
     function handleAnimationEnd() {
-        node.removeEventListener('animationend', handleAnimationEnd)
-  
-        if (typeof callback === 'function') callback()
+      node.removeEventListener('animationend', handleAnimationEnd)
+
+      if (typeof callback === 'function') callback()
     }
   
     node.addEventListener('animationend', handleAnimationEnd)
   }
   
-  var toggleNotes = document.querySelector('.open-notes');
-  var closeNotes = document.querySelector('.rim-notes__close');
-  var notes = document.querySelector('.rim-notes--all');
   
-  toggleNotes.addEventListener('click', function() {
-    notes.classList.add('slide-right-enter-active');
-    notes.classList.remove('slide-right-leave-active');
-  });
-  
-  closeNotes.addEventListener('click', function(){
-    notes.classList.add('slide-right-leave-active');
-    notes.classList.remove('slide-right-enter-active');
-  });
-  
-  
-  var rimNote = document.querySelector('.rim-note');
   var rimNoteToggle = document.querySelector('.rim-note__toggle');
-  var openTags = document.querySelector('.open-note-tags');
   
-  [].forEach.call(document.querySelectorAll('.rim-note-toggle-wrapper'), function(el) {
+  [].forEach.call(document.querySelectorAll('.js-toggle-wrapper'), function(el) {
     el.addEventListener('click', function() {
       var parent = this.parentNode.parentNode;
-  
+      let hidden = document.querySelector('.js-toggle-wrapper--bottom').getAttribute('hidden');
+
+      if(hidden == "true" ) {
+        hidden = false;
+        document.querySelector('.js-toggle-wrapper--bottom').removeAttribute('hidden');
+      } else {
+        hidden = true;
+        document.querySelector('.js-toggle-wrapper--bottom').setAttribute('hidden', true);   
+      }
+      
       parent.classList.toggle('note-open');
-      document.querySelector('.rim-note-toggle-wrapper--bottom').classList.toggle('slide-down-enter-active');   
     })
   });
     
@@ -46,61 +38,64 @@ if (rimNotes) {
   [].forEach.call(document.querySelectorAll('.rim-note__toggle'), function(el) {
     el.addEventListener('click', function() {
       var note = this.parentNode;
-  
+      let hidden = document.querySelector('.js-toggle-wrapper--bottom').getAttribute('hidden');
+
+      if(hidden == "true" ) {
+        hidden = false;
+        document.querySelector('.js-toggle-wrapper--bottom').removeAttribute('hidden');
+      } else {
+        hidden = true;
+        document.querySelector('.js-toggle-wrapper--bottom').setAttribute('hidden', true);   
+      }
+
       note.classList.toggle('note-open');
-      document.querySelector('.rim-note-toggle-wrapper--bottom').classList.toggle('slide-down-enter-active');    
     })
   });
   
   
-  [].forEach.call(document.querySelectorAll('.open-note-tags'), function(el) {
+  [].forEach.call(document.querySelectorAll('.js-open-tags'), function(el) {
     el.addEventListener('click', function() {
-      var noteTags = document.querySelector('.rim-note__tags');
-  
-      noteTags.classList.toggle('slide-down-enter-active');
+      let hidden = document.querySelector('.js-tags').getAttribute('hidden');
+
+      if (document.querySelector('.js-tags').style.display === "none") {
+        document.querySelector('.js-tags').style.display = "flex";
+      } else {
+        document.querySelector('.js-tags').style.display = "none";
+      }
     })
   });
     
   
-  [].forEach.call(document.querySelectorAll('.rim-note__tag'), function(el) {
+  [].forEach.call(document.querySelectorAll('.js-tag'), function(el) {
     el.addEventListener('click', function() {
-      this.classList.toggle('active');
-    })
-  });
-    
-  
-  [].forEach.call(document.querySelectorAll('.rim-note__action'), function(el) {
-    el.addEventListener('click', function() {
-      this.classList.toggle('active');
+      this.classList.add('background-salmon', 'text-white');
     })
   });
   
-  var newButton = document.querySelector('.rim-notes__new-action');
-  var allButton = document.querySelector('.rim-note__all-action');
-  var notesList = document.querySelector('.rim-notes__list');
-  var newNoteForm = document.querySelector('.rim-new-note');
-  var cancelNote = document.querySelector('.rim-note__cancel-action');
+  var newButton = document.querySelector('.js-toggle-form');
+  var notesList = document.querySelector('[data-list="notes"]');
+  var newNoteForm = document.querySelector('[data-new="note"]');
+  var cancelNote = document.querySelector('.js-cancel-form');
   
   function newNoteFormClose() {
     newButton.classList.remove('cancel-note');
     newNoteForm.classList.add('flip-y-leave-active');
     newNoteForm.classList.remove('flip-y-enter-active');
+    newNoteForm.setAttribute('hidden', true);
     notesList.classList.add('flip-y-enter-active');
     notesList.classList.remove('flip-y-leave-active');
+    notesList.removeAttribute('hidden');
   }
   
   function newNoteFormOpen() {
     newButton.classList.add('cancel-note');
     newNoteForm.classList.add('flip-y-enter-active');
     newNoteForm.classList.remove('flip-y-leave-active');
+    newNoteForm.removeAttribute('hidden');
     notesList.classList.add('flip-y-leave-active');
     notesList.classList.remove('flip-y-add-active');
+    notesList.setAttribute('hidden', true);
   }
-  
-  allButton.addEventListener('click', function() {
-    notes.classList.add('slide-right-enter-active');
-    notes.classList.remove('slide-right-leave-active');
-  });
   
   cancelNote.addEventListener('click', function(e){
     e.preventDefault();

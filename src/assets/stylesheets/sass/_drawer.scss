@@ -29,7 +29,7 @@
 
 .rim-drawer {
   $self: &;
-  background: transparent;
+  background-color: map-get($greyscale, 'white' );
   box-shadow: 0 -1rem 2rem rgba(map-get($greyscale, 'black'), .5);
   display: flex;
   flex-direction: column;
@@ -41,7 +41,6 @@
   overflow-y: scroll;
 
   &__inner {
-    background: map-get($brand-colors, 'lightblue');
     height: 100%;
     min-height: 50vh;
     overflow-y: visible;
@@ -61,7 +60,6 @@
   }
 
   &__header {
-    background-color: map-get($greyscale, 'white');
     padding: map-get($spacers, 4);
     position: relative;
     width: 100%;
@@ -88,10 +86,58 @@
   }
 }
 
+
+// Drawer animates from the right
+.rim-drawer-right {
+  bottom: 0;
+  box-shadow: 0 -.5rem 2rem rgba(map-get($greyscale, 'black'), .5);
+  flex-direction: column;
+  height: calc(100% - 4.5rem);
+  left: unset;
+  position: fixed;
+  right: 0;
+  transition: all ease-in-out .3s;
+  z-index: 500;
+  width: 27rem;
+
+  &[hidden] {
+    display: none;
+  }
+}
+
 #kss-node {
   .rim-drawer__open {
     position: relative;
     bottom: inherit;
     right: inherit;
   }
+}
+
+
+// side content stuff
+
+.side-content {
+  height: 100%;
+
+  &__header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: $spacer * 1.5;
+  }
+
+  &__inner {
+    height: 100%;
+  }
+
+  &__content {
+    height: calc(100% - 4rem);
+    position: relative;
+  }
+}
+
+.side-content__list {
+  height: 100%;
+  overflow-y: visible;
+  overflow-x: hidden;
 }

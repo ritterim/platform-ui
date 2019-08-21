@@ -580,3 +580,80 @@
     text-transform: uppercase;
   }
 }
+
+
+
+//Icon Menu
+// 
+// 
+// Markup:
+// <div class="icon-menu">
+//     <a href="#" class="icon-menu__action" role="button" aria-label="Remove">
+//       <i class="fas fa-trash-alt" aria-hidden="hidden"></i>
+//     </a>
+//     <a href="#" class="icon-menu__action" role="button" aria-label="Edit">
+//       <i class="fas fa-edit" aria-hidden="hidden"></i>
+//     </a>
+// </div>
+// <div class="my-3"></div>
+// <div class="icon-menu">
+//     <a href="#" class="icon-menu__action" role="button" aria-label="Remove">
+//       <i class="fas fa-trash-alt" aria-hidden="hidden"></i>
+//     </a>
+//     <a href="#" class="icon-menu__action" role="button" aria-label="Edit">
+//       <i class="fas fa-edit" aria-hidden="hidden"></i>
+//     </a>
+//     <a href="#" class="icon-menu__action" role="button" aria-label="Edit">
+//       <i class="far fa-clock" aria-hidden="hidden"></i>
+//     </a>
+// </div>
+// 
+// Styleguide Components.IconMenu
+
+// icon menu 
+.icon-menu {
+  align-items: center;
+  display: flex;
+
+  &__action {
+    color: lighten(map-get($greyscale, 'light'), 10%);
+    height: 1.5rem;
+    width: 2rem;
+    @extend %flex-center;
+    padding: 0 .5rem;
+    position: relative;
+
+    &::after {
+      background-color: map-get($greyscale, 'light' );
+      content: '';
+      position: absolute;
+      right: -1px;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+    }
+
+    &:first-of-type {
+      padding-left: 0;
+    }
+  
+    &:last-of-type {
+      padding-right: 0;
+      
+      &::after {
+        display: none;
+      }
+    }
+  
+    &:hover {
+      
+      i {
+        transform: scale(1.1);
+      }      
+    }
+
+    i {
+      transition: $transitions;
+    }
+  }
+}

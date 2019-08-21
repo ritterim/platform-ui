@@ -139,3 +139,20 @@ ul {
     }
   }
 }
+
+
+.rim-list {
+  $list: &;
+
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  &--bordered {
+    border-top: 1px solid map-get($greyscale, 'light-mid' );
+
+    #{$list}__item {
+      border-bottom: 1px solid map-get($greyscale, 'light-mid' );
+    }
+  }
+}
