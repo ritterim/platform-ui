@@ -215,7 +215,7 @@
     </div>
   </aside>
   <main>
-    <div class="rim-content-grid has-side-content presentation-only">
+    <div class="rim-content-grid has-side-content">
       <h1 class="rim-content-grid__heading text--center">Contracts</h1>
       <div class="rim-content-grid__content">
         <div class="rim-card">
@@ -314,9 +314,9 @@
           </table>
         </div>
       </div>
-      <div class="rim-drawer rim-drawer-right background-light-yellow pt-5 pb-3 px-4 js-drawer-right">
+      <div class="rim-drawer rim-drawer-right slide-right-enter-active background-light-yellow pt-5 pb-3 px-4 js-drawer-right" hidden>
         <div class="side-content" data-inner="notes">
-          <div class="side-content__header">            
+          <div class="side-content__header flex flex--align-center flex--justify-between pb-3 mb-2">            
             <div class="flex flex--align-center">
               <button class="button button--secondary js-toggle-form">
                 <i class="far fa-plus"></i>
@@ -326,8 +326,8 @@
             <button class="button js-drawer-right-close">Close <i class="fas fa-times" aria-hidden="true"></i></button>
           </div>
           <div class="side-content__content">
-            <ol class="side-content__list" data-list="notes">
-              <li class="side-content__list-item rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
+            <ol class="side-content__list rim-list rim-list--bordered" data-list="notes">
+              <li class="side-content__list-item rim-list__item rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
                 <div class="rim-note__inner pt-4 pb-5">
                   <div class="js-toggle-wrapper">
                     <div class="flex flex--align-start mb-2">
@@ -399,7 +399,7 @@
           </div>
         </div>
         <div class="side-content rim-tasks" data-inner="tasks" hidden>
-          <div class="side-content__header">
+          <div class="side-content__header flex flex--align-center flex--justify-between pb-3 mb-2">
             <div class="flex flex--align-center">
               <button class="button button--secondary js-toggle-task" data-toggle="tasks">
                 <i class="far fa-plus"></i>
@@ -409,8 +409,8 @@
             <button class="button js-drawer-right-close">Close <i class="fas fa-times" aria-hidden="true"></i></button>
           </div>
           <div class="side-content__content">
-            <ol class="side-content__list" data-list="tasks">
-              <li class="side-content__list-item" data-task="task-1">
+            <ol class="side-content__list rim-list rim-list--bordered" data-list="tasks">
+              <li class="side-content__list-item rim-list__item" data-task="task-1">
                 <div class="text-base py-3 px-1">
                   <div class="flex flex--justify-between mb-2">
                     <div class="flex flex--align-center">
@@ -471,7 +471,7 @@
                   </div>
                 </div>
               </li>
-              <li class="side-content__list-item" data-task="task-2">
+              <li class="side-content__list-item rim-list__item" data-task="task-2">
                 <div class="text-base py-3 px-1">
                   <div class="flex flex--justify-between mb-2">
                     <div class="flex flex--align-center">
@@ -570,7 +570,7 @@
       </div>
       <div class="rim-content-grid__side-content background-light-yellow pt-5 pb-3 px-4 js-side-content">
         <div class="side-content" data-inner="notes">
-          <div class="side-content__header">
+          <div class="side-content__header flex flex--align-center flex--justify-between pb-3 mb-2">
             <div class="flex flex--align-center">
               <button class="button button--secondary js-toggle-form">
                 <i class="far fa-plus"></i>
@@ -580,8 +580,8 @@
             <button class="button js-open-right-drawer" data-open="notes">View All <span>27</span> <i class="far fa-arrow-right"></i></button>
           </div>
           <div class="side-content__content">
-            <ol class="side-content__list" data-list="notes">
-              <li class="side-content__list-item rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
+            <ol class="side-content__list rim-list rim-list--bordered" data-list="notes">
+              <li class="side-content__list-item rim-list__item rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
                 <div class="rim-note__inner pt-4 pb-5">
                   <div class="js-toggle-wrapper">
                     <div class="flex flex--align-start mb-2">
@@ -653,7 +653,7 @@
           </div>
         </div>
         <div class="side-content rim-tasks" data-inner="tasks" hidden>
-          <div class="side-content__header">
+          <div class="side-content__header flex flex--align-center flex--justify-between pb-3 mb-2">
             <div class="flex flex--align-center">
               <button class="button button--secondary js-toggle-form">
                 <i class="far fa-plus"></i>
@@ -663,8 +663,8 @@
             <button class="button js-open-right-drawer" data-open="tasks">View All <span>11</span> <i class="far fa-arrow-right"></i></button>
           </div>
           <div class="side-content__content">
-            <ol class="side-content__list" data-list="tasks">
-              <li class="side-content__list-item" data-task="task-1">
+            <ol class="side-content__list rim-list rim-list--bordered" data-list="tasks">
+              <li class="side-content__list-item rim-list__item" data-task="task-1">
                 <div class="text-base py-3 px-1">
                   <div class="flex flex--justify-between mb-2">
                     <div class="flex flex--align-center">
@@ -725,7 +725,7 @@
                   </div>
                 </div>
               </li>
-              <li class="side-content__list-item" data-task="task-2">
+              <li class="side-content__list-item rim-list__item" data-task="task-2">
                 <div class="text-base py-3 px-1">
                   <div class="flex flex--justify-between mb-2">
                     <div class="flex flex--align-center">

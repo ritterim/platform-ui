@@ -91,7 +91,6 @@
 .rim-drawer-right {
   bottom: 0;
   box-shadow: 0 -.5rem 2rem rgba(map-get($greyscale, 'black'), .5);
-  display: none;
   flex-direction: column;
   height: calc(100% - 4.5rem);
   left: unset;
@@ -100,6 +99,10 @@
   transition: all ease-in-out .3s;
   z-index: 500;
   width: 27rem;
+
+  &[hidden] {
+    display: none;
+  }
 }
 
 #kss-node {
@@ -118,7 +121,6 @@
 
   &__header {
     align-items: center;
-    border-bottom: 1px solid map-get($greyscale, 'light-mid' );
     display: flex;
     justify-content: space-between;
     padding-bottom: $spacer * 1.5;
@@ -135,18 +137,7 @@
 }
 
 .side-content__list {
-  border-top: 1px solid map-get($greyscale, 'light-mid' );
   height: 100%;
-  list-style-type: none;
   overflow-y: visible;
   overflow-x: hidden;
-}
-
-.side-content__list-item {
-  border-top: 1px solid map-get($greyscale, 'light-mid' );
-  position: relative;
-
-  &:first-of-type {
-    border-top: none;
-  }
 }

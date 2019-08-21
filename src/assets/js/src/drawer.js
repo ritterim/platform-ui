@@ -44,8 +44,7 @@ if(rightDrawer) {
     const target = this;
     const targetOpen = target.getAttribute('data-open');
   
-    rightDrawer.classList.add('slide-right-enter-active');
-    rightDrawer.classList.remove('slide-right-leave-active');
+    rightDrawer.removeAttribute('hidden');
   
     // hide all drawer content
     rightDrawer
@@ -59,8 +58,7 @@ if(rightDrawer) {
   }
   
   function closeDrawerRight() {
-    rightDrawer.classList.add('slide-right-leave-active');
-    rightDrawer.classList.remove('slide-right-enter-active');
+    rightDrawer.setAttribute('hidden', true);
   }
   
   showContent.forEach(show => {

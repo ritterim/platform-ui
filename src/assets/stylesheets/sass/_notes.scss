@@ -3,6 +3,8 @@
 .rim-note {
   $orange: map-get($brand-colors, 'salmon' );
 
+  position: relative;
+
   &:hover {
     cursor: pointer;
 
@@ -65,20 +67,3 @@
     }
   }
 }
-
-
-//  platformUI Testing only
-.presentation-only {
-
-  .rim-drawer-right {
-
-    &.slide-right-enter-active {
-      display: block;
-    }
-
-    &.slide-right-leave-active {
-      display: none;
-    }
-  }
-}
-
