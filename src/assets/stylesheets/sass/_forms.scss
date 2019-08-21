@@ -339,6 +339,23 @@ input[type="radio"] {
     }
   }
 
+  &.rim-form--bordered {
+
+    input[type="text"],
+    input[type="date"],
+    input[type="email"],
+    input[type="textarea"],
+    input[type="tel"],
+    input[type="password"],
+    input[type="number"],
+    input[type="time"],
+    textarea,
+    select {
+      border-color: map-get($greyscale, 'light' );
+      border-radius: map-get($radius, 'default' );
+    }
+  }
+
   &__field {
     display: block;
     margin-bottom: $spacer * 1.5;
@@ -525,6 +542,7 @@ input[type="radio"] {
   textarea {
     border-color: map-get($greyscale, 'light' );
     padding: map-get($spacers, 1);
+    width: 100%;
   }
 
   &__select-wrapper {
@@ -543,6 +561,20 @@ input[type="radio"] {
       transform: rotate(-45deg) translateY(-50%);
       width: .3rem;
     }
+
+    &.time {
+      
+      &:after {
+        color: map-get($greyscale, 'base' );
+        content: '\f017';
+        font-family: "Font Awesome 5 Pro";
+        font-weight: 400;
+        height: auto;
+        width: auto;
+        border: none;
+        transform: rotate(0) translateY(-50%);
+      }
+    }
   }
 
   select {
@@ -551,6 +583,30 @@ input[type="radio"] {
     border-radius: 0;
     padding: map-get($spacers, 1) $spacer map-get($spacers, 1) 0;
     width: calc(100% - #{$spacer}); // right-padding 
+  }
+
+  input[type="date"]::-webkit-inner-spin-button,
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+  }
+
+  input[type=date] {
+    position: relative;
+
+    &::after {
+      pointer-events: none;
+      position: absolute;
+    }
+
+    &:after {
+      content: '\f073';
+      font-family: "Font Awesome 5 Pro";
+      font-weight: 400;
+      right: .6rem;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+    }
   }
 }
 
