@@ -315,7 +315,7 @@
         </div>
       </div>
       <div class="rim-drawer rim-drawer-right background-light-yellow pt-5 pb-3 px-4 js-drawer-right">
-        <div class="side-content rim-notes" data-inner="notes">
+        <div class="side-content" data-inner="notes">
           <div class="side-content__header">            
             <div class="flex flex--align-center">
               <button class="button button--secondary js-toggle-form">
@@ -326,305 +326,50 @@
             <button class="button js-drawer-right-close">Close <i class="fas fa-times" aria-hidden="true"></i></button>
           </div>
           <div class="side-content__content">
-            <ol class="side-content__list rim-notes__list">
+            <ol class="side-content__list" data-list="notes">
               <li class="side-content__list-item rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
                 <div class="rim-note__inner pt-4 pb-5">
-                  <div class="rim-note-toggle-wrapper">
-                    <div class="rim-note__header">
-                      <i class="far fa-comment-alt-lines"></i>
-                      <h3 class="rim-note__title">
+                  <div class="js-toggle-wrapper">
+                    <div class="flex flex--align-start mb-2">
+                      <i class="far fa-comment-alt-lines text-light"></i>
+                      <h3 class="text-light ml-2">
                         Tiffaney Livingston 07/08/2019
                       </h3>
                     </div>
-                    <p class="rim-note__content">
+                    <p class="text-base mb-3">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     </p>
                   </div>
-                  <div class="rim-note-toggle-wrapper--bottom">
-                    <div class="rim-note__actions">
-                      <button class="rim-note__action open-note-tags" aria-label="Tags">
-                        <i class="fas fa-tags" focusable="false" aria-hidden="hidden"></i>
+                  <div class="js-toggle-wrapper--bottom mt-3 slide-down-enter-active" hidden="true">
+                    <div class="icon-menu flex--justify-center mb-3">
+                      <a href="#" class="icon-menu__action js-open-tags" aria-label="Tags">
+                        <i class="fas fa-tags text-positive--hover" focusable="false" aria-hidden="hidden"></i>
                         <span class="sr-only">Tags</span>
-                      </button>
-                      <button class="rim-note__action" aria-label="Edit">
-                        <i class="far fa-edit" focusable="false" aria-hidden="hidden"></i>
+                      </a>
+                      <a href="#" aria-label="edit" class="icon-menu__action">
+                        <i class="far fa-edit text-positive--hover" focusable="false" aria-hidden="hidden"></i>
                         <span class="sr-only">Edit</span>
-                      </button>
-                      <button class="rim-note__action" aria-label="unlock">
-                        <i class="fas fa-lock" focusable="false" aria-hidden="hidden"></i>
+                      </a>
+                      <a href="#" aria-label="edit" class="icon-menu__action" aria-label="unlock">
+                        <i class="fas fa-lock text-positive--hover" focusable="false" aria-hidden="hidden"></i>
                         <span class="sr-only">unlock</span>
-                      </button>
-                      <button class="rim-note__action" aria-label="Delete">
-                        <i class="far fa-trash-alt" focusable="false" aria-hidden="hidden"></i>
+                      </a>
+                      <a href="#" aria-label="edit" class="icon-menu__action" aria-label="Delete">
+                        <i class="far fa-trash-alt text-positive--hover" focusable="false" aria-hidden="hidden"></i>
                         <span class="sr-only">Delete</span>
-                      </button>
+                      </a>
                     </div>
-                    <div class="rim-note__active-tags">
-                      <div class="rim-note__tag-wrapper">
-                        <button class="button rim-note__tag active">Sales</button>
+                    <div class="flex flex--wrap">
+                      <div class="mb-2 px-1">
+                        <button class="button js-tag background-salmon text-white">Sales</button>
                       </div>
-                      <div class="rim-note__tag-wrapper">
-                        <button class="button rim-note__tag active">Release</button>
-                      </div>
-                    </div>
-                    <div class="rim-note__tags">
-                      <div class="rim-note__tag-wrapper">
-                        <button class="button rim-note__tag">Production</button>
+                      <div class="mb-2 px-1">
+                        <button class="button js-tag background-salmon text-white">Release</button>
                       </div>
                     </div>
-                  </div>
-                </div>
-                <button class="rim-note__toggle">
-                  <i class="far fa-chevron-double-down"></i>
-                </button>
-              </li>
-              <li class="side-content__list-item rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
-                <div class="rim-note__inner pt-4 pb-5">
-                  <div class="rim-note-toggle-wrapper">
-                    <div class="rim-note__header">
-                      <i class="far fa-comment-alt-lines"></i>
-                      <h3 class="rim-note__title">
-                        Tiffaney Livingston 07/08/2019
-                      </h3>
-                    </div>
-                    <p class="rim-note__content">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    </p>
-                  </div>
-                  <div class="rim-note-toggle-wrapper--bottom">
-                    <div class="rim-note__actions">
-                      <button class="rim-note__action open-note-tags" aria-label="Tags">
-                        <i class="fas fa-tags" focusable="false" aria-hidden="hidden"></i>
-                        <span class="sr-only">Tags</span>
-                      </button>
-                      <button class="rim-note__action" aria-label="Edit">
-                        <i class="far fa-edit" focusable="false" aria-hidden="hidden"></i>
-                        <span class="sr-only">Edit</span>
-                      </button>
-                      <button class="rim-note__action" aria-label="unlock">
-                        <i class="fas fa-lock" focusable="false" aria-hidden="hidden"></i>
-                        <span class="sr-only">unlock</span>
-                      </button>
-                      <button class="rim-note__action" aria-label="Delete">
-                        <i class="far fa-trash-alt" focusable="false" aria-hidden="hidden"></i>
-                        <span class="sr-only">Delete</span>
-                      </button>
-                    </div>
-                    <div class="rim-note__active-tags">
-                      <div class="rim-note__tag-wrapper">
-                        <button class="button rim-note__tag active">Sales</button>
-                      </div>
-                      <div class="rim-note__tag-wrapper">
-                        <button class="button rim-note__tag active">Release</button>
-                      </div>
-                    </div>
-                    <div class="rim-note__tags">
-                      <div class="rim-note__tag-wrapper">
-                        <button class="button rim-note__tag">Production</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <button class="rim-note__toggle">
-                  <i class="far fa-chevron-double-down"></i>
-                </button>
-              </li>
-              <li class="side-content__list-item rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
-                <div class="rim-note__inner pt-4 pb-5">
-                  <div class="rim-note-toggle-wrapper">
-                    <div class="rim-note__header">
-                      <i class="far fa-comment-alt-lines"></i>
-                      <h3 class="rim-note__title">
-                        Tiffaney Livingston 07/08/2019
-                      </h3>
-                    </div>
-                    <p class="rim-note__content">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    </p>
-                  </div>
-                  <div class="rim-note-toggle-wrapper--bottom">
-                    <div class="rim-note__actions">
-                      <button class="rim-note__action open-note-tags" aria-label="Tags">
-                        <i class="fas fa-tags" focusable="false" aria-hidden="hidden"></i>
-                        <span class="sr-only">Tags</span>
-                      </button>
-                      <button class="rim-note__action" aria-label="Edit">
-                        <i class="far fa-edit" focusable="false" aria-hidden="hidden"></i>
-                        <span class="sr-only">Edit</span>
-                      </button>
-                      <button class="rim-note__action" aria-label="unlock">
-                        <i class="fas fa-lock" focusable="false" aria-hidden="hidden"></i>
-                        <span class="sr-only">unlock</span>
-                      </button>
-                      <button class="rim-note__action" aria-label="Delete">
-                        <i class="far fa-trash-alt" focusable="false" aria-hidden="hidden"></i>
-                        <span class="sr-only">Delete</span>
-                      </button>
-                    </div>
-                    <div class="rim-note__active-tags">
-                      <div class="rim-note__tag-wrapper">
-                        <button class="button rim-note__tag active">Sales</button>
-                      </div>
-                      <div class="rim-note__tag-wrapper">
-                        <button class="button rim-note__tag active">Release</button>
-                      </div>
-                    </div>
-                    <div class="rim-note__tags">
-                      <div class="rim-note__tag-wrapper">
-                        <button class="button rim-note__tag">Production</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <button class="rim-note__toggle">
-                  <i class="far fa-chevron-double-down"></i>
-                </button>
-              </li>
-              <li class="side-content__list-item rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
-                <div class="rim-note__inner pt-4 pb-5">
-                  <div class="rim-note-toggle-wrapper">
-                    <div class="rim-note__header">
-                      <i class="far fa-comment-alt-lines"></i>
-                      <h3 class="rim-note__title">
-                        Tiffaney Livingston 07/08/2019
-                      </h3>
-                    </div>
-                    <p class="rim-note__content">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    </p>
-                  </div>
-                  <div class="rim-note-toggle-wrapper--bottom">
-                    <div class="rim-note__actions">
-                      <button class="rim-note__action open-note-tags" aria-label="Tags">
-                        <i class="fas fa-tags" focusable="false" aria-hidden="hidden"></i>
-                        <span class="sr-only">Tags</span>
-                      </button>
-                      <button class="rim-note__action" aria-label="Edit">
-                        <i class="far fa-edit" focusable="false" aria-hidden="hidden"></i>
-                        <span class="sr-only">Edit</span>
-                      </button>
-                      <button class="rim-note__action" aria-label="unlock">
-                        <i class="fas fa-lock" focusable="false" aria-hidden="hidden"></i>
-                        <span class="sr-only">unlock</span>
-                      </button>
-                      <button class="rim-note__action" aria-label="Delete">
-                        <i class="far fa-trash-alt" focusable="false" aria-hidden="hidden"></i>
-                        <span class="sr-only">Delete</span>
-                      </button>
-                    </div>
-                    <div class="rim-note__active-tags">
-                      <div class="rim-note__tag-wrapper">
-                        <button class="button rim-note__tag active">Sales</button>
-                      </div>
-                      <div class="rim-note__tag-wrapper">
-                        <button class="button rim-note__tag active">Release</button>
-                      </div>
-                    </div>
-                    <div class="rim-note__tags">
-                      <div class="rim-note__tag-wrapper">
-                        <button class="button rim-note__tag">Production</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <button class="rim-note__toggle">
-                  <i class="far fa-chevron-double-down"></i>
-                </button>
-              </li>
-              <li class="side-content__list-item rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
-                <div class="rim-note__inner pt-4 pb-5">
-                  <div class="rim-note-toggle-wrapper">
-                    <div class="rim-note__header">
-                      <i class="far fa-comment-alt-lines"></i>
-                      <h3 class="rim-note__title">
-                        Tiffaney Livingston 07/08/2019
-                      </h3>
-                    </div>
-                    <p class="rim-note__content">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    </p>
-                  </div>
-                  <div class="rim-note-toggle-wrapper--bottom">
-                    <div class="rim-note__actions">
-                      <button class="rim-note__action open-note-tags" aria-label="Tags">
-                        <i class="fas fa-tags" focusable="false" aria-hidden="hidden"></i>
-                        <span class="sr-only">Tags</span>
-                      </button>
-                      <button class="rim-note__action" aria-label="Edit">
-                        <i class="far fa-edit" focusable="false" aria-hidden="hidden"></i>
-                        <span class="sr-only">Edit</span>
-                      </button>
-                      <button class="rim-note__action" aria-label="unlock">
-                        <i class="fas fa-lock" focusable="false" aria-hidden="hidden"></i>
-                        <span class="sr-only">unlock</span>
-                      </button>
-                      <button class="rim-note__action" aria-label="Delete">
-                        <i class="far fa-trash-alt" focusable="false" aria-hidden="hidden"></i>
-                        <span class="sr-only">Delete</span>
-                      </button>
-                    </div>
-                    <div class="rim-note__active-tags">
-                      <div class="rim-note__tag-wrapper">
-                        <button class="button rim-note__tag active">Sales</button>
-                      </div>
-                      <div class="rim-note__tag-wrapper">
-                        <button class="button rim-note__tag active">Release</button>
-                      </div>
-                    </div>
-                    <div class="rim-note__tags">
-                      <div class="rim-note__tag-wrapper">
-                        <button class="button rim-note__tag">Production</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <button class="rim-note__toggle">
-                  <i class="far fa-chevron-double-down"></i>
-                </button>
-              </li>
-              <li class="side-content__list-item rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
-                <div class="rim-note__inner pt-4 pb-5">
-                  <div class="rim-note-toggle-wrapper">
-                    <div class="rim-note__header">
-                      <i class="far fa-comment-alt-lines"></i>
-                      <h3 class="rim-note__title">
-                        Tiffaney Livingston 07/08/2019
-                      </h3>
-                    </div>
-                    <p class="rim-note__content">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    </p>
-                  </div>
-                  <div class="rim-note-toggle-wrapper--bottom">
-                    <div class="rim-note__actions">
-                      <button class="rim-note__action open-note-tags" aria-label="Tags">
-                        <i class="fas fa-tags" focusable="false" aria-hidden="hidden"></i>
-                        <span class="sr-only">Tags</span>
-                      </button>
-                      <button class="rim-note__action" aria-label="Edit">
-                        <i class="far fa-edit" focusable="false" aria-hidden="hidden"></i>
-                        <span class="sr-only">Edit</span>
-                      </button>
-                      <button class="rim-note__action" aria-label="unlock">
-                        <i class="fas fa-lock" focusable="false" aria-hidden="hidden"></i>
-                        <span class="sr-only">unlock</span>
-                      </button>
-                      <button class="rim-note__action" aria-label="Delete">
-                        <i class="far fa-trash-alt" focusable="false" aria-hidden="hidden"></i>
-                        <span class="sr-only">Delete</span>
-                      </button>
-                    </div>
-                    <div class="rim-note__active-tags">
-                      <div class="rim-note__tag-wrapper">
-                        <button class="button rim-note__tag active">Sales</button>
-                      </div>
-                      <div class="rim-note__tag-wrapper">
-                        <button class="button rim-note__tag active">Release</button>
-                      </div>
-                    </div>
-                    <div class="rim-note__tags">
-                      <div class="rim-note__tag-wrapper">
-                        <button class="button rim-note__tag">Production</button>
+                    <div class="js-tags flex flex--wrap flex--align-center slide-down-enter-active" style="display: none;">
+                      <div class="mb-2 px-1">
+                        <button class="button js-tag">Production</button>
                       </div>
                     </div>
                   </div>
@@ -634,7 +379,7 @@
                 </button>
               </li>
             </ol>
-            <div class="rim-new-note pt-4" hidden>
+            <div class="pt-4" hidden data-new="note">
               <form action="" class="rim-form">
                 <label for="first-name" class="rim-form__field">First Name
                   <input id="first-name" type="text" placeholder="First Name">
@@ -646,7 +391,7 @@
                   <textarea id="message" name="message" rows="10" ></textarea>
                 </label>
                 <div class="rim-form__field rim-form__button-group mb-0">
-                  <button class="button button--lg rim-note__cancel-action" type="cancel">Cancel</button>
+                  <button class="button button--lg js-cancel-form" type="cancel">Cancel</button>
                   <button class="button button--post button--lg" type="submit">Save</button>
                 </div>
               </form>
@@ -666,22 +411,22 @@
           <div class="side-content__content">
             <ol class="side-content__list" data-list="tasks">
               <li class="side-content__list-item" data-task="task-1">
-                <div class="rim-task py-3 px-1">
-                  <div class="rim-task__header flex flex--justify-between mb-2">
+                <div class="text-base py-3 px-1">
+                  <div class="flex flex--justify-between mb-2">
                     <div class="flex flex--align-center">
                       <i class="fal fa-bell"></i>
-                      <h2 class="rim-task__title ml-2">Training</h2>
+                      <h2 class="text--size-md ml-2">Training</h2>
                     </div>
-                    <div class="rim-task__header-actions flex icon-menu">
-                      <a href="#" aria-label="remove" class="icon-menu__action negative js-delete-task" data-delete="task-1">
-                        <i class="fas fa-trash-alt" aria-hidden="true"></i>
+                    <div class="icon-menu">
+                      <a href="#" aria-label="remove" class="icon-menu__action js-delete-task" data-delete="task-1">
+                        <i class="fas fa-trash-alt text-negative--hover" aria-hidden="true"></i>
                       </a>
-                      <a href="#" aria-label="edit" class="icon-menu__action positive js-edit-task" data-edit="task-1">
-                        <i class="fas fa-edit" aria-hidden="true"></i>
+                      <a href="#" aria-label="edit" class="icon-menu__action js-edit-task" data-edit="task-1">
+                        <i class="fas fa-edit text-positive--hover" aria-hidden="true"></i>
                       </a>
                     </div>
                   </div>
-                  <div class="rim-task__content" data-content-container="task-1">
+                  <div data-content-container="task-1">
                     <p class="mb-3">Call client back as requested on 07/01/19. Do some more work too. Done</p>
                     <div class="flex flex--justify-between flex--align-end">
                       <div>
@@ -692,27 +437,31 @@
                           <i class="far fa-clock text-skyblue" aria-hidden="true"></i> <time datetime="10:25 am">10:25am</time>
                         </div>
                       </div>
-                      <button class="task-status flex flex--align-center flex--column positive-text js-task-status" aria-pressed="true">
-                        <i class="fal fa-check-circle"></i>
+                      <div role="button" class="pointer flex flex--align-center flex--column text-positive text-base--hover js-task-status" aria-pressed="true">
+                        <i class="fas fa-check-circle fa-3x"></i>
                         <p class="task-status__title js-task-status-title mb-0">Completed</p>
-                      </button>
+                      </div>
                     </div>
                   </div>
-                  <div class="rim-task__content-update rim-form" data-edit-container="task-1" hidden>
-                    <textarea name="task-1" id="task-1" cols="30" rows="3" class="block mb-2">Call client back as requested on 07/01/19. Do some more work too. Done</textarea>
+                  <div class="rim-form rim-form--bordered" data-edit-container="task-1" hidden>
+                    <textarea name="task-1" id="task-1" cols="30" rows="3" class="block mb-2 background-white">Call client back as requested on 07/01/19. Do some more work too. Done</textarea>
                     <div class="block-container mb-3">
-                      <div class="block-6 pr-2">
-                        <input class="px-2" type="date" value="2019-07-14" id="task-1-date">
+                      <div class="block block-6 pr-2">
+                        <label for="task-1-date" class="rim-form__field"><input class="px-2 background-white" type="date" value="2019-07-14" id="task-1-date"></label>
                       </div>
-                      <div class="rim-form__select-wrapper block-6 pl-2" id="task-1-time">
-                        <select class="px-2" name="Select a time" id="task-1-time-select">
-                          <option value="8:00 AM">8:00 AM</option>
-                          <option value="8:30 AM">8:30 AM</option>
-                          <option value="9:00 AM">9:00 AM</option>
-                          <option value="9:30 AM">9:30 AM</option>
-                          <option value="10:00 AM">10:00 AM</option>
-                          <option value="10:30 AM">10:30 AM</option>
-                        </select>
+                      <div class="block block-6 pl-2">
+                        <label for="task-1-time" class="rim-form__field">
+                          <div class="rim-form__select-wrapper" id="task-1-time">
+                            <select class="px-2 background-white" name="Select a time" id="task-1-time-select">
+                              <option value="8:00 AM">8:00 AM</option>
+                              <option value="8:30 AM">8:30 AM</option>
+                              <option value="9:00 AM">9:00 AM</option>
+                              <option value="9:30 AM">9:30 AM</option>
+                              <option value="10:00 AM">10:00 AM</option>
+                              <option value="10:30 AM">10:30 AM</option>
+                            </select>
+                          </div>
+                        </label>
                       </div>
                     </div>
                     <div class="rim-form__field rim-form__button-group mb-0">
@@ -723,22 +472,22 @@
                 </div>
               </li>
               <li class="side-content__list-item" data-task="task-2">
-                <div class="rim-task py-3 px-1">
-                  <div class="rim-task__header flex flex--justify-between mb-2">
+                <div class="text-base py-3 px-1">
+                  <div class="flex flex--justify-between mb-2">
                     <div class="flex flex--align-center">
                       <i class="fal fa-bell"></i>
-                      <h2 class="rim-task__title ml-2">Customer Meeting</h2>
+                      <h2 class="text--size-md ml-2">Customer Meeting</h2>
                     </div>
-                    <div class="rim-task__header-actions flex icon-menu">
-                      <a href="#" aria-label="remove" class="icon-menu__action negative js-delete-task" data-delete="task-1">
-                        <i class="fas fa-trash-alt" aria-hidden="true"></i>
+                    <div class="icon-menu">
+                      <a href="#" aria-label="remove" class="icon-menu__action js-delete-task" data-delete="task-1">
+                        <i class="fas fa-trash-alt text-negative--hover" aria-hidden="true"></i>
                       </a>
-                      <a href="#" aria-label="edit" class="icon-menu__action positive js-edit-task" data-edit="task-1">
-                        <i class="fas fa-edit" aria-hidden="true"></i>
+                      <a href="#" aria-label="edit" class="icon-menu__action js-edit-task" data-edit="task-1">
+                        <i class="fas fa-edit text-positive--hover" aria-hidden="true"></i>
                       </a>
                     </div>
                   </div>
-                  <div class="rim-task__content" data-content-container="task-2">
+                  <div data-content-container="task-2">
                     <p class="mb-3">Call Lorem Ipsum is free text.</p>
                     <div class="flex flex--justify-between flex--align-end">
                       <div>
@@ -749,27 +498,31 @@
                           <i class="far fa-clock text-skyblue" aria-hidden="true"></i> <time datetime="10:25 am">10:25am</time>
                         </div>
                       </div>
-                      <button class="task-status flex flex--align-center flex--column js-task-status" aria-pressed="false">
-                        <i class="fal fa-check-circle"></i>
+                      <div role="button" class="pointer flex flex--align-center flex--column text-base text-positive--hover js-task-status" aria-pressed="false">
+                       <i class="fas fa-check-circle fa-3x"></i>
                         <p class="task-status__title js-task-status-title mb-0">Complete</p>
-                      </button>
+                      </div>
                     </div>
                   </div>
-                  <div class="rim-task__content-update rim-form" data-edit-container="task-2" hidden>
+                  <div class="rim-form rim-form--bordered" data-edit-container="task-2" hidden>
                     <textarea name="task-2" id="task-2" cols="30" rows="3" class="block mb-2">Call client back as requested on 07/01/19. Do some more work too. Done</textarea>
                     <div class="block-container mb-3">
-                      <div class="block-6 pr-2">
-                        <input class="px-2" type="date" value="2019-07-14" id="task-2-date">
+                      <div class="block block-6 pr-2">
+                        <label for="task-2-date" class="rim-form__field"><input class="px-2" type="date" value="2019-07-14" id="task-2-date"></label>
                       </div>
-                      <div class="rim-form__select-wrapper block-6 pl-2" id="task-2-time">
-                        <select class="px-2" name="Select a time" id="task-2-time-select">
-                          <option value="8:00 AM">8:00 AM</option>
-                          <option value="8:30 AM">8:30 AM</option>
-                          <option value="9:00 AM">9:00 AM</option>
-                          <option value="9:30 AM">9:30 AM</option>
-                          <option value="10:00 AM">10:00 AM</option>
-                          <option value="10:30 AM">10:30 AM</option>
-                        </select>
+                      <div class="block block-6 pl-2">
+                        <label for="task-2-time" class="rim-form__field">
+                          <div class="rim-form__select-wrapper" id="task-2-time">
+                            <select class="px-2" name="Select a time" id="task-2-time-select">
+                              <option value="8:00 AM">8:00 AM</option>
+                              <option value="8:30 AM">8:30 AM</option>
+                              <option value="9:00 AM">9:00 AM</option>
+                              <option value="9:30 AM">9:30 AM</option>
+                              <option value="10:00 AM">10:00 AM</option>
+                              <option value="10:30 AM">10:30 AM</option>
+                            </select>
+                          </div>
+                        </label>
                       </div>
                     </div>
                     <div class="rim-form__field rim-form__button-group mb-0">
@@ -779,180 +532,9 @@
                   </div>
                 </div>
               </li>
-              <li class="side-content__list-item" data-task="task-3">
-                <div class="rim-task py-3 px-1">
-                  <div class="rim-task__header flex flex--justify-between mb-2">
-                    <div class="flex flex--align-center">
-                      <i class="fal fa-bell"></i>
-                      <h2 class="rim-task__title ml-2">Agents</h2>
-                    </div>
-                    <div class="rim-task__header-actions flex icon-menu">
-                      <a href="#" aria-label="remove" class="icon-menu__action negative js-delete-task" data-delete="task-1">
-                        <i class="fas fa-trash-alt" aria-hidden="true"></i>
-                      </a>
-                      <a href="#" aria-label="edit" class="icon-menu__action positive js-edit-task" data-edit="task-1">
-                        <i class="fas fa-edit" aria-hidden="true"></i>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="rim-task__content" data-content-container="task-3">
-                    <p class="mb-3">Test copy is hard to think of sometimes. Hense the use of Lorem Ipsum.</p>
-                    <div class="flex flex--justify-between flex--align-end">
-                      <div>
-                        <div class="mb-3">
-                          <i class="far fa-calendar-alt text-skyblue" aria-hidden="true"></i> <time datetime="14 Jul 2019">14 Jul 2019</time>
-                        </div>
-                        <div>
-                          <i class="far fa-clock text-skyblue" aria-hidden="true"></i> <time datetime="10:25 am">10:25am</time>
-                        </div>
-                      </div>
-                      <button class="task-status flex flex--align-center flex--column positive-text js-task-status" aria-pressed="true">
-                        <i class="fal fa-check-circle"></i>
-                        <p class="task-status__title js-task-status-title mb-0">Completed</p>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="rim-task__content-update rim-form" data-edit-container="task-3" hidden>
-                    <textarea name="task-3" id="task-3" cols="30" rows="3" class="block mb-2">Call client back as requested on 07/01/19. Do some more work too. Done</textarea>
-                    <div class="block-container mb-3">
-                      <div class="block-6 pr-2">
-                        <input class="px-2" type="date" value="2019-07-14" id="task-3-date">
-                      </div>
-                      <div class="rim-form__select-wrapper block-6 pl-2" id="task-3-time">
-                        <select class="px-2" name="Select a time" id="task-3-time-select">
-                          <option value="8:00 AM">8:00 AM</option>
-                          <option value="8:30 AM">8:30 AM</option>
-                          <option value="9:00 AM">9:00 AM</option>
-                          <option value="9:30 AM">9:30 AM</option>
-                          <option value="10:00 AM">10:00 AM</option>
-                          <option value="10:30 AM">10:30 AM</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="rim-form__field rim-form__button-group mb-0">
-                      <button class="button button--lg js-cancel-task" type="cancel" data-cancel="task-3">Cancel</button>
-                      <button class="button button--post button--lg js-save-task" data-save="task-3" type="submit">Save</button>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="side-content__list-item" data-task="task-4">
-                <div class="rim-task py-3 px-1">
-                  <div class="rim-task__header flex flex--justify-between mb-2">
-                    <div class="flex flex--align-center">
-                      <i class="fal fa-bell"></i>
-                      <h2 class="rim-task__title ml-2">Example</h2>
-                    </div>
-                    <div class="rim-task__header-actions flex icon-menu">
-                      <a href="#" aria-label="remove" class="icon-menu__action negative js-delete-task" data-delete="task-1">
-                        <i class="fas fa-trash-alt" aria-hidden="true"></i>
-                      </a>
-                      <a href="#" aria-label="edit" class="icon-menu__action positive js-edit-task" data-edit="task-1">
-                        <i class="fas fa-edit" aria-hidden="true"></i>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="rim-task__content" data-content-container="task-4">
-                    <p class="mb-3">Example copy goes here. Lorem Ipsum stuff lorem.</p>
-                    <div class="flex flex--justify-between flex--align-end">
-                      <div>
-                        <div class="mb-3">
-                          <i class="far fa-calendar-alt text-skyblue" aria-hidden="true"></i> <time datetime="14 Jul 2019">14 Jul 2019</time>
-                        </div>
-                        <div>
-                          <i class="far fa-clock text-skyblue" aria-hidden="true"></i> <time datetime="10:25 am">10:25am</time>
-                        </div>
-                      </div>
-                      <button class="task-status flex flex--align-center flex--column positive-text js-task-status" aria-pressed="true">
-                        <i class="fal fa-check-circle"></i>
-                        <p class="task-status__title js-task-status-title mb-0">Completed</p>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="rim-task__content-update rim-form" data-edit-container="task-4" hidden>
-                    <textarea name="task-4" id="task-4" cols="30" rows="3" class="block mb-2">Call client back as requested on 07/01/19. Do some more work too. Done</textarea>
-                    <div class="block-container mb-3">
-                      <div class="block-6 pr-2">
-                        <input class="px-2" type="date" value="2019-07-14" id="task-4-date">
-                      </div>
-                      <div class="rim-form__select-wrapper block-6 pl-2" id="task-4-time">
-                        <select class="px-2" name="Select a time" id="task-4-time-select">
-                          <option value="8:00 AM">8:00 AM</option>
-                          <option value="8:30 AM">8:30 AM</option>
-                          <option value="9:00 AM">9:00 AM</option>
-                          <option value="9:30 AM">9:30 AM</option>
-                          <option value="10:00 AM">10:00 AM</option>
-                          <option value="10:30 AM">10:30 AM</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="rim-form__field rim-form__button-group mb-0">
-                      <button class="button button--lg js-cancel-task" type="cancel" data-cancel="task-4">Cancel</button>
-                      <button class="button button--post button--lg js-save-task" data-save="task-4" type="submit">Save</button>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="side-content__list-item" data-task="task-5">
-                <div class="rim-task py-3 px-1">
-                  <div class="rim-task__header flex flex--justify-between mb-2">
-                    <div class="flex flex--align-center">
-                      <i class="fal fa-bell"></i>
-                      <h2 class="rim-task__title ml-2">Training</h2>
-                    </div>
-                    <div class="rim-task__header-actions flex icon-menu">
-                      <a href="#" aria-label="remove" class="icon-menu__action negative js-delete-task" data-delete="task-1">
-                        <i class="fas fa-trash-alt" aria-hidden="true"></i>
-                      </a>
-                      <a href="#" aria-label="edit" class="icon-menu__action positive js-edit-task" data-edit="task-1">
-                        <i class="fas fa-edit" aria-hidden="true"></i>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="rim-task__content" data-content-container="task-5">
-                    <p class="mb-3">Call client back as requested on 07/01/19. Do some more work too. Done</p>
-                    <div class="flex flex--justify-between flex--align-end">
-                      <div>
-                        <div class="mb-3">
-                          <i class="far fa-calendar-alt text-skyblue" aria-hidden="true"></i> <time datetime="14 Jul 2019">14 Jul 2019</time>
-                        </div>
-                        <div>
-                          <i class="far fa-clock text-skyblue" aria-hidden="true"></i> <time datetime="10:25 am">10:25am</time>
-                        </div>
-                      </div>
-                      <button class="task-status flex flex--align-center flex--column js-task-status" aria-pressed="false">
-                        <i class="fal fa-check-circle"></i>
-                        <p class="task-status__title js-task-status-title mb-0">Complete</p>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="rim-task__content-update rim-form" data-edit-container="task-5" hidden>
-                    <textarea name="task-5" id="task-5" cols="30" rows="3" class="block mb-2">Call client back as requested on 07/01/19. Do some more work too. Done</textarea>
-                    <div class="block-container mb-3">
-                      <div class="block-6 pr-2">
-                        <input class="px-2" type="date" value="2019-07-14" id="task-5-date">
-                      </div>
-                      <div class="rim-form__select-wrapper block-6 pl-2" id="task-5-time">
-                        <select class="px-2" name="Select a time" id="task-5-time-select">
-                          <option value="8:00 AM">8:00 AM</option>
-                          <option value="8:30 AM">8:30 AM</option>
-                          <option value="9:00 AM">9:00 AM</option>
-                          <option value="9:30 AM">9:30 AM</option>
-                          <option value="10:00 AM">10:00 AM</option>
-                          <option value="10:30 AM">10:30 AM</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="rim-form__field rim-form__button-group mb-0">
-                      <button class="button button--lg js-cancel-task" type="cancel" data-cancel="task-5">Cancel</button>
-                      <button class="button button--post button--lg js-save-task" data-save="task-5" type="submit">Save</button>
-                    </div>
-                  </div>
-                </div>
-              </li>
             </ol>
-            <div class="new-task py-3" data-form="tasks" hidden>
-              <form action="" class="rim-form">
+            <div class="py-3" data-form="tasks" hidden>
+              <form action="" class="rim-form rim-form--bordered">
                 <label for="first-name" class="rim-form__field">Comment
                   <textarea name="Task Comment" id="task-comment" cols="30" rows="10"></textarea>
                 </label>
@@ -987,7 +569,7 @@
         </div>
       </div>
       <div class="rim-content-grid__side-content background-light-yellow pt-5 pb-3 px-4 js-side-content">
-        <div class="side-content rim-notes" data-inner="notes">
+        <div class="side-content" data-inner="notes">
           <div class="side-content__header">
             <div class="flex flex--align-center">
               <button class="button button--secondary js-toggle-form">
@@ -998,152 +580,50 @@
             <button class="button js-open-right-drawer" data-open="notes">View All <span>27</span> <i class="far fa-arrow-right"></i></button>
           </div>
           <div class="side-content__content">
-            <ol class="side-content__list rim-notes__list">
+            <ol class="side-content__list" data-list="notes">
               <li class="side-content__list-item rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
                 <div class="rim-note__inner pt-4 pb-5">
-                  <div class="rim-note-toggle-wrapper">
-                    <div class="rim-note__header">
-                      <i class="far fa-comment-alt-lines"></i>
-                      <h3 class="rim-note__title">
+                  <div class="js-toggle-wrapper">
+                    <div class="flex flex--align-start mb-2">
+                      <i class="far fa-comment-alt-lines text-light"></i>
+                      <h3 class="text-light ml-2">
                         Tiffaney Livingston 07/08/2019
                       </h3>
                     </div>
-                    <p class="rim-note__content">
+                    <p class="text-base mb-3">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     </p>
                   </div>
-                  <div class="rim-note-toggle-wrapper--bottom">
-                    <div class="rim-note__actions">
-                      <button class="rim-note__action open-note-tags" aria-label="Tags">
-                        <i class="fas fa-tags" focusable="false" aria-hidden="hidden"></i>
+                  <div class="js-toggle-wrapper--bottom mt-3 slide-down-enter-active" hidden="true">
+                    <div class="icon-menu flex--justify-center mb-3">
+                      <a href="#" class="icon-menu__action js-open-tags" aria-label="Tags">
+                        <i class="fas fa-tags text-positive--hover" focusable="false" aria-hidden="hidden"></i>
                         <span class="sr-only">Tags</span>
-                      </button>
-                      <button class="rim-note__action" aria-label="Edit">
-                        <i class="far fa-edit" focusable="false" aria-hidden="hidden"></i>
+                      </a>
+                      <a href="#" aria-label="edit" class="icon-menu__action">
+                        <i class="far fa-edit text-positive--hover" focusable="false" aria-hidden="hidden"></i>
                         <span class="sr-only">Edit</span>
-                      </button>
-                      <button class="rim-note__action" aria-label="unlock">
-                        <i class="fas fa-lock" focusable="false" aria-hidden="hidden"></i>
+                      </a>
+                      <a href="#" aria-label="edit" class="icon-menu__action" aria-label="unlock">
+                        <i class="fas fa-lock text-positive--hover" focusable="false" aria-hidden="hidden"></i>
                         <span class="sr-only">unlock</span>
-                      </button>
-                      <button class="rim-note__action" aria-label="Delete">
-                        <i class="far fa-trash-alt" focusable="false" aria-hidden="hidden"></i>
+                      </a>
+                      <a href="#" aria-label="edit" class="icon-menu__action" aria-label="Delete">
+                        <i class="far fa-trash-alt text-positive--hover" focusable="false" aria-hidden="hidden"></i>
                         <span class="sr-only">Delete</span>
-                      </button>
+                      </a>
                     </div>
-                    <div class="rim-note__active-tags">
-                      <div class="rim-note__tag-wrapper">
-                        <button class="button rim-note__tag active">Sales</button>
+                    <div class="flex flex--wrap">
+                      <div class="mb-2 px-1">
+                        <button class="button js-tag background-salmon text-white">Sales</button>
                       </div>
-                      <div class="rim-note__tag-wrapper">
-                        <button class="button rim-note__tag active">Release</button>
-                      </div>
-                    </div>
-                    <div class="rim-note__tags">
-                      <div class="rim-note__tag-wrapper">
-                        <button class="button rim-note__tag">Production</button>
+                      <div class="mb-2 px-1">
+                        <button class="button js-tag background-salmon text-white">Release</button>
                       </div>
                     </div>
-                  </div>
-                </div>
-                <button class="rim-note__toggle">
-                  <i class="far fa-chevron-double-down"></i>
-                </button>
-              </li>
-              <li class="side-content__list-item rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
-                <div class="rim-note__inner pt-4 pb-5">
-                  <div class="rim-note-toggle-wrapper">
-                    <div class="rim-note__header">
-                      <i class="far fa-comment-alt-lines"></i>
-                      <h3 class="rim-note__title">
-                        Tiffaney Livingston 07/08/2019
-                      </h3>
-                    </div>
-                    <p class="rim-note__content">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    </p>
-                  </div>
-                  <div class="rim-note-toggle-wrapper--bottom">
-                    <div class="rim-note__actions">
-                      <button class="rim-note__action open-note-tags" aria-label="Tags">
-                        <i class="fas fa-tags" focusable="false" aria-hidden="hidden"></i>
-                        <span class="sr-only">Tags</span>
-                      </button>
-                      <button class="rim-note__action" aria-label="Edit">
-                        <i class="far fa-edit" focusable="false" aria-hidden="hidden"></i>
-                        <span class="sr-only">Edit</span>
-                      </button>
-                      <button class="rim-note__action" aria-label="unlock">
-                        <i class="fas fa-lock" focusable="false" aria-hidden="hidden"></i>
-                        <span class="sr-only">unlock</span>
-                      </button>
-                      <button class="rim-note__action" aria-label="Delete">
-                        <i class="far fa-trash-alt" focusable="false" aria-hidden="hidden"></i>
-                        <span class="sr-only">Delete</span>
-                      </button>
-                    </div>
-                    <div class="rim-note__active-tags">
-                      <div class="rim-note__tag-wrapper">
-                        <button class="button rim-note__tag active">Sales</button>
-                      </div>
-                      <div class="rim-note__tag-wrapper">
-                        <button class="button rim-note__tag active">Release</button>
-                      </div>
-                    </div>
-                    <div class="rim-note__tags">
-                      <div class="rim-note__tag-wrapper">
-                        <button class="button rim-note__tag">Production</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <button class="rim-note__toggle">
-                  <i class="far fa-chevron-double-down"></i>
-                </button>
-              </li>
-              <li class="side-content__list-item rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
-                <div class="rim-note__inner pt-4 pb-5">
-                  <div class="rim-note-toggle-wrapper">
-                    <div class="rim-note__header">
-                      <i class="far fa-comment-alt-lines"></i>
-                      <h3 class="rim-note__title">
-                        Tiffaney Livingston 07/08/2019
-                      </h3>
-                    </div>
-                    <p class="rim-note__content">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    </p>
-                  </div>
-                  <div class="rim-note-toggle-wrapper--bottom">
-                    <div class="rim-note__actions">
-                      <button class="rim-note__action open-note-tags" aria-label="Tags">
-                        <i class="fas fa-tags" focusable="false" aria-hidden="hidden"></i>
-                        <span class="sr-only">Tags</span>
-                      </button>
-                      <button class="rim-note__action" aria-label="Edit">
-                        <i class="far fa-edit" focusable="false" aria-hidden="hidden"></i>
-                        <span class="sr-only">Edit</span>
-                      </button>
-                      <button class="rim-note__action" aria-label="unlock">
-                        <i class="fas fa-lock" focusable="false" aria-hidden="hidden"></i>
-                        <span class="sr-only">unlock</span>
-                      </button>
-                      <button class="rim-note__action" aria-label="Delete">
-                        <i class="far fa-trash-alt" focusable="false" aria-hidden="hidden"></i>
-                        <span class="sr-only">Delete</span>
-                      </button>
-                    </div>
-                    <div class="rim-note__active-tags">
-                      <div class="rim-note__tag-wrapper">
-                        <button class="button rim-note__tag active">Sales</button>
-                      </div>
-                      <div class="rim-note__tag-wrapper">
-                        <button class="button rim-note__tag active">Release</button>
-                      </div>
-                    </div>
-                    <div class="rim-note__tags">
-                      <div class="rim-note__tag-wrapper">
-                        <button class="button rim-note__tag">Production</button>
+                    <div class="js-tags flex flex--wrap flex--align-center slide-down-enter-active" style="display: none;">
+                      <div class="mb-2 px-1">
+                        <button class="button js-tag">Production</button>
                       </div>
                     </div>
                   </div>
@@ -1153,7 +633,7 @@
                 </button>
               </li>
             </ol>
-            <div class="rim-new-note pt-4">
+            <div class="pt-4" hidden data-new="note">
               <form action="" class="rim-form">
                 <label for="first-name" class="rim-form__field">First Name
                   <input id="first-name" type="text" placeholder="First Name">
@@ -1165,7 +645,7 @@
                   <textarea id="message" name="message" rows="10" ></textarea>
                 </label>
                 <div class="rim-form__field rim-form__button-group mb-0">
-                  <button class="button button--lg rim-note__cancel-action" type="cancel">Cancel</button>
+                  <button class="button button--lg js-cancel-form" type="cancel">Cancel</button>
                   <button class="button button--post button--lg" type="submit">Save</button>
                 </div>
               </form>
@@ -1185,22 +665,22 @@
           <div class="side-content__content">
             <ol class="side-content__list" data-list="tasks">
               <li class="side-content__list-item" data-task="task-1">
-                <div class="rim-task py-3 px-1">
-                  <div class="rim-task__header flex flex--justify-between mb-2">
+                <div class="text-base py-3 px-1">
+                  <div class="flex flex--justify-between mb-2">
                     <div class="flex flex--align-center">
                       <i class="fal fa-bell"></i>
-                      <h2 class="rim-task__title ml-2">Training</h2>
+                      <h2 class="text--size-md ml-2">Training</h2>
                     </div>
-                    <div class="rim-task__header-actions flex icon-menu">
-                      <a href="#" aria-label="remove" class="icon-menu__action negative js-delete-task" data-delete="task-1">
-                        <i class="fas fa-trash-alt" aria-hidden="true"></i>
+                    <div class="icon-menu">
+                      <a href="#" aria-label="remove" class="icon-menu__action js-delete-task" data-delete="task-1">
+                        <i class="fas fa-trash-alt text-negative--hover" aria-hidden="true"></i>
                       </a>
-                      <a href="#" aria-label="edit" class="icon-menu__action positive js-edit-task" data-edit="task-1">
-                        <i class="fas fa-edit" aria-hidden="true"></i>
+                      <a href="#" aria-label="edit" class="icon-menu__action js-edit-task" data-edit="task-1">
+                        <i class="fas fa-edit text-positive--hover" aria-hidden="true"></i>
                       </a>
                     </div>
                   </div>
-                  <div class="rim-task__content" data-content-container="task-1">
+                  <div data-content-container="task-1">
                     <p class="mb-3">Call client back as requested on 07/01/19. Do some more work too. Done</p>
                     <div class="flex flex--justify-between flex--align-end">
                       <div>
@@ -1211,27 +691,31 @@
                           <i class="far fa-clock text-skyblue" aria-hidden="true"></i> <time datetime="10:25 am">10:25am</time>
                         </div>
                       </div>
-                      <button class="task-status flex flex--align-center flex--column positive-text js-task-status" aria-pressed="true">
-                        <i class="fal fa-check-circle"></i>
+                      <div role="button" class="pointer flex flex--align-center flex--column text-positive text-base--hover js-task-status" aria-pressed="true">
+                        <i class="fas fa-check-circle fa-3x"></i>
                         <p class="task-status__title js-task-status-title mb-0">Completed</p>
-                      </button>
+                      </div>
                     </div>
                   </div>
-                  <div class="rim-task__content-update rim-form" data-edit-container="task-1" hidden>
+                  <div class="rim-form rim-form--bordered" data-edit-container="task-1" hidden>
                     <textarea name="task-1" id="task-1" cols="30" rows="3" class="block mb-2">Call client back as requested on 07/01/19. Do some more work too. Done</textarea>
                     <div class="block-container mb-3">
-                      <div class="block-6 pr-2">
-                        <input class="px-2" type="date" value="2019-07-14" id="task-1-date">
+                      <div class="block block-6 pr-2">
+                        <label for="task-1-date" class="rim-form__field"><input class="px-2" type="date" value="2019-07-14" id="task-1-date"></label>
                       </div>
-                      <div class="rim-form__select-wrapper block-6 pl-2" id="task-1-time">
-                        <select class="px-2" name="Select a time" id="task-1-time-select">
-                          <option value="8:00 AM">8:00 AM</option>
-                          <option value="8:30 AM">8:30 AM</option>
-                          <option value="9:00 AM">9:00 AM</option>
-                          <option value="9:30 AM">9:30 AM</option>
-                          <option value="10:00 AM">10:00 AM</option>
-                          <option value="10:30 AM">10:30 AM</option>
-                        </select>
+                      <div class="block block-6 pl-2">
+                        <label for="task-1-time" class="rim-form__field">
+                          <div class="rim-form__select-wrapper" id="task-1-time">
+                            <select class="px-2" name="Select a time" id="task-1-time-select">
+                              <option value="8:00 AM">8:00 AM</option>
+                              <option value="8:30 AM">8:30 AM</option>
+                              <option value="9:00 AM">9:00 AM</option>
+                              <option value="9:30 AM">9:30 AM</option>
+                              <option value="10:00 AM">10:00 AM</option>
+                              <option value="10:30 AM">10:30 AM</option>
+                            </select>
+                          </div>
+                        </label>
                       </div>
                     </div>
                     <div class="rim-form__field rim-form__button-group mb-0">
@@ -1242,22 +726,22 @@
                 </div>
               </li>
               <li class="side-content__list-item" data-task="task-2">
-                <div class="rim-task py-3 px-1">
-                  <div class="rim-task__header flex flex--justify-between mb-2">
+                <div class="text-base py-3 px-1">
+                  <div class="flex flex--justify-between mb-2">
                     <div class="flex flex--align-center">
                       <i class="fal fa-bell"></i>
-                      <h2 class="rim-task__title ml-2">Customer Meeting</h2>
+                      <h2 class="text--size-md ml-2">Customer Meeting</h2>
                     </div>
-                    <div class="rim-task__header-actions flex icon-menu">
-                      <a href="#" aria-label="remove" class="icon-menu__action negative js-delete-task" data-delete="task-1">
-                        <i class="fas fa-trash-alt" aria-hidden="true"></i>
+                    <div class="icon-menu">
+                      <a href="#" aria-label="remove" class="icon-menu__action js-delete-task" data-delete="task-1">
+                        <i class="fas fa-trash-alt text-negative--hover" aria-hidden="true"></i>
                       </a>
-                      <a href="#" aria-label="edit" class="icon-menu__action positive js-edit-task" data-edit="task-1">
-                        <i class="fas fa-edit" aria-hidden="true"></i>
+                      <a href="#" aria-label="edit" class="icon-menu__action js-edit-task" data-edit="task-1">
+                        <i class="fas fa-edit text-positive--hover" aria-hidden="true"></i>
                       </a>
                     </div>
                   </div>
-                  <div class="rim-task__content" data-content-container="task-2">
+                  <div data-content-container="task-2">
                     <p class="mb-3">Call Lorem Ipsum is free text.</p>
                     <div class="flex flex--justify-between flex--align-end">
                       <div>
@@ -1268,27 +752,31 @@
                           <i class="far fa-clock text-skyblue" aria-hidden="true"></i> <time datetime="10:25 am">10:25am</time>
                         </div>
                       </div>
-                      <button class="task-status flex flex--align-center flex--column js-task-status" aria-pressed="false">
-                        <i class="fal fa-check-circle"></i>
+                      <div role="button" class="pointer flex flex--align-center flex--column text-base text-positive--hover js-task-status" aria-pressed="false">
+                        <i class="fas fa-check-circle fa-3x"></i>
                         <p class="task-status__title js-task-status-title mb-0">Complete</p>
-                      </button>
+                      </div>
                     </div>
                   </div>
-                  <div class="rim-task__content-update rim-form" data-edit-container="task-2" hidden>
+                  <div class="rim-form rim-form--bordered" data-edit-container="task-2" hidden>
                     <textarea name="task-2" id="task-2" cols="30" rows="3" class="block mb-2">Call client back as requested on 07/01/19. Do some more work too. Done</textarea>
                     <div class="block-container mb-3">
-                      <div class="block-6 pr-2">
-                        <input class="px-2" type="date" value="2019-07-14" id="task-2-date">
+                      <div class="block block-6 pr-2">
+                        <label for="task-1-date" class="rim-form__field"><input class="px-2" type="date" value="2019-07-14" id="task-2-date"></label>
                       </div>
-                      <div class="rim-form__select-wrapper block-6 pl-2" id="task-2-time">
-                        <select class="px-2" name="Select a time" id="task-2-time-select">
-                          <option value="8:00 AM">8:00 AM</option>
-                          <option value="8:30 AM">8:30 AM</option>
-                          <option value="9:00 AM">9:00 AM</option>
-                          <option value="9:30 AM">9:30 AM</option>
-                          <option value="10:00 AM">10:00 AM</option>
-                          <option value="10:30 AM">10:30 AM</option>
-                        </select>
+                      <div class="block block-6 pl-2">
+                        <label for="task-2-time" class="rim-form__field">
+                          <div class="rim-form__select-wrapper time" id="task-2-time">
+                            <select class="px-2" name="Select a time" id="task-2-time-select">
+                              <option value="8:00 AM">8:00 AM</option>
+                              <option value="8:30 AM">8:30 AM</option>
+                              <option value="9:00 AM">9:00 AM</option>
+                              <option value="9:30 AM">9:30 AM</option>
+                              <option value="10:00 AM">10:00 AM</option>
+                              <option value="10:30 AM">10:30 AM</option>
+                            </select>
+                          </div>
+                        </label>
                       </div>
                     </div>
                     <div class="rim-form__field rim-form__button-group mb-0">
@@ -1299,15 +787,15 @@
                 </div>
               </li>
             </ol>
-            <div class="new-task py-3" data-form="tasks" hidden>
-              <form action="" class="rim-form">
+            <div class="py-3" data-form="tasks" hidden>
+              <form action="" class="rim-form rim-form--bordered">
                 <label for="first-name" class="rim-form__field">Comment
                   <textarea name="Task Comment" id="task-comment" cols="30" rows="10"></textarea>
                 </label>
                 <div class="block-container mb-3">
                   <div class="block block-6 pr-2">
                     <label for="task-2-date" class="rim-form__field">Last Name
-                      <input class="px-2" type="date" value="2019-07-14" id="task-2-date">
+                      <label for="task-1-date"><input class="px-2" type="date" value="2019-07-14" id="task-2-date"></label>
                     </label>
                   </div>
                   <div class="block block-6 pl-2">
