@@ -1,9 +1,9 @@
 
 const tabs = document.querySelectorAll('[role="tab"]');
-const tabList = document.querySelector('[role="tablist"]');
-const tabPanel = document.querySelectorAll('[role="tabpanel"]');
 
 if(tabs) {
+  const tabList = document.querySelector('[role="tablist"]');
+  const tabPanel = document.querySelectorAll('[role="tabpanel"]');
   // Add a click event handler to each tab
   tabs.forEach(tab => {
     tab.addEventListener('click', changeTabs);
