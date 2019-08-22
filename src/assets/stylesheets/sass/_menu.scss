@@ -589,42 +589,60 @@
 // to get the list you want. Be sure to use the specific `icon-menu` classes. With this strcuture you have
 // the freedom to use any icon you want and make that icon change to whatever color you want on hover.
 // Simpy change the `<icon>` class to the desired font-awesome icon you want. Then, add the `text-{color}--hover`
-// class to the icon. To see a list of available hover colors [click here](/section-typography.html#kssref-typography-utilities-color).
+// class to the `icon-menu__action`. To see a list of available hover colors [click here](/section-typography.html#kssref-typography-utilities-color).
+// 
+// Be sure to always wrap the font icon in another element. We don't want to have the click event be on the `<icon>` itself.
 // 
 // You can add as many icons as you'd like. 
 // 
 // Markup:
 // <div class="icon-menu">
-//   <a href="#" aria-label="remove" class="icon-menu__action">
-//     <i class="fas fa-trash-alt text-negative--hover" aria-hidden="true"></i>
-//   </a>
-//   <a href="#" aria-label="edit" class="icon-menu__action">
-//     <i class="fas fa-edit text-positive--hover" aria-hidden="true"></i>
-//   </a>
+//   <div class="icon-menu__item">
+//     <a href="#" class="icon-menu__action text-negative--hover" role="button">
+//       <i class="fas fa-trash-alt" focusable="false" aria-hidden="true"></i>
+//     </a>
+//   </div>
+//   <div class="icon-menu__item">
+//     <a href="#" class="icon-menu__action text-positive--hover" role="button">
+//       <i class="fas fa-edit" focusable="false" aria-hidden="true"></i>
+//     </a>
+//   </div>
 // </div>
 // <div class="my-3"></div>
 // <div class="icon-menu">
-//   <a href="#" class="icon-menu__action" role="button" aria-label="Remove">
-//     <i class="fas fa-trash-alt text-negative--hover" aria-hidden="hidden"></i>
-//   </a>
-//   <a href="#" class="icon-menu__action" role="button" aria-label="Edit">
-//     <i class="fas fa-edit text-positive--hover" aria-hidden="hidden"></i>
-//   </a>
-//   <a href="#" class="icon-menu__action" role="button" aria-label="Edit">
-//     <i class="far fa-clock" aria-hidden="hidden"></i>
-//   </a>
+//   <div class="icon-menu__item">
+//     <a href="#" class="icon-menu__action text-negative--hover" role="button">
+//       <i class="fas fa-trash-alt" focusable="false" aria-hidden="hidden"></i>
+//     </a>
+//   </div>
+//   <div class="icon-menu__item">
+//     <a href="#" class="icon-menu__action text-positive--hover" role="button">
+//       <i class="fas fa-edit" focusable="false" aria-hidden="hidden"></i>
+//     </a>
+//   </div>
+//   <div class="icon-menu__item">
+//     <a href="#" class="icon-menu__action" role="button">
+//       <i class="far fa-clock" focusable="false" aria-hidden="hidden"></i>
+//     </a>
+//   </div>
 // </div>
 // <div class="my-3"></div>
 // <div class="icon-menu">
-//   <a href="#" class="icon-menu__action" role="button" aria-label="Remove">
-//     <i class="fas fa-trash-alt text-navy--hover" aria-hidden="hidden"></i>
-//   </a>
-//   <a href="#" class="icon-menu__action" role="button" aria-label="Edit">
-//     <i class="fas fa-edit text-violet--hover" aria-hidden="hidden"></i>
-//   </a>
-//   <a href="#" class="icon-menu__action" role="button" aria-label="Edit">
-//     <i class="far fa-clock text-salmon--hover" aria-hidden="hidden"></i>
-//   </a>
+//   <div class="icon-menu__item">
+//     <a href="#" class="icon-menu__action text-navy--hover" role="button">
+//       <i class="fas fa-trash-alt" focusable="false" aria-hidden="hidden"></i>
+//     </a>
+//   </div>
+//   <div class="icon-menu__item">
+//     <a href="#" class="icon-menu__action text-violet--hover" role="button">
+//       <i class="fas fa-edit" focusable="false" aria-hidden="hidden"></i>
+//     </a>
+//   </div>
+//   <div class="icon-menu__item">
+//     <a href="#" class="icon-menu__action text-salmon--hover" role="button">
+//       <i class="far fa-clock" focusable="false" aria-hidden="hidden"></i>
+//     </a>
+//   </div>
 // </div>
 // 
 // Styleguide Components.IconMenu
@@ -634,13 +652,9 @@
   align-items: center;
   display: flex;
 
-  &__action {
-    color: lighten(map-get($greyscale, 'light'), 10%);
-    height: 1.5rem;
+  &__item {
     margin: 0 .5rem;
     position: relative;
-    width: 2rem;
-    @extend %flex-center;
 
     &::after {
       background-color: map-get($greyscale, 'light' );
@@ -664,20 +678,17 @@
         display: none;
       }
     }
+  }
+
+  &__action {
+    color: lighten(map-get($greyscale, 'light'), 10%);
+    height: 1.5rem;
+    width: 2rem;
+    @extend %flex-center;
   
     &:hover {
-      
-      i {
-        color: map-get($error-colors, 'default' );
-        transform: scale(1.1);
-      }      
-    }
-
-    i {
-      height: 100%;
-      transition: $transitions;
-      width: 100%;
-      @extend %flex-center;
+      color: map-get($error-colors, 'default' );
+      transform: scale(1.1);
     }
   }
 }

@@ -2,13 +2,21 @@
 //
 // This is a simple `data-attribute` alternative to the `title` tag.
 // Add your tooltip text to a `data-rim-tooltip` attribute on any item you want a tooltip.
+// 
+// We use a font-awesome icon for our tooltip, but we don't want the hover to take place on the icon.
+// Be sure to add the tooltip data attribute to the `<div>` wrapper instead. Place any color changes,
+// whether they be a hover or not, on the `<div>` as well. This will ensure that our tooltip text
+// does not render a different font due to the icon having the font-awesome font style.
 //
 // Markup:
-// <div data-rim-tooltip="This is really something!">Hover over me</div>
+// <div data-rim-tooltip="This is a tooltip" class="text-med-blue">
+//   <i class=" fal fa-question-circle fa-lg" focusable="false" aria-hidden="true"></i>
+// </div>
 //
 // Styleguide Components.Tooltip
 
 [data-rim-tooltip] {
+  display: inline-flex;
   position: relative;
   transition: $transitions;
   &:hover:after {
