@@ -10,7 +10,6 @@ if (tabList) {
   });
 
   if (window.location.hash) {
-    console.log('tabs')
     tabs.forEach(tab => {
       if (window.location.hash === tab.hash) {
         tabList.children[0].firstElementChild.setAttribute('aria-selected', false);

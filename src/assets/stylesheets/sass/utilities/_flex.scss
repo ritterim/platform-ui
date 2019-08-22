@@ -10,11 +10,16 @@
 // | Class Name             |                    |                     |                      |                      |
 // | ---------------------- | ------------------ | ------------------- | -------------------- | -------------------- |
 // | `flex--align-center`   | `flex--column`     | `flex--justify-between` | `flex--justify-end` | `flex--justify-start` |
-// | `flex--wrap`   |   |  |  |  |
+// | `flex--wrap`   | 'flex-inline`   |  |  |  |
 //
 // Styleguide Utilities.Flex
 .flex {
   display: flex;
+
+  &-inline {
+    display: inline-flex;
+  }
+
   &--align {
     &-center {
       align-items: center;

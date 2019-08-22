@@ -91,9 +91,8 @@
 // Styleguide Tables
 
 
-
-
-table, .rim-table {
+table, 
+.rim-table {
 
   $border-radius: map-get($radius, 'default');
   $table-border: 1px solid lighten(map-get($greyscale, 'light'), $hue-threshold * 2);
@@ -103,7 +102,6 @@ table, .rim-table {
 
   width: 100%;
   background-color: transparent;
-  // border: $table-border;
   border-radius: $border-radius;
   border-collapse: separate;
   border-spacing: 0;
@@ -126,6 +124,11 @@ table, .rim-table {
     tr {
       border-radius: $border-radius $border-radius 0 0;
     }
+
+    th {
+      border: solid lighten(map-get($greyscale, 'light'), $hue-threshold * 2);
+      border-width: 1px 0;
+    }
   }
 
   tr {
@@ -146,6 +149,10 @@ table, .rim-table {
     th {
       cursor: pointer;
     }
+
+    td {
+      border-bottom: 1px solid lighten(map-get($greyscale, 'light'), $hue-threshold * 2);
+    }
   }
 
   @include breakpoint(tablet, max) {
@@ -163,7 +170,6 @@ table, .rim-table {
       td {
         align-items: center;
         border: none;
-        border-bottom: $table-border;
         display: flex;
         justify-content: space-between;
         text-align: right;

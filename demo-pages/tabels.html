@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Welcome to Rams John</title>
+
+  <link rel="stylesheet" href="/src/assets/stylesheets/platform-ui.min.css">
+  <link rel="canonical" href="http://localhost:8001/">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/src/assets/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/src/assets/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/src/assets/images/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/src/assets/images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/src/assets/images/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/src/assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <script src="https://kit.fontawesome.com/9adb49694f.js"></script>
+</head>
+
+<body class="platform">
+  <header class="site-header">
+    <nav class="site-menu">
+      <div class="site-menu__item has-dropdown" class="mb-2">
+        <span class="card__header-icon pill--circle background-purple mr-2 text-skyblue">
+          JH
+        </span>
+        <div class="font-lg">
+          Hello John
+        </div>
+        <div class="dropdown-menu agent-profile">
+          <h2 class="agent-profile__heading">Profile</h2>
+          <div class="agent-profile__content-wrapper">
+            <div class="agent-profile__content">
+              <ul class="agent-profile__info-list">
+                <li class="agent-profile__info-list-item">
+                  <i class="fas fa-user"></i>
+                  <span>John Smith</span>
+                </li>
+                <li class="agent-profile__info-list-item">
+                  <i class="fas fa-home"></i>
+                  <address>
+                    123 Street, <br>
+                    City, ST 12345
+                  </address>
+                </li>
+                <li class="agent-profile__info-list-item">
+                  <i class="fas fa-paper-plane"></i>
+                  <a href="">email@email.net</a>
+                </li>
+                <li class="agent-profile__info-list-item">
+                    <i class="fas fa-phone"></i>
+                  <a href="tel:123-456-7890">123-456-7890</a>
+                </li>
+                <li class="agent-profile__info-list-item">
+                    <i class="fas fa-sign-out-alt"></i>
+                  <a href="#">Sign Out</a>
+                </li>
+              </ul>
+            </div>
+            <div class="agent-profile__content">
+              <div class="pill background-olive">Active</div>
+              <dl class="agent-profile__status-list">
+                <div class="agent-profile__status-list-item">
+                  <dt>CT</dt><dd>Email</dd>
+                </div>
+                <div class="agent-profile__status-list-item">
+                  <dt>MU</dt><dd>Ritter Insurance Marketing</dd>
+                </div>
+                <div class="agent-profile__status-list-item">
+                  <dt>GPL</dt><dd>8</dd>
+                </div>
+                <div class="agent-profile__status-list-item">
+                  <dt>NPN</dt><dd>9006591</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="site-menu__item search">
+      </div>
+      <div class="site-menu__item has-dropdown">
+        <i class="fas fa-ticket-alt rotate-45"></i>
+        <div class="dropdown-menu agent-contact">
+          <form action="" class="rim-form rim-form--stacked rim-form--light">
+            <label for="agent-name" class="rim-form__field">Name
+              <input id="agent-name" type="text" placeholder="First and Last Name">
+            </label>
+            <label for="agent-email" class="rim-form__field">Email
+              <input id="agent-email" type="email" placeholder="geg.gudis@bgainsurances.net">
+            </label>
+            <label for="agent-phone" class="rim-form__field">Phone
+              <input id="agent-phone" type="tel" placeholder="(610) 828-3553x302">
+            </label>
+            <label for="subject" class="rim-form__field">Subject
+              <input id="subject" type="text" placeholder="">
+            </label>
+            <label for="message" class="rim-form__field">Message
+              <textarea id="message" name="message" rows="10" ></textarea>
+            </label>
+            <div class="rim-form__field rim-form__button-group">
+              <button class="button button--post button--lg">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <aside class="crm-actions">
+    <div class="aside-tab"><i class="fas fa-chevron-left" aria-hidden="true"></i></div>
+    <div class="crm-actions__stats">
+        <!-- To be added back
+        <div class="crm-actions__stats-header">
+            Quick Numbers
+        </div>
+        <div class="crm-actions__stats-group">
+            <div class="crm-actions__stat">
+                45
+                <div class="crm-actions__stat-label">
+                    incomplete<br>submissions
+                </div>
+            </div>
+        </div>
+     -->
+      <div class="today">
+        <script type="text/javascript">
+          var d = (new Date()).toString().split(' ').splice(1,3).join(' ');
+          document.write(d);
+        </script>
+      </div>
+        <nav class="crm-menu">
+            <div class="crm-menu__group">
+                <div href="/" class="crm-menu__item active" data-view="overview" data-rim-tooltip="Overview">
+                    <img src="/src/assets/images/crm-icons-color/overview.svg" alt="">
+                    <img class="mini-image" src="/src/assets/images/crm-icons-color/bare/overview-bare.svg" alt="">
+                    <span>Overview</span>
+                </div>
+                <div class="crm-menu__item" data-view="quote" data-rim-tooltip="Quote">
+                    <img src="/src/assets/images/crm-icons-color/quote.svg" alt="Quote">
+                    <img class="mini-image" src="/src/assets/images/crm-icons-color/bare/quote-bare.svg" alt="Quote">
+                    <span>Quote</span>
+                </div>
+            </div>
+
+                <div class="crm-menu__group">
+                    <div class="crm-menu__item" data-view="tasks" data-rim-tooltip="Tasks">
+                        <img src="/src/assets/images/crm-icons-color/tasks.svg" alt="Tasks">
+                        <img class="mini-image" src="/src/assets/images/crm-icons-color/bare/tasks-bare.svg" alt="Tasks">
+                        <span>Tasks</span>
+                    </div>
+                    <div class="crm-menu__item" data-view="clients" data-rim-tooltip="Clients">
+                        <img src="/src/assets/images/crm-icons-color/clients.svg" alt="Clients">
+                        <img class="mini-image" src="/src/assets/images/crm-icons-color/bare/clients-bare.svg" a-barelt="Clients">
+                        <span>Clients</span>
+                    </div>
+                </div>
+
+            <div class="crm-menu__group">
+                <div class="crm-menu__item" data-view="commissions" data-rim-tooltip="Commisions">
+                    <img src="/src/assets/images/crm-icons-color/commissions.svg" alt="">
+                    <img class="mini-image" src="/src/assets/images/crm-icons-color/bare/commissions-bare.svg" alt="">
+                    <span>Commissions</span>
+                </div>
+                <a target="_blank" href="@SiteConfiguration.ContractsUrl" class="crm-menu__item" data-rim-tooltip="Get Contracted">
+                    <img src="/src/assets/images/crm-icons-color/get-contracted.svg" alt="">
+                    <img class="mini-image" src="/src/assets/images/crm-icons-color/bare/get-contracted-bare.svg" alt="">
+                    <span>Get Contracted <i class="fal fa-external-link-square fa-sm"></i></span>
+                </a>
+            </div>
+            <div class="crm-menu__group">
+                <a target="_blank" href="@SiteConfiguration.CrmUrl" class="crm-menu__item" data-rim-tooltip="CRM Dashboard">
+                    <img src="/src/assets/images/crm-icons-color/crm-dashboard.svg" alt="">
+                    <img class="mini-image" src="/src/assets/images/crm-icons-color/bare/crm-dashboard-bare.svg" alt="">
+                    <span>CRM Dashboard <i class="fal fa-external-link-square fa-sm"></i></span>
+                </a>
+                <a target="_blank" href="@SiteConfiguration.DocSiteUrl/carriers/products/" class="crm-menu__item" data-rim-tooltip="Carriers">
+                    <img src="/src/assets/images/crm-icons-color/carriers.svg" alt="">
+                    <img class="mini-image" src="/src/assets/images/crm-icons-color/bare/carriers-bare.svg" alt="">
+                    <span>Carriers <i class="fal fa-external-link-square fa-sm"></i></span>
+                </a>
+            </div>
+            <div class="crm-menu__group">
+                <div class="crm-menu__item" data-view="contracts" data-rim-tooltip="Contracts">
+                    <img src="/src/assets/images/crm-icons-color/contracts.svg" alt="">
+                    <img class="mini-image" src="/src/assets/images/crm-icons-color/bare/contracts-bare.svg" alt="">
+                    <span>Contracts</span>
+                </div>
+                <div class="crm-menu__item" data-view="submissions" data-rim-tooltip="Submissions">
+                    <img src="/src/assets/images/crm-icons-color/submissions.svg" alt="">
+                    <img class="mini-image" src="/src/assets/images/crm-icons-color/bare/submissions-bare.svg" alt="">
+                    <span>Submissions</span>
+                </div>
+            </div>
+
+                <div class="crm-menu__group">
+                    <div class="crm-menu__item" data-view="downlines" data-rim-tooltip="Register Downlines">
+                        <img src="/src/assets/images/crm-icons-color/register-downlines.svg" alt="">
+                        <img class="mini-image" src="/src/assets/images/crm-icons-color/bare/register-downlines-bare.svg" alt="">
+                        <span>Register Downlines
+                    </div>
+                    <div class="crm-menu__item" data-view="hierarchy" data-rim-tooltip="Hierarchy">
+                        <img src="/src/assets/images/crm-icons-color/hierarchy.svg" alt="">
+                        <img class="mini-image" src="/src/assets/images/crm-icons-color/bare/hierarchy-bare.svg" alt="">
+                        <span>Hierarchy</span>
+                    </div>
+                </div>
+
+        </nav>
+    </div>
+  </aside>
+  <main>
+    <div class="crm-banner post animated slideInDown fast" style="background-image: linear-gradient(to right, white, 80%, transparent), url('https://freephotos.cc/storage/preview/path/e0TY5dzjfyAcol92eAidR4ublvPlT2dBbmAGcqeN.jpeg'); background-repeat: no-repeat; background-size: cover; background-position: top center;">
+      <div class="button button--sm close-action right">
+        collapse
+        <i class="fas fa-angle-up" aria-hidden="true"></i>
+      </div>
+      <h1 class="mb-2">Your dashboard got an upgrade!</h1>
+      <p class="crm-banner__teaser">
+        <i class="fas fa-bullhorn" aria-hidden="true"></i>
+        Take a quick video tour to see the new features of your dashboard.
+      </p>
+      <a data-modal="video-banner" class="button button--post button--lg rim-modal__open">
+        <i class="far fa-play-circle" aria-hidden="true"></i>
+        Watch now
+      </a>
+    </div>
+    <section>
+      <div class="px-3 py-3 mb-3">
+        <div data-rim-tooltip="This is a tooltip" class="text-med-blue">
+          <i class=" fal fa-question-circle fa-lg" focusable="false" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div class="mb-3">
+        <div class="icon-menu">
+          <div class="icon-menu__item">
+            <a href="#" class="icon-menu__action text-negative--hover" role="button">
+              <i class="fas fa-trash-alt" focusable="false" aria-hidden="hidden"></i>
+            </a>
+          </div>
+          <div class="icon-menu__item">
+            <a href="#" class="icon-menu__action text-positive--hover" role="button">
+              <i class="fas fa-edit" focusable="false" aria-hidden="hidden"></i>
+            </a>
+          </div>
+          <div class="icon-menu__item">
+            <a href="#" class="icon-menu__action" role="button">
+              <i class="far fa-clock" focusable="false" aria-hidden="hidden"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="background-white px-3 py-3 mb-5">
+        <table>
+          <thead>
+            <tr>
+              <th>Company</th>
+              <th>Contact</th>
+              <th>Country</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Company">
+                Alfreds Futterkiste
+              </td>
+              <td data-label="Contact">
+                Maria Anders
+              </td>
+              <td data-label="Country">
+                Germany
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Company">
+                Centro comercial Moctezuma
+              </td>
+              <td data-label="Contact">
+                Francisco Chang
+              </td>
+              <td data-label="Country">
+                Mexico
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Company">
+                Ernst Handel
+              </td>
+              <td data-label="Contact">
+                Roland Mendel
+              </td>
+              <td data-label="Country">
+                Austria
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Company">
+                Island Trading
+              </td>
+              <td data-label="Contact">
+                Helen Bennett
+              </td>
+              <td data-label="Country">
+                UK
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Company">
+                Laughing Bacchus Winecellars
+              </td>
+              <td data-label="Contact">
+                Yoshi Tannamuri
+              </td>
+              <td data-label="Country">
+                Canada
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Company">
+                Magazzini Alimentari Riuniti
+              </td>
+              <td data-label="Contact">
+                Giovanni Rovelli
+              </td>
+              <td data-label="Country">
+                Italy
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+  <div class="mobile-menu-action-wrapper">
+    <button class="button mobile-menu-action" aria-label="Menu">
+      <i class="fas fa-th menu-icon" focusable="false" aria-hidden="hidden"></i>
+      <span class="mobile-menu-action__copy">Menu</span>
+    </button>
+  </div>
+
+  <script src="/src/assets/js/platform-ui.min.js"></script>
+  <script src="https://fast.wistia.com/assets/external/E-v1.js"></script>
+</body>
+</html>
