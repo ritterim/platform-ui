@@ -583,29 +583,48 @@
 
 
 
-//Icon Menu
+// Icon Menu
 // 
+// When you need a horizontal list of icons, look no further than "Icon Menu". Use the mark up below
+// to get the list you want. Be sure to use the specific `icon-menu` classes. With this strcuture you have
+// the freedom to use any icon you want and make that icon change to whatever color you want on hover.
+// Simpy change the `<icon>` class to the desired font-awesome icon you want. Then, add the `text-{color}--hover`
+// class to the icon. To see a list of available hover colors [click here](/section-typography.html#kssref-typography-utilities-color).
+// 
+// You can add as many icons as you'd like. 
 // 
 // Markup:
 // <div class="icon-menu">
-//     <a href="#" class="icon-menu__action" role="button" aria-label="Remove">
-//       <i class="fas fa-trash-alt" aria-hidden="hidden"></i>
-//     </a>
-//     <a href="#" class="icon-menu__action" role="button" aria-label="Edit">
-//       <i class="fas fa-edit" aria-hidden="hidden"></i>
-//     </a>
+//   <a href="#" aria-label="remove" class="icon-menu__action">
+//     <i class="fas fa-trash-alt text-negative--hover" aria-hidden="true"></i>
+//   </a>
+//   <a href="#" aria-label="edit" class="icon-menu__action">
+//     <i class="fas fa-edit text-positive--hover" aria-hidden="true"></i>
+//   </a>
 // </div>
 // <div class="my-3"></div>
 // <div class="icon-menu">
-//     <a href="#" class="icon-menu__action" role="button" aria-label="Remove">
-//       <i class="fas fa-trash-alt" aria-hidden="hidden"></i>
-//     </a>
-//     <a href="#" class="icon-menu__action" role="button" aria-label="Edit">
-//       <i class="fas fa-edit" aria-hidden="hidden"></i>
-//     </a>
-//     <a href="#" class="icon-menu__action" role="button" aria-label="Edit">
-//       <i class="far fa-clock" aria-hidden="hidden"></i>
-//     </a>
+//   <a href="#" class="icon-menu__action" role="button" aria-label="Remove">
+//     <i class="fas fa-trash-alt text-negative--hover" aria-hidden="hidden"></i>
+//   </a>
+//   <a href="#" class="icon-menu__action" role="button" aria-label="Edit">
+//     <i class="fas fa-edit text-positive--hover" aria-hidden="hidden"></i>
+//   </a>
+//   <a href="#" class="icon-menu__action" role="button" aria-label="Edit">
+//     <i class="far fa-clock" aria-hidden="hidden"></i>
+//   </a>
+// </div>
+// <div class="my-3"></div>
+// <div class="icon-menu">
+//   <a href="#" class="icon-menu__action" role="button" aria-label="Remove">
+//     <i class="fas fa-trash-alt text-navy--hover" aria-hidden="hidden"></i>
+//   </a>
+//   <a href="#" class="icon-menu__action" role="button" aria-label="Edit">
+//     <i class="fas fa-edit text-violet--hover" aria-hidden="hidden"></i>
+//   </a>
+//   <a href="#" class="icon-menu__action" role="button" aria-label="Edit">
+//     <i class="far fa-clock text-salmon--hover" aria-hidden="hidden"></i>
+//   </a>
 // </div>
 // 
 // Styleguide Components.IconMenu
@@ -618,27 +637,28 @@
   &__action {
     color: lighten(map-get($greyscale, 'light'), 10%);
     height: 1.5rem;
+    margin: 0 .5rem;
+    position: relative;
     width: 2rem;
     @extend %flex-center;
-    padding: 0 .5rem;
-    position: relative;
 
     &::after {
       background-color: map-get($greyscale, 'light' );
       content: '';
+      pointer-events: none;
       position: absolute;
-      right: -1px;
+      right: -.5rem;
       top: 0;
       bottom: 0;
       width: 1px;
     }
 
     &:first-of-type {
-      padding-left: 0;
+      margin-left: 0;
     }
   
     &:last-of-type {
-      padding-right: 0;
+      margin-right: 0;
       
       &::after {
         display: none;
@@ -648,12 +668,16 @@
     &:hover {
       
       i {
+        color: map-get($error-colors, 'default' );
         transform: scale(1.1);
       }      
     }
 
     i {
+      height: 100%;
       transition: $transitions;
+      width: 100%;
+      @extend %flex-center;
     }
   }
 }

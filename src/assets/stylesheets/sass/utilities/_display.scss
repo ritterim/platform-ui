@@ -2,6 +2,10 @@
 // 
 // Our display utilities allow you to show or hide code at specific resolutions.
 // 
+// If you want to simply add `display: none` to an element you can use the class `hidden`.
+// 
+// We also have print specific display classes. `show-print` and `hide-print`.
+// 
 // The classes are broken down by a display prefix, a breakpoint value, and a 
 // directional suffix. The prefixes of show and hide represent the display value. Where `show-` will equal `display: block` 
 // and `hide-` equals `display: none`.
@@ -14,6 +18,9 @@
 // 
 // | Class Name                     | Display Value              | Generated Media Query                                                     |
 // | ------------------------------ | -------------------------- | ------------------------------------------------------------------------- |
+// | `hidden`                       | `display: none;`           | No specified resolution                                                   |
+// | `show-print`                   | `diaplay: block;`          | `@media print`                                                            |
+// | `hide-print`                   | `diaplay: none;`           | `@media print`                                                            |
 // | `show-mobile-up`               | `diaplay: block;`          | `@media screen and (min-width: 0px)`                                      |
 // | `show-mobile-only`             | `diaplay: block;`          | `@media screen and (min-width: 0px) and (max-width: 767px)`               |
 // | `show-mobile-down`             | `diaplay: block;`          | `@media screen and (max-width: 767px)`                                    |
@@ -39,6 +46,23 @@
 // 
 // 
 // Styleguide Utilities.Display
+
+
+.hidden {
+  display: none;
+}
+
+.show-print {
+  @media print {
+    display: block;
+  }
+}
+
+.hide-print {
+  @media print {
+    display: none;
+  }
+}
 
 // Function the gets the next value in the map.
 @function nextKey($current-value, $mapped-list:$breakpoints) {

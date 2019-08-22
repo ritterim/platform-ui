@@ -138,6 +138,64 @@
 // Styleguide Forms.Fancy
 
 
+// Form Border
+// 
+// This modifier class adds a full border to each input within the form. Just add `rim-form--bordered`
+// 
+// Markup:
+// <form action="" class="rim-form rim-form--bordered block-container tablet-up-3 laptop-up-4 desktop-up-6 blocks-mb-3 blocks-py-2 blocks-px-2">
+//   <div class="block">
+//     <label for="first-name" class="rim-form__field">First Name
+//       <input id="first-name" type="text" placeholder="First Name">
+//     </label>
+//   </div>
+//   <div class="block">
+//     <label for="last-name" class="rim-form__field">Last Name
+//       <input id="last-name" type="text" placeholder="Last Name">
+//     </label>
+//   </div>
+//   <div class="block">
+//     <label for="dob" class="rim-form__field">Age or DOB
+//       <input id="dob" type="date" placeholder="DD/MM/YYYY">
+//     </label>
+//   </div>
+//   <div class="block">
+//     <label for="zipcode" class="rim-form__field">ZIP Code
+//       <input id="zipcode" type="tel" placeholder="e.g.90012" pattern="^\d{5,6}(?:[-\s]\d{4})?$">
+//     </label>
+//   </div>
+// </form>
+// 
+// Styleguide Forms.Border
+
+
+// Time Icon
+// 
+// The select wrapper displays an arrow down icon. We can change that by adding the class `time`
+// to the class `rim-form__select-wrapper`. So the classes would be `rim-form__select-wrapper time`.
+// This will replace the arrow down icon with a clock icon.
+// 
+// Markup:
+// <form action="" class="rim-form block-container">
+//  <div class="block block-4">
+//   <label for="task-1-time" class="rim-form__field">
+//     <div class="rim-form__select-wrapper time" id="task-1-time">
+//       <select class="px-2" name="Select a time" id="task-1-time-select">
+//         <option value="8:00 AM">8:00 AM</option>
+//         <option value="8:30 AM">8:30 AM</option>
+//         <option value="9:00 AM">9:00 AM</option>
+//         <option value="9:30 AM">9:30 AM</option>
+//         <option value="10:00 AM">10:00 AM</option>
+//         <option value="10:30 AM">10:30 AM</option>
+//       </select>
+//     </div>
+//   </label>
+//  </div>
+// </form
+// 
+// Styleguide Forms.TimeIcon
+
+
 // KSS-Node specific stuff for forms
 #kss-node {
 
@@ -409,7 +467,6 @@ input[type="radio"] {
         color: map-get($greyscale, 'base' );
         padding: map-get($spacers, 1 );
         transition: .2s ease-in;
-        width: calc(100% - .5rem); // padding left and right
 
         &:focus ~ label,
         &:valid ~ label {
@@ -451,7 +508,6 @@ input[type="radio"] {
 
       select {
         padding-left: map-get($spacers, 1 );
-        width: calc(100% - 1.25rem); // accounts for padding left and right
 
         &:focus ~ label,
         &:valid ~ label {
@@ -519,13 +575,13 @@ input[type="radio"] {
     background-color: transparent;
     border: 1px solid transparent;
     border-bottom-color: map-get($greyscale, 'light' );
-    box-sizing: content-box;
     color: map-get($greyscale, 'base' );
     display: block;
     font-family: map-get($fonts, 'base');
     font-size: map-get($fonts, 'size');
-    min-height: 1.5rem;
+    min-height: 2.2rem;
     padding: map-get($spacers, 1) 0;
+    width: 100%;
 
     &::placeholder {
       color: map-get($greyscale, 'base' );
@@ -582,7 +638,6 @@ input[type="radio"] {
     appearance: none;
     border-radius: 0;
     padding: map-get($spacers, 1) $spacer map-get($spacers, 1) 0;
-    width: calc(100% - #{$spacer}); // right-padding 
   }
 
   input[type="date"]::-webkit-inner-spin-button,
