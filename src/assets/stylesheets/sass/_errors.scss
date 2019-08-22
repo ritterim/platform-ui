@@ -44,6 +44,13 @@
 @each $error in (positive, negative, neutral) {
   .text-#{$error} {
     color: map-get($error-colors, #{$error}) !important;
+
+    &--hover {
+      transition: $transitions;
+      &:hover {
+        color: map-get($error-colors, #{$error}) !important;
+      }
+    }
   }
   // for pills
   .pill {

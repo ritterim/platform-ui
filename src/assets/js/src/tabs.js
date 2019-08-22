@@ -1,8 +1,8 @@
+const tabList = document.querySelector('[role="tablist"]');
 
-const tabs = document.querySelectorAll('[role="tab"]');
+if (tabList) {
 
-if(tabs) {
-  const tabList = document.querySelector('[role="tablist"]');
+  const tabs = document.querySelectorAll('[role="tab"]');
   const tabPanel = document.querySelectorAll('[role="tabpanel"]');
   // Add a click event handler to each tab
   tabs.forEach(tab => {
@@ -10,6 +10,7 @@ if(tabs) {
   });
 
   if (window.location.hash) {
+    console.log('tabs')
     tabs.forEach(tab => {
       if (window.location.hash === tab.hash) {
         tabList.children[0].firstElementChild.setAttribute('aria-selected', false);
