@@ -449,10 +449,6 @@ input[type="radio"] {
       }
     }
 
-    &--full {
-      max-width: none;
-    }
-
     // Fancy label animations
     &#{ $self }__field--fancy {
       position: relative;
@@ -595,10 +591,45 @@ input[type="radio"] {
     }
   }
 
+  input[type="text"],
+  input[type="email"],
+  input[type="textarea"],
+  input[type="tel"],
+  input[type="password"],
+  input[type="number"] {
+
+    &.readonly {
+      transition: $transitions;
+  
+      &[readonly] {
+        border-bottom-color: transparent;    
+        pointer-events: none;
+        
+        &:focus {
+          box-shadow: none;
+        }
+      }    
+    }
+  }
+
   textarea {
     border-color: map-get($greyscale, 'light' );
     padding: map-get($spacers, 1);
     width: 100%;
+
+    &.readonly {
+      transition: $transitions;
+  
+      &[readonly] {
+        border-color: transparent;    
+        pointer-events: none;
+        resize: none;
+        
+        &:focus {
+          box-shadow: none;
+        }
+      }    
+    }
   }
 
   &__select-wrapper {
@@ -664,6 +695,64 @@ input[type="radio"] {
     }
   }
 }
+
+// Readonly Input
+// 
+// This style is for editable inputs as well as textareas. If you want to display the text or value of an
+// input but disable the ability to edit it, add the `readonly` attribute as well as the class `readonly`
+// to the input or textarea. In your javascript only toggle the `readonly` attribute on or off when the user
+// would select the option to edit the text.
+// 
+// | <i class="fas fa-exclamation-triangle fa-sm text-orange"></i> NOTE: The `js-` classes in the example below are just for test purposes. You do not need them.** |
+// | --
+// 
+// Markup:
+// <form action="" class="rim-form">
+//   <div class="block-container">
+//     <div class="block block-10">
+//       <label for="first-name" class="rim-form__field">
+//         <input id="first-name" type="text" placeholder="First Name" class="readonly" readonly value="This is a readonly input. When you select edit, the readonly attribute will be removed.">
+//       </label>
+//     </div>
+//     <div class="block block-2 flex flex--align-center flex--justify-end">
+//       <div class="icon-menu">
+//         <div class="icon-menu__item">
+//           <a href="#" class="icon-menu__action text-positive--hover js-edit-readonly" role="button">
+//             <i class="fas fa-edit" focusable="false" aria-hidden="hidden"></i>
+//           </a>
+//         </div>
+//         <div class="icon-menu__item">
+//           <a href="#" class="icon-menu__action text-negative--hover" role="button">
+//             <i class="fas fa-trash-alt" focusable="false" aria-hidden="hidden"></i>
+//           </a>
+//         </div>
+//       </div>
+//     </div>
+//   </div>
+//   <div class="block-container">
+//     <div class="block block-10">
+//       <label for="message" class="rim-form__field">
+//         <textarea id="message" name="message" class="readonly js-textarea" readonly>This is a readonly textarea. When you select edit, the readonly attribute will be removed.</textarea>
+//       </label>
+//     </div>
+//     <div class="block block-2 flex flex--align-center flex--justify-end">
+//       <div class="icon-menu">
+//         <div class="icon-menu__item">
+//           <a href="#" class="icon-menu__action text-positive--hover js-edit-textarea" role="button">
+//             <i class="fas fa-edit" focusable="false" aria-hidden="hidden"></i>
+//           </a>
+//         </div>
+//         <div class="icon-menu__item">
+//           <a href="#" class="icon-menu__action text-negative--hover" role="button">
+//             <i class="fas fa-trash-alt" focusable="false" aria-hidden="hidden"></i>
+//           </a>
+//         </div>
+//       </div>
+//     </div>
+//   </div>
+// </form>
+// 
+// Styleguide Forms.Readonly
 
 // Togles
 // ------

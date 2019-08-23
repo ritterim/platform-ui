@@ -28,6 +28,10 @@
     &-end {
       align-items: flex-end;
     }
+
+    &-start {
+      align-items: flex-start;
+    }
   }
   &--column {
     flex-direction: column;
