@@ -44,10 +44,10 @@
 
 .fade-in-from-none {
   &-enter-active {
-    animation: fadeInFromNone $slideAnimationDuration * 1.5;
+    animation: fadeInFromNone $transitions * 1.5;
   }
   &-leave-active {
-    animation: fadeInFromNone $slideAnimationDuration reverse;
+    animation: fadeInFromNone $transitions reverse;
   }
 }
 
