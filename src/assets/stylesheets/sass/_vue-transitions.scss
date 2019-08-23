@@ -42,12 +42,38 @@
   }
 }
 
+.fade-in-from-none {
+  &-enter-active {
+    animation: fadeInFromNone $transitions * 1.5;
+  }
+  &-leave-active {
+    animation: fadeInFromNone $transitions reverse;
+  }
+}
+
+@keyframes fadeInFromNone {
+  0% {
+      display: none;
+      opacity: 0;
+  }
+
+  1% {
+      display: block;
+      opacity: 0;
+  }
+
+  100% {
+      display: block;
+      opacity: 1;
+  }
+}
+
 .slide-down {
   &-enter-active {
     animation: slideInDown $transitions;
   }
   &-leave-active {
-    animation: slideInUp $transitions;
+    animation: slideInDown $transitions reverse;
   }
 }
 
