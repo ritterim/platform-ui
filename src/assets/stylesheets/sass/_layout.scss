@@ -508,7 +508,7 @@
   &.menu-open {
     
     aside {
-      left: 0rem;
+      bottom: 3rem;
     }
   }
 
@@ -549,7 +549,7 @@
     @include breakpoint(tablet, max) {
       // 100% - header + today - mobile-menu-action-wrapper
       height: calc(100% - 7.8125rem - 3rem);
-      left: -100%;
+      bottom: -100%;
       margin-top: calc(#{$menu-height} + 3.3125rem);
       transition: $transitions;
       width: 100%;
