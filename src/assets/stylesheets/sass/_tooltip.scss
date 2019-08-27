@@ -19,7 +19,6 @@
   display: inline-flex;
   position: relative;
   transition: $transitions;
-
   &:hover:after {
     background-color: map-get($greyscale, 'dark');
     border-radius: map-get($radius, 'default');
@@ -27,17 +26,13 @@
     content: attr(data-rim-tooltip);
     font-size: map-get($font-percentage, 'sm');
     font-weight: normal;
-    margin-left: .1rem;
+    margin-left: .3rem;
     opacity: $opacity;
     padding: map-get($spacers, 1) map-get($spacers, 2);
     position: absolute;
     text-shadow: none;
-    top: 0;
-    left: 100%;
+    top: map-get($spacers, 2);
+    left: 0;
     white-space: nowrap;
-  }
-
-  i {
-    line-height: 1;
   }
 }
