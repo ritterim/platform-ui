@@ -9,7 +9,7 @@
 // does not render a different font due to the icon having the font-awesome font style.
 //
 // Markup:
-// <div data-rim-tooltip="This is a tooltip" class="text-med-blue">
+// <div data-rim-tooltip="This is a tooltip" class="text-med-blue" aria-label="This is a tooltip">
 //   <i class=" fal fa-question-circle fa-lg" focusable="false" aria-hidden="true"></i>
 // </div>
 //
@@ -19,6 +19,7 @@
   display: inline-flex;
   position: relative;
   transition: $transitions;
+
   &:hover:after {
     background-color: map-get($greyscale, 'dark');
     border-radius: map-get($radius, 'default');
@@ -26,13 +27,17 @@
     content: attr(data-rim-tooltip);
     font-size: map-get($font-percentage, 'sm');
     font-weight: normal;
-    margin-left: .3rem;
+    margin-left: .1rem;
     opacity: $opacity;
     padding: map-get($spacers, 1) map-get($spacers, 2);
     position: absolute;
     text-shadow: none;
-    top: map-get($spacers, 2);
-    left: 0;
+    top: 0;
+    left: 100%;
     white-space: nowrap;
+  }
+
+  i {
+    line-height: 1;
   }
 }
