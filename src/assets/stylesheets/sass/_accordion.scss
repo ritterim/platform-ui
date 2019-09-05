@@ -1,44 +1,126 @@
 // Accordion
 //
-// Accordion description
-//
-// Styleguide Components.Accordion
-
-// Default
-//
-// The default platform button. Usually paired visually with an icon. Can be the default size or large.
-//
-// - .rim-accordion
+// Leverage spacing utility classes for padding and margin for the content within the accordion.
+// To show the content of the accordion use vue transitions and toggle the class `active` on `rim-accordion`.
 //
 // Markup:
 // <div class="rim-accordion">
-//   <div class="rim-accordion__title">
-//     title
+//   <div class="rim-accordion__header block-container pl-5 pr-3 py-3">          
+//     <div class="block block-5">
+//       <h3 class="mb-3">Aetna</h3>
+//       <span>Aetna Health and Life</span>
+//     </div>
+//     <div class="block block-2">
+//       <h3 class="mb-3">Status <span class="pill pill--circle__empty positive"></span></h3>
+//       <span>Appointed</span>
+//     </div>
+//     <div class="block block-2">
+//       <h3 class="mb-3">AWN</h3>
+//       <span>GX000</span>
+//     </div>
+//     <div class="block block-2">
+//       <h3 class="mb-3">Level</h3>
+//       <span>0</span>
+//     </div>
+//     <div class="block block-1 flex flex--column flex--align-end flex--justify-center">
+//       <div class="icon-menu">
+//         <div class="icon-menu__item">
+//           <a href="#" class="icon-menu__action text-negative--hover" role="button">
+//             <i class="fas fa-trash-alt" focusable="false" aria-hidden="true"></i>
+//           </a>
+//         </div>
+//         <div class="icon-menu__item">
+//           <a href="#" class="icon-menu__action text-positive--hover" role="button">
+//             <i class="fas fa-edit" focusable="false" aria-hidden="true"></i>
+//           </a>
+//         </div>
+//       </div>
+//     </div>
 //   </div>
-//   <div class="rim-accordion__content">
-//     content
+//   <div class="rim-accordion__content fade-in-from-none-enter-active">
+//     <div class="px-4">
+//       <p>content</p>
+//     </div>
 //   </div>
 // </div>
 //
-// Styleguide Components.Accordion.Default
+// Styleguide Components.Accordion
 
 // Active
 //
-// Adding `.active` changes the default title bar background and hover highlight
+// Adding `.active` changes the default header bar background and hover highlight.
 //
-// - .rim_accordion .active
+// - .rim-accordion .active
 //
 // Markup:
 // <div class="rim-accordion active">
-//   <div class="rim-accordion__title">
-//     title
+//   <div class="rim-accordion__header">
+//     header
 //   </div>
-//   <div class="rim-accordion__content">
+//   <div class="rim-accordion__content fade-in-from-none-enter-active">
 //     content
 //   </div>
 // </div>
 //
 // Styleguide Components.Accordion.Active
+
+// Nested
+// 
+// You can nest accordions. By adding a `rim-accordion` inside a parent `rim-accordion`, you get the following look.
+// 
+// Markup:
+// <div class="rim-accordion">
+//   <div class="rim-accordion__header block-container pl-5 pr-3 py-3">          
+//     Header
+//   </div>
+//   <div class="rim-accordion__content fade-in-from-none-enter-active">
+//     <div class="px-4">
+//       <p>content</p>
+//     </div>
+//     <div class="rim-accordion">
+//       <div class="rim-accordion__header px-4 py-3 flex flex--justify-between flex--align-center">
+//         <div class="flex flex--align-center">
+//           <i class="fal fa-users text-med-blue mr-2"></i><h4 class="text-med-blue">Downlines</h4>
+//         </div>
+//         <i class="far fa-chevron-down rim-accordion__icon text-med-blue"></i>
+//       </div>
+//       <div class="rim-accordion__content fade-in-from-none-enter-active px-4">
+//         Inner Accordion Content
+//       </div>
+//     </div>
+//     <div class="rim-accordion">
+//       <div class="rim-accordion__header px-4 py-3 flex flex--justify-between flex--align-center">
+//         <div class="flex flex--align-center">
+//           <i class="fal fa-file-import text-med-blue mr-2"></i><h4 class="text-med-blue">Request Contract Work</h4>
+//         </div>
+//         <i class="far fa-chevron-down rim-accordion__icon text-med-blue"></i>
+//       </div>
+//       <div class="rim-accordion__content fade-in-from-none-enter-active px-4">
+//         Inner Accordion Content
+//       </div>
+//     </div>
+//     <div class="rim-accordion">
+//       <div class="rim-accordion__header px-4 py-3 flex flex--justify-between flex--align-center">
+//         <div class="flex flex--align-center">                     
+//           <i class="fal fa-file-upload text-med-blue mr-2"></i><h4 class="text-med-blue">Attachments</h4>
+//         </div>
+//         <i class="far fa-chevron-down rim-accordion__icon text-med-blue"></i>
+//       </div>
+//       <div class="rim-accordion__content fade-in-from-none-enter-active px-4">
+//         Inner Accordion Content
+//       </div>
+//     </div>
+//   </div>
+// </div>
+// 
+// Styleguide Components.Accordion.Nested
+
+// KSS specific
+.rim-style-modifier__example {
+  .rim-accordion {
+    border-bottom-color: lighten(map-get($greyscale, 'light'), $hue-threshold * 2);
+  }
+}
 
 .rim-accordion {
 
@@ -53,14 +135,14 @@
 
   background-color: $primary-background;
   border: 1px solid transparent;
-  border-top: 1px solid $primary-border-color;
+  border-top-color: $primary-border-color;
   color: $primary-color;
   font-family: map-get($fonts, 'base');
   font-size: 100%;
   transition: $transitions;
 
   &:last-of-type {
-    border-bottom: 1px solid $primary-border-color;
+    border-bottom-color: $primary-border-color;
   }
 
   &:not(.active):hover {
@@ -72,8 +154,8 @@
   }
 
   &.active {
-    border-bottom: none;
-    border: 2px solid $hover-border;
+    border-color: transparent;
+    box-shadow: 0px 0px 0px 2px $hover-border;
 
     > .rim-accordion__header {
       background-color: $secondary-background;
@@ -113,10 +195,8 @@
     margin-bottom: map-get($spacers, 1 );
 
     &.active {
-
-      .rim-accordion__content {
-        border: none;
-      }
+      border: none;
+      box-shadow: none;
     }
 
     .rim-accordion__header {
