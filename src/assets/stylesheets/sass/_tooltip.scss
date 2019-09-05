@@ -33,6 +33,8 @@
     text-shadow: none;
     top: map-get($spacers, 2);
     left: 0;
-    white-space: nowrap;
+    // white-space: nowrap;
+    min-width: 10rem;
+    max-width: 30rem;
   }
 }

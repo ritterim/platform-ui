@@ -6,11 +6,11 @@
 @import "utilities/typography";
 
 .rotate-45 {
-  transform: rotate(-45deg);
+  @extend %rotate-45;
 }
 
 .rotate-180 {
-  transform: rotate(180deg);
+  @extend %rotate-180;
 }
 
 // add-on to animate.css to speed up

@@ -73,21 +73,16 @@
 
   &.active {
     border-bottom: none;
+    border: 2px solid $hover-border;
 
     > .rim-accordion__header {
-      background-color: $active-background;
-      color: $primary-background;
-
-      * {
-        color: $primary-background;
-      }
+      background-color: $secondary-background;
 
       .rim-accordion__icon {
-        transform: rotate(180deg);
+        @extend %rotate-180;
       }
 
       + .rim-accordion__content {
-        border-color: $hover-border;
         display: block;
       }
     }
@@ -105,7 +100,6 @@
   }
 
   &__content {
-    border: 2px solid transparent;
     border-top: none;
     display: none;
     position: relative;
