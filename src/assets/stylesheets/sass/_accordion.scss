@@ -45,42 +45,88 @@
   $self: &;
   $primary-color: map-get($greyscale, 'base');
   $primary-background: map-get($greyscale, 'white');
+  $secondary-background: map-get($greyscale, 'lighter');
   $primary-border-color: lighten(map-get($greyscale, 'light'), $hue-threshold * 2);
   $secondary-border-color: lighten(map-get($brand-colors, 'med-blue'), $hue-threshold);
+  $active-background: map-get($brand-colors, 'med-blue' );
+  $hover-border: map-get($brand-colors, 'skyblue' );
 
   background-color: $primary-background;
-  border: 1px solid $primary-border-color;
+  border: 1px solid transparent;
+  border-top: 1px solid $primary-border-color;
   color: $primary-color;
   font-family: map-get($fonts, 'base');
   font-size: 100%;
   transition: $transitions;
 
+  &:last-of-type {
+    border-bottom: 1px solid $primary-border-color;
+  }
+
+  &:not(.active):hover {
+    border-color: $hover-border;
+
+    .rim-accordion__header {
+      background-color: $secondary-background;
+    }    
+  }
+
   &.active {
-    border: 2px solid $secondary-border-color;
-    #{ $self } {
-      &__title {
-        background-color: map-get($greyscale, 'lighter');
-        border-width: 0 0 1px 0;
+    border-bottom: none;
+
+    > .rim-accordion__header {
+      background-color: $active-background;
+      color: $primary-background;
+
+      * {
+        color: $primary-background;
       }
-      &__content {
-        border: none;
-        display: flex;
+
+      .rim-accordion__icon {
+        transform: rotate(180deg);
+      }
+
+      + .rim-accordion__content {
+        border-color: $hover-border;
+        display: block;
       }
     }
   }
 
-  &__title {
-    display: flex;
-    padding: $spacer;
+  &__header {
+    cursor: pointer;
+    position: relative;
+    transition: $transitions;
+    z-index: 10;
+  }
+
+  &__icon {
+    transition: $transitions;
   }
 
   &__content {
+    border: 2px solid transparent;
+    border-top: none;
     display: none;
-    padding: $spacer;
+    position: relative;
+    z-index: 0;
   }
 
-  &__actions {
-    display: flex;
-    padding: $spacer;
+
+  // nested accordions
+  .rim-accordion {    
+    border: none;
+    margin-bottom: map-get($spacers, 1 );
+
+    &.active {
+
+      .rim-accordion__content {
+        border: none;
+      }
+    }
+
+    .rim-accordion__header {
+      background-color: $secondary-background;
+    }
   }
 }

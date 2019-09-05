@@ -653,30 +653,17 @@
   display: flex;
 
   &__item {
-    margin: 0 .5rem;
+    border-right: 1px solid map-get($greyscale, 'light' );
+    padding: 0 .5rem;
     position: relative;
 
-    &::after {
-      background-color: map-get($greyscale, 'light' );
-      content: '';
-      pointer-events: none;
-      position: absolute;
-      right: -.5rem;
-      top: 0;
-      bottom: 0;
-      width: 1px;
-    }
-
     &:first-of-type {
-      margin-left: 0;
+      padding-left: 0;
     }
   
     &:last-of-type {
-      margin-right: 0;
-      
-      &::after {
-        display: none;
-      }
+      border-right: none;
+      padding-right: 0;
     }
   }
 
