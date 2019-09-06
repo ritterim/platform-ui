@@ -67,6 +67,13 @@
 // Styleguide Components.modal
 
 .rim-modal {
+
+  // print entire modal
+  @media print {
+    visibility: visible;
+    height: 100%;
+  }
+
   $self: &;
   display: flex;
   flex-direction: column;
