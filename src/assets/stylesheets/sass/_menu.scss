@@ -148,6 +148,7 @@
     left: 0;
     padding: map-get($spacers, 3) map-get($spacers, 4) map-get($spacers, 4);
     right: auto;
+    min-width: 20rem;
 
     a {
       color: $primary-color;
