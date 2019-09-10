@@ -10,7 +10,7 @@
 // | Class Name             |                    |                     |                      |                      |
 // | ---------------------- | ------------------ | ------------------- | -------------------- | -------------------- |
 // | `flex--align-center`   | `flex--column`     | `flex--justify-between` | `flex--justify-end` | `flex--justify-start` |
-// | `flex--wrap`   | 'flex-inline`   |  |  |  |
+// | `flex--wrap`   | `flex-inline`   | `flex--align-baseline`  |  |  |
 //
 // Styleguide Utilities.Flex
 .flex {
@@ -31,6 +31,10 @@
 
     &-start {
       align-items: flex-start;
+    }
+
+    &-baseline {
+      align-items: baseline;
     }
   }
   &--column {

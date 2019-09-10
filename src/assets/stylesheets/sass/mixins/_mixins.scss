@@ -191,3 +191,18 @@
     font-weight: 700;
   }
 }
+
+
+// Function the gets the next value in the map.
+@function nextKey($current-value, $mapped-list:$breakpoints) {
+  // get current key from list
+  $the-list: map-keys($mapped-list);
+
+  //find index of current value and add 1
+  $the-index: ( index( $the-list, $current-value) ) + 1;
+
+  // get value from list with new index
+  $new-value : nth($the-list, $the-index);
+
+  @return $new-value;
+}

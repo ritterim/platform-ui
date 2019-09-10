@@ -64,20 +64,6 @@
   }
 }
 
-// Function the gets the next value in the map.
-@function nextKey($current-value, $mapped-list:$breakpoints) {
-  // get current key from list
-  $the-list: map-keys($mapped-list);
-
-  //find index of current value and add 1
-  $the-index: ( index( $the-list, $current-value) ) + 1;
-
-  // get value from list with new index
-  $new-value : nth($the-list, $the-index);
-
-  @return $new-value;
-}
-
 
 @each $breakpoint, $size in $breakpoints {
   @each $display, $d in (s: show, h: hide) {
@@ -106,18 +92,6 @@
         // if there is another key above the selected key, run this
         @if $index < length($breakpoints) {
           @media screen and (min-width : ($size)) and (max-width: map-get($breakpoints, nextKey($breakpoint) )  - 1 ) {
-            @if $d == hide {
-              display: none !important;
-            } 
-            @else {
-              display: block !important;
-            }
-          }
-        }
-        // For the desktop breakpoint value or the last breakpoint
-        // in the map.
-        @else if $index == length($breakpoints) {
-          @media screen and (min-width: ($size)) {
             @if $d == hide {
               display: none !important;
             } 
