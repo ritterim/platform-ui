@@ -96,6 +96,7 @@
 
     &.active {
       background-color: $dropdown-background;
+      border-bottom-color: rgba(map-get($greyscale, 'light'), .5);
       color: $primary-color;
     }
   }
@@ -103,7 +104,6 @@
   .dropdown-menu {
     background-color: $dropdown-background;
     position: absolute;
-    right: 0;
     top: calc(100% + 1px);
     transition: opacity ease $duration, visibility ease $duration;
 
@@ -142,13 +142,11 @@
   }
 
   .agent-profile {
-    background-color: $dropdown-background;
-    box-sizing: border-box;
-    color: map-get($greyscale, 'white' );
-    left: 0;
-    padding: map-get($spacers, 3) map-get($spacers, 4) map-get($spacers, 4);
     right: auto;
-    min-width: 20rem;
+
+    @include breakpoint(tablet, min) {
+      width: 35rem;
+    }
 
     a {
       color: $primary-color;
@@ -158,30 +156,7 @@
       font-style: normal;
     }
 
-    &__heading {
-      color: $primary-color;
-      font-family: map-get($fonts, 'base');
-      line-height: 1;
-      margin-bottom: map-get($spacers, 3);
-    }
-
-    &__content-wrapper {
-      display: flex;
-      margin-left: -(map-get($spacers, 4));
-      width: calc(100% + #{map-get($spacers, 4)} * 2);
-
-      @include breakpoint(tablet, max) {
-        flex-direction: column;
-        padding: 0 map-get($spacers, 3);
-      }
-    }
-
     &__content {
-      padding: 0 map-get($spacers, 4);
-
-      @include breakpoint(tablet, max) {
-        padding: map-get($spacers, 3 ) 0;
-      }
 
       &:nth-of-type(2) {
         border-left: 1px solid map-get($brand-colors, 'med-blue' );
@@ -191,68 +166,12 @@
           border-top: 1px solid map-get($brand-colors, 'med-blue' );
         }
       }
-
-      .pill {
-        color: $dropdown-background;
-        margin-bottom: $spacer;
-      }
-    }
-
-    &__info-list {
-      list-style-type: none;
-      padding: 0;
-
-      &-item {
-        margin-bottom: map-get($spacers, 3);
-        padding-left: map-get($spacers, 4);
-        position: relative;
-
-        &:last-of-type {
-          margin-bottom: 0;
-        }
-
-        i {
-          left: 0;
-          position: absolute;
-          top: .375rem;
-        }
-      }
-    }
-
-    &__status-list {
-      margin: 0;
-    }
-
-    &__status-list-item {
-      display: flex;
-      margin-bottom: map-get($spacers, 3);
-
-      &:last-of-type {
-        margin-bottom: 0;
-      }
-
-      dt {
-        margin-right: map-get($spacers, 3);
-        width: 3.125rem;
-      }
-
-      dd {
-        margin: 0;
-        white-space: nowrap;
-      }
     }
   }
 }
 
 .agent-contact {
-  box-sizing: border-box;
-  font-size: map-get($font-percentage, 'sm');
-  padding: map-get($spacers, 4);
   width: 25rem;
-
-  .crm-form__field {
-    margin-bottom: map-get($spacers, 3);
-  }
 }
 
 .crm-actions {
