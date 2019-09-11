@@ -1,0 +1,32 @@
+// Borders
+
+.no-border {
+  border-color: transparent !important;
+}
+
+%border,
+.border {
+  border: 1px solid;
+
+  @each $name, $color in $all-colors {
+    &--color-#{$name} {
+      border-color: $color;
+    }
+  }
+
+  &-x {
+    border-width: 0 1px;
+    @extend %border;
+  }
+
+  &-y {
+    border-width: 1px 0;
+    @extend %border;
+  }
+
+  @each $direction, $d in $xy-border {
+    &-#{$d} {
+      border-#{$direction}: 1px solid;
+    }
+  }
+}
