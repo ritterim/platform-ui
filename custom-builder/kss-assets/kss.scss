@@ -180,6 +180,8 @@
   // main
   main {
     padding: 2rem;
+    position: relative;
+    z-index: 5;
     .rim-style-section--depth-0 {
       h1 {
         padding: map-get($spacers, 4) 0;
