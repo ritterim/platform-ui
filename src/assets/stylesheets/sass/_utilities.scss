@@ -4,6 +4,7 @@
 @import "utilities/spacers";
 @import "utilities/colors";
 @import "utilities/typography";
+@import "utilities/borders";
 
 .rotate-45 {
   @extend %rotate-45;
@@ -16,10 +17,6 @@
 // add-on to animate.css to speed up
 .animated.fastest {
   animation-duration: $transitions;
-}
-
-.no-border {
-  border-color: transparent !important;
 }
 
 .transparent {
@@ -188,6 +185,8 @@
 // | `overflow-hidden`       | `overflow-y--scroll`     | `overflow-x--scroll` |
 // |                         | `overflow-y--hidden`     | `overflow-x--hidden` |
 // 
+// The classes with the `--scroll` modifier will use our custom scroll bar.
+// 
 // Styleguide Utilities.Overflow
 
 .overflow {
@@ -205,6 +204,7 @@
 
     &--scroll {
       overflow-y: scroll;
+      @extend %scrollbar;
     }
 
     &--hidden {
@@ -217,10 +217,56 @@
 
     &--scroll {
       overflow-x: scroll;
+      @extend %scrollbar;
     }
 
     &--hidden {
       overflow-x: hidden;
     }
   }
+}
+
+
+// Scale Hover
+// 
+// The class `hover-scale` will scale the element, on hover, to 1.05 the original size.
+// 
+// 
+// Markup:
+// <section>
+//   <div class="block-container">
+//     <div class="block block-4">
+//       <div class="rim-card hover-scale">
+//         <h4 class="pb-2 mb-2">Hover over this</h4>
+//         <div class="rim-card__content">
+//           <p>Notice how it scales on hover</p>
+//         </div>
+//       </div>
+//     </div>
+//   </div>
+// <section>
+// 
+// Styleguide Utilities.ScaleHover
+.hover-scale {
+  transition: $transitions;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+
+// Transition
+// 
+// Using the `transition` class adds `transition: .2s;` to an element. You could use this to make specific hover effects by toggling a class. 
+// For example, if you wanted the border-color on a `rim-card` to change on a click, you could add the `transition` class, and toggle the class `border--color-{color}`.
+// 
+// Styleguide Utilities.Transition
+
+.transition {
+  transition: $transitions;
+}
+
+.scrollbar {
+  @extend %scrollbar;
 }

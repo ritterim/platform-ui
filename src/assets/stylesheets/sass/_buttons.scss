@@ -124,6 +124,24 @@
 //
 // Styleguide Components.Button.Accessibility
 
+// Active
+// 
+// By adding the class `active` to a button, the button's hover effect is mimicked.
+// 
+// Markup: 
+// <button class="button">Add <i class="fas fa-plus" focusable="false" aria-hidden="hidden"></i></button>
+// <button class="button button--lg active">Add <i class="fas fa-plus" focusable="false" aria-hidden="hidden"></i></button>
+// <div class="button-group mt-4">
+//   <a class="button button--secondary" role="button" aria-label="Download">
+//     <i class="fas fa-download" focusable="false" aria-hidden="hidden"></i>
+//   </a>
+//   <a class="button button--secondary active" role="button" aria-label="Pie Chart">
+//     <i class="fas fa-chart-pie" focusable="false" aria-hidden="hidden"></i>
+//   </a>
+// </div>
+// 
+// Styleguide Components.Button.Active
+
 @function color-contrast($color) {
   @return if(lightness($color) < 51, #FFF, #000);
 }
@@ -146,12 +164,11 @@
   padding: map-get($spacers, 1) $spacer;
   transition: $duration;
 
-  @media (pointer: fine) {
-    &:hover {
-      background-color: $secondary-background;
-      border-color: inherit;
-      color: $secondary-color;
-    }
+  &.active,
+  &:hover {
+    background-color: $secondary-background;
+    border-color: inherit;
+    color: $secondary-color;
   }
 
   &:disabled {
@@ -211,11 +228,10 @@
     height: 2rem;
     @extend %flex-center;
 
-    @media (pointer: fine) {
-      &:hover {
-        background-color: darken($secondary-background, $hue-threshold);
-        box-shadow: 0 0 0 .3rem lighten($secondary-background, $hue-threshold);
-      }
+    &.active,
+    &:hover {
+      background-color: darken($secondary-background, $hue-threshold);
+      box-shadow: 0 0 0 .3rem lighten($secondary-background, $hue-threshold);
     }
 
     &.loading {
@@ -238,6 +254,7 @@
     color: $secondary-color;
     transition: $transitions;
 
+    &.active,
     &:hover {
       background-color: darken($secondary-background, 10%);
       background-image: linear-gradient(45deg, $secondary-background, darken($secondary-background, $hue-threshold * 2));

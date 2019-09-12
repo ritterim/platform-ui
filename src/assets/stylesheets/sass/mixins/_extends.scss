@@ -17,3 +17,21 @@
 %rotate-180 {
   transform: rotate(180deg);
 }
+
+%scrollbar {
+
+  &::-webkit-scrollbar {
+    @include square(.5rem);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-clip: padding-box;
+    background-color: map-get($greyscale, 'light' );
+    border-radius: map-get($radius, 'button' );
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: map-get($greyscale, 'lighter' );
+    border-radius: map-get($radius, 'button' );
+  }
+}
