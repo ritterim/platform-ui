@@ -94,7 +94,7 @@
 //     <span class="sr-only">Loading...</span>
 //   </button>
 //   <button class="button button--secondary loading" aria-label="Download" aria-label="Loading...">
-//     <i class="fas fa-download" focusable="false" aria-hidden="hidden"></i>
+//     <i class="fas fa-download" aria-hidden="hidden"></i>
 //     <span class="sr-only">Loading...</span>
 //   </button>
 //   <button class="button button--post loading" aria-label="Loading...">
@@ -119,7 +119,7 @@
 //
 // Markup:
 // <a class="button button--secondary" role="button" aria-label="Download">
-//  <i class="fas fa-download" focusable="false" aria-hidden="hidden"></i>
+//  <i class="fas fa-download" aria-hidden="hidden"></i>
 // </a>
 //
 // Styleguide Components.Button.Accessibility
@@ -129,14 +129,14 @@
 // By adding the class `active` to a button, the button's hover effect is mimicked.
 // 
 // Markup: 
-// <button class="button">Add <i class="fas fa-plus" focusable="false" aria-hidden="hidden"></i></button>
-// <button class="button button--lg active">Add <i class="fas fa-plus" focusable="false" aria-hidden="hidden"></i></button>
+// <button class="button">Add <i class="fas fa-plus" aria-hidden="hidden"></i></button>
+// <button class="button button--lg active">Add <i class="fas fa-plus" aria-hidden="hidden"></i></button>
 // <div class="button-group mt-4">
 //   <a class="button button--secondary" role="button" aria-label="Download">
-//     <i class="fas fa-download" focusable="false" aria-hidden="hidden"></i>
+//     <i class="fas fa-download" aria-hidden="hidden"></i>
 //   </a>
 //   <a class="button button--secondary active" role="button" aria-label="Pie Chart">
-//     <i class="fas fa-chart-pie" focusable="false" aria-hidden="hidden"></i>
+//     <i class="fas fa-chart-pie" aria-hidden="hidden"></i>
 //   </a>
 // </div>
 // 
