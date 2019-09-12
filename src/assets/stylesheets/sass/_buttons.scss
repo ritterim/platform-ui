@@ -124,6 +124,24 @@
 //
 // Styleguide Components.Button.Accessibility
 
+// Active
+// 
+// By adding the class `active` to a button, the button's hover effect is mimicked.
+// 
+// Markup: 
+// <button class="button">Add <i class="fas fa-plus" focusable="false" aria-hidden="hidden"></i></button>
+// <button class="button button--lg active">Add <i class="fas fa-plus" focusable="false" aria-hidden="hidden"></i></button>
+// <div class="button-group mt-4">
+//   <a class="button button--secondary" role="button" aria-label="Download">
+//     <i class="fas fa-download" focusable="false" aria-hidden="hidden"></i>
+//   </a>
+//   <a class="button button--secondary active" role="button" aria-label="Pie Chart">
+//     <i class="fas fa-chart-pie" focusable="false" aria-hidden="hidden"></i>
+//   </a>
+// </div>
+// 
+// Styleguide Components.Button.Active
+
 @function color-contrast($color) {
   @return if(lightness($color) < 51, #FFF, #000);
 }
@@ -159,6 +177,12 @@
     cursor: not-allowed;
     opacity: .7;
     pointer-events: none;
+  }
+
+  &.active {
+    background-color: $secondary-background;
+    border-color: inherit;
+    color: $secondary-color;
   }
 
   &.loading {
@@ -218,6 +242,11 @@
       }
     }
 
+    &.active {
+      background-color: darken($secondary-background, $hue-threshold);
+      box-shadow: 0 0 0 .3rem lighten($secondary-background, $hue-threshold);
+    }
+
     &.loading {
 
       &:before {
@@ -239,6 +268,11 @@
     transition: $transitions;
 
     &:hover {
+      background-color: darken($secondary-background, 10%);
+      background-image: linear-gradient(45deg, $secondary-background, darken($secondary-background, $hue-threshold * 2));
+    }
+
+    &.active {
       background-color: darken($secondary-background, 10%);
       background-image: linear-gradient(45deg, $secondary-background, darken($secondary-background, $hue-threshold * 2));
     }
