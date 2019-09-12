@@ -164,12 +164,11 @@
   padding: map-get($spacers, 1) $spacer;
   transition: $duration;
 
-  @media (pointer: fine) {
-    &:hover {
-      background-color: $secondary-background;
-      border-color: inherit;
-      color: $secondary-color;
-    }
+  &.active,
+  &:hover {
+    background-color: $secondary-background;
+    border-color: inherit;
+    color: $secondary-color;
   }
 
   &:disabled {
@@ -177,12 +176,6 @@
     cursor: not-allowed;
     opacity: .7;
     pointer-events: none;
-  }
-
-  &.active {
-    background-color: $secondary-background;
-    border-color: inherit;
-    color: $secondary-color;
   }
 
   &.loading {
@@ -235,14 +228,8 @@
     height: 2rem;
     @extend %flex-center;
 
-    @media (pointer: fine) {
-      &:hover {
-        background-color: darken($secondary-background, $hue-threshold);
-        box-shadow: 0 0 0 .3rem lighten($secondary-background, $hue-threshold);
-      }
-    }
-
-    &.active {
+    &.active,
+    &:hover {
       background-color: darken($secondary-background, $hue-threshold);
       box-shadow: 0 0 0 .3rem lighten($secondary-background, $hue-threshold);
     }
@@ -267,12 +254,8 @@
     color: $secondary-color;
     transition: $transitions;
 
+    &.active,
     &:hover {
-      background-color: darken($secondary-background, 10%);
-      background-image: linear-gradient(45deg, $secondary-background, darken($secondary-background, $hue-threshold * 2));
-    }
-
-    &.active {
       background-color: darken($secondary-background, 10%);
       background-image: linear-gradient(45deg, $secondary-background, darken($secondary-background, $hue-threshold * 2));
     }
