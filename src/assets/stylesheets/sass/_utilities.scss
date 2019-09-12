@@ -185,6 +185,8 @@
 // | `overflow-hidden`       | `overflow-y--scroll`     | `overflow-x--scroll` |
 // |                         | `overflow-y--hidden`     | `overflow-x--hidden` |
 // 
+// The classes with the `--scroll` modifier will use our custom scroll bar.
+// 
 // Styleguide Utilities.Overflow
 
 .overflow {
@@ -202,6 +204,7 @@
 
     &--scroll {
       overflow-y: scroll;
+      @extend %scrollbar;
     }
 
     &--hidden {
@@ -214,6 +217,7 @@
 
     &--scroll {
       overflow-x: scroll;
+      @extend %scrollbar;
     }
 
     &--hidden {
@@ -249,4 +253,9 @@
   &:hover {
     transform: scale(1.05);
   }
+}
+
+
+.scrollbar {
+  @extend %scrollbar;
 }
