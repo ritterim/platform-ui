@@ -900,8 +900,6 @@ input[type="checkbox"].pill-filter, input[type="radio"].pill-filter {
 
   $border-radius: 3rem;
   .slider {
-    -moz-appearance: none;
-    -webkit-appearance: none;
     appearance: none;
     background-color: map-get($brand-colors, 'med-blue');
     border-radius: $border-radius;
@@ -920,8 +918,6 @@ input[type="checkbox"].pill-filter, input[type="radio"].pill-filter {
       opacity: .7;
     }
     &::-webkit-slider-thumb {
-      -moz-appearance: none;
-      -webkit-appearance: none;
       appearance: none;
       border: 1px solid;
       border-color: map-get($brand-colors, 'med-blue');
