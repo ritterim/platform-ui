@@ -47,7 +47,7 @@
         <li class="rim-style-nav__menu-item{{#if template.isHomepage}} active{{/if}}">
           <a class="rim-style-nav__menu-link" href="./">
             <i class="fad fa-home"></i>
-            <span class="rim-style-nav__name">Home</span>
+            <span class="rim-style-nav__name">Home v{{ options.version }}</span>
           </a>
         </li>
       {{#each menu}}
@@ -82,7 +82,7 @@
     <div class="crm-banner animated slideInDown fast flex--center-content flex--column pt-6" style="background-image: linear-gradient(to right, white, transparent), url('site-assets/stylesheets/images/style-guide-background.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
       <h1 class="mb-2">Welcome to the Platform UI Style Guide</h1>
       <p>Platform UI is the CSS framework we've developed to maintain the Ritter Platform of agent tools.</p>
-      <a href="/section-_contributing.html" class="button button--post button--lg">Get Started</a>
+      <a href="/section-_contributing.html" class="button button--post button--lg">Get Started v{{ options.version }}</a>
     </div>
     {{/if}}
     <article {{#if homepage}}class="block-container px-6 mx-6 py-4"{{/if}}>

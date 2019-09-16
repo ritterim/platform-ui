@@ -1,40 +1,141 @@
 // Tooltip
 //
-// This is a simple `data-attribute` alternative to the `title` tag.
 // Add your tooltip text to a `data-rim-tooltip` attribute on any item you want a tooltip.
-// 
+//
+// `data-placement` will set direction: `top`, `bottom`, `left`, `right`. Default placement is `top`.
+  //
+  // `data-inline` add a dashed underline to identify the tooltip.
+//
 // We use a font-awesome icon for our tooltip, but we don't want the hover to take place on the icon.
 // Be sure to add the tooltip data attribute to the `<div>` wrapper instead. Place any color changes,
 // whether they be a hover or not, on the `<div>` as well. This will ensure that our tooltip text
 // does not render a different font due to the icon having the font-awesome font style.
 //
 // Markup:
-// <div data-rim-tooltip="This is a tooltip" class="text-med-blue" aria-label="This is a tooltip">
-//   <i class=" fal fa-question-circle fa-lg" aria-hidden="true"></i>
+// <div class="block-container pb-3 flex flex--justify-between">
+//   <div data-placement="right" data-rim-tooltip="This is a right facing tooltip.">right</div>
+//   <div data-placement="bottom" data-rim-tooltip="This is a bottom facing tooltip.">bottom</div>
+//   <div data-placement="top" data-rim-tooltip="This is a top facing tooltip.">top</div>
+//   <div data-placement="left" data-rim-tooltip="This is a left facing tooltip.">left</div>
+// </div>
+// <div class="block-container pb-3">
+//   <p>Lorem ipsum dolor sit amet, <span data-rim-tooltip="This is a default tooltip with data-inline." data-inline="true">consectetur</span> adipiscing elit. Maecenas mi nunc, egestas id consectetur a, consectetur a lorem. Maecenas interdum enim felis, eget fringilla massa rhoncus sed.
+// </div>
+// <div class="block-container pb-3">
+//   <div data-placement="top" data-rim-tooltip="Not a true help tooltip.">
+//     <i class=" fal fa-question-circle fa-lg" focusable="false" aria-hidden="true"></i>
+//   </div>
 // </div>
 //
 // Styleguide Components.Tooltip
 
+
 [data-rim-tooltip] {
-  display: inline-flex;
+
+  $triangle: map-get($radius, 'default');
+  $background-color: rgba(map-get($greyscale, 'dark'), .9);
+
+  cursor: pointer;
+  display: inline-block;
   position: relative;
-  transition: $transitions;
-  &:hover:after {
-    background-color: map-get($greyscale, 'dark');
-    border-radius: map-get($radius, 'default');
+
+  &::after {
+    background-color: $background-color;
+    border-radius: $triangle;
     color: map-get($greyscale, 'white');
     content: attr(data-rim-tooltip);
+    font-size: map-get($fonts, 'size');
     font-size: map-get($font-percentage, 'sm');
     font-weight: normal;
-    margin-left: .3rem;
-    opacity: $opacity;
+    opacity: 0;
     padding: map-get($spacers, 1) map-get($spacers, 2);
     position: absolute;
-    text-shadow: none;
-    top: map-get($spacers, 2);
-    left: 0;
-    // white-space: nowrap;
-    min-width: 10rem;
-    max-width: 30rem;
+    text-align: center;
+    text-transform: none;
+    transition: opacity $transitions;
+    visibility: hidden;
+    white-space: nowrap;
+    z-index: 1;
   }
+
+  @each $direction, $d in $xy-border {
+    &.tooltip-#{$direction} {
+      // arrows
+      &::before {
+        border-style: solid;
+        border-width: $triangle;
+        content: "";
+        opacity: 0;
+        position: absolute;
+        transition: opacity $transitions;
+        visibility: hidden;
+        @if $direction == top {
+          border-color: $background-color transparent transparent transparent;
+          top: 0;
+          left: 50%;
+          margin-left: -$triangle;
+        } @else
+        if $direction == bottom {
+          border-color: transparent transparent $background-color transparent;
+          bottom: 0;
+          left: 50%;
+          margin-left: -$triangle;
+        } @else
+        if $direction == left {
+          border-color: transparent transparent transparent $background-color;
+          top: calc(50% - #{$triangle});
+          left: -$triangle;
+          margin-top: -$triangle;
+        } @else
+        if $direction == right {
+          border-color: transparent $background-color transparent transparent;
+          top: 50%;
+          top: calc(50% - #{$triangle});
+          right: -$triangle;
+          margin-top: -$triangle;
+        }
+      }
+
+      &::after {
+        @if $direction == top {
+          bottom: 100%;
+          left: 50%;
+          transform: translate(-50%);
+        } @else
+        if $direction == bottom {
+          top: 100%;
+          left: 50%;
+          transform: translate(-50%);
+        } @else
+        if $direction == left {
+          top: -$triangle;
+          right: 100%;
+          transform: translate(-1%);
+          margin-right: $triangle / 2;
+        } @else
+        if $direction == right {
+          top: -$triangle;
+          left: 110%;
+          transform: translate(-1%);
+          margin-left: $triangle / 2;
+        }
+      }
+    }
+  }
+
+  &:hover::after,
+  &[class^=tooltip-]:hover::before {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+[data-inline] {
+  border-bottom: 2px dotted map-get($brand-colors, 'med-blue');
+  display: inline-block;
+}
+
+// not fully realized :(
+.rim-tooltip--help {
+  color: map-get($brand-colors, 'med-blue') !important;
 }
