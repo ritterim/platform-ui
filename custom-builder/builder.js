@@ -17,6 +17,8 @@
  */
 
 const path = require('path');
+const pjson = require('../package.json');
+const puiVersion = pjson.version;
 
 // We want to extend kss-node's Handlebars builder so we can add options that
 // are used in our templates.
@@ -57,6 +59,9 @@ class KssBuilderHandlebars extends KssBuilderBaseHandlebars {
         multiple: false,
         describe: 'Title of the style guide',
         default: 'platform Style Guide'
+      },
+      version: {
+        default: pjson.version
       }
     });
   }

@@ -85,7 +85,7 @@
     &.has-dropdown {
       @include breakpoint(tablet, min) {
         position: relative;
-      }      
+      }
 
       @media (pointer: fine) {
         &:hover {
@@ -202,7 +202,7 @@
     overflow-y: scroll;
     overflow: -moz-scrollbars-none;
     -ms-overflow-style: none;
-    
+
     &::-webkit-scrollbar {
       width: 0 !important
     }
@@ -226,7 +226,7 @@
 
       @include breakpoint(tablet, max) {
         padding: $spacer 0;
-  
+
         &[data-rim-tooltip] {
           &:hover:after {
             background-color: inherit;
@@ -258,7 +258,7 @@
           }
         }
         &.active {
-          pointer-events: none; 
+          pointer-events: none;
         }
       }
     }
@@ -380,7 +380,7 @@
   }
 }
 
-.crm-actions__stats {  
+.crm-actions__stats {
   border-top: 1px solid rgba(map-get($greyscale, 'white'), .3);
   color: map-get($greyscale, 'white');
   display: flex;
@@ -504,17 +504,19 @@
 
 
 // Icon Menu
-// 
+//
 // When you need a horizontal list of icons, look no further than "Icon Menu". Use the mark up below
 // to get the list you want. Be sure to use the specific `icon-menu` classes. With this strcuture you have
 // the freedom to use any icon you want and make that icon change to whatever color you want on hover.
 // Simpy change the `<icon>` class to the desired font-awesome icon you want. Then, add the `text-{color}--hover`
 // class to the `icon-menu__action`. To see a list of available hover colors [click here](/section-typography.html#kssref-typography-utilities-color).
-// 
-// Be sure to always wrap the font icon in another element. We don't want to have the click event be on the `<icon>` itself.
-// 
-// You can add as many icons as you'd like. 
-// 
+//
+// | <i class="fas fa-exclamation-triangle text-orange"></i> Be sure to always wrap the font icon in another element. We don't want to have the click event be on the `<icon>` itself.|
+// | ---
+//
+//
+// You can add as many icons as you'd like.
+//
 // Markup:
 // <div class="icon-menu">
 //   <div class="icon-menu__item">
@@ -564,10 +566,10 @@
 //     </a>
 //   </div>
 // </div>
-// 
+//
 // Styleguide Components.IconMenu
 
-// icon menu 
+// icon menu
 .icon-menu {
   align-items: center;
   display: flex;
@@ -580,7 +582,7 @@
     &:first-of-type {
       padding-left: 0;
     }
-  
+
     &:last-of-type {
       border-right: none;
       padding-right: 0;
@@ -592,7 +594,7 @@
     height: 1.5rem;
     width: 2rem;
     @extend %flex-center;
-  
+
     &:hover {
       color: map-get($error-colors, 'default' );
       transform: scale(1.1);
