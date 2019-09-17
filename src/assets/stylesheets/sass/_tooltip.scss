@@ -36,7 +36,6 @@
   $background-color: rgba(map-get($greyscale, 'dark'), .9);
 
   cursor: pointer;
-  display: inline-block;
   position: relative;
 
   &::after {
