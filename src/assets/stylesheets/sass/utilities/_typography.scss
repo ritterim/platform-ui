@@ -143,8 +143,8 @@
 //
 // | General           |                    |                     |                      |
 // | ----------------- | ------------------ | ------------------- | -------------------- |
-// | `text--uppercase` | `text--underline`  | `text-bold`         | `text-nowrap` <i class="fas fa-exclamation-triangle fa-sm text-orange"></i>      |
-// | `text-center` <i class="fas fa-exclamation-triangle fa-sm text-orange"></i>   |                    |                     |                      |
+// | `text--uppercase` | `text--underline`  | `text--bold`         | `text--nowrap` <i class="fas fa-exclamation-triangle fa-sm text-orange"></i>      |
+// | `text--center` <i class="fas fa-exclamation-triangle fa-sm text-orange"></i>   | `text--right` <i class="fas fa-exclamation-triangle fa-sm text-orange"></i>                    |                     |                      |
 //
 // | <i class="fas fa-exclamation-triangle fa-sm text-orange"></i> NOTE: A `flex--` utility should be used were possible. |
 // | --
@@ -166,6 +166,9 @@
   }
   &--center {
     text-align: center;
+  }
+  &--right {
+    text-align: right;
   }
   // text shadow using $greyscale
   @each $name, $color in $greyscale {
