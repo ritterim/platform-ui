@@ -12,8 +12,8 @@ ul {
   &-list {
     list-style: none;
     flex-grow: 1;
-    margin: 0 $spacer;
-    padding: 0 0 0 map-get($spacers, 4);
+    margin: 0;
+    padding: 0;
 
     @include breakpoint(desktop, max) {
       margin: 0;
@@ -22,6 +22,23 @@ ul {
     &__inline {
       display: flex;
       flex-wrap: wrap;
+    }
+
+    &--arrow {
+      margin: 0 $spacer;
+      padding: 0 0 0 map-get($spacers, 4);
+      .post-item {
+        &:before {
+          color: map-get($brand-colors, 'salmon');
+          content: '\f30b';
+          display: inline-block;
+          font-family: 'Font Awesome 5 Pro';
+          font-weight: 900;
+          left: -(map-get($spacers, 4));
+          position: absolute;
+          transform: rotate(30deg);
+        }
+      }
     }
   }
 
@@ -32,17 +49,6 @@ ul {
 
     &:not(:last-of-type) {
       border-bottom: 1px solid map-get($greyscale, 'lighter');
-    }
-
-    &:before {
-      color: map-get($brand-colors, 'salmon');
-      content: '\f30b';
-      display: inline-block;
-      font-family: 'Font Awesome 5 Pro';
-      font-weight: 900;
-      left: -(map-get($spacers, 4));
-      position: absolute;
-      transform: rotate(30deg);
     }
 
     &__duration {
