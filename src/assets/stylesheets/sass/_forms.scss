@@ -899,7 +899,7 @@ input[type="checkbox"].pill-filter, input[type="radio"].pill-filter {
   margin-bottom: 1rem;
   width: 100%;
   @supports not (-ms-high-contrast: none) {
-    // targeting averything *but* IE
+    // targeting averything *but* IE //
 
     $border-radius: 3rem;
     .slider {
@@ -911,11 +911,6 @@ input[type="checkbox"].pill-filter, input[type="radio"].pill-filter {
       margin: 0;
       outline: none;
       transition: $transitions;
-
-      // ie specific
-      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-        padding: .3rem;
-      }
 
       &:hover {
         opacity: .7;

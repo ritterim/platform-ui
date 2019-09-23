@@ -1,6 +1,6 @@
 {
   "name": "@ritterim/platform-ui",
-  "version": "0.8.9",
+  "version": "0.8.10",
   "description": "A CSS framework used by Ritter Insurance Marketing (RIM) for our platform of agent tools.",
   "homepage": "https://style.rimdev.io",
   "main": "gulpfile.js",
