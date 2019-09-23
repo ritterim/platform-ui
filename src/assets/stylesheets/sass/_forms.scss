@@ -912,11 +912,6 @@ input[type="checkbox"].pill-filter, input[type="radio"].pill-filter {
       outline: none;
       transition: $transitions;
 
-      // ie specific
-      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-        padding: .3rem;
-      }
-
       &:hover {
         opacity: .7;
       }
