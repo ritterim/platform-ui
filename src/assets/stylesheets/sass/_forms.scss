@@ -899,7 +899,7 @@ input[type="checkbox"].pill-filter, input[type="radio"].pill-filter {
   margin-bottom: 1rem;
   width: 100%;
   @supports not (-ms-high-contrast: none) {
-    // targeting averything *but* IE
+    // targeting averything *but* IE //
 
     $border-radius: 3rem;
     .slider {
