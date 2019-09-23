@@ -1,3 +1,26 @@
+// Lists
+//
+// Markup:
+// <ul class="post-list post-list__inline">
+//   <li class="post-item">This is an inline list item.</li>
+//   <li class="post-item">This is an inline list item.</li>
+//   <li class="post-item">This is an inline list item.</li>
+// </ul>
+// <br>
+// <ul class="post-list">
+//   <li class="post-item">This is a list item.</li>
+//   <li class="post-item">This is a list item.</li>
+//   <li class="post-item">This is a list item.</li>
+// </ul>
+// <br>
+// <ul class="post-list post-list--arrow">
+//   <li class="post-item">This is a list item with a leading arrow.</li>
+//   <li class="post-item">This is a list item with a leading arrow.</li>
+//   <li class="post-item">This is a list item with a leading arrow.</li>
+// </ul>
+//
+// Styleguide Components.Lists
+
 ul {
   margin: 0;
   padding: 0 0 0 $spacer;

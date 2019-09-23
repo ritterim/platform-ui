@@ -2,7 +2,7 @@
 
 Platform UI is a CSS framework, rooted in Sass, used by [Ritter Insurance Marketing](https://ritterim.com) (RIM) for our platform of agent tools. It's being built as a replacement for existing frameworks while considering some of our unique needs.
 
-As we start to reach a 1.0 version of Platform UI, we hope to create an easy to use framework that other developers can implement.
+As continue to improve Platform UI, we hope to create an easy to use framework that other developers can implement.
 
 ## Publishing
 
@@ -24,7 +24,7 @@ Documentation for Platform UI is generated on every build using [KSS-Node](https
   - [x] specifically to handle "states"
   - [x] disabled, active
   - [x] corner flags/markers
-- [ ] Accordions v0.8
-  - [ ] Refactor accordions visually to view more table-like
+- [x] Accordions v0.8
+  - [x] Refactor accordions visually to view more table-like
 - [ ] Search UI v0.9
 - [x] Styleguide redesign v1.0 😃

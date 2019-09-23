@@ -3,7 +3,7 @@
 //
 // Markup:
 // <form action="" class="rim-form block-container tablet-up-3 laptop-up-4 desktop-up-6 blocks-mb-3 blocks-py-2 blocks-px-2">
-//   <div class="block">
+//   <div class="block rim-required">
 //     <label for="first-name" class="rim-form__field">First Name
 //       <input id="first-name" type="text" placeholder="First Name">
 //     </label>
@@ -282,7 +282,7 @@ input[type="checkbox"] {
 
     &:after {
       bottom: 1px;
-      color: map-get($greyscale, 'base');
+      color: inherit;
       content: '\f00c';
       font-family: "Font Awesome 5 Pro";
       font-size: map-get($font-percentage, 'xs');
@@ -370,7 +370,8 @@ input[type="radio"] {
         color: map-get($greyscale, 'white');
 
         &:before {
-          border: 1px solid map-get($greyscale, 'white');
+          border: 1px solid;
+          border-color: inherit;
         }
       }
     }
@@ -897,40 +898,43 @@ input[type="checkbox"].pill-filter, input[type="radio"].pill-filter {
 .slidecontainer {
   margin-bottom: 1rem;
   width: 100%;
+  @supports not (-ms-high-contrast: none) {
+    // targeting averything *but* IE
 
-  $border-radius: 3rem;
-  .slider {
-    appearance: none;
-    background-color: map-get($brand-colors, 'med-blue');
-    border-radius: $border-radius;
-    width: 100%;
-    height: .5rem;
-    margin: 0;
-    outline: none;
-    transition: $transitions;
-
-    // ie specific
-    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-      padding: .3rem;
-    }
-
-    &:hover {
-      opacity: .7;
-    }
-    &::-webkit-slider-thumb {
+    $border-radius: 3rem;
+    .slider {
       appearance: none;
-      border: 1px solid;
-      border-color: map-get($brand-colors, 'med-blue');
+      background-color: map-get($brand-colors, 'med-blue');
       border-radius: $border-radius;
-      background-color: map-get($greyscale, 'white');
-      cursor: pointer;
-      @include square(1.3rem);
+      width: 100%;
+      height: .5rem;
+      margin: 0;
+      outline: none;
+      transition: $transitions;
 
-    }
-    &::-moz-range-thumb {
-      background-color: map-get($greyscale, 'white');
-      cursor: pointer;
-      @include square(25px);
+      // ie specific
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        padding: .3rem;
+      }
+
+      &:hover {
+        opacity: .7;
+      }
+      &::-webkit-slider-thumb {
+        appearance: none;
+        border: 1px solid;
+        border-color: map-get($brand-colors, 'med-blue');
+        border-radius: $border-radius;
+        background-color: map-get($greyscale, 'white');
+        cursor: pointer;
+        @include square(1.3rem);
+
+      }
+      &::-moz-range-thumb {
+        background-color: map-get($greyscale, 'white');
+        cursor: pointer;
+        @include square(25px);
+      }
     }
   }
 }
