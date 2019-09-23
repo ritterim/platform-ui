@@ -1,7 +1,7 @@
 // Borders
-// 
+//
 // You can add specific borders to elements by using the following classes:
-// 
+//
 // Markup:
 // <div class="block-container mobile-up-2 blocks-px-2 blocks-mb-3">
 //   <div class="block">
@@ -34,16 +34,16 @@
 //     </div>
 //   </div>
 // </div>
-// 
+//
 // | Classes        |                         |                 |                 |
 // | -------------- | ----------------------- | --------------- | --------------- |
 // | `no-border`    | `border--color-{color}` |                 |                 |
 // | `border`       | `border-x`              | `border-y`      |                 |
 // | `border-t`     | `border-r`              | `border-b`      | `border-l`      |
-// 
-// 
+//
+//
 // The `border--color-{color}` class combines the [brand colors](/section-color.html#kssref-color-brandcolors), and [secondary colors](/section-color.html#kssref-color-secondarycolors) maps.
-// 
+//
 // Styleguide Utilities.Borders
 
 .no-border {
@@ -66,7 +66,6 @@
 
   @each $direction, $d in $xy-border {
     &-#{$d} {
-      border-width: 0;
       border-#{$direction}-width: 1px;
       @extend %border;
     }
