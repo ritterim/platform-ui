@@ -14,6 +14,10 @@
   @extend %rotate-180;
 }
 
+.float-right {
+  float: right;
+}
+
 // add-on to animate.css to speed up
 .animated.fastest {
   animation-duration: $transitions;
@@ -82,8 +86,8 @@
 // Remember that when positioning an element absolute, the element will position
 // according to the closest parent element that has `position: relative`. For this
 // you can use the class `pos-rel` on the parent element you want to position the
-// absolute element to. 
-// 
+// absolute element to.
+//
 // | Class                  | Position              | X-Axis                                    | Y-Axis                                     |
 // | ---------------------- | --------------------- | ----------------------------------------- | ------------------------------------------ |
 // | `pos-rel`              | `position: relative`  |                                           |                                            |
@@ -97,7 +101,7 @@
 // | `pin-center-bottom`    |                       |                                           | `bottom: 50%; transform: translateY(-50%)` |
 // | `pin-center-left`      |                       | `left: 50%; transform: translateX(-50%)`  |                                            |
 //
-// 
+//
 //
 // Styleguide Utilities.Position
 
@@ -156,14 +160,14 @@
 }
 
 
-// Height and Width 
-// 
+// Height and Width
+//
 // These classes give you `width: 100%` and `height: 100%`.
-// 
+//
 // | Height     | Width         |                     |                      |
 // | ---------- | ------------- | ------------------- | -------------------- |
 // | `h-100`    | `w-100`       |                     |                      |
-// 
+//
 // Styleguide Utilities.HeightWidth
 
 .h-100 {
@@ -176,17 +180,17 @@
 
 
 // Overflow
-// 
+//
 // You can add or hide specific overflow on an element with the following classes.
-// 
+//
 // | overflow                | overflow-y               | overflow-x           |
 // | ----------------------- | ------------------------ | -------------------- |
 // | `overflow-visible`      | `overflow-y`             | `overflow-x`         |
 // | `overflow-hidden`       | `overflow-y--scroll`     | `overflow-x--scroll` |
 // |                         | `overflow-y--hidden`     | `overflow-x--hidden` |
-// 
+//
 // The classes with the `--scroll` modifier will use our custom scroll bar.
-// 
+//
 // Styleguide Utilities.Overflow
 
 .overflow {
@@ -228,10 +232,10 @@
 
 
 // Scale Hover
-// 
+//
 // The class `hover-scale` will scale the element, on hover, to 1.05 the original size.
-// 
-// 
+//
+//
 // Markup:
 // <section>
 //   <div class="block-container">
@@ -245,7 +249,7 @@
 //     </div>
 //   </div>
 // <section>
-// 
+//
 // Styleguide Utilities.ScaleHover
 .hover-scale {
   transition: $transitions;
@@ -257,10 +261,10 @@
 
 
 // Transition
-// 
-// Using the `transition` class adds `transition: .2s;` to an element. You could use this to make specific hover effects by toggling a class. 
+//
+// Using the `transition` class adds `transition: .2s;` to an element. You could use this to make specific hover effects by toggling a class.
 // For example, if you wanted the border-color on a `rim-card` to change on a click, you could add the `transition` class, and toggle the class `border--color-{color}`.
-// 
+//
 // Styleguide Utilities.Transition
 
 .transition {

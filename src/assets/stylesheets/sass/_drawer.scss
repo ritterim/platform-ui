@@ -1,16 +1,16 @@
 // Drawer
 //
 // Drawers slide up or in-from-right.
-// 
+//
 // There are some key classes you need for the drawer to work properly. Be sure to use `rim-drawer rim-drawer--closed` on each drawer.
 // From this point, you want to add the proper animation class to the drawer. In the examples below, we have the classes set for the
 // direction of the drawer animation. Now all you need to do is toggle the class `rim-drawer--closed` to show or hide the drawer.
-// 
+//
 // You can have a drawer open from the bottom by using the class `rim-drawer-bottom`. To have a drawer open from the right
 // use `rim-drawer-right`.
-// 
+//
 // If you want a smaller drawer you can add the class `rim-drawer--single-row`. This class has a min-height and is
-// best used in cases where less content will be needed. 
+// best used in cases where less content will be needed.
 //
 // Markup:
 // <button class="button button--post button--lg rim-drawer__open" data-drawer="default">Toggle default drawer</button>
@@ -39,13 +39,13 @@
 
 
 // Drawer Right
-// 
+//
 // This Drawer slides in from the right.
-// 
+//
 // Markup:
 // <button class="button button--post button--lg rim-drawer__open" data-drawer="right">Toggle right drawer</button>
 // <div id="right" class="rim-drawer rim-drawer-right slide-right-enter-active rim-drawer--closed background-light-yellow pt-5 pb-3 px-4">
-//   <div class="flex flex--align-center flex--justify-between pb-3 mb-2">            
+//   <div class="flex flex--align-center flex--justify-between pb-3 mb-2">
 //     <div class="flex flex--align-center">
 //       <button class="button button--secondary js-toggle-form">
 //         <i class="far fa-plus"></i>
@@ -55,13 +55,13 @@
 //     <button class="button rim-drawer__close" data-drawer="right">Close <i class="fas fa-times" aria-hidden="true"></i></button>
 //   </div>
 // </div>
-// 
+//
 // Styleguide Components.Drawer.Right
 
 .rim-drawer {
   $self: &;
   background-color: map-get($greyscale, 'white' );
-  box-shadow: 0 -1rem 2rem rgba(map-get($greyscale, 'black'), .5);
+  box-shadow: 0 -1rem 2rem rgba(map-get($greyscale, 'black'), .4);
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -84,7 +84,7 @@
   &--single-row {
     & {
       #{$self}__inner {
-        min-height: 10rem !important;
+        min-height: 8rem !important;
       }
     }
   }
