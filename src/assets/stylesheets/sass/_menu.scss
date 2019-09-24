@@ -576,7 +576,7 @@
 
   &__item {
     border-right: 1px solid map-get($greyscale, 'light' );
-    padding: 0 .5rem;
+    padding: 0 map-get($spacers, 1);
     position: relative;
 
     &:first-of-type {
@@ -591,8 +591,8 @@
 
   &__action {
     color: lighten(map-get($greyscale, 'light'), 10%);
-    height: 1.5rem;
-    width: 2rem;
+    height: $spacer * 1.5;
+    width: map-get($spacers, 4);
     @extend %flex-center;
 
     &:hover {
