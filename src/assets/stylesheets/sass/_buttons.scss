@@ -39,12 +39,17 @@
 // Include the class `has-text` on the secondary button. So the classes tould be, `button button--secondary has-text`.
 // What this does is add `width: auto` and a little padding for the text.
 //
+// If you want to display text only on hover, add a data attribute named `data-button-text`, this will insert the value of that attribute on hover.
+//
 // - .button
 // - .button .button--secondary
 // - .button .button--secondary .has-text
 //
 // Markup:
-// <button class="button button--secondary has-text">Open <i class="fas fa-download"></i></button>
+// <div class="button-group">
+//   <button class="button button--secondary has-text">Open <i class="fas fa-download"></i></button>
+//   <button class="button button--secondary" data-button-text="Download"><i class="fas fa-download"></i></button>
+// </div>
 //
 // Weight: 4
 //
@@ -232,6 +237,29 @@
     &:hover {
       background-color: darken($secondary-background, $hue-threshold);
       box-shadow: 0 0 0 .3rem lighten($secondary-background, $hue-threshold);
+    }
+
+    &[data-button-text] {
+      transition: $duration;
+
+      &:after {
+        display: none;
+        width: 0;
+        content: attr(data-button-text);
+      }
+
+      &:hover {
+        width: auto;
+        padding: 0 map-get($spacers, 1 );
+
+        &:after {
+          width: auto;
+          display: inline-block;
+          padding-right: map-get($spacers, 2 );
+        }
+
+      }
+
     }
 
     &.loading {
