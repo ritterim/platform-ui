@@ -56,10 +56,10 @@
 .rim-loader {
   animation: rotation 1s infinite linear;
   border: 2px solid rgba(160, 160, 160, 0.2);
-  border-radius: 50%;
+  border-radius: map-get($radius, 'round');
   border-top-color: rgba(160, 160, 160, 0.7);
-  height: 1.4em;
-  width: 1.4em;
+  @include square(1.4rem);
+  @include square(1.4rem, 'max');
 }
 
 .pointer {
