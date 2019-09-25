@@ -128,7 +128,7 @@
   }
 
   &--overlay {
-    background: rgba(map-get($greyscale, 'base'), .5);
+    background: rgba(map-get($greyscale, 'black'), .5);
     height: 100%;
     width: 100%;
     position: fixed;

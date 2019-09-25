@@ -44,6 +44,10 @@
   .hide-print {
     display: none;
   }
+  .full-height-print {
+    height: 100% !important;
+    overflow-y: visible !important;
+  }
   .platform {
     display: block;
     main {
