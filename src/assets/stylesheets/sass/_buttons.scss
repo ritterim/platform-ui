@@ -147,10 +147,6 @@
 // 
 // Styleguide Components.Button.Active
 
-@function color-contrast($color) {
-  @return if(lightness($color) < 51, #FFF, #000);
-}
-
 .button {
 
   $border-radius: map-get($radius, 'button');
