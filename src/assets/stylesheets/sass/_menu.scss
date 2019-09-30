@@ -109,9 +109,7 @@
 
     @include breakpoint(tablet, max) {
       height: calc(100vh - #{$menu-height});
-
-      // accounts for border-top
-      top: calc(#{$menu-height} + 1px);
+      overflow-y: scroll;
       width: 100%;
     }
 
@@ -171,6 +169,9 @@
 }
 
 .agent-contact {
+  height: calc(100vh - #{$menu-height});
+  max-height: 41.5rem;
+  overflow-y: scroll;
   width: 25rem;
 }
 
@@ -196,15 +197,17 @@
   @include breakpoint(tablet, max) {
     overflow-y: scroll;
     padding-bottom: map-get($spacers, 4 );
-  }
+  }  
 
-  @include breakpoint($max-height, max-height) {
-    overflow-y: scroll;
-    overflow: -moz-scrollbars-none;
-    -ms-overflow-style: none;
-
-    &::-webkit-scrollbar {
-      width: 0 !important
+  .toggle & {
+    @include breakpoint($max-height, max-height) {
+      overflow-y: scroll;
+      overflow: -moz-scrollbars-none;
+      -ms-overflow-style: none;
+  
+      &::-webkit-scrollbar {
+        width: 0 !important
+      }
     }
   }
 
@@ -281,7 +284,6 @@
     width: 100%;
     transition: $transitions;
     flex-direction: column;
-    justify-content: space-around;
 
     @media (pointer: fine) {
       &:hover {
@@ -299,7 +301,8 @@
 
     // aside open at tablet + resolutions
     .toggle & {
-      padding: $spacer 0;
+      justify-content: space-around;
+      padding: $spacer map-get($spacers, 1 );
       &[data-rim-tooltip] {
         &:hover:after {
           background-color: inherit;
@@ -311,6 +314,7 @@
       }
       span {
         display: block;
+        text-align: center;
       }
       img {
         left: $spacer;
@@ -357,21 +361,18 @@
     }
 
     img {
-      margin-bottom: $spacer / 2;
+      max-height: $spacer * 1.5;
       transition: $transitions;
+      
       &:not(.mini-image) {
         display: none;
       }
     }
+    
     &.active {
       &:before, &:after {
         top: 40%;
       }
-    }
-
-    img {
-      max-height: $spacer * 1.5;
-      transition: $transitions;
     }
 
     span {
