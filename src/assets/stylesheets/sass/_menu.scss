@@ -109,9 +109,7 @@
 
     @include breakpoint(tablet, max) {
       height: calc(100vh - #{$menu-height});
-
-      // accounts for border-top
-      top: calc(#{$menu-height} + 1px);
+      overflow-y: scroll;
       width: 100%;
     }
 
@@ -171,6 +169,9 @@
 }
 
 .agent-contact {
+  height: calc(100vh - #{$menu-height});
+  max-height: 41.5rem;
+  overflow-y: scroll;
   width: 25rem;
 }
 
