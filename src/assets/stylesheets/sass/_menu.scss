@@ -195,6 +195,7 @@
   overflow: visible;
 
   @include breakpoint(tablet, max) {
+    overflow-x: hidden;
     overflow-y: scroll;
     padding-bottom: map-get($spacers, 4 );
   }  
