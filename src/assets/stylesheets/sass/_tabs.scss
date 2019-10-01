@@ -67,14 +67,11 @@ $tab-active-color:    map-get($brand-colors, 'navy' );
 }
 
 .rim-tab {
+  flex: 1 1 auto;
   height: $tab-height;
   margin-bottom: 0;
+  max-width: 16rem;
   position: relative;
-  width: 16rem;
-
-  @include breakpoint(tablet, max) {
-    flex: 1 1 auto;
-  }
 
   &__anchor {
     background-color: transparent;
