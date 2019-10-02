@@ -204,7 +204,6 @@
 
     &--scroll {
       overflow-y: scroll;
-      @extend %scrollbar;
     }
 
     &--hidden {
@@ -217,7 +216,6 @@
 
     &--scroll {
       overflow-x: scroll;
-      @extend %scrollbar;
     }
 
     &--hidden {
