@@ -80,4 +80,32 @@
     border-color: map-get($greyscale, 'dark') !important;
     color: map-get($greyscale, 'base') !important;;
   }
+    .modal-open {
+    visibility: hidden;
+  }
+  @supports (-ms-ime-align:auto) {
+    .modal-open {
+      opacity: 0;
+    }
+  }
+  .rim-modal {
+    color: black !important;
+    position: absolute !important;
+    overflow: visible !important;
+    width: 100% !important;
+    height: 100% !important;
+    .rim-modal__content {
+      background-color: white !important;
+      overflow: visible !important;
+    }
+    .block-errors {
+      visibility: hidden;
+    }
+    .actions {
+      visibility: hidden;
+    }
+    input {
+      color: black !important;
+    }
+  }
 }
