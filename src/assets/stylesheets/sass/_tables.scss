@@ -90,24 +90,66 @@
 //   </tbody>
 // </table>
 //
+// Sometimes you don't want a resposive table? just add `unresponsive` to `rim-table`
+//
+// <table class="rim-table unresponsive">
+//   <thead>
+//     <tr>
+//       <th></th>
+//       <th>option one</th>
+//       <th>option two</th>
+//     </tr>
+//   </thead>
+//   <tbody>
+//     <tr>
+//       <td>
+//         Desc
+//       </td>
+//       <td>
+//         Pork Buns
+//       </td>
+//       <td>
+//         Pork Buns
+//       </td>
+//     </tr>
+//     <tr>
+//       <td>
+//         price
+//       </td>
+//       <td>
+//         $5.00
+//       </td>
+//       <td>
+//         $9.00
+//       </td>
+//     </tr>
+//     <tr>
+//       <td>
+//         qty
+//       </td>
+//       <td>
+//         5
+//       </td>
+//       <td>
+//         2
+//       </td>
+//     </tr>
+//   </tbody>
+// </table>
+//
 // Styleguide Tables
 
-
-table,
-.rim-table {
-
+.rim-table,
+table {
   $border-radius: map-get($radius, 'default');
   $table-border: 1px solid lighten(map-get($greyscale, 'light'), $hue-threshold * 2);
-
   $responsive-table-bottom-gap: $spacer * 1.5;
-  $responsive-table-label-bg: map-get($greyscale, 'lighter' );
-
+  $responsive-table-label-bg: map-get($greyscale, 'lighter');
   width: 100%;
   background-color: transparent;
   border-radius: $border-radius;
   border-collapse: separate;
   border-spacing: 0;
-
   @include breakpoint(tablet, max) {
     border: none;
   }
@@ -118,7 +160,6 @@ table,
     color: map-get($greyscale, 'base');
     font-weight: bold;
     text-align: left;
-
     @include breakpoint(tablet, max) {
       border: none;
     }
@@ -136,7 +177,6 @@ table,
   tr {
     background-color: transparent;
     transition: $transitions * 3;
-
     @include breakpoint(tablet, min) {
       &:hover {
         background-color: map-get($greyscale, 'lighter');
@@ -155,49 +195,53 @@ table,
     td {
       border-bottom: 1px solid lighten(map-get($greyscale, 'light'), $hue-threshold * 2);
     }
+
     &:last-child {
       td {
         border-color: transparent;
       }
     }
   }
-
   @include breakpoint(tablet, max) {
-    thead tr {
-      position: absolute;
-      top: -9999em;
-      left: -9999em;
-    }
+    &:not(.unresponsive) {
 
-    tr {
-      border-bottom: none;
-      display: block;
 
-      td {
-        align-items: center;
-        border: none;
-        display: flex;
-        justify-content: space-between;
-        text-align: right;
+      thead tr {
+        position: absolute;
+        top: -9999em;
+        left: -9999em;
+      }
 
-        &:before {
-          content: attr(data-label);
-          display: inline-block;
-          font-weight: bold;
-          line-height: 1.5;
-          min-width: 40%;
-          padding-right: map-get($spacers, 2 );
-          text-align: left;
+      tr {
+        border-bottom: none;
+        display: block;
+
+        td {
+          align-items: center;
+          border: none;
+          display: flex;
+          justify-content: space-between;
+          text-align: right;
+
+          &:before {
+            content: attr(data-label);
+            display: inline-block;
+            font-weight: bold;
+            line-height: 1.5;
+            min-width: 40%;
+            padding-right: map-get($spacers, 2);
+            text-align: left;
+          }
         }
       }
-    }
 
-    tr + tr {
-      margin-top: $responsive-table-bottom-gap;
+      tr + tr {
+        margin-top: $responsive-table-bottom-gap;
+      }
+      /* Get table cells to act like rows */
     }
-    /* Get table cells to act like rows */
   }
-    &--no-hover {
+  &--no-hover {
     tr {
       background-color: transparent !important;
     }
