@@ -212,15 +212,20 @@
   }
 
   i {
-    margin: 0 map-get($spacers, 1);
-
-    @include breakpoint(tablet, max) {
-      display: none;
-    }
+    margin: 0 map-get($spacers, 1);    
   }
 
   [aria-hidden="hidden"] {
     pointer-events: none;
+  }
+
+  &:not(.button--secondary) {
+
+    i {
+      @include breakpoint(tablet, max) {
+        display: none;
+      }
+    }    
   }
 
   &--secondary {
