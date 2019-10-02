@@ -531,8 +531,8 @@
     @include breakpoint(tablet, max) {
       overflow-x: hidden;
 
-      // height of mobile button wrapper and half of button
-      padding-bottom: 4.75rem;
+      // accounts for height of mobile menu and Help button
+      padding-bottom: 6rem;
       position: relative;
       z-index: 1;
     }

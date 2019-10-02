@@ -93,11 +93,20 @@
     padding: map-get($spacers, 4);
     position: relative;
     width: 100%;
+
+    @include breakpoint(tablet, max) {
+      padding-top: map-get($spacers, 5);
+    }
+
     #{$self}__close {
       position: absolute;
       right: -$spacer;
       top: 50%;
       transform: translate(-50%, -50%);
+
+      @include breakpoint(tablet, max) {
+        top: 1.5rem;
+      }
     }
   }
   &__content {
@@ -113,6 +122,10 @@
     right: 1rem;
     position: fixed;
     z-index: 25;
+
+    @include breakpoint(tablet, max) {
+      bottom: 3.5rem;
+    }
   }
 }
 

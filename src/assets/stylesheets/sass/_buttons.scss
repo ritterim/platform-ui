@@ -219,10 +219,10 @@
     pointer-events: none;
   }
 
-  &:not(.button--secondary) {
+  &:not(.button--secondary):not(.mobile-menu-action) {
 
     i {
-      @include breakpoint(tablet, max) {
+      @include breakpoint(lg-tablet, max) {
         display: none;
       }
     }    
@@ -278,6 +278,15 @@
     &.has-text {
       padding: 0 map-get($spacers, 2 );
       width: auto;
+
+      @include breakpoint(lg-tablet, max) {
+        font-size: 0;
+        width: 2rem;
+
+        i {
+          font-size: initial;
+        }
+      }
     }
   }
 
