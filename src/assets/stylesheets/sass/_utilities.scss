@@ -102,11 +102,11 @@
 // Styleguide Utilities.Position
 
 .pos-rel {
-  position: relative;
+  position: relative !important;
 }
 
 .pos-abs {
-  position: absolute;
+  position: absolute !important;
 }
 
 .pin {
@@ -204,7 +204,6 @@
 
     &--scroll {
       overflow-y: scroll;
-      @extend %scrollbar;
     }
 
     &--hidden {
@@ -217,7 +216,6 @@
 
     &--scroll {
       overflow-x: scroll;
-      @extend %scrollbar;
     }
 
     &--hidden {
