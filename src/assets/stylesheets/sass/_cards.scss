@@ -230,10 +230,9 @@
 //
 // Styleguide Components.Cards.Overflow
 
-
 .rim-card {
-  background-color: map-get($greyscale, 'white');
-  border: 1px solid lighten(map-get($greyscale, 'light'), $hue-threshold * 2);
+  background-color: map-get($greyscale, "white");
+  border: 1px solid lighten(map-get($greyscale, "light"), $hue-threshold * 2);
   padding: $spacer;
 
   .block & {
@@ -241,81 +240,83 @@
   }
 
   &__header {
-      color: map-get($greyscale, 'base');
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: $spacer;
-      position: relative;
+    color: map-get($greyscale, "base");
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: $spacer;
+    position: relative;
 
-      .icon {
-        max-height: 2rem;
-      }
+    .icon {
+      max-height: 2rem;
 
-      .rim-card__group {
-          align-items: center;
+      @include breakpoint(tablet, max) {
+        display: none;
       }
+    }
+
+    .rim-card__group {
+      align-items: center;
+    }
   }
 
   &__header-actions {
-      display: flex;
-      position: absolute;
-      top: -#{map-get($spacers, 2)};
-      right: -#{map-get($spacers, 3)};
+    display: flex;
+    position: absolute;
+    top: -#{map-get($spacers, 2)};
+    right: -#{map-get($spacers, 3)};
   }
 
   &-action {
-      border-right: 1px solid map-get($greyscale, 'light');
-      color: lighten(map-get($greyscale, 'light'), 10%);
-      height: 1.5rem;
-      padding: 0 .5rem;
-      transition: $transitions;
-      width: 2rem;
-      @extend %flex-center;
+    border-right: 1px solid map-get($greyscale, "light");
+    color: lighten(map-get($greyscale, "light"), 10%);
+    height: 1.5rem;
+    padding: 0 0.5rem;
+    transition: $transitions;
+    width: 2rem;
+    @extend %flex-center;
 
-      &:hover {
-          color: map-get($greyscale, 'light');
-      }
+    &:hover {
+      color: map-get($greyscale, "light");
+    }
 
-      &:last-of-type {
-          border-right: none;
-      }
+    &:last-of-type {
+      border-right: none;
+    }
   }
 
   &__group {
-      display: flex;
+    display: flex;
 
-      &--split {
-          > :first-child {
-              width: 35%;
-          }
+    &--split {
+      > :first-child {
+        width: 35%;
       }
+    }
 
-      &--vertical {
-          align-items: flex-start;
-          flex-direction: column;
-      }
+    &--vertical {
+      align-items: flex-start;
+      flex-direction: column;
+    }
 
-      > * {
-          margin-right: $spacer;
-      }
+    > * {
+      margin-right: $spacer;
+    }
   }
 
   &__title {
-      color: map-get($greyscale, 'base');
-      font-family: map-get($fonts, 'base');
-      font-size: 100%;
-      margin-bottom: 0;
-      text-transform: uppercase;
+    color: map-get($greyscale, "base");
+    font-family: map-get($fonts, "base");
+    font-size: 100%;
+    margin-bottom: 0;
+    text-transform: uppercase;
 
-      &--normal {
-          text-transform: none;
-      }
+    &--normal {
+      text-transform: none;
+    }
   }
 
   &__header-icon {
-
     i {
-
       .alert & {
         transform: rotate(-25deg);
       }
@@ -323,7 +324,6 @@
   }
 
   &__content {
-
     &--scroll {
       height: 10rem;
       overflow-y: auto;
@@ -334,6 +334,6 @@
     align-items: flex-end;
     display: flex;
     justify-content: space-between;
-    margin-top: map-get($spacers, 3 );
+    margin-top: map-get($spacers, 3);
   }
 }

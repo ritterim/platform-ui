@@ -148,9 +148,11 @@
   }
   &__header {
     background-color: map-get($brand-colors, 'lightblue');
+    height: 6rem;
     padding: 2rem;
     position: relative;
     width: 100%;
+
     #{$self}__close {
       position: absolute;
       right: -1rem;
@@ -158,9 +160,13 @@
       transform: translate(-50%, -50%);
     }
   }
+
   &__content {
+    height: calc(100% - 6rem);
+    overflow-y: scroll;
     padding: 2rem;
     position: relative;
+    
     &--video {
       display: flex;
       height: 100%;

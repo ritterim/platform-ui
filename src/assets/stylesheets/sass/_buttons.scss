@@ -213,6 +213,10 @@
 
   i {
     margin: 0 map-get($spacers, 1);
+
+    @include breakpoint(tablet, max) {
+      display: none;
+    }
   }
 
   [aria-hidden="hidden"] {
