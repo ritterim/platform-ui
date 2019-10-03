@@ -510,6 +510,13 @@
     aside {
       bottom: 3rem;
     }
+
+    main {
+
+      @include breakpoint(tablet, max) {
+        overflow-x: hidden;
+      }
+    }
   }
 
   main {
@@ -529,8 +536,6 @@
     }
 
     @include breakpoint(tablet, max) {
-      overflow-x: hidden;
-
       // accounts for height of mobile menu and Help button
       padding-bottom: 6rem;
       position: relative;
