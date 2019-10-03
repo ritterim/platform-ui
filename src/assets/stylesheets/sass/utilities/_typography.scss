@@ -170,6 +170,30 @@
   &--right {
     text-align: right;
   }
+
+  &-underline--hover {
+    position: relative;
+
+    &:after {
+      background-color: map-get($platform-colors, 'link');
+      bottom: 0;
+      content: '';
+      height: 1px;
+      left: 0;
+      position: absolute;
+      right: 0;
+      transition: $transitions;
+      width: 0;
+    }
+
+    &:hover {
+
+      &:after {
+        width: 100%;
+      }
+    }      
+  }
+
   // text shadow using $greyscale
   @each $name, $color in $greyscale {
     &--shadow-#{$name} {
