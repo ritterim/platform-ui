@@ -12,6 +12,13 @@ $all-colors: map-merge(map-merge($brand-colors, $secondary-colors), $greyscale);
     transition: .2s;
     &--hover {
       transition: $transitions;
+
+      &.text-underline--hover {
+        &:after {
+          background-color: $color!important;
+        }
+      }
+      
       &:hover {
         color: $color !important;
       }

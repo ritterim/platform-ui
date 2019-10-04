@@ -145,9 +145,22 @@
 // | ----------------- | ------------------ | ------------------- | -------------------- |
 // | `text--uppercase` | `text--underline`  | `text--bold`         | `text--nowrap` <i class="fas fa-exclamation-triangle fa-sm text-orange"></i>      |
 // | `text--center` <i class="fas fa-exclamation-triangle fa-sm text-orange"></i>   | `text--right` <i class="fas fa-exclamation-triangle fa-sm text-orange"></i>                    |                     |                      |
+// | `text-underline--hover` |   |         |      |
 //
 // | <i class="fas fa-exclamation-triangle fa-sm text-orange"></i> NOTE: A `flex--` utility should be used were possible. |
 // | --
+// 
+// The `text-underline--hover` class will add an animated underline to links or any element you add the class to. By default, the underline color is the 
+// standard link color in the platform(light blue). If you want to change the color of the element and the underline on hover you can add a `text-{color}--hover`
+// class. This will change the color of the underline as well as the element with the hover color class.
+// 
+// Markup:
+// <div class="rim-card block-container mb-3 flex--align-center">
+//   <div class="block">
+//     <p>Text underline on hover <a class="text-underline--hover">standard</a>.</p>
+//     <p>Text underline on hover <a class="text-underline--hover text-red--hover">red</a>.</p>
+//   </div>
+// </div>
 //
 // Styleguide Typography.Utilities.General
 
@@ -170,6 +183,30 @@
   &--right {
     text-align: right;
   }
+
+  &-underline--hover {
+    position: relative;
+
+    &:after {
+      background-color: map-get($platform-colors, 'link');
+      bottom: 0;
+      content: '';
+      height: 1px;
+      left: 0;
+      position: absolute;
+      right: 0;
+      transition: $transitions;
+      width: 0;
+    }
+
+    &:hover {
+
+      &:after {
+        width: 100%;
+      }
+    }      
+  }
+
   // text shadow using $greyscale
   @each $name, $color in $greyscale {
     &--shadow-#{$name} {
