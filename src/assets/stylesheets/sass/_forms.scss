@@ -450,9 +450,65 @@ input[type="radio"] {
       }
     }
 
+    &.error {
+      color: map-get($message-colors, 'error-dark' ) !important;
+
+      input[type="text"],
+      input[type="date"],
+      input[type="email"],
+      input[type="textarea"],
+      input[type="tel"],
+      input[type="password"],
+      input[type="number"],
+      input[type="time"],
+      textarea,
+      select {
+        background-color: map-get($message-colors, 'error-light' );
+        border-color: map-get($error-colors, 'negative' ) !important;
+        border-radius: map-get($radius, 'default' );
+        padding-left: map-get($spacers, 2 );
+      }
+
+      input[type="checkbox"],
+      input[type="radio"] {
+
+        &:not(:checked) + label {
+    
+          &:before {
+            background-color: map-get($message-colors, 'error-light' );
+            border-color: map-get($error-colors, 'negative' ) !important;
+          }
+        }
+      }
+    }
+
     // Fancy label animations
     &#{ $self }__field--fancy {
       position: relative;
+
+      &.error {        
+
+        label {
+          color: map-get($message-colors, 'error-dark' ) !important;
+          font-size: 80%;
+          top: -1rem;
+          transform: translate(0) scale(1);
+          left: 0;
+        }
+
+        input:not([type=checkbox]),
+        input:not([type=radio]),
+        textarea {
+          background-color: map-get($message-colors, 'error-light' );
+          border: 1px solid map-get($error-colors, 'negative' ) !important;
+          box-shadow: 0 0 2px 0 map-get($error-colors, 'negative') !important;
+        }
+
+        ::-webkit-input-placeholder {
+          opacity: 1;
+          transition: inherit;
+        }
+      }
 
       input:not([type=checkbox]),
       input:not([type=radio]),
@@ -479,7 +535,9 @@ input[type="radio"] {
       }
 
       input::-webkit-datetime-edit {
-        color: transparent; }
+        color: transparent; 
+      }
+
       input:focus::-webkit-datetime-edit,
       input:valid::-webkit-datetime-edit {
         color: map-get($greyscale, 'base' );
