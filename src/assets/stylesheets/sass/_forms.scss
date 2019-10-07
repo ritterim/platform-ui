@@ -196,6 +196,37 @@
 // Styleguide Forms.TimeIcon
 
 
+// Error styles
+//
+// If there is an error on a specific input after submission, add the `error` class to the specific `rim-form__field`.
+//
+// Markup:
+// <form action="" class="rim-form block-container tablet-up-3 laptop-up-4 desktop-up-6 blocks-mb-3 blocks-py-2 blocks-px-2">
+//   <div class="block">
+//     <label for="first-name" class="rim-form__field">First Name
+//       <input id="first-name" type="text" placeholder="First Name">
+//     </label>
+//   </div>
+//   <div class="block">
+//     <label for="last-name" class="rim-form__field error">Last Name
+//       <input id="last-name" type="text" placeholder="Last Name">
+//     </label>
+//   </div>
+//   <div class="block">
+//     <label for="dob" class="rim-form__field">Age or DOB
+//       <input id="dob" type="date">
+//     </label>
+//   </div>
+//   <div class="block">
+//     <label for="zipcode" class="rim-form__field">ZIP Code
+//       <input id="zipcode" type="tel" placeholder="e.g.90012" pattern="^\d{5,6}(?:[-\s]\d{4})?$">
+//     </label>
+//   </div>
+// </form>
+//
+// Styleguide Forms.Error
+
+
 // KSS-Node specific stuff for forms
 #kss-node {
 
@@ -450,9 +481,65 @@ input[type="radio"] {
       }
     }
 
+    &.error {
+      color: map-get($message-colors, 'error-dark' ) !important;
+
+      input[type="text"],
+      input[type="date"],
+      input[type="email"],
+      input[type="textarea"],
+      input[type="tel"],
+      input[type="password"],
+      input[type="number"],
+      input[type="time"],
+      textarea,
+      select {
+        background-color: map-get($message-colors, 'error-light' );
+        border-color: map-get($error-colors, 'negative' ) !important;
+        border-radius: map-get($radius, 'default' );
+        padding-left: map-get($spacers, 2 );
+      }
+
+      input[type="checkbox"],
+      input[type="radio"] {
+
+        &:not(:checked) + label {
+    
+          &:before {
+            background-color: map-get($message-colors, 'error-light' );
+            border-color: map-get($error-colors, 'negative' ) !important;
+          }
+        }
+      }
+    }
+
     // Fancy label animations
     &#{ $self }__field--fancy {
       position: relative;
+
+      &.error {        
+
+        label {
+          color: map-get($message-colors, 'error-dark' ) !important;
+          font-size: 80%;
+          top: -1rem;
+          transform: translate(0) scale(1);
+          left: 0;
+        }
+
+        input:not([type=checkbox]),
+        input:not([type=radio]),
+        textarea {
+          background-color: map-get($message-colors, 'error-light' );
+          border: 1px solid map-get($error-colors, 'negative' ) !important;
+          box-shadow: 0 0 2px 0 map-get($error-colors, 'negative') !important;
+        }
+
+        ::-webkit-input-placeholder {
+          opacity: 1;
+          transition: inherit;
+        }
+      }
 
       input:not([type=checkbox]),
       input:not([type=radio]),
@@ -479,7 +566,9 @@ input[type="radio"] {
       }
 
       input::-webkit-datetime-edit {
-        color: transparent; }
+        color: transparent; 
+      }
+
       input:focus::-webkit-datetime-edit,
       input:valid::-webkit-datetime-edit {
         color: map-get($greyscale, 'base' );

@@ -49,6 +49,7 @@
 // <div class="button-group">
 //   <button class="button button--secondary has-text">Open <i class="fas fa-download"></i></button>
 //   <button class="button button--secondary" data-button-text="Download"><i class="fas fa-download"></i></button>
+//   <button class="button button--secondary loading" data-button-text="Download"><i class="fas fa-download"></i></button>
 // </div>
 //
 // Weight: 4
@@ -195,20 +196,22 @@
       bottom: 0;
     }
 
-    &:after {
-      @extend %rim-loader;
-      @include square($spacer);
-      box-sizing: border-box;
-      content: '';
-      display: block;
-      border-color: $primary-background;
-      border-top-color: lighten(map-get($greyscale, 'base' ), 20%);
-      left: 50%;
-      margin-left: -.5rem;
-      margin-top: -.5rem;
-      position: absolute;
-      top: 50%;
-    }
+    &:not([data-button-text]) {
+      &:after {
+        @extend %rim-loader;
+        @include square($spacer);
+        box-sizing: border-box;
+        content: '';
+        display: block;
+        border-color: $primary-background;
+        border-top-color: lighten(map-get($greyscale, 'base' ), 20%);
+        left: 50%;
+        margin-left: -.5rem;
+        margin-top: -.5rem;
+        position: absolute;
+        top: 50%;
+      }
+    }    
   }
 
   i {
@@ -272,6 +275,41 @@
       &:before {
         background-color: darken($secondary-background, $hue-threshold);
         box-shadow: 0 0 0 .3rem lighten($secondary-background, $hue-threshold);
+      }
+
+      &[data-button-text] {
+        background-color: darken($secondary-background, $hue-threshold);
+        border-color: inherit;
+        box-shadow: 0 0 0 .3rem lighten($secondary-background, $hue-threshold);
+        padding: 0 map-get($spacers, 1 );
+        width: auto;
+
+        &:before {
+          @extend %rim-loader;
+          @include square($spacer);
+          background-color: unset;
+          box-sizing: border-box;
+          box-shadow: none;
+          content: '';
+          display: block;
+          border-color: $primary-background;
+          border-top-color: lighten(map-get($greyscale, 'base' ), 20%);
+          left: 0;
+          margin: 0 map-get($spacers, 1 );
+          position: relative;
+          top: 0;
+        }
+
+        &:after {
+          content: attr(data-button-text);
+          width: auto;
+          display: inline-block;
+          padding-right: map-get($spacers, 2 );
+        }
+
+        i {
+          display: none;
+        }
       }
     }
 

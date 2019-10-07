@@ -87,6 +87,11 @@
   top: 50%;
   transform: translate(-50%, -50%);
 
+  @include breakpoint(tablet, max) {
+    height: 100vh !important;
+    width: 100vw !important;
+  }
+
   @include breakpoint(tablet, min) {
     width: 65vw;
   }
@@ -99,9 +104,6 @@
   }
 
   &--small {
-    @include breakpoint(mobile, min) {
-      width: 80vw;
-    }
     @include breakpoint(tablet, min) {
       width: 40vw;
     }
@@ -111,7 +113,7 @@
   }
 
   &--large {
-    height: 70vh;
+
     @include breakpoint(tablet, min) {
       width: 80vw;
     }
@@ -182,4 +184,10 @@ body.modal-open {
   // REF: https://css-tricks.com/prevent-page-scrolling-when-a-modal-is-open/#article-header-id-0
   height: 100vh;
   overflow-y: hidden;
+
+  main {
+    @include breakpoint(tablet, max) {
+      z-index: 200;
+    }    
+  }
 }
