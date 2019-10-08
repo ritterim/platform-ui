@@ -32,37 +32,50 @@
   box-sizing: border-box;
   padding: map-get($spacers, 4);
   position: relative;
-  &__teaser {
-    width: 80%;
-    font-size: map-get($font-percentage, 'lg');
+
+  &__title {
+    color: map-get($brand-colors, 'navy' );
+    font-size: map-get($font-percentage, 'xxl' );
+
     .fas {
       display: none;
     }
-  }
-  &__content {
-    width: 80%;
-  }
-  // .collapsed hides everything but the teaser text in the <p> tag
-  &.collapsed {
-    animation: slideInUp .2s;
-    background-image: none !important;
-    height: auto;
-    padding: $spacer;
-    h1, button, a.button {
-      display: none;
-    }
-    p {
-      text-shadow: none !important;
-      margin: 0;
+
+    .collapsed & {
+      margin-bottom: 0!important;
+      @extend %inverted;
+
       .fas {
         display: inline-flex;
       }
     }
   }
+
+  &__teaser {
+    width: 80%;
+    font-size: map-get($font-percentage, 'lg');    
+  }
+
+  &__content {
+    width: 80%;
+  }
+
+  // .collapsed hides everything but the Banner Title
+  &.collapsed {
+    animation: slideInUp .2s;
+    background-image: none !important;
+    height: auto;
+    padding: $spacer;
+
+    p, button, a.button {
+      display: none;
+    }
+  }
 }
 
 .crm-view_item {
-  h1 {
+
+  .crm-banner__title {
     padding: map-get($spacers, 4)
   }
 }

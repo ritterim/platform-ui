@@ -25,8 +25,7 @@
 }
 
 .inverted {
-  color: map-get($greyscale, 'white') !important;
-  transition: $transitions;
+  @extend %inverted;
 }
 
 .close-action {
