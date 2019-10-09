@@ -18,6 +18,11 @@
   transform: rotate(180deg);
 }
 
+%inverted {
+  color: map-get($greyscale, 'white') !important;
+  transition: $transitions;
+}
+
 %scrollbar {
 
   &::-webkit-scrollbar {
