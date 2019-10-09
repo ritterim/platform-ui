@@ -222,7 +222,7 @@
     pointer-events: none;
   }
 
-  &:not(.button--secondary):not(.mobile-menu-action) {
+  &:not(.button--secondary):not(.mobile-menu-action):not(.close-action) {
 
     i {
       @include breakpoint(lg-tablet, max) {

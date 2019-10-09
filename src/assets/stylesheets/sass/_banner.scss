@@ -30,34 +30,50 @@
   background-color: map-get($brand-colors, 'skyblue');
   border-bottom: 1px solid map-get($brand-colors, 'skyblue');
   box-sizing: border-box;
-  padding: map-get($spacers, 4);
+  padding: (map-get($spacers, 4) + .5) map-get($spacers, 3 ) map-get($spacers, 3 );
   position: relative;
+
+  @include breakpoint(tablet, min) {
+    padding: map-get($spacers, 4);
+  }
+
+  .close-action.right {
+    @include breakpoint(tablet, max) {
+      top: .5rem;
+      right: .5rem;
+    }
+  }
 
   &__title {
     color: map-get($brand-colors, 'navy' );
-    font-size: map-get($font-percentage, 'xxl' );
+    font-size: map-get($font-percentage, 'xl' );
 
-    .fas {
-      display: none;
+    @include breakpoint(tablet, min) {
+      font-size: map-get($font-percentage, 'xxl' );
     }
 
     .collapsed & {
+      font-size: map-get($fonts, 'size' );
       margin-bottom: 0!important;
+      width: calc(100% - 72px); // size of the button
       @extend %inverted;
-
-      .fas {
-        display: inline-flex;
-      }
     }
   }
 
   &__teaser {
     width: 80%;
-    font-size: map-get($font-percentage, 'lg');    
+
+    @include breakpoint(tablet, min) {
+      font-size: map-get($font-percentage, 'lg');
+    }
   }
 
   &__content {
     width: 80%;
+  }
+
+  .button--post {
+    display: inline-block;
   }
 
   // .collapsed hides everything but the Banner Title
@@ -69,6 +85,11 @@
 
     p, button, a.button {
       display: none;
+    }
+
+    .close-action.right {
+      top: 50%;
+      transform: translateY(-50%);
     }
   }
 }
