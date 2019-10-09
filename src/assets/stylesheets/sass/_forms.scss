@@ -100,6 +100,9 @@
 // To get the animation, add the class `rim-form__field--fancy` to the `rim-form__field`.
 // You will also need to change the markup slightly. Instead of a `label` the `rim-form__field` should now be a `div`
 // put the `label` under the `input` as a sibling of the `rim-form__field` `div`. See markup below.
+// 
+// **Note:** Firefox does not have a way to hide the date and time placeholder for those inputs. This style of form would 
+// probably be best for a simple form that has text inputs.
 //
 // Markup:
 // <form action="" class="rim-form">
@@ -110,10 +113,6 @@
 //   <div class="rim-form__field rim-form__field--fancy">
 //     <input id="last-name" type="text" required placeholder="Smith">
 //     <label for="last-name">Last Name</label>
-//   </div>
-//   <div class="rim-form__field rim-form__field--fancy">
-//     <input id="dob" type="date" required placeholder="01/23/1985">
-//     <label for="dob">Age or DOB</label>
 //   </div>
 //   <div class="rim-form__field rim-form__field--fancy">
 //     <input id="zipcode" type="tel" pattern="^\d{5,6}(?:[-\s]\d{4})?$" required placeholder="12345">
@@ -803,7 +802,7 @@ input[type="radio"] {
   input[type="time"] {
 
     &::-webkit-clear-button {
-      margin-right: -#{$spacer};
+      margin-right: -.75rem;
     }
 
     // &::-webkit-calendar-picker-indicator,
