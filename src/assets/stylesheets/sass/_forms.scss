@@ -479,6 +479,23 @@ input[type="radio"] {
         left: 0;
         position: absolute;
       }
+
+      &--right {
+        position: relative;
+
+        input[type=date],
+        input[type=time] {
+          padding-right: $spacer * 1.5;
+        }
+
+        i {
+          bottom: .5rem;
+          color: map-get($brand-colors, 'med-blue' );
+          pointer-events: none;
+          position: absolute;
+          right: .5rem;
+        }
+      }
     }
 
     &.error {
@@ -535,7 +552,8 @@ input[type="radio"] {
           box-shadow: 0 0 2px 0 map-get($error-colors, 'negative') !important;
         }
 
-        ::-webkit-input-placeholder {
+        ::-webkit-input-placeholder,
+        :-moz-placeholder {
           opacity: 1;
           transition: inherit;
         }
@@ -569,18 +587,38 @@ input[type="radio"] {
         color: transparent; 
       }
 
+      input::-moz-datetime-edit {
+        color: transparent; 
+      }
+
       input:focus::-webkit-datetime-edit,
       input:valid::-webkit-datetime-edit {
         color: map-get($greyscale, 'base' );
       }
 
       ::-webkit-input-placeholder {
-        opacity: 0;
-        transition: inherit;
+        /* WebKit browsers */
+         color: transparent !important;
+      }
+      ::-moz-placeholder {
+          /* Mozilla Firefox 19+ */
+          color: transparent !important;
+      }
+
+      input::placeholder {
+          color: transparent !important;
+      }
+
+      ::-moz-placeholder {
+        color: transparent !important;
       }
 
       input:focus::-webkit-input-placeholder {
-        opacity: 1;
+        color: map-get($greyscale, 'base' )!important;
+      }
+
+      input:focus::-moz-placeholder {
+        color: map-get($greyscale, 'base' )!important;
       }
 
       input:focus + label {
@@ -761,27 +799,16 @@ input[type="radio"] {
     padding: map-get($spacers, 1) $spacer map-get($spacers, 1) 0;
   }
 
-  input[type="date"]::-webkit-inner-spin-button,
-  input[type="date"]::-webkit-calendar-picker-indicator {
-    opacity: 0;
-  }
+  input[type="date"],
+  input[type="time"] {
 
-  input[type=date] {
-    position: relative;
-
-    &::after {
-      pointer-events: none;
-      position: absolute;
+    &::-webkit-clear-button {
+      margin-right: -#{$spacer};
     }
 
-    &:after {
-      content: '\f073';
-      font-family: "Font Awesome 5 Pro";
-      font-weight: 400;
-      right: .6rem;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 2;
+    // &::-webkit-calendar-picker-indicator,
+    &::-webkit-inner-spin-button {
+      opacity: 0;
     }
   }
 }
