@@ -100,6 +100,9 @@
 // To get the animation, add the class `rim-form__field--fancy` to the `rim-form__field`.
 // You will also need to change the markup slightly. Instead of a `label` the `rim-form__field` should now be a `div`
 // put the `label` under the `input` as a sibling of the `rim-form__field` `div`. See markup below.
+// 
+// **Note:** Firefox does not have a way to hide the date and time placeholder for those inputs. This style of form would 
+// probably be best for a simple form that has text inputs.
 //
 // Markup:
 // <form action="" class="rim-form">
@@ -110,10 +113,6 @@
 //   <div class="rim-form__field rim-form__field--fancy">
 //     <input id="last-name" type="text" required placeholder="Smith">
 //     <label for="last-name">Last Name</label>
-//   </div>
-//   <div class="rim-form__field rim-form__field--fancy">
-//     <input id="dob" type="date" required placeholder="01/23/1985">
-//     <label for="dob">Age or DOB</label>
 //   </div>
 //   <div class="rim-form__field rim-form__field--fancy">
 //     <input id="zipcode" type="tel" pattern="^\d{5,6}(?:[-\s]\d{4})?$" required placeholder="12345">
@@ -225,6 +224,41 @@
 // </form>
 //
 // Styleguide Forms.Error
+
+
+
+// Has Icon
+// 
+// If you would like the icon to be on the right side of the input, add the class `has-icon--right` to the `rim-form__field` class.
+// 
+// Markup:
+// <form action="" class="rim-form block-container tablet-up-3 laptop-up-4 desktop-up-6 blocks-mb-3 blocks-py-2 blocks-px-2">
+//   <div class="block">
+//     <label for="dob" class="rim-form__field has-icon--right">Age or DOB
+//       <input id="dob" type="date">
+//       <i class="fas fa-calendar-alt background-white"></i>
+//     </label>
+//   </div>
+//   <div class="block">
+//     <label for="dob" class="rim-form__field has-icon">Application Date
+//       <input id="dob" type="date">
+//       <i class="fas fa-calendar-alt text-med-blue background-white"></i>
+//     </label>
+//   </div>
+//   <div class="block">
+//     <label for="time" class="rim-form__field has-icon--right">Your Time
+//       <input id="time" type="time" placeholder="10:00 AM">
+//       <i class="far fa-clock"></i>
+//     </label>
+//   </div>
+//   <div class="block">
+//     <div class="rim-form__field rim-form__button-group">
+//       <button class="button button--post button--lg">Quote Now</button>
+//     </div>
+//   </div>
+// </form>
+//
+// Styleguide Forms.HasIcon
 
 
 // KSS-Node specific stuff for forms
@@ -479,6 +513,23 @@ input[type="radio"] {
         left: 0;
         position: absolute;
       }
+
+      &--right {
+        position: relative;
+
+        input[type=date],
+        input[type=time] {
+          padding-right: $spacer * 1.5;
+        }
+
+        i {
+          bottom: .5rem;
+          color: map-get($brand-colors, 'med-blue' );
+          pointer-events: none;
+          position: absolute;
+          right: .5rem;
+        }
+      }
     }
 
     &.error {
@@ -535,7 +586,8 @@ input[type="radio"] {
           box-shadow: 0 0 2px 0 map-get($error-colors, 'negative') !important;
         }
 
-        ::-webkit-input-placeholder {
+        ::-webkit-input-placeholder,
+        :-moz-placeholder {
           opacity: 1;
           transition: inherit;
         }
@@ -569,18 +621,38 @@ input[type="radio"] {
         color: transparent; 
       }
 
+      input::-moz-datetime-edit {
+        color: transparent; 
+      }
+
       input:focus::-webkit-datetime-edit,
       input:valid::-webkit-datetime-edit {
         color: map-get($greyscale, 'base' );
       }
 
       ::-webkit-input-placeholder {
-        opacity: 0;
-        transition: inherit;
+        /* WebKit browsers */
+         color: transparent !important;
+      }
+      ::-moz-placeholder {
+          /* Mozilla Firefox 19+ */
+          color: transparent !important;
+      }
+
+      input::placeholder {
+          color: transparent !important;
+      }
+
+      ::-moz-placeholder {
+        color: transparent !important;
       }
 
       input:focus::-webkit-input-placeholder {
-        opacity: 1;
+        color: map-get($greyscale, 'base' )!important;
+      }
+
+      input:focus::-moz-placeholder {
+        color: map-get($greyscale, 'base' )!important;
       }
 
       input:focus + label {
@@ -761,27 +833,16 @@ input[type="radio"] {
     padding: map-get($spacers, 1) $spacer map-get($spacers, 1) 0;
   }
 
-  input[type="date"]::-webkit-inner-spin-button,
-  input[type="date"]::-webkit-calendar-picker-indicator {
-    opacity: 0;
-  }
+  input[type="date"],
+  input[type="time"] {
 
-  input[type=date] {
-    position: relative;
-
-    &::after {
-      pointer-events: none;
-      position: absolute;
+    &::-webkit-clear-button {
+      margin-right: -.75rem;
     }
 
-    &:after {
-      content: '\f073';
-      font-family: "Font Awesome 5 Pro";
-      font-weight: 400;
-      right: .6rem;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 2;
+    // &::-webkit-calendar-picker-indicator,
+    &::-webkit-inner-spin-button {
+      opacity: 0;
     }
   }
 }
