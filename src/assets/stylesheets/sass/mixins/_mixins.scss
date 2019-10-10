@@ -124,6 +124,60 @@
 //
 // Styleguide Mixins.MediaQuery
 
+
+// Square
+// 
+// If you want an element that has equal height and width, you can build one using the `@include square` mixin.
+// 
+// ```css
+// .test {
+//   @include square(2rem);
+// }
+// ```
+// 
+// This will output:
+// ```css
+// .test {
+//   height: 2rem;
+//   width: 2rem;
+// }
+// ```
+// 
+// 
+// You can also use a minMax parameter that will use min or max values on height and width.
+// 
+// ```css
+// .test {
+//   @include square(3rem, min);
+// }
+// ```
+// 
+// This outputs:
+// ```css
+// .test {
+//   min-height: 3rem;
+//   min-width: 3rem;
+// }
+// ```
+// 
+// If you want `max-height` and `max-width` simply use `max` in the mixin.
+// 
+// ```css
+// .test {
+//   @include square(4rem, max);
+// }
+// ```
+// 
+// Outputs:
+// ```css
+// .test {
+//   max-height: 4rem;
+//   max-width: 4rem;
+// }
+// ```
+// 
+// Styleguide Mixins.Square
+
 @mixin breakpoint($breakpoint, $direction: null) {
   @if map-has-key($breakpoints, $breakpoint) {
 

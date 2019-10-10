@@ -15,6 +15,7 @@
 // $breakpoints: (
 //   mobile: 0px,
 //   tablet: 768px,
+//   lg-tablet: 991px,
 //   laptop: 1240px,
 //   desktop: 1800px
 // );
@@ -250,7 +251,7 @@
 //
 //
 // The utility classes are `block--shrink` and `block--fill`. You can also you our breakpoint values on the class to make
-// the block have the specific style at a different screen size. EXample: `block-tablet--shrink' would add `width: auto`
+// the block have the specific style at a different screen size. Example: `block-tablet--shrink` would add `width: auto`
 // to the `block` at the tablet width and up.
 //
 // Styleguide Layout.Blocks.Utility
