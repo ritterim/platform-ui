@@ -1,28 +1,27 @@
 // Contributing
 //
+// ## Get started
+//
 // Learn how we've built Platform UI and patterns to help you contribute.
 //
-// Run it: `npm run start`
+// Lifecycle scripts included in @ritterim/platform-ui:
+//
+// | script (`npm run`) | runs |
+// | --- | --- |
+// | `start` | `npm install && gulp` |
+// | `test` | `echo "Error: no test specified" && exit 1` |
+// | `build` |  `gulp build` |
+// | `build:all` |  `npm install && cd custom-builder && npm install && npm run sass && cd .. && gulp` |
+// | `build:style` |  `rm -rf styleguide && cd custom-builder && npm run sass && cd .. && gulp` |
+// | `ver` | `echo "$npm_package_version"` |
 //
 // Styleguide _Contributing
 
-// BEM
+// SASS
 //
-// A summary of how we've decided to write/structure BEM.
-//
-// Styleguide _Contributing.BEM
-
-// Utility classes
-//
-// All utility classes _are_ modifiers, underscores are not applied here.
-//
-// ```css
-// flex--justify-center
-// ```
-//
-// Styleguide _Contributing.BEM.UtilityClasses
-
-// Mixins v. Extends
+// [https://sass-lang.com/](https://sass-lang.com/)
+// 
+// ## Mixins v. Extends
 //
 // If you're passing an argument or looping through a function, this is a `mixin`.
 //
@@ -31,4 +30,136 @@
 // | <i class="fas fa-exclamation-triangle fa-sm text-orange"></i> NOTE: Place any SCSS native call, includes, extends, loops, and functions, at the bottom of any regular CSS. I.e., `@include`, `@extend`, `@for`, `@each` |
 // | --
 //
-// Styleguide _Contributing.MixinsExtends
+// Styleguide _Contributing.Sass
+
+// JavaScript
+//
+// We use semi-colons.
+//
+// We use single quotes.
+//
+// Do not use trailing commas. This actually causes errors in Edge and Internet Explorer (YES, we have to deal with BOTH!).
+//
+// ```js
+// // Do NOT do this
+// ['hedgehog', 'hedgehog',]
+// // This is good
+// ['hedgehog', 'hedgehog']
+// ```
+//
+// Keep towards ES6 standards whenever possible (`let`, `const` should be used over `var`).
+//
+// We use two spaces for JavaScript, HTML, and CSS. If you happen to be writing any C#, use four spaces. The `.editorconfig` file should handle this.
+//
+// Styleguide _Contributing.JavaScript
+
+// VueJS
+//
+// ## General Component Structure
+// [https://vuejs.org/](https://vuejs.org/)
+//
+// Components are generally done in single file components. These components are structured in the order of `<template>` and then `<script>`. In general, we do not use `<style>` unless directed to do so by the UI team and something needs that encapsulation.
+//
+// The general component structure should be like below, following the same order as the pieces in the object below.
+//
+// ```JS
+// import nonComponents;
+//
+// import Components;
+//
+// export default {
+// 	name: 'PascalCaseName',
+// 	components: {
+// 		PascalCaseComponentImports
+// 	},
+// 	mixins: [importedMixinsCamelCase],
+// 	computed: {
+// 		computedProperty() {
+// 			return null;
+// 		},
+// 		...mapState([
+// 			'things'
+// 		])
+// 	},
+// 	data() {
+// 		return {
+// 			item: 'hello'
+// 		}
+// 	},
+// 	created() {
+// 		console.log('first lifecycle piece');
+// 	},
+// 	mounted() {
+// 		// in general mounted should be used over created, unless created is needed
+// 		console.log('next lifecycle piece');
+// 	},
+// 	destroyed() {
+// 		console.log('last lifecycle piece');
+// 	},
+// 	watch: {
+// 		item() {
+// 			console.log(this.item);
+// 		}
+// 	},
+// 	methods: {
+// 		thisMethod() {
+// 			console.log('this is a method');
+// 		}
+// 	},
+// 	filters: {
+// 		formatString(val) {
+// 			return val.toLocaleString();
+// 		}
+// 	}
+// }
+// ```
+//
+// ## HTML/Template Structure
+//
+// When using three or more attributes, an element should be stacked. In addition to this, if props are included, those props should be camelCased.
+//
+// If you are adding a base component that uses `vue-custom-element`, note that your props will need to be `snake-cased`. This helps us differentiate when we are pulling in a full, standalone component and when we are pulling in individual pieces inside of a standalone component.
+//
+// Component tags should be written as `snake-cased` as opposed to `PascalCased`.
+//
+// We should use the following order when using Vue attributes on our elements. Following this order will allow everyone to very quickly see the pieces that we are looking for.
+//
+// ```
+// ref
+// v-if/v-else
+// v-for
+// v-model
+// :camelCaseProps
+// @events
+// regular attributes
+// ```
+//
+// An example with two or less attributes can be seen below.
+//
+// ```html
+// <button @click="handleClick" class="button">
+// 	Click Me!
+// </button>
+// ```
+//
+// An example with three or more attributes can be seen below.
+//
+// ```html
+// <my-component
+// 	v-if="condition"
+// 	v-for="thing in things"
+// 	v-model="thing"
+// 	:key="thing.id">
+// </my-component>
+//
+// <!-- Either of these are correct, with the closing > on the last line or its own -->
+// <my-component
+// 	v-if="condition"
+// 	v-for="thing in things"
+// 	v-model="thing"
+// 	:key="thing.id"
+// >
+// </my-component>
+// ```
+//
+// Styleguide _Contributing.JavaScript.VueJS
