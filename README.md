@@ -13,18 +13,6 @@ Platform UI is published privately on a regular basis to [MyGet](https://myget.o
 Documentation for Platform UI is generated on every build using [KSS-Node](https://github.com/kss-node/kss-node) and hosted [here](https://style.rimdev.io/).
 
 ## Roadmap
-- [ ] Documentation 📓
-- [x] Tables
-  - [x] Responsive tables
-  - [x] add dedicated `rim-table` class to `table`
-  - [x] add alternate table styles i.e., borders, no-borders, alternating borders
-- [x] Tab system v0.6
-  - [x] Attaches to `rim-card`
-- [x] Pez (rounded corner labels) v0.7
-  - [x] specifically to handle "states"
-  - [x] disabled, active
-  - [x] corner flags/markers
-- [x] Accordions v0.8
-  - [x] Refactor accordions visually to view more table-like
-- [ ] Search UI v0.9
-- [x] Styleguide redesign v1.0 😃
+- [ ] Documentation (always) 📓
+- [x] Styleguide redesign v0.9 😃
+- [ ] Search UI v1.0 🔎
