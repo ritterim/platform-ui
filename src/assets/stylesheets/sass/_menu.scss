@@ -1,3 +1,38 @@
+// Menu
+//
+// The default menu is `position: fixed` and `background-navy`, both of which can be overridden on `.site-header`.
+// Adding `pos-rel` removes the default `fixed` positioning, and the menu background color default of
+// `background-navy`can be overridden by adding a [background color](/section-color.html) using `background-{ color }`.
+//
+// Markup:
+// <header class="site-header pos-rel background-base">
+//   <nav class="site-menu">
+//     <div class="site-menu__item has-dropdown">
+//       <span class="card__header-icon pill--circle-medium background-pink text-white mr-2">
+//         <i class="fas fa-chess-knight text-base"></i>
+//       </span>
+//       <div class="font-lg">
+//         Menu Header with avatar
+//       </div>
+//   </div>
+//   <div class="site-menu__item">
+//     menu item
+//   </div>
+//   <div class="site-menu__item has-dropdown">
+//     dropdown item
+//     <div class="dropdown-menu pin-right hide-mobile-up">
+//       <div class="dropdown-menu__item">
+//         dropdown
+//       </div>
+//     </div>
+//   </div>
+// </nav>
+// </header>
+//
+// Weight: -1
+//
+// Styleguide Menus.Main
+
 .site-header {
   background-color: map-get($platform-colors, 'menu');
   color: map-get($greyscale, 'white');
@@ -198,14 +233,14 @@
     overflow-x: hidden;
     overflow-y: scroll;
     padding-bottom: map-get($spacers, 4 );
-  }  
+  }
 
   .toggle & {
     @include breakpoint($max-height, max-height) {
       overflow-y: scroll;
       overflow: -moz-scrollbars-none;
       -ms-overflow-style: none;
-  
+
       &::-webkit-scrollbar {
         width: 0 !important
       }
@@ -364,12 +399,12 @@
     img {
       max-height: $spacer * 1.5;
       transition: $transitions;
-      
+
       &:not(.mini-image) {
         display: none;
       }
     }
-    
+
     &.active {
       &:before, &:after {
         top: 40%;
@@ -503,8 +538,6 @@
   }
 }
 
-
-
 // Icon Menu
 //
 // When you need a horizontal list of icons, look no further than "Icon Menu". Use the mark up below
@@ -569,7 +602,7 @@
 //   </div>
 // </div>
 //
-// Styleguide Components.IconMenu
+// Styleguide Menus.IconMenu
 
 // icon menu
 .icon-menu {
