@@ -27,6 +27,18 @@
 //
 // Styleguide Utilities.Spacers
 
+// Responsive
+// 
+// Currently we only have responsive spacers for mobile. We are also only using them for `margin-bottom` and `padding-bottom`.
+// 
+// Example:
+// ```scss
+// .mobile-mb-3 // margin-bottom: 1rem
+// .mobile-pb-3 // padding-bottom: 1rem
+// ```
+// 
+// Styleguide Utilities.Spacers.Responsive
+
 @each $prop, $letter in (margin: m, padding: p) {
   @each $direction, $d in $xy-border {
     @each $unit, $rem in $spacers {
@@ -40,6 +52,16 @@
       .#{$letter}y-#{$unit} {
         #{$prop}-top: $rem !important;
         #{$prop}-bottom: $rem !important;
+      }
+    }
+  }
+}
+
+@each $prop, $letter in (margin: m, padding: p) {
+  @each $unit, $rem in $spacers {
+    .#{$letter}b-mobile-#{$unit} {
+      @media screen and (min-width: map-get($breakpoints, mobile)) and (max-width: map-get($breakpoints, tablet) - 1) {
+        #{$prop}-bottom: #{$rem} !important;
       }
     }
   }
