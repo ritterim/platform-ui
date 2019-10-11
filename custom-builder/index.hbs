@@ -21,19 +21,19 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
 </head>
-<body id="kss-node" class="{{#unless homepage}}rim-style{{/unless}}">
-  <header class="rim-style-header">
-    <div class="rim-style-logo">
-      <a href="/">
-        <img src="site-assets/stylesheets/svg/RitterInsuranceLogo.svg" alt="Ritter Insurance Marketing">
+<body id="kss-node" class="{{#if template.isHomepage}}background-lighter{{/if}}{{#unless homepage}}platform toggle{{/unless}}  ">
+  <header class="site-header flex--justify-between flex--align-center px-3 background-white block-container border-b border--color-skyblue">
+    <div class="block block-2 px-3 py-1">
+      <a class="flex w-100" href="/">
+        <img class="w-100" src="site-assets/stylesheets/svg/RitterInsuranceLogo.svg" alt="Ritter Insurance Marketing">
       </a>
     </div>
-    <nav>
-      <a href="https://docs.ritterim.com">
+    <nav class="block block-4 flex flex--justify-end">
+      <a class="text--bold text-navy px-3" href="https://docs.ritterim.com">
         <img class="icon--svg-small" src="site-assets/stylesheets/svg/ritter-docs.svg" alt="">
         Ritter Docs
       </a>
-      <a href="https://ritterim.com">
+      <a class="text--bold text-navy px-3" href="https://ritterim.com">
         <img class="icon--svg-small" src="site-assets/stylesheets/svg/ritter-website.svg" alt="">
         Ritterim.com
       </a>
@@ -77,7 +77,7 @@
     </nav>
   </aside>
   {{/unless}}
-  <main class="{{#if homepage}}rim-style-home{{else}}rim-style-main{{/if}}" aria-label="Content">
+  <main class="pt-6" aria-label="Content">
     {{#if homepage}}
     <div class="crm-banner animated slideInDown fast flex--center-content flex--column pt-6" style="background-image: linear-gradient(to right, white, transparent), url('site-assets/stylesheets/images/style-guide-background.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
       <h1 class="mb-2">Welcome to the Platform UI Style Guide</h1>

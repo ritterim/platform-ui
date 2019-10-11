@@ -14,45 +14,6 @@
   $menu-margin: 6rem;
 
 
-  #{ $self }-aside,
-  #{ $self }-main {
-    padding-top: $menu-margin;
-  }
-
-  &-home {
-    padding-top: 4rem;
-  }
-
-  &-header {
-    align-items: center;
-    background-color: map-get($greyscale, 'white');
-    box-shadow: 0 0 1rem map-get($greyscale, 'light');
-    display: flex;
-    height: $menu-margin;
-    justify-content: space-between;
-    padding: $spacer;
-    position: fixed;
-    width: 100%;
-    z-index: 10;
-
-    #{$self}-logo {
-      padding: map-get($spacers, 2);
-
-      img {
-        width: 100%;
-        max-width: 12rem;
-      }
-    }
-
-    nav {
-      a {
-        color: map-get($brand-colors, 'navy');
-        font-weight: bold;
-        text-decoration: none;
-        padding: $spacer;
-      }
-    }
-  }
   // Aside
   &-aside {
     border-right: 2px solid map-get($greyscale, 'lighter');
