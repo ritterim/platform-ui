@@ -41,6 +41,17 @@
       }
     }
   }
+
+  &-description {
+
+    code {
+      background-color: map-get($message-colors, 'info-light' );
+      border-bottom: 1px solid #b2e1ff;
+      color: map-get($brand-colors, 'navy' );
+      font-size: map-get($fonts, 'sm' );
+      padding: map-get($spacers, 1 );
+    }
+  }
 }
 
 
