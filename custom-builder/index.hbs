@@ -41,28 +41,28 @@
   </header>
 
   {{#unless template.isHomepage}}
-  <aside class="rim-style-aside">
-    <nav class="rim-style-nav" aria-label="Style Guide">
-      <ul class="rim-style-nav__menu">
-        <li class="rim-style-nav__menu-item{{#if template.isHomepage}} active{{/if}}">
-          <a class="rim-style-nav__menu-link" href="./">
-            <i class="fad fa-home"></i>
+  <aside class="crm-actions border-r border--color-lighter">
+    <nav class="h-100 overflow-y--scroll" aria-label="Style Guide">
+      <ul class="rim-list rim-list--bordered">
+        <li class="rim-list__item mb-0">
+          <a class="flex px-3 py-3 hover-scale{{#if template.isHomepage}} background-skyblue text-navy text--bold{{/if}}" href="./">
             <span class="rim-style-nav__name">Home v{{ options.version }}</span>
+            <i class="fad fa-home"></i>
           </a>
         </li>
       {{#each menu}}
-        <li class="rim-style-nav__menu-item{{#if isActive}} active{{/if}}">
-          <a class="rim-style-nav__menu-link" href="section-{{referenceURI}}.html">
+        <li class="rim-list__item mb-0">
+          <a class="flex px-3 py-3 hover-scale{{#if isActive}} background-skyblue text-navy text--bold{{/if}}" href="section-{{referenceURI}}.html">
             <span class="rim-style-nav__ref">{{referenceNumber}}</span><span class="rim-style-nav__name">{{header}}</span>
-            <i class="fal fa-angle-down fa-lg {{#if isActive}} fa-rotate-180{{/if}}"></i>
+            <i class="fal fa-angle-down fa-lg{{#if isActive}} fa-rotate-180{{/if}}"></i>
             {{!-- {{#if children}}<i class="fas fa-chevron-right"></i>{{/if}} --}}
           </a>
           {{#if isActive}}
             {{#if children}}
-              <ul class="rim-style-nav__menu-child">
+              <ul class="rim-list pl-1 background-lighter style-nav__child-list">
               {{#each children}}
-                <li class="rim-style-nav__menu-child-item{{#if isActive}} active{{/if}}">
-                  <a class="rim-style-nav__menu-link" href="section-{{../referenceURI}}.html#kssref-{{referenceURI}}">
+                <li class="{{#if isActive}} active{{/if}} mb-0">
+                  <a class="flex px-3 py-3 hover-scale text-base" href="section-{{../referenceURI}}.html#kssref-{{referenceURI}}">
                     <span class="rim-style-nav__ref {{#if isGrandChild}}rim-style-nav__ref-child{{/if}}">{{referenceNumber}}</span
                     ><span class="rim-style-nav__name">{{header}}</span>
                   </a>
@@ -77,7 +77,7 @@
     </nav>
   </aside>
   {{/unless}}
-  <main class="pt-6" aria-label="Content">
+  <main class="pb-4 {{#unless homepage}}px-4 background-white{{/unless}}" aria-label="Content">
     {{#if homepage}}
     <div class="crm-banner animated slideInDown fast flex--center-content flex--column pt-6" style="background-image: linear-gradient(to right, white, transparent), url('site-assets/stylesheets/images/style-guide-background.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
       <h1 class="mb-2">Welcome to the Platform UI Style Guide</h1>
@@ -249,8 +249,8 @@
   <script src="kss-assets/platform-ui.min.js"></script>
   <script>
     var spy = new ScrollSpy('#kss-node', {
-      nav: '.rim-style-nav__menu-child > li > a',
-      className: 'is-in-viewport'
+      nav: '.style-nav__child-list > li > a',
+      className: 'text--bold'
     });
     var kssFullScreen = new KssFullScreen({
       idPrefix: 'kss-fullscreen-',

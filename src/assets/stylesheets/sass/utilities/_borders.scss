@@ -66,6 +66,7 @@
 
   @each $direction, $d in $xy-border {
     &-#{$d} {
+      border-width: 0;
       border-#{$direction}-width: 1px;
       @extend %border;
     }
