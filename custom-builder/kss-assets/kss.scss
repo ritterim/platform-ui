@@ -2,6 +2,10 @@
 
 .rim-style {
   $self: &;
+
+  &-logo-action {
+    max-width: 12rem;
+  }
   
   &-title {
 
@@ -32,23 +36,28 @@
     &__permalink-hash {
       display: none;
     }
-
-    &-description {
-  
-      ul {
-        list-style-type: none;
-        padding: 0;
-      }
-    }
   }
 
   &-description {
+
+    h2 {
+      margin-bottom: $spacer;
+    }
+
+    p {
+      margin-bottom: $spacer * 1.5;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
 
     code {
       background-color: map-get($message-colors, 'info-light' );
       border-bottom: 1px solid #b2e1ff;
       color: map-get($brand-colors, 'navy' );
-      font-size: map-get($fonts, 'sm' );
+      font-size: map-get($font-percentage, 'sm' );
       padding: map-get($spacers, 1 );
     }
   }
@@ -83,6 +92,7 @@ pre {
   padding: 0.5em;
   background: linear-gradient(45deg, map-get($brand-colors, 'navy'), lighten(map-get($brand-colors, 'navy'), 5%));
   color: map-get($greyscale, 'white');
+  margin: map-get($spacers, 4 ) 0;
 }
 
 .hljs-keyword,
