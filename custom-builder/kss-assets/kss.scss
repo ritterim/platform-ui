@@ -1,5 +1,9 @@
 @import "../src/assets/stylesheets/sass/main.scss";
 
+main {
+  min-width: 0;
+}
+
 .rim-style {
   $self: &;
 
