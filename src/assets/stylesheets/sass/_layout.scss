@@ -663,9 +663,10 @@
   }
 
   main {
+    min-width: 0;
     padding-left: 4rem;
-    width: 100%;
     transition: $transitions;
+    width: 100%;
 
     @supports(display: grid) {
       grid-column: 2;
