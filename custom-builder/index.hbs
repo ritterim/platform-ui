@@ -21,19 +21,19 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
 </head>
-<body id="kss-node" class="{{#if template.isHomepage}}background-lighter{{/if}}{{#unless homepage}}platform toggle{{/unless}}  ">
-  <header class="site-header flex--justify-between flex--align-center px-3 py-2 background-white block-container border-b border--color-skyblue">
-    <div class="block block-4 flex flex--justify-start">
-      <a class="flex rim-style-logo-action" href="/">
-        <img class="w-100" src="site-assets/stylesheets/svg/RitterInsuranceLogo.svg" alt="Ritter Insurance Marketing">
+<body id="kss-node" class="{{#unless homepage}}rim-style{{/unless}}">
+  <header class="rim-style-header">
+    <div class="rim-style-logo">
+      <a href="/">
+        <img src="site-assets/stylesheets/svg/RitterInsuranceLogo.svg" alt="Ritter Insurance Marketing">
       </a>
     </div>
-    <nav class="block block-8 flex flex--justify-end">
-      <a class="text--bold text-navy px-3" href="https://docs.ritterim.com">
+    <nav>
+      <a href="https://docs.ritterim.com">
         <img class="icon--svg-small" src="site-assets/stylesheets/svg/ritter-docs.svg" alt="">
         Ritter Docs
       </a>
-      <a class="text--bold text-navy px-3" href="https://ritterim.com">
+      <a href="https://ritterim.com">
         <img class="icon--svg-small" src="site-assets/stylesheets/svg/ritter-website.svg" alt="">
         Ritterim.com
       </a>
@@ -41,30 +41,30 @@
   </header>
 
   {{#unless template.isHomepage}}
-  <aside class="crm-actions border-r border--color-lighter">
-    <nav class="h-100 overflow-y--scroll pb-7" aria-label="Style Guide">
-      <ul class="rim-list">
-        <li class="rim-list__item mb-0">
-          <a class="flex px-3 py-3 pos-rel{{#unless template.homepage}} hover-scale text-base{{/unless}}{{#if template.isHomepage}} background-skyblue text-navy text--bold{{/if}}" href="./">
-            <span>Home v{{ options.version }}</span>
-            <i class="pos-abs pin-right mr-3 fad fa-home"></i>
+  <aside class="rim-style-aside">
+    <nav class="rim-style-nav" aria-label="Style Guide">
+      <ul class="rim-style-nav__menu">
+        <li class="rim-style-nav__menu-item{{#if template.isHomepage}} active{{/if}}">
+          <a class="rim-style-nav__menu-link" href="./">
+            <i class="fad fa-home"></i>
+            <span class="rim-style-nav__name">Home v{{ options.version }}</span>
           </a>
         </li>
       {{#each menu}}
-        <li class="rim-list__item mb-0">
-          <a class="flex px-3 py-3 pos-rel{{#unless isActive}} hover-scale text-base{{/unless}}{{#if isActive}} background-skyblue text-navy text--bold{{/if}}" href="section-{{referenceURI}}.html">
-            <span>{{referenceNumber}}</span><span class="ml-2">{{header}}</span>
-            <i class="pos-abs pin-right mr-3 fal fa-angle-down fa-lg{{#if isActive}} fa-rotate-180{{/if}}"></i>
+        <li class="rim-style-nav__menu-item{{#if isActive}} active{{/if}}">
+          <a class="rim-style-nav__menu-link" href="section-{{referenceURI}}.html">
+            <span class="rim-style-nav__ref">{{referenceNumber}}</span><span class="rim-style-nav__name">{{header}}</span>
+            <i class="fal fa-angle-down fa-lg {{#if isActive}} fa-rotate-180{{/if}}"></i>
             {{!-- {{#if children}}<i class="fas fa-chevron-right"></i>{{/if}} --}}
           </a>
           {{#if isActive}}
             {{#if children}}
-              <ul class="rim-list pl-1 background-lighter style-nav__child-list">
+              <ul class="rim-style-nav__menu-child">
               {{#each children}}
-                <li class="mb-0">
-                  <a class="flex px-3 py-3 hover-scale text-base" href="section-{{../referenceURI}}.html#kssref-{{referenceURI}}">
-                    <span>{{referenceNumber}}</span
-                    ><span class="ml-2">{{header}}</span>
+                <li class="rim-style-nav__menu-child-item{{#if isActive}} active{{/if}}">
+                  <a class="rim-style-nav__menu-link" href="section-{{../referenceURI}}.html#kssref-{{referenceURI}}">
+                    <span class="rim-style-nav__ref {{#if isGrandChild}}rim-style-nav__ref-child{{/if}}">{{referenceNumber}}</span
+                    ><span class="rim-style-nav__name">{{header}}</span>
                   </a>
                 </li>
               {{/each}}
@@ -77,7 +77,7 @@
     </nav>
   </aside>
   {{/unless}}
-  <main class="pb-4 {{#unless homepage}}px-4 background-white{{/unless}}" aria-label="Content">
+  <main class="{{#if homepage}}rim-style-home{{else}}rim-style-main{{/if}}" aria-label="Content">
     {{#if homepage}}
     <div class="crm-banner animated slideInDown fast flex--center-content flex--column pt-6" style="background-image: linear-gradient(to right, white, transparent), url('site-assets/stylesheets/images/style-guide-background.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
       <h1 class="mb-2">Welcome to the Platform UI Style Guide</h1>
@@ -113,72 +113,81 @@
       the "#if @first" block as seen below.
     }}
     {{#each sections}}
-      <{{#if @first}}div{{else}}section{{/if}} id="kssref-{{referenceURI}}" class="border-b border--color-lighter {{#if @first}}no-border{{/if}} {{#if @last}}no-border{{/if}} {{#if @root.template.isItem}}is-fullscreen{{/if}}">
-        <h{{depth}} class="rim-style-title {{#if @first}}text--bold text--size-xxl{{/if}} mb-3">
-          <a class="rim-style-title__permalink py-3 my-5{{#if @first}} text-navy{{else}} text-dark{{/if}}" href="#kssref-{{referenceURI}}">
-            <div class="rim-style-title__ref text-base text--size-xxs">
-              Section {{referenceNumber}}
-              <span class="rim-style-title__permalink-hash text-light">
-                {{#if @root.hasNumericReferences}}
-                  #permalink
-                {{else}}
-                  #{{reference}}
-                {{/if}}
+      <{{#if @first}}div{{else}}section{{/if}} id="kssref-{{referenceURI}}" class="rim-style-section rim-style-section--depth-{{depth}} {{#if @root.template.isItem}}is-fullscreen{{/if}}">
+
+        <div class="rim-style-content">
+          <h{{depth}} class="rim-style-title rim-style-title--level-{{depth}}">
+            <a class="rim-style-title__permalink" href="#kssref-{{referenceURI}}">
+              <span class="rim-style-title__ref">
+                {{referenceNumber}}
+                <span class="rim-style-title__permalink-hash">
+                  {{#if @root.hasNumericReferences}}
+                    #permalink
+                  {{else}}
+                    #{{reference}}
+                  {{/if}}
+                </span>
               </span>
+              {{header}}
+            </a>
+          </h{{depth}}>
+
+          {{#if description}}
+            <div class="rim-style-description">
+              {{{description}}}
             </div>
-            {{header}}
-          </a>
-        </h{{depth}}>
+          {{/if}}
 
-        {{#if description}}
-          <div class="rim-style-description">
-            {{{description}}}
-          </div>
-        {{/if}}
+          {{#if colors }}
+            <ul class="rim-style-colors">
+              {{#each colors}}
+                <li>
+                  <figure class="rim-style-color">
+                    <div class="rim-style-color__figure" style="background-color:{{color}}"></div>
+                    <figcaption class="rim-style-color__caption">
+                      {{#if name }}
+                        <strong class="rim-style-color__name">{{ color.name }}</strong>
+                      {{/if}}
+                      <strong class="rim-style-color__name">{{name}}</strong>
+                      <code class="rim-style-color__code">{{color}}</code>
+                      {{#if description}}
+                        <p class="rim-style-color__desc">{{description}}</p>
+                      {{/if}}
+                    </figcaption>
+                  </figure>
+                </li>
+              {{/each}}
+            </ul>
+          {{/if}}
 
-        {{#if colors }}
-          <ul class="rim-list block-container tablet-up-3 laptop-up-4 blocks-px-2 blocks-py-2">
-            {{#each colors}}
-              <li class="block">
-                <figure class="h-100 background-white border border--color-light my-0 mx-0 py-0 px-0">
-                  <div style="background-color:{{color}}; height: 3em;"></div>
-                  <figcaption class="py-2 px-2 flex flex--column">
-                    <strong class="text--bold text-dark">{{name}}</strong>
-                    <code class="text-base">{{color}}</code>
-                  </figcaption>
-                </figure>
+          {{#if parameters}}
+            <div class="kss-parameters__title">Parameters:</div>
+            <ul class="kss-parameters">
+            {{#each parameters}}
+              <li class="kss-parameters__item">
+                <div class="kss-parameters__name"><code>{{name}}</code></div>
+                <div class="kss-parameters__description">
+                  {{{description}}}
+                  {{#if defaultValue}}
+                    <div class="kss-parameters__default-value">
+                      Defaults to: <code>{{defaultValue}}</code>
+                    </div>
+                  {{/if}}
+                </div>
               </li>
             {{/each}}
-          </ul>
-        {{/if}}
-
-        {{#if parameters}}
-          <div class="kss-parameters__title">Parameters:</div>
-          <ul class="kss-parameters">
-          {{#each parameters}}
-            <li class="kss-parameters__item">
-              <div class="kss-parameters__name"><code>{{name}}</code></div>
-              <div class="kss-parameters__description">
-                {{{description}}}
-                {{#if defaultValue}}
-                  <div class="kss-parameters__default-value">
-                    Defaults to: <code>{{defaultValue}}</code>
-                  </div>
-                {{/if}}
-              </div>
-            </li>
-          {{/each}}
-          </ul>
-        {{/if}}
+            </ul>
+          {{/if}}
+        </div>
 
         {{#if example}}
-          <div class="my-4">
-            <h4 class="text--bold mb-3">
+          <div class="rim-style-modifier">
+            <h4 class="rim-style-section__heading rim-style-content">
               Example:{{#if modifiers}}s{{/if}}
             </h4>
 
             {{#if modifiers}}
-              <div class="text--bold mb-4">
+              <div class="rim-style-modifier__default-name rim-style-content">
                 Default styling
               </div>
             {{/if}}
@@ -189,37 +198,38 @@
             </div>
 
             {{#each modifiers}}
-              <div class="rim-style-modifier__name">
+              <div class="rim-style-modifier__name rim-style-content">
                 {{name}}
               </div>
-              <div class="rim-style-modifier__description mb-4">
+              <div class="rim-style-modifier__description rim-style-content">
                 {{{description}}}
               </div>
               <div class="rim-style-modifier__example">
                 {{{markup}}}
+                <div class="rim-style-modifier__example-footer"></div>
               </div>
             {{/each}}
           </div>
 
           {{#if markup}}
-            <h4 class="mb-3">
+            <h4 class="rim-style-section__heading rim-style-content">
               Markup:
             </h4>
-            <details class="rim-style-markup mb-4" open>
-              <summary class="hidden">
+            <details class="rim-style-markup rim-style-content" open>
+              <summary>
                 {{#if markupFile }}
                   Markup: <code>{{markupFile}}</code>
                 {{else}}
                   Markup
                 {{/if}}
               </summary>
-              <pre class="hljs mx-0 my-0"><code class="language-handlebars">{{{hljs markup 'handlebars'}}}</code></pre>
+              <pre class="rim-style-markup__code-wrapper hljs"><code class="language-handlebars">{{{hljs markup 'handlebars'}}}</code></pre>
             </details>
           {{/if}}
         {{/if}}
 
         {{#if source.filename}}
-          <div>
+          <div class="kss-source rim-style-content">
             Source: <code>{{source.filename}}</code>, line {{source.line}}
           </div>
         {{/if}}
@@ -239,8 +249,8 @@
   <script src="kss-assets/platform-ui.min.js"></script>
   <script>
     var spy = new ScrollSpy('#kss-node', {
-      nav: '.style-nav__child-list > li > a',
-      className: 'text--bold'
+      nav: '.rim-style-nav__menu-child > li > a',
+      className: 'is-in-viewport'
     });
     var kssFullScreen = new KssFullScreen({
       idPrefix: 'kss-fullscreen-',

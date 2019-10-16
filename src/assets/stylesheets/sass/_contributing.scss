@@ -1,4 +1,4 @@
-// Getting-started
+// Contributing
 //
 // ## Get started
 //
@@ -15,7 +15,7 @@
 // | `build:style` |  `rm -rf styleguide && cd custom-builder && npm run sass && cd .. && gulp` |
 // | `ver` | `echo "$npm_package_version"` |
 //
-// Styleguide _getting-started
+// Styleguide _Contributing
 
 // SASS
 //
@@ -30,7 +30,7 @@
 // | <i class="fas fa-exclamation-triangle fa-sm text-orange"></i> NOTE: Place any SCSS native call, includes, extends, loops, and functions, at the bottom of any regular CSS. I.e., `@include`, `@extend`, `@for`, `@each` |
 // | --
 //
-// Styleguide _getting-started.Sass
+// Styleguide _Contributing.Sass
 
 // JavaScript
 //
@@ -51,7 +51,7 @@
 //
 // We use two spaces for JavaScript, HTML, and CSS. If you happen to be writing any C#, use four spaces. The `.editorconfig` file should handle this.
 //
-// Styleguide _getting-started.JavaScript
+// Styleguide _Contributing.JavaScript
 
 // VueJS
 //
@@ -162,4 +162,4 @@
 // </my-component>
 // ```
 //
-// Styleguide _getting-started.JavaScript.VueJS
+// Styleguide _Contributing.JavaScript.VueJS
