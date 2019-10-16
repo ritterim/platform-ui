@@ -108,42 +108,18 @@
   position: absolute !important;
 }
 
-.pin {
-
-  &-top {
-    top: 0;
+@each $pos, $letter in $xy-border {
+  .pin-#{$pos} {
+    #{$pos}: 0;
   }
-
-  &-right {
-    right: 0;
-  }
-
-  &-bottom {
-    bottom: 0;
-  }
-
-  &-left {
-    left: 0;
-  }
-
-  &-center-top {
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  &-center-right {
-    right: 50%;
-    transform: translateX(-50%);
-  }
-
-  &-center-bottom {
-    bottom: 50%;
-    transform: translateY(-50%);
-  }
-
-  &-center-left {
-    left: 50%;
-    transform: translateX(-50%);
+  
+  .pin-center-#{$pos} {
+    #{$pos}: 50%;
+    @if $pos == top or $pos == bottom {
+      transform: translateY(-50%);  
+    } @else {
+      transform: translateX(-50%);
+    }
   }
 }
 
@@ -191,37 +167,14 @@
 //
 // Styleguide Utilities.Overflow
 
-.overflow {
-
-  &-visible {
-    overflow: visible;
+@each $key, $value in $overflow {
+ .overflow-#{$key} {
+    overflow: #{$value};
   }
-
-  &-hidden {
-    overflow: hidden;
-  }
-
-  &-y {
-    overflow-y: visible;
-
-    &--scroll {
-      overflow-y: scroll;
-    }
-
-    &--hidden {
-      overflow-y: hidden;
-    }
-  }
-
-  &-x {
-    overflow-x: visible;
-
-    &--scroll {
-      overflow-x: scroll;
-    }
-
-    &--hidden {
-      overflow-x: hidden;
+  
+  @each $axis, $letter in (y: y, x: x) {
+    .overflow-#{$letter}--#{$key} {
+      overflow-#{$letter}: #{$value};
     }
   }
 }

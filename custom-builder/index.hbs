@@ -47,14 +47,14 @@
         <li class="rim-list__item mb-0">
           <a class="flex px-3 py-3 pos-rel{{#unless template.homepage}} hover-scale text-base{{/unless}}{{#if template.isHomepage}} background-skyblue text-navy text--bold{{/if}}" href="./">
             <span>Home v{{ options.version }}</span>
-            <i class="pos-abs pin-right mr-3 fad fa-home"></i>
+            <i class="pos-abs pin-right pin-center-top mr-3 fad fa-home"></i>
           </a>
         </li>
       {{#each menu}}
         <li class="rim-list__item mb-0">
           <a class="flex px-3 py-3 pos-rel{{#unless isActive}} hover-scale text-base{{/unless}}{{#if isActive}} background-skyblue text-navy text--bold{{/if}}" href="section-{{referenceURI}}.html">
             <span>{{referenceNumber}}</span><span class="ml-2">{{header}}</span>
-            <i class="pos-abs pin-right mr-3 fal fa-angle-down fa-lg{{#if isActive}} fa-rotate-180{{/if}}"></i>
+            <i class="pos-abs pin-right pin-center-top mr-3 fal fa-angle-down fa-lg{{#if isActive}} fa-rotate-180{{/if}}"></i>
             {{!-- {{#if children}}<i class="fas fa-chevron-right"></i>{{/if}} --}}
           </a>
           {{#if isActive}}
