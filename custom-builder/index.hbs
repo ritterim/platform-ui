@@ -80,7 +80,7 @@
   <main class="pb-4 {{#unless homepage}}px-4 background-white{{/unless}}" aria-label="Content">
     {{#if homepage}}
     <div class="crm-banner animated slideInDown fast flex--center-content flex--column pt-6" style="background-image: linear-gradient(to right, white, transparent), url('site-assets/stylesheets/images/style-guide-background.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
-      <h1 class="mb-2">Welcome to the Platform UI Style Guide</h1>
+      <h1 class="my-4">Welcome to the Platform UI Style Guide</h1>
       <p>Platform UI is the CSS framework we've developed to maintain the Ritter Platform of agent tools.</p>
       <a href="/section-_contributing.html" class="button button--post button--lg">Get Started v{{ options.version }}</a>
     </div>
@@ -113,7 +113,7 @@
       the "#if @first" block as seen below.
     }}
     {{#each sections}}
-      <div id="kssref-{{referenceURI}}" class="border-b border--color-lighter pb-3{{#unless @first}} pt-6 mt-2{{/unless}}{{#if @first}} pt-5{{/if}}{{#if @last}} no-border{{/if}} {{#if @root.template.isItem}}is-fullscreen{{/if}}">
+      <div id="kssref-{{referenceURI}}" class="border-b border--color-lighter pb-3{{#unless @first}} pt-7 mt-2{{/unless}}{{#if @first}} pt-5{{/if}}{{#if @last}} no-border{{/if}} {{#if @root.template.isItem}}is-fullscreen{{/if}}">
         <h{{depth}} class="rim-style-title {{#if @first}}text--bold text--size-xxl{{/if}} mb-3">
           <a class="rim-style-title__permalink {{#if @first}} text-navy{{else}} text-dark{{/if}}" href="#kssref-{{referenceURI}}">
             <div class="rim-style-title__ref text-base text--size-xxs">
@@ -131,7 +131,7 @@
         </h{{depth}}>
 
         {{#if description}}
-          <div class="rim-style-description">
+          <div class="rim-style-description pui-code-block">
             {{{description}}}
           </div>
         {{/if}}
@@ -213,7 +213,9 @@
                   Markup
                 {{/if}}
               </summary>
-              <pre class="hljs mx-0 my-0"><code class="language-handlebars">{{{hljs markup 'handlebars'}}}</code></pre>
+              <pre class="hljs mx-0 my-0">
+                <code class="language-handlebars">{{{hljs markup 'handlebars'}}}</code>
+              </pre>
             </details>
           {{/if}}
         {{/if}}
