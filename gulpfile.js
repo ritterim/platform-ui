@@ -65,8 +65,7 @@ function styleguide() {
   return kss({
     source: 'src/assets/stylesheets/',
     destination: 'styleguide/',
-    builder: 'custom-builder',
-    css: 'kss-assets/kss.css'
+    builder: 'custom-builder'
   });
 }
 
