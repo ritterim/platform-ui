@@ -100,12 +100,10 @@
 //
 // Styleguide Utilities.Position
 
-.pos-rel {
-  position: relative !important;
-}
-
-.pos-abs {
-  position: absolute !important;
+@each $key, $val in $positions {
+  .pos-#{$key} {
+    position: #{$val}!important; 
+  }
 }
 
 @each $pos, $letter in $xy-border {
