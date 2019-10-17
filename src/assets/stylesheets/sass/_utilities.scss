@@ -26,20 +26,87 @@
 }
 
 
+// Colors
+// 
+// Find some utility classes that you can use to use along our existing color classes.
+// 
+// Styleguide Utilities.Color
 
-// add-on to animate.css to speed up
-.animated.fastest {
-  animation-duration: $transitions;
-}
+
+// Transparent
+// 
+// If you want to remove the background color and border color on an element, add the class `transparent`.
+// 
+// Markup:
+// <div class="block-container rim-card background-lighter">
+//   <div class="block-6">
+//     <button class="button">Button</button>
+//   </div>
+//   <div class="block-6">
+//     <button class="button transparent">Transparent Button</button>
+//   </div>
+// </div>
+// 
+// Styleguide Utilities.Color.Transparent
 
 .transparent {
-  background: transparent;
-  border-color: transparent;
+  background: transparent!important;
+  border-color: transparent!important;
 }
+
+// Inverted
+// 
+// The `inverted` class changes the color of an element to white. It has a transition, so after the class is added, the color
+// will transition to white.
+// 
+// Styleguide Utilities.Color.Inverted
 
 .inverted {
   @extend %inverted;
 }
+
+
+// Close Action
+// 
+// The close action is used to close or hide certain components. It could be used on banners and modals for example.
+// It needs to have a position class associated with it, like `right` or `left`. These classes tell it what side of the container it will live on.
+// You can see the Collapse button in the banners below.
+// 
+// Markup:
+// <div class="crm-banner post animated slideInDown fast" style="background-image: linear-gradient(to right, white, 80%, transparent), url('https://freephotos.cc/storage/preview/path/e0TY5dzjfyAcol92eAidR4ublvPlT2dBbmAGcqeN.jpeg'); background-repeat: no-repeat; background-size: cover; background-position: top center;">
+//   <div class="button button--sm close-action right">
+//     collapse
+//     <i class="fas fa-angle-up" aria-hidden="true"></i>
+//   </div>
+//   <h2 class="crm-banner__title mb-2">
+//     Your dashboard got an upgrade!
+//   </h2>
+//   <p class="crm-banner__teaser">        
+//     Take a quick video tour to see the new features of your dashboard.
+//   </p>
+//   <a data-modal="video-banner" class="button button--post button--lg rim-modal__open">
+//     <i class="far fa-play-circle" aria-hidden="true"></i>
+//     Watch now
+//   </a>
+// </div>
+// <div class="crm-banner post animated slideInDown fast" style="background-image: linear-gradient(to right, white, 80%, transparent), url('https://freephotos.cc/storage/preview/path/e0TY5dzjfyAcol92eAidR4ublvPlT2dBbmAGcqeN.jpeg'); background-repeat: no-repeat; background-size: cover; background-position: top center;">
+//   <div class="button button--sm close-action left">
+//     collapse
+//     <i class="fas fa-angle-up" aria-hidden="true"></i>
+//   </div>
+//   <h2 class="crm-banner__title mb-2">
+//     Your dashboard got an upgrade!
+//   </h2>
+//   <p class="crm-banner__teaser">        
+//     Take a quick video tour to see the new features of your dashboard.
+//   </p>
+//   <a data-modal="video-banner" class="button button--post button--lg rim-modal__open">
+//     <i class="far fa-play-circle" aria-hidden="true"></i>
+//     Watch now
+//   </a>
+// </div>
+// 
+// Styleguide Utilities.CloseAction
 
 .close-action {
   @each $position in ('left', 'right') {
@@ -53,6 +120,10 @@
 
 .fa-spinner {
   animation: spin 2s infinite linear;
+}
+
+.animated.fastest {
+  animation-duration: $transitions;
 }
 
 
