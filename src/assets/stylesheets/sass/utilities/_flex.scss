@@ -1,18 +1,21 @@
 // Flex
 //
-// Flexbox utilities to use when flexbox is present
+// Flexbox utilities to use when flexbox is present.
 //
 // Usage:
 // `.flex .flex--align-center`
 //
 // `.flex--center-content` centers content horizontaly and vertically. it includes `display: flex`
 //
-// | Class Name             |                    |                     |                      |                      |
-// | ---------------------- | ------------------ | ------------------- | -------------------- | -------------------- |
-// | `flex--align-center`   | `flex--column`     | `flex--justify-between` | `flex--justify-end` | `flex--justify-start` |
-// | `flex--justify-center` | `flex--wrap`   | `flex--grow` | `flex-inline`   | `flex--align-baseline`  | 
+// | Class Name             |                         |                         |                      |                          |
+// | ---------------------- | ----------------------- | ----------------------- | -------------------- | ------------------------ |
+// | `flex--align-center`   | `flex--column`          | `flex--justify-between` | `flex--justify-end`  | `flex--justify-start`    |
+// | `flex--justify-center` | `flex--wrap`            | `flex--grow`            | `flex-inline`        | `flex--align-baseline`   | 
+// | `flex--align-start`    | `flex--align-end`       | `flex--align-center`    | `flex-nowrap`        | `flex--justify-between`  | 
+// | `flex--row-reverse`    | `flex--column-reverse`  | `flex--align-center`    | `flex-nowrap`        | `flex--justify-between`  | 
 //
 // Styleguide Utilities.Flex
+
 .flex {
   display: flex;
 
@@ -22,6 +25,10 @@
 
   &--wrap {
     flex-wrap: wrap;
+  }
+
+  &--nowrap {
+    flex-wrap: nowrap
   }
 
   &--grow {
