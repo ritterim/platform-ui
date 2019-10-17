@@ -6,6 +6,17 @@
 @import "utilities/typography";
 @import "utilities/borders";
 
+
+// Rotate
+// 
+// Utility classes to rotate an element.
+// 
+// Markup:
+// <button class="rotate-45 button">45 degrees</button>
+// <button class="rotate-180 button">180 degrees</button>
+// 
+// Styleguide Utilities.Rotate
+
 .rotate-45 {
   @extend %rotate-45;
 }
@@ -13,6 +24,8 @@
 .rotate-180 {
   @extend %rotate-180;
 }
+
+
 
 // add-on to animate.css to speed up
 .animated.fastest {
@@ -42,6 +55,15 @@
   animation: spin 2s infinite linear;
 }
 
+
+
+// Screen reader only
+// 
+// This class is to hide text that is important for screen readers and accessibility.
+// `sr-only`
+// 
+// Styleguide Utilities.ScreenReader
+
 .sr-only {
   // https://a11yproject.com/posts/how-to-hide-content/
   clip: rect(0 0 0 0);
@@ -50,6 +72,18 @@
   overflow: hidden;
   position: absolute !important;
 }
+
+
+// Loader
+// 
+// The standard loading wheel that is used throughout platform-ui. This class is extended on the loading button.
+// 
+// Markup:
+// <div>
+//   <div class="rim-loader"></div>
+// </div>
+// 
+// Styleguide Utilities.Loader
 
 %rim-loader,
 .rim-loader {
@@ -61,16 +95,21 @@
   @include square(1.4rem, 'max');
 }
 
+
+// Cursor Pointer
+// 
+// If you want to ensure that the mouse is a pointer on hover add the class `pointer`.
+// 
+// Markup:
+// <div class="rim-card">
+//   <h3>Hover over the text below</h3>
+//   <p class="pointer">This is a standard p and doesn't have a pointer, unless you hover.</p>
+// </div>
+// 
+// Styleguide Utilities.Cursor
+
 .pointer {
   cursor: pointer;
-}
-
-
-.check-circle {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
 }
 
 
