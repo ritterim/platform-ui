@@ -50,13 +50,40 @@ $quarter-values: (
   100: 100%
 );
 
+
+// Overflow map
 $overflow: (
   hidden: hidden,
   scroll: scroll,
   visible: visible
 );
 
+
+// Position map
 $positions: (
   rel: relative,
   abs: absolute
+);
+
+
+// Flex maps
+$flex-align: (
+  start: start,
+  end: flex-end,
+  center: center,
+  baseline: baseline
+);
+
+$flex-direction: (
+  column: column,
+  row-reverse: row-reverse,
+  column-reverse: column-reverse
+);
+
+$flex-justify: (
+  start: flex-start,
+  end: flex-end,
+  around: space-around,
+  between: space-between,
+  center: center
 );
