@@ -170,6 +170,21 @@
 //
 // Styleguide Typography.Utilities.General
 
+
+// Text Shadow
+// 
+// You can add a text-shadow to an element using colors from our [greyscale](/section-color.html#kssref-color-greyscale) map.
+// 
+// | Greyscale                 |                            |                             |                              |
+// | ------------------------- | -------------------------- | --------------------------- | ---------------------------- |
+// | `text--shadow-white`      | `text--shadow-lighter`     | `text--shadow-light-mid`    | `text--shadow-light`         |
+// | `text--shadow-base`       | `text--shadow-dark`        | `text--shadow-black`        |                              |
+// 
+// Markup:
+// <p class="text--shadow-base">This text has a base color shadow.</p>
+// 
+// Styleguide Typography.Utilities.TextShadow
+
 .text {
   &--uppercase {
     text-transform: uppercase;
