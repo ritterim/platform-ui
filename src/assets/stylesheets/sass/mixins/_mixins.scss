@@ -1,8 +1,8 @@
 // Mixins
-//
-// Mixins for the platform
-//
-// Styleguide Mixins
+// 
+// A sample of mixins we use throughout platform-ui.
+// 
+// Styleguide SASS.Mixins
 
 // Media Queries
 //
@@ -122,7 +122,7 @@
 //```
 //
 //
-// Styleguide Mixins.MediaQuery
+// Styleguide SASS.Mixins.MediaQuery
 
 
 // Square
@@ -176,7 +176,7 @@
 // }
 // ```
 // 
-// Styleguide Mixins.Square
+// Styleguide SASS.Mixins.Square
 
 @mixin breakpoint($breakpoint, $direction: null) {
   @if map-has-key($breakpoints, $breakpoint) {
