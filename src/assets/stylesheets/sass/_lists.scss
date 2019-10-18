@@ -1,16 +1,30 @@
 // Lists
 //
+// The `ul` within platform-ui have `margin: 0` and a `padding-left: 1rem`. The `li`s in those lists have `margin-bottom: .5rem`.
+// Each `post-item` also has a `border-bottom` all except the last item in the list.
+// 
+//  Styleguide Components.Lists
+
+// Post Lists
+// 
+// A  post-list` is a pretty basic list. The margin and padding is removed from the list itself. The `post-item`s which should be added to the `li`s 
+// in the list, have a `padding-bottom: 1rem` and `margin-bottom: 1rem`.
+// 
+// Adding the class `post-list--inline` gives the list an inline look using `display: flex`.
+// 
+// You can add some arrow icons to be in front of each `li` by adding the class `post-list--arrow`.
+// 
 // Markup:
-// <ul class="post-list post-list__inline">
-//   <li class="post-item">This is an inline list item.</li>
-//   <li class="post-item">This is an inline list item.</li>
-//   <li class="post-item">This is an inline list item.</li>
-// </ul>
-// <br>
 // <ul class="post-list">
 //   <li class="post-item">This is a list item.</li>
 //   <li class="post-item">This is a list item.</li>
 //   <li class="post-item">This is a list item.</li>
+// </ul>
+// <br>
+// <ul class="post-list post-list--inline">
+//   <li class="post-item">This is an inline list item.</li>
+//   <li class="post-item">This is an inline list item.</li>
+//   <li class="post-item">This is an inline list item.</li>
 // </ul>
 // <br>
 // <ul class="post-list post-list--arrow">
@@ -18,8 +32,16 @@
 //   <li class="post-item">This is a list item with a leading arrow.</li>
 //   <li class="post-item">This is a list item with a leading arrow.</li>
 // </ul>
-// <br>
-// <p class="mb-2">rim-list is a simplified list that strips the <em>list-style-type</em>, <em>margin</em>, and <em>padding</em>.</p>
+// 
+// Styleguide Components.Lists.Post
+
+// rim-list
+// 
+// The rim-list is a simplified list that strips the `list-style-type`, `margin`, and `padding`.
+// You can have a bordered list by adding the `rim-list--bordered` modifier. Be sure to add the class `rim-list__item` to the li.
+// This puts a top border on the list, as well as a border-bottom on each li.
+// 
+// Markup:
 // <ul class="rim-list">
 //   <li>This is a rim-list item.</li>
 //   <li>This is a rim-list item.</li>
@@ -27,7 +49,6 @@
 // </ul>
 // <br>
 // <div class="mt-4">
-//   <p class="mb-2">You can have a bordered list by adding the <em>rim-list--bordered</em> modifier. Be sure to add the class <em>rim-list__item</em> to the li.</p>
 //   <ul class="rim-list rim-list--bordered">
 //     <li class="rim-list__item">This is a rim-list item.</li>
 //     <li class="rim-list__item">This is a rim-list item.</li>
@@ -35,7 +56,7 @@
 //   </ul>
 // </div>
 //
-// Styleguide Components.Lists
+// Styleguide Components.Lists.RimList
 
 ul {
   margin: 0;
@@ -58,7 +79,7 @@ ul {
       margin: 0;
     }
 
-    &__inline {
+    &--inline {
       display: flex;
       flex-wrap: wrap;
     }
