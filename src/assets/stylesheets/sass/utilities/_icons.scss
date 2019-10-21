@@ -1,3 +1,56 @@
+// SVG Height
+// 
+// Use these classes to change the height of an svg used for an icon.
+// 
+// 
+// ```scss
+// .icon--svg {
+//   height: 2rem
+// }
+// 
+// .icon--svg-small {
+//   height: 1rem
+// }
+// 
+// .icon--svg-large {
+//   height: 3rem
+// }
+// 
+// .icon--svg-xlarge {
+//   height: 6.5rem
+// }
+// ```
+// 
+// Markup:
+// <div class="block-container mobile-up-2 tablet-up-4">
+//   <div class="block">
+//     <h5 class="flex--center-content my-3">
+//       <img class="icon--svg mr-2" src="site-assets/stylesheets/svg/getting-started.svg" alt="">
+//       Commissions
+//     </h5>
+//   </div>
+//   <div class="block">
+//     <h5 class="flex--center-content my-3">
+//       <img class="icon--svg mr-2" src="site-assets/stylesheets/svg/notes.svg" alt="">
+//       Testing
+//     </h5>
+//   </div>
+//   <div class="block">
+//     <h5 class="flex--center-content my-3">
+//       <img class="icon--svg mr-2" src="site-assets/stylesheets/svg/mixins.svg" alt="">
+//       Downlines
+//     </h5>
+//   </div>
+//   <div class="block">
+//     <h5 class="flex--center-content my-3">
+//       <img class="icon--svg mr-2" src="site-assets/stylesheets/svg/print.svg" alt="">
+//       Quotes
+//     </h5>
+//   </div>
+// </div>
+// 
+// Styleguide Utilities.SVGHeight
+
 .icon {
   &--svg {
     height: map-get($spacers, 4);

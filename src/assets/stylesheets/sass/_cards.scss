@@ -1,12 +1,48 @@
 // Cards
 //
-// Card description
+// Cards can be great for seperating blocks of content. A `rim-card` comes standard with a white background, light grey border, and 
+// some padding. 
+// 
+// Note: The use of the block-container and block classes are only to give the rim-card size.
+// 
+// Markup:
+// <div class="block-container">
+//   <div class="block block-4">
+//     <div class="rim-card">
+//       <p>Here's a rim-card.</p>
+//     </div>
+//   </div>
+// </div>
 //
 // Styleguide Components.Cards
 
+// Headers
+// 
+// For the headings in your cards, you generally want to wrap them in the class `rim-card__header`. This works best when you 
+// have a layout of inline content that should have space between. The class `rim-card__group` will give the element `display: flex`.
+// When it is nested inside the class `rim-card__header` it will also have `align-items: center`. 
+// 
+// Markup:
+// <div class="block-container">
+//   <div class="block block-4">
+//     <div class="rim-card">
+//       <div class="rim-card__header">
+//         <div class="rim-card__group">
+//           <i class="far fa-newspaper"></i>
+//           <h2 class="rim-card__title">Agent News</h2>
+//         </div>
+//         <button class="button">Button</button>
+//       </div>
+//       <p>Here's a rim-card.</p>
+//     </div>
+//   </div>
+// </div>
+// 
+// Styleguide Components.Cards.Headers
+
 // News Card
 //
-// This is a news card description
+// Below is an example of where we use a card for a layout where we might be teasing our latest blogs.
 //
 // Markup:
 // <div class="rim-card">
@@ -17,8 +53,8 @@
 //     </div>
 //   </div>
 //   <div class="rim-card__content">
-//    <div class="rim-card__group rim-card__group--split">
-//      <ul class="image-link-list">
+//    <div class="block-container blocks-px-2">
+//      <ul class="image-link-list block block-4">
 //        <li>
 //          <a href="#" class="image-link">
 //            <img src="/styleguide/site-assets/images/image-link.jpg" alt="image" />
@@ -26,7 +62,7 @@
 //          </a>
 //        </li>
 //      </ul>
-//      <ul class="post-list">
+//      <ul class="post-list block block-8">
 //        <li class="post-item">
 //          <div class="post-duration">3 min read</div>
 //          <div class="post-title">Ritter is Named One of the Best Places to Work in PA for 2018</div>
@@ -51,7 +87,8 @@
 
 // Videos
 //
-// This is a video card description
+// For the card below we're showcasing some videos. Here we stick with a simple rim-card, a header, and some content.
+// Within the content we utilize our [block layout](/section-layout.html#kssref-layout-blocks).
 //
 // Markup:
 // <div class="rim-card">
@@ -93,7 +130,7 @@
 // `rim-card__content--scroll` to the `rim-card__content` in order to set a hright and add an `overflow-y: auto;`.
 //
 // Markup:
-// <div class="block-container mobile-up-3">
+// <div class="block-container mobile-up-3 blocks-px-2">
 //   <div class="block">
 //     <div class="rim-card flex flex--column flex--justify-between">
 //         <div class="rim-card__header">
@@ -286,17 +323,6 @@
 
   &__group {
     display: flex;
-
-    &--split {
-      > :first-child {
-        width: 35%;
-      }
-    }
-
-    &--vertical {
-      align-items: flex-start;
-      flex-direction: column;
-    }
 
     > * {
       margin-right: $spacer;

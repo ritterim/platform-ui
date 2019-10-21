@@ -23,8 +23,8 @@
 </head>
 <body id="kss-node" class="{{#if template.isHomepage}}background-lighter{{/if}}{{#unless homepage}}platform toggle{{/unless}}  ">
   <header class="site-header flex--justify-between flex--align-center px-3 py-2 background-white block-container border-b border--color-skyblue">
-    <div class="block block-4 flex flex--justify-start">
-      <a class="flex rim-style-logo-action" href="/">
+    <div class="block block-mobile-4 block-laptop-3 flex flex--justify-start">
+      <a class="flex w-50" href="/">
         <img class="w-100" src="site-assets/stylesheets/svg/RitterInsuranceLogo.svg" alt="Ritter Insurance Marketing">
       </a>
     </div>
@@ -46,15 +46,15 @@
       <ul class="rim-list">
         <li class="rim-list__item mb-0">
           <a class="flex px-3 py-3 pos-rel{{#unless template.homepage}} hover-scale text-base{{/unless}}{{#if template.isHomepage}} background-skyblue text-navy text--bold{{/if}}" href="./">
-            <span>Home v{{ options.version }}</span>
-            <i class="pos-abs pin-right mr-3 fad fa-home"></i>
+            <strong>Home v{{ options.version }}</strong>
+            <i class="pos-abs pin-right pin-center-top mr-3 fad fa-home"></i>
           </a>
         </li>
       {{#each menu}}
         <li class="rim-list__item mb-0">
           <a class="flex px-3 py-3 pos-rel{{#unless isActive}} hover-scale text-base{{/unless}}{{#if isActive}} background-skyblue text-navy text--bold{{/if}}" href="section-{{referenceURI}}.html">
-            <span>{{referenceNumber}}</span><span class="ml-2">{{header}}</span>
-            <i class="pos-abs pin-right mr-3 fal fa-angle-down fa-lg{{#if isActive}} fa-rotate-180{{/if}}"></i>
+            <strong>{{referenceNumber}}</strong><span class="ml-2">{{header}}</span>
+            <i class="pos-abs pin-right pin-center-top mr-3 fal fa-angle-down fa-lg{{#if isActive}} fa-rotate-180{{/if}}"></i>
             {{!-- {{#if children}}<i class="fas fa-chevron-right"></i>{{/if}} --}}
           </a>
           {{#if isActive}}
@@ -63,8 +63,7 @@
               {{#each children}}
                 <li class="mb-0">
                   <a class="flex px-3 py-3 hover-scale text-base" href="section-{{../referenceURI}}.html#kssref-{{referenceURI}}">
-                    <span>{{referenceNumber}}</span
-                    ><span class="ml-2">{{header}}</span>
+                    <strong>{{referenceNumber}}</strong><span class="ml-2">{{header}}</span>
                   </a>
                 </li>
               {{/each}}
@@ -80,7 +79,7 @@
   <main class="pb-4 {{#unless homepage}}px-4 background-white{{/unless}}" aria-label="Content">
     {{#if homepage}}
     <div class="crm-banner animated slideInDown fast flex--center-content flex--column pt-6" style="background-image: linear-gradient(to right, white, transparent), url('site-assets/stylesheets/images/style-guide-background.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
-      <h1 class="mb-2">Welcome to the Platform UI Style Guide</h1>
+      <h1 class="my-4">Welcome to the Platform UI Style Guide</h1>
       <p>Platform UI is the CSS framework we've developed to maintain the Ritter Platform of agent tools.</p>
       <a href="/section-_contributing.html" class="button button--post button--lg">Get Started v{{ options.version }}</a>
     </div>
@@ -113,9 +112,9 @@
       the "#if @first" block as seen below.
     }}
     {{#each sections}}
-      <{{#if @first}}div{{else}}section{{/if}} id="kssref-{{referenceURI}}" class="border-b border--color-lighter {{#if @first}}no-border{{/if}} {{#if @last}}no-border{{/if}} {{#if @root.template.isItem}}is-fullscreen{{/if}}">
-        <h{{depth}} class="rim-style-title {{#if @first}}text--bold text--size-xxl{{/if}} mb-3">
-          <a class="rim-style-title__permalink py-3 my-5{{#if @first}} text-navy{{else}} text-dark{{/if}}" href="#kssref-{{referenceURI}}">
+      <div id="kssref-{{referenceURI}}" class="pb-3{{#unless @first}} border-b border--color-lighter pt-7 mt-2{{/unless}}{{#if @first}} pt-5{{/if}}{{#if @last}} no-border{{/if}} {{#if @root.template.isItem}}is-fullscreen{{/if}}">
+        <h{{#if @first}}1{{else}}2{{/if}} class="rim-style-title {{#if @first}}text--bold text--size-xxl{{/if}} mb-3">
+          <a class="rim-style-title__permalink {{#if @first}} text-navy{{else}} text-dark{{/if}}" href="#kssref-{{referenceURI}}">
             <div class="rim-style-title__ref text-base text--size-xxs">
               Section {{referenceNumber}}
               <span class="rim-style-title__permalink-hash text-light">
@@ -128,10 +127,11 @@
             </div>
             {{header}}
           </a>
-        </h{{depth}}>
+          <hr class="w-25 background-orange" style="height: .3rem;">
+        </h{{#if @first}}1{{else}}2{{/if}}>
 
         {{#if description}}
-          <div class="rim-style-description">
+          <div class="rim-style-description pui-code-block--inline">
             {{{description}}}
           </div>
         {{/if}}
@@ -224,7 +224,7 @@
           </div>
         {{/if}}
 
-      </{{#if @first}}div{{else}}section{{/if}}>
+      </div>
     {{/each}}
   {{/if}}
   </article>

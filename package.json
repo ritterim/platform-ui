@@ -11,8 +11,8 @@
     "start": "npm install && gulp",
     "build": "gulp build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:all": "npm install && cd custom-builder && npm install && npm run sass && cd .. && gulp",
-    "build:style": "rm -rf styleguide && cd custom-builder && npm run sass && cd .. && gulp",
+    "build:all": "npm install && cd custom-builder && npm install && cd .. && gulp",
+    "build:style": "rm -rf styleguide && cd custom-builder && cd .. && gulp",
     "ver": "echo \"$npm_package_version\""
   },
   "browserslist": [

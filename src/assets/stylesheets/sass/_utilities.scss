@@ -6,6 +6,16 @@
 @import "utilities/typography";
 @import "utilities/borders";
 
+// Rotate
+// 
+// Utility classes to rotate an element.
+// 
+// Markup:
+// <button class="rotate-45 button">45 degrees</button>
+// <button class="rotate-180 button">180 degrees</button>
+// 
+// Styleguide Utilities.Rotate
+
 .rotate {
   &-45 {
     @extend %rotate-45;
@@ -18,19 +28,88 @@
   }
 }
 
-// add-on to animate.css to speed up
-.animated.fastest {
-  animation-duration: $transitions;
-}
+
+// Colors
+// 
+// Find some utility classes that you can use to use along our existing color classes.
+// 
+// Styleguide Utilities.Color
+
+
+// Transparent
+// 
+// If you want to remove the background color and border color on an element, add the class `transparent`.
+// 
+// Markup:
+// <div class="block-container rim-card background-lighter">
+//   <div class="block-6">
+//     <button class="button">Button</button>
+//   </div>
+//   <div class="block-6">
+//     <button class="button transparent">Transparent Button</button>
+//   </div>
+// </div>
+// 
+// Styleguide Utilities.Color.Transparent
 
 .transparent {
-  background: transparent;
-  border-color: transparent;
+  background: transparent!important;
+  border-color: transparent!important;
 }
+
+// Inverted
+// 
+// The `inverted` class changes the color of an element to white. It has a transition, so after the class is added, the color
+// will transition to white.
+// 
+// Styleguide Utilities.Color.Inverted
 
 .inverted {
   @extend %inverted;
 }
+
+
+// Close Action
+// 
+// The close action is used to close or hide certain components. It could be used on banners and modals for example.
+// It needs to have a position class associated with it, like `right` or `left`. These classes tell it what side of the container it will live on.
+// You can see the Collapse button in the banners below.
+// 
+// Markup:
+// <div class="crm-banner post animated slideInDown fast" style="background-image: linear-gradient(to right, white, 80%, transparent), url('https://freephotos.cc/storage/preview/path/e0TY5dzjfyAcol92eAidR4ublvPlT2dBbmAGcqeN.jpeg'); background-repeat: no-repeat; background-size: cover; background-position: top center;">
+//   <div class="button button--sm close-action right">
+//     collapse
+//     <i class="fas fa-angle-up" aria-hidden="true"></i>
+//   </div>
+//   <h2 class="crm-banner__title mb-2">
+//     Your dashboard got an upgrade!
+//   </h2>
+//   <p class="crm-banner__teaser">        
+//     Take a quick video tour to see the new features of your dashboard.
+//   </p>
+//   <a data-modal="video-banner" class="button button--post button--lg rim-modal__open">
+//     <i class="far fa-play-circle" aria-hidden="true"></i>
+//     Watch now
+//   </a>
+// </div>
+// <div class="crm-banner post animated slideInDown fast" style="background-image: linear-gradient(to right, white, 80%, transparent), url('https://freephotos.cc/storage/preview/path/e0TY5dzjfyAcol92eAidR4ublvPlT2dBbmAGcqeN.jpeg'); background-repeat: no-repeat; background-size: cover; background-position: top center;">
+//   <div class="button button--sm close-action left">
+//     collapse
+//     <i class="fas fa-angle-up" aria-hidden="true"></i>
+//   </div>
+//   <h2 class="crm-banner__title mb-2">
+//     Your dashboard got an upgrade!
+//   </h2>
+//   <p class="crm-banner__teaser">        
+//     Take a quick video tour to see the new features of your dashboard.
+//   </p>
+//   <a data-modal="video-banner" class="button button--post button--lg rim-modal__open">
+//     <i class="far fa-play-circle" aria-hidden="true"></i>
+//     Watch now
+//   </a>
+// </div>
+// 
+// Styleguide Utilities.CloseAction
 
 .close-action {
   @each $position in ('left', 'right') {
@@ -46,6 +125,19 @@
   animation: spin 2s infinite linear;
 }
 
+.animated.fastest {
+  animation-duration: $transitions;
+}
+
+
+
+// Screen reader only
+// 
+// This class is to hide text that is important for screen readers and accessibility.
+// `sr-only`
+// 
+// Styleguide Utilities.ScreenReader
+
 .sr-only {
   // https://a11yproject.com/posts/how-to-hide-content/
   clip: rect(0 0 0 0);
@@ -54,6 +146,18 @@
   overflow: hidden;
   position: absolute !important;
 }
+
+
+// Loader
+// 
+// The standard loading wheel that is used throughout platform-ui. This class is extended on the loading button.
+// 
+// Markup:
+// <div>
+//   <div class="rim-loader"></div>
+// </div>
+// 
+// Styleguide Utilities.Loader
 
 %rim-loader,
 .rim-loader {
@@ -65,16 +169,21 @@
   @include square(1.4rem, 'max');
 }
 
+
+// Cursor Pointer
+// 
+// If you want to ensure that the mouse is a pointer on hover add the class `pointer`.
+// 
+// Markup:
+// <div class="rim-card">
+//   <h3>Hover over the text below</h3>
+//   <p class="pointer">This is a standard p and doesn't have a pointer, unless you hover.</p>
+// </div>
+// 
+// Styleguide Utilities.Cursor
+
 .pointer {
   cursor: pointer;
-}
-
-
-.check-circle {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
 }
 
 
@@ -104,50 +213,24 @@
 //
 // Styleguide Utilities.Position
 
-.pos-rel {
-  position: relative !important;
+@each $key, $val in $positions {
+  .pos-#{$key} {
+    position: #{$val}!important; 
+  }
 }
 
-.pos-abs {
-  position: absolute !important;
-}
-
-.pin {
-
-  &-top {
-    top: 0;
+@each $pos, $letter in $xy-border {
+  .pin-#{$pos} {
+    #{$pos}: 0;
   }
-
-  &-right {
-    right: 0;
-  }
-
-  &-bottom {
-    bottom: 0;
-  }
-
-  &-left {
-    left: 0;
-  }
-
-  &-center-top {
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  &-center-right {
-    right: 50%;
-    transform: translateX(-50%);
-  }
-
-  &-center-bottom {
-    bottom: 50%;
-    transform: translateY(-50%);
-  }
-
-  &-center-left {
-    left: 50%;
-    transform: translateX(-50%);
+  
+  .pin-center-#{$pos} {
+    #{$pos}: 50%;
+    @if $pos == top or $pos == bottom {
+      transform: translateY(-50%);  
+    } @else {
+      transform: translateX(-50%);
+    }
   }
 }
 
@@ -166,30 +249,18 @@
 // | Height     |              | Width      |              |
 // | ---------- | ------------ | -----------| ------------ |
 // | `h-100`    | height: 100% | `w-100`    | width: 100%  |
-// |            |              | `w-75`     | width: 75%   |
-// |            |              | `w-50`     | width: 50%   |
-// |            |              | `w-25`     | width: 25%   |
+// | `h-75`     | height: 75%  | `w-75`     | width: 75%   |
+// | `h-50`     | height: 50%  | `w-50`     | width: 50%   |
+// | `h-25`     | height: 25%  | `w-25`     | width: 25%   |
 //
 // Styleguide Utilities.HeightWidth
 
-.h-100 {
-  height: 100%;
-}
-
-.w-100 {
-  width: 100%;
-}
-
-.w-75 {
-  width: 75%;
-}
-
-.w-50 {
-  width: 50%;
-}
-
-.w-25 {
-  width: 25%;
+@each $size, $letter in (height: h, width: w) {
+  @each $number, $value in $quarter-values {
+    .#{$letter}-#{$number} {
+      #{$size}: #{$value};
+    }
+  }
 }
 
 
@@ -207,37 +278,14 @@
 //
 // Styleguide Utilities.Overflow
 
-.overflow {
-
-  &-visible {
-    overflow: visible;
+@each $key, $value in $overflow {
+ .overflow-#{$key} {
+    overflow: #{$value};
   }
-
-  &-hidden {
-    overflow: hidden;
-  }
-
-  &-y {
-    overflow-y: visible;
-
-    &--scroll {
-      overflow-y: scroll;
-    }
-
-    &--hidden {
-      overflow-y: hidden;
-    }
-  }
-
-  &-x {
-    overflow-x: visible;
-
-    &--scroll {
-      overflow-x: scroll;
-    }
-
-    &--hidden {
-      overflow-x: hidden;
+  
+  @each $axis, $letter in (y: y, x: x) {
+    .overflow-#{$letter}--#{$key} {
+      overflow-#{$letter}: #{$value};
     }
   }
 }

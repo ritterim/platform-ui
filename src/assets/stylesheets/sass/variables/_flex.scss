@@ -1,0 +1,21 @@
+// Flex maps
+$flex-align: (
+  start: start,
+  end: flex-end,
+  center: center,
+  baseline: baseline
+);
+
+$flex-direction: (
+  column: column,
+  row-reverse: row-reverse,
+  column-reverse: column-reverse
+);
+
+$flex-justify: (
+  start: flex-start,
+  end: flex-end,
+  around: space-around,
+  between: space-between,
+  center: center
+);

@@ -1,3 +1,6 @@
+// Breakpoints map used in our breakpoints mixin
+// as well as some of our utility classes
+
 $breakpoints: (
   mobile: 0px,
   tablet: 768px,
@@ -6,4 +9,3 @@ $breakpoints: (
   desktop: 1800px
 );
 
-$max-height: 600px;

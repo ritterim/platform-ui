@@ -4,8 +4,7 @@
   "description": "The default builder for kss-node.",
   "main": "builder.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "./node_modules/.bin/node-sass --output-style compressed kss-assets/kss.scss kss-assets/kss.css"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
     "highlight.js": "^9.12.0",

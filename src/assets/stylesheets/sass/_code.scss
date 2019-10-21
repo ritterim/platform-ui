@@ -1,72 +1,8 @@
-@import "../src/assets/stylesheets/sass/main.scss";
-
-main {
-  min-width: 0;
-}
-
-.rim-style {
-  $self: &;
-
-  &-logo-action {
-    max-width: 12rem;
-  }
-  
-  &-title {
-
-    &__permalink {
-      display: block;
-      font-family: map-get($fonts, 'post-headline');
-
-      &:after {
-        border-bottom: .3rem solid map-get($brand-colors, 'orange');
-        content: "";
-        display: block;
-        padding-bottom: map-get($spacers, 4);
-        width: 12rem;
-      }
-
-      &:active,
-      &:focus,
-      &:hover {
-        color: lighten(map-get($greyscale, 'base'), 10%);
-        @media screen and (min-width: 607px) {
-          #{$self}-title__permalink-hash {
-            display: inline;
-          }
-        }
-      }
-    }
-
-    &__permalink-hash {
-      display: none;
-    }
-  }
-
-  &-description {
-
-    h2 {
-      margin-bottom: $spacer;
-    }
-
-    p {
-      margin-bottom: $spacer * 1.5;
-    }
-
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    code {
-      background-color: map-get($message-colors, 'info-light' );
-      border-bottom: 1px solid #b2e1ff;
-      color: map-get($brand-colors, 'navy' );
-      font-size: map-get($font-percentage, 'sm' );
-      padding: map-get($spacers, 1 );
-    }
-  }
-}
-
+// Code 
+// 
+// You can see the styles for our code blocks throughout the styleguide. Each "Markup" block is outputting actual code tags. 
+// 
+// Styleguide Utilities.code
 
 
 code,
@@ -199,4 +135,16 @@ pre {
   background-color: #600;
   display: inline-block;
   width: 100%;
+}
+
+
+.pui-code-block--inline {
+
+  code {
+    background-color: map-get($message-colors, 'info-light' );
+    border-bottom: 1px solid #b2e1ff;
+    color: map-get($brand-colors, 'navy' );
+    font-size: map-get($font-percentage, 'sm' );
+    padding: map-get($spacers, 1 );
+  }
 }
