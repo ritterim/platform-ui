@@ -12,3 +12,64 @@
     }
   }
 }
+
+.search {
+  $self: &;
+  &--complex {
+    display: flex;
+    flex-flow: row;
+    height: 100%;
+    &-close {
+      display: none;
+    }
+    #{$self}-bar {
+      .search--toggle {
+        display: none;
+      }
+      &:not(.active) {
+        background-color: grey;
+        border-right: 1px solid lightgray;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        max-width: 4rem;
+        padding: .5rem;
+        transition: .3s;
+        &:last-child {
+          border: none;
+        }
+        .search--close {
+          display: none
+        }
+        .search--toggle {
+          align-self: center;
+          cursor: pointer;
+          display: flex;
+        }
+        .search-bar__title {
+          color: white;
+          padding-left: 1rem;
+          text-transform: capitalize;
+          transform: rotate(-90deg);
+        }
+        .search-bar__count {
+          transform: rotate(90deg);
+        }
+        .search-bar__content {
+          display: none;
+        }
+      }
+      &.active {
+        padding: 1rem;
+        .search-bar__count {
+          display: none;
+        }
+        .search--close {
+          position: absolute;
+          bottom: 1rem;
+          z-index: 10;
+        }
+      }
+    }
+  }
+}

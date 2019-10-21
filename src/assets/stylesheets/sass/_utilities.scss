@@ -6,7 +6,6 @@
 @import "utilities/typography";
 @import "utilities/borders";
 
-
 // Rotate
 // 
 // Utility classes to rotate an element.
@@ -17,12 +16,16 @@
 // 
 // Styleguide Utilities.Rotate
 
-.rotate-45 {
-  @extend %rotate-45;
-}
-
-.rotate-180 {
-  @extend %rotate-180;
+.rotate {
+  &-45 {
+    @extend %rotate-45;
+  }
+  &-90 {
+    @extend %rotate-90;
+  }
+  &-180 {
+    @extend %rotate-180;
+  }
 }
 
 
