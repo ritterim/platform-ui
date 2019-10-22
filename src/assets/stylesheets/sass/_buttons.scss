@@ -156,15 +156,18 @@
   $secondary-background: map-get($brand-colors, 'salmon');
   $secondary-color: map-get($greyscale, 'white');
 
+  align-items: center;
   background-color: $primary-background;
   border: 1px solid lighten(map-get($greyscale, 'light'), $hue-threshold * 2);
   border-radius: $border-radius;
   color: $primary-color;
   cursor: pointer;
+  display: flex;
   font-family: map-get($fonts, 'base');
   font-size: map-get($fonts, 'size');
   padding: map-get($spacers, 1) $spacer;
   transition: $duration;
+  white-space: nowrap;
 
   &.active,
   &:hover {
