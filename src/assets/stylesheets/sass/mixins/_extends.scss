@@ -99,3 +99,10 @@
     border-radius: map-get($radius, 'button' );
   }
 }
+
+%circle-pill {
+  border-radius: map-get($radius, 'button');
+  padding: map-get($spacers, 1);
+  @include square($spacer * 1.5);
+  @extend %flex-center;
+}

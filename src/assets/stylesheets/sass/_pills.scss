@@ -87,6 +87,26 @@
 //
 // Styleguide Components.Pill.Circle
 
+// Circle Image
+//
+// Circular pills can also have images.
+//
+// Markup:
+// <div class="pill pill--circle__image-small background-navy">
+//   <img src="site-assets/stylesheets/svg/ritter-horse.svg" alt="horse">
+// </div>
+// <div class="pill pill--circle__image-small">
+//   <img src="https://images.unsplash.com/photo-1565191999001-551c187427bb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" alt="pretty">
+// </div>
+// <div class="pill pill--circle__image-medium">
+//   <img src="https://images.unsplash.com/photo-1565191999001-551c187427bb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" alt="pretty">
+// </div>
+// <div class="pill pill--circle__image-large">
+//   <img src="https://images.unsplash.com/photo-1565191999001-551c187427bb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" alt="pretty">
+// </div>
+//
+// Styleguide Components.Pill.CircleImage
+
 
 .pill {
 
@@ -113,10 +133,32 @@
   }
 
   &--circle {
-    border-radius: $border-radius * 100;
-    padding: map-get($spacers, 1);
-    @include square($spacer * 1.5);
-    @extend %flex-center;
+
+    @extend %circle-pill;
+
+    &__image {
+      &-small {
+        @include square(100px);
+      }
+      &-medium {
+        @include square(150px);
+      }
+      &-large {
+        @include square(200px);
+      }
+      &-small,
+      &-medium,
+      &-large {
+        @extend %circle-pill;
+        border-radius: $border-radius * 100;
+        overflow: hidden;
+        padding: 0 !important;
+        img {
+          height: 100%;
+          width: auto;
+        }
+      }
+    }
     &__empty {
       @extend .pill--circle;
       &--dot {

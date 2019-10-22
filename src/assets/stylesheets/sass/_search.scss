@@ -26,15 +26,19 @@
       .search--toggle {
         display: none;
       }
+      .search-bar__count {
+        font-size: 50%;
+      }
       &:not(.active) {
-        background-color: grey;
-        border-right: 1px solid lightgray;
+        background-color: map-get($greyscale, 'light');;
+        border-right: 1px solid map-get($greyscale, 'lighter');
+        color: map-get($greyscale, 'white');
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        max-width: 4rem;
-        padding: .5rem;
-        transition: .3s;
+        max-width: $spacer * 4;
+        padding: map-get($spacers, 2);
+        transition: $transitions;
         &:last-child {
           border: none;
         }
@@ -43,17 +47,24 @@
         }
         .search--toggle {
           align-self: center;
+          color: map-get($greyscale, 'white');
           cursor: pointer;
           display: flex;
         }
         .search-bar__title {
-          color: white;
-          padding-left: 1rem;
+          color: map-get($greyscale, 'white');
+          display: flex;
+          padding-left: $spacer;
+          justify-content: space-between;
           text-transform: capitalize;
           transform: rotate(-90deg);
         }
         .search-bar__count {
-          transform: rotate(90deg);
+          color: map-get($greyscale, 'white');
+          font-size: 50%;
+          font-weight: lighter;
+          margin-right: $spacer;
+          @extend %rotate-90;
         }
         .search-bar__content {
           display: none;
@@ -61,12 +72,9 @@
       }
       &.active {
         padding: 1rem;
-        .search-bar__count {
-          display: none;
-        }
         .search--close {
           position: absolute;
-          bottom: 1rem;
+          bottom: $spacer;
           z-index: 10;
         }
       }
