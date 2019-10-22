@@ -165,6 +165,7 @@
   font-size: map-get($fonts, 'size');
   padding: map-get($spacers, 1) $spacer;
   transition: $duration;
+  white-space: nowrap;
 
   &.active,
   &:hover {
