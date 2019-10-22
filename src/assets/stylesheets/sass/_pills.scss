@@ -62,10 +62,10 @@
 // Pills can be circular. Sizes above `dot`, can have content. They come in 5 sizes, `dot`, `empty`, `pill--circle` (_default_), `pill--circle-medium`, `pill--circle-large`
 //
 // Markup:
-// <div class="pill pill--circle__empty--dot negative"></div>
-// <div class="pill pill--circle__empty--dot positive"></div>
-// <div class="pill pill--circle__empty negative"></div>
-// <div class="pill pill--circle__empty positive"></div>
+// <div class="pill pill--circle-empty-dot negative"></div>
+// <div class="pill pill--circle-empty-dot positive"></div>
+// <div class="pill pill--circle-empty negative"></div>
+// <div class="pill pill--circle-empty positive"></div>
 // <div class="pill pill--circle">
 //   33
 // </div>
@@ -86,6 +86,8 @@
 // </div>
 //
 // Styleguide Components.Pill.Circle
+
+
 
 
 .pill {
@@ -113,13 +115,12 @@
   }
 
   &--circle {
-    border-radius: $border-radius * 100;
-    padding: map-get($spacers, 1);
-    @include square($spacer * 1.5);
-    @extend %flex-center;
-    &__empty {
+
+    @extend %basic-circle;
+
+    &-empty {
       @extend .pill--circle;
-      &--dot {
+      &-dot {
         padding: 0;
         @include square(map-get($spacers, 2));
       }

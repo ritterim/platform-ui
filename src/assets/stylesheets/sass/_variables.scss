@@ -61,3 +61,10 @@ $positions: (
   rel: relative,
   abs: absolute
 );
+
+// image radius
+$image-size: (
+  'small' : 100px,
+  'medium': 150px,
+  'large':  200px
+);

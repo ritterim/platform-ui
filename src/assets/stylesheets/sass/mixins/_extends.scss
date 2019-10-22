@@ -1,9 +1,9 @@
 // Extends
-// 
+//
 // We use extends throughout platform-ui. You can extend a block of scss by using `@extend {class-name}` or, how we
 // typically use extends is by extending a placeholder selector. Rather than a class `@extend %example-placeholder`.
 // These are style rules that we only want to extend.
-// 
+//
 // **You can find a list of extendable placeholders below:**
 // ```scss
 // %flex-center {
@@ -11,45 +11,45 @@
 //   align-items: center;
 //   justify-content: center;
 // }
-// 
+//
 // %truncate-with-ellipsis {
 //   overflow: hidden;
 //   text-overflow: ellipsis;
 //   white-space: nowrap;
 // }
-// 
+//
 // %rotate-45 {
 //   transform: rotate(45deg);
 // }
-// 
+//
 // %rotate-180 {
 //   transform: rotate(180deg);
 // }
-// 
+//
 // %inverted {
 //   color: map-get($greyscale, 'white') !important;
 //   transition: $transitions;
 // }
-// 
+//
 // %scrollbar {
-// 
+//
 //   &::-webkit-scrollbar {
 //     @include square(.5rem);
 //   }
-// 
+//
 //   &::-webkit-scrollbar-thumb {
 //     background-clip: padding-box;
 //     background-color: map-get($greyscale, 'light' );
 //     border-radius: map-get($radius, 'button' );
 //   }
-// 
+//
 //   &::-webkit-scrollbar-track {
 //     background-color: map-get($greyscale, 'lighter' );
 //     border-radius: map-get($radius, 'button' );
 //   }
 // }
 // ```
-// 
+//
 // Styleguide SASS.Extends
 
 
@@ -98,4 +98,10 @@
     background-color: map-get($greyscale, 'lighter' );
     border-radius: map-get($radius, 'button' );
   }
+}
+
+%basic-circle {
+  border-radius: map-get($radius, 'round');
+  @include square($spacer * 1.5);
+  @extend %flex-center;
 }
