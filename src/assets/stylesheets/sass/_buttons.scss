@@ -160,7 +160,7 @@
   display: flex;
   font-family: map-get($fonts, 'base');
   font-size: map-get($fonts, 'size');
-  padding: map-get($spacers, 1) $spacer;
+  padding: conf.$primary-padding;
   transition: conf.$duration;
   white-space: nowrap;
 
@@ -349,7 +349,7 @@
 
   &--lg {
     font-size: map-get($font-percentage, 'lg');
-    padding: map-get($spacers, 2) $spacer;
+    padding: conf.$large-padding;
 
     &.loading {
 
@@ -371,7 +371,7 @@
   align-items: center;
 
   .button {
-    margin: 0 map-get($spacers, 1);
+    margin: conf.$group-margin;
 
     &:first-child {
       margin-left: 0;
