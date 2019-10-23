@@ -131,10 +131,10 @@
 // Styleguide Components.Button.Accessibility
 
 // Active
-// 
+//
 // By adding the class `active` to a button, the button's hover effect is mimicked.
-// 
-// Markup: 
+//
+// Markup:
 // <button class="button">Add <i class="fas fa-plus" aria-hidden="hidden"></i></button>
 // <button class="button button--lg active">Add <i class="fas fa-plus" aria-hidden="hidden"></i></button>
 // <div class="button-group mt-4">
@@ -145,22 +145,17 @@
 //     <i class="fas fa-chart-pie" aria-hidden="hidden"></i>
 //   </a>
 // </div>
-// 
+//
 // Styleguide Components.Button.Active
 
 .button {
 
-  $border-radius: map-get($radius, 'button');
-  $primary-background: map-get($greyscale, 'white');
-  $primary-color: map-get($greyscale, 'base');
-  $secondary-background: map-get($brand-colors, 'salmon');
-  $secondary-color: map-get($greyscale, 'white');
 
   align-items: center;
-  background-color: $primary-background;
+  background-color: $button-primary-background;
   border: 1px solid lighten(map-get($greyscale, 'light'), $hue-threshold * 2);
-  border-radius: $border-radius;
-  color: $primary-color;
+  border-radius: $button-border-radius;
+  color: $button-primary-color;
   cursor: pointer;
   display: flex;
   font-family: map-get($fonts, 'base');
@@ -171,9 +166,9 @@
 
   &.active,
   &:hover {
-    background-color: $secondary-background;
+    background-color: $button-secondary-background;
     border-color: inherit;
-    color: $secondary-color;
+    color: $button-secondary-color;
   }
 
   &:disabled {
@@ -190,7 +185,7 @@
     position: relative;
 
     &:before {
-      background-color: $secondary-background;
+      background-color: $button-secondary-background;
       content: '';
       position: absolute;
       top: 0;
@@ -206,7 +201,7 @@
         box-sizing: border-box;
         content: '';
         display: block;
-        border-color: $primary-background;
+        border-color: $button-primary-background;
         border-top-color: lighten(map-get($greyscale, 'base' ), 20%);
         left: 50%;
         margin-left: -.5rem;
@@ -214,11 +209,11 @@
         position: absolute;
         top: 50%;
       }
-    }    
+    }
   }
 
   i {
-    margin: 0 map-get($spacers, 1);    
+    margin: 0 map-get($spacers, 1);
   }
 
   [aria-hidden="hidden"] {
@@ -231,14 +226,14 @@
       @include breakpoint(lg-tablet, max) {
         display: none;
       }
-    }    
+    }
   }
 
   &--secondary {
-    background-color: $secondary-background;
-    border: 1px solid $secondary-background;
-    color: $secondary-color;
-    border-radius: $border-radius * 100;
+    background-color: $button-secondary-background;
+    border: 1px solid $button-secondary-background;
+    color: $button-secondary-color;
+    border-radius: $button-border-radius * 100;
     padding: 0;
     width: 2rem;
     height: 2rem;
@@ -246,8 +241,8 @@
 
     &.active,
     &:hover {
-      background-color: darken($secondary-background, $hue-threshold);
-      box-shadow: 0 0 0 .3rem lighten($secondary-background, $hue-threshold);
+      background-color: darken($button-secondary-background, $hue-threshold);
+      box-shadow: 0 0 0 .3rem lighten($button-secondary-background, $hue-threshold);
     }
 
     &[data-button-text] {
@@ -276,14 +271,14 @@
     &.loading {
 
       &:before {
-        background-color: darken($secondary-background, $hue-threshold);
-        box-shadow: 0 0 0 .3rem lighten($secondary-background, $hue-threshold);
+        background-color: darken($button-secondary-background, $hue-threshold);
+        box-shadow: 0 0 0 .3rem lighten($button-secondary-background, $hue-threshold);
       }
 
       &[data-button-text] {
-        background-color: darken($secondary-background, $hue-threshold);
+        background-color: darken($button-secondary-background, $hue-threshold);
         border-color: inherit;
-        box-shadow: 0 0 0 .3rem lighten($secondary-background, $hue-threshold);
+        box-shadow: 0 0 0 .3rem lighten($button-secondary-background, $hue-threshold);
         padding: 0 map-get($spacers, 1 );
         width: auto;
 
@@ -295,7 +290,7 @@
           box-shadow: none;
           content: '';
           display: block;
-          border-color: $primary-background;
+          border-color: $button-primary-background;
           border-top-color: lighten(map-get($greyscale, 'base' ), 20%);
           left: 0;
           margin: 0 map-get($spacers, 1 );
@@ -332,22 +327,22 @@
   }
 
   &--post {
-    background-color: $secondary-background;
-    border: 1px solid $secondary-background;
-    color: $secondary-color;
+    background-color: $button-secondary-background;
+    border: 1px solid $button-secondary-background;
+    color: $button-secondary-color;
     transition: $transitions;
 
     &.active,
     &:hover {
-      background-color: darken($secondary-background, 10%);
-      background-image: linear-gradient(45deg, $secondary-background, darken($secondary-background, $hue-threshold * 2));
+      background-color: darken($button-secondary-background, 10%);
+      background-image: linear-gradient(45deg, $button-secondary-background, darken($button-secondary-background, $hue-threshold * 2));
     }
 
     &.loading {
 
       &:before {
-        background-color: darken($secondary-background, 10%);
-        background-image: linear-gradient(45deg, $secondary-background, darken($secondary-background, $hue-threshold * 2));
+        background-color: darken($button-secondary-background, 10%);
+        background-image: linear-gradient(45deg, $button-secondary-background, darken($button-secondary-background, $hue-threshold * 2));
       }
     }
   }

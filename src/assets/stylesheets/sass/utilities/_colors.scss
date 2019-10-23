@@ -1,12 +1,9 @@
-// make $brand-colors and $secondary colors available as text and background colors
-
-$all-colors: map-merge(map-merge($brand-colors, $secondary-colors), $greyscale);
 
 // Background Colors
-// 
+//
 // These classes are to be used to set, or change a background-color on a specific element. Similar to our `text-{color}` classes.
 // You can view our list of colors [greyscale](/section-color.html#kssref-color-greyscale), [brand colors](/section-color.html#kssref-color-brandcolors), and [secondary colors](/section-color.html#kssref-color-secondarycolors) maps.
-// 
+//
 // | Greyscale               |                          |                           |                            |
 // | ----------------------- | ------------------------ | ------------------------- | -------------------------- |
 // | `background-white`      | `background-lighter`     | `background-light-mid`    | `background-light`         |
@@ -22,8 +19,10 @@ $all-colors: map-merge(map-merge($brand-colors, $secondary-colors), $greyscale);
 // | `background-red`        | `background-olive`       | `background-purple`       | `background-yellow`        |
 // | `background-pink`       | `background-cyan`        | `background-violet`       | `background-blue`          |
 // | `background-green`      | `background-teal`        | `background-gold`         |                            |
-// 
+//
 // Styleguide Utilities.Color.Background
+
+$all-colors: map-merge($config-colors, $greyscale);
 
 @each $name, $color in $all-colors {
   // text color
@@ -41,7 +40,7 @@ $all-colors: map-merge(map-merge($brand-colors, $secondary-colors), $greyscale);
           background-color: $color!important;
         }
       }
-      
+
       &:hover {
         color: $color !important;
       }

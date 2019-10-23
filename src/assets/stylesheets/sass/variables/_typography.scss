@@ -1,14 +1,6 @@
-$fonts: (
-  'base': #{'Inter UI', sans-serif},
-  'base-alt': #{'Inter UI var alt', sans-serif},
-  'color': map-get($greyscale, 'dark'),
-  'headline': #{'Roboto', sans-serif},
-  'headline-slab': #{'Roboto Slab', serif},
-  'post-headline': #{'Raleway', sans-serif},
-  'size': 1rem
-);
 
-$font-scale: .3;
+
+$font-scale: .3; //NOTE: define where we use this
 
 $font-percentage: (
   'xxs': 50%,

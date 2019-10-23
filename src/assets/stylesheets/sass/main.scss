@@ -1,6 +1,5 @@
-@import url('https://rsms.me/inter/inter-ui.css');
-@import url('https://fonts.googleapis.com/css?family=Raleway:400,500|Roboto+Slab|Roboto:300i,400,500,700&display=swap');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css');
+
+@import "config";
 
 @import "variables";
 
@@ -10,6 +9,8 @@
 // animation libs
 @import "animate"; // leveraging animate.css
 @import "vue-transitions";
+
+@import "normalize";
 
 // initial structure
 @import "base";
