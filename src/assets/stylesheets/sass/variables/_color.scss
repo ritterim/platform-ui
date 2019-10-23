@@ -5,7 +5,7 @@
 // `map-get($map, $key);`
 //
 // All color variations should be handled through `darken()`, `lighten()`, or `rgba` for alpha transparency.
-// 
+//
 // Our Color Utility classes can be found in the Utilities section of the guide, [here](/section-utilities.html#kssref-utilities-color).
 //
 // Styleguide Color
@@ -32,33 +32,6 @@ $greyscale: (
   'black': #222
 );
 
-// Brand Colors
-//
-// Colors:
-// navy: #003f70
-// skyblue: #91b9dc
-// lightblue: #E5F5FF
-// med-blue: #3f7bad
-// beige: #ecd7b1
-// peach: #dfa278
-// salmon: #e58967
-// brown: #866657
-// orange: #f48418
-//
-// Styleguide Color.BrandColors
-
-$brand-colors: (
-  'navy':   #003f70,
-  'skyblue':#91b9dc,
-  'lightblue': #E5F5FF,
-  'med-blue': #3f7bad,
-  'beige':  #ecd7b1,
-  'peach':  #dfa278,
-  'salmon': #e58967,
-  'brown':  #866657,
-  'orange': #f48418
-);
-
 // Platform Colors
 //
 // Colors:
@@ -69,46 +42,6 @@ $brand-colors: (
 // help-text: #003f70 - navy
 //
 // Styleguide Color.PlatformColors
-
-$platform-colors: (
-  'focus': dodgerblue,
-  'menu': map-get($brand-colors, 'navy'),
-  'link': map-get($brand-colors, 'med-blue'),
-  'help': map-get($brand-colors, 'lightblue'),
-  'cornsilk': cornsilk,
-  'light-yellow': #FFFDF5,
-  'help-text': map-get($brand-colors, 'navy')
-);
-
-// Secondary Colors
-//
-// Colors:
-// red: tomato
-// olive: #b5cc18
-// purple: purple
-// yellow: #FBBD08
-// pink: pink
-// cyan: cyan
-// violet: #6435C9
-// blue: #3f7bad
-// green: #21BA45
-// teal: teal
-// gold: #ffcc00
-//
-// Styleguide Color.SecondaryColors
-$secondary-colors: (
-  'red':    tomato,
-  'olive':  #b5cc18,
-  'purple': lighten(purple, 10%),
-  'yellow': #FBBD08, // semantic-ui yellow
-  'pink': pink,
-  'cyan':   cyan,
-  'violet': #6435C9,
-  'blue':   map-get($platform-colors, 'link'),
-  'green': #21BA45,
-  'teal': teal,
-  'gold': #ffcc00
-);
 
 // Error Colors
 //

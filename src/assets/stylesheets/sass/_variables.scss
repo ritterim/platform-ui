@@ -1,18 +1,9 @@
 
-@import "variables/breakpoints";
 @import "variables/color";
 @import "variables/typography";
 @import "variables/flex";
-@import "variables/height";
-@import "variables/radius";
 @import "variables/spacing";
 
-
-// milliseconds; animations, transitions
-$duration: .2s;
-$transitions: .2s;
-$hue-threshold: 10%;
-$opacity: .9;
 
 $xy-border: (
   top: t,
@@ -60,11 +51,4 @@ $overflow: (
 $positions: (
   rel: relative,
   abs: absolute
-);
-
-// image radius
-$image-size: (
-  'small' : 100px,
-  'medium': 150px,
-  'large':  200px
 );

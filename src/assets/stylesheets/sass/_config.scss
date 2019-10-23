@@ -1,0 +1,152 @@
+@import url('https://rsms.me/inter/inter-ui.css');
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500|Roboto+Slab|Roboto:300i,400,500,700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css');
+
+// Add custom colors here to support your theme.
+
+$brand-colors: (
+  'navy':   #003f70,
+  'skyblue':#91b9dc,
+  'lightblue': #E5F5FF,
+  'med-blue': #3f7bad,
+  'beige':  #ecd7b1,
+  'peach':  #dfa278,
+  'salmon': #e58967,
+  'brown':  #866657,
+  'orange': #f48418
+);
+
+$secondary-colors: (
+  'red':    tomato,
+  'olive':  #b5cc18,
+  'purple': lighten(purple, 10%),
+  'yellow': #FBBD08, // semantic-ui yellow
+  'pink': pink,
+  'cyan':   cyan,
+  'violet': #6435C9,
+  'blue':   dodgerblue,
+  'green': #21BA45,
+  'teal': teal,
+  'gold': #ffcc00
+);
+
+// You only need to document color is the commented forms
+// if you're generating the style guide.
+
+// Brand Colors
+//
+// Colors:
+// navy: #003f70
+// skyblue: #91b9dc
+// lightblue: #E5F5FF
+// med-blue: #3f7bad
+// beige: #ecd7b1
+// peach: #dfa278
+// salmon: #e58967
+// brown: #866657
+// orange: #f48418
+//
+// Styleguide Color.BrandColors
+
+// Secondary Colors
+//
+// Colors:
+// red: tomato
+// olive: #b5cc18
+// purple: purple
+// yellow: #FBBD08
+// pink: pink
+// cyan: cyan
+// violet: #6435C9
+// blue: #3f7bad
+// green: #21BA45
+// teal: teal
+// gold: #ffcc00
+//
+// Styleguide Color.SecondaryColors
+
+// make $brand-colors and $secondary colors available as text and background colors
+
+// If you're only adding one additional color map. $greyscale will be merged.
+// $all-colors: map-merge($brand-colors), $greyscale);
+
+// If you're adding 2 maps
+
+
+// NOTE: use conditional here
+$config-colors: map-merge($brand-colors, $secondary-colors);
+
+// Button specific
+
+$button-border-radius: 5rem !default;
+$button-primary-background: #FFFFFF !default;
+$button-primary-color: #666666 !default;
+$button-secondary-background: map-get($config-colors, 'salmon') !default;
+$button-secondary-color: #FFFFFF !default;
+
+// Default colors used in platform UI
+
+$platform-focus-color: map-get($config-colors, 'med-blue') !default;
+$platform-menu-color: map-get($config-colors, 'navy') !default;
+$platform-link-color: map-get($config-colors, 'med-blue') !default;
+$platform-help-color: map-get($config-colors, 'lightblue') !default;
+$platform-note-color: #FFFDF5 !default;
+$platform-help-text-color: map-get($config-colors, 'navy') !default;
+
+// Platform colors need to be placed back in a map
+
+$platform-colors: (
+  'focus' : $platform-focus-color,
+  'menu' : $platform-menu-color,
+  'link' : $platform-link-color,
+  'help' : $platform-help-color,
+  'note' : $platform-note-color,
+  'help-text' : $platform-help-text-color
+);
+
+// image radius
+$image-size: (
+  'small' : 100px,
+  'medium': 150px,
+  'large':  200px
+);
+
+// milliseconds; animations, transitions
+//
+$duration: .2s;
+$transitions: .2s;
+$hue-threshold: 10%;
+$opacity: .9;
+
+// Breakpoints map used in our breakpoints mixin
+// as well as some of our utility classes
+
+$breakpoints: (
+  mobile: 0px,
+  tablet: 768px,
+  lg-tablet: 991px,
+  laptop: 1240px,
+  desktop: 1800px
+);
+
+// Some height variables
+$menu-height: 4.5rem;
+$menu-banner-height: 14rem;
+
+$max-height: 600px; // NOTE: define where we're using this
+
+$radius: (
+  'button': 5rem,
+  'default': .3rem,
+  'round': 50%
+);
+
+$fonts: (
+  'base': #{'Inter UI', sans-serif},
+  'base-alt': #{'Inter UI var alt', sans-serif},
+  'color': #333333,
+  'headline': #{'Roboto', sans-serif},
+  'headline-slab': #{'Roboto Slab', serif},
+  'post-headline': #{'Raleway', sans-serif},
+  'size': 1rem
+);
