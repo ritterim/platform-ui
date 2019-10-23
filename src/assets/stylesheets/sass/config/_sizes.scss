@@ -1,0 +1,18 @@
+// image radius
+$image-size: (
+  'small' : 100px,
+  'medium': 150px,
+  'large':  200px
+);
+
+// Some height variables
+$menu-height: 4.5rem;
+$menu-banner-height: 14rem;
+
+$max-height: 600px; // NOTE: define where we're using this
+
+$radius: (
+  'button': 5rem,
+  'default': .3rem,
+  'round': 50%
+);

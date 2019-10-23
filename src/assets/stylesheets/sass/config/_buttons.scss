@@ -1,0 +1,11 @@
+@use 'colors' as c;
+
+
+// Button specific
+
+$border-radius: 5rem !default;
+$primary-background: #FFFFFF !default;
+$primary-color: #666666 !default;
+$secondary-background: map-get(c.$config-colors, 'salmon') !default;
+$secondary-color: #FFFFFF !default;
+
