@@ -267,12 +267,12 @@
 //
 // Styleguide Components.Cards.Overflow
 
-@use 'config/_config.scss' as conf;
+@use '_config.scss';
 
 .rim-card {
   background-color: map-get($greyscale, "white");
   border: 1px solid lighten(map-get($greyscale, "light"), $hue-threshold * 2);
-  padding: conf.$card-padding;
+  padding: $card-padding;
 
   .block & {
     height: 100%;
@@ -362,6 +362,6 @@
     align-items: flex-end;
     display: flex;
     justify-content: space-between;
-    margin-top: conf.$footer-top-margin;
+    margin-top: $footer-top-margin;
   }
 }

@@ -148,31 +148,34 @@
 //
 // Styleguide Components.Button.Active
 
-@use 'config/_config.scss' as conf;
+@use '_config.scss';
+@use 'sass:color';
+@use 'sass:math';
+@use 'sass:map';
 
 .button {
   align-items: center;
-  background-color: conf.$primary-background;
-  border: 1px solid lighten(map-get($greyscale, 'light'), $hue-threshold * 2);
-  border-radius: conf.$border-radius;
-  color: conf.$primary-color;
+  background-color: $button-primary-background;
+  border: 1px solid color.adjust(map-get($greyscale, 'light'), $lightness: math.percentage($hue-threshold * 2));
+  border-radius: $button-border-radius;
+  color: $button-primary-color;
   cursor: pointer;
   display: flex;
   font-family: map-get($fonts, 'base');
   font-size: map-get($fonts, 'size');
-  padding: conf.$primary-padding;
-  transition: conf.$duration;
+  padding: $button-primary-padding;
+  transition: $duration;
   white-space: nowrap;
 
   &.active,
   &:hover {
-    background-color: conf.$secondary-background;
+    background-color: $button-secondary-background;
     border-color: inherit;
-    color: conf.$secondary-color;
+    color: $button-secondary-color;
   }
 
   &:disabled {
-    background-color: lighten(map-get($greyscale, 'light' ), 10);
+    background-color: color.adjust(map-get($greyscale, 'light' ), $lightness: math.percentage($hue-threshold));
     cursor: not-allowed;
     opacity: .7;
     pointer-events: none;
@@ -185,7 +188,7 @@
     position: relative;
 
     &:before {
-      background-color: conf.$secondary-background;
+      background-color: $button-secondary-background;
       content: '';
       position: absolute;
       top: 0;
@@ -201,8 +204,8 @@
         box-sizing: border-box;
         content: '';
         display: block;
-        border-color: conf.$primary-background;
-        border-top-color: lighten(map-get($greyscale, 'base' ), 20%);
+        border-color: $button-primary-background;
+        border-top-color: color.adjust(map-get($greyscale, 'base' ), $lightness: math.percentage($hue-threshold * 2));
         left: 50%;
         margin-left: -.5rem;
         margin-top: -.5rem;
@@ -230,10 +233,10 @@
   }
 
   &--secondary {
-    background-color: conf.$secondary-background;
-    border: 1px solid conf.$secondary-background;
-    color: conf.$secondary-color;
-    border-radius: conf.$border-radius * 100;
+    background-color: $button-secondary-background;
+    border: 1px solid $button-secondary-background;
+    color: $button-secondary-color;
+    border-radius: $button-border-radius * 100;
     padding: 0;
     width: 2rem;
     height: 2rem;
@@ -241,12 +244,12 @@
 
     &.active,
     &:hover {
-      background-color: darken(conf.$secondary-background, $hue-threshold);
-      box-shadow: 0 0 0 .3rem lighten(conf.$secondary-background, $hue-threshold);
+      background-color: darken($button-secondary-background, math.percentage($hue-threshold));
+      box-shadow: 0 0 0 .3rem color.adjust($button-secondary-background, $lightness: math.percentage($hue-threshold));
     }
 
     &[data-button-text] {
-      transition: conf.$duration;
+      transition: $duration;
 
       &:after {
         display: none;
@@ -271,14 +274,14 @@
     &.loading {
 
       &:before {
-        background-color: darken(conf.$secondary-background, $hue-threshold);
-        box-shadow: 0 0 0 .3rem lighten(conf.$secondary-background, $hue-threshold);
+        background-color: darken($button-secondary-background, math.percentage($hue-threshold));
+        box-shadow: 0 0 0 .3rem color.adjust($button-secondary-background, $lightness: math.percentage($hue-threshold));
       }
 
       &[data-button-text] {
-        background-color: darken(conf.$secondary-background, $hue-threshold);
+        background-color: darken($button-secondary-background, math.percentage($hue-threshold));
         border-color: inherit;
-        box-shadow: 0 0 0 .3rem lighten(conf.$secondary-background, $hue-threshold);
+        box-shadow: 0 0 0 .3rem color.adjust($button-secondary-background, $lightness: math.percentage($hue-threshold));
         padding: 0 map-get($spacers, 1 );
         width: auto;
 
@@ -290,8 +293,8 @@
           box-shadow: none;
           content: '';
           display: block;
-          border-color: conf.$primary-background;
-          border-top-color: lighten(map-get($greyscale, 'base' ), 20%);
+          border-color: $button-primary-background;          
+          border-top-color: color.adjust(map-get($greyscale, 'base' ), $lightness: math.percentage($hue-threshold * 2));
           left: 0;
           margin: 0 map-get($spacers, 1 );
           position: relative;
@@ -327,29 +330,29 @@
   }
 
   &--post {
-    background-color: conf.$secondary-background;
-    border: 1px solid conf.$secondary-background;
-    color: conf.$secondary-color;
-    transition: conf.$transitions;
+    background-color: $button-secondary-background;
+    border: 1px solid $button-secondary-background;
+    color: $button-secondary-color;
+    transition: $transitions;
 
     &.active,
     &:hover {
-      background-color: darken(conf.$secondary-background, 10%);
-      background-image: linear-gradient(45deg, conf.$secondary-background, darken(conf.$secondary-background, $hue-threshold * 2));
+      background-color: darken($button-secondary-background, math.percentage($hue-threshold));
+      background-image: linear-gradient(45deg, $button-secondary-background, darken($button-secondary-background, math.percentage($hue-threshold * 2)));
     }
 
     &.loading {
 
       &:before {
-        background-color: darken(conf.$secondary-background, 10%);
-        background-image: linear-gradient(45deg, conf.$secondary-background, darken(conf.$secondary-background, $hue-threshold * 2));
+        background-color: darken($button-secondary-background, math.percentage($hue-threshold));
+        background-image: linear-gradient(45deg, $button-secondary-background, darken($button-secondary-background, math.percentage($hue-threshold * 2)));
       }
     }
   }
 
   &--lg {
     font-size: map-get($font-percentage, 'lg');
-    padding: conf.$large-padding;
+    padding: $button-large-padding;
 
     &.loading {
 
@@ -371,7 +374,7 @@
   align-items: center;
 
   .button {
-    margin: conf.$group-margin;
+    margin: $button-group-margin;
 
     &:first-child {
       margin-left: 0;
