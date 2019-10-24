@@ -1,7 +1,11 @@
-@import url('https://rsms.me/inter/inter-ui.css');
-@import url('https://fonts.googleapis.com/css?family=Raleway:400,500|Roboto+Slab|Roboto:300i,400,500,700&display=swap');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css');
+@use 'sass:map';
 
+
+
+
+// ------------------
+// Colors
+// ------------------
 // Add custom colors here to support your theme.
 
 $brand-colors: (
@@ -72,26 +76,18 @@ $secondary-colors: (
 
 // If you're adding 2 maps
 
-
 // NOTE: use conditional here
-$config-colors: map-merge($brand-colors, $secondary-colors);
-
-// Button specific
-
-$button-border-radius: 5rem !default;
-$button-primary-background: #FFFFFF !default;
-$button-primary-color: #666666 !default;
-$button-secondary-background: map-get($config-colors, 'salmon') !default;
-$button-secondary-color: #FFFFFF !default;
+$config-colors: map.merge($brand-colors, $secondary-colors);
 
 // Default colors used in platform UI
 
-$platform-focus-color: map-get($config-colors, 'med-blue') !default;
-$platform-menu-color: map-get($config-colors, 'navy') !default;
-$platform-link-color: map-get($config-colors, 'med-blue') !default;
-$platform-help-color: map-get($config-colors, 'lightblue') !default;
+$platform-focus-color: map.get($config-colors, 'med-blue') !default;
+$platform-menu-color: map.get($config-colors, 'navy') !default;
+$platform-link-color: map.get($config-colors, 'med-blue') !default;
+$platform-help-color: map.get($config-colors, 'lightblue') !default;
 $platform-note-color: #FFFDF5 !default;
-$platform-help-text-color: map-get($config-colors, 'navy') !default;
+$platform-help-text-color: map.get($config-colors, 'navy') !default;
+
 
 // Platform colors need to be placed back in a map
 
@@ -104,19 +100,12 @@ $platform-colors: (
   'help-text' : $platform-help-text-color
 );
 
-// image radius
-$image-size: (
-  'small' : 100px,
-  'medium': 150px,
-  'large':  200px
-);
 
-// milliseconds; animations, transitions
-//
-$duration: .2s;
-$transitions: .2s;
-$hue-threshold: 10%;
-$opacity: .9;
+
+
+// --------------------
+// Breakpoints
+// --------------------
 
 // Breakpoints map used in our breakpoints mixin
 // as well as some of our utility classes
@@ -127,6 +116,20 @@ $breakpoints: (
   lg-tablet: 991px,
   laptop: 1240px,
   desktop: 1800px
+);
+
+
+
+
+// --------------------
+// Sizes
+// --------------------
+
+// image radius
+$image-size: (
+  'small' : 100px,
+  'medium': 150px,
+  'large':  200px
 );
 
 // Some height variables
@@ -141,6 +144,31 @@ $radius: (
   'round': 50%
 );
 
+
+
+
+// --------------------
+// Timing
+// --------------------
+
+// milliseconds; animations, transitions
+
+$duration: .2s;
+$transitions: .2s;
+$hue-threshold: .1;   // NOTE: Set to .1 to use with math.percentage
+$opacity: .9;
+
+
+
+
+// --------------------
+// Fonts
+// --------------------
+
+@import url('https://rsms.me/inter/inter-ui.css');
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500|Roboto+Slab|Roboto:300i,400,500,700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css');
+
 $fonts: (
   'base': #{'Inter UI', sans-serif},
   'base-alt': #{'Inter UI var alt', sans-serif},
@@ -150,3 +178,47 @@ $fonts: (
   'post-headline': #{'Raleway', sans-serif},
   'size': 1rem
 );
+
+
+
+
+// --------------------
+// Drawers
+// --------------------
+
+$background: #fff !default;
+
+$primary-padding: 2rem;
+
+$right-height: calc(100% - #{$menu-height});
+$right-width: 27rem;
+
+
+
+
+// --------------------
+// Button specific
+// --------------------
+
+$button-border-radius: 5rem !default;
+
+$button-primary-background: #FFFFFF !default;
+$button-primary-color: #666666 !default;
+$button-secondary-background: map.get($config-colors, 'salmon') !default;
+$button-secondary-color: #FFFFFF !default;
+
+$button-primary-padding: .25rem 1rem;
+$button-large-padding: .5rem 1rem;
+$button-group-margin: 0 .25rem;
+
+
+
+
+// --------------------
+// Cards
+// --------------------
+
+$card-padding: 1rem;
+$footer-top-margin: 1rem;
+
+
