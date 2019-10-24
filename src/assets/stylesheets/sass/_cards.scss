@@ -267,7 +267,7 @@
 //
 // Styleguide Components.Cards.Overflow
 
-@use 'config/_cards.scss' as conf;
+@use 'config/_config.scss' as conf;
 
 .rim-card {
   background-color: map-get($greyscale, "white");
