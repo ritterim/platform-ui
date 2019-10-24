@@ -1,3 +1,4 @@
+@use '../variables/_spacing.scss' as space;
 @use 'colors' as c;
 
 
@@ -10,6 +11,6 @@ $primary-color: #666666 !default;
 $secondary-background: map-get(c.$config-colors, 'salmon') !default;
 $secondary-color: #FFFFFF !default;
 
-$primary-padding: .25rem 1rem;
-$large-padding: .5rem 1rem;
-$group-margin: 0 .25rem;
+$primary-padding: map-get(space.$spacers, 1) space.$spacer;
+$large-padding: map-get(space.$spacers, 2) space.$spacer;
+$group-margin: 0 map-get(space.$spacers, 1);

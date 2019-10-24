@@ -58,9 +58,11 @@
 //
 // Styleguide Components.Drawer.Right
 
+@use 'config/_drawer.scss' as drawer;
+
 .rim-drawer {
   $self: &;
-  background-color: map-get($greyscale, 'white' );
+  background-color: drawer.$background;
   box-shadow: 0 -1rem 2rem rgba(map-get($greyscale, 'black'), .4);
   display: flex;
   flex-direction: column;
@@ -90,7 +92,7 @@
   }
 
   &__header {
-    padding: map-get($spacers, 4);
+    padding: drawer.$primary-padding;
     position: relative;
     width: 100%;
 
@@ -110,7 +112,7 @@
     }
   }
   &__content {
-    padding: map-get($spacers, 4);
+    padding: drawer.$primary-padding;
     position: relative;
   }
   &--closed {
@@ -135,13 +137,13 @@
   bottom: 0;
   box-shadow: 0 -.5rem 2rem rgba(map-get($greyscale, 'black'), .5);
   flex-direction: column;
-  height: calc(100% - 4.5rem);
+  height: drawer.$right-height;
   left: unset;
   position: fixed;
   right: 0;
   transition: all ease-in-out .3s;
   z-index: 500;
-  width: 27rem;
+  width: drawer.$right-width;
 
   &[hidden] {
     display: none;

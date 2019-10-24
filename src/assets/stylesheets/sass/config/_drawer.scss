@@ -1,0 +1,12 @@
+@use '../variables/_spacing.scss' as space;
+@use 'colors' as c;
+@use 'sizes' as size;
+
+// Drawer specific variables
+
+$background: #fff !default;
+
+$primary-padding: map-get(space.$spacers, 4);
+
+$right-height: calc(100% - #{size.$menu-height});
+$right-width: 27rem;

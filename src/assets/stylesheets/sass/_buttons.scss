@@ -148,7 +148,8 @@
 //
 // Styleguide Components.Button.Active
 
-@use 'config/_index.scss' as conf;
+@use 'config/_buttons.scss' as conf;
+@use 'config/_timing.scss' as time;
 
 .button {
   align-items: center;
@@ -161,7 +162,7 @@
   font-family: map-get($fonts, 'base');
   font-size: map-get($fonts, 'size');
   padding: conf.$primary-padding;
-  transition: conf.$duration;
+  transition: time.$duration;
   white-space: nowrap;
 
   &.active,
@@ -246,7 +247,7 @@
     }
 
     &[data-button-text] {
-      transition: conf.$duration;
+      transition: time.$duration;
 
       &:after {
         display: none;
@@ -330,7 +331,7 @@
     background-color: conf.$secondary-background;
     border: 1px solid conf.$secondary-background;
     color: conf.$secondary-color;
-    transition: conf.$transitions;
+    transition: time.$transitions;
 
     &.active,
     &:hover {
