@@ -1,12 +1,17 @@
+@use "config";
+@use "mixins";
+@use "variables";
+@use "sass:map";
+
 .rim-search {
   display: flex;
   &--results {
-    background: map-get($greyscale, 'light');
-    color: map-get($greyscale, 'white');
+    background: map.get(variables.$greyscale, 'light');
+    color: map.get(variables.$greyscale, 'white');
     width: 3rem;
     h2 {
-      color: map-get($greyscale, 'white');
-      font-size: map-get($font-percentage, 'xl');
+      color: map.get(variables.$greyscale, 'white');
+      font-size: map.get(variables.$font-percentage, 'xl');
       font-weight: lighter;
       transform: rotate(90deg);
     }
@@ -30,15 +35,15 @@
         font-size: 50%;
       }
       &:not(.active) {
-        background-color: map-get($greyscale, 'light');;
-        border-right: 1px solid map-get($greyscale, 'lighter');
-        color: map-get($greyscale, 'white');
+        background-color: map.get(variables.$greyscale, 'light');;
+        border-right: 1px solid map.get(variables.$greyscale, 'lighter');
+        color: map.get(variables.$greyscale, 'white');
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        max-width: $spacer * 4;
-        padding: map-get($spacers, 2);
-        transition: $transitions;
+        max-width: variables.$spacer * 4;
+        padding: map.get(variables.$spacers, 2);
+        transition: config.$transitions;
         &:last-child {
           border: none;
         }
@@ -47,23 +52,23 @@
         }
         .search--toggle {
           align-self: center;
-          color: map-get($greyscale, 'white');
+          color: map.get(variables.$greyscale, 'white');
           cursor: pointer;
           display: flex;
         }
         .search-bar__title {
-          color: map-get($greyscale, 'white');
+          color: map.get(variables.$greyscale, 'white');
           display: flex;
-          padding-left: $spacer;
+          padding-left: variables.$spacer;
           justify-content: space-between;
           text-transform: capitalize;
           transform: rotate(-90deg);
         }
         .search-bar__count {
-          color: map-get($greyscale, 'white');
+          color: map.get(variables.$greyscale, 'white');
           font-size: 50%;
           font-weight: lighter;
-          margin-right: $spacer;
+          margin-right: variables.$spacer;
           @extend %rotate-90;
         }
         .search-bar__content {
@@ -74,7 +79,7 @@
         padding: 1rem;
         .search--close {
           position: absolute;
-          bottom: $spacer;
+          bottom: variables.$spacer;
           z-index: 10;
         }
       }

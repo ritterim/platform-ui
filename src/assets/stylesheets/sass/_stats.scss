@@ -1,3 +1,6 @@
+
+@use "variables";
+@use "sass:map";
 // Stats
 //
 // Used to display statistics in different situations throughout the platform. There are three sizes, `rim-stat--lg`, `rim-stat--md`(default), and `rim-stat--sm`. `rim-stat` requires `data-stat-label` and `aria-label` attributes.
@@ -72,36 +75,36 @@
     align-items: center;
     display: flex;
     flex-direction: column;
-    font-size: map-get($font-percentage, 'lg' );
+    font-size: map.get(variables.$font-percentage, 'lg' );
     font-weight: bold;
 
     &[data-stat-label]:after {
         content: attr(data-stat-label);
-        color: map-get($greyscale, 'base');
-        font-size: map-get($fonts, 'size' );
+        color: map.get(variables.$greyscale, 'base');
+        font-size: map.get(variables.$fonts, 'size' );
         font-weight: normal;
     }
 
     &--sm {
         #{$self}__number {
-            font-size: map-get($font-percentage, 'md' );
+            font-size: map.get(variables.$font-percentage, 'md' );
         }
 
         &[data-stat-label]:after {
-            font-size: map-get($font-percentage, 'xs' );
+            font-size: map.get(variables.$font-percentage, 'xs' );
         }
 
     }
 
     &--md {
         #{$self}__number {
-            font-size: map-get($font-percentage, 'xl' );
+            font-size: map.get(variables.$font-percentage, 'xl' );
         }
     }
 
     &--lg {
         #{$self}__number {
-            font-size: map-get($font-percentage, 'xxl' );
+            font-size: map.get(variables.$font-percentage, 'xxl' );
         }
     }
 

@@ -1,3 +1,8 @@
+@use "config";
+@use "variables";
+@use "sass:color";
+@use "sass:map";
+
 // Info Box
 // 
 // Click the button to toggle the infor box.
@@ -132,12 +137,12 @@
   position: relative;
 
   &__content {
-    background-color: map-get($greyscale, 'white');
-    border: 1px solid lighten(map-get($greyscale, 'light'), $hue-threshold * 2);
-    box-shadow: 0 2px 4px 2px map-get($greyscale, 'lighter' );
-    margin-top: $spacer;
+    background-color: map.get(variables.$greyscale, 'white');
+    border: 1px solid color.adjust(map.get(variables.$greyscale, 'light'), $lightness: config.$hue-threshold * 2);
+    box-shadow: 0 2px 4px 2px map.get(variables.$greyscale, 'lighter' );
+    margin-top: variables.$spacer;
     min-width: 20rem;
-    padding: map-get($spacers, 5) map-get($spacers, 4);
+    padding: map.get(variables.$spacers, 5) map.get(variables.$spacers, 4);
     position: absolute;
     right: -4.5rem;
     z-index: 50;
@@ -149,7 +154,7 @@
       height: 0;
       border-style: solid;
       border-width: 0 8px 12px 8px;
-      border-color: transparent transparent map-get($greyscale, 'white') transparent;
+      border-color: transparent transparent map.get(variables.$greyscale, 'white') transparent;
       right: 82px;
       top: -12px;
       z-index: 51;
@@ -162,7 +167,7 @@
       height: 0;
       border-style: solid;
       border-width: 0 10px 14px 10px;
-      border-color: transparent transparent lighten(map-get($greyscale, 'light'), $hue-threshold * 2);
+      border-color: transparent transparent color.adjust(map.get(variables.$greyscale, 'light'), $lightness: config.$hue-threshold * 2);
       right: 80px;
       top: -14px;
       z-index: 49;

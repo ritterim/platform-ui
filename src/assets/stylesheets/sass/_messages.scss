@@ -1,3 +1,8 @@
+@use "config";
+@use "mixins";
+@use "variables";
+@use "sass:map";
+
 // Messages
 //
 // These are examples of global messages or alerts
@@ -27,41 +32,41 @@
 
 .rim-message {
   border: 1px solid;
-  border-radius: map-get($radius, 'default' );
-  padding: $spacer $spacer + .5;
+  border-radius: map.get(config.$radius, 'default' );
+  padding: variables.$spacer variables.$spacer + .5;
   position: relative;
-  margin-top: $spacer;
-  margin-bottom: $spacer;
-  @include message-variant(
-    map-get($message-colors, 'base-light' ),
-    map-get($message-colors, 'base-dark' )
+  margin-top: variables.$spacer;
+  margin-bottom: variables.$spacer;
+  @include mixins.message-variant(
+    map.get(variables.$message-colors, 'base-light' ),
+    map.get(variables.$message-colors, 'base-dark' )
   );
 
   &--error {
-    @include message-variant(
-      map-get($message-colors, 'error-light' ),
-      map-get($message-colors, 'error-dark' )
+    @include mixins.message-variant(
+      map.get(variables.$message-colors, 'error-light' ),
+      map.get(variables.$message-colors, 'error-dark' )
     );
   }
 
   &--success {
-    @include message-variant(
-      map-get($message-colors, 'success-light' ),
-      map-get($message-colors, 'success-dark' )
+    @include mixins.message-variant(
+      map.get(variables.$message-colors, 'success-light' ),
+      map.get(variables.$message-colors, 'success-dark' )
     );
   }
 
   &--warning {
-    @include message-variant(
-      map-get($message-colors, 'warning-light' ),
-      map-get($message-colors, 'warning-dark' )
+    @include mixins.message-variant(
+      map.get(variables.$message-colors, 'warning-light' ),
+      map.get(variables.$message-colors, 'warning-dark' )
     );
   }
 
   &--info {
-    @include message-variant(
-      map-get($message-colors, 'info-light' ),
-      map-get($message-colors, 'info-dark' )
+    @include mixins.message-variant(
+      map.get(variables.$message-colors, 'info-light' ),
+      map.get(variables.$message-colors, 'info-dark' )
     );
   }
 
@@ -72,9 +77,9 @@
   }
 
   &__heading {
-    font-family: map-get($fonts, 'base-alt' );
-    font-size: 150%;
-    margin-bottom: $spacer;
+    font-family: map.get(config.$fonts, 'base-alt' );
+    font-size: map.get(variables.$font-percentage, 'xl' );
+    margin-bottom: variables.$spacer;
   }
 
   .button--close {

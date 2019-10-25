@@ -1,3 +1,9 @@
+@use "config";
+@use "mixins";
+@use "variables";
+@use "sass:color";
+@use "sass:map";
+
 // Pill
 //
 // Pills represent rounded labels throughout the platform.
@@ -92,16 +98,16 @@
 
 .pill {
 
-  $border-radius: map-get($radius, 'button');
-  $primary-background: map-get($greyscale, 'white');
-  $primary-color: map-get($greyscale, 'base');
+  $border-radius: map.get(config.$radius, 'button');
+  $primary-background: map.get(variables.$greyscale, 'white');
+  $primary-color: map.get(variables.$greyscale, 'base');
 
-  border: 1px solid lighten(map-get($greyscale, 'light'), $hue-threshold * 2);
+  border: 1px solid color.adjust(map.get(variables.$greyscale, 'light'), $lightness: config.$hue-threshold * 2);
   border-radius: $border-radius;
   color: $primary-color;
   display: inline-flex;
-  font-size: map-get($font-percentage, 'sm');
-  padding: map-get($spacers, 1) map-get($spacers, 2);
+  font-size: map.get(variables.$font-percentage, 'sm');
+  padding: map.get(variables.$spacers, 1) map.get(variables.$spacers, 2);
   position: relative;
 
   &--split {
@@ -122,24 +128,24 @@
       @extend .pill--circle;
       &-dot {
         padding: 0;
-        @include square(map-get($spacers, 2));
+        @include mixins.square(map.get(variables.$spacers, 2));
       }
-      @include square($spacer);
+      @include mixins.square(variables.$spacer);
     }
 
     &-medium {
       @extend .pill--circle;
-      @include square(map-get($spacers, 4));
+      @include mixins.square(map.get(variables.$spacers, 4));
     }
 
     &-large {
       @extend .pill--circle;
-      @include square(map-get($spacers, 5));
+      @include mixins.square(map.get(variables.$spacers, 5));
     }
   }
 
   &__content {
-    padding: map-get($spacers, 1);
+    padding: map.get(variables.$spacers, 1);
   }
 
   &__close {

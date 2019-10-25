@@ -1,3 +1,8 @@
+@use "config";
+@use "mixins";
+@use "variables";
+@use "sass:map";
+
 // Lists
 //
 // The `ul` within platform-ui have `margin: 0` and a `padding-left: 1rem`. The `li`s in those lists have `margin-bottom: .5rem`.
@@ -60,10 +65,10 @@
 
 ul {
   margin: 0;
-  padding: 0 0 0 $spacer;
+  padding: 0 0 0 variables.$spacer;
 
   li {
-    margin: 0 0 map-get($spacers, 2);
+    margin: 0 0 map.get(variables.$spacers, 2);
   }
 }
 
@@ -75,7 +80,7 @@ ul {
     margin: 0;
     padding: 0;
 
-    @include breakpoint(desktop, max) {
+    @include mixins.breakpoint(desktop, max) {
       margin: 0;
     }
 
@@ -85,16 +90,16 @@ ul {
     }
 
     &--arrow {
-      margin: 0 $spacer;
-      padding: 0 0 0 map-get($spacers, 4);
+      margin: 0 variables.$spacer;
+      padding: 0 0 0 map.get(variables.$spacers, 4);
       .post-item {
         &:before {
-          color: map-get($brand-colors, 'salmon');
+          color: map.get(config.$brand-colors, 'salmon');
           content: '\f30b';
           display: inline-block;
           font-family: 'Font Awesome 5 Pro';
           font-weight: 900;
-          left: -(map-get($spacers, 4));
+          left: -(map.get(variables.$spacers, 4));
           position: absolute;
           transform: rotate(30deg);
         }
@@ -103,32 +108,32 @@ ul {
   }
 
   &-item {
-    margin: 0 0 $spacer;
-    padding: 0 0 $spacer;
+    margin: 0 0 variables.$spacer;
+    padding: 0 0 variables.$spacer;
     position: relative;
 
     &:not(:last-of-type) {
-      border-bottom: 1px solid map-get($greyscale, 'lighter');
+      border-bottom: 1px solid map.get(variables.$greyscale, 'lighter');
     }
 
     &__duration {
-      color: map-get($greyscale, 'light');
-      font-size: map-get($font-percentage, 'sm');
-      margin-bottom: map-get($spacers, 1);
+      color: map.get(variables.$greyscale, 'light');
+      font-size: map.get(variables.$font-percentage, 'sm');
+      margin-bottom: map.get(variables.$spacers, 1);
 
       &:before {
         content: '\f017';
         font-family: 'Font Awesome 5 Pro';
-        margin: 0 map-get($spacers, 2) 0 0;
+        margin: 0 map.get(variables.$spacers, 2) 0 0;
       }
     }
 
     &__title {
-      margin-bottom: map-get($spacers, 1);
+      margin-bottom: map.get(variables.$spacers, 1);
     }
 
     &__link {
-      font-size: map-get($font-percentage, 'sm');
+      font-size: map.get(variables.$font-percentage, 'sm');
       font-weight: bold;
     }
   }
@@ -142,7 +147,7 @@ ul {
     width: 100%;
 
     .image-link {
-      background-color: map-get($brand-colors, 'med-blue');
+      background-color: map.get(config.$brand-colors, 'med-blue');
       display: block;
       position: relative;
 
@@ -167,29 +172,29 @@ ul {
 
         &:after {
           content: '\f144';
-          color: map-get($greyscale, 'white');
+          color: map.get(variables.$greyscale, 'white');
           font-family: 'Font Awesome 5 Pro';
-          font-size: map-get($font-percentage, 'lg') * 2;
+          font-size: map.get(variables.$font-percentage, 'lg') * 2;
           font-weight: 900;
           left: 50%;
           position: absolute;
           top: 50%;
-          text-shadow: 0 0 .5rem map-get($greyscale, 'black');
+          text-shadow: 0 0 .5rem map.get(variables.$greyscale, 'black');
           transform: translate(-50%, -50%);
-          transition: $transitions;
+          transition: config.$transitions;
           z-index: 2;
         }
         &:hover {
           &:after {
             transform: translate(-50%, -50%) scale(1.2);
-            text-shadow: 0 0 1rem map-get($greyscale, 'black');
+            text-shadow: 0 0 1rem map.get(variables.$greyscale, 'black');
           }
         }
       }
 
       &-caption {
           bottom: 0;
-          padding: map-get($spacers, 2);
+          padding: map.get(variables.$spacers, 2);
           position: absolute;
           text-align: center;
           width: 100%;
@@ -215,10 +220,10 @@ ul {
   padding: 0;
 
   &--bordered {
-    border-top: 1px solid map-get($greyscale, 'light-mid' );
+    border-top: 1px solid map.get(variables.$greyscale, 'light-mid' );
 
     #{$list}__item {
-      border-bottom: 1px solid map-get($greyscale, 'light-mid' );
+      border-bottom: 1px solid map.get(variables.$greyscale, 'light-mid' );
     }
   }
 }

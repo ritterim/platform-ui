@@ -1,3 +1,6 @@
+@use "config";
+@use "mixins";
+
 // Image Round
 //
 // Circular pills can also have images.
@@ -20,9 +23,9 @@
 
 .image {
   &--round {
-    @each $size, $radius in $image-size {
+    @each $size, $radius in config.$image-size {
       &-#{$size} {
-        @include square($radius);
+        @include mixins.square($radius);
         @extend %flex-center;
         @extend %basic-circle;
         display: inline-flex;

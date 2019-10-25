@@ -1,3 +1,7 @@
+@use "config";
+@use "variables";
+@use "sass:map";
+
 // Quote
 //
 // Specific CSS overrides and styling for the OQE experience in the Platform
@@ -15,47 +19,47 @@ main.details-and-compare {
 }
 
 mark.stars {
-  color: map-get($secondary-colors, 'gold');
+  color: map.get(variables.$secondary-colors, 'gold');
 }
 
 /* Temporarily added back for OQE compatibility - can rework OQE markup when a replacement is available */
 .filter-group {
   display: flex;
   flex-flow: row wrap;
-  margin-left: map-get($spacers, 1);
-  width: calc(100% + #{map-get($spacers, 1)} * 2);
+  margin-left: map.get(variables.$spacers, 1);
+  width: calc(100% + #{map.get(variables.$spacers, 1)} * 2);
 
   input[type="checkbox"].filter-group__filter {
     + label {
-      background-color: map-get($greyscale, 'light' );
-      border-radius: map-get($radius, 'button');
-      color: map-get($greyscale, 'white');
+      background-color: map.get(variables.$greyscale, 'light' );
+      border-radius: map.get(config.$radius, 'button');
+      color: map.get(variables.$greyscale, 'white');
       display: flex;
       flex: 1 1 auto;
       height: 100%;
       justify-content: center;
-      margin: map-get($spacers, 1);
+      margin: map.get(variables.$spacers, 1);
       max-width: 5rem;
-      padding: map-get($spacers, 2);
-      transition: $transitions;
+      padding: map.get(variables.$spacers, 2);
+      transition: config.$transitions;
 
        &:before {
         display: none;
       }
 
        &:after {
-        color: map-get($greyscale, 'white');
+        color: map.get(variables.$greyscale, 'white');
         opacity: 0;
         top: 50%;
         transform: translate(50%, -50%);
-        transition: visibility $duration ease, opacity $duration ease;
+        transition: visibility config.$duration ease, opacity config.$duration ease;
         visibility: hidden;
       }
     }
 
 
      &:checked + label {
-      background-color: map-get($platform-colors, 'link' );
+      background-color: map.get(config.$platform-colors, 'link' );
       font-weight: 400;
 
 

@@ -1,3 +1,9 @@
+@use "config";
+@use "mixins";
+@use "variables";
+@use "sass:color";
+@use "sass:map";
+
 // Forms
 //
 //
@@ -307,15 +313,15 @@ input[type="radio"] {
   }
 
   + label {
-    color: map-get($greyscale, 'base');
+    color: map.get(variables.$greyscale, 'base');
     cursor: pointer;
     display: inline-block;
     font-weight: 400;
     height: 1rem;
     line-height: 1.2;
-    margin-right: $spacer;
-    margin-top: $spacer * .75;
-    padding-left: $spacer * 1.5;
+    margin-right: variables.$spacer;
+    margin-top: variables.$spacer * .75;
+    padding-left: variables.$spacer * 1.5;
     position: relative;
     vertical-align: baseline;
 
@@ -326,17 +332,17 @@ input[type="radio"] {
     }
 
     &:before {
-      border: 1px solid map-get($greyscale, 'base');
+      border: 1px solid map.get(variables.$greyscale, 'base');
       border-radius: 50%;
       bottom: 0;
       content: '';
       left: 0;
-      @include square($spacer);
+      @include mixins.square(variables.$spacer);
     }
 
     &:after {
       transform: scale(0);
-      transition: transform $duration ease;
+      transition: transform config.$duration ease;
     }
   }
 }
@@ -350,7 +356,7 @@ input[type="checkbox"] {
       color: inherit;
       content: '\f00c';
       font-family: "Font Awesome 5 Pro";
-      font-size: map-get($font-percentage, 'xs');
+      font-size: map.get(variables.$font-percentage, 'xs');
       font-weight: 900;
       left: 2px;
     }
@@ -368,12 +374,12 @@ input[type="radio"] {
     + label {
 
       &:after {
-        background-color: map-get($greyscale, 'base' );
+        background-color: map.get(variables.$greyscale, 'base' );
         border-radius: 50%;
         bottom: 2px;
         content: '';
         left: 2px;
-        @include square($spacer * .75);
+        @include mixins.square(variables.$spacer * .75);
       }
     }
   }
@@ -381,7 +387,7 @@ input[type="radio"] {
 
 .rim-form {
   $self: &;
-  color: map-get($greyscale, 'light' );
+  color: map.get(variables.$greyscale, 'light' );
 
   &--stacked {
     flex-flow: column;
@@ -408,7 +414,7 @@ input[type="radio"] {
   }
 
   &.rim-form--light {
-    color: map-get($greyscale, 'white' );
+    color: map.get(variables.$greyscale, 'white' );
 
     input[type="text"],
     input[type="date"],
@@ -420,11 +426,11 @@ input[type="radio"] {
     input[type="time"],
     textarea,
     select {
-      border-bottom-color: map-get($greyscale, 'white' );
-      color: map-get($greyscale, 'white' );
+      border-bottom-color: map.get(variables.$greyscale, 'white' );
+      color: map.get(variables.$greyscale, 'white' );
 
       &::placeholder {
-        color: map-get($greyscale, 'white' );
+        color: map.get(variables.$greyscale, 'white' );
       }
     }
 
@@ -432,7 +438,7 @@ input[type="radio"] {
     input[type="radio"] {
 
       + label {
-        color: map-get($greyscale, 'white');
+        color: map.get(variables.$greyscale, 'white');
 
         &:before {
           border: 1px solid;
@@ -446,19 +452,19 @@ input[type="radio"] {
       + label {
 
         &:after {
-          color: map-get($greyscale, 'white');
+          color: map.get(variables.$greyscale, 'white');
         }
       }
     }
 
     textarea {
-      border-color: map-get($greyscale, 'white' );
+      border-color: map.get(variables.$greyscale, 'white' );
     }
 
     #{ $self }__select-wrapper {
 
       &:after {
-        border-color: map-get($greyscale, 'white' );
+        border-color: map.get(variables.$greyscale, 'white' );
       }
     }
   }
@@ -475,14 +481,14 @@ input[type="radio"] {
     input[type="time"],
     textarea,
     select {
-      border-color: map-get($greyscale, 'light' );
-      border-radius: map-get($radius, 'default' );
+      border-color: map.get(variables.$greyscale, 'light' );
+      border-radius: map.get(config.$radius, 'default' );
     }
   }
 
   &__field {
     display: block;
-    margin-bottom: $spacer * 1.5;
+    margin-bottom: variables.$spacer * 1.5;
 
     .block & {
       margin-bottom: 0;
@@ -499,17 +505,17 @@ input[type="radio"] {
     textarea,
     #{ $self }__select-wrapper,
     #{ $self }__option-group {
-      margin-top: map-get($spacers, 2);
+      margin-top: map.get(variables.$spacers, 2);
       width: 100%;
     }
 
     &.has-icon {
-      padding-left: $spacer;
+      padding-left: variables.$spacer;
       position: relative;
 
       i {
         bottom: .5rem;
-        font-size: map-get($font-percentage, 'md');
+        font-size: map.get(variables.$font-percentage, 'md');
         left: 0;
         position: absolute;
       }
@@ -519,12 +525,12 @@ input[type="radio"] {
 
         input[type=date],
         input[type=time] {
-          padding-right: $spacer * 1.5;
+          padding-right: variables.$spacer * 1.5;
         }
 
         i {
           bottom: .5rem;
-          color: map-get($brand-colors, 'med-blue' );
+          color: map.get(config.$brand-colors, 'med-blue' );
           pointer-events: none;
           position: absolute;
           right: .5rem;
@@ -533,7 +539,7 @@ input[type="radio"] {
     }
 
     &.error {
-      color: map-get($message-colors, 'error-dark' ) !important;
+      color: map.get(variables.$message-colors, 'error-dark' ) !important;
 
       input[type="text"],
       input[type="date"],
@@ -545,10 +551,10 @@ input[type="radio"] {
       input[type="time"],
       textarea,
       select {
-        background-color: map-get($message-colors, 'error-light' );
-        border-color: map-get($error-colors, 'negative' ) !important;
-        border-radius: map-get($radius, 'default' );
-        padding-left: map-get($spacers, 2 );
+        background-color: map.get(variables.$message-colors, 'error-light' );
+        border-color: map.get(variables.$error-colors, 'negative' ) !important;
+        border-radius: map.get(config.$radius, 'default' );
+        padding-left: map.get(variables.$spacers, 2 );
       }
 
       input[type="checkbox"],
@@ -557,8 +563,8 @@ input[type="radio"] {
         &:not(:checked) + label {
     
           &:before {
-            background-color: map-get($message-colors, 'error-light' );
-            border-color: map-get($error-colors, 'negative' ) !important;
+            background-color: map.get(variables.$message-colors, 'error-light' );
+            border-color: map.get(variables.$error-colors, 'negative' ) !important;
           }
         }
       }
@@ -571,7 +577,7 @@ input[type="radio"] {
       &.error {        
 
         label {
-          color: map-get($message-colors, 'error-dark' ) !important;
+          color: map.get(variables.$message-colors, 'error-dark' ) !important;
           font-size: 80%;
           top: -1rem;
           transform: translate(0) scale(1);
@@ -581,9 +587,9 @@ input[type="radio"] {
         input:not([type=checkbox]),
         input:not([type=radio]),
         textarea {
-          background-color: map-get($message-colors, 'error-light' );
-          border: 1px solid map-get($error-colors, 'negative' ) !important;
-          box-shadow: 0 0 2px 0 map-get($error-colors, 'negative') !important;
+          background-color: map.get(variables.$message-colors, 'error-light' );
+          border: 1px solid map.get(variables.$error-colors, 'negative' ) !important;
+          box-shadow: 0 0 2px 0 map.get(variables.$error-colors, 'negative') !important;
         }
 
         ::-webkit-input-placeholder,
@@ -598,10 +604,10 @@ input[type="radio"] {
       textarea {
         background: transparent;
         border: none;
-        border-bottom: 1px solid map-get($greyscale, 'light' );
+        border-bottom: 1px solid map.get(variables.$greyscale, 'light' );
         border-radius: 0;
-        color: map-get($greyscale, 'base' );
-        padding: map-get($spacers, 1 );
+        color: map.get(variables.$greyscale, 'base' );
+        padding: map.get(variables.$spacers, 1 );
         transition: .2s ease-in;
 
         &:focus ~ label,
@@ -612,7 +618,7 @@ input[type="radio"] {
         }
 
         &:focus {
-          border-bottom-color: map-get($brand-colors, 'med-blue' ) !important;
+          border-bottom-color: map.get(config.$brand-colors, 'med-blue' ) !important;
           outline: none !important;
         }
       }
@@ -627,7 +633,7 @@ input[type="radio"] {
 
       input:focus::-webkit-datetime-edit,
       input:valid::-webkit-datetime-edit {
-        color: map-get($greyscale, 'base' );
+        color: map.get(variables.$greyscale, 'base' );
       }
 
       ::-webkit-input-placeholder {
@@ -648,11 +654,11 @@ input[type="radio"] {
       }
 
       input:focus::-webkit-input-placeholder {
-        color: map-get($greyscale, 'base' )!important;
+        color: map.get(variables.$greyscale, 'base' )!important;
       }
 
       input:focus::-moz-placeholder {
-        color: map-get($greyscale, 'base' )!important;
+        color: map.get(variables.$greyscale, 'base' )!important;
       }
 
       input:focus + label {
@@ -665,7 +671,7 @@ input[type="radio"] {
       }
 
       select {
-        padding-left: map-get($spacers, 1 );
+        padding-left: map.get(variables.$spacers, 1 );
 
         &:focus ~ label,
         &:valid ~ label {
@@ -675,13 +681,13 @@ input[type="radio"] {
         }
 
         &:focus {
-          border-bottom-color: map-get($brand-colors, 'med-blue' ) !important;
+          border-bottom-color: map.get(config.$brand-colors, 'med-blue' ) !important;
           outline: none !important;
         }
       }
 
       label {
-        color: map-get($greyscale, 'light' );
+        color: map.get(variables.$greyscale, 'light' );
         pointer-events: none;
         position: absolute;
         left: .25rem;
@@ -732,24 +738,24 @@ input[type="radio"] {
   select {
     background-color: transparent;
     border: 1px solid transparent;
-    border-bottom-color: map-get($greyscale, 'light' );
-    color: map-get($greyscale, 'base' );
+    border-bottom-color: map.get(variables.$greyscale, 'light' );
+    color: map.get(variables.$greyscale, 'base' );
     display: block;
-    font-family: map-get($fonts, 'base');
-    font-size: map-get($fonts, 'size');
+    font-family: map.get(config.$fonts, 'base');
+    font-size: map.get(config.$fonts, 'size');
     min-height: 2.2rem;
-    padding: map-get($spacers, 1) 0;
+    padding: map.get(variables.$spacers, 1) 0;
     width: 100%;
 
     &::placeholder {
-      color: map-get($greyscale, 'base' );
+      color: map.get(variables.$greyscale, 'base' );
     }
 
     &:focus {
       outline: none;
-      border-bottom-color: map-get($platform-colors, 'focus' );
-      box-shadow: 0 0 2px 0 map-get($platform-colors, 'focus' );
-      transition: box-shadow $duration, border-color $duration ease-in-out, border-width $duration ease;
+      border-bottom-color: map.get(config.$platform-colors, 'focus' );
+      box-shadow: 0 0 2px 0 map.get(config.$platform-colors, 'focus' );
+      transition: box-shadow config.$duration, border-color config.$duration ease-in-out, border-width config.$duration ease;
     }
   }
 
@@ -761,7 +767,7 @@ input[type="radio"] {
   input[type="number"] {
 
     &.readonly {
-      transition: $transitions;
+      transition: config.$transitions;
 
       &[readonly] {
         border-bottom-color: transparent;
@@ -775,12 +781,12 @@ input[type="radio"] {
   }
 
   textarea {
-    border-color: map-get($greyscale, 'light' );
-    padding: map-get($spacers, 1);
+    border-color: map.get(variables.$greyscale, 'light' );
+    padding: map.get(variables.$spacers, 1);
     width: 100%;
 
     &.readonly {
-      transition: $transitions;
+      transition: config.$transitions;
 
       &[readonly] {
         border-color: transparent;
@@ -799,7 +805,7 @@ input[type="radio"] {
     position: relative;
 
     &:after {
-      border: 1px solid map-get($greyscale, 'base' );
+      border: 1px solid map.get(variables.$greyscale, 'base' );
       border-width: 0 0 1px 1px;
       content: '';
       height: .3rem;
@@ -814,7 +820,7 @@ input[type="radio"] {
     &.time {
 
       &:after {
-        color: map-get($greyscale, 'base' );
+        color: map.get(variables.$greyscale, 'base' );
         content: '\f017';
         font-family: "Font Awesome 5 Pro";
         font-weight: 400;
@@ -830,7 +836,7 @@ input[type="radio"] {
     -webkit-appearance: none;
     appearance: none;
     border-radius: 0;
-    padding: map-get($spacers, 1) $spacer map-get($spacers, 1) 0;
+    padding: map.get(variables.$spacers, 1) variables.$spacer map.get(variables.$spacers, 1) 0;
   }
 
   input[type="date"],
@@ -908,17 +914,17 @@ input[type="radio"] {
 // Togles
 // ------
 .rim-toggle {
-  border: 1px solid lighten(map-get($greyscale, 'light'), $hue-threshold * 2);
-  border-radius: map-get($radius, 'button');
+  border: 1px solid color.adjust(map.get(variables.$greyscale, 'light'), $lightness: config.$hue-threshold * 2);
+  border-radius: map.get(config.$radius, 'button');
   display: flex;
   justify-content: space-between;
-  margin-top: map-get($spacers, 2);
-  padding: map-get($spacers, 1);
+  margin-top: map.get(variables.$spacers, 2);
+  padding: map.get(variables.$spacers, 1);
 
   &__content {
-    border-radius: map-get($radius, 'button');
+    border-radius: map.get(config.$radius, 'button');
     flex: 1 1 auto;
-    // font-size: map-get($font-percentage, 'sm');
+    // font-size: map.get($font-percentage, 'sm');
     overflow: hidden;
     position: relative;
   }
@@ -926,20 +932,20 @@ input[type="radio"] {
   input.rim-toggle__input {
 
     + label {
-      color: map-get($greyscale, 'base');
+      color: map.get(variables.$greyscale, 'base');
       display: flex;
       height: 100%;
       justify-content: center;
       margin: 0;
-      padding: map-get($spacers, 1) map-get($spacers, 2);
-      padding-left: $spacer * 1.3;
+      padding: map.get(variables.$spacers, 1) map.get(variables.$spacers, 2);
+      padding-left: variables.$spacer * 1.3;
       z-index: 10;
 
       &:before {
         border: none;
         content: '\f00c';
         font-family: "Font Awesome 5 Pro";
-        font-size: map-get($font-percentage, 'sm' );
+        font-size: map.get(variables.$font-percentage, 'sm' );
         font-weight: 900;
         height: auto;
         opacity: 0;
@@ -952,7 +958,7 @@ input[type="radio"] {
 
       &:after {
         content: '';
-        background-color: map-get($greyscale, 'white' );
+        background-color: map.get(variables.$greyscale, 'white' );
         position: absolute;
         left: 0;
         top: 0;
@@ -964,7 +970,7 @@ input[type="radio"] {
     }
 
     &:checked + label {
-      color: map-get($greyscale, 'white' );
+      color: map.get(variables.$greyscale, 'white' );
       font-weight: inherit;
 
       &:before {
@@ -973,7 +979,7 @@ input[type="radio"] {
       }
 
       &:after {
-        background-color: map-get($platform-colors, 'link' );
+        background-color: map.get(config.$platform-colors, 'link' );
       }
     }
   }
@@ -983,14 +989,14 @@ input[type="radio"] {
 [role="radio"],
 [role="checkbox"] {
   position: relative;
-  transition: $transitions;
+  transition: config.$transitions;
   width: 100%;
 
   i {
     left: .5rem;
     position: absolute;
     transform: scale(0);
-    transition: transform $duration ease;
+    transition: transform config.$duration ease;
   }
 
   &[aria-checked="true"] {
@@ -1004,17 +1010,17 @@ input[type="radio"] {
 input[type="checkbox"].pill-filter, input[type="radio"].pill-filter {
 
   + label {
-    background-color: map-get($greyscale, 'white');
-    border-radius: map-get($radius, 'button');
-    color: map-get($platform-colors, 'link');
-    border: 1px solid map-get($platform-colors, 'link');
+    background-color: map.get(variables.$greyscale, 'white');
+    border-radius: map.get(config.$radius, 'button');
+    color: map.get(config.$platform-colors, 'link');
+    border: 1px solid map.get(config.$platform-colors, 'link');
     height: auto;
     justify-content: center;
     margin: .25rem;
-    padding: map-get($spacers, 2) 1.5rem;
-    transition: $transitions;
+    padding: map.get(variables.$spacers, 2) 1.5rem;
+    transition: config.$transitions;
     i {
-      font-size: map-get($font-percentage, 'xs');
+      font-size: map.get(variables.$font-percentage, 'xs');
     }
 
     &:before {
@@ -1022,20 +1028,20 @@ input[type="checkbox"].pill-filter, input[type="radio"].pill-filter {
     }
 
     &:after {
-      color: map-get($greyscale, 'white');
+      color: map.get(variables.$greyscale, 'white');
       left: .5rem;
       opacity: 0;
       top: 50%;
       transform: translateY(-50%);
-      transition: visibility $duration ease, opacity $duration ease;
+      transition: visibility config.$duration ease, opacity config.$duration ease;
       visibility: hidden;
     }
   }
 
   &:checked + label {
-    background-color: map-get($platform-colors, 'link' );
+    background-color: map.get(config.$platform-colors, 'link' );
     font-weight: 400;
-    color: map-get($greyscale, 'white');
+    color: map.get(variables.$greyscale, 'white');
 
     &:after {
       opacity: 1;
@@ -1054,13 +1060,13 @@ input[type="checkbox"].pill-filter, input[type="radio"].pill-filter {
     $border-radius: 3rem;
     .slider {
       appearance: none;
-      background-color: map-get($brand-colors, 'med-blue');
+      background-color: map.get(config.$brand-colors, 'med-blue');
       border-radius: $border-radius;
       width: 100%;
       height: .5rem;
       margin: 0;
       outline: none;
-      transition: $transitions;
+      transition: config.$transitions;
 
       &:hover {
         opacity: .7;
@@ -1068,17 +1074,17 @@ input[type="checkbox"].pill-filter, input[type="radio"].pill-filter {
       &::-webkit-slider-thumb {
         appearance: none;
         border: 1px solid;
-        border-color: map-get($brand-colors, 'med-blue');
+        border-color: map.get(config.$brand-colors, 'med-blue');
         border-radius: $border-radius;
-        background-color: map-get($greyscale, 'white');
+        background-color: map.get(variables.$greyscale, 'white');
         cursor: pointer;
-        @include square(1.3rem);
+        @include mixins.square(1.3rem);
 
       }
       &::-moz-range-thumb {
-        background-color: map-get($greyscale, 'white');
+        background-color: map.get(variables.$greyscale, 'white');
         cursor: pointer;
-        @include square(25px);
+        @include mixins.square(25px);
       }
     }
   }
