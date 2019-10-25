@@ -247,7 +247,7 @@
 
     &.active,
     &:hover {
-      background-color: darken(config.$button-secondary-background, math.percentage(config.$hue-threshold));
+      background-color: color.adjust(config.$button-secondary-background, $lightness: math.percentage(-(config.$hue-threshold)));
       box-shadow: 0 0 0 .3rem color.adjust(config.$button-secondary-background, $lightness: math.percentage(config.$hue-threshold));
     }
 
@@ -277,12 +277,12 @@
     &.loading {
 
       &:before {
-        background-color: darken(config.$button-secondary-background, math.percentage(config.$hue-threshold));
+        background-color: color.adjust(config.$button-secondary-background, $lightness: math.percentage(-(config.$hue-threshold)));
         box-shadow: 0 0 0 .3rem color.adjust(config.$button-secondary-background, $lightness: math.percentage(config.$hue-threshold));
       }
 
       &[data-button-text] {
-        background-color: darken(config.$button-secondary-background, math.percentage(config.$hue-threshold));
+        background-color: color.adjust(config.$button-secondary-background, $lightness: math.percentage(-(config.$hue-threshold)));
         border-color: inherit;
         box-shadow: 0 0 0 .3rem color.adjust(config.$button-secondary-background, $lightness: math.percentage(config.$hue-threshold));
         padding: 0 map.get(variables.$spacers, 1 );
@@ -340,15 +340,15 @@
 
     &.active,
     &:hover {
-      background-color: darken(config.$button-secondary-background, math.percentage(config.$hue-threshold));
-      background-image: linear-gradient(45deg, config.$button-secondary-background, darken(config.$button-secondary-background, math.percentage(config.$hue-threshold * 2)));
+      background-color: color.adjust(config.$button-secondary-background, $lightness: math.percentage(-(config.$hue-threshold)));
+      background-image: linear-gradient(45deg, config.$button-secondary-background, color.adjust(config.$button-secondary-background, $lightness: math.percentage(-(config.$hue-threshold * 2))));
     }
 
     &.loading {
 
       &:before {
-        background-color: darken(config.$button-secondary-background, math.percentage(config.$hue-threshold));
-        background-image: linear-gradient(45deg, config.$button-secondary-background, darken(config.$button-secondary-background, math.percentage(config.$hue-threshold * 2)));
+        background-color: color.adjust(config.$button-secondary-background, $lightness: math.percentage(-(config.$hue-threshold)));
+        background-image: linear-gradient(45deg, config.$button-secondary-background, color.adjust(config.$button-secondary-background, $lightness: math.percentage(-(config.$hue-threshold * 2))));
       }
     }
   }

@@ -1,4 +1,6 @@
 @use "config";
+@use "sass:color";
+@use "sass:math";
 @use "sass:map";
 
 // Mixins
@@ -236,7 +238,7 @@
 // Messages Variant
 @mixin message-variant($background, $color) {
   background-color: $background;
-  border-color: darken($background, 20%);
+  border-color: color.adjust($background, $lightness: math.percentage(-(config.$hue-threshold * 2)));
   color: $color;
 
   * {
@@ -244,7 +246,7 @@
   }
 
   a {
-    color: darken($color, 10%);
+    color: color.adjust($background, $lightness: math.percentage(-(config.$hue-threshold)));
     font-weight: 700;
   }
 }

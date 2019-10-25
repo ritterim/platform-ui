@@ -1,11 +1,14 @@
 @use "config";
+@use "sass:color";
+@use "sass:math";
+
 // Colors
 //
 // DO NOT implement colors outside of these collections. All color should be called using:
 //
 // `map-get($map, $key);`
 //
-// All color variations should be handled through `darken()`, `lighten()`, or `rgba` for alpha transparency.
+// All color variations should be handled through `color.adjust(#color, $lightness: #percentage);`, `lighten()`, or `rgba` for alpha transparency.
 //
 // Our Color Utility classes can be found in the Utilities section of the guide, [here](/section-utilities.html#kssref-utilities-color).
 //
@@ -75,7 +78,7 @@ $message-colors: (
   'base-dark': map-get($greyscale, 'base'),
   'info-light': map-get(config.$brand-colors, 'lightblue'),
   'info': map-get(config.$brand-colors, 'skyblue'),
-  'info-dark': darken(map-get(config.$brand-colors, 'med-blue'), 10%),
+  'info-dark': color.adjust(map-get(config.$brand-colors, 'med-blue'), $lightness: math.percentage(-(config.$hue-threshold))),
   'warning-light': #fff3cd,
   'warning': #ffeeba,
   'warning-dark': #856404,

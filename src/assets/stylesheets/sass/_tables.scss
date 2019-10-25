@@ -3,6 +3,8 @@
 @use "variables";
 @use "sass:color";
 @use "sass:map";
+@use "sass:math";
+
 // Tables
 //
 // Default table.
@@ -147,7 +149,7 @@
 .rim-table,
 table {
   $border-radius: map.get(config.$radius, 'default');
-  $table-border: 1px solid color.adjust(map.get(variables.$greyscale, 'light'), $lightness: config.$hue-threshold * 2);
+  $table-border: 1px solid color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold * 2));
   $responsive-table-bottom-gap: variables.$spacer * 1.5;
   $responsive-table-label-bg: map.get(variables.$greyscale, 'lighter');
   width: 100%;
@@ -174,7 +176,7 @@ table {
     }
 
     th {
-      border: solid color.adjust(map.get(variables.$greyscale, 'light'), $lightness: config.$hue-threshold * 2);
+      border: solid color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold * 2));
       border-width: 1px 0;
     }
   }
@@ -198,7 +200,7 @@ table {
     }
 
     td {
-      border-bottom: 1px solid color.adjust(map.get(variables.$greyscale, 'light'), $lightness: config.$hue-threshold * 2);
+      border-bottom: 1px solid color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold * 2));
     }
 
     &:last-child {

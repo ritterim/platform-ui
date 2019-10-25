@@ -3,6 +3,7 @@
 @use "variables";
 @use "sass:color";
 @use "sass:map";
+@use "sass:math";
 
 // Menu
 //
@@ -56,7 +57,7 @@
 .site-menu {
   $menu-primary-color: map.get(variables.$greyscale, 'white');
 
-  $dropdown-background: color.adjust(map.get(config.$brand-colors, 'navy' ), $lightness: config.$hue-threshold * 5);
+  $dropdown-background: color.adjust(map.get(config.$brand-colors, 'navy' ), $lightness: math.percentage(config.$hue-threshold * 5));
   display: flex;
   flex-grow: 1;
   width: 100%;
@@ -631,7 +632,7 @@
   }
 
   &__action {
-    color: color.adjust(map.get(variables.$greyscale, 'light'), $lightness: config.$hue-threshold);
+    color: color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold));
     height: variables.$spacer * 1.5;
     width: map.get(variables.$spacers, 4);
     @extend %flex-center;

@@ -2,6 +2,7 @@
 @use "variables";
 @use "sass:color";
 @use "sass:map";
+@use "sass:math";
 
 // Info Box
 // 
@@ -138,7 +139,7 @@
 
   &__content {
     background-color: map.get(variables.$greyscale, 'white');
-    border: 1px solid color.adjust(map.get(variables.$greyscale, 'light'), $lightness: config.$hue-threshold * 2);
+    border: 1px solid color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold * 2));
     box-shadow: 0 2px 4px 2px map.get(variables.$greyscale, 'lighter' );
     margin-top: variables.$spacer;
     min-width: 20rem;
@@ -167,7 +168,7 @@
       height: 0;
       border-style: solid;
       border-width: 0 10px 14px 10px;
-      border-color: transparent transparent color.adjust(map.get(variables.$greyscale, 'light'), $lightness: config.$hue-threshold * 2);
+      border-color: transparent transparent color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold * 2));
       right: 80px;
       top: -14px;
       z-index: 49;
