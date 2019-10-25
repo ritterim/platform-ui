@@ -1,3 +1,8 @@
+@use "config";
+@use "variables";
+@use "sass:color";
+@use "sass:map";
+
 // Pez
 //
 // Pez represent square and rectangular rounded labels throughout the platform.
@@ -63,62 +68,62 @@
 
 .pez {
 
-  background-color: map-get($greyscale, 'light-mid');
-  border: 1px solid lighten(map-get($greyscale, 'light'), 15%);
-  border-radius: map-get($spacers, 1);
-  color: darken(map-get($greyscale, 'light'), 25%);
+  background-color: map.get(variables.$greyscale, 'light-mid');
+  border: 1px solid color.adjust(map.get(variables.$greyscale, 'light'), $lightness: config.$hue-threshold * 1.5);
+  border-radius: map.get(variables.$spacers, 1);
+  color: darken(map.get(variables.$greyscale, 'light'), config.$hue-threshold * 2.5);
   cursor: pointer;
   display: inline-flex;
-  font-size: map-get($font-percentage,'sm');
+  font-size: map.get(variables.$font-percentage,'sm');
   font-weight: bold;
   justify-content: center;
-  margin: map-get($spacers, 1) / 2;
-  min-width: map-get($spacers, 4);
+  margin: map.get(variables.$spacers, 1) / 2;
+  min-width: map.get(variables.$spacers, 4);
   overflow: hidden;
-  padding: map-get($spacers, 1);
+  padding: map.get(variables.$spacers, 1);
   position: relative;
-  transition: $transitions;
+  transition: config.$transitions;
 
   &--has-product {
-    background-color: rgba(map-get($secondary-colors, 'yellow'), $opacity /  1.5);
-    border: 1px solid lighten(map-get($brand-colors, 'brown'), 15%);
-    border-radius: map-get($spacers, 1);
-    color: map-get($brand-colors, 'brown');
-    padding: map-get($spacers, 2) map-get($spacers, 3);
+    background-color: rgba(map.get(config.$secondary-colors, 'yellow'), config.$opacity /  1.5);
+    border: 1px solid color.adjust(map.get(config.$brand-colors, 'brown'), $lightness: config.$hue-threshold * 1.5);
+    border-radius: map.get(variables.$spacers, 1);
+    color: map.get(config.$brand-colors, 'brown');
+    padding: map.get(variables.$spacers, 2) map.get(variables.$spacers, 3);
   }
 
   // --check-wrapper is meantto  be used with a checkmark  icon
   &__check-wrapper {
 
-    $small-spacer: map-get($spacers, 2)  / 2;
+    $small-spacer: map.get(variables.$spacers, 2)  / 2;
 
-    background-color: map-get($error-colors, 'positive');
+    background-color: map.get(variables.$error-colors, 'positive');
     color: white;
     bottom: 0;
     right: 0;
-    height: $spacer * 1.6;
+    height: variables.$spacer * 1.6;
     margin-right: -#{$small-spacer};
-    margin-bottom: -#{map-get($spacers, 2)};
+    margin-bottom: -#{map.get(variables.$spacers, 2)};
     padding-top: $small-spacer;
     position: absolute;
     transform: rotate(40deg);
     .fa-check {
-      font-size: map-get($font-percentage, 'xxs');
+      font-size: map.get(variables.$font-percentage, 'xxs');
       transform: rotate(-40deg);
-      margin: 0 map-get($spacers, 1) 0 0;
+      margin: 0 map.get(variables.$spacers, 1) 0 0;
     }
   }
 
   &.disabled {
     cursor: none;
     font-weight: normal;
-    opacity: $opacity / 2;
+    opacity: config.$opacity / 2;
   }
 
   &.pressed {
-    background-color: lighten(map-get($brand-colors, 'med-blue'), 20%);
-    border-color: map-get($brand-colors, 'med-blue');
-    color: map-get($greyscale, 'white');
+    background-color: color.adjust(map.get(config.$brand-colors, 'med-blue'), $lightness: config.$hue-threshold * 2);
+    border-color: map.get(config.$brand-colors, 'med-blue');
+    color: map.get(variables.$greyscale, 'white');
     font-weight: bold;
   }
 

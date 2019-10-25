@@ -1,7 +1,9 @@
-
+@use "config";
+@use "variables";
+@use "sass:map";
 
 .rim-note {
-  $orange: map-get($brand-colors, 'salmon' );
+  $orange: map.get(config.$brand-colors, 'salmon' );
 
   position: relative;
 
@@ -31,7 +33,7 @@
   
   &__inner {
     overflow: hidden;
-    transition: max-width $transitions, transform $transitions;
+    transition: max-width config.$transitions, transform config.$transitions;
 
     .note-open & {
       cursor: default;
@@ -43,10 +45,10 @@
   &__toggle {
     background-color: transparent;
     border: none;
-    color: map-get($greyscale, 'light' );
+    color: map.get(variables.$greyscale, 'light' );
     cursor: pointer;
     font-size: 100%;
-    transition: all ease $transitions;
+    transition: all ease config.$transitions;
     position: absolute;
     bottom: .5rem;
     left: 50%;

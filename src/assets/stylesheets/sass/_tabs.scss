@@ -1,3 +1,9 @@
+@use "config";
+@use "mixins";
+@use "variables";
+@use "sass:color";
+@use "sass:map";
+
 // Tabs
 // 
 // The content for a tabbed section needs to live inside the `.rim-tabs` class. The tabs should 
@@ -50,7 +56,7 @@
 // Styleguide Components.Tabs
 
 $tab-height:          4rem;
-$tab-active-color:    map-get($brand-colors, 'navy' );
+$tab-active-color:    map.get(config.$brand-colors, 'navy' );
 
 .rim-card.has-tabs {
   margin-top: $tab-height;
@@ -60,9 +66,9 @@ $tab-active-color:    map-get($brand-colors, 'navy' );
   display: flex;
   list-style-type: none;
   padding: 0;
-  margin-bottom: $spacer; // makes up for .rim-card padding-top
-  margin-left: calc(-#{$spacer} - 1px); // .rim-card padding + 1px border
-  margin-top: calc(-#{$tab-height} - #{$spacer}); // .rim-tab height + .rim-card padding
+  margin-bottom: variables.$spacer; // makes up for .rim-card padding-top
+  margin-left: calc(-#{variables.$spacer} - 1px); // .rim-card padding + 1px border
+  margin-top: calc(-#{$tab-height} - #{variables.$spacer}); // .rim-tab height + .rim-card padding
   width: calc(100% + (1rem + 1px) * 2);
 }
 
@@ -76,21 +82,21 @@ $tab-active-color:    map-get($brand-colors, 'navy' );
   &__anchor {
     background-color: transparent;
     border: 1px solid transparent;
-    color: map-get($greyscale, 'light' );
+    color: map.get(variables.$greyscale, 'light' );
     cursor: pointer;
     font-size: 100%;
     height: 100%;
-    padding: map-get($spacers, 2 ) $spacer;
+    padding: map.get(variables.$spacers, 2 ) variables.$spacer;
     position: relative;
-    transition: $transitions;
+    transition: config.$transitions;
     width: 100%;
     @extend %flex-center;
 
     @media (pointer: fine) {
       &:hover {
-        background-color: map-get($greyscale, 'white' );
-        border-color: lighten(map-get($greyscale, 'light'), $hue-threshold * 2);
-        border-bottom-color: map-get($greyscale, 'white' );
+        background-color: map.get(variables.$greyscale, 'white' );
+        border-color: color.adjust(map.get(variables.$greyscale, 'light'), $lightness: config.$hue-threshold * 2);
+        border-bottom-color: map.get(variables.$greyscale, 'white' );
         color: $tab-active-color;
         font-weight: 600;
       }
@@ -101,9 +107,9 @@ $tab-active-color:    map-get($brand-colors, 'navy' );
     }
 
     &[aria-selected="true"] {
-      background-color: map-get($greyscale, 'white' );
-      border: 1px solid lighten(map-get($greyscale, 'light'), $hue-threshold * 2);
-      border-bottom-color: map-get($greyscale, 'white' );
+      background-color: map.get(variables.$greyscale, 'white' );
+      border: 1px solid color.adjust(map.get(variables.$greyscale, 'light'), $lightness: config.$hue-threshold * 2);
+      border-bottom-color: map.get(variables.$greyscale, 'white' );
       color: $tab-active-color;
       font-weight: 600;
       pointer-events: none;
@@ -125,7 +131,7 @@ $tab-active-color:    map-get($brand-colors, 'navy' );
       position: absolute;
       right: -1px;
       top: 0;
-      transition: $transitions;
+      transition: config.$transitions;
       width: auto;
       border: none;
       border-radius: 0;
@@ -133,15 +139,15 @@ $tab-active-color:    map-get($brand-colors, 'navy' );
   }
 
   i {
-    @include breakpoint(tablet, max) {
-      font-size: map-get($font-percentage, 'lg' );
+    @include mixins.breakpoint(tablet, max) {
+      font-size: map.get(variables.$font-percentage, 'lg' );
     }
   }
 
   &__title {
-    margin-left: map-get($spacers, 2 );
+    margin-left: map.get(variables.$spacers, 2 );
 
-    @include breakpoint(tablet, max) {
+    @include mixins.breakpoint(tablet, max) {
       display: none;
 
       [aria-selected="true"] & {

@@ -1,3 +1,6 @@
+@use "mixins";
+@use "variables";
+@use "sass:map";
 // ie specific
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
 
@@ -21,19 +24,19 @@
   .rim-content-grid {
     display: flex;
     flex-flow: row wrap;
-    padding: map-get($spacers, 5 ) $spacer;
+    padding: map.get(variables.$spacers, 5 ) variables.$spacer;
 
     &.has-side-content {
       justify-content: space-between;
     }
   
     &__heading {
-      margin-bottom: map-get($spacers, 4 );
+      margin-bottom: map.get(variables.$spacers, 4 );
       flex-basis: 100%;
   
       .has-side-content & {
 
-        @include breakpoint(desktop, min) {
+        @include mixins.breakpoint(desktop, min) {
           flex: 0 82.3333%;
         }
       }
@@ -44,7 +47,7 @@
   
       .has-side-content & {
 
-        @include breakpoint(desktop, min) {
+        @include mixins.breakpoint(desktop, min) {
           flex-basis: 82.3333%;
           order: 1;
         }
@@ -54,7 +57,7 @@
     &__side-content {
       display: none;
   
-      @include breakpoint(desktop, min) {
+      @include mixins.breakpoint(desktop, min) {
         display: block;
         flex-basis: 15.6667%;
         order: 2;

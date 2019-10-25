@@ -1,3 +1,8 @@
+@use "config";
+@use "mixins";
+@use "variables";
+@use "sass:map";
+
 // Modal
 //
 // Modal default state is closed. Toggling `.rim-modal--closed` on both the `.rim-modal--overlay` and `.rim-modal` will diplay the modal.
@@ -87,15 +92,15 @@
   top: 50%;
   transform: translate(-50%, -50%);
 
-  @include breakpoint(tablet, max) {
+  @include mixins.breakpoint(tablet, max) {
     height: 100vh !important;
     width: 100vw !important;
   }
 
-  @include breakpoint(tablet, min) {
+  @include mixins.breakpoint(tablet, min) {
     width: 65vw;
   }
-  @include breakpoint(desktop, min) {
+  @include mixins.breakpoint(desktop, min) {
     width: 45vw;
   }
 
@@ -104,17 +109,17 @@
   }
 
   &--small {
-    @include breakpoint(tablet, min) {
+    @include mixins.breakpoint(tablet, min) {
       width: 40vw;
     }
-    @include breakpoint(desktop, min) {
+    @include mixins.breakpoint(desktop, min) {
       width: 20vw;
     }
   }
 
   &--large {
 
-    @include breakpoint(tablet, min) {
+    @include mixins.breakpoint(tablet, min) {
       width: 80vw;
     }
   }
@@ -130,7 +135,7 @@
   }
 
   &--overlay {
-    background: rgba(map-get($greyscale, 'black'), .5);
+    background: rgba(map.get(variables.$greyscale, 'black'), .5);
     height: 100%;
     width: 100%;
     position: fixed;
@@ -145,11 +150,11 @@
     cursor: pointer;
   }
   &__inner {
-    background: map-get($greyscale, 'white');
+    background: map.get(variables.$greyscale, 'white');
     height: 100%;
   }
   &__header {
-    background-color: map-get($brand-colors, 'lightblue');
+    background-color: map.get(config.$brand-colors, 'lightblue');
     height: 6rem;
     padding: 2rem;
     position: relative;
@@ -186,7 +191,7 @@ body.modal-open {
   overflow-y: hidden;
 
   main {
-    @include breakpoint(tablet, max) {
+    @include mixins.breakpoint(tablet, max) {
       z-index: 200;
     }    
   }
