@@ -1,3 +1,6 @@
+@use "mixins";
+@use "variables";
+
 // Flex
 //
 // Flexbox utilities to use when flexbox is present.
@@ -10,9 +13,9 @@
 // | Class Name             |                         |                         |                      |                          |
 // | ---------------------- | ----------------------- | ----------------------- | -------------------- | ------------------------ |
 // | `flex--align-center`   | `flex--column`          | `flex--justify-between` | `flex--justify-end`  | `flex--justify-start`    |
-// | `flex--justify-center` | `flex--wrap`            | `flex--grow`            | `flex-inline`        | `flex--align-baseline`   | 
-// | `flex--align-start`    | `flex--align-end`       | `flex--align-center`    | `flex-nowrap`        | `flex--justify-between`  | 
-// | `flex--row-reverse`    | `flex--column-reverse`  | `flex--align-center`    | `flex-nowrap`        | `flex--justify-between`  | 
+// | `flex--justify-center` | `flex--wrap`            | `flex--grow`            | `flex-inline`        | `flex--align-baseline`   |
+// | `flex--align-start`    | `flex--align-end`       | `flex--align-center`    | `flex-nowrap`        | `flex--justify-between`  |
+// | `flex--row-reverse`    | `flex--column-reverse`  | `flex--align-center`    | `flex-nowrap`        | `flex--justify-between`  |
 //
 // Styleguide Utilities.Flex
 
@@ -36,21 +39,21 @@
   }
 }
 
-@each $key, $val in $flex-align {
+@each $key, $val in variables.$flex-align {
   .flex--align-#{$key} {
-    align-items: #{$val}; 
+    align-items: #{$val};
   }
 }
 
-@each $key, $val in $flex-direction {
+@each $key, $val in variables.$flex-direction {
   .flex--#{$key} {
-    flex-direction: #{$val}; 
+    flex-direction: #{$val};
   }
 }
 
-@each $key, $val in $flex-justify {
+@each $key, $val in variables.$flex-justify {
   .flex--justify-#{$key} {
-    justify-content: #{$val}; 
+    justify-content: #{$val};
   }
 }
 

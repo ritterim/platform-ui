@@ -1,3 +1,7 @@
+@use "config";
+@use "variables";
+@use "sass:map";
+
 // Spacers
 //
 // We've included spacing utilities for padding and margin that work almost the same as Bootstrap 4.x. These cover
@@ -30,20 +34,20 @@
 // Styleguide Utilities.Spacers
 
 // Responsive
-// 
+//
 // Currently we only have responsive spacers for mobile. We are also only using them for `margin-bottom` and `padding-bottom`.
-// 
+//
 // Example:
 // ```scss
 // .mobile-mb-3 // margin-bottom: 1rem
 // .mobile-pb-3 // padding-bottom: 1rem
 // ```
-// 
+//
 // Styleguide Utilities.Spacers.Responsive
 
 @each $prop, $letter in (margin: m, padding: p) {
-  @each $direction, $d in $xy-border {
-    @each $unit, $rem in $spacers {
+  @each $direction, $d in variables.$xy-border {
+    @each $unit, $rem in variables.$spacers {
       .#{$letter}#{$d}-#{$unit} {
         #{$prop}-#{$direction}: #{$rem} !important;
       }
@@ -60,9 +64,9 @@
 }
 
 @each $prop, $letter in (margin: m, padding: p) {
-  @each $unit, $rem in $spacers {
+  @each $unit, $rem in variables.$spacers {
     .#{$letter}b-mobile-#{$unit} {
-      @media screen and (min-width: map-get($breakpoints, mobile)) and (max-width: map-get($breakpoints, tablet) - 1) {
+      @media screen and (min-width: map.get(config.$breakpoints, mobile)) and (max-width: map.get(config.$breakpoints, tablet) - 1) {
         #{$prop}-bottom: #{$rem} !important;
       }
     }

@@ -1,6 +1,7 @@
-
+@use "config";
 @use "variables";
 @use "sass:map";
+
 // Stats
 //
 // Used to display statistics in different situations throughout the platform. There are three sizes, `rim-stat--lg`, `rim-stat--md`(default), and `rim-stat--sm`. `rim-stat` requires `data-stat-label` and `aria-label` attributes.
@@ -81,7 +82,7 @@
     &[data-stat-label]:after {
         content: attr(data-stat-label);
         color: map.get(variables.$greyscale, 'base');
-        font-size: map.get(variables.$fonts, 'size' );
+        font-size: map.get(config.$fonts, 'size' );
         font-weight: normal;
     }
 
@@ -109,4 +110,3 @@
     }
 
 }
-  

@@ -1,48 +1,47 @@
 
-@import "config";
+@use "config";
+@use "variables";
 
-@import "variables";
-
-@import "mixins";
-@import "utilities";
+@use "mixins";
+@use "utilities";
 
 // animation libs
-@import "animate"; // leveraging animate.css
-@import "vue-transitions";
+@use "animate"; // leveraging animate.css
+@use "vue-transitions";
 
-@import "normalize";
+@use "normalize";
 
 // initial structure
-@import "base";
-@import "layout";
+@use "base";
+@use "layout";
 
 // components, utilities, etc
-@import "accordion";
-@import "blocks";
-@import "buttons";
-@import "cards";
-@import "code";
-@import "banner";
-@import "drawer";
-@import "errors";
-@import "forms";
-@import "images";
-@import "info-box";
-@import "lists";
-@import "messages";
-@import "menu";
-@import "modal";
-@import "notes";
-@import "pez";
-@import "pills";
-@import "quote";
-@import "search";
-@import "stats";
-@import "tabs";
-@import "tables";
-@import "tooltip";
+@use "accordion";
+@use "blocks";
+@use "buttons";
+@use "cards";
+@use "code";
+@use "banner";
+@use "drawer";
+@use "errors";
+@use "forms";
+@use "images";
+@use "info-box";
+@use "lists";
+@use "messages";
+@use "menu";
+@use "modal";
+@use "notes";
+@use "pez";
+@use "pills";
+@use "quote";
+@use "search";
+@use "stats";
+@use "tabs";
+@use "tables";
+@use "tooltip";
 
 // special and print
-@import "ie-specific";
-@import "print";
-@import "wistia";
+@use "ie-specific";
+@use "print";
+@use "wistia";

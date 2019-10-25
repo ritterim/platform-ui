@@ -1,3 +1,5 @@
+@use "config";
+@use "variables";
 
 // Background Colors
 //
@@ -22,7 +24,7 @@
 //
 // Styleguide Utilities.Color.Background
 
-$all-colors: map-merge($config-colors, $greyscale);
+$all-colors: map-merge(config.$config-colors, variables.$greyscale);
 
 @each $name, $color in $all-colors {
   // text color
@@ -33,11 +35,11 @@ $all-colors: map-merge($config-colors, $greyscale);
     color: $color !important;
     transition: .2s;
     &--hover {
-      transition: $transitions;
+      transition: config.$transitions;
 
       &.text-underline--hover {
         &:after {
-          background-color: $color!important;
+          background-color: $color !important;
         }
       }
 
@@ -62,7 +64,7 @@ $all-colors: map-merge($config-colors, $greyscale);
   }
 }
 
-@each $name, $color in $platform-colors {
+@each $name, $color in config.$platform-colors {
   // text color
   .text-#{$name} {
     border-color: $color !important;

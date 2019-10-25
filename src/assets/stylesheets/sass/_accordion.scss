@@ -1,3 +1,10 @@
+@use "config";
+@use "mixins";
+@use "variables";
+@use "sass:color";
+@use "sass:math";
+@use "sass:map";
+
 // Accordion
 //
 // Leverage spacing utility classes for padding and margin for the content within the accordion.
@@ -5,7 +12,7 @@
 //
 // Markup:
 // <div class="rim-accordion">
-//   <div class="rim-accordion__header block-container pl-5 pr-3 py-3">          
+//   <div class="rim-accordion__header block-container pl-5 pr-3 py-3">
 //     <div class="block block-5">
 //       <h3 class="mb-3">Aetna</h3>
 //       <span>Aetna Health and Life</span>
@@ -65,12 +72,12 @@
 // Styleguide Components.Accordion.Active
 
 // Nested
-// 
+//
 // You can nest accordions. By adding a `rim-accordion` inside a parent `rim-accordion`, you get the following look.
-// 
+//
 // Markup:
 // <div class="rim-accordion">
-//   <div class="rim-accordion__header block-container pl-5 pr-3 py-3">          
+//   <div class="rim-accordion__header block-container pl-5 pr-3 py-3">
 //     Header
 //   </div>
 //   <div class="rim-accordion__content fade-in-from-none-enter-active">
@@ -101,7 +108,7 @@
 //     </div>
 //     <div class="rim-accordion">
 //       <div class="rim-accordion__header px-4 py-3 flex flex--justify-between flex--align-center">
-//         <div class="flex flex--align-center">                     
+//         <div class="flex flex--align-center">
 //           <i class="fal fa-file-upload text-med-blue mr-2"></i><h4 class="text-med-blue">Attachments</h4>
 //         </div>
 //         <i class="far fa-chevron-down rim-accordion__icon text-med-blue"></i>
@@ -112,53 +119,53 @@
 //     </div>
 //   </div>
 // </div>
-// 
+//
 // Styleguide Components.Accordion.Nested
 
 // KSS specific
 .rim-style-modifier__example {
   .rim-accordion {
-    border-bottom-color: lighten(map-get($greyscale, 'light'), $hue-threshold * 2);
+    border-bottom-color: color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold * 2));
   }
 }
 
 .rim-accordion {
 
   $self: &;
-  $primary-color: map-get($greyscale, 'base');
-  $primary-background: map-get($greyscale, 'white');
-  $secondary-background: map-get($greyscale, 'lighter');
-  $primary-border-color: lighten(map-get($greyscale, 'light'), $hue-threshold * 2);
-  $secondary-border-color: lighten(map-get($brand-colors, 'med-blue'), $hue-threshold);
-  $active-background: map-get($brand-colors, 'med-blue' );
-  $hover-border: map-get($brand-colors, 'skyblue' );
+  $accordion-primary-color: map.get(variables.$greyscale, 'base');
+  $accordion-primary-background: map.get(variables.$greyscale, 'white');
+  $accordion-secondary-background: map.get(variables.$greyscale, 'lighter');
+  $accordion-primary-border-color: color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold * 2));
+  $accordion-secondary-border-color: color.adjust(map.get(config.$brand-colors, 'med-blue'), $lightness: math.percentage(config.$hue-threshold));
+  $accordion-active-background: map.get(config.$brand-colors, 'med-blue' );
+  $accordion-hover-border: map.get(config.$brand-colors, 'skyblue' );
 
-  background-color: $primary-background;
+  background-color: $accordion-primary-background;
   border: 1px solid transparent;
-  border-top-color: $primary-border-color;
-  color: $primary-color;
-  font-family: map-get($fonts, 'base');
+  border-top-color: $accordion-primary-border-color;
+  color: $accordion-primary-color;
+  font-family: map.get(config.$fonts, 'base');
   font-size: 100%;
-  transition: $transitions;
+  transition: config.$transitions;
 
   &:last-of-type {
-    border-bottom-color: $primary-border-color;
+    border-bottom-color: $accordion-primary-border-color;
   }
 
   &:not(.active):hover {
-    border-color: $hover-border;
+    border-color: $accordion-hover-border;
 
     .rim-accordion__header {
-      background-color: $secondary-background;
-    }    
+      background-color: $accordion-secondary-background;
+    }
   }
 
   &.active {
     border-color: transparent;
-    box-shadow: 0px 0px 0px 2px $hover-border;
+    box-shadow: 0px 0px 0px 2px $accordion-hover-border;
 
     > .rim-accordion__header {
-      background-color: $secondary-background;
+      background-color: $accordion-secondary-background;
 
       .rim-accordion__icon {
         @extend %rotate-180;
@@ -173,12 +180,12 @@
   &__header {
     cursor: pointer;
     position: relative;
-    transition: $transitions;
+    transition: config.$transitions;
     z-index: 10;
   }
 
   &__icon {
-    transition: $transitions;
+    transition: config.$transitions;
   }
 
   &__content {
@@ -190,9 +197,9 @@
 
 
   // nested accordions
-  .rim-accordion {    
+  .rim-accordion {
     border: none;
-    margin-bottom: map-get($spacers, 1 );
+    margin-bottom: map.get(variables.$spacers, 1 );
 
     &.active {
       border: none;
@@ -200,7 +207,7 @@
     }
 
     .rim-accordion__header {
-      background-color: $secondary-background;
+      background-color: $accordion-secondary-background;
     }
   }
 }

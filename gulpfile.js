@@ -8,10 +8,12 @@ const kss = require('kss');
 const nano = require('cssnano');
 const pjson = require('./package.json');
 const postcss = require("gulp-postcss");
-const sass = require('gulp-dart-sass');
+const sass = require('gulp-sass');
 const uglify = require('gulp-uglify');
 const year = new Date().getFullYear();
 const { watch } = require('gulp');
+
+sass.compiler = require('sass');
 
 const puiHeader = ['/*!',
   '  Platform UI v' + pjson.version + ' | ' + pjson.name + '\n',

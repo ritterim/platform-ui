@@ -1,10 +1,16 @@
+@use "config";
+@use "mixins";
+@use "variables";
+@use "sass:color";
+@use "sass:math";
+@use "sass:map";
 // Cards
 //
-// Cards can be great for seperating blocks of content. A `rim-card` comes standard with a white background, light grey border, and 
-// some padding. 
-// 
+// Cards can be great for seperating blocks of content. A `rim-card` comes standard with a white background, light grey border, and
+// some padding.
+//
 // Note: The use of the block-container and block classes are only to give the rim-card size.
-// 
+//
 // Markup:
 // <div class="block-container">
 //   <div class="block block-4">
@@ -17,11 +23,11 @@
 // Styleguide Components.Cards
 
 // Headers
-// 
-// For the headings in your cards, you generally want to wrap them in the class `rim-card__header`. This works best when you 
+//
+// For the headings in your cards, you generally want to wrap them in the class `rim-card__header`. This works best when you
 // have a layout of inline content that should have space between. The class `rim-card__group` will give the element `display: flex`.
-// When it is nested inside the class `rim-card__header` it will also have `align-items: center`. 
-// 
+// When it is nested inside the class `rim-card__header` it will also have `align-items: center`.
+//
 // Markup:
 // <div class="block-container">
 //   <div class="block block-4">
@@ -37,7 +43,7 @@
 //     </div>
 //   </div>
 // </div>
-// 
+//
 // Styleguide Components.Cards.Headers
 
 // News Card
@@ -267,28 +273,27 @@
 //
 // Styleguide Components.Cards.Overflow
 
-@use '_config.scss';
 
 .rim-card {
-  background-color: map-get($greyscale, "white");
-  border: 1px solid lighten(map-get($greyscale, "light"), $hue-threshold * 2);
-  padding: $card-padding;
+  background-color: map.get(variables.$greyscale, "white");
+  border: 1px solid color.adjust(map.get(variables.$greyscale, "light"), $lightness: math.percentage(config.$hue-threshold * 2));
+  padding: config.$card-padding;
 
   .block & {
     height: 100%;
   }
 
   &__header {
-    color: map-get($greyscale, "base");
+    color: map.get(variables.$greyscale, "base");
     display: flex;
     justify-content: space-between;
-    margin-bottom: $spacer;
+    margin-bottom: variables.$spacer;
     position: relative;
 
     .icon {
       max-height: 2rem;
 
-      @include breakpoint(tablet, max) {
+      @include mixins.breakpoint(tablet, max) {
         display: none;
       }
     }
@@ -301,21 +306,21 @@
   &__header-actions {
     display: flex;
     position: absolute;
-    top: -#{map-get($spacers, 2)};
-    right: -#{map-get($spacers, 3)};
+    top: -#{map.get(variables.$spacers, 2)};
+    right: -#{map.get(variables.$spacers, 3)};
   }
 
   &-action {
-    border-right: 1px solid map-get($greyscale, "light");
-    color: lighten(map-get($greyscale, "light"), 10%);
+    border-right: 1px solid map.get(variables.$greyscale, "light");
+    color: color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold));
     height: 1.5rem;
     padding: 0 0.5rem;
-    transition: $transitions;
+    transition: config.$transitions;
     width: 2rem;
     @extend %flex-center;
 
     &:hover {
-      color: map-get($greyscale, "light");
+      color: map.get(variables.$greyscale, "light");
     }
 
     &:last-of-type {
@@ -327,13 +332,13 @@
     display: flex;
 
     > * {
-      margin-right: $spacer;
+      margin-right: variables.$spacer;
     }
   }
 
   &__title {
-    color: map-get($greyscale, "base");
-    font-family: map-get($fonts, "base");
+    color: map.get(variables.$greyscale, "base");
+    font-family: map.get(config.$fonts, "base");
     font-size: 100%;
     margin-bottom: 0;
     text-transform: uppercase;
@@ -362,6 +367,6 @@
     align-items: flex-end;
     display: flex;
     justify-content: space-between;
-    margin-top: $footer-top-margin;
+    margin-top: config.$card-footer-top-margin;
   }
 }

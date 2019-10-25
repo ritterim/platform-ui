@@ -1,7 +1,4 @@
-@use 'sass:map';
-
-
-
+@use "sass:map";
 
 // ------------------
 // Colors
@@ -18,7 +15,7 @@ $brand-colors: (
   'salmon': #e58967,
   'brown':  #866657,
   'orange': #f48418
-);
+) !default;
 
 $secondary-colors: (
   'red':    tomato,
@@ -32,7 +29,7 @@ $secondary-colors: (
   'green': #21BA45,
   'teal': teal,
   'gold': #ffcc00
-);
+) !default;
 
 // You only need to document color is the commented forms
 // if you're generating the style guide.
@@ -98,7 +95,7 @@ $platform-colors: (
   'help' : $platform-help-color,
   'note' : $platform-note-color,
   'help-text' : $platform-help-text-color
-);
+) !default;
 
 
 
@@ -172,6 +169,7 @@ $opacity: .9;
 $fonts: (
   'base': #{'Inter UI', sans-serif},
   'base-alt': #{'Inter UI var alt', sans-serif},
+  'code': #{'Lucida Console', 'Courier New', 'Courier', monospace},
   'color': #333333,
   'headline': #{'Roboto', sans-serif},
   'headline-slab': #{'Roboto Slab', serif},
@@ -186,12 +184,12 @@ $fonts: (
 // Drawers
 // --------------------
 
-$background: #fff !default;
+$drawer-background: #fff !default;
 
-$primary-padding: 2rem;
+$drawer-primary-padding: 2rem;
 
-$right-height: calc(100% - #{$menu-height});
-$right-width: 27rem;
+$drawer-right-height: calc(100% - #{$menu-height});
+$drawer-right-width: 27rem;
 
 
 
@@ -219,6 +217,4 @@ $button-group-margin: 0 .25rem;
 // --------------------
 
 $card-padding: 1rem;
-$footer-top-margin: 1rem;
-
-
+$card-footer-top-margin: 1rem;

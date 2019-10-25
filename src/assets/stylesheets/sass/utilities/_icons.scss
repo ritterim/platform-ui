@@ -1,26 +1,29 @@
+@use "variables";
+@use "sass:map";
+
 // SVG Height
-// 
+//
 // Use these classes to change the height of an svg used for an icon.
-// 
-// 
+//
+//
 // ```scss
 // .icon--svg {
 //   height: 2rem
 // }
-// 
+//
 // .icon--svg-small {
 //   height: 1rem
 // }
-// 
+//
 // .icon--svg-large {
 //   height: 3rem
 // }
-// 
+//
 // .icon--svg-xlarge {
 //   height: 6.5rem
 // }
 // ```
-// 
+//
 // Markup:
 // <div class="block-container mobile-up-2 tablet-up-4">
 //   <div class="block">
@@ -48,20 +51,20 @@
 //     </h5>
 //   </div>
 // </div>
-// 
+//
 // Styleguide Utilities.SVGHeight
 
 .icon {
   &--svg {
-    height: map-get($spacers, 4);
+    height: map.get(variables.$spacers, 4);
     &-small {
-      height: $spacer;
+      height: variables.$spacer;
     }
     &-large {
-      height: map-get($spacers, 5);
+      height: map.get(variables.$spacers, 5);
     }
     &-xlarge {
-      height: map-get($spacers, 7);
+      height: map.get(variables.$spacers, 7);
     }
   }
 }

@@ -1,7 +1,10 @@
+@use "config";
+@use "sass:map";
+
 // Mixins
-// 
+//
 // A sample of mixins we use throughout platform-ui.
-// 
+//
 // Styleguide SASS.Mixins
 
 // Media Queries
@@ -126,15 +129,15 @@
 
 
 // Square
-// 
+//
 // If you want an element that has equal height and width, you can build one using the `@include square` mixin.
-// 
+//
 // ```css
 // .test {
 //   @include square(2rem);
 // }
 // ```
-// 
+//
 // This will output:
 // ```css
 // .test {
@@ -142,16 +145,16 @@
 //   width: 2rem;
 // }
 // ```
-// 
-// 
+//
+//
 // You can also use a minMax parameter that will use min or max values on height and width.
-// 
+//
 // ```css
 // .test {
 //   @include square(3rem, min);
 // }
 // ```
-// 
+//
 // This outputs:
 // ```css
 // .test {
@@ -159,15 +162,15 @@
 //   min-width: 3rem;
 // }
 // ```
-// 
+//
 // If you want `max-height` and `max-width` simply use `max` in the mixin.
-// 
+//
 // ```css
 // .test {
 //   @include square(4rem, max);
 // }
 // ```
-// 
+//
 // Outputs:
 // ```css
 // .test {
@@ -175,14 +178,14 @@
 //   max-width: 4rem;
 // }
 // ```
-// 
+//
 // Styleguide SASS.Mixins.Square
 
 @mixin breakpoint($breakpoint, $direction: null) {
-  @if map-has-key($breakpoints, $breakpoint) {
+  @if map.has-key(config.$breakpoints, $breakpoint) {
 
     // Get the breakpoint value.
-    $breakpoint-value: map-get($breakpoints, $breakpoint);
+    $breakpoint-value: map.get(config.$breakpoints, $breakpoint);
 
     @if $direction == max {
       @media only screen and (max-width: ($breakpoint-value - 1)) {
@@ -248,9 +251,9 @@
 
 
 // Function the gets the next value in the map.
-@function nextKey($current-value, $mapped-list:$breakpoints) {
+@function nextKey($current-value, $mapped-list:config.$breakpoints) {
   // get current key from list
-  $the-list: map-keys($mapped-list);
+  $the-list: map.keys($mapped-list);
 
   //find index of current value and add 1
   $the-index: ( index( $the-list, $current-value) ) + 1;

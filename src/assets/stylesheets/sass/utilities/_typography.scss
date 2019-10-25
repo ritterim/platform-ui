@@ -1,3 +1,7 @@
+@use "config";
+@use "variables";
+@use "sass:map";
+
 // Icons
 //
 // We are licenced for [Font Awesome pro](https://fontawesome.com/icons). Include the script tag below in the `<head>` to use.
@@ -82,9 +86,9 @@
 // Styleguide Typography.Paragraphs
 
 // Typography Utilities
-// 
+//
 // Below are some of our typography utilities.
-// 
+//
 // Styleguide Typography.Utilities
 
 // Color
@@ -155,11 +159,11 @@
 //
 // | <i class="fas fa-exclamation-triangle fa-sm text-orange"></i> NOTE: A `flex--` utility should be used were possible. |
 // | --
-// 
-// The `text-underline--hover` class will add an animated underline to links or any element you add the class to. By default, the underline color is the 
+//
+// The `text-underline--hover` class will add an animated underline to links or any element you add the class to. By default, the underline color is the
 // standard link color in the platform(light blue). If you want to change the color of the element and the underline on hover you can add a `text-{color}--hover`
 // class. This will change the color of the underline as well as the element with the hover color class.
-// 
+//
 // Markup:
 // <div class="rim-card block-container mb-3 flex--align-center">
 //   <div class="block">
@@ -172,17 +176,17 @@
 
 
 // Text Shadow
-// 
+//
 // You can add a text-shadow to an element using colors from our [greyscale](/section-color.html#kssref-color-greyscale) map.
-// 
+//
 // | Greyscale                 |                            |                             |                              |
 // | ------------------------- | -------------------------- | --------------------------- | ---------------------------- |
 // | `text--shadow-white`      | `text--shadow-lighter`     | `text--shadow-light-mid`    | `text--shadow-light`         |
 // | `text--shadow-base`       | `text--shadow-dark`        | `text--shadow-black`        |                              |
-// 
+//
 // Markup:
 // <p class="text--shadow-base">This text has a base color shadow.</p>
-// 
+//
 // Styleguide Typography.Utilities.TextShadow
 
 .text {
@@ -209,14 +213,14 @@
     position: relative;
 
     &:after {
-      background-color: map-get($platform-colors, 'link');
+      background-color: map.get(config.$platform-colors, 'link');
       bottom: 0;
       content: '';
       height: 1px;
       left: 0;
       position: absolute;
       right: 0;
-      transition: $transitions;
+      transition: config.$transitions;
       width: 0;
     }
 
@@ -225,17 +229,17 @@
       &:after {
         width: 100%;
       }
-    }      
+    }
   }
 
   // text shadow using $greyscale
-  @each $name, $color in $greyscale {
+  @each $name, $color in variables.$greyscale {
     &--shadow-#{$name} {
       text-shadow: .3rem .3rem .5rem $color;
     }
   }
   // font size based on percentages
-  @each $name, $percentage in $font-percentage {
+  @each $name, $percentage in variables.$font-percentage {
     &--size-#{$name} {
       font-size: $percentage !important;
     }

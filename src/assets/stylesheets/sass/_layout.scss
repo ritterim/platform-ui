@@ -1,22 +1,27 @@
+@use "config";
+@use "mixins";
+@use "variables";
+@use "sass:map";
+
 // Content Grid
-// 
+//
 // So far the only instance where this layout is needed is for pages that contain a Notes module.
-// This layout uses `css grid`. All of the content on the page must be nested inside an element with 
+// This layout uses `css grid`. All of the content on the page must be nested inside an element with
 // the class `rim-content-grid`. From here, the heading of the page needs the class `rim-content-grid__heading`.
 // The main content needs the class `rim-content-grid__content`, where the side content, in this case
 // the Notes module, needs `rim-content-grid__side-content`.
-// 
+//
 // `rim-content-grid`, by itself, will span the the width of all of the columns within the grid. In order to get
-// page to fit with `rim-content-grid__side-content`, you need to add the class `has-side-content` to 
+// page to fit with `rim-content-grid__side-content`, you need to add the class `has-side-content` to
 // `rim-content-grid`.
-// 
+//
 // Below `1800px` or our `desktop` breakpoint, `rim-content-grid__content` will still span the entire width even if
-// `has-side-content` is applied. This is because the notes module is off the screen below this screen width but 
+// `has-side-content` is applied. This is because the notes module is off the screen below this screen width but
 // visible at higher resolutions.
-// 
+//
 // **Note:** Do not use the `presentation-only` class on the container. That is specific to the testing environment.
-// 
-// 
+//
+//
 // Markup:
 // <div class="rim-content-grid has-side-content">
 //   <h1 class="rim-content-grid__heading text--center">Contracts</h1>
@@ -119,7 +124,7 @@
 //   </div>
 //   <div class="rim-drawer rim-drawer-right slide-right-enter-active background-light-yellow pt-5 pb-3 px-4 js-drawer-right" hidden>
 //     <div class="h-100" data-inner="notes">
-//       <div class="flex flex--align-center flex--justify-between pb-3 mb-2">            
+//       <div class="flex flex--align-center flex--justify-between pb-3 mb-2">
 //         <div class="flex flex--align-center">
 //           <button class="button button--secondary js-toggle-form">
 //             <i class="far fa-plus"></i>
@@ -626,37 +631,37 @@
 //     </div>
 //   </div>
 // </div>
-// 
+//
 // Styleguide Layout.ContentGrid
 
 
 
 .platform {
-  background-color: map-get($greyscale, 'lighter');
+  background-color: map.get(variables.$greyscale, 'lighter');
   overflow-x: hidden;
 
   @supports(display: grid) {
     display: grid;
-    grid-template-rows: $menu-height auto;
+    grid-template-rows: config.$menu-height auto;
     grid-template-columns: 4rem 1fr;
 
-    @include breakpoint(tablet, max) {
+    @include mixins.breakpoint(tablet, max) {
       grid-template-columns: 1fr;
 
       // add height of .today to header
-      grid-template-rows: $menu-height + 3.3125rem auto;
+      grid-template-rows: config.$menu-height + 3.3125rem auto;
     }
   }
 
   &.menu-open {
-    
+
     aside {
       bottom: 3rem;
     }
 
     main {
 
-      @include breakpoint(tablet, max) {
+      @include mixins.breakpoint(tablet, max) {
         overflow-x: hidden;
       }
     }
@@ -665,7 +670,7 @@
   main {
     min-width: 0;
     padding-left: 4rem;
-    transition: $transitions;
+    transition: config.$transitions;
     width: 100%;
 
     @supports(display: grid) {
@@ -674,12 +679,12 @@
       padding-left: 0;
       width: auto;
 
-      @include breakpoint(tablet, max) {
+      @include mixins.breakpoint(tablet, max) {
         grid-column: 1;
       }
     }
 
-    @include breakpoint(tablet, max) {
+    @include mixins.breakpoint(tablet, max) {
       // accounts for height of mobile menu and Help button
       padding-bottom: 6rem;
       position: relative;
@@ -688,19 +693,19 @@
   }
 
   aside {
-    margin-top: $menu-height;
+    margin-top: config.$menu-height;
     position: fixed;
-    transition: $transitions;
+    transition: config.$transitions;
     margin-left: 0;
     width: 4rem;
     z-index: 50;
 
-    @include breakpoint(tablet, max) {
+    @include mixins.breakpoint(tablet, max) {
       // 100% - header + today - mobile-menu-action-wrapper
       height: calc(100% - 7.8125rem - 3rem);
       bottom: -100%;
-      margin-top: calc(#{$menu-height} + 3.3125rem);
-      transition: $transitions;
+      margin-top: calc(#{config.$menu-height} + 3.3125rem);
+      transition: config.$transitions;
       width: 100%;
       z-index: 2;
     }
@@ -708,33 +713,33 @@
     @supports(display: grid) {
       grid-column: 1;
 
-      @include breakpoint(tablet, max) {
+      @include mixins.breakpoint(tablet, max) {
         grid-column: unset;
       }
     }
   }
 
   .aside-tab {
-    background: map-get($greyscale, 'white');
+    background: map.get(variables.$greyscale, 'white');
     border-top-right-radius: 50%;
     border-bottom-right-radius: 50%;
-    border: 1px solid map-get($greyscale, 'light-mid');
-    color: map-get($greyscale, 'base');
+    border: 1px solid map.get(variables.$greyscale, 'light-mid');
+    color: map.get(variables.$greyscale, 'base');
     top: 50%;
     cursor: pointer;
     left: 4rem;
     margin-left: -1px;
     padding: .5rem;
     position: fixed;
-    transition: $transitions;
+    transition: config.$transitions;
     z-index: -1;
 
-    @include breakpoint(tablet, max) {
+    @include mixins.breakpoint(tablet, max) {
       display: none;
     }
 
     &:hover {
-      color: map-get($brand-colors, 'salmon');
+      color: map.get(config.$brand-colors, 'salmon');
     }
   }
 }
@@ -745,7 +750,7 @@
     @supports(display: grid) {
       grid-template-columns: 25vw 1fr;
 
-      @include breakpoint(tablet, max) {
+      @include mixins.breakpoint(tablet, max) {
         grid-template-columns: 1fr;
       }
     }
@@ -764,7 +769,7 @@
         padding-left: 0;
         width: auto;
 
-        @include breakpoint(tablet, max) {
+        @include mixins.breakpoint(tablet, max) {
           grid-column: 1;
         }
       }
@@ -787,14 +792,14 @@
 
 
 .rim-content-grid {
-  padding: map-get($spacers, 5 ) $spacer;
+  padding: map.get(variables.$spacers, 5 ) variables.$spacer;
 
   @supports (display: grid) {
     display: grid;
-    grid-gap: map-get($spacers, 5 ) $spacer;
+    grid-gap: map.get(variables.$spacers, 5 ) variables.$spacer;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: max-content;
-  }  
+  }
 
   &__heading {
     @supports (display: grid) {
@@ -803,7 +808,7 @@
     }
 
     .has-side-content & {
-      @include breakpoint(desktop, min) {
+      @include mixins.breakpoint(desktop, min) {
         @supports (display: grid) {
           grid-column: 1/10;
         }
@@ -818,7 +823,7 @@
     }
 
     .has-side-content & {
-      @include breakpoint(desktop, min) {
+      @include mixins.breakpoint(desktop, min) {
         @supports (display: grid) {
           grid-column: 1/10;
         }
@@ -828,11 +833,11 @@
 
   &__side-content {
     @supports (display: grid) {
-      @include breakpoint(desktop, max) {
+      @include mixins.breakpoint(desktop, max) {
         display: none;
       }
 
-      @include breakpoint(desktop, min) {      
+      @include mixins.breakpoint(desktop, min) {
         align-self: baseline;
         grid-column: 10/13;
         grid-row: 2;

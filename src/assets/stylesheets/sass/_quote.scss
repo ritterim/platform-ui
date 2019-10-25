@@ -19,7 +19,7 @@ main.details-and-compare {
 }
 
 mark.stars {
-  color: map.get(variables.$secondary-colors, 'gold');
+  color: map.get(config.$secondary-colors, 'gold');
 }
 
 /* Temporarily added back for OQE compatibility - can rework OQE markup when a replacement is available */
