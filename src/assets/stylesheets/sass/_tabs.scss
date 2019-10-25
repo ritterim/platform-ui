@@ -3,6 +3,7 @@
 @use "variables";
 @use "sass:color";
 @use "sass:map";
+@use "sass:math";
 
 // Tabs
 // 
@@ -95,7 +96,7 @@ $tab-active-color:    map.get(config.$brand-colors, 'navy' );
     @media (pointer: fine) {
       &:hover {
         background-color: map.get(variables.$greyscale, 'white' );
-        border-color: color.adjust(map.get(variables.$greyscale, 'light'), $lightness: config.$hue-threshold * 2);
+        border-color: color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold * 2));
         border-bottom-color: map.get(variables.$greyscale, 'white' );
         color: $tab-active-color;
         font-weight: 600;
@@ -108,7 +109,7 @@ $tab-active-color:    map.get(config.$brand-colors, 'navy' );
 
     &[aria-selected="true"] {
       background-color: map.get(variables.$greyscale, 'white' );
-      border: 1px solid color.adjust(map.get(variables.$greyscale, 'light'), $lightness: config.$hue-threshold * 2);
+      border: 1px solid color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold * 2));
       border-bottom-color: map.get(variables.$greyscale, 'white' );
       color: $tab-active-color;
       font-weight: 600;

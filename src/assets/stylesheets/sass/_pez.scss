@@ -87,7 +87,7 @@
 
   &--has-product {
     background-color: rgba(map.get(config.$secondary-colors, 'yellow'), config.$opacity /  1.5);
-    border: 1px solid color.adjust(map.get(config.$brand-colors, 'brown'), $lightness: config.$hue-threshold * 1.5);
+    border: 1px solid color.adjust(map.get(config.$brand-colors, 'brown'), $lightness: math.percentage(config.$hue-threshold * 1.5));
     border-radius: map.get(variables.$spacers, 1);
     color: map.get(config.$brand-colors, 'brown');
     padding: map.get(variables.$spacers, 2) map.get(variables.$spacers, 3);
@@ -122,7 +122,7 @@
   }
 
   &.pressed {
-    background-color: color.adjust(map.get(config.$brand-colors, 'med-blue'), $lightness: config.$hue-threshold * 2);
+    background-color: color.adjust(map.get(config.$brand-colors, 'med-blue'), $lightness: math.percentage(config.$hue-threshold * 2));
     border-color: map.get(config.$brand-colors, 'med-blue');
     color: map.get(variables.$greyscale, 'white');
     font-weight: bold;

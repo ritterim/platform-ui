@@ -3,6 +3,7 @@
 @use "variables";
 @use "sass:color";
 @use "sass:map";
+@use "sass:math";
 
 // Pill
 //
@@ -102,7 +103,7 @@
   $primary-background: map.get(variables.$greyscale, 'white');
   $primary-color: map.get(variables.$greyscale, 'base');
 
-  border: 1px solid color.adjust(map.get(variables.$greyscale, 'light'), $lightness: config.$hue-threshold * 2);
+  border: 1px solid color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold * 2));
   border-radius: $border-radius;
   color: $primary-color;
   display: inline-flex;
