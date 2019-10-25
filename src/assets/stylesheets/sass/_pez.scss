@@ -1,6 +1,7 @@
 @use "config";
 @use "variables";
 @use "sass:color";
+@use "sass:math";
 @use "sass:map";
 
 // Pez
@@ -69,9 +70,9 @@
 .pez {
 
   background-color: map.get(variables.$greyscale, 'light-mid');
-  border: 1px solid color.adjust(map.get(variables.$greyscale, 'light'), $lightness: config.$hue-threshold * 1.5);
+  border: 1px solid color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold * 1.5));
   border-radius: map.get(variables.$spacers, 1);
-  color: darken(map.get(variables.$greyscale, 'light'), config.$hue-threshold * 2.5);
+  color: color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(-(config.$hue-threshold * 2.5)));
   cursor: pointer;
   display: inline-flex;
   font-size: map.get(variables.$font-percentage,'sm');
