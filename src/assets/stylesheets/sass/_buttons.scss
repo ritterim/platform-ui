@@ -1,3 +1,10 @@
+@use "config";
+@use "mixins";
+@use "variables";
+@use "sass:color";
+@use "sass:math";
+@use "sass:map";
+
 // Button
 //
 // Each button has a default button style. Color can be added to any button using a combination of background and text utilities.
@@ -148,34 +155,29 @@
 //
 // Styleguide Components.Button.Active
 
-@use '_config.scss';
-@use 'sass:color';
-@use 'sass:math';
-@use 'sass:map';
-
 .button {
   align-items: center;
-  background-color: $button-primary-background;
-  border: 1px solid color.adjust(map-get($greyscale, 'light'), $lightness: math.percentage($hue-threshold * 2));
-  border-radius: $button-border-radius;
-  color: $button-primary-color;
+  background-color: config.$button-primary-background;
+  border: 1px solid color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold * 2));
+  border-radius: config.$button-border-radius;
+  color: config.$button-primary-color;
   cursor: pointer;
   display: flex;
-  font-family: map-get($fonts, 'base');
-  font-size: map-get($fonts, 'size');
-  padding: $button-primary-padding;
-  transition: $duration;
+  font-family: map.get(config.$fonts, 'base');
+  font-size: map.get(config.$fonts, 'size');
+  padding: config.$button-primary-padding;
+  transition: config.$transitions;
   white-space: nowrap;
 
   &.active,
   &:hover {
-    background-color: $button-secondary-background;
+    background-color: config.$button-secondary-background;
     border-color: inherit;
-    color: $button-secondary-color;
+    color: config.$button-secondary-color;
   }
 
   &:disabled {
-    background-color: color.adjust(map-get($greyscale, 'light' ), $lightness: math.percentage($hue-threshold));
+    background-color: color.adjust(map.get(variables.$greyscale, 'light' ), $lightness: math.percentage(config.$hue-threshold));
     cursor: not-allowed;
     opacity: .7;
     pointer-events: none;
@@ -188,8 +190,8 @@
     position: relative;
 
     &:before {
-      background-color: $button-secondary-background;
-      content: '';
+      background-color: config.$button-secondary-background;
+      content: "";
       position: absolute;
       top: 0;
       left: 0;
@@ -200,12 +202,12 @@
     &:not([data-button-text]) {
       &:after {
         @extend %rim-loader;
-        @include square($spacer);
+        @include mixins.square(variables.$spacer);
         box-sizing: border-box;
-        content: '';
+        content: "";
         display: block;
-        border-color: $button-primary-background;
-        border-top-color: color.adjust(map-get($greyscale, 'base' ), $lightness: math.percentage($hue-threshold * 2));
+        border-color: config.$button-primary-background;
+        border-top-color: color.adjust(map.get(variables.$greyscale, 'base' ), $lightness: math.percentage(config.$hue-threshold * 2));
         left: 50%;
         margin-left: -.5rem;
         margin-top: -.5rem;
@@ -216,7 +218,7 @@
   }
 
   i {
-    margin: 0 map-get($spacers, 1);
+    margin: 0 map.get(variables.$spacers, 1);
   }
 
   [aria-hidden="hidden"] {
@@ -226,17 +228,17 @@
   &:not(.button--secondary):not(.mobile-menu-action):not(.close-action) {
 
     i {
-      @include breakpoint(lg-tablet, max) {
+      @include mixins.breakpoint(lg-tablet, max) {
         display: none;
       }
     }
   }
 
   &--secondary {
-    background-color: $button-secondary-background;
-    border: 1px solid $button-secondary-background;
-    color: $button-secondary-color;
-    border-radius: $button-border-radius * 100;
+    background-color: config.$button-secondary-background;
+    border: 1px solid config.$button-secondary-background;
+    color: config.$button-secondary-color;
+    border-radius: config.$button-border-radius * 100;
     padding: 0;
     width: 2rem;
     height: 2rem;
@@ -244,12 +246,12 @@
 
     &.active,
     &:hover {
-      background-color: darken($button-secondary-background, math.percentage($hue-threshold));
-      box-shadow: 0 0 0 .3rem color.adjust($button-secondary-background, $lightness: math.percentage($hue-threshold));
+      background-color: darken(config.$button-secondary-background, math.percentage(config.$hue-threshold));
+      box-shadow: 0 0 0 .3rem color.adjust(config.$button-secondary-background, $lightness: math.percentage(config.$hue-threshold));
     }
 
     &[data-button-text] {
-      transition: $duration;
+      transition: config.$transitions;
 
       &:after {
         display: none;
@@ -259,12 +261,12 @@
 
       &:hover {
         width: auto;
-        padding: 0 map-get($spacers, 1 );
+        padding: 0 map.get(variables.$spacers, 1 );
 
         &:after {
           width: auto;
           display: inline-block;
-          padding-right: map-get($spacers, 2 );
+          padding-right: map.get(variables.$spacers, 2 );
         }
 
       }
@@ -274,29 +276,29 @@
     &.loading {
 
       &:before {
-        background-color: darken($button-secondary-background, math.percentage($hue-threshold));
-        box-shadow: 0 0 0 .3rem color.adjust($button-secondary-background, $lightness: math.percentage($hue-threshold));
+        background-color: darken(config.$button-secondary-background, math.percentage(config.$hue-threshold));
+        box-shadow: 0 0 0 .3rem color.adjust(config.$button-secondary-background, $lightness: math.percentage(config.$hue-threshold));
       }
 
       &[data-button-text] {
-        background-color: darken($button-secondary-background, math.percentage($hue-threshold));
+        background-color: darken(config.$button-secondary-background, math.percentage(config.$hue-threshold));
         border-color: inherit;
-        box-shadow: 0 0 0 .3rem color.adjust($button-secondary-background, $lightness: math.percentage($hue-threshold));
-        padding: 0 map-get($spacers, 1 );
+        box-shadow: 0 0 0 .3rem color.adjust(config.$button-secondary-background, $lightness: math.percentage(config.$hue-threshold));
+        padding: 0 map.get(variables.$spacers, 1 );
         width: auto;
 
         &:before {
           @extend %rim-loader;
-          @include square($spacer);
+          @include mixins.square(variables.$spacer);
           background-color: unset;
           box-sizing: border-box;
           box-shadow: none;
           content: '';
           display: block;
-          border-color: $button-primary-background;          
-          border-top-color: color.adjust(map-get($greyscale, 'base' ), $lightness: math.percentage($hue-threshold * 2));
+          border-color: config.$button-primary-background;
+          border-top-color: color.adjust(map.get(variables.$greyscale, 'base' ), $lightness: math.percentage(config.$hue-threshold * 2));
           left: 0;
-          margin: 0 map-get($spacers, 1 );
+          margin: 0 map.get(variables.$spacers, 1 );
           position: relative;
           top: 0;
         }
@@ -305,7 +307,7 @@
           content: attr(data-button-text);
           width: auto;
           display: inline-block;
-          padding-right: map-get($spacers, 2 );
+          padding-right: map.get(variables.$spacers, 2 );
         }
 
         i {
@@ -315,10 +317,10 @@
     }
 
     &.has-text {
-      padding: 0 map-get($spacers, 2 );
+      padding: 0 map.get(variables.$spacers, 2 );
       width: auto;
 
-      @include breakpoint(lg-tablet, max) {
+      @include mixins.breakpoint(lg-tablet, max) {
         font-size: 0;
         width: 2rem;
 
@@ -330,34 +332,34 @@
   }
 
   &--post {
-    background-color: $button-secondary-background;
-    border: 1px solid $button-secondary-background;
-    color: $button-secondary-color;
-    transition: $transitions;
+    background-color: config.$button-secondary-background;
+    border: 1px solid config.$button-secondary-background;
+    color: config.$button-secondary-color;
+    transition: config.$transitions;
 
     &.active,
     &:hover {
-      background-color: darken($button-secondary-background, math.percentage($hue-threshold));
-      background-image: linear-gradient(45deg, $button-secondary-background, darken($button-secondary-background, math.percentage($hue-threshold * 2)));
+      background-color: darken(config.$button-secondary-background, math.percentage(config.$hue-threshold));
+      background-image: linear-gradient(45deg, config.$button-secondary-background, darken(config.$button-secondary-background, math.percentage(config.$hue-threshold * 2)));
     }
 
     &.loading {
 
       &:before {
-        background-color: darken($button-secondary-background, math.percentage($hue-threshold));
-        background-image: linear-gradient(45deg, $button-secondary-background, darken($button-secondary-background, math.percentage($hue-threshold * 2)));
+        background-color: darken(config.$button-secondary-background, math.percentage(config.$hue-threshold));
+        background-image: linear-gradient(45deg, config.$button-secondary-background, darken(config.$button-secondary-background, math.percentage(config.$hue-threshold * 2)));
       }
     }
   }
 
   &--lg {
-    font-size: map-get($font-percentage, 'lg');
-    padding: $button-large-padding;
+    font-size: map.get(variables.$font-percentage, 'lg');
+    padding: config.$button-large-padding;
 
     &.loading {
 
       &:after {
-        @include square($spacer * 1.5);
+        @include mixins.square(variables.$spacer * 1.5);
         margin-left: -.75rem;
         margin-top: -.75rem;
       }
@@ -374,7 +376,7 @@
   align-items: center;
 
   .button {
-    margin: $button-group-margin;
+    margin: config.$button-group-margin;
 
     &:first-child {
       margin-left: 0;

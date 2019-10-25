@@ -1,7 +1,13 @@
-// Code 
-// 
-// You can see the styles for our code blocks throughout the styleguide. Each "Markup" block is outputting actual code tags. 
-// 
+@use "config";
+@use "variables";
+@use "sass:color";
+@use "sass:math";
+@use "sass:map";
+
+// Code
+//
+// You can see the styles for our code blocks throughout the styleguide. Each "Markup" block is outputting actual code tags.
+//
 // Styleguide Utilities.code
 
 
@@ -9,8 +15,8 @@ code,
 kbd,
 pre,
 samp {
-  color: mix(map-get($greyscale, 'dark'), map-get($greyscale, 'black'), 50%);
-  font-family: Menlo,Ubuntu Mono,Lucida Console,Courier New,Courier,monospace;
+  color: color.mix(map.get(variables.$greyscale, 'dark'), map.get(variables.$greyscale, 'black'), math.percentage(config.$hue-threshold * 5));
+  font-family: map.get(config.$fonts, 'code');
   font-weight: 500;
 }
 
@@ -30,9 +36,11 @@ pre {
   display: block;
   overflow-x: auto;
   padding: 0.5em;
-  background: linear-gradient(45deg, map-get($brand-colors, 'navy'), lighten(map-get($brand-colors, 'navy'), 5%));
-  color: map-get($greyscale, 'white');
-  margin: map-get($spacers, 4 ) 0;
+  background: linear-gradient(45deg,
+    map.get(config.$brand-colors, 'navy'),
+    color.adjust(map.get(config.$brand-colors, 'lightblue'), $lightness: math.percentage(config.$hue-threshold / 2)));
+  color: map.get(variables.$greyscale, 'white');
+  margin: map.get(variables.$spacers, 4 ) 0;
 }
 
 .hljs-keyword,
@@ -139,12 +147,11 @@ pre {
 
 
 .pui-code-block--inline {
-
   code {
-    background-color: map-get($message-colors, 'info-light' );
+    background-color: map.get(variables.$message-colors, "info-light");
     border-bottom: 1px solid #b2e1ff;
-    color: map-get($brand-colors, 'navy' );
-    font-size: map-get($font-percentage, 'sm' );
-    padding: map-get($spacers, 1 );
+    color: map.get(config.$brand-colors, 'navy' );
+    font-size: map.get(variables.$font-percentage, 'sm' );
+    padding: map.get(variables.$spacers, 1 );
   }
 }

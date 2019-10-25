@@ -1,3 +1,4 @@
+@use "config";
 // Colors
 //
 // DO NOT implement colors outside of these collections. All color should be called using:
@@ -32,17 +33,6 @@ $greyscale: (
   'black': #222
 );
 
-// Platform Colors
-//
-// Colors:
-// menu: #003f70 - navy
-// link: #3f7bad - med-blue
-// help: #E5F5FF - lightblue
-// note: cornsilk - cornsilk
-// help-text: #003f70 - navy
-//
-// Styleguide Color.PlatformColors
-
 // Error Colors
 //
 // Colors:
@@ -51,9 +41,10 @@ $greyscale: (
 // neutral: #999
 //
 // Styleguide Color.ErrorColors
+
 $error-colors: (
-  'positive': map-get($secondary-colors, 'olive'),
-  'negative': map-get($secondary-colors, 'red'),
+  'positive': map-get(config.$secondary-colors, 'olive'),
+  'negative': map-get(config.$secondary-colors, 'red'),
   'neutral': map-get($greyscale, 'light')
 );
 
@@ -82,9 +73,9 @@ $message-colors: (
   'base-light': map-get($greyscale, 'lighter'),
   'base': map-get($greyscale, 'light'),
   'base-dark': map-get($greyscale, 'base'),
-  'info-light': map-get($brand-colors, 'lightblue'),
-  'info': map-get($brand-colors, 'skyblue'),
-  'info-dark': darken(map-get($brand-colors, 'med-blue'), 10%),
+  'info-light': map-get(config.$brand-colors, 'lightblue'),
+  'info': map-get(config.$brand-colors, 'skyblue'),
+  'info-dark': darken(map-get(config.$brand-colors, 'med-blue'), 10%),
   'warning-light': #fff3cd,
   'warning': #ffeeba,
   'warning-dark': #856404,

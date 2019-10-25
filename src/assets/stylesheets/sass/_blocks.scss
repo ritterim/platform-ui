@@ -1,3 +1,7 @@
+@use "config";
+@use "mixins";
+@use "variables";
+
 // Blocks
 //
 // To get a specific layout you will need to start with 2 classes. `block-container` and `block`. `block-container`
@@ -357,25 +361,25 @@
       width: auto !important;
     }
   }
-  @each $key, $val in $rim-columns {
+  @each $key, $val in variables.$rim-columns {
     .block-#{$val} {
       width: calc(#{$key} * 100%);
     }
   }
 
-  @each $breakpoint, $name in $breakpoints {
-    @each $key, $val in $rim-columns {
+  @each $breakpoint, $name in config.$breakpoints {
+    @each $key, $val in variables.$rim-columns {
       .block-#{$breakpoint}-#{$val} {
-        @include breakpoint(#{$name}, min) {
+        @include mixins.breakpoint(#{$name}, min) {
           width: calc(#{$key} * 100%);
         }
       }
     }
   }
 
-  @each $breakpoint, $name in $breakpoints {
+  @each $breakpoint, $name in config.$breakpoints {
     .block-#{$breakpoint} {
-      @include breakpoint(#{$name}, min) {
+      @include mixins.breakpoint(#{$name}, min) {
 
         &--full {
           width: 100% !important;
@@ -395,8 +399,8 @@
   // Add padding and or margin to container
   // as well as the blocks within the block-container
   @each $prop, $letter in (margin: m, padding: p) {
-    @each $direction, $d in $xy-border {
-      @each $unit, $rem in $spacers {
+    @each $direction, $d in variables.$xy-border {
+      @each $unit, $rem in variables.$spacers {
         // top, right, bottom, left
         &.blocks-#{$letter}#{$d}-#{$unit} {
           > .block {
@@ -428,12 +432,12 @@
   // Add these classes ex: tablet-up-2 to the
   // container to change the width of the block
   // elements inside the block-container
-  @each $breakpoint, $name in $breakpoints {
-    @each $key, $val in $rim-columns {
+  @each $breakpoint, $name in config.$breakpoints {
+    @each $key, $val in variables.$rim-columns {
       &.#{$breakpoint}-up-#{$val} {
 
         > .block {
-          @include breakpoint(#{$name}, min) {
+          @include mixins.breakpoint(#{$name}, min) {
             width: calc(100% / #{$val});
           }
         }

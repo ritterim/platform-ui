@@ -1,3 +1,5 @@
+@use "config";
+
 // Animate Vue
 //
 //
@@ -23,29 +25,29 @@
 
 .fade {
   &-enter-active {
-    animation: fadeIn $transitions;
+    animation: fadeIn config.$transitions;
   }
   &-leave-active {
-    animation: fadeOut $transitions;
+    animation: fadeOut config.$transitions;
   }
 }
 
 //Slide Up for Pre-Title
 .slide-up {
   &-enter-active {
-    animation: SlideUp $transitions * 1.5;
+    animation: SlideUp config.$transitions * 1.5;
   }
   &-leave-active {
-    animation: SlideUp $transitions reverse;
+    animation: SlideUp config.$transitions reverse;
   }
 }
 
 .fade-in-from-none {
   &-enter-active {
-    animation: fadeInFromNone $transitions * 1.5;
+    animation: fadeInFromNone config.$transitions * 1.5;
   }
   &-leave-active {
-    animation: fadeInFromNone $transitions reverse;
+    animation: fadeInFromNone config.$transitions reverse;
   }
 }
 
@@ -68,45 +70,45 @@
 
 .slide-down {
   &-enter-active {
-    animation: slideInDown $transitions;
+    animation: slideInDown config.$transitions;
   }
   &-leave-active {
-    animation: slideInDown $transitions reverse;
+    animation: slideInDown config.$transitions reverse;
   }
 }
 
 .slide-right {
   &-enter-active {
-    animation: slideInRight $transitions;
+    animation: slideInRight config.$transitions;
   }
   &-leave-active {
-    animation: slideInRight $transitions reverse;
+    animation: slideInRight config.$transitions reverse;
   }
 }
 
 .slide-left {
   &-enter-active {
-    animation: slideOutLeft $transitions reverse;
+    animation: slideOutLeft config.$transitions reverse;
   }
   &-leave-active {
-    animation: slideOutLeft $transitions;
+    animation: slideOutLeft config.$transitions;
   }
 }
 
 .flip-x {
   &-enter-active {
-    animation: flipOutX $transitions reverse;
+    animation: flipOutX config.$transitions reverse;
   }
   &-leave-active {
-    animation:  flipOutX $transitions;
+    animation:  flipOutX config.$transitions;
   }
 }
 
 .flip-y {
   &-enter-active {
-    animation: flipOutY $transitions reverse;
+    animation: flipOutY config.$transitions reverse;
   }
   &-leave-active {
-    animation: flipOutY $transitions;
+    animation: flipOutY config.$transitions;
   }
 }

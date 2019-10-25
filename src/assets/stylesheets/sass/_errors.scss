@@ -1,3 +1,7 @@
+@use "config";
+@use "variables";
+@use "sass:map";
+
 // Errors
 //
 // Throughout the Platform, we leverage a concept of `positive`, `Negative`, and `Neutral` for success, errors, and no change, or neutral states.
@@ -43,19 +47,19 @@
 
 @each $error in (positive, negative, neutral) {
   .text-#{$error} {
-    color: map-get($error-colors, #{$error}) !important;
+    color: map.get(variables.$error-colors, #{$error}) !important;
 
     &--hover {
-      transition: $transitions;
+      transition: config.$transitions;
       &:hover {
-        color: map-get($error-colors, #{$error}) !important;
+        color: map.get(variables.$error-colors, #{$error}) !important;
       }
     }
   }
   // for pills
   .pill {
     &.#{$error} {
-      background: map-get($error-colors, #{$error}) !important;
+      background: map.get(variables.$error-colors, #{$error}) !important;
       border: none;
       color: white !important;
     }

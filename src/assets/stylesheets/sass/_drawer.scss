@@ -1,3 +1,9 @@
+@use "config";
+@use "mixins";
+@use "variables";
+@use "sass:math";
+@use "sass:map";
+
 // Drawer
 //
 // Drawers slide up or in-from-right.
@@ -58,12 +64,10 @@
 //
 // Styleguide Components.Drawer.Right
 
-@use '_config.scss';
-
 .rim-drawer {
   $self: &;
-  background-color: $background;
-  box-shadow: 0 -1rem 2rem rgba(map-get($greyscale, 'black'), .4);
+  background-color: config.$drawer-background;
+  box-shadow: 0 -1rem 2rem rgba(map.get(variables.$greyscale, 'black'), .4);
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -92,27 +96,27 @@
   }
 
   &__header {
-    padding: $primary-padding;
+    padding: config.$drawer-primary-padding;
     position: relative;
     width: 100%;
 
-    @include breakpoint(tablet, max) {
-      padding-top: map-get($spacers, 5);
+    @include mixins.breakpoint(tablet, max) {
+      padding-top: map.get(variables.$spacers, 5);
     }
 
     #{$self}__close {
       position: absolute;
-      right: -$spacer;
+      right: -#{variables.$spacer};
       top: 50%;
       transform: translate(-50%, -50%);
 
-      @include breakpoint(tablet, max) {
+      @include mixins.breakpoint(tablet, max) {
         top: 1.5rem;
       }
     }
   }
   &__content {
-    padding: $primary-padding;
+    padding: config.$drawer-primary-padding;
     position: relative;
   }
   &--closed {
@@ -125,7 +129,7 @@
     position: fixed;
     z-index: 25;
 
-    @include breakpoint(tablet, max) {
+    @include mixins.breakpoint(tablet, max) {
       bottom: 3.5rem;
     }
   }
@@ -135,15 +139,15 @@
 // Drawer animates from the right
 .rim-drawer-right {
   bottom: 0;
-  box-shadow: 0 -.5rem 2rem rgba(map-get($greyscale, 'black'), .5);
+  box-shadow: 0 -.5rem 2rem rgba(map.get(variables.$greyscale, 'black'), math.percentage(config.$hue-threshold / 2));
   flex-direction: column;
-  height: $right-height;
+  height: config.$drawer-right-height;
   left: unset;
   position: fixed;
   right: 0;
-  transition: all ease-in-out .3s;
+  transition: all ease-in-out config.$transitions;
   z-index: 500;
-  width: $right-width;
+  width: config.$drawer-right-width;
 
   &[hidden] {
     display: none;

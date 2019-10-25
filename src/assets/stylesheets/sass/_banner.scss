@@ -1,3 +1,8 @@
+@use "config";
+@use "mixins";
+@use "variables";
+@use "sass:map";
+
 // Banner
 //
 // Banner is a blog-style section specifically for post and banners within the Ritter Agent CRM.
@@ -15,7 +20,7 @@
 //   <h2 class="crm-banner__title mb-2">
 //     Your dashboard got an upgrade!
 //   </h2>
-//   <p class="crm-banner__teaser">        
+//   <p class="crm-banner__teaser">
 //     Take a quick video tour to see the new features of your dashboard.
 //   </p>
 //   <a data-modal="video-banner" class="button button--post button--lg rim-modal__open">
@@ -28,33 +33,33 @@
 
 .crm-banner {
   animation: slideInDown .2s;
-  background-color: map-get($brand-colors, 'skyblue');
-  border-bottom: 1px solid map-get($brand-colors, 'skyblue');
+  background-color: map.get(config.$brand-colors, 'skyblue');
+  border-bottom: 1px solid map.get(config.$brand-colors, 'skyblue');
   box-sizing: border-box;
-  padding: (map-get($spacers, 4) + .5) map-get($spacers, 3 ) map-get($spacers, 3 );
+  padding: (map.get(variables.$spacers, 4) + .5) map.get(variables.$spacers, 3 ) map.get(variables.$spacers, 3 );
   position: relative;
 
-  @include breakpoint(tablet, min) {
-    padding: map-get($spacers, 4);
+  @include mixins.breakpoint(tablet, min) {
+    padding: map.get(variables.$spacers, 4);
   }
 
   .close-action.right {
-    @include breakpoint(tablet, max) {
+    @include mixins.breakpoint(tablet, max) {
       top: .5rem;
       right: .5rem;
     }
   }
 
   &__title {
-    color: map-get($brand-colors, 'navy' );
-    font-size: map-get($font-percentage, 'xl' );
+    color: map.get(config.$brand-colors, 'navy' );
+    font-size: map.get(variables.$font-percentage, 'xl' );
 
-    @include breakpoint(tablet, min) {
-      font-size: map-get($font-percentage, 'xxl' );
+    @include mixins.breakpoint(tablet, min) {
+      font-size: map.get(variables.$font-percentage, 'xxl' );
     }
 
     .collapsed & {
-      font-size: map-get($fonts, 'size' );
+      font-size: map.get(config.$fonts, 'size' );
       margin-bottom: 0!important;
       width: calc(100% - 72px); // size of the button
       @extend %inverted;
@@ -64,8 +69,8 @@
   &__teaser {
     width: 80%;
 
-    @include breakpoint(tablet, min) {
-      font-size: map-get($font-percentage, 'lg');
+    @include mixins.breakpoint(tablet, min) {
+      font-size: map.get(variables.$font-percentage, 'lg');
     }
   }
 
@@ -82,7 +87,7 @@
     animation: slideInUp .2s;
     background-image: none !important;
     height: auto;
-    padding: $spacer;
+    padding: variables.$spacer;
 
     p, button, a.button {
       display: none;
@@ -98,6 +103,6 @@
 .crm-view_item {
 
   .crm-banner__title {
-    padding: map-get($spacers, 4)
+    padding: map.get(variables.$spacers, 4)
   }
 }
