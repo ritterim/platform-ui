@@ -38,7 +38,7 @@ pre {
   padding: 0.5em;
   background: linear-gradient(45deg,
     map.get(config.$brand-colors, 'navy'),
-    color.adjust(map.get(config.$brand-colors, 'lightblue'), $lightness: math.percentage(config.$hue-threshold / 2)));
+    color.adjust(map.get(config.$brand-colors, 'navy'), $lightness: math.percentage(config.$hue-threshold / 2)));
   color: map.get(variables.$greyscale, 'white');
   margin: map.get(variables.$spacers, 4 ) 0;
 }

@@ -1,4 +1,5 @@
 @use "config";
+@use "mixins";
 @use "variables";
 @use "sass:map";
 
@@ -89,7 +90,7 @@
 %scrollbar {
 
   &::-webkit-scrollbar {
-    @include square(.5rem);
+    @include mixins.square(.5rem);
   }
 
   &::-webkit-scrollbar-thumb {
@@ -106,6 +107,6 @@
 
 %basic-circle {
   border-radius: map.get(variables.$radius, 'round');
-  @include square(variables.$spacer * 1.5);
+  @include mixins.square(variables.$spacer * 1.5);
   @extend %flex-center;
 }

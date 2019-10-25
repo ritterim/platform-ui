@@ -1,11 +1,13 @@
+@use "config";
 @use "mixins";
 @use "variables";
 @use "sass:map";
+
 // ie specific
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
 
   .platform {
-    padding-top: $menu-height;
+    padding-top: config.$menu-height;
 
     aside {
       margin-top: 0;
@@ -29,11 +31,11 @@
     &.has-side-content {
       justify-content: space-between;
     }
-  
+
     &__heading {
       margin-bottom: map.get(variables.$spacers, 4 );
       flex-basis: 100%;
-  
+
       .has-side-content & {
 
         @include mixins.breakpoint(desktop, min) {
@@ -41,10 +43,10 @@
         }
       }
     }
-  
+
     &__content {
       flex-basis: 100%;
-  
+
       .has-side-content & {
 
         @include mixins.breakpoint(desktop, min) {
@@ -56,7 +58,7 @@
 
     &__side-content {
       display: none;
-  
+
       @include mixins.breakpoint(desktop, min) {
         display: block;
         flex-basis: 15.6667%;
