@@ -8,7 +8,8 @@
 //
 // `map-get($map, $key);`
 //
-// All color variations should be handled through `color.adjust(#color, $lightness: #percentage);`, `lighten()`, or `rgba` for alpha transparency.
+// All color variations should be handled through `color.adjust(#color, $lightness: -(#percentage);`, which darkens the color, 
+// or `color.adjust(#color, $lightness: #percentage);`, which will lighten the color, or `rgba` for alpha transparency.
 //
 // Our Color Utility classes can be found in the Utilities section of the guide, [here](/section-utilities.html#kssref-utilities-color).
 //
