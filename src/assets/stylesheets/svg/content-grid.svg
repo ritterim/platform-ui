@@ -1,13 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="71.264" height="72.653" viewBox="0 0 71.264 72.653">
-  <g id="Group_114" data-name="Group 114" transform="translate(594.058 295.769)">
-    <g id="Group_636" data-name="Group 636" transform="translate(-594.058 -295.769)">
-      <circle id="Ellipse_3" data-name="Ellipse 3" cx="34.524" cy="34.524" r="34.524" fill="#e9eaeb"/>
-    </g>
-    <rect id="Rectangle_67" data-name="Rectangle 67" width="57.125" height="57.125" transform="translate(-580.919 -281.241)" fill="#fff" stroke="#2a5082" stroke-miterlimit="10" stroke-width="2"/>
-    <line id="Line_50" data-name="Line 50" y2="46.668" transform="translate(-561.93 -276.283)" fill="none" stroke="#2a5082" stroke-miterlimit="10" stroke-width="2"/>
-    <line id="Line_51" data-name="Line 51" y2="46.668" transform="translate(-543.09 -276.379)" fill="none" stroke="#2a5082" stroke-miterlimit="10" stroke-width="2"/>
-    <line id="Line_52" data-name="Line 52" x1="45.983" transform="translate(-575.393 -261.796)" fill="none" stroke="#2a5082" stroke-miterlimit="10" stroke-width="2"/>
-    <line id="Line_53" data-name="Line 53" x1="45.983" transform="translate(-575.298 -242.957)" fill="none" stroke="#2a5082" stroke-miterlimit="10" stroke-width="2"/>
-    <rect id="Rectangle_68" data-name="Rectangle 68" width="16.205" height="16.118" transform="translate(-560.624 -260.447)" fill="#91b9dc"/>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="71.264" height="72.653" viewBox="0 0 71.264 72.653"><g id="Group_114" data-name="Group 114" transform="translate(594.058 295.769)"><g id="Group_636" data-name="Group 636" transform="translate(-594.058 -295.769)"><circle id="Ellipse_3" cx="34.524" cy="34.524" r="34.524" fill="#e9eaeb" data-name="Ellipse 3"/></g><rect id="Rectangle_67" width="57.125" height="57.125" fill="#fff" stroke="#2a5082" stroke-miterlimit="10" stroke-width="2" data-name="Rectangle 67" transform="translate(-580.919 -281.241)"/><line id="Line_50" y2="46.668" fill="none" stroke="#2a5082" stroke-miterlimit="10" stroke-width="2" data-name="Line 50" transform="translate(-561.93 -276.283)"/><line id="Line_51" y2="46.668" fill="none" stroke="#2a5082" stroke-miterlimit="10" stroke-width="2" data-name="Line 51" transform="translate(-543.09 -276.379)"/><line id="Line_52" x1="45.983" fill="none" stroke="#2a5082" stroke-miterlimit="10" stroke-width="2" data-name="Line 52" transform="translate(-575.393 -261.796)"/><line id="Line_53" x1="45.983" fill="none" stroke="#2a5082" stroke-miterlimit="10" stroke-width="2" data-name="Line 53" transform="translate(-575.298 -242.957)"/><rect id="Rectangle_68" width="16.205" height="16.118" fill="#91b9dc" data-name="Rectangle 68" transform="translate(-560.624 -260.447)"/></g></svg>
