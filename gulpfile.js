@@ -51,10 +51,7 @@ function css() {
 }
 
 function js() {
-  return src([
-      'node_modules/@babel/polyfill/dist/polyfill.min.js',
-      'src/assets/js/src/*.js'
-    ])
+  return src('src/assets/js/src/*.js')
     .pipe(sourcemaps.init())
     .pipe(babel())
     .pipe(concat('platform-ui.min.js'))
