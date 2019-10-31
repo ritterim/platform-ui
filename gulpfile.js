@@ -1,6 +1,5 @@
 const { src, dest, series, parallel } = require('gulp');
 const autoprefixer = require("autoprefixer");
-// const babel = require('gulp-babel');
 const babel = require('gulp-babel');
 const concat = require('gulp-concat');
 const connect = require('gulp-connect');
