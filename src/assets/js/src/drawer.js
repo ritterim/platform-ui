@@ -1,5 +1,5 @@
-let closeDrawer = document.querySelectorAll('.rim-drawer__close');
-let openDrawer = document.querySelectorAll('.rim-drawer__open');
+let closeDrawer = Array.prototype.slice.call(document.querySelectorAll('.rim-drawer__close'));
+let openDrawer = Array.prototype.slice.call(document.querySelectorAll('.rim-drawer__open'));
 
 if(closeDrawer) {
   closeDrawer.forEach(function(el) {

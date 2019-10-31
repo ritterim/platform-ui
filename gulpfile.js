@@ -9,6 +9,7 @@ const nano = require('cssnano');
 const pjson = require('./package.json');
 const postcss = require("gulp-postcss");
 const sass = require('gulp-sass');
+const sourcemaps = require("gulp-sourcemaps");
 const uglify = require('gulp-uglify');
 const year = new Date().getFullYear();
 const { watch } = require('gulp');
@@ -50,13 +51,16 @@ function css() {
 }
 
 function js() {
-  return src('src/assets/js/src/*.js')
-    .pipe(babel({
-      presets: ['@babel/env']
-    }))
+  return src([
+      'node_modules/@babel/polyfill/dist/polyfill.min.js',
+      'src/assets/js/src/*.js'
+    ])
+    .pipe(sourcemaps.init())
+    .pipe(babel())
     .pipe(concat('platform-ui.min.js'))
     .pipe(uglify())
     .pipe(header( puiHeader ))
+    .pipe(sourcemaps.write())
     .pipe(dest('src/assets/js'))
     .pipe(dest('dist/js'))
     .pipe(dest('custom-builder/kss-assets/'))
