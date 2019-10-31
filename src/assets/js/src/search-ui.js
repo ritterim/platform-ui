@@ -1,5 +1,5 @@
-const searchBar = document.querySelectorAll('.search--toggle');
-const searchClose = document.querySelectorAll('.search--close');
+const searchBar = Array.prototype.slice.call(document.querySelectorAll('.search--toggle'));
+const searchClose = Array.prototype.slice.call(document.querySelectorAll('.search--close'));
 
 if (searchBar) {
   searchBar.forEach(sb => {
