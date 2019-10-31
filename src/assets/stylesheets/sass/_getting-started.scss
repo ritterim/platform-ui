@@ -1,7 +1,7 @@
 // Getting-started
 //
 // ## Get started
-// 
+//
 // Platform-UI is a responsive framework.
 //
 // Learn how we've built Platform UI and patterns to help you contribute.
@@ -26,7 +26,7 @@
 // SASS
 //
 // [https://sass-lang.com/](https://sass-lang.com/)
-// 
+//
 // ## Mixins v. Extends
 //
 // If you're passing an argument or looping through a function, this is a `mixin`.
@@ -35,10 +35,10 @@
 //
 // | <i class="fas fa-exclamation-triangle fa-sm text-orange"></i> NOTE: Place any SCSS native call, includes, extends, loops, and functions, at the bottom of any regular CSS. I.e., `@include`, `@extend`, `@for`, `@each` |
 // | --
-// 
-// 
+//
+//
 // <h3 class="mt-4 mb-1">Updated syntax</h3>
-// 
+//
 // With the dart-sass update you now will need to call a mixin by including the namespace of the mixins file. In our case it's `mixins`.
 // `@include breakpoint()` becomes `@include mixins.breakpoint()`. Notice the `mixins.` before the mixin name.
 //
@@ -62,6 +62,22 @@
 // Keep towards ES6 standards whenever possible (`let`, `const` should be used over `var`).
 //
 // We use two spaces for JavaScript, HTML, and CSS. If you happen to be writing any C#, use four spaces. The `.editorconfig` file should handle this.
+//
+// <i class="fab fa-internet-explorer fa-2x text-med-blue"></i>
+// | <i style="color:red" class="fas fa-times-circle fa-lg"></i> <strong style="color:red;"><span class="text-med-blue">SCRIPT438</span>: Object doesn't support property or method 'forEach'</strong>|
+// | --
+//
+//
+// ```js
+// /* ES6 errors in IE */
+// let closeModal = document.querySelectorAll('.rim-modal__close');
+//
+// /* the fix - no error in IE */
+// let closeModal = Array.prototype.slice.call(document.querySelectorAll('.rim-modal__close'));
+//
+// if(closeModal) {
+//   closeModal.forEach(function(el) {
+//   ...
 //
 // Styleguide _getting-started.JavaScript
 
