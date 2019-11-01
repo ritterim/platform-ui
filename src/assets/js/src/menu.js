@@ -1,5 +1,5 @@
-let  dropdownMenu = Array.prototype.slice.call(document.querySelectorAll('.dropdown-menu'));
-let  hasDropdown = Array.prototype.slice.call(document.querySelectorAll('.has-dropdown'));
+let  dropdownMenu = document.querySelectorAll('.dropdown-menu');
+let  hasDropdown = document.querySelectorAll('.has-dropdown');
 
 if (dropdownMenu) {
   dropdownMenu.forEach(menu => {

@@ -1,6 +1,6 @@
 let modalOverlay = document.querySelector('.rim-modal--overlay');
-let closeModal = Array.prototype.slice.call(document.querySelectorAll('.rim-modal__close'));
-let openModal = Array.prototype.slice.call(document.querySelectorAll('.rim-modal__open'));
+let closeModal = document.querySelectorAll('.rim-modal__close');
+let openModal = document.querySelectorAll('.rim-modal__open');
 
 if(closeModal) {
   closeModal.forEach(function(el) {

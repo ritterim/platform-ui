@@ -51,7 +51,10 @@ function css() {
 }
 
 function js() {
-  return src('src/assets/js/src/*.js')
+  return src([
+      'src/assets/js/polyfill/main.js',
+      'src/assets/js/src/*.js'
+      ])
     .pipe(sourcemaps.init())
     .pipe(babel())
     .pipe(concat('platform-ui.min.js'))
