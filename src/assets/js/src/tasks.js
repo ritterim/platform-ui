@@ -1,9 +1,9 @@
 // tasks stuff
 const task = document.querySelectorAll('[data-task]');
-const taskEdit = Array.prototype.slice.call(document.querySelectorAll('.js-edit-task'));
-const cancelTaskEdit = Array.prototype.slice.call(document.querySelectorAll('.js-cancel-task'));
-const saveTaskEdit = Array.prototype.slice.call(document.querySelectorAll('.js-save-task'));
-const deleteTask = Array.prototype.slice.call(document.querySelectorAll('.js-delete-task'));
+const taskEdit = document.querySelectorAll('.js-edit-task');
+const cancelTaskEdit = document.querySelectorAll('.js-cancel-task');
+const saveTaskEdit = document.querySelectorAll('.js-save-task');
+const deleteTask = document.querySelectorAll('.js-delete-task');
 
 if(task) {
   taskEdit.forEach(edit => {
@@ -72,7 +72,7 @@ if(task) {
     })
   })
 
-  const toggleNewTask = Array.prototype.slice.call(document.querySelectorAll('.js-toggle-task'));
+  const toggleNewTask = document.querySelectorAll('.js-toggle-task');
   const cancelNewTask = document.querySelector('.js-cancel-task-form');
 
   toggleNewTask.forEach(elm => {
@@ -124,7 +124,7 @@ if(task) {
     });
   }
 
-  const taskStatus = Array.prototype.slice.call(document.querySelectorAll('.js-task-status'));
+  const taskStatus = document.querySelectorAll('.js-task-status');
 
   taskStatus.forEach(status => {
     status.addEventListener('click', function() {
