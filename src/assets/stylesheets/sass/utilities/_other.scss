@@ -8,8 +8,11 @@
 // Utility classes to rotate an element.
 //
 // Markup:
-// <button class="rotate-45 button">45 degrees</button>
-// <button class="rotate-180 button">180 degrees</button>
+// <div class="button-group">
+//   <button class="rotate-45 button">45 degrees</button>
+//   <button class="rotate-90 button">180 degrees</button>
+//   <button class="rotate-180 button">180 degrees</button>
+// </div>
 //
 // Styleguide Utilities.Rotate
 
@@ -150,20 +153,33 @@
 // The standard loading wheel that is used throughout platform-ui. This class is extended on the loading button.
 //
 // Markup:
-// <div>
-//   <div class="rim-loader"></div>
+// <div class="block-container blocks-px-3">
+//   <div class="block block-6 flex--center-content" style="height: 3rem">
+//     <div class="pui-loader"></div>
+//   </div>
+//   <div class="block block-6 background-navy flex--center-content" style="height: 3rem">
+//     <div class="pui-loader inverted"></div>
+//   </div>
 // </div>
 //
 // Styleguide Utilities.Loader
 
-%rim-loader,
-.rim-loader {
+%pui-loader,
+.pui-loader {
   animation: rotation 1s infinite linear;
-  border: 2px solid rgba(160, 160, 160, 0.2);
+  border: 2px solid map.get(config.$loader-colors, 'primary');
   border-radius: map.get(variables.$radius, 'round');
-  border-top-color: rgba(160, 160, 160, 0.7);
+  border-top-color: map.get(config.$loader-colors, 'primary-top');
   @include mixins.square(1.4rem);
   @include mixins.square(1.4rem, 'max');
+}
+
+.pui-loader {
+
+  &.inverted {
+    border-color: map.get(config.$loader-colors, 'inverted');
+    border-top-color: map.get(config.$loader-colors, 'inverted-top');
+  }
 }
 
 

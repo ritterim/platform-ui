@@ -218,3 +218,22 @@ $button-group-margin: 0 .25rem;
 
 $card-padding: 1rem;
 $card-footer-top-margin: 1rem;
+
+
+
+
+// --------------------
+// Loader
+// --------------------
+
+$loader-color-primary: map.get($config-colors, "navy") !default;
+$loader-border-top-primary: transparent !default;
+$loader-color-inverted: #fff !default;
+$loader-border-top-inverted: transparent !default;
+
+$loader-colors: (
+  'primary': $loader-color-primary,
+  'primary-top': $loader-border-top-primary,
+  'inverted': $loader-color-inverted,
+  'inverted-top': $loader-border-top-inverted
+) !default;
