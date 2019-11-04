@@ -166,6 +166,7 @@
   display: flex;
   font-family: map.get(config.$fonts, 'base');
   font-size: map.get(config.$fonts, 'size');
+  justify-content: center;
   padding: config.$button-primary-padding;
   transition: config.$transitions;
   white-space: nowrap;
@@ -202,13 +203,13 @@
 
     &:not([data-button-text]) {
       &:after {
-        @extend %rim-loader;
+        @extend %pui-loader;
         @include mixins.square(variables.$spacer);
         box-sizing: border-box;
         content: "";
         display: block;
-        border-color: config.$button-primary-background;
-        border-top-color: color.adjust(map.get(variables.$greyscale, 'base' ), $lightness: math.percentage(config.$hue-threshold * 2));
+        border-color: map.get(config.$loader-colors, 'inverted');
+        border-top-color: map.get(config.$loader-colors, 'inverted-top');
         left: 50%;
         margin-left: -.5rem;
         margin-top: -.5rem;
@@ -289,7 +290,7 @@
         width: auto;
 
         &:before {
-          @extend %rim-loader;
+          @extend %pui-loader;
           @include mixins.square(variables.$spacer);
           background-color: unset;
           box-sizing: border-box;
