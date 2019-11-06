@@ -84,6 +84,12 @@
     flex-grow: 1;
     @extend %flex-center;
 
+    // flexing component
+    // rim-search {
+    //   display: flex;
+    //   width: 100%;
+    // }
+
     input[type=text] {
       background: transparent;
       border: none;

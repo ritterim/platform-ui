@@ -7,10 +7,10 @@
   display: flex;
   &--results {
     background: map.get(variables.$greyscale, 'light');
-    color: map.get(variables.$greyscale, 'white');
+    // color: map.get(variables.$greyscale, 'white');
     width: 3rem;
     h2 {
-      color: map.get(variables.$greyscale, 'white');
+      // color: map.get(variables.$greyscale, 'white');
       font-size: map.get(variables.$font-percentage, 'xl');
       font-weight: lighter;
       transform: rotate(90deg);
@@ -21,9 +21,15 @@
 .search {
   $self: &;
   &--complex {
+    background-color: map.get(variables.$greyscale, 'lighter');
     display: flex;
     flex-flow: row;
-    height: 100%;
+    height: calc(100% - #{config.$menu-height});
+    position: fixed;
+    left: 0;
+    top: config.$menu-height;
+    width: 100%;
+
     &-close {
       display: none;
     }
@@ -48,7 +54,7 @@
           border: none;
         }
         .search--close {
-          display: none
+          display: none;
         }
         .search--toggle {
           align-self: center;
@@ -81,6 +87,9 @@
           position: absolute;
           bottom: variables.$spacer;
           z-index: 10;
+        }
+        .search-bar__content {
+          color: map.get(config.$fonts, 'color');  
         }
       }
     }
