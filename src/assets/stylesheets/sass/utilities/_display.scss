@@ -1,4 +1,5 @@
 @use "config";
+@use "mixins";
 @use "sass:map";
 
 // Display
@@ -31,11 +32,17 @@
 // | `hide-mobile-only`             | `diaplay: none;`           | `@media screen and (min-width: 0px) and (max-width: 767px)`               |
 // | `hide-mobile-down`             | `diaplay: none;`           | `@media screen and (max-width: 767px)`                                    |
 // | `show-tablet-up`               | `diaplay: block;`          | `@media screen and (min-width: 768px)`                                    |
-// | `show-tablet-only`             | `diaplay: block;`          | `@media screen and (min-width: 768px) and (max-width: 1239px)`            |
-// | `show-tablet-down`             | `diaplay: block;`          | `@media screen and (max-width: 1239px)`                                   |
+// | `show-tablet-only`             | `diaplay: block;`          | `@media screen and (min-width: 768px) and (max-width: 990px)`            |
+// | `show-tablet-down`             | `diaplay: block;`          | `@media screen and (max-width: 990px)`                                   |
 // | `hide-tablet-up`               | `diaplay: none;`           | `@media screen and (min-width: 768px)`                                    |
-// | `hide-tablet-only`             | `diaplay: none;`           | `@media screen and (min-width: 768px) and (max-width: 1239px)`            |
-// | `hide-tablet-down`             | `diaplay: none;`           | `@media screen and (max-width: 1239px)`                                   |
+// | `hide-tablet-only`             | `diaplay: none;`           | `@media screen and (min-width: 768px) and (max-width: 990px)`            |
+// | `hide-tablet-down`             | `diaplay: none;`           | `@media screen and (max-width: 990px)`                                   |
+// | `show-lg-tablet-up`            | `diaplay: block;`          | `@media screen and (min-width: 991px)`                                    |
+// | `show-lg-tablet-only`          | `diaplay: block;`          | `@media screen and (min-width: 991px) and (max-width: 1239px)`            |
+// | `show-lg-tablet-down`          | `diaplay: block;`          | `@media screen and (max-width: 1239px)`                                   |
+// | `hide-lg-tablet-up`            | `diaplay: none;`           | `@media screen and (min-width: 991px)`                                    |
+// | `hide-lg-tablet-only`          | `diaplay: none;`           | `@media screen and (min-width: 991px) and (max-width: 1239px)`            |
+// | `hide-lg-tablet-down`          | `diaplay: none;`           | `@media screen and (max-width: 1239px)`                                   |
 // | `show-laptop-up`               | `diaplay: block;`          | `@media screen and (min-width: 1240px)`                                   |
 // | `show-laptop-only`             | `diaplay: block;`          | `@media screen and (min-width: 1240px) and (max-width: 1799px)`           |
 // | `show-laptop-down`             | `diaplay: block;`          | `@media screen and (max-width: 1799px)`                                   |
@@ -94,7 +101,13 @@
       @if $index {
         // if there is another key above the selected key, run this
         @if $index < length(config.$breakpoints) {
-          @media screen and (min-width : ($size)) and (max-width: map.get(config.$breakpoints, nextKey($breakpoint) )  - 1 ) {
+          @if $d == hide {
+            display: block !important;
+          }
+          @else {
+            display: none !important;
+          }
+          @media screen and (min-width : ($size)) and (max-width: map.get(config.$breakpoints, mixins.nextKey($breakpoint) )  - 1 ) {
             @if $d == hide {
               display: none !important;
             }
@@ -110,7 +123,7 @@
     .#{$d}-#{$breakpoint}-down {
       @if $index {
         @if $index < length(config.$breakpoints) {
-          @media (max-width: map.get(config.$breakpoints, nextKey($breakpoint) )  - 1 ) {
+          @media (max-width: map.get(config.$breakpoints, mixins.nextKey($breakpoint) )  - 1 ) {
             @if $d == hide {
               display: none !important;
             }
