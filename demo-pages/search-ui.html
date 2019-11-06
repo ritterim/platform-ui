@@ -24,8 +24,83 @@
           </div>
       </div>
       <div class="site-menu__item search">
-        <input type="text" name="" value="">
-        <i class="far fa-search"></i>
+        <rim-search class="flex w-100">
+          <input type="text" name="" value="">
+          <i class="far fa-search"></i>
+          <results-cmp>
+            <div class="block-container search--complex">
+              <div class="search-bar block active" aria-role="search-panel"  aria-selected="true">
+                <div class="pill pill--circle-medium background-light search--toggle">
+                  <i class="fas fa-chevron-left"></i>
+                </div>
+                <h2 class="search-bar__title block-12">
+                  <div class="pill pill--circle search-bar__count">120</div>
+                  Content
+
+                </h2>
+                <div class="search-bar__content my-3">
+                  Something.
+                </div>
+              </div>
+              <div class="search-bar block" aria-role="search-panel"  aria-selected="false">
+                <div class="pill pill--circle-medium background-light search--toggle">
+                  <i class="fas fa-chevron-left"></i>
+                </div>
+                <h2 class="search-bar__title block-12">
+                  <div class="pill pill--circle search-bar__count">120</div>
+                  Contracts
+
+                </h2>
+                <div class="search-bar__content my-3">
+                  Something.
+                </div>
+              </div>
+              <!-- active -->
+              <div class="search-bar block" aria-role="search-panel" aria-selected="false">
+                <div class="pill pill--circle-medium background-light search--toggle">
+                  <i class="fas fa-chevron-left"></i>
+                </div>
+                <h2 class="search-bar__title block-12">
+                  <div class="pill pill--circle search-bar__count">33</div>
+                  Submissions
+
+                </h2>
+                <div class="search-bar__content my-3">
+                    <div class="rim-card">
+                      Something
+                    </div>
+                </div>
+
+              </div>
+              <div class="search-bar block" aria-role="search-panel" aria-selected="false">
+                <div class="pill pill--circle-medium background-light search--toggle">
+                  <i class="fas fa-chevron-left"></i>
+                </div>
+                <h2 class="search-bar__title block-12">
+                  <div class="pill pill--circle search-bar__count">1500</div>
+                  Tasks
+
+                </h2>
+                <div class="search-bar__content my-3">
+                  Something.
+                </div>
+              </div>
+              <div class="search-bar block" aria-role="search-panel" aria-selected="false">
+                <div class="pill pill--circle-medium background-light search--toggle">
+                  <i class="fas fa-chevron-left"></i>
+                </div>
+                <h2 class="search-bar__title block-12">
+                  <div class="pill pill--circle search-bar__count">33</div>
+                  Clients
+
+                </h2>
+                <div class="search-bar__content my-3">
+                  Something.
+                </div>
+              </div>
+            </div>
+          </results-cmp>
+        </rim-search>
       </div>
       <div class="site-menu__item">
         menu item
@@ -144,77 +219,7 @@
       </div>
     </aside>
     <main>
-      <div class="block-container search--complex">
-        <div class="search-bar block active" aria-role="search-panel"  aria-selected="true">
-          <div class="pill pill--circle-medium background-light search--toggle">
-            <i class="fas fa-chevron-left"></i>
-          </div>
-          <h2 class="search-bar__title block-12">
-            <div class="pill pill--circle search-bar__count">33</div>
-            Content
-
-          </h2>
-          <div class="search-bar__content my-3">
-            Something.
-          </div>
-        </div>
-        <div class="search-bar block" aria-role="search-panel"  aria-selected="false">
-          <div class="pill pill--circle-medium background-light search--toggle">
-            <i class="fas fa-chevron-left"></i>
-          </div>
-          <h2 class="search-bar__title block-12">
-            <div class="pill pill--circle search-bar__count">33</div>
-            Contracts
-
-          </h2>
-          <div class="search-bar__content my-3">
-            Something.
-          </div>
-        </div>
-        <!-- active -->
-        <div class="search-bar block" aria-role="search-panel" aria-selected="false">
-          <div class="pill pill--circle-medium background-light search--toggle">
-            <i class="fas fa-chevron-left"></i>
-          </div>
-          <h2 class="search-bar__title block-12">
-            <div class="pill pill--circle search-bar__count">33</div>
-            Submissions
-
-          </h2>
-          <div class="search-bar__content my-3">
-              <div class="rim-card">
-                Something
-              </div>
-          </div>
-
-        </div>
-        <div class="search-bar block" aria-role="search-panel" aria-selected="false">
-          <div class="pill pill--circle-medium background-light search--toggle">
-            <i class="fas fa-chevron-left"></i>
-          </div>
-          <h2 class="search-bar__title block-12">
-            <div class="pill pill--circle search-bar__count">33</div>
-            Tasks
-
-          </h2>
-          <div class="search-bar__content my-3">
-            Something.
-          </div>
-        </div>
-        <div class="search-bar block" aria-role="search-panel" aria-selected="false">
-          <div class="pill pill--circle-medium background-light search--toggle">
-            <i class="fas fa-chevron-left"></i>
-          </div>
-          <h2 class="search-bar__title block-12">
-            <div class="pill pill--circle search-bar__count">33</div>
-            Clients
-
-          </h2>
-          <div class="search-bar__content my-3">
-            Something.
-          </div>
-        </div>
-      </div>
+    
     </main>
     <div class="mobile-menu-action-wrapper">
       <button class="button mobile-menu-action" aria-label="Menu">

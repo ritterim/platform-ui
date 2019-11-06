@@ -1,4 +1,10 @@
 @use "sass:map";
+@use "sass:meta";
+
+// Needed maps whether populated below of not. //-- DO NOT DELETE
+$config-colors: () !default;
+$platform-colors: () !default;
+
 
 // ------------------
 // Colors
@@ -30,6 +36,9 @@ $secondary-colors: (
   'teal': teal,
   'gold': #ffcc00
 ) !default;
+
+// $brand-colors and $secondary colors will be made available as text and background colors
+// e.g., .text--{color} .background--{color}
 
 // You only need to document color is the commented forms
 // if you're generating the style guide.
@@ -66,17 +75,13 @@ $secondary-colors: (
 //
 // Styleguide Color.SecondaryColors
 
-// make $brand-colors and $secondary colors available as text and background colors
+@if meta.variable-exists('secondary-colors') {
+  $config-colors: map.merge($brand-colors, $secondary-colors);
+} @else {
+  $config-colors: map.merge($brand-colors, $config-colors);
+}
 
-// If you're only adding one additional color map. $greyscale will be merged.
-// $all-colors: map-merge($brand-colors), $greyscale);
-
-// If you're adding 2 maps
-
-// NOTE: use conditional here
-$config-colors: map.merge($brand-colors, $secondary-colors);
-
-// Default colors used in platform UI
+// Default colors used in the Ritter Platform
 
 $platform-focus-color: map.get($config-colors, 'med-blue') !default;
 $platform-menu-color: map.get($config-colors, 'navy') !default;
@@ -85,10 +90,10 @@ $platform-help-color: map.get($config-colors, 'lightblue') !default;
 $platform-note-color: #FFFDF5 !default;
 $platform-help-text-color: map.get($config-colors, 'navy') !default;
 
-
 // Platform colors need to be placed back in a map
+// Removing platform-colors will not affect compilation
 
-$platform-colors: (
+$platform-colors-vars: (
   'focus' : $platform-focus-color,
   'menu' : $platform-menu-color,
   'link' : $platform-link-color,
@@ -97,7 +102,9 @@ $platform-colors: (
   'help-text' : $platform-help-text-color
 ) !default;
 
-
+@if meta.type-of($platform-colors-vars) == 'map' {
+  $platform-colors: map.merge($platform-colors-vars, $platform-colors);
+}
 
 
 // --------------------

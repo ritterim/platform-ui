@@ -1,5 +1,7 @@
 @use "config";
 @use "variables";
+@use "sass:map";
+@use "sass:meta";
 
 // Background Colors
 //
@@ -24,65 +26,87 @@
 //
 // Styleguide Utilities.Color.Background
 
-$all-colors: map-merge(config.$config-colors, variables.$greyscale);
+$all-colors: () !default;
+$platform-colors: () !default;
 
-@each $name, $color in $all-colors {
-  // text color
-  .text-#{$name} {
-    &.pill {
-      border-color: $color !important;
-    }
-    color: $color !important;
-    transition: .2s;
-    &--hover {
-      transition: config.$transitions;
+@if meta.type-of(config.$config-colors) == 'map' {
+  $all-colors: map.merge(config.$config-colors, variables.$greyscale);
+} @else {
+  $all-colors: map.merge(variables.$greyscale, $all-colors);
+  @warn "$config-colors is not set or empty";
+}
 
-      &.text-underline--hover {
-        &:after {
-          background-color: $color !important;
+@if meta.type-of($all-colors) == 'map' {
+  @each $name, $color in $all-colors {
+    // text color
+    .text-#{$name} {
+      &.pill {
+        border-color: $color !important;
+      }
+      color: $color !important;
+      transition: .2s;
+      &--hover {
+        transition: config.$transitions;
+
+        &.text-underline--hover {
+          &:after {
+            background-color: $color !important;
+          }
+        }
+
+        &:hover {
+          color: $color !important;
         }
       }
-
-      &:hover {
-        color: $color !important;
-      }
     }
-  }
-  // background color
-  .background-#{$name} {
-    background-color: $color !important;
+    // background color
+    .background-#{$name} {
+      background-color: $color !important;
 
-    &.button {
+      &.button {
 
-      &.loading {
+        &.loading {
 
-        &:before {
-          background-color: $color !important;
+          &:before {
+            background-color: $color !important;
+          }
         }
       }
+    }
+    // create native css variables
+    :root {
+      --pui-#{$name}: #{$color};
     }
   }
 }
 
-@each $name, $color in config.$platform-colors {
-  // text color
-  .text-#{$name} {
-    border-color: $color !important;
-    color: $color !important;
-    transition: .2s;
-  }
-  // background color
-  .background-#{$name} {
-    background-color: $color !important;
+$platform-colors: map.merge(config.$platform-colors, $platform-colors);
 
-    &.button {
+@if meta.type-of($platform-colors) == 'map' {
+  @each $name, $color in $platform-colors {
+    // text color
+    .text-#{$name} {
+      border-color: $color !important;
+      color: $color !important;
+      transition: .2s;
+    }
+    // background color
+    .background-#{$name} {
+      background-color: $color !important;
 
-      &.loading {
+      &.button {
 
-        &:before {
-          background-color: $color !important;
+        &.loading {
+
+          &:before {
+            background-color: $color !important;
+          }
         }
       }
+    }
+    // create native css variables
+    :root {
+      --pui-#{$name}: $color;
     }
   }
 }
