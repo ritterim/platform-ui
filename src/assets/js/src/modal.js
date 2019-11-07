@@ -1,13 +1,13 @@
-let modalOverlay = document.querySelector('.rim-modal--overlay');
-let closeModal = document.querySelectorAll('.rim-modal__close');
-let openModal = document.querySelectorAll('.rim-modal__open');
+let modalOverlay = document.querySelector('.pui-modal--overlay');
+let closeModal = document.querySelectorAll('.pui-modal__close');
+let openModal = document.querySelectorAll('.pui-modal__open');
 
 if(closeModal) {
   closeModal.forEach(function(el) {
     el.addEventListener('click', function() {
       let modal = document.getElementById(el.dataset.modal);
-      modal.classList.toggle('rim-modal--closed');
-      modalOverlay.classList.toggle('rim-modal--closed');
+      if(modal) modal.classList.toggle('pui-modal--closed');
+      if(modalOverlay) modalOverlay.classList.toggle('pui-modal--closed');
       document.body.classList.remove('modal-open');
     });
   });
@@ -17,8 +17,8 @@ if(openModal) {
   openModal.forEach(function(el) {
     el.addEventListener('click', function(evt) {
       let modal = document.getElementById(el.dataset.modal);
-      modal.classList.toggle('rim-modal--closed');
-      modalOverlay.classList.toggle('rim-modal--closed');
+      if(modal) modal.classList.toggle('pui-modal--closed');
+      if(modalOverlay) modalOverlay.classList.toggle('pui-modal--closed');
       if(el.dataset.noScroll) {
         document.body.classList.add('modal-open');
       }
