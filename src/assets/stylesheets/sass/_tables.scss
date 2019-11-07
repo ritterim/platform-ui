@@ -7,7 +7,7 @@
 
 // Tables
 //
-// Default table.
+// Default table. Use the `pui-table` class to get the table styles applied.
 //
 // Adding sort icon: `<i class="fas fa-arrows-alt-v"></i>`
 //
@@ -16,10 +16,10 @@
 // These tables are responsive. They get the mobile view below the mobile breakpoint.
 // You need to add the `data-label="{th - name}"` to the corresponding `<td>`. See the markup below.
 //
-// Turn row hover off by adding `rim-table--no-hover`
+// Turn row hover off by adding `pui-table--no-hover`
 //
 // Markup:
-// <table class="rim-table">
+// <table class="pui-table">
 //   <thead>
 //     <tr>
 //       <th>Company</th>
@@ -97,9 +97,9 @@
 //   </tbody>
 // </table>
 //
-// Sometimes you don't want a resposive table? just add `unresponsive` to `rim-table`
+// Sometimes you don't want a resposive table? just add `unresponsive` to `pui-table`
 //
-// <table class="rim-table unresponsive">
+// <table class="pui-table unresponsive">
 //   <thead>
 //     <tr>
 //       <th></th>
@@ -146,8 +146,7 @@
 //
 // Styleguide Tables
 
-.rim-table,
-table {
+.pui-table {
   $border-radius: map.get(config.$radius, 'default');
   $table-border: 1px solid color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold * 2));
   $responsive-table-bottom-gap: variables.$spacer * 1.5;
