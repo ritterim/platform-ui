@@ -16,15 +16,20 @@
 // You may run into issues where the background scrolls while your modal is open. To prevent this behavior, add the `.modal-open` class to your body element when a modal is open. See demo below for example and note how adding the `.modal-open` class to the body on open makes the background scroll bar go away.
 //
 // Markup:
-// <div class="pui-modal--overlay pui-modal--closed"></div>
 // <div id="default-modal" class="pui-modal pui-modal--closed ">
 //   <div class="pui-modal__inner animated slideInUp faster">
 //     <div class="pui-modal__header">
 //       <button class="button pui-modal__close" data-modal="default-modal">Close <i class="fas fa-times"></i></button>
-//       <h2>Modal</h2>
+//       <h2>Standard Modal</h2>
 //     </div>
 //     <div class="pui-modal__content">
-//       <p>Modal Content</p>
+//       <h3>pui-modal</h3>
+//       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eleifend convallis quam fermentum sagittis. Curabitur nec ullamcorper nibh, et rhoncus ipsum. Cras quam lacus, gravida id pharetra sit amet, eleifend vel enim. Donec non est ullamcorper tellus aliquam molestie. Morbi vitae nisi velit. Nam tincidunt justo eros, quis posuere quam condimentum ac. Curabitur mi diam, efficitur laoreet iaculis non, volutpat ac ligula. Nullam ut luctus arcu. Donec a turpis mi. Pellentesque fermentum, turpis at bibendum laoreet, lorem lorem tempor lectus, congue viverra nisi dui nec purus. Donec ultricies ut risus sit amet mollis.</p>
+//       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eleifend convallis quam fermentum sagittis. Curabitur nec ullamcorper nibh, et rhoncus ipsum. Cras quam lacus, gravida id pharetra sit amet, eleifend vel enim. Donec non est ullamcorper tellus aliquam molestie. Morbi vitae nisi velit. Nam tincidunt justo eros, quis posuere quam condimentum ac. Curabitur mi diam, efficitur laoreet iaculis non, volutpat ac ligula. Nullam ut luctus arcu. Donec a turpis mi. Pellentesque fermentum, turpis at bibendum laoreet, lorem lorem tempor lectus, congue viverra nisi dui nec purus. Donec ultricies ut risus sit amet mollis.</p>
+//       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eleifend convallis quam fermentum sagittis. Curabitur nec ullamcorper nibh, et rhoncus ipsum. Cras quam lacus, gravida id pharetra sit amet, eleifend vel enim. Donec non est ullamcorper tellus aliquam molestie. Morbi vitae nisi velit. Nam tincidunt justo eros, quis posuere quam condimentum ac. Curabitur mi diam, efficitur laoreet iaculis non, volutpat ac ligula. Nullam ut luctus arcu. Donec a turpis mi. Pellentesque fermentum, turpis at bibendum laoreet, lorem lorem tempor lectus, congue viverra nisi dui nec purus. Donec ultricies ut risus sit amet mollis.</p>
+//       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eleifend convallis quam fermentum sagittis. Curabitur nec ullamcorper nibh, et rhoncus ipsum. Cras quam lacus, gravida id pharetra sit amet, eleifend vel enim. Donec non est ullamcorper tellus aliquam molestie. Morbi vitae nisi velit. Nam tincidunt justo eros, quis posuere quam condimentum ac. Curabitur mi diam, efficitur laoreet iaculis non, volutpat ac ligula. Nullam ut luctus arcu. Donec a turpis mi. Pellentesque fermentum, turpis at bibendum laoreet, lorem lorem tempor lectus, congue viverra nisi dui nec purus. Donec ultricies ut risus sit amet mollis.</p>
+//       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eleifend convallis quam fermentum sagittis. Curabitur nec ullamcorper nibh, et rhoncus ipsum. Cras quam lacus, gravida id pharetra sit amet, eleifend vel enim. Donec non est ullamcorper tellus aliquam molestie. Morbi vitae nisi velit. Nam tincidunt justo eros, quis posuere quam condimentum ac. Curabitur mi diam, efficitur laoreet iaculis non, volutpat ac ligula. Nullam ut luctus arcu. Donec a turpis mi. Pellentesque fermentum, turpis at bibendum laoreet, lorem lorem tempor lectus, congue viverra nisi dui nec purus. Donec ultricies ut risus sit amet mollis.</p>
+//       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eleifend convallis quam fermentum sagittis. Curabitur nec ullamcorper nibh, et rhoncus ipsum. Cras quam lacus, gravida id pharetra sit amet, eleifend vel enim. Donec non est ullamcorper tellus aliquam molestie. Morbi vitae nisi velit. Nam tincidunt justo eros, quis posuere quam condimentum ac. Curabitur mi diam, efficitur laoreet iaculis non, volutpat ac ligula. Nullam ut luctus arcu. Donec a turpis mi. Pellentesque fermentum, turpis at bibendum laoreet, lorem lorem tempor lectus, congue viverra nisi dui nec purus. Donec ultricies ut risus sit amet mollis.</p>
 //     </div>
 //   </div>
 // </div>
@@ -32,6 +37,17 @@
 //   <div class="pui-modal__inner animated slideInUp faster">
 //     <div class="pui-modal__header">
 //       <button class="button pui-modal__close" data-modal="small-modal">Close <i class="fas fa-times"></i></button>
+//       <h2>Modal</h2>
+//     </div>
+//     <div class="pui-modal__content">
+//       <p>Modal Content</p>
+//     </div>
+//   </div>
+// </div>
+// <div id="centered-modal" class="pui-modal pui-modal--centered pui-modal--closed ">
+//   <div class="pui-modal__inner animated slideInUp faster">
+//     <div class="pui-modal__header">
+//       <button class="button pui-modal__close" data-modal="centered-modal">Close <i class="fas fa-times"></i></button>
 //       <h2>Modal</h2>
 //     </div>
 //     <div class="pui-modal__content">
@@ -67,7 +83,23 @@
 //     </div>
 //   </div>
 // </div>
-// <button class="button button--post button--lg pui-modal__open" data-modal="default-modal">Trigger Modal</button> <button class="button button--post button--lg pui-modal__open" data-modal="small-modal">Small Modal</button> <button class="button button--post button--lg pui-modal__open" data-modal="large-modal">Large Modal</button> <button class="button button--post button--lg pui-modal__open" data-modal="full-modal">Full Screen Modal</button> <button class="button button--post button--lg pui-modal__open" data-modal="full-modal" data-no-scroll="true">Full Screen Modal (No background scroll)</button>
+// <div class="block-container mobile-up-2 tablet-up-3 laptop-up-5 blocks-px-2 blocks-mb-3">
+//     <div class="block">
+//         <button class="button button--post button--lg pui-modal__open" data-modal="default-modal">Trigger Modal</button>
+//     </div>
+//     <div class="block">
+//         <button class="button button--post button--lg pui-modal__open" data-modal="small-modal">Small Modal</button>
+//     </div>
+//     <div class="block">
+//         <button class="button button--post button--lg pui-modal__open" data-modal="centered-modal">Centered Modal</button>
+//     </div>
+//     <div class="block">
+//         <button class="button button--post button--lg pui-modal__open" data-modal="large-modal">Large Modal</button>
+//     </div>
+//     <div class="block">
+//         <button class="button button--post button--lg pui-modal__open" data-modal="full-modal">Full Screen Modal</button>
+//     </div>
+// </div>
 //
 // Styleguide Components.modal
 
@@ -80,79 +112,71 @@
   }
 
   $self: &;
-  display: flex;
-  flex-direction: column;
-  height: 50vh;
-  max-height: 100%;
-  width: 80vw;
-  max-width: 100%;
   position: fixed;
   z-index: 500;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  overflow-x: hidden;
+  overflow-y: auto;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
 
-  @include mixins.breakpoint(tablet, max) {
-    height: 100vh !important;
-    width: 100vw !important;
-  }
-
-  @include mixins.breakpoint(tablet, min) {
-    width: 65vw;
-  }
-  @include mixins.breakpoint(desktop, min) {
-    width: 45vw;
-  }
-
-  &--height-auto {
-    height: auto;
-  }
-
-  &--small {
-    @include mixins.breakpoint(tablet, min) {
-      width: 40vw;
-    }
-    @include mixins.breakpoint(desktop, min) {
-      width: 20vw;
-    }
-  }
-
-  &--large {
-
-    @include mixins.breakpoint(tablet, min) {
-      width: 80vw;
-    }
-  }
-
-  &--full {
-    height: 100vh;
-    width: 100vw;
-    .pui-modal__content {
-      height: 100%;
-      overflow-y: auto;
-      padding-bottom: 6rem;
-    }
-  }
-
-  &--overlay {
-    background: rgba(map.get(variables.$greyscale, 'black'), .5);
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 200;
-  }
   &--closed {
     display: none;
   }
+
+  &--full {
+
+    .pui-modal__inner {
+      height: auto;
+      margin: auto;
+      width: 100%;
+    }
+  }
+
+  &--centered {
+    @extend %flex-center;
+  }
+
+
   &__open {
     cursor: pointer;
   }
+
   &__inner {
     background: map.get(variables.$greyscale, 'white');
-    height: 100%;
+    margin: map.get(variables.$spacers, 4) auto;
+
+    @include mixins.breakpoint(tablet, max) {      
+      height: auto;
+      margin: auto;
+      width: 100%;
+    }
+
+    @include mixins.breakpoint(tablet, min) {
+      width: 65vw;
+    }
+    @include mixins.breakpoint(desktop, min) {
+      width: 45vw;
+    }
+
+    #{$self}--small & {
+      @include mixins.breakpoint(tablet, min) {
+        width: 40vw;
+      }
+      @include mixins.breakpoint(desktop, min) {
+        width: 20vw;
+      }
+    }
+
+    #{$self}--large & {
+
+      @include mixins.breakpoint(tablet, min) {
+        width: 80vw;
+      }
+    }
   }
+
   &__header {
     background-color: map.get(config.$brand-colors, 'lightblue');
     height: 6rem;
@@ -169,8 +193,6 @@
   }
 
   &__content {
-    height: calc(100% - 6rem);
-    overflow-y: auto;
     padding: 2rem;
     position: relative;
 
@@ -189,6 +211,18 @@ body.modal-open {
   // REF: https://css-tricks.com/prevent-page-scrolling-when-a-modal-is-open/#article-header-id-0
   height: 100vh;
   overflow-y: hidden;
+  position: relative;
+
+  &:before {
+    background: rgba(map.get(variables.$greyscale, 'black'), .5);
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 200;
+  }
 
   main {
     @include mixins.breakpoint(tablet, max) {

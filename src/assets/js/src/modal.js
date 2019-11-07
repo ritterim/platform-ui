@@ -1,4 +1,5 @@
-let modalOverlay = document.querySelector('.pui-modal--overlay');
+// let modalOverlay = document.querySelector('.pui-modal--overlay');
+let body = document.querySelector('body');
 let closeModal = document.querySelectorAll('.pui-modal__close');
 let openModal = document.querySelectorAll('.pui-modal__open');
 
@@ -7,8 +8,7 @@ if(closeModal) {
     el.addEventListener('click', function() {
       let modal = document.getElementById(el.dataset.modal);
       if(modal) modal.classList.toggle('pui-modal--closed');
-      if(modalOverlay) modalOverlay.classList.toggle('pui-modal--closed');
-      document.body.classList.remove('modal-open');
+      body.classList.remove('modal-open');
     });
   });
 }
@@ -18,10 +18,7 @@ if(openModal) {
     el.addEventListener('click', function(evt) {
       let modal = document.getElementById(el.dataset.modal);
       if(modal) modal.classList.toggle('pui-modal--closed');
-      if(modalOverlay) modalOverlay.classList.toggle('pui-modal--closed');
-      if(el.dataset.noScroll) {
-        document.body.classList.add('modal-open');
-      }
+      body.classList.add('modal-open');
     });
   });
 }
