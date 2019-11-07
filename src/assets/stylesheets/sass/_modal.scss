@@ -12,6 +12,8 @@
 // Animation note: using `animated` must be placed on `.pui-modal__inner` to maintain correct positioning.
 //
 // The default size of the modal is `medium`, you can use `pui-modal--small`, `pui-modal--large`, or `pui-modal--full` for different sized modals.
+// 
+// You can center a modal in the middle of the window with the modifier `pui-modal--centered`.
 //
 // You may run into issues where the background scrolls while your modal is open. To prevent this behavior, add the `.modal-open` class to your body element when a modal is open. See demo below for example and note how adding the `.modal-open` class to the body on open makes the background scroll bar go away.
 //
