@@ -188,17 +188,17 @@
 //           </li>
 //         </ol>
 //         <div class="pt-4" hidden data-new="note">
-//           <form action="" class="rim-form">
-//             <label for="first-name" class="rim-form__field">First Name
+//           <form action="" class="pui-form">
+//             <label for="first-name" class="pui-form__field">First Name
 //               <input id="first-name" type="text" placeholder="First Name">
 //             </label>
-//             <label for="last-name" class="rim-form__field">Last Name
+//             <label for="last-name" class="pui-form__field">Last Name
 //               <input id="last-name" type="text" placeholder="Last Name">
 //             </label>
-//             <label for="message" class="rim-form__field">Message
+//             <label for="message" class="pui-form__field">Message
 //               <textarea id="message" name="message" rows="10" ></textarea>
 //             </label>
-//             <div class="rim-form__field rim-form__button-group mb-0">
+//             <div class="pui-form__field pui-form__button-group mb-0">
 //               <button class="button button--lg js-cancel-form" type="cancel">Cancel</button>
 //               <button class="button button--post button--lg" type="submit">Save</button>
 //             </div>
@@ -251,15 +251,15 @@
 //                   </div>
 //                 </div>
 //               </div>
-//               <div class="rim-form rim-form--bordered" data-edit-container="task-1" hidden>
+//               <div class="pui-form pui-form--bordered" data-edit-container="task-1" hidden>
 //                 <textarea name="task-1" id="task-1" cols="30" rows="3" class="block mb-2 background-white">Call client back as requested on 07/01/19. Do some more work too. Done</textarea>
 //                 <div class="block-container mb-3">
 //                   <div class="block block-6 pr-2">
-//                     <label for="task-1-date" class="rim-form__field"><input class="px-2 background-white" type="date" value="2019-07-14" id="task-1-date"></label>
+//                     <label for="task-1-date" class="pui-form__field"><input class="px-2 background-white" type="date" value="2019-07-14" id="task-1-date"></label>
 //                   </div>
 //                   <div class="block block-6 pl-2">
-//                     <label for="task-1-time" class="rim-form__field">
-//                       <div class="rim-form__select-wrapper" id="task-1-time">
+//                     <label for="task-1-time" class="pui-form__field">
+//                       <div class="pui-form__select-wrapper" id="task-1-time">
 //                         <select class="px-2 background-white" name="Select a time" id="task-1-time-select">
 //                           <option value="8:00 AM">8:00 AM</option>
 //                           <option value="8:30 AM">8:30 AM</option>
@@ -272,7 +272,7 @@
 //                     </label>
 //                   </div>
 //                 </div>
-//                 <div class="rim-form__field rim-form__button-group mb-0">
+//                 <div class="pui-form__field pui-form__button-group mb-0">
 //                   <button class="button button--lg js-cancel-task" type="cancel" data-cancel="task-1">Cancel</button>
 //                   <button class="button button--post button--lg js-save-task" data-save="task-1" type="submit">Save</button>
 //                 </div>
@@ -312,15 +312,15 @@
 //                   </div>
 //                 </div>
 //               </div>
-//               <div class="rim-form rim-form--bordered" data-edit-container="task-2" hidden>
+//               <div class="pui-form pui-form--bordered" data-edit-container="task-2" hidden>
 //                 <textarea name="task-2" id="task-2" cols="30" rows="3" class="block mb-2">Call client back as requested on 07/01/19. Do some more work too. Done</textarea>
 //                 <div class="block-container mb-3">
 //                   <div class="block block-6 pr-2">
-//                     <label for="task-2-date" class="rim-form__field"><input class="px-2" type="date" value="2019-07-14" id="task-2-date"></label>
+//                     <label for="task-2-date" class="pui-form__field"><input class="px-2" type="date" value="2019-07-14" id="task-2-date"></label>
 //                   </div>
 //                   <div class="block block-6 pl-2">
-//                     <label for="task-2-time" class="rim-form__field">
-//                       <div class="rim-form__select-wrapper" id="task-2-time">
+//                     <label for="task-2-time" class="pui-form__field">
+//                       <div class="pui-form__select-wrapper" id="task-2-time">
 //                         <select class="px-2" name="Select a time" id="task-2-time-select">
 //                           <option value="8:00 AM">8:00 AM</option>
 //                           <option value="8:30 AM">8:30 AM</option>
@@ -333,7 +333,7 @@
 //                     </label>
 //                   </div>
 //                 </div>
-//                 <div class="rim-form__field rim-form__button-group mb-0">
+//                 <div class="pui-form__field pui-form__button-group mb-0">
 //                   <button class="button button--lg js-cancel-task" type="cancel" data-cancel="task-2">Cancel</button>
 //                   <button class="button button--post button--lg js-save-task" data-save="task-2" type="submit">Save</button>
 //                 </div>
@@ -342,19 +342,19 @@
 //           </li>
 //         </ol>
 //         <div class="py-3" data-form="tasks" hidden>
-//           <form action="" class="rim-form rim-form--bordered">
-//             <label for="first-name" class="rim-form__field">Comment
+//           <form action="" class="pui-form pui-form--bordered">
+//             <label for="first-name" class="pui-form__field">Comment
 //               <textarea name="Task Comment" id="task-comment" cols="30" rows="10"></textarea>
 //             </label>
 //             <div class="block-container mb-3">
 //               <div class="block block-6 pr-2">
-//                 <label for="task-2-date" class="rim-form__field">Last Name
+//                 <label for="task-2-date" class="pui-form__field">Last Name
 //                   <input class="px-2" type="date" value="2019-07-14" id="task-2-date">
 //                 </label>
 //               </div>
 //               <div class="block block-6 pl-2">
-//                 <label for="task-2-time-select" class="rim-form__field">Time
-//                   <div class="rim-form__select-wrapper" id="task-2-time">
+//                 <label for="task-2-time-select" class="pui-form__field">Time
+//                   <div class="pui-form__select-wrapper" id="task-2-time">
 //                     <select class="px-2" name="Select a time" id="task-2-time-select">
 //                       <option value="8:00 AM">8:00 AM</option>
 //                       <option value="8:30 AM">8:30 AM</option>
@@ -367,7 +367,7 @@
 //                 </label>
 //               </div>
 //             </div>
-//             <div class="rim-form__field rim-form__button-group mb-0">
+//             <div class="pui-form__field pui-form__button-group mb-0">
 //               <button class="button button--lg js-cancel-task-form" type="cancel" data-cancel="tasks">Cancel</button>
 //               <button class="button button--post button--lg" type="submit">Save</button>
 //             </div>
@@ -442,17 +442,17 @@
 //           </li>
 //         </ol>
 //         <div class="pt-4" hidden data-new="note">
-//           <form action="" class="rim-form">
-//             <label for="first-name" class="rim-form__field">First Name
+//           <form action="" class="pui-form">
+//             <label for="first-name" class="pui-form__field">First Name
 //               <input id="first-name" type="text" placeholder="First Name">
 //             </label>
-//             <label for="last-name" class="rim-form__field">Last Name
+//             <label for="last-name" class="pui-form__field">Last Name
 //               <input id="last-name" type="text" placeholder="Last Name">
 //             </label>
-//             <label for="message" class="rim-form__field">Message
+//             <label for="message" class="pui-form__field">Message
 //               <textarea id="message" name="message" rows="10" ></textarea>
 //             </label>
-//             <div class="rim-form__field rim-form__button-group mb-0">
+//             <div class="pui-form__field pui-form__button-group mb-0">
 //               <button class="button button--lg js-cancel-form" type="cancel">Cancel</button>
 //               <button class="button button--post button--lg" type="submit">Save</button>
 //             </div>
@@ -505,15 +505,15 @@
 //                   </div>
 //                 </div>
 //               </div>
-//               <div class="rim-form rim-form--bordered" data-edit-container="task-1" hidden>
+//               <div class="pui-form pui-form--bordered" data-edit-container="task-1" hidden>
 //                 <textarea name="task-1" id="task-1" cols="30" rows="3" class="block mb-2">Call client back as requested on 07/01/19. Do some more work too. Done</textarea>
 //                 <div class="block-container mb-3">
 //                   <div class="block block-6 pr-2">
-//                     <label for="task-1-date" class="rim-form__field"><input class="px-2" type="date" value="2019-07-14" id="task-1-date"></label>
+//                     <label for="task-1-date" class="pui-form__field"><input class="px-2" type="date" value="2019-07-14" id="task-1-date"></label>
 //                   </div>
 //                   <div class="block block-6 pl-2">
-//                     <label for="task-1-time" class="rim-form__field">
-//                       <div class="rim-form__select-wrapper" id="task-1-time">
+//                     <label for="task-1-time" class="pui-form__field">
+//                       <div class="pui-form__select-wrapper" id="task-1-time">
 //                         <select class="px-2" name="Select a time" id="task-1-time-select">
 //                           <option value="8:00 AM">8:00 AM</option>
 //                           <option value="8:30 AM">8:30 AM</option>
@@ -526,7 +526,7 @@
 //                     </label>
 //                   </div>
 //                 </div>
-//                 <div class="rim-form__field rim-form__button-group mb-0">
+//                 <div class="pui-form__field pui-form__button-group mb-0">
 //                   <button class="button button--lg js-cancel-task" type="cancel" data-cancel="task-1">Cancel</button>
 //                   <button class="button button--post button--lg js-save-task" data-save="task-1" type="submit">Save</button>
 //                 </div>
@@ -566,15 +566,15 @@
 //                   </div>
 //                 </div>
 //               </div>
-//               <div class="rim-form rim-form--bordered" data-edit-container="task-2" hidden>
+//               <div class="pui-form pui-form--bordered" data-edit-container="task-2" hidden>
 //                 <textarea name="task-2" id="task-2" cols="30" rows="3" class="block mb-2">Call client back as requested on 07/01/19. Do some more work too. Done</textarea>
 //                 <div class="block-container mb-3">
 //                   <div class="block block-6 pr-2">
-//                     <label for="task-1-date" class="rim-form__field"><input class="px-2" type="date" value="2019-07-14" id="task-2-date"></label>
+//                     <label for="task-1-date" class="pui-form__field"><input class="px-2" type="date" value="2019-07-14" id="task-2-date"></label>
 //                   </div>
 //                   <div class="block block-6 pl-2">
-//                     <label for="task-2-time" class="rim-form__field">
-//                       <div class="rim-form__select-wrapper time" id="task-2-time">
+//                     <label for="task-2-time" class="pui-form__field">
+//                       <div class="pui-form__select-wrapper time" id="task-2-time">
 //                         <select class="px-2" name="Select a time" id="task-2-time-select">
 //                           <option value="8:00 AM">8:00 AM</option>
 //                           <option value="8:30 AM">8:30 AM</option>
@@ -587,7 +587,7 @@
 //                     </label>
 //                   </div>
 //                 </div>
-//                 <div class="rim-form__field rim-form__button-group mb-0">
+//                 <div class="pui-form__field pui-form__button-group mb-0">
 //                   <button class="button button--lg js-cancel-task" type="cancel" data-cancel="task-2">Cancel</button>
 //                   <button class="button button--post button--lg js-save-task" data-save="task-2" type="submit">Save</button>
 //                 </div>
@@ -596,19 +596,19 @@
 //           </li>
 //         </ol>
 //         <div class="py-3" data-form="tasks" hidden>
-//           <form action="" class="rim-form rim-form--bordered">
-//             <label for="first-name" class="rim-form__field">Comment
+//           <form action="" class="pui-form pui-form--bordered">
+//             <label for="first-name" class="pui-form__field">Comment
 //               <textarea name="Task Comment" id="task-comment" cols="30" rows="10"></textarea>
 //             </label>
 //             <div class="block-container mb-3">
 //               <div class="block block-6 pr-2">
-//                 <label for="task-2-date" class="rim-form__field">Last Name
+//                 <label for="task-2-date" class="pui-form__field">Last Name
 //                   <label for="task-1-date"><input class="px-2" type="date" value="2019-07-14" id="task-2-date"></label>
 //                 </label>
 //               </div>
 //               <div class="block block-6 pl-2">
-//                 <label for="task-2-time-select" class="rim-form__field">Time
-//                   <div class="rim-form__select-wrapper" id="task-2-time">
+//                 <label for="task-2-time-select" class="pui-form__field">Time
+//                   <div class="pui-form__select-wrapper" id="task-2-time">
 //                     <select class="px-2" name="Select a time" id="task-2-time-select">
 //                       <option value="8:00 AM">8:00 AM</option>
 //                       <option value="8:30 AM">8:30 AM</option>
@@ -621,7 +621,7 @@
 //                 </label>
 //               </div>
 //             </div>
-//             <div class="rim-form__field rim-form__button-group mb-0">
+//             <div class="pui-form__field pui-form__button-group mb-0">
 //               <button class="button button--lg js-cancel-task-form" type="cancel" data-cancel="tasks">Cancel</button>
 //               <button class="button button--post button--lg" type="submit">Save</button>
 //             </div>

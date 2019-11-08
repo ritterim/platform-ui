@@ -120,40 +120,40 @@
 //
 //
 // Markup:
-// <form action="" class="rim-form block-container blocks-px-2 blocks-mb-3">
+// <form action="" class="pui-form block-container blocks-px-2 blocks-mb-3">
 //   <div class="block block-6 block-tablet-3 block-laptop-4">
-//     <div class="rim-form__field rim-form__field--fancy">
+//     <div class="pui-form__field pui-form__field--fancy">
 //       <input id="first-name" type="text" required placeholder="Jane">
 //       <label for="first-name">First Name</label>
 //     </div>
 //   </div>
 //   <div class="block block-6 block-tablet-3 block-laptop-4">
-//     <div class="rim-form__field rim-form__field--fancy">
+//     <div class="pui-form__field pui-form__field--fancy">
 //       <input id="last-name" type="text" required placeholder="Smith">
 //       <label for="last-name">Last Name</label>
 //     </div>
 //   </div>
 //   <div class="block block-6 block-tablet-4">
-//     <div class="rim-form__field rim-form__field--fancy">
+//     <div class="pui-form__field pui-form__field--fancy">
 //       <input id="dob" type="date" required placeholder="01/23/1985">
 //       <label for="dob">Age or DOB</label>
 //     </div>
 //   </div>
 //   <div class="block block-6 block-tablet-4">
-//     <div class="rim-form__field rim-form__field--fancy">
+//     <div class="pui-form__field pui-form__field--fancy">
 //       <input id="time" type="time" required placeholder="10:00 AM">
 //       <label for="time">What Time</label>
 //     </div>
 //   </div>
 //   <div class="block block-6 block-tablet-4">
-//     <div class="rim-form__field rim-form__field--fancy">
+//     <div class="pui-form__field pui-form__field--fancy">
 //       <input id="zipcode" type="tel" pattern="^\d{5,6}(?:[-\s]\d{4})?$" required placeholder="12345">
 //       <label for="zipcode">ZIP Code</label>
 //     </div>
 //   </div>
 //   <div class="block block-6 block-tablet-3 block-laptop-4">
-//     <div class="rim-form__field rim-form__field--fancy">
-//       <div class="rim-form__select-wrapper">
+//     <div class="pui-form__field pui-form__field--fancy">
+//       <div class="pui-form__select-wrapper">
 //         <select name="County Select" id="county" required placeholder="County">
 //           <option value=""></option>
 //           <option value="County1">County 1</option>
