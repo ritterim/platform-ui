@@ -17,42 +17,42 @@
 //     <button class="button rim-info-box__close">
 //       Close <i class="fas fa-times" aria-hidden="hidden"></i>
 //     </button>
-//     <form action="" class="block-container block-mb-4 rim-form">
-//       <label for="dob" class="block rim-form__field has-icon">Age or DOB
+//     <form action="" class="block-container block-mb-4 pui-form">
+//       <label for="dob" class="block pui-form__field has-icon">Age or DOB
 //         <input id="dob" type="date" placeholder="DD/MM/YYYY">
 //         <i class="fas fa-calendar-alt text-skyblue background-white"></i>
 //       </label>
-//       <label for="dob" class="block rim-form__field has-icon">Age or DOB
+//       <label for="dob" class="block pui-form__field has-icon">Age or DOB
 //         <input id="dob" type="date" placeholder="DD/MM/YYYY">
 //         <i class="fas fa-calendar-alt text-skyblue background-white"></i>
 //       </label>
-//       <fieldset class="block rim-form__field">
+//       <fieldset class="block pui-form__field">
 //         <legend>Rate Class</legend>
-//         <div class="rim-toggle">
-//           <div class="rim-toggle__content">
-//             <input class="rim-toggle__input" id="smoking" type="radio" checked name="rate">
+//         <div class="pui-toggle">
+//           <div class="pui-toggle__content">
+//             <input class="pui-toggle__input" id="smoking" type="radio" checked name="rate">
 //             <label for="smoking">Non-smoking</label>
 //           </div>
-//           <div class="rim-toggle__content">
-//             <input class="rim-toggle__input" id="non-smoking" type="radio" name="rate">
+//           <div class="pui-toggle__content">
+//             <input class="pui-toggle__input" id="non-smoking" type="radio" name="rate">
 //             <label for="non-smoking">Smoking</label>
 //           </div>
 //         </div>
 //       </fieldset>
-//       <fieldset class="block rim-form__field">
+//       <fieldset class="block pui-form__field">
 //         <legend>Marital Status</legend>
-//         <div class="rim-toggle">
-//           <div class="rim-toggle__content">
-//             <input class="rim-toggle__input" id="Single" type="radio" checked name="household">
+//         <div class="pui-toggle">
+//           <div class="pui-toggle__content">
+//             <input class="pui-toggle__input" id="Single" type="radio" checked name="household">
 //             <label for="Single">Single</label>
 //           </div>
-//           <div class="rim-toggle__content">
-//             <input class="rim-toggle__input" id="household" type="radio" name="household">
+//           <div class="pui-toggle__content">
+//             <input class="pui-toggle__input" id="household" type="radio" name="household">
 //             <label for="household">Household</label>
 //           </div>
 //         </div>
 //       </fieldset>
-//       <fieldset class="block rim-form__field">
+//       <fieldset class="block pui-form__field">
 //         <legend id="radio-heading">Plan</legend>
 //         <div class="block-container" role="radiogroup" aria-labelledby="radio-heading">
 //           <div class="block-3 my-2 px-1">
@@ -117,7 +117,7 @@
 //           </div>
 //         </div>
 //       </fieldset>
-//       <div class="rim-form__field rim-form__button-group">
+//       <div class="pui-form__field pui-form__button-group">
 //         <button class="button button--post button--lg">Apply Filters</button>
 //       </div>
 //     </form>
