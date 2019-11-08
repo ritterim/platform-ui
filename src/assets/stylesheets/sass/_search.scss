@@ -21,6 +21,7 @@
 .search {
   $self: &;
   &--complex {
+    cursor: default;
     background-color: map.get(variables.$greyscale, 'lighter');
     display: flex;
     flex-flow: row;
@@ -50,6 +51,7 @@
         max-width: variables.$spacer * 4;
         padding: map.get(variables.$spacers, 2);
         transition: config.$transitions;
+        cursor: pointer;
         &:last-child {
           border: none;
         }
@@ -75,7 +77,6 @@
           font-size: 50%;
           font-weight: lighter;
           margin-right: variables.$spacer;
-          @extend %rotate-90;
         }
         .search-bar__content {
           display: none;
