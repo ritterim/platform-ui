@@ -1,5 +1,5 @@
-let closeDrawer = document.querySelectorAll('.rim-drawer__close');
-let openDrawer = document.querySelectorAll('.rim-drawer__open');
+let closeDrawer = document.querySelectorAll('.pui-drawer__close');
+let openDrawer = document.querySelectorAll('.pui-drawer__open');
 
 if(closeDrawer) {
   closeDrawer.forEach(function(el) {
@@ -8,7 +8,7 @@ if(closeDrawer) {
       let drawer = document.getElementById(el.dataset.drawer);
       console.log('el.dataset: ' + el.dataset.drawer);
       console.log('drawer: ' + drawer);
-      drawer.classList.toggle('rim-drawer--closed');
+      drawer.classList.toggle('pui-drawer--closed');
     });
   });
 }
@@ -20,7 +20,7 @@ if(openDrawer) {
       let drawer = document.getElementById(el.dataset.drawer);
       console.log('el.dataset: ' + el.dataset.drawer);
       console.log('drawer: ' + drawer);
-      drawer.classList.toggle('rim-drawer--closed');
+      drawer.classList.toggle('pui-drawer--closed');
     });
   });
 }
