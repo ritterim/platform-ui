@@ -6,16 +6,16 @@
 @use "sass:map";
 // Cards
 //
-// Cards can be great for seperating blocks of content. A `rim-card` comes standard with a white background, light grey border, and
+// Cards can be great for seperating blocks of content. A `pui-card` comes standard with a white background, light grey border, and
 // some padding.
 //
-// Note: The use of the block-container and block classes are only to give the rim-card size.
+// Note: The use of the block-container and block classes are only to give the pui-card size.
 //
 // Markup:
 // <div class="block-container">
 //   <div class="block block-4">
-//     <div class="rim-card">
-//       <p>Here's a rim-card.</p>
+//     <div class="pui-card">
+//       <p>Here's a pui-card.</p>
 //     </div>
 //   </div>
 // </div>
@@ -24,22 +24,22 @@
 
 // Headers
 //
-// For the headings in your cards, you generally want to wrap them in the class `rim-card__header`. This works best when you
-// have a layout of inline content that should have space between. The class `rim-card__group` will give the element `display: flex`.
-// When it is nested inside the class `rim-card__header` it will also have `align-items: center`.
+// For the headings in your cards, you generally want to wrap them in the class `pui-card__header`. This works best when you
+// have a layout of inline content that should have space between. The class `pui-card__group` will give the element `display: flex`.
+// When it is nested inside the class `pui-card__header` it will also have `align-items: center`.
 //
 // Markup:
 // <div class="block-container">
 //   <div class="block block-4">
-//     <div class="rim-card">
-//       <div class="rim-card__header">
-//         <div class="rim-card__group">
+//     <div class="pui-card">
+//       <div class="pui-card__header">
+//         <div class="pui-card__group">
 //           <i class="far fa-newspaper"></i>
-//           <h2 class="rim-card__title">Agent News</h2>
+//           <h2 class="pui-card__title">Agent News</h2>
 //         </div>
 //         <button class="button">Button</button>
 //       </div>
-//       <p>Here's a rim-card.</p>
+//       <p>Here's a pui-card.</p>
 //     </div>
 //   </div>
 // </div>
@@ -51,14 +51,14 @@
 // Below is an example of where we use a card for a layout where we might be teasing our latest blogs.
 //
 // Markup:
-// <div class="rim-card">
-//   <div class="rim-card__header">
-//     <div class="rim-card__group">
+// <div class="pui-card">
+//   <div class="pui-card__header">
+//     <div class="pui-card__group">
 //      <i class="far fa-newspaper"></i>
-//      <h2 class="rim-card__title">Agent News</h2>
+//      <h2 class="pui-card__title">Agent News</h2>
 //     </div>
 //   </div>
-//   <div class="rim-card__content">
+//   <div class="pui-card__content">
 //    <div class="block-container blocks-px-2">
 //      <ul class="image-link-list block block-4">
 //        <li>
@@ -93,18 +93,18 @@
 
 // Videos
 //
-// For the card below we're showcasing some videos. Here we stick with a simple rim-card, a header, and some content.
+// For the card below we're showcasing some videos. Here we stick with a simple pui-card, a header, and some content.
 // Within the content we utilize our [block layout](/section-layout.html#kssref-layout-blocks).
 //
 // Markup:
-// <div class="rim-card">
-//   <div class="rim-card__header">
-//     <div class="rim-card__group">
+// <div class="pui-card">
+//   <div class="pui-card__header">
+//     <div class="pui-card__group">
 //       <i class="fas fa-film"></i>
-//         <h2 class="rim-card__title">Featured Videos</h2>
+//         <h2 class="pui-card__title">Featured Videos</h2>
 //     </div>
 //   </div>
-//   <div class="rim-card__content">
+//   <div class="pui-card__content">
 //     <ul class="image-link-list block-container blocks-py-2 blocks-px-2 tablet-up-2 lg-tablet-up-3">
 //       <li class="block">
 //         <a href="#" class="image-link image-link--video">
@@ -133,25 +133,25 @@
 // Content Overflow
 //
 // If you have a lot of content in a card that is causing other cards to grow too much, you could add the class
-// `rim-card__content--scroll` to the `rim-card__content` in order to set a hright and add an `overflow-y: auto;`.
+// `pui-card__content--scroll` to the `pui-card__content` in order to set a hright and add an `overflow-y: auto;`.
 //
 // Markup:
 // <div class="block-container mobile-up-3 blocks-px-2">
 //   <div class="block">
-//     <div class="rim-card flex flex--column flex--justify-between">
-//         <div class="rim-card__header">
-//             <div class="rim-card__group">
-//                 <h2 class="rim-card__title rim-card__title--normal">Test header</h2>
+//     <div class="pui-card flex flex--column flex--justify-between">
+//         <div class="pui-card__header">
+//             <div class="pui-card__group">
+//                 <h2 class="pui-card__title pui-card__title--normal">Test header</h2>
 //             </div>
-//             <div class="rim-card__header-actions"><a role="button" aria-label="remove"
-//                     class="rim-card-action text-light"><i class="fas fa-trash-alt" aria-hidden="true"></i></a>
-//                 <a role="button" aria-label="edit" class="rim-card-action text-light"><i class="fas fa-edit"
+//             <div class="pui-card__header-actions"><a role="button" aria-label="remove"
+//                     class="pui-card-action text-light"><i class="fas fa-trash-alt" aria-hidden="true"></i></a>
+//                 <a role="button" aria-label="edit" class="pui-card-action text-light"><i class="fas fa-edit"
 //                         aria-hidden="true"></i></a></div>
 //         </div>
-//         <div class="rim-card__content">
+//         <div class="pui-card__content">
 //             <p>Yada Yada</p>
 //         </div>
-//         <div class="rim-card__footer rim-card__footer">
+//         <div class="pui-card__footer pui-card__footer">
 //             <div>
 //                 <p><i class="fas fa-calendar-alt text-skyblue" aria-hidden="true"></i> <time
 //                         datetime="22 Jul 2019">22 Jul 2019</time></p>
@@ -172,17 +172,17 @@
 //     </div>
 //   </div>
 //   <div class="block">
-//     <div class="rim-card flex flex--column flex--justify-between">
-//         <div class="rim-card__header">
-//             <div class="rim-card__group">
-//                 <h2 class="rim-card__title rim-card__title--normal">Testing stuff</h2>
+//     <div class="pui-card flex flex--column flex--justify-between">
+//         <div class="pui-card__header">
+//             <div class="pui-card__group">
+//                 <h2 class="pui-card__title pui-card__title--normal">Testing stuff</h2>
 //             </div>
-//             <div class="rim-card__header-actions"><a role="button" aria-label="remove"
-//                     class="rim-card-action text-light"><i class="fas fa-trash-alt" aria-hidden="true"></i></a>
-//                 <a role="button" aria-label="edit" class="rim-card-action text-light"><i class="fas fa-edit"
+//             <div class="pui-card__header-actions"><a role="button" aria-label="remove"
+//                     class="pui-card-action text-light"><i class="fas fa-trash-alt" aria-hidden="true"></i></a>
+//                 <a role="button" aria-label="edit" class="pui-card-action text-light"><i class="fas fa-edit"
 //                         aria-hidden="true"></i></a></div>
 //         </div>
-//         <div class="rim-card__content rim-card__content--scroll">
+//         <div class="pui-card__content pui-card__content--scroll">
 //             <p>Desc</p>
 //             <p>Desc</p>
 //             <p>Desc</p>
@@ -215,7 +215,7 @@
 //             <p>Desc</p>
 //             <p>Desc</p>
 //         </div>
-//         <div class="rim-card__footer rim-card__footer">
+//         <div class="pui-card__footer pui-card__footer">
 //             <div>
 //                 <p><i class="fas fa-calendar-alt text-skyblue" aria-hidden="true"></i> <time
 //                         datetime="23 Jul 2019">23 Jul 2019</time></p>
@@ -236,20 +236,20 @@
 //     </div>
 //   </div>
 //   <div class="block">
-//     <div class="rim-card flex flex--column flex--justify-between">
-//         <div class="rim-card__header">
-//             <div class="rim-card__group">
-//                 <h2 class="rim-card__title rim-card__title--normal">Call Carol</h2>
+//     <div class="pui-card flex flex--column flex--justify-between">
+//         <div class="pui-card__header">
+//             <div class="pui-card__group">
+//                 <h2 class="pui-card__title pui-card__title--normal">Call Carol</h2>
 //             </div>
-//             <div class="rim-card__header-actions"><a role="button" aria-label="remove"
-//                     class="rim-card-action text-light"><i class="fas fa-trash-alt" aria-hidden="true"></i></a>
-//                 <a role="button" aria-label="edit" class="rim-card-action text-light"><i class="fas fa-edit"
+//             <div class="pui-card__header-actions"><a role="button" aria-label="remove"
+//                     class="pui-card-action text-light"><i class="fas fa-trash-alt" aria-hidden="true"></i></a>
+//                 <a role="button" aria-label="edit" class="pui-card-action text-light"><i class="fas fa-edit"
 //                         aria-hidden="true"></i></a></div>
 //         </div>
-//         <div class="rim-card__content">
+//         <div class="pui-card__content">
 //             <p>Carol from accounting need to get some updates.</p>
 //         </div>
-//         <div class="rim-card__footer rim-card__footer">
+//         <div class="pui-card__footer pui-card__footer">
 //             <div>
 //                 <p><i class="fas fa-calendar-alt text-skyblue" aria-hidden="true"></i> <time
 //                         datetime="23 Jul 2019">23 Jul 2019</time></p>
@@ -274,7 +274,7 @@
 // Styleguide Components.Cards.Overflow
 
 
-.rim-card {
+.pui-card {
   background-color: map.get(variables.$greyscale, "white");
   border: 1px solid color.adjust(map.get(variables.$greyscale, "light"), $lightness: math.percentage(config.$hue-threshold * 2));
   padding: config.$card-padding;
@@ -298,7 +298,7 @@
       }
     }
 
-    .rim-card__group {
+    .pui-card__group {
       align-items: center;
     }
   }

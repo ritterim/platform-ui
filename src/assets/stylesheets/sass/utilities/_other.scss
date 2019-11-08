@@ -41,7 +41,7 @@
 // If you want to remove the background color and border color on an element, add the class `transparent`.
 //
 // Markup:
-// <div class="block-container rim-card background-lighter">
+// <div class="block-container pui-card background-lighter">
 //   <div class="block-6">
 //     <button class="button">Button</button>
 //   </div>
@@ -188,7 +188,7 @@
 // If you want to ensure that the mouse is a pointer on hover add the class `pointer`.
 //
 // Markup:
-// <div class="rim-card">
+// <div class="pui-card">
 //   <h3>Hover over the text below</h3>
 //   <p class="pointer">This is a standard p and doesn't have a pointer, unless you hover.</p>
 // </div>
@@ -313,9 +313,9 @@
 // <section>
 //   <div class="block-container">
 //     <div class="block block-4">
-//       <div class="rim-card hover-scale">
+//       <div class="pui-card hover-scale">
 //         <h4 class="pb-2 mb-2">Hover over this</h4>
-//         <div class="rim-card__content">
+//         <div class="pui-card__content">
 //           <p>Notice how it scales on hover</p>
 //         </div>
 //       </div>
@@ -336,7 +336,7 @@
 // Transition
 //
 // Using the `transition` class adds `transition: .2s;` to an element. You could use this to make specific hover effects by toggling a class.
-// For example, if you wanted the border-color on a `rim-card` to change on a click, you could add the `transition` class, and toggle the class `border--color-{color}`.
+// For example, if you wanted the border-color on a `pui-card` to change on a click, you could add the `transition` class, and toggle the class `border--color-{color}`.
 //
 // Styleguide Utilities.Transition
 

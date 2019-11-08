@@ -23,7 +23,7 @@
     top: 0;
   }
 
-  .rim-content-grid {
+  .pui-content-grid {
     display: flex;
     flex-flow: row wrap;
     padding: map.get(variables.$spacers, 5 ) variables.$spacer;

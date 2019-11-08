@@ -7,47 +7,47 @@
 
 // Tabs
 // 
-// The content for a tabbed section needs to live inside the `.rim-tabs` class. The tabs should 
-// be added to a `.rim-card` with the class `has-tabs` added. This class gives the card the proper
+// The content for a tabbed section needs to live inside the `.pui-tabs` class. The tabs should 
+// be added to a `.pui-card` with the class `has-tabs` added. This class gives the card the proper
 // margin-top necessary for the look of the tabs being outside the card.
 // 
 // The aria attributes are important to the funcationality of the tabs as well. The active tab styles
 // come from `aria-selected="true"` being set on the tab. The corresponding tab content is displayed
 // by the removal of the `hidden` attribute.
 // 
-// Be sure that the `href` value on the `rim-tab__acnchor` matches that of the corresponding
-// `rim-tab-panel` id. This is key for links that contain the hash in the url.
+// Be sure that the `href` value on the `pui-tab__acnchor` matches that of the corresponding
+// `pui-tab-panel` id. This is key for links that contain the hash in the url.
 // 
-// The tabs themselves or the `.rim-tab` have a specific width of `16rem` as well as a specific
+// The tabs themselves or the `.pui-tab` have a specific width of `16rem` as well as a specific
 // height of `4rem`. The width can be changed using the [blocks layout method](/styleguide/section-layout.html#kssref-layout-blocks).
 // 
 // Markup: 
-// <div class="rim-card has-tabs">
-//   <div class="rim-tabs">
-//     <ul class="rim-tab-list" role="tablist" aria-label="Sample Tabs">
-//      <li class="rim-tab">
-//        <a href="#contracts-active" class="rim-tab__anchor" role="tab" aria-selected="true" aria-controls="contracts-active" id="rim-tab-1" tabindex="0">
-//          <i class="fas fa-folder-open" aria-hidden="hidden"></i><span class="rim-tab__title">Animal</span>
+// <div class="pui-card has-tabs">
+//   <div class="pui-tabs">
+//     <ul class="pui-tab-list" role="tablist" aria-label="Sample Tabs">
+//      <li class="pui-tab">
+//        <a href="#contracts-active" class="pui-tab__anchor" role="tab" aria-selected="true" aria-controls="contracts-active" id="pui-tab-1" tabindex="0">
+//          <i class="fas fa-folder-open" aria-hidden="hidden"></i><span class="pui-tab__title">Animal</span>
 //        </a>
 //      </li>
-//      <li class="rim-tab">
-//        <a href="#contracts-inactive" class="rim-tab__anchor" role="tab" aria-selected="false" aria-controls="contracts-inactive" id="rim-tab-2" tabindex="-1">
-//          <i class="fas fa-folder" aria-hidden="hidden"></i><span class="rim-tab__title">Another Animal</span>
+//      <li class="pui-tab">
+//        <a href="#contracts-inactive" class="pui-tab__anchor" role="tab" aria-selected="false" aria-controls="contracts-inactive" id="pui-tab-2" tabindex="-1">
+//          <i class="fas fa-folder" aria-hidden="hidden"></i><span class="pui-tab__title">Another Animal</span>
 //        </a>
 //      </li>
-//      <li class="rim-tab">
-//        <a href="#contracts-downlines" class="rim-tab__anchor" role="tab" aria-selected="false" aria-controls="contracts-downlines" id="rim-tab-3" tabindex="-1">
-//          <i class="fad fa-users" aria-hidden="hidden"></i><span class="rim-tab__title">Third Animal</span>
+//      <li class="pui-tab">
+//        <a href="#contracts-downlines" class="pui-tab__anchor" role="tab" aria-selected="false" aria-controls="contracts-downlines" id="pui-tab-3" tabindex="-1">
+//          <i class="fad fa-users" aria-hidden="hidden"></i><span class="pui-tab__title">Third Animal</span>
 //        </a>
 //      </li>
 //    </ul>
-//     <div class="rim-tab-panel" id="contracts-active" role="tabpanel" tabindex="0" aria-labelledby="rim-tab-1">
+//     <div class="pui-tab-panel" id="contracts-active" role="tabpanel" tabindex="0" aria-labelledby="pui-tab-1">
 //       <img src="https://placeimg.com/640/480/animals?t=1565635267224">
 //     </div>
-//     <div class="rim-tab-panel" id="contracts-inactive" role="tabpanel" tabindex="0" aria-labelledby="rim-tab-2" hidden>
+//     <div class="pui-tab-panel" id="contracts-inactive" role="tabpanel" tabindex="0" aria-labelledby="pui-tab-2" hidden>
 //       <img src="https://placeimg.com/640/480/animals?t=1565635322782">
 //     </div>
-//     <div class="rim-tab-panel" id="contracts-downlines" role="tabpanel" tabindex="0" aria-labelledby="rim-tab-3" hidden>
+//     <div class="pui-tab-panel" id="contracts-downlines" role="tabpanel" tabindex="0" aria-labelledby="pui-tab-3" hidden>
 //       <img src="https://placeimg.com/640/480/animals?t=1565635383449">
 //     </div>
 //   </div>
@@ -59,21 +59,21 @@
 $tab-height:          4rem;
 $tab-active-color:    map.get(config.$brand-colors, 'navy' );
 
-.rim-card.has-tabs {
+.pui-card.has-tabs {
   margin-top: $tab-height;
 }
 
-.rim-tab-list {
+.pui-tab-list {
   display: flex;
   list-style-type: none;
   padding: 0;
-  margin-bottom: variables.$spacer; // makes up for .rim-card padding-top
-  margin-left: calc(-#{variables.$spacer} - 1px); // .rim-card padding + 1px border
-  margin-top: calc(-#{$tab-height} - #{variables.$spacer}); // .rim-tab height + .rim-card padding
+  margin-bottom: variables.$spacer; // makes up for .pui-card padding-top
+  margin-left: calc(-#{variables.$spacer} - 1px); // .pui-card padding + 1px border
+  margin-top: calc(-#{$tab-height} - #{variables.$spacer}); // .pui-tab height + .pui-card padding
   width: calc(100% + (1rem + 1px) * 2);
 }
 
-.rim-tab {
+.pui-tab {
   flex: 1 1 auto;
   height: $tab-height;
   margin-bottom: 0;
@@ -158,7 +158,7 @@ $tab-active-color:    map.get(config.$brand-colors, 'navy' );
   }
 }
 
-.rim-tab-panel {
+.pui-tab-panel {
   
   &:focus {
     outline: none;

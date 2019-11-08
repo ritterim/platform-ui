@@ -9,12 +9,12 @@
 // Click the button to toggle the infor box.
 // 
 // Markup:
-// <div class="rim-info-box">
+// <div class="pui-info-box">
 //   <a class="button button--secondary toggle-hidden" role="button" aria-label="Toggle">
 //     <i class="fas fa-sliders-h" aria-hidden="hidden"></i>
 //   </a>
-//   <div class="rim-info-box__content hidden">
-//     <button class="button rim-info-box__close">
+//   <div class="pui-info-box__content hidden">
+//     <button class="button pui-info-box__close">
 //       Close <i class="fas fa-times" aria-hidden="hidden"></i>
 //     </button>
 //     <form action="" class="block-container block-mb-4 pui-form">
@@ -127,14 +127,14 @@
 // Styleguide Components.info
 
 
-.rim-style-modifier__example {
+.pui-style-modifier__example {
 
-  .rim-info-box {
+  .pui-info-box {
     width: 32px;
   }
 }
 
-.rim-info-box {
+.pui-info-box {
   position: relative;
 
   &__content {

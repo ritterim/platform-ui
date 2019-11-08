@@ -40,24 +40,24 @@
 // 
 // Styleguide Components.Lists.Post
 
-// rim-list
+// pui-list
 // 
-// The rim-list is a simplified list that strips the `list-style-type`, `margin`, and `padding`.
-// You can have a bordered list by adding the `rim-list--bordered` modifier. Be sure to add the class `rim-list__item` to the li.
+// The pui-list is a simplified list that strips the `list-style-type`, `margin`, and `padding`.
+// You can have a bordered list by adding the `pui-list--bordered` modifier. Be sure to add the class `pui-list__item` to the li.
 // This puts a top border on the list, as well as a border-bottom on each li.
 // 
 // Markup:
-// <ul class="rim-list">
-//   <li>This is a rim-list item.</li>
-//   <li>This is a rim-list item.</li>
-//   <li>This is a rim-list item.</li>
+// <ul class="pui-list">
+//   <li>This is a pui-list item.</li>
+//   <li>This is a pui-list item.</li>
+//   <li>This is a pui-list item.</li>
 // </ul>
 // <br>
 // <div class="mt-4">
-//   <ul class="rim-list rim-list--bordered">
-//     <li class="rim-list__item">This is a rim-list item.</li>
-//     <li class="rim-list__item">This is a rim-list item.</li>
-//     <li class="rim-list__item">This is a rim-list item.</li>
+//   <ul class="pui-list pui-list--bordered">
+//     <li class="pui-list__item">This is a pui-list item.</li>
+//     <li class="pui-list__item">This is a pui-list item.</li>
+//     <li class="pui-list__item">This is a pui-list item.</li>
 //   </ul>
 // </div>
 //
@@ -212,7 +212,7 @@ ul {
 }
 
 
-.rim-list {
+.pui-list {
   $list: &;
 
   list-style-type: none;

@@ -3,7 +3,7 @@
 @use "sass:map";
 // Tooltip
 //
-// Add your tooltip text to a `data-rim-tooltip` attribute on any item you want a tooltip.
+// Add your tooltip text to a `data-pui-tooltip` attribute on any item you want a tooltip.
 //
 // `data-placement` will set direction: `top`, `bottom`, `left`, `right`. Default placement is `top`.
   //
@@ -16,16 +16,16 @@
 //
 // Markup:
 // <div class="block-container pb-3 flex flex--justify-between">
-//   <div data-placement="right" data-rim-tooltip="This is a right facing tooltip.">right</div>
-//   <div data-placement="bottom" data-rim-tooltip="This is a bottom facing tooltip.">bottom</div>
-//   <div data-placement="top" data-rim-tooltip="This is a top facing tooltip.">top</div>
-//   <div data-placement="left" data-rim-tooltip="This is a left facing tooltip.">left</div>
+//   <div data-placement="right" data-pui-tooltip="This is a right facing tooltip.">right</div>
+//   <div data-placement="bottom" data-pui-tooltip="This is a bottom facing tooltip.">bottom</div>
+//   <div data-placement="top" data-pui-tooltip="This is a top facing tooltip.">top</div>
+//   <div data-placement="left" data-pui-tooltip="This is a left facing tooltip.">left</div>
 // </div>
 // <div class="block-container pb-3">
-//   <p>Lorem ipsum dolor sit amet, <span data-rim-tooltip="This is a default tooltip with data-inline." data-inline="true">consectetur</span> adipiscing elit. Maecenas mi nunc, egestas id consectetur a, consectetur a lorem. Maecenas interdum enim felis, eget fringilla massa rhoncus sed.
+//   <p>Lorem ipsum dolor sit amet, <span data-pui-tooltip="This is a default tooltip with data-inline." data-inline="true">consectetur</span> adipiscing elit. Maecenas mi nunc, egestas id consectetur a, consectetur a lorem. Maecenas interdum enim felis, eget fringilla massa rhoncus sed.
 // </div>
 // <div class="block-container pb-3">
-//   <div data-placement="top" data-rim-tooltip="Not a true help tooltip.">
+//   <div data-placement="top" data-pui-tooltip="Not a true help tooltip.">
 //     <i class=" fal fa-question-circle fa-lg" focusable="false" aria-hidden="true"></i>
 //   </div>
 // </div>
@@ -33,7 +33,7 @@
 // Styleguide Components.Tooltip
 
 
-[data-rim-tooltip] {
+[data-pui-tooltip] {
 
   $triangle: map.get(config.$radius, 'default');
   $background-color: rgba(map.get(variables.$greyscale, 'dark'), .9);
@@ -45,7 +45,7 @@
     background-color: $background-color;
     border-radius: $triangle;
     color: map.get(variables.$greyscale, 'white');
-    content: attr(data-rim-tooltip);
+    content: attr(data-pui-tooltip);
     font-size: map.get(config.$fonts, 'size');
     font-size: map.get(variables.$font-percentage, 'sm');
     font-weight: normal;
@@ -138,6 +138,6 @@
 }
 
 // not fully realized :(
-.rim-tooltip--help {
+.pui-tooltip--help {
   color: map.get(config.$brand-colors, 'med-blue') !important;
 }

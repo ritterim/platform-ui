@@ -7,15 +7,15 @@
 //
 // So far the only instance where this layout is needed is for pages that contain a Notes module.
 // This layout uses `css grid`. All of the content on the page must be nested inside an element with
-// the class `rim-content-grid`. From here, the heading of the page needs the class `rim-content-grid__heading`.
-// The main content needs the class `rim-content-grid__content`, where the side content, in this case
-// the Notes module, needs `rim-content-grid__side-content`.
+// the class `pui-content-grid`. From here, the heading of the page needs the class `pui-content-grid__heading`.
+// The main content needs the class `pui-content-grid__content`, where the side content, in this case
+// the Notes module, needs `pui-content-grid__side-content`.
 //
-// `rim-content-grid`, by itself, will span the the width of all of the columns within the grid. In order to get
-// page to fit with `rim-content-grid__side-content`, you need to add the class `has-side-content` to
-// `rim-content-grid`.
+// `pui-content-grid`, by itself, will span the the width of all of the columns within the grid. In order to get
+// page to fit with `pui-content-grid__side-content`, you need to add the class `has-side-content` to
+// `pui-content-grid`.
 //
-// Below `1800px` or our `desktop` breakpoint, `rim-content-grid__content` will still span the entire width even if
+// Below `1800px` or our `desktop` breakpoint, `pui-content-grid__content` will still span the entire width even if
 // `has-side-content` is applied. This is because the notes module is off the screen below this screen width but
 // visible at higher resolutions.
 //
@@ -23,10 +23,10 @@
 //
 //
 // Markup:
-// <div class="rim-content-grid has-side-content">
-//   <h1 class="rim-content-grid__heading text--center">Contracts</h1>
-//   <div class="rim-content-grid__content">
-//     <div class="rim-card">
+// <div class="pui-content-grid has-side-content">
+//   <h1 class="pui-content-grid__heading text--center">Contracts</h1>
+//   <div class="pui-content-grid__content">
+//     <div class="pui-card">
 //       <div class="block-container flex--justify-end mb-4">
 //         <div class="block block-3 button-group">
 //           <button class="button button--secondary has-text hide-desktop-up js-open-right-drawer" data-open="notes">
@@ -122,7 +122,7 @@
 //       </table>
 //     </div>
 //   </div>
-//   <div class="rim-drawer rim-drawer-right slide-right-enter-active background-light-yellow pt-5 pb-3 px-4 js-drawer-right" hidden>
+//   <div class="pui-drawer pui-drawer-right slide-right-enter-active background-light-yellow pt-5 pb-3 px-4 js-drawer-right" hidden>
 //     <div class="h-100" data-inner="notes">
 //       <div class="flex flex--align-center flex--justify-between pb-3 mb-2">
 //         <div class="flex flex--align-center">
@@ -134,9 +134,9 @@
 //         <button class="button js-drawer-right-close">Close <i class="fas fa-times" aria-hidden="true"></i></button>
 //       </div>
 //       <div class="side-content">
-//         <ol class="h-100 overflow-y overflow-x--hidden rim-list rim-list--bordered" data-list="notes">
-//           <li class="rim-list__item rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
-//             <div class="rim-note__inner pt-4 pb-5">
+//         <ol class="h-100 overflow-y overflow-x--hidden pui-list pui-list--bordered" data-list="notes">
+//           <li class="pui-list__item pui-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
+//             <div class="pui-note__inner pt-4 pb-5">
 //               <div class="js-toggle-wrapper">
 //                 <div class="flex flex--align-start mb-2">
 //                   <i class="far fa-comment-alt-lines text-light"></i>
@@ -182,7 +182,7 @@
 //                 </div>
 //               </div>
 //             </div>
-//             <button class="rim-note__toggle">
+//             <button class="pui-note__toggle">
 //               <i class="far fa-chevron-double-down"></i>
 //             </button>
 //           </li>
@@ -206,7 +206,7 @@
 //         </div>
 //       </div>
 //     </div>
-//     <div class="h-100 rim-tasks" data-inner="tasks" hidden>
+//     <div class="h-100 pui-tasks" data-inner="tasks" hidden>
 //       <div class="flex flex--align-center flex--justify-between pb-3 mb-2">
 //         <div class="flex flex--align-center">
 //           <button class="button button--secondary js-toggle-task" data-toggle="tasks">
@@ -217,8 +217,8 @@
 //         <button class="button js-drawer-right-close">Close <i class="fas fa-times" aria-hidden="true"></i></button>
 //       </div>
 //       <div class="side-content">
-//         <ol class="h-100 overflow-y overflow-x--hidden rim-list rim-list--bordered" data-list="tasks">
-//           <li class="rim-list__item" data-task="task-1">
+//         <ol class="h-100 overflow-y overflow-x--hidden pui-list pui-list--bordered" data-list="tasks">
+//           <li class="pui-list__item" data-task="task-1">
 //             <div class="text-base py-3 px-1">
 //               <div class="flex flex--justify-between mb-2">
 //                 <div class="flex flex--align-center">
@@ -279,7 +279,7 @@
 //               </div>
 //             </div>
 //           </li>
-//           <li class="rim-list__item" data-task="task-2">
+//           <li class="pui-list__item" data-task="task-2">
 //             <div class="text-base py-3 px-1">
 //               <div class="flex flex--justify-between mb-2">
 //                 <div class="flex flex--align-center">
@@ -376,7 +376,7 @@
 //       </div>
 //     </div>
 //   </div>
-//   <div class="rim-content-grid__side-content background-light-yellow pt-5 pb-3 px-4 js-side-content">
+//   <div class="pui-content-grid__side-content background-light-yellow pt-5 pb-3 px-4 js-side-content">
 //     <div class="h-100" data-inner="notes">
 //       <div class="flex flex--align-center flex--justify-between pb-3 mb-2">
 //         <div class="flex flex--align-center">
@@ -388,9 +388,9 @@
 //         <button class="button js-open-right-drawer" data-open="notes">View All <span>27</span> <i class="far fa-arrow-right"></i></button>
 //       </div>
 //       <div class="side-content">
-//         <ol class="h-100 overflow-y overflow-x--hidden rim-list rim-list--bordered" data-list="notes">
-//           <li class="rim-list__item rim-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
-//             <div class="rim-note__inner pt-4 pb-5">
+//         <ol class="h-100 overflow-y overflow-x--hidden pui-list pui-list--bordered" data-list="notes">
+//           <li class="pui-list__item pui-note" title="Last Edited by Tiffaney Livingston 07/10/2019">
+//             <div class="pui-note__inner pt-4 pb-5">
 //               <div class="js-toggle-wrapper">
 //                 <div class="flex flex--align-start mb-2">
 //                   <i class="far fa-comment-alt-lines text-light"></i>
@@ -436,7 +436,7 @@
 //                 </div>
 //               </div>
 //             </div>
-//             <button class="rim-note__toggle">
+//             <button class="pui-note__toggle">
 //               <i class="far fa-chevron-double-down"></i>
 //             </button>
 //           </li>
@@ -460,7 +460,7 @@
 //         </div>
 //       </div>
 //     </div>
-//     <div class="h-100 rim-tasks" data-inner="tasks" hidden>
+//     <div class="h-100 pui-tasks" data-inner="tasks" hidden>
 //       <div class="flex flex--align-center flex--justify-between pb-3 mb-2">
 //         <div class="flex flex--align-center">
 //           <button class="button button--secondary js-toggle-form">
@@ -471,8 +471,8 @@
 //         <button class="button js-open-right-drawer" data-open="tasks">View All <span>11</span> <i class="far fa-arrow-right"></i></button>
 //       </div>
 //       <div class="side-content">
-//         <ol class="h-100 overflow-y overflow-x--hidden rim-list rim-list--bordered" data-list="tasks">
-//           <li class="rim-list__item" data-task="task-1">
+//         <ol class="h-100 overflow-y overflow-x--hidden pui-list pui-list--bordered" data-list="tasks">
+//           <li class="pui-list__item" data-task="task-1">
 //             <div class="text-base py-3 px-1">
 //               <div class="flex flex--justify-between mb-2">
 //                 <div class="flex flex--align-center">
@@ -533,7 +533,7 @@
 //               </div>
 //             </div>
 //           </li>
-//           <li class="rim-list__item" data-task="task-2">
+//           <li class="pui-list__item" data-task="task-2">
 //             <div class="text-base py-3 px-1">
 //               <div class="flex flex--justify-between mb-2">
 //                 <div class="flex flex--align-center">
@@ -791,7 +791,7 @@
 }
 
 
-.rim-content-grid {
+.pui-content-grid {
   padding: map.get(variables.$spacers, 5 ) variables.$spacer;
 
   @supports (display: grid) {

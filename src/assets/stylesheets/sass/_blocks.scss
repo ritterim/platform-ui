@@ -49,27 +49,27 @@
 // You can still use the other spacing utility classes on the `block-container` as well, if you need to add specific padding, or margin
 // to the `block-container`.
 //
-// **Note:** Some examples also use the class `rim-card`. This is for style guide purposes only.
+// **Note:** Some examples also use the class `pui-card`. This is for style guide purposes only.
 //
 // Markup:
 // <div class="block-container blocks-px-2 blocks-py-2 tablet-up-3 laptop-up-4">
 //   <div class="block">
-//     <div class="rim-card">
+//     <div class="pui-card">
 //       Test
 //     </div>
 //   </div>
 //   <div class="block">
-//     <div class="rim-card">
+//     <div class="pui-card">
 //       Test
 //     </div>
 //   </div>
 //   <div class="block">
-//     <div class="rim-card">
+//     <div class="pui-card">
 //       Test
 //     </div>
 //   </div>
 //   <div class="block">
-//     <div class="rim-card">
+//     <div class="pui-card">
 //       Test
 //     </div>
 //   </div>
@@ -87,21 +87,21 @@
 // will take up at that resolution. If you want the blocks to take up an entire row, the values in the classes should
 // equal 12. Each value represents the amount of columns the block will take up in the row.
 //
-// **Note:** Some examples also use the class `rim-card`. This is for style guide purposes only. In the example below
+// **Note:** Some examples also use the class `pui-card`. This is for style guide purposes only. In the example below
 //
 //
 // Markup:
 // <div class="block-container">
-//   <div class="rim-card block block-6">
+//   <div class="pui-card block block-6">
 //     block-6
 //   </div>
-//   <div class="rim-card block block-6">
+//   <div class="pui-card block block-6">
 //     block-6
 //   </div>
-//   <div class="rim-card block block-4">
+//   <div class="pui-card block block-4">
 //     block-4
 //   </div>
-//   <div class="rim-card block block-8">
+//   <div class="pui-card block block-8">
 //     block-8
 //   </div>
 // </div>
@@ -186,22 +186,22 @@
 // Markup:
 // <div class="block-container">
 //   <div class="block block-6 px-3 my-3">
-//     <div class="rim-card">
+//     <div class="pui-card">
 //       block-6
 //     </div>
 //   </div>
 //   <div class="block block-6 px-2 my-3">
-//     <div class="rim-card">
+//     <div class="pui-card">
 //       block-6
 //     </div>
 //   </div>
 //   <div class="block block-4 px-2 my-3">
-//     <div class="rim-card">
+//     <div class="pui-card">
 //       block-4
 //     </div>
 //   </div>
 //   <div class="block block-8 px-5 my-3">
-//     <div class="rim-card">
+//     <div class="pui-card">
 //       block-8
 //     </div>
 //   </div>
@@ -223,22 +223,22 @@
 // Markup:
 // <div class="block-container blocks-px-2 blocks-mb-3">
 //   <div class="block block-6">
-//     <div class="rim-card">
+//     <div class="pui-card">
 //       block-6
 //     </div>
 //   </div>
 //   <div class="block block-6">
-//     <div class="rim-card">
+//     <div class="pui-card">
 //       block-6
 //     </div>
 //   </div>
 //   <div class="block block-4">
-//     <div class="rim-card">
+//     <div class="pui-card">
 //       block-4
 //     </div>
 //   </div>
 //   <div class="block block-8">
-//     <div class="rim-card">
+//     <div class="pui-card">
 //       block-8
 //     </div>
 //   </div>
@@ -269,22 +269,22 @@
 // Markup:
 // <div class="block-container blocks-px-2 blocks-py-2 tablet-up-3 laptop-up-4">
 //   <div class="block">
-//     <div class="rim-card">
+//     <div class="pui-card">
 //       Test
 //     </div>
 //   </div>
 //   <div class="block">
-//     <div class="rim-card">
+//     <div class="pui-card">
 //       Test
 //     </div>
 //   </div>
 //   <div class="block block--shrink">
-//     <div class="rim-card">
+//     <div class="pui-card">
 //       Test
 //     </div>
 //   </div>
 //   <div class="block">
-//     <div class="rim-card">
+//     <div class="pui-card">
 //       Test
 //     </div>
 //   </div>
@@ -301,37 +301,37 @@
 // Markup:
 // <div class="block-container blocks-px-2 blocks-py-2 tablet-up-3 laptop-up-4">
 //   <div class="block">
-//     <div class="rim-card">
+//     <div class="pui-card">
 //       Test
 //     </div>
 //   </div>
 //   <div class="block">
-//     <div class="rim-card">
+//     <div class="pui-card">
 //       Test
 //     </div>
 //   </div>
 //   <div class="block">
-//     <div class="rim-card">
+//     <div class="pui-card">
 //       Test
 //     </div>
 //   </div>
 //   <div class="block">
-//     <div class="rim-card">
+//     <div class="pui-card">
 //       Test
 //     </div>
 //   </div>
 //   <div class="block">
-//     <div class="rim-card">
+//     <div class="pui-card">
 //       Test
 //     </div>
 //   </div>
 //   <div class="block">
-//     <div class="rim-card">
+//     <div class="pui-card">
 //       Test
 //     </div>
 //   </div>
 //   <div class="block block--fill">
-//     <div class="rim-card">
+//     <div class="pui-card">
 //       Test
 //     </div>
 //   </div>
@@ -361,14 +361,14 @@
       width: auto !important;
     }
   }
-  @each $key, $val in variables.$rim-columns {
+  @each $key, $val in variables.$pui-columns {
     .block-#{$val} {
       width: calc(#{$key} * 100%);
     }
   }
 
   @each $breakpoint, $name in config.$breakpoints {
-    @each $key, $val in variables.$rim-columns {
+    @each $key, $val in variables.$pui-columns {
       .block-#{$breakpoint}-#{$val} {
         @include mixins.breakpoint(#{$name}, min) {
           width: calc(#{$key} * 100%);
@@ -433,7 +433,7 @@
   // container to change the width of the block
   // elements inside the block-container
   @each $breakpoint, $name in config.$breakpoints {
-    @each $key, $val in variables.$rim-columns {
+    @each $key, $val in variables.$pui-columns {
       &.#{$breakpoint}-up-#{$val} {
 
         > .block {

@@ -3,7 +3,7 @@
 @use "variables";
 @use "sass:map";
 
-.rim-search {
+.pui-search {
   display: flex;
   &--results {
     background: map.get(variables.$greyscale, 'light');
