@@ -43,15 +43,15 @@
   {{#unless template.isHomepage}}
   <aside class="crm-actions border-r border--color-lighter">
     <nav class="h-100 overflow-y--scroll pb-7" aria-label="Style Guide">
-      <ul class="rim-list">
-        <li class="rim-list__item mb-0">
+      <ul class="pui-list">
+        <li class="pui-list__item mb-0">
           <a class="flex px-3 py-3 pos-rel{{#unless template.homepage}} hover-scale text-base{{/unless}}{{#if template.isHomepage}} background-skyblue text-navy text--bold{{/if}}" href="./">
             <strong>Home v{{ options.version }}</strong>
             <i class="pos-abs pin-right pin-center-top mr-3 fad fa-home"></i>
           </a>
         </li>
       {{#each menu}}
-        <li class="rim-list__item mb-0">
+        <li class="pui-list__item mb-0">
           <a class="flex px-3 py-3 pos-rel{{#unless isActive}} hover-scale text-base{{/unless}}{{#if isActive}} background-skyblue text-navy text--bold{{/if}}" href="section-{{referenceURI}}.html">
             <strong>{{referenceNumber}}</strong><span class="ml-2">{{header}}</span>
             <i class="pos-abs pin-right pin-center-top mr-3 fal fa-angle-down fa-lg{{#if isActive}} fa-rotate-180{{/if}}"></i>
@@ -59,7 +59,7 @@
           </a>
           {{#if isActive}}
             {{#if children}}
-              <ul class="rim-list pl-1 background-lighter style-nav__child-list">
+              <ul class="pui-list pl-1 background-lighter style-nav__child-list">
               {{#each children}}
                 <li class="mb-0">
                   <a class="flex px-3 py-3 hover-scale text-base" href="section-{{../referenceURI}}.html#kssref-{{referenceURI}}">
@@ -93,7 +93,7 @@
 
             {{#each menu}}
               <div class="block{{#if isActive}} active{{/if}}">
-                <a class="rim-card flex--center-content flex--column rounded-1 text-salmon--hover" href="section-{{referenceURI}}.html">
+                <a class="pui-card flex--center-content flex--column rounded-1 text-salmon--hover" href="section-{{referenceURI}}.html">
                   <img class="py-2" src="site-assets/stylesheets/svg/{{header}}.svg" alt="">
                   <span class="py-1">{{header}}</span>
                   <span class="py-1">Learn More <i class="far fa-arrow-right"></i><i class="far fa-angle-right"></i></span>
@@ -113,11 +113,11 @@
     }}
     {{#each sections}}
       <div id="kssref-{{referenceURI}}" class="pb-3{{#unless @first}} border-b border--color-lighter pt-7 mt-2{{/unless}}{{#if @first}} pt-5{{/if}}{{#if @last}} no-border{{/if}} {{#if @root.template.isItem}}is-fullscreen{{/if}}">
-        <h{{#if @first}}1{{else}}2{{/if}} class="rim-style-title {{#if @first}}text--bold text--size-xxl{{/if}} mb-3">
-          <a class="rim-style-title__permalink {{#if @first}} text-navy{{else}} text-dark{{/if}}" href="#kssref-{{referenceURI}}">
-            <div class="rim-style-title__ref text-base text--size-xxs">
+        <h{{#if @first}}1{{else}}2{{/if}} class="pui-style-title {{#if @first}}text--bold text--size-xxl{{/if}} mb-3">
+          <a class="pui-style-title__permalink {{#if @first}} text-navy{{else}} text-dark{{/if}}" href="#kssref-{{referenceURI}}">
+            <div class="pui-style-title__ref text-base text--size-xxs">
               Section {{referenceNumber}}
-              <span class="rim-style-title__permalink-hash text-light">
+              <span class="pui-style-title__permalink-hash text-light">
                 {{#if @root.hasNumericReferences}}
                   #permalink
                 {{else}}
@@ -131,13 +131,13 @@
         </h{{#if @first}}1{{else}}2{{/if}}>
 
         {{#if description}}
-          <div class="rim-style-description pui-code-block--inline">
+          <div class="pui-style-description pui-code-block--inline">
             {{{description}}}
           </div>
         {{/if}}
 
         {{#if colors }}
-          <ul class="rim-list block-container tablet-up-3 laptop-up-4 blocks-px-2 blocks-py-2">
+          <ul class="pui-list block-container tablet-up-3 laptop-up-4 blocks-px-2 blocks-py-2">
             {{#each colors}}
               <li class="block">
                 <figure class="h-100 background-white border border--color-light my-0 mx-0 py-0 px-0">
@@ -183,19 +183,19 @@
               </div>
             {{/if}}
 
-            <div class="rim-style-modifier__example">
+            <div class="pui-style-modifier__example">
               {{{example}}}
-              <div class="rim-style-modifier__example-footer"></div>
+              <div class="pui-style-modifier__example-footer"></div>
             </div>
 
             {{#each modifiers}}
-              <div class="rim-style-modifier__name">
+              <div class="pui-style-modifier__name">
                 {{name}}
               </div>
-              <div class="rim-style-modifier__description mb-4">
+              <div class="pui-style-modifier__description mb-4">
                 {{{description}}}
               </div>
-              <div class="rim-style-modifier__example">
+              <div class="pui-style-modifier__example">
                 {{{markup}}}
               </div>
             {{/each}}
@@ -205,7 +205,7 @@
             <h4 class="mb-3">
               Markup:
             </h4>
-            <details class="rim-style-markup mb-4" open>
+            <details class="pui-style-markup mb-4" open>
               <summary class="hidden">
                 {{#if markupFile }}
                   Markup: <code>{{markupFile}}</code>

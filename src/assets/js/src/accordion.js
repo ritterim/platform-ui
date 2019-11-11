@@ -1,4 +1,4 @@
-let accordionHeader = document.querySelectorAll('.rim-accordion__header');
+let accordionHeader = document.querySelectorAll('.pui-accordion__header');
 
 if (accordionHeader) {
   accordionHeader.forEach(function(el) {

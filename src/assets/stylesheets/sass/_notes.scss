@@ -2,7 +2,7 @@
 @use "variables";
 @use "sass:map";
 
-.rim-note {
+.pui-note {
   $orange: map.get(config.$brand-colors, 'salmon' );
 
   position: relative;
@@ -10,19 +10,19 @@
   &:hover {
     cursor: pointer;
 
-    .rim-note__header i {
+    .pui-note__header i {
       color: $orange;
     }
 
     &:not(.note-open) {
 
-      .rim-note__inner {
+      .pui-note__inner {
         max-width: 90%;
         transform: translate(19px, 0) scale(1.1);
       }
     }
 
-    .rim-note__toggle {
+    .pui-note__toggle {
       color: $orange;
     }
   }

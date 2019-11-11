@@ -11,7 +11,7 @@
 // header,
 // .button,
 // .crm-banner,
-// .rim-drawer__open,
+// .pui-drawer__open,
 // .site-header
 // ```
 // There are also classes to `show` and `hide` during print:
@@ -35,7 +35,7 @@
     header,
     .button,
     .crm-banner,
-    .rim-drawer__open,
+    .pui-drawer__open,
     .site-header {
       display: none;
     }
@@ -57,9 +57,9 @@
       width: 100vw;
     }
   }
-  .rim-card.quote {
+  .pui-card.quote {
     border: none;
-    .pui-form, .rim-card {
+    .pui-form, .pui-card {
       width: 100vw;
     }
     .pui-form__field {

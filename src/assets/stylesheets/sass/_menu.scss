@@ -85,7 +85,7 @@
     @extend %flex-center;
 
     // flexing component
-    // rim-search {
+    // pui-search {
     //   display: flex;
     //   width: 100%;
     // }
@@ -279,7 +279,7 @@
       @include mixins.breakpoint(tablet, max) {
         padding: variables.$spacer 0;
 
-        &[data-rim-tooltip] {
+        &[data-pui-tooltip] {
           &:hover:after {
             background-color: inherit;
             border-radius: inherit;
@@ -305,7 +305,7 @@
           }
         }
         &:not(.active) {
-          &[data-rim-tooltip]:hover:after {
+          &[data-pui-tooltip]:hover:after {
             display: none;
           }
         }
@@ -352,7 +352,7 @@
     .toggle & {
       justify-content: space-around;
       padding: variables.$spacer map.get(variables.$spacers, 1 );
-      &[data-rim-tooltip] {
+      &[data-pui-tooltip] {
         &:hover:after {
           background-color: inherit;
           border-radius: inherit;
@@ -379,7 +379,7 @@
         }
       }
       &:not(.active) {
-        &[data-rim-tooltip]:hover:after {
+        &[data-pui-tooltip]:hover:after {
           display: none;
         }
       }

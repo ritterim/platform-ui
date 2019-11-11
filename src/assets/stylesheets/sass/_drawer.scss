@@ -8,34 +8,34 @@
 //
 // Drawers slide up or in-from-right.
 //
-// There are some key classes you need for the drawer to work properly. Be sure to use `rim-drawer rim-drawer--closed` on each drawer.
+// There are some key classes you need for the drawer to work properly. Be sure to use `pui-drawer pui-drawer--closed` on each drawer.
 // From this point, you want to add the proper animation class to the drawer. In the examples below, we have the classes set for the
-// direction of the drawer animation. Now all you need to do is toggle the class `rim-drawer--closed` to show or hide the drawer.
+// direction of the drawer animation. Now all you need to do is toggle the class `pui-drawer--closed` to show or hide the drawer.
 //
-// You can have a drawer open from the bottom by using the class `rim-drawer-bottom`. To have a drawer open from the right
-// use `rim-drawer-right`.
+// You can have a drawer open from the bottom by using the class `pui-drawer-bottom`. To have a drawer open from the right
+// use `pui-drawer-right`.
 //
-// If you want a smaller drawer you can add the class `rim-drawer--single-row`. This class has a min-height and is
+// If you want a smaller drawer you can add the class `pui-drawer--single-row`. This class has a min-height and is
 // best used in cases where less content will be needed.
 //
 // Markup:
-// <button class="button button--post button--lg rim-drawer__open" data-drawer="default">Toggle default drawer</button>
-// <button class="button button--post button--lg rim-drawer__open" data-drawer="single-row">Toggle single row drawer</button>
-// <div id="default" class="rim-drawer rim-drawer-bottom rim-drawer--closed animated slideInUp fastest">
-//   <div class="rim-drawer__inner animated slideInUp fastest">
-//     <div class="rim-drawer__header">
-//       <button class="button rim-drawer__close" data-drawer="default">Close <i class="fas fa-times" aria-hidden="true"></i></button>
+// <button class="button button--post button--lg pui-drawer__open" data-drawer="default">Toggle default drawer</button>
+// <button class="button button--post button--lg pui-drawer__open" data-drawer="single-row">Toggle single row drawer</button>
+// <div id="default" class="pui-drawer pui-drawer-bottom pui-drawer--closed animated slideInUp fastest">
+//   <div class="pui-drawer__inner animated slideInUp fastest">
+//     <div class="pui-drawer__header">
+//       <button class="button pui-drawer__close" data-drawer="default">Close <i class="fas fa-times" aria-hidden="true"></i></button>
 //       <h3 class="mb-2">Header.</h3>
 //     </div>
-//     <div class="rim-drawer__content">
+//     <div class="pui-drawer__content">
 //       <p>Content.</p>
 //     </div>
 //   </div>
 // </div>
-// <div id="single-row" class="rim-drawer rim-drawer-bottom rim-drawer--single-row rim-drawer--closed animated slideInUp fastest">
-//   <div class="rim-drawer__inner animated slideInUp fastest">
-//     <div class="rim-drawer__content">
-//       <button class="button rim-drawer__close" data-drawer="single-row">Close <i class="fas fa-times" aria-hidden="true"></i></button>
+// <div id="single-row" class="pui-drawer pui-drawer-bottom pui-drawer--single-row pui-drawer--closed animated slideInUp fastest">
+//   <div class="pui-drawer__inner animated slideInUp fastest">
+//     <div class="pui-drawer__content">
+//       <button class="button pui-drawer__close" data-drawer="single-row">Close <i class="fas fa-times" aria-hidden="true"></i></button>
 //       <p>Single row drawer without a header.</p>
 //     </div>
 //   </div>
@@ -49,8 +49,8 @@
 // This Drawer slides in from the right.
 //
 // Markup:
-// <button class="button button--post button--lg rim-drawer__open" data-drawer="right">Toggle right drawer</button>
-// <div id="right" class="rim-drawer rim-drawer-right slide-right-enter-active rim-drawer--closed background-light-yellow pt-5 pb-3 px-4">
+// <button class="button button--post button--lg pui-drawer__open" data-drawer="right">Toggle right drawer</button>
+// <div id="right" class="pui-drawer pui-drawer-right slide-right-enter-active pui-drawer--closed background-light-yellow pt-5 pb-3 px-4">
 //   <div class="flex flex--align-center flex--justify-between pb-3 mb-2">
 //     <div class="flex flex--align-center">
 //       <button class="button button--secondary js-toggle-form">
@@ -58,13 +58,13 @@
 //       </button>
 //       <h2 class="ml-2 text-navy">Notes</h2>
 //     </div>
-//     <button class="button rim-drawer__close" data-drawer="right">Close <i class="fas fa-times" aria-hidden="true"></i></button>
+//     <button class="button pui-drawer__close" data-drawer="right">Close <i class="fas fa-times" aria-hidden="true"></i></button>
 //   </div>
 // </div>
 //
 // Styleguide Components.Drawer.Right
 
-.rim-drawer {
+.pui-drawer {
   $self: &;
   background-color: config.$drawer-background;
   box-shadow: 0 -1rem 2rem rgba(map.get(variables.$greyscale, 'black'), .4);
@@ -82,7 +82,7 @@
     overflow-y: visible;
     overflow-x: hidden;
 
-    .rim-drawer-bottom & {
+    .pui-drawer-bottom & {
       max-height: 80vh;
     }
   }
@@ -137,7 +137,7 @@
 
 
 // Drawer animates from the right
-.rim-drawer-right {
+.pui-drawer-right {
   bottom: 0;
   box-shadow: 0 -.5rem 2rem rgba(map.get(variables.$greyscale, 'black'), math.percentage(config.$hue-threshold / 2));
   flex-direction: column;
@@ -155,7 +155,7 @@
 }
 
 #kss-node {
-  .rim-drawer__open {
+  .pui-drawer__open {
     position: relative;
     bottom: inherit;
     right: inherit;

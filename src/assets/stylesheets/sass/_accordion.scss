@@ -8,11 +8,11 @@
 // Accordion
 //
 // Leverage spacing utility classes for padding and margin for the content within the accordion.
-// To show the content of the accordion use vue transitions and toggle the class `active` on `rim-accordion`.
+// To show the content of the accordion use vue transitions and toggle the class `active` on `pui-accordion`.
 //
 // Markup:
-// <div class="rim-accordion">
-//   <div class="rim-accordion__header block-container pl-5 pr-3 py-3">
+// <div class="pui-accordion">
+//   <div class="pui-accordion__header block-container pl-5 pr-3 py-3">
 //     <div class="block block-5">
 //       <h3 class="mb-3">Aetna</h3>
 //       <span>Aetna Health and Life</span>
@@ -44,7 +44,7 @@
 //       </div>
 //     </div>
 //   </div>
-//   <div class="rim-accordion__content fade-in-from-none-enter-active">
+//   <div class="pui-accordion__content fade-in-from-none-enter-active">
 //     <div class="px-4">
 //       <p>content</p>
 //     </div>
@@ -57,14 +57,14 @@
 //
 // Adding `.active` changes the default header bar background and hover highlight.
 //
-// - .rim-accordion .active
+// - .pui-accordion .active
 //
 // Markup:
-// <div class="rim-accordion active">
-//   <div class="rim-accordion__header">
+// <div class="pui-accordion active">
+//   <div class="pui-accordion__header">
 //     header
 //   </div>
-//   <div class="rim-accordion__content fade-in-from-none-enter-active">
+//   <div class="pui-accordion__content fade-in-from-none-enter-active">
 //     content
 //   </div>
 // </div>
@@ -73,47 +73,47 @@
 
 // Nested
 //
-// You can nest accordions. By adding a `rim-accordion` inside a parent `rim-accordion`, you get the following look.
+// You can nest accordions. By adding a `pui-accordion` inside a parent `pui-accordion`, you get the following look.
 //
 // Markup:
-// <div class="rim-accordion">
-//   <div class="rim-accordion__header block-container pl-5 pr-3 py-3">
+// <div class="pui-accordion">
+//   <div class="pui-accordion__header block-container pl-5 pr-3 py-3">
 //     Header
 //   </div>
-//   <div class="rim-accordion__content fade-in-from-none-enter-active">
+//   <div class="pui-accordion__content fade-in-from-none-enter-active">
 //     <div class="px-4">
 //       <p>content</p>
 //     </div>
-//     <div class="rim-accordion">
-//       <div class="rim-accordion__header px-4 py-3 flex flex--justify-between flex--align-center">
+//     <div class="pui-accordion">
+//       <div class="pui-accordion__header px-4 py-3 flex flex--justify-between flex--align-center">
 //         <div class="flex flex--align-center">
 //           <i class="fal fa-users text-med-blue mr-2"></i><h4 class="text-med-blue">Downlines</h4>
 //         </div>
-//         <i class="far fa-chevron-down rim-accordion__icon text-med-blue"></i>
+//         <i class="far fa-chevron-down pui-accordion__icon text-med-blue"></i>
 //       </div>
-//       <div class="rim-accordion__content fade-in-from-none-enter-active px-4">
+//       <div class="pui-accordion__content fade-in-from-none-enter-active px-4">
 //         Inner Accordion Content
 //       </div>
 //     </div>
-//     <div class="rim-accordion">
-//       <div class="rim-accordion__header px-4 py-3 flex flex--justify-between flex--align-center">
+//     <div class="pui-accordion">
+//       <div class="pui-accordion__header px-4 py-3 flex flex--justify-between flex--align-center">
 //         <div class="flex flex--align-center">
 //           <i class="fal fa-file-import text-med-blue mr-2"></i><h4 class="text-med-blue">Request Contract Work</h4>
 //         </div>
-//         <i class="far fa-chevron-down rim-accordion__icon text-med-blue"></i>
+//         <i class="far fa-chevron-down pui-accordion__icon text-med-blue"></i>
 //       </div>
-//       <div class="rim-accordion__content fade-in-from-none-enter-active px-4">
+//       <div class="pui-accordion__content fade-in-from-none-enter-active px-4">
 //         Inner Accordion Content
 //       </div>
 //     </div>
-//     <div class="rim-accordion">
-//       <div class="rim-accordion__header px-4 py-3 flex flex--justify-between flex--align-center">
+//     <div class="pui-accordion">
+//       <div class="pui-accordion__header px-4 py-3 flex flex--justify-between flex--align-center">
 //         <div class="flex flex--align-center">
 //           <i class="fal fa-file-upload text-med-blue mr-2"></i><h4 class="text-med-blue">Attachments</h4>
 //         </div>
-//         <i class="far fa-chevron-down rim-accordion__icon text-med-blue"></i>
+//         <i class="far fa-chevron-down pui-accordion__icon text-med-blue"></i>
 //       </div>
-//       <div class="rim-accordion__content fade-in-from-none-enter-active px-4">
+//       <div class="pui-accordion__content fade-in-from-none-enter-active px-4">
 //         Inner Accordion Content
 //       </div>
 //     </div>
@@ -123,13 +123,13 @@
 // Styleguide Components.Accordion.Nested
 
 // KSS specific
-.rim-style-modifier__example {
-  .rim-accordion {
+.pui-style-modifier__example {
+  .pui-accordion {
     border-bottom-color: color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold * 2));
   }
 }
 
-.rim-accordion {
+.pui-accordion {
 
   $self: &;
   $accordion-primary-color: map.get(variables.$greyscale, 'base');
@@ -155,7 +155,7 @@
   &:not(.active):hover {
     border-color: $accordion-hover-border;
 
-    .rim-accordion__header {
+    .pui-accordion__header {
       background-color: $accordion-secondary-background;
     }
   }
@@ -164,14 +164,14 @@
     border-color: transparent;
     box-shadow: 0px 0px 0px 2px $accordion-hover-border;
 
-    > .rim-accordion__header {
+    > .pui-accordion__header {
       background-color: $accordion-secondary-background;
 
-      .rim-accordion__icon {
+      .pui-accordion__icon {
         @extend %rotate-180;
       }
 
-      + .rim-accordion__content {
+      + .pui-accordion__content {
         display: block;
       }
     }
@@ -197,7 +197,7 @@
 
 
   // nested accordions
-  .rim-accordion {
+  .pui-accordion {
     border: none;
     margin-bottom: map.get(variables.$spacers, 1 );
 
@@ -206,7 +206,7 @@
       box-shadow: none;
     }
 
-    .rim-accordion__header {
+    .pui-accordion__header {
       background-color: $accordion-secondary-background;
     }
   }

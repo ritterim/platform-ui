@@ -15,7 +15,7 @@ if (rimNotes) {
   }
   
   
-  var rimNoteToggle = document.querySelector('.rim-note__toggle');
+  var rimNoteToggle = document.querySelector('.pui-note__toggle');
   
   [].forEach.call(document.querySelectorAll('.js-toggle-wrapper'), function(el) {
     el.addEventListener('click', function() {
@@ -35,7 +35,7 @@ if (rimNotes) {
   });
     
   
-  [].forEach.call(document.querySelectorAll('.rim-note__toggle'), function(el) {
+  [].forEach.call(document.querySelectorAll('.pui-note__toggle'), function(el) {
     el.addEventListener('click', function() {
       var note = this.parentNode;
       let hidden = document.querySelector('.js-toggle-wrapper--bottom').getAttribute('hidden');
