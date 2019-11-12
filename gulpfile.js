@@ -1,5 +1,5 @@
 const { src, dest, series, parallel } = require('gulp');
-const autoprefixer = require("autoprefixer");
+const autoprefixer = require('autoprefixer');
 const babel = require('gulp-babel');
 const concat = require('gulp-concat');
 const connect = require('gulp-connect');
@@ -34,7 +34,8 @@ function serve() {
 }
 
 function copyStaticAssets() {
-  return src(['src/assets/images/**/*', 'src/assets/stylesheets/**/*', '!src/assets/stylesheets/sass/**'], { base: 'src/assets' })
+  return src([
+    'src/assets/images/**/*', 'src/assets/stylesheets/**/*', '!src/assets/stylesheets/sass/**'], { base: 'src/assets' })
     .pipe(dest('./styleguide/site-assets'))
     .pipe(connect.reload());
 }
@@ -75,6 +76,11 @@ function styleguide() {
   });
 }
 
+function iconFonts() {
+  return src('./node_modules/@ritterim/platform-icons/dist/*')
+    .pipe(dest('custom-builder/kss-assets/'));
+}
+
 function watchFiles() {
   watch('./src/assets/stylesheets/sass/*', css);
   watch('./src/assets/js/src/*', js);
@@ -84,7 +90,8 @@ function watchFiles() {
 exports.build = series(css, js, styleguide, copyStaticAssets);
 exports.css = css;
 exports.js = js;
+exports.iconFonts = iconFonts;
 exports.styleguide = styleguide;
 exports.serve = serve;
 exports.copyStaticAssets = copyStaticAssets;
-exports.default = parallel(series(css, styleguide, copyStaticAssets), js, serve, watchFiles);
+exports.default = parallel(series(css, styleguide, copyStaticAssets), iconFonts, js, serve, watchFiles);
