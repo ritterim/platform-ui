@@ -106,6 +106,7 @@
 // Styleguide Components.modal
 
 .pui-modal {
+  $header-height: 6rem;
 
   // print entire modal
   @media print {
@@ -130,9 +131,19 @@
   &--full {
 
     .pui-modal__inner {
-      height: auto;
       margin: auto;
       width: 100%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    .pui-modal__content {
+      height: calc(100% - #{$header-height});
+      overflow-x: hidden;
+      overflow-y: auto;
     }
   }
 
@@ -181,7 +192,7 @@
 
   &__header {
     background-color: map.get(config.$brand-colors, 'lightblue');
-    height: 6rem;
+    height: $header-height;
     padding: 2rem;
     position: relative;
     width: 100%;
