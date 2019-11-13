@@ -254,6 +254,13 @@
       bodyClass: 'kss-markup-mode',
       detailsClass: 'kss-markup'
     });
+
+    {{!-- Specific JS for tables. Markdown does not
+    support adding classes --}}
+    var table = document.querySelectorAll('table');
+    table.forEach(function(el) {
+      el.classList.add('pui-table');
+    });
   </script>
   {{{scripts}}}
 
