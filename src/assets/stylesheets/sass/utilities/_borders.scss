@@ -75,6 +75,12 @@
     }
   }
 
+  @each $unit, $rem in variables.$spacers {
+    &--width-#{$unit} {
+      border-width: $rem !important;
+    }
+  }
+
   @each $name, $color in colors.$all-colors {
     &--color-#{$name} {
       border-color: $color !important;
