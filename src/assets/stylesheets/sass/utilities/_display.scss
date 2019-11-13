@@ -23,36 +23,36 @@
 // | Class Name                     | Display Value              | Generated Media Query                                                     |
 // | ------------------------------ | -------------------------- | ------------------------------------------------------------------------- |
 // | `hidden`                       | `display: none;`           | No specified resolution                                                   |
-// | `show-print`                   | `diaplay: block;`          | `@media print`                                                            |
-// | `hide-print`                   | `diaplay: none;`           | `@media print`                                                            |
-// | `show-mobile-up`               | `diaplay: block;`          | `@media screen and (min-width: 0px)`                                      |
-// | `show-mobile-only`             | `diaplay: block;`          | `@media screen and (min-width: 0px) and (max-width: 767px)`               |
-// | `show-mobile-down`             | `diaplay: block;`          | `@media screen and (max-width: 767px)`                                    |
-// | `hide-mobile-up`               | `diaplay: none;`           | `@media screen and (min-width: 0px)`                                      |
-// | `hide-mobile-only`             | `diaplay: none;`           | `@media screen and (min-width: 0px) and (max-width: 767px)`               |
-// | `hide-mobile-down`             | `diaplay: none;`           | `@media screen and (max-width: 767px)`                                    |
-// | `show-tablet-up`               | `diaplay: block;`          | `@media screen and (min-width: 768px)`                                    |
-// | `show-tablet-only`             | `diaplay: block;`          | `@media screen and (min-width: 768px) and (max-width: 990px)`            |
-// | `show-tablet-down`             | `diaplay: block;`          | `@media screen and (max-width: 990px)`                                   |
-// | `hide-tablet-up`               | `diaplay: none;`           | `@media screen and (min-width: 768px)`                                    |
-// | `hide-tablet-only`             | `diaplay: none;`           | `@media screen and (min-width: 768px) and (max-width: 990px)`            |
-// | `hide-tablet-down`             | `diaplay: none;`           | `@media screen and (max-width: 990px)`                                   |
-// | `show-lg-tablet-up`            | `diaplay: block;`          | `@media screen and (min-width: 991px)`                                    |
-// | `show-lg-tablet-only`          | `diaplay: block;`          | `@media screen and (min-width: 991px) and (max-width: 1239px)`            |
-// | `show-lg-tablet-down`          | `diaplay: block;`          | `@media screen and (max-width: 1239px)`                                   |
-// | `hide-lg-tablet-up`            | `diaplay: none;`           | `@media screen and (min-width: 991px)`                                    |
-// | `hide-lg-tablet-only`          | `diaplay: none;`           | `@media screen and (min-width: 991px) and (max-width: 1239px)`            |
-// | `hide-lg-tablet-down`          | `diaplay: none;`           | `@media screen and (max-width: 1239px)`                                   |
-// | `show-laptop-up`               | `diaplay: block;`          | `@media screen and (min-width: 1240px)`                                   |
-// | `show-laptop-only`             | `diaplay: block;`          | `@media screen and (min-width: 1240px) and (max-width: 1799px)`           |
-// | `show-laptop-down`             | `diaplay: block;`          | `@media screen and (max-width: 1799px)`                                   |
-// | `hide-laptop-up`               | `diaplay: none;`           | `@media screen and (min-width: 1240px)`                                   |
-// | `hide-laptop-only`             | `diaplay: none;`           | `@media screen and (min-width: 1240px) and (max-width: 1799px)`           |
-// | `hide-laptop-down`             | `diaplay: none;`           | `@media screen and (max-width: 1799px)`                                   |
-// | `show-desktop-up`              | `diaplay: block;`          | `@media screen and (min-width: 1800px)`                                   |
-// | `show-desktop-only`            | `diaplay: block;`          | `@media screen and (min-width: 1800px) and (max-width: 1799px)`           |
-// | `hide-desktop-up`              | `diaplay: none;`           | `@media screen and (min-width: 1800px)`                                   |
-// | `hide-desktop-only`            | `diaplay: none;`           | `@media screen and (min-width: 1800px) and (max-width: 1799px)`           |
+// | `show-print`                   | `display: block;`          | `@media print`                                                            |
+// | `hide-print`                   | `display: none;`           | `@media print`                                                            |
+// | `show-mobile-up`               | `display: block;`          | `@media screen and (min-width: 0px)`                                      |
+// | `show-mobile-only`             | `display: block;`          | `@media screen and (min-width: 0px) and (max-width: 767px)`               |
+// | `show-mobile-down`             | `display: block;`          | `@media screen and (max-width: 767px)`                                    |
+// | `hide-mobile-up`               | `display: none;`           | `@media screen and (min-width: 0px)`                                      |
+// | `hide-mobile-only`             | `display: none;`           | `@media screen and (min-width: 0px) and (max-width: 767px)`               |
+// | `hide-mobile-down`             | `display: none;`           | `@media screen and (max-width: 767px)`                                    |
+// | `show-tablet-up`               | `display: block;`          | `@media screen and (min-width: 768px)`                                    |
+// | `show-tablet-only`             | `display: block;`          | `@media screen and (min-width: 768px) and (max-width: 990px)`            |
+// | `show-tablet-down`             | `display: block;`          | `@media screen and (max-width: 990px)`                                   |
+// | `hide-tablet-up`               | `display: none;`           | `@media screen and (min-width: 768px)`                                    |
+// | `hide-tablet-only`             | `display: none;`           | `@media screen and (min-width: 768px) and (max-width: 990px)`            |
+// | `hide-tablet-down`             | `display: none;`           | `@media screen and (max-width: 990px)`                                   |
+// | `show-lg-tablet-up`            | `display: block;`          | `@media screen and (min-width: 991px)`                                    |
+// | `show-lg-tablet-only`          | `display: block;`          | `@media screen and (min-width: 991px) and (max-width: 1239px)`            |
+// | `show-lg-tablet-down`          | `display: block;`          | `@media screen and (max-width: 1239px)`                                   |
+// | `hide-lg-tablet-up`            | `display: none;`           | `@media screen and (min-width: 991px)`                                    |
+// | `hide-lg-tablet-only`          | `display: none;`           | `@media screen and (min-width: 991px) and (max-width: 1239px)`            |
+// | `hide-lg-tablet-down`          | `display: none;`           | `@media screen and (max-width: 1239px)`                                   |
+// | `show-laptop-up`               | `display: block;`          | `@media screen and (min-width: 1240px)`                                   |
+// | `show-laptop-only`             | `display: block;`          | `@media screen and (min-width: 1240px) and (max-width: 1799px)`           |
+// | `show-laptop-down`             | `display: block;`          | `@media screen and (max-width: 1799px)`                                   |
+// | `hide-laptop-up`               | `display: none;`           | `@media screen and (min-width: 1240px)`                                   |
+// | `hide-laptop-only`             | `display: none;`           | `@media screen and (min-width: 1240px) and (max-width: 1799px)`           |
+// | `hide-laptop-down`             | `display: none;`           | `@media screen and (max-width: 1799px)`                                   |
+// | `show-desktop-up`              | `display: block;`          | `@media screen and (min-width: 1800px)`                                   |
+// | `show-desktop-only`            | `display: block;`          | `@media screen and (min-width: 1800px) and (max-width: 1799px)`           |
+// | `hide-desktop-up`              | `display: none;`           | `@media screen and (min-width: 1800px)`                                   |
+// | `hide-desktop-only`            | `display: none;`           | `@media screen and (min-width: 1800px) and (max-width: 1799px)`           |
 //
 //
 // Styleguide Utilities.Display
