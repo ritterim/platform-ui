@@ -57,7 +57,7 @@
 .site-menu {
   $menu-primary-color: map.get(variables.$greyscale, 'white');
 
-  $dropdown-background: color.adjust(map.get(config.$brand-colors, 'navy' ), $lightness: math.percentage(config.$hue-threshold * 5));
+  $dropdown-background: color.adjust(map.get(config.$brand-colors, 'navy' ), $lightness: math.percentage(config.$hue-threshold * 0.5));
   display: flex;
   flex-grow: 1;
   width: 100%;
