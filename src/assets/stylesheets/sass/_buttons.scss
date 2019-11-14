@@ -10,7 +10,7 @@
 //
 // Each button has a default button style. Color can be added to any button using a combination of background and text utilities.
 //
-// Add icons to buttons using [Font Awesome](https://fontawesome.com/icons) icons: `<i class="fas fa-plus"></i>`
+// Add icons to buttons using [platform icons](https://github.com/ritterim/platform-icons) icons: `<i class="pi-plus"></i>`
 //
 // Styleguide Components.Button
 
@@ -22,9 +22,9 @@
 // - .button .button--lg
 //
 // Markup:
-// <button class="button">Basic Button</button>
-// <button class="button">Add <i class="fas fa-plus"></i></button>
-// <button class="button button--lg">Add <i class="fas fa-plus"></i></button>
+// <button class="button mb-2">Basic Button</button>
+// <button class="button mb-2">Add <i class="pi-plus"></i></button>
+// <button class="button button--lg">Add <i class="pi-plus"></i></button>
 //
 // Styleguide Components.Button.Default
 
@@ -37,7 +37,7 @@
 // - .button .button--secondary .button--lg
 //
 // Markup:
-// <button class="button button--secondary"><i class="fas fa-download"></i></button>
+// <button class="button button--secondary"><i class="pi-download"></i></button>
 //
 // Styleguide Components.Button.Secondary
 
@@ -55,9 +55,9 @@
 //
 // Markup:
 // <div class="button-group">
-//   <button class="button button--secondary has-text">Open <i class="fas fa-download"></i></button>
-//   <button class="button button--secondary" data-button-text="Download"><i class="fas fa-download"></i></button>
-//   <button class="button button--secondary loading" data-button-text="Download"><i class="fas fa-download"></i></button>
+//   <button class="button button--secondary has-text">Open <i class="pi-download"></i></button>
+//   <button class="button button--secondary" data-button-text="Download"><i class="pi-download"></i></button>
+//   <button class="button button--secondary loading" data-button-text="Download"><i class="pi-download"></i></button>
 // </div>
 //
 // Weight: 4
@@ -72,7 +72,7 @@
 // - .button .button--post .button--lg
 //
 // Markup:
-// <button class="button button--post">Post Button</button>
+// <button class="button button--post mb-2">Post Button</button>
 // <button class="button button--post button--lg">Large Post Button</button>
 //
 // Styleguide Components.Button.Post
@@ -85,9 +85,9 @@
 //
 // Markup:
 // <div class="button-group">
-//   <a class="button button--secondary"><i class="fas fa-download"></i></a>
-//   <a class="button button--secondary"><i class="fas fa-chart-pie"></i></a>
-//   <a class="button button--secondary"><i class="fas fa-chart-line"></i></a>
+//   <a class="button button--secondary"><i class="pi-download"></i></a>
+//   <a class="button button--secondary"><i class="pi-lock"></i></a>
+//   <a class="button button--secondary"><i class="pi-save"></i></a>
 // </div>
 //
 // Styleguide Components.Button.Group
@@ -99,19 +99,19 @@
 //
 // Markup:
 // <div class="flexcol">
-//   <button class="button loading" aria-label="Loading...">
+//   <button class="button loading mb-2" aria-label="Loading...">
 //     Submit
 //     <span class="sr-only">Loading...</span>
 //   </button>
-//   <button class="button button--lg loading" aria-label="Loading...">
+//   <button class="button button--lg loading mb-2" aria-label="Loading...">
 //     Submit
 //     <span class="sr-only">Loading...</span>
 //   </button>
-//   <button class="button button--secondary loading" aria-label="Download" aria-label="Loading...">
-//     <i class="fas fa-download" aria-hidden="hidden"></i>
+//   <button class="button button--secondary loading mb-2" aria-label="Download" aria-label="Loading...">
+//     <i class="pi-download" aria-hidden="hidden"></i>
 //     <span class="sr-only">Loading...</span>
 //   </button>
-//   <button class="button button--post loading" aria-label="Loading...">
+//   <button class="button button--post loading mb-2" aria-label="Loading...">
 //     Submit
 //     <span class="sr-only">Loading...</span>
 //   </button>
@@ -133,7 +133,7 @@
 //
 // Markup:
 // <a class="button button--secondary" role="button" aria-label="Download">
-//  <i class="fas fa-download" aria-hidden="hidden"></i>
+//  <i class="pi-download" aria-hidden="hidden"></i>
 // </a>
 //
 // Styleguide Components.Button.Accessibility
@@ -143,14 +143,14 @@
 // By adding the class `active` to a button, the button's hover effect is mimicked.
 //
 // Markup:
-// <button class="button">Add <i class="fas fa-plus" aria-hidden="hidden"></i></button>
-// <button class="button button--lg active">Add <i class="fas fa-plus" aria-hidden="hidden"></i></button>
+// <button class="button mb-2">Add <i class="pi-plus" aria-hidden="hidden"></i></button>
+// <button class="button button--lg active">Add <i class="pi-plus" aria-hidden="hidden"></i></button>
 // <div class="button-group mt-4">
 //   <a class="button button--secondary" role="button" aria-label="Download">
-//     <i class="fas fa-download" aria-hidden="hidden"></i>
+//     <i class="pi-download" aria-hidden="hidden"></i>
 //   </a>
-//   <a class="button button--secondary active" role="button" aria-label="Pie Chart">
-//     <i class="fas fa-chart-pie" aria-hidden="hidden"></i>
+//   <a class="button button--secondary active" role="button" aria-label="locked">
+//     <i class="pi-lock" aria-hidden="hidden"></i>
 //   </a>
 // </div>
 //

@@ -18,7 +18,7 @@
 //       <span>Aetna Health and Life</span>
 //     </div>
 //     <div class="block block-2">
-//       <h3 class="mb-3">Status <span class="pill pill--circle__empty positive"></span></h3>
+//       <h3 class="mb-3">Status <span class="pill pill--circle-empty-dot positive"></span></h3>
 //       <span>Appointed</span>
 //     </div>
 //     <div class="block block-2">
@@ -33,12 +33,12 @@
 //       <div class="icon-menu">
 //         <div class="icon-menu__item">
 //           <a href="#" class="icon-menu__action text-negative--hover" role="button">
-//             <i class="fas fa-trash-alt" aria-hidden="true"></i>
+//             <i class="pi-trash" aria-hidden="true"></i>
 //           </a>
 //         </div>
 //         <div class="icon-menu__item">
 //           <a href="#" class="icon-menu__action text-positive--hover" role="button">
-//             <i class="fas fa-edit" aria-hidden="true"></i>
+//             <i class="pi-edit" aria-hidden="true"></i>
 //           </a>
 //         </div>
 //       </div>
@@ -61,10 +61,10 @@
 //
 // Markup:
 // <div class="pui-accordion active">
-//   <div class="pui-accordion__header">
+//   <div class="pui-accordion__header px-3 py-3">
 //     header
 //   </div>
-//   <div class="pui-accordion__content fade-in-from-none-enter-active">
+//   <div class="pui-accordion__content px-3 py-3 fade-in-from-none-enter-active">
 //     content
 //   </div>
 // </div>
@@ -87,9 +87,9 @@
 //     <div class="pui-accordion">
 //       <div class="pui-accordion__header px-4 py-3 flex flex--justify-between flex--align-center">
 //         <div class="flex flex--align-center">
-//           <i class="fal fa-users text-med-blue mr-2"></i><h4 class="text-med-blue">Downlines</h4>
+//           <i class="pi-users text-med-blue mr-2"></i><h4 class="text-med-blue">Downlines</h4>
 //         </div>
-//         <i class="far fa-chevron-down pui-accordion__icon text-med-blue"></i>
+//         <i class="pi-angle-down pui-accordion__icon text-med-blue"></i>
 //       </div>
 //       <div class="pui-accordion__content fade-in-from-none-enter-active px-4">
 //         Inner Accordion Content
@@ -98,9 +98,9 @@
 //     <div class="pui-accordion">
 //       <div class="pui-accordion__header px-4 py-3 flex flex--justify-between flex--align-center">
 //         <div class="flex flex--align-center">
-//           <i class="fal fa-file-import text-med-blue mr-2"></i><h4 class="text-med-blue">Request Contract Work</h4>
+//           <i class="pi-import text-med-blue mr-2"></i><h4 class="text-med-blue">Request Contract Work</h4>
 //         </div>
-//         <i class="far fa-chevron-down pui-accordion__icon text-med-blue"></i>
+//         <i class="pi-angle-down pui-accordion__icon text-med-blue"></i>
 //       </div>
 //       <div class="pui-accordion__content fade-in-from-none-enter-active px-4">
 //         Inner Accordion Content
@@ -109,9 +109,9 @@
 //     <div class="pui-accordion">
 //       <div class="pui-accordion__header px-4 py-3 flex flex--justify-between flex--align-center">
 //         <div class="flex flex--align-center">
-//           <i class="fal fa-file-upload text-med-blue mr-2"></i><h4 class="text-med-blue">Attachments</h4>
+//           <i class="pi-upload text-med-blue mr-2"></i><h4 class="text-med-blue">Attachments</h4>
 //         </div>
-//         <i class="far fa-chevron-down pui-accordion__icon text-med-blue"></i>
+//         <i class="pi-angle-down pui-accordion__icon text-med-blue"></i>
 //       </div>
 //       <div class="pui-accordion__content fade-in-from-none-enter-active px-4">
 //         Inner Accordion Content

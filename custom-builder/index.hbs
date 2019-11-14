@@ -47,15 +47,14 @@
         <li class="pui-list__item mb-0">
           <a class="flex px-3 py-3 pos-rel{{#unless template.homepage}} hover-scale text-base{{/unless}}{{#if template.isHomepage}} background-skyblue text-navy text--bold{{/if}}" href="./">
             <strong>Home v{{ options.version }}</strong>
-            <i class="pos-abs pin-right pin-center-top mr-3 fad fa-home"></i>
+            <i class="pos-abs pin-right pin-center-top mr-3 fad pi-house"></i>
           </a>
         </li>
       {{#each menu}}
         <li class="pui-list__item mb-0">
           <a class="flex px-3 py-3 pos-rel{{#unless isActive}} hover-scale text-base{{/unless}}{{#if isActive}} background-skyblue text-navy text--bold{{/if}}" href="section-{{referenceURI}}.html">
             <strong>{{referenceNumber}}</strong><span class="ml-2">{{header}}</span>
-            <i class="pos-abs pin-right pin-center-top mr-3 fal fa-angle-down fa-lg{{#if isActive}} fa-rotate-180{{/if}}"></i>
-            {{!-- {{#if children}}<i class="fas fa-chevron-right"></i>{{/if}} --}}
+            <i class="pos-abs pin-right pin-center-top mr-3 fal pi-angle-down text--size-xl{{#if isActive}} rotate-180{{/if}}"></i>
           </a>
           {{#if isActive}}
             {{#if children}}
@@ -96,7 +95,7 @@
                 <a class="pui-card flex--center-content flex--column rounded-1 text-salmon--hover" href="section-{{referenceURI}}.html">
                   <img class="py-2" src="site-assets/stylesheets/svg/{{header}}.svg" alt="">
                   <span class="py-1">{{header}}</span>
-                  <span class="py-1">Learn More <i class="far fa-arrow-right"></i><i class="far fa-angle-right"></i></span>
+                  <span class="py-1">Learn More <i class="pui-arrow-right"></i><i class="pui-angle-right"></i></span>
                 </a>
               </div>
             {{/each}}
@@ -263,7 +262,7 @@
         el.classList.add('pui-table');
       });
     }
-    
+
   </script>
   {{{scripts}}}
 

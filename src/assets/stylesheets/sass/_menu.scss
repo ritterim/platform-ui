@@ -16,7 +16,7 @@
 //   <nav class="site-menu">
 //     <div class="site-menu__item has-dropdown">
 //       <span class="card__header-icon pill--circle-medium background-pink text-white mr-2">
-//         <i class="fas fa-chess-knight text-base"></i>
+//         <i class="pi-rimdev text-base"></i>
 //       </span>
 //       <div class="font-lg">
 //         Menu Header with avatar
@@ -65,18 +65,6 @@
 
   @include mixins.breakpoint(tablet, max) {
     position: relative;
-  }
-
-  .agent-profile__gear {
-    .fa-cog {
-      opacity: config.$opacity / 2;
-    }
-    &:hover {
-      .fa-cog {
-        opacity: 1;
-        animation: spin config.$transitions * 4;
-      }
-    }
   }
 
   .search {
@@ -559,7 +547,7 @@
 // Simpy change the `<icon>` class to the desired font-awesome icon you want. Then, add the `text-{color}--hover`
 // class to the `icon-menu__action`. To see a list of available hover colors [click here](/section-typography.html#kssref-typography-utilities-color).
 //
-// | <i class="fas fa-exclamation-triangle text-orange"></i> Be sure to always wrap the font icon in another element. We don't want to have the click event be on the `<icon>` itself.|
+// | <i class="fpi-warning text-orange"></i> Be sure to always wrap the font icon in another element. We don't want to have the click event be on the `<icon>` itself.|
 // | ---
 //
 //
@@ -569,12 +557,12 @@
 // <div class="icon-menu">
 //   <div class="icon-menu__item">
 //     <a href="#" class="icon-menu__action text-negative--hover" role="button">
-//       <i class="fas fa-trash-alt" aria-hidden="true"></i>
+//       <i class="pi-trash" aria-hidden="true"></i>
 //     </a>
 //   </div>
 //   <div class="icon-menu__item">
 //     <a href="#" class="icon-menu__action text-positive--hover" role="button">
-//       <i class="fas fa-edit" aria-hidden="true"></i>
+//       <i class="pi-edit" aria-hidden="true"></i>
 //     </a>
 //   </div>
 // </div>
@@ -582,17 +570,17 @@
 // <div class="icon-menu">
 //   <div class="icon-menu__item">
 //     <a href="#" class="icon-menu__action text-negative--hover" role="button">
-//       <i class="fas fa-trash-alt" aria-hidden="hidden"></i>
+//       <i class="pi-trash" aria-hidden="hidden"></i>
 //     </a>
 //   </div>
 //   <div class="icon-menu__item">
 //     <a href="#" class="icon-menu__action text-positive--hover" role="button">
-//       <i class="fas fa-edit" aria-hidden="hidden"></i>
+//       <i class="pi-edit" aria-hidden="hidden"></i>
 //     </a>
 //   </div>
 //   <div class="icon-menu__item">
 //     <a href="#" class="icon-menu__action" role="button">
-//       <i class="far fa-clock" aria-hidden="hidden"></i>
+//       <i class="pi-clock" aria-hidden="hidden"></i>
 //     </a>
 //   </div>
 // </div>
@@ -600,17 +588,17 @@
 // <div class="icon-menu">
 //   <div class="icon-menu__item">
 //     <a href="#" class="icon-menu__action text-navy--hover" role="button">
-//       <i class="fas fa-trash-alt" aria-hidden="hidden"></i>
+//       <i class="pi-trash" aria-hidden="hidden"></i>
 //     </a>
 //   </div>
 //   <div class="icon-menu__item">
 //     <a href="#" class="icon-menu__action text-violet--hover" role="button">
-//       <i class="fas fa-edit" aria-hidden="hidden"></i>
+//       <i class="pi-edit" aria-hidden="hidden"></i>
 //     </a>
 //   </div>
 //   <div class="icon-menu__item">
 //     <a href="#" class="icon-menu__action text-salmon--hover" role="button">
-//       <i class="far fa-clock" aria-hidden="hidden"></i>
+//       <i class="pi-clock" aria-hidden="hidden"></i>
 //     </a>
 //   </div>
 // </div>

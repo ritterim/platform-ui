@@ -6,38 +6,38 @@
 @use "sass:math";
 
 // Tabs
-// 
-// The content for a tabbed section needs to live inside the `.pui-tabs` class. The tabs should 
+//
+// The content for a tabbed section needs to live inside the `.pui-tabs` class. The tabs should
 // be added to a `.pui-card` with the class `has-tabs` added. This class gives the card the proper
 // margin-top necessary for the look of the tabs being outside the card.
-// 
+//
 // The aria attributes are important to the funcationality of the tabs as well. The active tab styles
 // come from `aria-selected="true"` being set on the tab. The corresponding tab content is displayed
 // by the removal of the `hidden` attribute.
-// 
+//
 // Be sure that the `href` value on the `pui-tab__acnchor` matches that of the corresponding
 // `pui-tab-panel` id. This is key for links that contain the hash in the url.
-// 
+//
 // The tabs themselves or the `.pui-tab` have a specific width of `16rem` as well as a specific
 // height of `4rem`. The width can be changed using the [blocks layout method](/styleguide/section-layout.html#kssref-layout-blocks).
-// 
-// Markup: 
+//
+// Markup:
 // <div class="pui-card has-tabs">
 //   <div class="pui-tabs">
 //     <ul class="pui-tab-list" role="tablist" aria-label="Sample Tabs">
 //      <li class="pui-tab">
 //        <a href="#contracts-active" class="pui-tab__anchor" role="tab" aria-selected="true" aria-controls="contracts-active" id="pui-tab-1" tabindex="0">
-//          <i class="fas fa-folder-open" aria-hidden="hidden"></i><span class="pui-tab__title">Animal</span>
+//          <i class="pi-folder-open" aria-hidden="hidden"></i><span class="pui-tab__title">Animal</span>
 //        </a>
 //      </li>
 //      <li class="pui-tab">
 //        <a href="#contracts-inactive" class="pui-tab__anchor" role="tab" aria-selected="false" aria-controls="contracts-inactive" id="pui-tab-2" tabindex="-1">
-//          <i class="fas fa-folder" aria-hidden="hidden"></i><span class="pui-tab__title">Another Animal</span>
+//          <i class="pi-folder" aria-hidden="hidden"></i><span class="pui-tab__title">Another Animal</span>
 //        </a>
 //      </li>
 //      <li class="pui-tab">
 //        <a href="#contracts-downlines" class="pui-tab__anchor" role="tab" aria-selected="false" aria-controls="contracts-downlines" id="pui-tab-3" tabindex="-1">
-//          <i class="fad fa-users" aria-hidden="hidden"></i><span class="pui-tab__title">Third Animal</span>
+//          <i class="pi-users" aria-hidden="hidden"></i><span class="pui-tab__title">Third Animal</span>
 //        </a>
 //      </li>
 //    </ul>
@@ -52,8 +52,8 @@
 //     </div>
 //   </div>
 // </div>
-// 
-// 
+//
+//
 // Styleguide Components.Tabs
 
 $tab-height:          4rem;
@@ -154,12 +154,12 @@ $tab-active-color:    map.get(config.$brand-colors, 'navy' );
       [aria-selected="true"] & {
         display: block;
       }
-    }    
+    }
   }
 }
 
 .pui-tab-panel {
-  
+
   &:focus {
     outline: none;
   }
