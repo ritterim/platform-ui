@@ -1,9 +1,11 @@
 const tabList = document.querySelector('[role="tablist"]');
 
 if (tabList) {
+  let width = window.innerWidth;
 
   const tabs = document.querySelectorAll('[role="tab"]');
   const tabPanel = document.querySelectorAll('[role="tabpanel"]');
+  
   // Add a click event handler to each tab
   tabs.forEach(tab => {
     tab.addEventListener('click', changeTabs);
@@ -75,9 +77,97 @@ if (tabList) {
       .querySelectorAll('[role="tabpanel"]')
       .forEach(p => p.setAttribute('hidden', true));
 
+    grandparent.parentNode
+      .querySelectorAll('[role="tabpanel"]')
+      .forEach(p => p.classList.remove('is-active'));      
+
     // Show the selected panel
     grandparent.parentNode
       .querySelector(`#${target.getAttribute('aria-controls')}`)
       .removeAttribute('hidden');
+      
+    grandparent.parentNode
+      .querySelector(`#${target.getAttribute('aria-controls')}`).classList.add('is-active');
   }
+
+  function removeActiveClass() {
+    tabPanel.forEach(node => {
+      node.classList.remove('is-active');
+      node.setAttribute('hidden', true);
+    });
+  }
+
+  function resetTabs() {
+    tabs.forEach(node => {
+      node.setAttribute('aria-selected', false);
+    });
+  }
+
+  function mobileTabs(e) {    
+
+    // Allow clicks inside content
+    if (e.target.closest('.pui-tab-panel__inner')) return;
+    
+    if (e.currentTarget.classList.contains('is-active')) {
+      removeActiveClass();
+    } else {
+      removeActiveClass();
+      e.currentTarget.classList.add('is-active');
+      e.currentTarget.removeAttribute('hidden');
+    }    
+  }
+
+  if(width < 768) {
+    tabPanel.forEach(panel => {
+      panel.addEventListener('click', mobileTabs);
+    });
+  }
+
+  var delay = (function(){
+    var timer = 0;
+    return function(callback, ms){
+      clearTimeout (timer);
+      timer = setTimeout(callback, ms);
+    };
+  })();
+
+  // var bounds = [
+  //   {min:0,max:500,func:red},
+  //   {min:501,max:850,func:orange},
+  //   {min:851,func:green}
+  // ];
+
+  // var resizeFn = function(){
+  //     var lastBoundry; // cache the last boundry used
+  //     return function(){
+  //         var width = window.innerWidth;
+  //         var boundry, min, max;
+  //         for(var i=0; i<bounds.length; i++){
+  //             boundry = bounds[i];
+  //             min = boundry.min || Number.MIN_VALUE;
+  //             max = boundry.max || Number.MAX_VALUE;
+  //             if(width > min && width < max 
+  //               && lastBoundry !== boundry){
+  //                 lastBoundry = boundry;
+  //                 return boundry.func.call(boundry);            
+  //             }
+  //         }
+  //     }
+  // };
+  // $(window).resize(resizeFn());
+  // $(document).ready(function(){
+  //     $(window).trigger('resize');
+  // });
+
+  window.onresize = function(event) {
+    let width = window.innerWidth;
+
+    // resizeFn();
+
+    if(width < 768) {
+      tabPanel.forEach(panel => {
+        panel.addEventListener('click', mobileTabs);
+      });
+    }
+  };
 }
