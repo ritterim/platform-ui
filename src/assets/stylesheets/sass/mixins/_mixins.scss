@@ -85,7 +85,7 @@
   }
 
   a {
-    color: color.adjust($background, $lightness: math.percentage(-(config.$hue-threshold)));
+    color: color.scale($color, $lightness: math.percentage(-(config.$hue-threshold)));
     font-weight: 700;
   }
 }
