@@ -25,9 +25,14 @@ if (tabList) {
       }
     });
   } else {
+    setFirstTab();
+  }
+
+  function setFirstTab() {
+    console.log('test');
     tabList.children[0].firstElementChild.setAttribute('aria-selected', true);
     tabPanel[0].removeAttribute('hidden');
-  }
+  };
 
   // Enable arrow navigation between tabs in the tab list
   let tabFocus = 0;
@@ -98,6 +103,7 @@ if (tabList) {
   }
 
   function resetTabs() {
+    console.log('tabs reset');
     tabs.forEach(node => {
       node.setAttribute('aria-selected', false);
     });
@@ -131,43 +137,24 @@ if (tabList) {
     };
   })();
 
-  // var bounds = [
-  //   {min:0,max:500,func:red},
-  //   {min:501,max:850,func:orange},
-  //   {min:851,func:green}
-  // ];
-
-  // var resizeFn = function(){
-  //     var lastBoundry; // cache the last boundry used
-  //     return function(){
-  //         var width = window.innerWidth;
-  //         var boundry, min, max;
-  //         for(var i=0; i<bounds.length; i++){
-  //             boundry = bounds[i];
-  //             min = boundry.min || Number.MIN_VALUE;
-  //             max = boundry.max || Number.MAX_VALUE;
-  //             if(width > min && width < max 
-  //               && lastBoundry !== boundry){
-  //                 lastBoundry = boundry;
-  //                 return boundry.func.call(boundry);            
-  //             }
-  //         }
-  //     }
-  // };
-  // $(window).resize(resizeFn());
-  // $(document).ready(function(){
-  //     $(window).trigger('resize');
-  // });
-
-  window.onresize = function(event) {
+  window.onresize = function(e) {
     let width = window.innerWidth;
-
-    // resizeFn();
 
     if(width < 768) {
       tabPanel.forEach(panel => {
         panel.addEventListener('click', mobileTabs);
       });
-    }
+    } else {      
+     
+
+    // if(width < 768) {
+    //   tabPanel.forEach(panel => {
+    //     panel.addEventListener('click', mobileTabs);
+    //   });
+    // } else {      
+    //   console.log('else if');
+    //   resetTabs();
+    //   setFirstTab();
+    // }
   };
 }
