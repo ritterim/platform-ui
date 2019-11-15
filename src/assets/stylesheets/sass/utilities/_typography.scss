@@ -5,7 +5,9 @@
 // Icons
 //
 // We've switched to [Platform-icons](https://github.com/ritterim/platform-icons).
-//
+//```
+// <i class="pui-arrow-right"></i>
+//```
 //
 // Markup:
 // <iframe src="kss-assets/platform-icons.html" width="100%" height="2000px" style="border: none"></iframe>
@@ -149,11 +151,11 @@
 //
 // | General           |                    |                     |                      |
 // | ----------------- | ------------------ | ------------------- | -------------------- |
-// | `text--uppercase` | `text--underline`  | `text--bold`         | `text--nowrap` <i class="fas fa-exclamation-triangle fa-sm text-orange"></i>      |
-// | `text--center` <i class="fas fa-exclamation-triangle fa-sm text-orange"></i>   | `text--right` <i class="fas fa-exclamation-triangle fa-sm text-orange"></i>                    |                     |                      |
+// | `text--uppercase` | `text--underline`  | `text--bold`         | `text--nowrap` <i class="pi-warning text-orange"></i>      |
+// | `text--center` <i class="pi-warning text-orange"></i>   | `text--right` <i class="pi-warning text-orange"></i>                    |                     |                      |
 // | `text-underline--hover` |   |         |      |
 //
-// | <i class="fas fa-exclamation-triangle fa-sm text-orange"></i> NOTE: A `flex--` utility should be used were possible. |
+// | <i class="pi-warning text-orange"></i> NOTE: A `flex--` utility should be used were possible. |
 // | --
 //
 // The `text-underline--hover` class will add an animated underline to links or any element you add the class to. By default, the underline color is the

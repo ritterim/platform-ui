@@ -30,16 +30,16 @@
 //       <div class="block-container flex--justify-end mb-4">
 //         <div class="block block-3 button-group">
 //           <button class="button button--secondary has-text hide-desktop-up js-open-right-drawer" data-open="notes">
-//             Notes <i class="fal fa-sticky-note text-white"></i>
+//             Notes <i class="pi-note text-white"></i>
 //           </button>
 //           <button class="button button--secondary has-text hide-mobile-up show-desktop-up js-show-content" data-open="notes">
-//             Notes <i class="fal fa-sticky-note text-white"></i>
+//             Notes <i class="pi-note text-white"></i>
 //           </button>
 //           <button class="button button--secondary has-text hide-desktop-up js-open-right-drawer" data-open="tasks">
-//             Tasks <i class="fal fa-bells text-white"></i>
+//             Tasks <i class="pi-bell-multi text-white"></i>
 //           </button>
 //           <button class="button button--secondary has-text hide-mobile-up show-desktop-up js-show-content" data-open="tasks">
-//             Tasks <i class="fal fa-bells text-white"></i>
+//             Tasks <i class="pi-bell-multi text-white"></i>
 //           </button>
 //         </div>
 //       </div>
@@ -127,11 +127,11 @@
 //       <div class="flex flex--align-center flex--justify-between pb-3 mb-2">
 //         <div class="flex flex--align-center">
 //           <button class="button button--secondary js-toggle-form">
-//             <i class="far fa-plus"></i>
+//             <i class="pi-plus"></i>
 //           </button>
 //           <h2 class="ml-2 text-navy">Notes</h2>
 //         </div>
-//         <button class="button js-drawer-right-close">Close <i class="fas fa-times" aria-hidden="true"></i></button>
+//         <button class="button js-drawer-right-close">Close <i class="pi-times" aria-hidden="true"></i></button>
 //       </div>
 //       <div class="side-content">
 //         <ol class="h-100 overflow-y overflow-x--hidden pui-list pui-list--bordered" data-list="notes">
@@ -139,7 +139,7 @@
 //             <div class="pui-note__inner pt-4 pb-5">
 //               <div class="js-toggle-wrapper">
 //                 <div class="flex flex--align-start mb-2">
-//                   <i class="far fa-comment-alt-lines text-light"></i>
+//                   <i class="pi-speech-bubble text-light"></i>
 //                   <h3 class="text-light ml-2">
 //                     Tiffaney Livingston 07/08/2019
 //                   </h3>
@@ -151,19 +151,19 @@
 //               <div class="js-toggle-wrapper--bottom mt-3 slide-down-enter-active" hidden="true">
 //                 <div class="icon-menu flex--justify-center mb-3">
 //                   <a href="#" class="icon-menu__action js-open-tags" aria-label="Tags">
-//                     <i class="fas fa-tags text-positive--hover" focusable="false" aria-hidden="hidden"></i>
+//                     <i class="pi-tag text-positive--hover" focusable="false" aria-hidden="hidden"></i>
 //                     <span class="sr-only">Tags</span>
 //                   </a>
 //                   <a href="#" aria-label="edit" class="icon-menu__action">
-//                     <i class="far fa-edit text-positive--hover" focusable="false" aria-hidden="hidden"></i>
+//                     <i class="pi-edit text-positive--hover" focusable="false" aria-hidden="hidden"></i>
 //                     <span class="sr-only">Edit</span>
 //                   </a>
 //                   <a href="#" aria-label="edit" class="icon-menu__action" aria-label="unlock">
-//                     <i class="fas fa-lock text-positive--hover" focusable="false" aria-hidden="hidden"></i>
+//                     <i class="pi-lock text-positive--hover" focusable="false" aria-hidden="hidden"></i>
 //                     <span class="sr-only">unlock</span>
 //                   </a>
 //                   <a href="#" aria-label="edit" class="icon-menu__action" aria-label="Delete">
-//                     <i class="far fa-trash-alt text-positive--hover" focusable="false" aria-hidden="hidden"></i>
+//                     <i class="pi-trash text-positive--hover" focusable="false" aria-hidden="hidden"></i>
 //                     <span class="sr-only">Delete</span>
 //                   </a>
 //                 </div>
@@ -183,7 +183,7 @@
 //               </div>
 //             </div>
 //             <button class="pui-note__toggle">
-//               <i class="far fa-chevron-double-down"></i>
+//               <i class="pi-angle-down"></i>
 //             </button>
 //           </li>
 //         </ol>
@@ -210,11 +210,11 @@
 //       <div class="flex flex--align-center flex--justify-between pb-3 mb-2">
 //         <div class="flex flex--align-center">
 //           <button class="button button--secondary js-toggle-task" data-toggle="tasks">
-//             <i class="far fa-plus"></i>
+//             <i class="pi-plus"></i>
 //           </button>
 //           <h2 class="ml-2 text-navy">Tasks</h2>
 //         </div>
-//         <button class="button js-drawer-right-close">Close <i class="fas fa-times" aria-hidden="true"></i></button>
+//         <button class="button js-drawer-right-close">Close <i class="pi-times" aria-hidden="true"></i></button>
 //       </div>
 //       <div class="side-content">
 //         <ol class="h-100 overflow-y overflow-x--hidden pui-list pui-list--bordered" data-list="tasks">
@@ -222,15 +222,15 @@
 //             <div class="text-base py-3 px-1">
 //               <div class="flex flex--justify-between mb-2">
 //                 <div class="flex flex--align-center">
-//                   <i class="fal fa-bell"></i>
+//                   <i class="pi-bell"></i>
 //                   <h2 class="text--size-md ml-2">Training</h2>
 //                 </div>
 //                 <div class="icon-menu">
 //                   <a href="#" aria-label="remove" class="icon-menu__action js-delete-task" data-delete="task-1">
-//                     <i class="fas fa-trash-alt text-negative--hover" aria-hidden="true"></i>
+//                     <i class="pi-trash text-negative--hover" aria-hidden="true"></i>
 //                   </a>
 //                   <a href="#" aria-label="edit" class="icon-menu__action js-edit-task" data-edit="task-1">
-//                     <i class="fas fa-edit text-positive--hover" aria-hidden="true"></i>
+//                     <i class="pi-edit text-positive--hover" aria-hidden="true"></i>
 //                   </a>
 //                 </div>
 //               </div>
@@ -239,14 +239,14 @@
 //                 <div class="flex flex--justify-between flex--align-end">
 //                   <div>
 //                     <div class="mb-3">
-//                       <i class="far fa-calendar-alt text-skyblue" aria-hidden="true"></i> <time datetime="14 Jul 2019">14 Jul 2019</time>
+//                       <i class="pi-calendar text-skyblue" aria-hidden="true"></i> <time datetime="14 Jul 2019">14 Jul 2019</time>
 //                     </div>
 //                     <div>
-//                       <i class="far fa-clock text-skyblue" aria-hidden="true"></i> <time datetime="10:25 am">10:25am</time>
+//                       <i class="pi-clock text-skyblue" aria-hidden="true"></i> <time datetime="10:25 am">10:25am</time>
 //                     </div>
 //                   </div>
 //                   <div role="button" class="pointer flex flex--align-center flex--column text-positive text-base--hover js-task-status" aria-pressed="true">
-//                     <i class="fal fa-check-circle fa-3x"></i>
+//                     <i class="pi-check-circle "></i>
 //                     <p class="task-status__title js-task-status-title mb-0">Completed</p>
 //                   </div>
 //                 </div>
@@ -283,15 +283,15 @@
 //             <div class="text-base py-3 px-1">
 //               <div class="flex flex--justify-between mb-2">
 //                 <div class="flex flex--align-center">
-//                   <i class="fal fa-bell"></i>
+//                   <i class="pi-bell"></i>
 //                   <h2 class="text--size-md ml-2">Customer Meeting</h2>
 //                 </div>
 //                 <div class="icon-menu">
 //                   <a href="#" aria-label="remove" class="icon-menu__action js-delete-task" data-delete="task-1">
-//                     <i class="fas fa-trash-alt text-negative--hover" aria-hidden="true"></i>
+//                     <i class="pi-trash text-negative--hover" aria-hidden="true"></i>
 //                   </a>
 //                   <a href="#" aria-label="edit" class="icon-menu__action js-edit-task" data-edit="task-1">
-//                     <i class="fas fa-edit text-positive--hover" aria-hidden="true"></i>
+//                     <i class="pi-edit text-positive--hover" aria-hidden="true"></i>
 //                   </a>
 //                 </div>
 //               </div>
@@ -300,14 +300,14 @@
 //                 <div class="flex flex--justify-between flex--align-end">
 //                   <div>
 //                     <div class="mb-3">
-//                       <i class="far fa-calendar-alt text-skyblue" aria-hidden="true"></i> <time datetime="14 Jul 2019">14 Jul 2019</time>
+//                       <i class="pi-calendar text-skyblue" aria-hidden="true"></i> <time datetime="14 Jul 2019">14 Jul 2019</time>
 //                     </div>
 //                     <div>
-//                       <i class="far fa-clock text-skyblue" aria-hidden="true"></i> <time datetime="10:25 am">10:25am</time>
+//                       <i class="pi-clock text-skyblue" aria-hidden="true"></i> <time datetime="10:25 am">10:25am</time>
 //                     </div>
 //                   </div>
 //                   <div role="button" class="pointer flex flex--align-center flex--column text-base text-positive--hover js-task-status" aria-pressed="false">
-//                     <i class="fal fa-check-circle fa-3x"></i>
+//                     <i class="pi-check-circle"></i>
 //                     <p class="task-status__title js-task-status-title mb-0">Complete</p>
 //                   </div>
 //                 </div>
@@ -381,11 +381,11 @@
 //       <div class="flex flex--align-center flex--justify-between pb-3 mb-2">
 //         <div class="flex flex--align-center">
 //           <button class="button button--secondary js-toggle-form">
-//             <i class="far fa-plus"></i>
+//             <i class="pi-plus"></i>
 //           </button>
 //           <h2 class="ml-2 text-navy">Notes</h2>
 //         </div>
-//         <button class="button js-open-right-drawer" data-open="notes">View All <span>27</span> <i class="far fa-arrow-right"></i></button>
+//         <button class="button js-open-right-drawer" data-open="notes">View All <span>27</span> <i class="pi-arrow-right"></i></button>
 //       </div>
 //       <div class="side-content">
 //         <ol class="h-100 overflow-y overflow-x--hidden pui-list pui-list--bordered" data-list="notes">
@@ -393,7 +393,7 @@
 //             <div class="pui-note__inner pt-4 pb-5">
 //               <div class="js-toggle-wrapper">
 //                 <div class="flex flex--align-start mb-2">
-//                   <i class="far fa-comment-alt-lines text-light"></i>
+//                   <i class="pi-speech-bubble text-light"></i>
 //                   <h3 class="text-light ml-2">
 //                     Tiffaney Livingston 07/08/2019
 //                   </h3>
@@ -405,19 +405,19 @@
 //               <div class="js-toggle-wrapper--bottom mt-3 slide-down-enter-active" hidden="true">
 //                 <div class="icon-menu flex--justify-center mb-3">
 //                   <a href="#" class="icon-menu__action js-open-tags" aria-label="Tags">
-//                     <i class="fas fa-tags text-positive--hover" focusable="false" aria-hidden="hidden"></i>
+//                     <i class="pi-tag text-positive--hover" focusable="false" aria-hidden="hidden"></i>
 //                     <span class="sr-only">Tags</span>
 //                   </a>
 //                   <a href="#" aria-label="edit" class="icon-menu__action">
-//                     <i class="far fa-edit text-positive--hover" focusable="false" aria-hidden="hidden"></i>
+//                     <i class="pi-edit text-positive--hover" focusable="false" aria-hidden="hidden"></i>
 //                     <span class="sr-only">Edit</span>
 //                   </a>
 //                   <a href="#" aria-label="edit" class="icon-menu__action" aria-label="unlock">
-//                     <i class="fas fa-lock text-positive--hover" focusable="false" aria-hidden="hidden"></i>
+//                     <i class="pi-lock text-positive--hover" focusable="false" aria-hidden="hidden"></i>
 //                     <span class="sr-only">unlock</span>
 //                   </a>
 //                   <a href="#" aria-label="edit" class="icon-menu__action" aria-label="Delete">
-//                     <i class="far fa-trash-alt text-positive--hover" focusable="false" aria-hidden="hidden"></i>
+//                     <i class="pi-trash text-positive--hover" focusable="false" aria-hidden="hidden"></i>
 //                     <span class="sr-only">Delete</span>
 //                   </a>
 //                 </div>
@@ -437,7 +437,7 @@
 //               </div>
 //             </div>
 //             <button class="pui-note__toggle">
-//               <i class="far fa-chevron-double-down"></i>
+//               <i class="pi-angle-down"></i>
 //             </button>
 //           </li>
 //         </ol>
@@ -464,11 +464,11 @@
 //       <div class="flex flex--align-center flex--justify-between pb-3 mb-2">
 //         <div class="flex flex--align-center">
 //           <button class="button button--secondary js-toggle-form">
-//             <i class="far fa-plus"></i>
+//             <i class="pi-plus"></i>
 //           </button>
 //           <h2 class="ml-2 text-navy">Tasks</h2>
 //         </div>
-//         <button class="button js-open-right-drawer" data-open="tasks">View All <span>11</span> <i class="far fa-arrow-right"></i></button>
+//         <button class="button js-open-right-drawer" data-open="tasks">View All <span>11</span> <i class="pi-arrow-right"></i></button>
 //       </div>
 //       <div class="side-content">
 //         <ol class="h-100 overflow-y overflow-x--hidden pui-list pui-list--bordered" data-list="tasks">
@@ -476,15 +476,15 @@
 //             <div class="text-base py-3 px-1">
 //               <div class="flex flex--justify-between mb-2">
 //                 <div class="flex flex--align-center">
-//                   <i class="fal fa-bell"></i>
+//                   <i class="pi-bell"></i>
 //                   <h2 class="text--size-md ml-2">Training</h2>
 //                 </div>
 //                 <div class="icon-menu">
 //                   <a href="#" aria-label="remove" class="icon-menu__action js-delete-task" data-delete="task-1">
-//                     <i class="fas fa-trash-alt text-negative--hover" aria-hidden="true"></i>
+//                     <i class="pi-trash text-negative--hover" aria-hidden="true"></i>
 //                   </a>
 //                   <a href="#" aria-label="edit" class="icon-menu__action js-edit-task" data-edit="task-1">
-//                     <i class="fas fa-edit text-positive--hover" aria-hidden="true"></i>
+//                     <i class="pi-edit text-positive--hover" aria-hidden="true"></i>
 //                   </a>
 //                 </div>
 //               </div>
@@ -493,14 +493,14 @@
 //                 <div class="flex flex--justify-between flex--align-end">
 //                   <div>
 //                     <div class="mb-3">
-//                       <i class="far fa-calendar-alt text-skyblue" aria-hidden="true"></i> <time datetime="14 Jul 2019">14 Jul 2019</time>
+//                       <i class="pi-calendar text-skyblue" aria-hidden="true"></i> <time datetime="14 Jul 2019">14 Jul 2019</time>
 //                     </div>
 //                     <div>
-//                       <i class="far fa-clock text-skyblue" aria-hidden="true"></i> <time datetime="10:25 am">10:25am</time>
+//                       <i class="pi-clock text-skyblue" aria-hidden="true"></i> <time datetime="10:25 am">10:25am</time>
 //                     </div>
 //                   </div>
 //                   <div role="button" class="pointer flex flex--align-center flex--column text-positive text-base--hover js-task-status" aria-pressed="true">
-//                     <i class="fal fa-check-circle fa-3x"></i>
+//                     <i class="pi-check-circle"></i>
 //                     <p class="task-status__title js-task-status-title mb-0">Completed</p>
 //                   </div>
 //                 </div>
@@ -537,15 +537,15 @@
 //             <div class="text-base py-3 px-1">
 //               <div class="flex flex--justify-between mb-2">
 //                 <div class="flex flex--align-center">
-//                   <i class="fal fa-bell"></i>
+//                   <i class="pi-bell"></i>
 //                   <h2 class="text--size-md ml-2">Customer Meeting</h2>
 //                 </div>
 //                 <div class="icon-menu">
 //                   <a href="#" aria-label="remove" class="icon-menu__action js-delete-task" data-delete="task-1">
-//                     <i class="fas fa-trash-alt text-negative--hover" aria-hidden="true"></i>
+//                     <i class="pi-trash text-negative--hover" aria-hidden="true"></i>
 //                   </a>
 //                   <a href="#" aria-label="edit" class="icon-menu__action js-edit-task" data-edit="task-1">
-//                     <i class="fas fa-edit text-positive--hover" aria-hidden="true"></i>
+//                     <i class="pi-edit text-positive--hover" aria-hidden="true"></i>
 //                   </a>
 //                 </div>
 //               </div>
@@ -554,14 +554,14 @@
 //                 <div class="flex flex--justify-between flex--align-end">
 //                   <div>
 //                     <div class="mb-3">
-//                       <i class="far fa-calendar-alt text-skyblue" aria-hidden="true"></i> <time datetime="14 Jul 2019">14 Jul 2019</time>
+//                       <i class="pi-calendar text-skyblue" aria-hidden="true"></i> <time datetime="14 Jul 2019">14 Jul 2019</time>
 //                     </div>
 //                     <div>
-//                       <i class="far fa-clock text-skyblue" aria-hidden="true"></i> <time datetime="10:25 am">10:25am</time>
+//                       <i class="pi-clock text-skyblue" aria-hidden="true"></i> <time datetime="10:25 am">10:25am</time>
 //                     </div>
 //                   </div>
 //                   <div role="button" class="pointer flex flex--align-center flex--column text-base text-positive--hover js-task-status" aria-pressed="false">
-//                     <i class="fal fa-check-circle fa-3x"></i>
+//                     <i class="pi-check-circle"></i>
 //                     <p class="task-status__title js-task-status-title mb-0">Complete</p>
 //                   </div>
 //                 </div>

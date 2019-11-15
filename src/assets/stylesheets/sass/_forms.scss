@@ -84,7 +84,7 @@
 //   <div class="block">
 //     <label for="dob" class="pui-form__field has-icon">Application Date
 //       <input id="dob" type="date">
-//       <i class="fas fa-calendar-alt text-skyblue background-white"></i>
+//       <i class="pi-calendar text-skyblue background-white"></i>
 //     </label>
 //   </div>
 //   <div class="block">
@@ -107,8 +107,8 @@
 // To get the animation, add the class `pui-form__field--fancy` to the `pui-form__field`.
 // You will also need to change the markup slightly. Instead of a `label` the `pui-form__field` should now be a `div`
 // put the `label` under the `input` as a sibling of the `pui-form__field` `div`. See markup below.
-// 
-// **Note:** Firefox does not have a way to hide the date and time placeholder for those inputs. This style of form would 
+//
+// **Note:** Firefox does not have a way to hide the date and time placeholder for those inputs. This style of form would
 // probably be best for a simple form that has text inputs.
 //
 // Markup:
@@ -235,27 +235,27 @@
 
 
 // Has Icon
-// 
+//
 // If you would like the icon to be on the right side of the input, add the class `has-icon--right` to the `pui-form__field` class.
-// 
+//
 // Markup:
 // <form action="" class="pui-form block-container tablet-up-3 laptop-up-4 desktop-up-6 blocks-mb-3 blocks-py-2 blocks-px-2">
 //   <div class="block">
 //     <label for="dob" class="pui-form__field has-icon--right">Age or DOB
 //       <input id="dob" type="date">
-//       <i class="fas fa-calendar-alt background-white"></i>
+//       <i class="pi-calendar background-white"></i>
 //     </label>
 //   </div>
 //   <div class="block">
 //     <label for="dob" class="pui-form__field has-icon">Application Date
 //       <input id="dob" type="date">
-//       <i class="fas fa-calendar-alt text-med-blue background-white"></i>
+//       <i class="pi-calendar text-med-blue background-white"></i>
 //     </label>
 //   </div>
 //   <div class="block">
 //     <label for="time" class="pui-form__field has-icon--right">Your Time
 //       <input id="time" type="time" placeholder="10:00 AM">
-//       <i class="far fa-clock"></i>
+//       <i class="pi-clock"></i>
 //     </label>
 //   </div>
 //   <div class="block">
@@ -352,8 +352,8 @@ input[type="checkbox"] {
     &:after {
       bottom: 1px;
       color: inherit;
-      content: '\f00c';
-      font-family: "Font Awesome 5 Pro";
+      content: "\f11f";
+      font-family: "platform-icons";
       font-size: map.get(variables.$font-percentage, 'xs');
       font-weight: 900;
       left: 2px;
@@ -559,7 +559,7 @@ input[type="radio"] {
       input[type="radio"] {
 
         &:not(:checked) + label {
-    
+
           &:before {
             background-color: map.get(variables.$message-colors, 'error-light' );
             border-color: map.get(variables.$error-colors, 'negative' ) !important;
@@ -572,7 +572,7 @@ input[type="radio"] {
     &#{ $self }__field--fancy {
       position: relative;
 
-      &.error {        
+      &.error {
 
         label {
           color: map.get(variables.$message-colors, 'error-dark' ) !important;
@@ -622,11 +622,11 @@ input[type="radio"] {
       }
 
       input::-webkit-datetime-edit {
-        color: transparent; 
+        color: transparent;
       }
 
       input::-moz-datetime-edit {
-        color: transparent; 
+        color: transparent;
       }
 
       input:focus::-webkit-datetime-edit,
@@ -819,7 +819,7 @@ input[type="radio"] {
 
       &:after {
         color: map.get(variables.$greyscale, 'base' );
-        content: '\f017';
+        content: '\f11f';
         font-family: "Font Awesome 5 Pro";
         font-weight: 400;
         height: auto;
@@ -858,7 +858,7 @@ input[type="radio"] {
 // to the input or textarea. In your javascript only toggle the `readonly` attribute on or off when the user
 // would select the option to edit the text.
 //
-// | <i class="fas fa-exclamation-triangle fa-sm text-orange"></i> NOTE: The `js-` classes in the example below are just for test purposes. You do not need them.** |
+// | <i class="pi-warning text-orange"></i> NOTE: The `js-` classes in the example below are just for test purposes. You do not need them.** |
 // | --
 //
 // Markup:
@@ -873,12 +873,12 @@ input[type="radio"] {
 //       <div class="icon-menu">
 //         <div class="icon-menu__item">
 //           <a href="#" class="icon-menu__action text-positive--hover js-edit-readonly" role="button">
-//             <i class="fas fa-edit" aria-hidden="hidden"></i>
+//             <i class="pi-edit" aria-hidden="hidden"></i>
 //           </a>
 //         </div>
 //         <div class="icon-menu__item">
 //           <a href="#" class="icon-menu__action text-negative--hover" role="button">
-//             <i class="fas fa-trash-alt" aria-hidden="hidden"></i>
+//             <i class="pi-trash" aria-hidden="hidden"></i>
 //           </a>
 //         </div>
 //       </div>
@@ -894,12 +894,12 @@ input[type="radio"] {
 //       <div class="icon-menu">
 //         <div class="icon-menu__item">
 //           <a href="#" class="icon-menu__action text-positive--hover js-edit-textarea" role="button">
-//             <i class="fas fa-edit" aria-hidden="hidden"></i>
+//             <i class="pi-edit" aria-hidden="hidden"></i>
 //           </a>
 //         </div>
 //         <div class="icon-menu__item">
 //           <a href="#" class="icon-menu__action text-negative--hover" role="button">
-//             <i class="fas fa-trash-alt" aria-hidden="hidden"></i>
+//             <i class="pi-trash" aria-hidden="hidden"></i>
 //           </a>
 //         </div>
 //       </div>
@@ -941,8 +941,8 @@ input[type="radio"] {
 
       &:before {
         border: none;
-        content: '\f00c';
-        font-family: "Font Awesome 5 Pro";
+        content: "\f11f";
+        font-family: "platform-icons";
         font-size: map.get(variables.$font-percentage, 'sm' );
         font-weight: 900;
         height: auto;

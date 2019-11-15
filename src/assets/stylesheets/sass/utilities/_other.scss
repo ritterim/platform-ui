@@ -79,7 +79,7 @@
 // <div class="crm-banner post animated slideInDown fast" style="background-image: linear-gradient(to right, white, 80%, transparent), url('https://freephotos.cc/storage/preview/path/e0TY5dzjfyAcol92eAidR4ublvPlT2dBbmAGcqeN.jpeg'); background-repeat: no-repeat; background-size: cover; background-position: top center;">
 //   <div class="button button--sm close-action right">
 //     collapse
-//     <i class="fas fa-angle-up" aria-hidden="true"></i>
+//     <i class="pi-angle-up" aria-hidden="true"></i>
 //   </div>
 //   <h2 class="crm-banner__title mb-2">
 //     Your dashboard got an upgrade!
@@ -88,14 +88,14 @@
 //     Take a quick video tour to see the new features of your dashboard.
 //   </p>
 //   <a data-modal="video-banner" class="button button--post button--lg pui-modal__open">
-//     <i class="far fa-play-circle" aria-hidden="true"></i>
+//     <i class="pi-play-circle" aria-hidden="true"></i>
 //     Watch now
 //   </a>
 // </div>
 // <div class="crm-banner post animated slideInDown fast" style="background-image: linear-gradient(to right, white, 80%, transparent), url('https://freephotos.cc/storage/preview/path/e0TY5dzjfyAcol92eAidR4ublvPlT2dBbmAGcqeN.jpeg'); background-repeat: no-repeat; background-size: cover; background-position: top center;">
 //   <div class="button button--sm close-action left">
 //     collapse
-//     <i class="fas fa-angle-up" aria-hidden="true"></i>
+//     <i class="pi-angle-up" aria-hidden="true"></i>
 //   </div>
 //   <h2 class="crm-banner__title mb-2">
 //     Your dashboard got an upgrade!
@@ -104,7 +104,7 @@
 //     Take a quick video tour to see the new features of your dashboard.
 //   </p>
 //   <a data-modal="video-banner" class="button button--post button--lg pui-modal__open">
-//     <i class="far fa-play-circle" aria-hidden="true"></i>
+//     <i class="pi-play-circle" aria-hidden="true"></i>
 //     Watch now
 //   </a>
 // </div>
@@ -119,10 +119,6 @@
       top: variables.$spacer;
     }
   }
-}
-
-.fa-spinner {
-  animation: spin 2s infinite linear;
 }
 
 .animated.fastest {

@@ -5,26 +5,26 @@
 @use "sass:math";
 
 // Info Box
-// 
+//
 // Click the button to toggle the infor box.
-// 
+//
 // Markup:
 // <div class="pui-info-box">
-//   <a class="button button--secondary toggle-hidden rotate-90" role="button" aria-label="Toggle">
-//     <i class="fas fa-sliders-h" aria-hidden="hidden"></i>
+//   <a class="button button--secondary toggle-hidden" role="button" aria-label="Toggle">
+//     <i class="pi-filter" aria-hidden="hidden"></i>
 //   </a>
 //   <div class="pui-info-box__content hidden">
 //     <button class="button pui-info-box__close">
-//       Close <i class="fas fa-times" aria-hidden="hidden"></i>
+//       Close <i class="pi-times" aria-hidden="hidden"></i>
 //     </button>
 //     <form action="" class="block-container block-mb-4 pui-form">
 //       <label for="dob" class="block pui-form__field has-icon">Age or DOB
 //         <input id="dob" type="date" placeholder="DD/MM/YYYY">
-//         <i class="fas fa-calendar-alt text-skyblue background-white"></i>
+//         <i class="pi-calendar text-skyblue background-white"></i>
 //       </label>
 //       <label for="dob" class="block pui-form__field has-icon">Age or DOB
 //         <input id="dob" type="date" placeholder="DD/MM/YYYY">
-//         <i class="fas fa-calendar-alt text-skyblue background-white"></i>
+//         <i class="pi-calendar text-skyblue background-white"></i>
 //       </label>
 //       <fieldset class="block pui-form__field">
 //         <legend>Rate Class</legend>
@@ -57,62 +57,62 @@
 //         <div class="block-container" role="radiogroup" aria-labelledby="radio-heading">
 //           <div class="block-3 my-2 px-1">
 //             <span class="pill background-light text-white flex--align-center" id="a" tabindex="0" role="radio" aria-checked="false">
-//               <i class="fas fa-circle"></i> A
+//               <i class="pi-circle"></i> A
 //             </span>
 //           </div>
 //           <div class="block-3 my-2 px-1">
 //             <span class="pill background-light text-white flex--align-center" id="B" tabindex="0" role="radio" aria-checked="false">
-//               <i class="fas fa-circle"></i> B
+//               <i class="pi-circle"></i> B
 //             </span>
 //           </div>
 //           <div class="block-3 my-2 px-1">
 //             <span class="pill background-light text-white flex--align-center" id="C" tabindex="0" role="radio" aria-checked="false">
-//               <i class="fas fa-circle"></i> C
+//               <i class="pi-circle"></i> C
 //             </span>
 //           </div>
 //           <div class="block-3 my-2 px-1">
 //             <span class="pill background-light text-white flex--align-center" id="D" tabindex="0" role="radio" aria-checked="false">
-//               <i class="fas fa-circle"></i> D
+//               <i class="pi-circle"></i> D
 //             </span>
 //           </div>
 //           <div class="block-3 my-2 px-1">
 //             <span class="pill background-light text-white flex--align-center" id="F" tabindex="0" role="radio" aria-checked="false">
-//               <i class="fas fa-circle"></i> F
+//               <i class="pi-circle"></i> F
 //             </span>
 //           </div>
 //           <div class="block-3 my-2 px-1">
 //             <span class="pill background-light text-white flex--align-center" id="G" tabindex="0" role="radio" aria-checked="false">
-//               <i class="fas fa-circle"></i> G
+//               <i class="pi-circle"></i> G
 //             </span>
 //           </div>
 //           <div class="block-3 my-2 px-1">
 //             <span class="pill background-light text-white flex--align-center" id="Hi-F" tabindex="0" role="radio" aria-checked="false">
-//               <i class="fas fa-circle"></i> Hi-F
+//               <i class="pi-circle"></i> Hi-F
 //             </span>
 //           </div>
 //           <div class="block-3 my-2 px-1">
 //             <span class="pill background-light text-white flex--align-center" id="K" tabindex="0" role="radio" aria-checked="false">
-//               <i class="fas fa-circle"></i> K
+//               <i class="pi-circle"></i> K
 //             </span>
 //           </div>
 //           <div class="block-3 my-2 px-1">
 //             <span class="pill background-light text-white flex--align-center" id="L" tabindex="0" role="radio" aria-checked="false">
-//               <i class="fas fa-circle"></i> L
+//               <i class="pi-circle"></i> L
 //             </span>
 //           </div>
 //           <div class="block-3 my-2 px-1">
 //             <span class="pill background-light text-white flex--align-center" id="M" tabindex="0" role="radio" aria-checked="false">
-//               <i class="fas fa-circle"></i> M
+//               <i class="pi-circle"></i> M
 //             </span>
 //           </div>
 //           <div class="block-3 my-2 px-1">
 //             <span class="pill background-light text-white flex--align-center" id="N" tabindex="0" role="radio" aria-checked="false">
-//               <i class="fas fa-circle"></i> N
+//               <i class="pi-circle"></i> N
 //             </span>
 //           </div>
 //           <div class="block-3 my-2 px-1">
 //             <span class="pill background-light text-white flex--align-center" id="All" tabindex="0" role="radio" aria-checked="false">
-//               <i class="fas fa-circle"></i> All
+//               <i class="pi-circle"></i> All
 //             </spann>
 //           </div>
 //         </div>
@@ -123,7 +123,7 @@
 //     </form>
 //   </div>
 // </div>
-// 
+//
 // Styleguide Components.info
 
 
