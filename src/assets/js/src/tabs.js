@@ -144,7 +144,7 @@ if (tabList) {
       tabPanel.forEach(panel => {
         panel.addEventListener('click', mobileTabs);
       });
-    } else {      
+    }
      
 
     // if(width < 768) {
