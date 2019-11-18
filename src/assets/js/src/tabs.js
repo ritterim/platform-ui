@@ -25,6 +25,7 @@ if (tabList) {
       }
     });
   } else {
+    console.log('no hash');
     setFirstTab();
   }
 
@@ -124,30 +125,45 @@ if (tabList) {
   }
 
   if(width < 768) {
+    resetTabs();
     tabPanel.forEach(panel => {
       panel.addEventListener('click', mobileTabs);
     });
   }
 
-  var delay = (function(){
-    var timer = 0;
-    return function(callback, ms){
-      clearTimeout (timer);
-      timer = setTimeout(callback, ms);
-    };
-  })();
+  function handleResize() {
+    let width = window.innerWidth;
+    if (width > 767.9) {
+      //  desktop stuff
+      let activeTabs = document.querySelectorAll('.tab-active');
+      
+      if (activeTabs.length) {
+        return;
+      } else {
+        resetTabs();
+        setFirstTab();
+      }      
+      window.removeEventListener('resize', handleResize);
+    } else {
+      tabPanel.forEach(panel => {
+        panel.addEventListener('click', mobileTabs);
+      });
+    }
+  }
+  
+  window.addEventListener('resize', handleResize);
 
   window.onresize = function(e) {
     let width = window.innerWidth;
 
     if(width < 768) {
-      tabPanel.forEach(panel => {
-        panel.addEventListener('click', mobileTabs);
-      });
+      window.addEventListener('resize', handleResize);
     }
      
+   
 
-    // if(width < 768) {
+    // if(width > 768 && width < 769) {
+    //   console.log(width);
     //   tabPanel.forEach(panel => {
     //     panel.addEventListener('click', mobileTabs);
     //   });
