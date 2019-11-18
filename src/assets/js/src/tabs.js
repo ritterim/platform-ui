@@ -84,7 +84,7 @@ if (tabList) {
 
     grandparent.parentNode
       .querySelectorAll('[role="tabpanel"]')
-      .forEach(p => p.classList.remove('is-active'));      
+      .forEach(p => p.classList.remove('tab-active'));      
 
     // Show the selected panel
     grandparent.parentNode
@@ -92,12 +92,12 @@ if (tabList) {
       .removeAttribute('hidden');
       
     grandparent.parentNode
-      .querySelector(`#${target.getAttribute('aria-controls')}`).classList.add('is-active');
+      .querySelector(`#${target.getAttribute('aria-controls')}`).classList.add('tab-active');
   }
 
   function removeActiveClass() {
     tabPanel.forEach(node => {
-      node.classList.remove('is-active');
+      node.classList.remove('tab-active');
       node.setAttribute('hidden', true);
     });
   }
@@ -114,11 +114,11 @@ if (tabList) {
     // Allow clicks inside content
     if (e.target.closest('.pui-tab-panel__inner')) return;
     
-    if (e.currentTarget.classList.contains('is-active')) {
+    if (e.currentTarget.classList.contains('tab-active')) {
       removeActiveClass();
     } else {
       removeActiveClass();
-      e.currentTarget.classList.add('is-active');
+      e.currentTarget.classList.add('tab-active');
       e.currentTarget.removeAttribute('hidden');
     }    
   }

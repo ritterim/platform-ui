@@ -183,38 +183,26 @@ $tab-active-color:    map.get(config.$brand-colors, 'navy' );
     &[hidden="true"] {
       display: block;
     }
+  }
 
-    &.is-active {
+  &.tab-active {
+
+    @include mixins.breakpoint(tablet, max) {
       display: block;
-
-      &:after {
-        transform: rotate(45deg);
-      }
 
       .pui-tab-panel__inner {
         height: auto;
         opacity: 1;
         visibility: visible;
       }
-    }
-  }
 
-  &:before {
-    background-color: $tab-active-color;
-    color: map.get(variables.$greyscale, 'white');
-    content: attr(data-label);
-    display: block;
-    font-weight: 600;
-    padding: map.get(variables.$spacers, 3);
-    transition: config.$transitions;
-
-    @include mixins.breakpoint(tablet, min) {
-      display: none;
+      .pui-tab__icon-wrapper {
+        transform: rotate(45deg);
+      }
     }
   }
 
   &:after {
-    content: "\f067";
     color: map.get(variables.$greyscale, 'white');
     font-family: "Font Awesome 5 Pro";
     font-weight: bold;
@@ -238,4 +226,22 @@ $tab-active-color:    map.get(config.$brand-colors, 'navy' );
   &:focus {
     outline: none;
   }
+}
+
+.pui-tab__mobile-tab {
+  background-color: $tab-active-color;
+  color: map.get(variables.$greyscale, 'white');
+  display: flex;
+  font-weight: 600;
+  justify-content: space-between;
+  padding: map.get(variables.$spacers, 3);
+  transition: config.$transitions;
+
+  @include mixins.breakpoint(tablet, min) {
+    display: none;
+  }
+}
+
+.pui-tab__icon-wrapper {
+  transition: config.$transitions; 
 }
