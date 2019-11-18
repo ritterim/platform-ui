@@ -59,14 +59,14 @@
 $tab-height:          4rem;
 $tab-active-color:    map.get(config.$brand-colors, 'navy' );
 
-.pui-card.has-tabs {
-
-  @include mixins.breakpoint(tablet, max) {
-    padding: 0;
-  }
+.pui-tabs {
+  background-color: map.get(variables.$greyscale, 'white');
+  border: 1px solid color.adjust(map.get(variables.$greyscale, "light"), $lightness: math.percentage(config.$hue-threshold * 2));
 
   @include mixins.breakpoint(tablet, min) {
     margin-top: $tab-height;
+    padding-top: $tab-height;
+    padding: $tab-height variables.$spacer variables.$spacer;
   }  
 }
 
@@ -79,7 +79,7 @@ $tab-active-color:    map.get(config.$brand-colors, 'navy' );
     padding: 0;
     margin-bottom: variables.$spacer; // makes up for .pui-card padding-top
     margin-left: calc(-#{variables.$spacer} - 1px); // .pui-card padding + 1px border
-    margin-top: calc(-#{$tab-height} - #{variables.$spacer}); // .pui-tab height + .pui-card padding
+    margin-top: calc(-#{$tab-height} * 2); // .pui-tab height
     width: calc(100% + (1rem + 1px) * 2);
   }
 }

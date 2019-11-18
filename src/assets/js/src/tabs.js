@@ -138,7 +138,7 @@ if (tabList) {
 
   function setActiveTab(id) {
     resetTabs();
-    let newTab =  document.querySelector(`a[href="#${id}"]`);
+    let newTab = document.querySelector(`a[href="#${id}"]`);
     
     newTab.setAttribute('aria-selected', true);
     window.location.hash = `${id}`;
