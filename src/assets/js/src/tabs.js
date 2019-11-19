@@ -99,6 +99,25 @@ if (tabList) {
       .querySelector(`#${target.getAttribute('aria-controls')}`).classList.add('tab-active');
   }
 
+  function createMobileTabs() {
+    tabs.forEach(tab => {
+      let tabId = tab.hash.substr(1);
+      let tabTitle = tab.querySelector('.pui-tab__title').innerHTML;
+      let mobileTab = document.createElement('div');
+      mobileTab.className = 'pui-tab__mobile-tab';
+      mobileTab.innerHTML = '<span>' + tabTitle + '</span><span class="pui-tab__icon-wrapper"><i class="fas fa-plus"></i></span>';
+      let mobileContent = document.getElementById(tabId);
+      mobileContent.prepend(mobileTab);
+    });
+  }
+
+  function deleteMobileTabs() {
+    let mobileTabs = document.querySelectorAll('.pui-tab__mobile-tab');
+    mobileTabs.forEach(tab => {
+      tab.remove();
+    });
+  }
+
   function removeActiveClass() {
     tabPanel.forEach(node => {
       node.classList.remove('tab-active');
@@ -147,6 +166,7 @@ if (tabList) {
   // mobile resolution
   if(width < 768) {
     resetTabs();
+    createMobileTabs();
     tabPanel.forEach(panel => {
       panel.addEventListener('click', mobileTabs);
     });
@@ -157,7 +177,7 @@ if (tabList) {
     if (width > 767.9) {
       //  desktop stuff
       let activeTabs = document.querySelectorAll('.tab-active');
-      
+      deleteMobileTabs();
       if (activeTabs.length) {
         return;
       } else {
@@ -166,6 +186,7 @@ if (tabList) {
       }      
       window.removeEventListener('resize', handleResize);
     } else {
+      if (!document.body.contains(document.querySelector('.pui-tab__mobile-tab'))) createMobileTabs();
       tabPanel.forEach(panel => {
         panel.addEventListener('click', mobileTabs);
       });
