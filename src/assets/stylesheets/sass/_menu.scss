@@ -167,7 +167,7 @@
         flex-direction: column;
       }
 
-      i[class*="fa-"] {
+      i[class*="pi-"] {
         padding-right: map.get(variables.$spacers, 3);
         width: 1.2rem;
         @extend %flex-center;

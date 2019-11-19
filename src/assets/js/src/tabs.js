@@ -105,7 +105,7 @@ if (tabList) {
       let tabTitle = tab.querySelector('.pui-tab__title').innerHTML;
       let mobileTab = document.createElement('div');
       mobileTab.className = 'pui-tab__mobile-tab';
-      mobileTab.innerHTML = '<span>' + tabTitle + '</span><span class="pui-tab__icon-wrapper"><i class="fas fa-plus"></i></span>';
+      mobileTab.innerHTML = '<span>' + tabTitle + '</span><span class="pui-tab__icon-wrapper"><i class="pi-plus"></i></span>';
       let mobileContent = document.getElementById(tabId);
       mobileContent.prepend(mobileTab);
     });
