@@ -231,6 +231,7 @@ $tab-active-color:    map.get(config.$brand-colors, 'navy' );
 .pui-tab__mobile-tab {
   background-color: $tab-active-color;
   color: map.get(variables.$greyscale, 'white');
+  cursor: pointer;
   display: flex;
   font-weight: 600;
   justify-content: space-between;
