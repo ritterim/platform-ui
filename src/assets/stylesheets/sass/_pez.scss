@@ -108,7 +108,7 @@
     padding-top: $small-spacer;
     position: absolute;
     transform: rotate(40deg);
-    .fa-check {
+    .pi-check {
       font-size: map.get(variables.$font-percentage, 'xxs');
       transform: rotate(-40deg);
       margin: 0 map.get(variables.$spacers, 1) 0 0;
