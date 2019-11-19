@@ -93,6 +93,18 @@ $platform-help-text-color: map.get($config-colors, 'navy') !default;
 // Platform colors need to be placed back in a map
 // Removing platform-colors will not affect compilation
 
+// Platform Colors
+//
+// Colors:
+// focus: #3f7bad
+// menu: #003f70
+// link: #3f7bad
+// help: #E5F5FF
+// note: #FFFDF5
+// help-text: #003f70
+//
+// Styleguide Color.PlatformColors
+
 $platform-colors-vars: (
   'focus' : $platform-focus-color,
   'menu' : $platform-menu-color,
