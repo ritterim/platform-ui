@@ -7,9 +7,7 @@
 
 // Tabs
 //
-// The content for a tabbed section needs to live inside the `.pui-tabs` class. The tabs should
-// be added to a `.pui-card` with the class `has-tabs` added. This class gives the card the proper
-// margin-top necessary for the look of the tabs being outside the card.
+// The content for a tabbed section needs to live inside the `.pui-tabs` class. 
 //
 // The aria attributes are important to the funcationality of the tabs as well. The active tab styles
 // come from `aria-selected="true"` being set on the tab. The corresponding tab content is displayed
@@ -22,32 +20,36 @@
 // height of `4rem`. The width can be changed using the [blocks layout method](/styleguide/section-layout.html#kssref-layout-blocks).
 //
 // Markup:
-// <div class="pui-card has-tabs">
-//   <div class="pui-tabs">
-//     <ul class="pui-tab-list" role="tablist" aria-label="Sample Tabs">
-//      <li class="pui-tab">
-//        <a href="#contracts-active" class="pui-tab__anchor" role="tab" aria-selected="true" aria-controls="contracts-active" id="pui-tab-1" tabindex="0">
-//          <i class="pi-folder-open" aria-hidden="hidden"></i><span class="pui-tab__title">Animal</span>
-//        </a>
-//      </li>
-//      <li class="pui-tab">
-//        <a href="#contracts-inactive" class="pui-tab__anchor" role="tab" aria-selected="false" aria-controls="contracts-inactive" id="pui-tab-2" tabindex="-1">
-//          <i class="pi-folder" aria-hidden="hidden"></i><span class="pui-tab__title">Another Animal</span>
-//        </a>
-//      </li>
-//      <li class="pui-tab">
-//        <a href="#contracts-downlines" class="pui-tab__anchor" role="tab" aria-selected="false" aria-controls="contracts-downlines" id="pui-tab-3" tabindex="-1">
-//          <i class="pi-users" aria-hidden="hidden"></i><span class="pui-tab__title">Third Animal</span>
-//        </a>
-//      </li>
-//    </ul>
-//     <div class="pui-tab-panel" id="contracts-active" role="tabpanel" tabindex="0" aria-labelledby="pui-tab-1">
+// <div class="pui-tabs">
+//   <ul class="pui-tab-list" role="tablist" aria-label="Sample Tabs">
+//     <li class="pui-tab">
+//       <a href="#contracts-active" class="pui-tab__anchor" role="tab" aria-selected="true" aria-controls="contracts-active" id="pui-tab-1" tabindex="0">
+//         <i class="fas fa-folder-open" focusable="false" aria-hidden="hidden"></i><span class="pui-tab__title">Active</span>
+//       </a>
+//     </li>
+//     <li class="pui-tab">
+//       <a href="#contracts-inactive" class="pui-tab__anchor" role="tab" aria-selected="false" aria-controls="contracts-inactive" id="pui-tab-2" tabindex="-1">
+//         <i class="fas fa-folder" focusable="false" aria-hidden="hidden"></i><span class="pui-tab__title">Inactive</span>
+//       </a>
+//     </li>
+//     <li class="pui-tab">
+//       <a href="#contracts-downlines" class="pui-tab__anchor" role="tab" aria-selected="false" aria-controls="contracts-downlines" id="pui-tab-3" tabindex="-1">
+//         <i class="fad fa-users" focusable="false" aria-hidden="hidden"></i><span class="pui-tab__title">Downlines</span>
+//       </a>
+//     </li>
+//   </ul>
+//   <div class="pui-tab-panel" id="contracts-active" role="tabpanel" tabindex="0" aria-labelledby="pui-tab-1">
+//     <div class="pui-tab-panel__inner">
 //       <img src="https://placeimg.com/640/480/animals?t=1565635267224">
 //     </div>
-//     <div class="pui-tab-panel" id="contracts-inactive" role="tabpanel" tabindex="0" aria-labelledby="pui-tab-2" hidden>
+//   </div>
+//   <div class="pui-tab-panel" id="contracts-inactive" role="tabpanel" tabindex="0" aria-labelledby="pui-tab-2" hidden>
+//     <div class="pui-tab-panel__inner">
 //       <img src="https://placeimg.com/640/480/animals?t=1565635322782">
 //     </div>
-//     <div class="pui-tab-panel" id="contracts-downlines" role="tabpanel" tabindex="0" aria-labelledby="pui-tab-3" hidden>
+//   </div>
+//   <div class="pui-tab-panel" id="contracts-downlines" role="tabpanel" tabindex="0" aria-labelledby="pui-tab-3" hidden>
+//     <div class="pui-tab-panel__inner">
 //       <img src="https://placeimg.com/640/480/animals?t=1565635383449">
 //     </div>
 //   </div>
