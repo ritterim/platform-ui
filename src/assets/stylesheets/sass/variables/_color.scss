@@ -1,12 +1,13 @@
 @use "config";
 @use "sass:color";
 @use "sass:math";
+@use "sass:map";
 
 // Colors
 //
 // DO NOT implement colors outside of these collections. All color should be called using:
 //
-// `map-get($map, $key);`
+// `map.get($map, $key);`
 //
 // All color variations should be handled through `color.adjust(#color, $lightness: -(#percentage);`, which darkens the color, 
 // or `color.adjust(#color, $lightness: #percentage);`, which will lighten the color, or `rgba` for alpha transparency.
@@ -47,9 +48,9 @@ $greyscale: (
 // Styleguide Color.ErrorColors
 
 $error-colors: (
-  'positive': map-get(config.$secondary-colors, 'olive'),
-  'negative': map-get(config.$secondary-colors, 'red'),
-  'neutral': map-get($greyscale, 'light')
+  'positive': map.get(config.$secondary-colors, 'olive'),
+  'negative': map.get(config.$secondary-colors, 'red'),
+  'neutral': map.get($greyscale, 'light')
 );
 
 // Message Colors
@@ -74,12 +75,12 @@ $error-colors: (
 // Styleguide Color.MessageColors
 
 $message-colors: (
-  'base-light': map-get($greyscale, 'lighter'),
-  'base': map-get($greyscale, 'light'),
-  'base-dark': map-get($greyscale, 'base'),
-  'info-light': map-get(config.$brand-colors, 'lightblue'),
-  'info': map-get(config.$brand-colors, 'skyblue'),
-  'info-dark': color.adjust(map-get(config.$brand-colors, 'med-blue'), $lightness: math.percentage(-(config.$hue-threshold))),
+  'base-light': map.get($greyscale, 'lighter'),
+  'base': map.get($greyscale, 'light'),
+  'base-dark': map.get($greyscale, 'base'),
+  'info-light': map.get(config.$brand-colors, 'lightblue'),
+  'info': map.get(config.$brand-colors, 'skyblue'),
+  'info-dark': color.adjust(map.get(config.$brand-colors, 'med-blue'), $lightness: math.percentage(-(config.$hue-threshold))),
   'warning-light': #fff3cd,
   'warning': #ffeeba,
   'warning-dark': #856404,
