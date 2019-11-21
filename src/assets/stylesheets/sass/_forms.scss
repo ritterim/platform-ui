@@ -941,8 +941,8 @@ input[type="radio"] {
 
       &:before {
         border: none;
-        content: "\f11f";
-        font-family: "platform-icons";
+        content: "\f124";
+        font-family: platform-icons;
         font-size: map.get(variables.$font-percentage, 'sm' );
         font-weight: 900;
         height: auto;
