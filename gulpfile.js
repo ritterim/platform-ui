@@ -1,13 +1,17 @@
 const { src, dest, series, parallel } = require('gulp');
 const autoprefixer = require('autoprefixer');
 const babel = require('gulp-babel');
+const clean = require('gulp-clean');
 const concat = require('gulp-concat');
 const connect = require('gulp-connect');
 const header = require('gulp-header');
 const kss = require('kss');
+const merge = require('merge-stream');
 const nano = require('cssnano');
 const pjson = require('./package.json');
 const postcss = require("gulp-postcss");
+const rename = require("gulp-rename");
+const run = require('gulp-run');
 const sass = require('gulp-sass');
 const sourcemaps = require("gulp-sourcemaps");
 const uglify = require('gulp-uglify');
@@ -40,6 +44,29 @@ function copyStaticAssets() {
     .pipe(connect.reload());
 }
 
+function generateIconAssets() {
+    const iconsIndex = src('dist/platform-icons.html')
+      .pipe(clean())
+      .pipe(dest('./styleguide'));
+
+    const iconsCss = src('dist/platform-icons.css')
+      .pipe(clean())
+      .pipe(rename('_platform-icons.scss'))
+      .pipe(dest('src/assets/stylesheets/sass'));
+
+    const iconsFonts = src([
+        './dist/*.eot',
+        './dist/*.svg',
+        './dist/*.ttf',
+        './dist/*.woff',
+        './dist/*.woff2',
+      ])
+      .pipe(dest('src/assets/stylesheets/'));
+
+    return merge(iconsIndex, iconsCss, iconsFonts)
+      .pipe(connect.reload());
+}
+
 function css() {
   return src('src/assets/stylesheets/sass/main.scss')
     .pipe(sass())
@@ -64,7 +91,6 @@ function js() {
     .pipe(sourcemaps.write())
     .pipe(dest('src/assets/js'))
     .pipe(dest('dist/js'))
-    .pipe(dest('custom-builder/kss-assets/'))
     .pipe(connect.reload())
 }
 
@@ -72,26 +98,31 @@ function styleguide() {
   return kss({
     source: 'src/assets/stylesheets/',
     destination: 'styleguide/',
-    builder: 'custom-builder'
+    builder: 'templates'
   });
 }
 
-function iconFonts() {
-  return src('./node_modules/@ritterim/platform-icons/dist/*')
-    .pipe(dest('custom-builder/kss-assets/'));
+function generateIconFonts() {
+  return run('npm run generate-assets').exec();
 }
 
 function watchFiles() {
+  watch('./src/assets/icons/svg/**/*', generateIconFonts);
   watch('./src/assets/stylesheets/sass/*', css);
   watch('./src/assets/js/src/*', js);
-  watch(['./src/assets/js/src/*', './src/assets/stylesheets/sass/*'], copyStaticAssets);
+  watch([
+    './src/assets/js/src/*',
+    './src/assets/stylesheets/sass/*',
+    './src/assets/icons/svg/**/*'],
+    copyStaticAssets);
 }
 
-exports.build = series(css, js, styleguide, copyStaticAssets);
+exports.build = series(generateIconFonts, generateIconAssets, css, js, styleguide, copyStaticAssets);
 exports.css = css;
 exports.js = js;
-exports.iconFonts = iconFonts;
+exports.generateIconAssets = generateIconAssets;
+exports.generateIconFonts = generateIconFonts;
 exports.styleguide = styleguide;
 exports.serve = serve;
 exports.copyStaticAssets = copyStaticAssets;
-exports.default = parallel(series(css, styleguide, copyStaticAssets), iconFonts, js, serve, watchFiles);
+exports.default = parallel(series(generateIconFonts, generateIconAssets, css, styleguide, copyStaticAssets), js, serve, watchFiles);

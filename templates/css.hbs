@@ -1,0 +1,54 @@
+@font-face {
+    font-family: "{{ fontName }}";
+    src: {{{ src }}};
+    font-style: normal;
+    font-weight: normal;
+}
+
+{{# if baseSelector }}
+{{ baseSelector }} {
+{{ else }}
+{{ baseTag }}[class^="{{classPrefix}}"], {{ baseTag }}[class*=" {{classPrefix}}"] {
+{{/ if }}
+  font-family: {{ fontName }};
+  font-style: normal;
+  font-weight: normal;
+  margin-right: .25rem;
+  text-decoration: inherit;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+{{# if baseSelector }}
+{{ baseSelector }}:before {
+{{ else }}
+{{ baseTag }}[class^="{{classPrefix}}"]:before, {{ baseTag }}[class*=" {{classPrefix}}"]:before {
+{{/ if }}
+  display: inline-block;
+  speak: none;
+  text-decoration: inherit;
+}
+
+{{! Icon sizing }}
+.{{ classPrefix }}sm {
+  font-size: .75rem;
+}
+.{{ classPrefix }}lg {
+  font-size: 1.5rem;
+}
+.{{ classPrefix }}xl {
+  font-size: 2rem;
+}
+.{{ classPrefix }}xxl {
+  font-size: 3rem;
+}
+
+{{# each codepoints }}
+{{# if ../baseSelector }}
+{{ ../baseSelector }}.{{ ../classPrefix }}{{ @key }}:before {
+{{ else }}
+{{ baseTag }}.{{ ../classPrefix }}{{ @key }}:before {
+{{/ if }}
+  content: "\\{{ this }}";
+}
+{{/ each }}
