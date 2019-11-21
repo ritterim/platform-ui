@@ -819,8 +819,8 @@ input[type="radio"] {
 
       &:after {
         color: map.get(variables.$greyscale, 'base' );
-        content: '\f11f';
-        font-family: "Font Awesome 5 Pro";
+        content: '\f128';
+        font-family: platform-icons;
         font-weight: 400;
         height: auto;
         width: auto;
