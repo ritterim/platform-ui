@@ -283,8 +283,7 @@
 // | `overflow-visible`      | `overflow-y`             | `overflow-x`         |
 // | `overflow-hidden`       | `overflow-y--scroll`     | `overflow-x--scroll` |
 // |                         | `overflow-y--hidden`     | `overflow-x--hidden` |
-//
-// The classes with the `--scroll` modifier will use our custom scroll bar.
+// | `overflow-auto`         | `overflow-y--auto`       | `overflow-x--auto`   |
 //
 // Styleguide Utilities.Overflow
 
