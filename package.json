@@ -38,7 +38,7 @@
   "devDependencies": {
     "@babel/core": "^7.6.4",
     "@babel/preset-env": "^7.6.3",
-    "@ritterim/platform-icons": "^0.3.0",
+    "@ritterim/platform-icons": "^0.3.2",
     "autoprefixer": "^9.6.0",
     "cssnano": "^4.1.10",
     "gulp": "^4.0.2",
