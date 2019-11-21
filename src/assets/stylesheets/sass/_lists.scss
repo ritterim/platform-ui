@@ -92,16 +92,17 @@ ul {
     &--arrow {
       margin: 0 variables.$spacer;
       padding: 0 0 0 map.get(variables.$spacers, 4);
+
       .post-item {
+
         &:before {
           color: map.get(config.$brand-colors, 'salmon');
-          content: '\f30b';
+          content: '\f10a';
           display: inline-block;
-          font-family: 'Font Awesome 5 Pro';
+          font-family: platform-icons;
           font-weight: 900;
           left: -(map.get(variables.$spacers, 4));
           position: absolute;
-          transform: rotate(30deg);
         }
       }
     }
@@ -122,8 +123,8 @@ ul {
       margin-bottom: map.get(variables.$spacers, 1);
 
       &:before {
-        content: '\f017';
-        font-family: 'Font Awesome 5 Pro';
+        content: '\f14a';
+        font-family: platform-icons;
         margin: 0 map.get(variables.$spacers, 2) 0 0;
       }
     }
@@ -171,9 +172,9 @@ ul {
         }
 
         &:after {
-          content: '\f144';
+          content: '\f16e';
           color: map.get(variables.$greyscale, 'white');
-          font-family: 'Font Awesome 5 Pro';
+          font-family: platform-icons;
           font-size: map.get(variables.$font-percentage, 'lg') * 2;
           font-weight: 900;
           left: 50%;
