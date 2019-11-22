@@ -1,0 +1,27 @@
+<article class="block-container px-6 mx-6 py-4">
+  <div class="block-container blocks-px-2 blocks-py-2 tablet-up-4 laptop-up-5">
+    {{# each names }}
+      <div class="block">
+        <div class="pui-card flex--center-content flex--column rounded-1 text-salmon--hover">
+          <span class="flex text--size-xxl text-base py-3 px-3">
+            <i class="{{ ../baseClassNames }} {{ ../classPrefix }}{{ this }}"></i>
+          </span>
+          <div class="button icon" data-clipboard-text="<i class='{{ ../classPrefix }}{{ this }}'></i>">
+            <i class="pi-clipboard mr-2 "></i>
+            {{ ../classPrefix }}{{ this }}
+          </div>
+        </div>
+      </div>
+      {{/ each }}
+  </div>
+</article>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
+<script>
+const clipboard = new ClipboardJS('.button.icon');
+clipboard.on('success', function(e) {
+    e.trigger.setAttribute('data-pui-tooltip', 'Copied!');
+    e.clearSelection();
+    setTimeout(() => e.trigger.removeAttribute('data-pui-tooltip'), 1000);
+});
+</script>

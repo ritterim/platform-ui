@@ -7,12 +7,15 @@
   "files": [
     "/dist"
   ],
+  "modules": {
+    "name": "platform icons",
+    "version": "0.4.0"
+  },
   "scripts": {
     "start": "npm install && gulp",
     "build": "gulp build",
+    "generate-assets": "icon-font-generator src/assets/icons/svg/**/*.svg -o dist -n platform-icons -j -p pi --center --htmltp templates/html.hbs --csstp templates/css.hbs",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:all": "npm install && cd custom-builder && npm install && cd .. && gulp",
-    "build:style": "rm -rf styleguide && cd custom-builder && cd .. && gulp",
     "ver": "echo \"$npm_package_version\""
   },
   "browserslist": [
@@ -38,19 +41,23 @@
   "devDependencies": {
     "@babel/core": "^7.6.4",
     "@babel/preset-env": "^7.6.3",
-    "@ritterim/platform-icons": "^0.3.2",
     "autoprefixer": "^9.6.0",
     "cssnano": "^4.1.10",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
+    "gulp-clean": "^0.4.0",
     "gulp-concat": "^2.6.1",
     "gulp-connect": "^5.7.0",
     "gulp-header": "^2.0.9",
     "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-run": "^1.7.1",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2",
+    "icon-font-generator": "^2.1.10",
     "kss": "^3.0.0-beta.25",
+    "merge-stream": "^2.0.0",
     "sass": "^1.23.1"
   },
   "babel": {
