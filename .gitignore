@@ -5,7 +5,8 @@ dist/*.svg
 dist/*.ttf
 dist/*.woff
 dist/*.woff2
-dist/platform-ui
+dist/js
+dist/platform-ui.min.css
 src/assets/*.pdf
 src/assets/*.csv
 src/assets/*.txt
