@@ -1,6 +1,11 @@
 .DS_Store
 node_modules/
-dist/**
+dist/*.eot
+dist/*.svg
+dist/*.ttf
+dist/*.woff
+dist/*.woff2
+dist/platform-ui
 src/assets/*.pdf
 src/assets/*.csv
 src/assets/*.txt
@@ -10,4 +15,3 @@ src/assets/stylesheets/sass/fontawesome
 src/assets/webfonts
 styleguide/
 ritterim-platform-ui-*.tgz
-custom-builder/kss-assets/platform-ui.min.js
