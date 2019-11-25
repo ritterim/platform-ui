@@ -39,7 +39,7 @@ function serve() {
 
 function copyStaticAssets() {
   return src([
-    'src/assets/images/**/*', 'src/assets/stylesheets/**/*', '!src/assets/stylesheets/sass/**'], { base: 'src/assets' })
+    'src/assets/images/**/*', 'src/assets/stylesheets/**/*', '!src/assets/stylesheets/sass/**', 'src/assets/js/*.js'], { base: 'src/assets' })
     .pipe(dest('./styleguide/site-assets'))
     .pipe(connect.reload());
 }

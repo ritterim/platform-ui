@@ -24,16 +24,16 @@
   <header class="site-header flex--justify-between flex--align-center px-3 py-2 background-white block-container border-b border--color-skyblue">
     <div class="block block-mobile-4 block-laptop-3 flex flex--justify-start">
       <a class="flex w-50" href="/">
-        <img class="w-100" src="site-assets/stylesheets/svg/RitterInsuranceLogo.svg" alt="Ritter Insurance Marketing">
+        <img class="w-100" src="site-assets/images/svg/RitterInsuranceLogo.svg" alt="Ritter Insurance Marketing">
       </a>
     </div>
     <nav class="block block-8 flex flex--justify-end">
       <a class="text--bold text-navy px-3" href="https://docs.ritterim.com">
-        <img class="icon--svg-small" src="site-assets/stylesheets/svg/ritter-docs.svg" alt="">
+        <img class="icon--svg-small" src="site-assets/images/svg/ritter-docs.svg" alt="">
         Ritter Docs
       </a>
       <a class="text--bold text-navy px-3" href="https://ritterim.com">
-        <img class="icon--svg-small" src="site-assets/stylesheets/svg/ritter-website.svg" alt="">
+        <img class="icon--svg-small" src="site-assets/images/svg/ritter-website.svg" alt="">
         Ritterim.com
       </a>
     </nav>
@@ -76,7 +76,7 @@
   {{/unless}}
   <main class="pb-4 {{#unless homepage}}px-4 background-white{{/unless}}" aria-label="Content">
     {{#if homepage}}
-    <div class="crm-banner animated slideInDown fast flex--center-content flex--column pt-6" style="background-image: linear-gradient(to right, white, transparent), url('site-assets/stylesheets/images/style-guide-background.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+    <div class="crm-banner animated slideInDown fast flex--center-content flex--column pt-6" style="background-image: linear-gradient(to right, white, transparent), url('site-assets/images/style-guide-background.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
       <h1 class="my-4">Welcome to the Platform UI Style Guide</h1>
       <p>Platform UI is the CSS framework we've developed to maintain the Ritter Platform of agent tools.</p>
       <a href="/section-_getting-started.html" class="button button--post button--lg">Get Started v{{ options.version }}</a>
@@ -92,7 +92,7 @@
             {{#each menu}}
               <div class="block{{#if isActive}} active{{/if}}">
                 <a class="pui-card flex--center-content flex--column rounded-1 text-salmon--hover" href="section-{{referenceURI}}.html">
-                  <img class="py-2" src="site-assets/stylesheets/svg/{{header}}.svg" alt="">
+                  <img class="py-2" src="site-assets/images/svg/{{header}}.svg" alt="">
                   <span class="py-1">{{header}}</span>
                   <span class="py-1">Learn More <i class="pui-arrow-right"></i><i class="pui-angle-right"></i></span>
                 </a>
@@ -230,7 +230,7 @@
 
   <!-- SCRIPTS -->
 
-  <script src="kss-assets/platform-ui.min.js"></script>
+  <script src="site-assets/js/platform-ui.min.js"></script>
   <script>
     {{!-- Specific JS for tables. Markdown does not
     support adding classes --}}
