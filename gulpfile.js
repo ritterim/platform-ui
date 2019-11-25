@@ -98,7 +98,8 @@ function styleguide() {
   return kss({
     source: 'src/assets/stylesheets/',
     destination: 'styleguide/',
-    builder: 'templates'
+    builder: 'templates',
+    version: pjson.version
   });
 }
 
