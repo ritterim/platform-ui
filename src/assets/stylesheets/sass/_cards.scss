@@ -46,45 +46,6 @@
 //
 // Styleguide Components.Cards.Headers
 
-// Videos
-//
-// For the card below we're showcasing some videos. Here we stick with a simple pui-card, a header, and some content.
-// Within the content we utilize our [block layout](/section-layout.html#kssref-layout-blocks).
-//
-// Markup:
-// <div class="pui-card">
-//   <div class="pui-card__header">
-//     <div class="pui-card__group">
-//       <i class="pi-youtube"></i>
-//         <h2 class="pui-card__title">Featured Videos</h2>
-//     </div>
-//   </div>
-//   <div class="pui-card__content">
-//     <ul class="image-link-list block-container blocks-py-2 blocks-px-2 tablet-up-2 lg-tablet-up-3">
-//       <li class="block">
-//         <a href="#" class="image-link image-link--video">
-//           <img src="/styleguide/site-assets/images/vid1.jpg" alt="image" />
-//           <span class="image-link-caption text-white background-skyblue">A Medicare Quoting Tool - Medicare Walkthrough</span>
-//         </a>
-//       </li>
-//       <li class="block">
-//         <a href="#" class="image-link image-link--video">
-//           <img src="/styleguide/site-assets/images/vid2.jpg" alt="image" />
-//           <span class="image-link-caption text-white background-skyblue">Enrollment on Medicareful</span>
-//         </a>
-//       </li>
-//       <li class="block">
-//         <a href="#" class="image-link image-link--video">
-//           <img src="/styleguide/site-assets/images/vid1.jpg" alt="image" />
-//           <span class="image-link-caption text-white background-skyblue">A Medicare Quoting Tool - Medicare Walkthrough</span>
-//         </a>
-//       </li>
-//     </ul>
-//   </div>
-// </div>
-//
-// Styleguide Components.Cards.Videos
-
 // Content Overflow
 //
 // If you have a lot of content in a card that is causing other cards to grow too much, you could add the class
@@ -113,12 +74,10 @@
 //                 <p><i class="pi-clock text-skyblue" aria-hidden="true"></i> <time datetime="9:15 am">9:15
 //                         am</time></p>
 //             </div>
-//             <div class="div-btn">
-//                 <div class="check-circle">
-//                     <div class="pill pill--circle text-light"><i class="pi-check" aria-hidden="true"></i>
-//                     </div>
-//                     <p class="check-circle__status">Complete</p>
+//             <div class="flex--center-content flex--column">
+//                 <div class="pill pill--circle text-light"><i class="pi-check" aria-hidden="true"></i>
 //                 </div>
+//                 <p class="check-circle__status">Complete</p>
 //             </div>
 //         </div>
 //         <div class="flex">
@@ -177,12 +136,10 @@
 //                 <p><i class="pi-clock text-skyblue" aria-hidden="true"></i> <time datetime="12:00 am">12:00
 //                         am</time></p>
 //             </div>
-//             <div class="div-btn">
-//                 <div class="check-circle">
-//                     <div class="pill pill--circle text-light"><i class="pi-check" aria-hidden="true"></i>
-//                     </div>
-//                     <p class="check-circle__status">Complete</p>
+//             <div class="flex--center-content flex--column">
+//                 <div class="pill pill--circle text-light"><i class="pi-check" aria-hidden="true"></i>
 //                 </div>
+//                 <p class="check-circle__status">Complete</p>
 //             </div>
 //         </div>
 //         <div class="flex">
@@ -211,12 +168,10 @@
 //                 <p><i class="pi-clock text-skyblue" aria-hidden="true"></i> <time datetime="6:30 pm">6:30
 //                         pm</time></p>
 //             </div>
-//             <div class="div-btn">
-//                 <div class="check-circle">
-//                     <div class="pill pill--circle text-light"><i class="pi-check" aria-hidden="true"></i>
-//                     </div>
-//                     <p class="check-circle__status">Complete</p>
+//             <div class="flex--center-content flex--column">
+//                 <div class="pill pill--circle text-light"><i class="pi-check" aria-hidden="true"></i>
 //                 </div>
+//                 <p class="check-circle__status">Complete</p>
 //             </div>
 //         </div>
 //         <div class="flex">

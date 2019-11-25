@@ -10,17 +10,19 @@
 // A Pez can support color by adding a text or background modifier as do Pills.
 //
 // Pez were created to handle a specific need in our system for georaphic states. States and Products are used as buttons, so they are here as well.
+// 
+// For accessibility purposes, add `aria-label="{state name}"`.
 //
 // Pez have 3 states, default, disabled, and pressed
 //
 // Markup:
-// <div class="pez">
+// <div class="pez" aria-label="Alaska">
 //   AK
 // </div>
-// <div class="pez disabled">
+// <div class="pez disabled" aria-label="Washington DC">
 //   DC
 // </div>
-// <div class="pez pressed">
+// <div class="pez pressed" aria-label="Georgia">
 //   GA
 // </div>
 //
@@ -28,31 +30,31 @@
 
 // Corner label
 //
-// Pez can also have corner labels. These were designed  to be used with [Font Awesomes checkmark icon](https://fontawesome.com/icons/check?style=solid).
+// Pez can also have corner labels. These were designed to be used with the platform icon `pi-check`.
 //
 // Markup:
-// <button class="pez">
+// <button class="pez" aria-label="Alaska">
 //   AK
 //   <div class="pez__check-wrapper">
-//     <i class="pi-check"></i>
+//     <i class="pi-check" aria-hidden="true"></i>
 //   </div>
 // </button>
-// <button class="pez disabled">
+// <button class="pez disabled" aria-label="Washington DC">
 //   DC
 //   <div class="pez__check-wrapper">
-//     <i class="pi-check"></i>
+//     <i class="pi-check" aria-hidden="true"></i>
 //   </div>
 // </button>
-// <button class="pez pressed">
+// <button class="pez pressed" aria-label="Georgia">
 //   GA
 //   <div class="pez__check-wrapper">
-//     <i class="pi-check"></i>
+//     <i class="pi-check" aria-hidden="true"></i>
 //   </div>
 // </button>
 //
 // Styleguide Components.Pez.CornerLabel
 
-// products
+// Products
 //
 // Pez can also be a product label. The 2 states are default and disabled.
 //
@@ -64,7 +66,7 @@
 //   Medicare Advantage
 // </button>
 //
-// Styleguide Components.Pez.CornerLabel
+// Styleguide Components.Pez.Products
 
 
 .pez {
@@ -93,25 +95,39 @@
     padding: map.get(variables.$spacers, 2) map.get(variables.$spacers, 3);
   }
 
-  // --check-wrapper is meantto  be used with a checkmark  icon
+  // --check-wrapper is meant to be used with a checkmark icon
   &__check-wrapper {
 
     $small-spacer: map.get(variables.$spacers, 2)  / 2;
 
-    background-color: map.get(variables.$error-colors, 'positive');
     color: white;
-    bottom: 0;
-    right: 0;
-    height: variables.$spacer * 1.6;
-    margin-right: -#{$small-spacer};
-    margin-bottom: -#{map.get(variables.$spacers, 2)};
-    padding-top: $small-spacer;
+    bottom: -1px;
+    right: -1px;
+    height: variables.$spacer;
     position: absolute;
-    transform: rotate(40deg);
+    width: variables.$spacer;
+    
+    // triangle for check background
+    &:after {
+      content: "";
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 0 1rem 1rem;
+      border-color: transparent transparent map.get(variables.$error-colors, 'positive') transparent;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: 1;
+    }
+
     .pi-check {
+      display: block;
       font-size: map.get(variables.$font-percentage, 'xxs');
-      transform: rotate(-40deg);
-      margin: 0 map.get(variables.$spacers, 1) 0 0;
+      position: absolute;
+      bottom: 0; 
+      right: 1px;
+      z-index: 2;
     }
   }
 

@@ -352,11 +352,11 @@ input[type="checkbox"] {
     &:after {
       bottom: 1px;
       color: inherit;
-      content: "\f11f";
+      content: "\f13a";
       font-family: "platform-icons";
       font-size: map.get(variables.$font-percentage, 'xs');
       font-weight: 900;
-      left: 2px;
+      left: 3px;
     }
   }
 }
@@ -819,8 +819,8 @@ input[type="radio"] {
 
       &:after {
         color: map.get(variables.$greyscale, 'base' );
-        content: '\f11f';
-        font-family: "Font Awesome 5 Pro";
+        content: '\f17f';
+        font-family: platform-icons;
         font-weight: 400;
         height: auto;
         width: auto;
@@ -941,11 +941,12 @@ input[type="radio"] {
 
       &:before {
         border: none;
-        content: "\f11f";
-        font-family: "platform-icons";
+        content: "\f13a";
+        font-family: platform-icons;
         font-size: map.get(variables.$font-percentage, 'sm' );
         font-weight: 900;
         height: auto;
+        left: 2px;
         opacity: 0;
         position: absolute;
         top: 50%;
