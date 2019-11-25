@@ -352,7 +352,7 @@ input[type="checkbox"] {
     &:after {
       bottom: 1px;
       color: inherit;
-      content: "\f124";
+      content: "\f13a";
       font-family: "platform-icons";
       font-size: map.get(variables.$font-percentage, 'xs');
       font-weight: 900;
@@ -819,7 +819,7 @@ input[type="radio"] {
 
       &:after {
         color: map.get(variables.$greyscale, 'base' );
-        content: '\f128';
+        content: '\f17f';
         font-family: platform-icons;
         font-weight: 400;
         height: auto;
@@ -941,7 +941,7 @@ input[type="radio"] {
 
       &:before {
         border: none;
-        content: "\f124";
+        content: "\f13a";
         font-family: platform-icons;
         font-size: map.get(variables.$font-percentage, 'sm' );
         font-weight: 900;
