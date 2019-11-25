@@ -2,8 +2,18 @@
 //
 // All platform icons have a prefix of `pi` and are house in the `<i>` element tag. **Click the button below the icon to copy to clipboard.**
 //
-// `<i class="pi-arrow-right"></i>` produces <i class="pi-arrow-right"></i>
+// `<i class="pi-arrow-right"></i>` produces: <i class="pi-arrow-right"></i>
 //
+// ## General setup:
+//
+// |  source| default|
+// | ------- | ----- |
+// | artboard | 4" x 4" |
+// | stroke: main | 24pt  |
+// | stroke: auxiliary* | 18pt  |
+// | stroke: corner | .15"  |
+// | stroke: join | round  |
+// * expand object after completion *
 //
 // |  There is also a size utility specific to icons||
 // | ------- | ----- |
@@ -16,3 +26,27 @@
 // <iframe src="platform-icons.html" width="100%" height="5000px" style="border: none"></iframe>
 //
 // Styleguide Icons
+
+// Setup
+//
+// |  source| default|
+// | ------- | ----- |
+// | artboard | 4" x 4" |
+// | stroke: main | 24pt  |
+// | stroke: auxiliary* | 18pt  |
+// | stroke: corner | .15"  |
+// | stroke: join | round  |
+// * expand object after completion *
+//
+// Styleguide Icons.setup
+
+// Sizing
+//
+// |  There is also a size utility specific to icons||
+// | ------- | ----- |
+// | `pi-sm` | 75%   |
+// | `pi-lg` | 150%  |
+// | `pi-xl` | 2rem  |
+// | `pi-xxl` | 3rem  |
+//
+// Styleguide Icons.Sizing
