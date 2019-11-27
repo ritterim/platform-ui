@@ -106,7 +106,7 @@ $platform-colors: map.merge(config.$platform-colors, $platform-colors);
     }
     // create native css variables
     :root {
-      --pui-#{$name}: $color;
+      --pui-#{$name}: #{$color};
     }
   }
 }
