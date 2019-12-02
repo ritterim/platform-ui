@@ -18,7 +18,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "ver": "echo \"$npm_package_version\"",
     "nightwatch": "percy exec -- nightwatch",
-    "browser-integration-tests": "npm install && npm run build && npm run nightwatch"
+    "browser-visual-tests": "npm run build && npm run nightwatch"
   },
   "browserslist": [
     "last 2 version",
