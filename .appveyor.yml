@@ -21,7 +21,8 @@ after_build:
 cache:
   - node_modules -> package.json, package-lock.json
 
-test: off
+test_script:
+  - npm run browser-visual-tests
 
 artifacts:
   - path: ./styleguide.zip
