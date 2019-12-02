@@ -16,3 +16,5 @@ src/assets/stylesheets/sass/fontawesome
 src/assets/webfonts
 styleguide/
 ritterim-platform-ui-*.tgz
+tests_output/
+chromedriver.log

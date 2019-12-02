@@ -16,7 +16,9 @@
     "build": "gulp build",
     "generate-assets": "icon-font-generator src/assets/icons/svg/**/*.svg -o dist -n platform-icons -j -p pi --center --htmltp templates/html.hbs --csstp templates/css.hbs",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "ver": "echo \"$npm_package_version\""
+    "ver": "echo \"$npm_package_version\"",
+    "nightwatch": "percy exec -- nightwatch",
+    "browser-integration-tests": "npm install && npm run build && npm run nightwatch"
   },
   "browserslist": [
     "last 2 version",
@@ -41,7 +43,9 @@
   "devDependencies": {
     "@babel/core": "^7.6.4",
     "@babel/preset-env": "^7.6.3",
+    "@percy/nightwatch": "^1.0.5",
     "autoprefixer": "^9.6.0",
+    "chromedriver": "^78.0.1",
     "cssnano": "^4.1.10",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
@@ -55,10 +59,13 @@
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2",
+    "http-server": "^0.12.0",
     "icon-font-generator": "^2.1.10",
     "kss": "^3.0.0-beta.25",
     "merge-stream": "^2.0.0",
-    "sass": "^1.23.1"
+    "nightwatch": "^1.3.1",
+    "sass": "^1.23.1",
+    "selenium-server": "^3.141.59"
   },
   "babel": {
     "presets": [
