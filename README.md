@@ -2,7 +2,7 @@
 
 Platform UI is a CSS framework, rooted in Sass, used by [Ritter Insurance Marketing](https://ritterim.com) (RIM) for our platform of agent tools. It's being built as a replacement for existing frameworks while considering some of our unique needs.
 
-As continue to improve Platform UI, we hope to create an easy to use framework that other developers can implement.
+As we continue to improve Platform UI, we hope to create an easy to use framework that other developers can implement.
 
 ## Publishing
 
