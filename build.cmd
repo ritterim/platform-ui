@@ -1,6 +1,7 @@
 @echo Off
 pushd %~dp0
 setlocal
+set pull_request_number=%APPVEYOR_PULL_REQUEST_NUMBER%
 
 :Build
 call npm install
@@ -8,6 +9,12 @@ if %ERRORLEVEL% neq 0 goto BuildFail
 
 call npm run build
 if %ERRORLEVEL% neq 0 goto BuildFail
+
+if %pull_request_number% gtr 0 (
+  echo "In pull request. Not Deploying."
+  CALL npm run browser-visual-tests
+  if %ERRORLEVEL% neq 0 goto BuildFail
+)
 
 goto BuildSuccess
 
