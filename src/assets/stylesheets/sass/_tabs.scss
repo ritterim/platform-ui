@@ -21,7 +21,7 @@
 //
 // Markup:
 // <div class="pui-tabs">
-//   <div class="pui-tab-list" role="tablist" aria-label="Sample Tabs">
+//   <ul class="pui-tab-list" role="tablist" aria-label="Sample Tabs">
 //     <li class="pui-tab">
 //       <a href="#contracts-active" class="pui-tab__anchor" role="tab" aria-selected="true" aria-controls="contracts-active" id="pui-tab-1" tabindex="0">
 //         <i class="pi-folder-open" focusable="false" aria-hidden="hidden"></i><span class="pui-tab__title">Active</span>
@@ -37,7 +37,7 @@
 //         <i class="pi-users" focusable="false" aria-hidden="hidden"></i><span class="pui-tab__title">Downlines</span>
 //       </a>
 //     </li>
-//   </div>
+//   </ul>
 //   <div class="pui-tab-panel" id="contracts-active" role="tabpanel" tabindex="0" aria-labelledby="pui-tab-1">
 //     <div class="pui-tab__mobile-tab">
 //      <span>Active</span>
