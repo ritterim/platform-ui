@@ -76,8 +76,126 @@
 //
 // Styleguide Components.Tabs
 
+
+// radio Tabs
+// 
+// 
+// Markup:
+// <div class="pui-tabs--radio">
+//   <input type="radio" id="tab-input-a" name="tabs" checked>
+//   <label for="tab-input-a">
+//     <i class="fab fa-pied-piper-hat"></i> Tab 1
+//   </label>
+//   <div class="pui-tab--radio">
+//     <img src="https://placeimg.com/640/480/animals?t=1565635383449">
+//   </div>
+//   <input type="radio" id="tab-input-b" name="tabs">
+//   <label for="tab-input-b" class="tab-label">
+//     <i class="fab fa-pied-piper-pp"></i> Tab 2
+//   </label>
+//   <div class="pui-tab--radio">
+//     <img src="https://placeimg.com/640/480/animals?t=1565635267224">
+//   </div>
+//   <input type="radio" id="tab-input-c" name="tabs">
+//   <label for="tab-input-c" class="tab-label">
+//     <i class="fab fa-pied-piper"></i> Tab 3
+//   </label>
+//   <div class="pui-tab--radio">
+//     <img src="https://placeimg.com/640/480/animals?t=1565635322782">
+//   </div>
+// </div>
+// 
+// 
+// Styleguide Components.Tabs.radio
+
 $tab-height:          4rem;
 $tab-active-color:    map.get(config.$brand-colors, 'navy' );
+
+.pui-tabs--radio {
+  
+  @include mixins.breakpoint(tablet, min) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  input[type=radio] {
+    appearance: none;
+    position: absolute;
+    
+    &:checked {
+      + label {
+        
+        @include mixins.breakpoint(tablet, max) {
+          border-bottom: none; 
+        }
+        
+        @include mixins.breakpoint(tablet, min) {
+          background-color: #fff;
+          color: #000;
+        }
+        
+        + .pui-tab--radio {
+          display: block;
+        }
+      }
+    }
+  }
+  
+  label {
+    align-items: center;
+    display: flex;
+    height: 4rem;
+    padding: .5rem 1rem;
+    transition: all ease .2s;
+    
+    @include mixins.breakpoint(tablet, max) {
+      border: 1px solid #003f70;
+      background: #003f70;
+      color: #fff;
+      margin-top: .25rem;
+    
+      &:first-of-type {
+        margin-top: 0;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      border: 1px solid transparent;
+      color: #ccc;
+      cursor: pointer;
+      justify-content: center;
+      margin: 0 .5rem;
+      order: 1;
+      
+      &:first-of-type {
+        margin-left: 0;
+      }
+      
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.pui-tab--radio {
+  background-color: #fff;
+  border: 1px solid #003f70;
+  border-top: transparent;
+  display: none;
+  padding: .5rem;
+  width: 100%;
+
+  @include mixins.breakpoint(tablet, min) {
+    border: none;
+    flex-grow: 1;
+    order: 99;
+  }
+}
 
 .pui-tabs {
   background-color: map.get(variables.$greyscale, 'white');
