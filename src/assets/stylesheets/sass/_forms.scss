@@ -296,96 +296,96 @@ legend {
   white-space: normal;
 }
 
-input[type="checkbox"],
-input[type="radio"] {
-  opacity: 0;
-  position: absolute;
-  width: auto;
-
-  &:checked + label {
-    font-weight: 600;
-
-    &:after {
-      transform: scale(1);
-    }
-  }
-
-  + label {
-    color: map.get(variables.$greyscale, 'base');
-    cursor: pointer;
-    display: inline-block;
-    font-weight: 400;
-    height: 1rem;
-    line-height: 1.2;
-    margin-right: variables.$spacer;
-    margin-top: variables.$spacer * .75;
-    padding-left: variables.$spacer * 1.5;
-    position: relative;
-    vertical-align: baseline;
-
-    &:before,
-    &:after {
-      position: absolute;
-      display: inline-block;
-    }
-
-    &:before {
-      border: 1px solid map.get(variables.$greyscale, 'base');
-      border-radius: 50%;
-      bottom: 0;
-      content: '';
-      left: 0;
-      @include mixins.square(variables.$spacer);
-    }
-
-    &:after {
-      transform: scale(0);
-      transition: transform config.$duration ease;
-    }
-  }
-}
-
-input[type="checkbox"] {
-
-  + label {
-
-    &:after {
-      bottom: 1px;
-      color: inherit;
-      content: "\f13b";
-      font-family: "platform-icons";
-      font-size: map.get(variables.$font-percentage, 'xs');
-      font-weight: 900;
-      left: 3px;
-    }
-  }
-}
-
-input[type="radio"] {
-
-  &:checked + label {
-    cursor: default;
-  }
-
-  &.pui-form__radio {
-
-    + label {
-
-      &:after {
-        background-color: map.get(variables.$greyscale, 'base' );
-        border-radius: 50%;
-        bottom: 2px;
-        content: '';
-        left: 2px;
-        @include mixins.square(variables.$spacer * .75);
-      }
-    }
-  }
-}
-
 .pui-form {
   $self: &;
   color: map.get(variables.$greyscale, 'light' );
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    opacity: 0;
+    position: absolute;
+    width: auto;
+  
+    &:checked + label {
+      font-weight: 600;
+  
+      &:after {
+        transform: scale(1);
+      }
+    }
+  
+    + label {
+      color: map.get(variables.$greyscale, 'base');
+      cursor: pointer;
+      display: inline-block;
+      font-weight: 400;
+      height: 1rem;
+      line-height: 1.2;
+      margin-right: variables.$spacer;
+      margin-top: variables.$spacer * .75;
+      padding-left: variables.$spacer * 1.5;
+      position: relative;
+      vertical-align: baseline;
+  
+      &:before,
+      &:after {
+        position: absolute;
+        display: inline-block;
+      }
+  
+      &:before {
+        border: 1px solid map.get(variables.$greyscale, 'base');
+        border-radius: 50%;
+        bottom: 0;
+        content: '';
+        left: 0;
+        @include mixins.square(variables.$spacer);
+      }
+  
+      &:after {
+        transform: scale(0);
+        transition: transform config.$duration ease;
+      }
+    }
+  }
+  
+  input[type="checkbox"] {
+  
+    + label {
+  
+      &:after {
+        bottom: 1px;
+        color: inherit;
+        content: "\f13b";
+        font-family: "platform-icons";
+        font-size: map.get(variables.$font-percentage, 'xs');
+        font-weight: 900;
+        left: 3px;
+      }
+    }
+  }
+  
+  input[type="radio"] {
+  
+    &:checked + label {
+      cursor: default;
+    }
+  
+    &.pui-form__radio {
+  
+      + label {
+  
+        &:after {
+          background-color: map.get(variables.$greyscale, 'base' );
+          border-radius: 50%;
+          bottom: 2px;
+          content: '';
+          left: 2px;
+          @include mixins.square(variables.$spacer * .75);
+        }
+      }
+    }
+  }
 
   &--stacked {
     flex-flow: column;
