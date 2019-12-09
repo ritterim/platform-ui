@@ -159,7 +159,11 @@
 // </div>
 //
 // Styleguide Utilities.Loader
-
+@keyframes rotation {
+  to {
+    transform: rotate(360deg);
+  }
+}
 %pui-loader,
 .pui-loader {
   animation: rotation 1s infinite linear;
