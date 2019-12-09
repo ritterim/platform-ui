@@ -5,10 +5,6 @@
 @use "mixins";
 @use "utilities";
 
-// animation libs
-@use "animate"; // leveraging animate.css
-@use "vue-transitions";
-
 @use "normalize";
 
 // initial structure
@@ -34,7 +30,6 @@
 @use "notes";
 @use "pez";
 @use "pills";
-@use "quote";
 @use "search";
 @use "stats";
 @use "tabs";
@@ -44,7 +39,6 @@
 // special and print
 @use "ie-specific";
 @use "print";
-@use "wistia";
 
 // platform-icons
 @use "platform-icons";
