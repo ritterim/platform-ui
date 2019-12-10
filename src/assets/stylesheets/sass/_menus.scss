@@ -562,17 +562,17 @@
 // Markup:
 // <div class="icon-menu">
 //   <div class="icon-menu__item">
-//     <div class="icon-menu__action text-negative--hover pointer">
+//     <div class="icon-menu__action text-negative--hover pointer" role="button">
 //       <i class="pi-trash" aria-hidden="hidden"></i>
 //     </div>
 //   </div>
 //   <div class="icon-menu__item">
-//     <div class="icon-menu__action text-positive--hover pointer">
+//     <div class="icon-menu__action text-positive--hover pointer" role="button">
 //       <i class="pi-edit" aria-hidden="hidden"></i>
 //     </div>
 //   </div>
 //   <div class="icon-menu__item">
-//     <div class="icon-menu__action text-red--hover pointer">
+//     <div class="icon-menu__action text-red--hover pointer" role="button">
 //       <i class="pi-clock" aria-hidden="hidden"></i>
 //     </div>
 //   </div>
