@@ -548,7 +548,7 @@
 // class to the `icon-menu__action`. To see a list of available hover colors [click here](/section-typography.html#kssref-typography-utilities-color).
 // 
 // In the example below, we're using `<div>`s on the `icon-menu__action` to build the menus. You could use a `<button>` or an `<a>` to improve accessibility
-// depending on exactly what you need. If you use a less semantic element like `<div>`, we would recommend adding `role="bottom"`.
+// depending on exactly what you need. If you use a less semantic element like `<div>`, we would recommend adding `role="button"`.
 // 
 // Also notice that the `pointer` class was added to those elements that do not have a `cursor: pointer` applied to them by default.
 //
