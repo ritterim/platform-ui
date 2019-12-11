@@ -349,8 +349,7 @@ legend {
     position: absolute;
     width: auto;
   
-    &:checked + label {
-      font-variation-settings: 'GRAD' 0.5;
+    &:checked + label {      
   
       .input-icons {
 
