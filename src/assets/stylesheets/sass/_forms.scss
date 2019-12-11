@@ -923,6 +923,7 @@ legend {
   input.pui-toggle__input {
 
     + label {
+      align-items: center;
       color: map.get(variables.$greyscale, 'base');
       display: flex;
       height: 100%;
