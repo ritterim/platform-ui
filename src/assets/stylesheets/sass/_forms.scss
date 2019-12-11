@@ -35,9 +35,21 @@
 //       <legend>Choose</legend>
 //       <div class="pui-form__option-group">
 //         <input class="pui-form__checkbox" id="gender-this-one" type="checkbox">
-//         <label for="gender-this-one">This One</label>
+//         <label for="gender-this-one">
+//           <div class="input-icons">
+//             <i class='pi-circle pi-lg'></i>
+//             <i class='pi-check pi-sm'></i>
+//           </div>
+//           This One
+//         </label>
 //         <input class="pui-form__checkbox" id="gender-that-one" type="checkbox">
-//         <label for="gender-that-one">That One</label>
+//         <label for="gender-that-one">
+//           <div class="input-icons">
+//             <i class='pi-circle pi-lg'></i>
+//             <i class='pi-check pi-sm'></i>
+//           </div>
+//           That One
+//         </label>
 //       </div>
 //     </fieldset>
 //   </div>
@@ -46,9 +58,21 @@
 //       <legend>Gender</legend>
 //       <div class="pui-form__option-group">
 //         <input class="pui-form__radio" id="gender-male" type="radio" name="gender">
-//         <label for="gender-male">Male</label>
+//         <label for="gender-male">
+//           <div class="input-icons">
+//             <i class='pi-circle pi-lg'></i>
+//             <i class='pi-circle-solid pi-sm'></i>
+//           </div>
+//           Male
+//         </label>
 //         <input class="pui-form__radio" id="gender-female" type="radio" name="gender">
-//         <label for="gender-female">Female</label>
+//         <label for="gender-female">
+//           <div class="input-icons">
+//             <i class='pi-circle pi-lg'></i>
+//             <i class='pi-circle-solid pi-sm'></i>
+//           </div>
+//           Female
+//         </label>
 //       </div>
 //     </fieldset>
 //   </div>
@@ -72,11 +96,11 @@
 //       <div class="pui-toggle">
 //         <div class="pui-toggle__content">
 //           <input class="pui-toggle__input" id="tall" type="radio" checked name="height">
-//           <label for="tall">Tall</label>
+//           <label for="tall"><i class='pi-check'></i> Tall</label>
 //         </div>
 //         <div class="pui-toggle__content">
 //           <input class="pui-toggle__input" id="short" type="radio" name="height">
-//           <label for="short">Short</label>
+//           <label for="short"><i class='pi-check'></i> Short</label>
 //         </div>
 //       </div>
 //     </fieldset>
@@ -300,7 +324,7 @@ legend {
   $self: &;
   color: map.get(variables.$greyscale, 'light' );
 
-  .check-icons {
+  .input-icons {
     left: 0; top: 0;
     position: absolute;
     @include mixins.square(1rem);
@@ -328,9 +352,9 @@ legend {
     &:checked + label {
       font-variation-settings: 'GRAD' 0.5;
   
-      .check-icons {
+      .input-icons {
 
-        i:nth-of-type(2) {
+        [class^="pi-"]:nth-of-type(2) {
           transform: translate(-50%, -50%) scale(1);
         }
       }
@@ -893,7 +917,6 @@ legend {
   &__content {
     border-radius: map.get(config.$radius, 'button');
     flex: 1 1 auto;
-    // font-size: map.get($font-percentage, 'sm');
     overflow: hidden;
     position: relative;
   }
@@ -910,46 +933,26 @@ legend {
       padding-left: variables.$spacer * 1.3;
       z-index: 10;
 
-      &:before {
-        border: none;
-        content: "\f13b";
-        font-family: platform-icons;
-        font-size: map.get(variables.$font-percentage, 'sm' );
-        font-weight: 900;
+      [class^="pi-"] {
         height: auto;
         left: 2px;
         opacity: 0;
         position: absolute;
         top: 50%;
-        transform: translate(30%, -60%); // -60% due to longer checkmark from platform-icons
+        transform: translate(30%, -50%);
         visibility: hidden;
         width: auto;
-      }
-
-      &:after {
-        content: '';
-        background-color: map.get(variables.$greyscale, 'white' );
-        position: absolute;
-        left: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        transition: none;
-        z-index: -1;
       }
     }
 
     &:checked + label {
+      background-color: map.get(config.$platform-colors, 'link' );
       color: map.get(variables.$greyscale, 'white' );
       font-weight: inherit;
 
-      &:before {
+      [class^="pi-"] {
         opacity: 1;
         visibility: visible;
-      }
-
-      &:after {
-        background-color: map.get(config.$platform-colors, 'link' );
       }
     }
   }
