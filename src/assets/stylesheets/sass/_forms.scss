@@ -300,6 +300,25 @@ legend {
   $self: &;
   color: map.get(variables.$greyscale, 'light' );
 
+  .check-icons {
+    left: 0; top: 0;
+    position: absolute;
+    @include mixins.square(1rem);
+
+    [class^="pi-"] {
+      font-size: map.get(variables.$font-percentage, 'md');
+      position: absolute;
+      left: 50%; top: 50%;
+      transform: translate(-50%, -50%);      
+
+      &:nth-of-type(2) {
+        font-size: map.get(variables.$font-percentage, 'xs');
+        transform: translate(-50%, -50%) scale(0);
+        transition: transform config.$duration ease;
+      }
+    }
+  }
+
   input[type="checkbox"],
   input[type="radio"] {
     opacity: 0;
@@ -307,10 +326,13 @@ legend {
     width: auto;
   
     &:checked + label {
-      font-weight: 600;
+      font-variation-settings: 'GRAD' 0.5;
   
-      &:after {
-        transform: scale(1);
+      .check-icons {
+
+        i:nth-of-type(2) {
+          transform: translate(-50%, -50%) scale(1);
+        }
       }
     }
   
@@ -326,42 +348,6 @@ legend {
       padding-left: variables.$spacer * 1.5;
       position: relative;
       vertical-align: baseline;
-  
-      &:before,
-      &:after {
-        position: absolute;
-        display: inline-block;
-      }
-  
-      &:before {
-        border: 1px solid map.get(variables.$greyscale, 'base');
-        border-radius: 50%;
-        bottom: 0;
-        content: '';
-        left: 0;
-        @include mixins.square(variables.$spacer);
-      }
-  
-      &:after {
-        transform: scale(0);
-        transition: transform config.$duration ease;
-      }
-    }
-  }
-  
-  input[type="checkbox"] {
-  
-    + label {
-  
-      &:after {
-        bottom: 1px;
-        color: inherit;
-        content: "\f13b";
-        font-family: "platform-icons";
-        font-size: map.get(variables.$font-percentage, 'xs');
-        font-weight: 900;
-        left: 3px;
-      }
     }
   }
   
@@ -369,21 +355,6 @@ legend {
   
     &:checked + label {
       cursor: default;
-    }
-  
-    &.pui-form__radio {
-  
-      + label {
-  
-        &:after {
-          background-color: map.get(variables.$greyscale, 'base' );
-          border-radius: 50%;
-          bottom: 2px;
-          content: '';
-          left: 2px;
-          @include mixins.square(variables.$spacer * .75);
-        }
-      }
     }
   }
 
