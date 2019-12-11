@@ -546,60 +546,35 @@
 // the freedom to use any icon you want and make that icon change to whatever color you want on hover.
 // Simpy change the `<icon>` class to the desired font-awesome icon you want. Then, add the `text-{color}--hover`
 // class to the `icon-menu__action`. To see a list of available hover colors [click here](/section-typography.html#kssref-typography-utilities-color).
+// 
+// In the example below, we're using `<div>`s on the `icon-menu__action` to build the menus. You could use a `<button>` or an `<a>` to improve accessibility
+// depending on exactly what you need. If you use a less semantic element like `<div>`, we would recommend adding `role="button"`.
+// 
+// Also notice that the `pointer` class was added to those elements that do not have a `cursor: pointer` applied to them by default.
 //
 // | <i class="fpi-warning text-orange"></i> Be sure to always wrap the font icon in another element. We don't want to have the click event be on the `<icon>` itself.|
 // | ---
 //
 //
 // You can add as many icons as you'd like.
+// 
 //
 // Markup:
 // <div class="icon-menu">
 //   <div class="icon-menu__item">
-//     <a href="#" class="icon-menu__action text-negative--hover" role="button">
-//       <i class="pi-trash" aria-hidden="true"></i>
-//     </a>
-//   </div>
-//   <div class="icon-menu__item">
-//     <a href="#" class="icon-menu__action text-positive--hover" role="button">
-//       <i class="pi-edit" aria-hidden="true"></i>
-//     </a>
-//   </div>
-// </div>
-// <div class="my-3"></div>
-// <div class="icon-menu">
-//   <div class="icon-menu__item">
-//     <a href="#" class="icon-menu__action text-negative--hover" role="button">
+//     <div class="icon-menu__action text-negative--hover pointer" role="button">
 //       <i class="pi-trash" aria-hidden="hidden"></i>
-//     </a>
+//     </div>
 //   </div>
 //   <div class="icon-menu__item">
-//     <a href="#" class="icon-menu__action text-positive--hover" role="button">
+//     <div class="icon-menu__action text-positive--hover pointer" role="button">
 //       <i class="pi-edit" aria-hidden="hidden"></i>
-//     </a>
+//     </div>
 //   </div>
 //   <div class="icon-menu__item">
-//     <a href="#" class="icon-menu__action" role="button">
+//     <div class="icon-menu__action text-red--hover pointer" role="button">
 //       <i class="pi-clock" aria-hidden="hidden"></i>
-//     </a>
-//   </div>
-// </div>
-// <div class="my-3"></div>
-// <div class="icon-menu">
-//   <div class="icon-menu__item">
-//     <a href="#" class="icon-menu__action text-navy--hover" role="button">
-//       <i class="pi-trash" aria-hidden="hidden"></i>
-//     </a>
-//   </div>
-//   <div class="icon-menu__item">
-//     <a href="#" class="icon-menu__action text-violet--hover" role="button">
-//       <i class="pi-edit" aria-hidden="hidden"></i>
-//     </a>
-//   </div>
-//   <div class="icon-menu__item">
-//     <a href="#" class="icon-menu__action text-salmon--hover" role="button">
-//       <i class="pi-clock" aria-hidden="hidden"></i>
-//     </a>
+//     </div>
 //   </div>
 // </div>
 //
