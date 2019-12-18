@@ -8,106 +8,43 @@
 
 // Tabs
 //
-// The content for a tabbed section needs to live inside the `.pui-tabs` class. 
-//
-// The aria attributes are important to the funcationality of the tabs as well. The active tab styles
-// come from `aria-selected="true"` being set on the tab. The corresponding tab content is displayed
-// by the removal of the `hidden` attribute.
-//
-// Be sure that the `href` value on the `pui-tab__acnchor` matches that of the corresponding
-// `pui-tab-panel` id. This is key for links that contain the hash in the url.
+// The content for a tabbed section needs to live inside the `.pui-tabs` class. The tabs are radio inputs. 
+// Be sure to add a specific `id` to the input and add a `for` to the label with a value that matches the 
+// corresponding input. The label needs the class of `pui-tab`.
+// 
+// The content for the tabs needs the class of `pui-tab-panel` and it needs to be directly after the `pui-tab` label.
 //
 // The tabs themselves or the `.pui-tab` have a specific width of `16rem` as well as a specific
-// height of `4rem`. The width can be changed using the [blocks layout method](/styleguide/section-layout.html#kssref-layout-blocks).
+// height of `4rem`. 
 //
 // Markup:
 // <div class="pui-tabs">
-//   <ul class="pui-tab-list" role="tablist" aria-label="Sample Tabs">
-//     <li class="pui-tab">
-//       <a href="#contracts-active" class="pui-tab__anchor" role="tab" aria-selected="true" aria-controls="contracts-active" id="pui-tab-1" tabindex="0">
-//         <i class="pi-folder-open" focusable="false" aria-hidden="hidden"></i><span class="pui-tab__title">Active</span>
-//       </a>
-//     </li>
-//     <li class="pui-tab">
-//       <a href="#contracts-inactive" class="pui-tab__anchor" role="tab" aria-selected="false" aria-controls="contracts-inactive" id="pui-tab-2" tabindex="-1">
-//         <i class="pi-folder" focusable="false" aria-hidden="hidden"></i><span class="pui-tab__title">Inactive</span>
-//       </a>
-//     </li>
-//     <li class="pui-tab">
-//       <a href="#contracts-downlines" class="pui-tab__anchor" role="tab" aria-selected="false" aria-controls="contracts-downlines" id="pui-tab-3" tabindex="-1">
-//         <i class="pi-users" focusable="false" aria-hidden="hidden"></i><span class="pui-tab__title">Downlines</span>
-//       </a>
-//     </li>
-//   </ul>
-//   <div class="pui-tab-panel" id="contracts-active" role="tabpanel" tabindex="0" aria-labelledby="pui-tab-1">
-//     <div class="pui-tab__mobile-tab">
-//      <span>Active</span>
-//      <span class="pui-tab__icon-wrapper">
-//        <i class="pi-plus"></i>
-//      </span>
-//     </div>
-//     <div class="pui-tab-panel__inner">
-//       <img src="https://placeimg.com/640/480/animals?t=1565635267224">
-//     </div>
+//   <input type="radio" id="tab-input-a" name="tabs" checked>
+//   <label for="tab-input-a" class="pui-tab">
+//     <i class="pi-folder-open" focusable="false" aria-hidden="hidden"></i> Tab 1
+//   </label>
+//   <div class="pui-tab-panel">
+//     <img src="https://placeimg.com/640/480/animals?t=1565635383449">
 //   </div>
-//   <div class="pui-tab-panel" id="contracts-inactive" role="tabpanel" tabindex="0" aria-labelledby="pui-tab-2" hidden>
-//     <div class="pui-tab__mobile-tab">
-//      <span>Inactive</span>
-//      <span class="pui-tab__icon-wrapper">
-//        <i class="pi-plus"></i>
-//      </span>
-//     </div>
-//     <div class="pui-tab-panel__inner">
-//       <img src="https://placeimg.com/640/480/animals?t=1565635322782">
-//     </div>
+//   <input type="radio" id="tab-input-b" name="tabs">
+//   <label for="tab-input-b" class="pui-tab">
+//     <i class="pi-folder" focusable="false" aria-hidden="hidden"></i> Tab 2
+//   </label>
+//   <div class="pui-tab-panel">
+//     <img src="https://placeimg.com/640/480/animals?t=1565635267224">
 //   </div>
-//   <div class="pui-tab-panel" id="contracts-downlines" role="tabpanel" tabindex="0" aria-labelledby="pui-tab-3" hidden>
-//     <div class="pui-tab__mobile-tab">
-//      <span>Downlines</span>
-//      <span class="pui-tab__icon-wrapper">
-//        <i class="pi-plus"></i>
-//      </span>
-//     </div>
-//     <div class="pui-tab-panel__inner">
-//       <img src="https://placeimg.com/640/480/animals?t=1565635383449">
-//     </div>
+//   <input type="radio" id="tab-input-c" name="tabs">
+//   <label for="tab-input-c" class="pui-tab">
+//     <i class="pi-users" focusable="false" aria-hidden="hidden"></i> Tab 3
+//   </label>
+//   <div class="pui-tab-panel">
+//     <img src="https://placeimg.com/640/480/animals?t=1565635322782">
 //   </div>
 // </div>
 //
 //
 // Styleguide Components.Tabs
 
-
-// radio Tabs
-// 
-// 
-// Markup:
-// <div class="pui-tabs--radio">
-//   <input type="radio" id="tab-input-a" name="tabs" checked>
-//   <label for="tab-input-a">
-//     <i class="fab fa-pied-piper-hat"></i> Tab 1
-//   </label>
-//   <div class="pui-tab-panel">
-//     <img src="https://placeimg.com/640/480/animals?t=1565635383449">
-//   </div>
-//   <input type="radio" id="tab-input-b" name="tabs">
-//   <label for="tab-input-b" class="tab-label">
-//     <i class="fab fa-pied-piper-pp"></i> Tab 2
-//   </label>
-//   <div class="pui-tab-panel">
-//     <img src="https://placeimg.com/640/480/animals?t=1565635267224">
-//   </div>
-//   <input type="radio" id="tab-input-c" name="tabs">
-//   <label for="tab-input-c" class="tab-label">
-//     <i class="fab fa-pied-piper"></i> Tab 3
-//   </label>
-//   <div class="pui-tab-panel">
-//     <img src="https://placeimg.com/640/480/animals?t=1565635322782">
-//   </div>
-// </div>
-// 
-// 
-// Styleguide Components.Tabs.radio
 
 $tab-height:          4rem;
 $tab-active-color:    map.get(config.$brand-colors, 'navy' );
