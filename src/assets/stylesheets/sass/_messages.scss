@@ -8,13 +8,6 @@
 // These are examples of global messages or alerts
 //
 // Markup:
-// <div class="pui-message">
-//   <p>This is an example of a global message. This is a standard message. No warnings, no successes.</p>
-// </div>
-// <div class="pui-message">
-//   <h2 class="pui-message__heading">This Message has a heading</h2>
-//   <p>This is an example of a global message. This is a standard message. No warnings, no successes. This message also has a <a href="#">Link in it</a>.</p>
-// </div>
 // <div class="pui-message pui-message--error">
 //   <p>This is an example of a message that fires after an error has occured. </p>
 // </div>
@@ -27,69 +20,62 @@
 // <div class="pui-message pui-message--info">
 //   <p>This is an example of a message that displays some simple information.</p>
 // </div>
+// <div class="pui-message pui-message--error" data-header="Alternate heading based on data-header">
+//   <p>This is an example of a message that fires after an error has occured. </p>
+// </div>
+// <div class="pui-message pui-message--success" data-header="Alternate heading based on data-header">
+//   <p>This is an example of a message that displays a success message. Congratulations! You're form has been submitted. </p>
+// </div>
+// <div class="pui-message pui-message--warning" data-header="Alternate heading based on data-header">
+//   <p>This is an example of a message that displays a warning but not necessarily an error.</p>
+// </div>
+// <div class="pui-message pui-message--info" data-header="Alternate heading based on data-header">
+//   <p>This is an example of a message that displays some simple information.</p>
+// </div>
 //
 //Styleguide Components.Messages
 
 .pui-message {
-  border: 1px solid;
-  border-radius: map.get(config.$radius, 'default' );
-  padding: variables.$spacer variables.$spacer + .5;
-  position: relative;
-  margin-top: variables.$spacer;
-  margin-bottom: variables.$spacer;
-  @include mixins.message-variant(
-    map.get(variables.$message-colors, 'base-light' ),
-    map.get(variables.$message-colors, 'base-dark' )
-  );
-
-  &--error {
-    @include mixins.message-variant(
-      map.get(variables.$message-colors, 'error-light' ),
-      map.get(variables.$message-colors, 'error-dark' )
-    );
+  $self: &;
+  display: flex;
+  flex-direction: column;
+  margin: map.get(variables.$spacers, 2 ) 0;
+  padding: map.get(variables.$spacers, 2 );
+  p {
+    margin: map.get(variables.$spacers, 2 ) 0;
   }
 
-  &--success {
-    @include mixins.message-variant(
-      map.get(variables.$message-colors, 'success-light' ),
-      map.get(variables.$message-colors, 'success-dark' )
-    );
-  }
-
-  &--warning {
-    @include mixins.message-variant(
-      map.get(variables.$message-colors, 'warning-light' ),
-      map.get(variables.$message-colors, 'warning-dark' )
-    );
-  }
-
-  &--info {
-    @include mixins.message-variant(
-      map.get(variables.$message-colors, 'info-light' ),
-      map.get(variables.$message-colors, 'info-dark' )
-    );
-  }
+  // button close needs to be an independant concept to be placed
+  // anywhere
 
   &__close {
     position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
+    top: map.get(variables.$spacers, 2 );
+    right: map.get(variables.$spacers, 2 );
   }
-
-  &__heading {
-    font-family: map.get(config.$fonts, 'base-alt' );
-    font-size: map.get(variables.$font-percentage, 'xl' );
-    margin-bottom: variables.$spacer;
-  }
-
   .button--close {
     float: right;
   }
 
-  p {
+  // ----------
 
-    &:last-of-type {
-      margin-bottom: 0;
+  @each $name, $color in $message-colors {
+    &--#{$name} {
+      background-color: $color;
+      border: 1px solid color.adjust($color, $lightness: math.percentage(-(config.$hue-threshold * 5)));
+      border-left-width: thick;
+      color: color.adjust($color, $lightness: math.percentage(-(config.$hue-threshold * 6)));
+      &:before {
+        content: $name;
+        display: flex;
+        font-size: 80%;
+        font-weight: bold;
+        margin-bottom: map.get(variables.$spacers, 2 );
+        text-transform: uppercase;
+      }
+      &[data-header]:before {
+        content: attr(data-header);
+      }
     }
   }
 }
