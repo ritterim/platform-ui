@@ -321,6 +321,10 @@ legend {
 }
 
 .pui-form {
+  $error-color: color.adjust(map.get(variables.$error-colors, 'negative'), $lightness: math.percentage(-(config.$hue-threshold * 2)));
+  $error-background: map.get(variables.$message-colors, 'error' );
+
+
   $self: &;
   color: map.get(variables.$greyscale, 'light' );
 
@@ -531,7 +535,7 @@ legend {
     }
 
     &.error {
-      color: map.get(variables.$message-colors, 'error-dark' ) !important;
+      color: $error-color!important;
 
       input[type="text"],
       input[type="date"],
@@ -543,8 +547,8 @@ legend {
       input[type="time"],
       textarea,
       select {
-        background-color: map.get(variables.$message-colors, 'error-light' );
-        border-color: map.get(variables.$error-colors, 'negative' ) !important;
+        background-color: $error-background;
+        border-color: $error-color !important;
         border-radius: map.get(config.$radius, 'default' );
         padding-left: map.get(variables.$spacers, 2 );
       }
@@ -554,9 +558,8 @@ legend {
 
         &:not(:checked) + label {
 
-          &:before {
-            background-color: map.get(variables.$message-colors, 'error-light' );
-            border-color: map.get(variables.$error-colors, 'negative' ) !important;
+          [class^="pi-"] {
+            color: $error-color !important;
           }
         }
       }
@@ -569,7 +572,7 @@ legend {
       &.error {
 
         label {
-          color: map.get(variables.$message-colors, 'error-dark' ) !important;
+          color: $error-color!important;
           font-size: 80%;
           top: -1rem;
           transform: translate(0) scale(1);
@@ -579,9 +582,9 @@ legend {
         input:not([type=checkbox]),
         input:not([type=radio]),
         textarea {
-          background-color: map.get(variables.$message-colors, 'error-light' );
-          border: 1px solid map.get(variables.$error-colors, 'negative' ) !important;
-          box-shadow: 0 0 2px 0 map.get(variables.$error-colors, 'negative') !important;
+          background-color: $error-background;
+          border: 1px solid $error-color !important;
+          box-shadow: 0 0 2px 0 $error-color !important;
         }
 
         ::-webkit-input-placeholder,
