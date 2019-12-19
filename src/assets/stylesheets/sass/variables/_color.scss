@@ -9,7 +9,7 @@
 //
 // `map.get($map, $key);`
 //
-// All color variations should be handled through `color.adjust(#color, $lightness: -(#percentage);`, which darkens the color, 
+// All color variations should be handled through `color.adjust(#color, $lightness: -(#percentage);`, which darkens the color,
 // or `color.adjust(#color, $lightness: #percentage);`, which will lighten the color, or `rgba` for alpha transparency.
 //
 // Our Color Utility classes can be found in the Utilities section of the guide, [here](/section-utilities.html#kssref-utilities-color).
@@ -56,38 +56,17 @@ $error-colors: (
 // Message Colors
 //
 // Colors:
-// base-light: #e2e3e5
-// base: #999
-// base-dark: #666
-// info-light: #E5F5FF
 // info: #91b9dc
-// info-dark: #3f7bad
-// warning-light: #fff3cd
 // warning: #ffeeba
-// warning-dark: #856404
-// error-light: #ffe5e0
-// error: #e5aaaa
-// error-dark: #a93434
-// success-light: #d4edda
-// success: #c3e6cb
-// success-dark: #155724
+// error: #ffe5e0
+// success: #d4edda
 //
 // Styleguide Color.MessageColors
 
 $message-colors: (
-  'base-light': map.get($greyscale, 'lighter'),
-  'base': map.get($greyscale, 'light'),
-  'base-dark': map.get($greyscale, 'base'),
-  'info-light': map.get(config.$brand-colors, 'lightblue'),
-  'info': map.get(config.$brand-colors, 'skyblue'),
-  'info-dark': color.adjust(map.get(config.$brand-colors, 'med-blue'), $lightness: math.percentage(-(config.$hue-threshold))),
-  'warning-light': #fff3cd,
+  'info': map.get(config.$brand-colors, 'lightblue'),
+  'note': #ffeeba,
   'warning': #ffeeba,
-  'warning-dark': #856404,
-  'error-light': #ffe5e0,
-  'error': #e5aaaa,
-  'error-dark': #a93434,
-  'success-light': #d4edda,
-  'success': #c3e6cb,
-  'success-dark': #155724
+  'error': #ffe5e0,
+  'success': #d4edda
 );

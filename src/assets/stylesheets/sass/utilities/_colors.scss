@@ -75,7 +75,7 @@ $platform-colors: () !default;
     }
     // create native css variables
     :root {
-      --pui-#{$name}: #{$color};
+      --pui-#{$name}: $colors;
     }
   }
 }
