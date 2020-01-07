@@ -5,6 +5,33 @@ let server;
 
 const percy = require('@percy/nightwatch');
 
+async function waitForDocumentReady(timeoutMs = 5000) {
+    function returnWhenReady()  {
+        return new Promise((resolve, reject) => {
+            let checkTimeout = setTimeout(() => reject(`Timed out after ${timeoutMs}`), timeoutMs);
+        
+            if(document.readyState.toLowerCase() === 'complete') {
+                // If assets load really quick, we might already be in a complete state
+                clearTimeout(checkTimeout);
+                resolve(document.readyState);
+            }
+            
+            document.addEventListener('readystatechange', (event) => {
+            if(document.readyState.toLowerCase() === 'complete') {
+                clearTimeout(checkTimeout);
+                resolve({ state: document.readyState, styleSheets: document.styleSheets});
+            }
+            });
+        })
+    }
+
+    return await returnWhenReady()
+        .then(resp => resp)
+        .catch(err => { 
+            throw err
+        });
+}
+
 module.exports = {
     before: function(browser) {
         server = httpServer.createServer({ root: './styleguide' });
@@ -20,61 +47,61 @@ module.exports = {
     'Capture Components Page': function(browser) {
         browser
         .url(`${TEST_URL}/section-components.html`)
-        .waitForElementVisible('body')
+        .execute(waitForDocumentReady)
         .percySnapshot();
     },
     'Capture Errors Page': function(browser) {
         browser
         .url(`${TEST_URL}/section-errors.html`)
-        .waitForElementVisible('body')
+        .execute(waitForDocumentReady)
         .percySnapshot();
     },
     'Capture Forms Page': function(browser) {
         browser
         .url(`${TEST_URL}/section-forms.html`)
-        .waitForElementVisible('body')
+        .execute(waitForDocumentReady)
         .percySnapshot();
     },
     'Capture Icons Page': function(browser) {
         browser
         .url(`${TEST_URL}/section-icons.html`)
-        .waitForElementVisible('body')
+        .execute(waitForDocumentReady)
         .percySnapshot();
     },
     'Capture Layout Page': function(browser) {
         browser
         .url(`${TEST_URL}/section-layout.html`)
-        .waitForElementVisible('body')
+        .execute(waitForDocumentReady)
         .percySnapshot();
     },
     'Capture Menu Page': function(browser) {
         browser
         .url(`${TEST_URL}/section-menus.html`)
-        .waitForElementVisible('body')
+        .execute(waitForDocumentReady)
         .percySnapshot();
     },
     'Capture Print Page': function(browser) {
         browser
         .url(`${TEST_URL}/section-print.html`)
-        .waitForElementVisible('body')
+        .execute(waitForDocumentReady)
         .percySnapshot();
     },
     'Capture Table Page': function(browser) {
         browser
         .url(`${TEST_URL}/section-tables.html`)
-        .waitForElementVisible('body')
+        .execute(waitForDocumentReady)
         .percySnapshot();
     },
     'Capture Typography Page': function(browser) {
         browser
         .url(`${TEST_URL}/section-typography.html`)
-        .waitForElementVisible('body')
+        .execute(waitForDocumentReady)
         .percySnapshot();
     },
     'Capture Utilities Page': function(browser) {
         browser
         .url(`${TEST_URL}/section-utilities.html`)
-        .waitForElementVisible('body')
+        .execute(waitForDocumentReady)
         .percySnapshot();
     }
 }

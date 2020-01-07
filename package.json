@@ -18,7 +18,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "ver": "echo \"$npm_package_version\"",
     "nightwatch": "percy exec -- nightwatch",
-    "browser-visual-tests": "npm run build && npm run nightwatch"
+    "browser-visual-tests": "npm run build && npm run nightwatch",
+    "nightwatch:debug": "node --inspect-brk ./node_modules/nightwatch/bin/runner.js -t ./browser_automated_tests/docs-pages.js"
   },
   "browserslist": [
     "last 2 version",
