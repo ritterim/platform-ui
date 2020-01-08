@@ -40,8 +40,8 @@
   </header>
 
   {{#unless template.isHomepage}}
-  <div class="block-container">
-    <aside class="block block-2 border-r border--color-lighter">
+  <div class="block-container flex--justify-end">
+    <aside class="block block-4 block-laptop-3 block-desktop-2 border-r border--color-lighter pos-fix pin-left h-100">
       <nav class="h-100 overflow-y--scroll pb-7" aria-label="Style Guide">
         <ul class="pui-list">
           <li class="pui-list__item mb-0">
@@ -75,7 +75,7 @@
       </nav>
     </aside>
   {{/unless}}
-    <main class="pb-4 {{#unless homepage}}px-4 background-white block block-10{{/unless}}" aria-label="Content">
+    <main class="pb-4 {{#unless homepage}}px-4 background-white block block-8 block-laptop-9 block-desktop-10{{/unless}}" aria-label="Content">
       {{#if homepage}}
       <div class="crm-banner animated slideInDown fast flex--center-content flex--column pt-6" style="background-image: linear-gradient(to right, white, transparent), url('site-assets/images/style-guide-background.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
         <h1 class="my-4">Welcome to the Platform UI Style Guide</h1>
