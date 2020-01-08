@@ -19,7 +19,7 @@ async function waitForDocumentReady(timeoutMs = 5000) {
             document.addEventListener('readystatechange', (event) => {
             if(document.readyState.toLowerCase() === 'complete') {
                 clearTimeout(checkTimeout);
-                resolve({ state: document.readyState, styleSheets: document.styleSheets});
+                resolve(document.readyState);
             }
             });
         })
