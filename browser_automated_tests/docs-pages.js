@@ -5,10 +5,10 @@ let server;
 
 const percy = require('@percy/nightwatch');
 
-async function waitForDocumentReady(timeoutMs = 5000) {
+async function waitForDocumentReady(timeoutMs = 10000) {
     function returnWhenReady()  {
         return new Promise((resolve, reject) => {
-            let checkTimeout = setTimeout(() => reject(`Timed out after ${timeoutMs}`), timeoutMs);
+            let checkTimeout = setTimeout(() => reject(`Timed out after ${timeoutMs}ms`), timeoutMs);
         
             if(document.readyState.toLowerCase() === 'complete') {
                 // If assets load really quick, we might already be in a complete state
