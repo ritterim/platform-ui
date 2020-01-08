@@ -6,19 +6,6 @@
 // ie specific
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
 
-  .platform {
-    padding-top: config.$menu-height;
-
-    aside {
-      margin-top: 0;
-    }
-
-    main {
-      display: block;
-      width: auto;
-    }
-  }
-
   .site-header {
     top: 0;
   }
