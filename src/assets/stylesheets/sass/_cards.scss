@@ -4,6 +4,7 @@
 @use "sass:color";
 @use "sass:math";
 @use "sass:map";
+@use "sass:meta";
 // Cards
 //
 // Cards can be great for seperating blocks of content. A `pui-card` comes standard with a white background, light grey border, and
@@ -194,10 +195,19 @@
 
 
 .pui-card {
+  $card-min-height: config.$card-min-height;
+
   background-color: map.get(variables.$greyscale, "white");
   border: 1px solid color.adjust(map.get(variables.$greyscale, "light"), $lightness: math.percentage(config.$hue-threshold * 2));
   padding: config.$card-padding;
 
+  @if meta.variable-exists("card-min-height") {
+    @debug meta.variable-exists("card-min-height");
+    @include mixins.breakpoint(desktop, min) {
+      min-height: config.$card-min-height;
+    }  
+  }
+  
   .block & {
     height: 100%;
   }
