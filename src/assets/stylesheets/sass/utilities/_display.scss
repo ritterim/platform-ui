@@ -122,7 +122,7 @@
     // Display utility for a max-width media query
     .#{$d}-#{$breakpoint}-down {
       @if $index {
-        @media (max-width: map.get(config.$breakpoints, $breakpoint)) {
+        @media (max-width: map.get(config.$breakpoints, $breakpoint) - 1) {
           @if $d == hide {
             display: none !important;
           }
