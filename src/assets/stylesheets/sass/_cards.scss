@@ -202,7 +202,6 @@
   padding: config.$card-padding;
 
   @if meta.variable-exists("card-min-height") {
-    @debug meta.variable-exists("card-min-height");
     @include mixins.breakpoint(desktop, min) {
       min-height: config.$card-min-height;
     }  
