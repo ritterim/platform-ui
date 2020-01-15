@@ -77,7 +77,7 @@
   {{/unless}}
     <main class="pb-4 {{#unless homepage}}px-4 background-white block block-8 block-laptop-9 block-desktop-10{{/unless}}" aria-label="Content">
       {{#if homepage}}
-      <div class="crm-banner animated slideInDown fast flex--center-content flex--column pt-6" style="background-image: linear-gradient(to right, white, transparent), url('site-assets/images/style-guide-background.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+      <div class="crm-banner animated slideInDown fast flex--center-content flex--column pt-6 px-3 pb-3" style="background-image: linear-gradient(to right, white, transparent), url('site-assets/images/style-guide-background.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
         <h1 class="my-4">Welcome to the Platform UI Style Guide</h1>
         <p>Platform UI is the CSS framework we've developed to maintain the Ritter Platform of agent tools.</p>
         <a href="/section-_getting-started.html" class="button button--post button--lg">Get Started v{{ options.version }}</a>
@@ -86,7 +86,7 @@
       <article {{#if homepage}}class="block-container px-6 mx-6 py-4"{{/if}}>
       {{#if template.isHomepage}}
         {{#if homepage}}
-          <div id="pui-0">
+          <div id="pui-0" class="w-100">
             <!-- {{{homepage}}} -->
             <div class="block-container blocks-px-2 blocks-py-2 tablet-up-3 laptop-up-4">
 
