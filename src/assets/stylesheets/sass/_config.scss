@@ -223,6 +223,7 @@ $button-primary-background: #FFFFFF !default;
 $button-primary-color: #666666 !default;
 $button-secondary-background: map.get($config-colors, 'salmon') !default;
 $button-secondary-color: #FFFFFF !default;
+$button-filter-color: map.get($brand-colors, 'med-blue') !default;
 
 $button-primary-padding: .25rem 1rem;
 $button-large-padding: .5rem 1rem;
