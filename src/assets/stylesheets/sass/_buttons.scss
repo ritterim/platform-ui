@@ -385,6 +385,7 @@
     border-color: config.$button-filter-color;
     color: config.$button-filter-color;
 
+    &.active,
     &:hover {
       background-color: config.$button-filter-color;
       color: config.$button-secondary-color;
