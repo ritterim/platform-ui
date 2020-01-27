@@ -335,13 +335,13 @@ legend {
     @include mixins.square(1rem);
 
     [class^="pi-"] {
-      font-size: map.get(variables.$font-percentage, 'md');
+      // font-size: map.get(variables.$font-percentage, 'md');
       position: absolute;
       left: 50%; top: 50%;
       transform: translate(-50%, -50%);      
 
       &:nth-of-type(2) {
-        font-size: map.get(variables.$font-percentage, 'xs');
+        // font-size: map.get(variables.$font-percentage, 'xs');
         transform: translate(-50%, -50%) scale(0);
         transition: transform config.$duration ease;
       }
@@ -369,7 +369,6 @@ legend {
       cursor: pointer;
       display: inline-block;
       font-weight: 400;
-      height: 1rem;
       line-height: 1.2;
       margin-right: variables.$spacer;
       margin-top: variables.$spacer * .75;
@@ -797,7 +796,6 @@ legend {
   }
 
   &__select-wrapper {
-    min-width: 9.375rem;
     position: relative;
 
     &:after {

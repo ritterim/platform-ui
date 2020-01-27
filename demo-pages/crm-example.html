@@ -111,16 +111,93 @@
                 <label for="tab-input-a" class="pui-tab">
                     Active
                 </label>
-                <div class="pui-tab-panel">
+                <div class="pui-tab-panel py-4 px-4">
+                    <div class="flex flex--justify-end w-100 mb-4">
+                        <button class="button">Add <i class="pi-plus" aria-hidden="true"></i></button>
+                    </div>
                     <div class="pui-accordion">
-                        <div class="pui-accordion__header px-3 py-3 flex flex--justify-between">
-                            <span class="text--bold">Humana</span>
-                            <button class="text-negative--hover pointer button--plain" aria-label="Remove Carrier">
+                        <div class="pui-accordion__header px-4 py-4 flex flex--justify-between">
+                            <span class="text--bold text-base">Humana</span>
+                            <button class="text-light text-negative--hover pointer button--plain" aria-label="Remove Carrier">
                                 <i class="pi-trash" aria-hidden="hidden"></i>
                             </button>
                         </div>
-                        <div class="pui-accordion__content px-3 py-3 fade-in-from-none-enter-active">
-                            content
+                        <div class="pui-accordion__content px-4 py-4 fade-in-from-none-enter-active">
+                            <div class="block-container blocks-px-3">
+                                <div class="block block-tablet-4 block-lg-tablet-3">
+                                    <h3 class="text-base">Setup</h3>
+                                    <form action="" class="pui-form">
+                                        <fieldset class="pui-form__field mb-4">
+                                            <legend class="sr-only">Choose</legend>
+                                            <div class="pui-form__option-group">
+                                                <input class="pui-form__checkbox" id="per-state" type="checkbox">
+                                                <label for="per-state">
+                                                    <div class="input-icons">
+                                                        <i class="pi-circle pi-lg"></i>
+                                                        <i class="pi-check pi-lg"></i>
+                                                    </div>
+                                                    Allow per-state agent writting number
+                                                </label>
+                                                <input class="pui-form__checkbox" id="non-licensed" type="checkbox">
+                                                <label for="non-licensed">
+                                                    <div class="input-icons">
+                                                        <i class="pi-circle pi-lg"></i>
+                                                        <i class="pi-check pi-lg"></i>
+                                                    </div>
+                                                    Allow non-licensed states for overrides
+                                                </label>
+                                                <input class="pui-form__checkbox" id="staff" type="checkbox">
+                                                <label for="staff">
+                                                    <div class="input-icons">
+                                                        <i class="pi-circle pi-lg"></i>
+                                                        <i class="pi-check pi-lg"></i>
+                                                    </div>
+                                                    Enabled for staff
+                                                </label>
+                                                <input class="pui-form__checkbox" id="agents" type="checkbox">
+                                                <label for="agents">
+                                                    <div class="input-icons">
+                                                        <i class="pi-circle pi-lg"></i>
+                                                        <i class="pi-check pi-lg"></i>
+                                                    </div>
+                                                    Enabled for agents
+                                                </label>
+                                            </div>
+                                        </fieldset>
+                                        <label for="third-party" class="pui-form__field mb-4">Third Party Provider
+                                            <div class="pui-form__select-wrapper">
+                                                <select name="County Select" id="third-party">
+                                                <option value="County1">County 1</option>
+                                                <option value="County2">County 2</option>
+                                                <option value="County3">County 3</option>
+                                                <option value="County4">County 4</option>
+                                                <option value="County5">County 5</option>
+                                                <option value="County6">County 6</option>
+                                                </select>
+                                            </div>
+                                        </label>
+                                        <fieldset class="pui-form__field">
+                                            <legend class="sr-only">Are You</legend>
+                                            <div class="pui-toggle">
+                                                <div class="pui-toggle__content">
+                                                <input class="pui-toggle__input" id="digital" type="radio" checked="" name="height">
+                                                <label for="digital"><i class="pi-check"></i> Digital</label>
+                                                </div>
+                                                <div class="pui-toggle__content">
+                                                <input class="pui-toggle__input" id="paper" type="radio" name="height">
+                                                <label for="paper"><i class="pi-check"></i> Paper</label>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </form>
+                                </div>
+                                <div class="block block-tablet-8 block-lg-tablet-9 border-l border--color-light-mid">
+                                    <div class="flex flex--justify-between">
+                                        <h3 class="text-base">Products and States</h3>
+                                        <button class="button">Add <i class="pi-plus" aria-hidden="true"></i></button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
