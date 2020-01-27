@@ -174,11 +174,14 @@
           border-bottom-color: rgba(map.get(variables.$greyscale, 'light'), .5);
         }
       }
+
+      &.active {
+        border-bottom-color: rgba(map.get(variables.$greyscale, 'light'), .5);
+      }
     }
 
     &.active {
       background-color: $menu-primary-hover;
-      border-bottom-color: rgba(map.get(variables.$greyscale, 'light'), .5);
       color: $menu-primary-hover-color;
 
       .site-menu--secondary & {

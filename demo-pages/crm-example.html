@@ -25,7 +25,7 @@
             <span class="card__header-icon pill--circle-medium background-purple text-white mr-2">
                 GG
             </span>
-            <span class="">
+            <span class="text--size-lg">
                 Hello Greg
             </span>
         </div>
@@ -88,13 +88,13 @@
             <span class="card__header-icon pill--circle-medium background-salmon text-white mr-2">
                 <i class="pi-building text-white"></i>
             </span>
-            <div class="">
+            <div class="text--size-lg">
                 Humana
             </div>
             <span class="pill text-white background-olive ml-3">Active</span>
         </div>
         <div class="flex">
-            <div class="site-menu__item">
+            <div class="site-menu__item active">
                 Contracts
             </div>
             <div class="site-menu__item">
@@ -103,6 +103,108 @@
         </div>
     </nav>
   </header>
+  <main class="background-light-mid flex--grow py-3 px-3">
+    <div class="block-container blocks-px-3">
+        <div class="block block-lg-tablet-8 block-laptop-9 block-desktop-10">
+            <div class="pui-tabs">
+                <input type="radio" id="tab-input-a" name="tabs" checked>
+                <label for="tab-input-a" class="pui-tab">
+                    Active
+                </label>
+                <div class="pui-tab-panel">
+                    <div class="pui-accordion">
+                        <div class="pui-accordion__header px-3 py-3 flex flex--justify-between">
+                            <span class="text--bold">Humana</span>
+                            <button class="text-negative--hover pointer" aria-label="Remove Carrier">
+                                <i class="pi-trash" aria-hidden="hidden"></i>
+                            </button>
+                        </div>
+                        <div class="pui-accordion__content px-3 py-3 fade-in-from-none-enter-active">
+                            content
+                        </div>
+                    </div>
+                </div>
+                <input type="radio" id="tab-input-b" name="tabs">
+                <label for="tab-input-b" class="pui-tab">
+                    Inactive
+                </label>
+                <div class="pui-tab-panel">
+                    <img src="https://placeimg.com/640/480/animals?t=1565635267224">
+                </div>
+                <input type="radio" id="tab-input-c" name="tabs">
+                <label for="tab-input-c" class="pui-tab">
+                    Internal
+                </label>
+                <div class="pui-tab-panel">
+                    <img src="https://placeimg.com/640/480/animals?t=1565635322782">
+                </div>
+            </div>
+        </div>
+        <div class="block block-lg-tablet-4 block-laptop-3 block-desktop-2">
+            <div class="background-note pt-5 pb-3 px-4">
+                <div class="h-100">
+                    <div class="flex flex--align-center flex--justify-between pb-3 mb-2">
+                        <div class="flex flex--align-center">
+                            <button title="Add Note" aria-label="Add Note" class="button button--secondary">
+                                <i aria-hidden="true" class="pi-plus"></i>
+                            </button>
+                            <h2 class="ml-2 text-navy">Notes</h2>
+                        </div> 
+                        <button class="button">
+                            View All 27 <i aria-hidden="true" class="pi-arrow-right"></i>
+                        </button>
+                    </div>
+                    <div class="side-content">
+                        <ol class="h-100 overflow-y overflow-x--hidden pui-list">
+                            <li class="pui-list__item pui-note border-t border--color-light-mid">
+                                <div class="text-base py-3 px-1">
+                                    <div class="pui-note__inner">
+                                        <div title="Last edited by Ted Krueger 01/27/2020" class="flex flex--align-start mb-2">
+                                            <i aria-hidden="true" class="pi-speech-bubble text-light"></i>
+                                            <h4 class="text-light ml-2">Ted Krueger 01/27/2020</h4>
+                                        </div>
+                                        <p class="mb-0">
+                                            This is a test note. I'm creating one of these for the same reason that I
+                                            created a test Task.
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="pui-list__item pui-note border-t border--color-light-mid">
+                                <div class="text-base py-3 px-1">
+                                    <div class="pui-note__inner">
+                                        <div title="Last edited by Ted Krueger 01/27/2020" class="flex flex--align-start mb-2">
+                                            <i aria-hidden="true" class="pi-speech-bubble text-light"></i>
+                                            <h4 class="text-light ml-2">Ted Krueger 01/27/2020</h4>
+                                        </div>
+                                        <p class="mb-0">
+                                            This is a test note. I'm creating one of these for the same reason that I
+                                            created a test Task.
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="pui-list__item pui-note border-t border--color-light-mid">
+                                <div class="text-base py-3 px-1">
+                                    <div class="pui-note__inner">
+                                        <div title="Last edited by Ted Krueger 01/27/2020" class="flex flex--align-start mb-2">
+                                            <i aria-hidden="true" class="pi-speech-bubble text-light"></i>
+                                            <h4 class="text-light ml-2">Ted Krueger 01/27/2020</h4>
+                                        </div>
+                                        <p class="mb-0">
+                                            This is a test note. I'm creating one of these for the same reason that I
+                                            created a test Task.
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </main>
 
   <script src="/src/assets/js/platform-ui.min.js"></script>
 </body>
