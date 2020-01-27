@@ -452,7 +452,12 @@
         }
       }
     }
-  }  
+  }
+
+  &--plain {
+    appearance: none;
+    border: none;
+  }
 }
 
 .button-group {
