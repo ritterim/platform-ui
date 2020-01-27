@@ -18,47 +18,87 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
 </head>
-<body class="flex flex--column">
-  <header>
-    <nav class="site-menu">
+<body class="flex flex--column fixed-header">
+  <header class="pui-header">
+    <nav class="site-menu site-menu--secondary flex">
         <div class="site-menu__item">
-            <span class="card__header-icon pill--circle-medium background-pink text-white mr-2">
-                <i class="pi-rimdev text-base"></i>
+            <span class="card__header-icon pill--circle-medium background-purple text-white mr-2">
+                GG
             </span>
-            <div class="font-lg">
-                Menu Header with avatar
-            </div>
+            <span class="">
+                Hello Greg
+            </span>
         </div>
-        <div class="site-menu__item">
-            menu item
+        <div class="site-menu__item search">
+            <form role="search" aria-label="CRM" _lpchecked="1" class="w-100">
+                <div class="flex flex--align-center">
+                    <label for="search-input" class="sr-only">Search</label> 
+                    <input type="text" id="search-input" placeholder="Type to search..." class="placeholder--light">
+                    <i aria-hidden="true" class="pi-search"></i>
+                </div>
+            </form>
         </div>
         <div class="site-menu__item has-dropdown">
-            dropdown item
+            Organizations <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
             <div class="dropdown-menu pin-right hide-mobile-up">
-            <div class="dropdown-menu__item">
-                dropdown
+                <div class="dropdown-menu__item">
+                    dropdown
+                </div>
             </div>
+        </div>
+        <div class="site-menu__item has-dropdown">
+            People <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+            <div class="dropdown-menu pin-right hide-mobile-up">
+                <div class="dropdown-menu__item">
+                    dropdown
+                </div>
+            </div>
+        </div>
+        <div class="site-menu__item has-dropdown">
+            Flow <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+            <div class="dropdown-menu pin-right hide-mobile-up">
+                <div class="dropdown-menu__item">
+                    dropdown
+                </div>
+            </div>
+        </div>
+        <div class="site-menu__item has-dropdown">
+            <span class="sr-only">RIMDev</span>
+            <span class="card__header-icon pill--circle-medium background-white text-navy">
+                <i class="pi-rimdev" aria-hidden="true"></i>
+            </span> 
+            <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+            <div class="dropdown-menu pin-right hide-mobile-up">
+                <div class="dropdown-menu__item">
+                    dropdown
+                </div>
+            </div>
+        </div>
+        <div class="site-menu__item has-dropdown">
+            Recent <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+            <div class="dropdown-menu pin-right hide-mobile-up">
+                <div class="dropdown-menu__item">
+                    dropdown
+                </div>
             </div>
         </div>
     </nav>
-    <nav class="site-menu">
+    <nav class="site-menu text-navy flex flex--justify-between">
         <div class="site-menu__item">
-            <span class="card__header-icon pill--circle-medium background-pink text-white mr-2">
-                <i class="pi-rimdev text-base"></i>
+            <span class="card__header-icon pill--circle-medium background-salmon text-white mr-2">
+                <i class="pi-building text-white"></i>
             </span>
-            <div class="font-lg">
-                Menu Header with avatar
+            <div class="">
+                Humana
             </div>
+            <span class="pill text-white background-olive ml-3">Active</span>
         </div>
-        <div class="site-menu__item">
-            menu item
-        </div>
-        <div class="site-menu__item has-dropdown">
-            dropdown item
-            <div class="dropdown-menu pin-right hide-mobile-up">
-            <div class="dropdown-menu__item">
-                dropdown
+        <div class="flex">
+            <div class="site-menu__item">
+                Contracts
             </div>
+            <div class="site-menu__item">
+                Membership
             </div>
         </div>
     </nav>

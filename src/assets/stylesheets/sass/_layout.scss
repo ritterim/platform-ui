@@ -49,3 +49,10 @@
   }
 }
 
+body {
+
+  &.fixed-header {
+    padding-top: config.$fixed-header-height;
+  }
+}
+
