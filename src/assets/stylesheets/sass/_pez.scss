@@ -140,7 +140,7 @@
   &.pressed {
     background-color: color.adjust(map.get(config.$brand-colors, 'med-blue'), $lightness: math.percentage(config.$hue-threshold * 2));
     border-color: map.get(config.$brand-colors, 'med-blue');
-    color: map.get(variables.$greyscale, 'white');
+    color: map.get(config.$brand-colors, 'navy');
     font-weight: bold;
   }
 

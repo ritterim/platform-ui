@@ -103,9 +103,24 @@
         </div>
     </nav>
   </header>
-  <main class="background-light-mid flex--grow py-3 px-3">
+  <main class="background-light-mid flex--grow py-4 px-5">
     <div class="block-container blocks-px-3">
         <div class="block block-lg-tablet-8 block-laptop-9 block-desktop-10">
+            <div class="block-container flex--justify-end mb-4">
+                <fieldset class="pui-form__field pui-form block block-tablet-6 block-lg-tablet-4 block-laptop-3 block-desktop-2">
+                    <legend class="sr-only">Select All States or Deselect all</legend>
+                    <div class="pui-toggle background-white ">
+                        <div class="pui-toggle__content">
+                            <input class="pui-toggle__input" id="active" type="radio" checked="" name="active">
+                            <label for="active"><i class="pi-check"></i> Active</label>
+                        </div>
+                        <div class="pui-toggle__content">
+                            <input class="pui-toggle__input" id="inactive" type="radio" name="active">
+                            <label for="inactive"><i class="pi-check"></i> Inactive</label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>            
             <div class="pui-tabs">
                 <input type="radio" id="tab-input-a" name="tabs" checked>
                 <label for="tab-input-a" class="pui-tab">
@@ -113,9 +128,9 @@
                 </label>
                 <div class="pui-tab-panel py-4 px-4">
                     <div class="flex flex--justify-end w-100 mb-4">
-                        <button class="button">Add <i class="pi-plus" aria-hidden="true"></i></button>
+                        <button class="button button--lg">Add <i class="pi-plus" aria-hidden="true"></i></button>
                     </div>
-                    <div class="pui-accordion">
+                    <div class="pui-accordion active">
                         <div class="pui-accordion__header px-4 py-4 flex flex--justify-between">
                             <span class="text--bold text-base">Humana</span>
                             <button class="text-light text-negative--hover pointer button--plain" aria-label="Remove Carrier">
@@ -125,13 +140,13 @@
                         <div class="pui-accordion__content px-4 py-4 fade-in-from-none-enter-active">
                             <div class="block-container blocks-px-3">
                                 <div class="block block-tablet-4 block-lg-tablet-3">
-                                    <h3 class="text-base">Setup</h3>
+                                    <h3 class="text-base mb-3">Setup</h3>
                                     <form action="" class="pui-form">
                                         <fieldset class="pui-form__field mb-4">
                                             <legend class="sr-only">Choose</legend>
-                                            <div class="pui-form__option-group">
+                                            <div class="flex flex--column">
                                                 <input class="pui-form__checkbox" id="per-state" type="checkbox">
-                                                <label for="per-state">
+                                                <label for="per-state" class="mb-2">
                                                     <div class="input-icons">
                                                         <i class="pi-circle pi-lg"></i>
                                                         <i class="pi-check pi-lg"></i>
@@ -139,7 +154,7 @@
                                                     Allow per-state agent writting number
                                                 </label>
                                                 <input class="pui-form__checkbox" id="non-licensed" type="checkbox">
-                                                <label for="non-licensed">
+                                                <label for="non-licensed" class="mb-2">
                                                     <div class="input-icons">
                                                         <i class="pi-circle pi-lg"></i>
                                                         <i class="pi-check pi-lg"></i>
@@ -147,7 +162,8 @@
                                                     Allow non-licensed states for overrides
                                                 </label>
                                                 <input class="pui-form__checkbox" id="staff" type="checkbox">
-                                                <label for="staff">
+                                                <label for="staff" class="mb-2">
+
                                                     <div class="input-icons">
                                                         <i class="pi-circle pi-lg"></i>
                                                         <i class="pi-check pi-lg"></i>
@@ -167,12 +183,13 @@
                                         <label for="third-party" class="pui-form__field mb-4">Third Party Provider
                                             <div class="pui-form__select-wrapper">
                                                 <select name="County Select" id="third-party">
-                                                <option value="County1">County 1</option>
-                                                <option value="County2">County 2</option>
-                                                <option value="County3">County 3</option>
-                                                <option value="County4">County 4</option>
-                                                <option value="County5">County 5</option>
-                                                <option value="County6">County 6</option>
+                                                    <option value="" selected></option>
+                                                    <option value="County1">County 1</option>
+                                                    <option value="County2">County 2</option>
+                                                    <option value="County3">County 3</option>
+                                                    <option value="County4">County 4</option>
+                                                    <option value="County5">County 5</option>
+                                                    <option value="County6">County 6</option>
                                                 </select>
                                             </div>
                                         </label>
@@ -191,11 +208,228 @@
                                         </fieldset>
                                     </form>
                                 </div>
-                                <div class="block block-tablet-8 block-lg-tablet-9 border-l border--color-light-mid">
-                                    <div class="flex flex--justify-between">
-                                        <h3 class="text-base">Products and States</h3>
-                                        <button class="button">Add <i class="pi-plus" aria-hidden="true"></i></button>
+                                <div class="block block-tablet-8 block-lg-tablet-9 py-2 border-l border--color-light-mid">
+                                    <div class="mb-4">
+                                        <div class="flex flex--justify-between flex--align-center mb-3">
+                                            <h3 class="text-base">Products and States</h3>
+                                            <button class="button button--lg">Add <i class="pi-plus" aria-hidden="true"></i></button>
+                                        </div>
+                                        <div class="button-group mb-3">
+                                            <button class="button">Medicare Advantage <i class="pi-times-solid"></i></button>
+                                            <button class="button">Prescription Drug Plan <i class="pi-times-solid"></i></button>
+                                        </div>
+                                        <div class="block-container mobile-up-4 tablet-up-6 lg-tablet-up-10 laptop-up-12 blocks-px-1 blocks-py-1 mb-2">
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                            <div class="block">
+                                                <button class="pez pressed">AK</button>
+                                            </div>
+                                        </div>
+                                        <fieldset class="pui-form__field pui-form block-container">
+                                            <legend class="sr-only">Select All States or Deselect all</legend>
+                                            <div class="pui-toggle block block-tablet-7 block-lg-tablet-8 block-laptop-5 block-desktop-3">
+                                                <div class="pui-toggle__content">
+                                                    <input class="pui-toggle__input" id="all-states" type="radio" checked="" name="height">
+                                                    <label for="all-states"><i class="pi-check"></i> All States</label>
+                                                </div>
+                                                <div class="pui-toggle__content">
+                                                    <input class="pui-toggle__input" id="deselect" type="radio" name="height">
+                                                    <label for="deselect"><i class="pi-check"></i> Deselect</label>
+                                                </div>
+                                            </div>
+                                        </fieldset>
                                     </div>
+                                    <div class="mb-4">
+                                        <div class="flex flex--justify-between flex--align-center mb-3">
+                                            <h3 class="text-base">Certifications</h3>
+                                            <button class="button button--lg">Add <i class="pi-plus" aria-hidden="true"></i></button>
+                                        </div>
+                                        <div class="w-100 flex flex--wrap">
+                                            <div class="pill background-navy text-white mr-1">
+                                                HMO <i aria-hidden="true" class="ml-2 pi-times-solid"></i>
+                                            </div>
+                                            <div class="pill background-navy text-white mr-1">
+                                                PFFS <i aria-hidden="true" class="ml-2 pi-times-solid"></i>
+                                            </div>
+                                            <div class="pill background-navy text-white mr-1">
+                                                PPO <i aria-hidden="true" class="ml-2 pi-times-solid"></i>
+                                            </div>
+                                            <div class="pill background-navy text-white mr-1">
+                                                SNP <i aria-hidden="true" class="ml-2 pi-times-solid"></i>
+                                            </div>
+                                            <div class="pill background-navy text-white mr-1">
+                                                CarePlus <i aria-hidden="true" class="ml-2 pi-times-solid"></i>
+                                            </div>
+                                        </div>
+                                    </div>   
+                                    <div>
+                                        <div class="flex flex--justify-between flex--align-center mb-3">
+                                            <h3 class="text-base">Carrier Required Documents</h3>
+                                            <button class="button button--lg">Add <i class="pi-plus" aria-hidden="true"></i></button>
+                                        </div>
+                                        <div class="w-100 flex flex--wrap">
+                                            <div class="pill background-navy text-white mr-1">
+                                                Per State License <i aria-hidden="true" class="ml-2 pi-times-solid"></i>
+                                            </div>
+                                            <div class="pill background-navy text-white mr-1">
+                                                E&O <i aria-hidden="true" class="ml-2 pi-times-solid"></i>
+                                            </div>
+                                            <div class="pill background-navy text-white mr-1">
+                                                W9 <i aria-hidden="true" class="ml-2 pi-times-solid"></i>
+                                            </div>
+                                            <div class="pill background-navy text-white mr-1">
+                                                ACH <i aria-hidden="true" class="ml-2 pi-times-solid"></i>
+                                            </div>
+                                            <div class="pill background-navy text-white mr-1">
+                                                Voided Check <i aria-hidden="true" class="ml-2 pi-times-solid"></i>
+                                            </div>
+                                        </div>
+                                    </div>                                    
                                 </div>
                             </div>
                         </div>
@@ -220,14 +454,14 @@
         <div class="block block-lg-tablet-4 block-laptop-3 block-desktop-2">
             <div class="background-note pt-5 pb-3 px-4">
                 <div class="h-100">
-                    <div class="flex flex--align-center flex--justify-between pb-3 mb-2">
+                    <div class="flex flex--align-center flex--justify-between pb-3 flex--wrap">
                         <div class="flex flex--align-center">
                             <button title="Add Note" aria-label="Add Note" class="button button--secondary">
                                 <i aria-hidden="true" class="pi-plus"></i>
                             </button>
                             <h2 class="ml-2 text-navy">Notes</h2>
                         </div> 
-                        <button class="button">
+                        <button class="button my-2">
                             View All 27 <i aria-hidden="true" class="pi-arrow-right"></i>
                         </button>
                     </div>

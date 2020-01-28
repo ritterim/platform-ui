@@ -74,6 +74,7 @@
     width: 100%;
     top: 0;
     height: config.$fixed-header-height;
+    z-index: 100;
   }
 }
 
@@ -88,13 +89,14 @@
   $menu-secondary-hover-color: config.$menu-secondary-hover-color;
   $menu-secondary-hover: color.adjust($menu-secondary-background, $lightness: math.percentage(config.$hue-threshold * 0.5));
 
+  background-color: $menu-primary-background;
 
   @include mixins.breakpoint(tablet, max) {
     position: relative;
   }
 
   &.site-menu--secondary {
-    background: $menu-secondary-background;
+    background-color: $menu-secondary-background;
 
     .dropdown-menu {
       background-color: $menu-secondary-hover;
