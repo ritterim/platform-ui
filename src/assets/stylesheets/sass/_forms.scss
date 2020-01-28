@@ -910,12 +910,9 @@ legend {
   border: 1px solid color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold * 2));
   border-radius: map.get(config.$radius, 'button');
   display: flex;
-  justify-content: space-between;  
+  justify-content: space-between;
+  margin-top: map.get(variables.$spacers, 2);
   padding: map.get(variables.$spacers, 1);
-
-  .pui-form & {
-    margin-top: map.get(variables.$spacers, 2);
-  }
 
   &__content {
     border-radius: map.get(config.$radius, 'button');

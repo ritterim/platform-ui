@@ -104,10 +104,10 @@
     </nav>
   </header>
   <main class="background-light-mid flex--grow py-4 px-5">
-    <div class="block-container blocks-px-3">
-        <div class="block block-lg-tablet-8 block-laptop-9 block-desktop-10">
+    <div class="block-container blocks-px-3 blocks-mb-4">
+        <div class="block block-lg-tablet-8 block-laptop-9">
             <div class="block-container flex--justify-end mb-4">
-                <fieldset class="pui-form__field pui-form block block-tablet-6 block-lg-tablet-4 block-laptop-3 block-desktop-2">
+                <fieldset class="pui-form__field pui-form block block--shrink">
                     <legend class="sr-only">Select All States or Deselect all</legend>
                     <div class="pui-toggle background-white ">
                         <div class="pui-toggle__content">
@@ -214,9 +214,9 @@
                                             <h3 class="text-base">Products and States</h3>
                                             <button class="button button--lg">Add <i class="pi-plus" aria-hidden="true"></i></button>
                                         </div>
-                                        <div class="button-group mb-3">
-                                            <button class="button">Medicare Advantage <i class="pi-times-solid"></i></button>
-                                            <button class="button">Prescription Drug Plan <i class="pi-times-solid"></i></button>
+                                        <div class="block-container blocks-mx-1 blocks-my-1 mb-3">
+                                            <button class="button block block--shrink">Medicare Advantage <i class="pi-times-solid"></i></button>
+                                            <button class="button block block--shrink">Prescription Drug Plan <i class="pi-times-solid"></i></button>
                                         </div>
                                         <div class="block-container mobile-up-4 tablet-up-6 lg-tablet-up-10 laptop-up-12 blocks-px-1 blocks-py-1 mb-2">
                                             <div class="block">
@@ -370,19 +370,21 @@
                                                 <button class="pez pressed">AK</button>
                                             </div>
                                         </div>
-                                        <fieldset class="pui-form__field pui-form block-container">
-                                            <legend class="sr-only">Select All States or Deselect all</legend>
-                                            <div class="pui-toggle block block-tablet-7 block-lg-tablet-8 block-laptop-5 block-desktop-3">
-                                                <div class="pui-toggle__content">
-                                                    <input class="pui-toggle__input" id="all-states" type="radio" checked="" name="height">
-                                                    <label for="all-states"><i class="pi-check"></i> All States</label>
+                                        <div class="block-container">
+                                            <fieldset class="pui-form__field pui-form block block--shrink">
+                                                <legend class="sr-only">Select All States or Deselect all</legend>
+                                                <div class="pui-toggle">
+                                                    <div class="pui-toggle__content">
+                                                        <input class="pui-toggle__input" id="all-states" type="radio" checked="" name="height">
+                                                        <label for="all-states"><i class="pi-check"></i> All States</label>
+                                                    </div>
+                                                    <div class="pui-toggle__content">
+                                                        <input class="pui-toggle__input" id="deselect" type="radio" name="height">
+                                                        <label for="deselect"><i class="pi-check"></i> Deselect</label>
+                                                    </div>
                                                 </div>
-                                                <div class="pui-toggle__content">
-                                                    <input class="pui-toggle__input" id="deselect" type="radio" name="height">
-                                                    <label for="deselect"><i class="pi-check"></i> Deselect</label>
-                                                </div>
-                                            </div>
-                                        </fieldset>
+                                            </fieldset>
+                                        </div>
                                     </div>
                                     <div class="mb-4">
                                         <div class="flex flex--justify-between flex--align-center mb-3">
@@ -451,7 +453,7 @@
                 </div>
             </div>
         </div>
-        <div class="block block-lg-tablet-4 block-laptop-3 block-desktop-2">
+        <div class="block block-lg-tablet-4 block-laptop-3">
             <div class="background-note pt-5 pb-3 px-4">
                 <div class="h-100">
                     <div class="flex flex--align-center flex--justify-between pb-3 flex--wrap">
