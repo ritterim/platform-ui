@@ -56,11 +56,12 @@
   }
 }
 
-//
+// ----------------------------------------
 // Potential changes for CRM example page?
-//
+// ----------------------------------------
 .pui-header {
   display: flex;
+  // specified font-family prior to removing inter-ui
   font-family: 'Roboto', sans-serif;
   flex-direction: column;
 
