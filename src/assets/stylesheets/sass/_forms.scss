@@ -218,6 +218,7 @@
 //         <option value="10:00 AM">10:00 AM</option>
 //         <option value="10:30 AM">10:30 AM</option>
 //       </select>
+//       <i class="pi-clock"></i> 
 //     </div>
 //   </label>
 //  </div>
@@ -815,14 +816,13 @@ legend {
     &.time {
 
       &:after {
-        color: map.get(variables.$greyscale, 'base' );
-        content: '\f17f';
-        font-family: platform-icons;
-        font-weight: 400;
-        height: auto;
-        width: auto;
-        border: none;
-        transform: rotate(0) translateY(-50%);
+        display: none;
+      }
+
+      i {
+        position: absolute;
+        top: .75rem;
+        right: 0;
       }
     }
   }

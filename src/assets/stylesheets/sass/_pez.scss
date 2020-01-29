@@ -126,7 +126,7 @@
       font-size: map.get(variables.$font-percentage, 'xxs');
       position: absolute;
       bottom: 0; 
-      right: 1px;
+      right: -2px;
       z-index: 2;
     }
   }
