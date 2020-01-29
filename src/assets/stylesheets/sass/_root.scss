@@ -1,0 +1,40 @@
+@use "config";
+@use "variables";
+@use "sass:map";
+@use "sass:meta";
+
+$all-colors: () !default;
+$platform-colors: () !default;
+
+@if meta.type-of(config.$config-colors) == 'map' {
+    $all-colors: map.merge(config.$config-colors, variables.$greyscale);
+} @else {
+    $all-colors: map.merge(variables.$greyscale, $all-colors);
+    @warn "$config-colors is not set or empty";
+}
+
+:root {
+    @if meta.type-of($all-colors) == 'map' {
+        @each $name, $color in $all-colors {
+            --pui-#{$name}: #{$color};
+        }
+    }
+    @if meta.type-of($platform-colors) == 'map' {
+        @each $name, $color in $platform-colors {
+            --pui-#{$name}: #{$color};
+        }
+    }
+    @each $breakpoint, $width in config.$breakpoints {
+        --pui-#{$breakpoint}: #{$width};
+    }
+    @each $size, $width in config.$image-size {
+        --pui-#{$size}: #{$width};
+    }
+    @each $type, $size in config.$radius {
+        --pui-#{$type}: #{$size};
+    }
+    --pui-menu-height: #{config.$menu-height};
+    --pui-duration: #{config.$duration};
+    --pui-transitions: #{config.$transitions};
+    --pui-opacity: #{config.$opacity};
+}
