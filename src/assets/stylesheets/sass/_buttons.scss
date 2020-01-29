@@ -169,6 +169,37 @@
 //
 // Styleguide Components.Button.Filter
 
+// Colors
+//
+// The filter button uses the med-blue background set in the brand-colors map. 
+//
+// Markup:
+// <div class="button-group mb-4">
+//   <button class="button button--navy">Navy</button>
+//   <button class="button button--skyblue">Skyblue</button>
+//   <button class="button button--lightblue">Lightblue</button>
+//   <button class="button button--med-blue">Med-blue</button>
+//   <button class="button button--beige">Beige</button>
+//   <button class="button button--peach">Peach</button>
+//   <button class="button button--salmon">Salmon</button>
+//   <button class="button button--brown">Brown</button>
+//   <button class="button button--orange">Orange</button>
+// </div>
+// <div class="button-group">
+//   <button class="button button--ghost button--navy">Navy</button>
+//   <button class="button button--ghost button--skyblue">Skyblue</button>
+//   <button class="button button--ghost button--lightblue">Lightblue</button>
+//   <button class="button button--ghost button--med-blue">Med-blue</button>
+//   <button class="button button--ghost button--beige">Beige</button>
+//   <button class="button button--ghost button--peach">Peach</button>
+//   <button class="button button--ghost button--salmon">Salmon</button>
+//   <button class="button button--ghost button--brown">Brown</button>
+//   <button class="button button--ghost button--orange">Orange</button>
+// </div>
+//
+// Styleguide Components.Button.Colors
+
+
 .button {
   align-items: center;
   background-color: config.$button-primary-background;
@@ -391,6 +422,61 @@
       color: config.$button-secondary-color;
     }
   }
+
+  &--plain {
+    appearance: none;
+    background: transparent;
+    border: none;
+  }
+
+  @each $name, $color in config.$brand-colors {
+    &--#{$name} {
+      background-color: $color;
+      border-color: $color;
+      @if lightness($color) > 50 and lightness($color) < 75 {
+        color: color.adjust($color, $lightness: math.percentage(-.5));
+      } @else if lightness($color) > 50 {
+        color: color.adjust($color, $lightness: math.percentage(-.7));
+      } @else {
+        color: map.get(variables.$greyscale, 'white');
+      }
+      
+      &:hover {
+        background-color: map.get(variables.$greyscale, 'white');
+        border-color: $color;
+        @if lightness($color) > 50 and lightness($color) < 75 {
+          color: color.adjust($color, $lightness: math.percentage(-.5));
+        } @else if lightness($color) > 50 {
+          color: color.adjust($color, $lightness: math.percentage(-.7));
+        } @else {
+          color: $color;
+        }
+      }
+      
+      &.button--ghost {
+        background-color: transparent;
+        @if lightness($color) > 50 and lightness($color) < 75 {
+          color: color.adjust($color, $lightness: math.percentage(-.4));
+        } @else if lightness($color) > 50 {
+          color: color.adjust($color, $lightness: math.percentage(-.6));
+        } @else {
+          color: $color;
+        }
+        
+        &:hover {
+          background-color: $color;
+          border-color: $color;
+          @if lightness($color) > 50 and lightness($color) < 75 {
+            color: color.adjust($color, $lightness: math.percentage(-.3));
+          } @else if lightness($color) > 50 {
+            color: color.adjust($color, $lightness: math.percentage(-.5));
+          } @else {
+            color: map.get(variables.$greyscale, 'white');
+          }
+        }
+      }
+    }
+  }  
 }
 
 .button-group {
