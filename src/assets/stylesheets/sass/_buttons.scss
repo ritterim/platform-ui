@@ -156,22 +156,9 @@
 //
 // Styleguide Components.Button.Active
 
-// Filter
-//
-// The filter button uses the med-blue background set in the brand-colors map. 
-//
-// Markup:
-// <div class="button-group">
-//   <a class="button button--filter">Clients</a>
-//   <a class="button button--filter">Lead</a>
-//   <a class="button button--filter">Prospect</a>
-// </div>
-//
-// Styleguide Components.Button.Filter
-
 // Colors
 //
-// The filter button uses the med-blue background set in the brand-colors map. 
+// We loop through a map to give you these color variations. 
 //
 // Markup:
 // <div class="button-group mb-4">
@@ -409,17 +396,6 @@
         margin-left: -.75rem;
         margin-top: -.75rem;
       }
-    }
-  }
-
-  &--filter {
-    border-color: config.$button-filter-color;
-    color: config.$button-filter-color;
-
-    &.active,
-    &:hover {
-      background-color: config.$button-filter-color;
-      color: config.$button-secondary-color;
     }
   }
 
