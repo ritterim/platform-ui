@@ -13,22 +13,15 @@
   }
 }
 
-html {
-  font-family: map.get(config.$fonts, 'base');
-}
-@supports (font-variation-settings: normal) {
-  html {
-    font-family: map.get(config.$fonts, 'base-alt');
-  }
-}
-
 html,
 body {
   box-sizing: border-box;
   color: map.get(variables.$greyscale, 'dark');
+  font-family: map.get(config.$fonts, 'base');
   font-size: map.get(config.$fonts, 'size');
   font-weight: 300;
   height: 100%;
+  line-height: map.get(config.$fonts, 'line-height');
   margin: 0;
   padding: 0;
 }
@@ -39,20 +32,14 @@ body {
     color: map.get(variables.$greyscale, 'base' );
     font-family: map.get(config.$fonts, 'headline');
     font-weight: 500;
-    margin: 0;
-
-    .post & {
-      font-family: map.get(config.$fonts, 'headline-slab');
-    }
+    line-height: map.get(config.$fonts, 'headline-line-height');
+    margin: variables.$spacer 0;
   }
 }
 
-h1 {
-  color: map.get(config.$brand-colors, 'navy' );
-}
-
 p {
-  margin: 0 0 map.get(variables.$spacers, 4) 0;
+  line-height: map.get(config.$fonts, 'line-height');
+  margin: 0 0 variables.$spacer 0;
 }
 
 a {
@@ -83,8 +70,8 @@ section {
 }
 
 hr {
-    background-color: map.get(variables.$greyscale, 'base');
-    border: none;
-    height: 1px;
-    margin: variables.$spacer 0;
+  background-color: map.get(variables.$greyscale, 'base');
+  border: none;
+  height: 1px;
+  margin: variables.$spacer 0;
 }
