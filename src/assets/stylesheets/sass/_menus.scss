@@ -62,7 +62,7 @@
 .pui-header {
   display: flex;
   // specified font-family prior to removing inter-ui
-  font-family: 'Roboto', sans-serif;
+  font-family: map.get(config.$fonts, 'base');
   flex-direction: column;
 
   > .site-menu {
