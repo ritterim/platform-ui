@@ -68,7 +68,11 @@ function generateIconAssets() {
 }
 
 function css() {
-  return src('src/assets/stylesheets/sass/main.scss')
+  return src([
+      'node_modules/normalize.css/normalize.css',             // normalize.css
+      'src/assets/stylesheets/sass/main.scss',                // platform ui scss
+      'node_modules/highlight.js/styles/solarized-light.css'  // highlight.js
+    ])
     .pipe(sass())
     .pipe(concat('platform-ui.min.css'))
     .pipe(postcss([autoprefixer(), nano()]))
