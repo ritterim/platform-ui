@@ -169,15 +169,7 @@ $radius: (
 $fixed-header-height: 8rem;
 
 // colors
-$menu-primary-background: #fff;
-$menu-primary-color: map.get($platform-colors, 'menu');
-$menu-primary-hover-color: $menu-primary-color;
-$menu-primary-hover: #e2e3e5;
-
-$menu-secondary-background: map.get($platform-colors, 'menu');
-$menu-secondary-color: #fff;
-$menu-secondary-hover-color: $menu-secondary-color;
-$menu-secondary-hover: map.get($platform-colors, 'menu');
+$primary-menu-color: map.get($platform-colors, 'menu');
 
 
 
