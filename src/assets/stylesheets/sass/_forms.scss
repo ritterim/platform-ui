@@ -335,13 +335,11 @@ legend {
     @include mixins.square(1rem);
 
     [class^="pi-"] {
-      // font-size: map.get(variables.$font-percentage, 'md');
       position: absolute;
       left: 50%; top: 50%;
       transform: translate(-50%, -50%);      
 
       &:nth-of-type(2) {
-        // font-size: map.get(variables.$font-percentage, 'xs');
         transform: translate(-50%, -50%) scale(0);
         transition: transform config.$duration ease;
       }
