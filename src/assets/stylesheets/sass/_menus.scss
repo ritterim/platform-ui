@@ -73,8 +73,10 @@
       border-left: 1px solid color.adjust(config.$primary-menu-color, $lightness: math.percentage(-.15));
   
       @media (pointer: fine) {
-        &:hover:not(.search) {
-          background-color: color.adjust(config.$primary-menu-color, $lightness: math.percentage(-.05));
+        &:hover {
+          &:not(.search):not(.active) {
+            background-color: color.adjust(config.$primary-menu-color, $lightness: math.percentage(-.05));
+          }
         }
       }
   
@@ -85,7 +87,9 @@
   
         @media (pointer: fine) {
           &:hover {
-            border-bottom-color: rgba(config.$primary-menu-color, .5);
+            &:not(.active) {
+              border-bottom-color: rgba(config.$primary-menu-color, .5);
+            }
           }
         }
   
@@ -105,7 +109,8 @@
       &__item {
   
         &:hover {
-          background-color: rgba(color.adjust(config.$primary-menu-color, $lightness: math.percentage(-.05)), .3);
+          // background-color: rgba(color.adjust(config.$primary-menu-color, $lightness: math.percentage(-.05)), .3);
+          background-color: rgba(color.adjust(map.get(variables.$greyscale, 'white'), $lightness: math.percentage(-.05)), .3);
         }
   
         &:not(:first-child) {
@@ -130,8 +135,10 @@
     }
 
     @media (pointer: fine) {
-      &:hover:not(.search) {
-        background-color: color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05));
+      &:hover {
+        &:not(.search):not(.active) {
+          background-color: color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05));
+        }
       }
     }
 
