@@ -7,12 +7,11 @@
 
 // Menu
 //
-// The default menu is `position: fixed` and `background-navy`, both of which can be overridden on `.site-header`.
-// Adding `pos-rel` removes the default `fixed` positioning, and the menu background color default of
-// `background-navy`can be overridden by adding a [background color](/section-color.html) using `background-{ color }`.
+// The default menu has a white background with Navy text color. The hover color on the items in the menu is set to a light gray. These colors can be cahnged in the config file.
+// You can also invert the colors of the site-menu by adding the classes `.primary` and `.inverted` to the site-menu. This would give the menu a navy background and white text color.
 //
 // Markup:
-// <header class="site-header pos-rel background-base">
+// <header class="site-header">
 //   <nav class="site-menu">
 //     <div class="site-menu__item has-dropdown">
 //       <span class="card__header-icon pill--circle-medium background-pink text-white mr-2">
@@ -21,24 +20,55 @@
 //       <div class="font-lg">
 //         Menu Header with avatar
 //       </div>
-//   </div>
-//   <div class="site-menu__item">
-//     menu item
-//   </div>
-//   <div class="site-menu__item has-dropdown">
-//     dropdown item
-//     <div class="dropdown-menu pin-right hide-mobile-up">
-//       <div class="dropdown-menu__item">
-//         dropdown
+//     </div>
+//     <div class="site-menu__item">
+//       menu item
+//     </div>
+//     <div class="site-menu__item has-dropdown">
+//       dropdown item
+//       <div class="dropdown-menu pin-right hide-mobile-up">
+//         <div class="dropdown-menu__item">
+//           dropdown
+//         </div>
 //       </div>
 //     </div>
-//   </div>
-// </nav>
+//   </nav>
+// </header>
+// <header class="site-header mt-5">
+//   <nav class="site-menu primary inverted">
+//     <div class="site-menu__item has-dropdown">
+//       <span class="card__header-icon pill--circle-medium background-pink text-white mr-2">
+//         <i class="pi-rimdev text-base"></i>
+//       </span>
+//       <div class="font-lg">
+//         Menu Header with avatar
+//       </div>
+//     </div>
+//     <div class="site-menu__item">
+//       menu item
+//     </div>
+//     <div class="site-menu__item has-dropdown">
+//       dropdown item
+//       <div class="dropdown-menu pin-right hide-mobile-up">
+//         <div class="dropdown-menu__item">
+//           dropdown
+//         </div>
+//       </div>
+//     </div>
+//   </nav>
 // </header>
 //
 // Weight: -1
 //
 // Styleguide Menus.Main
+
+// Fixed Header
+// 
+// To get a fixed header you can set the desired height in the config file. The `site-header` needs the modifier, `site-header--fixed`. This is what gives the header the `position: fixed` style.
+// In order to ensure that you have proper space between your header and main content, add the class `header-fixed` to the direct sibling of your `site-header`.
+// To see this in action, inspect the header of this style guide.
+// 
+// Styleguide Menus.Fixed
 
 .site-header {
   display: flex;
@@ -65,6 +95,7 @@
 .site-menu {
   background-color: map.get(variables.$greyscale, 'white');
   color: config.$primary-menu-color;
+  display: flex;
 
   &.primary {
     background-color: config.$primary-menu-color;
