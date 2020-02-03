@@ -21,27 +21,29 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
 </head>
-<body id="kss-node" class="{{#if template.isHomepage}}background-lighter{{/if}}{{#unless homepage}} mt-6{{/unless}}  ">
-  <header class="site-header flex--justify-between flex--align-center px-3 py-2 background-white block-container border-b border--color-skyblue pin-top">
-    <div class="block block-mobile-4 block-laptop-3 flex flex--justify-start">
-      <a class="flex w-50" href="/">
-        <img class="w-100" src="site-assets/images/svg/RitterInsuranceLogo.svg" alt="Ritter Insurance Marketing">
-      </a>
-    </div>
-    <nav class="block block-8 flex flex--justify-end">
-      <a class="text--bold text-navy px-3" href="https://docs.ritterim.com">
-        <img class="icon--svg-small" src="site-assets/images/svg/ritter-docs.svg" alt="">
-        Ritter Docs
-      </a>
-      <a class="text--bold text-navy px-3" href="https://ritterim.com">
-        <img class="icon--svg-small" src="site-assets/images/svg/ritter-website.svg" alt="">
-        Ritterim.com
-      </a>
+<body id="kss-node" class="{{#if template.isHomepage}}background-lighter{{/if}}">
+  <header class="site-header site-header--fixed border-b border--color-skyblue">
+    <nav class="site-menu flex flex--justify-between">
+      <div class="flex flex--justify-start pl-3">
+        <a class="flex w-50" href="/">
+          <img class="w-100" src="site-assets/images/svg/RitterInsuranceLogo.svg" alt="Ritter Insurance Marketing">
+        </a>
+      </div>
+      <div class="flex flex--justify-end">
+        <a class="site-menu__item text--bold text-navy px-3" href="https://docs.ritterim.com">
+          <img class="icon--svg-small" src="site-assets/images/svg/ritter-docs.svg" alt="">
+          Ritter Docs
+        </a>
+        <a class="site-menu__item text--bold text-navy px-3" href="https://ritterim.com">
+          <img class="icon--svg-small" src="site-assets/images/svg/ritter-website.svg" alt="">
+          Ritterim.com
+        </a>
+      </div>
     </nav>
   </header>
 
   {{#unless template.isHomepage}}
-  <div class="block-container flex--justify-end">
+  <div class="block-container flex--justify-end header-fixed">
     <aside class="block block-4 block-laptop-3 block-desktop-2 border-r border--color-lighter pos-fix pin-left h-100">
       <nav class="h-100 overflow-y--scroll pb-7" aria-label="Style Guide">
         <ul class="pui-list">
@@ -76,7 +78,7 @@
       </nav>
     </aside>
   {{/unless}}
-    <main class="pb-4 {{#unless homepage}}px-4 background-white block block-8 block-laptop-9 block-desktop-10{{/unless}}" aria-label="Content">
+    <main class="pb-4 header-fixed {{#unless homepage}}px-4 background-white block block-8 block-laptop-9 block-desktop-10{{/unless}}" aria-label="Content">
       {{#if homepage}}
       <div class="crm-banner animated slideInDown fast flex--center-content flex--column pt-6 px-3 pb-3" style="background-image: linear-gradient(to right, white, transparent), url('site-assets/images/style-guide-background.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
         <h1 class="my-4">Welcome to the Platform UI Style Guide</h1>
