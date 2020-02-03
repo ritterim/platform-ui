@@ -109,7 +109,6 @@
       &__item {
   
         &:hover {
-          // background-color: rgba(color.adjust(config.$primary-menu-color, $lightness: math.percentage(-.05)), .3);
           background-color: rgba(color.adjust(map.get(variables.$greyscale, 'white'), $lightness: math.percentage(-.05)), .3);
         }
   
