@@ -327,7 +327,7 @@ legend {
 
 
   $self: &;
-  color: map.get(variables.$greyscale, 'light' );
+  color: color.adjust(map.get(variables.$greyscale, 'base' ), $lightness: math.percentage(.05));
 
   .input-icons {
     left: 0; top: 0;
