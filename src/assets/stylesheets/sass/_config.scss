@@ -225,6 +225,7 @@ $button-border-radius: 5rem !default;
 
 $button-primary-background: #FFFFFF !default;
 $button-primary-color: #666666 !default;
+$button-primary-hover: #C3552A !default;
 $button-secondary-background: map.get($config-colors, 'salmon') !default;
 $button-secondary-color: #FFFFFF !default;
 $button-filter-color: map.get($brand-colors, 'med-blue') !default;
