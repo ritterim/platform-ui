@@ -765,10 +765,6 @@ legend {
       &[readonly] {
         border-bottom-color: transparent;
         pointer-events: none;
-
-        &:focus {
-          box-shadow: none;
-        }
       }
     }
   }
@@ -785,10 +781,6 @@ legend {
         border-color: transparent;
         pointer-events: none;
         resize: none;
-
-        &:focus {
-          box-shadow: none;
-        }
       }
     }
   }
