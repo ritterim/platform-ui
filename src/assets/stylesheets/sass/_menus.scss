@@ -7,12 +7,11 @@
 
 // Menu
 //
-// The default menu is `position: fixed` and `background-navy`, both of which can be overridden on `.site-header`.
-// Adding `pos-rel` removes the default `fixed` positioning, and the menu background color default of
-// `background-navy`can be overridden by adding a [background color](/section-color.html) using `background-{ color }`.
+// The default menu has a white background with Navy text color. The hover color on the items in the menu is set to a light gray. These colors can be cahnged in the config file.
+// You can also invert the colors of the site-menu by adding the classes `.primary` and `.inverted` to the site-menu. This would give the menu a navy background and white text color.
 //
 // Markup:
-// <header class="site-header pos-rel background-base">
+// <header class="site-header">
 //   <nav class="site-menu">
 //     <div class="site-menu__item has-dropdown">
 //       <span class="card__header-icon pill--circle-medium background-pink text-white mr-2">
@@ -21,68 +20,187 @@
 //       <div class="font-lg">
 //         Menu Header with avatar
 //       </div>
-//   </div>
-//   <div class="site-menu__item">
-//     menu item
-//   </div>
-//   <div class="site-menu__item has-dropdown">
-//     dropdown item
-//     <div class="dropdown-menu pin-right hide-mobile-up">
-//       <div class="dropdown-menu__item">
-//         dropdown
+//     </div>
+//     <div class="site-menu__item">
+//       menu item
+//     </div>
+//     <div class="site-menu__item has-dropdown">
+//       dropdown item
+//       <div class="dropdown-menu pin-right hide-mobile-up">
+//         <div class="dropdown-menu__item">
+//           dropdown
+//         </div>
 //       </div>
 //     </div>
-//   </div>
-// </nav>
+//   </nav>
+// </header>
+// <header class="site-header mt-5">
+//   <nav class="site-menu primary inverted">
+//     <div class="site-menu__item has-dropdown">
+//       <span class="card__header-icon pill--circle-medium background-pink text-white mr-2">
+//         <i class="pi-rimdev text-base"></i>
+//       </span>
+//       <div class="font-lg">
+//         Menu Header with avatar
+//       </div>
+//     </div>
+//     <div class="site-menu__item">
+//       menu item
+//     </div>
+//     <div class="site-menu__item has-dropdown">
+//       dropdown item
+//       <div class="dropdown-menu pin-right hide-mobile-up">
+//         <div class="dropdown-menu__item">
+//           dropdown
+//         </div>
+//       </div>
+//     </div>
+//   </nav>
 // </header>
 //
 // Weight: -1
 //
 // Styleguide Menus.Main
 
+// Fixed Header
+// 
+// To get a fixed header you can set the desired height in the config file. The `site-header` needs the modifier, `site-header--fixed`. This is what gives the header the `position: fixed` style.
+// In order to ensure that you have proper space between your header and main content, add the class `header-fixed` to the direct sibling of your `site-header`.
+// To see this in action, inspect the header of this style guide.
+// 
+// Styleguide Menus.Fixed
+
 .site-header {
-  background-color: map.get(config.$platform-colors, 'menu');
-  color: map.get(variables.$greyscale, 'white');
   display: flex;
-  font-size: map.get(variables.$font-percentage, 'md');
-  height: config.$menu-height;
-  position: fixed;
-  width: 100%;
-  z-index: 100;
-  public-menu-cmp {
+  font-family: map.get(config.$fonts, 'base');
+  flex-direction: column;
+
+  > .site-menu {
+    flex: 1 1 auto;
+  }
+
+  &.site-header--fixed {
+    position: fixed;
     width: 100%;
+    top: 0;
+    height: config.$fixed-header-height;
+    z-index: 100;
+
+    + .header-fixed {
+      margin-top: config.$fixed-header-height;
+    }
   }
 }
 
 .site-menu {
-  $menu-primary-color: map.get(variables.$greyscale, 'white');
-
-  $dropdown-background: color.adjust(map.get(config.$brand-colors, 'navy' ), $lightness: math.percentage(config.$hue-threshold * 0.5));
+  background-color: map.get(variables.$greyscale, 'white');
+  color: config.$primary-menu-color;
   display: flex;
-  flex-grow: 1;
-  width: 100%;
-  height: 100%;
 
-  @include mixins.breakpoint(tablet, max) {
-    position: relative;
+  &.primary {
+    background-color: config.$primary-menu-color;
+
+    .site-menu__item {
+      border-left: 1px solid color.adjust(config.$primary-menu-color, $lightness: math.percentage(-.15));
+  
+      @media (pointer: fine) {
+        &:hover {
+          &:not(.search):not(.active) {
+            background-color: color.adjust(config.$primary-menu-color, $lightness: math.percentage(-.05));
+          }
+        }
+      }
+  
+      &.has-dropdown {
+        @include mixins.breakpoint(tablet, min) {
+          position: relative;
+        }
+  
+        @media (pointer: fine) {
+          &:hover {
+            &:not(.active) {
+              border-bottom-color: rgba(config.$primary-menu-color, .5);
+            }
+          }
+        }
+  
+        &.active {
+          border-bottom-color: rgba(config.$primary-menu-color, .5);
+        }
+      }
+  
+      &.active {
+        background-color: color.adjust(config.$primary-menu-color, $lightness: math.percentage(-.05));
+      } 
+    }
+
+    .dropdown-menu {
+      background-color: color.adjust(config.$primary-menu-color, $lightness: math.percentage(-.05));
+  
+      &__item {
+  
+        &:hover {
+          background-color: rgba(color.adjust(map.get(variables.$greyscale, 'white'), $lightness: math.percentage(-.05)), .3);
+        }
+  
+        &:not(:first-child) {
+          border-top: 1px solid rgba(config.$primary-menu-color, .5);
+        }
+      }
+    }
+  }
+
+  &__item {
+    border-left: 1px solid color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.15));
+    border-bottom: 1px solid transparent;
+    cursor: pointer;
+    display: flex;
+    flex: 0 0 auto;
+    padding: 0 map.get(variables.$spacers, 4);
+    transition: config.$transitions;
+    @extend %flex-center;
+
+    @include mixins.breakpoint(tablet, max) {
+      padding: 0 map.get(variables.$spacers, 3 );
+    }
+
+    @media (pointer: fine) {
+      &:hover {
+        &:not(.search):not(.active) {
+          background-color: color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05));
+        }
+      }
+    }
+
+    &.has-dropdown {
+      @include mixins.breakpoint(tablet, min) {
+        position: relative;
+      }
+
+      @media (pointer: fine) {
+        &:hover {
+          border-bottom-color: rgba(map.get(variables.$greyscale, 'lighter'), .5);
+        }
+      }
+
+      &.active {
+        border-bottom-color: rgba(map.get(variables.$greyscale, 'lighter'), .5);
+      }
+    }
+
+    &.active {
+      background-color: color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05));
+    } 
   }
 
   .search {
-    color: $menu-primary-color;
     flex-grow: 1;
     @extend %flex-center;
-
-    // flexing component
-    // pui-search {
-    //   display: flex;
-    //   width: 100%;
-    // }
+    
 
     input[type=text] {
       background: transparent;
       border: none;
-      color: inherit;
-      font-size: map.get(variables.$font-percentage, 'lg');
       font-weight: lighter;
       width: 100%;
       height: 100%;
@@ -94,51 +212,8 @@
     }
   }
 
-  &__item {
-    border-left: 1px solid rgba(map.get(variables.$greyscale, 'light'), .5);
-    border-bottom: 1px solid transparent;
-    color: $menu-primary-color;
-    cursor: pointer;
-    display: flex;
-    flex: 0 0 auto;
-    font-size: map.get(variables.$font-percentage, 'sm');
-    line-height: 1.5;
-    padding: 0 map.get(variables.$spacers, 4);
-    transition: config.$transitions;
-    @extend %flex-center;
-
-    @include mixins.breakpoint(tablet, max) {
-      padding: 0 map.get(variables.$spacers, 3 );
-    }
-
-    @media (pointer: fine) {
-      &:hover:not(.search) {
-        background-color: $dropdown-background;
-        color: $menu-primary-color;
-      }
-    }
-
-    &.has-dropdown {
-      @include mixins.breakpoint(tablet, min) {
-        position: relative;
-      }
-
-      @media (pointer: fine) {
-        &:hover {
-          border-bottom-color: rgba(map.get(variables.$greyscale, 'light'), .5);
-        }
-      }
-    }
-
-    &.active {
-      background-color: $dropdown-background;
-      border-bottom-color: rgba(map.get(variables.$greyscale, 'light'), .5);
-      color: $menu-primary-color;
-    }
-  }
-
   .dropdown-menu {
-    background-color: $dropdown-background;
+    background-color: color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05));
     position: absolute;
     top: calc(100% + 1px);
     transition: opacity ease config.$transitions, visibility ease config.$transitions;
@@ -156,11 +231,11 @@
       padding: map.get(variables.$spacers, 3) map.get(variables.$spacers, 4);
 
       &:hover {
-        background-color: rgba($menu-primary-color, .3);
+        background-color: rgba(color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05)), .3);
       }
 
       &:not(:first-child) {
-        border-top: 1px solid rgba(map.get(variables.$greyscale, 'light'), .5);
+        border-top: 1px solid rgba(map.get(variables.$greyscale, 'lighter'), .5);
       }
 
       &.profile {
@@ -182,9 +257,9 @@
       width: 35rem;
     }
 
-    a {
-      color: $menu-primary-color;
-    }
+    // a {
+    //   color: $menu-primary-color;
+    // }
 
     address {
       font-style: normal;

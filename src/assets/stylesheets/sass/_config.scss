@@ -161,6 +161,17 @@ $radius: (
 );
 
 
+// --------------------
+// Pui-header
+// --------------------
+
+// sizes
+$fixed-header-height: 4.5rem;
+
+// colors
+$primary-menu-color: map.get($platform-colors, 'menu');
+
+
 
 
 // --------------------
