@@ -118,7 +118,7 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
       flex: 1 1 auto;
       max-width: 16rem;
       border: 1px solid transparent;
-      color: map.get(variables.$greyscale, 'light' );
+      color: map.get(variables.$greyscale, 'base' );
       cursor: pointer;
       justify-content: center;
       margin-bottom: -1px;

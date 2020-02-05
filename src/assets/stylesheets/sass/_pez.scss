@@ -54,20 +54,6 @@
 //
 // Styleguide Components.Pez.CornerLabel
 
-// Products
-//
-// Pez can also be a product label. The 2 states are default and disabled.
-//
-// Markup:
-// <button class="pez pez--has-product">
-//   Medicare Supplement
-// </button>
-// <button class="pez pez--has-product disabled">
-//   Medicare Advantage
-// </button>
-//
-// Styleguide Components.Pez.Products
-
 
 .pez {
 
@@ -86,14 +72,6 @@
   padding: map.get(variables.$spacers, 1);
   position: relative;
   transition: config.$transitions;
-
-  &--has-product {
-    background-color: rgba(map.get(config.$secondary-colors, 'yellow'), config.$opacity /  1.5);
-    border: 1px solid color.adjust(map.get(config.$brand-colors, 'brown'), $lightness: math.percentage(config.$hue-threshold * 1.5));
-    border-radius: map.get(variables.$spacers, 1);
-    color: map.get(config.$brand-colors, 'brown');
-    padding: map.get(variables.$spacers, 2) map.get(variables.$spacers, 3);
-  }
 
   // --check-wrapper is meant to be used with a checkmark icon
   &__check-wrapper {
