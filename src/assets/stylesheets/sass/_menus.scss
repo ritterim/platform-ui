@@ -302,19 +302,19 @@
 // Markup:
 // <div class="icon-menu">
 //   <div class="icon-menu__item">
-//     <div class="icon-menu__action text-negative--hover pointer" role="button">
+//     <button class="icon-menu__action button--plain text-negative--hover pointer">
 //       <i class="pi-trash" aria-hidden="hidden"></i>
-//     </div>
+//     </button>
 //   </div>
 //   <div class="icon-menu__item">
-//     <div class="icon-menu__action text-positive--hover pointer" role="button">
+//     <button class="icon-menu__action button--plain text-positive--hover pointer">
 //       <i class="pi-edit" aria-hidden="hidden"></i>
-//     </div>
+//     </button>
 //   </div>
 //   <div class="icon-menu__item">
-//     <div class="icon-menu__action text-red--hover pointer" role="button">
+//     <button class="icon-menu__action button--plain text-red--hover pointer">
 //       <i class="pi-clock" aria-hidden="hidden"></i>
-//     </div>
+//     </button>
 //   </div>
 // </div>
 //
