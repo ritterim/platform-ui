@@ -45,6 +45,7 @@
     "@babel/core": "^7.6.4",
     "@babel/preset-env": "^7.6.3",
     "@percy/nightwatch": "^1.0.5",
+    "animate.css": "^3.7.2",
     "autoprefixer": "^9.6.0",
     "chromedriver": "^78.0.1",
     "cssnano": "^4.1.10",

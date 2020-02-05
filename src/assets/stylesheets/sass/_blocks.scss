@@ -3,342 +3,328 @@
 @use "variables";
 @use "sass:map";
 
-// Blocks
+// Block Grid
 //
-// To get a specific layout you will need to start with 2 classes. `block-container` and `block`. `block-container`
-// is the wrapper class that contains the block or blocks depending on how many you have. `block` is the class that will
-// be on the element inside the container.
+// Blocks are Platform UI's core structural component. Here are some of the features and concepts behind our grid.
 //
-// This layout is based on a 12 column grid. So if you want a `block` to take up half the width of the row it is on, you
-// would use the class `block-6`, 6 being half of 12. For a row containing 3 `blocks` you would use `block-4` and so on.
-// Each `block` has a default `width: 100%`. This width will change as you add different size classes to the `block`.
-// These classes can be added to any element, although in some cases you may need to wrap a specific element in a
-// `<div class="block">`.
+// ### Blocks
 //
-// You can change the width of a block by using responsive size classes. These classes are tied to our `$breakpoints` map.
-// ```css
-// $breakpoints: (
-//   mobile: 0px,
-//   tablet: 768px,
-//   lg-tablet: 991px,
-//   laptop: 1240px,
-//   desktop: 1800px
-// );
-// ```
-// It's best to think "mobile-first" when it comes to using this layout. Each block class that uses a specific breakpoint
-// value has it's code inside a `min-width media-query` for that breakpoint. Think small to large. So as the width of your
-// page increases, the next breakpoint value will override the previous. See an [example below](/styleguide/section-layout.html#kssref-layout-blocks-responsive)
+// - Blocks are based on a 12 column grid, they allow content to be evenly distributed. **They are a mobile first approach.**
+// - Blocks can have responsive modifiers attached directly to them
+// - Blocks have responsive modifiers to override specific 'block-{ number }' columns; i.e., Four `block` children in a `block-container` with `tablet-up-2` applied will appear as two columns when viewed in the tablet viewport.
 //
-// Styleguide Layout.Blocks
-
-// Blocks Container
+// ### Block Containers
 //
-// You can add the resposinve classes to the `.block-container` wrapper rather than the `.block` elements. This method is
-// best used for a case where you need to build a grid of equal size blocks. By adding the classes to the `block-container`
-// you do not need to add them the individual `block`s.
+// - All block grids start with a wrapper of `block-container` that is set to `display: flex` with `flex-wrap: wrap`.
+// - `block-container` can also act as a row.
+// - `block-container` has modifiers to allow auto-placement based on responsive breakpoints.
+// - Using `block-container` and adding `block` children will give you an evenly distributed block grid.
+// - `block-container` has responsive modifiers can be placed on the `block-{number}` level item as well. The `block-{number}` will always reflect the mobile, smallest breakpoint, value.
 //
+// ### 12 Columns
 //
-// To make your grid responsive, you use classes that contain the names of our defined breakpoints. For example, if you want a grid
-// with 3 columns at the `laptop` resolution, you would use the class, `laptop-up-3`. This says, at the `laptop` breakpoint and up,
-// display the `block`s across 3 columns.
+// Container: `block-container blocks-px-2 blocks-py-2`
 //
-//
-// To add padding to the `block`s, you also add utility classes to the `block-container`. These classes will tell
-// each block how much `padding` or `margin` they should have. These utility classes work similar to our other spacing classes.
-// If you want each block to have padding of `1rem`, you would add the classes `blocks-px-3 blocks-py-3` to the `block-container`
-// If you need margin, you add `blocks-mx-3 blocks-my3` to the `block-container`. `X` is left and right, and `Y` is for top and bottom.
-// You can still use the other spacing utility classes on the `block-container` as well, if you need to add specific padding, or margin
-// to the `block-container`.
-//
-// **Note:** Some examples also use the class `pui-card`. This is for style guide purposes only.
-//
-// Markup:
-// <div class="block-container blocks-px-2 blocks-py-2 tablet-up-3 laptop-up-4">
-//   <div class="block">
+// <div class="block-container blocks-px-2 blocks-py-2">
+//   <div class="block block-1">
 //     <div class="pui-card">
-//       Test
+//     <code>block block-1</code>
 //     </div>
 //   </div>
-//   <div class="block">
+//   <div class="block block-11">
 //     <div class="pui-card">
-//       Test
+//     <code>block block-11</code>
 //     </div>
 //   </div>
-//   <div class="block">
+//   <div class="block block-2">
 //     <div class="pui-card">
-//       Test
+//     <code>block block-2</code>
 //     </div>
 //   </div>
-//   <div class="block">
+//   <div class="block block-10">
 //     <div class="pui-card">
-//       Test
+//     <code>block block-10</code>
 //     </div>
 //   </div>
-// </div>
-//
-// Styleguide Layout.Blocks.container
-
-// Blocks
-//
-// If you need to make a layout where the blocks are not equal widths, you can instead add the size classes to
-// the individual `block`s.
-//
-//
-// Since the `block-container` is based on a 12 column grid, each class number represents how many columns the `block`
-// will take up at that resolution. If you want the blocks to take up an entire row, the values in the classes should
-// equal 12. Each value represents the amount of columns the block will take up in the row.
-//
-// **Note:** Some examples also use the class `pui-card`. This is for style guide purposes only. In the example below
-//
-//
-// Markup:
-// <div class="block-container">
-//   <div class="pui-card block block-6">
-//     block-6
-//   </div>
-//   <div class="pui-card block block-6">
-//     block-6
-//   </div>
-//   <div class="pui-card block block-4">
-//     block-4
-//   </div>
-//   <div class="pui-card block block-8">
-//     block-8
-//   </div>
-// </div>
-//
-// Styleguide Layout.Blocks.Block
-
-// Responsive
-//
-// You can build responsive layouts while giving each blocks a specific width at different resolutions. In order to do
-// this you can leverage the `breakpoint` values within the block classes.
-//
-//
-// In the following example you will see a `form` that scales from the smallest screen up to larger screens. The
-// `.block` class has `width: 100%` alone, so on a mobile device the blocks will already be stacked. As we scale up
-// and have more real estate, we can add different classes to change the layout of the `form`.
-//
-//
-// Markup:
-// <form action="" class="pui-form block-container blocks-px-2 blocks-mb-3">
-//   <div class="block block-6 block-tablet-3 block-laptop-4">
-//     <div class="pui-form__field pui-form__field--fancy">
-//       <input id="first-name" type="text" required placeholder="Jane">
-//       <label for="first-name">First Name</label>
-//     </div>
-//   </div>
-//   <div class="block block-6 block-tablet-3 block-laptop-4">
-//     <div class="pui-form__field pui-form__field--fancy">
-//       <input id="last-name" type="text" required placeholder="Smith">
-//       <label for="last-name">Last Name</label>
-//     </div>
-//   </div>
-//   <div class="block block-6 block-tablet-4">
-//     <div class="pui-form__field pui-form__field--fancy">
-//       <input id="dob" type="date" required placeholder="01/23/1985">
-//       <label for="dob">Age or DOB</label>
-//     </div>
-//   </div>
-//   <div class="block block-6 block-tablet-4">
-//     <div class="pui-form__field pui-form__field--fancy">
-//       <input id="time" type="time" required placeholder="10:00 AM">
-//       <label for="time">What Time</label>
-//     </div>
-//   </div>
-//   <div class="block block-6 block-tablet-4">
-//     <div class="pui-form__field pui-form__field--fancy">
-//       <input id="zipcode" type="tel" pattern="^\d{5,6}(?:[-\s]\d{4})?$" required placeholder="12345">
-//       <label for="zipcode">ZIP Code</label>
-//     </div>
-//   </div>
-//   <div class="block block-6 block-tablet-3 block-laptop-4">
-//     <div class="pui-form__field pui-form__field--fancy">
-//       <div class="pui-form__select-wrapper">
-//         <select name="County Select" id="county" required placeholder="County">
-//           <option value=""></option>
-//           <option value="County1">County 1</option>
-//           <option value="County2">County 2</option>
-//           <option value="County3">County 3</option>
-//           <option value="County4">County 4</option>
-//           <option value="County5">County 5</option>
-//           <option value="County6">County 6</option>
-//         </select>
-//         <label for="county">County</label>
-//       </div>
-//     </div>
-//   </div>
-// </form>
-//
-// Styleguide Layout.Blocks.Responsive
-
-// Spacing
-//
-// The `.block` class has 0 padding and margin. The idea is to leverage our spacing utilities and be able to make
-// as specific layouts as possible. You can use the spacing modifiers in 2 ways within the `block` layout.
-//
-// Styleguide Layout.Blocks.Spacing
-
-// Individual Blocks
-//
-// The first option is to put the utility classes on the `.block` class itself. By doing this you can put different
-// spacing utilities on each block.
-//
-// Markup:
-// <div class="block-container">
-//   <div class="block block-6 px-3 my-3">
+//   <div class="block block-3">
 //     <div class="pui-card">
-//       block-6
+//     <code>block block-3</code>
 //     </div>
 //   </div>
-//   <div class="block block-6 px-2 my-3">
+//   <div class="block block-9">
 //     <div class="pui-card">
-//       block-6
-//     </div>
-//   </div>
-//   <div class="block block-4 px-2 my-3">
-//     <div class="pui-card">
-//       block-4
-//     </div>
-//   </div>
-//   <div class="block block-8 px-5 my-3">
-//     <div class="pui-card">
-//       block-8
-//     </div>
-//   </div>
-// </div>
-//
-// Styleguide Layout.Blocks.Spacing.Blocks
-
-// Container
-//
-// The second option is to add a spacing utility to the `block-container`. This would be the best option if you
-// wanted to build a layout where each `block` had the same padding and or margin. The specific classes you use
-// start with `.blocks-` because, although you are adding the classes to the `block-container`, you're using these
-// classes to add spacing to the blocks. You can use these classes as well as the spacing utility right on the
-// `block-container` if you need to give it some specific spacing as well.
-//
-//
-// The example below gives each block `padding: .5rem;` and `margin-bottom: 1rem;`.
-//
-// Markup:
-// <div class="block-container blocks-px-2 blocks-mb-3">
-//   <div class="block block-6">
-//     <div class="pui-card">
-//       block-6
-//     </div>
-//   </div>
-//   <div class="block block-6">
-//     <div class="pui-card">
-//       block-6
+//     <code>block block-9</code>
 //     </div>
 //   </div>
 //   <div class="block block-4">
 //     <div class="pui-card">
-//       block-4
+//     <code>block block-4</code>
 //     </div>
 //   </div>
 //   <div class="block block-8">
 //     <div class="pui-card">
-//       block-8
+//     <code>block block-8</code>
+//     </div>
+//   </div>
+//   <div class="block block-5">
+//     <div class="pui-card">
+//     <code>block block-5</code>
+//     </div>
+//   </div>
+//   <div class="block block-7">
+//     <div class="pui-card">
+//     <code>block block-7</code>
+//     </div>
+//   </div>
+//   <div class="block block-6">
+//     <div class="pui-card">
+//     <code>block block-6</code>
+//     </div>
+//   </div>
+//   <div class="block block-6">
+//     <div class="pui-card">
+//     <code>block block-6</code>
+//     </div>
+//   </div>
+//   <div class="block block-7">
+//     <div class="pui-card">
+//     <code>block block-7</code>
+//     </div>
+//   </div>
+//   <div class="block block-5">
+//     <div class="pui-card">
+//     <code>block block-5</code>
+//     </div>
+//   </div>
+//   <div class="block block-8">
+//     <div class="pui-card">
+//     <code>block block-8</code>
+//     </div>
+//   </div>
+//   <div class="block block-4">
+//     <div class="pui-card">
+//     <code>block block-4</code>
+//     </div>
+//   </div>
+//   <div class="block block-9">
+//     <div class="pui-card">
+//     <code>block block-9</code>
+//     </div>
+//   </div>
+//   <div class="block block-3">
+//     <div class="pui-card">
+//     <code>block block-3</code>
+//     </div>
+//   </div>
+//   <div class="block block-10">
+//     <div class="pui-card">
+//     <code>block block-10</code>
+//     </div>
+//   </div>
+//   <div class="block block-2">
+//     <div class="pui-card">
+//     <code>block block-2</code>
+//     </div>
+//   </div>
+//   <div class="block block-11">
+//     <div class="pui-card">
+//     <code>block block-11</code>
+//     </div>
+//   </div>
+//   <div class="block block-1">
+//     <div class="pui-card">
+//     <code>block block-1</code>
+//     </div>
+//   </div>
+//   <div class="block block-12">
+//     <div class="pui-card">
+//     <code>block block-12</code>
 //     </div>
 //   </div>
 // </div>
 //
-// Styleguide Layout.Blocks.Spacing.Container
-
-// Block Utilities
+// ### Block Spacing
 //
-// By now you understand that the size of the blocks are based on the size classes we give them. But the content within
-// the blocks may or may not have a set width. The block layout, for the most part looks pretty good. But there could
-// be a situation where you may want one block to change. This would probably only be most useful for the layouts using
-// the `{breakpoint}-up-{value}` classes.
+// - Spacing is based on [Platform UI spacing]() with the following changes in  behaviour; Attaching padding to the horizontal axis, `px-2`, with a modifier of `blocks` will add that spacing to the `block-container`. 
+// - Without the `blocks` modifier, placing `block-container px-2` will apply the horizontal axis padding to the `block` children within the container.
 //
+// | Spacing | padding |  |  |
+// |-------------|------------|------------|---------------|
+// | Axis        | x          | y
+// | Direction   |t           | b          | l     | r     |
+// | Type        | padding | `flex-grow: 1`| `width: auto` |
+// | Spacer       |  `block-shrink` | `block--fill` | `block-tablet-shrink` |
 //
-// The utility classes are `block--shrink` and `block--fill`. You can also you our breakpoint values on the class to make
-// the block have the specific style at a different screen size. Example: `block-tablet--shrink` would add `width: auto`
-// to the `block` at the tablet width and up.
+// Spacers
 //
-// Styleguide Layout.Blocks.Utility
-
-// Width Auto
+// ### Standard Grid
 //
-// So say you need a block to have `width: auto` so that it's the size of the content rather than matching the width of
-// the other blocks in the list. For this example you could add the class `block--shrink` to the `block`.
+// Container: `block-container blocks-px-2 blocks-py-2`
 //
-//
-// Markup:
-// <div class="block-container blocks-px-2 blocks-py-2 tablet-up-3 laptop-up-4">
-//   <div class="block">
+// <div class="block-container blocks-px-2 blocks-py-2">
+//   <div class="block-3">
 //     <div class="pui-card">
-//       Test
+//       <code>block-3</code>
 //     </div>
 //   </div>
-//   <div class="block">
+//   <div class="block-3">
 //     <div class="pui-card">
-//       Test
+//       <code>block-3</code>
 //     </div>
 //   </div>
-//   <div class="block block--shrink">
+//   <div class="block-3">
 //     <div class="pui-card">
-//       Test
+//       <code>block-3</code>
 //     </div>
 //   </div>
-//   <div class="block">
+//   <div class="block-3">
 //     <div class="pui-card">
-//       Test
+//       <code>block-3</code>
 //     </div>
 //   </div>
 // </div>
 //
-// Styleguide Layout.Blocks.Utility.Shrink
-
-// Flex Grow
+// ### Responsive Grid with Flex
 //
-// If you want to make a block fill any left over space there might be, you could add the class `block--fill`. This will
-// add `flex-grow: 1` to the block.
+// Container: `block-container blocks-px-2 blocks-py-2 tablet-up-3 laptop-up-4`
 //
-//
-// Markup:
 // <div class="block-container blocks-px-2 blocks-py-2 tablet-up-3 laptop-up-4">
 //   <div class="block">
 //     <div class="pui-card">
-//       Test
+//       <code>block</code>
 //     </div>
 //   </div>
 //   <div class="block">
 //     <div class="pui-card">
-//       Test
+//       <code>block</code>
 //     </div>
 //   </div>
 //   <div class="block">
 //     <div class="pui-card">
-//       Test
+//       <code>block</code>
 //     </div>
 //   </div>
 //   <div class="block">
 //     <div class="pui-card">
-//       Test
+//       <code>block</code>
 //     </div>
 //   </div>
 //   <div class="block">
 //     <div class="pui-card">
-//       Test
+//       <code>block</code>
 //     </div>
 //   </div>
 //   <div class="block">
 //     <div class="pui-card">
-//       Test
+//       <code>block</code>
 //     </div>
 //   </div>
 //   <div class="block block--fill">
 //     <div class="pui-card">
-//       Test
+//       <code>block block-fill</code>
 //     </div>
 //   </div>
 // </div>
 //
-// Styleguide Layout.Blocks.Utility.Fill
+// Container: `block-container blocks-px-2 blocks-py-2 tablet-up-3 laptop-up-4`
+//
+// <div class="block-container blocks-px-2 blocks-py-2 tablet-up-3 laptop-up-4">
+//   <div class="block">
+//     <div class="pui-card">
+//       <code>block</code>
+//     </div>
+//   </div>
+//   <div class="block">
+//     <div class="pui-card">
+//       <code>block</code>
+//     </div>
+//   </div>
+//   <div class="block block--shrink">
+//     <div class="pui-card">
+//       <code>block block-shrink</code>
+//     </div>
+//   </div>
+//   <div class="block">
+//     <div class="pui-card">
+//       <code>block</code>
+//     </div>
+//   </div>
+// </div>
+//
+// | Block Flex Utilities | | |  |
+// |-------------|------------|------------|---------------|
+// | [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) property| `flex-shrink: 1`| `flex-grow: 1`| `width: auto` |
+// | class      | `block-shrink` | `block--fill` | `block-tablet-shrink` |
+//
+//
+// ### Block grid breakpoints
+//
+// Spacing in Platform UI is based on `rem` values with the exception of breakpoints.
+//
+// - Attaching a resposive modifier to 'block-container' uses individual `block` elements and will affect the number of columns show in a particular viewport.
+// - Attaching a resposive modifier to `block block-{ number }` will affect the number of columns show in a particular viewport as above. **Their approaches cannot be combined.** You can either modify the `block-container` with `block` children, or the block level `block block-{ number }`.
+//
+// ### Responsive Block Container
+//
+// Container: `block-container blocks-px-2 blocks-py-2 laptop-up-3 desktop-up-4`
+//
+// <div class="block-container blocks-px-2 blocks-py-2 laptop-up-3 desktop-up-4">
+//   <div class="block">
+//     <div class="pui-card">
+//       <code>block</code>
+//     </div>
+//   </div>
+//   <div class="block">
+//     <div class="pui-card">
+//       <code>block</code>
+//     </div>
+//   </div>
+//   <div class="block">
+//     <div class="pui-card">
+//       <code>block</code>
+//     </div>
+//   </div>
+//   <div class="block">
+//     <div class="pui-card">
+//       <code>block</code>
+//     </div>
+//   </div>
+// </div>
+//
+// ### Responsive Blocks
+//
+// Container: `block-container blocks-px-2 blocks-py-2`
+//
+// <div class="block-container blocks-px-2 blocks-py-2">
+//   <div class="block block-8 laptop-up-3 desktop-up-4">
+//     <div class="pui-card">
+//       <code>block block-8 laptop-up-3 desktop-up-4</code>
+//     </div>
+//   </div>
+//   <div class="block block-4 laptop-up-3 desktop-up-4">
+//     <div class="pui-card">
+//       <code>block block-4 laptop-up-3 desktop-up-4</code>
+//     </div>
+//   </div>
+//   <div class="block block-4 laptop-up-3 desktop-up-4">
+//     <div class="pui-card">
+//       <code>block block-4 laptop-up-3 desktop-up-4</code>
+//     </div>
+//   </div>
+//   <div class="block block-8 laptop-up-3 desktop-up-4">
+//     <div class="pui-card">
+//       <code>block block-8 laptop-up-3 desktop-up-4</code>
+//     </div>
+//   </div>
+// </div>
+//
+// | Breakpoints | 0px        | 768px      | 991px         | 1240px     | 1800px      |
+// |-------------|------------|------------|---------------|------------|-------------|
+// | label       | mobile     | tablet     | lg-tablet     | laptop     | desktop     |
+// | prefix      | `mobile-up-` | `tablet-up-` | `lg-tablet-up-` | `laptop-up-` | `desktop-up-` |
+//
+// Styleguide Layout.Blocks
+
 
 
 // Block layout
@@ -374,7 +360,7 @@
 
   @each $breakpoint, $name in config.$breakpoints {
     @each $key, $val in variables.$pui-columns {
-      .block-#{$breakpoint}-#{$val} {
+      .block-#{$breakpoint}-up-#{$val} {
         @include mixins.breakpoint(#{$name}, min) {
           width: calc(#{$key} * 100%);
         }
