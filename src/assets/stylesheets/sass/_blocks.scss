@@ -384,14 +384,14 @@
     @each $direction, $d in variables.$xy-border {
       @each $unit, $rem in variables.$spacers {
         // top, right, bottom, left
-        &.blocks-#{$letter}#{$d}-#{$unit} {
+        &.blocks.#{$letter}#{$d}-#{$unit} {
           > .block {
             #{$prop}-#{$direction}: #{$rem};
           }
         }
 
         // left and right
-        &.blocks-#{$letter}x-#{$unit} {
+        &.blocks.#{$letter}x-#{$unit} {
           margin-left: -#{$rem};
           width: calc(100% + #{$rem} * 2);
 
@@ -406,7 +406,7 @@
         }
 
         // top and bottom
-        &.blocks-#{$letter}y-#{$unit} {
+        &.blocks.#{$letter}y-#{$unit} {
           > .block {
             #{$prop}-top: $rem;
             #{$prop}-bottom: $rem;
@@ -423,7 +423,7 @@
     @each $key, $val in variables.$pui-columns {
       &.#{$breakpoint}-up-#{$val} {
 
-        &[class*="blocks-px"] {
+        &[class*="blocks.px"] {
 
           > .block {
 
