@@ -16,7 +16,7 @@
 // <div class="block-container">
 //   <div class="block block-4">
 //     <div class="pui-card">
-//       <p>Here's a pui-card.</p>
+//       <p>This is a card.</p>
 //     </div>
 //   </div>
 // </div>
@@ -36,11 +36,11 @@
 //       <div class="pui-card__header">
 //         <div class="pui-card__group">
 //           <i class="pi-quill"></i>
-//           <h2 class="pui-card__title">Agent News</h2>
+//           <div class="pui-card__title">Card Header</div>
 //         </div>
 //         <button class="button">Button</button>
 //       </div>
-//       <p>Here's a pui-card.</p>
+//       <p>Card content.</p>
 //     </div>
 //   </div>
 // </div>
@@ -58,7 +58,7 @@
 //     <div class="pui-card flex flex--column flex--justify-between">
 //         <div class="pui-card__header">
 //             <div class="pui-card__group">
-//                 <h2 class="pui-card__title pui-card__title--normal">Test header</h2>
+//                 <div class="pui-card__title pui-card__title--normal">Card Header</div>
 //             </div>
 //             <div class="pui-card__header-actions"><a role="button" aria-label="remove"
 //                     class="pui-card-action text-light"><i class="pi-trash" aria-hidden="true"></i></a>
@@ -66,7 +66,7 @@
 //                         aria-hidden="true"></i></a></div>
 //         </div>
 //         <div class="pui-card__content">
-//             <p>Yada Yada</p>
+//             <p>Card content.</p>
 //         </div>
 //         <div class="pui-card__footer pui-card__footer">
 //             <div>
@@ -204,9 +204,9 @@
   @if meta.variable-exists("card-min-height") {
     @include mixins.breakpoint(desktop, min) {
       min-height: config.$card-min-height;
-    }  
+    }
   }
-  
+
   .block & {
     height: 100%;
   }

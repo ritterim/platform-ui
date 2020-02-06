@@ -209,7 +209,6 @@
   @include mixins.breakpoint(tablet, max) {
     &:not(.unresponsive) {
 
-
       thead tr {
         position: absolute;
         top: -9999em;
@@ -249,5 +248,11 @@
     tr {
       background-color: transparent !important;
     }
+  }
+  &--bordered {
+    // coming
+  }
+  &--condensed {
+    // coming
   }
 }

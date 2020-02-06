@@ -4,31 +4,27 @@
 
 // Spacers
 //
-// We've included spacing utilities for padding and margin that work almost the same as Bootstrap 4.x. These cover
-// left, right, x-axis (right _and_ left), and y-axis (top _and_ bottom).
+// Platform UI provides padding and margin utilities for most scenarios based on it's spacer map;
 //
-// Usage:
-// `<p or m>< direction: l, r, x, y >-<key from $spacers map>`
+// | Direction ||||||||
+// |----------------|-------------|-----|--------|------|-------|--------|--------|
+// | location       | surrounding | top | bottom | left | right | x-axis | y-axis |
+// | padding prefix | <code>p-</code>          | <code>pt-</code> | <code>pb-</code>    | <code>pl-</code>  | <code>pr-</code>   | <code>px-</code>    | <code>py-</code>    |
+// | margin prefix  | <code>m-</code>          | <code>mt-</code> | <code>mb-</code>    | <code>ml-</code>  | <code>mr-</code>   | <code>mx-</code>    | <code>my-</code>    |
+//
+//
+// | Spacer Number values map |||||||||
+// |-----------|------|--------|-------|------|------|------|--------|--------|
+// | number value    | 0    | 1      | 2     | 3    | 4    | 5    | 6      | 7      |
+// | rem value | <code>0rem</code> | <code>.25rem</code> | <code>.5rem</code> | <code>1rem</code> | <code>2rem</code> | <code>3rem</code> | <code>4.5rem</code> | <code>6.5rem</code> |
+//
+//
+// Usage: `{padding, p  or margin, m }{ direction if not surrounding: t, b, l, r, x, y }-{ number }`
 //
 // Example:
 // ```scss
 // .pl-2 // padding-left: .5rem;
 // .mx-3 // margin: 0 1rem;
-// ```
-//
-// Map:
-// ```scss
-// $spacer: 1rem;
-// $spacers: (
-//   0: 0,
-//   1: ($spacer * .25),
-//   2: ($spacer * .5),
-//   3: $spacer,
-//   4: ($spacer * 2),
-//   5: ($spacer * 3),
-//   6: ($spacer * 4.5),
-//   7: ($spacer * 6.5)
-// );
 // ```
 //
 // Styleguide Utilities.Spacers
@@ -45,24 +41,41 @@
 //
 // Styleguide Utilities.Spacers.Responsive
 
+// padding and margin by direction
 @each $prop, $letter in (margin: m, padding: p) {
   @each $direction, $d in variables.$xy-border {
     @each $unit, $rem in variables.$spacers {
       .#{$letter}#{$d}-#{$unit} {
         #{$prop}-#{$direction}: #{$rem} !important;
       }
-      .#{$letter}x-#{$unit} {
-        #{$prop}-left: $rem !important;
-        #{$prop}-right: $rem !important;
-      }
-      .#{$letter}y-#{$unit} {
-        #{$prop}-top: $rem !important;
-        #{$prop}-bottom: $rem !important;
-      }
     }
   }
 }
 
+// padding and margin all around
+@each $prop, $letter in (margin: m, padding: p) {
+  @each $unit, $rem in variables.$spacers {
+    .#{$letter}-#{$unit} {
+      #{$prop}: #{$rem} !important;
+    }
+  }
+}
+
+// padding and margin on x and y axis
+@each $prop, $letter in (margin: m, padding: p) {
+  @each $unit, $rem in variables.$spacers {
+    .#{$letter}x-#{$unit} {
+      #{$prop}-left: $rem !important;
+      #{$prop}-right: $rem !important;
+    }
+    .#{$letter}y-#{$unit} {
+      #{$prop}-top: $rem !important;
+      #{$prop}-bottom: $rem !important;
+    }
+  }
+}
+
+// padding and margin for mobile bottom only
 @each $prop, $letter in (margin: m, padding: p) {
   @each $unit, $rem in variables.$spacers {
     .#{$letter}b-mobile-#{$unit} {
