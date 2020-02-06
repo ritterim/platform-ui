@@ -351,7 +351,11 @@
 
   @each $breakpoint, $name in config.$breakpoints {
     @each $key, $val in variables.$pui-columns {
+<<<<<<< HEAD
       > .#{$breakpoint}-up-#{$val} {
+=======
+      .#{$breakpoint}-up-#{$val} {
+>>>>>>> squash blocks bugs
         @include mixins.breakpoint(#{$name}, min) {
           width: calc(#{$key} * 100%);
         }
@@ -395,10 +399,11 @@
           margin-left: -#{$rem};
           width: calc(100% + #{$rem} * 2);
 
-          > [class*="blocks-px"] {
-            margin-left: auto;
+          > .blocks {
+            &[class*="px"] {
+              margin-left: auto;
+            }
           }
-
           > .block {
             #{$prop}-left: $rem;
             #{$prop}-right: $rem;
@@ -423,23 +428,24 @@
     @each $key, $val in variables.$pui-columns {
       &.#{$breakpoint}-up-#{$val} {
 
-        &[class*="blocks.px"] {
+        &.blocks {
+          &[class*="px"] {
+            > .block {
 
-          > .block {
+              $mapped__keys : map.keys(config.$breakpoints);
+              // get index of the current name passed
+              $index : (index($mapped__keys, $breakpoint));
+              @if $index {
+                // if there is another key above the selected key, run this
+                @if $index < length(config.$breakpoints) {
+                  @media screen and (min-width : ($name)) and (max-width: map.get(config.$breakpoints, mixins.nextKey($breakpoint) )  - 1 ) {
+                    &:nth-child(#{$val}n+1) {
+                      padding-left: 0;
+                    }
 
-            $mapped__keys : map.keys(config.$breakpoints);
-            // get index of the current name passed
-            $index : (index($mapped__keys, $breakpoint));
-            @if $index {
-              // if there is another key above the selected key, run this
-              @if $index < length(config.$breakpoints) {
-                @media screen and (min-width : ($name)) and (max-width: map.get(config.$breakpoints, mixins.nextKey($breakpoint) )  - 1 ) {
-                  &:nth-child(#{$val}n+1) {
-                    padding-left: 0;
-                  }
-
-                  &:nth-child(#{$val}n+#{$val}) {
-                    padding-right: 0;
+                    &:nth-child(#{$val}n+#{$val}) {
+                      padding-right: 0;
+                    }
                   }
                 }
               }
