@@ -18,7 +18,7 @@
 // You may run into issues where the background scrolls while your modal is open. To prevent this behavior, add the `.modal-open` class to your body element when a modal is open. See demo below for example and note how adding the `.modal-open` class to the body on open makes the background scroll bar go away.
 //
 // Markup:
-// <div id="default-modal" class="pui-modal pui-modal--closed ">
+// <div id="default-modal" class="pui-modal pui-modal--closed" tabindex="-1">
 //   <div class="pui-modal__inner animated slideInUp faster">
 //     <div class="pui-modal__header">
 //       <button class="button pui-modal__close" data-modal="default-modal">Close <i class="pi-times"></i></button>
@@ -35,7 +35,7 @@
 //     </div>
 //   </div>
 // </div>
-// <div id="small-modal" class="pui-modal pui-modal--small pui-modal--closed ">
+// <div id="small-modal" class="pui-modal pui-modal--small pui-modal--closed" tabindex="-1">
 //   <div class="pui-modal__inner animated slideInUp faster">
 //     <div class="pui-modal__header">
 //       <button class="button pui-modal__close" data-modal="small-modal">Close <i class="pi-times"></i></button>
@@ -46,7 +46,7 @@
 //     </div>
 //   </div>
 // </div>
-// <div id="centered-modal" class="pui-modal pui-modal--centered pui-modal--closed ">
+// <div id="centered-modal" class="pui-modal pui-modal--centered pui-modal--closed" tabindex="-1">
 //   <div class="pui-modal__inner animated slideInUp faster">
 //     <div class="pui-modal__header">
 //       <button class="button pui-modal__close" data-modal="centered-modal">Close <i class="pi-times"></i></button>
@@ -57,7 +57,7 @@
 //     </div>
 //   </div>
 // </div>
-// <div id="large-modal" class="pui-modal pui-modal--large pui-modal--closed ">
+// <div id="large-modal" class="pui-modal pui-modal--large pui-modal--closed" tabindex="-1">
 //   <div class="pui-modal__inner animated slideInUp faster">
 //     <div class="pui-modal__header">
 //       <button class="button pui-modal__close" data-modal="large-modal">Close <i class="pi-times"></i></button>
@@ -68,7 +68,7 @@
 //     </div>
 //   </div>
 // </div>
-// <div id="full-modal" class="pui-modal pui-modal--full pui-modal--closed ">
+// <div id="full-modal" class="pui-modal pui-modal--full pui-modal--closed" tabindex="-1">
 //   <div class="pui-modal__inner animated slideInUp faster">
 //     <div class="pui-modal__header">
 //       <button class="button pui-modal__close" data-modal="full-modal">Close <i class="pi-times"></i></button>
