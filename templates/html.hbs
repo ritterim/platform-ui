@@ -1,21 +1,20 @@
 <link rel="stylesheet" href="site-assets/stylesheets/platform-ui.min.css">
-<article class="block-container py-4">
-  <div class="block-container tablet-up-4 laptop-up-5">
-    {{# each names }}
-      <div class="block mx-1 my-1">
-        <div class="pui-card flex--center-content flex--column rounded-1 text-salmon--hover">
-          <span class="flex text--size-xxl text-base py-3 px-3">
-            <i class="{{ ../baseClassNames }} {{ ../classPrefix }}{{ this }}"></i>
-          </span>
-          <div class="button icon" data-clipboard-text="<i class='{{ ../classPrefix }}{{ this }}'></i>">
-            <i class="pi-clipboard mr-2 "></i>
-            {{ ../classPrefix }}{{ this }}
-          </div>
-        </div>
+<ul class="pui-list block-container tablet-up-5 blocks p-2 mb-3">
+  {{# each names }}
+    <li class="block flex--center-content flex--column">
+
+      <span class="flex text--size-xxl text-base p-3">
+        <i class="{{ ../baseClassNames }} {{ ../classPrefix }}{{ this }}"></i>
+      </span>
+
+      <span class="flex--center-content">{{ ../classPrefix }}{{ this }}</span>
+      <div class="button mt-2" data-clipboard-text="<i class='{{ ../classPrefix }}{{ this }}'></i>">
+        Copy <i class="pi-clipboard"></i>
       </div>
-      {{/ each }}
-  </div>
-</article>
+
+    </li>
+    {{/ each }}
+  </ul>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
 <script>

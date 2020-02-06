@@ -23,9 +23,9 @@
 //
 // ### 12 Columns
 //
-// Container: `block-container blocks-px-2 blocks-py-2`
+// Container: `block-container blocks p-2`
 //
-// <div class="block-container blocks-px-2 blocks-py-2">
+// <div class="block-container blocks p-2">
 //   <div class="block block-1">
 //     <div class="pui-card">
 //     <code>block block-1</code>
@@ -150,36 +150,36 @@
 //
 // ### Standard Grid
 //
-// Container: `block-container blocks-px-2 blocks-py-2`
+// Container: `block-container blocks p-2`
 //
-// <div class="block-container blocks-px-2 blocks-py-2">
-//   <div class="block-3">
+// <div class="block-container blocks p-2">
+//   <div class="block block-3">
 //     <div class="pui-card">
-//       <code>block-3</code>
+//       <code>block block-3</code>
 //     </div>
 //   </div>
-//   <div class="block-3">
+//   <div class="block block-3">
 //     <div class="pui-card">
-//       <code>block-3</code>
+//       <code>block block-3</code>
 //     </div>
 //   </div>
-//   <div class="block-3">
+//   <div class="block block-3">
 //     <div class="pui-card">
-//       <code>block-3</code>
+//       <code>block block-3</code>
 //     </div>
 //   </div>
-//   <div class="block-3">
+//   <div class="block block-3">
 //     <div class="pui-card">
-//       <code>block-3</code>
+//       <code>block block-3</code>
 //     </div>
 //   </div>
 // </div>
 //
 // ### Responsive Grid with Flex
 //
-// Container: `block-container blocks-px-2 blocks-py-2 tablet-up-3 laptop-up-4`
+// Container: `block-container blocks p-2 tablet-up-3 laptop-up-4`
 //
-// <div class="block-container blocks-px-2 blocks-py-2 tablet-up-3 laptop-up-4">
+// <div class="block-container blocks p-2 tablet-up-3 laptop-up-4">
 //   <div class="block">
 //     <div class="pui-card">
 //       <code>block</code>
@@ -217,9 +217,9 @@
 //   </div>
 // </div>
 //
-// Container: `block-container blocks-px-2 blocks-py-2 tablet-up-3 laptop-up-4`
+// Container: `block-container blocks p-2 tablet-up-3 laptop-up-4`
 //
-// <div class="block-container blocks-px-2 blocks-py-2 tablet-up-3 laptop-up-4">
+// <div class="block-container blocks p-2 tablet-up-3 laptop-up-4">
 //   <div class="block">
 //     <div class="pui-card">
 //       <code>block</code>
@@ -257,9 +257,9 @@
 //
 // ### Responsive Block Container
 //
-// Container: `block-container blocks-px-2 blocks-py-2 laptop-up-3 desktop-up-4`
+// Container: `block-container blocks p-2 laptop-up-3 desktop-up-4`
 //
-// <div class="block-container blocks-px-2 blocks-py-2 laptop-up-3 desktop-up-4">
+// <div class="block-container blocks p-2 laptop-up-3 desktop-up-4">
 //   <div class="block">
 //     <div class="pui-card">
 //       <code>block</code>
@@ -284,9 +284,9 @@
 //
 // ### Responsive Blocks
 //
-// Container: `block-container blocks-px-2 blocks-py-2`
+// Container: `block-container blocks p-2`
 //
-// <div class="block-container blocks-px-2 blocks-py-2">
+// <div class="block-container blocks p-2">
 //   <div class="block block-8 laptop-up-3 desktop-up-4">
 //     <div class="pui-card">
 //       <code>block block-8 laptop-up-3 desktop-up-4</code>
@@ -435,6 +435,7 @@
       @each $unit, $rem in variables.$spacers {
         // top, right, bottom, left
         &.blocks.#{$letter}#{$d}-#{$unit} {
+          #{$prop}-#{$direction}: 0;
           > .block {
             #{$prop}-#{$direction}: #{$rem};
           }
@@ -450,8 +451,8 @@
 
       // x-axis
       &.blocks.#{$letter}x-#{$unit} {
-        margin-left: -#{$rem};
-        width: calc(100% + #{$rem} * 2);
+        #{$prop}-left: 0;
+        #{$prop}-right: 0;
 
         > .blocks {
           &[class*="px"] {
