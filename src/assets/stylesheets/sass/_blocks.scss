@@ -387,7 +387,7 @@
       // on the block-container
       &.#{$breakpoint}-up-#{$val} {
         @if $index == 1 and $val == 1 {
-          @debug $val;
+          // do nothing
         } @else {
           > .block {
             @include mixins.breakpoint(#{$name}, min) {
