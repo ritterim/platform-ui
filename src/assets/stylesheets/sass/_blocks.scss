@@ -351,7 +351,7 @@
 
   @each $breakpoint, $name in config.$breakpoints {
     @each $key, $val in variables.$pui-columns {
-      .block-#{$breakpoint}-up-#{$val} {
+      > .#{$breakpoint}-up-#{$val} {
         @include mixins.breakpoint(#{$name}, min) {
           width: calc(#{$key} * 100%);
         }
@@ -360,7 +360,7 @@
   }
 
   @each $breakpoint, $name in config.$breakpoints {
-    .block-#{$breakpoint} {
+    > .#{$breakpoint}-up {
       @include mixins.breakpoint(#{$name}, min) {
 
         &--full {
