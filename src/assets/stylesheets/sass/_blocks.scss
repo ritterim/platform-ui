@@ -378,7 +378,7 @@
     }
   }
 
-  // Add padding and or margin to container
+  // Add padding and or margin by direction to container
   // as well as the blocks within the block-container
   @each $prop, $letter in (margin: m, padding: p) {
     @each $direction, $d in variables.$xy-border {
@@ -389,28 +389,48 @@
             #{$prop}-#{$direction}: #{$rem};
           }
         }
+      }
+    }
+  }
 
-        // left and right
-        &.blocks.#{$letter}x-#{$unit} {
-          margin-left: -#{$rem};
-          width: calc(100% + #{$rem} * 2);
+  // Add x-y padding and or margin to container
+  // as well as the blocks within the block-container
+  @each $prop, $letter in (margin: m, padding: p) {
+    @each $unit, $rem in variables.$spacers {
 
-          > [class*="blocks-px"] {
+      // x-axis
+      &.blocks.#{$letter}x-#{$unit} {
+        margin-left: -#{$rem};
+        width: calc(100% + #{$rem} * 2);
+
+        > .blocks {
+          &[class*="px"] {
             margin-left: auto;
           }
-
-          > .block {
-            #{$prop}-left: $rem;
-            #{$prop}-right: $rem;
-          }
         }
+        > .block {
+          #{$prop}-left: $rem;
+          #{$prop}-right: $rem;
+        }
+      }
 
-        // top and bottom
-        &.blocks.#{$letter}y-#{$unit} {
-          > .block {
-            #{$prop}-top: $rem;
-            #{$prop}-bottom: $rem;
-          }
+      // y-axis
+      &.blocks.#{$letter}y-#{$unit} {
+        > .block {
+          #{$prop}-top: $rem;
+          #{$prop}-bottom: $rem;
+        }
+      }
+    }
+  }
+  // Add surrounding padding and or margin to container
+  // as well as the blocks within the block-container
+  @each $prop, $letter in (margin: m, padding: p) {
+    @each $unit, $rem in variables.$spacers {
+      // top, right, bottom, left
+      &.blocks.#{$letter}-#{$unit} {
+        > .block {
+          #{$prop}: #{$rem};
         }
       }
     }
@@ -423,23 +443,24 @@
     @each $key, $val in variables.$pui-columns {
       &.#{$breakpoint}-up-#{$val} {
 
-        &[class*="blocks.px"] {
+        &.blocks {
+          &[class*="px"] {
+            > .block {
 
-          > .block {
+              $mapped__keys : map.keys(config.$breakpoints);
+              // get index of the current name passed
+              $index : (index($mapped__keys, $breakpoint));
+              @if $index {
+                // if there is another key above the selected key, run this
+                @if $index < length(config.$breakpoints) {
+                  @media screen and (min-width : ($name)) and (max-width: map.get(config.$breakpoints, mixins.nextKey($breakpoint) )  - 1 ) {
+                    &:nth-child(#{$val}n+1) {
+                      padding-left: 0;
+                    }
 
-            $mapped__keys : map.keys(config.$breakpoints);
-            // get index of the current name passed
-            $index : (index($mapped__keys, $breakpoint));
-            @if $index {
-              // if there is another key above the selected key, run this
-              @if $index < length(config.$breakpoints) {
-                @media screen and (min-width : ($name)) and (max-width: map.get(config.$breakpoints, mixins.nextKey($breakpoint) )  - 1 ) {
-                  &:nth-child(#{$val}n+1) {
-                    padding-left: 0;
-                  }
-
-                  &:nth-child(#{$val}n+#{$val}) {
-                    padding-right: 0;
+                    &:nth-child(#{$val}n+#{$val}) {
+                      padding-right: 0;
+                    }
                   }
                 }
               }
