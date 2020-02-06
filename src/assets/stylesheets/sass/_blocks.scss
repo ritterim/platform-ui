@@ -351,11 +351,7 @@
 
   @each $breakpoint, $name in config.$breakpoints {
     @each $key, $val in variables.$pui-columns {
-<<<<<<< HEAD
       > .#{$breakpoint}-up-#{$val} {
-=======
-      .#{$breakpoint}-up-#{$val} {
->>>>>>> squash blocks bugs
         @include mixins.breakpoint(#{$name}, min) {
           width: calc(#{$key} * 100%);
         }
@@ -382,7 +378,7 @@
     }
   }
 
-  // Add padding and or margin to container
+  // Add padding and or margin by direction to container
   // as well as the blocks within the block-container
   @each $prop, $letter in (margin: m, padding: p) {
     @each $direction, $d in variables.$xy-border {
@@ -393,29 +389,48 @@
             #{$prop}-#{$direction}: #{$rem};
           }
         }
+      }
+    }
+  }
 
-        // left and right
-        &.blocks.#{$letter}x-#{$unit} {
-          margin-left: -#{$rem};
-          width: calc(100% + #{$rem} * 2);
+  // Add x-y padding and or margin to container
+  // as well as the blocks within the block-container
+  @each $prop, $letter in (margin: m, padding: p) {
+    @each $unit, $rem in variables.$spacers {
 
-          > .blocks {
-            &[class*="px"] {
-              margin-left: auto;
-            }
-          }
-          > .block {
-            #{$prop}-left: $rem;
-            #{$prop}-right: $rem;
+      // x-axis
+      &.blocks.#{$letter}x-#{$unit} {
+        margin-left: -#{$rem};
+        width: calc(100% + #{$rem} * 2);
+
+        > .blocks {
+          &[class*="px"] {
+            margin-left: auto;
           }
         }
+        > .block {
+          #{$prop}-left: $rem;
+          #{$prop}-right: $rem;
+        }
+      }
 
-        // top and bottom
-        &.blocks.#{$letter}y-#{$unit} {
-          > .block {
-            #{$prop}-top: $rem;
-            #{$prop}-bottom: $rem;
-          }
+      // y-axis
+      &.blocks.#{$letter}y-#{$unit} {
+        > .block {
+          #{$prop}-top: $rem;
+          #{$prop}-bottom: $rem;
+        }
+      }
+    }
+  }
+  // Add surrounding padding and or margin to container
+  // as well as the blocks within the block-container
+  @each $prop, $letter in (margin: m, padding: p) {
+    @each $unit, $rem in variables.$spacers {
+      // top, right, bottom, left
+      &.blocks.#{$letter}-#{$unit} {
+        > .block {
+          #{$prop}: #{$rem};
         }
       }
     }
