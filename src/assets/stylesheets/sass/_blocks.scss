@@ -350,30 +350,69 @@
   }
 
   @each $breakpoint, $name in config.$breakpoints {
-    @each $key, $val in variables.$pui-columns {
-      > .#{$breakpoint}-up-#{$val} {
+    $mapped__keys : map.keys(config.$breakpoints);
+    // get index of the current name passed
+    $index : (index($mapped__keys, $breakpoint));
+
+    // on the block
+    > .#{$breakpoint}-up {
+      @if $index > 1 {
         @include mixins.breakpoint(#{$name}, min) {
-          width: calc(#{$key} * 100%);
+
+          &--full {
+            width: 100% !important;
+          }
+
+          &--fill {
+            flex-grow: 1;
+          }
+
+          &--shrink {
+            width: auto !important;
+          }
         }
       }
     }
-  }
 
-  @each $breakpoint, $name in config.$breakpoints {
-    > .#{$breakpoint}-up {
-      @include mixins.breakpoint(#{$name}, min) {
-
-        &--full {
-          width: 100% !important;
+    @each $key, $val in variables.$pui-columns {
+      // on the block
+      > .#{$breakpoint}-up-#{$val} {
+        @if $index > 1 {
+          @include mixins.breakpoint(#{$name}, min) {
+            width: calc(#{$key} * 100%);
+          }
         }
+      }
 
-        &--fill {
-          flex-grow: 1;
-        }
+      // on the block-container
+      &.#{$breakpoint}-up-#{$val} {
+        @if $index == 1 and $val == 1 {
+          @debug $val;
+        } @else {
+          > .block {
+            @include mixins.breakpoint(#{$name}, min) {
+              width: calc(100% / #{$val});
+            }
+          }
 
-        &--shrink {
-          width: auto !important;
-        }
+          &.blocks {
+            &[class*="px"] {
+              > .block {
+                @if $index < length(config.$breakpoints) {
+                  @media screen and (min-width : ($name)) and (max-width: map.get(config.$breakpoints, mixins.nextKey($breakpoint) )  - 1 ) {
+                    &:nth-child(#{$val}n+1) {
+                      padding-left: 0;
+                    }
+  
+                    &:nth-child(#{$val}n+#{$val}) {
+                      padding-right: 0;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }        
       }
     }
   }
@@ -423,6 +462,7 @@
       }
     }
   }
+
   // Add surrounding padding and or margin to container
   // as well as the blocks within the block-container
   @each $prop, $letter in (margin: m, padding: p) {
@@ -431,47 +471,6 @@
       &.blocks.#{$letter}-#{$unit} {
         > .block {
           #{$prop}: #{$rem};
-        }
-      }
-    }
-  }
-
-  // Add these classes ex: tablet-up-2 to the
-  // container to change the width of the block
-  // elements inside the block-container
-  @each $breakpoint, $name in config.$breakpoints {
-    @each $key, $val in variables.$pui-columns {
-      &.#{$breakpoint}-up-#{$val} {
-
-        &.blocks {
-          &[class*="px"] {
-            > .block {
-
-              $mapped__keys : map.keys(config.$breakpoints);
-              // get index of the current name passed
-              $index : (index($mapped__keys, $breakpoint));
-              @if $index {
-                // if there is another key above the selected key, run this
-                @if $index < length(config.$breakpoints) {
-                  @media screen and (min-width : ($name)) and (max-width: map.get(config.$breakpoints, mixins.nextKey($breakpoint) )  - 1 ) {
-                    &:nth-child(#{$val}n+1) {
-                      padding-left: 0;
-                    }
-
-                    &:nth-child(#{$val}n+#{$val}) {
-                      padding-right: 0;
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-
-        > .block {
-          @include mixins.breakpoint(#{$name}, min) {
-            width: calc(100% / #{$val});
-          }
         }
       }
     }
