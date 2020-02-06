@@ -396,10 +396,21 @@
           }
 
           &.blocks {
+            &[class*="p-"],
             &[class*="px"] {
               > .block {
                 @if $index < length(config.$breakpoints) {
                   @media screen and (min-width : ($name)) and (max-width: map.get(config.$breakpoints, mixins.nextKey($breakpoint) )  - 1 ) {
+                    &:nth-child(#{$val}n+1) {
+                      padding-left: 0;
+                    }
+  
+                    &:nth-child(#{$val}n+#{$val}) {
+                      padding-right: 0;
+                    }
+                  }
+                } @else {
+                  @include mixins.breakpoint(#{$name}, min) {
                     &:nth-child(#{$val}n+1) {
                       padding-left: 0;
                     }
