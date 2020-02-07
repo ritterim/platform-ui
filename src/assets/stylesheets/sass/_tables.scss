@@ -192,10 +192,6 @@
       padding: 1rem;
     }
 
-    th {
-      cursor: pointer;
-    }
-
     td {
       border-bottom: 1px solid color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold * 2));
     }
@@ -246,7 +242,11 @@
   }
   &--no-hover {
     tr {
-      background-color: transparent !important;
+      @include mixins.breakpoint(tablet, min) {
+        &:hover {
+          background-color: initial;
+        }
+      }
     }
   }
   &--bordered {
