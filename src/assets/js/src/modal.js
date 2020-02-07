@@ -1,13 +1,22 @@
-// let modalOverlay = document.querySelector('.pui-modal--overlay');
 let closeModal = document.querySelectorAll('.pui-modal__close');
 let openModal = document.querySelectorAll('.pui-modal__open');
+
+function modalClose(elm) {
+  elm.classList.add('pui-modal--closed');
+  document.body.classList.remove('modal-open');
+}
+
+function modalOpen(elm) {
+  elm.classList.remove('pui-modal--closed');
+  document.body.classList.add('modal-open');
+  elm.focus();
+}
 
 if(closeModal) {
   closeModal.forEach(function(el) {
     el.addEventListener('click', function() {
       let modal = document.getElementById(el.dataset.modal);
-      if(modal) modal.classList.toggle('pui-modal--closed');
-      document.body.classList.remove('modal-open');
+      modalClose(modal);
     });
   });
 }
@@ -16,8 +25,14 @@ if(openModal) {
   openModal.forEach(function(el) {
     el.addEventListener('click', function(evt) {
       let modal = document.getElementById(el.dataset.modal);
-      if(modal) modal.classList.toggle('pui-modal--closed');
-      document.body.classList.add('modal-open');
+      modalOpen(modal);
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.keyCode == 27) {
+        let modal = document.getElementById(el.dataset.modal);
+        modalClose(modal);
+      }
     });
   });
 }

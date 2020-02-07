@@ -10,7 +10,7 @@ samp {
   :not(pre) > & {
     background-color: map.get(config.$platform-colors-vars, 'help' );
   }
-  color: map.get(config.$platform-colors-vars, 'link' );
+  color: map.get(config.$platform-colors-vars, 'menu' );
   font: normal 1.1rem map.get(config.$fonts, 'code' );
   padding: map.get(variables.$spacers, 1 );
 }

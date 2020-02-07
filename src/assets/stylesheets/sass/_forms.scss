@@ -207,22 +207,23 @@
 //
 // Markup:
 // <form action="" class="pui-form block-container">
-//  <div class="block block-4">
-//   <label for="task-1-time" class="pui-form__field">
-//     <div class="pui-form__select-wrapper time" id="task-1-time">
-//       <select class="px-2" name="Select a time" id="task-1-time-select">
-//         <option value="8:00 AM">8:00 AM</option>
-//         <option value="8:30 AM">8:30 AM</option>
-//         <option value="9:00 AM">9:00 AM</option>
-//         <option value="9:30 AM">9:30 AM</option>
-//         <option value="10:00 AM">10:00 AM</option>
-//         <option value="10:30 AM">10:30 AM</option>
-//       </select>
-//       <i class="pi-clock"></i> 
-//     </div>
-//   </label>
-//  </div>
-// </form
+//   <div class="block block-4">
+//     <label for="task-1-time" class="pui-form__field">
+//       <span class="sr-only">Time Icon Example</span>
+//       <div class="pui-form__select-wrapper time" id="task-1-time">
+//         <select class="px-2" name="Select a time" id="task-1-time-select">
+//           <option value="8:00 AM">8:00 AM</option>
+//           <option value="8:30 AM">8:30 AM</option>
+//           <option value="9:00 AM">9:00 AM</option>
+//           <option value="9:30 AM">9:30 AM</option>
+//           <option value="10:00 AM">10:00 AM</option>
+//           <option value="10:30 AM">10:30 AM</option>
+//         </select>
+//         <i class="pi-clock"></i>
+//       </div>
+//     </label>
+//   </div>
+// </form>
 //
 // Styleguide Forms.TimeIcon
 
@@ -327,7 +328,7 @@ legend {
 
 
   $self: &;
-  color: map.get(variables.$greyscale, 'light' );
+  color: color.adjust(map.get(variables.$greyscale, 'base' ), $lightness: math.percentage(.05));
 
   .input-icons {
     left: 0; top: 0;
@@ -765,10 +766,6 @@ legend {
       &[readonly] {
         border-bottom-color: transparent;
         pointer-events: none;
-
-        &:focus {
-          box-shadow: none;
-        }
       }
     }
   }
@@ -785,10 +782,6 @@ legend {
         border-color: transparent;
         pointer-events: none;
         resize: none;
-
-        &:focus {
-          box-shadow: none;
-        }
       }
     }
   }
@@ -859,6 +852,7 @@ legend {
 //   <div class="block-container">
 //     <div class="block block-10">
 //       <label for="first-name" class="pui-form__field">
+//         <span class="sr-only">Read only input example</span>
 //         <input id="first-name" type="text" placeholder="First Name" class="readonly" readonly value="This is a readonly input. When you select edit, the readonly attribute will be removed.">
 //       </label>
 //     </div>
@@ -876,10 +870,11 @@ legend {
 //         </div>
 //       </div>
 //     </div>
-//   </div>
-//   <div class="block-container">
+//     </div>
+//     <div class="block-container">
 //     <div class="block block-10">
 //       <label for="message" class="pui-form__field">
+//         <span class="sr-only">Read only input example</span>
 //         <textarea id="message" name="message" class="readonly js-textarea" readonly>This is a readonly textarea. When you select edit, the readonly attribute will be removed.</textarea>
 //       </label>
 //     </div>
