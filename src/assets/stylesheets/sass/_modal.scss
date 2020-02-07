@@ -124,6 +124,16 @@
   right: 0;
   left: 0;
 
+  &:before {
+    background: rgba(map.get(variables.$greyscale, 'black'), .5);
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
   &--closed {
     display: none;
   }
@@ -224,22 +234,4 @@ body.modal-open {
   // REF: https://css-tricks.com/prevent-page-scrolling-when-a-modal-is-open/#article-header-id-0
   height: 100vh;
   overflow-y: hidden;
-  position: relative;
-
-  &:before {
-    background: rgba(map.get(variables.$greyscale, 'black'), .5);
-    content: '';
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 200;
-  }
-
-  main {
-    @include mixins.breakpoint(tablet, max) {
-      z-index: 200;
-    }
-  }
 }
