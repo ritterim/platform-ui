@@ -28,7 +28,7 @@ if(openModal) {
       modalOpen(modal);
     });
 
-    document.addEventListener("keydown", e => {
+    document.addEventListener('keydown', e => {
       if (e.keyCode == 27) {
         let modal = document.getElementById(el.dataset.modal);
         modalClose(modal);
