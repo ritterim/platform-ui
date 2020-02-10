@@ -118,6 +118,8 @@ $platform-colors-vars: (
   $platform-colors: map.merge($platform-colors-vars, $platform-colors);
 }
 
+$outline: #659cf3;
+
 
 // --------------------
 // Breakpoints

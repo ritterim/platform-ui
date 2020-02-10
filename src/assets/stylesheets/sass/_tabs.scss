@@ -64,6 +64,13 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
   input[type=radio] {
     appearance: none;
     position: absolute;
+
+    &:focus {
+      
+      + label {
+        outline: config.$outline auto 5px;
+      }
+    }
     
     &:not(:checked) {
       + .pui-tab {

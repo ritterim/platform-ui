@@ -352,6 +352,14 @@ legend {
     opacity: 0;
     position: absolute;
     width: auto;
+
+    &:not(.pui-toggle__input) {
+      &:focus + label {
+        [class^="pi-"]:nth-of-type(1) {
+          outline: config.$outline auto 5px;
+        }
+      }
+    }    
   
     &:checked + label {      
   
@@ -908,16 +916,22 @@ legend {
   padding: map.get(variables.$spacers, 1);
 
   &__content {
-    border-radius: map.get(config.$radius, 'button');
     flex: 1 1 auto;
-    overflow: hidden;
     position: relative;
   }
 
   input.pui-toggle__input {
 
+    &:focus {
+
+      + label {
+        outline: config.$outline auto 5px;
+      }
+    }
+
     + label {
       align-items: center;
+      border-radius: map.get(config.$radius, 'button');
       color: map.get(variables.$greyscale, 'base');
       display: flex;
       height: 100%;
