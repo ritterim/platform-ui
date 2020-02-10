@@ -97,6 +97,12 @@
   color: config.$primary-menu-color;
   display: flex;
 
+  &.inverted {
+    a {
+      @extend %inverted;
+    }
+  }
+
   &.primary {
     background-color: config.$primary-menu-color;
 
