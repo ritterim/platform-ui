@@ -22,7 +22,7 @@
 //   <div class="pui-modal__inner animated slideInUp faster">
 //     <div class="pui-modal__header">
 //       <button class="button pui-modal__close" data-modal="default-modal">Close <i class="pi-times"></i></button>
-//       <h2>Standard Modal</h2>
+//       Standard Modal
 //     </div>
 //     <div class="pui-modal__content">
 //       <h3>pui-modal</h3>
@@ -39,7 +39,7 @@
 //   <div class="pui-modal__inner animated slideInUp faster">
 //     <div class="pui-modal__header">
 //       <button class="button pui-modal__close" data-modal="small-modal">Close <i class="pi-times"></i></button>
-//       <h2>Modal</h2>
+//       Modal
 //     </div>
 //     <div class="pui-modal__content">
 //       <p>Modal Content</p>
@@ -50,7 +50,7 @@
 //   <div class="pui-modal__inner animated slideInUp faster">
 //     <div class="pui-modal__header">
 //       <button class="button pui-modal__close" data-modal="centered-modal">Close <i class="pi-times"></i></button>
-//       <h2>Modal</h2>
+//       Modal
 //     </div>
 //     <div class="pui-modal__content">
 //       <p>Modal Content</p>
@@ -61,7 +61,7 @@
 //   <div class="pui-modal__inner animated slideInUp faster">
 //     <div class="pui-modal__header">
 //       <button class="button pui-modal__close" data-modal="large-modal">Close <i class="pi-times"></i></button>
-//       <h2>Modal</h2>
+//       Modal
 //     </div>
 //     <div class="pui-modal__content">
 //       <p>Modal Content</p>
@@ -72,7 +72,7 @@
 //   <div class="pui-modal__inner animated slideInUp faster">
 //     <div class="pui-modal__header">
 //       <button class="button pui-modal__close" data-modal="full-modal">Close <i class="pi-times"></i></button>
-//       <h2>Modal</h2>
+//       Modal
 //     </div>
 //     <div class="pui-modal__content">
 //       <h3>Full Screen Modal</h3>
@@ -202,6 +202,10 @@
 
   &__header {
     background-color: map.get(config.$brand-colors, 'lightblue');
+    color: map.get(variables.$greyscale, 'base');
+    font-size: map.get(variables.$font-percentage, 'xl');
+    font-family: map.get(config.$fonts, 'headline');
+    line-height: 1.7;
     height: $header-height;
     padding: 2rem;
     position: relative;
