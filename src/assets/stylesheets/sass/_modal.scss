@@ -205,7 +205,6 @@
     color: map.get(variables.$greyscale, 'base');
     font-size: map.get(variables.$font-percentage, 'xl');
     font-family: map.get(config.$fonts, 'headline');
-    line-height: 1.7;
     height: $header-height;
     padding: 2rem;
     position: relative;
