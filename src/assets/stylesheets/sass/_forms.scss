@@ -7,9 +7,196 @@
 
 // Forms
 //
+// Out of the box, our form fields have a margin-top added to them. This spacing should work just fine for smaller, simple forms. For larger,
+// responsive forms, we recommend that you utilize the block layout and our spacers to build the perfect form.
 //
 // Markup:
-// <form action="" class="pui-form block-container tablet-up-3 laptop-up-4 desktop-up-6 blocks-mb-3 blocks-py-2 blocks-px-2">
+// <form action="" class="pui-form">
+//   <label for="first-name-a" class="pui-form__field">First Name
+//     <input id="first-name-a" type="text" placeholder="First Name">
+//   </label>
+//   <label for="last-name" class="pui-form__field">Last Name
+//     <input id="last-name" type="text" placeholder="Last Name">
+//   </label>
+// </form>
+// 
+//
+// Styleguide Forms
+
+// Fancy Forms
+//
+// You want a fancy form that animates the `label`? You got it.
+// To get the animation, add the class `pui-form__field--fancy` to the `pui-form__field`.
+// You will also need to change the markup slightly. Instead of a `label` the `pui-form__field` should now be a `div`
+// put the `label` under the `input` as a sibling of the `pui-form__field` `div`. See markup below.
+//
+// **Note:** Firefox does not have a way to hide the date and time placeholder for those inputs. This style of form would
+// probably be best for a simple form that has text inputs.
+//
+// Markup:
+// <form action="" class="pui-form">
+//   <div class="pui-form__field pui-form__field--fancy">
+//     <input id="first-name" type="text" required placeholder="Jane">
+//     <label for="first-name">First Name</label>
+//   </div>
+//   <div class="pui-form__field pui-form__field--fancy">
+//     <input id="last-name" type="text" required placeholder="Smith">
+//     <label for="last-name">Last Name</label>
+//   </div>
+//   <div class="pui-form__field pui-form__field--fancy">
+//     <input id="zipcode" type="tel" pattern="^\d{5,6}(?:[-\s]\d{4})?$" required placeholder="12345">
+//     <label for="zipcode">ZIP Code</label>
+//   </div>
+//   <div class="pui-form__field pui-form__field--fancy">
+//     <div class="pui-form__select-wrapper">
+//       <select name="County Select" id="county" required placeholder="County">
+//         <option value=""></option>
+//         <option value="County1">County 1</option>
+//         <option value="County2">County 2</option>
+//         <option value="County3">County 3</option>
+//         <option value="County4">County 4</option>
+//         <option value="County5">County 5</option>
+//         <option value="County6">County 6</option>
+//       </select>
+//       <label for="county">County</label>
+//     </div>
+//   </div>
+// </form>
+//
+// Styleguide Forms.Fancy
+
+
+// Form Border
+//
+// This modifier class adds a full border to each input within the form. Just add `pui-form--bordered`
+//
+// Markup:
+// <form action="" class="pui-form pui-form--bordered block-container tablet-up-3 laptop-up-4 desktop-up-6 blocks mb-3 p-2">
+//   <div class="block">
+//     <label for="first-name" class="pui-form__field">First Name
+//       <input id="first-name" type="text" placeholder="First Name">
+//     </label>
+//   </div>
+//   <div class="block">
+//     <label for="last-name" class="pui-form__field">Last Name
+//       <input id="last-name" type="text" placeholder="Last Name">
+//     </label>
+//   </div>
+//   <div class="block">
+//     <label for="dob" class="pui-form__field">Age or DOB
+//       <input id="dob" type="date">
+//     </label>
+//   </div>
+//   <div class="block">
+//     <label for="zipcode" class="pui-form__field">ZIP Code
+//       <input id="zipcode" type="tel" placeholder="e.g.90012" pattern="^\d{5,6}(?:[-\s]\d{4})?$">
+//     </label>
+//   </div>
+// </form>
+//
+// Styleguide Forms.Border
+
+
+// Time Icon
+//
+// The select wrapper displays an arrow down icon. We can change that by adding the class `time`
+// to the class `pui-form__select-wrapper`. So the classes would be `pui-form__select-wrapper time`.
+// This will replace the arrow down icon with a clock icon.
+//
+// Markup:
+// <form action="" class="pui-form block-container">
+//   <div class="block block-4">
+//     <label for="task-1-time" class="pui-form__field">
+//       <span class="sr-only">Time Icon Example</span>
+//       <div class="pui-form__select-wrapper time" id="task-1-time">
+//         <select class="px-2" name="Select a time" id="task-1-time-select">
+//           <option value="8:00 AM">8:00 AM</option>
+//           <option value="8:30 AM">8:30 AM</option>
+//           <option value="9:00 AM">9:00 AM</option>
+//           <option value="9:30 AM">9:30 AM</option>
+//           <option value="10:00 AM">10:00 AM</option>
+//           <option value="10:30 AM">10:30 AM</option>
+//         </select>
+//         <i class="pi-clock"></i>
+//       </div>
+//     </label>
+//   </div>
+// </form>
+//
+// Styleguide Forms.TimeIcon
+
+
+// Error styles
+//
+// If there is an error on a specific input after submission, add the `error` class to the specific `pui-form__field`.
+//
+// Markup:
+// <form action="" class="pui-form block-container tablet-up-3 laptop-up-4 desktop-up-6 blocks mb-3 p-2">
+//   <div class="block">
+//     <label for="first-name" class="pui-form__field">First Name
+//       <input id="first-name" type="text" placeholder="First Name">
+//     </label>
+//   </div>
+//   <div class="block">
+//     <label for="last-name" class="pui-form__field error">Last Name
+//       <input id="last-name" type="text" placeholder="Last Name">
+//     </label>
+//   </div>
+//   <div class="block">
+//     <label for="dob" class="pui-form__field">Age or DOB
+//       <input id="dob" type="date">
+//     </label>
+//   </div>
+//   <div class="block">
+//     <label for="zipcode" class="pui-form__field">ZIP Code
+//       <input id="zipcode" type="tel" placeholder="e.g.90012" pattern="^\d{5,6}(?:[-\s]\d{4})?$">
+//     </label>
+//   </div>
+// </form>
+//
+// Styleguide Forms.Error
+
+
+
+// Has Icon
+//
+// If you would like the icon to be on the right side of the input, add the class `has-icon--right` to the `pui-form__field` class.
+//
+// Markup:
+// <form action="" class="pui-form block-container tablet-up-3 laptop-up-4 desktop-up-6 blocks mb-3 p-2">
+//   <div class="block">
+//     <label for="dob" class="pui-form__field has-icon--right">Age or DOB
+//       <input id="dob" type="date">
+//       <i class="pi-calendar background-white"></i>
+//     </label>
+//   </div>
+//   <div class="block">
+//     <label for="dob" class="pui-form__field has-icon">Application Date
+//       <input id="dob" type="date">
+//       <i class="pi-calendar text-med-blue background-white"></i>
+//     </label>
+//   </div>
+//   <div class="block">
+//     <label for="time" class="pui-form__field has-icon--right">Your Time
+//       <input id="time" type="time" placeholder="10:00 AM">
+//       <i class="pi-clock"></i>
+//     </label>
+//   </div>
+//   <div class="block">
+//     <div class="pui-form__field pui-form__button-group">
+//       <button class="button button--post button--lg">Quote Now</button>
+//     </div>
+//   </div>
+// </form>
+//
+// Styleguide Forms.HasIcon
+
+
+// Putting it together
+// 
+// Here's an example of a larger responsive form using the block layout.
+// 
+// <form action="" class="pui-form block-container tablet-up-3 laptop-up-4 desktop-up-6 blocks mb-3 p-2">
 //   <div class="block">
 //     <label for="first-name" class="pui-form__field">First Name
 //       <input id="first-name" type="text" placeholder="First Name">
@@ -122,176 +309,9 @@
 //     </div>
 //   </div>
 // </form>
-//
-// Styleguide Forms
-
-// Fancy Forms
-//
-// You want a fancy form that animates the `label`? You got it.
-// To get the animation, add the class `pui-form__field--fancy` to the `pui-form__field`.
-// You will also need to change the markup slightly. Instead of a `label` the `pui-form__field` should now be a `div`
-// put the `label` under the `input` as a sibling of the `pui-form__field` `div`. See markup below.
-//
-// **Note:** Firefox does not have a way to hide the date and time placeholder for those inputs. This style of form would
-// probably be best for a simple form that has text inputs.
-//
-// Markup:
-// <form action="" class="pui-form">
-//   <div class="pui-form__field pui-form__field--fancy">
-//     <input id="first-name" type="text" required placeholder="Jane">
-//     <label for="first-name">First Name</label>
-//   </div>
-//   <div class="pui-form__field pui-form__field--fancy">
-//     <input id="last-name" type="text" required placeholder="Smith">
-//     <label for="last-name">Last Name</label>
-//   </div>
-//   <div class="pui-form__field pui-form__field--fancy">
-//     <input id="zipcode" type="tel" pattern="^\d{5,6}(?:[-\s]\d{4})?$" required placeholder="12345">
-//     <label for="zipcode">ZIP Code</label>
-//   </div>
-//   <div class="pui-form__field pui-form__field--fancy">
-//     <div class="pui-form__select-wrapper">
-//       <select name="County Select" id="county" required placeholder="County">
-//         <option value=""></option>
-//         <option value="County1">County 1</option>
-//         <option value="County2">County 2</option>
-//         <option value="County3">County 3</option>
-//         <option value="County4">County 4</option>
-//         <option value="County5">County 5</option>
-//         <option value="County6">County 6</option>
-//       </select>
-//       <label for="county">County</label>
-//     </div>
-//   </div>
-// </form>
-//
-// Styleguide Forms.Fancy
-
-
-// Form Border
-//
-// This modifier class adds a full border to each input within the form. Just add `pui-form--bordered`
-//
-// Markup:
-// <form action="" class="pui-form pui-form--bordered block-container tablet-up-3 laptop-up-4 desktop-up-6 blocks-mb-3 blocks-py-2 blocks-px-2">
-//   <div class="block">
-//     <label for="first-name" class="pui-form__field">First Name
-//       <input id="first-name" type="text" placeholder="First Name">
-//     </label>
-//   </div>
-//   <div class="block">
-//     <label for="last-name" class="pui-form__field">Last Name
-//       <input id="last-name" type="text" placeholder="Last Name">
-//     </label>
-//   </div>
-//   <div class="block">
-//     <label for="dob" class="pui-form__field">Age or DOB
-//       <input id="dob" type="date">
-//     </label>
-//   </div>
-//   <div class="block">
-//     <label for="zipcode" class="pui-form__field">ZIP Code
-//       <input id="zipcode" type="tel" placeholder="e.g.90012" pattern="^\d{5,6}(?:[-\s]\d{4})?$">
-//     </label>
-//   </div>
-// </form>
-//
-// Styleguide Forms.Border
-
-
-// Time Icon
-//
-// The select wrapper displays an arrow down icon. We can change that by adding the class `time`
-// to the class `pui-form__select-wrapper`. So the classes would be `pui-form__select-wrapper time`.
-// This will replace the arrow down icon with a clock icon.
-//
-// Markup:
-// <form action="" class="pui-form block-container">
-//   <div class="block block-4">
-//     <label for="task-1-time" class="pui-form__field">
-//       <span class="sr-only">Time Icon Example</span>
-//       <div class="pui-form__select-wrapper time" id="task-1-time">
-//         <select class="px-2" name="Select a time" id="task-1-time-select">
-//           <option value="8:00 AM">8:00 AM</option>
-//           <option value="8:30 AM">8:30 AM</option>
-//           <option value="9:00 AM">9:00 AM</option>
-//           <option value="9:30 AM">9:30 AM</option>
-//           <option value="10:00 AM">10:00 AM</option>
-//           <option value="10:30 AM">10:30 AM</option>
-//         </select>
-//         <i class="pi-clock"></i>
-//       </div>
-//     </label>
-//   </div>
-// </form>
-//
-// Styleguide Forms.TimeIcon
-
-
-// Error styles
-//
-// If there is an error on a specific input after submission, add the `error` class to the specific `pui-form__field`.
-//
-// Markup:
-// <form action="" class="pui-form block-container tablet-up-3 laptop-up-4 desktop-up-6 blocks-mb-3 blocks-py-2 blocks-px-2">
-//   <div class="block">
-//     <label for="first-name" class="pui-form__field">First Name
-//       <input id="first-name" type="text" placeholder="First Name">
-//     </label>
-//   </div>
-//   <div class="block">
-//     <label for="last-name" class="pui-form__field error">Last Name
-//       <input id="last-name" type="text" placeholder="Last Name">
-//     </label>
-//   </div>
-//   <div class="block">
-//     <label for="dob" class="pui-form__field">Age or DOB
-//       <input id="dob" type="date">
-//     </label>
-//   </div>
-//   <div class="block">
-//     <label for="zipcode" class="pui-form__field">ZIP Code
-//       <input id="zipcode" type="tel" placeholder="e.g.90012" pattern="^\d{5,6}(?:[-\s]\d{4})?$">
-//     </label>
-//   </div>
-// </form>
-//
-// Styleguide Forms.Error
-
-
-
-// Has Icon
-//
-// If you would like the icon to be on the right side of the input, add the class `has-icon--right` to the `pui-form__field` class.
-//
-// Markup:
-// <form action="" class="pui-form block-container tablet-up-3 laptop-up-4 desktop-up-6 blocks-mb-3 blocks-py-2 blocks-px-2">
-//   <div class="block">
-//     <label for="dob" class="pui-form__field has-icon--right">Age or DOB
-//       <input id="dob" type="date">
-//       <i class="pi-calendar background-white"></i>
-//     </label>
-//   </div>
-//   <div class="block">
-//     <label for="dob" class="pui-form__field has-icon">Application Date
-//       <input id="dob" type="date">
-//       <i class="pi-calendar text-med-blue background-white"></i>
-//     </label>
-//   </div>
-//   <div class="block">
-//     <label for="time" class="pui-form__field has-icon--right">Your Time
-//       <input id="time" type="time" placeholder="10:00 AM">
-//       <i class="pi-clock"></i>
-//     </label>
-//   </div>
-//   <div class="block">
-//     <div class="pui-form__field pui-form__button-group">
-//       <button class="button button--post button--lg">Quote Now</button>
-//     </div>
-//   </div>
-// </form>
-//
-// Styleguide Forms.HasIcon
+// 
+// 
+// Styleguide Forms.Putting
 
 
 // KSS-Node specific stuff for forms
@@ -483,10 +503,13 @@ legend {
 
   &__field {
     display: block;
-    margin-bottom: variables.$spacer * 1.5;
 
-    .block & {
-      margin-bottom: 0;
+    + .pui-form__field {
+      margin-top: variables.$spacer * 1.5;
+    }
+
+    &.pui-form__field--fancy + .pui-form__field {
+      margin-top: map.get(variables.$spacers, 4);
     }
 
     input[type="text"],
@@ -685,6 +708,7 @@ legend {
         pointer-events: none;
         position: absolute;
         left: .25rem;
+        line-height: 1;
         top: 50%;
         transition: .2s ease-in;
         transform: translateY(-50%);
@@ -738,7 +762,7 @@ legend {
     font-family: map.get(config.$fonts, 'base');
     font-size: map.get(config.$fonts, 'size');
     min-height: 2.2rem;
-    padding: map.get(variables.$spacers, 1) 0;
+    padding: map.get(variables.$spacers, 1 ) map.get(variables.$spacers, 2 );
     width: 100%;
 
     &::placeholder {
