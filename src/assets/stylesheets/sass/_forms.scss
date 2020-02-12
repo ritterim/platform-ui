@@ -932,9 +932,7 @@ legend {
   padding: map.get(variables.$spacers, 1);
 
   &__content {
-    border-radius: map.get(config.$radius, 'button');
     flex: 1 1 auto;
-    overflow: hidden;
     position: relative;
   }
 
@@ -942,6 +940,7 @@ legend {
 
     + label {
       align-items: center;
+      border-radius: map.get(config.$radius, 'button');
       color: map.get(variables.$greyscale, 'base');
       display: flex;
       height: 100%;
