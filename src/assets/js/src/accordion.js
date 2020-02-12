@@ -16,4 +16,3 @@ if (accordionHeader) {
     });
   });
 }
-
