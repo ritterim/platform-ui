@@ -7,123 +7,19 @@
 
 // Forms
 //
-// Out of the box, our form fields have a padding-left added to them. This spacing should work just fine for smaller, simple forms. For larger,
+// Out of the box, our form fields have a margin-top added to them. This spacing should work just fine for smaller, simple forms. For larger,
 // responsive forms, we recommend that you utilize the block layout and our spacers to build the perfect form.
 //
 // Markup:
-// <form action="" class="pui-form block-container tablet-up-3 laptop-up-4 desktop-up-6 blocks mb-3 p-2">
-//   <div class="block">
-//     <label for="first-name" class="pui-form__field">First Name
-//       <input id="first-name" type="text" placeholder="First Name">
-//     </label>
-//   </div>
-//   <div class="block">
-//     <label for="last-name" class="pui-form__field">Last Name
-//       <input id="last-name" type="text" placeholder="Last Name">
-//     </label>
-//   </div>
-//   <div class="block">
-//     <label for="dob" class="pui-form__field">Age or DOB
-//       <input id="dob" type="date">
-//     </label>
-//   </div>
-//   <div class="block">
-//     <label for="zipcode" class="pui-form__field">ZIP Code
-//       <input id="zipcode" type="tel" placeholder="e.g.90012" pattern="^\d{5,6}(?:[-\s]\d{4})?$">
-//     </label>
-//   </div>
-//   <div class="block">
-//     <fieldset class="pui-form__field">
-//       <legend>Choose</legend>
-//       <div class="pui-form__option-group">
-//         <input class="pui-form__checkbox" id="gender-this-one" type="checkbox">
-//         <label for="gender-this-one">
-//           <div class="input-icons">
-//             <i class='pi-circle'></i>
-//             <i class='pi-check'></i>
-//           </div>
-//           This One
-//         </label>
-//         <input class="pui-form__checkbox" id="gender-that-one" type="checkbox">
-//         <label for="gender-that-one">
-//           <div class="input-icons">
-//             <i class='pi-circle'></i>
-//             <i class='pi-check'></i>
-//           </div>
-//           That One
-//         </label>
-//       </div>
-//     </fieldset>
-//   </div>
-//   <div class="block">
-//     <fieldset class="pui-form__field">
-//       <legend>Gender</legend>
-//       <div class="pui-form__option-group">
-//         <input class="pui-form__radio" id="gender-male" type="radio" name="gender">
-//         <label for="gender-male">
-//           <div class="input-icons">
-//             <i class='pi-circle'></i>
-//             <i class='pi-circle-solid pi-sm'></i>
-//           </div>
-//           Male
-//         </label>
-//         <input class="pui-form__radio" id="gender-female" type="radio" name="gender">
-//         <label for="gender-female">
-//           <div class="input-icons">
-//             <i class='pi-circle'></i>
-//             <i class='pi-circle-solid pi-sm'></i>
-//           </div>
-//           Female
-//         </label>
-//       </div>
-//     </fieldset>
-//   </div>
-//   <div class="block">
-//     <label for="county" class="pui-form__field">County
-//       <div class="pui-form__select-wrapper">
-//         <select name="County Select" id="county">
-//           <option value="County1">County 1</option>
-//           <option value="County2">County 2</option>
-//           <option value="County3">County 3</option>
-//           <option value="County4">County 4</option>
-//           <option value="County5">County 5</option>
-//           <option value="County6">County 6</option>
-//         </select>
-//       </div>
-//     </label>
-//   </div>
-//   <div class="block">
-//     <fieldset class="pui-form__field">
-//       <legend>Are You</legend>
-//       <div class="pui-toggle">
-//         <div class="pui-toggle__content">
-//           <input class="pui-toggle__input" id="tall" type="radio" checked name="height">
-//           <label for="tall"><i class='pi-check'></i> Tall</label>
-//         </div>
-//         <div class="pui-toggle__content">
-//           <input class="pui-toggle__input" id="short" type="radio" name="height">
-//           <label for="short"><i class='pi-check'></i> Short</label>
-//         </div>
-//       </div>
-//     </fieldset>
-//   </div>
-//   <div class="block">
-//     <label for="dob" class="pui-form__field has-icon">Application Date
-//       <input id="dob" type="date">
-//       <i class="pi-calendar text-skyblue background-white"></i>
-//     </label>
-//   </div>
-//   <div class="block">
-//     <label for="time" class="pui-form__field">Your Time
-//       <input id="time" type="time" placeholder="10:00 AM">
-//     </label>
-//   </div>
-//   <div class="block">
-//     <div class="pui-form__field pui-form__button-group">
-//       <button class="button button--post button--lg">Quote Now</button>
-//     </div>
-//   </div>
+// <form action="" class="pui-form">
+//   <label for="first-name-a" class="pui-form__field">First Name
+//     <input id="first-name-a" type="text" placeholder="First Name">
+//   </label>
+//   <label for="last-name" class="pui-form__field">Last Name
+//     <input id="last-name" type="text" placeholder="Last Name">
+//   </label>
 // </form>
+// 
 //
 // Styleguide Forms
 
@@ -294,6 +190,128 @@
 // </form>
 //
 // Styleguide Forms.HasIcon
+
+
+// Putting it together
+// 
+// Here's an example of a larger responsive form using the block layout.
+// 
+// <form action="" class="pui-form block-container tablet-up-3 laptop-up-4 desktop-up-6 blocks mb-3 p-2">
+//   <div class="block">
+//     <label for="first-name" class="pui-form__field">First Name
+//       <input id="first-name" type="text" placeholder="First Name">
+//     </label>
+//   </div>
+//   <div class="block">
+//     <label for="last-name" class="pui-form__field">Last Name
+//       <input id="last-name" type="text" placeholder="Last Name">
+//     </label>
+//   </div>
+//   <div class="block">
+//     <label for="dob" class="pui-form__field">Age or DOB
+//       <input id="dob" type="date">
+//     </label>
+//   </div>
+//   <div class="block">
+//     <label for="zipcode" class="pui-form__field">ZIP Code
+//       <input id="zipcode" type="tel" placeholder="e.g.90012" pattern="^\d{5,6}(?:[-\s]\d{4})?$">
+//     </label>
+//   </div>
+//   <div class="block">
+//     <fieldset class="pui-form__field">
+//       <legend>Choose</legend>
+//       <div class="pui-form__option-group">
+//         <input class="pui-form__checkbox" id="gender-this-one" type="checkbox">
+//         <label for="gender-this-one">
+//           <div class="input-icons">
+//             <i class='pi-circle'></i>
+//             <i class='pi-check'></i>
+//           </div>
+//           This One
+//         </label>
+//         <input class="pui-form__checkbox" id="gender-that-one" type="checkbox">
+//         <label for="gender-that-one">
+//           <div class="input-icons">
+//             <i class='pi-circle'></i>
+//             <i class='pi-check'></i>
+//           </div>
+//           That One
+//         </label>
+//       </div>
+//     </fieldset>
+//   </div>
+//   <div class="block">
+//     <fieldset class="pui-form__field">
+//       <legend>Gender</legend>
+//       <div class="pui-form__option-group">
+//         <input class="pui-form__radio" id="gender-male" type="radio" name="gender">
+//         <label for="gender-male">
+//           <div class="input-icons">
+//             <i class='pi-circle'></i>
+//             <i class='pi-circle-solid pi-sm'></i>
+//           </div>
+//           Male
+//         </label>
+//         <input class="pui-form__radio" id="gender-female" type="radio" name="gender">
+//         <label for="gender-female">
+//           <div class="input-icons">
+//             <i class='pi-circle'></i>
+//             <i class='pi-circle-solid pi-sm'></i>
+//           </div>
+//           Female
+//         </label>
+//       </div>
+//     </fieldset>
+//   </div>
+//   <div class="block">
+//     <label for="county" class="pui-form__field">County
+//       <div class="pui-form__select-wrapper">
+//         <select name="County Select" id="county">
+//           <option value="County1">County 1</option>
+//           <option value="County2">County 2</option>
+//           <option value="County3">County 3</option>
+//           <option value="County4">County 4</option>
+//           <option value="County5">County 5</option>
+//           <option value="County6">County 6</option>
+//         </select>
+//       </div>
+//     </label>
+//   </div>
+//   <div class="block">
+//     <fieldset class="pui-form__field">
+//       <legend>Are You</legend>
+//       <div class="pui-toggle">
+//         <div class="pui-toggle__content">
+//           <input class="pui-toggle__input" id="tall" type="radio" checked name="height">
+//           <label for="tall"><i class='pi-check'></i> Tall</label>
+//         </div>
+//         <div class="pui-toggle__content">
+//           <input class="pui-toggle__input" id="short" type="radio" name="height">
+//           <label for="short"><i class='pi-check'></i> Short</label>
+//         </div>
+//       </div>
+//     </fieldset>
+//   </div>
+//   <div class="block">
+//     <label for="dob" class="pui-form__field has-icon">Application Date
+//       <input id="dob" type="date">
+//       <i class="pi-calendar text-skyblue background-white"></i>
+//     </label>
+//   </div>
+//   <div class="block">
+//     <label for="time" class="pui-form__field">Your Time
+//       <input id="time" type="time" placeholder="10:00 AM">
+//     </label>
+//   </div>
+//   <div class="block">
+//     <div class="pui-form__field pui-form__button-group">
+//       <button class="button button--post button--lg">Quote Now</button>
+//     </div>
+//   </div>
+// </form>
+// 
+// 
+// Styleguide Forms.Putting
 
 
 // KSS-Node specific stuff for forms
@@ -487,7 +505,11 @@ legend {
     display: block;
 
     + .pui-form__field {
-      padding-left: variables.$spacer;
+      margin-top: variables.$spacer * 1.5;
+    }
+
+    &.pui-form__field--fancy + .pui-form__field {
+      margin-top: map.get(variables.$spacers, 4);
     }
 
     input[type="text"],
@@ -686,6 +708,7 @@ legend {
         pointer-events: none;
         position: absolute;
         left: .25rem;
+        line-height: 1;
         top: 50%;
         transition: .2s ease-in;
         transform: translateY(-50%);
@@ -739,7 +762,7 @@ legend {
     font-family: map.get(config.$fonts, 'base');
     font-size: map.get(config.$fonts, 'size');
     min-height: 2.2rem;
-    padding: map.get(variables.$spacers, 1) 0;
+    padding: map.get(variables.$spacers, 1 ) map.get(variables.$spacers, 2 );
     width: 100%;
 
     &::placeholder {
