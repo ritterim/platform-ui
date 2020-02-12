@@ -398,13 +398,14 @@
           &.blocks {
             &[class*="p-"],
             &[class*="px"] {
+              padding: 0 !important;
               > .block {
                 @if $index < length(config.$breakpoints) {
                   @media screen and (min-width : ($name)) and (max-width: map.get(config.$breakpoints, mixins.nextKey($breakpoint) )  - 1 ) {
                     &:nth-child(#{$val}n+1) {
                       padding-left: 0;
                     }
-  
+
                     &:nth-child(#{$val}n+#{$val}) {
                       padding-right: 0;
                     }
@@ -414,7 +415,7 @@
                     &:nth-child(#{$val}n+1) {
                       padding-left: 0;
                     }
-  
+
                     &:nth-child(#{$val}n+#{$val}) {
                       padding-right: 0;
                     }
@@ -423,7 +424,7 @@
               }
             }
           }
-        }        
+        }
       }
     }
   }
@@ -435,7 +436,7 @@
       @each $unit, $rem in variables.$spacers {
         // top, right, bottom, left
         &.blocks.#{$letter}#{$d}-#{$unit} {
-          #{$prop}-#{$direction}: 0;
+          #{$prop}-#{$direction}: 0 !important;
           > .block {
             #{$prop}-#{$direction}: #{$rem};
           }
@@ -451,8 +452,8 @@
 
       // x-axis
       &.blocks.#{$letter}x-#{$unit} {
-        #{$prop}-left: 0;
-        #{$prop}-right: 0;
+        #{$prop}-left: 0 !important;
+        #{$prop}-right: 0 !important;
 
         > .blocks {
           &[class*="px"] {
@@ -467,6 +468,9 @@
 
       // y-axis
       &.blocks.#{$letter}y-#{$unit} {
+        #{$prop}-top: 0 !important;
+        #{$prop}-bottom: 0 !important;
+
         > .block {
           #{$prop}-top: $rem;
           #{$prop}-bottom: $rem;
@@ -481,6 +485,7 @@
     @each $unit, $rem in variables.$spacers {
       // top, right, bottom, left
       &.blocks.#{$letter}-#{$unit} {
+        #{$prop}: 0 !important;
         > .block {
           #{$prop}: #{$rem};
         }
