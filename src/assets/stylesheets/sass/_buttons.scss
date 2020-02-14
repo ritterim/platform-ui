@@ -198,6 +198,7 @@
   font-family: map.get(config.$fonts, 'base');
   font-size: map.get(config.$fonts, 'size');
   justify-content: center;
+  line-height: 1.15;
   padding: config.$button-primary-padding;
   transition: config.$transitions;
   white-space: nowrap;
