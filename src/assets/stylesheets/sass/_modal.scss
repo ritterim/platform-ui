@@ -115,6 +115,7 @@
   }
 
   $self: &;
+  background: rgba(map.get(variables.$greyscale, 'black'), .5);
   position: fixed;
   z-index: 500;
   overflow-x: hidden;
@@ -123,16 +124,6 @@
   bottom: 0;
   right: 0;
   left: 0;
-
-  &:before {
-    background: rgba(map.get(variables.$greyscale, 'black'), .5);
-    content: '';
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-  }
 
   &--closed {
     display: none;
