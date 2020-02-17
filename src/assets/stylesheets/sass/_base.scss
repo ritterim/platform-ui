@@ -33,7 +33,7 @@ body {
     font-family: map.get(config.$fonts, 'headline');
     font-weight: 500;
     line-height: map.get(config.$fonts, 'headline-line-height');
-    margin: variables.$spacer 0;
+    margin-bottom: variables.$spacer;
   }
 }
 
