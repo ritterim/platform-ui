@@ -399,29 +399,6 @@
             &[class*="p-"],
             &[class*="px"] {
               padding: 0 !important;
-              > .block {
-                @if $index < length(config.$breakpoints) {
-                  @media screen and (min-width : ($name)) and (max-width: map.get(config.$breakpoints, mixins.nextKey($breakpoint) )  - 1 ) {
-                    &:nth-child(#{$val}n+1) {
-                      padding-left: 0;
-                    }
-
-                    &:nth-child(#{$val}n+#{$val}) {
-                      padding-right: 0;
-                    }
-                  }
-                } @else {
-                  @include mixins.breakpoint(#{$name}, min) {
-                    &:nth-child(#{$val}n+1) {
-                      padding-left: 0;
-                    }
-
-                    &:nth-child(#{$val}n+#{$val}) {
-                      padding-right: 0;
-                    }
-                  }
-                }
-              }
             }
           }
         }
@@ -454,6 +431,8 @@
       &.blocks.#{$letter}x-#{$unit} {
         #{$prop}-left: 0 !important;
         #{$prop}-right: 0 !important;
+        width: calc(100% + (#{$rem} * 2));
+        margin-left: -#{$rem};
 
         > .blocks {
           &[class*="px"] {
@@ -461,6 +440,7 @@
           }
         }
         > .block {
+          display: block;
           #{$prop}-left: $rem;
           #{$prop}-right: $rem;
         }
@@ -486,6 +466,8 @@
       // top, right, bottom, left
       &.blocks.#{$letter}-#{$unit} {
         #{$prop}: 0 !important;
+        width: calc(100% + (#{$rem} * 2));
+        margin-left: -#{$rem};
         > .block {
           #{$prop}: #{$rem};
         }
