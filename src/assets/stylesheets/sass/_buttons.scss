@@ -11,11 +11,7 @@
 // Each button has a default button style. Color can be added to any button using a combination of background and text utilities.
 //
 // Add icons to buttons using [platform icons](https://github.com/ritterim/platform-icons) icons: `<i class="pi-plus"></i>`
-//
-// Styleguide Components.Button
-
-// Default
-//
+// 
 // The default platform button. Usually paired visually with an icon. Can be the default size or large.
 //
 // - .button
@@ -26,7 +22,8 @@
 // <button class="button mb-2">Add <i class="pi-plus"></i></button>
 // <button class="button button--lg">Add <i class="pi-plus"></i></button>
 //
-// Styleguide Components.Button.Default
+//
+// Styleguide Components.Button
 
 // Secondary
 //
@@ -156,6 +153,38 @@
 //
 // Styleguide Components.Button.Active
 
+// Disabled
+// 
+// To make a button look inactive, add the disabled attribute.
+// 
+// `<a>` elements do not support the disabled attribute. In order to make an `<a>` that is a button look disabled, add the `.diabled` class.
+// Also, note that adding specific aria roles and attributes to your button will help with screen readers and other assitive technology.
+// 
+// Markup:
+// <div class="button-group">
+//   <button class="button" disabled>
+//     Download
+//     <i class="pi-download" aria-hidden="hidden"></i>
+//   </button>
+//   <button class="button" disabled>
+//     Lock
+//     <i class="pi-lock" aria-hidden="hidden"></i>
+//   </button>
+// </div>
+// <div class="button-group mt-4">
+//   <a href="#" class="button disabled" disabled role="button" aria-disabled="true">
+//     Status
+//   </a>
+//   <a href="#" class="button disabled" disabled role="button" aria-disabled="true">
+//     Account
+//   </a>
+// </div>
+// 
+// Although the links look disabled and have the css property of `pointer-events: none`, users can still navigate to the links and use them via keyboard navigation.
+// To ensure that your users could not interact with disabled links, it's recommended to use JavaScript to disable functionality further.
+// 
+// Styleguide Components.Button.Disabled
+
 // Colors
 //
 // We loop through a map to give you these color variations. 
@@ -210,10 +239,12 @@
     color: config.$button-secondary-color;
   }
 
-  &:disabled {
+  &:disabled,
+  &.disabled {
     background-color: color.adjust(map.get(variables.$greyscale, 'light' ), $lightness: math.percentage(config.$hue-threshold));
+    border-color: color.adjust(map.get(variables.$greyscale, 'light' ), $lightness: math.percentage(config.$hue-threshold));
+    color: map.get(variables.$greyscale, 'white');
     cursor: not-allowed;
-    opacity: .7;
     pointer-events: none;
   }
 
