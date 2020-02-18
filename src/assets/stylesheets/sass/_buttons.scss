@@ -170,6 +170,9 @@
 //     Lock
 //     <i class="pi-lock" aria-hidden="hidden"></i>
 //   </button>
+//   <button class="button button--post" disabled>
+//     Submit
+//   </button>
 // </div>
 // <div class="button-group mt-4">
 //   <a href="#" class="button disabled" disabled role="button" aria-disabled="true">
@@ -242,9 +245,13 @@
   &:disabled,
   &.disabled {
     background-color: color.adjust(map.get(variables.$greyscale, 'light' ), $lightness: math.percentage(config.$hue-threshold)) !important;
+    background-image: none;
     border-color: color.adjust(map.get(variables.$greyscale, 'light' ), $lightness: math.percentage(config.$hue-threshold)) !important;
-    color: map.get(variables.$greyscale, 'white');
+    color: map.get(variables.$greyscale, 'white') !important;
     cursor: not-allowed;
+  }
+
+  &.disabled {
     pointer-events: none;
   }
 
