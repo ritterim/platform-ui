@@ -157,7 +157,7 @@
 // 
 // To make a button look inactive, add the disabled attribute.
 // 
-// `<a>` elements do not support the disabled attribute. In order to make an `<a>` that is a button look disabled, add the `.diabled` class.
+// `<a>` elements do not support the disabled attribute. In order to make an `<a>` that is a button look disabled, add the `.disabled` class.
 // Also, note that adding specific aria roles and attributes to your button will help with screen readers and other assitive technology.
 // 
 // Markup:
@@ -241,8 +241,8 @@
 
   &:disabled,
   &.disabled {
-    background-color: color.adjust(map.get(variables.$greyscale, 'light' ), $lightness: math.percentage(config.$hue-threshold));
-    border-color: color.adjust(map.get(variables.$greyscale, 'light' ), $lightness: math.percentage(config.$hue-threshold));
+    background-color: color.adjust(map.get(variables.$greyscale, 'light' ), $lightness: math.percentage(config.$hue-threshold)) !important;
+    border-color: color.adjust(map.get(variables.$greyscale, 'light' ), $lightness: math.percentage(config.$hue-threshold)) !important;
     color: map.get(variables.$greyscale, 'white');
     cursor: not-allowed;
     pointer-events: none;
