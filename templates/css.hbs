@@ -13,7 +13,6 @@
   font-family: {{ fontName }};
   font-style: normal;
   font-weight: normal;
-  margin-right: .25rem;
   text-decoration: inherit;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -30,6 +29,9 @@
 }
 
 {{! Icon sizing }}
+.{{ classPrefix }}xs {
+  font-size: .5rem;
+}
 .{{ classPrefix }}sm {
   font-size: .75rem;
 }
@@ -41,6 +43,10 @@
 }
 .{{ classPrefix }}xxl {
   font-size: 3rem;
+}
+
+.{{ classPrefix }}heavy {
+  font-weight: 900 !important;
 }
 
 {{# each codepoints }}

@@ -13,7 +13,6 @@ i[class^="pi-"], i[class*=" pi-"] {
   font-family: platform-icons;
   font-style: normal;
   font-weight: normal;
-  margin-right: .25rem;
   text-decoration: inherit;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -25,6 +24,9 @@ i[class^="pi-"]:before, i[class*=" pi-"]:before {
   text-decoration: inherit;
 }
 
+.pi-xs {
+  font-size: .5rem;
+}
 .pi-sm {
   font-size: .75rem;
 }
@@ -36,6 +38,10 @@ i[class^="pi-"]:before, i[class*=" pi-"]:before {
 }
 .pi-xxl {
   font-size: 3rem;
+}
+
+.pi-heavy {
+  font-weight: 900 !important;
 }
 
 .pi-eye-line:before {
