@@ -8,14 +8,14 @@
 
 // Tabs
 //
-// The content for a tabbed section needs to live inside the `.pui-tabs` class. The tabs are radio inputs. 
-// Be sure to add a specific `id` to the input and add a `for` to the label with a value that matches the 
+// The content for a tabbed section needs to live inside the `.pui-tabs` class. The tabs are radio inputs.
+// Be sure to add a specific `id` to the input and add a `for` to the label with a value that matches the
 // corresponding input. The label needs the class of `pui-tab`.
-// 
+//
 // The content for the tabs needs the class of `pui-tab-panel` and it needs to be directly after the `pui-tab` label.
 //
 // The tabs themselves or the `.pui-tab` have a specific width of `16rem` as well as a specific
-// height of `4rem`. 
+// height of `4rem`.
 //
 // Markup:
 // <div class="pui-tabs">
@@ -46,25 +46,25 @@
 // Styleguide Components.Tabs
 
 
-$tab-height:          4rem;
+$tab-height:          3rem;
 $tab-active-color:    map.get(config.$brand-colors, 'navy' );
 $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold * 2));
 
 .pui-tabs {
-  
+
   @include mixins.breakpoint(tablet, min) {
     display: flex;
     flex-wrap: wrap;
   }
-  
+
   * {
     box-sizing: border-box;
   }
-  
+
   input[type=radio] {
     appearance: none;
     position: absolute;
-    
+
     &:not(:checked) {
       + .pui-tab {
         + .pui-tab-panel {
@@ -72,17 +72,17 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
         }
       }
     }
-    
+
     &:checked {
       + .pui-tab {
         border: 1px solid $tab-border-color;
         border-bottom-color: map.get(variables.$greyscale, 'white' );
         font-weight: 600;
-        
+
         @include mixins.breakpoint(tablet, max) {
-          border-bottom: none; 
+          border-bottom: none;
         }
-        
+
         @include mixins.breakpoint(tablet, min) {
           background-color: #fff;
           color: $tab-active-color;
@@ -94,7 +94,7 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
       }
     }
   }
-  
+
   .pui-tab {
     align-items: center;
     display: flex;
@@ -102,18 +102,18 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
     padding: map.get(variables.$spacers, 2 ) variables.$spacer;
     position: relative;
     transition: config.$transitions;
-    
+
     @include mixins.breakpoint(tablet, max) {
       border: 1px solid #003f70;
       background: #003f70;
       color: #fff;
       margin-top: map.get(variables.$spacers, 1 );
-    
+
       &:first-of-type {
         margin-top: 0;
       }
     }
-  
+
     @include mixins.breakpoint(tablet, min) {
       flex: 1 1 auto;
       max-width: 16rem;
@@ -123,7 +123,7 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
       justify-content: center;
       margin-bottom: -1px;
       order: 1;
-      
+
       &::before {
         background-color: transparent;
         content: '';

@@ -63,11 +63,11 @@
 // Styleguide Menus.Main
 
 // Fixed Header
-// 
+//
 // To get a fixed header you can set the desired height in the config file. The `site-header` needs the modifier, `site-header--fixed`. This is what gives the header the `position: fixed` style.
 // In order to ensure that you have proper space between your header and main content, add the class `header-fixed` to the direct sibling of your `site-header`.
 // To see this in action, inspect the header of this style guide.
-// 
+//
 // Styleguide Menus.Fixed
 
 .site-header {
@@ -108,7 +108,7 @@
 
     .site-menu__item {
       border-left: 1px solid color.adjust(config.$primary-menu-color, $lightness: math.percentage(-.15));
-  
+
       @media (pointer: fine) {
         &:hover {
           &:not(.search):not(.active) {
@@ -116,12 +116,12 @@
           }
         }
       }
-  
+
       &.has-dropdown {
         @include mixins.breakpoint(tablet, min) {
           position: relative;
         }
-  
+
         @media (pointer: fine) {
           &:hover {
             &:not(.active) {
@@ -129,26 +129,26 @@
             }
           }
         }
-  
+
         &.active {
           border-bottom-color: rgba(config.$primary-menu-color, .5);
         }
       }
-  
+
       &.active {
         background-color: color.adjust(config.$primary-menu-color, $lightness: math.percentage(-.05));
-      } 
+      }
     }
 
     .dropdown-menu {
       background-color: color.adjust(config.$primary-menu-color, $lightness: math.percentage(-.05));
-  
+
       &__item {
-  
+
         &:hover {
           background-color: rgba(color.adjust(map.get(variables.$greyscale, 'white'), $lightness: math.percentage(-.05)), .3);
         }
-  
+
         &:not(:first-child) {
           border-top: 1px solid rgba(config.$primary-menu-color, .5);
         }
@@ -196,13 +196,13 @@
 
     &.active {
       background-color: color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05));
-    } 
+    }
   }
 
   .search {
     flex-grow: 1;
     @extend %flex-center;
-    
+
 
     input[type=text] {
       background: transparent;
@@ -292,18 +292,20 @@
 // the freedom to use any icon you want and make that icon change to whatever color you want on hover.
 // Simpy change the `<icon>` class to the desired font-awesome icon you want. Then, add the `text-{color}--hover`
 // class to the `icon-menu__action`. To see a list of available hover colors [click here](/section-typography.html#kssref-typography-utilities-color).
-// 
+//
 // In the example below, we're using `<div>`s on the `icon-menu__action` to build the menus. You could use a `<button>` or an `<a>` to improve accessibility
 // depending on exactly what you need. If you use a less semantic element like `<div>`, we would recommend adding `role="button"`.
-// 
+//
 // Also notice that the `pointer` class was added to those elements that do not have a `cursor: pointer` applied to them by default.
+// 
+// Adding `icon-menu icon-menu--vertical` creates a vertical icon menu.
 //
 // | <i class="fpi-warning text-orange"></i> Be sure to always wrap the font icon in another element. We don't want to have the click event be on the `<icon>` itself.|
 // | ---
 //
 //
 // You can add as many icons as you'd like.
-// 
+//
 //
 // Markup:
 // <div class="icon-menu">
@@ -323,11 +325,24 @@
 //     </button>
 //   </div>
 // </div>
+// <div class="icon-menu icon-menu--vertical">
+//   <div class="icon-menu__item">
+//     <button class="icon-menu__action button--plain text-negative--hover pointer">
+//       <i class="pi-trash" aria-hidden="hidden"></i>
+//     </button>
+//   </div>
+//   <div class="icon-menu__item">
+//     <button class="icon-menu__action button--plain text-positive--hover pointer">
+//       <i class="pi-edit" aria-hidden="hidden"></i>
+//     </button>
+//   </div>
+// </div>
 //
 // Styleguide Menus.IconMenu
 
 // icon menu
 .icon-menu {
+  $self: &;
   align-items: center;
   display: flex;
 
@@ -355,6 +370,19 @@
     &:hover {
       color: map.get(variables.$error-colors, 'default' );
       transform: scale(1.1);
+    }
+  }
+
+  &--vertical {
+    flex-direction: column;
+    justify-content: center;
+    #{$self}__item {
+      border: 0;
+      border-bottom: 1px solid map.get(variables.$greyscale, 'light' );
+      padding: map.get(variables.$spacers, 1) 0;
+      &:last-of-type {
+        border-bottom: none;
+      }
     }
   }
 }

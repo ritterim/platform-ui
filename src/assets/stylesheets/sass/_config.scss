@@ -149,7 +149,7 @@ $image-size: (
 );
 
 // Some height variables
-$menu-height: 4.5rem;
+$menu-height: 6.5rem;
 $menu-banner-height: 14rem;
 
 $max-height: 600px; // NOTE: define where we're using this
@@ -166,7 +166,7 @@ $radius: (
 // --------------------
 
 // sizes
-$fixed-header-height: 4.5rem;
+$fixed-header-height: 6.5rem;
 
 // colors
 $primary-menu-color: map.get($platform-colors, 'menu');
