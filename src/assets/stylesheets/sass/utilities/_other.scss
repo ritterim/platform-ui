@@ -267,6 +267,7 @@
 // | `h-75`     | height: 75%  | `w-75`     | width: 75%   |
 // | `h-50`     | height: 50%  | `w-50`     | width: 50%   |
 // | `h-25`     | height: 25%  | `w-25`     | width: 25%   |
+// | `h-auto`   | height: auto  | `w-auto`     | width: auto   |
 //
 // Styleguide Utilities.HeightWidth
 
@@ -276,7 +277,14 @@
       #{$size}: #{$value};
     }
   }
+  .#{$letter} {
+    &-auto {
+      #{$size}: auto !important;
+    }
+  }
 }
+
+
 
 
 // Overflow
@@ -347,4 +355,14 @@
 
 .scrollbar {
   @extend %scrollbar;
+}
+
+// Truncate with ellipsis
+//
+// A utility that does what it's name says. It truncates text within an element with ellipsis.
+//
+// Styleguide Utilities.Ellipsis
+
+.truncate-with-ellipsis {
+  @extend %truncate-with-ellipsis;
 }

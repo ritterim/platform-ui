@@ -9,7 +9,7 @@
 // Accordion
 //
 // Leverage spacing utility classes for padding and margin for the content within the accordion.
-// To show the content of the accordion toggle the class `active` on `pui-accordion`. These accordions are also keyboard accessible. 
+// To show the content of the accordion toggle the class `active` on `pui-accordion`. These accordions are also keyboard accessible.
 //
 // Platform UI accordions were designed to be stacked.
 //
@@ -124,6 +124,8 @@
     }
   }
 
+
+
   &.active {
     border-color: transparent;
     box-shadow: 0px 0px 0px 2px $accordion-hover-border;
@@ -154,24 +156,29 @@
   }
 
   &__content {
+
+    > #{$self} {
+      border: none;
+      &:not(.active):hover {
+        #{$self}__header {
+          background-color: $accordion-primary-background;
+        }
+      }
+      &.active {
+        border: none;
+        box-shadow: none;
+      }
+      > #{$self} {
+         &__header {
+          background-color: $accordion-primary-background;
+          font-weight: bold;
+         }
+       }
+    }
     border-top: none;
     display: none;
     position: relative;
     z-index: 0;
   }
 
-
-  // nested accordions
-  .pui-accordion {
-    border: none;
-
-    &.active {
-      border: none;
-      box-shadow: none;
-    }
-
-    .pui-accordion__header {
-      background-color: $accordion-secondary-background;
-    }
-  }
 }
