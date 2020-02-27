@@ -28,3 +28,13 @@ if (hasDropdown) {
     })
   });
 }
+
+let menuAction = document.querySelector('.site-menu-mobile-action');
+let siteMenu = document.querySelector('.site-menu');
+
+if (menuAction) {
+  menuAction.addEventListener('click', (e) => {
+    e.preventDefault;
+    siteMenu.classList.toggle('active');
+  })
+}
