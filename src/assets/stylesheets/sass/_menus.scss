@@ -241,7 +241,9 @@
       }
 
       &:not(:first-child) {
-        border-top: 1px solid rgba(map.get(variables.$greyscale, 'lighter'), .5);
+        @include mixins.breakpoint(tablet, min) {
+          border-top: 1px solid rgba(map.get(variables.$greyscale, 'lighter'), .5);
+        }        
       }
 
       &.profile {
@@ -393,14 +395,15 @@
 
   @include mixins.breakpoint(tablet, max) {
     position: relative;
+
     .site-menu {
-      top: 100%;
-      // height: calc(100vh - #{config.$menu-height});
       flex-direction: column;
       left: 0;
       max-height: 0;
+      padding: 0 map.get(variables.$spacers, 2 );
       position: absolute;
       right: 0;
+      top: 100%;
       transition: max-height config.$transitions ease-out;
       overflow: hidden;
   
@@ -411,12 +414,63 @@
     }
 
     .site-menu__item {
+      align-items: start;
       border-left: none;
-      padding: map.get(variables.$spacers, 3 );
+      flex-direction: column;
+      padding: map.get(variables.$spacers, 3 ) map.get(variables.$spacers, 1 );
+
+      &.active {
+        background-color: unset;
+      }
 
       &:not(:last-of-type) {
         border-bottom: 1px solid color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.15));
       }      
+    }
+
+    .has-dropdown {
+
+      .has-dropdown__icon {
+        transition: config.$transitions;
+      }
+
+      &.active {
+
+        .has-dropdown__icon {
+          transform: rotate(90deg);
+        }
+      }
+    }
+
+    .dropdown-menu {
+      background-color: unset;
+      height: auto;
+      position: static;
+      top: unset;
+      transition: unset;
+
+      &__item {
+        border-top: none;
+        padding: map.get(variables.$spacers, 2 );
+
+        &:first-of-type {
+          padding-top: variables.$spacer;
+        }
+      }
+    }
+
+    // Accounts for fixed header height and max-height of open nav
+    &.site-header--fixed,
+    .site-header--fixed & {
+
+      .site-menu {
+
+        &.active {
+          max-height: calc(100vh - #{config.$fixed-header-height});
+          overflow-y: auto;
+          overflow-x: hidden;
+        }
+      }
     }
   }
 }
