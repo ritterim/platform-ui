@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Submissions staff agent view</title>
+
+  <link rel="stylesheet" href="/src/assets/stylesheets/platform-ui.min.css">
+
+</head>
+<body class="flex flex--column">
+  <header class="site-header site-header--fixed">
+    <nav class="site-menu primary inverted">
+        <a href="/demo-pages/crm-example.html" class="site-menu__item">
+            <span class="card__header-icon pill--circle-medium background-purple text-white mr-2">
+                D
+            </span>
+            <span class="text--size-lg">
+                Hello Dev
+            </span>
+        </a>
+        <div class="site-menu__item search">
+            <form role="search" aria-label="CRM" _lpchecked="1" class="w-100">
+                <div class="flex flex--align-center">
+                    <label for="search-input" class="sr-only">Search</label>
+                    <input type="text" id="search-input" placeholder="Type to search..." class="placeholder--light text-white">
+                    <i aria-hidden="true" class="pi-search"></i>
+                </div>
+            </form>
+        </div>
+        <div class="site-menu__item has-dropdown" tabindex="0">
+            Organizations <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+            <div class="dropdown-menu pin-right">
+                <a href="#" class="dropdown-menu__item">
+                    dropdown
+                </a>
+            </div>
+        </div>
+        <div class="site-menu__item has-dropdown" tabindex="0">
+            People <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+            <div class="dropdown-menu pin-right">
+                <a href="#" class="dropdown-menu__item">
+                    dropdown
+                </a>
+            </div>
+        </div>
+        <div class="site-menu__item has-dropdown active" tabindex="0">
+            Flow <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+            <div class="dropdown-menu pin-right">
+                <a href="#" class="dropdown-menu__item">
+                    dropdown
+                </a>
+            </div>
+        </div>
+        <div class="site-menu__item has-dropdown" tabindex="0">
+            <span class="sr-only">RIMDev</span>
+            <span class="pill--circle-medium background-white text-navy">
+                <i class="pi-rimdev text--size-xl" aria-hidden="true"></i>
+            </span>
+            <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+            <div class="dropdown-menu pin-right">
+                <a href="#" class="dropdown-menu__item">
+                    dropdown
+                </a>
+            </div>
+        </div>
+        <div class="site-menu__item has-dropdown" tabindex="0">
+            Recent <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+            <div class="dropdown-menu pin-right">
+                <a href="#" class="dropdown-menu__item">
+                    dropdown
+                </a>
+            </div>
+        </div>
+    </nav>
+  </header>
+  <main class="header-fixed background-light-mid flex--grow py-4 px-5">
+    <div class="block-container blocks px-3 mb-4">
+        <div class="block lg-tablet-up-8 laptop-up-9">
+            <div class="block-container flex--justify-end mb-4">
+            </div>
+            <div class="pui-tabs">
+                <input type="radio" id="tab-input-a" name="tabs" checked>
+                <label for="tab-input-a" class="pui-tab flex flex--justify-between">
+                    Submissions
+                    <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
+                </label>
+                <div class="pui-tab-panel p-4">
+                    <div class="block-container mb-3">
+                      <div class="block block-6 flex flex--align-center">
+                        Showing XX of XXX
+                        <button type="button" class="button button--secondary ml-2" data-button-text="Load more">
+                          <i aria-hidden="true" class="pi-sync"></i>
+                        </button>
+                      </div>
+                      <div class="block block-6 flex flex--justify-end">
+                        <button class="button button--secondary mr-2" data-button-text="Filters">
+                            <i aria-hidden="true" class="pi-filter"></i>
+                        </button>
+                        <button class="button button--secondary mr-2" data-button-text="Export">
+                            <i aria-hidden="true" class="pi-download"></i>
+                        </button>
+                        <button class="button">
+                          Add
+                          <i class="pi-plus" aria-hidden="true"></i>
+                        </button>
+                      </div>
+                    </div>
+
+                    <!-- Start Accordion -->
+                    <div class="pui-accordion active">
+                      <!-- Accordion Header -->
+                        <div class="pui-accordion__header p-2 block-container">
+
+                          <div class="block block-3 flex flex--column">
+                            <span class="text-med-blue">Clover Health Plans</span>
+                            <span class="truncate-with-ellipsis">Clover Health Choice (PPO)</span>
+                            <span><i class="pi-calendar mr-2" aria-hidden="true"></i>00/00/0000 <div class="pill neutral">Eligible</div></span>
+                          </div>
+
+                          <div class="block block-8">
+                            <div class="block-container tablet-up-5">
+                              <div class="block flex flex--column">
+                                <strong>Client</strong>
+                                John Smith
+                              </div>
+                              <div class="block flex flex--column">
+                                <strong>Agent</strong>
+                                QA Testpass
+                              </div>
+                              <div class="block flex flex--column">
+                                <strong>Processor</strong>
+                                <span>Medicareful</span>
+                                00/00/0000
+                              </div>
+                              <div class="block flex flex--column">
+                                <strong>Source</strong>
+                                <span>Medicareful</span>
+                                <div class="pill pill--circle text-white background-negative">
+                                  13
+                                </div>
+                              </div>
+                              <div class="block flex flex--column w-auto">
+                                <strong>Status <div class="pill pill--circle-empty-dot neutral"></div></strong>
+                                Initial
+                                <div class="pill text-white background-neutral">
+                                  Incomplete
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="block block-1 flex flex--justify-end">
+                            <div class="icon-menu">
+                              <div class="icon-menu__item">
+                                <button class="icon-menu__action button--plain text-navy--hover">
+                                  <i class="pi-sync-clock" aria-hidden="hidden"></i>
+                                </button>
+                              </div>
+                              <div class="icon-menu__item">
+                                <button class="icon-menu__action button--plain text-navy--hover">
+                                  <i class="pi-keyboard" aria-hidden="hidden"></i>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- End Accordion Header -->
+
+                        <!-- Start Accordion Content -->
+                        <div class="pui-accordion__content p-4">
+
+                          <div class="block-container blocks p-2 tablet-up-2 pui-form">
+                            <div class="block">
+                              <label for="action" class="pui-form__field">
+                                Action
+                                <div class="pui-form__select-wrapper">
+                                  <select name="County Select" id="action">
+                                    <option value="County1">Option</option>
+                                  </select>
+                                </div>
+                              </label>
+                            </div>
+                            <div class="block">
+                              <label for="form" class="pui-form__field">
+                                Form
+                                <div class="pui-form__select-wrapper">
+                                  <select name="County Select" id="form">
+                                    <option value="County1">Option</option>
+                                  </select>
+                                </div>
+                              </label>
+                            </div>
+
+                          </div>
+                          <!-- History block -->
+                          <div class="block-container mt-3">
+                            <div class="block block-6 flex flex--align-center">
+                              <strong class="text-navy text--size-lg flex"><i class="pi-sync-clock mr-2"></i> History</strong>
+                            </div>
+                            <div class="block block-6 flex flex--justify-end">
+                              <button class="button">Close <i class="pi-times" aria-hidden="true"></i></button>
+                            </div>
+
+                            <div class="block block-12 mt-3">
+                              <table class="pui-table">
+                                <thead>
+                                  <tr>
+                                    <th>Type</th>
+                                    <th>Event</th>
+                                    <th>Created By</th>
+                                    <th>Detail</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>Contract</td>
+                                    <td>Create</td>
+                                    <td>
+                                      Medicareful
+                                      <span class="flex">January 7, 2020 10:38 AM</span>
+                                    </td>
+                                    <td>John Smith</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Contract</td>
+                                    <td>Create</td>
+                                    <td>
+                                      Medicareful
+                                      <span class="flex">January 7, 2020 10:38 AM</span>
+                                    </td>
+                                    <td>John Smith</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Contract</td>
+                                    <td>Create</td>
+                                    <td>
+                                      Medicareful
+                                      <span class="flex">January 7, 2020 10:38 AM</span>
+                                    </td>
+                                    <td>John Smith</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                            <div class="block block-12">
+                              <div class="pui-message pui-message--success" data-header="Enrollment #">
+                                <p>123456789 (eligible), Effective 01/01/2020 </p>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="pui-accordion active">
+                            <div class="pui-accordion__header p-2 block-container flex--justify-between">
+                              <span class="flex--center-content">
+                                <i class="pi-angle-right text--size-xl mr-3 rotate-90"></i>
+                                <i class="pi-note mr-2"></i>
+                                Submission Note
+                                <div class="ml-1 pill pill--circle">
+                                  3
+                                </div>
+                              </span>
+                              <span class="flex">
+                                <button class="button mr-2">Add <i class="pi-plus" aria-hidden="true"></i></button>
+                                <button class="button">View All <i class="pi-arrow-right" aria-hidden="true"></i></button>
+                              </span>
+                            </div>
+                            <div class="pui-accordion__content">
+                              <div class="block-container blocks tablet-up-3 flex--align-center flex--justify-between overflow-x--scroll">
+                                <div class="block">
+                                  <div class="background-note pui-card m-2 py-3 pl-3 pr-0">
+                                    <div class="block-container">
+                                      <div class="block-10">
+                                        <div class="pui-card__header">
+                                          <strong class="pui-card__group">
+                                            <i class="pi-speech-bubble"></i> John Hammond 00/00/0000
+                                          </strong>
+                                        </div>
+                                        <div class="pui-card__content">
+                                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis sem, iaculis vitae posuere ac, blandit vel neque.
+                                        </div>
+                                      </div>
+                                      <div class="block-2">
+                                        <div class="icon-menu icon-menu--vertical">
+                                          <div class="icon-menu__item">
+                                            <button class="icon-menu__action button--plain text-navy--hover pointer">
+                                              <i class="pi-tag" aria-hidden="hidden"></i>
+                                            </button>
+                                          </div>
+                                          <div class="icon-menu__item">
+                                            <button class="icon-menu__action button--plain text-navy--hover pointer">
+                                              <i class="pi-edit" aria-hidden="hidden"></i>
+                                            </button>
+                                          </div>
+                                          <div class="icon-menu__item">
+                                            <button class="icon-menu__action button--plain text-navy--hover pointer">
+                                              <i class="pi-lock" aria-hidden="hidden"></i>
+                                            </button>
+                                          </div>
+                                          <div class="icon-menu__item">
+                                            <button class="icon-menu__action button--plain text-negative--hover pointer">
+                                              <i class="pi-trash" aria-hidden="hidden"></i>
+                                            </button>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                  </div>
+                                </div>
+                                <div class="block">
+                                  <div class="background-note pui-card m-2 py-3 pl-3 pr-0">
+                                    <div class="block-container">
+                                      <div class="block-10">
+                                        <div class="pui-card__header">
+                                          <strong class="pui-card__group">
+                                            <i class="pi-speech-bubble"></i> John Hammond 00/00/0000
+                                          </strong>
+                                        </div>
+                                        <div class="pui-card__content">
+                                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis sem, iaculis vitae posuere ac, blandit vel neque.
+                                        </div>
+                                      </div>
+                                      <div class="block-2">
+                                        <div class="icon-menu icon-menu--vertical">
+                                          <div class="icon-menu__item">
+                                            <button class="icon-menu__action button--plain text-navy--hover pointer">
+                                              <i class="pi-tag" aria-hidden="hidden"></i>
+                                            </button>
+                                          </div>
+                                          <div class="icon-menu__item">
+                                            <button class="icon-menu__action button--plain text-navy--hover pointer">
+                                              <i class="pi-edit" aria-hidden="hidden"></i>
+                                            </button>
+                                          </div>
+                                          <div class="icon-menu__item">
+                                            <button class="icon-menu__action button--plain text-navy--hover pointer">
+                                              <i class="pi-lock" aria-hidden="hidden"></i>
+                                            </button>
+                                          </div>
+                                          <div class="icon-menu__item">
+                                            <button class="icon-menu__action button--plain text-negative--hover pointer">
+                                              <i class="pi-trash" aria-hidden="hidden"></i>
+                                            </button>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                  </div>
+                                </div>
+                                <div class="block">
+                                  <div class="background-note pui-card m-2 py-3 pl-3 pr-0">
+                                    <div class="block-container">
+                                      <div class="block-10">
+                                        <div class="pui-card__header">
+                                          <strong class="pui-card__group">
+                                            <i class="pi-speech-bubble"></i> John Hammond 00/00/0000
+                                          </strong>
+                                        </div>
+                                        <div class="pui-card__content">
+                                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis sem, iaculis vitae posuere ac, blandit vel neque.
+                                        </div>
+                                      </div>
+                                      <div class="block-2">
+                                        <div class="icon-menu icon-menu--vertical">
+                                          <div class="icon-menu__item">
+                                            <button class="icon-menu__action button--plain text-navy--hover pointer">
+                                              <i class="pi-tag" aria-hidden="hidden"></i>
+                                            </button>
+                                          </div>
+                                          <div class="icon-menu__item">
+                                            <button class="icon-menu__action button--plain text-navy--hover pointer">
+                                              <i class="pi-edit" aria-hidden="hidden"></i>
+                                            </button>
+                                          </div>
+                                          <div class="icon-menu__item">
+                                            <button class="icon-menu__action button--plain text-navy--hover pointer">
+                                              <i class="pi-lock" aria-hidden="hidden"></i>
+                                            </button>
+                                          </div>
+                                          <div class="icon-menu__item">
+                                            <button class="icon-menu__action button--plain text-negative--hover pointer">
+                                              <i class="pi-trash" aria-hidden="hidden"></i>
+                                            </button>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                  </div>
+                                </div>
+
+                              </div>
+                            </div>
+
+                          </div>
+                          <div class="pui-accordion">
+                            <div class="pui-accordion__header p-2 block-container flex--justify-between">
+                              <span class="flex--center-content">
+                                <i class="pi-angle-right text--size-xl mr-3"></i>
+                                <i class="pi-file-text mr-2"></i>
+                                Attachments
+                                <div class="ml-1 pill pill--circle">
+                                  0
+                                </div>
+                              </span>
+                              <span class="flex">
+                                <button class="button mr-2">Add <i class="pi-plus" aria-hidden="true"></i></button>
+                              </span>
+                            </div>
+                            <div class="pui-accordion__content">
+                              <div class="pui-message pui-message--info">
+                                <p>This submission has no attachments.</p>
+                              </div>
+                            </div>
+
+                          </div>
+
+                        </div>
+                    </div>
+                    <!-- End Accordion -->
+                </div>
+                <input type="radio" id="tab-input-b" name="tabs">
+                <label for="tab-input-b" class="pui-tab flex flex--justify-between">
+                    Downlines
+                    <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
+                </label>
+                <div class="pui-tab-panel p-4">
+
+                  <div class="block-container mb-3">
+                    <div class="block block-6 flex flex--align-center">
+                      Showing XX of XXX
+                      <button type="button" class="button button--secondary ml-2" data-button-text="Load more">
+                        <i aria-hidden="true" class="pi-sync"></i>
+                      </button>
+                    </div>
+                    <div class="block block-6 flex flex--justify-end">
+                      <button class="button button--secondary mr-2" data-button-text="Filters">
+                          <i aria-hidden="true" class="pi-filter"></i>
+                      </button>
+                      <button class="button button--secondary mr-2" data-button-text="Export">
+                          <i aria-hidden="true" class="pi-download"></i>
+                      </button>
+                      <button class="button">
+                        Add
+                        <i class="pi-plus" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <!-- Start Accordion -->
+                  <div class="pui-accordion">
+                    <!-- Accordion Header -->
+                      <div class="pui-accordion__header p-2 block-container">
+
+                        <div class="block block-3 flex flex--column">
+                          <span class="text-med-blue">Clover Health Plans</span>
+                          <span class="truncate-with-ellipsis">Clover Health Choice (PPO)</span>
+                          <span><i class="pi-calendar mr-2" aria-hidden="true"></i>00/00/0000</span>
+                        </div>
+
+                        <div class="block block-8">
+                          <div class="block-container tablet-up-5">
+                            <div class="block flex flex--column">
+                              <strong>Client</strong>
+                              John Smith
+                            </div>
+                            <div class="block flex flex--column">
+                              <strong>Agent</strong>
+                              QA Testpass
+                            </div>
+                            <div class="block flex flex--column">
+                              <strong>Processor</strong>
+                              <span>Medicareful</span>
+                              00/00/0000
+                            </div>
+                            <div class="block flex flex--column">
+                              <strong>Source</strong>
+                              <span>Medicareful</span>
+                              <div class="pill pill--circle text-white background-negative">
+                                13
+                              </div>
+                            </div>
+                            <div class="block flex flex--column w-auto">
+                              <strong>Status <div class="pill pill--circle-empty-dot neutral"></div></strong>
+                              Initial
+                              <div class="pill text-white background-neutral">
+                                Incomplete
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="block block-1 flex flex--justify-end">
+                          <div class="icon-menu">
+                            <div class="icon-menu__item">
+                              <button class="icon-menu__action button--plain text-navy--hover pointer">
+                                <i class="pi-sync-clock" aria-hidden="hidden"></i>
+                              </button>
+                            </div>
+                            <div class="icon-menu__item">
+                              <button class="icon-menu__action button--plain text-navy--hover pointer">
+                                <i class="pi-eye" aria-hidden="hidden"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- End Accordion Header -->
+
+                      <!-- Start Accordion Content -->
+                      <div class="pui-accordion__content p-4">
+
+                        <div class="block-container p-2 tablet-up-2 pui-form">
+                          <div class="block-6">
+                            <label for="action" class="pui-form__field">
+                              Action
+                              <div class="pui-form__select-wrapper">
+                                <select name="County Select" id="action">
+                                  <option value="County1">Option</option>
+                                </select>
+                              </div>
+                            </label>
+                          </div>
+
+                        </div>
+                        <!-- History block -->
+                        <div class="block-container mt-3">
+                          <div class="block block-6 flex flex--align-center">
+                            <strong class="text-navy text--size-lg flex"><i class="pi-sync-clock mr-2"></i> History</strong>
+                          </div>
+                          <div class="block block-6 flex flex--justify-end">
+                            <button class="button">Close <i class="pi-times" aria-hidden="true"></i></button>
+                          </div>
+
+                          <div class="block block-12 mt-3">
+                            <table class="pui-table">
+                              <thead>
+                                <tr>
+                                  <th>Type</th>
+                                  <th>Event</th>
+                                  <th>Created By</th>
+                                  <th>Detail</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>Contract</td>
+                                  <td>Create</td>
+                                  <td>
+                                    Medicareful
+                                    <span class="flex">January 7, 2020 10:38 AM</span>
+                                  </td>
+                                  <td>John Smith</td>
+                                </tr>
+                                <tr>
+                                  <td>Contract</td>
+                                  <td>Create</td>
+                                  <td>
+                                    Medicareful
+                                    <span class="flex">January 7, 2020 10:38 AM</span>
+                                  </td>
+                                  <td>John Smith</td>
+                                </tr>
+                                <tr>
+                                  <td>Contract</td>
+                                  <td>Create</td>
+                                  <td>
+                                    Medicareful
+                                    <span class="flex">January 7, 2020 10:38 AM</span>
+                                  </td>
+                                  <td>John Smith</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <div class="block block-12">
+                            <div class="pui-message pui-message--success" data-header="Enrollment #">
+                              <p>123456789 (eligible), Effective 01/01/2020 </p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="pui-accordion">
+                          <div class="pui-accordion__header p-2 block-container flex--justify-between">
+                            <span class="flex--center-content">
+                              <i class="pi-angle-right text--size-xl mr-3"></i>
+                              <i class="pi-note mr-2"></i>
+                              Submission Note
+                              <div class="ml-1 pill pill--circle">
+                                3
+                              </div>
+                            </span>
+                            <span class="flex">
+                              <button class="button mr-2">Add <i class="pi-plus" aria-hidden="true"></i></button>
+                              <button class="button">View All <i class="pi-arrow-right" aria-hidden="true"></i></button>
+                            </span>
+                          </div>
+                          <div class="pui-accordion__content">
+                            <div class="block-container blocks tablet-up-3 flex--align-center flex--justify-between overflow-x--scroll">
+                              <div class="block">
+                                <div class="background-note pui-card m-2 py-3 pl-3 pr-0">
+                                  <div class="block-container">
+                                    <div class="block-10">
+                                      <div class="pui-card__header">
+                                        <strong class="pui-card__group">
+                                          <i class="pi-speech-bubble"></i> John Hammond 00/00/0000
+                                        </strong>
+                                      </div>
+                                      <div class="pui-card__content">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis sem, iaculis vitae posuere ac, blandit vel neque.
+                                      </div>
+                                    </div>
+                                    <div class="block-2">
+                                      <div class="icon-menu icon-menu--vertical">
+                                        <div class="icon-menu__item">
+                                          <button class="icon-menu__action button--plain text-navy--hover pointer">
+                                            <i class="pi-tag" aria-hidden="hidden"></i>
+                                          </button>
+                                        </div>
+                                        <div class="icon-menu__item">
+                                          <button class="icon-menu__action button--plain text-navy--hover pointer">
+                                            <i class="pi-edit" aria-hidden="hidden"></i>
+                                          </button>
+                                        </div>
+                                        <div class="icon-menu__item">
+                                          <button class="icon-menu__action button--plain text-navy--hover pointer">
+                                            <i class="pi-lock" aria-hidden="hidden"></i>
+                                          </button>
+                                        </div>
+                                        <div class="icon-menu__item">
+                                          <button class="icon-menu__action button--plain text-negative--hover pointer">
+                                            <i class="pi-trash" aria-hidden="hidden"></i>
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                </div>
+                              </div>
+                              <div class="block">
+                                <div class="background-note pui-card m-2 py-3 pl-3 pr-0">
+                                  <div class="block-container">
+                                    <div class="block-10">
+                                      <div class="pui-card__header">
+                                        <strong class="pui-card__group">
+                                          <i class="pi-speech-bubble"></i> John Hammond 00/00/0000
+                                        </strong>
+                                      </div>
+                                      <div class="pui-card__content">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis sem, iaculis vitae posuere ac, blandit vel neque.
+                                      </div>
+                                    </div>
+                                    <div class="block-2">
+                                      <div class="icon-menu icon-menu--vertical">
+                                        <div class="icon-menu__item">
+                                          <button class="icon-menu__action button--plain text-navy--hover pointer">
+                                            <i class="pi-tag" aria-hidden="hidden"></i>
+                                          </button>
+                                        </div>
+                                        <div class="icon-menu__item">
+                                          <button class="icon-menu__action button--plain text-navy--hover pointer">
+                                            <i class="pi-edit" aria-hidden="hidden"></i>
+                                          </button>
+                                        </div>
+                                        <div class="icon-menu__item">
+                                          <button class="icon-menu__action button--plain text-navy--hover pointer">
+                                            <i class="pi-lock" aria-hidden="hidden"></i>
+                                          </button>
+                                        </div>
+                                        <div class="icon-menu__item">
+                                          <button class="icon-menu__action button--plain text-negative--hover pointer">
+                                            <i class="pi-trash" aria-hidden="hidden"></i>
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                </div>
+                              </div>
+                              <div class="block">
+                                <div class="background-note pui-card m-2 py-3 pl-3 pr-0">
+                                  <div class="block-container">
+                                    <div class="block-10">
+                                      <div class="pui-card__header">
+                                        <strong class="pui-card__group">
+                                          <i class="pi-speech-bubble"></i> John Hammond 00/00/0000
+                                        </strong>
+                                      </div>
+                                      <div class="pui-card__content">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis sem, iaculis vitae posuere ac, blandit vel neque.
+                                      </div>
+                                    </div>
+                                    <div class="block-2">
+                                      <div class="icon-menu icon-menu--vertical">
+                                        <div class="icon-menu__item">
+                                          <button class="icon-menu__action button--plain text-navy--hover pointer">
+                                            <i class="pi-tag" aria-hidden="hidden"></i>
+                                          </button>
+                                        </div>
+                                        <div class="icon-menu__item">
+                                          <button class="icon-menu__action button--plain text-navy--hover pointer">
+                                            <i class="pi-edit" aria-hidden="hidden"></i>
+                                          </button>
+                                        </div>
+                                        <div class="icon-menu__item">
+                                          <button class="icon-menu__action button--plain text-navy--hover pointer">
+                                            <i class="pi-lock" aria-hidden="hidden"></i>
+                                          </button>
+                                        </div>
+                                        <div class="icon-menu__item">
+                                          <button class="icon-menu__action button--plain text-negative--hover pointer">
+                                            <i class="pi-trash" aria-hidden="hidden"></i>
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                </div>
+                              </div>
+
+                            </div>
+                          </div>
+
+                        </div>
+                        <div class="pui-accordion">
+                          <div class="pui-accordion__header p-2 block-container flex--justify-between">
+                            <span class="flex--center-content">
+                              <i class="pi-angle-right text--size-xl mr-3"></i>
+                              <i class="pi-file-text mr-2"></i>
+                              Attachments
+                              <div class="ml-1 pill pill--circle">
+                                0
+                              </div>
+                            </span>
+                            <span class="flex">
+                              <button class="button mr-2">Add <i class="pi-plus" aria-hidden="true"></i></button>
+                            </span>
+                          </div>
+                          <div class="pui-accordion__content">
+                            <div class="pui-message pui-message--info">
+                              <p>This submission has no attachments.</p>
+                            </div>
+                          </div>
+
+                        </div>
+
+                      </div>
+                  </div>
+                  <!-- End Accordion -->
+                </div>
+                <input type="radio" id="tab-input-c" name="tabs">
+                <label for="tab-input-c" class="pui-tab flex flex--justify-between">
+                    Uploads
+                    <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
+                </label>
+                <div class="pui-tab-panel p-4">
+                    <div class="block-container mb-3">
+                      <div class="block block-6 flex flex--align-center">
+                        Showing XX of XXX
+                        <button type="button" class="button button--secondary ml-2" data-button-text="Load more">
+                          <i aria-hidden="true" class="pi-sync"></i>
+                        </button>
+                      </div>
+                      <div class="block block-6 flex flex--justify-end">
+                        <button class="button button--secondary mr-2" data-button-text="Filters">
+                            <i aria-hidden="true" class="pi-filter"></i>
+                        </button>
+                        <button class="button">
+                          Add
+                          <i class="pi-plus" aria-hidden="true"></i>
+                        </button>
+                      </div>
+                    </div>
+
+                    <!-- Start Accordion -->
+                    <div class="pui-accordion">
+                      <!-- Accordion Header -->
+                        <div class="pui-accordion__header p-2 block-container tablet-up-5">
+
+                          <div class="block flex flex--column">
+                            <strong class="text-med-blue">Johns Hopkins</strong>
+                            <span><i class="pi-calendar mr-2"></i>02/26/2020 3:37pm ET</span>
+                          </div>
+                          <div class="block flex flex--column">
+                            <strong>Client</strong>
+                            Edge Upload Test
+                          </div>
+                          <div class="block flex flex--column">
+                            <strong>Agent</strong>
+                            Bill Long
+                          </div>
+                          <div class="block flex flex--column">
+                            <strong>Type</strong>
+                            New
+                          </div>
+                          <div class="block flex flex--column">
+                            <strong>
+                              Status
+                              <div class="pill pill--circle-empty-dot positive"></div>
+                            </strong>
+                            Received
+                          </div>
+                        </div>
+                        <!-- End Accordion Header -->
+
+                        <!-- Start Accordion Content -->
+                        <div class="pui-accordion__content px-2">
+
+                          <div class="pui-accordion">
+                            <div class="pui-accordion__header p-2 block-container flex--justify-between">
+                              <span class="flex--center-content">
+                                <i class="pi-angle-right text--size-xl mr-3"></i>
+                                <i class="pi-file-text mr-2"></i>
+                                Attachments
+                                <div class="ml-1 pill pill--circle">
+                                  1
+                                </div>
+                              </span>
+                              <span class="flex">
+                                <button class="button mr-2">Add <i class="pi-plus" aria-hidden="true"></i></button>
+                              </span>
+                            </div>
+                            <div class="pui-accordion__content">
+                              <table class="pui-table">
+                                <tbody>
+                                  <tr>
+                                    <td>
+                                      <div class="icon-menu">
+                                        <div class="icon-menu__item">
+                                          <button class="icon-menu__action button--plain text-navy--hover pointer">
+                                            <i class="pi-download" aria-hidden="hidden"></i>
+                                          </button>
+                                        </div>
+                                        <div class="icon-menu__item">
+                                          <button class="icon-menu__action button--plain text-navy--hover pointer">
+                                            <i class="pi-eye" aria-hidden="hidden"></i>
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </td>
+                                    <td class="w-100">
+                                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.pdf
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+
+                          </div>
+
+                        </div>
+                    </div>
+                    <!-- End Accordion -->
+                </div>
+                <input type="radio" id="tab-input-d" name="tabs">
+                <label for="tab-input-d" class="pui-tab flex flex--justify-between">
+                    Enrollments
+                    <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
+                </label>
+                <div class="pui-tab-panel p-4">
+                  <div class="block-container mb-3">
+                    <div class="block block-6 flex flex--align-center">
+                      Showing XX of XXX
+                      <button type="button" class="button button--secondary ml-2" data-button-text="Load more">
+                        <i aria-hidden="true" class="pi-sync"></i>
+                      </button>
+                    </div>
+                    <div class="block block-6 flex flex--justify-end mb-3">
+                      <button class="button button--secondary mr-2" data-button-text="Filters">
+                          <i aria-hidden="true" class="pi-filter"></i>
+                      </button>
+                      <button class="button button--secondary mr-2" data-button-text="Stats">
+                          <i aria-hidden="true" class="pi-chart-bar"></i>
+                      </button>
+                      <button class="button button--secondary mr-2" data-button-text="Export">
+                          <i aria-hidden="true" class="pi-download"></i>
+                      </button>
+                      <button class="button">
+                        Add
+                        <i class="pi-plus" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                    <div class="block block-6">
+                      <strong class="text-navy text--size-lg flex">
+                        <i class="pi-chart-bar mr-2"></i>
+                        Statistics
+                      </strong>
+                    </div>
+                    <div class="block block-6 flex flex--justify-end mb-2">
+                      <button class="button">
+                        Close
+                        <i class="pi-times" aria-hidden="true"></i>
+                      </button>
+                    </div>
+
+                    <table class="pui-table">
+                      <thead>
+                        <tr>
+                          <td>Carrier</td>
+                          <td>Counts</td>
+                          <td>Last Updated</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="med-blue-text">Excellus</td>
+                          <td>34,021</td>
+                          <td>March 1, 2020 10:00 AM</td>
+                        </tr>
+                        <tr>
+                          <td>Excellus</td>
+                          <td>34,021</td>
+                          <td>March 1, 2020 10:00 AM</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <table class="pui-table">
+                      <thead>
+                        <tr>
+                          <td>Carrier</td>
+                          <td>Client Name/Member ID</td>
+                          <td>Agent Name</td>
+                          <td>Effective Date</td>
+                          <td>Plan Name</td>
+                          <td>Carrier Status</td>
+                          <td>Status</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Carrier Name</td>
+                          <td class="flex flex--column">
+                            <span>Client Name</span>
+                            <span><i class="pi-badge"></i> 123456789</span>
+                          </td>
+                          <td>Agent Name</td>
+                          <td>00/00/0000</td>
+                          <td>Keystone 65 Basic RX HMO</td>
+                          <td>Pending</td>
+                          <td class="flex">
+                            <div class="pill pill--circle-empty-dot positive"></div>
+                            Enrolled
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="block mt-6 lg-tablet-up-4 laptop-up-3">
+          <div class="pui-card text-base background-note mt-2 p-4 h-auto">
+
+            <div class="pui-card__header">
+              <div class="pui-card__group">
+                <button title="Add Note" aria-label="Add Note" class="button button--secondary">
+                    <i aria-hidden="true" class="pi-plus"></i>
+                </button>
+                <strong class="text-navy text--size-lg">Notes</strong>
+              </div>
+              <button class="button">
+                  View All 27
+                  <i aria-hidden="true" class="pi-arrow-right"></i>
+              </button>
+            </div>
+            <ol class="pui-list pui-list--bordered">
+              <li class="pui-list__item py-3">
+                <strong class="" title="Last edited by Ted Krueger 01/27/2020">
+                  <i aria-hidden="true" class="pi-speech-bubble text-light"></i>
+                  Ted Krueger 01/27/2020
+                </strong>
+                <p class="pt-2">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tristique viverra posuere. Pellentesque vitae turpis a lectus rutrum finibus. Fusce vitae sapien et purus fermentum feugiat. Donec finibus ante vel risus euismod lobortis. Morbi vehicula posuere dolor, et eleifend metus cursus eget. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec dapibus porttitor consectetur. Etiam fringilla arcu in urna placerat, vel mollis turpis malesuada. Aliquam pharetra, tellus a varius pharetra, urna ligula tempus eros, ac porttitor arcu magna sed ex.
+                </p>
+                <div class="pill text-salmon">
+                  Something
+                </div>
+                <div class="pill text-salmon">
+                  Something
+                </div>
+                <div class="flex flex--column flex--align-center">
+                  <div class="icon-menu py-2 flex--justify-center">
+                    <div class="icon-menu__item">
+                      <button class="icon-menu__action button--plain text-navy--hover pointer">
+                        <i class="pi-tag" aria-hidden="hidden"></i>
+                      </button>
+                    </div>
+                    <div class="icon-menu__item">
+                      <button class="icon-menu__action button--plain text-navy--hover pointer">
+                        <i class="pi-edit" aria-hidden="hidden"></i>
+                      </button>
+                    </div>
+                    <div class="icon-menu__item">
+                      <button class="icon-menu__action button--plain text-navy--hover pointer">
+                        <i class="pi-lock" aria-hidden="hidden"></i>
+                      </button>
+                    </div>
+                    <div class="icon-menu__item">
+                      <button class="icon-menu__action button--plain text-negative--hover pointer">
+                        <i class="pi-trash" aria-hidden="hidden"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <i class="pi-angle-down-double text--size-lg rotate-180"></i>
+                </div>
+              </li>
+              <li class="pui-list__item py-3">
+                <strong class="" title="Last edited by Ted Krueger 01/27/2020">
+                  <i aria-hidden="true" class="pi-speech-bubble text-light"></i>
+                  Ted Krueger 01/27/2020
+                </strong>
+                <p class="pt-2 truncate-with-ellipsis">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tristique viverra posuere. Pellentesque vitae turpis a lectus rutrum finibus. Fusce vitae sapien et purus fermentum feugiat. Donec finibus ante vel risus euismod lobortis. Morbi vehicula posuere dolor, et eleifend metus cursus eget. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec dapibus porttitor consectetur. Etiam fringilla arcu in urna placerat, vel mollis turpis malesuada. Aliquam pharetra, tellus a varius pharetra, urna ligula tempus eros, ac porttitor arcu magna sed ex. Donec rutrum ante quis lectus elementum, sed venenatis elit interdum. Integer rhoncus nibh vel libero porta scelerisque. Etiam gravida sit amet turpis in pellentesque.
+                </p>
+                <div class="pill text-salmon">
+                  Something
+                </div>
+                <div class="flex flex--column flex--align-center">
+                  <div class="icon-menu py-2 flex--justify-center hidden">
+                    <div class="icon-menu__item">
+                      <button class="icon-menu__action button--plain text-navy--hover pointer">
+                        <i class="pi-tag" aria-hidden="hidden"></i>
+                      </button>
+                    </div>
+                    <div class="icon-menu__item">
+                      <button class="icon-menu__action button--plain text-navy--hover pointer">
+                        <i class="pi-edit" aria-hidden="hidden"></i>
+                      </button>
+                    </div>
+                    <div class="icon-menu__item">
+                      <button class="icon-menu__action button--plain text-navy--hover pointer">
+                        <i class="pi-lock" aria-hidden="hidden"></i>
+                      </button>
+                    </div>
+                    <div class="icon-menu__item">
+                      <button class="icon-menu__action button--plain text-negative--hover pointer">
+                        <i class="pi-trash" aria-hidden="hidden"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <i class="pi-angle-down-double text--size-lg"></i>
+                </div>
+              </li>
+            </ol>
+        </div>
+
+
+    </div>
+  </main>
+
+  <script src="/src/assets/js/platform-ui.min.js"></script>
+</body>
+</html>

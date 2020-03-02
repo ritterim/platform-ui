@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Submissions staff agent view</title>
+
+  <link rel="stylesheet" href="/src/assets/stylesheets/platform-ui.min.css">
+
+</head>
+
+<body class="flex flex--column">
+  <div class="pui-modal pui-modal--full" tabindex="-1">
+    <div class="pui-modal__inner animated slideInUp faster">
+      <div class="pui-modal__header flex flex--justify-between">
+        <span>
+          <strong>You are in key entry mode</strong>
+          <div class="pill text-white background-neutral">
+            Initial
+          </div>
+          <div class="pill text-white background-negative">
+            Incomplete
+          </div>
+        </span>
+        <span class="flex">
+          <button class="button button--secondary mr-2" data-button-text="Print">
+            <i class="pi-file-form"></i>
+          </button>
+          <button class="button">
+            Close
+            <i class="pi-times"></i>
+          </button>
+        </span>
+      </div>
+      <div class="pui-modal__content p-0 pui-form">
+        <div class="block-container h-100">
+          <div class="block block-9 overflow-y--scroll p-4">
+            <div class="pui-message pui-message--info mx-3">
+              <div class="block-container tablet-up-3">
+                <div class="block flex flex--column">
+                  <strong>Aetna</strong>
+                  Aetna Medicare 2020
+                  <strong>Client</strong>
+                  John Hammond
+                </div>
+                <div class="block flex flex--column">
+                  <strong>Agent</strong>
+                  Bill Long
+                  <strong>Source</strong>
+                  RAMS (#R4ITAWDG7H)
+                </div>
+                <div class="block flex flex--column">
+                  <strong>Processor</strong>
+                  That guy
+                  <strong>Keyed</strong>
+                  <i class="pi-ban"></i>
+                </div>
+              </div>
+            </div>
+            <section>
+              <header>
+                <h2>Plan Picker</h2>
+              </header>
+              <div class="block-container blocks p-2 tablet-up-4">
+                <div class="block">
+                  <label>Effective Date
+                    <input type="date">
+                  </label>
+                </div>
+                <div class="block">
+                  <label>Residence Zip
+                    <input type="text" maxlength="5">
+                  </label>
+                </div>
+                <div class="block">
+                  <label for="county" class="pui-form__field">Residence County
+                    <div class="pui-form__select-wrapper mt-0">
+                      <select name="County Select" id="county">
+                        <option value="County1">County 1</option>
+                      </select>
+                    </div>
+                  </label>
+                </div>
+                <div class="block flex--center-content">
+                  <button class="button button--secondary has-text">
+                    <i class="pi-sync" aria-hidden="true"></i> Get plans
+                  </button>
+                </div>
+              </div>
+
+            </section>
+
+            <section>
+              <header>
+                <h2>Cover sheet</h2>
+                <label for="psoa" class="pui-form__field error">Is Paper SoA Attached
+                  <div class="pui-form__select-wrapper mt-0">
+                    <select name="County Select" id="psoa">
+                      <option value=""></option>
+                      <option value="yes">yes</option>
+                      <option value="no">no</option>
+                    </select>
+                  </div>
+                </label>
+              </header>
+            </section>
+            <section>
+              <header>
+                <h2>Dental plan</h2>
+                <label for="dental" class="pui-form__field error">Dental plan
+                  <div class="pui-form__select-wrapper mt-0">
+                    <select name="County Select" id="dental">
+                      <option value=""></option>
+                    </select>
+                  </div>
+                </label>
+              </header>
+            </section>
+            <section>
+              <header>
+                <h2>Confirm your enrollment period</h2>
+              </header>
+
+              <input class="pui-form__checkbox" id="aep" type="checkbox">
+              <label for="aep">
+                <div class="input-icons">
+                  <i class="pi-circle"></i>
+                  <i class="pi-check pi-heavy"></i>
+                </div>
+                AEP - I am enrolling during the Annual Open Enrollment Period from October 15 to December 7.
+              </label>
+
+              <input class="pui-form__checkbox" id="oep" type="checkbox">
+              <label for="oep">
+                <div class="input-icons">
+                  <i class="pi-circle"></i>
+                  <i class="pi-check pi-heavy"></i>
+                </div>
+                OEP - I am enrolled in a Medicare Advantage plan and want to make a change during the Medicare Advantage Open Enrollment Period (MA OEP).
+              </label>
+
+              <input class="pui-form__checkbox" id="mov" type="checkbox">
+              <label for="mov">
+                <div class="input-icons">
+                  <i class="pi-circle"></i>
+                  <i class="pi-check pi-heavy"></i>
+                </div>
+                MOV - I recently moved outside of the service area for my current plan or I recently moved and this plan is a new option for me. I moved on:
+              </label>
+              <input type="date">
+
+            </section>
+
+            <div class="block-container pos-fix pin-bottom pb-4">
+              <button class="button button--post button--lg border border--color-white mr-2">
+                <i class="pi-save"></i>
+                Save
+              </button>
+              <button class="button button--post button--lg">
+                Submit
+              </button>
+
+            </div>
+          </div>
+          <!-- End block-9 -->
+
+          <div class="block block-3 overflow-y--scroll">
+            <div class="pui-message pui-message--warning m-0">
+              <ul class="pui-list">
+                <li>This is the agent's first application.</li>
+              </ul>
+            </div>
+            <div class="pui-message pui-message--error m-0 h-100">
+              <ul class="pui-list">
+                <li>Is Paper SoA Attached:
+                  <ul>
+                    <li>Required</li>
+                  </ul>
+                </li>
+                <li>Dental Plan:
+                  <ul>
+                    <li>Required</li>
+                  </ul>
+                </li>
+                <li>eligibilityreasons:
+                  <ul>
+                    <li>Required</li>
+                  </ul>
+                </li>
+                <li>Birthdate:
+                  <ul>
+                    <li>Required</li>
+                  </ul>
+                </li>
+                <li>Gender:
+                  <ul>
+                    <li>Required</li>
+                  </ul>
+                </li>
+                <li>Home phone number:
+                  <ul>
+                    <li>Required</li>
+                  </ul>
+                </li>
+                <li>Address 1:
+                  <ul>
+                    <li>Required</li>
+                  </ul>
+                </li>
+                <li>City:
+                  <ul>
+                    <li>Required</li>
+                  </ul>
+                </li>
+                <li>Mailing Address Different:
+                  <ul>
+                    <li>Required</li>
+                  </ul>
+                </li>
+                <li>Do you have ESRD:
+                  <ul>
+                    <li>Required</li>
+                  </ul>
+                </li>
+                <li>Continue other prescription drug coverage:
+                  <ul>
+                    <li>Required</li>
+                  </ul>
+                </li>
+                <li>Resident in a LTC facility:
+                  <ul>
+                    <li>Required</li>
+                  </ul>
+                </li>
+                <li>Enrolled in your State Medicaid program:
+                  <ul>
+                    <li>Required</li>
+                  </ul>
+                </li>
+                <li>Do you or your spouse work:
+                  <ul>
+                    <li>Required</li>
+                  </ul>
+                </li>
+                <li>Medicare Number:
+                  <ul>
+                    <li>Required</li>
+                  </ul>
+                </li>
+                <li>Part A Effective Date:
+                  <ul>
+                    <li>Required</li>
+                  </ul>
+                </li>
+                <li>Part B Effective Date:
+                  <ul>
+                    <li>Required</li>
+                  </ul>
+                </li>
+                <li>Payment Option:
+                  <ul>
+                    <li>Required</li>
+                  </ul>
+                </li>
+                <li>Client Signature Date:
+                  <ul>
+                    <li>Required</li>
+                  </ul>
+                </li>
+                <li>Effective Date:
+                  <ul>
+                    <li>Required</li>
+                  </ul>
+                </li>
+                <li>Has Authorized Representative:
+                  <ul>
+                    <li>Required</li>
+                  </ul>
+                </li>
+                <li>Agent Signed:
+                  <ul>
+                    <li>Required</li>
+                  </ul>
+                </li>
+                <li>Keyed:
+                  <ul>
+                    <li>Required</li>
+                  </ul>
+                </li>
+                <li>Both agent and client signed:
+                  <ul>
+                    <li>Required</li>
+                  </ul>
+                </li>
+                <li>quoteResult:
+                  <ul>
+                    <li>Cannot find plan:
+                      • Plan Year is missing.
+                      • ExternalPlanId is missing.</li>
+                  </ul>
+                </li>
+                <li>applicationDates:
+                  <ul>
+                    <li>Required</li>
+                  </ul>
+                </li>
+                <li>plan.externalPlanId:
+                  <ul>
+                    <li>Required</li>
+                  </ul>
+                </li>
+                <li>plan.year:
+                  <ul>
+                    <li>Required</li>
+                  </ul>
+                </li>
+                <li>contract:
+                  <ul>
+                    <li>Cannot find contract:
+                      • Plan is missing.
+                      • Plan Year is missing.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/src/assets/js/platform-ui.min.js"></script>
+</body>
+
+</html>
