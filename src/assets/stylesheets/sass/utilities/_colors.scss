@@ -102,3 +102,19 @@ $platform-colors: map.merge(config.$platform-colors, $platform-colors);
     }
   }
 }
+
+// error Colors
+@if meta.type-of(variables.$error-colors) == 'map' {
+  @each $name, $color in variables.$error-colors {
+    // text color
+    .text-#{$name} {
+      border-color: $color !important;
+      color: $color !important;
+      transition: .2s;
+    }
+    // background color
+    .background-#{$name} {
+      background-color: $color !important;
+    }
+  }
+}
