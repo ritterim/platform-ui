@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Submissions staff agent view</title>
+
+  <link rel="stylesheet" href="/src/assets/stylesheets/platform-ui.min.css">
+  <style>
+    /*
+     *  This css will need to live in the platform along with custom
+     *  mobile menu css.
+     */
+    .site-header--fixed {
+      height: calc(var(--pui-menu-height) * 2 )!important;
+    }
+    .site-header--fixed + .header-fixed {
+      margin-top: calc(var(--pui-menu-height) * 2 )!important;
+    }
+  </style>
+
+</head>
+<body class="flex flex--column">
+  <header class="site-header site-header--fixed">
+    <nav class="site-menu primary inverted">
+        <a href="/demo-pages/crm-example.html" class="site-menu__item">
+            <span class="card__header-icon pill--circle-medium background-purple text-white mr-2">
+                D
+            </span>
+            <span class="text--size-lg">
+                Hello Dev
+            </span>
+        </a>
+        <div class="site-menu__item search">
+            <form role="search" aria-label="CRM" _lpchecked="1" class="w-100">
+                <div class="flex flex--align-center">
+                    <label for="search-input" class="sr-only">Search</label>
+                    <input type="text" id="search-input" placeholder="Type to search..." class="placeholder--light text-white">
+                    <i aria-hidden="true" class="pi-search"></i>
+                </div>
+            </form>
+        </div>
+        <div class="site-menu__item has-dropdown" tabindex="0">
+            Organizations <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+            <div class="dropdown-menu pin-right">
+                <a href="#" class="dropdown-menu__item">
+                    dropdown
+                </a>
+            </div>
+        </div>
+        <div class="site-menu__item has-dropdown" tabindex="0">
+            People <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+            <div class="dropdown-menu pin-right">
+                <a href="#" class="dropdown-menu__item">
+                    dropdown
+                </a>
+            </div>
+        </div>
+        <div class="site-menu__item has-dropdown" tabindex="0">
+            Flow <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+            <div class="dropdown-menu pin-right">
+                <a href="#" class="dropdown-menu__item">
+                    dropdown
+                </a>
+            </div>
+        </div>
+        <div class="site-menu__item has-dropdown" tabindex="0">
+            <span class="sr-only">RIMDev</span>
+            <span class="pill--circle-medium background-white text-navy">
+                <i class="pi-rimdev text--size-xl" aria-hidden="true"></i>
+            </span>
+            <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+            <div class="dropdown-menu pin-right">
+                <a href="#" class="dropdown-menu__item">
+                    dropdown
+                </a>
+            </div>
+        </div>
+        <div class="site-menu__item has-dropdown" tabindex="0">
+            Recent <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+            <div class="dropdown-menu pin-right">
+                <a href="#" class="dropdown-menu__item">
+                    dropdown
+                </a>
+            </div>
+        </div>
+    </nav>
+    <nav class="site-menu flex--justify-between">
+        <div class="site-menu__item has-dropdown">
+          <span class="card__header-icon pill--circle-medium background-salmon text-white mr-2">
+              GG
+          </span>
+          <div class="text--size-lg">
+            Greg Gudis
+          </div>
+          <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+          <div class="dropdown-menu pin-right">
+            <a href="#" class="dropdown-menu__item background-white">
+              <div class="pill background-olive">
+                Active
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="flex">
+            <div class="site-menu__item">
+                Contracts
+            </div>
+            <div class="site-menu__item active">
+                Submissions
+            </div>
+            <div class="site-menu__item">
+                Hierarchy
+            </div>
+            <div class="site-menu__item">
+                Memberships
+            </div>
+            <div class="site-menu__item">
+                Licenses
+            </div>
+            <div class="site-menu__item">
+                Reports
+            </div>
+            <div class="site-menu__item">
+                <i class="pi-phone"></i>
+            </div>
+            <div class="site-menu__item">
+                <i class="pi-file-cabinet"></i>
+                <div class="ml-1 pill pill--circle text-navy">
+                  33
+                </div>
+            </div>
+            <div class="site-menu__item">
+                <i class="pi-gavel"></i>
+                <div class="pill pill--split text-white background-navy">
+                  <div class="pill__content background-salmon">5</div>
+                  <div class="pill__content background-olive">2</div>
+                  <div class="pill__content background-skyblue">13</div>
+                </div>
+            </div>
+        </div>
+    </nav>
+  </header>
+  <main class="header-fixed background-light-mid flex--grow py-4 px-5">
+    <div class="block-container blocks px-3 mb-4">
+        <div class="block lg-tablet-up-8 laptop-up-9">
+            <div class="block-container flex--justify-end mb-4">
+            </div>
+            <div class="pui-tabs">
+              <input type="radio" id="tab-input-a" name="tabs" checked>
+              <label for="tab-input-a" class="pui-tab flex flex--justify-between">
+                  Submissions
+                  <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
+              </label>
+              <div class="pui-tab-panel p-4">
+                <div class="block-container mb-3">
+                  <div class="block block-6 flex flex--align-center">
+                    Showing XX of XXX
+                    <button type="button" class="button button--secondary ml-2" data-button-text="Load more">
+                      <i aria-hidden="true" class="pi-sync"></i>
+                    </button>
+                  </div>
+                  <div class="block block-6 flex flex--justify-end">
+                    <button class="button button--secondary mr-2 pui-drawer__open" data-button-text="Filters" data-drawer="filters">
+                        <i aria-hidden="true" class="pi-filter"></i>
+                    </button>
+                    <button class="button button--secondary mr-2" data-button-text="Export">
+                        <i aria-hidden="true" class="pi-download"></i>
+                    </button>
+                    <button class="button pui-modal__open" data-modal="large-modal">
+                      Add
+                      <i class="pi-plus" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                </div>
+                <p>Click the filter and Add buttons.</p>
+              </div>
+
+            </div>
+
+            <div id="filters" class="pui-drawer pui-drawer-right pui-drawer--closed animated slideInRight">
+              <div class="flex flex--align-center flex--justify-between background-lightblue p-4">
+                <div class="flex flex--align-center">
+                  <strong class="text-navy text--size-lg">Filters</strong>
+                  <button class="button button--secondary ml-2" data-button-text="Clear">
+                    <i class="pi-sync"></i>
+                  </button>
+                </div>
+                <button class="button pui-drawer__close" data-drawer="right" data-drawer="filters">Close <i class="pi-times" aria-hidden="true"></i></button>
+              </div>
+              <div class="block-container p-4 pui-form">
+                <div class="block">
+                  <label for="carrier" class="pui-form__field">Carrier
+                    <input id="carrier" type="text" placeholder="Choose">
+                  </label>
+                  <label for="client-name" class="pui-form__field">Client
+                    <input id="client-name" type="text" placeholder="Type to search">
+                  </label>
+                </div>
+                <div class="block">
+                  <span class="flex my-4">
+                    <strong class="text-navy text--size-lg">Filter by status</strong>
+                    <button class="button button--secondary ml-2" data-button-text="Clear">
+                      <i class="pi-sync"></i>
+                    </button>
+                  </span>
+                </div>
+                <div class="block">
+                  <div class="pill text-med-blue pointer mb-2">
+                    Active
+                  </div>
+                  <div class="pill background-med-blue text-white pointer mb-2">
+                    Active
+                    <i class="pi-check ml-1"></i>
+                  </div>
+                  <div class="pill text-med-blue pointer mb-2">
+                    Active
+                  </div>
+                  <div class="pill text-med-blue pointer mb-2">
+                    Active
+                  </div>
+                  <div class="pill text-med-blue pointer mb-2">
+                    Active
+                  </div>
+                  <div class="pill text-med-blue pointer mb-2">
+                    Active
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="block mt-6 lg-tablet-up-4 laptop-up-3">
+          <div class="pui-card text-base background-note mt-2 p-4 h-auto">
+
+            <div class="pui-card__header">
+              <div class="pui-card__group">
+                <button title="Add Note" aria-label="Add Note" class="button button--secondary">
+                    <i aria-hidden="true" class="pi-plus"></i>
+                </button>
+                <strong class="text-navy text--size-lg">Notes</strong>
+              </div>
+              <button class="button">
+                  View All 27
+                  <i aria-hidden="true" class="pi-arrow-right"></i>
+              </button>
+            </div>
+            <ol class="pui-list pui-list--bordered">
+              <li class="pui-list__item py-3">
+                <strong class="" title="Last edited by Ted Krueger 01/27/2020">
+                  <i aria-hidden="true" class="pi-speech-bubble text-light"></i>
+                  Ted Krueger 01/27/2020
+                </strong>
+                <p class="pt-2">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tristique viverra posuere. Pellentesque vitae turpis a lectus rutrum finibus. Fusce vitae sapien et purus fermentum feugiat. Donec finibus ante vel risus euismod lobortis. Morbi vehicula posuere dolor, et eleifend metus cursus eget. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec dapibus porttitor consectetur. Etiam fringilla arcu in urna placerat, vel mollis turpis malesuada. Aliquam pharetra, tellus a varius pharetra, urna ligula tempus eros, ac porttitor arcu magna sed ex.
+                </p>
+                <div class="pill text-salmon">
+                  Something
+                </div>
+                <div class="pill text-salmon">
+                  Something
+                </div>
+                <div class="flex flex--column flex--align-center">
+                  <div class="icon-menu py-2 flex--justify-center">
+                    <div class="icon-menu__item">
+                      <button class="icon-menu__action button--plain text-navy--hover pointer">
+                        <i class="pi-tag" aria-hidden="hidden"></i>
+                      </button>
+                    </div>
+                    <div class="icon-menu__item">
+                      <button class="icon-menu__action button--plain text-navy--hover pointer">
+                        <i class="pi-edit" aria-hidden="hidden"></i>
+                      </button>
+                    </div>
+                    <div class="icon-menu__item">
+                      <button class="icon-menu__action button--plain text-navy--hover pointer">
+                        <i class="pi-lock" aria-hidden="hidden"></i>
+                      </button>
+                    </div>
+                    <div class="icon-menu__item">
+                      <button class="icon-menu__action button--plain text-negative--hover pointer">
+                        <i class="pi-trash" aria-hidden="hidden"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <i class="pi-angle-down-double text--size-lg rotate-180"></i>
+                </div>
+              </li>
+              <li class="pui-list__item py-3">
+                <strong class="" title="Last edited by Ted Krueger 01/27/2020">
+                  <i aria-hidden="true" class="pi-speech-bubble text-light"></i>
+                  Ted Krueger 01/27/2020
+                </strong>
+                <p class="pt-2 truncate-with-ellipsis">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tristique viverra posuere. Pellentesque vitae turpis a lectus rutrum finibus. Fusce vitae sapien et purus fermentum feugiat. Donec finibus ante vel risus euismod lobortis. Morbi vehicula posuere dolor, et eleifend metus cursus eget. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec dapibus porttitor consectetur. Etiam fringilla arcu in urna placerat, vel mollis turpis malesuada. Aliquam pharetra, tellus a varius pharetra, urna ligula tempus eros, ac porttitor arcu magna sed ex. Donec rutrum ante quis lectus elementum, sed venenatis elit interdum. Integer rhoncus nibh vel libero porta scelerisque. Etiam gravida sit amet turpis in pellentesque.
+                </p>
+                <div class="pill text-salmon">
+                  Something
+                </div>
+                <div class="flex flex--column flex--align-center">
+                  <div class="icon-menu py-2 flex--justify-center hidden">
+                    <div class="icon-menu__item">
+                      <button class="icon-menu__action button--plain text-navy--hover pointer">
+                        <i class="pi-tag" aria-hidden="hidden"></i>
+                      </button>
+                    </div>
+                    <div class="icon-menu__item">
+                      <button class="icon-menu__action button--plain text-navy--hover pointer">
+                        <i class="pi-edit" aria-hidden="hidden"></i>
+                      </button>
+                    </div>
+                    <div class="icon-menu__item">
+                      <button class="icon-menu__action button--plain text-navy--hover pointer">
+                        <i class="pi-lock" aria-hidden="hidden"></i>
+                      </button>
+                    </div>
+                    <div class="icon-menu__item">
+                      <button class="icon-menu__action button--plain text-negative--hover pointer">
+                        <i class="pi-trash" aria-hidden="hidden"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <i class="pi-angle-down-double text--size-lg"></i>
+                </div>
+              </li>
+            </ol>
+        </div>
+
+
+    </div>
+    <div id="large-modal" class="pui-modal pui-modal--large pui-modal--closed" tabindex="-1">
+      <div class="pui-modal__inner animated slideInUp faster">
+        <div class="pui-modal__header">
+          <button class="button pui-modal__close" data-modal="centered-modal">Close <i class="pi-times"></i></button>
+          <strong class="text--size-lg text-navy">Add new submission</strong>
+        </div>
+        <div class="pui-modal__content">
+          <div class="block-container blocks p-2 pui-form tablet-up-4">
+            <div class="block">
+              <label for="first-name" class="pui-form__field">First Name
+                <input id="first-name" type="text" placeholder="First Name">
+              </label>
+            </div>
+            <div class="block">
+              <label for="last-name" class="pui-form__field error">Last Name
+                <input id="last-name" type="text" placeholder="Last Name">
+              </label>
+            </div>
+            <div class="block">
+              <label for="dob" class="pui-form__field">Age or DOB
+                <input id="dob" type="date">
+              </label>
+            </div>
+            <div class="block">
+              <label for="zipcode" class="pui-form__field">ZIP Code
+                <input id="zipcode" type="tel" placeholder="e.g.90012" pattern="^\d{5,6}(?:[-\s]\d{4})?$">
+              </label>
+            </div>
+          </div>
+          <div class="block-container flex--center-content">
+            <button class="button button--post button--lg m-4">Create</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+
+  <script src="/src/assets/js/platform-ui.min.js"></script>
+</body>
+</html>
