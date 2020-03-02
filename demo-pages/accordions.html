@@ -76,20 +76,57 @@
         </div>
     </nav>
     <nav class="site-menu flex--justify-between">
-        <div class="site-menu__item">
-            <span class="card__header-icon pill--circle-medium background-salmon text-white mr-2">
-                GG
-            </span>
-            <div class="text--size-lg">
-                Greg Gudis
-            </div>
+        <div class="site-menu__item has-dropdown">
+          <span class="card__header-icon pill--circle-medium background-salmon text-white mr-2">
+              GG
+          </span>
+          <div class="text--size-lg">
+            Greg Gudis
+          </div>
+          <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+          <div class="dropdown-menu pin-right">
+            <a href="#" class="dropdown-menu__item background-white">
+              <div class="pill background-olive">
+                Active
+              </div>
+            </a>
+          </div>
         </div>
         <div class="flex">
+            <div class="site-menu__item">
+                Contracts
+            </div>
             <div class="site-menu__item active">
                 Submissions
             </div>
             <div class="site-menu__item">
-                Contracts
+                Hierarchy
+            </div>
+            <div class="site-menu__item">
+                Memberships
+            </div>
+            <div class="site-menu__item">
+                Licenses
+            </div>
+            <div class="site-menu__item">
+                Reports
+            </div>
+            <div class="site-menu__item">
+                <i class="pi-phone"></i>
+            </div>
+            <div class="site-menu__item">
+                <i class="pi-file-cabinet"></i>
+                <div class="ml-1 pill pill--circle text-navy">
+                  33
+                </div>
+            </div>
+            <div class="site-menu__item">
+                <i class="pi-gavel"></i>
+                <div class="pill pill--split text-white background-navy">
+                  <div class="pill__content background-salmon">5</div>
+                  <div class="pill__content background-olive">2</div>
+                  <div class="pill__content background-skyblue">13</div>
+                </div>
             </div>
         </div>
     </nav>
@@ -143,11 +180,17 @@
                               </div>
                               <div class="block flex flex--column">
                                 <strong>Source</strong>
-                                Medicareful
+                                <span>Medicareful</span>
+                                <div class="pill pill--circle text-white background-negative">
+                                  13
+                                </div>
                               </div>
-                              <div class="block flex flex--column">
-                                <strong>Status <div class="pill pill--circle-empty-dot positive"></div></strong>
-                                Sent to Carrier
+                              <div class="block flex flex--column w-auto">
+                                <strong>Status <div class="pill pill--circle-empty-dot neutral"></div></strong>
+                                Initial
+                                <div class="pill text-white background-neutral">
+                                  Incomplete
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -172,7 +215,31 @@
                         <!-- Start Accordion Content -->
                         <div class="pui-accordion__content p-4">
 
-                          <div class="block-container">
+                          <div class="block-container blocks p-2 tablet-up-2 pui-form">
+                            <div class="block">
+                              <label for="action" class="pui-form__field">
+                                Action
+                                <div class="pui-form__select-wrapper">
+                                  <select name="County Select" id="action">
+                                    <option value="County1">Option</option>
+                                  </select>
+                                </div>
+                              </label>
+                            </div>
+                            <div class="block">
+                              <label for="form" class="pui-form__field">
+                                Form
+                                <div class="pui-form__select-wrapper">
+                                  <select name="County Select" id="form">
+                                    <option value="County1">Option</option>
+                                  </select>
+                                </div>
+                              </label>
+                            </div>
+
+                          </div>
+                          <!-- History block -->
+                          <div class="block-container mt-3">
                             <div class="block block-6 flex flex--align-center">
                               <strong class="text-navy text--size-lg flex"><i class="pi-sync-clock mr-2"></i> History</strong>
                             </div>
@@ -429,7 +496,7 @@
                   Ted Krueger 01/27/2020
                 </strong>
                 <p class="pt-2">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tristique viverra posuere. Pellentesque vitae turpis a lectus rutrum finibus. Fusce vitae sapien et purus fermentum feugiat. Donec finibus ante vel risus euismod lobortis. Morbi vehicula posuere dolor, et eleifend metus cursus eget. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec dapibus porttitor consectetur. Etiam fringilla arcu in urna placerat, vel mollis turpis malesuada. Aliquam pharetra, tellus a varius pharetra, urna ligula tempus eros, ac porttitor arcu magna sed ex. 
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tristique viverra posuere. Pellentesque vitae turpis a lectus rutrum finibus. Fusce vitae sapien et purus fermentum feugiat. Donec finibus ante vel risus euismod lobortis. Morbi vehicula posuere dolor, et eleifend metus cursus eget. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec dapibus porttitor consectetur. Etiam fringilla arcu in urna placerat, vel mollis turpis malesuada. Aliquam pharetra, tellus a varius pharetra, urna ligula tempus eros, ac porttitor arcu magna sed ex.
                 </p>
                 <div class="pill text-salmon">
                   Something

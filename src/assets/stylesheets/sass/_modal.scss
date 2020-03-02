@@ -194,7 +194,6 @@
   &__header {
     background-color: map.get(config.$brand-colors, 'lightblue');
     color: map.get(variables.$greyscale, 'base');
-    font-size: map.get(variables.$font-percentage, 'xl');
     font-family: map.get(config.$fonts, 'headline');
     height: $header-height;
     padding: 2rem;

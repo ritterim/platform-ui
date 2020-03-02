@@ -126,10 +126,7 @@
   }
   &__open {
     cursor: pointer;
-    bottom: 1rem;
-    right: 1rem;
-    position: fixed;
-    z-index: 25;
+
 
     @include mixins.breakpoint(tablet, max) {
       bottom: 3.5rem;
