@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Submissions staff key entry view</title>
+
+  <link rel="stylesheet" href="/src/assets/stylesheets/platform-ui.min.css">
+
+</head>
+
+<body class="flex flex--column">
+
+  <div class="pui-modal pui-modal--full" tabindex="-1">
+    <div class="pui-modal__inner animated slideInUp faster">
+      <div class="pui-modal__header flex flex--justify-between">
+        <strong class="text-navy text--size-lg">Compliance view for {Agent Name}</strong>
+        <button class="button">
+          Close
+          <i class="pi-times"></i>
+        </button>
+      </div>
+      <div class="pui-modal__content pui-form">
+        <div class="block-container">
+          <div class="block block-9 flex flex--align-center">
+            <div class="pill pill--split mr-2">
+              <div class="pill__label background-salmon text-white">187</div>
+              <div class="pill__content">Application</div>
+            </div>
+            <div class="pill pill--split mr-2">
+              <div class="pill__label background-salmon text-white">3</div>
+              <div class="pill__content">Grievance</div>
+            </div>
+            <div class="pill pill--split mr-2">
+              <div class="pill__label background-salmon text-white">40</div>
+              <div class="pill__content flex">
+                SOA
+                <i class="pi-times-solid ml-2 text-negative"></i>
+              </div>
+            </div>
+            <div class="pill pill--split mr-2">
+              <div class="pill__label background-salmon text-white">5</div>
+              <div class="pill__content">
+                <i class="pi-lock-open text-positive"></i>
+              </div>
+            </div>
+            <div class="pill pill--split mr-2">
+              <div class="pill__label background-salmon text-white">255</div>
+              <div class="pill__content">
+                <i class="pi-lock text-negative"></i>
+              </div>
+            </div>
+          </div>
+          <div class="block block-3 flex flex--justify-end">
+            <button class="button">
+              Add
+              <i class="pi-plus" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+        <div class="block-container mt-4">
+          <div class="block">
+
+            <div class="pui-accordion active">
+              <div class="pui-accordion__header p-3 block-container">
+                <div class="block block-1 flex flex--align-center">
+                  <div class="pill pill--circle-empty negative"></div>
+                </div>
+                <div class="block block-4 flex flex--column">
+                  <strong>Company</strong>
+                  <span class="text-navy">Clover Health Plans</span>
+                </div>
+                <div class="block block-2 flex flex--column">
+                  <strong>Initiated</strong>
+                  Ritter
+                </div>
+                <div class="block block-3 flex flex--align-center">
+                  <div class="pill background-med-blue text-white">
+                    Medicare Advantage
+                  </div>
+                </div>
+                <div class="block block-2 flex flex--align-center flex--justify-end">
+                  <i class="pi-lock text-negative"></i>
+                </div>
+              </div>
+              <div class="pui-accordion__content p-3">
+                <div class="block-container pui-form blocks p-2 tablet-up-4">
+                  <div class="block">
+                    <label for="company" class="pui-form__field has-icon--right">
+                      Company
+                      <input id="company" type="text">
+                      <i class="pi-search"></i>
+                    </label>
+                  </div>
+                  <div class="block">
+                    <label for="product" class="pui-form__field">
+                      Product
+                      <div class="pui-form__select-wrapper">
+                        <select name="Product Select" id="product">
+                          <option value="County1">Medicare Advantage</option>
+                        </select>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="block">
+                    <label for="opened" class="pui-form__field has-icon--right">
+                      Opened
+                      <input id="opened" type="date">
+                      <i class="pi-calendar"></i>
+                    </label>
+                  </div>
+                  <div class="block">
+                    <label for="closed" class="pui-form__field has-icon--right">
+                      Closed
+                      <input id="closed" type="date">
+                      <i class="pi-calendar"></i>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="block-container pui-form blocks px-2 py-3 tablet-up-4">
+                  <div class="block">
+                    <label for="issue" class="pui-form__field">
+                      Issue
+                      <div class="pui-form__select-wrapper">
+                        <select name="Product Select" id="issue">
+                          <option value="">Something</option>
+                        </select>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="block">
+                    <label for="sub" class="pui-form__field">
+                      Sub-Issue
+                      <div class="pui-form__select-wrapper">
+                        <select name="Product Select" id="sub">
+                          <option value="">Something</option>
+                        </select>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="block">
+                    <label for="substantiated" class="pui-form__field">
+                      Substantiation
+                      <div class="pui-form__select-wrapper">
+                        <select name="Product Select" id="substantiated">
+                          <option value="">Something</option>
+                        </select>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="block">
+                    <input class="pui-form__checkbox" id="corrective" type="checkbox">
+                    <label for="corrective">
+                      <div class="input-icons">
+                        <i class="pi-circle"></i>
+                        <i class="pi-check pi-heavy"></i>
+                      </div>
+                      Corrective action taken
+                    </label>
+
+                    <input class="pui-form__checkbox" id="ritter" type="checkbox">
+                    <label for="ritter">
+                      <div class="input-icons">
+                        <i class="pi-circle"></i>
+                        <i class="pi-check pi-heavy"></i>
+                      </div>
+                      Initiated by Ritter
+                    </label>
+
+                  </div>
+                </div>
+                <div class="pui-message pui-message--info" data-header="Sub-issue(s)">
+                  <ul>
+                    <li class="flex flex--justify-between">
+                      Enrollee Did Not Understand Plan Benefits Or Services, Misstatement Of Plan Benefits Or Services
+                      <button class="button button--secondary" data-button-text="Remove">
+                        <i class="pi-times"></i>
+                      </button>
+                    </li>
+                  </ul>
+
+                </div>
+
+                <div class="block-container blocks px-2 py-4 tablet-up-2">
+                  <div class="block block-6">
+                    <label for="detail">Case detail</label>
+                    <textarea name="detail" rows="10" class="w-100 no-border background-lighter"></textarea>
+                  </div>
+                  <div class="block block-6">
+                    <label for="detail">Case detail</label>
+                    <textarea name="detail" rows="10" class="w-100 no-border background-lighter"></textarea>
+                  </div>
+
+                </div>
+
+                <div class="pui-accordion">
+                  <div class="pui-accordion__header p-2 block-container flex--justify-between">
+                    <span class="flex--center-content">
+                      <i class="pi-angle-right text--size-xl mr-3"></i>
+                      <i class="pi-file-text mr-2"></i>
+                      Attachments
+                      <div class="ml-1 pill pill--circle">
+                        0
+                      </div>
+                    </span>
+                    <span class="flex">
+                      <button class="button mr-2">Add <i class="pi-plus" aria-hidden="true"></i></button>
+                    </span>
+                  </div>
+                  <div class="pui-accordion__content">
+                    <div class="pui-message pui-message--info">
+                      <p>There are currently no attachments.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="block-container pt-2">
+                  <div class="block block-6 flex flex--align-center">
+                    <div class="pill pill--circle-large mr-2" data-placement="right" data-pui-tooltip="Last edited by Van Hang 2/3/2020">
+                      VH
+                    </div>
+                    Created by Van Hang <i class="pi-calendar text-med-blue mx-2" aria-hidden="true"></i> Jan 20, 2020 12:42 PM
+                  </div>
+                  <div class="block block-6 flex flex--justify-end">
+                    <button class="button button--secondary" data-button-text="Delete Case">
+                      <i class="pi-trash"></i>
+                    </button>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/src/assets/js/platform-ui.min.js"></script>
+</body>
+
+</html>

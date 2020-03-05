@@ -12,6 +12,7 @@
     /*
      *  This css will need to live in the platform along with custom
      *  mobile menu css.
+     *  See src/Platform/Content/css/sass/platform-ui-plugins.scss
      */
     .site-header--fixed {
       height: calc(var(--pui-menu-height) * 2 )!important;
@@ -123,7 +124,7 @@
             <div class="site-menu__item">
                 Reports
             </div>
-            <div class="site-menu__item">
+            <div class="site-menu__item pui-drawer__open" data-drawer="touches">
                 <i class="pi-phone"></i>
             </div>
             <div class="site-menu__item">
@@ -175,7 +176,7 @@
                     </button>
                   </div>
                 </div>
-                <p>Click the filter and Add buttons.</p>
+                <p>Demo <strong>modal</strong>, <strong>filters</strong>, and <strong>touches</strong>.</p>
               </div>
 
             </div>
@@ -230,7 +231,73 @@
                 </div>
               </div>
             </div>
+
+            <div id="touches" class="pui-drawer pui-drawer-right pui-drawer--closed animated slideInRight">
+              <div class="pui-drawer__inner">
+                <div class="pui-drawer__header flex flex--align-center flex--justify-between background-lightblue p-4">
+                  <div class="flex flex--align-center">
+                    <button class="button button--secondary mr-2">
+                      <i class="pi-plus"></i>
+                    </button>
+                    <strong class="text-navy text--size-lg">Touches</strong>
+
+                  </div>
+                  <button class="button pui-drawer__close" data-drawer="right" data-drawer="touches">Close <i class="pi-times" aria-hidden="true"></i></button>
+                </div>
+                <div class="pui-drawer__content">
+
+                  <div class="block-container blocks py-3 pui-form">
+                    <div class="block pt-0">
+                      <label for="method" class="pui-form__field">
+                        Method
+                        <div class="pui-form__select-wrapper">
+                          <select name="County Select" id="method">
+                            <option></option>
+                            <option>Email</option>
+                            <option>Inbound call</option>
+                            <option>Outbound call</option>
+                            <option>Service request</option>
+                          </select>
+                        </div>
+                      </label>
+                    </div>
+                    <div class="block">
+                      <textarea class="no-border background-lighter p-2" rows="10" placeholder="Notes entered will also be accessible in Notes..."></textarea>
+                    </div>
+                    <div class="block flex--center-content">
+                      <button class="button">
+                        Create
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="block-container blocks py-3">
+
+                    <div class="block flex flex--column border-t border--color-lighter">
+                      <strong class="text-navy text--size-md">Joseph Millerkashdkjaskkd on Jan 28, 2020</strong>
+                      <span class="flex flex--align-center py-2"><i class="pi-envelope mr-2"></i> Email</span>
+                      <textarea class="no-border background-lighter mt-2 p-2" rows="6">These 10 things happened.</textarea>
+                    </div>
+
+                    <div class="block flex flex--column border-t border--color-lighter">
+                      <strong class="text-navy text--size-md">Someone else on Jan 28, 2020</strong>
+                      <div class="block flex flex--justify-between flex--align-center">
+                        <span class="flex flex--align-center py-2"><i class="pi-envelope mr-2"></i> Email</span>
+                        <button class="button button--secondary" data-button-text="Edit">
+                          <i class="pi-edit"></i>
+                        </button>
+                      </div>
+
+                      <textarea class="no-border background-lighter mt-2 p-2" rows="6">These 11 things happened.</textarea>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
         </div>
+
         <div class="block mt-6 lg-tablet-up-4 laptop-up-3">
           <div class="pui-card text-base background-note mt-2 p-4 h-auto">
 

@@ -108,6 +108,7 @@
   color: $primary-color;
   display: inline-flex;
   font-size: map.get(variables.$font-percentage, 'sm');
+  line-height: 1.15;
   padding: map.get(variables.$spacers, 1) map.get(variables.$spacers, 2);
   position: relative;
 
@@ -118,6 +119,7 @@
     padding: 0;
     .pill__label {
       background-color: rgba($primary-color, .3);
+      padding: map.get(variables.$spacers, 2);
     }
   }
 
@@ -146,7 +148,11 @@
   }
 
   &__content {
-    padding: map.get(variables.$spacers, 1);
+    padding: map.get(variables.$spacers, 2);
+    // if icon present - flex it
+    i {
+      display: flex;
+    }
   }
 
   &__close {
