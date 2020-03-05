@@ -11,7 +11,7 @@
 // Each button has a default button style. Color can be added to any button using a combination of background and text utilities.
 //
 // Add icons to buttons using [platform icons](https://github.com/ritterim/platform-icons) icons: `<i class="pi-plus"></i>`
-// 
+//
 // The default platform button. Usually paired visually with an icon. Can be the default size or large.
 //
 // - .button
@@ -154,12 +154,12 @@
 // Styleguide Components.Button.Active
 
 // Disabled
-// 
+//
 // To make a button look inactive, add the disabled attribute.
-// 
+//
 // `<a>` elements do not support the disabled attribute. In order to make an `<a>` that is a button look disabled, add the `.disabled` class.
 // Also, note that adding specific aria roles and attributes to your button will help with screen readers and other assitive technology.
-// 
+//
 // Markup:
 // <div class="button-group">
 //   <button class="button" disabled>
@@ -182,15 +182,15 @@
 //     Account
 //   </a>
 // </div>
-// 
+//
 // Although the links look disabled and have the css property of `pointer-events: none`, users can still navigate to the links and use them via keyboard navigation.
 // To ensure that your users could not interact with disabled links, it's recommended to use JavaScript to disable functionality further.
-// 
+//
 // Styleguide Components.Button.Disabled
 
 // Colors
 //
-// We loop through a map to give you these color variations. 
+// We loop through a map to give you these color variations.
 //
 // Markup:
 // <div class="button-group mb-4">
@@ -230,7 +230,7 @@
   font-family: map.get(config.$fonts, 'base');
   font-size: map.get(config.$fonts, 'size');
   justify-content: center;
-  line-height: 1.15;
+  line-height: 1.15 !important;
   padding: config.$button-primary-padding;
   transition: config.$transitions;
   white-space: nowrap;
@@ -411,7 +411,7 @@
 
     &.active,
     &:hover {
-      background-color: config.$button-primary-hover;      
+      background-color: config.$button-primary-hover;
     }
 
     &.loading {
@@ -453,7 +453,7 @@
       } @else {
         color: map.get(variables.$greyscale, 'white');
       }
-      
+
       &:hover {
         background-color: map.get(variables.$greyscale, 'white');
         border-color: $color;
@@ -465,7 +465,7 @@
           color: $color;
         }
       }
-      
+
       &.button--ghost {
         background-color: transparent;
         @if lightness($color) > 50 and lightness($color) < 75 {
@@ -475,7 +475,7 @@
         } @else {
           color: $color;
         }
-        
+
         &:hover {
           background-color: $color;
           border-color: $color;
