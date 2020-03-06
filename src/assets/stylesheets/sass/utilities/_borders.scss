@@ -61,11 +61,21 @@
   &-x {
     border-width: 0 1px;
     @extend %border;
+    @for $i from 1 through 5 {
+      &.border--width-#{$i} {
+        border-width: 0 #{$i}px !important;
+      }
+    }
   }
 
   &-y {
     border-width: 1px 0;
     @extend %border;
+    @for $i from 1 through 5 {
+      &.border--width-#{$i} {
+        border-width: #{$i}px 0 !important;
+      }
+    }
   }
 
   @each $direction, $d in variables.$xy-border {
@@ -73,12 +83,11 @@
       border-width: 0;
       border-#{$direction}-width: 1px;
       @extend %border;
-    }
-  }
-
-  @each $unit, $rem in variables.$spacers {
-    &--width-#{$unit} {
-      border-width: $rem !important;
+      @for $i from 1 through 5 {
+        &.border--width-#{$i} {
+          border-#{$direction}-width: #{$i}px !important;
+        }
+      }
     }
   }
 
