@@ -1,32 +1,28 @@
 let  dropdownMenu = document.querySelectorAll('.dropdown-menu');
 let  hasDropdown = document.querySelectorAll('.has-dropdown');
 
-if (dropdownMenu) {
-  dropdownMenu.forEach(menu => {
-    menu.classList.add('hidden')
-  });
-}
-
 let openDropdown = (item) => {
-  Array.from(item.childNodes).find(x => {
-    if(x.classList && Array.from(x.classList).includes('dropdown-menu'))
-      x.classList.toggle('hidden');
-  })
+  let menuItem = item.closest('.has-dropdown');
+  menuItem.classList.toggle('dropdown-active');
+  // item.classList.toggle('active');
+  // Array.from(menuItem.childNodes).find(x => {
+  //   if(x.classList && Array.from(x.classList).includes('dropdown-menu'))
+  //     x.classList.toggle('active');
+  // })
 }
 
 if (hasDropdown) {
-  hasDropdown.forEach(menu => {
-    menu.addEventListener('click', (e) => {
-      e.preventDefault();
-      openDropdown(menu);
-    })
-    menu.addEventListener('keydown', (e) => {
-      if (e.keyCode === 13) {
+
+  let handleDropDownClick = () => {
+    [].forEach.call(document.querySelectorAll('.dropdown-action'), (el) => {
+      el.addEventListener('click', (e) => {
+        openDropdown(el);
         e.preventDefault();
-        openDropdown(menu);
-      }      
-    })
-  });
+      })
+    });
+  }
+
+  handleDropDownClick();
 }
 
 let menuAction = document.querySelector('.site-menu-mobile-action');

@@ -46,19 +46,6 @@ a {
   color: map.get(config.$platform-colors, 'link');
   text-decoration: none;
   transition: config.$transitions;
-  // if arrow structure is on place
-  i.pi-arrow-right,
-  i.pi-angle-right {
-    transition: config.$transitions;
-  }
-  &:hover {
-    i.pi-arrow-right {
-      transform: translate(.3rem);
-    }
-    i.pi-angle-right {
-      transform: translate(.5rem);
-    }
-  }
 }
 
 button {

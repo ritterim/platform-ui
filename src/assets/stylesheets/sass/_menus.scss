@@ -130,12 +130,12 @@
           }
         }
 
-        &.active {
+        &.dropdown-active {
           border-bottom-color: rgba(config.$primary-menu-color, .5);
         }
       }
 
-      &.active {
+      &.dropdown-active {
         background-color: color.adjust(config.$primary-menu-color, $lightness: math.percentage(-.05));
       }
     }
@@ -189,13 +189,20 @@
         }
       }
 
-      &.active {
+      &.dropdown-active {
         border-bottom-color: rgba(map.get(variables.$greyscale, 'lighter'), .5);
       }
     }
 
-    &.active {
+    &.dropdown-active {
       background-color: color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05));
+
+      @include mixins.breakpoint(tablet, min) {
+
+        .dropdown-menu {
+          display: block;
+        }
+      }
     }
   }
 
@@ -219,7 +226,7 @@
   }
 
   .dropdown-menu {
-    background-color: color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05));
+    background-color: color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05));    
     position: absolute;
     top: calc(100% + 1px);
     transition: opacity ease config.$transitions, visibility ease config.$transitions;
@@ -228,6 +235,14 @@
       height: calc(100vh - #{config.$menu-height});
       overflow-y: scroll;
       width: 100%;
+    }
+
+    @include mixins.breakpoint(tablet, min) {
+      display: none;
+
+      // .dropdown-active & {
+      //   display: block;
+      // }
     }
 
     &__item {
@@ -419,42 +434,60 @@
       flex-direction: column;
       padding: map.get(variables.$spacers, 3 ) map.get(variables.$spacers, 1 );
 
-      &.active {
+      &.dropdown-active {
         background-color: unset;
+
+        .dropdown-menu {
+          max-height: 100vh;
+          transition: max-height .2s ease-in;
+        }
+
+        .dropdown-action {
+    
+          .has-dropdown__icon {
+            transform: rotate(90deg);
+          }
+        }
       }
 
-      &:not(:last-of-type) {
+      &:not(:last-child) {
         border-bottom: 1px solid color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.15));
       }      
     }
 
-    .has-dropdown {
+    .dropdown-action {
 
       .has-dropdown__icon {
         transition: config.$transitions;
       }
 
-      &.active {
+      // .dropdown-active & {
 
-        .has-dropdown__icon {
-          transform: rotate(90deg);
-        }
-      }
+      //   .has-dropdown__icon {
+      //     transform: rotate(90deg);
+      //   }
+      // }
     }
 
     .dropdown-menu {
       background-color: unset;
       height: auto;
+      max-height: 0;
+      transition: max-height .2s ease-out;
+      overflow: hidden;
       position: static;
-      top: unset;
-      transition: unset;
+
+      // .dropdown-active & {
+      //   max-height: 100vh;
+      //   transition: max-height .2s ease-in;
+      // }
 
       &__item {
         border-top: none;
         padding: map.get(variables.$spacers, 2 );
 
         &:first-of-type {
-          padding-top: variables.$spacer;
+          margin-top: variables.$spacer;
         }
       }
     }
