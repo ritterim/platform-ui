@@ -4,20 +4,21 @@ let  hasDropdown = document.querySelectorAll('.has-dropdown');
 let openDropdown = (item) => {
   let menuItem = item.closest('.has-dropdown');
   menuItem.classList.toggle('dropdown-active');
-  // item.classList.toggle('active');
-  // Array.from(menuItem.childNodes).find(x => {
-  //   if(x.classList && Array.from(x.classList).includes('dropdown-menu'))
-  //     x.classList.toggle('active');
-  // })
 }
 
 if (hasDropdown) {
 
   let handleDropDownClick = () => {
-    [].forEach.call(document.querySelectorAll('.dropdown-action'), (el) => {
+    [].forEach.call(document.querySelectorAll('.has-dropdown .site-menu__link'), (el) => {
       el.addEventListener('click', (e) => {
         openDropdown(el);
         e.preventDefault();
+      })
+      el.addEventListener('keydown', (e) => {
+        if (e.keyCode === 13) {
+          openDropdown(el);
+          e.preventDefault();
+        }
       })
     });
   }
