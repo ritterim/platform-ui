@@ -405,7 +405,7 @@
       .site-menu {
 
         &.active {
-          max-height: calc(100vh - #{config.$fixed-header-height});
+          max-height: calc(100vh - #{config.$menu-height});
           overflow-y: auto;
           overflow-x: hidden;
         }
