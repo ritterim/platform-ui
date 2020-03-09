@@ -127,7 +127,8 @@
         }
       }
 
-      &.dropdown-active {
+      &.dropdown-active,
+      &.active {
         background-color: color.adjust(config.$primary-menu-color, $lightness: math.percentage(-.05));
       }
     }
@@ -150,7 +151,12 @@
 
   .search {
     flex-grow: 1;
+    padding: 0 map.get(variables.$spacers, 3 );
     @extend %flex-center;
+
+    @include mixins.breakpoint(tablet, min) {
+      padding: 0 map.get(variables.$spacers, 4);
+    }
 
 
     input[type=text] {
@@ -265,6 +271,10 @@
         display: block;
       }
     }
+  }
+
+  &.active {
+    background-color: color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05));
   }
 }
 
