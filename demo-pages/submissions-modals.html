@@ -26,61 +26,73 @@
 <body class="flex flex--column">
   <header class="site-header site-header--fixed">
     <nav class="site-menu primary inverted">
-        <a href="/demo-pages/crm-example.html" class="site-menu__item">
-            <span class="card__header-icon pill--circle-medium background-purple text-white mr-2">
-                D
-            </span>
-            <span class="text--size-lg">
-                Hello Dev
-            </span>
-        </a>
+        <div class="site-menu__item">
+            <a href="/demo-pages/crm-example.html" class="site-menu__link">
+                <span class="card__header-icon pill--circle-medium background-purple text-white mr-2">
+                    GG
+                </span>
+                <span class="text--size-lg">
+                    Hello Greg
+                </span>
+            </a>
+        </div>
         <div class="site-menu__item search">
             <form role="search" aria-label="CRM" _lpchecked="1" class="w-100">
                 <div class="flex flex--align-center">
-                    <label for="search-input" class="sr-only">Search</label>
+                    <label for="search-input" class="sr-only">Search</label> 
                     <input type="text" id="search-input" placeholder="Type to search..." class="placeholder--light text-white">
                     <i aria-hidden="true" class="pi-search"></i>
                 </div>
             </form>
         </div>
-        <div class="site-menu__item has-dropdown" tabindex="0">
-            Organizations <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+        <div class="site-menu__item has-dropdown">
+            <a href="#" class="site-menu__link">
+                Organizations <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+            </a>
             <div class="dropdown-menu pin-right">
                 <a href="#" class="dropdown-menu__item">
                     dropdown
                 </a>
             </div>
         </div>
-        <div class="site-menu__item has-dropdown" tabindex="0">
-            People <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+        <div class="site-menu__item has-dropdown">
+            <a href="#" class="site-menu__link">
+                People <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+            </a>
             <div class="dropdown-menu pin-right">
                 <a href="#" class="dropdown-menu__item">
                     dropdown
                 </a>
             </div>
         </div>
-        <div class="site-menu__item has-dropdown" tabindex="0">
-            Flow <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+        <div class="site-menu__item has-dropdown">
+            <a href="#" class="site-menu__link">
+                Flow <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+            </a>
             <div class="dropdown-menu pin-right">
                 <a href="#" class="dropdown-menu__item">
                     dropdown
                 </a>
             </div>
         </div>
-        <div class="site-menu__item has-dropdown" tabindex="0">
-            <span class="sr-only">RIMDev</span>
-            <span class="pill--circle-medium background-white text-navy">
-                <i class="pi-rimdev text--size-xl" aria-hidden="true"></i>
-            </span>
-            <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+        <div class="site-menu__item has-dropdown">
+            <a href="#" class="site-menu__link">
+                <span class="sr-only">RIMDev</span>
+                <span class="card__header-icon pill--circle-medium background-white text-navy">
+                    <i class="pi-rimdev" aria-hidden="true"></i>
+                </span> 
+                <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+            </a>
             <div class="dropdown-menu pin-right">
                 <a href="#" class="dropdown-menu__item">
                     dropdown
                 </a>
             </div>
         </div>
-        <div class="site-menu__item has-dropdown" tabindex="0">
-            Recent <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+        <div class="site-menu__item has-dropdown">
+            <a href="#" class="site-menu__link">
+                Recent <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+            </a>
             <div class="dropdown-menu pin-right">
                 <a href="#" class="dropdown-menu__item">
                     dropdown
@@ -90,13 +102,15 @@
     </nav>
     <nav class="site-menu flex--justify-between">
         <div class="site-menu__item has-dropdown">
-          <span class="card__header-icon pill--circle-medium background-salmon text-white mr-2">
-              GG
-          </span>
-          <div class="text--size-lg">
-            Greg Gudis
-          </div>
-          <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+          <a href="#" class="site-menu__link">
+            <span class="card__header-icon pill--circle-medium background-salmon text-white mr-2">
+                GG
+            </span>
+            <div class="text--size-lg">
+              Greg Gudis
+            </div>
+            <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+          </a>
           <div class="dropdown-menu pin-right">
             <a href="#" class="dropdown-menu__item background-white">
               <div class="pill background-olive">
@@ -107,39 +121,57 @@
         </div>
         <div class="flex">
             <div class="site-menu__item">
+              <a href="#" class="site-menu__link">
                 Contracts
+              </a>
             </div>
             <div class="site-menu__item active">
+              <a href="#" class="site-menu__link">
                 Submissions
+              </a>
             </div>
             <div class="site-menu__item">
+              <a href="#" class="site-menu__link">
                 Hierarchy
+              </a>
             </div>
             <div class="site-menu__item">
+              <a href="#" class="site-menu__link">
                 Memberships
+              </a>
             </div>
             <div class="site-menu__item">
+              <a href="#" class="site-menu__link">
                 Licenses
+              </a>
             </div>
             <div class="site-menu__item">
+              <a href="#" class="site-menu__link">
                 Reports
+              </a>
             </div>
             <div class="site-menu__item pui-drawer__open" data-drawer="touches">
+              <a href="#" class="site-menu__link">
                 <i class="pi-phone"></i>
+              </a>
             </div>
             <div class="site-menu__item">
+              <a href="#" class="site-menu__link">
                 <i class="pi-file-cabinet"></i>
                 <div class="ml-1 pill pill--circle text-navy">
                   33
                 </div>
+              </a>
             </div>
             <div class="site-menu__item">
+              <a href="#" class="site-menu__link">
                 <i class="pi-gavel"></i>
                 <div class="pill pill--split text-white background-navy">
                   <div class="pill__content background-salmon">5</div>
                   <div class="pill__content background-olive">2</div>
                   <div class="pill__content background-skyblue">13</div>
                 </div>
+              </a>
             </div>
         </div>
     </nav>
