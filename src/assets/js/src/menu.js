@@ -7,9 +7,10 @@ let openDropdown = (item) => {
 }
 
 if (hasDropdown) {
+  const links = document.querySelectorAll('.has-dropdown .site-menu__link')
 
   let handleDropDownClick = () => {
-    [].forEach.call(document.querySelectorAll('.has-dropdown .site-menu__link'), (el) => {
+    links.forEach( (el) => {
       el.addEventListener('click', (e) => {
         openDropdown(el);
         e.preventDefault();
