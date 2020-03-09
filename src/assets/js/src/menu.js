@@ -9,22 +9,18 @@ let openDropdown = (item) => {
 if (hasDropdown) {
   const links = document.querySelectorAll('.has-dropdown .site-menu__link')
 
-  let handleDropDownClick = () => {
-    links.forEach( (el) => {
-      el.addEventListener('click', (e) => {
+  links.forEach( (el) => {
+    el.addEventListener('click', (e) => {
+      openDropdown(el);
+      e.preventDefault();
+    })
+    el.addEventListener('keydown', (e) => {
+      if (e.keyCode === 13) {
         openDropdown(el);
         e.preventDefault();
-      })
-      el.addEventListener('keydown', (e) => {
-        if (e.keyCode === 13) {
-          openDropdown(el);
-          e.preventDefault();
-        }
-      })
-    });
-  }
-
-  handleDropDownClick();
+      }
+    })
+  });
 }
 
 let menuAction = document.querySelector('.site-menu-mobile-action');
