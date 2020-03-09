@@ -80,8 +80,8 @@
 
   @each $direction, $d in variables.$xy-border {
     &-#{$d} {
-      border-width: 0;
-      border-#{$direction}-width: 1px;
+      border-width: 0 !important;
+      border-#{$direction}-width: 1px !important;
       @extend %border;
       @for $i from 1 through 5 {
         &.border--width-#{$i} {
