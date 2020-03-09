@@ -1,30 +1,34 @@
 let  dropdownMenu = document.querySelectorAll('.dropdown-menu');
 let  hasDropdown = document.querySelectorAll('.has-dropdown');
 
-if (dropdownMenu) {
-  dropdownMenu.forEach(menu => {
-    menu.classList.add('hidden')
-  });
-}
-
 let openDropdown = (item) => {
-  Array.from(item.childNodes).find(x => {
-    if(x.classList && Array.from(x.classList).includes('dropdown-menu'))
-      x.classList.toggle('hidden');
-  })
+  let menuItem = item.closest('.has-dropdown');
+  menuItem.classList.toggle('dropdown-active');
 }
 
 if (hasDropdown) {
-  hasDropdown.forEach(menu => {
-    menu.addEventListener('click', (e) => {
+  const links = document.querySelectorAll('.has-dropdown .site-menu__link')
+
+  links.forEach( (el) => {
+    el.addEventListener('click', (e) => {
+      openDropdown(el);
       e.preventDefault();
-      openDropdown(menu);
     })
-    menu.addEventListener('keydown', (e) => {
+    el.addEventListener('keydown', (e) => {
       if (e.keyCode === 13) {
+        openDropdown(el);
         e.preventDefault();
-        openDropdown(menu);
-      }      
+      }
     })
   });
+}
+
+let menuAction = document.querySelector('.site-menu-mobile-action');
+let siteMenu = document.querySelector('.site-menu');
+
+if (menuAction) {
+  menuAction.addEventListener('click', (e) => {
+    e.preventDefault;
+    siteMenu.classList.toggle('active');
+  })
 }
