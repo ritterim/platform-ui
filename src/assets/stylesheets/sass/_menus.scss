@@ -350,6 +350,8 @@
 // added a button with the class `site-menu-mobile-action`. For accessibility purposes, we included button text with an `sr-only` class.
 // Be sure to add the button before the site-menu so that the button and site-menu are siblings. This is important for the JS to fire correctly. 
 // The menu mobile menu will respond below the `tablet` resolution and the menu button will display as well.
+// If you want to add an icon to the dropdown targets, make sure the icon has the class `site-menu__link-icon`. This icon will rotate when the dropdown
+// is active. In the example below we're using a platform icon. `<i class="pi-angle-right mx-2 site-menu__link-icon"></i>`
 // 
 // 
 // Markup: 
