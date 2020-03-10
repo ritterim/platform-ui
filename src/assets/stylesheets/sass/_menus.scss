@@ -13,20 +13,26 @@
 // Markup:
 // <header class="site-header">
 //   <nav class="site-menu">
-//     <div class="site-menu__item has-dropdown">
+//     <div class="site-menu__item">
+//      <a href="#" class="site-menu__link">
 //       <span class="card__header-icon pill--circle-medium background-pink text-white mr-2">
 //         <i class="pi-rimdev text-base"></i>
 //       </span>
 //       <div class="font-lg">
 //         Menu Header with avatar
 //       </div>
+//      </a>
 //     </div>
 //     <div class="site-menu__item">
-//       menu item
+//       <a href="#" class="site-menu__link">
+//         menu item
+//       </a>
 //     </div>
 //     <div class="site-menu__item has-dropdown">
-//       dropdown item
-//       <div class="dropdown-menu pin-right hide-mobile-up">
+//       <a href="#" class="site-menu__link">
+//         dropdown item
+//       </a>
+//       <div class="dropdown-menu pin-right">
 //         <div class="dropdown-menu__item">
 //           dropdown
 //         </div>
@@ -36,20 +42,26 @@
 // </header>
 // <header class="site-header mt-5">
 //   <nav class="site-menu primary inverted">
-//     <div class="site-menu__item has-dropdown">
-//       <span class="card__header-icon pill--circle-medium background-pink text-white mr-2">
-//         <i class="pi-rimdev text-base"></i>
-//       </span>
-//       <div class="font-lg">
-//         Menu Header with avatar
-//       </div>
+//     <div class="site-menu__item">
+//       <a href="#" class="site-menu__link">
+//         <span class="card__header-icon pill--circle-medium background-pink text-white mr-2">
+//           <i class="pi-rimdev text-base"></i>
+//         </span>
+//         <div class="font-lg">
+//           Menu Header with avatar
+//         </div>
+//       </a>
 //     </div>
 //     <div class="site-menu__item">
-//       menu item
+//       <a href="#" class="site-menu__link">
+//         menu item
+//       </a>
 //     </div>
 //     <div class="site-menu__item has-dropdown">
-//       dropdown item
-//       <div class="dropdown-menu pin-right hide-mobile-up">
+//       <a href="#" class="site-menu__link">
+//         dropdown item
+//       </a>
+//       <div class="dropdown-menu pin-right">
 //         <div class="dropdown-menu__item">
 //           dropdown
 //         </div>
@@ -331,12 +343,94 @@
 
 
 
+// Responsive Menu
+// 
+// If you want the site menu to be responsive, add the class `site-menu-wrapper` to the parent element of the `site-menu`. 
+// In the example below, the class is added to the `header`. You will also need to add a button to toggle the menu. Below, you see we 
+// added a button with the class `site-menu-mobile-action`. For accessibility purposes, we included button text with an `sr-only` class.
+// Be sure to add the button before the site-menu so that the button and site-menu are siblings. This is important for the JS to fire correctly. 
+// The menu mobile menu will respond below the `tablet` resolution and the menu button will display as well.
+// 
+// 
+// Markup: 
+// <header class="background-teal site-menu-wrapper py-3 px-3">
+//   <div class="block-container flex--justify-between">
+//     <div class="block block--shrink">
+//       <img src="https://dummyimage.com/150x50/fff/aaa" alt="Logo">
+//     </div>
+//     <button class="site-menu-mobile-action button--plain text-white">
+//       <span class="sr-only">Toggle Navigation</span>
+//       <i aria-hidden="true" focusable="false" class="pi-menu pi-xl"></i>
+//     </button>
+//     <nav class="site-menu background-teal inverted">
+//       <div class="site-menu__item">
+//         <a href="#" class="site-menu__link">
+//           About
+//         </a>
+//       </div>
+//       <div class="site-menu__item has-dropdown">
+//         <a href="#" class="site-menu__link flex flex--justify-between w-100">
+//           Blog <i class="pi-angle-right mx-2 site-menu__link-icon"></i>
+//         </a>
+//         <div class="dropdown-menu pin-right">
+//           <a href="#" class="dropdown-menu__item">
+//             Blog Post
+//           </a>
+//           <a href="#" class="dropdown-menu__item">
+//             Blog Post
+//           </a>
+//           <a href="#" class="dropdown-menu__item">
+//             Blog Post
+//           </a>
+//         </div>
+//       </div>
+//       <div class="site-menu__item has-dropdown">
+//         <a href="#" class="site-menu__link flex flex--justify-between w-100">
+//           Dropdown <i class="pi-angle-right mx-2 site-menu__link-icon"></i>
+//         </a>
+//         <div class="dropdown-menu pin-right">
+//           <a href="#" class="dropdown-menu__item">
+//             Dropdown Item
+//           </a>
+//           <a href="#" class="dropdown-menu__item">
+//             Dropdown Item
+//           </a>
+//           <a href="#" class="dropdown-menu__item">
+//             Dropdown Item
+//           </a>
+//         </div>
+//       </div>
+//       <div class="site-menu__item">
+//         <a href="#" class="site-menu__link">
+//           Contact
+//         </a>
+//       </div>
+//       <div class="site-menu__item">
+//         <a href="#" class="site-menu__link">
+//           Events
+//         </a>
+//       </div>
+//     </nav>
+//   </div>
+// </header>
+// 
+// Styleguide Menus.Responsive
 
 // *****************
 // Mobile site menu
 // *****************
 
 .site-menu-wrapper {
+
+  .site-menu-mobile-action {
+
+    @include mixins.breakpoint(tablet, min) {
+      display: none;
+    }
+     > * {
+       pointer-events: none;
+     }
+  }
 
   @include mixins.breakpoint(tablet, max) {
     position: relative;
