@@ -345,13 +345,20 @@
 
 // Responsive Menu
 // 
+// If you want the site menu to be responsive, add the class `site-menu-wrapper` to the parent element of the `site-menu`. 
+// In the example below, the class is added to the `header`. You will also need to add a button to toggle the menu. Below, you see we 
+// added a button with the class `site-menu-mobile-action`. For accessibility purposes, we included button text with an `sr-only` class.
+// Be sure to add the button before the site-menu so that the button and site-menu are siblings. This is important for the JS to fire correctly. 
+// The menu mobile menu will respond below the `tablet` resolution and the menu button will display as well.
+// 
+// 
 // Markup: 
 // <header class="background-teal site-menu-wrapper py-3 px-3">
 //   <div class="block-container flex--justify-between">
 //     <div class="block block--shrink">
 //       <img src="https://dummyimage.com/150x50/fff/aaa" alt="Logo">
 //     </div>
-//     <button class="site-menu-mobile-action button--plain text-white hide-tablet-up">
+//     <button class="site-menu-mobile-action button--plain text-white">
 //       <span class="sr-only">Toggle Navigation</span>
 //       <i aria-hidden="true" focusable="false" class="pi-menu pi-xl"></i>
 //     </button>
@@ -416,6 +423,10 @@
 .site-menu-wrapper {
 
   .site-menu-mobile-action {
+
+    @include mixins.breakpoint(tablet, min) {
+      display: none;
+    }
      > * {
        pointer-events: none;
      }
