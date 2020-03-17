@@ -443,6 +443,13 @@
         max-height: 100vh;
         transition: max-height config.$transitions ease-in;
       }
+
+      &.primary {
+
+        .site-menu__item {
+          border-left: none;
+        }
+      }
     }
 
     .site-menu__item {
