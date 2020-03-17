@@ -3,7 +3,14 @@ let  hasDropdown = document.querySelectorAll('.has-dropdown');
 
 let openDropdown = (item) => {
   let menuItem = item.closest('.has-dropdown');
-  menuItem.classList.toggle('dropdown-active');
+  if(menuItem.classList.contains('dropdown-active')) {
+    menuItem.classList.remove('dropdown-active');
+  } else {
+    hasDropdown.forEach(node => {
+      node.classList.remove('dropdown-active');
+    });
+    menuItem.classList.toggle('dropdown-active');
+  }  
 }
 
 if (hasDropdown) {
