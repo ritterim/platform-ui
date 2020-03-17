@@ -4,10 +4,8 @@ let  hasDropdown = document.querySelectorAll('.has-dropdown');
 let openDropdown = (item) => {
   let menuItem = item.closest('.has-dropdown');
   if(menuItem.classList.contains('dropdown-active')) {
-    console.log('got it')
     menuItem.classList.remove('dropdown-active');
   } else {
-    console.log('dont got it')
     hasDropdown.forEach(node => {
       node.classList.remove('dropdown-active');
     });
