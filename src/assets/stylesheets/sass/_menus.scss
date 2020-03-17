@@ -122,9 +122,6 @@
       border-left: 1px solid color.adjust(config.$primary-menu-color, $lightness: math.percentage(-.15));
 
       &.has-dropdown {
-        @include mixins.breakpoint(tablet, min) {
-          position: relative;
-        }
 
         @media (pointer: fine) {
           &:hover {
@@ -186,20 +183,14 @@
   }
 
   .dropdown-menu {
-    background-color: color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05));    
+    background-color: color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05));
+    height: auto;
+    max-height: 0;
+    min-width: 10rem;
+    overflow: hidden;
     position: absolute;
+    transition: max-height .2s ease-out;
     top: calc(100% + 1px);
-    transition: opacity ease config.$transitions, visibility ease config.$transitions;
-
-    @include mixins.breakpoint(tablet, max) {
-      height: calc(100vh - #{config.$menu-height});
-      overflow-y: scroll;
-      width: 100%;
-    }
-
-    @include mixins.breakpoint(tablet, min) {
-      display: none;
-    }
 
     &__item {
       border-left: 0;
@@ -260,14 +251,13 @@
   border-bottom: 1px solid transparent;
   cursor: pointer;
   display: flex;
+  flex-direction: column;
   flex: 0 0 auto;
   transition: config.$transitions;
   @extend %flex-center;
 
   &.has-dropdown {
-    @include mixins.breakpoint(tablet, min) {
-      position: relative;
-    }
+    position: relative;
 
     &.dropdown-active {
       border-bottom-color: rgba(map.get(variables.$greyscale, 'lighter'), .5);
@@ -277,11 +267,9 @@
   &.dropdown-active {
     background-color: color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05));
 
-    @include mixins.breakpoint(tablet, min) {
-
-      .dropdown-menu {
-        display: block;
-      }
+    .dropdown-menu {
+      max-height: 100vh;
+      transition: max-height .2s ease-in;
     }
   }
 
@@ -423,19 +411,22 @@
 // *****************
 
 .site-menu-wrapper {
+  @include mixins.breakpoint(tablet, max) {
+    position: relative;
+  }
 
   .site-menu-mobile-action {
 
     @include mixins.breakpoint(tablet, min) {
       display: none;
     }
-     > * {
-       pointer-events: none;
-     }
+
+    > * {
+      pointer-events: none;
+    }
   }
 
   @include mixins.breakpoint(tablet, max) {
-    position: relative;
 
     .site-menu {
       flex-direction: column;
@@ -462,11 +453,6 @@
 
       &.dropdown-active {
         background-color: unset;
-
-        .dropdown-menu {
-          max-height: 100vh;
-          transition: max-height .2s ease-in;
-        }
     
         .site-menu__link-icon {
           transform: rotate(90deg);
@@ -493,6 +479,7 @@
       transition: max-height .2s ease-out;
       overflow: hidden;
       position: static;
+      width: 100%;
 
       &__item {
         border-top: none;
