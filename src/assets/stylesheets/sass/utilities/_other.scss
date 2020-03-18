@@ -239,14 +239,20 @@
     #{$pos}: 0;
   }
 
-  .pin-center-#{$pos} {
-    #{$pos}: 50%;
-    @if $pos == top or $pos == bottom {
-      transform: translateY(-50%);
-    } @else {
-      transform: translateX(-50%);
+  .pin-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    &-#{$pos} {
+      #{$pos}: 50%;
+      @if $pos == top or $pos == bottom {
+        transform: translateY(-50%);
+      } @else {
+        transform: translateX(-50%);
+      }
     }
-  }
+  } 
 }
 
 // rounded corners based on $spacers map
