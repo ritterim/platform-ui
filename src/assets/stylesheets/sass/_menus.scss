@@ -270,6 +270,8 @@
     .dropdown-menu {
       max-height: 100vh;
       transition: max-height .2s ease-in;
+      overflow-y: auto;
+      overflow-x: hidden;
     }
   }
 
