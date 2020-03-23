@@ -13,17 +13,22 @@
      *  This css will need to live in the platform along with custom
      *  mobile menu css.
      */
-    .site-header--fixed {
+    .double-menu .site-header--fixed {
       height: calc(var(--pui-menu-height) * 2 )!important;
     }
-    .site-header--fixed + .header-fixed {
+    .double-menu .site-header--fixed + .header-fixed {
       margin-top: calc(var(--pui-menu-height) * 2 )!important;
+    }
+
+    /* specifically targets notes */
+    .block.pos-fix.hide-laptop-down {
+      right: 2rem;
     }
 
   </style>
 
 </head>
-<body class="flex flex--column">
+<body class="flex flex--column double-menu">
   <header class="site-header site-header--fixed">
     <nav class="site-menu primary inverted">
         <div class="site-menu__item">
@@ -80,7 +85,7 @@
                 <span class="sr-only">RIMDev</span>
                 <span class="card__header-icon pill--circle-medium background-white text-navy">
                     <i class="pi-rimdev" aria-hidden="true"></i>
-                </span> 
+                </span>
                 <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
             </a>
             <div class="dropdown-menu pin-right">
@@ -178,7 +183,7 @@
   </header>
   <main class="header-fixed background-light-mid flex--grow py-4 px-5">
     <div class="block-container blocks px-3 mb-4">
-        <div class="block lg-tablet-up-8 laptop-up-9">
+        <div class="block laptop-up-9">
             <div class="block-container flex--justify-end mb-4">
             </div>
             <div class="pui-tabs">
@@ -196,6 +201,9 @@
                         </button>
                       </div>
                       <div class="block block-6 flex flex--justify-end">
+                        <button class="button button--secondary mr-2 hide-laptop-up" data-button-text="Notes">
+                            <i aria-hidden="true" class="pi-note"></i>
+                        </button>
                         <button class="button button--secondary mr-2" data-button-text="Filters">
                             <i aria-hidden="true" class="pi-filter"></i>
                         </button>
@@ -1056,7 +1064,7 @@
                 </div>
             </div>
         </div>
-        <div class="block mt-6 lg-tablet-up-4 laptop-up-3">
+        <div class="block mt-6 lg-tablet-up-4 laptop-up-3 pos-fix hide-laptop-down">
           <div class="pui-card text-base background-note mt-2 p-4 h-auto">
 
             <div class="pui-card__header">
