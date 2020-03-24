@@ -8,7 +8,7 @@
       </span>
 
       <span class="flex--center-content">{{ ../classPrefix }}{{ this }}</span>
-      <div class="button mt-2" data-clipboard-text="<i class='{{ ../classPrefix }}{{ this }}'></i>">
+      <div class="button mt-2 tooltip-bottom" data-copy-button data-clipboard-text="<i class='{{ ../classPrefix }}{{ this }}'></i>">
         Copy <i class="pi-clipboard"></i>
       </div>
 
@@ -18,7 +18,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
 <script>
-const clipboard = new ClipboardJS('.button.icon');
+const clipboard = new ClipboardJS('[data-copy-button]');
 clipboard.on('success', function(e) {
     e.trigger.setAttribute('data-pui-tooltip', 'Copied!');
     e.clearSelection();
