@@ -110,7 +110,14 @@
   display: flex;
 
   &.inverted {
-    a {
+
+    .site-menu__item:not(.search) {
+      a {
+        @extend %inverted;  
+      }
+    }
+    
+    a.site-menu__item:not(.search) {
       @extend %inverted;
     }
   }
