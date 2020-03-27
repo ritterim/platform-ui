@@ -440,6 +440,7 @@
     appearance: none;
     background: transparent;
     border: none;
+    color: inherit;
   }
 
   @each $name, $color in config.$brand-colors {
