@@ -49,7 +49,8 @@
 
 // Image Card
 //
-// For cards with an image.
+// Images can be placed at the top of cards. The `<img>` element gets the class `pui-card__image` and is expected to be the first child element of the card.
+// When `rounded-` modifiers are used on the card, the image takes on the radius as well. Other modifiers can be used as needed.
 //
 // Markup:
 // <div class="block-container blocks p-3 mb-3 tablet-up-4">
