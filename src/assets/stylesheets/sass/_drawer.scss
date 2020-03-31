@@ -118,6 +118,7 @@
     }
   }
   &__content {
+    overflow-y: auto;
     padding: config.$drawer-primary-padding;
     position: relative;
   }
@@ -141,7 +142,7 @@
   box-shadow: 0 -.5rem 2rem rgba(map.get(variables.$greyscale, 'black'), math.percentage(config.$hue-threshold / 2));
   flex-direction: column;
   height: config.$drawer-right-height;
-  left: unset;
+  left: auto;
   position: fixed;
   right: 0;
   transition: all ease-in-out config.$transitions;
