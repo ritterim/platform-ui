@@ -47,6 +47,81 @@
 //
 // Styleguide Components.Cards.Headers
 
+// Image Card
+//
+// Images can be placed at the top of cards. The `<img>` element gets the class `pui-card__image` and is expected to be the first child element of the card.
+// When `rounded-` modifiers are used on the card, the image takes on the radius as well. Other modifiers can be used as needed.
+//
+// Markup:
+// <div class="block-container blocks p-3 mb-3 tablet-up-4">
+// <div class="block">
+// <div class="pui-card rounded-3">
+//     <img class="pui-card__image background-lightblue p-3" src="/src/assets/images/svg/course-1.svg" alt="" />
+//     <div class="pui-card__content">
+//         <div class="flex flex--justify-between">
+//             <div class="text--bold text--uppercase">Part 1</div>
+//             <div class="text--bold flex flex--align-center">
+//                 <i class="pi-clock text-navy mr-1" aria-hidden="true"></i>
+//                 1:45
+//             </div>
+//         </div>
+//         <h3 class="text-med-blue">Final Expense</h3>
+//         <p>Donec malesuada semper risus vitae placerat. Morbi tristique, odio vel hendrerit sollicitudin, massa orci blandit felis, ac vehicula nulla mauris vitae arcu.</p>
+//     </div>
+// </div>
+// </div>
+// <div class="block">
+// <div class="pui-card">
+//     <img class="pui-card__image background-lightblue p-3" src="/src/assets/images/svg/course-1.svg" alt="" />
+//     <div class="pui-card__content">
+//         <div class="flex flex--justify-between">
+//             <div class="text--bold text--uppercase">Part 1</div>
+//             <div class="text--bold flex flex--align-center">
+//                 <i class="pi-clock text-navy mr-1" aria-hidden="true"></i>
+//                 1:45
+//             </div>
+//         </div>
+//         <h3 class="text-med-blue">Final Expense</h3>
+//         <p>Donec malesuada semper risus vitae placerat. Morbi tristique, odio vel hendrerit sollicitudin, massa orci blandit felis, ac vehicula nulla mauris vitae arcu.</p>
+//     </div>
+// </div>
+// </div>
+// <div class="block">
+// <div class="pui-card rounded-3">
+//     <img class="pui-card__image" src="https://i.picsum.photos/id/1061/600/400.jpg" alt="" />
+//     <div class="pui-card__content">
+//         <div class="flex flex--justify-between">
+//             <div class="text--bold text--uppercase">Part 1</div>
+//             <div class="text--bold flex flex--align-center">
+//                 <i class="pi-clock text-navy mr-1" aria-hidden="true"></i>
+//                 1:45
+//             </div>
+//         </div>
+//         <h3 class="text-med-blue">Final Expense</h3>
+//         <p>Donec malesuada semper risus vitae placerat. Morbi tristique, odio vel hendrerit sollicitudin, massa orci blandit felis, ac vehicula nulla mauris vitae arcu.</p>
+//     </div>
+// </div>
+// </div>
+// <div class="block">
+// <div class="pui-card">
+//     <img class="pui-card__image" src="https://i.picsum.photos/id/1061/600/400.jpg" alt="" />
+//     <div class="pui-card__content">
+//         <div class="flex flex--justify-between">
+//             <div class="text--bold text--uppercase">Part 1</div>
+//             <div class="text--bold flex flex--align-center">
+//                 <i class="pi-clock text-navy mr-1" aria-hidden="true"></i>
+//                 1:45
+//             </div>
+//         </div>
+//         <h3 class="text-med-blue">Final Expense</h3>
+//         <p>Donec malesuada semper risus vitae placerat. Morbi tristique, odio vel hendrerit sollicitudin, massa orci blandit felis, ac vehicula nulla mauris vitae arcu.</p>
+//     </div>
+// </div>
+// </div>
+// </div>
+//
+// Styleguide Components.Cards.ImageCard
+
 // Content Overflow
 //
 // If you have a lot of content in a card that is causing other cards to grow too much, you could add the class
@@ -195,6 +270,7 @@
 
 
 .pui-card {
+  $self: &;
   $card-min-height: config.$card-min-height;
 
   background-color: map.get(variables.$greyscale, "white");
@@ -209,6 +285,20 @@
 
   .block & {
     height: 100%;
+  }
+
+  &__image {
+    width: calc(100% + (#{config.$card-padding} * 2));
+    height: auto;
+    margin-top: -#{config.$card-padding};
+    margin-right: -#{config.$card-padding};
+    margin-left: -#{config.$card-padding};
+    margin-bottom: config.$card-padding;
+    border-bottom: 1px solid color.adjust(map.get(variables.$greyscale, "light"), $lightness: math.percentage(config.$hue-threshold * 2));
+  }
+
+  &[class*="rounded-"] {
+    overflow: hidden;
   }
 
   &__header {
