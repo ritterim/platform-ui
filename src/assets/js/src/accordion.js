@@ -5,13 +5,13 @@ if (accordionHeader) {
     el.addEventListener('click', function(e) {
       let accordion = el.parentElement;
       e.preventDefault();
-      accordion.classList.toggle('active');
+      accordion.querySelector('.pui-accordion__content').classList.toggle('active');
     });
     el.addEventListener('keydown', function(e) {
       let accordion = el.parentElement;
       if (e.keyCode === 13) {
         e.preventDefault();
-        accordion.classList.toggle('active');
+        accordion.querySelector('.pui-accordion__content').classList.toggle('active');
       }
     });
   });
