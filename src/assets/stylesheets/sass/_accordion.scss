@@ -136,10 +136,6 @@
       .pui-accordion__icon {
         @extend %rotate-180;
       }
-
-      + .pui-accordion__content {
-        display: block;
-      }
     }
   }
 
@@ -179,6 +175,10 @@
     display: none;
     position: relative;
     z-index: 0;
+
+    &.active {
+      display: block;
+    }
   }
 
 }
