@@ -101,12 +101,6 @@
       @if $index {
         // if there is another key above the selected key, run this
         @if $index < length(config.$breakpoints) {
-          @if $d == hide {
-            display: block !important;
-          }
-          @else {
-            display: none !important;
-          }
           @media screen and (min-width : ($size)) and (max-width: map.get(config.$breakpoints, mixins.nextKey($breakpoint) )  - 1 ) {
             @if $d == hide {
               display: none !important;
