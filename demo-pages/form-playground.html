@@ -73,7 +73,7 @@
     </section>
     <section>
       <h4>Forms</h4>
-      <form action="" class="pui-form block-container tablet-up-3 laptop-up-4 desktop-up-6 blocks-mb-3 blocks-py-2 blocks-px-2">
+      <form action="" class="pui-form block-container tablet-up-3 laptop-up-4 desktop-up-6 blocks mb-3 py-2 px-2">
         <div class="block">
           <label for="first-name" class="pui-form__field">First Name
             <input id="first-name" type="text" placeholder="First Name">
@@ -214,6 +214,114 @@
         </div>
       </form>
     </section>
+
+    <section class="my-4">
+      <form action="" class="pui-form block-container tablet-up-3 laptop-up-4 desktop-up-6 blocks mb-3 py-2 px-2">
+        <div class="block">
+          <fieldset class="pui-form__field">
+            <legend>Choose</legend>
+            <div class="pui-form__option-group">
+              <input class="pui-form__checkbox" id="1-gender-this-one" type="checkbox">
+              <label for="1-gender-this-one">
+                <div class="input-icons">
+                  <i class='pi-circle'></i>
+                  <i class='pi-check pi-heavy pi-sm'></i>
+                </div>
+                One
+              </label>
+              <input class="pui-form__checkbox" id="1-gender-that-one" type="checkbox">
+              <label for="1-gender-that-one">
+                <div class="input-icons">
+                  <i class='pi-circle'></i>
+                  <i class='pi-check pi-heavy pi-sm'></i>
+                </div>
+                Green
+              </label>
+              <input class="pui-form__checkbox" id="1-gender-this-one-a" type="checkbox">
+              <label for="1-gender-this-one-a">
+                <div class="input-icons">
+                  <i class='pi-circle'></i>
+                  <i class='pi-check pi-heavy pi-sm'></i>
+                </div>
+                Four
+              </label>
+              <input class="pui-form__checkbox" id="1-gender-that-one-b" type="checkbox">
+              <label for="1-gender-that-one-b">
+                <div class="input-icons">
+                  <i class='pi-circle'></i>
+                  <i class='pi-check pi-heavy pi-sm'></i>
+                </div>
+                Ten Thousand Seven (1,007)
+              </label>
+            </div>
+          </fieldset>
+        </div>
+        <div class="block">
+          <fieldset class="pui-form__field">
+            <legend>Options</legend>
+              <input class="pui-form__radio" id="1-gender-male" type="radio" name="1-gender">
+              <label for="1-gender-male">
+                <div class="input-icons">
+                  <i class='pi-circle'></i>
+                  <i class='pi-circle-solid pi-xs'></i>
+                </div>
+                One Fish
+              </label>
+              <input class="pui-form__radio" id="1-gender-female" type="radio" name="1-gender">
+              <label for="1-gender-female">
+                <div class="input-icons">
+                  <i class='pi-circle'></i>
+                  <i class='pi-circle-solid pi-xs'></i>
+                </div>
+                Two Fish
+              </label>
+              <input class="pui-form__radio" id="1-gender-male-1" type="radio" name="1-gender">
+              <label for="1-gender-male-1">
+                <div class="input-icons">
+                  <i class='pi-circle'></i>
+                  <i class='pi-circle-solid pi-xs'></i>
+                </div>
+                Red Fish
+              </label>
+              <input class="pui-form__radio" id="1-gender-female-1" type="radio" name="1-gender">
+              <label for="1-gender-female-1">
+                <div class="input-icons">
+                  <i class='pi-circle'></i>
+                  <i class='pi-circle-solid pi-xs'></i>
+                </div>
+                Blue Fish
+              </label>
+          </fieldset>
+        </div>
+        <div class="block">
+          <label for="zipcode" class="pui-form__field">County
+            <select class="pui-select" name="County Select" id="county">
+              <option value="County1">County 1</option>
+              <option value="County2">County 2</option>
+              <option value="County3">County 3</option>
+              <option value="County4">County 4</option>
+              <option value="County5">County 5</option>
+              <option value="County6">County 6</option>
+            </select>
+          </label>
+        </div>
+        <div class="block">
+          <fieldset class="pui-form__field">
+            <legend>Are You</legend>
+            <div class="pui-toggle">
+              <input class="pui-toggle__input" id="1-non-smoking-2" type="radio" checked name="height">
+              <label for="1-non-smoking-2">
+                <i class='pi-check pi-heavy'></i> Non-Smoking
+              </label>
+              <input class="pui-toggle__input" id="1-smoking-2" type="radio" name="height">
+              <label for="1-smoking-2">
+                <i class='pi-check pi-heavy'></i> Smoking
+              </label>
+            </div>
+          </fieldset>
+        </div>
+      </form>
+    </section>
     <section>
       <h4 class="mb-3">Fancy Form</h4>
       <form action="" class="pui-form block-container blocks-px-2 blocks-mb-3">
@@ -266,14 +374,7 @@
       </form>
     </section>
 
-
   </main>
-  <div class="mobile-menu-action-wrapper">
-    <button class="button mobile-menu-action" aria-label="Menu">
-      <i class="fas fa-th menu-icon" focusable="false" aria-hidden="hidden"></i>
-      <span class="mobile-menu-action__copy">Menu</span>
-    </button>
-  </div>
 
   <script src="/src/assets/js/platform-ui.min.js"></script>
   <script src="https://fast.wistia.com/assets/external/E-v1.js"></script>
