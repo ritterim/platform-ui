@@ -96,4 +96,11 @@
       border-color: $color !important;
     }
   }
+
+
+  @for $i from 1 through 5 {
+    &--width-#{$i} {
+      border-width: #{$i}px !important;
+    }
+  }
 }
