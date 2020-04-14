@@ -282,11 +282,11 @@
 //       <legend>Are You</legend>
 //       <div class="pui-toggle">
 //         <div class="pui-toggle__content">
-//           <input class="pui-toggle__input" id="tall" type="radio" checked name="height">
+//           <input id="tall" type="radio" checked name="height">
 //           <label for="tall"><i class='pi-check pi-heavy'></i> Tall</label>
 //         </div>
 //         <div class="pui-toggle__content">
-//           <input class="pui-toggle__input" id="short" type="radio" name="height">
+//           <input id="short" type="radio" name="height">
 //           <label for="short"><i class='pi-check pi-heavy'></i> Short</label>
 //         </div>
 //       </div>
@@ -930,19 +930,29 @@ legend {
 
 // Toggle Option
 // 
+// To create this toggle effect around 2 radio buttons you need to wrap the set of inputs in a `<div class="pui-toggle">.
+// From there, be sure to add your input, followed by it's label. These elements should be sibligns of one another and
+// children of the `pui-toggle`. Each pair of inputs and children should be siblings of one another.
+// 
+// From a semantic perspective, we would recommend _not_ using check boxes inside the toggle. The reason being that one
+// option needs to be checked for the toggle to make sense. Also, the toggle works so you that you could never select both
+// options.
+// 
+// We put the toggle inside a `fieldset` in the example below, but this is not required for the toggle to work.
+// 
 // Markup:
 // <form class="pui-form">
 //   <div class="block-container">
 //     <fieldset class="pui-form__field block-4">
 //       <legend>Are You</legend>
 //       <div class="pui-toggle">
-//         <input class="pui-toggle__input" id="non-smoking-2" type="radio" checked name="height">
-//         <label for="non-smoking-2">
-//           <i class='pi-check pi-heavy'></i> Non-Smoking
+//         <input id="Tall-2" type="radio" checked name="height">
+//         <label for="Tall-2">
+//           <i class='pi-check pi-heavy'></i> Tall
 //         </label>
-//         <input class="pui-toggle__input" id="smoking-2" type="radio" name="height">
-//         <label for="smoking-2">
-//           <i class='pi-check pi-heavy'></i> Smoking
+//         <input id="Short-2" type="radio" name="height">
+//         <label for="Short-2">
+//           <i class='pi-check pi-heavy'></i> Short
 //         </label>
 //       </div>
 //     </div>
