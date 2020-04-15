@@ -9,6 +9,8 @@
 //
 // Out of the box, our form fields have a margin-top added to them. This spacing should work just fine for smaller, simple forms. For larger,
 // responsive forms, we recommend that you utilize the block layout and our spacers to build the perfect form.
+// 
+// **Note** All of the following form elements must be nested inside the `pui-form` class to get the desired look.
 //
 // Markup:
 // <form action="" class="pui-form">
@@ -192,6 +194,137 @@
 // Styleguide Forms.HasIcon
 
 
+
+// Input - Checkbox
+//
+// The platform check boxes require some specific markup to get the look you see in the example below.
+// In this case, be sure to add `<div class="input-icons">` your label. Inside this `<div class="input-icons">`
+// add the font icons for the look of the checkbox, in this case we need `<i class='pi-circle pi-lg'></i>` and
+// `<i class='pi-check'></i>`. Each of these need to be siblings, nested inside the `input-icons` wrapper. Be
+// sure to add the `pi-lg` class to the `pi-circle` icon. This way, the circle will be large enough to allow the
+// checkmark to fit properly. You can try different sizes for the icons by using the font icons [size utilities](/section-icons.html#pui-icons-sizing). 
+// 
+// You can wrap the inputs and labels in the class `pui-form__option-group`. This class will ensure the proper top margin,
+// consistent with the rest of the form elements. It also allows the inputs inside the field to wrap using `display: flex`
+//  and `flex-wrap: wrap`. If you do not want the items to wrap, but rather look like block level elements, you can simplay add
+// different utility classes to the `pui-form__option-group` wrapper. In this case, `flex--column` and `flex--nowrap`.
+// 
+// **Note** For better semantics, it would be best to wrap the check boxes in a `fieldset` using this element as your
+// `pui-form__field` then adding a `legend`. See the example below.
+// 
+// Markup:
+// <form action="" class="pui-form block-container">
+//   <div class="block block-4">
+//     <fieldset class="pui-form__field">
+//       <legend>Choose</legend>
+//       <div class="pui-form__option-group">
+//         <input id="choose-this-one" type="checkbox">
+//         <label for="choose-this-one">
+//           <div class="input-icons">
+//             <i class='pi-circle pi-lg'></i>
+//             <i class='pi-check pi-heavy'></i>
+//           </div>
+//           This One
+//         </label>
+//         <input id="choose-that-one" type="checkbox">
+//         <label for="choose-that-one">
+//           <div class="input-icons">
+//             <i class='pi-circle pi-lg'></i>
+//             <i class='pi-check pi-heavy'></i>
+//           </div>
+//           That One
+//         </label>
+//         <input id="choose-that-one-2" type="checkbox">
+//         <label for="choose-that-one-2">
+//           <div class="input-icons">
+//             <i class='pi-circle pi-lg'></i>
+//             <i class='pi-check pi-heavy'></i>
+//           </div>
+//           Or This One
+//         </label>
+//         <input id="choose-that-one-3" type="checkbox">
+//         <label for="choose-that-one-3">
+//           <div class="input-icons">
+//             <i class='pi-circle pi-lg'></i>
+//             <i class='pi-check pi-heavy'></i>
+//           </div>
+//           Or Even That One
+//         </label>
+//       </div>
+//     </fieldset>
+//   </div>
+// </form>
+//
+// Styleguide Forms.InputCheckbox
+
+
+
+// Input - Radio
+//
+// Radio buttons in platform UI are almost identical to how the check boxes work. Only different here is the input type
+// and the font icon that shows when the input is checked.
+// 
+// The platform radios require some specific markup to get the look you see in the example below.
+// In this case, be sure to add `<div class="input-icons">` your label. Inside this `<div class="input-icons">`
+// add the font icons for the look of the radio, in this case we need `<i class='pi-circle pi-lg'></i>` and
+// `<i class='pi-circle-solid'></i>`. Each of these need to be siblings, nested inside the `input-icons` wrapper. Be
+// sure to add the `pi-lg` class to the `pi-circle` icon. This way, the circle will be large enough to allow the
+// dot to fit properly. You can try different sizes for the icons by using the font icons [size utilities](/section-icons.html#pui-icons-sizing). 
+// 
+// You can wrap the inputs and labels in the class `pui-form__option-group`. This class will ensure the proper top margin,
+// consistent with the rest of the form elements. It also allows the inputs inside the field to wrap using `display: flex`
+//  and `flex-wrap: wrap`. If you do not want the items to wrap, but rather look like block level elements, you can simplay add
+// different utility classes to the `pui-form__option-group` wrapper. In this case, `flex--column` and `flex--nowrap`.
+// 
+// **Note** For better semantics, it would be best to wrap the radios in a `fieldset` using this element as your
+// `pui-form__field` then adding a `legend`. See the example below.
+// 
+// Markup:
+// <form action="" class="pui-form block-container">
+//   <div class="block block-4">
+//     <fieldset class="pui-form__field">
+//       <legend>Pick one</legend>
+//       <div class="pui-form__option-group">
+//         <input id="choose-big" type="radio" name="choose-one">
+//         <label for="choose-big">
+//           <div class="input-icons">
+//             <i class='pi-circle pi-lg'></i>
+//             <i class='pi-circle-solid'></i>
+//           </div>
+//           Big
+//         </label>
+//         <input id="choose-small" type="radio" name="choose-one">
+//         <label for="choose-small">
+//           <div class="input-icons">
+//             <i class='pi-circle pi-lg'></i>
+//             <i class='pi-circle-solid'></i>
+//           </div>
+//           Small
+//         </label>
+//         <input id="choose-bigger" type="radio" name="choose-one">
+//         <label for="choose-bigger">
+//           <div class="input-icons">
+//             <i class='pi-circle pi-lg'></i>
+//             <i class='pi-circle-solid'></i>
+//           </div>
+//           Bigger
+//         </label>
+//         <input id="choose-smaller" type="radio" name="choose-one">
+//         <label for="choose-smaller">
+//           <div class="input-icons">
+//             <i class='pi-circle pi-lg'></i>
+//             <i class='pi-circle-solid'></i>
+//           </div>
+//           Smaller
+//         </label>
+//       </div>
+//     </fieldset>
+//   </div>
+// </form>
+//
+// Styleguide Forms.InputRadio
+
+
 // Putting it together
 // 
 // Here's an example of a larger responsive form using the block layout.
@@ -224,7 +357,7 @@
 //         <input class="pui-form__checkbox" id="gender-this-one" type="checkbox">
 //         <label for="gender-this-one">
 //           <div class="input-icons">
-//             <i class='pi-circle'></i>
+//             <i class='pi-circle pi-lg'></i>
 //             <i class='pi-check pi-heavy'></i>
 //           </div>
 //           This One
@@ -232,7 +365,7 @@
 //         <input class="pui-form__checkbox" id="gender-that-one" type="checkbox">
 //         <label for="gender-that-one">
 //           <div class="input-icons">
-//             <i class='pi-circle'></i>
+//             <i class='pi-circle pi-lg'></i>
 //             <i class='pi-check pi-heavy'></i>
 //           </div>
 //           That One
@@ -247,16 +380,16 @@
 //         <input class="pui-form__radio" id="gender-male" type="radio" name="gender">
 //         <label for="gender-male">
 //           <div class="input-icons">
-//             <i class='pi-circle'></i>
-//             <i class='pi-circle-solid pi-xs'></i>
+//             <i class='pi-circle pi-lg'></i>
+//             <i class='pi-circle-solid'></i>
 //           </div>
 //           Male
 //         </label>
 //         <input class="pui-form__radio" id="gender-female" type="radio" name="gender">
 //         <label for="gender-female">
 //           <div class="input-icons">
-//             <i class='pi-circle'></i>
-//             <i class='pi-circle-solid pi-xs'></i>
+//             <i class='pi-circle pi-lg'></i>
+//             <i class='pi-circle-solid'></i>
 //           </div>
 //           Female
 //         </label>
@@ -282,11 +415,11 @@
 //       <legend>Are You</legend>
 //       <div class="pui-toggle">
 //         <div class="pui-toggle__content">
-//           <input class="pui-toggle__input" id="tall" type="radio" checked name="height">
+//           <input id="tall" type="radio" checked name="height">
 //           <label for="tall"><i class='pi-check pi-heavy'></i> Tall</label>
 //         </div>
 //         <div class="pui-toggle__content">
-//           <input class="pui-toggle__input" id="short" type="radio" name="height">
+//           <input id="short" type="radio" name="height">
 //           <label for="short"><i class='pi-check pi-heavy'></i> Short</label>
 //         </div>
 //       </div>
@@ -312,6 +445,37 @@
 // 
 // 
 // Styleguide Forms.Putting
+
+
+
+// Select
+// 
+// To get this look you see in the example below, be sure to wrap your `select` in the class, `pui-form__select-wrapper`.
+// This allows for the angle down arrow to show. We're using a pseudo element to create the angle down arrow here. Since
+// you can not add a pseudo element to a `select` we wrapped it in a `div`. The class, `pui-form__select-wrapper` also 
+// allows for consistent spacing with the other form elements. If you wish to have a different arrow, you can remove the 
+// `pui-form__select-wrapper` class but be sure to add the proper top margin to the element you use to wrap your `select`.
+// 
+// 
+// Markup:
+// <form action="" class="pui-form block-container">
+//   <div class="block block-4">
+//     <label for="county" class="pui-form__field">County
+//       <div class="pui-form__select-wrapper">
+//         <select name="County Select" id="county">
+//           <option value="County1">County 1</option>
+//           <option value="County2">County 2</option>
+//           <option value="County3">County 3</option>
+//           <option value="County4">County 4</option>
+//           <option value="County5">County 5</option>
+//           <option value="County6">County 6</option>
+//         </select>
+//       </div>
+//     </label>
+//   </div>
+// </form>
+// 
+// Styleguide Forms.Selects
 
 
 // KSS-Node specific stuff for forms
@@ -352,10 +516,12 @@ legend {
 
   .input-icons {
     left: 0; top: 0;
-    position: absolute;
-    @include mixins.square(1rem);
+    margin-right: map.get(variables.$spacers, 2);
+    position: relative;
+    @include mixins.square(1.5rem);
 
     [class^="pi-"] {
+      line-height: 1;
       position: absolute;
       left: 50%; top: 50%;
       transform: translate(-50%, -50%);      
@@ -384,14 +550,13 @@ legend {
     }
   
     + label {
+      align-items: center;
       color: map.get(variables.$greyscale, 'base');
       cursor: pointer;
-      display: inline-block;
+      display: flex;
       font-weight: 400;
-      line-height: 1.2;
       margin-right: variables.$spacer;
       margin-top: variables.$spacer * .75;
-      padding-left: variables.$spacer * 1.5;
       position: relative;
       vertical-align: baseline;
     }
@@ -718,7 +883,7 @@ legend {
 
   &__option-group {
     display: flex;
-    flex-flow: row wrap;
+    flex-wrap: wrap;
     justify-content: flex-start;
     &.option-group--block {
       display: block;
@@ -844,7 +1009,7 @@ legend {
     -webkit-appearance: none;
     appearance: none;
     border-radius: 0;
-    padding: map.get(variables.$spacers, 1) variables.$spacer map.get(variables.$spacers, 1) 0;
+    padding: map.get(variables.$spacers, 1) variables.$spacer map.get(variables.$spacers, 1) map.get(variables.$spacers, 2);
   }
 
   input[type="date"],
@@ -921,8 +1086,43 @@ legend {
 //
 // Styleguide Forms.Readonly
 
+
+
 // Togles
 // ------
+
+// Toggle Option
+// 
+// To create this toggle effect around 2 radio buttons you need to wrap the set of inputs in a `<div class="pui-toggle">`.
+// From there, be sure to add your input, followed by it's label. These elements should be sibligns of one another and
+// children of the `pui-toggle`. Each pair of inputs and children should be siblings of one another.
+// 
+// From a semantic perspective, we would recommend _not_ using check boxes inside the toggle. The reason being that one
+// option needs to be checked for the toggle to make sense. Also, the toggle works so you that you could never select both
+// options.
+// 
+// We put the toggle inside a `fieldset` in the example below, but this is not required for the toggle to work.
+// 
+// Markup:
+// <form class="pui-form">
+//   <div class="block-container">
+//     <fieldset class="pui-form__field block-4">
+//       <legend>Are You</legend>
+//       <div class="pui-toggle">
+//         <input id="Tall-2" type="radio" checked name="height">
+//         <label for="Tall-2">
+//           <i class='pi-check pi-heavy'></i> Tall
+//         </label>
+//         <input id="Short-2" type="radio" name="height">
+//         <label for="Short-2">
+//           <i class='pi-check pi-heavy'></i> Short
+//         </label>
+//       </div>
+//     </div>
+//   </fieldset>
+// </form>
+// 
+// Styleguide Forms.Toggle
 .pui-toggle {
   border: 1px solid color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold * 2));
   border-radius: map.get(config.$radius, 'button');
@@ -932,22 +1132,38 @@ legend {
   padding: map.get(variables.$spacers, 1);
 
   &__content {
+    display: flex;
     flex: 1 1 auto;
-    position: relative;
   }
 
-  input.pui-toggle__input {
+  input[type="checkbox"],
+  input[type="radio"] {
+    opacity: 0;
+    position: absolute;
+    width: auto;
+  
+    &:checked + label {      
+  
+      .input-icons {
+
+        [class^="pi-"]:nth-of-type(2) {
+          transform: translate(-50%, -50%) scale(1);
+        }
+      }
+    }
 
     + label {
       align-items: center;
       border-radius: map.get(config.$radius, 'button');
       color: map.get(variables.$greyscale, 'base');
       display: flex;
+      flex: 1 1 auto;
       height: 100%;
       justify-content: center;
       margin: 0;
       padding: map.get(variables.$spacers, 1) map.get(variables.$spacers, 2);
       padding-left: variables.$spacer * 1.3;
+      position: relative;
       z-index: 10;
 
       [class^="pi-"] {
