@@ -216,7 +216,7 @@
 //     <fieldset class="pui-form__field">
 //       <legend>Choose</legend>
 //       <div class="pui-form__option-group">
-//         <input class="pui-form__checkbox" id="choose-this-one" type="checkbox">
+//         <input id="choose-this-one" type="checkbox">
 //         <label for="choose-this-one">
 //           <div class="input-icons">
 //             <i class='pi-circle pi-lg'></i>
@@ -224,7 +224,7 @@
 //           </div>
 //           This One
 //         </label>
-//         <input class="pui-form__checkbox" id="choose-that-one" type="checkbox">
+//         <input id="choose-that-one" type="checkbox">
 //         <label for="choose-that-one">
 //           <div class="input-icons">
 //             <i class='pi-circle pi-lg'></i>
@@ -232,7 +232,7 @@
 //           </div>
 //           That One
 //         </label>
-//         <input class="pui-form__checkbox" id="choose-that-one-2" type="checkbox">
+//         <input id="choose-that-one-2" type="checkbox">
 //         <label for="choose-that-one-2">
 //           <div class="input-icons">
 //             <i class='pi-circle pi-lg'></i>
@@ -240,7 +240,7 @@
 //           </div>
 //           Or This One
 //         </label>
-//         <input class="pui-form__checkbox" id="choose-that-one-3" type="checkbox">
+//         <input id="choose-that-one-3" type="checkbox">
 //         <label for="choose-that-one-3">
 //           <div class="input-icons">
 //             <i class='pi-circle pi-lg'></i>
@@ -253,7 +253,74 @@
 //   </div>
 // </form>
 //
-// Styleguide Forms.Checkbox
+// Styleguide Forms.InputCheckbox
+
+
+
+// Input - Radio
+//
+// Radio buttons in platform UI are almost identical to how the check boxes work. Only different here is the input type
+// and the font icon that shows when the input is checked.
+// 
+// The platform radios require some specific markup to get the look you see in the example below.
+// In this case, be sure to add `<div class="input-icons">` your label. Inside this `<div class="input-icons">`
+// add the font icons for the look of the radio, in this case we need `<i class='pi-circle pi-lg'></i>` and
+// `<i class='pi-circle-solid'></i>`. Each of these need to be siblings, nested inside the `input-icons` wrapper. Be
+// sure to add the `pi-lg` class to the `pi-circle` icon. This way, the circle will be large enough to allow the
+// dot to fit properly. You can try different sizes for the icons by using the font icons [size utilities](/section-icons.html#pui-icons-sizing). 
+// 
+// You can wrap the inputs and labels in the class `pui-form__option-group`. This class will ensure the proper top margin,
+// consistant with the rest of the form elements. It also allows the inputs inside the field to wrap using `display: flex`
+//  and `flex-wrap: wrap`. If you do not want the items to wrap, but rather look like block level elements, you can simplay add
+// different utility classes to the `pui-form__option-group` wrapper. In this case, `flex--column` and `flex--nowrap`.
+// 
+// **Note** For better semantics, it would be best to wrap the radios in a `fieldset` using this element as your
+// `pui-form__field` then adding a `legend`. See the example below.
+// 
+// Markup:
+// <form action="" class="pui-form block-container">
+//   <div class="block block-4">
+//     <fieldset class="pui-form__field">
+//       <legend>Pick one</legend>
+//       <div class="pui-form__option-group">
+//         <input id="choose-big" type="radio" name="choose-one">
+//         <label for="choose-big">
+//           <div class="input-icons">
+//             <i class='pi-circle pi-lg'></i>
+//             <i class='pi-circle-solid'></i>
+//           </div>
+//           Big
+//         </label>
+//         <input id="choose-small" type="radio" name="choose-one">
+//         <label for="choose-small">
+//           <div class="input-icons">
+//             <i class='pi-circle pi-lg'></i>
+//             <i class='pi-circle-solid'></i>
+//           </div>
+//           Small
+//         </label>
+//         <input id="choose-bigger" type="radio" name="choose-one">
+//         <label for="choose-bigger">
+//           <div class="input-icons">
+//             <i class='pi-circle pi-lg'></i>
+//             <i class='pi-circle-solid'></i>
+//           </div>
+//           Bigger
+//         </label>
+//         <input id="choose-smaller" type="radio" name="choose-one">
+//         <label for="choose-smaller">
+//           <div class="input-icons">
+//             <i class='pi-circle pi-lg'></i>
+//             <i class='pi-circle-solid'></i>
+//           </div>
+//           Smaller
+//         </label>
+//       </div>
+//     </fieldset>
+//   </div>
+// </form>
+//
+// Styleguide Forms.InputRadio
 
 
 // Putting it together
@@ -455,7 +522,6 @@ legend {
       cursor: pointer;
       display: flex;
       font-weight: 400;
-      line-height: 1.2;
       margin-right: variables.$spacer;
       margin-top: variables.$spacer * .75;
       position: relative;
