@@ -9,6 +9,8 @@
 //
 // Out of the box, our form fields have a margin-top added to them. This spacing should work just fine for smaller, simple forms. For larger,
 // responsive forms, we recommend that you utilize the block layout and our spacers to build the perfect form.
+// 
+// **Note** All of the following form elements must be nested inside the `pui-form` class to get the desired look.
 //
 // Markup:
 // <form action="" class="pui-form">
@@ -203,7 +205,7 @@
 // checkmark to fit properly. You can try different sizes for the icons by using the font icons [size utilities](/section-icons.html#pui-icons-sizing). 
 // 
 // You can wrap the inputs and labels in the class `pui-form__option-group`. This class will ensure the proper top margin,
-// consistant with the rest of the form elements. It also allows the inputs inside the field to wrap using `display: flex`
+// consistent with the rest of the form elements. It also allows the inputs inside the field to wrap using `display: flex`
 //  and `flex-wrap: wrap`. If you do not want the items to wrap, but rather look like block level elements, you can simplay add
 // different utility classes to the `pui-form__option-group` wrapper. In this case, `flex--column` and `flex--nowrap`.
 // 
@@ -270,7 +272,7 @@
 // dot to fit properly. You can try different sizes for the icons by using the font icons [size utilities](/section-icons.html#pui-icons-sizing). 
 // 
 // You can wrap the inputs and labels in the class `pui-form__option-group`. This class will ensure the proper top margin,
-// consistant with the rest of the form elements. It also allows the inputs inside the field to wrap using `display: flex`
+// consistent with the rest of the form elements. It also allows the inputs inside the field to wrap using `display: flex`
 //  and `flex-wrap: wrap`. If you do not want the items to wrap, but rather look like block level elements, you can simplay add
 // different utility classes to the `pui-form__option-group` wrapper. In this case, `flex--column` and `flex--nowrap`.
 // 
@@ -443,6 +445,37 @@
 // 
 // 
 // Styleguide Forms.Putting
+
+
+
+// Select
+// 
+// To get this look you see in the example below, be sure to wrap your `select` in the class, `pui-form__select-wrapper`.
+// This allows for the angle down arrow to show. We're using a pseudo element to create the angle down arrow here. Since
+// you can not add a pseudo element to a `select` we wrapped it in a `div`. The class, `pui-form__select-wrapper` also 
+// allows for consistent spacing with the other form elements. If you wish to have a different arrow, you can remove the 
+// `pui-form__select-wrapper` class but be sure to add the proper top margin to the element you use to wrap your `select`.
+// 
+// 
+// Markup:
+// <form action="" class="pui-form block-container">
+//   <div class="block block-4">
+//     <label for="county" class="pui-form__field">County
+//       <div class="pui-form__select-wrapper">
+//         <select name="County Select" id="county">
+//           <option value="County1">County 1</option>
+//           <option value="County2">County 2</option>
+//           <option value="County3">County 3</option>
+//           <option value="County4">County 4</option>
+//           <option value="County5">County 5</option>
+//           <option value="County6">County 6</option>
+//         </select>
+//       </div>
+//     </label>
+//   </div>
+// </form>
+// 
+// Styleguide Forms.Selects
 
 
 // KSS-Node specific stuff for forms
