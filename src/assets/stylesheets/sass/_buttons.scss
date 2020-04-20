@@ -126,6 +126,12 @@
 // For our links that should look like buttons, and contain an icon, we need to add specific
 // `aria-roles` for accessibility.
 // These are links that look like buttons but do not have the same html.
+// 
+// Another accessibility consideration is to add `aria-label`s appropriately. In the example
+// below, we have a button only containing a font icon. To make this button accessible for 
+// screen readers, you should add an `aria-label` and apply `aria-hidden="true"` to the icon.
+// 
+// Learn more about <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute" target="_blank">aria-label</a>.
 //
 //
 // Markup:
