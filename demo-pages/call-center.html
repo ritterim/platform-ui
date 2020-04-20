@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Call Center view</title>
+
+  <link rel="stylesheet" href="/src/assets/stylesheets/platform-ui.min.css">
+  <style>
+    :root {
+      --text-khaki: #86813c;
+      --background-light-khaki: #f4f3e6;
+    }
+    .background-khaki {
+      background-color: var(--background-light-khaki);
+    }
+    .text-khaki {
+      color: var(--text-khaki);
+    }
+    .repeating-linear-gradient {
+      background: repeating-linear-gradient(-55deg, #d5d1a0, #d5d1a0 10px, #dcd9b2 10px, #dcd9b2 20px);
+    }
+  </style>
+</head>
+<body class="flex flex--column background-light-mid">
+  <header class="site-header site-header--fixed">
+      <nav class="site-menu primary inverted">
+          <div class="site-menu__item">
+            <a href="/demo-pages/crm-example.html" class="site-menu__link">
+              <span class="card__header-icon pill--circle-medium background-purple text-white mr-2">
+                  D
+              </span>
+              <span class="text--size-lg">
+                  Hello Dev
+              </span>
+            </a>
+          </div>
+          <div class="site-menu__item search">
+              <form role="search" aria-label="CRM" _lpchecked="1" class="w-100">
+                  <div class="flex flex--align-center">
+                      <label for="search-input" class="sr-only">Search</label>
+                      <input type="text" id="search-input" placeholder="Type to search..." class="placeholder--light text-white">
+                      <i aria-hidden="true" class="pi-search"></i>
+                  </div>
+              </form>
+          </div>
+          <div class="site-menu__item active">
+              <a href="#" class="site-menu__link">
+                <i class="mr-1 pi-phone" aria-hidden="true"></i>
+                Call Center 
+              </a>
+          </div>
+          <div class="site-menu__item has-dropdown">
+              <a href="#" class="site-menu__link">
+                  Organizations <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+              </a>
+              <div class="dropdown-menu pin-right">
+                  <a href="#" class="dropdown-menu__item">
+                      dropdown
+                  </a>
+              </div>
+          </div>
+          <div class="site-menu__item has-dropdown">
+              <a href="#" class="site-menu__link">
+                  People <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+              </a>
+              <div class="dropdown-menu pin-right">
+                  <a href="#" class="dropdown-menu__item">
+                      dropdown
+                  </a>
+              </div>
+          </div>
+          <div class="site-menu__item has-dropdown">
+              <a href="#" class="site-menu__link">
+                  Flow <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+              </a>
+              <div class="dropdown-menu pin-right">
+                  <a href="#" class="dropdown-menu__item">
+                      dropdown
+                  </a>
+              </div>
+          </div>
+          <div class="site-menu__item has-dropdown">
+              <a href="#" class="site-menu__link">
+                  <span class="sr-only">RIMDev</span>
+                  <span class="card__header-icon pill--circle-medium background-white text-navy">
+                      <i class="pi-rimdev pi-lg" aria-hidden="true"></i>
+                  </span>
+                  <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+              </a>
+              <div class="dropdown-menu pin-right">
+                  <a href="#" class="dropdown-menu__item">
+                      dropdown
+                  </a>
+              </div>
+          </div>
+          <div class="site-menu__item has-dropdown">
+              <a href="#" class="site-menu__link">
+                  Recent <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+              </a>
+              <div class="dropdown-menu pin-right">
+                  <a href="#" class="dropdown-menu__item">
+                      dropdown
+                  </a>
+              </div>
+          </div>
+      </nav>
+  </header>
+  <main class="header-fixed py-4 px-5">
+    <div class="block-container blocks px-2 mb-4">
+      <div class="block block-7">
+        <h1 class="flex--center-content text-navy">Lead Information</h1>
+        <div class="block-container">
+          <div class="block pui-card p-4 border--color-olive border--width-3">
+          <div class="pui-card__header">
+            <span>
+              <strong class="text--size-xl">
+                { Lead Name }
+              </strong>
+              <div class="pill pill--circle-empty positive"></div>
+            </span>
+            <!-- <button class="button button--secondary">
+              <i class="pi-help" aria-hidden="true"></i>
+            </button> -->
+          </div>
+
+          <div class="block-container tablet-up-3">
+            <div class="block flex flex--column">
+              <span>
+                <i class="pi-phone"></i>
+                <strong>Phone</strong>
+              </span>
+              (000) 000-0000
+            </div>
+            <div class="block flex flex--column">
+              <span>
+                <i class="pi-envelope"></i>
+                <strong>Email</strong>
+              </span>
+              email@email.com
+            </div>
+
+            <div class="block flex flex--column">
+              <span>
+                <i class="pi-building"></i>
+                <strong>Address</strong>
+              </span>
+              123 Street <br>
+              City, ST 12345
+            </div>
+          </div>
+          <div class="block-container tablet-up-3 mt-2">
+            <div class="block flex flex--column">
+              <strong>Campaign</strong>
+              <span class="truncate-with-ellipsis" title="RIM_long_named_campaign_here_for_NO_REASON">RIM_long_named_campaign_here_for_NO_REASON</span>
+            </div>
+            <div class="block flex flex--column">
+              <strong>Campaign Status</strong>
+              Success
+            </div>
+            <div class="block flex flex--column">
+              <strong>Sales Rep</strong>
+              John Hammond
+            </div>
+          </div>
+
+          <div class="block-container mt-3 background-khaki text-khaki">
+            <div class="block block-11 p-3">
+              <div class="block-container tablet-up-3">
+                <div class="block flex flex--column">
+                  <strong>Campaign ID</strong>
+                  <span class="truncate-with-ellipsis" title="Sales_somthing">Sales_somthing</span>
+                </div>
+                <div class="block flex flex--column">
+                  <strong>Campaign</strong>
+                  <span class="truncate-with-ellipsis" title="Sales_somthing">Sales_somthing</span>
+                </div>
+                <div class="block flex flex--column">
+                  <strong>Sales Rep</strong>
+                  <i class="pi-ban"></i>
+                </div>
+              </div>
+              <div class="block-container tablet-up-3 mt-2">
+                <div class="block flex flex--column">
+                  <strong>Start Range</strong>
+                  <i class="pi-ban"></i>
+                </div>
+                <div class="block flex flex--column">
+                  <label for="status" class="pui-form text-khaki mr-2 pui-form__field">
+                    <strong>Campaign Status</strong>
+                    <div class="pui-form__select-wrapper mt-0">
+                      <select name="Status Select" id="status">
+                        <option value="">Success</option>
+                      </select>
+                    </div>
+                  </label>
+                </div>
+                <div class="block flex flex--column">
+                  <strong>Audience</strong>
+                  <i class="pi-ban"></i>
+                </div>
+              </div>
+              <div class="block-container mt-2 tablet-up-3">
+  
+                <div class="block flex flex--column">
+                  <strong>Comm Source</strong>
+                  <i class="pi-ban"></i>
+                </div>
+                <div class="block flex flex--column">
+                  <strong>Comm Type</strong>
+                  <i class="pi-ban"></i>
+                </div>
+                <div class="block flex flex--column">
+                  <strong>Comm Content</strong>
+                  <i class="pi-ban"></i>
+                </div>
+              </div>
+            </div>
+            <div class="block block-1 flex--center-content repeating-linear-gradient">
+              <div class="rotate-90 text--size-lg flex">
+                <strong class="text-brown">ACTIVE</strong>
+              </div>
+            </div>
+          </div>
+          </div>
+
+          <div class="block mt-3 pui-card">
+            <div class="pui-card__header px-3">
+              <strong class="text--size-xl">Notes</strong>
+              <button class="button">
+                Add
+                <i class="pi-plus" aria-hidden="true"></i>
+              </button>
+            </div>
+          
+            <div class="block-container tablet-up-3 flex--align-center flex--justify-between overflow-x--scroll px-2">
+              <div class="block">
+                <div class="background-note pui-card m-2 pl-3 pr-0">
+                  <div class="block-container">
+                    <div class="block-10">
+                      <div class="pui-card__header">
+                        <strong class="pui-card__group">
+                          <i class="pi-speech-bubble"></i> John Hammond 00/00/0000
+                        </strong>
+                      </div>
+                      <div class="pui-card__content">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis sem,
+                        iaculis vitae posuere ac, blandit vel neque.
+                      </div>
+                    </div>
+                    <div class="block-2">
+                      <div class="icon-menu icon-menu--vertical">
+                        <div class="icon-menu__item">
+                          <button class="icon-menu__action button--plain text-navy--hover pointer">
+                            <i class="pi-tag" aria-hidden="hidden"></i>
+                          </button>
+                        </div>
+                        <div class="icon-menu__item">
+                          <button class="icon-menu__action button--plain text-navy--hover pointer">
+                            <i class="pi-edit" aria-hidden="hidden"></i>
+                          </button>
+                        </div>
+                        <div class="icon-menu__item">
+                          <button class="icon-menu__action button--plain text-navy--hover pointer">
+                            <i class="pi-lock" aria-hidden="hidden"></i>
+                          </button>
+                        </div>
+                        <div class="icon-menu__item">
+                          <button
+                            class="icon-menu__action button--plain text-negative--hover pointer">
+                            <i class="pi-trash" aria-hidden="hidden"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="block">
+                <div class="background-note pui-card m-2 pl-3 pr-0">
+                  <div class="block-container">
+                    <div class="block-10">
+                      <div class="pui-card__header">
+                        <strong class="pui-card__group">
+                          <i class="pi-speech-bubble"></i> John Hammond 00/00/0000
+                        </strong>
+                      </div>
+                      <div class="pui-card__content">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis sem,
+                        iaculis vitae posuere ac, blandit vel neque.
+                      </div>
+                    </div>
+                    <div class="block-2">
+                      <div class="icon-menu icon-menu--vertical">
+                        <div class="icon-menu__item">
+                          <button class="icon-menu__action button--plain text-navy--hover pointer">
+                            <i class="pi-tag" aria-hidden="hidden"></i>
+                          </button>
+                        </div>
+                        <div class="icon-menu__item">
+                          <button class="icon-menu__action button--plain text-navy--hover pointer">
+                            <i class="pi-edit" aria-hidden="hidden"></i>
+                          </button>
+                        </div>
+                        <div class="icon-menu__item">
+                          <button class="icon-menu__action button--plain text-navy--hover pointer">
+                            <i class="pi-lock" aria-hidden="hidden"></i>
+                          </button>
+                        </div>
+                        <div class="icon-menu__item">
+                          <button
+                            class="icon-menu__action button--plain text-negative--hover pointer">
+                            <i class="pi-trash" aria-hidden="hidden"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="block">
+                <div class="background-note pui-card m-2 pl-3 pr-0">
+                  <div class="block-container">
+                    <div class="block-10">
+                      <div class="pui-card__header">
+                        <strong class="pui-card__group">
+                          <i class="pi-speech-bubble"></i> John Hammond 00/00/0000
+                        </strong>
+                      </div>
+                      <div class="pui-card__content">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis sem,
+                        iaculis vitae posuere ac, blandit vel neque.
+                      </div>
+                    </div>
+                    <div class="block-2">
+                      <div class="icon-menu icon-menu--vertical">
+                        <div class="icon-menu__item">
+                          <button class="icon-menu__action button--plain text-navy--hover pointer">
+                            <i class="pi-tag" aria-hidden="hidden"></i>
+                          </button>
+                        </div>
+                        <div class="icon-menu__item">
+                          <button class="icon-menu__action button--plain text-navy--hover pointer">
+                            <i class="pi-edit" aria-hidden="hidden"></i>
+                          </button>
+                        </div>
+                        <div class="icon-menu__item">
+                          <button class="icon-menu__action button--plain text-navy--hover pointer">
+                            <i class="pi-lock" aria-hidden="hidden"></i>
+                          </button>
+                        </div>
+                        <div class="icon-menu__item">
+                          <button
+                            class="icon-menu__action button--plain text-negative--hover pointer">
+                            <i class="pi-trash" aria-hidden="hidden"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    
+      <div class="block block-5">
+        <div class="flex flex--justify-end flex--align-center pui-form pt-3 pb-3">
+          <button class="button button--secondary" data-button-text="Pause">
+            <span aria-hidden="true">&#10073; &#10073;</span>
+          </button>
+          <button class="button py-2 ml-2">Next Call</button>
+          <div class="pui-toggle background-white mt-0 ml-2">
+            <div class="pui-toggle__content">
+              <input class="pui-toggle__input" id="ready" type="radio" checked="" name="mode">
+              <label for="ready"><i class="pi-phone pi-sm" aria-hidden="true"></i><span class="flex ml-1">Ready</span></label>
+            </div>
+            <div class="pui-toggle__content">
+              <input class="pui-toggle__input" id="paused" type="radio" name="mode">
+              <label for="paused"><i class="pi-warning pi-sm"></i><span class="flex ml-1">Paused</span></label>
+            </div>
+          </div>
+        </div>
+        <div class="pui-card mt-2 p-4">
+          <div class="pui-card__header">
+            <strong class="text--size-xl">Script</strong>
+            <button class="button">
+              Open in new tab
+              <i class="pi-link-external" aria-hidden="true"></i>
+            </button>
+          </div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ipsum libero, suscipit a vulputate eu,
+            laoreet sed quam. Suspendisse nec massa posuere, ultrices velit sit amet, sagittis sem. Maecenas et nulla ut
+            ipsum malesuada feugiat sed sed diam. Nam tincidunt enim non semper molestie. Vestibulum pharetra rutrum
+            eros vel aliquet. Mauris at nulla lorem. Aliquam congue euismod dolor quis facilisis.</p>
+            <p>Ut nec leo molestie, efficitur est ut, gravida libero. Curabitur id lorem feugiat, varius tortor nec,
+              rhoncus lectus. Sed tempor massa sit amet urna condimentum cursus. Aenean ut imperdiet tortor. Aenean
+              vitae diam at lacus condimentum aliquam. Sed sagittis sem a ipsum sodales, sit amet eleifend eros
+              scelerisque. Vivamus convallis eu odio sit amet porta. Mauris venenatis mi a dignissim vulputate. Duis
+              tincidunt, lectus at eleifend suscipit, erat nunc pulvinar turpis, accumsan ultricies lacus est et diam.
+              Pellentesque sed tellus ex. Mauris sed rutrum mi, interdum tempus nisl.
+</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </main>
+
+
+  <script src="/src/assets/js/platform-ui.min.js"></script>
+</body>
+</html>
