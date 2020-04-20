@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Call Center view</title>
+
+  <link rel="stylesheet" href="/src/assets/stylesheets/platform-ui.min.css">
+
+</head>
+<body class="flex flex--column background-light-mid">
+  <header class="site-header site-header--fixed">
+      <nav class="site-menu primary inverted">
+          <div class="site-menu__item">
+            <a href="/demo-pages/crm-example.html" class="site-menu__link">
+              <span class="card__header-icon pill--circle-medium background-purple text-white mr-2">
+                  D
+              </span>
+              <span class="text--size-lg">
+                  Hello Dev
+              </span>
+            </a>
+          </div>
+          <div class="site-menu__item search">
+              <form role="search" aria-label="CRM" _lpchecked="1" class="w-100">
+                  <div class="flex flex--align-center">
+                      <label for="search-input" class="sr-only">Search</label>
+                      <input type="text" id="search-input" placeholder="Type to search..." class="placeholder--light text-white">
+                      <i aria-hidden="true" class="pi-search"></i>
+                  </div>
+              </form>
+          </div>
+          <div class="site-menu__item active">
+              <a href="#" class="site-menu__link">
+                <i class="mr-1 pi-phone" aria-hidden="true"></i>
+                Call Center 
+              </a>
+          </div>
+          <div class="site-menu__item has-dropdown">
+              <a href="#" class="site-menu__link">
+                  Organizations <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+              </a>
+              <div class="dropdown-menu pin-right">
+                  <a href="#" class="dropdown-menu__item">
+                      dropdown
+                  </a>
+              </div>
+          </div>
+          <div class="site-menu__item has-dropdown">
+              <a href="#" class="site-menu__link">
+                  People <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+              </a>
+              <div class="dropdown-menu pin-right">
+                  <a href="#" class="dropdown-menu__item">
+                      dropdown
+                  </a>
+              </div>
+          </div>
+          <div class="site-menu__item has-dropdown">
+              <a href="#" class="site-menu__link">
+                  Flow <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+              </a>
+              <div class="dropdown-menu pin-right">
+                  <a href="#" class="dropdown-menu__item">
+                      dropdown
+                  </a>
+              </div>
+          </div>
+          <div class="site-menu__item has-dropdown">
+              <a href="#" class="site-menu__link">
+                  <span class="sr-only">RIMDev</span>
+                  <span class="card__header-icon pill--circle-medium background-white text-navy">
+                      <i class="pi-rimdev pi-lg" aria-hidden="true"></i>
+                  </span>
+                  <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+              </a>
+              <div class="dropdown-menu pin-right">
+                  <a href="#" class="dropdown-menu__item">
+                      dropdown
+                  </a>
+              </div>
+          </div>
+          <div class="site-menu__item has-dropdown">
+              <a href="#" class="site-menu__link">
+                  Recent <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+              </a>
+              <div class="dropdown-menu pin-right">
+                  <a href="#" class="dropdown-menu__item">
+                      dropdown
+                  </a>
+              </div>
+          </div>
+      </nav>
+  </header>
+  <main class="header-fixed py-4 px-5">
+    <div class="block-container blocks px-2 mb-4">
+      <div class="block block-7">
+        <h1 class="flex--center-content text-navy">Lead Information</h1>
+        <div class="block-container">
+          <div class="block pui-card p-4 flex--center-content">
+          
+            Please  select.
+
+         
+          
+
+          </div>
+        </div>
+      </div>
+    
+      <div class="block block-5">
+        <div class="flex flex--justify-end flex--align-center pui-form pt-3 pb-3">
+          <button class="button button--secondary" data-button-text="Pause">
+            <i class="pi-play" aria-hidden="true"></i>
+          </button>
+          <button class="button py-2 ml-2">Next Call</button>
+          <div class="pui-toggle background-white mt-0 ml-2">
+            <div class="pui-toggle__content">
+              <input class="pui-toggle__input" id="ready" type="radio" checked="" name="mode">
+              <label for="ready"><i class="pi-phone pi-sm" aria-hidden="true"></i><span class="flex ml-1">Ready</span></label>
+            </div>
+            <div class="pui-toggle__content">
+              <input class="pui-toggle__input" id="paused" type="radio" name="mode">
+              <label for="paused"><i class="pi-warning pi-sm"></i><span class="flex ml-1">Paused</span></label>
+            </div>
+          </div>
+        </div>
+        <div class="pui-card mt-2 p-4">
+          <div class="pui-card__header">
+            <strong class="text--size-xl">Script</strong>
+            <button class="button">
+              Open in new tab
+              <i class="pi-link-external" aria-hidden="true"></i>
+            </button>
+          </div>
+         
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </main>
+
+
+  <script src="/src/assets/js/platform-ui.min.js"></script>
+</body>
+</html>
