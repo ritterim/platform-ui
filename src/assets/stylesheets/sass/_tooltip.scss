@@ -31,7 +31,7 @@
 //   <p>Lorem ipsum dolor sit amet, <span data-pui-tooltip="This is a default tooltip with data-inline." class="tooltip-inline">consectetur</span> adipiscing elit. Maecenas mi nunc, egestas id consectetur a, consectetur a lorem. Maecenas interdum enim felis, eget fringilla massa rhoncus sed.
 // </div>
 // <div class="block-container pb-3">
-//   <div class="tooltip-top" data-pui-tooltip="Not a true help tooltip.">
+//   <div class="tooltip-right" data-pui-tooltip="Not a true help tooltip.">
 //     <i class="pi-help-solid" focusable="false" aria-hidden="true"></i>
 //   </div>
 // </div>
@@ -101,14 +101,14 @@
         if $direction == left {
           border-color: transparent transparent transparent $background-color;
           top: $triangle;
-          right: calc(100% - (#{$triangle} / 2 ));
+          right: calc(110% - #{$triangle});
           margin-top: -$triangle;
         } @else
         if $direction == right {
           border-color: transparent $background-color transparent transparent;
           top: 50%;
           top: $triangle;
-          left: calc(100% - (#{$triangle} / 2 ));
+          left: calc(110% - #{$triangle});
           margin-top: -$triangle;
         }
       }
@@ -126,15 +126,11 @@
         } @else
         if $direction == left {
           top: -$triangle;
-          right: 100%;
-          transform: translate(-1%);
-          margin-right: $triangle / 2;
+          right: calc(110% + #{$triangle});
         } @else
         if $direction == right {
           top: -$triangle;
           left: calc(110% + #{$triangle});
-          transform: translate(-1%);
-          margin-left: $triangle / 2;
         }
       }
     }
