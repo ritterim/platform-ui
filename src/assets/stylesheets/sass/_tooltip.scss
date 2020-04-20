@@ -51,6 +51,7 @@
   $background-color: rgba(map.get(variables.$greyscale, 'dark'), .9);
 
   cursor: pointer;
+  display: inline-block;
   line-height: 1;
   position: relative;
 
@@ -99,15 +100,15 @@
         } @else
         if $direction == left {
           border-color: transparent transparent transparent $background-color;
-          top: calc(50% - #{$triangle});
-          left: -$triangle;
+          top: $triangle;
+          right: calc(100% - (#{$triangle} / 2 ));
           margin-top: -$triangle;
         } @else
         if $direction == right {
           border-color: transparent $background-color transparent transparent;
           top: 50%;
-          top: calc(50% - #{$triangle});
-          right: -$triangle;
+          top: $triangle;
+          left: calc(100% - (#{$triangle} / 2 ));
           margin-top: -$triangle;
         }
       }
@@ -131,7 +132,7 @@
         } @else
         if $direction == right {
           top: -$triangle;
-          left: 110%;
+          left: calc(110% + #{$triangle});
           transform: translate(-1%);
           margin-left: $triangle / 2;
         }
@@ -146,6 +147,7 @@
       }
 
       &:after {
+        font-size: 1rem;
         max-width: 20rem;
         position: fixed;
         bottom: auto; top: 50%;
