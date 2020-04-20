@@ -7,8 +7,8 @@
 // Add your tooltip text to a `data-pui-tooltip` attribute on any item you want a tooltip.
 //
 // `data-placement` will set direction: `top`, `bottom`, `left`, `right`. Default placement is `top`.
-  //
-  // `data-inline` add a dashed underline to identify the tooltip.
+//
+// `data-inline` add a dashed underline to identify the tooltip.
 //
 // We use a font-awesome icon for our tooltip, but we don't want the hover to take place on the icon.
 // Be sure to add the tooltip data attribute to the `<div>` wrapper instead. Place any color changes,
@@ -31,7 +31,7 @@
 //   </div>
 // </div>
 // <div class="block-container pb-3">
-//   <div class="tooltip-top tooltip-mobile" data-pui-tooltip="This tooltip is centered on a mobile screen.">
+//   <div class="tooltip-right tooltip-mobile" data-pui-tooltip="This tooltip is centered on a mobile screen.">
 //     <i class="pi-help-solid" focusable="false" aria-hidden="true"></i>
 //   </div>
 // </div>
@@ -151,16 +151,16 @@
     }
   }
 
+  &.tooltip-inline {
+    border-bottom: 2px dotted map.get(config.$brand-colors, 'med-blue');
+    display: inline-block;
+  }
+
   &:hover::after,
   &[class^=tooltip-]:hover::before {
     visibility: visible;
     opacity: 1;
   }
-}
-
-[data-inline] {
-  border-bottom: 2px dotted map.get(config.$brand-colors, 'med-blue');
-  display: inline-block;
 }
 
 // not fully realized :(
