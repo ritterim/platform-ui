@@ -129,6 +129,7 @@
 
     &-empty {
       @extend .pill--circle;
+      padding: 0;
       &-dot {
         padding: 0;
         @include mixins.square(map.get(variables.$spacers, 2));
