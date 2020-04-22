@@ -41,6 +41,7 @@
 //     <i class="pi-help-solid" focusable="false" aria-hidden="true"></i>
 //   </div>
 // </div>
+// <div class="tooltip-right" data-pui-tooltip="This is what our tooltips look like.">Tooltip</div>
 //
 // Styleguide Components.Tooltip
 
@@ -161,7 +162,7 @@
   }
 
   &:hover::after,
-  &[class^=tooltip-]:hover::before {
+  &[class*=tooltip-]:hover::before {
     visibility: visible;
     opacity: 1;
   }
