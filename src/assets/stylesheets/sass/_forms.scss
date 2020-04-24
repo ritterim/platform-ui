@@ -669,14 +669,6 @@ legend {
   &__field {
     display: block;
 
-    + .pui-form__field {
-      margin-top: variables.$spacer * 1.5;
-    }
-
-    &.pui-form__field--fancy + .pui-form__field {
-      margin-top: map.get(variables.$spacers, 4);
-    }
-
     input[type="text"],
     input[type="date"],
     input[type="email"],
