@@ -597,6 +597,7 @@ legend {
     color: map.get(variables.$greyscale, 'white' );
 
     input[type="text"],
+    input[type="search"],
     input[type="date"],
     input[type="email"],
     input[type="textarea"],
@@ -652,6 +653,7 @@ legend {
   &.pui-form--bordered {
 
     input[type="text"],
+    input[type="search"],
     input[type="date"],
     input[type="email"],
     input[type="textarea"],
@@ -670,6 +672,7 @@ legend {
     display: block;
 
     input[type="text"],
+    input[type="search"],
     input[type="date"],
     input[type="email"],
     input[type="textarea"],
@@ -717,6 +720,7 @@ legend {
       color: $error-color!important;
 
       input[type="text"],
+      input[type="search"],
       input[type="date"],
       input[type="email"],
       input[type="textarea"],
@@ -902,6 +906,7 @@ legend {
   }
 
   input[type="text"],
+  input[type="search"],
   input[type="date"],
   input[type="email"],
   input[type="textarea"],
@@ -935,6 +940,7 @@ legend {
   }
 
   input[type="text"],
+  input[type="search"],
   input[type="email"],
   input[type="textarea"],
   input[type="tel"],
