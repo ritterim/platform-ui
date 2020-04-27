@@ -1338,95 +1338,10 @@
                 <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
               </label>
               <div class="pui-tab-panel p-4">
-                <div class="block-container mb-3">
-                  <div class="block block-6 flex flex--align-center">
-                    Showing XX of XXX
-                    <button type="button" class="button button--secondary ml-2" data-button-text="Load more">
-                      <i aria-hidden="true" class="pi-sync"></i>
-                    </button>
-                  </div>
-                  <div class="block block-6 flex flex--justify-end mb-3">
-                    <button class="button button--secondary mr-2" data-button-text="Filters">
-                        <i aria-hidden="true" class="pi-filter"></i>
-                    </button>
-                    <button class="button button--secondary mr-2" data-button-text="Stats">
-                        <i aria-hidden="true" class="pi-chart-bar"></i>
-                    </button>
-                    <button class="button button--secondary mr-2" data-button-text="Export">
-                        <i aria-hidden="true" class="pi-download"></i>
-                    </button>
-                    <button class="button">
-                      Add
-                      <i class="pi-plus" aria-hidden="true"></i>
-                    </button>
-                  </div>
-                  <div class="block block-6">
-                    <strong class="text-navy text--size-lg flex">
-                      <i class="pi-chart-bar mr-2"></i>
-                      Statistics
-                    </strong>
-                  </div>
-                  <div class="block block-6 flex flex--justify-end mb-2">
-                    <button class="button">
-                      Close
-                      <i class="pi-times" aria-hidden="true"></i>
-                    </button>
-                  </div>
-
-                  <table class="pui-table">
-                    <thead>
-                      <tr>
-                        <td>Carrier</td>
-                        <td>Counts</td>
-                        <td>Last Updated</td>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td class="med-blue-text">Excellus</td>
-                        <td>34,021</td>
-                        <td>March 1, 2020 10:00 AM</td>
-                      </tr>
-                      <tr>
-                        <td>Excellus</td>
-                        <td>34,021</td>
-                        <td>March 1, 2020 10:00 AM</td>
-                      </tr>
-                    </tbody>
-                  </table>
-
-                  <table class="pui-table">
-                    <thead>
-                      <tr>
-                        <td>Carrier</td>
-                        <td>Client Name/Member ID</td>
-                        <td>Agent Name</td>
-                        <td>Effective Date</td>
-                        <td>Plan Name</td>
-                        <td>Carrier Status</td>
-                        <td>Status</td>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>Carrier Name</td>
-                        <td class="flex flex--column">
-                          <span>Client Name</span>
-                          <span><i class="pi-badge"></i> 123456789</span>
-                        </td>
-                        <td>Agent Name</td>
-                        <td>00/00/0000</td>
-                        <td>Keystone 65 Basic RX HMO</td>
-                        <td>Pending</td>
-                        <td class="flex">
-                          <div class="pill pill--circle-empty-dot positive"></div>
-                          Enrolled
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-
+                <button class="button button--post pui-modal__open" data-modal="medicareful-partner-modal">
+                  Add Partner
+                  <i class="pi-plus" aria-hidden="true"></i>
+                </button>
               </div>
           </div>
         </div>
@@ -1631,6 +1546,39 @@
           <div class="block">
             <button class="button button--post">
               Create
+              <i class="pi-check"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div id="medicareful-partner-modal" class="pui-modal pui-modal--closed" tabindex="-1">
+    <div class="pui-modal__inner animated slideInUp faster">
+      <div class="pui-modal__header">
+        <button class="button pui-modal__close" data-modal="medicareful-partner-modal">Close <i class="pi-times"></i></button>
+        <h2 class="m-0">Add New Partner</h2>
+      </div>
+      <div class="pui-modal__content">
+        <form action="submit" class="pui-form block-container blocks p-2 tablet-up-2 laptop-up-3 desktop-up-4">
+          <label for="medicareful-display-name-modal" class="pui-form__field block">Display Name
+            <input id="medicareful-display-name-modal" type="text" placeholder="" value="">
+          </label>
+          <label for="medicareful-display-npn-modal" class="pui-form__field block">Display NPN
+            <input id="medicareful-display-npn-modal" type="text" value="">
+          </label>
+          <label for="medicareful-phone-number-modal" class="pui-form__field block ">Phone Number
+            <input id="medicareful-phone-number-modal" type="tel" placeholder="" value="">
+          </label>
+          <label for="medicareful-agent-slug-modal" class="pui-form__field block">Agent Slug
+            <input id="medicareful-agent-slug-modal" type="text" placeholder="" value="" >
+          </label>
+          <label for="medicareful-email-modal" class="pui-form__field block">Email
+            <input id="medicareful-email-modal" type="text" name="email" placeholder="" value="" >
+          </label>
+          <div class="block flex flex--align-center">
+            <button class="button button--post">
+              Add
               <i class="pi-check"></i>
             </button>
           </div>
