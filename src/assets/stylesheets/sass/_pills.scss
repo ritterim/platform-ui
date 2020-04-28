@@ -39,17 +39,17 @@
 //
 // Markup:
 // <div class="pill pill--split">
-//   <div class="pill__label">NPN:</div>
-//   <div class="pill__content">123456789</div>
+//   <div class="pill__label">Left:</div>
+//   <div class="pill__content">Right</div>
 // </div>
 // <div class="pill pill--split text-white background-peach">
-//   <div class="pill__label text-brown">NPN:</div>
-//   <div class="pill__content">123456789</div>
+//   <div class="pill__label text-brown">Left:</div>
+//   <div class="pill__content">Right</div>
 // </div>
 // <div class="pill pill--split text-white background-navy">
-//   <div class="pill__content background-salmon">1234589</div>
-//   <div class="pill__content background-olive">345789</div>
-//   <div class="pill__content background-skyblue">1289</div>
+//   <div class="pill__content background-salmon">Left</div>
+//   <div class="pill__content background-olive">Middle</div>
+//   <div class="pill__content background-skyblue">Right</div>
 // </div>
 //
 // Styleguide Components.Pill.Split
