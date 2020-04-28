@@ -18,42 +18,38 @@
 //       Close <i class="pi-times" aria-hidden="hidden"></i>
 //     </button>
 //     <form action="" class="block-container block-mb-4 pui-form">
-//       <label for="dob" class="block pui-form__field has-icon">Age or DOB
-//         <input id="dob" type="date" placeholder="DD/MM/YYYY">
-//         <i class="pi-calendar text-skyblue background-white"></i>
-//       </label>
-//       <label for="dob" class="block pui-form__field has-icon">Age or DOB
+//       <label for="dob" class="block pui-form__field has-icon">Birthday
 //         <input id="dob" type="date" placeholder="DD/MM/YYYY">
 //         <i class="pi-calendar text-skyblue background-white"></i>
 //       </label>
 //       <fieldset class="block pui-form__field">
-//         <legend>Rate Class</legend>
+//         <legend>Please Choose</legend>
 //         <div class="pui-toggle">
 //           <div class="pui-toggle__content">
 //             <input class="pui-toggle__input" id="smoking" type="radio" checked name="rate">
-//             <label for="smoking">Non-smoking</label>
+//             <label for="smoking">This one</label>
 //           </div>
 //           <div class="pui-toggle__content">
 //             <input class="pui-toggle__input" id="non-smoking" type="radio" name="rate">
-//             <label for="non-smoking">Smoking</label>
+//             <label for="non-smoking">That one</label>
 //           </div>
 //         </div>
 //       </fieldset>
 //       <fieldset class="block pui-form__field">
-//         <legend>Marital Status</legend>
+//         <legend>Also Choose</legend>
 //         <div class="pui-toggle">
 //           <div class="pui-toggle__content">
 //             <input class="pui-toggle__input" id="Single" type="radio" checked name="household">
-//             <label for="Single">Single</label>
+//             <label for="Single">Red Fish</label>
 //           </div>
 //           <div class="pui-toggle__content">
 //             <input class="pui-toggle__input" id="household" type="radio" name="household">
-//             <label for="household">Household</label>
+//             <label for="household">Blue Fish</label>
 //           </div>
 //         </div>
 //       </fieldset>
 //       <fieldset class="block pui-form__field">
-//         <legend id="radio-heading">Plan</legend>
+//         <legend id="radio-heading">Pick Some Letters</legend>
 //         <div class="block-container" role="radiogroup" aria-labelledby="radio-heading">
 //           <div class="block-3 my-2 px-1">
 //             <span class="pill background-light text-white flex--align-center" id="a" tabindex="0" role="radio" aria-checked="false">
@@ -118,7 +114,7 @@
 //         </div>
 //       </fieldset>
 //       <div class="pui-form__field pui-form__button-group">
-//         <button class="button button--post button--lg">Apply Filters</button>
+//         <button class="button button--post button--lg">Submit</button>
 //       </div>
 //     </form>
 //   </div>
