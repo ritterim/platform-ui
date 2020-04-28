@@ -51,16 +51,16 @@
 //   </div>
 //   <div class="pui-form__field pui-form__field--fancy">
 //     <div class="pui-form__select-wrapper">
-//       <select name="County Select" id="county" required placeholder="County">
+//       <select name="Option Select" id="Option" required placeholder="Option">
 //         <option value=""></option>
-//         <option value="County1">County 1</option>
-//         <option value="County2">County 2</option>
-//         <option value="County3">County 3</option>
-//         <option value="County4">County 4</option>
-//         <option value="County5">County 5</option>
-//         <option value="County6">County 6</option>
+//         <option value="Option1">Option 1</option>
+//         <option value="Option2">Option 2</option>
+//         <option value="Option3">Option 3</option>
+//         <option value="Option4">Option 4</option>
+//         <option value="Option5">Option 5</option>
+//         <option value="Option6">Option 6</option>
 //       </select>
-//       <label for="county">County</label>
+//       <label for="Option">Option</label>
 //     </div>
 //   </div>
 // </form>
@@ -85,7 +85,7 @@
 //     </label>
 //   </div>
 //   <div class="block">
-//     <label for="dob" class="pui-form__field">Age or DOB
+//     <label for="dob" class="pui-form__field">Birthday
 //       <input id="dob" type="date">
 //     </label>
 //   </div>
@@ -145,7 +145,7 @@
 //     </label>
 //   </div>
 //   <div class="block">
-//     <label for="dob" class="pui-form__field">Age or DOB
+//     <label for="dob" class="pui-form__field">Birthday
 //       <input id="dob" type="date">
 //     </label>
 //   </div>
@@ -167,14 +167,14 @@
 // Markup:
 // <form action="" class="pui-form block-container tablet-up-3 laptop-up-4 desktop-up-6 blocks mb-3 p-2">
 //   <div class="block">
-//     <label for="dob" class="pui-form__field has-icon--right">Age or DOB
+//     <label for="dob" class="pui-form__field has-icon--right">Birthday
 //       <input id="dob" type="date">
 //       <i class="pi-calendar background-white"></i>
 //     </label>
 //   </div>
 //   <div class="block">
-//     <label for="dob" class="pui-form__field has-icon">Application Date
-//       <input id="dob" type="date">
+//     <label for="date" class="pui-form__field has-icon">Date
+//       <input id="date" type="date">
 //       <i class="pi-calendar text-med-blue background-white"></i>
 //     </label>
 //   </div>
@@ -186,7 +186,7 @@
 //   </div>
 //   <div class="block">
 //     <div class="pui-form__field pui-form__button-group">
-//       <button class="button button--post button--lg">Quote Now</button>
+//       <button class="button button--post button--lg">Submit</button>
 //     </div>
 //   </div>
 // </form>
@@ -341,7 +341,7 @@
 //     </label>
 //   </div>
 //   <div class="block">
-//     <label for="dob" class="pui-form__field">Age or DOB
+//     <label for="dob" class="pui-form__field">Birthday
 //       <input id="dob" type="date">
 //     </label>
 //   </div>
@@ -397,15 +397,15 @@
 //     </fieldset>
 //   </div>
 //   <div class="block">
-//     <label for="county" class="pui-form__field">County
+//     <label for="Option" class="pui-form__field">Option
 //       <div class="pui-form__select-wrapper">
-//         <select name="County Select" id="county">
-//           <option value="County1">County 1</option>
-//           <option value="County2">County 2</option>
-//           <option value="County3">County 3</option>
-//           <option value="County4">County 4</option>
-//           <option value="County5">County 5</option>
-//           <option value="County6">County 6</option>
+//         <select name="Option Select" id="Option">
+//           <option value="Option1">Option 1</option>
+//           <option value="Option2">Option 2</option>
+//           <option value="Option3">Option 3</option>
+//           <option value="Option4">Option 4</option>
+//           <option value="Option5">Option 5</option>
+//           <option value="Option6">Option 6</option>
 //         </select>
 //       </div>
 //     </label>
@@ -426,8 +426,8 @@
 //     </fieldset>
 //   </div>
 //   <div class="block">
-//     <label for="dob" class="pui-form__field has-icon">Application Date
-//       <input id="dob" type="date">
+//     <label for="date-1" class="pui-form__field has-icon">Date
+//       <input id="date-1" type="date">
 //       <i class="pi-calendar text-skyblue background-white"></i>
 //     </label>
 //   </div>
@@ -438,7 +438,7 @@
 //   </div>
 //   <div class="block">
 //     <div class="pui-form__field pui-form__button-group">
-//       <button class="button button--post button--lg">Quote Now</button>
+//       <button class="button button--post button--lg">Submit</button>
 //     </div>
 //   </div>
 // </form>
@@ -460,15 +460,15 @@
 // Markup:
 // <form action="" class="pui-form block-container">
 //   <div class="block block-4">
-//     <label for="county" class="pui-form__field">County
+//     <label for="Option" class="pui-form__field">Option
 //       <div class="pui-form__select-wrapper">
-//         <select name="County Select" id="county">
-//           <option value="County1">County 1</option>
-//           <option value="County2">County 2</option>
-//           <option value="County3">County 3</option>
-//           <option value="County4">County 4</option>
-//           <option value="County5">County 5</option>
-//           <option value="County6">County 6</option>
+//         <select name="Option Select" id="Option">
+//           <option value="Option1">Option 1</option>
+//           <option value="Option2">Option 2</option>
+//           <option value="Option3">Option 3</option>
+//           <option value="Option4">Option 4</option>
+//           <option value="Option5">Option 5</option>
+//           <option value="Option6">Option 6</option>
 //         </select>
 //       </div>
 //     </label>
