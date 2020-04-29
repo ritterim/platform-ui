@@ -192,7 +192,7 @@
                 Details
                 <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
               </label>
-              <div class="pui-tab-panel pt-4 px-4 pb-6 pos-rel">
+              <div class="pui-tab-panel pt-4 px-4 pb-6">
                 <form action="submit" class="pui-form mb-4">
                   <div class="block-container blocks px-3 my-3">
                     <label for="first-name-a" class="pui-form__field block tablet-up-4 lg-tablet-up-3 laptop-up-4 desktop-up-2">First Name
@@ -1070,12 +1070,12 @@
                   <div class="pui-accordion__header p-2 block-container flex--justify-between">
                     <div class="block block-10 tablet-up-8">
                       <div class="block-container">
-                        <div class="block block-6 flex flex--column">
-                          <strong class="text-med-blue">Name</strong>
+                        <div class="block block-6">
+                          <p class="text-med-blue text--bold mb-1">Name</p>
                           <p class="m-0">AHIP 2019</p>
                         </div>
-                        <div class="block block-6 flex flex--column">
-                          <strong class="text-med-blue">Description</strong>
+                        <div class="block block-6">
+                          <p class="text-med-blue text--bold mb-1">Description</p>
                           <p class="m-0"></p>
                         </div>
                       </div>
@@ -1117,12 +1117,12 @@
                   <div class="pui-accordion__header p-2 block-container flex--justify-between">
                     <div class="block block-10 tablet-up-8">
                       <div class="block-container">
-                        <div class="block block-6 flex flex--column">
-                          <strong class="text-med-blue">Name</strong>
+                        <div class="block block-6">
+                          <p class="text-med-blue text--bold mb-1">Name</p>
                           <p class="m-0">2020 AHIP</p>
                         </div>
-                        <div class="block block-6 flex flex--column">
-                          <strong class="text-med-blue">Description</strong>
+                        <div class="block block-6">
+                          <p class="text-med-blue text--bold mb-1">Description</p>
                           <p class="m-0">AHIP</p>
                         </div>
                       </div>
@@ -1242,94 +1242,6 @@
                 <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
               </label>
               <div class="pui-tab-panel p-4">
-                <div class="block-container mb-3">
-                  <div class="block block-6 flex flex--align-center">
-                    Showing XX of XXX
-                    <button type="button" class="button button--secondary ml-2" data-button-text="Load more">
-                      <i aria-hidden="true" class="pi-sync"></i>
-                    </button>
-                  </div>
-                  <div class="block block-6 flex flex--justify-end mb-3">
-                    <button class="button button--secondary mr-2" data-button-text="Filters">
-                        <i aria-hidden="true" class="pi-filter"></i>
-                    </button>
-                    <button class="button button--secondary mr-2" data-button-text="Stats">
-                        <i aria-hidden="true" class="pi-chart-bar"></i>
-                    </button>
-                    <button class="button button--secondary mr-2" data-button-text="Export">
-                        <i aria-hidden="true" class="pi-download"></i>
-                    </button>
-                    <button class="button">
-                      Add
-                      <i class="pi-plus" aria-hidden="true"></i>
-                    </button>
-                  </div>
-                  <div class="block block-6">
-                    <strong class="text-navy text--size-lg flex">
-                      <i class="pi-chart-bar mr-2"></i>
-                      Statistics
-                    </strong>
-                  </div>
-                  <div class="block block-6 flex flex--justify-end mb-2">
-                    <button class="button">
-                      Close
-                      <i class="pi-times" aria-hidden="true"></i>
-                    </button>
-                  </div>
-
-                  <table class="pui-table">
-                    <thead>
-                      <tr>
-                        <td>Carrier</td>
-                        <td>Counts</td>
-                        <td>Last Updated</td>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td class="med-blue-text">Excellus</td>
-                        <td>34,021</td>
-                        <td>March 1, 2020 10:00 AM</td>
-                      </tr>
-                      <tr>
-                        <td>Excellus</td>
-                        <td>34,021</td>
-                        <td>March 1, 2020 10:00 AM</td>
-                      </tr>
-                    </tbody>
-                  </table>
-
-                  <table class="pui-table">
-                    <thead>
-                      <tr>
-                        <td>Carrier</td>
-                        <td>Client Name/Member ID</td>
-                        <td>Agent Name</td>
-                        <td>Effective Date</td>
-                        <td>Plan Name</td>
-                        <td>Carrier Status</td>
-                        <td>Status</td>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>Carrier Name</td>
-                        <td class="flex flex--column">
-                          <span>Client Name</span>
-                          <span><i class="pi-badge"></i> 123456789</span>
-                        </td>
-                        <td>Agent Name</td>
-                        <td>00/00/0000</td>
-                        <td>Keystone 65 Basic RX HMO</td>
-                        <td>Pending</td>
-                        <td class="flex">
-                          <div class="pill pill--circle-empty-dot positive"></div>
-                          Enrolled
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
 
               </div>
               <input type="radio" id="tab-input-f" name="tabs">
@@ -1338,10 +1250,360 @@
                 <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
               </label>
               <div class="pui-tab-panel p-4">
-                <button class="button button--post pui-modal__open" data-modal="medicareful-partner-modal">
-                  Add Partner
-                  <i class="pi-plus" aria-hidden="true"></i>
-                </button>
+                <div class="flex flex--justify-end">
+                  <button class="button button--post pui-modal__open" data-modal="medicareful-partner-modal">
+                    Add Partner
+                    <i class="pi-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <div class="pui-accordion my-3">
+                  <!-- Accordion Header -->
+                  <div class="pui-accordion__header p-2 block-container flex--justify-between">
+                    <div class="block block-10 tablet-up-11">
+                      <div class="block-container blocks p-2">
+                        <div class="block tablet-up-3">
+                          <p class="text-med-blue text--bold mb-1">Name</p>
+                          <p class="m-0">Domingo Stracke</p>
+                        </div>
+                        <div class="block tablet-up-3">
+                          <p class="text-med-blue text--bold mb-1">NPN</p>
+                          <p class="m-0">1234567</p>
+                        </div>
+                        <div class="block tablet-up-3">
+                          <p class="text-med-blue text--bold mb-1">Phone Number</p>
+                          <p class="m-0">(494) 941-0476</p>
+                        </div>
+                        <div class="block tablet-up-3">
+                          <p class="text-med-blue text--bold mb-1">Slug</p>
+                          <p class="m-0">ggudis</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="block block--shrink">
+                      <button class="button--plain text-negative--hover p-2" aria-label="Remove Training">
+                        <i class="pi-trash" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <!-- End Accordion Header -->
+                  <!-- Start Accordion Content -->
+                  <div class="pui-accordion__content pt-2 px-3 pb-6 pos-rel">
+                    <div class="mb-4">
+                      <form action="submit" class="pui-form mb-3">
+                        <div class="block-container blocks px-2 my-3">
+                          <label for="training-name-1" class="pui-form__field block tablet-up-6 lg-tablet-up-4 desktop-up-2">Display Name
+                            <input id="training-name-1" type="text" placeholder="" value="Domingo Stracke">
+                          </label>
+                          <label for="training-id-code-1" class="pui-form__field block tablet-up-6 lg-tablet-up-4 desktop-up-2">Display NPN
+                            <input id="training-id-code-1" type="tel" value="627253">
+                          </label>
+                          <label for="training-name-1" class="pui-form__field block tablet-up-6 lg-tablet-up-4 desktop-up-2">Display Phone Number
+                            <input id="training-name-1" type="tel" placeholder="" value="(494) 941-0476">
+                          </label>
+                          <label for="training-id-code-1" class="pui-form__field block tablet-up-6 lg-tablet-up-4 desktop-up-2">Agent Slug
+                            <input id="training-id-code-1" type="text" value="ggudis">
+                          </label>
+                          <label for="training-name-1" class="pui-form__field block tablet-up-6 lg-tablet-up-4 desktop-up-3">Email
+                            <input id="training-name-1" type="email" placeholder="" value="Carol.Hayes70@gmail.com">
+                          </label>
+                          <label for="tax-classification" class="pui-form__field block tablet-up-6 lg-tablet-up-4 desktop-up-3">Default Product
+                            <div class="pui-form__select-wrapper">
+                              <select name="state Select" id="tax-classification">
+                                <option value="Option 1" selected>Option</option>
+                                <option value="Other">Other</option>
+                                <option value="Other">Other</option>
+                                <option value="Other">Other</option>
+                                <option value="Other">Other</option>
+                                <option value="Other">Other</option>
+                              </select>
+                            </div>
+                          </label>
+                        </div>
+                        <button class="button">
+                          Suspend
+                          <i class="pi-lock" aria-hidden="true"></i>
+                        </button>
+                      </form>
+                      <hr class="my-4">
+                      <h2 class="m-0 text--size-md">Affiliate</h2>
+                      <form action="submit" class="pui-form mb-3">
+                        <div class="block-container blocks px-2 flex--justify-between">
+                          <div class="block lg-tablet-up-6 mb-3">
+                            <div class="block-container blocks laptop-up-2 px-2 my-3">
+                              <label for="affiliate-link-1" class="pui-form__field block">Site Link Text
+                                <input id="affiliate-link-1" type="text" placeholder="" value="Site">
+                              </label>
+                              <label for="affiliate-url-1" class="pui-form__field block">Site URL
+                                <input id="training-url-1" type="text" value="">
+                              </label>
+                            </div>                          
+                          </div>
+                          <div class="block lg-tablet-up-6 desktop-up-4">
+                            <img class="w-100" src="https://picsum.photos/340/174" alt="Site Logo">
+                          </div>
+                        </div>
+                        <button class="button">Change Logo</button>
+                        <fieldset class="pui-form__field">
+                          <legend class="sr-only">Sponsor</legend>
+                          <div class="pui-form__option-group">
+                            <input id="choose-this-one" type="checkbox">
+                            <label for="choose-this-one">
+                              <div class="input-icons">
+                                <i class='pi-circle pi-lg'></i>
+                                <i class='pi-check pi-heavy'></i>
+                              </div>
+                              Sponsor
+                            </label>
+                          </div>
+                        </fieldset>
+                      </form>
+                      <div class="flex flex--align-center flex--justify-end">
+                        <button class="button pui-modal__open" data-modal="medicareful-new-carrier-modal">
+                          Add Carrier <i class="pi-plus" aria-hidden="true"></i>
+                        </button>
+                      </div>
+                      <hr class="my-4">
+                      <table class="pui-table">
+                        <thead>
+                          <tr>
+                            <th>Carrier</th>
+                            <th>Status</th>
+                            <th>Delete</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td data-label="Carrier">Lasso Healthcare</td>
+                            <td data-label="Status"><i class="pi-circle-solid text-positive"></i></td>
+                            <td data-label="Delete">
+                              <button class="button--plain text-negative--hover p-2" aria-label="Remove Carrier">
+                                <i class="pi-trash" aria-hidden="true"></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td data-label="Carrier">Humana</td>
+                            <td data-label="Status"><i class="pi-circle-solid text-positive"></i></td>
+                            <td data-label="Delete">
+                              <button class="button--plain text-negative--hover p-2" aria-label="Remove Carrier">
+                                <i class="pi-trash" aria-hidden="true"></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td data-label="Carrier">Aetna</td>
+                            <td data-label="Status"><i class="pi-circle-solid text-positive"></i></td>
+                            <td data-label="Delete">
+                              <button class="button--plain text-negative--hover p-2" aria-label="Remove Carrier">
+                                <i class="pi-trash" aria-hidden="true"></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td data-label="Carrier">SilverScript</td>
+                            <td data-label="Status"><i class="pi-circle-solid text-positive"></i></td>
+                            <td data-label="Delete">
+                              <button class="button--plain text-negative--hover p-2" aria-label="Remove Carrier">
+                                <i class="pi-trash" aria-hidden="true"></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td data-label="Carrier">Capital Blue Cross</td>
+                            <td data-label="Status"><i class="pi-circle-solid text-positive"></i></td>
+                            <td data-label="Delete">
+                              <button class="button--plain text-negative--hover p-2" aria-label="Remove Carrier">
+                                <i class="pi-trash" aria-hidden="true"></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td data-label="Carrier">Clover Health Plans</td>
+                            <td data-label="Status"><i class="pi-circle-solid text-positive"></i></td>
+                            <td data-label="Delete">
+                              <button class="button--plain text-negative--hover p-2" aria-label="Remove Carrier">
+                                <i class="pi-trash" aria-hidden="true"></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td data-label="Carrier">Wellcare</td>
+                            <td data-label="Status"><i class="pi-circle-solid text-positive"></i></td>
+                            <td data-label="Delete">
+                              <button class="button--plain text-negative--hover p-2" aria-label="Remove Carrier">
+                                <i class="pi-trash" aria-hidden="true"></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td data-label="Carrier">Vibra Health Plan</td>
+                            <td data-label="Status"><i class="pi-circle-solid text-positive"></i></td>
+                            <td data-label="Delete">
+                              <button class="button--plain text-negative--hover p-2" aria-label="Remove Carrier">
+                                <i class="pi-trash" aria-hidden="true"></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td data-label="Carrier">United Healthcare</td>
+                            <td data-label="Status"><i class="pi-circle-solid text-positive"></i></td>
+                            <td data-label="Delete">
+                              <button class="button--plain text-negative--hover p-2" aria-label="Remove Carrier">
+                                <i class="pi-trash" aria-hidden="true"></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td data-label="Carrier">Envision Insurance Company</td>
+                            <td data-label="Status"><i class="pi-circle-solid text-positive"></i></td>
+                            <td data-label="Delete">
+                              <button class="button--plain text-negative--hover p-2" aria-label="Remove Carrier">
+                                <i class="pi-trash" aria-hidden="true"></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td data-label="Carrier">IBC</td>
+                            <td data-label="Status"><i class="pi-circle-solid text-positive"></i></td>
+                            <td data-label="Delete">
+                              <button class="button--plain text-negative--hover p-2" aria-label="Remove Carrier">
+                                <i class="pi-trash" aria-hidden="true"></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td data-label="Carrier">Highmark</td>
+                            <td data-label="Status"><i class="pi-circle-solid text-positive"></i></td>
+                            <td data-label="Delete">
+                              <button class="button--plain text-negative--hover p-2" aria-label="Remove Carrier">
+                                <i class="pi-trash" aria-hidden="true"></i>
+                              </button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="pui-message pui-message--info pos-abs pin-bottom pin-left m-0 w-100" data-header="Last Edited By">
+                      <p>
+                        Jimmy Weber on 10/24/2019 @10:19am
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="pui-accordion my-3">
+                  <!-- Accordion Header -->
+                  <div class="pui-accordion__header p-2 block-container flex--justify-between">
+                    <div class="block block-10 tablet-up-11">
+                      <div class="block-container blocks p-2">
+                        <div class="block tablet-up-3">
+                          <p class="text-med-blue text--bold mb-1">Name</p>
+                          <p class="m-0">Natasha Herzog</p>
+                        </div>
+                        <div class="block tablet-up-3">
+                          <p class="text-med-blue text--bold mb-1">NPN</p>
+                          <p class="m-0">98765432</p>
+                        </div>
+                        <div class="block tablet-up-3">
+                          <p class="text-med-blue text--bold mb-1">Phone Number</p>
+                          <p class="m-0">(594) 385-2515</p>
+                        </div>
+                        <div class="block tablet-up-3">
+                          <p class="text-med-blue text--bold mb-1">Slug</p>
+                          <p class="m-0">Tristatehr</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="block block--shrink">
+                      <button class="button--plain text-negative--hover p-2" aria-label="Remove Training">
+                        <i class="pi-trash" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <!-- End Accordion Header -->
+                  <!-- Start Accordion Content -->
+                  <div class="pui-accordion__content pt-2 px-3 pb-6 pos-rel">
+                    <div class="mb-4">
+                      <form action="submit" class="pui-form mb-3">
+                        <div class="block-container blocks px-2 my-3">
+                          <label for="training-name-1" class="pui-form__field block tablet-up-6 lg-tablet-up-4 desktop-up-2">Display Name
+                            <input id="training-name-1" type="text" placeholder="" value="Natasha Herzog">
+                          </label>
+                          <label for="training-id-code-1" class="pui-form__field block tablet-up-6 lg-tablet-up-4 desktop-up-2">Display NPN
+                            <input id="training-id-code-1" type="tel" value="98765432">
+                          </label>
+                          <label for="training-name-1" class="pui-form__field block tablet-up-6 lg-tablet-up-4 desktop-up-2">Display Phone Number
+                            <input id="training-name-1" type="tel" placeholder="" value="(594) 385-2515">
+                          </label>
+                          <label for="training-id-code-1" class="pui-form__field block tablet-up-6 lg-tablet-up-4 desktop-up-2">Agent Slug
+                            <input id="training-id-code-1" type="text" value="Tristatehr">
+                          </label>
+                          <label for="training-name-1" class="pui-form__field block tablet-up-6 lg-tablet-up-4 desktop-up-3">Email
+                            <input id="training-name-1" type="email" placeholder="" value="Vera_Green61@hotmail.com">
+                          </label>
+                          <label for="tax-classification" class="pui-form__field block tablet-up-6 lg-tablet-up-4 desktop-up-3">Default Product
+                            <div class="pui-form__select-wrapper">
+                              <select name="state Select" id="tax-classification">
+                                <option value="Option 1" selected>Option</option>
+                                <option value="Other">Other</option>
+                                <option value="Other">Other</option>
+                                <option value="Other">Other</option>
+                                <option value="Other">Other</option>
+                                <option value="Other">Other</option>
+                              </select>
+                            </div>
+                          </label>
+                        </div>
+                        <button class="button">
+                          Suspend
+                          <i class="pi-lock" aria-hidden="true"></i>
+                        </button>
+                      </form>
+                      <hr class="my-4">
+                      <h2 class="m-0 text--size-md">Affiliate</h2>
+                      <form action="submit" class="pui-form mb-3">
+                        <div class="block-container blocks px-2 flex--justify-between">
+                          <div class="block lg-tablet-up-6 mb-3">
+                            <div class="block-container blocks laptop-up-2 px-2 my-3">
+                              <label for="affiliate-link-1" class="pui-form__field block">Site Link Text
+                                <input id="affiliate-link-1" type="text" placeholder="" value="TriStateHR">
+                              </label>
+                              <label for="affiliate-url-1" class="pui-form__field block">Site URL
+                                <input id="training-url-1" type="text" value="">
+                              </label>
+                            </div>                          
+                          </div>
+                          <div class="block lg-tablet-up-6 desktop-up-4">
+                            <img class="w-100" src="https://picsum.photos/340/174" alt="Site Logo">
+                          </div>
+                        </div>
+                        <button class="button">Change Logo</button>
+                        <fieldset class="pui-form__field">
+                          <legend class="sr-only">Sponsor</legend>
+                          <div class="pui-form__option-group">
+                            <input id="choose-this-one" type="checkbox">
+                            <label for="choose-this-one">
+                              <div class="input-icons">
+                                <i class='pi-circle pi-lg'></i>
+                                <i class='pi-check pi-heavy'></i>
+                              </div>
+                              Sponsor
+                            </label>
+                          </div>
+                        </fieldset>
+                      </form>
+                      <div class="flex flex--align-center flex--justify-end">
+                        <button class="button pui-modal__open" data-modal="medicareful-new-carrier-modal">
+                          Add Carrier <i class="pi-plus" aria-hidden="true"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="pui-message pui-message--info pos-abs pin-bottom pin-left m-0 w-100" data-header="Last Edited By">
+                      <p>
+                        System Migratiion on 01/18/2018 @9:50am
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
           </div>
         </div>
@@ -1582,6 +1844,22 @@
               <i class="pi-check"></i>
             </button>
           </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div id="medicareful-new-carrier-modal" class="pui-modal pui-modal--closed" tabindex="-1">
+    <div class="pui-modal__inner animated slideInUp faster">
+      <div class="pui-modal__header">
+        <button class="button pui-modal__close" data-modal="medicareful-new-carrier-modal">Close <i class="pi-times"></i></button>
+        <h2 class="m-0">Add New Carrier</h2>
+      </div>
+      <div class="pui-modal__content">
+        <form action="submit" class="pui-form block-container blocks p-2 tablet-up-2 laptop-up-3 desktop-up-4">
+          <label for="medicareful-display-name-modal" class="pui-form__field block has-icon--right">Search Carrier
+            <input id="medicareful-display-name-modal" type="search" placeholder="" value="">
+            <i class="pi-search" aria-hidden="true"></i>
+          </label>
         </form>
       </div>
     </div>
