@@ -194,26 +194,26 @@
               </label>
               <div class="pui-tab-panel pt-4 px-4 pb-6">
                 <form action="submit" class="pui-form mb-4">
-                  <div class="block-container blocks px-3 my-3">
-                    <label for="first-name-a" class="pui-form__field block tablet-up-4 lg-tablet-up-3 laptop-up-4 desktop-up-2">First Name
+                  <div class="block-container blocks px-3 my-3 tablet-up-2 lg-tablet-up-3 laptop-up-4 desktop-up-5">
+                    <label for="first-name-a" class="pui-form__field block">First Name
                       <input id="first-name-a" type="text" placeholder="First Name" name="first-name" value="Gregory">
                     </label>
-                    <label for="middle-name" class="pui-form__field block block-8 tablet-up-4 lg-tablet-up-3 laptop-up-4 desktop-up-2">Middle Name
+                    <label for="middle-name" class="pui-form__field block">Middle Name
                       <input id="middle-name" type="text" placeholder="J" name="additional-name" value="J">
                     </label>
-                    <label for="last-name" class="pui-form__field block tablet-up-4 lg-tablet-up-3 laptop-up-4 desktop-up-2">Last Name
+                    <label for="last-name" class="pui-form__field block">Last Name
                       <input id="last-name" type="text" placeholder="Last Name" name="last-name" value="Gudis">
                     </label>
-                    <label for="prefix" class="pui-form__field block block-5 tablet-up-2 desktop-up-1">Prefix
+                    <label for="prefix" class="pui-form__field block">Prefix
                       <input id="prefix" type="text" placeholder="Prefix" name="honorific-prefix">
                     </label>
-                    <label for="suffix" class="pui-form__field block block-5 tablet-up-2 desktop-up-1">Suffix
+                    <label for="suffix" class="pui-form__field block">Suffix
                       <input id="suffix" type="text" placeholder="Suffix" name="honorific-suffix">
                     </label>
-                    <label for="preferred-name" class="pui-form__field block tablet-up-4 lg-tablet-up-3 laptop-up-4 desktop-up-2">Preferred Name
+                    <label for="preferred-name" class="pui-form__field block">Preferred Name
                       <input id="preferred-name" type="text" placeholder="Preferred Name" value="Greg">
                     </label>
-                    <fieldset class="pui-form__field block tablet-up-4 lg-tablet-up-3 laptop-up-4 desktop-up--shrink">
+                    <fieldset class="pui-form__field block">
                       <legend>Gender</legend>
                       <div class="pui-form__option-group">
                         <input id="gender-male" type="radio" name="gender">
@@ -234,14 +234,14 @@
                         </label>
                       </div>
                     </fieldset>
-                    <label for="dob" class="pui-form__field block tablet-up-4 lg-tablet-up-3 laptop-up-4 desktop-up-2 has-icon--right">Birthdate
+                    <label for="dob" class="pui-form__field block has-icon--right">Birthdate
                       <input id="dob" type="date" value="1979-02-02">
                       <i class="pi-calendar background-white"></i>
                     </label>
-                    <label for="social" class="pui-form__field block block-8 tablet-up-4 lg-tablet-up-3 laptop-up-4 desktop-up-2">SSN
+                    <label for="social" class="pui-form__field block">SSN
                       <input id="social" type="text" value="***-**-2345">
                     </label>
-                    <label for="communication" class="pui-form__field block tablet-up-4 lg-tablet-up-3 laptop-up-4 desktop-up-2">Communication Type
+                    <label for="communication" class="pui-form__field block">Communication Type
                       <div class="pui-form__select-wrapper">
                         <select name="Communication Select" id="communication">
                           <option value="Email">Email</option>
@@ -252,20 +252,20 @@
                         </select>
                       </div>
                     </label>
-                    <label for="npn" class="pui-form__field block block-8 tablet-up-4 lg-tablet-up-3 laptop-up-4 desktop-up-2">NPN
+                    <label for="npn" class="pui-form__field block">NPN
                       <input id="npn" type="number" value="9006591">
                     </label>
                   </div>
-                </form>                
+                </form>
                 <div class="block-container tablet-up-2 blocks px-3">
                   <div class="block mb-4">
+                    <div class="flex flex--align-center mb-3 flex--justify-between">
+                      <strong class="text-navy text--size-lg flex">Product Levels</strong>
+                      <button class="button ml-3 pui-modal__open" data-modal="product-levels-modal">
+                        Add <i aria-hidden="true" class="pi-plus"></i>
+                      </button>
+                    </div>
                     <form action="submit" class="pui-form">
-                      <div class="flex flex--align-center mb-3">
-                        <h2 class="m-0 text--size-md">Product Levels</h2>
-                        <button aria-label="Add Level" class="button button--secondary ml-3">
-                          <i aria-hidden="true" class="pi-plus"></i>
-                        </button>
-                      </div>
                       <div class="block-container mb-3">
                         <label for="global-level" class="pui-form__field block block-6">Global Product Level
                           <div class="pui-form__select-wrapper">
@@ -654,29 +654,27 @@
                       </div>
                     </form>
                   </div>
-                  <div class="block mb-4">
-                    <form action="submit" class="pui-form">
-                      <div class="block-container laptop-up-2 blocks px-3">
-                        <div class="block mb-3">
-                          <h2 class="m-0 text--size-md">Master Upline</h2>
-                          <label for="master-upline" class="pui-form__field">Producer
-                            <input id="master-upline" type="text" value="Ritter Insurance Marketing">
-                          </label>
-                        </div>
-                        <div class="block mb-3 flex flex--column flex--justify-between">
-                          <h2 class="m-0 text--size-md">Related agencies</h2>
-                          <label for="related-agencies" class="pui-form__field">
-                            <input id="related-agencies" type="text" value="Bachmeier, Gudis & Associates LLC">
-                          </label>
-                        </div>
-                        <div class="block flex flex--align-center">
-                          <h2 class="m-0 text--size-md">Languages</h2>
-                          <button aria-label="Add Level" class="button button--secondary ml-3">
-                            <i aria-hidden="true" class="pi-plus"></i>
-                          </button>
-                        </div>
+                  <div class="block mb-4 pui-form">
+                    <div class="block-container laptop-up-2 blocks px-3">
+                      <div class="block mb-3">
+                        <strong class="text-navy text--size-lg flex">Master Upline</strong>
+                        <label for="master-upline" class="pui-form__field">Producer
+                          <input id="master-upline" type="text" value="Ritter Insurance Marketing">
+                        </label>
                       </div>
-                    </form>
+                      <div class="block mb-3 flex flex--column flex--justify-between">
+                        <strong class="text-navy text--size-lg flex">Related agencies</strong>
+                        <label for="related-agencies" class="pui-form__field">
+                          <input id="related-agencies" type="text" value="Bachmeier, Gudis & Associates LLC">
+                        </label>
+                      </div>
+                    </div>
+                    <div class="flex flex--align-center">
+                      <strong class="text-navy text--size-lg flex flex--justify-between">Languages</strong>
+                      <button aria-label="Add Level" class="button ml-3 pui-modal__open" data-modal="language-modal">
+                        Add <i aria-hidden="true" class="pi-plus"></i>
+                      </button>
+                    </div>
                   </div>
                 </div>
                 <div class="pui-message pui-message--info pos-abs pin-bottom pin-left m-0 w-100" data-header="Record Created By">
@@ -689,119 +687,63 @@
                 <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
               </label>
               <div class="pui-tab-panel p-4">
+                <div class="flex flex--justify-between flex--align-center">
+                  <strong class="text-navy text--size-lg flex">Phone</strong>
+                  <button class="button ml-2 pui-modal__open" data-modal="add-phone-modal">
+                    Add <i class="pi-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
                 <form action="submit" class="pui-form mb-3">
-                  <h2 class="m-0 text--size-md">Phone</h2>
                   <div class="block-container tablet-up-3 lg-tablet-up-4 desktop-up-5 blocks px-3 my-3">
                     <div class="block flex">
                       <label for="phone-primary" class="pui-form__field w-100">Primary
                         <input id="phone-primary" type="tel" placeholder="" value="(506) 726-7005">
                       </label>
-                      <button class="button--plain text-negative--hover p-3" aria-label="Remove Product">
-                        <i class="pi-trash" aria-hidden="true"></i>
-                      </button>
-                    </div>                    
-                    <div class="block flex">
-                      <label for="phone-alternate" class="pui-form__field w-100">Alternate
-                        <input id="phone-alternate" type="tel" placeholder="" >
-                      </label>
-                      <button class="button--plain text-negative--hover p-3" aria-label="Remove Product">
+                      <button class="button--plain text-negative--hover p-3" aria-label="Remove Primary Contact">
                         <i class="pi-trash" aria-hidden="true"></i>
                       </button>
                     </div>
-                    <label for="phone-fax" class="pui-form__field block">Fax
-                      <input id="phone-fax" type="tel" placeholder="" value="(915) 290-7980">
-                    </label>
-                    <label for="phone-cell" class="pui-form__field block">Cell
-                      <input id="phone-cell" type="tel" placeholder="" >
-                    </label>
+                    <div class="block flex">
+                      <label for="phone-fax" class="pui-form__field block">Fax
+                        <input id="phone-fax" type="tel" placeholder="" value="(915) 290-7980">
+                      </label>
+                      <button class="button--plain text-negative--hover p-3" aria-label="Remove Fax Number">
+                        <i class="pi-trash" aria-hidden="true"></i>
+                      </button>
+                    </div>
                   </div>
                 </form>
+                <div class="flex flex--justify-between flex--align-center">
+                  <strong class="text-navy text--size-lg flex">Email</strong>
+                  <button class="button ml-2 pui-modal__open" aria-label="Add an Email" data-modal="add-email-modal">
+                    Add <i class="pi-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
                 <form action="submit" class="pui-form mb-3">
-                  <h2 class="m-0 text--size-md">Email</h2>
                   <div class="block-container tablet-up-3 lg-tablet-up-4 desktop-up-5 blocks px-3 my-3">
                     <label for="email-primary" class="pui-form__field block">Primary
-                      <input id="email-primary" type="text" name="email" placeholder="" value="greg.gudis@bgainsurance.net">
-                    </label>
-                    <label for="email-alternate" class="pui-form__field block">Alternate
-                      <input id="email-alternate" type="text" name="email" placeholder="" >
-                    </label>
-                    <label for="email-medicareful" class="pui-form__field block">Medicarfeful
-                      <input id="email-medicareful" type="text" name="email" placeholder="" value="(915) 290-7980">
-                    </label>
-                    <label for="email-comissions" class="pui-form__field block">Comissions
-                      <input id="email-comissions" type="text" name="email" placeholder="" >
+                      <input id="email-primary" type="text" name="email" placeholder="" value="greg.gudis@bgainsurance.net" title="greg.gudis@bgainsurance.net">
                     </label>
                     <label for="email-communication" class="pui-form__field block">Communication
-                      <input id="email-communication" type="text" name="email" placeholder="" value="(915) 290-7980">
+                      <input id="email-communication" type="text" name="email" placeholder="" value="">
                     </label>
                     <label for="email-contracting" class="pui-form__field block">Contracting
                       <input id="email-contracting" type="text" name="email" placeholder="" >
                     </label>
                   </div>
                 </form>
-                <h2 class="m-0 text--size-md">Addresses</h2>
+                <strong class="text-navy text--size-lg flex">Addresses</strong>
                 <!-- Start Accordion -->
                 <div class="pui-accordion">
                   <!-- Accordion Header -->
-                    <div class="pui-accordion__header p-2 flex flex--justify-between flex--align-center">
-                      <h2 class="m-0 text--size-md">Primary</h2>
-                      <button class="button--plain text-negative--hover p-3" aria-label="Remove Address">
-                        <i class="pi-trash" aria-hidden="true"></i>
-                      </button>
-                    </div>
-                    <!-- End Accordion Header -->
-
-                    <!-- Start Accordion Content -->
-                    <div class="pui-accordion__content p-3">
-                      <form action="submit" class="pui-form">
-                        <div class="block-container blocks px-3 my-3">
-                          <label for="street-address" class="pui-form__field block tablet-up-5 desktop-up-4">Street Address
-                            <input id="street-address" type="text" name="street-address" placeholder="" value="287 Daniel Port">
-                          </label>
-                          <label for="address-2" class="pui-form__field block tablet-up-3 desktop-up-2">Address 2
-                            <input id="address-2" type="text" placeholder="Apt. Number" value="Apt. 669">
-                          </label>
-                          <label for="city" class="pui-form__field block tablet-up-4 desktop-up-3">City
-                            <input id="city" type="text" name="address-level2" placeholder="City" value="Haddonfield">
-                          </label>
-                          <label for="zipcode" class="pui-form__field block block-6 tablet-up-3 desktop-up-2">Zipcode
-                            <input id="zipcode" type="text" name="postal-code" placeholder="" >
-                          </label>
-                          <label for="County" class="pui-form__field block tablet-up-4 desktop-up-3">County
-                            <div class="pui-form__select-wrapper">
-                              <select name="County Select" id="county">
-                                <option value="Camden" selected>Camden</option>
-                                <option value="Other">Other</option>
-                                <option value="Other">Other</option>
-                                <option value="Other">Other</option>
-                                <option value="Other">Other</option>
-                                <option value="Other">Other</option>
-                              </select>
-                            </div>
-                          </label>
-                          <label for="state" class="pui-form__field block block-6 tablet-up-2 desktop-up-1">State
-                            <div class="pui-form__select-wrapper">
-                              <select name="state Select" id="state">
-                                <option value="NJ" selected>NJ</option>
-                                <option value="Other">Other</option>
-                                <option value="Other">Other</option>
-                                <option value="Other">Other</option>
-                                <option value="Other">Other</option>
-                                <option value="Other">Other</option>
-                              </select>
-                            </div>
-                          </label>
-                        </div>
-                      </form>
-                    </div>
-                </div>
-                <!-- End Accordion -->
-                <!-- Start Accordion -->
-                <div class="pui-accordion">
-                <!-- Accordion Header -->
                   <div class="pui-accordion__header p-2 flex flex--justify-between flex--align-center">
-                    <h2 class="m-0 text--size-md">Alternate</h2>
-                    <button class="button--plain text-negative--hover p-3" aria-label="Remove Alternate Address">
+                    <div class="flex flex--align-center">
+                      <button class="button--plain p-3" aria-label="Edit Primary Address">
+                        <i class="pi-edit" aria-hidden="true"></i>
+                      </button>
+                      <p class="text-med-blue text--bold mb-0 ml-2">Primary Address</p>
+                    </div>
+                    <button class="button--plain text-negative--hover p-3" aria-label="Remove Address">
                       <i class="pi-trash" aria-hidden="true"></i>
                     </button>
                   </div>
@@ -810,20 +752,20 @@
                   <!-- Start Accordion Content -->
                   <div class="pui-accordion__content p-3">
                     <form action="submit" class="pui-form">
-                      <div class="block-container blocks px-3 my-3">
-                        <label for="street-address" class="pui-form__field block tablet-up-5 desktop-up-4">Street Address
+                      <div class="block-container blocks px-3 my-3 tablet-up-3 lg-tablet-up-4 laptop-up-3 desktop-up-4">
+                        <label for="street-address" class="pui-form__field block">Street Address
                           <input id="street-address" type="text" name="street-address" placeholder="" value="287 Daniel Port">
                         </label>
-                        <label for="address-2" class="pui-form__field block tablet-up-3 desktop-up-2">Address 2
+                        <label for="address-2" class="pui-form__field block">Address 2
                           <input id="address-2" type="text" placeholder="Apt. Number" value="Apt. 669">
                         </label>
-                        <label for="city" class="pui-form__field block tablet-up-4 desktop-up-3">City
+                        <label for="city" class="pui-form__field block">City
                           <input id="city" type="text" name="address-level2" placeholder="City" value="Haddonfield">
                         </label>
-                        <label for="zipcode" class="pui-form__field block block-6 tablet-up-3 desktop-up-2">Zipcode
+                        <label for="zipcode" class="pui-form__field block block-6">Zipcode
                           <input id="zipcode" type="text" name="postal-code" placeholder="" >
                         </label>
-                        <label for="County" class="pui-form__field block tablet-up-4 desktop-up-3">County
+                        <label for="County" class="pui-form__field block">County
                           <div class="pui-form__select-wrapper">
                             <select name="County Select" id="county">
                               <option value="Camden" selected>Camden</option>
@@ -835,7 +777,68 @@
                             </select>
                           </div>
                         </label>
-                        <label for="state" class="pui-form__field block block-6 tablet-up-2 desktop-up-1">State
+                        <label for="state" class="pui-form__field block">State
+                          <div class="pui-form__select-wrapper">
+                            <select name="state Select" id="state">
+                              <option value="NJ" selected>NJ</option>
+                              <option value="Other">Other</option>
+                              <option value="Other">Other</option>
+                              <option value="Other">Other</option>
+                              <option value="Other">Other</option>
+                              <option value="Other">Other</option>
+                            </select>
+                          </div>
+                        </label>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <!-- End Accordion -->
+                <!-- Start Accordion -->
+                <div class="pui-accordion">
+                <!-- Accordion Header -->
+                  <div class="pui-accordion__header p-2 flex flex--justify-between flex--align-center">
+                    <div class="flex flex--align-center">
+                      <button class="button--plain p-3" aria-label="Edit Alternate Address">
+                        <i class="pi-edit" aria-hidden="true"></i>
+                      </button>
+                      <p class="text-med-blue text--bold mb-0 ml-2">Alternate Address</p>
+                    </div>
+                    <button class="button--plain text-negative--hover p-3" aria-label="Remove Alternate Address">
+                      <i class="pi-trash" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                  <!-- End Accordion Header -->
+
+                  <!-- Start Accordion Content -->
+                  <div class="pui-accordion__content p-3">
+                    <form action="submit" class="pui-form">
+                      <div class="block-container blocks px-3 my-3 tablet-up-3 lg-tablet-up-4 laptop-up-3 desktop-up-4">
+                        <label for="street-address" class="pui-form__field block">Street Address
+                          <input id="street-address" type="text" name="street-address" placeholder="" value="287 Daniel Port">
+                        </label>
+                        <label for="address-2" class="pui-form__field block">Address 2
+                          <input id="address-2" type="text" placeholder="Apt. Number" value="Apt. 669">
+                        </label>
+                        <label for="city" class="pui-form__field block">City
+                          <input id="city" type="text" name="address-level2" placeholder="City" value="Haddonfield">
+                        </label>
+                        <label for="zipcode" class="pui-form__field block">Zipcode
+                          <input id="zipcode" type="text" name="postal-code" placeholder="" >
+                        </label>
+                        <label for="County" class="pui-form__field block">County
+                          <div class="pui-form__select-wrapper">
+                            <select name="County Select" id="county">
+                              <option value="Camden" selected>Camden</option>
+                              <option value="Other">Other</option>
+                              <option value="Other">Other</option>
+                              <option value="Other">Other</option>
+                              <option value="Other">Other</option>
+                              <option value="Other">Other</option>
+                            </select>
+                          </div>
+                        </label>
+                        <label for="state" class="pui-form__field block">State
                           <div class="pui-form__select-wrapper">
                             <select name="state Select" id="state">
                               <option value="NJ" selected>NJ</option>
@@ -855,28 +858,35 @@
                 <!-- Start Accordion -->
                 <div class="pui-accordion">
                   <!-- Accordion Header -->
-                  <div class="pui-accordion__header p-2">
-                    <h2 class="m-0 text--size-md">Shipping</h2>
+                  <div class="pui-accordion__header p-2 flex flex--justify-between flex--align-center">
+                    <div class="flex flex--align-center">
+                      <button class="button--plain p-3" aria-label="Edit Shipping Address">
+                        <i class="pi-edit" aria-hidden="true"></i>
+                      </button>
+                      <p class="text-med-blue text--bold mb-0 ml-2">Shipping Address</p>
+                    </div>
+                    <button class="button--plain text-negative--hover p-3" aria-label="Remove Shipping Address">
+                      <i class="pi-trash" aria-hidden="true"></i>
+                    </button>
                   </div>
                   <!-- End Accordion Header -->
-
                   <!-- Start Accordion Content -->
                   <div class="pui-accordion__content p-3">
                     <form action="submit" class="pui-form">
-                      <div class="block-container blocks px-3 my-3">
-                        <label for="street-address" class="pui-form__field block tablet-up-5 desktop-up-4">Street Address
+                      <div class="block-container blocks px-3 my-3 tablet-up-3 lg-tablet-up-4 laptop-up-3 desktop-up-4">
+                        <label for="street-address" class="pui-form__field block">Street Address
                           <input id="street-address" type="text" name="street-address" placeholder="" value="">
                         </label>
-                        <label for="address-2" class="pui-form__field block tablet-up-3 desktop-up-2">Address 2
+                        <label for="address-2" class="pui-form__field block">Address 2
                           <input id="address-2" type="text" placeholder="Apt. Number" value="Apt. Number">
                         </label>
-                        <label for="city" class="pui-form__field block tablet-up-4 desktop-up-3">City
+                        <label for="city" class="pui-form__field block">City
                           <input id="city" type="text" name="address-level2" placeholder="City" value="">
                         </label>
-                        <label for="zipcode" class="pui-form__field block block-6 tablet-up-3 desktop-up-2">Zipcode
+                        <label for="zipcode" class="pui-form__field block">Zipcode
                           <input id="zipcode" type="text" name="postal-code" placeholder="" >
                         </label>
-                        <label for="County" class="pui-form__field block tablet-up-4 desktop-up-3">County
+                        <label for="County" class="pui-form__field block">County
                           <div class="pui-form__select-wrapper">
                             <select name="County Select" id="county">
                               <option value="Camden">Camden</option>
@@ -888,7 +898,7 @@
                             </select>
                           </div>
                         </label>
-                        <label for="state" class="pui-form__field block block-6 tablet-up-2 desktop-up-1">State
+                        <label for="state" class="pui-form__field block">State
                           <div class="pui-form__select-wrapper">
                             <select name="state Select" id="state">
                               <option value="NJ">NJ</option>
@@ -912,7 +922,7 @@
                 <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
               </label>
               <div class="pui-tab-panel p-4">
-                <h2 class="m-0 text--size-md">General</h2>
+                <strong class="text-navy text--size-lg flex">General</strong>
                 <form action="submit" class="pui-form mb-3">
                   <div class="block-container tablet-up-2 blocks px-3 my-3">
                     <label for="general-ruid" class="pui-form__field block">RUID
@@ -923,11 +933,11 @@
                     </label>
                   </div>
                 </form>
-                <h2 class="m-0 text--size-md">Preferences</h2>
+                <strong class="text-navy text--size-lg flex">Preferences</strong>
                 <form action="submit" class="pui-form mb-3">
                   <fieldset class="pui-form__field">
                     <legend class="sr-only">Preferences</legend>
-                    <div class="pui-form__option-group">
+                    <div class="flex flex--wrap flex--justify-between">
                       <input id="never-email" type="checkbox">
                       <label for="never-email">
                         <div class="input-icons">
@@ -1011,7 +1021,7 @@
                     </div>
                   </div>
                 </form>
-                <h2 class="m-0 text--size-md">Programs</h2>
+                <strong class="text-navy text--size-lg flex mb-3">Programs</strong>
                 <form class="pui-form mb-3 block-container">
                   <div class="block flex flex--align-center flex--wrap">
                     <button class="pill mr-2 mb-3 hover-scale">
@@ -1040,27 +1050,27 @@
                     </div>
                   </label>
                 </form>
-                <h2 class="m-0 text--size-md">E & O</h2>
+                <strong class="text-navy text--size-lg flex mb-3">E & O</strong>
                 <form action="submit" class="pui-form mb-3">
-                  <div class="block-container blocks mb-3 px-2">
-                    <label for="carrier-name" class="pui-form__field block tablet-up-6 desktop-up-4">Carrier Name
+                  <div class="block-container blocks mb-3 px-2 tablet-up-2 lg-tablet-up-3 laptop-up-4">
+                    <label for="carrier-name" class="pui-form__field block">Carrier Name
                       <input id="carrier-name" type="text" placeholder="" value="Everst National INS CO">
                     </label>
-                    <label for="expiration-date" class="pui-form__field block block-4 tablet-up-3 desktop-up-2">Expiration date
+                    <label for="expiration-date" class="pui-form__field block">Expiration date
                       <input id="expiration-date" type="date" value="2022-10-01">
                     </label>
-                    <label for="policy-number" class="pui-form__field block tablet-up-6 desktop-up-4">Policy Number
+                    <label for="policy-number" class="pui-form__field block">Policy Number
                       <input id="policy-number" type="text" placeholder="" value="FL5sb07522-191">
                     </label>
-                    <label for="policy-limit" class="pui-form__field block block-6 tablet-up-3 desktop-up-2">Policy Limit
+                    <label for="policy-limit" class="pui-form__field block">Policy Limit
                       <input id="policy-limit" type="tel" placeholder="" >
                     </label>
                   </div>
-                </form>
-                <h2 class="m-0 text--size-md">Trainings</h2>
-                <div class="flex">
-                  <button class="button button--post pui-modal__open flex mr-2" data-modal="add-training-modal">
-                    Add Training
+                </form>                
+                <div class="flex flex--align-center flex--justify-between">
+                  <strong class="text-navy text--size-lg flex">Trainings</strong>
+                  <button class="button pui-modal__open flex ml-2" data-modal="add-training-modal">
+                    Add
                     <i class="pi-plus " aria-hidden="true"></i>
                   </button>
                 </div>
@@ -1091,6 +1101,12 @@
                   <div class="pui-accordion__content p-3">
                     <form action="submit" class="pui-form mb-3">
                       <div class="block-container blocks mb-3 px-2">
+                        <label for="training-completed-date-1" class="pui-form__field block tablet-up-6">Completed Date
+                          <input id="training-completed-date-1" type="date" placeholder="" value="2018-07-23" >
+                        </label>
+                        <label for="training-reimbursement-date-1" class="pui-form__field block tablet-up-6">Reimbursement Date
+                          <input id="training-reimbursement-date-1" type="date" placeholder="" value="" >
+                        </label>
                         <label for="training-name-1" class="pui-form__field block tablet-up-6">Name
                           <input id="training-name-1" type="text" placeholder="" value="AHIP 2019">
                         </label>
@@ -1098,13 +1114,7 @@
                           <input id="training-id-code-1" type="text" value="">
                         </label>
                         <label for="training-description-1" class="pui-form__field block">Description
-                          <textarea id="training-description-1" type="text" placeholder="" value=""></textarea>
-                        </label>
-                        <label for="training-completed-date-1" class="pui-form__field block tablet-up-6">Completed Date
-                          <input id="training-completed-date-1" type="date" placeholder="" value="2018-07-23" >
-                        </label>
-                        <label for="training-reimbursement-date-1" class="pui-form__field block tablet-up-6">Reimbursement Date
-                          <input id="training-reimbursement-date-1" type="date" placeholder="" value="" >
+                          <input id="training-description-1" type="text" placeholder="" value="">
                         </label>
                       </div>
                     </form>
@@ -1138,6 +1148,12 @@
                   <div class="pui-accordion__content p-3">
                     <form action="submit" class="pui-form mb-3">
                       <div class="block-container blocks mb-3 px-2">
+                        <label for="training-completed-date-1" class="pui-form__field block tablet-up-6">Completed Date
+                          <input id="training-completed-date-1" type="date" placeholder="" value="2019-07-18" >
+                        </label>
+                        <label for="training-reimbursement-date-1" class="pui-form__field block tablet-up-6">Reimbursement Date
+                          <input id="training-reimbursement-date-1" type="date" placeholder="" value="" >
+                        </label>
                         <label for="training-name-1" class="pui-form__field block tablet-up-6">Name
                           <input id="training-name-1" type="text" placeholder="" value="2020 AHIP">
                         </label>
@@ -1145,13 +1161,7 @@
                           <input id="training-id-code-1" type="text" value="LTS4YN8D5PT">
                         </label>
                         <label for="training-description-1" class="pui-form__field block">Description
-                          <textarea id="training-description-1" type="text" placeholder="" value="AHIP"></textarea>
-                        </label>
-                        <label for="training-completed-date-1" class="pui-form__field block tablet-up-6">Completed Date
-                          <input id="training-completed-date-1" type="date" placeholder="" value="2019-07-18" >
-                        </label>
-                        <label for="training-reimbursement-date-1" class="pui-form__field block tablet-up-6">Reimbursement Date
-                          <input id="training-reimbursement-date-1" type="date" placeholder="" value="" >
+                          <input id="training-description-1" type="text" placeholder="" value="">
                         </label>
                       </div>
                     </form>
@@ -1169,7 +1179,7 @@
                   <div class="pui-accordion mb-3">
                     <!-- Accordion Header -->
                       <div class="pui-accordion__header p-2 flex flex--justify-between flex--align-center">
-                        <h2 class="m-0 text--size-md">W-9</h2>
+                        <strong class="text-navy text--size-lg flex">W-9</strong>
                         <button class="button--plain text-negative--hover p-3" aria-label="Remove Address">
                           <i class="pi-trash" aria-hidden="true"></i>
                         </button>
@@ -1178,20 +1188,20 @@
 
                       <!-- Start Accordion Content -->
                       <div class="pui-accordion__content p-3">
-                        <div class="block-container blocks px-3 my-3">
-                          <label for="w9-street-address" class="pui-form__field block tablet-up-5 desktop-up-4">Street Address
+                        <div class="block-container blocks px-3 my-3 tablet-up-3 lg-tablet-up-4 laptop-up-3 desktop-up-4">
+                          <label for="w9-street-address" class="pui-form__field block">Street Address
                             <input id="w9-street-address" type="text" name="street-address" placeholder="" value="740 Robert Loaf">
                           </label>
-                          <label for="w9-address-2" class="pui-form__field block tablet-up-3 desktop-up-2">Address 2
+                          <label for="w9-address-2" class="pui-form__field block">Address 2
                             <input id="w9-address-2" type="text" placeholder="Apt. Number" value="Apt. 987">
                           </label>
-                          <label for="w9-city" class="pui-form__field block tablet-up-4 desktop-up-3">City
+                          <label for="w9-city" class="pui-form__field block">City
                             <input id="w9-city" type="text" name="address-level2" placeholder="City" value="Conshohocken">
                           </label>
-                          <label for="w9-zipcode" class="pui-form__field block block-6 tablet-up-3 desktop-up-2">Zipcode
+                          <label for="w9-zipcode" class="pui-form__field block">Zipcode
                             <input id="w9-zipcode" type="text" name="postal-code" placeholder="" value="19428" >
                           </label>
-                          <label for="w9-County" class="pui-form__field block tablet-up-4 desktop-up-3">County
+                          <label for="w9-County" class="pui-form__field block">County
                             <div class="pui-form__select-wrapper">
                               <select name="County Select" id="w9-county">
                                 <option value="Montgomery" selected>Montgomery</option>
@@ -1203,7 +1213,7 @@
                               </select>
                             </div>
                           </label>
-                          <label for="w9-state" class="pui-form__field block block-6 tablet-up-2 desktop-up-1">State
+                          <label for="w9-state" class="pui-form__field block">State
                             <div class="pui-form__select-wrapper">
                               <select name="state Select" id="w9-state">
                                 <option value="PA" selected>PA</option>
@@ -1218,7 +1228,7 @@
                         </div>
                     </div>
                   </div>
-                  <label for="tax-classification" class="pui-form__field block block-6 tablet-up-2 desktop-up-1">Tax Classification
+                  <label for="tax-classification" class="pui-form__field block">Tax Classification
                     <div class="pui-form__select-wrapper">
                       <select name="state Select" id="tax-classification">
                         <option value="S Corporation" selected>S Corporation</option>
@@ -1251,26 +1261,25 @@
                   <!-- Accordion Header -->
                   <div class="pui-accordion__header p-3 block-container flex--justify-between">
                     <div class="block block-10 tablet-up-11">
-                      <div class="block-container blocks py-2 px-3">
-                        <div class="block tablet-up-6 lg-tablet-up-4 desktop-up-3">
+                      <div class="block-container tablet-up-3 lg-tablet-up-4 blocks py-2 px-3">
+                        <div class="block">
                           <p class="text-med-blue text--bold mb-1">Campaign</p>
-                          <p class="m-0">HPP Cert Follow-ups for RTS 2019</p>
+                          <p class="m-0 truncate-with-ellipsis" title="HPP Cert Follow-ups for RTS 2019">HPP Cert Follow-ups for RTS 2019</p>
                         </div>
-                        <div class="block tablet-up-6 lg-tablet-up-4 desktop-up-3">
+                        <div class="block">
                           <p class="text-med-blue text--bold mb-1">Campaign ID</p>
-                          <p class="m-0">North_Key_Account 2018</p>
+                          <p class="m-0 truncate-with-ellipsis" title="North_Key_Account 2018">North_Key_Account 2018</p>
                         </div>
-                        <div class="block tablet-up-3 desktop-up-2">
+                        <div class="block">
                           <p class="text-med-blue text--bold mb-1">Status</p>
                           <p class="m-0">FollowUp3</p>
                         </div>
-                        <div class="block tablet-up-3 desktop-up-2">
-                          <p class="text-med-blue text--bold mb-1">Start Date</p>
-                          <p class="m-0">09/06/2018</p>
-                        </div>
-                        <div class="block tablet-up-3 desktop-up-2">
-                          <p class="text-med-blue text--bold mb-1">End Date</p>
-                          <p class="m-0">12/31/2018</p>
+                        <div class="block">
+                          <p class="text-med-blue text--bold mb-1">Start/End Date</p>
+                          <div>
+                            <p class="m-0">09/06/2018</p>
+                            <p class="m-0">12/31/2018</p>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -1323,26 +1332,25 @@
                   <!-- Accordion Header -->
                   <div class="pui-accordion__header p-3 block-container flex--justify-between">
                     <div class="block block-10 tablet-up-11">
-                      <div class="block-container blocks py-2 px-3">
-                        <div class="block tablet-up-6 lg-tablet-up-4 desktop-up-3">
+                      <div class="block-container tablet-up-3 lg-tablet-up-4 blocks py-2 px-3">
+                        <div class="block">
                           <p class="text-med-blue text--bold mb-1">Campaign</p>
-                          <p class="m-0">HPP Cert Follow-ups for RTS 2019</p>
+                          <p class="m-0 truncate-with-ellipsis" title="HPP Cert Follow-ups for RTS 2019">HPP Cert Follow-ups for RTS 2019</p>
                         </div>
-                        <div class="block tablet-up-6 lg-tablet-up-4 desktop-up-3">
+                        <div class="block">
                           <p class="text-med-blue text--bold mb-1">Campaign ID</p>
-                          <p class="m-0">North_Key_Account 2018</p>
+                          <p class="m-0 truncate-with-ellipsis" title="North_Key_Account 2018">North_Key_Account 2018</p>
                         </div>
-                        <div class="block tablet-up-3 desktop-up-2">
+                        <div class="block">
                           <p class="text-med-blue text--bold mb-1">Status</p>
                           <p class="m-0">FollowUp3</p>
                         </div>
-                        <div class="block tablet-up-3 desktop-up-2">
-                          <p class="text-med-blue text--bold mb-1">Start Date</p>
-                          <p class="m-0">09/06/2018</p>
-                        </div>
-                        <div class="block tablet-up-3 desktop-up-2">
-                          <p class="text-med-blue text--bold mb-1">End Date</p>
-                          <p class="m-0">12/31/2018</p>
+                        <div class="block">
+                          <p class="text-med-blue text--bold mb-1">Start/End Date</p>
+                          <div>
+                            <p class="m-0">09/06/2018</p>
+                            <p class="m-0">12/31/2018</p>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -1361,65 +1369,25 @@
                   <!-- Accordion Header -->
                   <div class="pui-accordion__header p-3 block-container flex--justify-between">
                     <div class="block block-10 tablet-up-11">
-                      <div class="block-container blocks py-2 px-3">
-                        <div class="block tablet-up-6 lg-tablet-up-4 desktop-up-3">
+                      <div class="block-container tablet-up-3 lg-tablet-up-4 blocks py-2 px-3">
+                        <div class="block">
                           <p class="text-med-blue text--bold mb-1">Campaign</p>
-                          <p class="m-0">HPP Cert Follow-ups for RTS 2019</p>
+                          <p class="m-0 truncate-with-ellipsis" title="HPP Cert Follow-ups for RTS 2019">HPP Cert Follow-ups for RTS 2019</p>
                         </div>
-                        <div class="block tablet-up-6 lg-tablet-up-4 desktop-up-3">
+                        <div class="block">
                           <p class="text-med-blue text--bold mb-1">Campaign ID</p>
-                          <p class="m-0">North_Key_Account 2018</p>
+                          <p class="m-0 truncate-with-ellipsis" title="North_Key_Account 2018">North_Key_Account 2018</p>
                         </div>
-                        <div class="block tablet-up-3 desktop-up-2">
+                        <div class="block">
                           <p class="text-med-blue text--bold mb-1">Status</p>
                           <p class="m-0">FollowUp3</p>
                         </div>
-                        <div class="block tablet-up-3 desktop-up-2">
-                          <p class="text-med-blue text--bold mb-1">Start Date</p>
-                          <p class="m-0">09/06/2018</p>
-                        </div>
-                        <div class="block tablet-up-3 desktop-up-2">
-                          <p class="text-med-blue text--bold mb-1">End Date</p>
-                          <p class="m-0">12/31/2018</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="block block--shrink">
-                      <button class="button--plain text-negative--hover p-2" aria-label="Remove Campaign">
-                        <i class="pi-trash" aria-hidden="true"></i>
-                      </button>
-                    </div>
-                  </div>
-                  <!-- End Accordion Header -->
-                  <!-- Start Accordion Content -->
-                  <div class="pui-accordion__content p-3">
-
-                  </div>
-                </div>
-                <div class="pui-accordion my-3">
-                  <!-- Accordion Header -->
-                  <div class="pui-accordion__header p-3 block-container flex--justify-between">
-                    <div class="block block-10 tablet-up-11">
-                      <div class="block-container blocks py-2 px-3">
-                        <div class="block tablet-up-6 lg-tablet-up-4 desktop-up-3">
-                          <p class="text-med-blue text--bold mb-1">Campaign</p>
-                          <p class="m-0">HPP Cert Follow-ups for RTS 2019</p>
-                        </div>
-                        <div class="block tablet-up-6 lg-tablet-up-4 desktop-up-3">
-                          <p class="text-med-blue text--bold mb-1">Campaign ID</p>
-                          <p class="m-0">North_Key_Account 2018</p>
-                        </div>
-                        <div class="block tablet-up-3 desktop-up-2">
-                          <p class="text-med-blue text--bold mb-1">Status</p>
-                          <p class="m-0">FollowUp3</p>
-                        </div>
-                        <div class="block tablet-up-3 desktop-up-2">
-                          <p class="text-med-blue text--bold mb-1">Start Date</p>
-                          <p class="m-0">09/06/2018</p>
-                        </div>
-                        <div class="block tablet-up-3 desktop-up-2">
-                          <p class="text-med-blue text--bold mb-1">End Date</p>
-                          <p class="m-0">12/31/2018</p>
+                        <div class="block">
+                          <p class="text-med-blue text--bold mb-1">Start/End Date</p>
+                          <div>
+                            <p class="m-0">09/06/2018</p>
+                            <p class="m-0">12/31/2018</p>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -1439,26 +1407,63 @@
                   <!-- Accordion Header -->
                   <div class="pui-accordion__header p-3 block-container flex--justify-between">
                     <div class="block block-10 tablet-up-11">
-                      <div class="block-container blocks py-2 px-3">
-                        <div class="block tablet-up-6 lg-tablet-up-4 desktop-up-3">
+                      <div class="block-container tablet-up-3 lg-tablet-up-4 blocks py-2 px-3">
+                        <div class="block">
                           <p class="text-med-blue text--bold mb-1">Campaign</p>
-                          <p class="m-0">HPP Cert Follow-ups for RTS 2019</p>
+                          <p class="m-0 truncate-with-ellipsis" title="HPP Cert Follow-ups for RTS 2019">HPP Cert Follow-ups for RTS 2019</p>
                         </div>
-                        <div class="block tablet-up-6 lg-tablet-up-4 desktop-up-3">
+                        <div class="block">
                           <p class="text-med-blue text--bold mb-1">Campaign ID</p>
-                          <p class="m-0">North_Key_Account 2018</p>
+                          <p class="m-0 truncate-with-ellipsis" title="North_Key_Account 2018">North_Key_Account 2018</p>
                         </div>
-                        <div class="block tablet-up-3 desktop-up-2">
+                        <div class="block">
                           <p class="text-med-blue text--bold mb-1">Status</p>
                           <p class="m-0">FollowUp3</p>
                         </div>
-                        <div class="block tablet-up-3 desktop-up-2">
-                          <p class="text-med-blue text--bold mb-1">Start Date</p>
-                          <p class="m-0">09/06/2018</p>
+                        <div class="block">
+                          <p class="text-med-blue text--bold mb-1">Start/End Date</p>
+                          <div>
+                            <p class="m-0">09/06/2018</p>
+                            <p class="m-0">12/31/2018</p>
+                          </div>
                         </div>
-                        <div class="block tablet-up-3 desktop-up-2">
-                          <p class="text-med-blue text--bold mb-1">End Date</p>
-                          <p class="m-0">12/31/2018</p>
+                      </div>
+                    </div>
+                    <div class="block block--shrink">
+                      <button class="button--plain text-negative--hover p-2" aria-label="Remove Campaign">
+                        <i class="pi-trash" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <!-- End Accordion Header -->
+                  <!-- Start Accordion Content -->
+                  <div class="pui-accordion__content p-3">
+
+                  </div>
+                </div>
+                <div class="pui-accordion my-3">
+                  <!-- Accordion Header -->
+                  <div class="pui-accordion__header p-3 block-container flex--justify-between">
+                    <div class="block block-10 tablet-up-11">
+                      <div class="block-container tablet-up-3 lg-tablet-up-4 blocks py-2 px-3">
+                        <div class="block">
+                          <p class="text-med-blue text--bold mb-1">Campaign</p>
+                          <p class="m-0 truncate-with-ellipsis" title="HPP Cert Follow-ups for RTS 2019">HPP Cert Follow-ups for RTS 2019</p>
+                        </div>
+                        <div class="block">
+                          <p class="text-med-blue text--bold mb-1">Campaign ID</p>
+                          <p class="m-0 truncate-with-ellipsis" title="North_Key_Account 2018">North_Key_Account 2018</p>
+                        </div>
+                        <div class="block">
+                          <p class="text-med-blue text--bold mb-1">Status</p>
+                          <p class="m-0">FollowUp3</p>
+                        </div>
+                        <div class="block">
+                          <p class="text-med-blue text--bold mb-1">Start/End Date</p>
+                          <div>
+                            <p class="m-0">09/06/2018</p>
+                            <p class="m-0">12/31/2018</p>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -1556,7 +1561,7 @@
                         </button>
                       </form>
                       <hr class="my-4">
-                      <h2 class="m-0 text--size-md">Affiliate</h2>
+                      <strong class="text-navy text--size-lg flex">Affiliate</strong>
                       <form action="submit" class="pui-form mb-3">
                         <div class="block-container blocks px-2 flex--justify-between">
                           <div class="block lg-tablet-up-6 mb-3">
@@ -1790,7 +1795,7 @@
                         </button>
                       </form>
                       <hr class="my-4">
-                      <h2 class="m-0 text--size-md">Affiliate</h2>
+                      <strong class="text-navy text--size-lg flex">Affiliate</strong>
                       <form action="submit" class="pui-form mb-3">
                         <div class="block-container blocks px-2 flex--justify-between">
                           <div class="block lg-tablet-up-6 mb-3">
@@ -1840,7 +1845,6 @@
         </div>
         <div class="block mt-6 lg-tablet-up-4 laptop-up-3 pos-fix hide-laptop-down">
           <div class="pui-card text-base background-note mt-2 p-4 h-auto">
-
             <div class="pui-card__header">
               <div class="pui-card__group">
                 <button title="Add Note" aria-label="Add Note" class="button button--secondary">
@@ -1936,14 +1940,173 @@
 
     </div>
   </main>
+  <div id="product-levels-modal" class="pui-modal pui-modal--closed" tabindex="-1">
+    <div class="pui-modal__inner animated slideInUp faster">
+      <div class="pui-modal__header">
+        <button class="button pui-modal__close" data-modal="product-levels-modal">Close <i class="pi-times"></i></button>
+        <strong class="text-navy text--size-lg">New Product Level</strong>
+      </div>
+      <div class="pui-modal__content">
+        <form action="submit" class="pui-form block-container blocks my-3 px-2 flex--justify-center">
+          <label for="1-level" class="pui-form__field block block-3">Level
+            <div class="pui-form__select-wrapper">
+              <select name="1-level Select" id="1-level">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8" selected>8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+            </div>
+          </label>
+          <label for="1-product" class="pui-form__field block block-7">Product
+            <div class="pui-form__select-wrapper">
+              <select name="1-product Select" id="1-product">
+                <option value="Medicare Supplement">Medicare Supplement</option>
+                <option selected="selected" value="Accident Critical Illness">Accident Critical Illness</option>
+                <option value="Cancer">Cancer</option>
+                <option value="Dental">Dental</option>
+                <option value="Dental Vision Hearing">Dental Vision Hearing</option>
+                <option value="Disability Income">Disability Income</option>
+                <option value="Employer Group Plan">Employer Group Plan</option>
+                <option value="Home Health Care">Home Health Care</option>
+                <option value="Hospital Indemnity">Hospital Indemnity</option>
+                <option value="Long Term Care">Long Term Care</option>
+                <option value="Medicare Advantage">Medicare Advantage</option>
+                <option value="Prescription Drug Plan">Prescription Drug Plan</option>
+                <option value="Short Term Care">Short Term Care</option>
+                <option value="Under 65 Health">Under 65 Health</option>
+                <option value="Vision">Vision</option>
+              </select>
+            </div>
+          </label>
+          <div class="block mt-3 flex--center-content">
+            <button class="button button--post button--lg">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div id="language-modal" class="pui-modal pui-modal--closed" tabindex="-1">
+    <div class="pui-modal__inner animated slideInUp faster">
+      <div class="pui-modal__header">
+        <button class="button pui-modal__close" data-modal="language-modal">Close <i class="pi-times"></i></button>
+        <strong class="text-navy text--size-lg">New Language</strong>
+      </div>
+      <div class="pui-modal__content">
+        <form action="submit" class="pui-form block-container blocks my-3 px-2 flex--justify-center">
+          <label for="1-level" class="pui-form__field block block-10">Languages
+            <div class="pui-form__select-wrapper">
+              <select name="1-level Select" id="1-level">
+                <option value=""></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+            </div>
+          </label>
+          <div class="block mt-3 flex--center-content">
+            <button class="button button--post button--lg">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div id="add-phone-modal" class="pui-modal pui-modal--closed" tabindex="-1">
+    <div class="pui-modal__inner animated slideInUp faster">
+      <div class="pui-modal__header">
+        <button class="button pui-modal__close" data-modal="add-phone-modal">Close <i class="pi-times"></i></button>
+        <strong class="text-navy text--size-lg">New Phone</strong>
+      </div>
+      <div class="pui-modal__content block-container flex--justify-center">
+        <div class="block tablet-up-8">
+          <form action="submit" class="pui-form block-container blocks my-3 px-2 flex--justify-center">
+            <label for="1-new-phone" class="pui-form__field block tablet-up-10">Type
+              <div class="pui-form__select-wrapper">
+                <select name="1-new-phone Select" id="1-new-phone">
+                  <option value=""></option>
+                  <option value="Fax">Fax</option>
+                  <option value="Cell">Cell</option>
+                  <option value="Alternate">Alternate</option>
+                </select>
+              </div>
+            </label>
+            <label for="new-phone-type-field" class="pui-form__field block tablet-up-10">Enter Number
+              <input id="new-phone-type-field" type="tel" placeholder="" value="" >
+            </label>
+            <div class="block mt-3 flex--center-content">
+              <button class="button button--post button--lg">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="add-email-modal" class="pui-modal pui-modal--closed" tabindex="-1">
+    <div class="pui-modal__inner animated slideInUp faster">
+      <div class="pui-modal__header">
+        <button class="button pui-modal__close" data-modal="add-email-modal">Close <i class="pi-times"></i></button>
+        <strong class="text-navy text--size-lg">New Email</strong>
+      </div>
+      <div class="pui-modal__content block-container flex--justify-center">
+        <div class="block tablet-up-8">
+          <form action="submit" class="pui-form block-container blocks my-3 px-2 flex--justify-center">
+            <label for="1-new-email" class="pui-form__field block tablet-up-10">Type
+              <div class="pui-form__select-wrapper">
+                <select name="1-new-email Select" id="1-new-email">
+                  <option value=""></option>
+                  <option value="Alternate">Alternate</option>
+                  <option value="Commissions">Commissions</option>
+                  <option value="Medicareful">Medicareful</option>
+                  <option value="Contracting">Contracting</option>
+                </select>
+              </div>
+            </label>
+            <label for="new-email-type-field" class="pui-form__field block tablet-up-10">Email
+              <input id="new-email-type-field" type="email" placeholder="" value="" >
+            </label>
+            <div class="block mt-3 flex--center-content">
+              <button class="button button--post button--lg">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
   <div id="add-training-modal" class="pui-modal pui-modal--closed" tabindex="-1">
     <div class="pui-modal__inner animated slideInUp faster">
       <div class="pui-modal__header">
         <button class="button pui-modal__close" data-modal="add-training-modal">Close <i class="pi-times"></i></button>
-        <h2 class="m-0">Add a New Training</h2>
+        <strong class="text-navy text--size-lg">New Training</strong>
       </div>
       <div class="pui-modal__content">
         <form action="submit" class="pui-form block-container blocks p-2">
+          <label for="training-completed-date-modal" class="pui-form__field block tablet-up-6">Completed Date
+            <input id="training-completed-date-modal" type="date" placeholder="" value="" >
+          </label>
+          <label for="training-reimbursement-date-modal" class="pui-form__field block tablet-up-6">Reimbursement Date
+            <input id="training-reimbursement-date-modal" type="date" placeholder="" value="" >
+          </label>
           <label for="training-name-modal" class="pui-form__field block tablet-up-6">Name
             <input id="training-name-modal" type="text" placeholder="" value="">
           </label>
@@ -1951,18 +2114,11 @@
             <input id="training-id-code-modal" type="text" value="">
           </label>
           <label for="training-description-modal" class="pui-form__field block">Description
-            <textarea id="training-description-modal" type="text" placeholder="" value=""></textarea>
+            <input id="training-description-modal" type="text" placeholder="" value="">
           </label>
-          <label for="training-completed-date-modal" class="pui-form__field block tablet-up-6">Completed Date
-            <input id="training-completed-date-modal" type="date" placeholder="" value="" >
-          </label>
-          <label for="training-reimbursement-date-modal" class="pui-form__field block tablet-up-6">Reimbursement Date
-            <input id="training-reimbursement-date-modal" type="date" placeholder="" value="" >
-          </label>
-          <div class="block">
-            <button class="button button--post">
-              Create
-              <i class="pi-check"></i>
+          <div class="block mt-3 flex--center-content">
+            <button class="button button--post button--lg">
+              Submit
             </button>
           </div>
         </form>
@@ -1973,7 +2129,7 @@
     <div class="pui-modal__inner animated slideInUp faster">
       <div class="pui-modal__header">
         <button class="button pui-modal__close" data-modal="new-payment-modal">Close <i class="pi-times"></i></button>
-        <h2 class="m-0">Add New Payment Method</h2>
+        <strong class="text-navy text--size-lg">New Payment Method</strong>
       </div>
       <div class="pui-modal__content">
         <form action="submit" class="pui-form block-container blocks px-2 py-3">
@@ -2036,10 +2192,9 @@
               </div>
             </fieldset>
           </div>
-          <div class="block">
-            <button class="button button--post">
-              Create
-              <i class="pi-check"></i>
+          <div class="block mt-3 flex--center-content">
+            <button class="button button--post button--lg">
+              Submit
             </button>
           </div>
         </form>
@@ -2050,7 +2205,7 @@
     <div class="pui-modal__inner animated slideInUp faster">
       <div class="pui-modal__header">
         <button class="button pui-modal__close" data-modal="medicareful-partner-modal">Close <i class="pi-times"></i></button>
-        <h2 class="m-0">Add New Partner</h2>
+        <strong class="text-navy text--size-lg">New Partner</strong>
       </div>
       <div class="pui-modal__content">
         <form action="submit" class="pui-form block-container blocks p-2 tablet-up-2 laptop-up-3 desktop-up-4">
@@ -2069,10 +2224,9 @@
           <label for="medicareful-email-modal" class="pui-form__field block">Email
             <input id="medicareful-email-modal" type="text" name="email" placeholder="" value="" >
           </label>
-          <div class="block flex flex--align-center">
-            <button class="button button--post">
-              Add
-              <i class="pi-check"></i>
+          <div class="block mt-3 flex--center-content">
+            <button class="button button--post button--lg">
+              Submit
             </button>
           </div>
         </form>
@@ -2083,7 +2237,7 @@
     <div class="pui-modal__inner animated slideInUp faster">
       <div class="pui-modal__header">
         <button class="button pui-modal__close" data-modal="medicareful-new-carrier-modal">Close <i class="pi-times"></i></button>
-        <h2 class="m-0">Add New Carrier</h2>
+        <strong class="text-navy text--size-lg">New Carrier</strong>
       </div>
       <div class="pui-modal__content">
         <form action="submit" class="pui-form block-container blocks p-2 tablet-up-2 laptop-up-3 desktop-up-4">
@@ -2099,7 +2253,7 @@
     <div class="pui-modal__inner animated slideInUp faster">
       <div class="pui-modal__header">
         <button class="button pui-modal__close" data-modal="campaign-new-modal">Close <i class="pi-times"></i></button>
-        <h2 class="m-0">Add New Carrier</h2>
+        <strong class="text-navy text--size-lg">New Carrier</strong>
       </div>
       <div class="pui-modal__content">
         <form action="submit" class="pui-form block-container blocks p-2 tablet-up-2 laptop-up-3 desktop-up-4">
@@ -2129,9 +2283,11 @@
             <input id="medicareful-display-name-modal" type="search" placeholder="" value="">
             <i class="pi-search" aria-hidden="true"></i>
           </label>
-          <button class="button button--post mt-4">
-            Add Campaign
-          </button>
+          <div class="block mt-3 flex--center-content">
+            <button class="button button--post button--lg">
+              Submit
+            </button>
+          </div>
         </form>
       </div>
     </div>
