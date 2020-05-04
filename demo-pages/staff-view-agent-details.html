@@ -752,7 +752,7 @@
                   <!-- Start Accordion Content -->
                   <div class="pui-accordion__content p-3">
                     <form action="submit" class="pui-form">
-                      <div class="block-container blocks px-3 my-3 tablet-up-3 lg-tablet-up-4 laptop-up-3 desktop-up-4">
+                      <div class="block-container blocks px-3 my-3 tablet-up-3 lg-tablet-up-4">
                         <label for="street-address" class="pui-form__field block">Street Address
                           <input id="street-address" type="text" name="street-address" placeholder="" value="287 Daniel Port">
                         </label>
@@ -813,7 +813,7 @@
                   <!-- Start Accordion Content -->
                   <div class="pui-accordion__content p-3">
                     <form action="submit" class="pui-form">
-                      <div class="block-container blocks px-3 my-3 tablet-up-3 lg-tablet-up-4 laptop-up-3 desktop-up-4">
+                      <div class="block-container blocks px-3 my-3 tablet-up-3 lg-tablet-up-4">
                         <label for="street-address" class="pui-form__field block">Street Address
                           <input id="street-address" type="text" name="street-address" placeholder="" value="287 Daniel Port">
                         </label>
@@ -873,7 +873,7 @@
                   <!-- Start Accordion Content -->
                   <div class="pui-accordion__content p-3">
                     <form action="submit" class="pui-form">
-                      <div class="block-container blocks px-3 my-3 tablet-up-3 lg-tablet-up-4 laptop-up-3 desktop-up-4">
+                      <div class="block-container blocks px-3 my-3 tablet-up-3 lg-tablet-up-4">
                         <label for="street-address" class="pui-form__field block">Street Address
                           <input id="street-address" type="text" name="street-address" placeholder="" value="">
                         </label>
@@ -1202,79 +1202,176 @@
                     Add
                     <i class="pi-plus" aria-hidden="true"></i>
                   </button>
-                </div>                
+                </div>
                 <form action="submit" class="pui-form mb-4">
                   <div class="pui-accordion mb-3">
                     <!-- Accordion Header -->
-                      <div class="pui-accordion__header p-2 block-container flex--justify-between">
-                        <div class="block block-10 tablet-up-11 flex flex--align-start">
-                          <button class="button--plain p-3 text-positive--hover" aria-label="Edit W9 Payment">
-                            <i class="pi-edit" aria-hidden="true"></i>
-                          </button>
-                          <div class="block-container blocks tablet-up-4 p-2 w-100">
-                            <div class="block">
-                              <p class="text-med-blue text--bold mb-1">Street Address</p>
-                              <p class="m-0 truncate-with-ellipsis" title="740 Robert Loaf">740 Robert Loaf</p>
-                            </div>
-                            <div class="block">
-                              <p class="text-med-blue text--bold mb-1">Address 2</p>
-                              <p class="m-0 truncate-with-ellipsis" title="Apt. 987">Apt. 987</p>
-                            </div>
-                            <div class="block">
-                              <p class="text-med-blue text--bold mb-1">City</p>
-                              <p class="m-0" title="Conshohocken">Conshohocken</p>
-                            </div>
+                    <div class="pui-accordion__header p-2 block-container flex--justify-between">
+                      <div class="block block-10 tablet-up-11 flex flex--align-start">
+                        <button class="button--plain p-3 text-positive--hover" aria-label="Edit W9 Payment">
+                          <i class="pi-edit" aria-hidden="true"></i>
+                        </button>
+                        <div class="block-container blocks tablet-up-4 p-2 w-100">
+                          <div class="block">
+                            <p class="text-med-blue text--bold mb-1">Street Address</p>
+                            <p class="m-0 truncate-with-ellipsis" title="740 Robert Loaf">740 Robert Loaf</p>
+                          </div>
+                          <div class="block">
+                            <p class="text-med-blue text--bold mb-1">Address 2</p>
+                            <p class="m-0 truncate-with-ellipsis" title="Apt. 987">Apt. 987</p>
+                          </div>
+                          <div class="block">
+                            <p class="text-med-blue text--bold mb-1">City</p>
+                            <p class="m-0" title="Conshohocken">Conshohocken</p>
                           </div>
                         </div>
-                        <button class="button--plain text-negative--hover p-3" aria-label="Remove Address">
-                          <i class="pi-trash" aria-hidden="true"></i>
-                        </button>
                       </div>
-                      <!-- End Accordion Header -->
+                      <button class="button--plain text-negative--hover p-3" aria-label="Remove Address">
+                        <i class="pi-trash" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                    <!-- End Accordion Header -->
 
-                      <!-- Start Accordion Content -->
-                      <div class="pui-accordion__content p-3">
-                        <div class="block-container blocks px-3 my-3 tablet-up-3 lg-tablet-up-4 laptop-up-3 desktop-up-4">
-                          <label for="w9-street-address" class="pui-form__field block">Street Address
-                            <input id="w9-street-address" type="text" name="street-address" placeholder="" value="740 Robert Loaf">
-                          </label>
-                          <label for="w9-address-2" class="pui-form__field block">Address 2
-                            <input id="w9-address-2" type="text" placeholder="Apt. Number" value="Apt. 987">
-                          </label>
-                          <label for="w9-city" class="pui-form__field block">City
-                            <input id="w9-city" type="text" name="address-level2" placeholder="City" value="Conshohocken">
-                          </label>
-                          <label for="w9-zipcode" class="pui-form__field block">Zipcode
-                            <input id="w9-zipcode" type="text" name="postal-code" placeholder="" value="19428" >
-                          </label>
-                          <label for="w9-County" class="pui-form__field block">County
-                            <div class="pui-form__select-wrapper">
-                              <select name="County Select" id="w9-county">
-                                <option value="Montgomery" selected>Montgomery</option>
-                                <option value="Other">Other</option>
-                                <option value="Other">Other</option>
-                                <option value="Other">Other</option>
-                                <option value="Other">Other</option>
-                                <option value="Other">Other</option>
-                              </select>
-                            </div>
-                          </label>
-                          <label for="w9-state" class="pui-form__field block">State
-                            <div class="pui-form__select-wrapper">
-                              <select name="state Select" id="w9-state">
-                                <option value="PA" selected>PA</option>
-                                <option value="Other">Other</option>
-                                <option value="Other">Other</option>
-                                <option value="Other">Other</option>
-                                <option value="Other">Other</option>
-                                <option value="Other">Other</option>
-                              </select>
-                            </div>
-                          </label>
-                        </div>
+                    <!-- Start Accordion Content -->
+                    <div class="pui-accordion__content p-3">
+                      <div class="block-container blocks px-3 my-3 tablet-up-3 lg-tablet-up-4">
+                        <label for="w9-street-address" class="pui-form__field block">Street Address
+                          <input id="w9-street-address" type="text" name="street-address" placeholder="" value="740 Robert Loaf">
+                        </label>
+                        <label for="w9-address-2" class="pui-form__field block">Address 2
+                          <input id="w9-address-2" type="text" placeholder="Apt. Number" value="Apt. 987">
+                        </label>
+                        <label for="w9-city" class="pui-form__field block">City
+                          <input id="w9-city" type="text" name="address-level2" placeholder="City" value="Conshohocken">
+                        </label>
+                        <label for="w9-zipcode" class="pui-form__field block">Zipcode
+                          <input id="w9-zipcode" type="text" name="postal-code" placeholder="" value="19428" >
+                        </label>
+                        <label for="w9-County" class="pui-form__field block">County
+                          <div class="pui-form__select-wrapper">
+                            <select name="County Select" id="w9-county">
+                              <option value="Montgomery" selected>Montgomery</option>
+                              <option value="Other">Other</option>
+                              <option value="Other">Other</option>
+                              <option value="Other">Other</option>
+                              <option value="Other">Other</option>
+                              <option value="Other">Other</option>
+                            </select>
+                          </div>
+                        </label>
+                        <label for="w9-state" class="pui-form__field block">State
+                          <div class="pui-form__select-wrapper">
+                            <select name="state Select" id="w9-state">
+                              <option value="PA" selected>PA</option>
+                              <option value="Other">Other</option>
+                              <option value="Other">Other</option>
+                              <option value="Other">Other</option>
+                              <option value="Other">Other</option>
+                              <option value="Other">Other</option>
+                            </select>
+                          </div>
+                        </label>
+                      </div>
                     </div>
                   </div>
-                </form>                
+                </form>
+                <div class="flex flex--justify-between flex--align-center mb-3">
+                  <p class="text-navy text--size-lg text--bold flex m-0">Payment Methods</p>
+                  <button class="button pui-modal__open" data-modal="new-payment-modal">
+                    Add
+                    <i class="pi-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <div class="pui-accordion pui-form mb-3">
+                  <!-- Accordion Header -->
+                  <div class="pui-accordion__header p-2 block-container flex--justify-between">
+                    <div class="block block-10 tablet-up-11 flex flex--align-start">
+                      <button class="button--plain p-3 text-positive--hover" aria-label="Edit W9 Payment">
+                        <i class="pi-edit" aria-hidden="true"></i>
+                      </button>
+                      <div class="block-container blocks tablet-up-4 p-2 w-100">
+                        <div class="block">
+                          <p class="text-med-blue text--bold mb-1">Description</p>
+                          <p class="m-0 truncate-with-ellipsis" title="Bachmeier, Gudis & Associates(Bachmeier)">Bachmeier, Gudis & Associates(Bachmeier)</p>
+                        </div>
+                        <div class="block">
+                          <p class="text-med-blue text--bold mb-1">Status</p>
+                          <i class="pi-circle-solid text-positive" title="Ready"></i>
+                        </div>
+                        <div class="block flex flex--align-center">
+                          <p class="text-med-blue text--bold mb-1">ACH</p>
+                        </div>
+                      </div>
+                    </div>
+                    <button class="button--plain text-negative--hover p-3" aria-label="Remove Address">
+                      <i class="pi-trash" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                  <!-- End Accordion Header -->
+
+                  <!-- Start Accordion Content -->
+                  <div class="pui-accordion__content pt-3 px-3 pb-6 pos-rel">
+                    <div class="mb-3">
+                      <div class="block-container blocks px-3 my-3 tablet-up-3 lg-tablet-up-4">
+                        <label for="payment-company-new" class="pui-form__field block">Company
+                          <input id="payment-company-new" type="text" placeholder="" title="Bachmeier, Gudis & Associates" value="Bachmeier, Gudis & Associates">
+                        </label>
+                        <label for="payment-company-eid-new" class="pui-form__field block">Company EIN
+                          <input id="payment-company-eid-new" type="text" value="85-3399742">
+                        </label>
+                        <label for="payment-individual-name-new" class="pui-form__field block">Individual Name
+                          <input id="payment-individual-name-new" type="text" placeholder="" title="Bachmeier, Gudis & Associates" value="Bachmeier, Gudis & Associates">
+                        </label>
+                        <label for="payment-routing-number-new" class="pui-form__field block">Routing Number
+                          <input id="payment-routing-number-new" type="tel" placeholder="" value="00123456789" >
+                        </label>
+                        <label for="payment-routing-number-new" class="pui-form__field block">Account Number
+                          <input id="payment-account-number-new" type="tel" placeholder="" value="123456789" >
+                        </label>
+                        <label for="payment-status-new" class="pui-form__field block">Payment Status
+                          <div class="pui-form__select-wrapper">
+                            <select name="state Select" id="payment-status-new">
+                              <option value="Ready">Ready</option>
+                              <option value="Other">Other</option>
+                              <option value="Other">Other</option>
+                              <option value="Other">Other</option>
+                              <option value="Other">Other</option>
+                              <option value="Other">Other</option>
+                            </select>
+                          </div>
+                        </label>
+                        <div class="block">
+                          <fieldset class="pui-form__field">
+                            <legend>Account Type</legend>
+                            <div class="flex">
+                              <input id="choose-checking" type="radio" name="choose-one" checked>
+                              <label for="choose-checking">
+                                <div class="input-icons">
+                                  <i class='pi-circle pi-lg'></i>
+                                  <i class='pi-circle-solid'></i>
+                                </div>
+                                Checking
+                              </label>
+                              <input id="choose-savings" type="radio" name="choose-one">
+                              <label for="choose-savings">
+                                <div class="input-icons">
+                                  <i class='pi-circle pi-lg'></i>
+                                  <i class='pi-circle-solid'></i>
+                                </div>
+                                Savings
+                              </label>
+                            </div>
+                          </fieldset>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="pui-message pui-message--info pos-abs pin-bottom pin-left m-0 w-100" data-header="Created By">
+                      <p>
+                        System Migration on 03/20/2012 @8:07 AM
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
               <input type="radio" id="tab-input-e" name="tabs">
               <label for="tab-input-e" class="pui-tab flex flex--justify-between">
@@ -1623,7 +1720,7 @@
                               <label for="affiliate-url-1" class="pui-form__field block">Site URL
                                 <input id="training-url-1" type="text" value="">
                               </label>
-                            </div>                          
+                            </div>          
                           </div>
                           <div class="block lg-tablet-up-6 desktop-up-4">
                             <img class="w-100" src="https://picsum.photos/340/174" alt="Site Logo">
@@ -1861,7 +1958,7 @@
                               <label for="affiliate-url-1" class="pui-form__field block">Site URL
                                 <input id="training-url-1" type="text" value="">
                               </label>
-                            </div>                          
+                            </div>          
                           </div>
                           <div class="block lg-tablet-up-6 desktop-up-4">
                             <img class="w-100" src="https://picsum.photos/340/174" alt="Site Logo">
@@ -2188,32 +2285,27 @@
         <strong class="text-navy text--size-lg">New Payment Method</strong>
       </div>
       <div class="pui-modal__content">
-        <form action="submit" class="pui-form block-container blocks px-2 py-3">
-          <label for="payment-company-modal" class="pui-form__field block tablet-up-6 laptop-up-4">Company
+        <form action="submit" class="pui-form block-container blocks px-2 py-3">          
+          <label for="payment-company-modal" class="pui-form__field block tablet-up-6 laptop-up-3">Company
             <input id="payment-company-modal" type="text" placeholder="" value="">
           </label>
-          <label for="payment-company-eid-modal" class="pui-form__field block tablet-up-6 laptop-up-4">Company EIN
+          <label for="payment-company-eid-modal" class="pui-form__field block tablet-up-6 laptop-up-3">Company EIN
             <input id="payment-company-eid-modal" type="text" value="">
           </label>
-          <label for="payment-individual-name-modal" class="pui-form__field block tablet-up-6 laptop-up-4">Individual Name
+          <label for="payment-individual-name-modal" class="pui-form__field block tablet-up-6 laptop-up-3">Individual Name
             <input id="payment-individual-name-modal" type="text" placeholder="" value="">
           </label>
-          <label for="payment-routing-number-modal" class="pui-form__field block tablet-up-6">Routing Number
+          <label for="payment-routing-number-modal" class="pui-form__field block tablet-up-6 laptop-up-3">Routing Number
             <input id="payment-routing-number-modal" type="tel" placeholder="" value="" >
           </label>
-          <label for="payment-verify-routing-number-modal" class="pui-form__field block tablet-up-6">Verify Routing Number
-            <input id="payment-verify-routing-number-modal" type="tel" placeholder="" value="" >
-          </label>
-          <label for="payment-routing-number-modal" class="pui-form__field block tablet-up-6">Account Number
+          <label for="payment-routing-number-modal" class="pui-form__field block tablet-up-6 laptop-up-3">Account Number
             <input id="payment-account-number-modal" type="tel" placeholder="" value="" >
           </label>
-          <label for="payment-verify-account-number-modal" class="pui-form__field block tablet-up-6">Verify Account Number
-            <input id="payment-verify-account-number-modal" type="tel" placeholder="" value="" >
-          </label>
-          <label for="payment-status-modal" class="pui-form__field block tablet-up-6 laptop-up-4">Payment Status
+          <label for="payment-status-modal" class="pui-form__field block tablet-up-6 laptop-up-3">Payment Status
             <div class="pui-form__select-wrapper">
               <select name="state Select" id="payment-status-modal">
-                <option value="Incomplete" >Incomplete</option>
+                <option value=""></option>
+                <option value="Ready">Ready</option>
                 <option value="Other">Other</option>
                 <option value="Other">Other</option>
                 <option value="Other">Other</option>
@@ -2222,13 +2314,10 @@
               </select>
             </div>
           </label>
-          <label for="payment-producer-npn-modal" class="pui-form__field block tablet-up-6 laptop-up-4">Producer NPN (9006591)
-            <input id="payment-producer-npn-modal" type="text" placeholder="" value="">
-          </label>
-          <div class="block tablet-up-6 laptop-up-4">
+          <div class="block tablet-up-6 laptop-up-3">
             <fieldset class="pui-form__field">
-              <legend class="sr-only">Choose an Account Type</legend>
-              <div class="pui-form__option-group">
+              <legend>Account Type</legend>
+              <div class="flex">
                 <input id="choose-checking" type="radio" name="choose-one">
                 <label for="choose-checking">
                   <div class="input-icons">
