@@ -432,7 +432,7 @@
         #{$prop}-left: 0 !important;
         #{$prop}-right: 0 !important;
         width: calc(100% + (#{$rem} * 2));
-        margin-left: -#{$rem};
+        margin-left: -#{$rem} !important;
 
         > .blocks {
           &[class*="px"] {
@@ -466,7 +466,7 @@
       &.blocks.#{$letter}-#{$unit} {
         #{$prop}: 0 !important;
         width: calc(100% + (#{$rem} * 2));
-        margin-left: -#{$rem};
+        margin-left: -#{$rem} !important;
         > .block {
           #{$prop}: #{$rem};
         }
