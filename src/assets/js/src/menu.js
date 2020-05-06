@@ -14,7 +14,7 @@ let openDropdown = (item) => {
 }
 
 if (hasDropdown) {
-  const links = document.querySelectorAll('.has-dropdown .site-menu__link')
+  const links = document.querySelectorAll('.has-dropdown')
 
   links.forEach( (el) => {
     el.addEventListener('click', (e) => {
@@ -30,13 +30,15 @@ if (hasDropdown) {
   });
 }
 
-let menuAction = document.querySelector('.site-menu-mobile-action');
+let menuAction = document.querySelectorAll('.site-menu-mobile-action');
 
 if (menuAction) {
-  menuAction.addEventListener('click', (e) => {
-    e.preventDefault;
-    if (e.target.nextElementSibling.matches('.site-menu')) {
-      e.target.nextElementSibling.classList.toggle('active');
-    }    
+  menuAction.forEach(function(el) {
+    el.addEventListener('click', (e) => {
+      e.preventDefault;
+      if (e.target.nextElementSibling.matches('.site-menu')) {
+        e.target.nextElementSibling.classList.toggle('active');
+      }
+    })
   })
 }
