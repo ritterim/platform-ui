@@ -574,8 +574,7 @@
 
   &__action {
     color: color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold));
-    height: variables.$spacer * 1.5;
-    width: map.get(variables.$spacers, 4);
+    @include mixins.square(variables.$spacer * 1.5);
     @extend %flex-center;
 
     &:hover {
