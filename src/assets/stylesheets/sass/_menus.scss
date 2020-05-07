@@ -14,7 +14,7 @@
 // <header class="site-header">
 //   <nav class="site-menu">
 //     <div class="site-menu__item">
-//      <a href="#" class="site-menu__link">
+//      <a href="#" class="dropdown__action">
 //       <span class="card__header-icon pill--circle-medium background-pink text-white mr-2">
 //         <i class="pi-rimdev text-base"></i>
 //       </span>
@@ -24,12 +24,12 @@
 //      </a>
 //     </div>
 //     <div class="site-menu__item">
-//       <a href="#" class="site-menu__link">
+//       <a href="#" class="dropdown__action">
 //         menu item
 //       </a>
 //     </div>
-//     <div class="site-menu__item has-dropdown">
-//       <a href="#" class="site-menu__link">
+//     <div class="site-menu__item dropdown">
+//       <a href="#" class="dropdown__action">
 //         dropdown item
 //       </a>
 //       <div class="dropdown-menu pin-right">
@@ -43,7 +43,7 @@
 // <header class="site-header mt-5">
 //   <nav class="site-menu primary inverted">
 //     <div class="site-menu__item">
-//       <a href="#" class="site-menu__link">
+//       <a href="#" class="dropdown__action">
 //         <span class="card__header-icon pill--circle-medium background-pink text-white mr-2">
 //           <i class="pi-rimdev text-base"></i>
 //         </span>
@@ -53,12 +53,12 @@
 //       </a>
 //     </div>
 //     <div class="site-menu__item">
-//       <a href="#" class="site-menu__link">
+//       <a href="#" class="dropdown__action">
 //         menu item
 //       </a>
 //     </div>
-//     <div class="site-menu__item has-dropdown">
-//       <a href="#" class="site-menu__link">
+//     <div class="site-menu__item dropdown">
+//       <a href="#" class="dropdown__action">
 //         dropdown item
 //       </a>
 //       <div class="dropdown-menu pin-right">
@@ -128,7 +128,7 @@
     .site-menu__item {
       border-left: 1px solid color.adjust(config.$primary-menu-color, $lightness: math.percentage(-.15));
 
-      &.has-dropdown {
+      &.dropdown {
 
         @media (pointer: fine) {
           &:hover {
@@ -234,7 +234,7 @@
     }
   }
 
-  &.has-dropdown {
+  &.dropdown {
     position: relative;
 
     @media (pointer: fine) {
@@ -251,7 +251,7 @@
   &.dropdown-active {
     background-color: color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05));
 
-    .dropdown-menu {
+    > .dropdown__action + .dropdown-menu {
       max-height: 100vh;
       transition: max-height .2s ease-in;
       overflow-y: auto;
@@ -289,7 +289,14 @@
   }
 }
 
-.site-menu__link-icon {
+.dropdown__action {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.dropdown__action-icon {
   
   @include mixins.breakpoint(tablet, min) {
     &.pi-angle-right {
@@ -307,8 +314,8 @@
 // added a button with the class `site-menu-mobile-action`. For accessibility purposes, we included button text with an `sr-only` class.
 // Be sure to add the button before the site-menu so that the button and site-menu are siblings. This is important for the JS to fire correctly. 
 // The menu mobile menu will respond below the `tablet` resolution and the menu button will display as well.
-// If you want to add an icon to the dropdown targets, make sure the icon has the class `site-menu__link-icon`. This icon will rotate when the dropdown
-// is active. In the example below we're using a platform icon. `<i class="pi-angle-right mx-2 site-menu__link-icon"></i>`
+// If you want to add an icon to the dropdown targets, make sure the icon has the class `dropdown__action-icon`. This icon will rotate when the dropdown
+// is active. In the example below we're using a platform icon. `<i class="pi-angle-right mx-2 dropdown__action-icon"></i>`
 // 
 // 
 // Markup: 
@@ -323,13 +330,13 @@
 //     </button>
 //     <nav class="site-menu background-teal inverted">
 //       <div class="site-menu__item">
-//         <a href="#" class="site-menu__link">
+//         <a href="#" class="dropdown__action">
 //           About
 //         </a>
 //       </div>
-//       <div class="site-menu__item has-dropdown">
-//         <a href="#" class="site-menu__link flex flex--justify-between w-100">
-//           Blog <i class="pi-angle-right mx-2 site-menu__link-icon"></i>
+//       <div class="site-menu__item dropdown">
+//         <a href="#" class="dropdown__action flex flex--justify-between w-100">
+//           Blog <i class="pi-angle-right mx-2 dropdown__action-icon"></i>
 //         </a>
 //         <div class="dropdown-menu pin-right">
 //           <a href="#" class="dropdown-menu__item">
@@ -343,9 +350,9 @@
 //           </a>
 //         </div>
 //       </div>
-//       <div class="site-menu__item has-dropdown">
-//         <a href="#" class="site-menu__link flex flex--justify-between w-100">
-//           Dropdown <i class="pi-angle-right mx-2 site-menu__link-icon"></i>
+//       <div class="site-menu__item dropdown">
+//         <a href="#" class="dropdown__action flex flex--justify-between w-100">
+//           Dropdown <i class="pi-angle-right mx-2 dropdown__action-icon"></i>
 //         </a>
 //         <div class="dropdown-menu pin-right">
 //           <a href="#" class="dropdown-menu__item">
@@ -360,12 +367,12 @@
 //         </div>
 //       </div>
 //       <div class="site-menu__item">
-//         <a href="#" class="site-menu__link">
+//         <a href="#" class="dropdown__action">
 //           Contact
 //         </a>
 //       </div>
 //       <div class="site-menu__item">
-//         <a href="#" class="site-menu__link">
+//         <a href="#" class="dropdown__action">
 //           Events
 //         </a>
 //       </div>
@@ -437,17 +444,17 @@
       &.dropdown-active {
         background-color: unset;
     
-        .site-menu__link-icon {
+        .dropdown__action-icon {
           transform: rotate(90deg);
         }
       }   
     }
 
-    .site-menu__link {
+    .dropdown__action {
       padding: map.get(variables.$spacers, 2 ) map.get(variables.$spacers, 1 ); 
     }
 
-    .site-menu__link-icon {
+    .dropdown__action-icon {
       transition: config.$transitions;
     }
 

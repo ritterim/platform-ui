@@ -1,8 +1,8 @@
 let  dropdownMenu = document.querySelectorAll('.dropdown-menu');
-let  hasDropdown = document.querySelectorAll('.has-dropdown');
+let  hasDropdown = document.querySelectorAll('.dropdown');
 
 let openDropdown = (item) => {
-  let menuItem = item;
+  let menuItem = item.closest('.dropdown');
   if(menuItem.classList.contains('dropdown-active')) {
     menuItem.classList.remove('dropdown-active');
   } else {
@@ -14,7 +14,7 @@ let openDropdown = (item) => {
 }
 
 if (hasDropdown) {
-  const links = document.querySelectorAll('.has-dropdown')
+  const links = document.querySelectorAll('.dropdown .dropdown__action')
   const dropdownLinks = document.querySelectorAll('.dropdown-menu__item')
 
   links.forEach( (el) => {
