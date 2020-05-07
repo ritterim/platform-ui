@@ -267,8 +267,13 @@
 .site-menu__link {
   align-items: center;
   display: flex;
+  padding: 0 map.get(variables.$spacers, 3);
   height: 100%;
   width: 100%;
+
+  @include mixins.breakpoint(tablet, min) {
+    padding: 0 map.get(variables.$spacers, 4);
+  }
 
   @media (pointer: fine) {
     &:hover {
