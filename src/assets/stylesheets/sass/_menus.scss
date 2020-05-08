@@ -13,21 +13,17 @@
 // Markup:
 // <header class="site-header">
 //   <nav class="site-menu">
-//     <div class="site-menu__item">
-//      <a href="#" class="dropdown__trigger">
-//       <span class="card__header-icon pill--circle-medium background-pink text-white mr-2">
-//         <i class="pi-rimdev text-base"></i>
-//       </span>
-//       <div class="font-lg">
-//         Menu Header with avatar
-//       </div>
-//      </a>
-//     </div>
-//     <div class="site-menu__item">
-//       <a href="#" class="dropdown__trigger">
-//         menu item
-//       </a>
-//     </div>
+//     <a href="#" class="site-menu__item">
+//      <span class="card__header-icon pill--circle-medium background-pink text-white mr-2">
+//        <i class="pi-rimdev text-base"></i>
+//      </span>
+//      <div class="font-lg">
+//        Menu Header with avatar
+//      </div>
+//     </a>
+//     <a href="#" class="site-menu__item">
+//       menu item
+//     </a>
 //     <div class="site-menu__item dropdown">
 //       <a href="#" class="dropdown__trigger">
 //         dropdown item
@@ -42,21 +38,17 @@
 // </header>
 // <header class="site-header mt-5">
 //   <nav class="site-menu primary inverted">
-//     <div class="site-menu__item">
-//       <a href="#" class="dropdown__trigger">
-//         <span class="card__header-icon pill--circle-medium background-pink text-white mr-2">
-//           <i class="pi-rimdev text-base"></i>
-//         </span>
-//         <div class="font-lg">
-//           Menu Header with avatar
-//         </div>
-//       </a>
-//     </div>
-//     <div class="site-menu__item">
-//       <a href="#" class="dropdown__trigger">
-//         menu item
-//       </a>
-//     </div>
+//     <a href="#" class="site-menu__item">
+//       <span class="card__header-icon pill--circle-medium background-pink text-white mr-2">
+//         <i class="pi-rimdev text-base"></i>
+//       </span>
+//       <div class="font-lg">
+//         Menu Header with avatar
+//       </div>
+//     </a>
+//     <a href="#" class="site-menu__item">
+//       menu item
+//     </a>
 //     <div class="site-menu__item dropdown">
 //       <a href="#" class="dropdown__trigger">
 //         dropdown item
@@ -127,80 +119,6 @@
 
     .site-menu__item {
       border-left: 1px solid color.adjust(config.$primary-menu-color, $lightness: math.percentage(-.15));
-
-      &.dropdown {
-
-        @media (pointer: fine) {
-          &:hover {
-            &:not(.active) {
-              border-bottom-color: rgba(config.$primary-menu-color, .5);
-            }
-          }
-        }
-
-        &.dropdown-active {
-          border-bottom-color: rgba(config.$primary-menu-color, .5);
-        }
-      }
-
-      &.dropdown-active,
-      &.active {
-        background-color: color.adjust(config.$primary-menu-color, $lightness: math.percentage(-.05));
-      }
-    }
-
-    .dropdown__content {
-      background-color: color.adjust(config.$primary-menu-color, $lightness: math.percentage(-.05));
-
-      &__item {
-
-        &:hover {
-          background-color: rgba(color.adjust(map.get(variables.$greyscale, 'white'), $lightness: math.percentage(-.05)), .3);
-        }
-
-        &:not(:first-child) {
-          border-top: 1px solid rgba(config.$primary-menu-color, .5);
-        }
-      }
-    }
-  }
-
-  .dropdown__content {
-    background-color: color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05));
-    // height: auto;
-    // max-height: 0;
-    // min-width: 15rem;
-    // width: 100%;
-    // overflow: hidden;
-    // position: absolute;
-    // transition: max-height .2s ease-out;
-    // top: calc(100% + 1px);
-
-    &__item {
-      // border-left: 0;
-      // display: flex;
-      // justify-content: flex-start;
-      // padding: map.get(variables.$spacers, 2);
-
-      &:hover {
-        background-color: rgba(color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05)), .3);
-      }
-
-      &:not(:first-child) {
-        @include mixins.breakpoint(tablet, min) {
-          border-top: 1px solid rgba(map.get(variables.$greyscale, 'lighter'), .5);
-        }        
-      }
-
-      // &.profile {
-      //   flex-direction: column;
-      // }
-
-      i[class*="pi-"] {
-        padding-right: map.get(variables.$spacers, 3);
-        width: 1.2rem;
-        @extend %flex-center;
-      }
     }
   }
 }
@@ -232,57 +150,6 @@
     }
   }
 
-  &.dropdown {
-    // position: relative;
-
-    @media (pointer: fine) {
-      &:hover {
-        border-bottom-color: rgba(map.get(variables.$greyscale, 'lighter'), .5);
-      }
-    }
-
-    &.dropdown-active {
-      border-bottom-color: rgba(map.get(variables.$greyscale, 'lighter'), .5);
-    }
-  }
-
-  .dropdown__content {
-    @media screen and (max-width: (config.$show-mobile-menu - 1)) {
-      background-color: unset;
-      // height: auto;
-      // max-height: 0;
-      // transition: max-height .2s ease-out;
-      // overflow: hidden;
-      position: static;
-      // width: 100%;
-  
-      &__item {
-        // border-top: none;
-        // padding: map.get(variables.$spacers, 2 );
-  
-        &:first-of-type {
-          margin-top: map.get(variables.$spacers, 2 );
-        }
-      }  
-    }    
-  }
-
-  &.dropdown-active {
-    background-color: color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05));
-
-    // > .dropdown__trigger + .dropdown__content {
-    //   max-height: 100vh;
-    //   transition: max-height .2s ease-in;
-    //   overflow-y: auto;
-    //   overflow-x: hidden;
-    //   z-index: 5;
-    // }
-  }
-
-  &.active {
-    background-color: color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05));
-  }
-
   &.search {
     flex-grow: 1;
     padding: 0 map.get(variables.$spacers, 3 );
@@ -308,6 +175,9 @@
   }
 }
 
+
+
+
 .dropdown {
   position: relative;
 
@@ -320,6 +190,97 @@
       overflow-y: auto;
       overflow-x: hidden;
       z-index: 5;
+    }
+  }
+
+  &.site-menu__item {
+
+    @media (pointer: fine) {
+      &:hover {
+        border-bottom-color: rgba(map.get(variables.$greyscale, 'lighter'), .5);
+      }
+    }
+
+    &.dropdown-active {
+      background-color: color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05));
+      border-bottom-color: rgba(map.get(variables.$greyscale, 'lighter'), .5);
+    }
+  
+    &.active {
+      background-color: color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05));
+    }
+
+    .dropdown__content {
+      background-color: color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05));
+
+      @media screen and (max-width: (config.$show-mobile-menu - 1)) {
+        background-color: unset;
+        position: static;
+    
+        &-item {
+    
+          &:first-of-type {
+            margin-top: map.get(variables.$spacers, 2 );
+          }
+        }  
+      }  
+  
+      &-item {
+  
+        &:hover {
+          background-color: rgba(color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05)), .3);
+        }
+  
+        &:not(:first-child) {
+          @include mixins.breakpoint(tablet, min) {
+            border-top: 1px solid rgba(map.get(variables.$greyscale, 'lighter'), .5);
+          }        
+        }
+  
+        i[class*="pi-"] {
+          padding-right: map.get(variables.$spacers, 3);
+          width: 1.2rem;
+          @extend %flex-center;
+        }
+      }
+    }
+
+    .primary & {
+
+      &.dropdown {
+
+        @media (pointer: fine) {
+          &:hover {
+            &:not(.active) {
+              border-bottom-color: rgba(config.$primary-menu-color, .5);
+            }
+          }
+        }
+
+        &.dropdown-active {
+          border-bottom-color: rgba(config.$primary-menu-color, .5);
+        }
+      }
+
+      &.dropdown-active,
+      &.active {
+        background-color: color.adjust(config.$primary-menu-color, $lightness: math.percentage(-.05));
+      }
+    }
+  
+    .dropdown__content {
+      background-color: color.adjust(config.$primary-menu-color, $lightness: math.percentage(-.05));
+
+      &__item {
+
+        &:hover {
+          background-color: rgba(color.adjust(map.get(variables.$greyscale, 'white'), $lightness: math.percentage(-.05)), .3);
+        }
+
+        &:not(:first-child) {
+          border-top: 1px solid rgba(config.$primary-menu-color, .5);
+        }
+      }
     }
   }
 }
@@ -351,12 +312,6 @@
   transition: max-height .2s ease-out;
   top: calc(100% + 1px);
 
-  @media screen and (max-width: (config.$show-mobile-menu - 1)) {
-    background-color: unset;
-    // position: static;
-    width: 100%;
-  }
-
   &-item {
     border-left: 0;
     display: flex;
@@ -366,10 +321,6 @@
     @media screen and (max-width: (config.$show-mobile-menu - 1)) {
       border-top: none;
       padding: map.get(variables.$spacers, 2 );
-
-      // &:first-of-type {
-      //   margin-top: map.get(variables.$spacers, 2 );
-      // }
     }
 
     &:hover {
