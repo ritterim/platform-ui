@@ -1,4 +1,4 @@
-let  dropdownMenu = document.querySelectorAll('.dropdown-menu');
+let  dropdownMenu = document.querySelectorAll('.dropdown-content');
 let  hasDropdown = document.querySelectorAll('.dropdown');
 
 let openDropdown = (item) => {
@@ -14,8 +14,8 @@ let openDropdown = (item) => {
 }
 
 if (hasDropdown) {
-  const links = document.querySelectorAll('.dropdown .dropdown__action')
-  const dropdownLinks = document.querySelectorAll('.dropdown-menu__item')
+  const links = document.querySelectorAll('.dropdown .dropdown__trigger')
+  const dropdownLinks = document.querySelectorAll('.dropdown__content a')
 
   links.forEach( (el) => {
     el.addEventListener('click', (e) => {

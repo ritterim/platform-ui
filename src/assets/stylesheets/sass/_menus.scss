@@ -14,7 +14,7 @@
 // <header class="site-header">
 //   <nav class="site-menu">
 //     <div class="site-menu__item">
-//      <a href="#" class="dropdown__action">
+//      <a href="#" class="dropdown__trigger">
 //       <span class="card__header-icon pill--circle-medium background-pink text-white mr-2">
 //         <i class="pi-rimdev text-base"></i>
 //       </span>
@@ -24,18 +24,18 @@
 //      </a>
 //     </div>
 //     <div class="site-menu__item">
-//       <a href="#" class="dropdown__action">
+//       <a href="#" class="dropdown__trigger">
 //         menu item
 //       </a>
 //     </div>
 //     <div class="site-menu__item dropdown">
-//       <a href="#" class="dropdown__action">
+//       <a href="#" class="dropdown__trigger">
 //         dropdown item
 //       </a>
-//       <div class="dropdown-menu pin-right">
-//         <div class="dropdown-menu__item">
+//       <div class="dropdown__content pin-right">
+//         <a href="#">
 //           dropdown
-//         </div>
+//         </a>
 //       </div>
 //     </div>
 //   </nav>
@@ -43,7 +43,7 @@
 // <header class="site-header mt-5">
 //   <nav class="site-menu primary inverted">
 //     <div class="site-menu__item">
-//       <a href="#" class="dropdown__action">
+//       <a href="#" class="dropdown__trigger">
 //         <span class="card__header-icon pill--circle-medium background-pink text-white mr-2">
 //           <i class="pi-rimdev text-base"></i>
 //         </span>
@@ -53,18 +53,18 @@
 //       </a>
 //     </div>
 //     <div class="site-menu__item">
-//       <a href="#" class="dropdown__action">
+//       <a href="#" class="dropdown__trigger">
 //         menu item
 //       </a>
 //     </div>
 //     <div class="site-menu__item dropdown">
-//       <a href="#" class="dropdown__action">
+//       <a href="#" class="dropdown__trigger">
 //         dropdown item
 //       </a>
-//       <div class="dropdown-menu pin-right">
-//         <div class="dropdown-menu__item">
+//       <a class="dropdown__content pin-right">
+//         <a href="#">
 //           dropdown
-//         </div>
+//         </a>
 //       </div>
 //     </div>
 //   </nav>
@@ -149,7 +149,7 @@
       }
     }
 
-    .dropdown-menu {
+    .dropdown__content {
       background-color: color.adjust(config.$primary-menu-color, $lightness: math.percentage(-.05));
 
       &__item {
@@ -165,22 +165,22 @@
     }
   }
 
-  .dropdown-menu {
+  .dropdown__content {
     background-color: color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05));
-    height: auto;
-    max-height: 0;
-    min-width: 15rem;
-    width: 100%;
-    overflow: hidden;
-    position: absolute;
-    transition: max-height .2s ease-out;
-    top: calc(100% + 1px);
+    // height: auto;
+    // max-height: 0;
+    // min-width: 15rem;
+    // width: 100%;
+    // overflow: hidden;
+    // position: absolute;
+    // transition: max-height .2s ease-out;
+    // top: calc(100% + 1px);
 
     &__item {
-      border-left: 0;
-      display: flex;
-      justify-content: flex-start;
-      padding: map.get(variables.$spacers, 2);
+      // border-left: 0;
+      // display: flex;
+      // justify-content: flex-start;
+      // padding: map.get(variables.$spacers, 2);
 
       &:hover {
         background-color: rgba(color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05)), .3);
@@ -192,9 +192,9 @@
         }        
       }
 
-      &.profile {
-        flex-direction: column;
-      }
+      // &.profile {
+      //   flex-direction: column;
+      // }
 
       i[class*="pi-"] {
         padding-right: map.get(variables.$spacers, 3);
@@ -209,9 +209,7 @@
 .site-menu__item {
   border-left: 1px solid color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.15));
   border-bottom: 1px solid transparent;
-  cursor: pointer;
   display: flex;
-  flex-direction: column;
   flex: 0 0 auto;
   transition: config.$transitions;
   @extend %flex-center;
@@ -235,7 +233,7 @@
   }
 
   &.dropdown {
-    position: relative;
+    // position: relative;
 
     @media (pointer: fine) {
       &:hover {
@@ -248,16 +246,37 @@
     }
   }
 
+  .dropdown__content {
+    @media screen and (max-width: (config.$show-mobile-menu - 1)) {
+      background-color: unset;
+      // height: auto;
+      // max-height: 0;
+      // transition: max-height .2s ease-out;
+      // overflow: hidden;
+      position: static;
+      // width: 100%;
+  
+      &__item {
+        // border-top: none;
+        // padding: map.get(variables.$spacers, 2 );
+  
+        &:first-of-type {
+          margin-top: map.get(variables.$spacers, 2 );
+        }
+      }  
+    }    
+  }
+
   &.dropdown-active {
     background-color: color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05));
 
-    > .dropdown__action + .dropdown-menu {
-      max-height: 100vh;
-      transition: max-height .2s ease-in;
-      overflow-y: auto;
-      overflow-x: hidden;
-      z-index: 5;
-    }
+    // > .dropdown__trigger + .dropdown__content {
+    //   max-height: 100vh;
+    //   transition: max-height .2s ease-in;
+    //   overflow-y: auto;
+    //   overflow-x: hidden;
+    //   z-index: 5;
+    // }
   }
 
   &.active {
@@ -289,20 +308,90 @@
   }
 }
 
-.dropdown__action {
+.dropdown {
+  position: relative;
+
+  &.dropdown-active {
+    background-color: color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05));
+
+    > .dropdown__trigger + .dropdown__content {
+      max-height: 100vh;
+      transition: max-height .2s ease-in;
+      overflow-y: auto;
+      overflow-x: hidden;
+      z-index: 5;
+    }
+  }
+}
+
+.dropdown__trigger {
   align-items: center;
   display: flex;
   height: 100%;
   width: 100%;
 }
 
-.dropdown__action-icon {
+.dropdown__trigger-icon {
   
   @include mixins.breakpoint(tablet, min) {
     &.pi-angle-right {
       transform: rotate(90deg);
     }
   }  
+}
+
+.dropdown__content {
+  background-color: color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05));
+  height: auto;
+  max-height: 0;
+  min-width: 15rem;
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  transition: max-height .2s ease-out;
+  top: calc(100% + 1px);
+
+  @media screen and (max-width: (config.$show-mobile-menu - 1)) {
+    background-color: unset;
+    // position: static;
+    width: 100%;
+  }
+
+  &-item {
+    border-left: 0;
+    display: flex;
+    justify-content: flex-start;
+    padding: map.get(variables.$spacers, 2);
+
+    @media screen and (max-width: (config.$show-mobile-menu - 1)) {
+      border-top: none;
+      padding: map.get(variables.$spacers, 2 );
+
+      // &:first-of-type {
+      //   margin-top: map.get(variables.$spacers, 2 );
+      // }
+    }
+
+    &:hover {
+      background-color: rgba(color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05)), .3);
+    }
+
+    &:not(:first-child) {
+      @include mixins.breakpoint(tablet, min) {
+        border-top: 1px solid rgba(map.get(variables.$greyscale, 'lighter'), .5);
+      }        
+    }
+
+    &.profile {
+      flex-direction: column;
+    }
+
+    i[class*="pi-"] {
+      padding-right: map.get(variables.$spacers, 3);
+      width: 1.2rem;
+      @extend %flex-center;
+    }
+  }
 }
 
 
@@ -314,8 +403,8 @@
 // added a button with the class `site-menu-mobile-action`. For accessibility purposes, we included button text with an `sr-only` class.
 // Be sure to add the button before the site-menu so that the button and site-menu are siblings. This is important for the JS to fire correctly. 
 // The menu mobile menu will respond below the `tablet` resolution and the menu button will display as well.
-// If you want to add an icon to the dropdown targets, make sure the icon has the class `dropdown__action-icon`. This icon will rotate when the dropdown
-// is active. In the example below we're using a platform icon. `<i class="pi-angle-right mx-2 dropdown__action-icon"></i>`
+// If you want to add an icon to the dropdown targets, make sure the icon has the class `dropdown__trigger-icon`. This icon will rotate when the dropdown
+// is active. In the example below we're using a platform icon. `<i class="pi-angle-right mx-2 dropdown__trigger-icon"></i>`
 // 
 // 
 // Markup: 
@@ -330,49 +419,49 @@
 //     </button>
 //     <nav class="site-menu background-teal inverted">
 //       <div class="site-menu__item">
-//         <a href="#" class="dropdown__action">
+//         <a href="#" class="dropdown__trigger">
 //           About
 //         </a>
 //       </div>
 //       <div class="site-menu__item dropdown">
-//         <a href="#" class="dropdown__action flex flex--justify-between w-100">
-//           Blog <i class="pi-angle-right mx-2 dropdown__action-icon"></i>
+//         <a href="#" class="dropdown__trigger flex flex--justify-between w-100">
+//           Blog <i class="pi-angle-right mx-2 dropdown__trigger-icon"></i>
 //         </a>
-//         <div class="dropdown-menu pin-right">
-//           <a href="#" class="dropdown-menu__item">
+//         <div class="dropdown__content pin-right">
+//           <a href="#">
 //             Blog Post
 //           </a>
-//           <a href="#" class="dropdown-menu__item">
+//           <a href="#">
 //             Blog Post
 //           </a>
-//           <a href="#" class="dropdown-menu__item">
+//           <a href="#">
 //             Blog Post
 //           </a>
 //         </div>
 //       </div>
 //       <div class="site-menu__item dropdown">
-//         <a href="#" class="dropdown__action flex flex--justify-between w-100">
-//           Dropdown <i class="pi-angle-right mx-2 dropdown__action-icon"></i>
+//         <a href="#" class="dropdown__trigger flex flex--justify-between w-100">
+//           Dropdown <i class="pi-angle-right mx-2 dropdown__trigger-icon"></i>
 //         </a>
-//         <div class="dropdown-menu pin-right">
-//           <a href="#" class="dropdown-menu__item">
+//         <div class="dropdown__content pin-right">
+//           <a href="#">
 //             Dropdown Item
 //           </a>
-//           <a href="#" class="dropdown-menu__item">
+//           <a href="#">
 //             Dropdown Item
 //           </a>
-//           <a href="#" class="dropdown-menu__item">
+//           <a href="#">
 //             Dropdown Item
 //           </a>
 //         </div>
 //       </div>
 //       <div class="site-menu__item">
-//         <a href="#" class="dropdown__action">
+//         <a href="#" class="dropdown__trigger">
 //           Contact
 //         </a>
 //       </div>
 //       <div class="site-menu__item">
-//         <a href="#" class="dropdown__action">
+//         <a href="#" class="dropdown__trigger">
 //           Events
 //         </a>
 //       </div>
@@ -387,13 +476,13 @@
 // *****************
 
 .site-menu-wrapper {
-  @include mixins.breakpoint(lg-tablet, max) {
+  @media screen and (max-width: (config.$show-mobile-menu - 1)) {
     position: relative;
   }
 
   .site-menu-mobile-action {
 
-    @include mixins.breakpoint(lg-tablet, min) {
+    @media screen and (min-width: (config.$show-mobile-menu)) {
       display: none;
     }
 
@@ -402,7 +491,7 @@
     }
   }
 
-  @include mixins.breakpoint(lg-tablet, max) {
+  @media screen and (max-width: (config.$show-mobile-menu - 1)) {
 
     .site-menu {
       flex-direction: column;
@@ -439,42 +528,18 @@
       align-items: start;
       border-left: none;
       flex-direction: column;
-      padding: map.get(variables.$spacers, 2 ) 0;
 
       &.dropdown-active {
         background-color: unset;
     
-        .dropdown__action-icon {
+        .dropdown__trigger-icon {
           transform: rotate(90deg);
         }
       }   
     }
 
-    .dropdown__action {
-      padding: map.get(variables.$spacers, 2 ) map.get(variables.$spacers, 1 ); 
-    }
-
-    .dropdown__action-icon {
+    .dropdown__trigger-icon {
       transition: config.$transitions;
-    }
-
-    .dropdown-menu {
-      background-color: unset;
-      height: auto;
-      max-height: 0;
-      transition: max-height .2s ease-out;
-      overflow: hidden;
-      position: static;
-      width: 100%;
-
-      &__item {
-        border-top: none;
-        padding: map.get(variables.$spacers, 2 );
-
-        &:first-of-type {
-          margin-top: map.get(variables.$spacers, 2 );
-        }
-      }
     }
 
     // Accounts for fixed header height and max-height of open nav
