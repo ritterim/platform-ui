@@ -53,7 +53,7 @@
 //       <a href="#" class="dropdown__trigger">
 //         dropdown item
 //       </a>
-//       <a class="dropdown__content pin-right">
+//       <div class="dropdown__content pin-right">
 //         <a href="#">
 //           dropdown
 //         </a>
@@ -266,19 +266,19 @@
       &.active {
         background-color: color.adjust(config.$primary-menu-color, $lightness: math.percentage(-.05));
       }
-    }
+
+      .dropdown__content {
+        background-color: color.adjust(config.$primary-menu-color, $lightness: math.percentage(-.05));
   
-    .dropdown__content {
-      background-color: color.adjust(config.$primary-menu-color, $lightness: math.percentage(-.05));
-
-      &__item {
-
-        &:hover {
-          background-color: rgba(color.adjust(map.get(variables.$greyscale, 'white'), $lightness: math.percentage(-.05)), .3);
-        }
-
-        &:not(:first-child) {
-          border-top: 1px solid rgba(config.$primary-menu-color, .5);
+        &__item {
+  
+          &:hover {
+            background-color: rgba(color.adjust(map.get(variables.$greyscale, 'white'), $lightness: math.percentage(-.05)), .3);
+          }
+  
+          &:not(:first-child) {
+            border-top: 1px solid rgba(config.$primary-menu-color, .5);
+          }
         }
       }
     }
