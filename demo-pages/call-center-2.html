@@ -11,89 +11,237 @@
 
 </head>
 <body class="flex flex--column background-light-mid">
-  <header class="site-header site-header--fixed">
-      <nav class="site-menu primary inverted">
-          <div class="site-menu__item">
-            <a href="/demo-pages/crm-example.html" class="site-menu__link">
+    <header class="site-header site-header--fixed">
+      <div class="site-menu primary inverted site-menu-wrapper">
+        <div class="block-container background-navy w-100">
+          <div class="block block-8 lg-tablet-up-4 lg-tablet-up--fill flex">
+            <a href="/demo-pages/call-center.html" class="site-menu__item">
               <span class="card__header-icon pill--circle-medium background-purple text-white mr-2">
-                  D
+                D
               </span>
               <span class="text--size-lg">
-                  Hello Dev
+                Hello Dev
               </span>
             </a>
-          </div>
-          <div class="site-menu__item search">
+            <div class="site-menu__item search">
               <form role="search" aria-label="CRM" _lpchecked="1" class="w-100">
-                  <div class="flex flex--align-center">
-                      <label for="search-input" class="sr-only">Search</label>
-                      <input type="text" id="search-input" placeholder="Type to search..." class="placeholder--light text-white">
-                      <i aria-hidden="true" class="pi-search"></i>
-                  </div>
+                <div class="flex flex--align-center">
+                  <label for="search-input" class="sr-only">Search</label>
+                  <input type="text" id="search-input" placeholder="Type to search..."
+                    class="placeholder--light text-white">
+                  <i aria-hidden="true" class="pi-search"></i>
+                </div>
               </form>
+            </div>
           </div>
-          <div class="site-menu__item active">
-              <a href="#" class="site-menu__link">
-                <i class="mr-1 pi-phone" aria-hidden="true"></i>
-                Call Center 
+          <button
+            class="site-menu-mobile-action button--plain text-white hide-lg-tablet-up pos-abs pin-right mr-2 pin-center-top">
+            <span class="sr-only">Toggle Navigation</span>
+            <i aria-hidden="true" focusable="false" class="pi-menu pi-xl"></i>
+          </button>
+          <nav class="block block--shrink site-menu primary inverted">
+            <a href="#" class="site-menu__item active">
+              <i class="mr-1 pi-phone" aria-hidden="true"></i>
+              Call Center
+            </a>
+            <div class="site-menu__item dropdown p-0">
+              <a href="#" class="dropdown__trigger p-3">
+                Organizations <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
               </a>
-          </div>
-          <div class="site-menu__item has-dropdown">
-              <a href="#" class="site-menu__link">
-                  Organizations <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-              </a>
-              <div class="dropdown-menu pin-right">
-                  <a href="#" class="dropdown-menu__item">
-                      dropdown
+              <ul class="dropdown__content pin-right post-list">
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/agencies" class="flex p-3"><i class="users icon"></i>
+                    Agencies
                   </a>
-              </div>
-          </div>
-          <div class="site-menu__item has-dropdown">
-              <a href="#" class="site-menu__link">
-                  People <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-              </a>
-              <div class="dropdown-menu pin-right">
-                  <a href="#" class="dropdown-menu__item">
-                      dropdown
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/businesses" class="flex p-3"><i class="business-icon icon"></i>
+                    Businesses
                   </a>
-              </div>
-          </div>
-          <div class="site-menu__item has-dropdown">
-              <a href="#" class="site-menu__link">
-                  Flow <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-              </a>
-              <div class="dropdown-menu pin-right">
-                  <a href="#" class="dropdown-menu__item">
-                      dropdown
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/carriers" class="flex p-3"><i class="carrier-icon icon"></i>
+                    Carriers
                   </a>
-              </div>
-          </div>
-          <div class="site-menu__item has-dropdown">
-              <a href="#" class="site-menu__link">
-                  <span class="sr-only">RIMDev</span>
-                  <span class="card__header-icon pill--circle-medium background-white text-navy">
-                      <i class="pi-rimdev pi-lg" aria-hidden="true"></i>
-                  </span>
-                  <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+                </li>
+              </ul>
+            </div>
+            <div class="site-menu__item dropdown p-0">
+              <a href="#" class="dropdown__trigger p-3">
+                People <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
               </a>
-              <div class="dropdown-menu pin-right">
-                  <a href="#" class="dropdown-menu__item">
-                      dropdown
+              <ul class="dropdown__content pin-right post-list">
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/agents" class="flex p-3"><i class="agent-icon icon"></i>
+                    Agents
                   </a>
-              </div>
-          </div>
-          <div class="site-menu__item has-dropdown">
-              <a href="#" class="site-menu__link">
-                  Recent <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/associates" class="flex p-3"><i class="associate-icon icon"></i>
+                    Associates
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/users" class="flex p-3"><i class="user-icon icon"></i>
+                    Users
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/consumers" class="flex p-3"><i class="user-icon icon"></i>
+                    Consumers
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/agents/map?term=Harrisburg%2C%20PA%2017110" class="flex p-3">
+                    <i class="map icon"></i>
+                    Map Agents
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="site-menu__item dropdown p-0">
+              <a href="#" class="dropdown__trigger p-3">
+                Flow <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
               </a>
-              <div class="dropdown-menu pin-right">
-                  <a href="#" class="dropdown-menu__item">
-                      dropdown
+              <ul class="dropdown__content pin-right post-list">
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/flow/agents" class="flex p-3"><i class="id badge icon"></i>
+                    Agents
                   </a>
-              </div>
-          </div>
-      </nav>
-  </header>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/flow/agencies" class="flex p-3"><i class="users icon"></i>
+                    Agencies
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/flow/contracts" class="flex p-3"><i class="open folder icon"></i>
+                    Contracts
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/flow/campaigns" class="flex p-3" style=""><i class="address-card icon"></i>
+                    Campaigns
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/flow/submissions" class="flex p-3" style=""><i class="file icon"></i>
+                    Submissions
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/flow/enrollments" class="flex p-3" style=""><i class="certificate icon"></i>
+                    Enrollments
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/flow/payment-methods" class="flex p-3" style=""><i class="money bill icon"></i>
+                    Payment Methods
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/flow/crm" class="flex p-3" style=""><i class="briefcase icon"></i>
+                    CRM
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="site-menu__item dropdown p-0">
+              <a href="#" class="dropdown__trigger p-3">
+                <span class="sr-only">RIMDev</span>
+                <span class="card__header-icon pill--circle-medium background-white text-navy">
+                  <i class="pi-rimdev" aria-hidden="true"></i>
+                </span>
+                <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+              </a>
+              <ul class="dropdown__content pin-right post-list">
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/rimdev" class="flex p-3">
+                    Permissions
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/form-builder" class="flex p-3">
+                    Form Builder
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/_features" class="flex p-3">
+                    Feature Flags
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/_self" class="flex p-3">
+                    Claims Diagnostics
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="site-menu__item dropdown p-0">
+              <a href="#" class="dropdown__trigger p-3">
+                Recent <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+              </a>
+              <ul class="dropdown__content pin-right post-list dropdown">
+                <li class="post-item p-0 m-0">
+                  <a href="/admin/agents/c057f20a-fbc8-403c-9777-9e0701310cf8/edit" title="Last viewed on 5/6/2020"
+                    class="flex p-3"><i class="grey icon id badge"></i> <i class="yellow vertical ellipsis icon"></i>
+                    Gregory Gudis
+                  </a>
+                </li>
+                <!---->
+                <div class="left menu">
+                  <li class="post-item m-0 p-0">
+                    <a href="/admin/agents/c057f20a-fbc8-403c-9777-9e0701310cf8/contracts?id=263135" class="flex p-3">
+                      Contract for Accendo Insurance Company
+                    </a>
+                  </li>
+                  <li class="post-item m-0 p-0">
+                    <a href="/admin/agents/c057f20a-fbc8-403c-9777-9e0701310cf8/edit?ui=medicareful" class="flex p-3">
+                      Medicareful
+                    </a>
+                  </li>
+                  <li class="post-item m-0 p-0 border-b border--color-lighter">
+                    <a href="/admin/agents/c057f20a-fbc8-403c-9777-9e0701310cf8/edit?ui=payments" class="flex p-3">
+                      Payments
+                    </a>
+                  </li>
+                </div>
+                <li class="post-item p-0 m-0">
+                  <a href="/admin/agencies/62f89954-d3ea-4d96-96d7-c98bbd2470ec/edit" title="Last viewed on 4/21/2020"
+                    class="flex p-3"><i class="grey icon users"></i> <i class="yellow vertical ellipsis icon"></i>
+                    Ritter Insurance Marketing
+                  </a>
+                </li>
+                <!---->
+                <div class="left menu">
+                  <li class="post-item m-0 p-0">
+                    <a href="/admin/agencies/62f89954-d3ea-4d96-96d7-c98bbd2470ec/contracts?id=136337" class="flex p-3">
+                      Contract for Aetna-Referral
+                    </a>
+                  </li>
+                  <li class="post-item m-0 p-0">
+                    <a href="/admin/agencies/62f89954-d3ea-4d96-96d7-c98bbd2470ec/edit?ui=profile" class="flex p-3">
+                      Profile
+                    </a>
+                  </li>
+                  <li class="post-item m-0 p-0 border-b border--color-lighter">
+                    <a href="/admin/agencies/62f89954-d3ea-4d96-96d7-c98bbd2470ec/edit?ui=contact" class="flex p-3">
+                      Contact
+                    </a>
+                  </li>
+                </div>
+                <!---->
+                <li class="post-item m-0 p-0">
+                  <a class="flex p-3">
+                    <i class="red icon close"></i> Clear Recent Items
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
   <main class="header-fixed py-4 px-5">
     <div class="block-container blocks px-2 mb-4">
       <div class="block block-7">
