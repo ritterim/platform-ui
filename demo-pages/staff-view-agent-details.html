@@ -25,6 +25,14 @@
       right: 2rem;
     }
 
+    .drop-target {
+      border: 0.3rem dashed var(--pui-light-mid);
+      color: var(--pui-light);
+      font-weight: bold;
+      text-align: center;
+      margin: 1rem 0;
+    }
+
   </style>
 
 </head>
@@ -240,17 +248,6 @@
                     </label>
                     <label for="social" class="pui-form__field block">SSN
                       <input id="social" type="text" value="***-**-2345">
-                    </label>
-                    <label for="communication" class="pui-form__field block">Communication Type
-                      <div class="pui-form__select-wrapper">
-                        <select name="Communication Select" id="communication">
-                          <option value="Email">Email</option>
-                          <option value="Fax">Fax</option>
-                          <option value="Mail">Mail</option>
-                          <option value="None">None</option>
-                          <option value="Phone">Phone</option>
-                        </select>
-                      </div>
                     </label>
                     <label for="npn" class="pui-form__field block">NPN
                       <input id="npn" type="number" value="9006591">
@@ -740,7 +737,7 @@
                   <!-- Accordion Header -->
                   <div class="pui-accordion__header p-2 flex flex--justify-between flex--align-center">
                     <div class="flex flex--align-center">
-                      <button class="button--plain p-3 text-positive--hover" aria-label="Edit Primary Address">
+                      <button class="button--plain py-2 px-3 text-positive--hover" aria-label="Edit Primary Address">
                         <i class="pi-edit" aria-hidden="true"></i>
                       </button>
                       <p class="text-med-blue text--bold mb-0 ml-2">Primary Address</p>
@@ -801,7 +798,7 @@
                 <!-- Accordion Header -->
                   <div class="pui-accordion__header p-2 flex flex--justify-between flex--align-center">
                     <div class="flex flex--align-center">
-                      <button class="button--plain p-3 text-positive--hover" aria-label="Edit Alternate Address">
+                      <button class="button--plain py-2 px-3 text-positive--hover" aria-label="Edit Alternate Address">
                         <i class="pi-edit" aria-hidden="true"></i>
                       </button>
                       <p class="text-med-blue text--bold mb-0 ml-2">Alternate Address</p>
@@ -862,7 +859,7 @@
                   <!-- Accordion Header -->
                   <div class="pui-accordion__header p-2 flex flex--justify-between flex--align-center">
                     <div class="flex flex--align-center">
-                      <button class="button--plain p-3 text-positive--hover" aria-label="Edit Shipping Address">
+                      <button class="button--plain py-2 px-3 text-positive--hover" aria-label="Edit Shipping Address">
                         <i class="pi-edit" aria-hidden="true"></i>
                       </button>
                       <p class="text-med-blue text--bold mb-0 ml-2">Shipping Address</p>
@@ -990,7 +987,7 @@
                       </label>
                     </div>
                   </fieldset>
-                  <div class="block-container tablet-up-2 lg-tablet-up-3 blocks px-3 my-3">
+                  <div class="block-container tablet-up-2 lg-tablet-up-4 blocks px-3 my-3">
                     <label for="producer-status" class="pui-form__field block">Producer Status
                       <div class="pui-form__select-wrapper">
                         <select name="producer-status Select" id="producer-status">
@@ -1012,6 +1009,17 @@
                           <option value="Other">Other</option>
                           <option value="Other">Other</option>
                           <option value="Other">Other</option>
+                        </select>
+                      </div>
+                    </label>
+                    <label for="communication" class="pui-form__field block">Communication Type
+                      <div class="pui-form__select-wrapper">
+                        <select name="Communication Select" id="communication">
+                          <option value="Email">Email</option>
+                          <option value="Fax">Fax</option>
+                          <option value="Mail">Mail</option>
+                          <option value="None">None</option>
+                          <option value="Phone">Phone</option>
                         </select>
                       </div>
                     </label>
@@ -1081,7 +1089,7 @@
                   <!-- Accordion Header -->
                   <div class="pui-accordion__header p-2 block-container flex--justify-between">
                     <div class="block block-10 tablet-up-8 flex">
-                      <button class="button--plain p-3 text-positive--hover" aria-label="Edit Training">
+                      <button class="button--plain py-2 px-3 text-positive--hover" aria-label="Edit Training">
                         <i class="pi-edit" aria-hidden="true"></i>
                       </button>
                       <div class="block-container ml-1 w-100">
@@ -1131,7 +1139,7 @@
                   <!-- Accordion Header -->
                   <div class="pui-accordion__header p-2 block-container flex--justify-between">
                     <div class="block block-10 tablet-up-8 flex">
-                      <button class="button--plain p-3 text-positive--hover" aria-label="Edit Training">
+                      <button class="button--plain py-2 px-3 text-positive--hover" aria-label="Edit Training">
                         <i class="pi-edit" aria-hidden="true"></i>
                       </button>
                       <div class="block-container ml-1 w-100">
@@ -1183,34 +1191,77 @@
                 <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
               </label>
               <div class="pui-tab-panel p-4">
-                <p class="text-navy text--size-lg text--bold flex m-0">Tax Classification</p>
-                <div class="pui-form mb-4 block-container">
-                  <label for="tax-classification" class="pui-form__field block tablet-up-6" aria-label="Tax Classification">
-                    <div class="pui-form__select-wrapper">
-                      <select name="state Select" id="tax-classification">
-                        <option value="S Corporation" selected>S Corporation</option>
-                        <option value="Other">Other</option>
-                        <option value="Other">Other</option>
-                        <option value="Other">Other</option>
-                        <option value="Other">Other</option>
-                        <option value="Other">Other</option>
-                      </select>
+                <div class="mb-4">
+                  <div class="flex flex--justify-between flex--align-center mb-3">
+                    <strong class="text-navy text--size-lg text--bold flex m-0">W9</strong>
+                    <button class="button pui-modal__open" data-modal="new-w9-modal">
+                      Add
+                      <i class="pi-plus" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                  <div class="pui-form mb-3 block-container">
+                    <label for="tax-classification" class="pui-form__field block tablet-up-6" aria-label="Tax Classification">
+                      <div class="pui-form__select-wrapper mt-0">
+                        <select name="state Select" id="tax-classification">
+                          <option value="S Corporation" selected>S Corporation</option>
+                          <option value="Other">Other</option>
+                          <option value="Other">Other</option>
+                          <option value="Other">Other</option>
+                          <option value="Other">Other</option>
+                          <option value="Other">Other</option>
+                        </select>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="pui-accordion mb-3">
+                    <!-- Accordion Header -->
+                    <div class="pui-accordion__header p-2 block-container flex--justify-between flex--align-start">
+                      <div class="block block-10 tablet-up-11 flex flex--align-start">
+                        <button class="button--plain py-2 px-3 text-positive--hover" aria-label="View W9">
+                          <i class="pi-eye" aria-hidden="true"></i>
+                        </button>
+                        <div class="block-container blocks tablet-up-4 p-2 w-100">
+                          <div class="block">
+                            <p class="text-med-blue text--bold mb-1">Company</p>
+                            <p class="m-0 truncate-with-ellipsis" title="Bachmeier, Gudis & Associates">Bachmeier, Gudis & Associates</p>
+                          </div>
+                          <div class="block">
+                            <p class="text-med-blue text--bold mb-1">Company EIN</p>
+                            <p class="m-0 truncate-with-ellipsis" title="85-3399742">85-3399742</p>
+                          </div>
+                          <div class="block">
+                            <p class="text-med-blue text--bold mb-1">Individual Name</p>
+                            <p class="m-0" title="Bachmeier, Gudis & Associates">Bachmeier, Gudis & Associates</p>
+                          </div>
+                        </div>
+                      </div>
+                      <button class="button--plain text-negative--hover p-3" aria-label="Remove Address">
+                        <i class="pi-trash" aria-hidden="true"></i>
+                      </button>
                     </div>
-                  </label>
+                    <!-- End Accordion Header -->
+
+                    <!-- Start Accordion Content -->
+                    <div class="pui-accordion__content p-1">
+                      <object data="../src/assets/images/fw9.pdf" type="application/pdf" width="100%" height="600px">
+                        <p>Alternative text - include a link <a href="../src/assets/images/fw9.pdf">to the PDF!</a></p>
+                      </object>
+                    </div>
+                  </div>
                 </div>
-                <div class="flex flex--justify-between flex--align-center mb-3">
-                  <p class="text-navy text--size-lg text--bold flex m-0">W-9 Mailing Address</p>
-                  <button class="button pui-modal__open" data-modal="new-payment-modal">
-                    Add
-                    <i class="pi-plus" aria-hidden="true"></i>
-                  </button>
-                </div>
-                <form action="submit" class="pui-form mb-4">
+                <div class="mb-4">
+                  <div class="flex flex--justify-between flex--align-center mb-3">
+                    <p class="text-navy text--size-lg text--bold flex m-0">W-9 Mailing Address</p>
+                    <button class="button pui-modal__open" data-modal="new-payment-modal">
+                      Add
+                      <i class="pi-plus" aria-hidden="true"></i>
+                    </button>
+                  </div>
                   <div class="pui-accordion mb-3">
                     <!-- Accordion Header -->
                     <div class="pui-accordion__header p-2 block-container flex--justify-between">
                       <div class="block block-10 tablet-up-11 flex flex--align-start">
-                        <button class="button--plain p-3 text-positive--hover" aria-label="Edit W9 Payment">
+                        <button class="button--plain py-2 px-3 text-positive--hover" aria-label="Edit W9 Payment">
                           <i class="pi-edit" aria-hidden="true"></i>
                         </button>
                         <div class="block-container blocks tablet-up-4 p-2 w-100">
@@ -1232,145 +1283,149 @@
                         <i class="pi-trash" aria-hidden="true"></i>
                       </button>
                     </div>
+                      <!-- End Accordion Header -->
+
+                      <!-- Start Accordion Content -->
+                    <div class="pui-accordion__content p-3">
+                      <form action="submit" class="pui-form">
+                        <div class="block-container blocks px-3 my-3 tablet-up-3 lg-tablet-up-4">
+                          <label for="w9-street-address" class="pui-form__field block">Street Address
+                            <input id="w9-street-address" type="text" name="street-address" placeholder="" value="740 Robert Loaf">
+                          </label>
+                          <label for="w9-address-2" class="pui-form__field block">Address 2
+                            <input id="w9-address-2" type="text" placeholder="Apt. Number" value="Apt. 987">
+                          </label>
+                          <label for="w9-city" class="pui-form__field block">City
+                            <input id="w9-city" type="text" name="address-level2" placeholder="City" value="Conshohocken">
+                          </label>
+                          <label for="w9-zipcode" class="pui-form__field block">Zipcode
+                            <input id="w9-zipcode" type="text" name="postal-code" placeholder="" value="19428" >
+                          </label>
+                          <label for="w9-County" class="pui-form__field block">County
+                            <div class="pui-form__select-wrapper">
+                              <select name="County Select" id="w9-county">
+                                <option value="Montgomery" selected>Montgomery</option>
+                                <option value="Other">Other</option>
+                                <option value="Other">Other</option>
+                                <option value="Other">Other</option>
+                                <option value="Other">Other</option>
+                                <option value="Other">Other</option>
+                              </select>
+                            </div>
+                          </label>
+                          <label for="w9-state" class="pui-form__field block">State
+                            <div class="pui-form__select-wrapper">
+                              <select name="state Select" id="w9-state">
+                                <option value="PA" selected>PA</option>
+                                <option value="Other">Other</option>
+                                <option value="Other">Other</option>
+                                <option value="Other">Other</option>
+                                <option value="Other">Other</option>
+                                <option value="Other">Other</option>
+                              </select>
+                            </div>
+                          </label>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex flex--justify-between flex--align-center mb-3">
+                    <p class="text-navy text--size-lg text--bold flex m-0">Payment Methods</p>
+                    <button class="button pui-modal__open" data-modal="new-payment-modal">
+                      Add
+                      <i class="pi-plus" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                  <div class="pui-accordion pui-form mb-3">
+                    <!-- Accordion Header -->
+                    <div class="pui-accordion__header p-2 block-container flex--justify-between">
+                      <div class="block block-10 tablet-up-11 flex flex--align-start">
+                        <button class="button--plain py-2 px-3 text-positive--hover" aria-label="Edit W9 Payment">
+                          <i class="pi-edit" aria-hidden="true"></i>
+                        </button>
+                        <div class="block-container blocks tablet-up-4 p-2 w-100">
+                          <div class="block">
+                            <p class="text-med-blue text--bold mb-1">Description</p>
+                            <p class="m-0 truncate-with-ellipsis" title="Bachmeier, Gudis & Associates(Bachmeier)">Bachmeier, Gudis & Associates(Bachmeier)</p>
+                          </div>
+                          <div class="block">
+                            <p class="text-med-blue text--bold mb-1">Status</p>
+                            <i class="pi-circle-solid text-positive" title="Ready"></i>
+                          </div>
+                          <div class="block flex flex--align-center">
+                            <p class="text-med-blue text--bold mb-1">ACH</p>
+                          </div>
+                        </div>
+                      </div>
+                      <button class="button--plain text-negative--hover p-3" aria-label="Remove Address">
+                        <i class="pi-trash" aria-hidden="true"></i>
+                      </button>
+                    </div>
                     <!-- End Accordion Header -->
 
                     <!-- Start Accordion Content -->
-                    <div class="pui-accordion__content p-3">
-                      <div class="block-container blocks px-3 my-3 tablet-up-3 lg-tablet-up-4">
-                        <label for="w9-street-address" class="pui-form__field block">Street Address
-                          <input id="w9-street-address" type="text" name="street-address" placeholder="" value="740 Robert Loaf">
-                        </label>
-                        <label for="w9-address-2" class="pui-form__field block">Address 2
-                          <input id="w9-address-2" type="text" placeholder="Apt. Number" value="Apt. 987">
-                        </label>
-                        <label for="w9-city" class="pui-form__field block">City
-                          <input id="w9-city" type="text" name="address-level2" placeholder="City" value="Conshohocken">
-                        </label>
-                        <label for="w9-zipcode" class="pui-form__field block">Zipcode
-                          <input id="w9-zipcode" type="text" name="postal-code" placeholder="" value="19428" >
-                        </label>
-                        <label for="w9-County" class="pui-form__field block">County
-                          <div class="pui-form__select-wrapper">
-                            <select name="County Select" id="w9-county">
-                              <option value="Montgomery" selected>Montgomery</option>
-                              <option value="Other">Other</option>
-                              <option value="Other">Other</option>
-                              <option value="Other">Other</option>
-                              <option value="Other">Other</option>
-                              <option value="Other">Other</option>
-                            </select>
-                          </div>
-                        </label>
-                        <label for="w9-state" class="pui-form__field block">State
-                          <div class="pui-form__select-wrapper">
-                            <select name="state Select" id="w9-state">
-                              <option value="PA" selected>PA</option>
-                              <option value="Other">Other</option>
-                              <option value="Other">Other</option>
-                              <option value="Other">Other</option>
-                              <option value="Other">Other</option>
-                              <option value="Other">Other</option>
-                            </select>
-                          </div>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                </form>
-                <div class="flex flex--justify-between flex--align-center mb-3">
-                  <p class="text-navy text--size-lg text--bold flex m-0">Payment Methods</p>
-                  <button class="button pui-modal__open" data-modal="new-payment-modal">
-                    Add
-                    <i class="pi-plus" aria-hidden="true"></i>
-                  </button>
-                </div>
-                <div class="pui-accordion pui-form mb-3">
-                  <!-- Accordion Header -->
-                  <div class="pui-accordion__header p-2 block-container flex--justify-between">
-                    <div class="block block-10 tablet-up-11 flex flex--align-start">
-                      <button class="button--plain p-3 text-positive--hover" aria-label="Edit W9 Payment">
-                        <i class="pi-edit" aria-hidden="true"></i>
-                      </button>
-                      <div class="block-container blocks tablet-up-4 p-2 w-100">
-                        <div class="block">
-                          <p class="text-med-blue text--bold mb-1">Description</p>
-                          <p class="m-0 truncate-with-ellipsis" title="Bachmeier, Gudis & Associates(Bachmeier)">Bachmeier, Gudis & Associates(Bachmeier)</p>
-                        </div>
-                        <div class="block">
-                          <p class="text-med-blue text--bold mb-1">Status</p>
-                          <i class="pi-circle-solid text-positive" title="Ready"></i>
-                        </div>
-                        <div class="block flex flex--align-center">
-                          <p class="text-med-blue text--bold mb-1">ACH</p>
-                        </div>
-                      </div>
-                    </div>
-                    <button class="button--plain text-negative--hover p-3" aria-label="Remove Address">
-                      <i class="pi-trash" aria-hidden="true"></i>
-                    </button>
-                  </div>
-                  <!-- End Accordion Header -->
-
-                  <!-- Start Accordion Content -->
-                  <div class="pui-accordion__content pt-3 px-3 pb-6 pos-rel">
-                    <div class="mb-3">
-                      <div class="block-container blocks px-3 my-3 tablet-up-3 lg-tablet-up-4">
-                        <label for="payment-company-new" class="pui-form__field block">Company
-                          <input id="payment-company-new" type="text" placeholder="" title="Bachmeier, Gudis & Associates" value="Bachmeier, Gudis & Associates">
-                        </label>
-                        <label for="payment-company-eid-new" class="pui-form__field block">Company EIN
-                          <input id="payment-company-eid-new" type="text" value="85-3399742">
-                        </label>
-                        <label for="payment-individual-name-new" class="pui-form__field block">Individual Name
-                          <input id="payment-individual-name-new" type="text" placeholder="" title="Bachmeier, Gudis & Associates" value="Bachmeier, Gudis & Associates">
-                        </label>
-                        <label for="payment-routing-number-new" class="pui-form__field block">Routing Number
-                          <input id="payment-routing-number-new" type="tel" placeholder="" value="00123456789" >
-                        </label>
-                        <label for="payment-routing-number-new" class="pui-form__field block">Account Number
-                          <input id="payment-account-number-new" type="tel" placeholder="" value="123456789" >
-                        </label>
-                        <label for="payment-status-new" class="pui-form__field block">Payment Status
-                          <div class="pui-form__select-wrapper">
-                            <select name="state Select" id="payment-status-new">
-                              <option value="Ready">Ready</option>
-                              <option value="Other">Other</option>
-                              <option value="Other">Other</option>
-                              <option value="Other">Other</option>
-                              <option value="Other">Other</option>
-                              <option value="Other">Other</option>
-                            </select>
-                          </div>
-                        </label>
-                        <div class="block">
-                          <fieldset class="pui-form__field">
-                            <legend>Account Type</legend>
-                            <div class="flex">
-                              <input id="choose-checking" type="radio" name="choose-one" checked>
-                              <label for="choose-checking">
-                                <div class="input-icons">
-                                  <i class='pi-circle pi-lg'></i>
-                                  <i class='pi-circle-solid'></i>
-                                </div>
-                                Checking
-                              </label>
-                              <input id="choose-savings" type="radio" name="choose-one">
-                              <label for="choose-savings">
-                                <div class="input-icons">
-                                  <i class='pi-circle pi-lg'></i>
-                                  <i class='pi-circle-solid'></i>
-                                </div>
-                                Savings
-                              </label>
+                    <div class="pui-accordion__content pt-3 px-3 pb-6 pos-rel">
+                      <div class="mb-3">
+                        <div class="block-container blocks px-3 my-3 tablet-up-3 lg-tablet-up-4">
+                          <label for="payment-company-new" class="pui-form__field block">Company
+                            <input id="payment-company-new" type="text" placeholder="" title="Bachmeier, Gudis & Associates" value="Bachmeier, Gudis & Associates">
+                          </label>
+                          <label for="payment-company-eid-new" class="pui-form__field block">Company EIN
+                            <input id="payment-company-eid-new" type="text" value="85-3399742">
+                          </label>
+                          <label for="payment-individual-name-new" class="pui-form__field block">Individual Name
+                            <input id="payment-individual-name-new" type="text" placeholder="" title="Bachmeier, Gudis & Associates" value="Bachmeier, Gudis & Associates">
+                          </label>
+                          <label for="payment-routing-number-new" class="pui-form__field block">Routing Number
+                            <input id="payment-routing-number-new" type="tel" placeholder="" value="00123456789" >
+                          </label>
+                          <label for="payment-routing-number-new" class="pui-form__field block">Account Number
+                            <input id="payment-account-number-new" type="tel" placeholder="" value="123456789" >
+                          </label>
+                          <label for="payment-status-new" class="pui-form__field block">Payment Status
+                            <div class="pui-form__select-wrapper">
+                              <select name="state Select" id="payment-status-new">
+                                <option value="Ready">Ready</option>
+                                <option value="Other">Other</option>
+                                <option value="Other">Other</option>
+                                <option value="Other">Other</option>
+                                <option value="Other">Other</option>
+                                <option value="Other">Other</option>
+                              </select>
                             </div>
-                          </fieldset>
+                          </label>
+                          <div class="block">
+                            <fieldset class="pui-form__field">
+                              <legend>Account Type</legend>
+                              <div class="flex">
+                                <input id="choose-checking" type="radio" name="choose-one" checked>
+                                <label for="choose-checking">
+                                  <div class="input-icons">
+                                    <i class='pi-circle pi-lg'></i>
+                                    <i class='pi-circle-solid'></i>
+                                  </div>
+                                  Checking
+                                </label>
+                                <input id="choose-savings" type="radio" name="choose-one">
+                                <label for="choose-savings">
+                                  <div class="input-icons">
+                                    <i class='pi-circle pi-lg'></i>
+                                    <i class='pi-circle-solid'></i>
+                                  </div>
+                                  Savings
+                                </label>
+                              </div>
+                            </fieldset>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="pui-message pui-message--info pos-abs pin-bottom pin-left m-0 w-100" data-header="Created By">
-                      <p>
-                        System Migration on 03/20/2012 @8:07 AM
-                      </p>
+                      <div class="pui-message pui-message--info pos-abs pin-bottom pin-left m-0 w-100" data-header="Created By">
+                        <p>
+                          System Migration on 03/20/2012 @8:07 AM
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1392,7 +1447,7 @@
                   <!-- Accordion Header -->
                   <div class="pui-accordion__header p-2 block-container flex--justify-between">
                     <div class="block block-10 tablet-up-11 flex flex--align-start">
-                      <button class="button--plain p-3 text-positive--hover" aria-label="Edit Campaign">
+                      <button class="button--plain py-2 px-3 text-positive--hover" aria-label="Edit Campaign">
                         <i class="pi-edit" aria-hidden="true"></i>
                       </button>
                       <div class="block-container tablet-up-3 lg-tablet-up-4 blocks py-2 px-3 w-100">
@@ -1466,7 +1521,7 @@
                   <!-- Accordion Header -->
                   <div class="pui-accordion__header p-2 block-container flex--justify-between">
                     <div class="block block-10 tablet-up-11 flex flex--align-start">
-                      <button class="button--plain p-3 text-positive--hover" aria-label="Edit Campaign">
+                      <button class="button--plain py-2 px-3 text-positive--hover" aria-label="Edit Campaign">
                         <i class="pi-edit" aria-hidden="true"></i>
                       </button>
                       <div class="block-container tablet-up-3 lg-tablet-up-4 blocks py-2 px-3 w-100">
@@ -1506,48 +1561,7 @@
                   <!-- Accordion Header -->
                   <div class="pui-accordion__header p-2 block-container flex--justify-between">
                     <div class="block block-10 tablet-up-11 flex flex--align-start">
-                      <button class="button--plain p-3 text-positive--hover" aria-label="Edit Campaign">
-                        <i class="pi-edit" aria-hidden="true"></i>
-                      </button>
-                      <div class="block-container tablet-up-3 lg-tablet-up-4 blocks py-2 px-3 w-100">
-                        <div class="block">
-                          <p class="text-med-blue text--bold mb-1">Campaign</p>
-                          <p class="m-0 truncate-with-ellipsis" title="HPP Cert Follow-ups for RTS 2019">HPP Cert Follow-ups for RTS 2019</p>
-                        </div>
-                        <div class="block">
-                          <p class="text-med-blue text--bold mb-1">Campaign ID</p>
-                          <p class="m-0 truncate-with-ellipsis" title="North_Key_Account 2018">North_Key_Account 2018</p>
-                        </div>
-                        <div class="block">
-                          <p class="text-med-blue text--bold mb-1">Status</p>
-                          <p class="m-0">FollowUp3</p>
-                        </div>
-                        <div class="block">
-                          <p class="text-med-blue text--bold mb-1">Start/End Date</p>
-                          <div>
-                            <p class="m-0">09/06/2018</p>
-                            <p class="m-0">12/31/2018</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="block block--shrink">
-                      <button class="button--plain text-negative--hover p-2" aria-label="Remove Campaign">
-                        <i class="pi-trash" aria-hidden="true"></i>
-                      </button>
-                    </div>
-                  </div>
-                  <!-- End Accordion Header -->
-                  <!-- Start Accordion Content -->
-                  <div class="pui-accordion__content p-3">
-
-                  </div>
-                </div>
-                <div class="pui-accordion">
-                  <!-- Accordion Header -->
-                  <div class="pui-accordion__header p-2 block-container flex--justify-between">
-                    <div class="block block-10 tablet-up-11 flex flex--align-start">
-                      <button class="button--plain p-3 text-positive--hover" aria-label="Edit Campaign">
+                      <button class="button--plain py-2 px-3 text-positive--hover" aria-label="Edit Campaign">
                         <i class="pi-edit" aria-hidden="true"></i>
                       </button>
                       <div class="block-container tablet-up-3 lg-tablet-up-4 blocks py-2 px-3 w-100">
@@ -1588,7 +1602,48 @@
                   <!-- Accordion Header -->
                   <div class="pui-accordion__header p-2 block-container flex--justify-between">
                     <div class="block block-10 tablet-up-11 flex flex--align-start">
-                      <button class="button--plain p-3 text-positive--hover" aria-label="Edit Campaign">
+                      <button class="button--plain py-2 px-3 text-positive--hover" aria-label="Edit Campaign">
+                        <i class="pi-edit" aria-hidden="true"></i>
+                      </button>
+                      <div class="block-container tablet-up-3 lg-tablet-up-4 blocks py-2 px-3 w-100">
+                        <div class="block">
+                          <p class="text-med-blue text--bold mb-1">Campaign</p>
+                          <p class="m-0 truncate-with-ellipsis" title="HPP Cert Follow-ups for RTS 2019">HPP Cert Follow-ups for RTS 2019</p>
+                        </div>
+                        <div class="block">
+                          <p class="text-med-blue text--bold mb-1">Campaign ID</p>
+                          <p class="m-0 truncate-with-ellipsis" title="North_Key_Account 2018">North_Key_Account 2018</p>
+                        </div>
+                        <div class="block">
+                          <p class="text-med-blue text--bold mb-1">Status</p>
+                          <p class="m-0">FollowUp3</p>
+                        </div>
+                        <div class="block">
+                          <p class="text-med-blue text--bold mb-1">Start/End Date</p>
+                          <div>
+                            <p class="m-0">09/06/2018</p>
+                            <p class="m-0">12/31/2018</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="block block--shrink">
+                      <button class="button--plain text-negative--hover p-2" aria-label="Remove Campaign">
+                        <i class="pi-trash" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <!-- End Accordion Header -->
+                  <!-- Start Accordion Content -->
+                  <div class="pui-accordion__content p-3">
+
+                  </div>
+                </div>
+                <div class="pui-accordion">
+                  <!-- Accordion Header -->
+                  <div class="pui-accordion__header p-2 block-container flex--justify-between">
+                    <div class="block block-10 tablet-up-11 flex flex--align-start">
+                      <button class="button--plain py-2 px-3 text-positive--hover" aria-label="Edit Campaign">
                         <i class="pi-edit" aria-hidden="true"></i>
                       </button>
                       <div class="block-container tablet-up-3 lg-tablet-up-4 blocks py-2 px-3 w-100">
@@ -1643,7 +1698,7 @@
                   <!-- Accordion Header -->
                   <div class="pui-accordion__header p-2 block-container flex--justify-between">
                     <div class="block block-10 tablet-up-11 flex flex--align-start">
-                      <button class="button--plain p-3 text-positive--hover" aria-label="Edit Partner">
+                      <button class="button--plain py-2 px-3 text-positive--hover" aria-label="Edit Partner">
                         <i class="pi-edit" aria-hidden="true"></i>
                       </button>
                       <div class="block-container blocks tablet-up-4 p-2 w-100">
@@ -1881,7 +1936,7 @@
                   <!-- Accordion Header -->
                   <div class="pui-accordion__header p-2 block-container flex--justify-between">
                     <div class="block block-10 tablet-up-11 flex flex--align-start">
-                      <button class="button--plain p-3 text-positive--hover" aria-label="Edit Partner">
+                      <button class="button--plain py-2 px-3 text-positive--hover" aria-label="Edit Partner">
                         <i class="pi-edit" aria-hidden="true"></i>
                       </button>
                       <div class="block-container blocks p-2 w-100">
@@ -2264,6 +2319,58 @@
             </div>
           </form>
         </div>
+      </div>
+    </div>
+  </div>
+  <div id="new-w9-modal" class="pui-modal pui-modal--closed" tabindex="-1">
+    <div class="pui-modal__inner animated slideInUp faster">
+      <div class="pui-modal__header">
+        <button class="button pui-modal__close" data-modal="new-w9-modal">Close <i class="pi-times"></i></button>
+        <strong class="text-navy text--size-lg">W9</strong>
+      </div>
+      <div class="pui-modal__content block-container flex--justify-center">
+        <form action="submit" class="pui-form block-container blocks px-2 py-3">
+          <label for="w9-modal" class="pui-form__field block tablet-up-6 laptop-up-4">Company
+            <input id="w9-modal" type="text" placeholder="" value="">
+          </label>
+          <label for="w9-eid-modal" class="pui-form__field block tablet-up-6 laptop-up-4">Company EIN
+            <input id="w9-eid-modal" type="text" value="">
+          </label>
+          <label for="w9-name-modal" class="pui-form__field block tablet-up-6 laptop-up-4">Individual Name
+            <input id="w9-name-modal" type="text" placeholder="" value="">
+          </label>
+          <div class="block">
+            <div ref="uploader">
+              <label for="file-picker" class="sr-only">Upload File</label>
+              <input
+                style="display: none;"
+                type="file"
+                class="main-file-target file-target"
+                id="file-picker"
+              >
+            </div>
+            <div
+              class="drop-target flex flex--align-center flex--column p-2"
+            >
+              <p>You have no attachments. Drag multiple files here or choose manually</p>
+              <button
+                class="button button--secondary"
+                aria-label="upload files"
+                autofocus>
+                <i
+                  class="pi-upload-cloud"
+                  aria-hidden="true"
+                  focusable="false">
+                </i>
+              </button>
+            </div>
+          </div>
+          <div class="block mt-3 flex--center-content">
+            <button class="button button--post button--lg">
+              Submit
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
