@@ -131,7 +131,7 @@
 
   &--full {
 
-    .pui-modal__inner {
+    > .pui-modal__inner {
       margin: auto;
       width: 100%;
       position: absolute;
@@ -141,10 +141,31 @@
       right: 0;
     }
 
-    .pui-modal__content {
+    > .pui-modal__content {
       height: calc(100% - #{$header-height});
       overflow-x: hidden;
       overflow-y: auto;
+    }
+  }
+
+  &--small {
+
+    > .pui-modal__inner {
+      @include mixins.breakpoint(tablet, min) {
+        width: 40vw;
+      }
+      @include mixins.breakpoint(desktop, min) {
+        width: 20vw;
+      }
+    }
+  }
+
+  &--large {
+
+    > .pui-modal__inner {
+      @include mixins.breakpoint(tablet, min) {
+        width: 80vw;
+      }
     }
   }
 
@@ -172,22 +193,6 @@
     }
     @include mixins.breakpoint(desktop, min) {
       width: 45vw;
-    }
-
-    #{$self}--small & {
-      @include mixins.breakpoint(tablet, min) {
-        width: 40vw;
-      }
-      @include mixins.breakpoint(desktop, min) {
-        width: 20vw;
-      }
-    }
-
-    #{$self}--large & {
-
-      @include mixins.breakpoint(tablet, min) {
-        width: 80vw;
-      }
     }
   }
 
