@@ -123,6 +123,7 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
       justify-content: center;
       margin-bottom: -1px;
       order: 1;
+      z-index: 2;
 
       &::before {
         background-color: transparent;
@@ -155,6 +156,7 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
   background-color: map.get(variables.$greyscale, 'white');
   border: 1px solid $tab-border-color;
   padding: map.get(variables.$spacers, 2 );
+  position: relative;
   width: 100%;
 
   @include mixins.breakpoint(tablet, max) {
@@ -165,5 +167,6 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
     flex-grow: 1;
     order: 99;
     padding-top: calc(#{map.get(variables.$spacers, 2 )} + 1px);
+    z-index: 1;
   }
 }

@@ -597,6 +597,7 @@ legend {
     color: map.get(variables.$greyscale, 'white' );
 
     input[type="text"],
+    input[type="search"],
     input[type="date"],
     input[type="email"],
     input[type="textarea"],
@@ -652,6 +653,7 @@ legend {
   &.pui-form--bordered {
 
     input[type="text"],
+    input[type="search"],
     input[type="date"],
     input[type="email"],
     input[type="textarea"],
@@ -669,15 +671,8 @@ legend {
   &__field {
     display: block;
 
-    + .pui-form__field {
-      margin-top: variables.$spacer * 1.5;
-    }
-
-    &.pui-form__field--fancy + .pui-form__field {
-      margin-top: map.get(variables.$spacers, 4);
-    }
-
     input[type="text"],
+    input[type="search"],
     input[type="date"],
     input[type="email"],
     input[type="textarea"],
@@ -725,6 +720,7 @@ legend {
       color: $error-color!important;
 
       input[type="text"],
+      input[type="search"],
       input[type="date"],
       input[type="email"],
       input[type="textarea"],
@@ -910,6 +906,7 @@ legend {
   }
 
   input[type="text"],
+  input[type="search"],
   input[type="date"],
   input[type="email"],
   input[type="textarea"],
@@ -943,6 +940,7 @@ legend {
   }
 
   input[type="text"],
+  input[type="search"],
   input[type="email"],
   input[type="textarea"],
   input[type="tel"],
