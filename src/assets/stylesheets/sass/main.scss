@@ -4,7 +4,6 @@
 @use "root";
 
 @use "mixins";
-@use "utilities";
 
 // initial structure
 @use "base";
@@ -39,3 +38,6 @@
 
 // platform-icons
 @use "platform-icons";
+
+// last called
+@use "utilities";
