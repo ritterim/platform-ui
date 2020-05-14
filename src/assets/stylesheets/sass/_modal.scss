@@ -139,12 +139,12 @@
       bottom: 0;
       left: 0;
       right: 0;
-    }
 
-    > .pui-modal__content {
-      height: calc(100% - #{$header-height});
-      overflow-x: hidden;
-      overflow-y: auto;
+      .pui-modal__content {
+        height: calc(100% - #{$header-height});
+        overflow-x: hidden;
+        overflow-y: auto;
+      }
     }
   }
 
