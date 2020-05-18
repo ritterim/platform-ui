@@ -13,58 +13,50 @@
 // Markup:
 // <header class="site-header">
 //   <nav class="site-menu">
-//     <div class="site-menu__item">
-//      <a href="#" class="site-menu__link">
-//       <span class="card__header-icon pill--circle-medium background-pink text-white mr-2">
-//         <i class="pi-rimdev text-base"></i>
-//       </span>
-//       <div class="font-lg">
-//         Menu Header with avatar
-//       </div>
-//      </a>
-//     </div>
-//     <div class="site-menu__item">
-//       <a href="#" class="site-menu__link">
-//         menu item
-//       </a>
-//     </div>
-//     <div class="site-menu__item has-dropdown">
-//       <a href="#" class="site-menu__link">
+//     <a href="#" class="site-menu__item">
+//      <span class="card__header-icon pill--circle-medium background-pink text-white mr-2">
+//        <i class="pi-rimdev text-base"></i>
+//      </span>
+//      <div class="font-lg">
+//        Menu Header with avatar
+//      </div>
+//     </a>
+//     <a href="#" class="site-menu__item">
+//       menu item
+//     </a>
+//     <div class="site-menu__item dropdown">
+//       <a href="#" class="dropdown__trigger">
 //         dropdown item
 //       </a>
-//       <div class="dropdown-menu pin-right">
-//         <div class="dropdown-menu__item">
+//       <div class="dropdown__content pin-right">
+//         <a href="#">
 //           dropdown
-//         </div>
+//         </a>
 //       </div>
 //     </div>
 //   </nav>
 // </header>
 // <header class="site-header mt-5">
 //   <nav class="site-menu primary inverted">
-//     <div class="site-menu__item">
-//       <a href="#" class="site-menu__link">
-//         <span class="card__header-icon pill--circle-medium background-pink text-white mr-2">
-//           <i class="pi-rimdev text-base"></i>
-//         </span>
-//         <div class="font-lg">
-//           Menu Header with avatar
-//         </div>
-//       </a>
-//     </div>
-//     <div class="site-menu__item">
-//       <a href="#" class="site-menu__link">
-//         menu item
-//       </a>
-//     </div>
-//     <div class="site-menu__item has-dropdown">
-//       <a href="#" class="site-menu__link">
+//     <a href="#" class="site-menu__item">
+//       <span class="card__header-icon pill--circle-medium background-pink text-white mr-2">
+//         <i class="pi-rimdev text-base"></i>
+//       </span>
+//       <div class="font-lg">
+//         Menu Header with avatar
+//       </div>
+//     </a>
+//     <a href="#" class="site-menu__item">
+//       menu item
+//     </a>
+//     <div class="site-menu__item dropdown">
+//       <a href="#" class="dropdown__trigger">
 //         dropdown item
 //       </a>
-//       <div class="dropdown-menu pin-right">
-//         <div class="dropdown-menu__item">
+//       <div class="dropdown__content pin-right">
+//         <a href="#">
 //           dropdown
-//         </div>
+//         </a>
 //       </div>
 //     </div>
 //   </nav>
@@ -87,8 +79,14 @@
   font-family: map.get(config.$fonts, 'base');
   flex-direction: column;
 
-  > .site-menu {
+   > .site-menu {
     flex: 1 1 auto;
+
+    // sets a max-height of each menu if there are 2 menus
+    &:nth-child(2),
+    &:nth-last-child(2) {
+      max-height: 50%;
+    }
   }
 
   &.site-header--fixed {
@@ -128,44 +126,42 @@
     .site-menu__item {
       border-left: 1px solid color.adjust(config.$primary-menu-color, $lightness: math.percentage(-.15));
 
-      &.has-dropdown {
-
-        @media (pointer: fine) {
-          &:hover {
-            &:not(.active) {
-              border-bottom-color: rgba(config.$primary-menu-color, .5);
-            }
-          }
-        }
-
-        &.dropdown-active {
-          border-bottom-color: rgba(config.$primary-menu-color, .5);
-        }
-      }
-
-      &.dropdown-active,
       &.active {
         background-color: color.adjust(config.$primary-menu-color, $lightness: math.percentage(-.05));
       }
     }
+  }
+}
 
-    .dropdown-menu {
-      background-color: color.adjust(config.$primary-menu-color, $lightness: math.percentage(-.05));
 
-      &__item {
+.site-menu__item {
+  border-left: 1px solid color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.15));
+  border-bottom: 1px solid transparent;
+  display: flex;
+  flex: 0 0 auto;
+  padding: map.get(variables.$spacers, 3);
+  transition: config.$transitions;
+  @extend %flex-center;
 
-        &:hover {
-          background-color: rgba(color.adjust(map.get(variables.$greyscale, 'white'), $lightness: math.percentage(-.05)), .3);
-        }
+  @media (pointer: fine) {
+    &:hover {
+      &:not(.search):not(.active) {
+        background-color: color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05));
+      }
+    }
+  }
 
-        &:not(:first-child) {
-          border-top: 1px solid rgba(config.$primary-menu-color, .5);
+  .primary & {
+    @media (pointer: fine) {
+      &:hover {
+        &:not(.search):not(.active) {
+          background-color: color.adjust(config.$primary-menu-color, $lightness: math.percentage(-.05));
         }
       }
     }
   }
 
-  .search {
+  &.search {
     flex-grow: 1;
     padding: 0 map.get(variables.$spacers, 3 );
     @extend %flex-center;
@@ -189,128 +185,185 @@
     }
   }
 
-  .dropdown-menu {
-    background-color: color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05));
-    height: auto;
-    max-height: 0;
-    min-width: 10rem;
-    overflow: hidden;
-    position: absolute;
-    transition: max-height .2s ease-out;
-    top: calc(100% + 1px);
-
-    &__item {
-      border-left: 0;
-      display: flex;
-      justify-content: flex-start;
-      padding: map.get(variables.$spacers, 3) map.get(variables.$spacers, 4);
-
-      &:hover {
-        background-color: rgba(color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05)), .3);
-      }
-
-      &:not(:first-child) {
-        @include mixins.breakpoint(tablet, min) {
-          border-top: 1px solid rgba(map.get(variables.$greyscale, 'lighter'), .5);
-        }        
-      }
-
-      &.profile {
-        flex-direction: column;
-      }
-
-      i[class*="pi-"] {
-        padding-right: map.get(variables.$spacers, 3);
-        width: 1.2rem;
-        @extend %flex-center;
-      }
-    }
-  }
-}
-
-
-.site-menu__item {
-  border-left: 1px solid color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.15));
-  border-bottom: 1px solid transparent;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  flex: 0 0 auto;
-  transition: config.$transitions;
-  @extend %flex-center;
-
-  &.has-dropdown {
-    position: relative;
-
-    &.dropdown-active {
-      border-bottom-color: rgba(map.get(variables.$greyscale, 'lighter'), .5);
-    }
-  }
-
-  &.dropdown-active {
-    background-color: color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05));
-
-    .dropdown-menu {
-      max-height: 100vh;
-      transition: max-height .2s ease-in;
-      overflow-y: auto;
-      overflow-x: hidden;
-    }
-  }
-
   &.active {
     background-color: color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05));
   }
 }
 
 
-.site-menu__link {
-  align-items: center;
-  display: flex;
-  padding: 0 map.get(variables.$spacers, 3);
-  height: 100%;
-  width: 100%;
 
-  @include mixins.breakpoint(tablet, min) {
-    padding: 0 map.get(variables.$spacers, 4);
-  }
 
-  @media (pointer: fine) {
-    &:hover {
-      &:not(.search):not(.active) {
-        background-color: rgba(color.adjust(map.get(variables.$greyscale, 'white'), $lightness: math.percentage(-.05)), .3);
-      }
+.dropdown {
+  position: relative;
+
+  &.dropdown-active {
+    background-color: color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05));
+
+    > .dropdown__trigger + .dropdown__content {
+      max-height: 100vh;
+      transition: max-height .2s ease-in;
+      overflow-y: auto;
+      overflow-x: hidden;
+      z-index: 5;
     }
   }
 
-  .has-dropdown & {
+  &.site-menu__item {
+
     @media (pointer: fine) {
       &:hover {
         border-bottom-color: rgba(map.get(variables.$greyscale, 'lighter'), .5);
       }
     }
-  }
 
+    &.dropdown-active {
+      background-color: color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05));
+      border-bottom-color: rgba(map.get(variables.$greyscale, 'lighter'), .5);
+    }
 
-  .primary & {
-    @media (pointer: fine) {
-      &:hover {
-        &:not(.search):not(.active) {
+    .dropdown__content {
+      background-color: color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05));
+
+      @media screen and (max-width: (config.$show-mobile-menu - 1)) {
+        background-color: unset;
+        position: static;
+    
+        &-item {
+    
+          &:first-of-type {
+            margin-top: map.get(variables.$spacers, 2 );
+          }
+        }  
+      }  
+  
+      &-item {
+  
+        &:hover {
+          background-color: rgba(color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05)), .3);
+        }
+  
+        &:not(:first-child) {
+          @include mixins.breakpoint(tablet, min) {
+            border-top: 1px solid rgba(map.get(variables.$greyscale, 'lighter'), .5);
+          }        
+        }
+  
+        i[class*="pi-"] {
+          padding-right: map.get(variables.$spacers, 3);
+          width: 1.2rem;
+          @extend %flex-center;
+        }
+      }
+    }
+
+    .primary & {
+
+      &.dropdown {
+
+        @media (pointer: fine) {
+          &:hover {
+            &:not(.active) {
+              border-bottom-color: rgba(config.$primary-menu-color, .5);
+            }
+          }
+        }
+
+        &.dropdown-active {
+          border-bottom-color: rgba(config.$primary-menu-color, .5);
+        }
+      }
+
+      &.dropdown-active,
+      &.active {
+        background-color: color.adjust(config.$primary-menu-color, $lightness: math.percentage(-.05));
+      }
+
+      .dropdown__trigger {
+        &:hover {
           background-color: color.adjust(config.$primary-menu-color, $lightness: math.percentage(-.05));
+        }
+      }
+
+      .dropdown__content {
+        background-color: color.adjust(config.$primary-menu-color, $lightness: math.percentage(-.05));
+  
+        &__item {
+  
+          &:hover {
+            background-color: rgba(color.adjust(map.get(variables.$greyscale, 'white'), $lightness: math.percentage(-.05)), .3);
+          }
+  
+          &:not(:first-child) {
+            border-top: 1px solid rgba(config.$primary-menu-color, .5);
+          }
         }
       }
     }
   }
 }
 
+.dropdown__trigger {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  width: 100%;
 
-.site-menu__link-icon {
+  &:hover {
+    background-color: color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05));
+  }
+}
+
+.dropdown__trigger-icon {
   
   @include mixins.breakpoint(tablet, min) {
     &.pi-angle-right {
       transform: rotate(90deg);
     }
   }  
+}
+
+.dropdown__content {
+  background-color: color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05));
+  height: auto;
+  max-height: 0;
+  min-width: 15rem;
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  transition: max-height .2s ease-out;
+  top: calc(100% + 1px);
+
+  &-item {
+    border-left: 0;
+    display: flex;
+    justify-content: flex-start;
+    padding: map.get(variables.$spacers, 3);
+
+    @media screen and (max-width: (config.$show-mobile-menu - 1)) {
+      border-top: none;
+      padding: map.get(variables.$spacers, 2 );
+    }
+
+    &:hover {
+      background-color: rgba(color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05)), .3);
+    }
+
+    &:not(:first-child) {
+      @include mixins.breakpoint(tablet, min) {
+        border-top: 1px solid rgba(map.get(variables.$greyscale, 'lighter'), .5);
+      }        
+    }
+
+    &.profile {
+      flex-direction: column;
+    }
+
+    i[class*="pi-"] {
+      padding-right: map.get(variables.$spacers, 3);
+      width: 1.2rem;
+      @extend %flex-center;
+    }
+  }
 }
 
 
@@ -322,8 +375,8 @@
 // added a button with the class `site-menu-mobile-action`. For accessibility purposes, we included button text with an `sr-only` class.
 // Be sure to add the button before the site-menu so that the button and site-menu are siblings. This is important for the JS to fire correctly. 
 // The menu mobile menu will respond below the `tablet` resolution and the menu button will display as well.
-// If you want to add an icon to the dropdown targets, make sure the icon has the class `site-menu__link-icon`. This icon will rotate when the dropdown
-// is active. In the example below we're using a platform icon. `<i class="pi-angle-right mx-2 site-menu__link-icon"></i>`
+// If you want to add an icon to the dropdown targets, make sure the icon has the class `dropdown__trigger-icon`. This icon will rotate when the dropdown
+// is active. In the example below we're using a platform icon. `<i class="pi-angle-right mx-2 dropdown__trigger-icon"></i>`
 // 
 // 
 // Markup: 
@@ -338,49 +391,49 @@
 //     </button>
 //     <nav class="site-menu background-teal inverted">
 //       <div class="site-menu__item">
-//         <a href="#" class="site-menu__link">
+//         <a href="#" class="dropdown__trigger">
 //           About
 //         </a>
 //       </div>
-//       <div class="site-menu__item has-dropdown">
-//         <a href="#" class="site-menu__link flex flex--justify-between w-100">
-//           Blog <i class="pi-angle-right mx-2 site-menu__link-icon"></i>
+//       <div class="site-menu__item dropdown">
+//         <a href="#" class="dropdown__trigger flex flex--justify-between w-100">
+//           Blog <i class="pi-angle-right mx-2 dropdown__trigger-icon"></i>
 //         </a>
-//         <div class="dropdown-menu pin-right">
-//           <a href="#" class="dropdown-menu__item">
+//         <div class="dropdown__content pin-right">
+//           <a href="#">
 //             Blog Post
 //           </a>
-//           <a href="#" class="dropdown-menu__item">
+//           <a href="#">
 //             Blog Post
 //           </a>
-//           <a href="#" class="dropdown-menu__item">
+//           <a href="#">
 //             Blog Post
 //           </a>
 //         </div>
 //       </div>
-//       <div class="site-menu__item has-dropdown">
-//         <a href="#" class="site-menu__link flex flex--justify-between w-100">
-//           Dropdown <i class="pi-angle-right mx-2 site-menu__link-icon"></i>
+//       <div class="site-menu__item dropdown">
+//         <a href="#" class="dropdown__trigger flex flex--justify-between w-100">
+//           Dropdown <i class="pi-angle-right mx-2 dropdown__trigger-icon"></i>
 //         </a>
-//         <div class="dropdown-menu pin-right">
-//           <a href="#" class="dropdown-menu__item">
+//         <div class="dropdown__content pin-right">
+//           <a href="#">
 //             Dropdown Item
 //           </a>
-//           <a href="#" class="dropdown-menu__item">
+//           <a href="#">
 //             Dropdown Item
 //           </a>
-//           <a href="#" class="dropdown-menu__item">
+//           <a href="#">
 //             Dropdown Item
 //           </a>
 //         </div>
 //       </div>
 //       <div class="site-menu__item">
-//         <a href="#" class="site-menu__link">
+//         <a href="#" class="dropdown__trigger">
 //           Contact
 //         </a>
 //       </div>
 //       <div class="site-menu__item">
-//         <a href="#" class="site-menu__link">
+//         <a href="#" class="dropdown__trigger">
 //           Events
 //         </a>
 //       </div>
@@ -395,13 +448,13 @@
 // *****************
 
 .site-menu-wrapper {
-  @include mixins.breakpoint(tablet, max) {
+  @media screen and (max-width: (config.$show-mobile-menu - 1)) {
     position: relative;
   }
 
   .site-menu-mobile-action {
 
-    @include mixins.breakpoint(tablet, min) {
+    @media screen and (min-width: (config.$show-mobile-menu)) {
       display: none;
     }
 
@@ -410,13 +463,12 @@
     }
   }
 
-  @include mixins.breakpoint(tablet, max) {
+  @media screen and (max-width: (config.$show-mobile-menu - 1)) {
 
     .site-menu {
       flex-direction: column;
       left: 0;
       max-height: 0;
-      padding: 0 map.get(variables.$spacers, 2 );
       position: absolute;
       right: 0;
       top: 100%;
@@ -426,6 +478,7 @@
       &.active {
         max-height: 100vh;
         transition: max-height config.$transitions ease-in;
+        z-index: 2;
       }
 
       &.primary {
@@ -434,52 +487,35 @@
           border-left: none;
         }
       }
+
+      .site-menu__item {
+
+        &:not(:last-child) {
+          border-bottom: 1px solid color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.15));
+        }  
+      }
     }
 
     .site-menu__item {
-      align-items: start;
       border-left: none;
-      flex-direction: column;
-      padding: map.get(variables.$spacers, 2 ) 0;
+      justify-content: flex-start;
+
+      &.dropdown {
+        align-items: flex-start;
+        flex-direction: column;
+      }
 
       &.dropdown-active {
         background-color: unset;
     
-        .site-menu__link-icon {
+        .dropdown__trigger-icon {
           transform: rotate(90deg);
         }
-      }
-
-      &:not(:last-child) {
-        border-bottom: 1px solid color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.15));
-      }      
+      }   
     }
 
-    .site-menu__link {
-      padding: map.get(variables.$spacers, 2 ) map.get(variables.$spacers, 1 ); 
-    }
-
-    .site-menu__link-icon {
+    .dropdown__trigger-icon {
       transition: config.$transitions;
-    }
-
-    .dropdown-menu {
-      background-color: unset;
-      height: auto;
-      max-height: 0;
-      transition: max-height .2s ease-out;
-      overflow: hidden;
-      position: static;
-      width: 100%;
-
-      &__item {
-        border-top: none;
-        padding: map.get(variables.$spacers, 2 );
-
-        &:first-of-type {
-          margin-top: map.get(variables.$spacers, 2 );
-        }
-      }
     }
 
     // Accounts for fixed header height and max-height of open nav
@@ -489,7 +525,7 @@
       .site-menu {
 
         &.active {
-          max-height: calc(100vh - #{config.$menu-height});
+          max-height: calc(100vh - var(--pui-menu-height));
           overflow-y: auto;
           overflow-x: hidden;
         }
@@ -564,7 +600,6 @@
 
   &__item {
     border-right: 1px solid map.get(variables.$greyscale, 'light' );
-    padding: 0 map.get(variables.$spacers, 1);
     position: relative;
 
     &:first-of-type {
