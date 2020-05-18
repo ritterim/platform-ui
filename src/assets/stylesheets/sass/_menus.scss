@@ -81,6 +81,12 @@
 
    > .site-menu {
     flex: 1 1 auto;
+
+    // sets a max-height of each menu if there are 2 menus
+    &:nth-child(2),
+    &:nth-last-child(2) {
+      max-height: 50%;
+    }
   }
 
   &.site-header--fixed {
@@ -119,6 +125,10 @@
 
     .site-menu__item {
       border-left: 1px solid color.adjust(config.$primary-menu-color, $lightness: math.percentage(-.15));
+
+      &.active {
+        background-color: color.adjust(config.$primary-menu-color, $lightness: math.percentage(-.05));
+      }
     }
   }
 }
@@ -487,9 +497,12 @@
     }
 
     .site-menu__item {
-      align-items: start;
       border-left: none;
-      flex-direction: column;
+
+      &.dropdown {
+        align-items: flex-start;
+        flex-direction: column;
+      }
 
       &.dropdown-active {
         background-color: unset;

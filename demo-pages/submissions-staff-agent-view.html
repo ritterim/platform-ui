@@ -19,6 +19,9 @@
     .double-menu .site-header--fixed + .header-fixed {
       margin-top: calc(var(--pui-menu-height) * 2 )!important;
     }
+    .site-header--fixed .site-menu-wrapper .site-menu.active, .site-menu-wrapper.site-header--fixed .site-menu.active {
+      max-height: calc(100vh - (var(--pui-menu-height) * 2));
+    }
 
     /* specifically targets notes */
     .block.pos-fix.hide-laptop-down {
@@ -37,7 +40,7 @@
             <span class="card__header-icon pill--circle-medium background-purple text-white mr-2">
               D
             </span>
-            <span class="text--size-lg">
+            <span class="text--size-lg hide-tablet-down">
               Hello Dev
             </span>
           </a>
@@ -263,7 +266,7 @@
               <span class="card__header-icon pill--circle-medium background-salmon text-white mr-2">
                 GG
               </span>
-              <div class="text--size-lg">
+              <div class="text--size-lg hide-tablet-down">
                 Greg Gudis
               </div>
               <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
