@@ -20,7 +20,8 @@
     .site-header--fixed + .header-fixed {
       margin-top: calc(var(--pui-menu-height) * 2 )!important;
     }
-    .site-header--fixed .site-menu-wrapper .site-menu.active, .site-menu-wrapper.site-header--fixed .site-menu.active {
+    .site-header--fixed .site-menu-wrapper:nth-child(2) .site-menu.active,
+    .site-menu-wrapper.site-header--fixed:nth-child(2) .site-menu.active {
       max-height: calc(100vh - (var(--pui-menu-height) * 2));
     }
   </style>

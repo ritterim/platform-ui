@@ -498,6 +498,7 @@
 
     .site-menu__item {
       border-left: none;
+      justify-content: flex-start;
 
       &.dropdown {
         align-items: flex-start;
@@ -524,7 +525,7 @@
       .site-menu {
 
         &.active {
-          max-height: calc(100vh - #{config.$menu-height});
+          max-height: calc(100vh - var(--pui-menu-height));
           overflow-y: auto;
           overflow-x: hidden;
         }
