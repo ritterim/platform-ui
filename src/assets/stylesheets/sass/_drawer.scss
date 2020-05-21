@@ -66,6 +66,26 @@
 //
 // Styleguide Components.Drawer.Right
 
+// Drawer Left
+//
+// This Drawer slides in from the left.
+//
+// Markup:
+// <button class="button button--post button--lg pui-drawer__open" data-drawer="left">Toggle left drawer</button>
+// <div id="left" class="pui-drawer pui-drawer-left slide-left-enter-active pui-drawer--closed background-note pt-5 pb-3 px-4">
+//   <div class="flex flex--align-center flex--justify-between pb-3 mb-2">
+//     <div class="flex flex--align-center">
+//       <button class="button button--secondary js-toggle-form">
+//         <i class="pi-plus"></i>
+//       </button>
+//       <h2 class="ml-2 my-0 text-navy">Drawer Left</h2>
+//     </div>
+//     <button class="button pui-drawer__close" data-drawer="left">Close <i class="pi-times" aria-hidden="true"></i></button>
+//   </div>
+// </div>
+//
+// Styleguide Components.Drawer.Left
+
 .pui-drawer {
   $self: &;
   background-color: config.$drawer-background;
@@ -145,6 +165,23 @@
   left: auto;
   position: fixed;
   right: 0;
+  transition: all ease-in-out config.$transitions;
+  z-index: 500;
+  width: config.$drawer-right-width;
+
+  &[hidden] {
+    display: none;
+  }
+}
+// Drawer animates from the left
+.pui-drawer-left {
+  bottom: 0;
+  box-shadow: 0 -.5rem 2rem rgba(map.get(variables.$greyscale, 'black'), math.percentage(config.$hue-threshold / 2));
+  flex-direction: column;
+  height: config.$drawer-right-height;
+  left: auto;
+  position: fixed;
+  left: 0;
   transition: all ease-in-out config.$transitions;
   z-index: 500;
   width: config.$drawer-right-width;
