@@ -13,7 +13,7 @@
 // direction of the drawer animation. Now all you need to do is toggle the class `pui-drawer--closed` to show or hide the drawer.
 //
 // You can have a drawer open from the bottom by using the class `pui-drawer-bottom`. To have a drawer open from the right
-// use `pui-drawer-right`.
+// use `pui-drawer--right`.
 //
 // If you want a smaller drawer you can add the class `pui-drawer--single-row`. This class has a min-height and is
 // best used in cases where less content will be needed.
@@ -52,7 +52,7 @@
 //
 // Markup:
 // <button class="button button--post button--lg pui-drawer__open" data-drawer="right">Toggle right drawer</button>
-// <div id="right" class="pui-drawer pui-drawer-right slide-right-enter-active pui-drawer--closed background-note pt-5 pb-3 px-4">
+// <div id="right" class="pui-drawer pui-drawer--right slide-right-enter-active pui-drawer--closed background-note pt-5 pb-3 px-4">
 //   <div class="flex flex--align-center flex--justify-between pb-3 mb-2">
 //     <div class="flex flex--align-center">
 //       <button class="button button--secondary js-toggle-form">
@@ -65,6 +65,26 @@
 // </div>
 //
 // Styleguide Components.Drawer.Right
+
+// Drawer Left
+//
+// This Drawer slides in from the left.
+//
+// Markup:
+// <button class="button button--post button--lg pui-drawer__open" data-drawer="left">Toggle left drawer</button>
+// <div id="left" class="pui-drawer pui-drawer--left slide-left-enter-active pui-drawer--closed background-note pt-5 pb-3 px-4">
+//   <div class="flex flex--align-center flex--justify-between pb-3 mb-2">
+//     <div class="flex flex--align-center">
+//       <button class="button button--secondary js-toggle-form">
+//         <i class="pi-plus"></i>
+//       </button>
+//       <h2 class="ml-2 my-0 text-navy">Drawer Left</h2>
+//     </div>
+//     <button class="button pui-drawer__close" data-drawer="left">Close <i class="pi-times" aria-hidden="true"></i></button>
+//   </div>
+// </div>
+//
+// Styleguide Components.Drawer.Left
 
 .pui-drawer {
   $self: &;
@@ -136,22 +156,28 @@
 }
 
 
-// Drawer animates from the right
-.pui-drawer-right {
+// Drawer animates from the side
+.pui-drawer--right, .pui-drawer--left {
   bottom: 0;
   box-shadow: 0 -.5rem 2rem rgba(map.get(variables.$greyscale, 'black'), math.percentage(config.$hue-threshold / 2));
   flex-direction: column;
-  height: config.$drawer-right-height;
-  left: auto;
+  height: config.$drawer-side-height;
   position: fixed;
-  right: 0;
   transition: all ease-in-out config.$transitions;
   z-index: 500;
-  width: config.$drawer-right-width;
+  width: config.$drawer-side-width;
 
   &[hidden] {
     display: none;
   }
+}
+.pui-drawer--right {
+  left: auto;
+  right: 0;
+}
+.pui-drawer--left {
+  right: auto;
+  left: 0;
 }
 
 #kss-node {
