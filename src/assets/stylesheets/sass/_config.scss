@@ -211,8 +211,8 @@ $drawer-background: #fff !default;
 
 $drawer-primary-padding: 2rem;
 
-$drawer-right-height: calc(100% - #{$menu-height});
-$drawer-right-width: 27rem;
+$drawer-side-height: calc(100% - #{$menu-height});
+$drawer-side-width: 27rem;
 
 
 
