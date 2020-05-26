@@ -180,4 +180,12 @@
     }
   }
 
+  .pui-accordion {
+
+    &:not(.active):hover {
+      .pui-accordion__header {
+        background-color: inherit;
+      }
+    }
+  }
 }

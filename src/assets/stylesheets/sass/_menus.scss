@@ -199,7 +199,7 @@
   &.dropdown-active {
     background-color: color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05));
 
-    > .dropdown__trigger + .dropdown__content {
+    > .dropdown__content {
       max-height: 100vh;
       transition: max-height .2s ease-in;
       overflow-y: auto;
@@ -352,16 +352,6 @@
       @include mixins.breakpoint(tablet, min) {
         border-top: 1px solid rgba(map.get(variables.$greyscale, 'lighter'), .5);
       }        
-    }
-
-    &.profile {
-      flex-direction: column;
-    }
-
-    i[class*="pi-"] {
-      padding-right: map.get(variables.$spacers, 3);
-      width: 1.2rem;
-      @extend %flex-center;
     }
   }
 }

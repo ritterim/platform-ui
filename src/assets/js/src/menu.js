@@ -1,4 +1,3 @@
-let  dropdownMenu = document.querySelectorAll('.dropdown-content');
 let  hasDropdown = document.querySelectorAll('.dropdown');
 
 let openDropdown = (item) => {
@@ -15,11 +14,9 @@ let openDropdown = (item) => {
 
 if (hasDropdown) {
   const links = document.querySelectorAll('.dropdown .dropdown__trigger')
-  const dropdownLinks = document.querySelectorAll('.dropdown__content a')
 
   links.forEach( (el) => {
     el.addEventListener('click', (e) => {
-      e.stopPropagation();
       e.preventDefault();
       openDropdown(el);
     })
@@ -30,12 +27,21 @@ if (hasDropdown) {
       }
     })
   });
+}
 
-  dropdownLinks.forEach((el) => {
-    el.addEventListener('click', (e) => {
-      e.stopPropagation();
+let siteMenu = document.querySelectorAll('.site-menu');
+
+let toggleMenu = (elm) => {
+  let activeMenu = elm.nextElementSibling;
+  
+  if (activeMenu.classList.contains('active')) {
+    activeMenu.classList.remove('active')
+  } else {
+    siteMenu.forEach(menu => {
+      menu.classList.remove('active');
     })
-  });
+    activeMenu.classList.toggle('active');
+  }
 }
 
 let menuAction = document.querySelectorAll('.site-menu-mobile-action');
@@ -44,9 +50,7 @@ if (menuAction) {
   menuAction.forEach(function(el) {
     el.addEventListener('click', (e) => {
       e.preventDefault;
-      if (e.target.nextElementSibling.matches('.site-menu')) {
-        e.target.nextElementSibling.classList.toggle('active');
-      }
+      toggleMenu(el);
     })
   })
 }
