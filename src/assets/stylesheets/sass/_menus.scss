@@ -103,6 +103,7 @@
 }
 
 .site-menu {
+  background-color: map.get(variables.$greyscale, 'white');
   color: config.$primary-menu-color;
   display: flex;
 
