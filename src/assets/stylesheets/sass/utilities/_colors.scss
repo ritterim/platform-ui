@@ -24,6 +24,10 @@
 // | `background-pink`       | `background-cyan`        | `background-violet`       | `background-blue`          |
 // | `background-green`      | `background-teal`        | `background-gold`         |                            |
 //
+// | Remove a background color |                          |                           |                            |
+// | ------------------------- | ------------------------ | ------------------------- | -------------------------- |
+// | `background-transparent`  |                          |                           |                            |
+// 
 // Styleguide Utilities.Color.Background
 
 $all-colors: () !default;
@@ -117,4 +121,9 @@ $platform-colors: map.merge(config.$platform-colors, $platform-colors);
       background-color: $color !important;
     }
   }
+}
+
+// transparent color
+.background-transparent {
+  background-color: transparent!important;
 }
