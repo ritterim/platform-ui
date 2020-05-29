@@ -6,7 +6,7 @@
 // You can add specific borders to elements by using the following classes:
 //
 // Markup:
-// <div class="block-container mobile-up-2 blocks-px-2 blocks-mb-3">
+// <div class="block-container mobile-up-2 blocks px-2 mb-3">
 //   <div class="block">
 //     <div class="pui-card border--color-red">
 //       <h4 class="border-b border--color-navy pb-2 mb-2">Card Header</h4>
@@ -18,7 +18,7 @@
 //   <div class="block">
 //     <div class="pui-card">
 //       <h4 class="pb-2 mb-2">Card Header</h4>
-//       <div class="pui-card__content block-container blocks-px-3">
+//       <div class="pui-card__content block-container blocks px-3">
 //         <div class="block block-6 border-r border--color-med-blue">
 //           <p>Here is some generic content for testing purposes. Don't worry about the actualy content of this card.</p>
 //         </div>
@@ -59,8 +59,8 @@
   border: 1px solid;
 
   &-x {
-    border-width: 0 1px;
-    @extend %border;
+    border-left: 1px solid;
+    border-right: 1px solid;
     @for $i from 1 through 5 {
       &.border--width-#{$i} {
         border-width: 0 #{$i}px !important;
@@ -69,8 +69,8 @@
   }
 
   &-y {
-    border-width: 1px 0;
-    @extend %border;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
     @for $i from 1 through 5 {
       &.border--width-#{$i} {
         border-width: #{$i}px 0 !important;
@@ -80,9 +80,7 @@
 
   @each $direction, $d in variables.$xy-border {
     &-#{$d} {
-      border-width: 0 !important;
-      border-#{$direction}-width: 1px !important;
-      @extend %border;
+      border-#{$direction}: 1px solid !important;
       @for $i from 1 through 5 {
         &.border--width-#{$i} {
           border-#{$direction}-width: #{$i}px !important;
