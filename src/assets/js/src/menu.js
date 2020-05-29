@@ -44,9 +44,8 @@ if (menuAction) {
   menuAction.forEach(function(el) {
     el.addEventListener('click', (e) => {
       e.preventDefault;
-      if (e.target.nextElementSibling.matches('.site-menu')) {
-        e.target.nextElementSibling.classList.toggle('active');
-      }
+      let wrapper = el.closest('.site-menu-wrapper');
+      wrapper.querySelector('.site-menu').classList.toggle('active');
     })
   })
 }
