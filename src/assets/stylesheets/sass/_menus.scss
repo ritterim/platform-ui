@@ -372,8 +372,7 @@
 // 
 // If you want the site menu to be responsive, add the class `site-menu-wrapper` to the parent element of the `site-menu`. 
 // In the example below, the class is added to the `header`. You will also need to add a button to toggle the menu. Below, you see we 
-// added a button with the class `site-menu-mobile-action`. For accessibility purposes, we included button text with an `sr-only` class.
-// Be sure to add the button before the site-menu so that the button and site-menu are siblings. This is important for the JS to fire correctly. 
+// added a button with the class `site-menu-mobile-action`. For accessibility purposes, we included button text with an `sr-only` class. 
 // The menu mobile menu will respond below the `tablet` resolution and the menu button will display as well.
 // If you want to add an icon to the dropdown targets, make sure the icon has the class `dropdown__trigger-icon`. This icon will rotate when the dropdown
 // is active. In the example below we're using a platform icon. `<i class="pi-angle-right mx-2 dropdown__trigger-icon"></i>`

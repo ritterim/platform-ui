@@ -196,10 +196,12 @@
 
 // Colors
 //
-// We loop through a map to give you these color variations.
+// We loop through a map to give you these color variations. The white button is not in this map however. A white ghost button, on hover, will resemble 
+// our standard `.button` look. You can get really fancy if you want by adding a specific text color on hover with any of these buttons. See the second
+// ghost white button example below. 
 //
 // Markup:
-// <div class="button-group mb-4">
+// <div class="button-group mb-4 p-2">
 //   <button class="button button--navy">Navy</button>
 //   <button class="button button--skyblue">Skyblue</button>
 //   <button class="button button--lightblue">Lightblue</button>
@@ -210,7 +212,7 @@
 //   <button class="button button--brown">Brown</button>
 //   <button class="button button--orange">Orange</button>
 // </div>
-// <div class="button-group">
+// <div class="button-group mb-4 p-2 background-lighter">
 //   <button class="button button--ghost button--navy">Navy</button>
 //   <button class="button button--ghost button--skyblue">Skyblue</button>
 //   <button class="button button--ghost button--lightblue">Lightblue</button>
@@ -220,6 +222,10 @@
 //   <button class="button button--ghost button--salmon">Salmon</button>
 //   <button class="button button--ghost button--brown">Brown</button>
 //   <button class="button button--ghost button--orange">Orange</button>
+// </div>
+// <div class="button-group p-2 background-med-blue">
+//   <button class="button button--white button--ghost">Button</button>
+//   <button class="button button--white button--ghost text-med-blue--hover">Button</button>
 // </div>
 //
 // Styleguide Components.Button.Colors
@@ -232,7 +238,7 @@
   border-radius: config.$button-border-radius;
   color: config.$button-primary-color;
   cursor: pointer;
-  display: flex;
+  display: inline-flex;
   font-family: map.get(config.$fonts, 'base');
   font-size: map.get(config.$fonts, 'size');
   justify-content: center;
@@ -409,6 +415,14 @@
     }
   }
 
+  &.button--ghost {
+    background-color: transparent;
+
+    &:hover {
+      background-color: config.$button-primary-color;
+    }
+  }  
+
   &--post {
     background-color: config.$button-secondary-background;
     border: 1px solid config.$button-secondary-background;
@@ -474,7 +488,6 @@
       }
 
       &.button--ghost {
-        background-color: transparent;
         @if lightness($color) > 50 and lightness($color) < 75 {
           color: color.adjust($color, $lightness: math.percentage(-.4));
         } @else if lightness($color) > 50 {
@@ -498,10 +511,19 @@
     }
   }
 
-  &--plain {
-    appearance: none;
-    background: transparent;
-    border: none;
+  &--white {
+    background-color: map.get(variables.$greyscale, 'white');
+    border-color: map.get(variables.$greyscale, 'white');
+
+    &.button--ghost {
+      color: map.get(variables.$greyscale, 'white');
+
+      &:hover {
+        background-color: map.get(variables.$greyscale, 'white');
+        border-color: map.get(variables.$greyscale, 'white');
+        color: config.$button-primary-color;
+      }
+    }
   }
 }
 
