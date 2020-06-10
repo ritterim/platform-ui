@@ -1,0 +1,44 @@
+// Figure Hover
+//
+// To hide and show the figcaption on hover, you can add the class `figure-hover` to a `figure`. Notice the figcaption transitions
+// on hover. 
+//
+// Markup:
+// <figure class="figure-hover">
+//   <img src="https://via.placeholder.com/500x250.png/e2e3e5/666666?text=This+Is+A+Test+Figure" alt="Figcaption goes here.">
+//   <figcaption>Figcaption goes here.</figcaption>
+// </figure>
+//
+// 
+// Styleguide Components.Figure
+
+.figure-hover {
+  display: inline-flex;
+  position: relative;
+
+  &:hover {
+    figcaption {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  figcaption {
+    color: #fff;
+    cursor: default;
+    background: rgba(78,90,101,.8);
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    padding: 1rem;
+    position: absolute;
+    text-align: center;
+    transition: .3s;
+    visibility: hidden;
+    width: 100%;
+  }
+}
