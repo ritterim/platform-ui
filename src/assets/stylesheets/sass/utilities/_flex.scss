@@ -16,6 +16,7 @@
 // | `flex--justify-center` | `flex--wrap`            | `flex--grow`            | `flex-inline`        | `flex--align-baseline`   |
 // | `flex--align-start`    | `flex--align-end`       | `flex--align-center`    | `flex-nowrap`        | `flex--justify-between`  |
 // | `flex--row-reverse`    | `flex--column-reverse`  | `flex--align-center`    | `flex-nowrap`        | `flex--justify-between`  |
+// | `flex--align-self-start`    | `flex--align-self-end`  | `flex--align-self-center`    | `flex--align-self-baseline`  |
 //
 // Styleguide Utilities.Flex
 
@@ -42,6 +43,12 @@
 @each $key, $val in variables.$flex-align {
   .flex--align-#{$key} {
     align-items: #{$val};
+  }
+}
+
+@each $key, $val in variables.$flex-align {
+  .flex--align-self-#{$key} {
+    align-self: #{$val};
   }
 }
 
