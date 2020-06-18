@@ -91,6 +91,12 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
             background-color: $tab-active-color;
           }
         }
+
+        &--flat {
+          @include mixins.breakpoint(tablet, min) {
+            border: none;
+          }
+        }
       }
     }
   }
@@ -147,6 +153,30 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
         border-bottom-color: map.get(variables.$greyscale, 'white' );
         color: $tab-active-color;
         font-weight: 600;
+      }
+    }
+
+    &--flat {
+      @include mixins.breakpoint(tablet, min) {
+        border: none;
+  
+        &::before {
+          bottom: 0;
+          top: unset;
+          left: 0; right: 0;
+        }
+      }
+
+      @media (pointer: fine) {
+        &:hover {
+          background-color: map.get(variables.$greyscale, 'white' );
+          color: rgba($tab-active-color, .7);
+          font-weight: 600;
+
+          &::before {
+            background-color: rgba($tab-active-color, .7);
+          }
+        }
       }
     }
   }
