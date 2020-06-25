@@ -51,23 +51,23 @@
 // If you want the borders removed from the tabs, add the class `pui-tab--flat` to the `pui-tab`.
 // 
 // Markup:
-// <div class="pui-tabs">
+// <div class="pui-tabs pui-tabs--flat">
 //   <input type="radio" id="tab-input-2a" name="tabs-2" checked>
-//   <label for="tab-input-2a" class="pui-tab pui-tab--flat">
+//   <label for="tab-input-2a" class="pui-tab">
 //     <i class="pi-folder-open" focusable="false" aria-hidden="hidden"></i> Tab 1
 //   </label>
 //   <div class="pui-tab-panel">
 //     <img src="https://placeimg.com/640/480/animals?t=1565635383449">
 //   </div>
 //   <input type="radio" id="tab-input-2b" name="tabs-2">
-//   <label for="tab-input-2b" class="pui-tab pui-tab--flat">
+//   <label for="tab-input-2b" class="pui-tab">
 //     <i class="pi-folder" focusable="false" aria-hidden="hidden"></i> Tab 2
 //   </label>
 //   <div class="pui-tab-panel">
 //     <img src="https://placeimg.com/640/480/animals?t=1565635267224">
 //   </div>
 //   <input type="radio" id="tab-input-2c" name="tabs-2">
-//   <label for="tab-input-2c" class="pui-tab pui-tab--flat">
+//   <label for="tab-input-2c" class="pui-tab">
 //     <i class="pi-users" focusable="false" aria-hidden="hidden"></i> Tab 3
 //   </label>
 //   <div class="pui-tab-panel">
@@ -121,12 +121,6 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
 
           &:before {
             background-color: $tab-active-color;
-          }
-        }
-
-        &--flat {
-          @include mixins.breakpoint(tablet, min) {
-            border: none;
           }
         }
       }
@@ -187,33 +181,95 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
         font-weight: 600;
       }
     }
+  }
 
-    &--flat {
-      @include mixins.breakpoint(tablet, min) {
-        border: none;
-        flex: 0 0 auto;
   
-        &::before {
-          bottom: 0;
-          top: unset;
-          left: 0;
-          right: 0;
-          transform: translateY(50%);
-        }
+}
+
+.pui-tabs--flat {
+  display: flex;
+  flex-wrap: wrap;
+
+  .pui-tab {
+    align-items: center;
+    color: map.get(variables.$greyscale, 'base' );
+    display: flex;
+    height: $tab-height;
+    padding: map.get(variables.$spacers, 2 ) variables.$spacer;
+    position: relative;
+    transition: config.$transitions;
+    justify-content: center;
+    margin-bottom: -1px;
+    order: 1;
+    z-index: 2;
+
+    // @include mixins.breakpoint(tablet, max) {
+      border: none;
+      background: map.get(variables.$greyscale, 'white');
+      color: map.get(variables.$greyscale, 'base' );
+      margin-top: 0;
+    // }
+
+    &:before {
+      background-color: transparent;
+      content: '';
+      height: .3rem;
+      left: -1px;
+      position: absolute;
+      right: -1px;
+      top: 0;
+      transition: config.$transitions;
+      width: auto;
+      border: none;
+      border-radius: 0;
+    }
+
+    // @include mixins.breakpoint(tablet, min) {
+      border: none;
+      flex: 0 0 auto;
+      margin: 0 1rem;
+
+      &::before {
+        bottom: 0;
+        top: unset;
+        left: 0;
+        right: 0;
+        transform: translateY(50%);
       }
+    // }
 
-      @media (pointer: fine) {
-        &:hover {
-          background-color: map.get(variables.$greyscale, 'white' );
-          color: rgba($tab-active-color, .7);
-          font-weight: 600;
+    @media (pointer: fine) {
+      &:hover {
+        background-color: map.get(variables.$greyscale, 'white' );
+        color: rgba($tab-active-color, .7);
+        font-weight: 600;
 
-          &::before {
-            background-color: rgba($tab-active-color, .7);
-          }
+        &::before {
+          background-color: rgba($tab-active-color, .7);
         }
       }
     }
+  }
+
+  input[type=radio] {
+    &:checked {
+      + .pui-tab {
+        border: none;
+        
+        &:before {
+          background-color: $tab-active-color;
+        }
+      }
+    }
+  }
+
+  .pui-tab-panel {
+    border: none;
+    border-top: 1px solid $tab-border-color;
+    flex-grow: 1;
+    order: 99;
+    padding-top: calc(#{map.get(variables.$spacers, 2 )} + 1px);
+    z-index: 1;
   }
 }
 
