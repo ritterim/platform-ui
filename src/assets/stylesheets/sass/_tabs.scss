@@ -46,6 +46,38 @@
 // Styleguide Components.Tabs
 
 
+// Tabs Flat
+// 
+// If you want the borders removed from the tabs, add the class `pui-tab--flat` to the `pui-tab`.
+// 
+// Markup:
+// <div class="pui-tabs">
+//   <input type="radio" id="tab-input-2a" name="tabs-2" checked>
+//   <label for="tab-input-2a" class="pui-tab pui-tab--flat">
+//     <i class="pi-folder-open" focusable="false" aria-hidden="hidden"></i> Tab 1
+//   </label>
+//   <div class="pui-tab-panel">
+//     <img src="https://placeimg.com/640/480/animals?t=1565635383449">
+//   </div>
+//   <input type="radio" id="tab-input-2b" name="tabs-2">
+//   <label for="tab-input-2b" class="pui-tab pui-tab--flat">
+//     <i class="pi-folder" focusable="false" aria-hidden="hidden"></i> Tab 2
+//   </label>
+//   <div class="pui-tab-panel">
+//     <img src="https://placeimg.com/640/480/animals?t=1565635267224">
+//   </div>
+//   <input type="radio" id="tab-input-2c" name="tabs-2">
+//   <label for="tab-input-2c" class="pui-tab pui-tab--flat">
+//     <i class="pi-users" focusable="false" aria-hidden="hidden"></i> Tab 3
+//   </label>
+//   <div class="pui-tab-panel">
+//     <img src="https://placeimg.com/640/480/animals?t=1565635322782">
+//   </div>
+// </div>
+// 
+// Styleguide Components.Tabs.Flat
+
+
 $tab-height:          3rem;
 $tab-active-color:    map.get(config.$brand-colors, 'navy' );
 $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold * 2));
