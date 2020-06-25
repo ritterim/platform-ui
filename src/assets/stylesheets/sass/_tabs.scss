@@ -191,12 +191,14 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
     &--flat {
       @include mixins.breakpoint(tablet, min) {
         border: none;
+        flex: 0 0 auto;
   
         &::before {
           bottom: 0;
           top: unset;
           left: 0;
           right: 0;
+          transform: translateY(50%);
         }
       }
 
