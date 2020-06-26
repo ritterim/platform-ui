@@ -24,21 +24,21 @@
 //     <i class="pi-folder-open" focusable="false" aria-hidden="hidden"></i> Tab 1
 //   </label>
 //   <div class="pui-tab-panel">
-//     <img src="https://placeimg.com/640/480/animals?t=1565635383449">
+//     <img src="https://placeimg.com/640/480/animals?t=1565635383449" style="max-width: 100%;">
 //   </div>
 //   <input type="radio" id="tab-input-b" name="tabs">
 //   <label for="tab-input-b" class="pui-tab">
 //     <i class="pi-folder" focusable="false" aria-hidden="hidden"></i> Tab 2
 //   </label>
 //   <div class="pui-tab-panel">
-//     <img src="https://placeimg.com/640/480/animals?t=1565635267224">
+//     <img src="https://placeimg.com/640/480/animals?t=1565635267224" style="max-width: 100%;">
 //   </div>
 //   <input type="radio" id="tab-input-c" name="tabs">
 //   <label for="tab-input-c" class="pui-tab">
 //     <i class="pi-users" focusable="false" aria-hidden="hidden"></i> Tab 3
 //   </label>
 //   <div class="pui-tab-panel">
-//     <img src="https://placeimg.com/640/480/animals?t=1565635322782">
+//     <img src="https://placeimg.com/640/480/animals?t=1565635322782" style="max-width: 100%;">
 //   </div>
 // </div>
 //
@@ -57,21 +57,21 @@
 //     <i class="pi-folder-open" focusable="false" aria-hidden="hidden"></i> Tab 1
 //   </label>
 //   <div class="pui-tab-panel">
-//     <img src="https://placeimg.com/640/480/animals?t=1565635383449">
+//     <img src="https://placeimg.com/640/480/animals?t=1565635383449" style="max-width: 100%;">
 //   </div>
 //   <input type="radio" id="tab-input-2b" name="tabs-2">
 //   <label for="tab-input-2b" class="pui-tab">
 //     <i class="pi-folder" focusable="false" aria-hidden="hidden"></i> Tab 2
 //   </label>
 //   <div class="pui-tab-panel">
-//     <img src="https://placeimg.com/640/480/animals?t=1565635267224">
+//     <img src="https://placeimg.com/640/480/animals?t=1565635267224" style="max-width: 100%;">
 //   </div>
 //   <input type="radio" id="tab-input-2c" name="tabs-2">
 //   <label for="tab-input-2c" class="pui-tab">
 //     <i class="pi-users" focusable="false" aria-hidden="hidden"></i> Tab 3
 //   </label>
 //   <div class="pui-tab-panel">
-//     <img src="https://placeimg.com/640/480/animals?t=1565635322782">
+//     <img src="https://placeimg.com/640/480/animals?t=1565635322782" style="max-width: 100%;">
 //   </div>
 // </div>
 // 
@@ -116,7 +116,7 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
         }
 
         @include mixins.breakpoint(tablet, min) {
-          background-color: #fff;
+          background-color: map.get(variables.$greyscale, 'white');
           color: $tab-active-color;
 
           &:before {
@@ -136,9 +136,9 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
     transition: config.$transitions;
 
     @include mixins.breakpoint(tablet, max) {
-      border: 1px solid #003f70;
-      background: #003f70;
-      color: #fff;
+      border: 1px solid $tab-active-color;
+      background: $tab-active-color;
+      color: map.get(variables.$greyscale, 'white');
       margin-top: map.get(variables.$spacers, 1 );
 
       &:first-of-type {
@@ -191,52 +191,29 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
   flex-wrap: wrap;
 
   .pui-tab {
-    align-items: center;
+    background: map.get(variables.$greyscale, 'white');
+    border: none;
     color: map.get(variables.$greyscale, 'base' );
-    display: flex;
-    height: $tab-height;
-    padding: map.get(variables.$spacers, 2 ) variables.$spacer;
-    position: relative;
-    transition: config.$transitions;
-    justify-content: center;
-    margin-bottom: -1px;
+    flex: 0 0 auto;
+    height: auto;
+    margin: 0 1rem;
     order: 1;
     z-index: 2;
 
-    // @include mixins.breakpoint(tablet, max) {
-      border: none;
-      background: map.get(variables.$greyscale, 'white');
-      color: map.get(variables.$greyscale, 'base' );
-      margin-top: 0;
-    // }
-
     &:before {
       background-color: transparent;
+      border: none;
+      bottom: 0;
       content: '';
       height: .3rem;
-      left: -1px;
+      left: 0;
       position: absolute;
-      right: -1px;
-      top: 0;
+      right: 0;
+      top: unset;
+      transform: translateY(50%);
       transition: config.$transitions;
       width: auto;
-      border: none;
-      border-radius: 0;
     }
-
-    // @include mixins.breakpoint(tablet, min) {
-      border: none;
-      flex: 0 0 auto;
-      margin: 0 1rem;
-
-      &::before {
-        bottom: 0;
-        top: unset;
-        left: 0;
-        right: 0;
-        transform: translateY(50%);
-      }
-    // }
 
     @media (pointer: fine) {
       &:hover {
@@ -255,6 +232,7 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
     &:checked {
       + .pui-tab {
         border: none;
+        color: $tab-active-color;
         
         &:before {
           background-color: $tab-active-color;
@@ -268,7 +246,6 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
     border-top: 1px solid $tab-border-color;
     flex-grow: 1;
     order: 99;
-    padding-top: calc(#{map.get(variables.$spacers, 2 )} + 1px);
     z-index: 1;
   }
 }
