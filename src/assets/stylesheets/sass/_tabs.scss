@@ -229,6 +229,15 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
   }
 
   input[type=radio] {
+    
+    &:not(:checked) {
+      + .pui-tab {
+        + .pui-tab-panel {
+          display: none;
+        }
+      }
+    }
+
     &:checked {
       + .pui-tab {
         border: none;
@@ -247,6 +256,67 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
     flex-grow: 1;
     order: 99;
     z-index: 1;
+  }
+
+  &.responsive {
+    @include mixins.breakpoint(tablet, max) {
+      display: block;
+      flex-wrap: unset;  
+    }    
+
+    .pui-tab {
+      @include mixins.breakpoint(tablet, max) {
+        border: 1px solid $tab-active-color;
+        background: $tab-active-color;
+        color: map.get(variables.$greyscale, 'white');
+        height: $tab-height;
+        margin: map.get(variables.$spacers, 1 ) 0 0;
+
+        align-items: center;
+        display: flex;
+        height: 3rem;
+        padding: .5rem 1rem;
+        position: relative;
+        transition: .2s;
+
+        border: 1px solid #003f70;
+        background: #003f70;
+        color: #fff;
+
+        &:before {
+          display: none;
+        }
+  
+        &:first-of-type {
+          margin-top: 0;
+        }
+      }
+    }
+
+    input[type=radio] {
+  
+      &:checked {
+        + .pui-tab {
+          
+          @include mixins.breakpoint(tablet, max) {
+            border: 1px solid $tab-border-color;
+            border-bottom: none;
+            color: map.get(variables.$greyscale, 'white');
+            font-weight: 600;
+          }
+        }
+      }
+    }
+
+    .pui-tab-panel {
+      @include mixins.breakpoint(tablet, max) {
+        border: 1px solid $tab-border-color;
+        border-top: transparent;
+        flex-grow: 0;
+        order: unset;
+        z-index: unset;
+      }      
+    }
   }
 }
 
