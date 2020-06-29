@@ -277,6 +277,17 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
         }
       }
     }
+
+    &:not(:checked) {
+      + .pui-tab {
+        + .pui-tab-panel {
+
+          @include mixins.breakpoint(tablet, min) {
+            display: none;
+          }
+        }
+      }
+    }
   }
 
   .pui-tab-panel {
@@ -295,22 +306,16 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
 
     .pui-tab {
       @include mixins.breakpoint(tablet, max) {
+        align-items: center;
         border: 1px solid $tab-active-color;
         background: $tab-active-color;
         color: map.get(variables.$greyscale, 'white');
+        display: flex;
         height: $tab-height;
         margin: map.get(variables.$spacers, 1 ) 0 0;
-
-        align-items: center;
-        display: flex;
-        height: 3rem;
-        padding: .5rem 1rem;
+        padding: map.get(variables.$spacers, 2 ) variables.$spacer;
         position: relative;
         transition: .2s;
-
-        border: 1px solid #003f70;
-        background: #003f70;
-        color: #fff;
 
         &:before {
           display: none;
