@@ -78,6 +78,40 @@
 // Styleguide Components.Tabs.Flat
 
 
+// Tabs Flat-Responsive 
+// 
+// The flat tabs do not change at lower/higher screen resolutions. You can make the tabs respond, however, by adding
+// the class `responsive` to `pui-tabs pui-tabs--flat`. This will make the tabs stack at the mobile breakpoint and 
+// go back to the flat tab look above mobile.
+// 
+// Markup:
+// <div class="pui-tabs pui-tabs--flat responsive">
+//   <input type="radio" id="tab-input-ar" name="tabs-r" checked>
+//   <label for="tab-input-ar" class="pui-tab">
+//     <i class="pi-folder-open" focusable="false" aria-hidden="hidden"></i> Tab 1
+//   </label>
+//   <div class="pui-tab-panel">
+//     <img src="https://placeimg.com/640/480/animals?t=1565635383449" style="max-width: 100%;">
+//   </div>
+//   <input type="radio" id="tab-input-br" name="tabs-r">
+//   <label for="tab-input-br" class="pui-tab">
+//     <i class="pi-folder" focusable="false" aria-hidden="hidden"></i> Tab 2
+//   </label>
+//   <div class="pui-tab-panel">
+//     <img src="https://placeimg.com/640/480/animals?t=1565635267224" style="max-width: 100%;">
+//   </div>
+//   <input type="radio" id="tab-input-cr" name="tabs-r">
+//   <label for="tab-input-cr" class="pui-tab">
+//     <i class="pi-users" focusable="false" aria-hidden="hidden"></i> Tab 3
+//   </label>
+//   <div class="pui-tab-panel">
+//     <img src="https://placeimg.com/640/480/animals?t=1565635322782" style="max-width: 100%;">
+//   </div>
+// </div>
+// 
+// Styleguide Components.Tabs.FlatResponsive
+
+
 $tab-height:          3rem;
 $tab-active-color:    map.get(config.$brand-colors, 'navy' );
 $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold * 2));
