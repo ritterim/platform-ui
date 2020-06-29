@@ -214,44 +214,6 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
   display: flex;
   flex-wrap: wrap;
 
-  .pui-tab {
-    background: map.get(variables.$greyscale, 'white');
-    border: none;
-    color: map.get(variables.$greyscale, 'base' );
-    flex: 0 0 auto;
-    height: auto;
-    margin: 0 1rem;
-    order: 1;
-    z-index: 2;
-
-    &:before {
-      background-color: transparent;
-      border: none;
-      bottom: 0;
-      content: '';
-      height: .3rem;
-      left: 0;
-      position: absolute;
-      right: 0;
-      top: unset;
-      transform: translateY(50%);
-      transition: config.$transitions;
-      width: auto;
-    }
-
-    @media (pointer: fine) {
-      &:hover {
-        background-color: map.get(variables.$greyscale, 'white' );
-        color: rgba($tab-active-color, .7);
-        font-weight: 600;
-
-        &::before {
-          background-color: rgba($tab-active-color, .7);
-        }
-      }
-    }
-  }
-
   &:not(.responsive) {
     input[type=radio] {
     
@@ -290,12 +252,53 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
     }
   }
 
+  .pui-tab {
+    background: map.get(variables.$greyscale, 'white');
+    border: none;
+    color: map.get(variables.$greyscale, 'base' );
+    flex: 0 0 auto;
+    height: auto;
+    margin: 0 1rem;
+    order: 1;
+    z-index: 2;
+
+    &:before {
+      background-color: transparent;
+      border: none;
+      bottom: 0;
+      content: '';
+      height: .3rem;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: unset;
+      transform: translateY(50%);
+      transition: config.$transitions;
+      width: auto;
+    }
+
+    @media (pointer: fine) {
+      &:hover {
+        background-color: map.get(variables.$greyscale, 'white' );
+        color: rgba($tab-active-color, .7);
+        font-weight: 600;
+
+        &::before {
+          background-color: rgba($tab-active-color, .7);
+        }
+      }
+    }
+  }
+
   .pui-tab-panel {
     border: none;
     border-top: 1px solid $tab-border-color;
-    flex-grow: 1;
-    order: 99;
-    z-index: 1;
+
+    @include mixins.breakpoint(tablet, max) {
+      flex-grow: 1;
+      order: 99;
+      z-index: 1;
+    }
   }
 
   &.responsive {
