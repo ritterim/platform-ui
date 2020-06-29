@@ -197,48 +197,28 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
         border-radius: 0;
       }
     }
-
-    @media (pointer: fine) {
-      &:hover {
-        background-color: map.get(variables.$greyscale, 'white' );
-        border-color: $tab-border-color;
-        border-bottom-color: map.get(variables.$greyscale, 'white' );
-        color: $tab-active-color;
-        font-weight: 600;
-      }
-    }
   }
+  
+  input[type=radio] {
+    &:not(:checked) {
+      + .pui-tab {
 
-  &:not(.pui-tabs--flat) {
-    input[type=radio] {
-      &:not(:checked) {
-        + .pui-tab {
-          + .pui-tab-panel {
-
+        @media (pointer: fine) {
+          &:hover {
+            background-color: map.get(variables.$greyscale, 'white' );
+            border-color: $tab-border-color;
+            color: $tab-active-color;
+            font-weight: 600;
+    
             @include mixins.breakpoint(tablet, min) {
-              display: none;
+              border-bottom-color: map.get(variables.$greyscale, 'white' );
             }
           }
         }
-      }
-  
-      &:checked {
-        + .pui-tab + .pui-tab-panel {
-          @include mixins.breakpoint(tablet, max) {
-            max-height: 100vh;
-            padding: .5rem;
-          }
+
+        + .pui-tab-panel {
+          display: none;
         }
-      }
-    }
-    
-    .pui-tab-panel {
-      @include mixins.breakpoint(tablet, max) {
-        display: block;
-        max-height: 0;
-        overflow: hidden;
-        padding: 0;
-        transition: all ease-in-out .3s;
       }
     }
   }
@@ -248,20 +228,22 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
   display: flex;
   flex-wrap: wrap;
 
-  &:not(.responsive) {
-    input[type=radio] {
+  input[type=radio] {
+    &:not(:checked) {
+      + .pui-tab {
+        @media (pointer: fine) {
+          &:hover {
+            background-color: map.get(variables.$greyscale, 'white' );
+            color: rgba($tab-active-color, .7);
+            font-weight: 600;
     
-      &:not(:checked) {
-        + .pui-tab {
-          + .pui-tab-panel {
-            display: none;
+            &::before {
+              background-color: rgba($tab-active-color, .7);
+            }
           }
         }
       }
     }
-  }
-
-  input[type=radio] {
 
     &:checked {
       + .pui-tab {
@@ -270,17 +252,6 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
         
         &:before {
           background-color: $tab-active-color;
-        }
-      }
-    }
-
-    &:not(:checked) {
-      + .pui-tab {
-        + .pui-tab-panel {
-
-          @include mixins.breakpoint(tablet, min) {
-            display: none;
-          }
         }
       }
     }
@@ -309,18 +280,6 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
       transform: translateY(50%);
       transition: config.$transitions;
       width: auto;
-    }
-
-    @media (pointer: fine) {
-      &:hover {
-        background-color: map.get(variables.$greyscale, 'white' );
-        color: rgba($tab-active-color, .7);
-        font-weight: 600;
-
-        &::before {
-          background-color: rgba($tab-active-color, .7);
-        }
-      }
     }
   }
 
@@ -367,20 +326,12 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
     input[type=radio] {
   
       &:checked {
-        + .pui-tab {
-          
+        + .pui-tab {          
           @include mixins.breakpoint(tablet, max) {
             border: 1px solid $tab-border-color;
             border-bottom: none;
             color: map.get(variables.$greyscale, 'white');
             font-weight: 600;
-          }
-
-          + .pui-tab-panel {
-            @include mixins.breakpoint(tablet, max) {
-              max-height: 100vh;
-              padding: .5rem;
-            }
           }
         }
       }
@@ -390,11 +341,6 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
       @include mixins.breakpoint(tablet, max) {
         background-color: map.get(variables.$greyscale, 'white');
         border: 1px solid $tab-border-color;
-        display: block;
-        max-height: 0;
-        overflow: hidden;
-        padding: 0;
-        transition: all ease-in-out .3s;
       }     
     }
   }
