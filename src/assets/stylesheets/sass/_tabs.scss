@@ -24,21 +24,21 @@
 //     <i class="pi-folder-open" focusable="false" aria-hidden="hidden"></i> Tab 1
 //   </label>
 //   <div class="pui-tab-panel">
-//     <img src="https://placeimg.com/640/480/animals?t=1565635383449">
+//     <img src="https://placeimg.com/640/480/animals?t=1565635383449" style="max-width: 100%;">
 //   </div>
 //   <input type="radio" id="tab-input-b" name="tabs">
 //   <label for="tab-input-b" class="pui-tab">
 //     <i class="pi-folder" focusable="false" aria-hidden="hidden"></i> Tab 2
 //   </label>
 //   <div class="pui-tab-panel">
-//     <img src="https://placeimg.com/640/480/animals?t=1565635267224">
+//     <img src="https://placeimg.com/640/480/animals?t=1565635267224" style="max-width: 100%;">
 //   </div>
 //   <input type="radio" id="tab-input-c" name="tabs">
 //   <label for="tab-input-c" class="pui-tab">
 //     <i class="pi-users" focusable="false" aria-hidden="hidden"></i> Tab 3
 //   </label>
 //   <div class="pui-tab-panel">
-//     <img src="https://placeimg.com/640/480/animals?t=1565635322782">
+//     <img src="https://placeimg.com/640/480/animals?t=1565635322782" style="max-width: 100%;">
 //   </div>
 // </div>
 //
@@ -51,31 +51,65 @@
 // If you want the borders removed from the tabs, add the class `pui-tab--flat` to the `pui-tab`.
 // 
 // Markup:
-// <div class="pui-tabs">
+// <div class="pui-tabs pui-tabs--flat">
 //   <input type="radio" id="tab-input-2a" name="tabs-2" checked>
-//   <label for="tab-input-2a" class="pui-tab pui-tab--flat">
+//   <label for="tab-input-2a" class="pui-tab">
 //     <i class="pi-folder-open" focusable="false" aria-hidden="hidden"></i> Tab 1
 //   </label>
 //   <div class="pui-tab-panel">
-//     <img src="https://placeimg.com/640/480/animals?t=1565635383449">
+//     <img src="https://placeimg.com/640/480/animals?t=1565635383449" style="max-width: 100%;">
 //   </div>
 //   <input type="radio" id="tab-input-2b" name="tabs-2">
-//   <label for="tab-input-2b" class="pui-tab pui-tab--flat">
+//   <label for="tab-input-2b" class="pui-tab">
 //     <i class="pi-folder" focusable="false" aria-hidden="hidden"></i> Tab 2
 //   </label>
 //   <div class="pui-tab-panel">
-//     <img src="https://placeimg.com/640/480/animals?t=1565635267224">
+//     <img src="https://placeimg.com/640/480/animals?t=1565635267224" style="max-width: 100%;">
 //   </div>
 //   <input type="radio" id="tab-input-2c" name="tabs-2">
-//   <label for="tab-input-2c" class="pui-tab pui-tab--flat">
+//   <label for="tab-input-2c" class="pui-tab">
 //     <i class="pi-users" focusable="false" aria-hidden="hidden"></i> Tab 3
 //   </label>
 //   <div class="pui-tab-panel">
-//     <img src="https://placeimg.com/640/480/animals?t=1565635322782">
+//     <img src="https://placeimg.com/640/480/animals?t=1565635322782" style="max-width: 100%;">
 //   </div>
 // </div>
 // 
 // Styleguide Components.Tabs.Flat
+
+
+// Tabs Flat-Responsive 
+// 
+// The flat tabs do not change at lower/higher screen resolutions. You can make the tabs respond, however, by adding
+// the class `responsive` to `pui-tabs pui-tabs--flat`. This will make the tabs stack at the mobile breakpoint and 
+// go back to the flat tab look above mobile.
+// 
+// Markup:
+// <div class="pui-tabs pui-tabs--flat responsive">
+//   <input type="radio" id="tab-input-ar" name="tabs-r" checked>
+//   <label for="tab-input-ar" class="pui-tab">
+//     <i class="pi-folder-open" focusable="false" aria-hidden="hidden"></i> Tab 1
+//   </label>
+//   <div class="pui-tab-panel">
+//     <img src="https://placeimg.com/640/480/animals?t=1565635383449" style="max-width: 100%;">
+//   </div>
+//   <input type="radio" id="tab-input-br" name="tabs-r">
+//   <label for="tab-input-br" class="pui-tab">
+//     <i class="pi-folder" focusable="false" aria-hidden="hidden"></i> Tab 2
+//   </label>
+//   <div class="pui-tab-panel">
+//     <img src="https://placeimg.com/640/480/animals?t=1565635267224" style="max-width: 100%;">
+//   </div>
+//   <input type="radio" id="tab-input-cr" name="tabs-r">
+//   <label for="tab-input-cr" class="pui-tab">
+//     <i class="pi-users" focusable="false" aria-hidden="hidden"></i> Tab 3
+//   </label>
+//   <div class="pui-tab-panel">
+//     <img src="https://placeimg.com/640/480/animals?t=1565635322782" style="max-width: 100%;">
+//   </div>
+// </div>
+// 
+// Styleguide Components.Tabs.FlatResponsive
 
 
 $tab-height:          3rem;
@@ -97,14 +131,6 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
     appearance: none;
     position: absolute;
 
-    &:not(:checked) {
-      + .pui-tab {
-        + .pui-tab-panel {
-          display: none;
-        }
-      }
-    }
-
     &:checked {
       + .pui-tab {
         border: 1px solid $tab-border-color;
@@ -116,17 +142,11 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
         }
 
         @include mixins.breakpoint(tablet, min) {
-          background-color: #fff;
+          background-color: map.get(variables.$greyscale, 'white');
           color: $tab-active-color;
 
           &:before {
             background-color: $tab-active-color;
-          }
-        }
-
-        &--flat {
-          @include mixins.breakpoint(tablet, min) {
-            border: none;
           }
         }
       }
@@ -142,9 +162,9 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
     transition: config.$transitions;
 
     @include mixins.breakpoint(tablet, max) {
-      border: 1px solid #003f70;
-      background: #003f70;
-      color: #fff;
+      border: 1px solid $tab-active-color;
+      background: $tab-active-color;
+      color: map.get(variables.$greyscale, 'white');
       margin-top: map.get(variables.$spacers, 1 );
 
       &:first-of-type {
@@ -187,30 +207,195 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
         font-weight: 600;
       }
     }
+  }
 
-    &--flat {
-      @include mixins.breakpoint(tablet, min) {
-        border: none;
-  
-        &::before {
-          bottom: 0;
-          top: unset;
-          left: 0;
-          right: 0;
-        }
-      }
+  &:not(.pui-tabs--flat) {
+    input[type=radio] {
+      &:not(:checked) {
+        + .pui-tab {
+          + .pui-tab-panel {
 
-      @media (pointer: fine) {
-        &:hover {
-          background-color: map.get(variables.$greyscale, 'white' );
-          color: rgba($tab-active-color, .7);
-          font-weight: 600;
-
-          &::before {
-            background-color: rgba($tab-active-color, .7);
+            @include mixins.breakpoint(tablet, min) {
+              display: none;
+            }
           }
         }
       }
+  
+      &:checked {
+        + .pui-tab + .pui-tab-panel {
+          @include mixins.breakpoint(tablet, max) {
+            max-height: 100vh;
+            padding: .5rem;
+          }
+        }
+      }
+    }
+    
+    .pui-tab-panel {
+      @include mixins.breakpoint(tablet, max) {
+        display: block;
+        max-height: 0;
+        overflow: hidden;
+        padding: 0;
+        transition: all ease-in-out .3s;
+      }
+    }
+  }
+}
+
+.pui-tabs--flat {
+  display: flex;
+  flex-wrap: wrap;
+
+  &:not(.responsive) {
+    input[type=radio] {
+    
+      &:not(:checked) {
+        + .pui-tab {
+          + .pui-tab-panel {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  input[type=radio] {
+
+    &:checked {
+      + .pui-tab {
+        border: none;
+        color: $tab-active-color;
+        
+        &:before {
+          background-color: $tab-active-color;
+        }
+      }
+    }
+
+    &:not(:checked) {
+      + .pui-tab {
+        + .pui-tab-panel {
+
+          @include mixins.breakpoint(tablet, min) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  .pui-tab {
+    background: map.get(variables.$greyscale, 'white');
+    border: none;
+    color: map.get(variables.$greyscale, 'base' );
+    flex: 0 0 auto;
+    height: auto;
+    margin: 0 1rem;
+    order: 1;
+    z-index: 2;
+
+    &:before {
+      background-color: transparent;
+      border: none;
+      bottom: 0;
+      content: '';
+      height: .3rem;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: unset;
+      transform: translateY(50%);
+      transition: config.$transitions;
+      width: auto;
+    }
+
+    @media (pointer: fine) {
+      &:hover {
+        background-color: map.get(variables.$greyscale, 'white' );
+        color: rgba($tab-active-color, .7);
+        font-weight: 600;
+
+        &::before {
+          background-color: rgba($tab-active-color, .7);
+        }
+      }
+    }
+  }
+
+  .pui-tab-panel {
+    border: none;
+    border-top: 1px solid $tab-border-color;
+
+    @include mixins.breakpoint(tablet, max) {
+      flex-grow: 1;
+      order: 99;
+      z-index: 1;
+    }
+  }
+
+  &.responsive {
+    @include mixins.breakpoint(tablet, max) {
+      display: block;
+      flex-wrap: unset;
+    }    
+
+    .pui-tab {
+      @include mixins.breakpoint(tablet, max) {
+        align-items: center;
+        border: 1px solid $tab-active-color;
+        background: $tab-active-color;
+        color: map.get(variables.$greyscale, 'white');
+        display: flex;
+        height: $tab-height;
+        margin: map.get(variables.$spacers, 1 ) 0 0;
+        padding: map.get(variables.$spacers, 2 ) variables.$spacer;
+        position: relative;
+        transition: .2s;
+
+        &:before {
+          display: none;
+        }
+  
+        &:first-of-type {
+          margin-top: 0;
+        }
+      }
+    }
+
+    input[type=radio] {
+  
+      &:checked {
+        + .pui-tab {
+          
+          @include mixins.breakpoint(tablet, max) {
+            border: 1px solid $tab-border-color;
+            border-bottom: none;
+            color: map.get(variables.$greyscale, 'white');
+            font-weight: 600;
+          }
+
+          + .pui-tab-panel {
+            @include mixins.breakpoint(tablet, max) {
+              max-height: 100vh;
+              padding: .5rem;
+            }
+          }
+        }
+      }
+    }
+
+    .pui-tab-panel {
+      @include mixins.breakpoint(tablet, max) {
+        background-color: map.get(variables.$greyscale, 'white');
+        border: 1px solid $tab-border-color;
+        display: block;
+        max-height: 0;
+        overflow: hidden;
+        padding: 0;
+        transition: all ease-in-out .3s;
+      }     
     }
   }
 }

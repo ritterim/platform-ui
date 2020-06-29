@@ -79,7 +79,7 @@
 @each $prop, $letter in (margin: m, padding: p) {
   @each $unit, $rem in variables.$spacers {
     .#{$letter}b-mobile-#{$unit} {
-      @media screen and (min-width: map.get(config.$breakpoints, mobile)) and (max-width: map.get(config.$breakpoints, tablet) - 1) {
+      @media (min-width: map.get(config.$breakpoints, mobile)) and (max-width: map.get(config.$breakpoints, tablet) - 1) {
         #{$prop}-bottom: #{$rem} !important;
       }
     }

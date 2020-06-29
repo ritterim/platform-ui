@@ -224,7 +224,7 @@
     .dropdown__content {
       background-color: color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05));
 
-      @media screen and (max-width: (config.$show-mobile-menu - 1)) {
+      @media (max-width: (config.$show-mobile-menu - 1)) {
         background-color: unset;
         position: static;
     
@@ -339,7 +339,7 @@
     justify-content: flex-start;
     padding: map.get(variables.$spacers, 3);
 
-    @media screen and (max-width: (config.$show-mobile-menu - 1)) {
+    @media (max-width: (config.$show-mobile-menu - 1)) {
       border-top: none;
       padding: map.get(variables.$spacers, 2 );
     }
@@ -447,13 +447,13 @@
 // *****************
 
 .site-menu-wrapper {
-  @media screen and (max-width: (config.$show-mobile-menu - 1)) {
+  @media (max-width: (config.$show-mobile-menu - 1)) {
     position: relative;
   }
 
   .site-menu-mobile-action {
 
-    @media screen and (min-width: (config.$show-mobile-menu)) {
+    @media (min-width: (config.$show-mobile-menu)) {
       display: none;
     }
 
@@ -462,7 +462,7 @@
     }
   }
 
-  @media screen and (max-width: (config.$show-mobile-menu - 1)) {
+  @media (max-width: (config.$show-mobile-menu - 1)) {
 
     .site-menu {
       flex-direction: column;
