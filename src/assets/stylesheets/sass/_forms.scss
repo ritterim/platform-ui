@@ -762,7 +762,25 @@ legend {
           position: absolute;
           right: .5rem;
         }
+
+        input[type="date"],
+        input[type="time"] {
+          &::-webkit-calendar-picker-indicator,
+          &::-webkit-inner-spin-button {
+            opacity: 0;
+          }
+        }
+
       }
+
+      input[type="date"],
+      input[type="time"] {
+        &::-webkit-calendar-picker-indicator,
+        &::-webkit-inner-spin-button {
+          opacity: 0;
+        }
+      }
+
     }
 
     &.error {
@@ -1067,10 +1085,6 @@ legend {
       margin-right: -.75rem;
     }
 
-    &::-webkit-calendar-picker-indicator,
-    &::-webkit-inner-spin-button {
-      opacity: 0;
-    }
   }
 }
 
