@@ -746,7 +746,7 @@ legend {
       position: relative;
 
       i {
-        bottom: .5rem;
+        bottom: .25rem;
         font-size: map.get(variables.$font-percentage, 'md');
         left: 0;
         position: absolute;
@@ -755,13 +755,8 @@ legend {
       &--right {
         position: relative;
 
-        input[type=date],
-        input[type=time] {
-          padding-right: variables.$spacer * 1.5;
-        }
-
         i {
-          bottom: .5rem;
+          bottom: .25rem;
           color: map.get(config.$brand-colors, 'med-blue' );
           pointer-events: none;
           position: absolute;
@@ -1072,7 +1067,7 @@ legend {
       margin-right: -.75rem;
     }
 
-    // &::-webkit-calendar-picker-indicator,
+    &::-webkit-calendar-picker-indicator,
     &::-webkit-inner-spin-button {
       opacity: 0;
     }
