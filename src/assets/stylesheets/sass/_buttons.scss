@@ -261,9 +261,6 @@
     border-color: color.adjust(map.get(variables.$greyscale, 'light' ), $lightness: math.percentage(config.$hue-threshold)) !important;
     color: map.get(variables.$greyscale, 'white') !important;
     cursor: not-allowed;
-  }
-
-  &.disabled {
     pointer-events: none;
   }
 
