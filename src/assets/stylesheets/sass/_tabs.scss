@@ -236,7 +236,7 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
             background-color: map.get(variables.$greyscale, 'white' );
             color: rgba($tab-active-color, .7);
             font-weight: 600;
-    
+
             &::before {
               background-color: rgba($tab-active-color, .7);
             }
@@ -265,7 +265,7 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
     height: auto;
     margin: 0 1rem;
     order: 1;
-    z-index: 2;
+    z-index: auto;
 
     &:before {
       background-color: transparent;
@@ -277,7 +277,6 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
       position: absolute;
       right: 0;
       top: unset;
-      transform: translateY(50%);
       transition: config.$transitions;
       width: auto;
     }
@@ -286,11 +285,11 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
   .pui-tab-panel {
     border: none;
     border-top: 1px solid $tab-border-color;
+    z-index: auto;
 
     @include mixins.breakpoint(tablet, max) {
       flex-grow: 1;
-      order: 99;
-      z-index: 1;
+      order: 99;      
     }
   }
 

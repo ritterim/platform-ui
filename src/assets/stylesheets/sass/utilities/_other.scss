@@ -256,12 +256,12 @@
 
 @each $key, $value in variables.$overflow {
  .overflow-#{$key} {
-    overflow: #{$value};
+    overflow: #{$value}!important;
   }
 
   @each $axis, $letter in (y: y, x: x) {
     .overflow-#{$letter}--#{$key} {
-      overflow-#{$letter}: #{$value};
+      overflow-#{$letter}: #{$value}!important;
     }
   }
 }
