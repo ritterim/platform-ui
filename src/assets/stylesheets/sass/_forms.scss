@@ -744,16 +744,26 @@ legend {
     &.has-icon {
       position: relative;
 
-      input {
-        padding-left: variables.$spacer;
+      input[type="text"],
+      input[type="search"],
+      input[type="date"],
+      input[type="email"],
+      input[type="textarea"],
+      input[type="tel"],
+      input[type="password"],
+      input[type="number"],
+      input[type="time"],
+      textarea,
+      select {
+        padding-left: map.get(variables.$spacers, 4);
       }
 
       i {
         bottom: 0;
         font-size: map.get(variables.$font-percentage, 'md');
-        left: 0;
+        left: .5rem;
         position: absolute;
-        transform: translate(50%, -50%);
+        transform: translateY(-50%);
       }
 
       &--right {
@@ -764,12 +774,22 @@ legend {
           color: map.get(config.$brand-colors, 'med-blue' );
           pointer-events: none;
           position: absolute;
-          transform: translate(-50%, -50%);
-          right: 0;
+          transform: translateY(-50%);
+          right: .5rem;
         }
 
-        input {
-          padding-right: variables.$spacer;
+        input[type="text"],
+        input[type="search"],
+        input[type="date"],
+        input[type="email"],
+        input[type="textarea"],
+        input[type="tel"],
+        input[type="password"],
+        input[type="number"],
+        input[type="time"],
+        textarea,
+        select {
+          padding-right: map.get(variables.$spacers, 4);
         }
 
         input[type="date"],
@@ -1117,16 +1137,20 @@ legend {
 
     .has-icon {
 
-      input {
-        padding-left: variables.$spacer * 1.75;
+      i {
+        left: .75rem;
       }
     }
 
     .has-icon--right {
 
-      input {
-        padding-right: variables.$spacer * 1.75;
+      i {
+        right: .75rem;
       }
+    }
+
+    .pui-form__select-wrapper:after {
+      right: .7rem;
     }
   }
 }
