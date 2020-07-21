@@ -742,25 +742,34 @@ legend {
     }
 
     &.has-icon {
-      padding-left: variables.$spacer;
       position: relative;
 
+      input {
+        padding-left: variables.$spacer;
+      }
+
       i {
-        bottom: .25rem;
+        bottom: 0;
         font-size: map.get(variables.$font-percentage, 'md');
         left: 0;
         position: absolute;
+        transform: translate(50%, -50%);
       }
 
       &--right {
         position: relative;
 
         i {
-          bottom: .25rem;
+          bottom: 0;
           color: map.get(config.$brand-colors, 'med-blue' );
           pointer-events: none;
           position: absolute;
-          right: .5rem;
+          transform: translate(-50%, -50%);
+          right: 0;
+        }
+
+        input {
+          padding-right: variables.$spacer;
         }
 
         input[type="date"],
@@ -1086,6 +1095,8 @@ legend {
     }
   }
 
+
+  // .pui-form--rounded
   &--rounded {
 
     input[type="text"],
@@ -1102,6 +1113,20 @@ legend {
       border-color: map.get(variables.$greyscale, 'light' );
       border-radius: map.get(config.$radius, 'button' );
       padding: map.get(variables.$spacers, 1 ) variables.$spacer * 1.25;
+    }
+
+    .has-icon {
+
+      input {
+        padding-left: variables.$spacer * 1.75;
+      }
+    }
+
+    .has-icon--right {
+
+      input {
+        padding-right: variables.$spacer * 1.75;
+      }
     }
   }
 }
