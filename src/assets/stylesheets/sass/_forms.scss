@@ -1084,7 +1084,25 @@ legend {
     &::-webkit-clear-button {
       margin-right: -.75rem;
     }
+  }
 
+  &--rounded {
+
+    input[type="text"],
+    input[type="search"],
+    input[type="date"],
+    input[type="email"],
+    input[type="textarea"],
+    input[type="tel"],
+    input[type="password"],
+    input[type="number"],
+    input[type="time"],
+    textarea,
+    select {
+      border-color: map.get(variables.$greyscale, 'light' );
+      border-radius: map.get(config.$radius, 'button' );
+      padding: map.get(variables.$spacers, 1 ) variables.$spacer;
+    }
   }
 }
 
