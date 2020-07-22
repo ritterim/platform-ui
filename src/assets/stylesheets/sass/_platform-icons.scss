@@ -1,10 +1,10 @@
 @font-face {
     font-family: "platform-icons";
-    src: url("./platform-icons.eot?43fec5ea31ebbb26000ccf8e2e869d59?#iefix") format("embedded-opentype"),
-url("./platform-icons.woff2?43fec5ea31ebbb26000ccf8e2e869d59") format("woff2"),
-url("./platform-icons.woff?43fec5ea31ebbb26000ccf8e2e869d59") format("woff"),
-url("./platform-icons.ttf?43fec5ea31ebbb26000ccf8e2e869d59") format("truetype"),
-url("./platform-icons.svg?43fec5ea31ebbb26000ccf8e2e869d59#platform-icons") format("svg");
+    src: url("./platform-icons.eot?c56656922bca65b177fce7baed8b42bd?#iefix") format("embedded-opentype"),
+url("./platform-icons.woff2?c56656922bca65b177fce7baed8b42bd") format("woff2"),
+url("./platform-icons.woff?c56656922bca65b177fce7baed8b42bd") format("woff"),
+url("./platform-icons.ttf?c56656922bca65b177fce7baed8b42bd") format("truetype"),
+url("./platform-icons.svg?c56656922bca65b177fce7baed8b42bd#platform-icons") format("svg");
     font-style: normal;
     font-weight: normal;
 }
@@ -13,6 +13,7 @@ i[class^="pi-"], i[class*=" pi-"] {
   font-family: platform-icons;
   font-style: normal;
   font-weight: normal;
+  line-height: 1;
   text-decoration: inherit;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -119,468 +120,474 @@ i[class^="pi-"]:before, i[class*=" pi-"]:before {
 .pi-download:before {
   content: "\f119";
 }
-.pi-logout:before {
+.pi-login:before {
   content: "\f11a";
 }
-.pi-merge:before {
+.pi-logout:before {
   content: "\f11b";
 }
-.pi-redo-clock:before {
+.pi-merge:before {
   content: "\f11c";
 }
-.pi-redo:before {
+.pi-redo-clock:before {
   content: "\f11d";
 }
-.pi-save:before {
+.pi-redo:before {
   content: "\f11e";
 }
-.pi-sync-clock:before {
+.pi-save:before {
   content: "\f11f";
 }
-.pi-sync:before {
+.pi-sync-clock:before {
   content: "\f120";
 }
-.pi-upload-cloud:before {
+.pi-sync:before {
   content: "\f121";
 }
-.pi-upload:before {
+.pi-upload-cloud:before {
   content: "\f122";
 }
-.pi-asg:before {
+.pi-upload:before {
   content: "\f123";
 }
-.pi-facebook-alt:before {
+.pi-asg:before {
   content: "\f124";
 }
-.pi-facebook:before {
+.pi-facebook-alt:before {
   content: "\f125";
 }
-.pi-instagram:before {
+.pi-facebook:before {
   content: "\f126";
 }
-.pi-linkedin:before {
+.pi-instagram:before {
   content: "\f127";
 }
-.pi-medicareful:before {
+.pi-linkedin:before {
   content: "\f128";
 }
-.pi-rimdev-circle:before {
+.pi-medicareful:before {
   content: "\f129";
 }
-.pi-rimdev:before {
+.pi-rimdev-circle:before {
   content: "\f12a";
 }
-.pi-ritter-circle:before {
+.pi-rimdev:before {
   content: "\f12b";
 }
-.pi-ritter:before {
+.pi-ritter-circle:before {
   content: "\f12c";
 }
-.pi-twitter:before {
+.pi-ritter:before {
   content: "\f12d";
 }
-.pi-youtube:before {
+.pi-twitter:before {
   content: "\f12e";
 }
-.pi-bank:before {
+.pi-youtube:before {
   content: "\f12f";
 }
-.pi-building:before {
+.pi-bank:before {
   content: "\f130";
 }
-.pi-city:before {
+.pi-building:before {
   content: "\f131";
 }
-.pi-hospital:before {
+.pi-city:before {
   content: "\f132";
 }
-.pi-house:before {
+.pi-hospital:before {
   content: "\f133";
 }
-.pi-chart-bar:before {
+.pi-house:before {
   content: "\f134";
 }
-.pi-chart-line-down:before {
+.pi-chart-bar:before {
   content: "\f135";
 }
-.pi-chart-line-up:before {
+.pi-chart-line-down:before {
   content: "\f136";
 }
-.pi-chart-pie:before {
+.pi-chart-line-up:before {
   content: "\f137";
 }
-.pi-ban:before {
+.pi-chart-pie:before {
   content: "\f138";
 }
-.pi-bell-multi:before {
+.pi-ban:before {
   content: "\f139";
 }
-.pi-bell:before {
+.pi-bell-multi:before {
   content: "\f13a";
 }
-.pi-check-circle:before {
+.pi-bell:before {
   content: "\f13b";
 }
-.pi-check-cirle-solid:before {
+.pi-check-circle:before {
   content: "\f13c";
 }
-.pi-check:before {
+.pi-check-cirle-solid:before {
   content: "\f13d";
 }
-.pi-circle-solid:before {
+.pi-check:before {
   content: "\f13e";
 }
-.pi-circle:before {
+.pi-circle-solid:before {
   content: "\f13f";
 }
-.pi-clipboard-file:before {
+.pi-circle:before {
   content: "\f140";
 }
-.pi-clipboard:before {
+.pi-clipboard-file:before {
   content: "\f141";
 }
-.pi-decision:before {
+.pi-clipboard:before {
   content: "\f142";
 }
-.pi-edit:before {
+.pi-decision:before {
   content: "\f143";
 }
-.pi-envelope-solid:before {
+.pi-edit:before {
   content: "\f144";
 }
-.pi-envelope:before {
+.pi-envelope-solid:before {
   content: "\f145";
 }
-.pi-filter:before {
+.pi-envelope:before {
   content: "\f146";
 }
-.pi-folder-open:before {
+.pi-filter:before {
   content: "\f147";
 }
-.pi-folder:before {
+.pi-folder-open:before {
   content: "\f148";
 }
-.pi-list-check:before {
+.pi-folder:before {
   content: "\f149";
 }
-.pi-list:before {
+.pi-list-check:before {
   content: "\f14a";
 }
-.pi-lock-open:before {
+.pi-list:before {
   content: "\f14b";
 }
-.pi-lock:before {
+.pi-lock-open:before {
   content: "\f14c";
 }
-.pi-menu:before {
+.pi-lock:before {
   content: "\f14d";
 }
-.pi-minus:before {
+.pi-menu:before {
   content: "\f14e";
 }
-.pi-mouse-pointer:before {
+.pi-minus:before {
   content: "\f14f";
 }
-.pi-note-solid:before {
+.pi-mouse-pointer:before {
   content: "\f150";
 }
-.pi-note:before {
+.pi-note-solid:before {
   content: "\f151";
 }
-.pi-paper-plane-solid:before {
+.pi-note:before {
   content: "\f152";
 }
-.pi-paper-plane:before {
+.pi-paper-plane-solid:before {
   content: "\f153";
 }
-.pi-pencil:before {
+.pi-paper-plane:before {
   content: "\f154";
 }
-.pi-plus-circle-solid:before {
+.pi-pencil:before {
   content: "\f155";
 }
-.pi-plus-circle:before {
+.pi-plus-circle-solid:before {
   content: "\f156";
 }
-.pi-plus:before {
+.pi-plus-circle:before {
   content: "\f157";
 }
-.pi-power-off:before {
+.pi-plus:before {
   content: "\f158";
 }
-.pi-power-on:before {
+.pi-power-off:before {
   content: "\f159";
 }
-.pi-search:before {
+.pi-power-on:before {
   content: "\f15a";
 }
-.pi-share:before {
+.pi-search:before {
   content: "\f15b";
 }
-.pi-signal-slash:before {
+.pi-share:before {
   content: "\f15c";
 }
-.pi-speech-bubble-multi:before {
+.pi-signal-slash:before {
   content: "\f15d";
 }
-.pi-speech-bubble:before {
+.pi-speech-bubble-multi:before {
   content: "\f15e";
 }
-.pi-suitcase-solid:before {
+.pi-speech-bubble:before {
   content: "\f15f";
 }
-.pi-suitecase:before {
+.pi-suitcase-solid:before {
   content: "\f160";
 }
-.pi-times-solid:before {
+.pi-suitecase:before {
   content: "\f161";
 }
-.pi-times:before {
+.pi-times-solid:before {
   content: "\f162";
 }
-.pi-touch:before {
+.pi-times:before {
   content: "\f163";
 }
-.pi-trash-solid:before {
+.pi-touch:before {
   content: "\f164";
 }
-.pi-trash:before {
+.pi-trash-solid:before {
   content: "\f165";
 }
-.pi-variable:before {
+.pi-trash:before {
   content: "\f166";
 }
-.pi-vertical-ellipsis:before {
+.pi-variable:before {
   content: "\f167";
 }
-.pi-window-new:before {
+.pi-vertical-ellipsis:before {
   content: "\f168";
 }
-.pi-attachment:before {
+.pi-window-new:before {
   content: "\f169";
 }
-.pi-copy:before {
+.pi-attachment:before {
   content: "\f16a";
 }
-.pi-file-add:before {
+.pi-copy:before {
   content: "\f16b";
 }
-.pi-file-award:before {
+.pi-file-add:before {
   content: "\f16c";
 }
-.pi-file-cabinet:before {
+.pi-file-award:before {
   content: "\f16d";
 }
-.pi-file-form:before {
+.pi-file-cabinet:before {
   content: "\f16e";
 }
-.pi-file-pdf:before {
+.pi-file-form:before {
   content: "\f16f";
 }
-.pi-file-sign:before {
+.pi-file-pdf:before {
   content: "\f170";
 }
-.pi-file-text-solid:before {
+.pi-file-sign:before {
   content: "\f171";
 }
-.pi-file-text:before {
+.pi-file-text-solid:before {
   content: "\f172";
 }
-.pi-image:before {
+.pi-file-text:before {
   content: "\f173";
 }
-.pi-link-external-small:before {
+.pi-image:before {
   content: "\f174";
 }
-.pi-link-external:before {
+.pi-link-external-small:before {
   content: "\f175";
 }
-.pi-link:before {
+.pi-link-external:before {
   content: "\f176";
 }
-.pi-map-marker:before {
+.pi-link:before {
   content: "\f177";
 }
-.pi-map:before {
+.pi-map-marker:before {
   content: "\f178";
 }
-.pi-pill-bottle-alt:before {
+.pi-map:before {
   content: "\f179";
 }
-.pi-pill-bottle-solid:before {
+.pi-pill-bottle-alt:before {
   content: "\f17a";
 }
-.pi-pill-bottle:before {
+.pi-pill-bottle-solid:before {
   content: "\f17b";
 }
-.pi-pills:before {
+.pi-pill-bottle:before {
   content: "\f17c";
 }
-.pi-rx:before {
+.pi-pills:before {
   content: "\f17d";
 }
-.pi-stethoscope:before {
+.pi-rx:before {
   content: "\f17e";
 }
-.pi-credit-card-back:before {
+.pi-stethoscope:before {
   content: "\f17f";
 }
-.pi-dollar:before {
+.pi-credit-card-back:before {
   content: "\f180";
 }
-.pi-asterisk:before {
+.pi-dollar:before {
   content: "\f181";
 }
-.pi-award:before {
+.pi-asterisk:before {
   content: "\f182";
 }
-.pi-binoculars:before {
+.pi-award:before {
   content: "\f183";
 }
-.pi-bolt:before {
+.pi-binoculars:before {
   content: "\f184";
 }
-.pi-book:before {
+.pi-bolt:before {
   content: "\f185";
 }
-.pi-books:before {
+.pi-book:before {
   content: "\f186";
 }
-.pi-bullhorn:before {
+.pi-books:before {
   content: "\f187";
 }
-.pi-calculator:before {
+.pi-bullhorn:before {
   content: "\f188";
 }
-.pi-calendar:before {
+.pi-calculator:before {
   content: "\f189";
 }
-.pi-clock:before {
+.pi-calendar:before {
   content: "\f18a";
 }
-.pi-cogs:before {
+.pi-clock:before {
   content: "\f18b";
 }
-.pi-dashboard:before {
+.pi-cogs:before {
   content: "\f18c";
 }
-.pi-flag:before {
+.pi-dashboard:before {
   content: "\f18d";
 }
-.pi-gavel:before {
+.pi-flag:before {
   content: "\f18e";
 }
-.pi-gear:before {
+.pi-gavel:before {
   content: "\f18f";
 }
-.pi-globe:before {
+.pi-gear:before {
   content: "\f190";
 }
-.pi-handshake:before {
+.pi-globe:before {
   content: "\f191";
 }
-.pi-headset:before {
+.pi-handshake:before {
   content: "\f192";
 }
-.pi-keyboard-key:before {
+.pi-headset:before {
   content: "\f193";
 }
-.pi-keyboard:before {
+.pi-key:before {
   content: "\f194";
 }
-.pi-light-bulb-off:before {
+.pi-keyboard-key:before {
   content: "\f195";
 }
-.pi-light-bulb-on:before {
+.pi-keyboard:before {
   content: "\f196";
 }
-.pi-magnet:before {
+.pi-light-bulb-off:before {
   content: "\f197";
 }
-.pi-paper-clip:before {
+.pi-light-bulb-on:before {
   content: "\f198";
 }
-.pi-phone-mobile:before {
+.pi-magnet:before {
   content: "\f199";
 }
-.pi-phone:before {
+.pi-paper-clip:before {
   content: "\f19a";
 }
-.pi-plug:before {
+.pi-phone-mobile:before {
   content: "\f19b";
 }
-.pi-podcast:before {
+.pi-phone:before {
   content: "\f19c";
 }
-.pi-puzzle-piece:before {
+.pi-plug:before {
   content: "\f19d";
 }
-.pi-quill:before {
+.pi-podcast:before {
   content: "\f19e";
 }
-.pi-rocket:before {
+.pi-puzzle-piece:before {
   content: "\f19f";
 }
-.pi-shield:before {
+.pi-quill:before {
   content: "\f1a0";
 }
-.pi-star-half:before {
+.pi-rocket:before {
   content: "\f1a1";
 }
-.pi-star:before {
+.pi-shield:before {
   content: "\f1a2";
 }
-.pi-tag:before {
+.pi-star-half:before {
   content: "\f1a3";
 }
-.pi-ticket:before {
+.pi-star:before {
   content: "\f1a4";
 }
-.pi-trophy:before {
+.pi-tag:before {
   content: "\f1a5";
 }
-.pi-badge-alt:before {
+.pi-ticket:before {
   content: "\f1a6";
 }
-.pi-badge:before {
+.pi-trophy:before {
   content: "\f1a7";
 }
-.pi-doctor:before {
+.pi-badge-alt:before {
   content: "\f1a8";
 }
-.pi-user-building:before {
+.pi-badge:before {
   content: "\f1a9";
 }
-.pi-user-circle:before {
+.pi-doctor:before {
   content: "\f1aa";
 }
-.pi-user-solid:before {
+.pi-user-building:before {
   content: "\f1ab";
 }
-.pi-user-tie:before {
+.pi-user-circle:before {
   content: "\f1ac";
 }
-.pi-user:before {
+.pi-user-solid:before {
   content: "\f1ad";
 }
-.pi-users:before {
+.pi-user-tie:before {
   content: "\f1ae";
 }
-.pi-collapse:before {
+.pi-user:before {
   content: "\f1af";
 }
-.pi-full-screen:before {
+.pi-users:before {
   content: "\f1b0";
 }
-.pi-pause:before {
+.pi-collapse:before {
   content: "\f1b1";
 }
-.pi-play-circle:before {
+.pi-full-screen:before {
   content: "\f1b2";
 }
-.pi-play-monitor:before {
+.pi-pause:before {
   content: "\f1b3";
 }
-.pi-play:before {
+.pi-play-circle:before {
   content: "\f1b4";
+}
+.pi-play-monitor:before {
+  content: "\f1b5";
+}
+.pi-play:before {
+  content: "\f1b6";
 }
