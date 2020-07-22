@@ -1162,7 +1162,6 @@ legend {
     select {
       border-color: map.get(variables.$greyscale, 'light' );
       border-radius: map.get(config.$radius, 'button' );
-      // padding: map.get(variables.$spacers, 1 ) variables.$spacer * .75;
     }
 
     .has-icon {
