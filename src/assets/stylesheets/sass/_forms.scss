@@ -802,6 +802,7 @@ legend {
         i {
           bottom: 0;
           color: map.get(config.$brand-colors, 'med-blue' );
+          font-size: map.get(variables.$font-percentage, 'md');
           pointer-events: none;
           position: absolute;
           transform: translateY(-50%);
