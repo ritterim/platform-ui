@@ -99,6 +99,37 @@
 // Styleguide Forms.Border
 
 
+// Form Rounded Border
+//
+// This modifier class adds a full border with a `5rem` radius to each input within the form. Just add `pui-form--rounded`
+//
+// Markup:
+// <form action="" class="pui-form pui-form--rounded block-container tablet-up-3 laptop-up-4 desktop-up-6 blocks mb-3 p-2">
+//   <div class="block">
+//     <label for="first-name" class="pui-form__field">First Name
+//       <input id="first-name" type="text" placeholder="First Name">
+//     </label>
+//   </div>
+//   <div class="block">
+//     <label for="last-name" class="pui-form__field">Last Name
+//       <input id="last-name" type="text" placeholder="Last Name">
+//     </label>
+//   </div>
+//   <div class="block">
+//     <label for="dob" class="pui-form__field">Birthday
+//       <input id="dob" type="date">
+//     </label>
+//   </div>
+//   <div class="block">
+//     <label for="zipcode" class="pui-form__field">ZIP Code
+//       <input id="zipcode" type="tel" placeholder="e.g.90012" pattern="^\d{5,6}(?:[-\s]\d{4})?$">
+//     </label>
+//   </div>
+// </form>
+//
+// Styleguide Forms.BorderRounded
+
+
 // Time Icon
 //
 // The select wrapper displays an arrow down icon. We can change that by adding the class `time`
