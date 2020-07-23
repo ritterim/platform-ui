@@ -99,6 +99,36 @@
 // Styleguide Forms.Border
 
 
+// Form Rounded Border
+//
+// This modifier class adds a full border with a `5rem` radius to each input within the form. Just add `pui-form--rounded`.
+// If you want to give the label an indented look, we suggest moving the `pui-form__field` class to a wrapping div containing 
+// both the `label` and `input` as siblings. This way, you can add something like `ml-2` to the label to align it closer to 
+// the padding of the rounded input. Checkout the markup below.
+//
+// Markup:
+// <form action="" class="pui-form pui-form--rounded block-container tablet-up-3 laptop-up-4 desktop-up-6 blocks mb-3 p-2">
+//   <div class="block pui-form__field">
+//     <label class="ml-2" for="first-name">First Name</label>
+//     <input id="first-name" type="text" placeholder="First Name">
+//   </div>
+//   <div class="block pui-form__field">
+//     <label class="ml-2" for="last-name">Last Name</label>
+//     <input id="last-name" type="text" placeholder="Last Name">
+//   </div>
+//   <div class="block pui-form__field">
+//     <label class="ml-2" for="dob">Birthday</label>
+//     <input id="dob" type="date">
+//   </div>
+//   <div class="block pui-form__field">
+//     <label class="ml-2" for="zipcode">ZIP Code</label>
+//     <input id="zipcode" type="tel" placeholder="e.g.90012" pattern="^\d{5,6}(?:[-\s]\d{4})?$">
+//   </div>
+// </form>
+//
+// Styleguide Forms.BorderRounded
+
+
 // Time Icon
 //
 // The select wrapper displays an arrow down icon. We can change that by adding the class `time`
@@ -659,6 +689,10 @@ legend {
     input[type="password"],
     input[type="number"],
     input[type="time"],
+    input[type="url"],
+    input[type="datetime-local"],
+    input[type="month"],
+    input[type="week"],
     textarea,
     select {
       border-bottom-color: map.get(variables.$greyscale, 'white' );
@@ -715,6 +749,10 @@ legend {
     input[type="password"],
     input[type="number"],
     input[type="time"],
+    input[type="url"],
+    input[type="datetime-local"],
+    input[type="month"],
+    input[type="week"],
     textarea,
     select {
       border-color: map.get(variables.$greyscale, 'light' );
@@ -734,6 +772,10 @@ legend {
     input[type="password"],
     input[type="number"],
     input[type="time"],
+    input[type="url"],
+    input[type="datetime-local"],
+    input[type="month"],
+    input[type="week"],
     textarea,
     #{ $self }__select-wrapper,
     #{ $self }__option-group {
@@ -742,25 +784,57 @@ legend {
     }
 
     &.has-icon {
-      padding-left: variables.$spacer;
       position: relative;
 
+      input[type="text"],
+      input[type="search"],
+      input[type="date"],
+      input[type="email"],
+      input[type="textarea"],
+      input[type="tel"],
+      input[type="password"],
+      input[type="number"],
+      input[type="time"],
+      textarea,
+      select {
+        padding-left: map.get(variables.$spacers, 4);
+      }
+
       i {
-        bottom: .25rem;
+        bottom: 0;
         font-size: map.get(variables.$font-percentage, 'md');
-        left: 0;
+        left: .5rem;
+        line-height: 1;
         position: absolute;
+        transform: translateY(-50%);
       }
 
       &--right {
         position: relative;
 
         i {
-          bottom: .25rem;
+          bottom: 0;
           color: map.get(config.$brand-colors, 'med-blue' );
+          font-size: map.get(variables.$font-percentage, 'md');
+          line-height: 1;
           pointer-events: none;
           position: absolute;
+          transform: translateY(-50%);
           right: .5rem;
+        }
+
+        input[type="text"],
+        input[type="search"],
+        input[type="date"],
+        input[type="email"],
+        input[type="textarea"],
+        input[type="tel"],
+        input[type="password"],
+        input[type="number"],
+        input[type="time"],
+        textarea,
+        select {
+          padding-right: map.get(variables.$spacers, 4);
         }
 
         input[type="date"],
@@ -1084,7 +1158,48 @@ legend {
     &::-webkit-clear-button {
       margin-right: -.75rem;
     }
+  }
 
+
+  // .pui-form--rounded
+  &--rounded {
+
+    input[type="text"],
+    input[type="search"],
+    input[type="date"],
+    input[type="email"],
+    input[type="textarea"],
+    input[type="tel"],
+    input[type="password"],
+    input[type="number"],
+    input[type="time"],
+    input[type="url"],
+    input[type="datetime-local"],
+    input[type="month"],
+    input[type="week"],
+    textarea,
+    select {
+      border-color: map.get(variables.$greyscale, 'light' );
+      border-radius: map.get(config.$radius, 'button' );
+    }
+
+    .has-icon {
+
+      i {
+        left: .75rem;
+      }
+    }
+
+    .has-icon--right {
+
+      i {
+        right: .75rem;
+      }
+    }
+
+    .pui-form__select-wrapper:after {
+      right: .7rem;
+    }
   }
 }
 
@@ -1185,12 +1300,40 @@ legend {
 // </form>
 // 
 // Styleguide Forms.Toggle
+
+
+// Toggle Option Disabled
+// 
+// If the toggle needs to be disabled, simply add the attribute `disabled` to a `fieldset` wrapping the `pui-toggle`. See the markup below.
+// 
+// Markup:
+// <form class="pui-form">
+//   <div class="block-container">
+//     <fieldset class="pui-form__field block-4" disabled>
+//       <legend>Are You</legend>
+//       <div class="pui-toggle">
+//         <input id="Tall-2" type="radio" checked name="height">
+//         <label for="Tall-2">
+//           <i class='pi-check pi-heavy'></i> Tall
+//         </label>
+//         <input id="Short-2" type="radio" name="height">
+//         <label for="Short-2">
+//           <i class='pi-check pi-heavy'></i> Short
+//         </label>
+//       </div>
+//     </div>
+//   </fieldset>
+// </form>
+// 
+// Styleguide Forms.ToggleDisabled
+
 .pui-toggle {
-  border: 1px solid color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold * 2));
+  border: 1px solid map.get(variables.$greyscale, 'light' );
   border-radius: map.get(config.$radius, 'button');
   display: flex;
   justify-content: space-between;
   margin-top: map.get(variables.$spacers, 2);
+  min-height: 2.2rem;
   padding: map.get(variables.$spacers, 1);
 
   &__content {
@@ -1220,10 +1363,9 @@ legend {
       color: map.get(variables.$greyscale, 'base');
       display: flex;
       flex: 1 1 auto;
-      height: 100%;
       justify-content: center;
       margin: 0;
-      padding: map.get(variables.$spacers, 1) map.get(variables.$spacers, 2);
+      padding: 0 map.get(variables.$spacers, 2);
       padding-left: variables.$spacer * 1.3;
       position: relative;
       z-index: 10;
@@ -1249,6 +1391,32 @@ legend {
         opacity: 1;
         visibility: visible;
       }
+    }
+  }
+}
+
+fieldset:disabled {
+  cursor: not-allowed;
+
+  legend {
+    cursor: default;
+  }
+  
+  .pui-toggle {
+    pointer-events: none;
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+
+    &:checked + label {
+      background-color: color.adjust(map.get(variables.$greyscale, 'light' ), $lightness: math.percentage(config.$hue-threshold)) !important;
+      border-color: color.adjust(map.get(variables.$greyscale, 'light' ), $lightness: math.percentage(config.$hue-threshold)) !important;
+      color: map.get(variables.$greyscale, 'white') !important;
+    }
+
+    + label {
+      color: color.adjust(map.get(variables.$greyscale, 'light' ), $lightness: math.percentage(config.$hue-threshold)) !important;
     }
   }
 }

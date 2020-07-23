@@ -250,7 +250,7 @@
   &.active,
   &:hover {
     background-color: config.$button-primary-hover;
-    border-color: inherit;
+    border-color: initial;
     color: config.$button-secondary-color;
   }
 

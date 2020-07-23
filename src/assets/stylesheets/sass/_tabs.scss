@@ -129,6 +129,7 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
 
   input[type=radio] {
     appearance: none;
+    opacity: 0;
     position: absolute;
 
     &:checked {
