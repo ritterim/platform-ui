@@ -792,6 +792,7 @@ legend {
         bottom: 0;
         font-size: map.get(variables.$font-percentage, 'md');
         left: .5rem;
+        line-height: 1;
         position: absolute;
         transform: translateY(-50%);
       }
@@ -803,6 +804,7 @@ legend {
           bottom: 0;
           color: map.get(config.$brand-colors, 'med-blue' );
           font-size: map.get(variables.$font-percentage, 'md');
+          line-height: 1;
           pointer-events: none;
           position: absolute;
           transform: translateY(-50%);
