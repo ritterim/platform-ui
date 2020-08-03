@@ -795,6 +795,10 @@ legend {
       input[type="password"],
       input[type="number"],
       input[type="time"],
+      input[type="url"],
+      input[type="datetime-local"],
+      input[type="month"],
+      input[type="week"],
       textarea,
       select {
         padding-left: map.get(variables.$spacers, 4);
@@ -832,6 +836,10 @@ legend {
         input[type="password"],
         input[type="number"],
         input[type="time"],
+        input[type="url"],
+        input[type="datetime-local"],
+        input[type="month"],
+        input[type="week"],
         textarea,
         select {
           padding-right: map.get(variables.$spacers, 4);
@@ -869,6 +877,10 @@ legend {
       input[type="password"],
       input[type="number"],
       input[type="time"],
+      input[type="url"],
+      input[type="datetime-local"],
+      input[type="month"],
+      input[type="week"],
       textarea,
       select {
         background-color: $error-background;
@@ -1056,6 +1068,10 @@ legend {
   input[type="password"],
   input[type="number"],
   input[type="time"],
+  input[type="url"],
+  input[type="datetime-local"],
+  input[type="month"],
+  input[type="week"],
   textarea,
   select {
     background-color: transparent;
@@ -1087,7 +1103,11 @@ legend {
   input[type="textarea"],
   input[type="tel"],
   input[type="password"],
-  input[type="number"] {
+  input[type="number"],
+  input[type="url"],
+  input[type="datetime-local"],
+  input[type="month"],
+  input[type="week"] {
 
     &.readonly {
       transition: config.$transitions;
