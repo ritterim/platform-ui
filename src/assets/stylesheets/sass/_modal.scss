@@ -105,6 +105,38 @@
 //
 // Styleguide Components.modal
 
+// Dialog Modal
+// 
+// To make a dialog box using the pui-modal, remove `pui-modal__header` from the modal. The header is typically reserved for
+// a modal title as well as a close button. In the case of most dialogs, the options you choose will close the modal so the 
+// header can seem unecessarry. See the code example below.
+// 
+// Markup:
+// <div id="dialog" class="pui-modal pui-modal--small pui-modal--centered pui-modal--closed" tabindex="-1">
+//   <div class="pui-modal__inner animated slideInUp faster">
+//     <div class="pui-modal__content">
+//       <p class="text--size-lg text--center">Are you sure you want to select these options?</p>
+//       <div class="block-container blocks p-3"> 
+//         <div class="block flex flex--justify-center">
+//           <button class="button mx-2 pui-modal__close" data-modal="dialog">
+//             No
+//           </button>
+//           <button aria-label="" class="button button--post mx-2 pui-modal__close" data-modal="dialog">
+//             Yes
+//           </button>
+//         </div>
+//       </div>
+//     </div>
+//   </div>
+// </div>
+// <div class="block-container mobile-up-1 tablet-up-4 desktop-up-5 blocks px-2 mb-3">
+//     <div class="block">
+//         <button class="button button--post button--lg pui-modal__open" data-modal="dialog">Fire Dialog</button>
+//     </div>
+// </div>
+// 
+// Styleguide Components.modaldialog
+
 .pui-modal {
   $header-height: 6rem;
 
