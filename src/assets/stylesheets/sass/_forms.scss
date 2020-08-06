@@ -1077,6 +1077,7 @@ legend {
     background-color: transparent;
     border: 1px solid transparent;
     border-bottom-color: map.get(variables.$greyscale, 'light' );
+    border-radius: 0; // specify no border-radius to override mobile user agent styles
     color: map.get(variables.$greyscale, 'base' );
     display: block;
     font-family: map.get(config.$fonts, 'base');
@@ -1173,7 +1174,10 @@ legend {
   }
 
   input[type="date"],
-  input[type="time"] {
+  input[type="time"],
+  input[type="datetime-local"] {
+    appearance: textfield;
+    display: inline-flex;
 
     &::-webkit-clear-button {
       margin-right: -.75rem;
