@@ -328,7 +328,7 @@
     width: 100%;
 
     &--full {
-      width: 100% !important;
+      width: 100%;
     }
 
     &--fill {
@@ -336,9 +336,10 @@
     }
 
     &--shrink {
-      width: auto !important;
+      width: auto;
     }
   }
+  
   @each $key, $val in variables.$pui-columns {
     .block-#{$val} {
       width: calc(#{$key} * 100%);
@@ -353,26 +354,6 @@
     $mapped__keys : map.keys(config.$breakpoints);
     // get index of the current name passed
     $index : (index($mapped__keys, $breakpoint));
-
-    // on the block
-    > .#{$breakpoint}-up {
-      @if $index > 1 {
-        @include mixins.breakpoint(#{$name}, min) {
-
-          &--full {
-            width: 100% !important;
-          }
-
-          &--fill {
-            flex-grow: 1;
-          }
-
-          &--shrink {
-            width: auto !important;
-          }
-        }
-      }
-    }
 
     @each $key, $val in variables.$pui-columns {
       // on the block
@@ -400,6 +381,65 @@
             &[class*="px"] {
               padding: 0 !important;
             }
+          }
+        }
+      }
+    }
+
+    // on the block
+    > .#{$breakpoint}-up {
+      @if $index > 1 {
+        @include mixins.breakpoint(#{$name}, min) {
+
+          &--full {
+            width: 100%;
+          }
+
+          &--fill {
+            flex-grow: 1;
+          }
+
+          &--shrink {
+            width: auto;
+          }
+        }
+      }
+    }
+  }
+
+  &[class*="-up-"] {
+  
+    @each $breakpoint, $name in config.$breakpoints {
+    $mapped__keys : map.keys(config.$breakpoints);
+    // get index of the current name passed
+    $index : (index($mapped__keys, $breakpoint));
+  
+      > .block {
+
+        &--full {
+          width: 100%;
+        }
+
+        &--fill {
+          flex-grow: 1;
+        }
+
+        &--shrink {
+          width: auto;
+        }
+
+        @include mixins.breakpoint(#{$name}, min) {
+  
+          &.#{$breakpoint}-up--full {
+            width: 100%;
+          }
+  
+          &.#{$breakpoint}-up--fill {
+            flex-grow: 1;
+          }
+  
+          &.#{$breakpoint}-up--shrink {
+            width: auto;
           }
         }
       }
