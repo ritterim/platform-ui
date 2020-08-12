@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Licenses staff agent view</title>
+
+  <link rel="stylesheet" href="/src/assets/stylesheets/platform-ui.min.css">
+  <style>
+    /*
+     *  This css will need to live in the platform along with custom
+     *  mobile menu css.
+     */
+    .double-menu .site-header--fixed {
+      height: calc(var(--pui-menu-height) * 2) !important;
+    }
+
+    .double-menu .site-header--fixed+.header-fixed {
+      margin-top: calc(var(--pui-menu-height) * 2) !important;
+    }
+
+    /* specifically targets notes */
+    .block.pos-fix.hide-laptop-down {
+      right: 2rem;
+    }
+
+    .drop-target {
+      border: 0.3rem dashed var(--pui-light-mid);
+      color: var(--pui-light);
+      font-weight: bold;
+      text-align: center;
+      margin: 1rem 0;
+    }
+  </style>
+
+</head>
+
+<body class="flex flex--column double-menu">
+  <header class="site-header site-header--fixed">
+    <div class="site-menu primary inverted site-menu-wrapper">
+      <div class="block-container background-navy w-100">
+        <div class="block block-8 lg-tablet-up-4 lg-tablet-up--fill flex">
+          <a href="/demo-pages/submissions-staff-agent-details.html" class="site-menu__item">
+            <span class="card__header-icon pill--circle-medium background-purple text-white mr-2">
+              D
+            </span>
+            <span class="text--size-lg hide-tablet-down">
+              Hello Dev
+            </span>
+          </a>
+          <div class="site-menu__item search">
+            <form role="search" aria-label="CRM" _lpchecked="1" class="w-100">
+              <div class="flex flex--align-center">
+                <label for="search-input" class="sr-only">Search</label>
+                <input type="text" id="search-input" placeholder="Type to search..."
+                  class="placeholder--light text-white">
+                <i aria-hidden="true" class="pi-search"></i>
+              </div>
+            </form>
+          </div>
+        </div>
+        <button
+          class="site-menu-mobile-action button--plain text-white hide-lg-tablet-up pos-abs pin-right mr-2 pin-center-top">
+          <span class="sr-only">Toggle Navigation</span>
+          <i aria-hidden="true" focusable="false" class="pi-menu pi-xl"></i>
+        </button>
+        <nav class="block block--shrink site-menu primary inverted">
+          <div class="site-menu__item dropdown p-0">
+            <a href="#" class="dropdown__trigger p-3">
+              Organizations <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+            </a>
+            <ul class="dropdown__content pin-right post-list">
+              <li class="post-item m-0 p-0">
+                <a href="/admin/agencies" class="flex p-3"><i class="users icon"></i>
+                  Agencies
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/businesses" class="flex p-3"><i class="business-icon icon"></i>
+                  Businesses
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/carriers" class="flex p-3"><i class="carrier-icon icon"></i>
+                  Carriers
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="site-menu__item dropdown p-0">
+            <a href="#" class="dropdown__trigger p-3">
+              People <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+            </a>
+            <ul class="dropdown__content pin-right post-list">
+              <li class="post-item m-0 p-0">
+                <a href="/admin/agents" class="flex p-3"><i class="agent-icon icon"></i>
+                  Agents
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/associates" class="flex p-3"><i class="associate-icon icon"></i>
+                  Associates
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/users" class="flex p-3"><i class="user-icon icon"></i>
+                  Users
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/consumers" class="flex p-3"><i class="user-icon icon"></i>
+                  Consumers
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/agents/map?term=Harrisburg%2C%20PA%2017110" class="flex p-3">
+                  <i class="map icon"></i>
+                  Map Agents
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="site-menu__item dropdown p-0">
+            <a href="#" class="dropdown__trigger p-3">
+              Flow <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+            </a>
+            <ul class="dropdown__content pin-right post-list">
+              <li class="post-item m-0 p-0">
+                <a href="/admin/flow/agents" class="flex p-3"><i class="id badge icon"></i>
+                  Agents
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/flow/agencies" class="flex p-3"><i class="users icon"></i>
+                  Agencies
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/flow/contracts" class="flex p-3"><i class="open folder icon"></i>
+                  Contracts
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/flow/campaigns" class="flex p-3" style=""><i class="address-card icon"></i>
+                  Campaigns
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/flow/submissions" class="flex p-3" style=""><i class="file icon"></i>
+                  Submissions
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/flow/enrollments" class="flex p-3" style=""><i class="certificate icon"></i>
+                  Enrollments
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/flow/payment-methods" class="flex p-3" style=""><i class="money bill icon"></i>
+                  Payment Methods
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/flow/crm" class="flex p-3" style=""><i class="briefcase icon"></i>
+                  CRM
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="site-menu__item dropdown p-0">
+            <a href="#" class="dropdown__trigger p-3">
+              <span class="sr-only">RIMDev</span>
+              <span class="card__header-icon pill--circle-medium background-white text-navy">
+                <i class="pi-rimdev" aria-hidden="true"></i>
+              </span>
+              <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+            </a>
+            <ul class="dropdown__content pin-right post-list">
+              <li class="post-item m-0 p-0">
+                <a href="/admin/rimdev" class="flex p-3">
+                  Permissions
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/form-builder" class="flex p-3">
+                  Form Builder
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/_features" class="flex p-3">
+                  Feature Flags
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/_self" class="flex p-3">
+                  Claims Diagnostics
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="site-menu__item dropdown p-0">
+            <a href="#" class="dropdown__trigger p-3">
+              Recent <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+            </a>
+            <ul class="dropdown__content pin-right post-list dropdown">
+              <li class="post-item p-0 m-0">
+                <a href="/admin/agents/c057f20a-fbc8-403c-9777-9e0701310cf8/edit" title="Last viewed on 5/6/2020"
+                  class="flex p-3"><i class="grey icon id badge"></i> <i class="yellow vertical ellipsis icon"></i>
+                  Gregory Gudis
+                </a>
+              </li>
+              <!---->
+              <div class="left menu">
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/agents/c057f20a-fbc8-403c-9777-9e0701310cf8/contracts?id=263135" class="flex p-3">
+                    Contract for Accendo Insurance Company
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/agents/c057f20a-fbc8-403c-9777-9e0701310cf8/edit?ui=medicareful" class="flex p-3">
+                    Medicareful
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0 border-b border--color-lighter">
+                  <a href="/admin/agents/c057f20a-fbc8-403c-9777-9e0701310cf8/edit?ui=payments" class="flex p-3">
+                    Payments
+                  </a>
+                </li>
+              </div>
+              <li class="post-item p-0 m-0">
+                <a href="/admin/agencies/62f89954-d3ea-4d96-96d7-c98bbd2470ec/edit" title="Last viewed on 4/21/2020"
+                  class="flex p-3"><i class="grey icon users"></i> <i class="yellow vertical ellipsis icon"></i>
+                  Ritter Insurance Marketing
+                </a>
+              </li>
+              <!---->
+              <div class="left menu">
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/agencies/62f89954-d3ea-4d96-96d7-c98bbd2470ec/contracts?id=136337" class="flex p-3">
+                    Contract for Aetna-Referral
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/agencies/62f89954-d3ea-4d96-96d7-c98bbd2470ec/edit?ui=profile" class="flex p-3">
+                    Profile
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0 border-b border--color-lighter">
+                  <a href="/admin/agencies/62f89954-d3ea-4d96-96d7-c98bbd2470ec/edit?ui=contact" class="flex p-3">
+                    Contact
+                  </a>
+                </li>
+              </div>
+              <!---->
+              <li class="post-item m-0 p-0">
+                <a class="flex p-3">
+                  <i class="red icon close"></i> Clear Recent Items
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="site-menu site-menu-wrapper">
+      <div class="block-container background-white flex--nowrap w-100">
+        <div class="block block-4 lg-tablet-up--fill ">
+          <div class="w-100 dropdown h-100 p-0">
+            <a href="#" class="dropdown__trigger p-3 w-100">
+              <span class="card__header-icon pill--circle-medium background-salmon text-white mr-2">
+                GG
+              </span>
+              <div class="text--size-lg hide-tablet-down">
+                Greg Gudis
+              </div>
+              <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+            </a>
+            <div class="dropdown__content pin-left">
+              <a href="#" class="flex p-3">
+                <div class="pill background-olive">
+                  Active
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <button
+          class="site-menu-mobile-action button--plain text-white hide-lg-tablet-up pos-abs pin-right mr-2 pin-center-top">
+          <span class="sr-only">Toggle Navigation</span>
+          <i aria-hidden="true" focusable="false" class="pi-menu pi-xl text-navy"></i>
+        </button>
+        <nav class="site-menu site-menu block block--shrink w-100 flex--justify-between">
+          <a href="#" class="site-menu__item">
+            Contracts
+          </a>
+          <a href="#" class="site-menu__item">
+            Submissions
+          </a>
+          <a href="#" class="site-menu__item">
+            Hierarchy
+          </a>
+          <a href="#" class="site-menu__item">
+            Memberships
+          </a>
+          <a href="#" class="site-menu__item active">
+            Licenses
+          </a>
+          <a href="#" class="site-menu__item">
+            Reports
+          </a>
+          <a href="#" class="site-menu__item pui-drawer__open" data-drawer="touches">
+            <i class="pi-phone"></i>
+          </a>
+          <a href="#" class="site-menu__item">
+            <i class="pi-file-cabinet"></i>
+            <div class="ml-1 pill pill--circle text-navy">
+              33
+            </div>
+          </a>
+          <a href="#" class="site-menu__item">
+            <i class="pi-gavel"></i>
+            <div class="pill pill--split text-white background-navy">
+              <div class="pill__content background-salmon">5</div>
+              <div class="pill__content background-olive">2</div>
+              <div class="pill__content background-skyblue">13</div>
+            </div>
+          </a>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <main class="header-fixed background-light-mid flex--grow py-4 px-5">
+    <div class="block-container blocks px-3 mb-4">
+      <div class="block laptop-up-9">
+        <div class="pui-tabs">
+          <input type="radio" id="tab-input-a" name="tabs" checked>
+          <label for="tab-input-a" class="pui-tab flex flex--justify-between">
+            Active
+            <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
+          </label>
+          <div class="pui-tab-panel p-4">
+            <div class="block-container flex--justify-between">
+              <div class="block block-6 mb-3">
+                Showing 100 out of 333
+                <button title="Load more" aria-label="Load more" class="button button--secondary ml-2">
+                  <i aria-hidden="true" class="pi-sync"></i>
+                </button>
+              </div>
+              <div class="block block-6 flex flex--justify-end flex--align-center mb-3">
+                <button data-button-text="Refresh NIPR" aria-controls="refresh-nipr" aria-label="Refresh NIPR" class="button button--secondary mr-2">
+                  <i aria-hidden="true" class="pi-redo"></i>
+                </button>
+                <button data-modal="large-modal" class="button pui-modal__open">
+                  Add
+                  <i aria-hidden="true" class="pi-plus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="pui-accordion overflow-hidden">
+              <div class="block-container flex--justify-between pui-accordion__header pointer px-2" tabindex="0">
+                <div class="block block-4 tablet-up-3 flex flex--align-center p-2">
+                  <div class="text-med-blue">
+                    <div class="pez pressed" aria-label="Pennsylvania">PA</div>
+                    <i class="pi-house text--size-sm mx-1"></i>
+                  </div>
+                </div>
+                <div class="block block-4 tablet-up-2 p-2">
+                  <div><strong>License No.</strong></div>
+                  <div>8783728</div>
+                </div>
+                <div class="block block-4 tablet-up-2 p-2">
+                  <div><strong>Issued</strong></div>
+                  <div>03/10/2014</div>
+                </div>
+                <div class="block block-4 tablet-up-2 p-2">
+                  <div><strong>Expires</strong><i class="pi-edit mx-1"></i></div>
+                  <div>03/10/2022</div>
+                </div>
+                <div class="block block-4 tablet-up-1 p-2">
+                  <div><strong>LOA</strong></div>
+                  <div>1</div>
+                </div>
+                <div class="block block-4 tablet-up-2 p-2 flex flex--justify-end flex--align-start">
+                  <div class="icon-menu">
+                    <div class="icon-menu__item">
+                      <button aria-label="Delete submission" title="Delete submission" class="icon-menu__action button--plain text-negative--hover">
+                        <i aria-hidden="true" class="pi-trash"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="pui-accordion__content p-2">
+                <h4>Lines of Authority</h4>
+                <table class="pui-table pui-table--no-hover">
+                  <thead>
+                    <tr>
+                      <th>Issued</th>
+                      <th>Line</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td data-label="Issued">
+                        3/12/2012
+                      </td>
+                      <td data-label="Line">
+                        Life
+                      </td>
+                    </tr>
+                    <tr>
+                      <td data-label="Issued">
+                        5/03/2015
+                      </td>
+                      <td data-label="Line">
+                        Accident and Health
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="pui-accordion overflow-hidden">
+              <div class="block-container flex--justify-between pui-accordion__header pointer px-2" tabindex="0">
+                <div class="block block-4 tablet-up-3 flex flex--align-center p-2">
+                  <div class="text-med-blue">
+                    <div class="pez pressed" aria-label="New Jersey">NJ</div>
+                  </div>
+                </div>
+                <div class="block block-4 tablet-up-2 p-2">
+                  <div><strong>License No.</strong></div>
+                  <div>252433</div>
+                </div>
+                <div class="block block-4 tablet-up-2 p-2">
+                  <div><strong>Issued</strong></div>
+                  <div>03/10/2014</div>
+                </div>
+                <div class="block block-4 tablet-up-2 p-2">
+                  <div><strong>Expires</strong><i class="pi-edit mx-1"></i></div>
+                  <div><i class="pi-ban"></i></div>
+                </div>
+                <div class="block block-4 tablet-up-2 p-2">
+                  <div><strong>LOA</strong></div>
+                  <div>1</div>
+                </div>
+                <div class="block block-4 tablet-up-1 p-2 flex flex--justify-end flex--align-start">
+                  <div class="icon-menu">
+                    <div class="icon-menu__item">
+                      <button aria-label="Delete submission" title="Delete submission" class="icon-menu__action button--plain text-negative--hover">
+                        <i aria-hidden="true" class="pi-trash"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="pui-accordion__content p-2">
+                <h4>Lines of Authority</h4>
+                <table class="pui-table pui-table--no-hover">
+                  <thead>
+                    <tr>
+                      <th>Issued</th>
+                      <th>Line</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td data-label="Issued">
+                        3/12/2012
+                      </td>
+                      <td data-label="Line">
+                        Life
+                      </td>
+                    </tr>
+                    <tr>
+                      <td data-label="Issued">
+                        5/03/2015
+                      </td>
+                      <td data-label="Line">
+                        Accident & Health
+                      </td>
+                    </tr>
+                    <tr>
+                      <td data-label="Issued">
+                        5/03/2015
+                      </td>
+                      <td data-label="Line">
+                        Property & Allied Lines
+                      </td>
+                    </tr>
+                    <tr>
+                      <td data-label="Issued">
+                        5/03/2015
+                      </td>
+                      <td data-label="Line">
+                        Life & Fixed Annuities
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="pui-accordion overflow-hidden">
+              <div class="block-container flex--justify-between pui-accordion__header pointer px-2" tabindex="0">
+                <div class="block block-4 tablet-up-3 flex flex--align-center p-2">
+                  <div class="text-med-blue">
+                    <div class="pez pressed" aria-label="Michigan">MI</div>
+                  </div>
+                </div>
+                <div class="block block-4 tablet-up-2 p-2">
+                  <div><strong>License No.</strong></div>
+                  <div>8783728</div>
+                </div>
+                <div class="block block-4 tablet-up-2 p-2">
+                  <div><strong>Issued</strong></div>
+                  <div>03/10/2014</div>
+                </div>
+                <div class="block block-4 tablet-up-2 p-2">
+                  <div><strong>Expires</strong><i class="pi-edit mx-1"></i></div>
+                  <div>03/10/2022</div>
+                </div>
+                <div class="block block-4 tablet-up-2 p-2">
+                  <div><strong>LOA</strong></div>
+                  <div>2</div>
+                </div>
+                <div class="block block-4 tablet-up-1 p-2 flex flex--justify-end flex--align-start">
+                  <div class="icon-menu">
+                    <div class="icon-menu__item">
+                      <button aria-label="Delete submission" title="Delete submission" class="icon-menu__action button--plain text-negative--hover">
+                        <i aria-hidden="true" class="pi-trash"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="pui-accordion__content p-2">
+                <h4>Lines of Authority</h4>
+                <table class="pui-table pui-table--no-hover">
+                  <thead>
+                    <tr>
+                      <th>Issued</th>
+                      <th>Line</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td data-label="Issued">
+                        3/12/2012
+                      </td>
+                      <td data-label="Line">
+                        Life
+                      </td>
+                    </tr>
+                    <tr>
+                      <td data-label="Issued">
+                        5/03/2015
+                      </td>
+                      <td data-label="Line">
+                        Accident and Health
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <input type="radio" id="tab-input-b" name="tabs">
+          <label for="tab-input-b" class="pui-tab flex flex--justify-between">
+            Inactive
+            <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
+          </label>
+          <div class="pui-tab-panel p-4">
+            <div class="block-container flex--justify-between">
+              <div class="block block-6 mb-3">
+                Showing 5 out of 5
+              </div>
+              <div class="block block-6 flex flex--justify-end flex--align-center mb-3">
+                <button data-button-text="Refresh NIPR" aria-controls="refresh-nipr" aria-label="Refresh NIPR" class="button button--secondary mr-2">
+                  <i aria-hidden="true" class="pi-redo"></i>
+                </button>
+                <button data-modal="large-modal" class="button pui-modal__open">
+                  Add
+                  <i aria-hidden="true" class="pi-plus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="pui-accordion overflow-hidden">
+              <div class="block-container flex--justify-between pui-accordion__header pointer px-2" tabindex="0">
+                <div class="block block-4 tablet-up-3 flex flex--align-center p-2">
+                  <div class="text-med-blue">
+                    <div class="pez pressed" aria-label="New Jersey">NJ</div>
+                  </div>
+                </div>
+                <div class="block block-8 tablet-up-2 p-2">
+                  <div><strong>License No.</strong></div>
+                  <div>252433</div>
+                </div>
+                <div class="block block-4 tablet-up-2 p-2">
+                  <div><strong>Issued</strong></div>
+                  <div>03/10/2014</div>
+                </div>
+                <div class="block block-4 tablet-up-2 p-2">
+                  <div><strong>Expired</strong><i class="pi-edit mx-1"></i></div>
+                  <div>06/23/18</div>
+                </div>
+                <div class="block block-4 tablet-up-2 p-2">
+                  <div><strong>LOA</strong></div>
+                  <div>4</div>
+                </div>
+              </div>
+              <div class="pui-accordion__content p-2">
+                <h4>Lines of Authority</h4>
+                <table class="pui-table pui-table--no-hover">
+                  <thead>
+                    <tr>
+                      <th>Issued</th>
+                      <th>Line</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td data-label="Issued">
+                        3/12/2012
+                      </td>
+                      <td data-label="Line">
+                        Life
+                      </td>
+                    </tr>
+                    <tr>
+                      <td data-label="Issued">
+                        5/03/2015
+                      </td>
+                      <td data-label="Line">
+                        Accident & Health
+                      </td>
+                    </tr>
+                    <tr>
+                      <td data-label="Issued">
+                        5/03/2015
+                      </td>
+                      <td data-label="Line">
+                        Property & Allied Lines
+                      </td>
+                    </tr>
+                    <tr>
+                      <td data-label="Issued">
+                        5/03/2015
+                      </td>
+                      <td data-label="Line">
+                        Life & Fixed Annuities
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="pui-accordion overflow-hidden">
+              <div class="block-container flex--justify-between pui-accordion__header pointer px-2" tabindex="0">
+                <div class="block block-4 tablet-up-3 flex flex--align-center p-2">
+                  <div class="text-med-blue">
+                    <div class="pez pressed" aria-label="Pennsylvania">PA</div>
+                  </div>
+                </div>
+                <div class="block block-8 tablet-up-2 p-2">
+                  <div><strong>License No.</strong></div>
+                  <div>8783728</div>
+                </div>
+                <div class="block block-4 tablet-up-2 p-2">
+                  <div><strong>Issued</strong></div>
+                  <div>03/10/2014</div>
+                </div>
+                <div class="block block-4 tablet-up-2 p-2">
+                  <div><strong>Expired</strong><i class="pi-edit mx-1"></i></div>
+                  <div>03/10/2019</div>
+                </div>
+                <div class="block block-4 tablet-up-2 p-2">
+                  <div><strong>LOA</strong></div>
+                  <div>2</div>
+                </div>
+              </div>
+              <div class="pui-accordion__content p-2">
+                <h4>Lines of Authority</h4>
+                <table class="pui-table pui-table--no-hover">
+                  <thead>
+                    <tr>
+                      <th>Issued</th>
+                      <th>Line</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td data-label="Issued">
+                        3/12/2012
+                      </td>
+                      <td data-label="Line">
+                        Life
+                      </td>
+                    </tr>
+                    <tr>
+                      <td data-label="Issued">
+                        5/03/2015
+                      </td>
+                      <td data-label="Line">
+                        Accident and Health
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <input type="radio" id="tab-input-c" name="tabs">
+          <label for="tab-input-c" class="pui-tab flex flex--justify-between">
+            NIPR
+            <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
+          </label>
+          <div class="pui-tab-panel p-4">
+            <div class="block-container flex--justify-end">
+              <div class="block tablet-up-6 flex flex--justify-end flex--align-center mb-3">
+                <button data-button-text="Refresh NIPR" aria-controls="refresh-nipr" aria-label="Refresh NIPR" class="button button--secondary mr-2">
+                  <i aria-hidden="true" class="pi-redo"></i>
+                </button>
+              </div>
+            </div>
+            <table class="pui-table">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Company</th>
+                  <th>County</th>
+                  <th>LOA</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Date">
+                    <div><strong class="text--size-sm text-base">Status:</strong> 3/12/2012</div>
+                    <div><strong class="text--size-sm text-base">Renewal:</strong> 7/12/2015</div>
+                  </td>
+                  <td data-label="Company">
+                    <div>Aetna Health Inc.</div>
+                    <div class="pill" title="Company Code">2838734</div>
+                  </td>
+                  <td data-label="County">
+                    <div class="flex flex--align-center">
+                      <strong class="text--size-sm text-base">Code:</strong>
+                      <i class="pi-ban mx-1"></i>
+                    </div>
+                    <div>
+                      <strong class="text--size-sm text-base">FEIN:</strong> 23-2169745
+                    </div>
+                  </td>
+                  <td data-label="LOA">
+                    <div>0815 NON RES LIFE HLTH AND VA</div>
+                    <div class="pill" title="LOA Code">27263</div>
+                  </td>
+                  <td data-label="Status">
+                    <div>
+                      <div class="pill pill--circle-empty-dot negative"></div>
+                      Terminated
+                    </div>
+                    <em>Not for cause</em>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Date">
+                    <div><strong class="text--size-sm text-base">Status:</strong> 4/12/2013</div>
+                    <div><strong class="text--size-sm text-base">Renewal:</strong> 7/12/2017</div>
+                  </td>
+                  <td data-label="Company">
+                    <div>Humana</div>
+                    <div class="pill" title="Company Code">63532</div>
+                  </td>
+                  <td data-label="County">
+                    <div class="flex flex--align-center">
+                      <strong class="text--size-sm text-base">Code:</strong>
+                      <span class="mx-1">Cumberland</span>
+                    </div>
+                    <div>
+                      <strong class="text--size-sm text-base">FEIN:</strong> 23-2169745
+                    </div>
+                  </td>
+                  <td data-label="LOA">
+                    <div>0815 NON RES LIFE HLTH AND VA</div>
+                    <div class="pill" title="LOA Code">93837</div>
+                  </td>
+                  <td data-label="Status">
+                    <div>
+                      <div class="pill pill--circle-empty-dot positive"></div>
+                      Appointed
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="block mt-5 lg-tablet-up-4 laptop-up-3 pos-fix hide-laptop-down">
+        <div class="pui-card text-base background-note p-4 h-auto">
+          <div class="pui-card__header">
+            <div class="pui-card__group">
+              <button title="Add Note" aria-label="Add Note" class="button button--secondary">
+                <i aria-hidden="true" class="pi-plus"></i>
+              </button>
+              <strong class="text-navy text--size-lg">Notes</strong>
+            </div>
+            <button class="button">
+              View All 27
+              <i aria-hidden="true" class="pi-arrow-right"></i>
+            </button>
+          </div>
+          <ol class="pui-list pui-list--bordered">
+            <li class="pui-list__item py-3">
+              <strong class="" title="Last edited by Ted Krueger 01/27/2020">
+                <i aria-hidden="true" class="pi-speech-bubble text-light"></i>
+                Ted Krueger 01/27/2020
+              </strong>
+              <p class="pt-2">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tristique viverra posuere. Pellentesque
+                vitae turpis a lectus rutrum finibus. Fusce vitae sapien et purus fermentum feugiat. Donec finibus ante
+                vel risus euismod lobortis. Morbi vehicula posuere dolor, et eleifend metus cursus eget. Pellentesque
+                habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec dapibus porttitor
+                consectetur. Etiam fringilla arcu in urna placerat, vel mollis turpis malesuada. Aliquam pharetra,
+                tellus a varius pharetra, urna ligula tempus eros, ac porttitor arcu magna sed ex.
+              </p>
+              <div class="pill text-salmon">
+                Something
+              </div>
+              <div class="pill text-salmon">
+                Something
+              </div>
+              <div class="flex flex--column flex--align-center">
+                <div class="icon-menu py-2 flex--justify-center">
+                  <div class="icon-menu__item">
+                    <button class="icon-menu__action button--plain text-navy--hover pointer">
+                      <i class="pi-tag" aria-hidden="hidden"></i>
+                    </button>
+                  </div>
+                  <div class="icon-menu__item">
+                    <button class="icon-menu__action button--plain text-navy--hover pointer">
+                      <i class="pi-edit" aria-hidden="hidden"></i>
+                    </button>
+                  </div>
+                  <div class="icon-menu__item">
+                    <button class="icon-menu__action button--plain text-navy--hover pointer">
+                      <i class="pi-lock" aria-hidden="hidden"></i>
+                    </button>
+                  </div>
+                  <div class="icon-menu__item">
+                    <button class="icon-menu__action button--plain text-negative--hover pointer">
+                      <i class="pi-trash" aria-hidden="hidden"></i>
+                    </button>
+                  </div>
+                </div>
+                <i class="pi-angle-down-double text--size-lg rotate-180"></i>
+              </div>
+            </li>
+            <li class="pui-list__item py-3">
+              <strong class="" title="Last edited by Ted Krueger 01/27/2020">
+                <i aria-hidden="true" class="pi-speech-bubble text-light"></i>
+                Ted Krueger 01/27/2020
+              </strong>
+              <p class="pt-2 truncate-with-ellipsis">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tristique viverra posuere. Pellentesque
+                vitae turpis a lectus rutrum finibus. Fusce vitae sapien et purus fermentum feugiat. Donec finibus ante
+                vel risus euismod lobortis. Morbi vehicula posuere dolor, et eleifend metus cursus eget. Pellentesque
+                habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec dapibus porttitor
+                consectetur. Etiam fringilla arcu in urna placerat, vel mollis turpis malesuada. Aliquam pharetra,
+                tellus a varius pharetra, urna ligula tempus eros, ac porttitor arcu magna sed ex. Donec rutrum ante
+                quis lectus elementum, sed venenatis elit interdum. Integer rhoncus nibh vel libero porta scelerisque.
+                Etiam gravida sit amet turpis in pellentesque.
+              </p>
+              <div class="pill text-salmon">
+                Something
+              </div>
+              <div class="flex flex--column flex--align-center">
+                <div class="icon-menu py-2 flex--justify-center hidden">
+                  <div class="icon-menu__item">
+                    <button class="icon-menu__action button--plain text-navy--hover pointer">
+                      <i class="pi-tag" aria-hidden="hidden"></i>
+                    </button>
+                  </div>
+                  <div class="icon-menu__item">
+                    <button class="icon-menu__action button--plain text-navy--hover pointer">
+                      <i class="pi-edit" aria-hidden="hidden"></i>
+                    </button>
+                  </div>
+                  <div class="icon-menu__item">
+                    <button class="icon-menu__action button--plain text-navy--hover pointer">
+                      <i class="pi-lock" aria-hidden="hidden"></i>
+                    </button>
+                  </div>
+                  <div class="icon-menu__item">
+                    <button class="icon-menu__action button--plain text-negative--hover pointer">
+                      <i class="pi-trash" aria-hidden="hidden"></i>
+                    </button>
+                  </div>
+                </div>
+                <i class="pi-angle-down-double text--size-lg"></i>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+      </div>
+  </main>
+
+  <script src="/src/assets/js/platform-ui.min.js"></script>
+</body>
+
+</html>
