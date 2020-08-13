@@ -1,0 +1,2737 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contracts</title>
+
+  <link rel="stylesheet" href="/src/assets/stylesheets/platform-ui.min.css">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="src/assets/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="src/assets/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="src/assets/images/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="src/assets/images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="src/assets/images/favicon/site.webmanifest">
+  <link rel="mask-icon" href="src/assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <style>
+    /*
+         *  This css will need to live in the platform along with custom
+         *  mobile menu css.
+         *  See src/Platform/Content/css/sass/platform-ui-plugins.scss
+         */
+    .site-header--fixed {
+      height: calc(var(--pui-menu-height) * 2) !important;
+    }
+
+    .site-header--fixed+.header-fixed {
+      margin-top: calc(var(--pui-menu-height) * 2) !important;
+    }
+
+    .site-header--fixed .site-menu-wrapper:nth-child(2) .site-menu.active,
+    .site-menu-wrapper.site-header--fixed:nth-child(2) .site-menu.active {
+      max-height: calc(100vh - (var(--pui-menu-height) * 2));
+    }
+
+    /* accordion stuff */
+    .pui-accordion--nested {
+      border: none;
+      position: relative;
+      z-index: 1;
+    }
+    .pui-accordion--nested.active {
+      border: none;
+      box-shadow: none;
+    }
+    .pui-accordion--nested.active > .pui-accordion__content-nested {
+      display: flex;
+    }
+    .pui-accordion--nested .pui-accordion__header {
+      font-weight: bold;
+    }
+    .pui-accordion__content--nested {
+      position: relative;
+      z-index: 11;
+    }
+    .pui-accordion {
+      z-index: 5;
+      position: relative;
+    }
+    .modal-open .pui-accordion {
+      position: static;
+      z-index: 0;
+    }
+    .pui-accordion .pui-drawer {
+      padding: 6.5rem 2rem;
+    }
+    .top-accordion {
+      position: relative;
+      z-index: 10;
+    }
+    .drop-target {
+      border: .3rem dashed var(--pui-light-mid);
+      color: var(--pui-light);
+      font-size: 150%;
+      font-weight: bold;
+      text-align: center;
+      margin: 1rem 0;
+      padding: 2rem;
+    }
+
+    /* downlines styles */
+    .no-left-border {
+      border-left: 0;
+    }
+    .background-skyblue-alpha-1 {
+      background-color: rgba(145, 185, 220, 0.1);
+    }
+    .background-skyblue-alpha-2 {
+      background-color: rgba(145, 185, 220, 0.2);
+    }
+    .background-skyblue-alpha-3 {
+      background-color: rgba(145, 185, 220, 0.3);
+    }
+    .background-skyblue-alpha-4 {
+      background-color: rgba(145, 185, 220, 0.4);
+    }
+    .background-skyblue-alpha-5 {
+      background-color: rgba(145, 185, 220, 0.5);
+    }
+    .background-skyblue-alpha-6 {
+      background-color: rgba(145, 185, 220, 0.6);
+    }
+  </style>
+</head>
+
+<body class="flex flex--column">
+  <header class="site-header site-header--fixed">
+    <div class="site-menu primary inverted site-menu-wrapper">
+      <div class="block-container background-navy w-100">
+        <div class="block block-8 lg-tablet-up-4 lg-tablet-up--fill flex">
+          <a href="/demo-pages/crm-example.html" class="site-menu__item">
+            <span class="card__header-icon pill--circle-medium background-purple text-white mr-2">
+              D
+            </span>
+            <span class="text--size-lg hide-tablet-down">
+              Hello Dev
+            </span>
+          </a>
+          <div class="site-menu__item search">
+            <form role="search" aria-label="CRM" _lpchecked="1" class="w-100">
+              <div class="flex flex--align-center">
+                <label for="search-input" class="sr-only">Search</label>
+                <input type="text" id="search-input" placeholder="Type to search..."
+                  class="placeholder--light text-white">
+                <i aria-hidden="true" class="pi-search"></i>
+              </div>
+            </form>
+          </div>
+        </div>
+        <button
+          class="site-menu-mobile-action button--plain text-white hide-lg-tablet-up pos-abs pin-right mr-2 pin-center-top">
+          <span class="sr-only">Toggle Navigation</span>
+          <i aria-hidden="true" focusable="false" class="pi-menu pi-xl"></i>
+        </button>
+        <nav class="block block--shrink site-menu primary inverted">
+          <div class="site-menu__item dropdown p-0">
+            <a href="#" class="dropdown__trigger p-3">
+              Organizations <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+            </a>
+            <ul class="dropdown__content pin-right post-list">
+              <li class="post-item m-0 p-0">
+                <a href="/admin/agencies" class="flex p-3"><i class="users icon"></i>
+                  Agencies
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/businesses" class="flex p-3"><i class="business-icon icon"></i>
+                  Businesses
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/carriers" class="flex p-3"><i class="carrier-icon icon"></i>
+                  Carriers
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="site-menu__item dropdown p-0">
+            <a href="#" class="dropdown__trigger p-3">
+              People <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+            </a>
+            <ul class="dropdown__content pin-right post-list">
+              <li class="post-item m-0 p-0">
+                <a href="/admin/agents" class="flex p-3"><i class="agent-icon icon"></i>
+                  Agents
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/associates" class="flex p-3"><i class="associate-icon icon"></i>
+                  Associates
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/users" class="flex p-3"><i class="user-icon icon"></i>
+                  Users
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/consumers" class="flex p-3"><i class="user-icon icon"></i>
+                  Consumers
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/agents/map?term=Harrisburg%2C%20PA%2017110" class="flex p-3">
+                  <i class="map icon"></i>
+                  Map Agents
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="site-menu__item dropdown p-0">
+            <a href="#" class="dropdown__trigger p-3">
+              Flow <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+            </a>
+            <ul class="dropdown__content pin-right post-list">
+              <li class="post-item m-0 p-0">
+                <a href="/admin/flow/agents" class="flex p-3"><i class="id badge icon"></i>
+                  Agents
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/flow/agencies" class="flex p-3"><i class="users icon"></i>
+                  Agencies
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/flow/contracts" class="flex p-3"><i class="open folder icon"></i>
+                  Contracts
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/flow/campaigns" class="flex p-3" style=""><i class="address-card icon"></i>
+                  Campaigns
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/flow/submissions" class="flex p-3" style=""><i class="file icon"></i>
+                  Submissions
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/flow/enrollments" class="flex p-3" style=""><i class="certificate icon"></i>
+                  Enrollments
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/flow/payment-methods" class="flex p-3" style=""><i class="money bill icon"></i>
+                  Payment Methods
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/flow/crm" class="flex p-3" style=""><i class="briefcase icon"></i>
+                  CRM
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="site-menu__item dropdown p-0">
+            <a href="#" class="dropdown__trigger p-3">
+              <span class="sr-only">RIMDev</span>
+              <span class="card__header-icon pill--circle-medium background-white text-navy">
+                <i class="pi-rimdev" aria-hidden="true"></i>
+              </span>
+              <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+            </a>
+            <ul class="dropdown__content pin-right post-list">
+              <li class="post-item m-0 p-0">
+                <a href="/admin/rimdev" class="flex p-3">
+                  Permissions
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/form-builder" class="flex p-3">
+                  Form Builder
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/_features" class="flex p-3">
+                  Feature Flags
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/_self" class="flex p-3">
+                  Claims Diagnostics
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="site-menu__item dropdown p-0">
+            <a href="#" class="dropdown__trigger p-3">
+              Recent <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+            </a>
+            <ul class="dropdown__content pin-right post-list dropdown">
+              <li class="post-item p-0 m-0">
+                <a href="/admin/agents/c057f20a-fbc8-403c-9777-9e0701310cf8/edit" title="Last viewed on 5/6/2020"
+                  class="flex p-3"><i class="grey icon id badge"></i> <i class="yellow vertical ellipsis icon"></i>
+                  Gregory Gudis
+                </a>
+              </li>
+              <!---->
+              <div class="left menu">
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/agents/c057f20a-fbc8-403c-9777-9e0701310cf8/contracts?id=263135" class="flex p-3">
+                    Contract for Accendo Insurance Company
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/agents/c057f20a-fbc8-403c-9777-9e0701310cf8/edit?ui=medicareful" class="flex p-3">
+                    Medicareful
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0 border-b border--color-lighter">
+                  <a href="/admin/agents/c057f20a-fbc8-403c-9777-9e0701310cf8/edit?ui=payments" class="flex p-3">
+                    Payments
+                  </a>
+                </li>
+              </div>
+              <li class="post-item p-0 m-0">
+                <a href="/admin/agencies/62f89954-d3ea-4d96-96d7-c98bbd2470ec/edit" title="Last viewed on 4/21/2020"
+                  class="flex p-3"><i class="grey icon users"></i> <i class="yellow vertical ellipsis icon"></i>
+                  Ritter Insurance Marketing
+                </a>
+              </li>
+              <!---->
+              <div class="left menu">
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/agencies/62f89954-d3ea-4d96-96d7-c98bbd2470ec/contracts?id=136337" class="flex p-3">
+                    Contract for Aetna-Referral
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/agencies/62f89954-d3ea-4d96-96d7-c98bbd2470ec/edit?ui=profile" class="flex p-3">
+                    Profile
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0 border-b border--color-lighter">
+                  <a href="/admin/agencies/62f89954-d3ea-4d96-96d7-c98bbd2470ec/edit?ui=contact" class="flex p-3">
+                    Contact
+                  </a>
+                </li>
+              </div>
+              <!---->
+              <li class="post-item m-0 p-0">
+                <a class="flex p-3">
+                  <i class="red icon close"></i> Clear Recent Items
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="site-menu site-menu-wrapper">
+      <div class="block-container background-white flex--nowrap w-100">
+        <div class="block block-4 lg-tablet-up--fill ">
+          <div class="w-100 dropdown h-100 p-0">
+            <a href="#" class="dropdown__trigger p-3 w-100">
+              <span class="card__header-icon pill--circle-medium background-salmon text-white mr-2">
+                <i class="pi-building text-white"></i>
+              </span>
+              <div class="text--size-lg">
+                Gregory Gudis
+              </div>
+              <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+            </a>
+            <div class="dropdown__content pin-left">
+              <a href="#" class="flex p-3">
+                <div class="pill background-olive">
+                  Active
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <button
+          class="site-menu-mobile-action button--plain text-white hide-lg-tablet-up pos-abs pin-right mr-2 pin-center-top">
+          <span class="sr-only">Toggle Navigation</span>
+          <i aria-hidden="true" focusable="false" class="pi-menu pi-xl text-navy"></i>
+        </button>
+        <nav class="site-menu site-menu block block--shrink w-100 flex--justify-between">
+          <a href="#" class="site-menu__item active">
+            Contracts
+          </a>
+          <a href="#" class="site-menu__item">
+            Submissions
+          </a>
+          <a href="#" class="site-menu__item">
+            Memberships
+          </a>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <main class="header-fixed background-light-mid flex--grow py-4 px-5">
+    <div class="block-container blocks px-3 mb-4">
+      <div class="block">
+        <div class="pui-tabs">
+          <input type="radio" id="tab-input-a" name="tabs" checked>
+          <label for="tab-input-a" class="pui-tab flex flex--justify-between">
+            Active
+            <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
+          </label>
+          <div class="pui-tab-panel p-4">
+            <div class="block-container flex--justify-between">
+              <div class="block tablet-up-4 flex flex--align-center mb-3">
+                <div class="block-container flex--align-end w-100 py-2">
+                  <div class="block">
+                    Showing 64 out of 64
+                    <button title="Load more" aria-label="Load more" class="button button--secondary ml-2">
+                      <i aria-hidden="true" class="pi-sync"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="block tablet-up-6 flex flex--justify-end flex--align-center mb-3">
+                <button data-button-text="Filters" data-drawer="filters" aria-controls="submission-filters"
+                  aria-label="Filters" class="button button--secondary mr-2"><i aria-hidden="true"
+                    class="pi-filter"></i></button>
+                <button data-button-text="Export" aria-label="Export" class="button button--secondary mr-2"><i
+                    aria-hidden="true" class="pi-download"></i></button>
+                <button data-modal="large-modal" class="button pui-modal__open">
+                  Add <i aria-hidden="true" class="pi-plus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="pui-accordion active">
+              <div class="block-container flex--justify-between pui-accordion__header pointer px-2" tabindex="0">
+                <div class="block tablet-up-4 flex flex--column px-2 py-3">
+                  <span class="text-med-blue">Humana</span>
+                  <span title="Direct Pay Test (2020)" class="truncate-with-ellipsis">
+                    Direct Pay Test (2020)
+                  </span>
+                </div>
+                <div class="block tablet-up-8">
+                  <div class="block-container flex--justify-end">
+                    <div class="block px-2 py-2 tablet-up-8">
+                      <div class="block-container tablet-up-3 blocks px-3 py-2">
+                        <div class="block flex flex--column">
+                          <strong>Status<span class="ml-1 pill pill--circle-empty-dot neutral"></span></strong>
+                          <span>Initial</span>
+                        </div>
+                        <div class="block flex flex--column">
+                          <strong>AWN</strong>
+                          <i class="pi-ban"></i>
+                        </div>
+                        <div class="block flex flex--column">
+                          <strong>Level</strong>
+                          <span>8</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="block tablet-up--shrink flex flex--align-start px-2 py-3">
+                      <div class="icon-menu">
+                        <div class="icon-menu__item">
+                          <button aria-label="Expire and Duplicate" title="Expire and Duplicate"
+                            class="icon-menu__action button--plain text-navy--hover">
+                            <i aria-hidden="true" class="pi-copy"></i>
+                          </button>
+                        </div>
+                        <div class="icon-menu__item">
+                          <button aria-label="Actions" title="Actions"
+                            class="icon-menu__action button--plain text-navy--hover">
+                            <i aria-hidden="true" class="pi-gear"></i>
+                          </button>
+                        </div>
+                        <div class="icon-menu__item">
+                          <button aria-label="History" title="History"
+                            class="icon-menu__action button--plain text-navy--hover">
+                            <i aria-hidden="true" class="pi-redo-clock"></i>
+                          </button>
+                        </div>
+                        <div class="icon-menu__item">
+                          <button aria-label="Delete" title="Delete"
+                            class="icon-menu__action button--plain text-navy--hover">
+                            <i aria-hidden="true" class="pi-trash"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="pui-accordion__content p-3 fade-in-from-none-enter-active">
+                <div class="block-container blocks px-3">
+                  <div class="block">
+                    <div class="mb-3">
+                      <div class="block-container blocks p-2 tablet-up-2 pui-form">
+                        <div class="block">
+                          <label class="pui-form__field">
+                            Set contract status to
+                            <div class="pui-form__select-wrapper">
+                              <select>
+                                <option value="Appointed">Appointed</option>
+                                <option value="Appointed - Overrides Only">Appointed - Overrides Only</option>
+                                <option value="Appointed - Renewal Only">Appointed - Renewal Only</option>
+                                <option value="Carrier Returned - Incomplete">Carrier Returned - Incomplete</option>
+                                <option value="Contracting Invite Sent">Contracting Invite Sent</option>
+                                <option value="Contract Returned - Incomplete">Contract Returned - Incomplete</option>
+                                <option value="Contract Returned">Contract Returned</option>
+                                <option value="Follow Up #1">Follow Up #1</option>
+                                <option value="Follow Up #2">Follow Up #2</option>
+                                <option value="Follow Up #3">Follow Up #3</option>
+                                <option value="Pending AHIP">Pending AHIP</option>
+                                <option value="Initial">Initial <span>(2020-06-02)</span></option>
+                                <option value="Paperwork Mailed">Paperwork Mailed</option>
+                                <option value="Pending Business">Pending Business</option>
+                                <option value="Lost">Lost</option>
+                                <option value="Released">Released</option>
+                                <option value="Sent to Carrier">Sent to Carrier</option>
+                                <option value="Suspended">Suspended</option>
+                                <option value="Terminated">Terminated</option>
+                                <option value="Waiting on Certification">Waiting on Certification</option>
+                                <option value="Pending Contract">Pending Contract</option>
+                                <option value="Expired">Expired</option>
+                                <option value="Pending Face-to-Face">Pending Face-to-Face</option>
+                                <option value="Pending OIG">Pending OIG</option>
+                                <option value="Delayed Release">Delayed Release</option>
+                              </select>
+                            </div>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <form action="" class="pui-form block-container tablet-up-3 laptop-up-4 desktop-up-5 blocks mb-3 p-2">
+                        <div class="block">
+                          <label for="awn" class="pui-form__field">General AWN
+                            <input id="awn" type="text" placeholder="9006591">
+                          </label>
+                        </div>
+                        <div class="block">
+                          <label for="advance-amount" class="pui-form__field">Advance Amount
+                            <input id="advance-amount" type="text" placeholder="9006591">
+                          </label>
+                        </div>
+                        <div class="block">
+                          <label for="Option" class="pui-form__field">Level
+                            <div class="pui-form__select-wrapper">
+                              <select name="Option Select" id="Option">
+                                <option value="Option1">Option 1</option>
+                                <option value="Option2">Option 2</option>
+                                <option value="Option3">Option 3</option>
+                                <option value="Option4">Option 4</option>
+                                <option value="Option5">Option 5</option>
+                                <option value="Option6">Option 6</option>
+                              </select>
+                            </div>
+                          </label>
+                        </div>
+                        <div class="block">
+                          <fieldset class="pui-form__field">
+                            <legend>Annual Rollover</legend>
+                            <div class="pui-toggle">
+                              <div class="pui-toggle__content">
+                                <input id="tall" type="radio" checked="" name="height">
+                                <label for="tall"><i class="pi-check pi-heavy"></i> Yes</label>
+                              </div>
+                              <div class="pui-toggle__content">
+                                <input id="short" type="radio" name="height">
+                                <label for="short"><i class="pi-check pi-heavy"></i> No</label>
+                              </div>
+                            </div>
+                          </fieldset>
+                        </div>
+                        <div class="block">
+                          <label for="upline" class="pui-form__field has-icon--right">Upline
+                            <input id="upline" type="search" placeholder="">
+                            <i class="pi-search background-white"></i>
+                          </label>
+                        </div>
+                        <div class="block">
+                          <label for="signing-agent" class="pui-form__field has-icon--right">Signing Agent
+                            <input id="signing-agent" type="search" placeholder="">
+                            <i class="pi-search background-white"></i>
+                          </label>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="mb-4">
+                      <div class="block-container flex--justify-between flex--align-center mb-3">
+                        <strong class="text-navy text--size-lg">Downlines</strong>
+                        <div class="flex flex--align-center pr-2">
+                          <button class="button">Add<i aria-hidden="true" class="pi-plus"></i></button>
+                        </div>
+                      </div>
+                      <div class="block-container tablet-up-3">
+                        <div class="block">
+                          <div class="pui-card flex--center-content flex--column background-skyblue-alpha-1 border--color-skyblue">
+                            <div class="pui-stat pui-stat--md text-salmon">
+                              <span class="pui-stat__number">0</span>
+                            </div>
+                            <span>
+                              <i class="pi-users text-light mr-2"></i><a href="#">Downlines</a>  
+                            </span>
+                          </div>
+                        </div>
+                          <div class="block">
+                          <div class="pui-card flex--center-content flex--column background-skyblue-alpha-2 border--color-skyblue">
+                            <a 
+                              href="#" 
+                              class="pui-stat pui-stat--md text-salmon" 
+                              data-stat-label="Really Long Company Name" 
+                              aria-label="Really Long Company Name">
+                              <span class="pui-stat__number">7</span>
+                            </a>
+                            <span>
+                              <i class="pi-user-solid text-light mr-2"></i><a href="#">Principal Name</a>  
+                            </span>
+                            <span>
+                              <div class="pill pill--circle-empty-dot positive"></div>
+                              <a href="#">Parent contract</a>
+                            </span>      
+                          </div>
+                        </div>
+                          <div class="block">
+                          <div class="pui-card flex--center-content flex--column background-skyblue-alpha-3 border--color-skyblue">
+                            <a 
+                              href="#" 
+                              class="pui-stat pui-stat--md text-salmon" 
+                              data-stat-label="Company Name" 
+                              aria-label="Company Name">
+                              <span class="pui-stat__number">10</span>
+                            </a>
+                            <span>
+                              <i class="pi-user-solid text-light mr-2"></i><a href="#">Principal Name</a>  
+                            </span>
+                            <span>
+                              <div class="pill pill--circle-empty-dot positive"></div>
+                              <a href="#">Parent contract</a>
+                            </span>      
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mb-4">
+                      <div class="block-container flex--justify-between flex--align-center mb-3">
+                        <strong class="text-navy text--size-lg">Products and States</strong>
+                        <div class="flex flex--align-center pr-2">
+                          <button class="button">Add <i aria-hidden="true" class="pi-plus"></i></button>
+                        </div>
+                      </div>
+                      <div>
+                        <div class="mb-3">
+                          <div class="block-container blocks mx-1 my-1">
+                            <button class="block block--shrink button button--beige text-navy border--color-navy">
+                              Medicare Advantage <i class="pi-times-solid ml-2 mr-0 text--size-lg"></i>
+                            </button>
+                            <button class="block block--shrink button button--beige text-navy border--color-navy">
+                              Prescription Drug Plan <i class="pi-times-solid ml-2 mr-0 text--size-lg"></i>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="mb-3">
+                          <div class="block-container blocks p-1">
+                            <div class="block block--shrink">
+                              <button class="pez pressed">
+                                AK
+                                <div class="pez__check-wrapper">
+                                  <span class="pill pill--circle-empty-dot background-white"></span>
+                                </div>
+                              </button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez">AK</button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez">AK
+                                  <div class="pez__check-wrapper">
+                                    <span class="pill pill--circle-empty-dot background-white"></span>
+                                  </div></button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez">AK</button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez pressed">AK</button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez pressed">AK
+                                  <div class="pez__check-wrapper">
+                                    <span class="pill pill--circle-empty-dot background-white"></span>
+                                  </div></button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez">AK</button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez">AK</button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez pressed">AK</button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez pressed">AK
+                                  <div class="pez__check-wrapper">
+                                    <span class="pill pill--circle-empty-dot background-white"></span>
+                                  </div></button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez">AK</button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez">AK</button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez">AK</button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez">AK
+                                  <div class="pez__check-wrapper">
+                                    <span class="pill pill--circle-empty-dot background-white"></span>
+                                  </div></button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez">AK
+                                  <div class="pez__check-wrapper">
+                                    <span class="pill pill--circle-empty-dot background-white"></span>
+                                  </div></button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez">AK</button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez">AK</button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez pressed">AK</button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez pressed">AK</button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez pressed">AK</button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez">AK</button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez pressed">AK</button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez pressed">AK</button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez pressed">AK
+                                  <div class="pez__check-wrapper">
+                                    <span class="pill pill--circle-empty-dot background-white"></span>
+                                  </div></button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez">AK</button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez">AK</button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez">AK</button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez">AK</button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez pressed">AK</button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez">AK</button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez">AK</button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez">AK</button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez">AK</button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez">AK</button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez">AK</button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez pressed">AK</button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez pressed">AK</button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez pressed">AK</button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez pressed">AK
+                                  <div class="pez__check-wrapper">
+                                    <span class="pill pill--circle-empty-dot background-white"></span>
+                                  </div></button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez pressed">AK</button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez">AK</button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez">AK</button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez">AK</button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez">AK</button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez">AK</button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez">AK
+                                  <div class="pez__check-wrapper">
+                                    <span class="pill pill--circle-empty-dot background-white"></span>
+                                  </div></button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez">AK</button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez">AK</button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez">AK</button>
+                            </div>
+                            <div class="block block--shrink">
+                              <button class="pez">AK</button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="block-container">
+                          <fieldset class="pui-form__field pui-form block block--shrink">
+                            <legend class="sr-only">Select All States or Deselect all</legend>
+                            <div class="pui-toggle mt-0">
+                              <div class="pui-toggle__content">
+                                <input class="pui-toggle__input" id="all-states-1" type="radio" checked="" name="states-active">
+                                <label for="all-states-1"><i class="pi-check"></i> All States</label>
+                              </div>
+                              <div class="pui-toggle__content">
+                                <input class="pui-toggle__input" id="deselect-1" type="radio" name="states-active">
+                                <label for="deselect-1"><i class="pi-check"></i> Deselect</label>
+                              </div>
+                            </div>
+                          </fieldset>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="pui-accordion pui-accordion--nested my-2 active">
+                      <div class="pui-accordion__header p-2 block-container flex--justify-between">
+                        <div class="flex--center-content">
+                          <button title="Show Notes" aria-label="Show Notes" class="button--plain flex px-3">
+                            <i aria-hidden="true" class="pi-angle-right pi-lg transition rotate-90"></i>
+                          </button> 
+                          <i aria-hidden="true" class="pi-note mr-2"></i>
+                          Notes
+                          <div class="ml-1 pill pill--circle p-0">1</div>
+                        </div>
+                        <div class="flex flex--align-center">
+                          <button class="button mr-2">Add <i aria-hidden="true" class="pi-plus"></i></button>
+                          <button class="button">View All <i aria-hidden="true" class="pi-arrow-right"></i></button>
+                        </div>
+                      </div>
+                      <div class="pui-accordion__content pui-accordion__content--nested p-3 active">
+                        <div class="block-container blocks tablet-up-3 flex--align-start overflow-x--scroll">
+                          <div class="block">
+                            <div class="background-note pui-card m-2 py-3 pl-3 pr-0">
+                              <div class="block-container">
+                                <div class="block-10">
+                                  <div class="pui-card__header">
+                                    <strong title="Last edited by Ted Krueger 08/12/2020" class="pui-card__group">
+                                      <i aria-hidden="true" class="pi-speech-bubble"></i>
+                                      Ted Krueger 08/12/2020
+                                    </strong>
+                                  </div>
+                                  <div title="Submission Note test" class="note-body">
+                                    Note test
+                                  </div>
+                                  <div class="flex flex--wrap mt-3"></div>
+                                </div>
+                                <div class="block-2">
+                                  <div class="icon-menu icon-menu--vertical">
+                                    <div class="icon-menu__item">
+                                      <button title="Tags" class="icon-menu__action button--plain text-navy--hover pointer">
+                                        <i aria-hidden="true" class="pi-tag"></i> <span class="sr-only">Tags</span>
+                                      </button>
+                                    </div>
+                                    <div class="icon-menu__item">
+                                      <button title="Edit" aria-label="Edit" class="icon-menu__action button--plain text-navy--hover pointer">
+                                        <i aria-hidden="true" class="pi-edit"></i>
+                                      </button>
+                                    </div>
+                                    <div class="icon-menu__item">
+                                      <button title="Readonly" aria-label="Readonly" class="icon-menu__action button--plain text-navy--hover pointer">
+                                        <i aria-hidden="true" class="pi-lock"></i>
+                                      </button>
+                                    </div>
+                                    <div class="icon-menu__item">
+                                      <button title="Owners" class="icon-menu__action button--plain text-navy--hover pointer">
+                                        <i aria-hidden="true" class="pi-user"></i> <span class="sr-only">Owners</span>
+                                      </button></div>
+                                    <div class="icon-menu__item">
+                                      <button title="Delete" class="icon-menu__action button--plain text-navy--hover pointer">
+                                        <i aria-hidden="true" class="pi-trash"></i> <span class="sr-only">Delete</span>
+                                      </button></div>
+                                    <div class="icon-menu__item">
+                                      <button title="expand note" class="icon-menu__action button--plain text-navy--hover pointer">
+                                        <i aria-hidden="true" class="pi-angle-down-double text--size-lg flex transition"></i> <span class="sr-only">expand note</span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="pui-accordion pui-accordion--nested my-2">
+                      <div class="pui-accordion__header p-2 block-container flex--justify-between">
+                        <div class="flex--center-content">
+                          <button title="Show Notes" aria-label="Show Notes" class="button--plain flex px-3">
+                            <i aria-hidden="true" class="pi-angle-right pi-lg transition"></i>
+                          </button> 
+                          <i aria-hidden="true" class="pi-note mr-2"></i>
+                          Certifications
+                          <div class="ml-1 pill pill--circle p-0">3</div>
+                        </div>
+                        <div class="flex flex--align-center"><button class="button">
+                          Add
+                          <i aria-hidden="true" class="pi-plus"></i></button>
+                        </div>
+                      </div>
+                      <div class="pui-accordion__content pui-accordion__content--nested p-3">
+                        <div class="mb-4">
+                          <p class="mb-0"><strong>2019</strong></p>
+                          <div class="pui-form flex flex--align-end mb-3">
+                            <div class="pill background-navy text-white mr-2">
+                              HMO <i aria-hidden="true" class="ml-2 pi-times-solid"></i>
+                            </div>
+                            <label for="hmo-certificate" class="pui-form__field">
+                              <span class="sr-only">Enter a date</span>
+                              <input id="hmo-certificate" type="date" min="2019-01-01" max="2019-12-31">
+                            </label>
+                          </div>
+                          <div class="pui-form flex flex--align-end mb-3">
+                            <div class="pill background-navy text-white mr-2">
+                              PPO <i aria-hidden="true" class="ml-2 pi-times-solid"></i>
+                            </div>
+                            <label for="PPO-certificate" class="pui-form__field">
+                              <span class="sr-only">Enter a date</span>
+                              <input id="PPO-certificate" type="date" value="2019-06-01" min="2019-01-01" max="2019-12-31">
+                            </label>
+                          </div>
+                        </div>
+                        <div class="mb-4">
+                          <p class="mb-0"><strong>2020</strong></p>
+                          <div class="pui-form flex flex--align-end mb-3">
+                            <div class="pill background-navy text-white mr-2">
+                              PDP <i aria-hidden="true" class="ml-2 pi-times-solid"></i>
+                            </div>
+                            <label for="PDP-certificate" class="pui-form__field">
+                              <span class="sr-only">Enter a date</span>
+                              <input id="PDP-certificate" type="date" value="2020-08-20" min="2020-01-01" max="2020-12-31">
+                            </label>
+                          </div>
+                        </div>
+                        <!-- For messaging purposes only. :point-down-finger-emoji -->
+                        <p>If there are no certifications, this message will display.</p> 
+                        <div class="pui-message pui-message--info">
+                          <p>This product has no available certifications. See its contract template for more details.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="pui-accordion pui-accordion--nested my-2">
+                      <div class="pui-accordion__header p-2 block-container flex--justify-between">
+                        <div class="flex--center-content">
+                          <button title="Show Notes" aria-label="Show Notes" class="button--plain flex px-3">
+                            <i aria-hidden="true" class="pi-angle-right pi-lg transition"></i>
+                          </button> 
+                          <i aria-hidden="true" class="pi-note mr-2"></i>
+                          Request Contract Work
+                          <div class="ml-1 pill pill--circle p-0">0</div>
+                        </div>
+                        <div class="flex flex--align-center">
+                          <button class="button pui-modal__open" data-modal="request-contract-work-modal">
+                            Request <i aria-hidden="true" class="pi-plus"></i>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="pui-accordion__content pui-accordion__content--nested p-3">
+                        <div class="pui-message pui-message--info">
+                          You have no Contract Work requested.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="pui-accordion pui-accordion--nested my-2">
+                      <div class="pui-accordion__header p-2 block-container flex--justify-between">
+                        <div class="flex--center-content">
+                          <button title="Show Notes" aria-label="Show Notes" class="button--plain flex px-3">
+                            <i aria-hidden="true" class="pi-angle-right pi-lg transition"></i>
+                          </button> 
+                          <i aria-hidden="true" class="pi-note mr-2"></i>
+                          Attachments
+                          <div class="ml-1 pill pill--circle p-0">0</div>
+                        </div>
+                        <div class="flex flex--align-center"><button class="button">
+                          Add
+                          <i aria-hidden="true" class="pi-plus"></i></button>
+                        </div>
+                      </div>
+                      <div class="pui-accordion__content pui-accordion__content-nested overflow-x--auto">
+                        <div>
+                          <div data-v-01488a82="" class="w-100">
+                            <form data-v-01488a82="">
+                              <label data-v-01488a82="" for="file-picker" class="sr-only">Upload File</label> 
+                              <input data-v-01488a82="" type="file" multiple="multiple" id="file-picker" class="main-file-target file-target" style="display: none;">
+                            </form>
+                            <div data-v-01488a82="" class="drop-target flex flex--align-center flex--column">
+                              You have no attachments. Drag multiple files here or choose manually
+                              <button data-v-01488a82="" type="button" aria-label="upload files" autofocus="autofocus" class="button button--secondary">
+                                <i data-v-01488a82="" aria-hidden="true" focusable="false" class="pi-upload-cloud"></i>
+                              </button>
+                            </div>
+                          </div>
+                          <div class="flex flex--center-content">
+                            <button disabled="disabled" class="button button--post">Submit</button>
+                          </div>
+                        </div>
+                        <div class="pui-message pui-message--info">
+                          There are no Files.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <input type="radio" id="tab-input-b" name="tabs">
+          <label for="tab-input-b" class="pui-tab flex flex--justify-between">
+            Inactive
+            <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
+          </label>
+          <div class="pui-tab-panel p-4">
+            <p>See Attachments tab</p>
+          </div>
+          <input type="radio" id="tab-input-c" name="tabs">
+          <label for="tab-input-c" class="pui-tab flex flex--justify-between">
+            Downlines
+            <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
+          </label>
+          <div class="pui-tab-panel p-4">
+            <div class="block-container flex--justify-between">
+              <div class="block tablet-up-8 flex flex--align-center mb-3">
+                <div class="block-container tablet-up-2 lg-tablet-up-3 w-100 blocks p-2 pui-form">
+                  <div class="block">
+                    <label class="pui-form__field">
+                      Agent/Agency
+                      <div class="pui-form__select-wrapper">
+                        <select>
+                          <option value="Gregory Gudis">Gregory Gudis</option>
+                          <option value="Bachmeier, Gudis & Associates LLC">Bachmeier, Gudis & Associates LLC</option>
+                        </select>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="block">
+                    <label for="upline" class="pui-form__field has-icon--right">Upline
+                      <input id="upline" type="search" placeholder="">
+                      <i class="pi-search background-white"></i>
+                    </label>
+                  </div>
+                  <div class="block">
+                    <label for="signing-agent" class="pui-form__field has-icon--right">Signing Agent
+                      <input id="signing-agent" type="search" placeholder="">
+                      <i class="pi-search background-white"></i>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="block tablet-up-4 flex flex--justify-end flex--align-center mb-3">
+                <button title="Load more" aria-label="Load more" class="button button--secondary mx-1">
+                  <i aria-hidden="true" class="pi-sync"></i>
+                </button>
+                <button data-button-text="Filters" data-drawer="filters" aria-controls="submission-filters"
+                  aria-label="Filters" class="button button--secondary mx-1"><i aria-hidden="true"
+                    class="pi-filter"></i></button>
+                <button data-button-text="Export" aria-label="Export" class="button button--secondary mx-1"><i
+                    aria-hidden="true" class="pi-download"></i></button>
+                <button data-modal="large-modal" class="button pui-modal__open">
+                  Add <i aria-hidden="true" class="pi-plus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="block-container">
+              <div class="block tablet-up-4 flex flex--align-center mb-3">
+                <div class="block-container flex--align-end w-100 py-2">
+                  <div class="block">
+                    Showing 10 out of 10
+                    <button title="Load more" aria-label="Load more" class="button button--secondary ml-2">
+                      <i aria-hidden="true" class="pi-sync"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <div class="flex flex--justify-between p-3">
+                <a href="#" class="text--size-lg text--bold">
+                  <i class="pi-user"></i>
+                  Gregory Gudis
+                </a>
+                <div class="flex flex--align-center">
+                  <div class="text--uppercase text-light mr-2">max level</div>
+                  <strong class="text--size-lg text-salmon">8</strong>
+                </div>
+              </div> 
+              <div class="pl-4">
+                <div class="pui-accordion">
+                  <div class="block-container flex--justify-between pui-accordion__header pointer px-2" tabindex="0">
+                    <div class="block tablet-up-4 flex flex--column px-2 py-3">
+                      <span class="text-med-blue">Humana</span>
+                      <span title="Direct Pay Test (2020)" class="truncate-with-ellipsis">
+                        Direct Pay Test (2020)
+                      </span>
+                    </div>
+                    <div class="block tablet-up-8">
+                      <div class="block-container flex--justify-end">
+                        <div class="block px-2 py-2 tablet-up-8">
+                          <div class="block-container tablet-up-3 blocks px-3 py-2">
+                            <div class="block flex flex--column">
+                              <strong>Status<span class="ml-1 pill pill--circle-empty-dot neutral"></span></strong>
+                              <span>Initial</span>
+                            </div>
+                            <div class="block flex flex--column">
+                              <strong>AWN</strong>
+                              <i class="pi-ban"></i>
+                            </div>
+                            <div class="block flex flex--column">
+                              <strong>Level</strong>
+                              <span>8</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="block tablet-up--shrink flex flex--align-start px-2 py-3">
+                          <div class="icon-menu">
+                            <div class="icon-menu__item">
+                              <button aria-label="Expire and Duplicate" title="Expire and Duplicate"
+                                class="icon-menu__action button--plain text-navy--hover">
+                                <i aria-hidden="true" class="pi-copy"></i>
+                              </button>
+                            </div>
+                            <div class="icon-menu__item">
+                              <button aria-label="Actions" title="Actions"
+                                class="icon-menu__action button--plain text-navy--hover">
+                                <i aria-hidden="true" class="pi-gear"></i>
+                              </button>
+                            </div>
+                            <div class="icon-menu__item">
+                              <button aria-label="History" title="History"
+                                class="icon-menu__action button--plain text-navy--hover">
+                                <i aria-hidden="true" class="pi-redo-clock"></i>
+                              </button>
+                            </div>
+                            <div class="icon-menu__item">
+                              <button aria-label="Delete" title="Delete"
+                                class="icon-menu__action button--plain text-navy--hover">
+                                <i aria-hidden="true" class="pi-trash"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pui-accordion__content p-3 fade-in-from-none-enter-active">
+                    <div class="block-container blocks px-3">
+                      <div class="block">
+                        <div class="mb-3">
+                          <div class="block-container blocks p-2 tablet-up-2 pui-form">
+                            <div class="block">
+                              <label class="pui-form__field">
+                                Set contract status to
+                                <div class="pui-form__select-wrapper">
+                                  <select>
+                                    <option value="Appointed">Appointed</option>
+                                    <option value="Appointed - Overrides Only">Appointed - Overrides Only</option>
+                                    <option value="Appointed - Renewal Only">Appointed - Renewal Only</option>
+                                    <option value="Carrier Returned - Incomplete">Carrier Returned - Incomplete</option>
+                                    <option value="Contracting Invite Sent">Contracting Invite Sent</option>
+                                    <option value="Contract Returned - Incomplete">Contract Returned - Incomplete</option>
+                                    <option value="Contract Returned">Contract Returned</option>
+                                    <option value="Follow Up #1">Follow Up #1</option>
+                                    <option value="Follow Up #2">Follow Up #2</option>
+                                    <option value="Follow Up #3">Follow Up #3</option>
+                                    <option value="Pending AHIP">Pending AHIP</option>
+                                    <option value="Initial">Initial <span>(2020-06-02)</span></option>
+                                    <option value="Paperwork Mailed">Paperwork Mailed</option>
+                                    <option value="Pending Business">Pending Business</option>
+                                    <option value="Lost">Lost</option>
+                                    <option value="Released">Released</option>
+                                    <option value="Sent to Carrier">Sent to Carrier</option>
+                                    <option value="Suspended">Suspended</option>
+                                    <option value="Terminated">Terminated</option>
+                                    <option value="Waiting on Certification">Waiting on Certification</option>
+                                    <option value="Pending Contract">Pending Contract</option>
+                                    <option value="Expired">Expired</option>
+                                    <option value="Pending Face-to-Face">Pending Face-to-Face</option>
+                                    <option value="Pending OIG">Pending OIG</option>
+                                    <option value="Delayed Release">Delayed Release</option>
+                                  </select>
+                                </div>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="mb-3">
+                          <form action="" class="pui-form block-container tablet-up-3 laptop-up-4 desktop-up-5 blocks mb-3 p-2">
+                            <div class="block">
+                              <label for="awn" class="pui-form__field">General AWN
+                                <input id="awn" type="text" placeholder="9006591">
+                              </label>
+                            </div>
+                            <div class="block">
+                              <label for="advance-amount" class="pui-form__field">Advance Amount
+                                <input id="advance-amount" type="text" placeholder="9006591">
+                              </label>
+                            </div>
+                            <div class="block">
+                              <label for="Option" class="pui-form__field">Level
+                                <div class="pui-form__select-wrapper">
+                                  <select name="Option Select" id="Option">
+                                    <option value="Option1">Option 1</option>
+                                    <option value="Option2">Option 2</option>
+                                    <option value="Option3">Option 3</option>
+                                    <option value="Option4">Option 4</option>
+                                    <option value="Option5">Option 5</option>
+                                    <option value="Option6">Option 6</option>
+                                  </select>
+                                </div>
+                              </label>
+                            </div>
+                            <div class="block">
+                              <fieldset class="pui-form__field">
+                                <legend>Annual Rollover</legend>
+                                <div class="pui-toggle">
+                                  <div class="pui-toggle__content">
+                                    <input id="tall" type="radio" checked="" name="height">
+                                    <label for="tall"><i class="pi-check pi-heavy"></i> Yes</label>
+                                  </div>
+                                  <div class="pui-toggle__content">
+                                    <input id="short" type="radio" name="height">
+                                    <label for="short"><i class="pi-check pi-heavy"></i> No</label>
+                                  </div>
+                                </div>
+                              </fieldset>
+                            </div>
+                            <div class="block">
+                              <label for="upline" class="pui-form__field has-icon--right">Upline
+                                <input id="upline" type="search" placeholder="">
+                                <i class="pi-search background-white"></i>
+                              </label>
+                            </div>
+                            <div class="block">
+                              <label for="signing-agent" class="pui-form__field has-icon--right">Signing Agent
+                                <input id="signing-agent" type="search" placeholder="">
+                                <i class="pi-search background-white"></i>
+                              </label>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="mb-4">
+                          <div class="block-container flex--justify-between flex--align-center mb-3">
+                            <strong class="text-navy text--size-lg">Downlines</strong>
+                            <div class="flex flex--align-center pr-2">
+                              <button class="button">Add<i aria-hidden="true" class="pi-plus"></i></button>
+                            </div>
+                          </div>
+                          <div class="block-container tablet-up-3">
+                            <div class="block">
+                              <div class="pui-card flex--center-content flex--column background-skyblue-alpha-1 border--color-skyblue">
+                                <div class="pui-stat pui-stat--md text-salmon">
+                                  <span class="pui-stat__number">0</span>
+                                </div>
+                                <span>
+                                  <i class="pi-users text-light mr-2"></i><a href="#">Downlines</a>  
+                                </span>
+                              </div>
+                            </div>
+                              <div class="block">
+                              <div class="pui-card flex--center-content flex--column background-skyblue-alpha-2 border--color-skyblue">
+                                <a 
+                                  href="#" 
+                                  class="pui-stat pui-stat--md text-salmon" 
+                                  data-stat-label="Really Long Company Name" 
+                                  aria-label="Really Long Company Name">
+                                  <span class="pui-stat__number">7</span>
+                                </a>
+                                <span>
+                                  <i class="pi-user-solid text-light mr-2"></i><a href="#">Principal Name</a>  
+                                </span>
+                                <span>
+                                  <div class="pill pill--circle-empty-dot positive"></div>
+                                  <a href="#">Parent contract</a>
+                                </span>      
+                              </div>
+                            </div>
+                              <div class="block">
+                              <div class="pui-card flex--center-content flex--column background-skyblue-alpha-3 border--color-skyblue">
+                                <a 
+                                  href="#" 
+                                  class="pui-stat pui-stat--md text-salmon" 
+                                  data-stat-label="Company Name" 
+                                  aria-label="Company Name">
+                                  <span class="pui-stat__number">10</span>
+                                </a>
+                                <span>
+                                  <i class="pi-user-solid text-light mr-2"></i><a href="#">Principal Name</a>  
+                                </span>
+                                <span>
+                                  <div class="pill pill--circle-empty-dot positive"></div>
+                                  <a href="#">Parent contract</a>
+                                </span>      
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="mb-4">
+                          <div class="block-container flex--justify-between flex--align-center mb-3">
+                            <strong class="text-navy text--size-lg">Products and States</strong>
+                            <div class="flex flex--align-center pr-2">
+                              <button class="button">Add <i aria-hidden="true" class="pi-plus"></i></button>
+                            </div>
+                          </div>
+                          <div>
+                            <div class="mb-3">
+                              <div class="block-container blocks mx-1 my-1">
+                                <button class="block block--shrink button button--beige text-navy border--color-navy">
+                                  Medicare Advantage <i class="pi-times-solid ml-2 mr-0 text--size-lg"></i>
+                                </button>
+                                <button class="block block--shrink button button--beige text-navy border--color-navy">
+                                  Prescription Drug Plan <i class="pi-times-solid ml-2 mr-0 text--size-lg"></i>
+                                </button>
+                              </div>
+                            </div>
+                            <div class="mb-3">
+                              <div class="block-container blocks p-1">
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">
+                                    AK
+                                    <div class="pez__check-wrapper">
+                                      <span class="pill pill--circle-empty-dot backkground-white"></span>
+                                    </div>
+                                  </button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="block-container">
+                              <fieldset class="pui-form__field pui-form block block--shrink">
+                                <legend class="sr-only">Select All States or Deselect all</legend>
+                                <div class="pui-toggle mt-0">
+                                  <div class="pui-toggle__content">
+                                    <input class="pui-toggle__input" id="all-states-1" type="radio" checked="" name="states">
+                                    <label for="all-states-1"><i class="pi-check"></i> All States</label>
+                                  </div>
+                                  <div class="pui-toggle__content">
+                                    <input class="pui-toggle__input" id="deselect-1" type="radio" name="states">
+                                    <label for="deselect-1"><i class="pi-check"></i> Deselect</label>
+                                  </div>
+                                </div>
+                              </fieldset>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="pui-accordion pui-accordion--nested my-2 active">
+                          <div class="pui-accordion__header p-2 block-container flex--justify-between">
+                            <div class="flex--center-content">
+                              <button title="Show Notes" aria-label="Show Notes" class="button--plain flex px-3">
+                                <i aria-hidden="true" class="pi-angle-right pi-lg transition rotate-90"></i>
+                              </button> 
+                              <i aria-hidden="true" class="pi-note mr-2"></i>
+                              Submission Notes
+                              <div class="ml-1 pill pill--circle p-0">1</div>
+                            </div>
+                            <div class="flex flex--align-center">
+                              <button class="button mr-2">Add <i aria-hidden="true" class="pi-plus"></i></button>
+                              <button class="button">View All <i aria-hidden="true" class="pi-arrow-right"></i></button>
+                            </div>
+                          </div>
+                          <div class="pui-accordion__content pui-accordion__content--nested p-3 active">
+                            <div class="block-container blocks tablet-up-3 flex--align-start overflow-x--scroll">
+                              <div class="block">
+                                <div class="background-note pui-card m-2 py-3 pl-3 pr-0">
+                                  <div class="block-container">
+                                    <div class="block-10">
+                                      <div class="pui-card__header">
+                                        <strong title="Last edited by Ted Krueger 08/12/2020" class="pui-card__group">
+                                          <i aria-hidden="true" class="pi-speech-bubble"></i>
+                                          Ted Krueger 08/12/2020
+                                        </strong>
+                                      </div>
+                                      <div title="Submission Note test" class="note-body">
+                                        Submission Note test
+                                      </div>
+                                      <div class="flex flex--wrap mt-3"></div>
+                                    </div>
+                                    <div class="block-2">
+                                      <div class="icon-menu icon-menu--vertical">
+                                        <div class="icon-menu__item">
+                                          <button title="Tags" class="icon-menu__action button--plain text-navy--hover pointer">
+                                            <i aria-hidden="true" class="pi-tag"></i> <span class="sr-only">Tags</span>
+                                          </button>
+                                        </div>
+                                        <div class="icon-menu__item">
+                                          <button title="Edit" aria-label="Edit" class="icon-menu__action button--plain text-navy--hover pointer">
+                                            <i aria-hidden="true" class="pi-edit"></i>
+                                          </button>
+                                        </div>
+                                        <div class="icon-menu__item">
+                                          <button title="Readonly" aria-label="Readonly" class="icon-menu__action button--plain text-navy--hover pointer">
+                                            <i aria-hidden="true" class="pi-lock"></i>
+                                          </button>
+                                        </div>
+                                        <div class="icon-menu__item">
+                                          <button title="Owners" class="icon-menu__action button--plain text-navy--hover pointer">
+                                            <i aria-hidden="true" class="pi-user"></i> <span class="sr-only">Owners</span>
+                                          </button></div>
+                                        <div class="icon-menu__item">
+                                          <button title="Delete" class="icon-menu__action button--plain text-navy--hover pointer">
+                                            <i aria-hidden="true" class="pi-trash"></i> <span class="sr-only">Delete</span>
+                                          </button></div>
+                                        <div class="icon-menu__item">
+                                          <button title="expand note" class="icon-menu__action button--plain text-navy--hover pointer">
+                                            <i aria-hidden="true" class="pi-angle-down-double text--size-lg flex transition"></i> <span class="sr-only">expand note</span>
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="pui-accordion pui-accordion--nested my-2">
+                          <div class="pui-accordion__header p-2 block-container flex--justify-between">
+                            <div class="flex--center-content">
+                              <button title="Show Notes" aria-label="Show Notes" class="button--plain flex px-3">
+                                <i aria-hidden="true" class="pi-angle-right pi-lg transition"></i>
+                              </button> 
+                              <i aria-hidden="true" class="pi-note mr-2"></i>
+                              Certifications
+                              <div class="ml-1 pill pill--circle p-0">3</div>
+                            </div>
+                            <div class="flex flex--align-center"><button class="button">
+                              Add
+                              <i aria-hidden="true" class="pi-plus"></i></button>
+                            </div>
+                          </div>
+                          <div class="pui-accordion__content pui-accordion__content--nested p-3">
+                            <div class="mb-4">
+                              <p class="mb-0"><strong>2019</strong></p>
+                              <div class="pui-form flex flex--align-end mb-3">
+                                <div class="pill background-navy text-white mr-2">
+                                  HMO <i aria-hidden="true" class="ml-2 pi-times-solid"></i>
+                                </div>
+                                <label for="hmo-certificate" class="pui-form__field">
+                                  <span class="sr-only">Enter a date</span>
+                                  <input id="hmo-certificate" type="date" min="2019-01-01" max="2019-12-31">
+                                </label>
+                              </div>
+                              <div class="pui-form flex flex--align-end mb-3">
+                                <div class="pill background-navy text-white mr-2">
+                                  PPO <i aria-hidden="true" class="ml-2 pi-times-solid"></i>
+                                </div>
+                                <label for="PPO-certificate" class="pui-form__field">
+                                  <span class="sr-only">Enter a date</span>
+                                  <input id="PPO-certificate" type="date" value="2019-06-01" min="2019-01-01" max="2019-12-31">
+                                </label>
+                              </div>
+                            </div>
+                            <div class="mb-4">
+                              <p class="mb-0"><strong>2020</strong></p>
+                              <div class="pui-form flex flex--align-end mb-3">
+                                <div class="pill background-navy text-white mr-2">
+                                  PDP <i aria-hidden="true" class="ml-2 pi-times-solid"></i>
+                                </div>
+                                <label for="PDP-certificate" class="pui-form__field">
+                                  <span class="sr-only">Enter a date</span>
+                                  <input id="PDP-certificate" type="date" value="2020-08-20" min="2020-01-01" max="2020-12-31">
+                                </label>
+                              </div>
+                            </div>
+                            <!-- For messaging purposes only. :point-down-finger-emoji -->
+                            <p>If there are no certifications, this message will display.</p> 
+                            <div class="pui-message pui-message--info">
+                              <p>This product has no available certifications. See its contract template for more details.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="pui-accordion pui-accordion--nested my-2">
+                          <div class="pui-accordion__header p-2 block-container flex--justify-between">
+                            <div class="flex--center-content">
+                              <button title="Show Notes" aria-label="Show Notes" class="button--plain flex px-3">
+                                <i aria-hidden="true" class="pi-angle-right pi-lg transition"></i>
+                              </button> 
+                              <i aria-hidden="true" class="pi-note mr-2"></i>
+                              Request Contract Work
+                              <div class="ml-1 pill pill--circle p-0">0</div>
+                            </div>
+                            <div class="flex flex--align-center">
+                              <button class="button pui-modal__open" data-modal="request-contract-work-modal">
+                                Request <i aria-hidden="true" class="pi-plus"></i>
+                              </button>
+                            </div>
+                          </div>
+                          <div class="pui-accordion__content pui-accordion__content--nested p-3">
+                            <div class="pui-message pui-message--info">
+                              You have no Contract Work requested.
+                            </div>
+                          </div>
+                        </div>
+                        <div class="pui-accordion pui-accordion--nested my-2">
+                          <div class="pui-accordion__header p-2 block-container flex--justify-between">
+                            <div class="flex--center-content">
+                              <button title="Show Notes" aria-label="Show Notes" class="button--plain flex px-3">
+                                <i aria-hidden="true" class="pi-angle-right pi-lg transition"></i>
+                              </button> 
+                              <i aria-hidden="true" class="pi-note mr-2"></i>
+                              Attachments
+                              <div class="ml-1 pill pill--circle p-0">0</div>
+                            </div>
+                            <div class="flex flex--align-center"><button class="button">
+                              Add
+                              <i aria-hidden="true" class="pi-plus"></i></button>
+                            </div>
+                          </div>
+                          <div class="pui-accordion__content pui-accordion__content-nested overflow-x--auto">
+                            <div>
+                              <div data-v-01488a82="" class="w-100">
+                                <form data-v-01488a82="">
+                                  <label data-v-01488a82="" for="file-picker" class="sr-only">Upload File</label> 
+                                  <input data-v-01488a82="" type="file" multiple="multiple" id="file-picker" class="main-file-target file-target" style="display: none;">
+                                </form>
+                                <div data-v-01488a82="" class="drop-target flex flex--align-center flex--column">
+                                  You have no attachments. Drag multiple files here or choose manually
+                                  <button data-v-01488a82="" type="button" aria-label="upload files" autofocus="autofocus" class="button button--secondary">
+                                    <i data-v-01488a82="" aria-hidden="true" focusable="false" class="pi-upload-cloud"></i>
+                                  </button>
+                                </div>
+                              </div>
+                              <div class="flex flex--center-content">
+                                <button disabled="disabled" class="button button--post">Submit</button>
+                              </div>
+                            </div>
+                            <div class="pui-message pui-message--info">
+                              There are no Files.
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="pui-accordion">
+                  <div class="block-container flex--justify-between pui-accordion__header pointer px-2" tabindex="0">
+                    <div class="block tablet-up-4 flex flex--column px-2 py-3">
+                      <span class="text-med-blue">Humana</span>
+                      <span title="Direct Pay Test (2020)" class="truncate-with-ellipsis">
+                        Direct Pay Test (2020)
+                      </span>
+                    </div>
+                    <div class="block tablet-up-8">
+                      <div class="block-container flex--justify-end">
+                        <div class="block px-2 py-2 tablet-up-8">
+                          <div class="block-container tablet-up-3 blocks px-3 py-2">
+                            <div class="block flex flex--column">
+                              <strong>Status<span class="ml-1 pill pill--circle-empty-dot neutral"></span></strong>
+                              <span>Initial</span>
+                            </div>
+                            <div class="block flex flex--column">
+                              <strong>AWN</strong>
+                              <i class="pi-ban"></i>
+                            </div>
+                            <div class="block flex flex--column">
+                              <strong>Level</strong>
+                              <span>8</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="block tablet-up--shrink flex flex--align-start px-2 py-3">
+                          <div class="icon-menu">
+                            <div class="icon-menu__item">
+                              <button aria-label="Expire and Duplicate" title="Expire and Duplicate"
+                                class="icon-menu__action button--plain text-navy--hover">
+                                <i aria-hidden="true" class="pi-copy"></i>
+                              </button>
+                            </div>
+                            <div class="icon-menu__item">
+                              <button aria-label="Actions" title="Actions"
+                                class="icon-menu__action button--plain text-navy--hover">
+                                <i aria-hidden="true" class="pi-gear"></i>
+                              </button>
+                            </div>
+                            <div class="icon-menu__item">
+                              <button aria-label="History" title="History"
+                                class="icon-menu__action button--plain text-navy--hover">
+                                <i aria-hidden="true" class="pi-redo-clock"></i>
+                              </button>
+                            </div>
+                            <div class="icon-menu__item">
+                              <button aria-label="Delete" title="Delete"
+                                class="icon-menu__action button--plain text-navy--hover">
+                                <i aria-hidden="true" class="pi-trash"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="pui-accordion">
+                  <div class="block-container flex--justify-between pui-accordion__header pointer px-2" tabindex="0">
+                    <div class="block tablet-up-4 flex flex--column px-2 py-3">
+                      <span class="text-med-blue">Humana</span>
+                      <span title="Direct Pay Test (2020)" class="truncate-with-ellipsis">
+                        Direct Pay Test (2020)
+                      </span>
+                    </div>
+                    <div class="block tablet-up-8">
+                      <div class="block-container flex--justify-end">
+                        <div class="block px-2 py-2 tablet-up-8">
+                          <div class="block-container tablet-up-3 blocks px-3 py-2">
+                            <div class="block flex flex--column">
+                              <strong>Status<span class="ml-1 pill pill--circle-empty-dot neutral"></span></strong>
+                              <span>Initial</span>
+                            </div>
+                            <div class="block flex flex--column">
+                              <strong>AWN</strong>
+                              <i class="pi-ban"></i>
+                            </div>
+                            <div class="block flex flex--column">
+                              <strong>Level</strong>
+                              <span>8</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="block tablet-up--shrink flex flex--align-start px-2 py-3">
+                          <div class="icon-menu">
+                            <div class="icon-menu__item">
+                              <button aria-label="Expire and Duplicate" title="Expire and Duplicate"
+                                class="icon-menu__action button--plain text-navy--hover">
+                                <i aria-hidden="true" class="pi-copy"></i>
+                              </button>
+                            </div>
+                            <div class="icon-menu__item">
+                              <button aria-label="Actions" title="Actions"
+                                class="icon-menu__action button--plain text-navy--hover">
+                                <i aria-hidden="true" class="pi-gear"></i>
+                              </button>
+                            </div>
+                            <div class="icon-menu__item">
+                              <button aria-label="History" title="History"
+                                class="icon-menu__action button--plain text-navy--hover">
+                                <i aria-hidden="true" class="pi-redo-clock"></i>
+                              </button>
+                            </div>
+                            <div class="icon-menu__item">
+                              <button aria-label="Delete" title="Delete"
+                                class="icon-menu__action button--plain text-navy--hover">
+                                <i aria-hidden="true" class="pi-trash"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="pui-accordion">
+                  <div class="block-container flex--justify-between pui-accordion__header pointer px-2" tabindex="0">
+                    <div class="block tablet-up-4 flex flex--column px-2 py-3">
+                      <span class="text-med-blue">Humana</span>
+                      <span title="Direct Pay Test (2020)" class="truncate-with-ellipsis">
+                        Direct Pay Test (2020)
+                      </span>
+                    </div>
+                    <div class="block tablet-up-8">
+                      <div class="block-container flex--justify-end">
+                        <div class="block px-2 py-2 tablet-up-8">
+                          <div class="block-container tablet-up-3 blocks px-3 py-2">
+                            <div class="block flex flex--column">
+                              <strong>Status<span class="ml-1 pill pill--circle-empty-dot neutral"></span></strong>
+                              <span>Initial</span>
+                            </div>
+                            <div class="block flex flex--column">
+                              <strong>AWN</strong>
+                              <i class="pi-ban"></i>
+                            </div>
+                            <div class="block flex flex--column">
+                              <strong>Level</strong>
+                              <span>8</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="block tablet-up--shrink flex flex--align-start px-2 py-3">
+                          <div class="icon-menu">
+                            <div class="icon-menu__item">
+                              <button aria-label="Expire and Duplicate" title="Expire and Duplicate"
+                                class="icon-menu__action button--plain text-navy--hover">
+                                <i aria-hidden="true" class="pi-copy"></i>
+                              </button>
+                            </div>
+                            <div class="icon-menu__item">
+                              <button aria-label="Actions" title="Actions"
+                                class="icon-menu__action button--plain text-navy--hover">
+                                <i aria-hidden="true" class="pi-gear"></i>
+                              </button>
+                            </div>
+                            <div class="icon-menu__item">
+                              <button aria-label="History" title="History"
+                                class="icon-menu__action button--plain text-navy--hover">
+                                <i aria-hidden="true" class="pi-redo-clock"></i>
+                              </button>
+                            </div>
+                            <div class="icon-menu__item">
+                              <button aria-label="Delete" title="Delete"
+                                class="icon-menu__action button--plain text-navy--hover">
+                                <i aria-hidden="true" class="pi-trash"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <div class="flex flex--justify-between p-3">
+                <a href="#" class="text--size-lg text--bold">
+                  <i class="pi-user"></i>
+                  Abe Froman
+                </a>
+                <div class="flex flex--align-center">
+                  <div class="text--uppercase text-light mr-2">max level</div>
+                  <strong class="text--size-lg text-salmon">4</strong>
+                </div>
+              </div> 
+              <div class="pl-4">
+                <div class="pui-accordion">
+                  <div class="block-container flex--justify-between pui-accordion__header pointer px-2" tabindex="0">
+                    <div class="block tablet-up-4 flex flex--column px-2 py-3">
+                      <span class="text-med-blue">Humana</span>
+                      <span title="Direct Pay Test (2020)" class="truncate-with-ellipsis">
+                        Direct Pay Test (2020)
+                      </span>
+                    </div>
+                    <div class="block tablet-up-8">
+                      <div class="block-container flex--justify-end">
+                        <div class="block px-2 py-2 tablet-up-8">
+                          <div class="block-container tablet-up-3 blocks px-3 py-2">
+                            <div class="block flex flex--column">
+                              <strong>Status<span class="ml-1 pill pill--circle-empty-dot neutral"></span></strong>
+                              <span>Initial</span>
+                            </div>
+                            <div class="block flex flex--column">
+                              <strong>AWN</strong>
+                              <i class="pi-ban"></i>
+                            </div>
+                            <div class="block flex flex--column">
+                              <strong>Level</strong>
+                              <span>8</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="block tablet-up--shrink flex flex--align-start px-2 py-3">
+                          <div class="icon-menu">
+                            <div class="icon-menu__item">
+                              <button aria-label="Expire and Duplicate" title="Expire and Duplicate"
+                                class="icon-menu__action button--plain text-navy--hover">
+                                <i aria-hidden="true" class="pi-copy"></i>
+                              </button>
+                            </div>
+                            <div class="icon-menu__item">
+                              <button aria-label="Actions" title="Actions"
+                                class="icon-menu__action button--plain text-navy--hover">
+                                <i aria-hidden="true" class="pi-gear"></i>
+                              </button>
+                            </div>
+                            <div class="icon-menu__item">
+                              <button aria-label="History" title="History"
+                                class="icon-menu__action button--plain text-navy--hover">
+                                <i aria-hidden="true" class="pi-redo-clock"></i>
+                              </button>
+                            </div>
+                            <div class="icon-menu__item">
+                              <button aria-label="Delete" title="Delete"
+                                class="icon-menu__action button--plain text-navy--hover">
+                                <i aria-hidden="true" class="pi-trash"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pui-accordion__content p-3 fade-in-from-none-enter-active">
+                    <div class="block-container blocks px-3">
+                      <div class="block">
+                        <div class="mb-3">
+                          <div class="block-container blocks p-2 tablet-up-2 pui-form">
+                            <div class="block">
+                              <label class="pui-form__field">
+                                Set contract status to
+                                <div class="pui-form__select-wrapper">
+                                  <select>
+                                    <option value="Appointed">Appointed</option>
+                                    <option value="Appointed - Overrides Only">Appointed - Overrides Only</option>
+                                    <option value="Appointed - Renewal Only">Appointed - Renewal Only</option>
+                                    <option value="Carrier Returned - Incomplete">Carrier Returned - Incomplete</option>
+                                    <option value="Contracting Invite Sent">Contracting Invite Sent</option>
+                                    <option value="Contract Returned - Incomplete">Contract Returned - Incomplete</option>
+                                    <option value="Contract Returned">Contract Returned</option>
+                                    <option value="Follow Up #1">Follow Up #1</option>
+                                    <option value="Follow Up #2">Follow Up #2</option>
+                                    <option value="Follow Up #3">Follow Up #3</option>
+                                    <option value="Pending AHIP">Pending AHIP</option>
+                                    <option value="Initial">Initial <span>(2020-06-02)</span></option>
+                                    <option value="Paperwork Mailed">Paperwork Mailed</option>
+                                    <option value="Pending Business">Pending Business</option>
+                                    <option value="Lost">Lost</option>
+                                    <option value="Released">Released</option>
+                                    <option value="Sent to Carrier">Sent to Carrier</option>
+                                    <option value="Suspended">Suspended</option>
+                                    <option value="Terminated">Terminated</option>
+                                    <option value="Waiting on Certification">Waiting on Certification</option>
+                                    <option value="Pending Contract">Pending Contract</option>
+                                    <option value="Expired">Expired</option>
+                                    <option value="Pending Face-to-Face">Pending Face-to-Face</option>
+                                    <option value="Pending OIG">Pending OIG</option>
+                                    <option value="Delayed Release">Delayed Release</option>
+                                  </select>
+                                </div>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="mb-3">
+                          <form action="" class="pui-form block-container tablet-up-3 laptop-up-4 desktop-up-5 blocks mb-3 p-2">
+                            <div class="block">
+                              <label for="awn" class="pui-form__field">General AWN
+                                <input id="awn" type="text" placeholder="9006591">
+                              </label>
+                            </div>
+                            <div class="block">
+                              <label for="advance-amount" class="pui-form__field">Advance Amount
+                                <input id="advance-amount" type="text" placeholder="9006591">
+                              </label>
+                            </div>
+                            <div class="block">
+                              <label for="Option" class="pui-form__field">Level
+                                <div class="pui-form__select-wrapper">
+                                  <select name="Option Select" id="Option">
+                                    <option value="Option1">Option 1</option>
+                                    <option value="Option2">Option 2</option>
+                                    <option value="Option3">Option 3</option>
+                                    <option value="Option4">Option 4</option>
+                                    <option value="Option5">Option 5</option>
+                                    <option value="Option6">Option 6</option>
+                                  </select>
+                                </div>
+                              </label>
+                            </div>
+                            <div class="block">
+                              <fieldset class="pui-form__field">
+                                <legend>Annual Rollover</legend>
+                                <div class="pui-toggle">
+                                  <div class="pui-toggle__content">
+                                    <input id="tall" type="radio" checked="" name="height">
+                                    <label for="tall"><i class="pi-check pi-heavy"></i> Yes</label>
+                                  </div>
+                                  <div class="pui-toggle__content">
+                                    <input id="short" type="radio" name="height">
+                                    <label for="short"><i class="pi-check pi-heavy"></i> No</label>
+                                  </div>
+                                </div>
+                              </fieldset>
+                            </div>
+                            <div class="block">
+                              <label for="upline" class="pui-form__field has-icon--right">Upline
+                                <input id="upline" type="search" placeholder="">
+                                <i class="pi-search background-white"></i>
+                              </label>
+                            </div>
+                            <div class="block">
+                              <label for="signing-agent" class="pui-form__field has-icon--right">Signing Agent
+                                <input id="signing-agent" type="search" placeholder="">
+                                <i class="pi-search background-white"></i>
+                              </label>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="mb-4">
+                          <div class="block-container flex--justify-between flex--align-center mb-3">
+                            <strong class="text-navy text--size-lg">Downlines</strong>
+                            <div class="flex flex--align-center pr-2">
+                              <button class="button">Add<i aria-hidden="true" class="pi-plus"></i></button>
+                            </div>
+                          </div>
+                          <div class="block-container tablet-up-3">
+                            <div class="block">
+                              <div class="pui-card flex--center-content flex--column background-skyblue-alpha-1 border--color-skyblue">
+                                <div class="pui-stat pui-stat--md text-salmon">
+                                  <span class="pui-stat__number">0</span>
+                                </div>
+                                <span>
+                                  <i class="pi-users text-light mr-2"></i><a href="#">Downlines</a>  
+                                </span>
+                              </div>
+                            </div>
+                              <div class="block">
+                              <div class="pui-card flex--center-content flex--column background-skyblue-alpha-2 border--color-skyblue">
+                                <a 
+                                  href="#" 
+                                  class="pui-stat pui-stat--md text-salmon" 
+                                  data-stat-label="Really Long Company Name" 
+                                  aria-label="Really Long Company Name">
+                                  <span class="pui-stat__number">7</span>
+                                </a>
+                                <span>
+                                  <i class="pi-user-solid text-light mr-2"></i><a href="#">Principal Name</a>  
+                                </span>
+                                <span>
+                                  <div class="pill pill--circle-empty-dot positive"></div>
+                                  <a href="#">Parent contract</a>
+                                </span>      
+                              </div>
+                            </div>
+                              <div class="block">
+                              <div class="pui-card flex--center-content flex--column background-skyblue-alpha-3 border--color-skyblue">
+                                <a 
+                                  href="#" 
+                                  class="pui-stat pui-stat--md text-salmon" 
+                                  data-stat-label="Company Name" 
+                                  aria-label="Company Name">
+                                  <span class="pui-stat__number">10</span>
+                                </a>
+                                <span>
+                                  <i class="pi-user-solid text-light mr-2"></i><a href="#">Principal Name</a>  
+                                </span>
+                                <span>
+                                  <div class="pill pill--circle-empty-dot positive"></div>
+                                  <a href="#">Parent contract</a>
+                                </span>      
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="mb-4">
+                          <div class="block-container flex--justify-between flex--align-center mb-3">
+                            <strong class="text-navy text--size-lg">Products and States</strong>
+                            <div class="flex flex--align-center pr-2">
+                              <button class="button">Add <i aria-hidden="true" class="pi-plus"></i></button>
+                            </div>
+                          </div>
+                          <div>
+                            <div class="mb-3">
+                              <div class="block-container blocks mx-1 my-1">
+                                <button class="block block--shrink button button--beige text-navy border--color-navy">
+                                  Medicare Advantage <i class="pi-times-solid ml-2 mr-0 text--size-lg"></i>
+                                </button>
+                                <button class="block block--shrink button button--beige text-navy border--color-navy">
+                                  Prescription Drug Plan <i class="pi-times-solid ml-2 mr-0 text--size-lg"></i>
+                                </button>
+                              </div>
+                            </div>
+                            <div class="mb-3">
+                              <div class="block-container blocks p-1">
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">
+                                    AK
+                                    <div class="pez__check-wrapper">
+                                      <span class="pill pill--circle-empty-dot backkground-white"></span>
+                                    </div>
+                                  </button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                                <div class="block block--shrink">
+                                  <button class="pez pressed">AK</button>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="block-container">
+                              <fieldset class="pui-form__field pui-form block block--shrink">
+                                <legend class="sr-only">Select All States or Deselect all</legend>
+                                <div class="pui-toggle mt-0">
+                                  <div class="pui-toggle__content">
+                                    <input class="pui-toggle__input" id="all-states-1" type="radio" checked="" name="states">
+                                    <label for="all-states-1"><i class="pi-check"></i> All States</label>
+                                  </div>
+                                  <div class="pui-toggle__content">
+                                    <input class="pui-toggle__input" id="deselect-1" type="radio" name="states">
+                                    <label for="deselect-1"><i class="pi-check"></i> Deselect</label>
+                                  </div>
+                                </div>
+                              </fieldset>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="pui-accordion pui-accordion--nested my-2 active">
+                          <div class="pui-accordion__header p-2 block-container flex--justify-between">
+                            <div class="flex--center-content">
+                              <button title="Show Notes" aria-label="Show Notes" class="button--plain flex px-3">
+                                <i aria-hidden="true" class="pi-angle-right pi-lg transition rotate-90"></i>
+                              </button> 
+                              <i aria-hidden="true" class="pi-note mr-2"></i>
+                              Submission Notes
+                              <div class="ml-1 pill pill--circle p-0">1</div>
+                            </div>
+                            <div class="flex flex--align-center">
+                              <button class="button mr-2">Add <i aria-hidden="true" class="pi-plus"></i></button>
+                              <button class="button">View All <i aria-hidden="true" class="pi-arrow-right"></i></button>
+                            </div>
+                          </div>
+                          <div class="pui-accordion__content pui-accordion__content--nested p-3 active">
+                            <div class="block-container blocks tablet-up-3 flex--align-start overflow-x--scroll">
+                              <div class="block">
+                                <div class="background-note pui-card m-2 py-3 pl-3 pr-0">
+                                  <div class="block-container">
+                                    <div class="block-10">
+                                      <div class="pui-card__header">
+                                        <strong title="Last edited by Ted Krueger 08/12/2020" class="pui-card__group">
+                                          <i aria-hidden="true" class="pi-speech-bubble"></i>
+                                          Ted Krueger 08/12/2020
+                                        </strong>
+                                      </div>
+                                      <div title="Submission Note test" class="note-body">
+                                        Submission Note test
+                                      </div>
+                                      <div class="flex flex--wrap mt-3"></div>
+                                    </div>
+                                    <div class="block-2">
+                                      <div class="icon-menu icon-menu--vertical">
+                                        <div class="icon-menu__item">
+                                          <button title="Tags" class="icon-menu__action button--plain text-navy--hover pointer">
+                                            <i aria-hidden="true" class="pi-tag"></i> <span class="sr-only">Tags</span>
+                                          </button>
+                                        </div>
+                                        <div class="icon-menu__item">
+                                          <button title="Edit" aria-label="Edit" class="icon-menu__action button--plain text-navy--hover pointer">
+                                            <i aria-hidden="true" class="pi-edit"></i>
+                                          </button>
+                                        </div>
+                                        <div class="icon-menu__item">
+                                          <button title="Readonly" aria-label="Readonly" class="icon-menu__action button--plain text-navy--hover pointer">
+                                            <i aria-hidden="true" class="pi-lock"></i>
+                                          </button>
+                                        </div>
+                                        <div class="icon-menu__item">
+                                          <button title="Owners" class="icon-menu__action button--plain text-navy--hover pointer">
+                                            <i aria-hidden="true" class="pi-user"></i> <span class="sr-only">Owners</span>
+                                          </button></div>
+                                        <div class="icon-menu__item">
+                                          <button title="Delete" class="icon-menu__action button--plain text-navy--hover pointer">
+                                            <i aria-hidden="true" class="pi-trash"></i> <span class="sr-only">Delete</span>
+                                          </button></div>
+                                        <div class="icon-menu__item">
+                                          <button title="expand note" class="icon-menu__action button--plain text-navy--hover pointer">
+                                            <i aria-hidden="true" class="pi-angle-down-double text--size-lg flex transition"></i> <span class="sr-only">expand note</span>
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="pui-accordion pui-accordion--nested my-2">
+                          <div class="pui-accordion__header p-2 block-container flex--justify-between">
+                            <div class="flex--center-content">
+                              <button title="Show Notes" aria-label="Show Notes" class="button--plain flex px-3">
+                                <i aria-hidden="true" class="pi-angle-right pi-lg transition"></i>
+                              </button> 
+                              <i aria-hidden="true" class="pi-note mr-2"></i>
+                              Certifications
+                              <div class="ml-1 pill pill--circle p-0">3</div>
+                            </div>
+                            <div class="flex flex--align-center"><button class="button">
+                              Add
+                              <i aria-hidden="true" class="pi-plus"></i></button>
+                            </div>
+                          </div>
+                          <div class="pui-accordion__content pui-accordion__content--nested p-3">
+                            <div class="mb-4">
+                              <p class="mb-0"><strong>2019</strong></p>
+                              <div class="pui-form flex flex--align-end mb-3">
+                                <div class="pill background-navy text-white mr-2">
+                                  HMO <i aria-hidden="true" class="ml-2 pi-times-solid"></i>
+                                </div>
+                                <label for="hmo-certificate" class="pui-form__field">
+                                  <span class="sr-only">Enter a date</span>
+                                  <input id="hmo-certificate" type="date" min="2019-01-01" max="2019-12-31">
+                                </label>
+                              </div>
+                              <div class="pui-form flex flex--align-end mb-3">
+                                <div class="pill background-navy text-white mr-2">
+                                  PPO <i aria-hidden="true" class="ml-2 pi-times-solid"></i>
+                                </div>
+                                <label for="PPO-certificate" class="pui-form__field">
+                                  <span class="sr-only">Enter a date</span>
+                                  <input id="PPO-certificate" type="date" value="2019-06-01" min="2019-01-01" max="2019-12-31">
+                                </label>
+                              </div>
+                            </div>
+                            <div class="mb-4">
+                              <p class="mb-0"><strong>2020</strong></p>
+                              <div class="pui-form flex flex--align-end mb-3">
+                                <div class="pill background-navy text-white mr-2">
+                                  PDP <i aria-hidden="true" class="ml-2 pi-times-solid"></i>
+                                </div>
+                                <label for="PDP-certificate" class="pui-form__field">
+                                  <span class="sr-only">Enter a date</span>
+                                  <input id="PDP-certificate" type="date" value="2020-08-20" min="2020-01-01" max="2020-12-31">
+                                </label>
+                              </div>
+                            </div>
+                            <!-- For messaging purposes only. :point-down-finger-emoji -->
+                            <p>If there are no certifications, this message will display.</p> 
+                            <div class="pui-message pui-message--info">
+                              <p>This product has no available certifications. See its contract template for more details.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="pui-accordion pui-accordion--nested my-2">
+                          <div class="pui-accordion__header p-2 block-container flex--justify-between">
+                            <div class="flex--center-content">
+                              <button title="Show Notes" aria-label="Show Notes" class="button--plain flex px-3">
+                                <i aria-hidden="true" class="pi-angle-right pi-lg transition"></i>
+                              </button> 
+                              <i aria-hidden="true" class="pi-note mr-2"></i>
+                              Request Contract Work
+                              <div class="ml-1 pill pill--circle p-0">0</div>
+                            </div>
+                            <div class="flex flex--align-center">
+                              <button class="button pui-modal__open" data-modal="request-contract-work-modal">
+                                Request <i aria-hidden="true" class="pi-plus"></i>
+                              </button>
+                            </div>
+                          </div>
+                          <div class="pui-accordion__content pui-accordion__content--nested p-3">
+                            <div class="pui-message pui-message--info">
+                              You have no Contract Work requested.
+                            </div>
+                          </div>
+                        </div>
+                        <div class="pui-accordion pui-accordion--nested my-2">
+                          <div class="pui-accordion__header p-2 block-container flex--justify-between">
+                            <div class="flex--center-content">
+                              <button title="Show Notes" aria-label="Show Notes" class="button--plain flex px-3">
+                                <i aria-hidden="true" class="pi-angle-right pi-lg transition"></i>
+                              </button> 
+                              <i aria-hidden="true" class="pi-note mr-2"></i>
+                              Attachments
+                              <div class="ml-1 pill pill--circle p-0">0</div>
+                            </div>
+                            <div class="flex flex--align-center"><button class="button">
+                              Add
+                              <i aria-hidden="true" class="pi-plus"></i></button>
+                            </div>
+                          </div>
+                          <div class="pui-accordion__content pui-accordion__content-nested overflow-x--auto">
+                            <div>
+                              <div data-v-01488a82="" class="w-100">
+                                <form data-v-01488a82="">
+                                  <label data-v-01488a82="" for="file-picker" class="sr-only">Upload File</label> 
+                                  <input data-v-01488a82="" type="file" multiple="multiple" id="file-picker" class="main-file-target file-target" style="display: none;">
+                                </form>
+                                <div data-v-01488a82="" class="drop-target flex flex--align-center flex--column">
+                                  You have no attachments. Drag multiple files here or choose manually
+                                  <button data-v-01488a82="" type="button" aria-label="upload files" autofocus="autofocus" class="button button--secondary">
+                                    <i data-v-01488a82="" aria-hidden="true" focusable="false" class="pi-upload-cloud"></i>
+                                  </button>
+                                </div>
+                              </div>
+                              <div class="flex flex--center-content">
+                                <button disabled="disabled" class="button button--post">Submit</button>
+                              </div>
+                            </div>
+                            <div class="pui-message pui-message--info">
+                              There are no Files.
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="pui-accordion">
+                  <div class="block-container flex--justify-between pui-accordion__header pointer px-2" tabindex="0">
+                    <div class="block tablet-up-4 flex flex--column px-2 py-3">
+                      <span class="text-med-blue">Humana</span>
+                      <span title="Direct Pay Test (2020)" class="truncate-with-ellipsis">
+                        Direct Pay Test (2020)
+                      </span>
+                    </div>
+                    <div class="block tablet-up-8">
+                      <div class="block-container flex--justify-end">
+                        <div class="block px-2 py-2 tablet-up-8">
+                          <div class="block-container tablet-up-3 blocks px-3 py-2">
+                            <div class="block flex flex--column">
+                              <strong>Status<span class="ml-1 pill pill--circle-empty-dot neutral"></span></strong>
+                              <span>Initial</span>
+                            </div>
+                            <div class="block flex flex--column">
+                              <strong>AWN</strong>
+                              <i class="pi-ban"></i>
+                            </div>
+                            <div class="block flex flex--column">
+                              <strong>Level</strong>
+                              <span>8</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="block tablet-up--shrink flex flex--align-start px-2 py-3">
+                          <div class="icon-menu">
+                            <div class="icon-menu__item">
+                              <button aria-label="Expire and Duplicate" title="Expire and Duplicate"
+                                class="icon-menu__action button--plain text-navy--hover">
+                                <i aria-hidden="true" class="pi-copy"></i>
+                              </button>
+                            </div>
+                            <div class="icon-menu__item">
+                              <button aria-label="Actions" title="Actions"
+                                class="icon-menu__action button--plain text-navy--hover">
+                                <i aria-hidden="true" class="pi-gear"></i>
+                              </button>
+                            </div>
+                            <div class="icon-menu__item">
+                              <button aria-label="History" title="History"
+                                class="icon-menu__action button--plain text-navy--hover">
+                                <i aria-hidden="true" class="pi-redo-clock"></i>
+                              </button>
+                            </div>
+                            <div class="icon-menu__item">
+                              <button aria-label="Delete" title="Delete"
+                                class="icon-menu__action button--plain text-navy--hover">
+                                <i aria-hidden="true" class="pi-trash"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <input type="radio" id="tab-input-d" name="tabs">
+          <label for="tab-input-d" class="pui-tab flex flex--justify-between">
+            RTS Checker
+            <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
+          </label>
+          <div class="pui-tab-panel p-4">
+            <div class="mb-4">
+              <div class="block-container tablet-up-2 lg-tablet-up-5 w-100 blocks p-2 pui-form">
+                <div class="block">
+                  <label class="pui-form__field">
+                    Product
+                    <div class="pui-form__select-wrapper">
+                      <select id="product">
+                        <option value="medicare-advantage-rx">
+                          MAPD
+                        </option>
+                        <option value="medicare-advantage-norx">
+                          MA Only
+                        </option>
+                        <option value="part-d">
+                          Part D
+                        </option>
+                        <option value="medicare-supplement">
+                          Med Supp
+                        </option>
+                      </select>
+                    </div>
+                  </label>
+                </div>
+                <div class="block">
+                  <label for="zipcode" class="pui-form__field">Zip Code
+                    <input id="zipcode" type="tel" placeholder="">
+                  </label>
+                </div>
+                <div class="block">
+                  <label class="pui-form__field">
+                    County
+                    <div class="pui-form__select-wrapper">
+                      <select id="product">
+                        <option value="medicare-advantage-rx">
+                          Herkimer
+                        </option>
+                      </select>
+                    </div>
+                  </label>
+                </div>
+                <div class="block">
+                  <label class="pui-form__field">
+                    Plan Year
+                    <div class="pui-form__select-wrapper">
+                      <select id="product">
+                        <option value="medicare-advantage-rx">
+                          2019
+                        </option>
+                        <option value="medicare-advantage-norx">
+                          2020
+                        </option>
+                      </select>
+                    </div>
+                  </label>
+                </div>
+                <div class="block flex flex--align-end">
+                  <button type="button" class="button button--post p-2 pui-modal__close" data-modal="request-contract-work-modal">
+                    Search <i focusable="false" aria-hidden="true" class="pi-search"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="pui-accordion active">
+              <div class="pui-accordion__header block-container p-3 tablet-up-3">
+                <div class="block flex flex--column">
+                  <strong>Carrier</strong>
+                  CDPHP Medicare Advantage
+                </div>
+                <div class="block flex flex--column">
+                  <strong>Plan</strong>
+                  <a href="#" title="Edit Contract">
+                    CDPHP Choice (HMO) Sell<i class="pi-edit ml-2"></i> 
+                  </a>          
+                </div>
+                <div class="block flex flex--column flex--align-start">
+                  <span class="flex flex--column">
+                    <strong>
+                      Status 
+                      <div class="pill pill--circle-empty-dot negative"></div>
+                    </strong>
+                    <span class="pill positive inverted">
+                      <i class="pi-ban mr-1"></i> Sell
+                    </span>              
+                  </span>
+                </div>
+                <i class="pos-abs pin-right pin-center-top pi-angle-up mr-3"></i>
+              </div>
+              <div class="pui-accordion__content active">
+                <div class="pui-message pui-message--error my-0">
+                  <p class="m-0">
+                    No matching appointed and certified contracts in the year of 2019 with a product of 'Medicare Advantage' in the state of 'NY' matching the selected plan (MA-H3388-001-000).
+                  </p>
+                </div>      
+              </div>
+            </div>
+            <div class="pui-accordion">
+              <div class="pui-accordion__header block-container p-3 tablet-up-3">
+                <div class="block flex flex--column">
+                  <strong>Carrier</strong>
+                  Highmark Inc.
+                </div>
+                <div class="block flex flex--column">
+                  <strong>Plan</strong>
+                  Freedom Blue PPO Standard (PPO)
+                </div>
+                <div class="block flex flex--column flex--align-start">
+                  <span class="flex flex--column">
+                    <strong>
+                      Status 
+                      <div class="pill pill--circle-empty-dot negative"></div>
+                    </strong>
+                      <span>
+                        <i class="pi-ban mr-1"></i>Sell
+                      </span>           
+                  </span>
+                </div>
+                <i class="pos-abs pin-right pin-center-top pi-angle-down mr-3"></i>
+              </div>
+              <div class="pui-accordion__content">
+                <div class="pui-message pui-message--error my-0">
+                  <ul>
+                    <li>Matched 'Medicare Advantage' product certification "Certification" (8/13/2019).</li>
+                    <li>Found ready-to-sell carrier contract 'Highmark' (#118532).</li>
+                  </ul>
+                </div>      
+              </div>
+            </div>
+            <div class="pui-accordion">
+              <div class="pui-accordion__header block-container p-3 tablet-up-3">
+                <div class="block flex flex--column">
+                  <strong>Carrier</strong>
+                  Highmark Inc.
+                </div>
+                <div class="block flex flex--column">
+                  <strong>Plan</strong>
+                  <a href="#" title="Edit Contract">
+                    Freedom Blue PPO Standard (PPO)<i class="pi-edit ml-2"></i> 
+                  </a>  
+                </div>
+                <div class="block flex flex--column flex--align-start">
+                  <span class="flex flex--column">
+                    <strong>
+                      Status 
+                      <div class="pill pill--circle-empty-dot neutral"></div>
+                    </strong>
+                    Contracted         
+                  </span>
+                </div>
+                <i class="pos-abs pin-right pin-center-top pi-angle-down mr-3"></i>
+              </div>
+              <div class="pui-accordion__content">
+                <div class="pui-message pui-message--info my-0">
+                  <ul>
+                    <li>Matched 'Medicare Advantage' product certification "Certification" (8/13/2019).</li>
+                    <li>Found ready-to-sell carrier contract 'Highmark' (#118532).</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <div id="request-contract-work-modal" class="pui-modal pui-modal--small pui-modal--closed" tabindex="-1">
+    <div class="pui-modal__inner animated slideInUp faster">
+      <div class="pui-modal__header flex flex--align-center">
+        Request Work On <strong>Direct Pay Test (2020)</strong>
+      </div>
+      <div class="pui-modal__content">
+        <form class="pui-form">
+          <label for="reason" class="pui-form__field mb-3">Reason
+            <input class="background-white" id="reason" type="text" placeholder="">
+          </label>
+          <label for="details" class="pui-form__field mb-3">Details
+            <textarea class="background-white" id="details" type="text" placeholder=""></textarea>
+          </label>
+          <div class="flex--center-content mt-2">
+            <button type="cancel" class="button mr-2 p-2 pui-modal__close" data-modal="request-contract-work-modal">Cancel</button>
+            <button type="button" class="button button--post p-2 pui-modal__close" data-modal="request-contract-work-modal">Add <i focusable="false" aria-hidden="true" class="pi-plus"></i></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="/src/assets/js/platform-ui.min.js"></script>
+</body>
+
+</html>
