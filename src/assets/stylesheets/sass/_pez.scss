@@ -69,7 +69,7 @@
   margin: map.get(variables.$spacers, 1) / 2;
   min-width: map.get(variables.$spacers, 4);
   overflow: hidden;
-  padding: map.get(variables.$spacers, 1);
+  padding: calc(#{variables.$spacer} * .45);
   position: relative;
   transition: config.$transitions;
 
@@ -81,9 +81,9 @@
     color: white;
     bottom: -1px;
     right: -1px;
-    height: variables.$spacer;
+    height: calc(#{variables.$spacer} + .2);
     position: absolute;
-    width: variables.$spacer;
+    width: calc(#{variables.$spacer} + .2);
     
     // triangle for check background
     &:after {
@@ -91,7 +91,7 @@
       width: 0;
       height: 0;
       border-style: solid;
-      border-width: 0 0 1rem 1rem;
+      border-width: 0 0 1.2rem 1.2rem;
       border-color: transparent transparent map.get(variables.$error-colors, 'positive') transparent;
       position: absolute;
       bottom: 0;
@@ -105,6 +105,13 @@
       position: absolute;
       bottom: 0; 
       right: -2px;
+      z-index: 2;
+    }
+
+    .pill {
+      position: absolute;
+      bottom: 2px;
+      right: 2px;
       z-index: 2;
     }
   }
