@@ -1029,7 +1029,7 @@
             Inactive
             <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
           </label>
-          <div class="pui-tab-panel py-4 px-4">
+          <div class="pui-tab-panel p-4">
             <p>See Attachments tab</p>
           </div>
           <input type="radio" id="tab-input-c" name="tabs">
@@ -1093,7 +1093,7 @@
               </div>
             </div>
             <div class="mb-3">
-              <div class="flex flex--justify-between border border--color-skyblue p-3 mb-3">
+              <div class="flex flex--justify-between p-3">
                 <a href="#" class="text--size-lg text--bold">
                   <i class="pi-user"></i>
                   Gregory Gudis
@@ -1874,7 +1874,7 @@
               </div>
             </div>
             <div class="mb-3">
-              <div class="flex flex--justify-between border border--color-skyblue p-3 mb-3">
+              <div class="flex flex--justify-between p-3">
                 <a href="#" class="text--size-lg text--bold">
                   <i class="pi-user"></i>
                   Abe Froman
@@ -2544,8 +2544,121 @@
             RTS Checker
             <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
           </label>
-          <div class="pui-tab-panel">
-            <img src="https://placeimg.com/640/480/animals?t=1565635322782">
+          <div class="pui-tab-panel p-4">
+            <div class="mb-4">
+              <div class="block-container tablet-up-2 lg-tablet-up-5 w-100 blocks p-2 pui-form">
+                <div class="block">
+                  <label class="pui-form__field">
+                    Product
+                    <div class="pui-form__select-wrapper">
+                      <select id="product">
+                        <option value="medicare-advantage-rx">
+                          MAPD
+                        </option>
+                        <option value="medicare-advantage-norx">
+                          MA Only
+                        </option>
+                        <option value="part-d">
+                          Part D
+                        </option>
+                        <option value="medicare-supplement">
+                          Med Supp
+                        </option>
+                      </select>
+                    </div>
+                  </label>
+                </div>
+                <div class="block">
+                  <label for="zipcode" class="pui-form__field">Zip Code
+                    <input id="zipcode" type="tel" placeholder="">
+                  </label>
+                </div>
+                <div class="block">
+                  <label class="pui-form__field">
+                    County
+                    <div class="pui-form__select-wrapper">
+                      <select id="product">
+                        <option value="medicare-advantage-rx">
+                          Herkimer
+                        </option>
+                      </select>
+                    </div>
+                  </label>
+                </div>
+                <div class="block">
+                  <label class="pui-form__field">
+                    Plan Year
+                    <div class="pui-form__select-wrapper">
+                      <select id="product">
+                        <option value="medicare-advantage-rx">
+                          2019
+                        </option>
+                        <option value="medicare-advantage-norx">
+                          2020
+                        </option>
+                      </select>
+                    </div>
+                  </label>
+                </div>
+                <div class="block flex flex--align-end">
+                  <button type="button" class="button button--post p-2 pui-modal__close" data-modal="request-contract-work-modal">
+                    Search <i focusable="false" aria-hidden="true" class="pi-search"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="mb-3 pb-3 pui-card">
+              <div class="flex flex--justify-between flex--align-start">
+                <div class="flex flex--column">
+                  <span>CDPHP Choice (HMO) Sell</span>
+                  <span>CDPHP Medicare Advantage</span>
+                </div>
+                <span class="pill negative text-white">
+                  <i class="pi-ban mr-1"></i> Sell
+                </span>
+              </div>
+              <div class="pui-message pui-message--error" data-header="">
+                <p class="m-0">
+                  No matching appointed and certified contracts in the year of 2019 with a product of 'Medicare Advantage' in the state of 'NY' matching the selected plan (MA-H3388-001-000).
+                </p>
+              </div>
+            </div>
+            <div class="mb-3 pb-3 pui-card">
+              <div class="flex flex--justify-between flex--align-start">
+                <div class="flex flex--column">
+                  <span>Fidelis Medicare Advantage without Rx (HMO-POS)</span>
+                  <span>Fidelis Legacy Plan</span>
+                </div>
+                <span class="pill negative text-white">
+                  <i class="pi-ban mr-1"></i> Sell
+                </span>
+              </div>
+              <div class="pui-message pui-message--error" data-header="">
+                <p class="m-0">
+                  No matching appointed and certified contracts in the year of 2019 with a product of 'Medicare Advantage' in the state of 'NY' matching the selected plan (MA-H3388-001-000).
+                </p>
+              </div>
+            </div>
+            <div class="mb-3 pb-3 pui-card">
+              <div class="flex flex--justify-between flex--align-start">
+                <div class="flex flex--column">
+                  <a href="#" title="Edit Contract">
+                    <i class="pi-edit mr-2"></i>HumanaChoice H5970-016 (PPO)
+                  </a>
+                  <span>Humana</span>
+                </div>
+                <span class="pill negative text-white">
+                  Contracted
+                </span>
+              </div>
+              <div class="pui-message pui-message--info" data-header="">
+                <ul>
+                  <li>Matched 'Medicare Advantage' product certification "PPO" (9/4/2018).</li>
+                  <li>Requested state 'NY' is not enabled for product 'Medicare Advantage'.</li>
+                  <li>Evaluated Appointed carrier contract 'Humana' (#4847): Not ready-to-sell.</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
