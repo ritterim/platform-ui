@@ -276,10 +276,6 @@
   border: 1px solid color.adjust(map.get(variables.$greyscale, "light"), $lightness: math.percentage(config.$hue-threshold * 2));
   padding: config.$card-padding;
 
-  .block & {
-    height: 100%;
-  }
-
   &__image {
     width: calc(100% + (#{config.$card-padding} * 2));
     height: auto;
