@@ -5,16 +5,16 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contracts</title>
+  <title>Memberships</title>
 
   <link rel="stylesheet" href="/src/assets/stylesheets/platform-ui.min.css">
 
-  <link rel="apple-touch-icon" sizes="180x180" href="src/assets/images/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="src/assets/images/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="src/assets/images/favicon/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="src/assets/images/favicon/favicon-16x16.png">
-  <link rel="manifest" href="src/assets/images/favicon/site.webmanifest">
-  <link rel="mask-icon" href="src/assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../src/assets/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../src/assets/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="../../src/assets/images/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../src/assets/images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../src/assets/images/favicon/site.webmanifest">
+  <link rel="mask-icon" href="../../src/assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
   <style>
@@ -102,6 +102,57 @@
     }
     .background-skyblue-alpha-6 {
       background-color: rgba(145, 185, 220, 0.6);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .contact-tabs-container {
+      flex-direction: row-reverse;
+      transition: .2s;
+    }
+    @media (min-width: 768px) {
+      .contact-tabs-container {
+        flex-direction: column;
+      }
+    }
+    .contact-tabs-container .contact-tabs {
+      display: flex;
+      flex-direction: column;
+      height: calc(100vh - var(--pui-menu-height) * 2);
+      position: sticky;
+      top: 144px;
+    }
+    @media (min-width: 768px) {
+      .contact-tabs-container .contact-tabs {
+        flex-direction: row;
+        position: inherit;
+        height: inherit;
+      }
+    }
+    .contact-tabs__result {
+      flex: 1 1 auto;
+    }
+    .contact-tabs-container .contact-tabs .contact-tab {
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      border-left: 0.25rem solid var(--pui-lighter);
+    }
+    @media (min-width: 768px) {
+      .contact-tabs-container .contact-tabs .contact-tab {
+        border-left: 0;
+        border-bottom: 0.25rem solid var(--pui-lighter);
+      }
+    }
+    .contact-tabs-container .contact-tabs .contact-tab.active, .contact-tabs-container .contact-tabs .contact-tab:focus, .contact-tabs-container .contact-tabs .contact-tab:hover {
+      border-color: var(--pui-navy);
+      color: var(--pui-navy);
+      font-weight: bold;
     }
   </style>
 </head>
@@ -384,7 +435,7 @@
             <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
           </label>
           <div class="pui-tab-panel p-4">
-            <div class="block-container flex--justify-between">
+            <!-- <div class="block-container flex--justify-between">
               <div class="block tablet-up-4 flex flex--align-center mb-3">
                 <div class="block-container flex--align-end w-100 py-2">
                   <div class="block">
@@ -400,14 +451,279 @@
                   Add <i aria-hidden="true" class="pi-plus"></i>
                 </button>
               </div>
-            </div>
-            <div class="block-container flex--justify-between">
-              <div class="block tablet-up-8 lg-tablet-up-9">
-                <div class="block-container">
-                  <div class="block"></div>
-                  <div class="block"></div>
-                  <div class="block"></div>
-                </div>
+            </div> -->
+            <div id="top" class="block-container contact-tabs-container background-white p-3">
+  
+              <div class="flex text--size-xl text--uppercase contact-tabs flex--justify-between mb-3">
+                <a href="#d" data-href="d" class="contact-tab active">d</a>
+                <a href="#k" data-href="k" class="contact-tab">k</a>
+                <a href="#m" data-href="m" class="contact-tab">m</a>
+                <a href="#p" data-href="p" class="contact-tab">p</a>
+                <a href="#s" data-href="s" class="contact-tab">s</a>
+                <a href="#w" data-href="w" class="contact-tab">w</a>    
+              </div>
+              
+              <div class="contact-tabs__result pui-form">
+                
+                <table class="pui-table">
+                  <thead>
+                    <tr>
+                      <th>Action</th>
+                      <th>Member</th>
+                      <th>Department</th>
+                      <th>Title</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr id="d">
+                      <td colspan="5" data-label="D" class="pos-rel text--size-lg text-navy text--bold">
+                        <span class="hide-tablet-down">D</span>
+                        <a href="#top" class="button top-action pos-abs pin-right mr-3">Top <i class="pi-arrow-up"></i></a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td data-label="Actions">
+                        <div class="icon-menu">
+                          <div class="icon-menu__item">
+                            <button class="icon-menu__action button--plain text-negative--hover pointer">
+                              <i class="pi-user-solid" aria-hidden="hidden"></i>
+                            </button>
+                          </div>
+                          <div class="icon-menu__item">
+                            <button class="icon-menu__action button--plain text-positive--hover pointer">
+                              <i class="pi-user-circle" aria-hidden="hidden"></i>
+                            </button>
+                          </div>
+                        </div>            
+                      </td>
+                      <td data-label="Member">
+                        Dormammu
+                      </td>
+                      <td data-label="Department">
+                        <input name="dept" type="text">
+                      </td>
+                      <td data-label="Title">
+                        <input name="title" type="text" value="Dark Dimension Ruler">
+                      </td>
+                      <td>
+                        <button class="icon-menu__action button--plain text-negative--hover pointer">
+                          <i class="pi-trash" aria-hidden="hidden"></i>
+                        </button>            
+                      </td>
+                    </tr>
+                    <tr id="k">
+                      <td colspan="5" data-label="K" class="pos-rel text--size-lg text-navy text--bold">
+                        <span class="hide-tablet-down">K</span>
+                        <a href="#top" class="button top-action pos-abs pin-right mr-3">Top <i class="pi-arrow-up"></i></a>
+                      </td>
+                    </tr>        
+                    <tr>
+                      <td data-label="Actions">
+                        <div class="icon-menu">
+                          <div class="icon-menu__item">
+                            <button class="icon-menu__action button--plain text-negative--hover pointer">
+                              <i class="pi-user-solid" aria-hidden="hidden"></i>
+                            </button>
+                          </div>
+                          <div class="icon-menu__item">
+                            <button class="icon-menu__action button--plain text-positive--hover pointer">
+                              <i class="pi-user-circle" aria-hidden="hidden"></i>
+                            </button>
+                          </div>
+                        </div>            
+                      </td>
+                      <td data-label="Member">
+                        Kaecilius
+                      </td>
+                      <td data-label="Department">
+                        <input name="dept" type="text">
+                      </td>
+                      <td data-label="Title">
+                        <input name="title" type="text" value="Master of the Mystic Arts">
+                      </td>
+                      <td>
+                        <button class="icon-menu__action button--plain text-negative--hover pointer">
+                          <i class="pi-trash" aria-hidden="hidden"></i>
+                        </button>            
+                      </td>
+                    </tr>     
+                    <tr id="m">
+                      <td colspan="5" data-label="M" class="pos-rel text--size-lg text-navy text--bold">
+                        <span class="hide-tablet-down">M</span>
+                        <a href="#top" class="button top-action pos-abs pin-right mr-3">Top <i class="pi-arrow-up"></i></a>
+                      </td>
+                    </tr>          
+                    <tr>
+                      <td data-label="Actions">
+                        <div class="icon-menu">
+                          <div class="icon-menu__item">
+                            <button class="icon-menu__action button--plain text-negative--hover pointer">
+                              <i class="pi-user-solid" aria-hidden="hidden"></i>
+                            </button>
+                          </div>
+                          <div class="icon-menu__item">
+                            <button class="icon-menu__action button--plain text-positive--hover pointer">
+                              <i class="pi-user-circle" aria-hidden="hidden"></i>
+                            </button>
+                          </div>
+                        </div>            
+                      </td>
+                      <td data-label="Member">
+                        Karl Mordo
+                      </td>
+                      <td data-label="Department">
+                        <input name="dept" type="text">
+                      </td>
+                      <td data-label="Title">
+                        <input name="title" type="text" value="Master of the Mystic Arts">
+                      </td>
+                      <td>
+                        <button class="icon-menu__action button--plain text-negative--hover pointer">
+                          <i class="pi-trash" aria-hidden="hidden"></i>
+                        </button>            
+                      </td>
+                    </tr>  
+                    <tr id="p">
+                      <td colspan="5" data-label="P" class="pos-rel text--size-lg text-navy text--bold">
+                        <span class="hide-tablet-down">P</span>
+                        <a href="#top" class="button top-action pos-abs pin-right mr-3">Top <i class="pi-arrow-up"></i></a>
+                      </td>
+                    </tr>    
+                    <tr>
+                      <td data-label="Actions">
+                        <div class="icon-menu">
+                          <div class="icon-menu__item">
+                            <button class="icon-menu__action button--plain text-negative--hover pointer">
+                              <i class="pi-user-solid" aria-hidden="hidden"></i>
+                            </button>
+                          </div>
+                          <div class="icon-menu__item">
+                            <button class="icon-menu__action button--plain text-positive--hover pointer">
+                              <i class="pi-user-circle" aria-hidden="hidden"></i>
+                            </button>
+                          </div>
+                        </div>            
+                      </td>
+                      <td data-label="Member">
+                        Christine Palmer
+                      </td>
+                      <td data-label="Department">
+                        <input name="dept" type="text" value="ER">
+                      </td>
+                      <td data-label="Title">
+                        <input name="title" type="text" value="Emergency Surgeon">
+                      </td>
+                      <td>
+                        <button class="icon-menu__action button--plain text-negative--hover pointer">
+                          <i class="pi-trash" aria-hidden="hidden"></i>
+                        </button>            
+                      </td>
+                    </tr>
+                    <tr>
+                      <td data-label="Actions">
+                        <div class="icon-menu">
+                          <div class="icon-menu__item">
+                            <button class="icon-menu__action button--plain text-negative--hover pointer">
+                              <i class="pi-user-solid" aria-hidden="hidden"></i>
+                            </button>
+                          </div>
+                          <div class="icon-menu__item">
+                            <button class="icon-menu__action button--plain text-positive--hover pointer">
+                              <i class="pi-user-circle" aria-hidden="hidden"></i>
+                            </button>
+                          </div>
+                        </div>            
+                      </td>
+                      <td data-label="Member">
+                        Johnathan Pangborn
+                      </td>
+                      <td data-label="Department">
+                        <input name="dept" type="text">
+                      </td>
+                      <td data-label="Title">
+                        <input name="title" type="text">
+                      </td>
+                      <td>
+                        <button class="icon-menu__action button--plain text-negative--hover pointer">
+                          <i class="pi-trash" aria-hidden="hidden"></i>
+                        </button>            
+                      </td>
+                    </tr>  
+                    <tr id="s">
+                      <td colspan="5" data-label="S" class="pos-rel text--size-lg text-navy text--bold">
+                        <span class="hide-tablet-down">S</span>
+                        <a href="#top" class="button top-action pos-abs pin-right mr-3">Top <i class="pi-arrow-up"></i></a>
+                      </td>
+                    </tr>     
+                    <tr>
+                      <td data-label="Actions">
+                        <div class="icon-menu">
+                          <div class="icon-menu__item">
+                            <button class="icon-menu__action button--plain text-negative--hover pointer">
+                              <i class="pi-user-solid" aria-hidden="hidden"></i>
+                            </button>
+                          </div>
+                          <div class="icon-menu__item">
+                            <button class="icon-menu__action button--plain text-positive--hover pointer">
+                              <i class="pi-user-circle" aria-hidden="hidden"></i>
+                            </button>
+                          </div>
+                        </div>            
+                      </td>
+                      <td data-label="Member">
+                        Stephen Strange
+                      </td>
+                      <td data-label="Department">
+                        <input name="dept" type="text">
+                      </td>
+                      <td data-label="Title">
+                        <input name="title" type="text" value="Neurosurgeon">
+                      </td>
+                      <td>
+                        <button class="icon-menu__action button--plain text-negative--hover pointer">
+                          <i class="pi-trash" aria-hidden="hidden"></i>
+                        </button>            
+                      </td>
+                    </tr>    
+                    <tr id="w">
+                      <td colspan="5" data-label="W" class="pos-rel text--size-lg text-navy text--bold">
+                        <span class="hide-tablet-down">W</span>
+                        <a href="#top" class="button top-action pos-abs pin-right mr-3">Top <i class="pi-arrow-up"></i></a>
+                      </td>
+                    </tr>   
+                    <tr>
+                      <td data-label="Actions">
+                        <div class="icon-menu">
+                          <div class="icon-menu__item">
+                            <button class="icon-menu__action button--plain text-negative--hover pointer">
+                              <i class="pi-user-solid" aria-hidden="hidden"></i>
+                            </button>
+                          </div>
+                          <div class="icon-menu__item">
+                            <button class="icon-menu__action button--plain text-positive--hover pointer">
+                              <i class="pi-user-circle" aria-hidden="hidden"></i>
+                            </button>
+                          </div>
+                        </div>            
+                      </td>
+                      <td data-label="Member">
+                        Wong
+                      </td>
+                      <td data-label="Department">
+                        <input name="dept" type="text" value="Library">
+                      </td>
+                      <td data-label="Title">
+                        <input name="title" type="text" value="Master of the Mystic Arts">
+                      </td>
+                      <td>
+                        <button class="icon-menu__action button--plain text-negative--hover pointer">
+                          <i class="pi-trash" aria-hidden="hidden"></i>
+                        </button>            
+                      </td>
+                    </tr>        
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
@@ -417,6 +733,51 @@
   </main>
 
   <script src="/src/assets/js/platform-ui.min.js"></script>
+  <script>
+    const tabLinks = document.querySelectorAll('.contact-tab');
+    const topAction = document.querySelectorAll('.top-action');
+
+    const headerHeight = document.querySelector('.site-header').offsetHeight;  
+
+    tabLinks.forEach(t => {
+      t.addEventListener('click', (e) =>  {
+        e.preventDefault();
+        const href = t.getAttribute('data-href');
+        const target = document.getElementById(href);
+        const bodyRect = document.body.getBoundingClientRect();
+        const _elementPosition = target.getBoundingClientRect().top;
+        const offset   = _elementPosition - bodyRect.top - headerHeight;
+        window.scrollTo({
+          top: offset,
+          behavior: "smooth"
+        });
+        clearActive();
+        t.classList.add('active');
+      })
+    })
+
+    function clearActive() {
+      const activeTab = document.querySelectorAll('.contact-tab.active')
+      activeTab.forEach(t => {
+        t.classList.remove('active')
+      })
+    }
+
+    const element = document.querySelector('.contact-tabs-container');
+    const elementPosition = element.getBoundingClientRect().top;
+
+    topAction.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const offsetPosition = elementPosition - headerHeight;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      })
+    })
+
+  </script>
 </body>
 
 </html>
