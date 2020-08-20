@@ -157,6 +157,7 @@
     
     @media (max-width: 767px) {
       .contact-tabs__result {
+        padding-right: 1rem;
         width: 80%;
       }
       .contact-tabs-container .contact-tabs {
@@ -440,14 +441,15 @@
         <div class="pui-tabs">
           <input type="radio" id="tab-input-a" name="tabs" checked>
           <label for="tab-input-a" class="pui-tab flex flex--justify-between">
-            Memberships
-            <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
+            Members
+            <div class="pill pill--circle text-navy border border--color-navy ml-2">
+              75
+            </div>
           </label>
           <div class="pui-tab-panel p-4">
             <div class="block-container flex--justify-end mb-4">
               <div class="block tablet-up-6 flex flex--justify-end flex--align-center">
-                <strong class="text-navy">New Associate</strong>
-                <button data-modal="large-modal" class="button pui-modal__open ml-2">
+                <button data-modal="add-associate-modal" class="button pui-modal__open ml-2">
                   Add <i aria-hidden="true" class="pi-plus"></i>
                 </button>
               </div>
@@ -769,6 +771,76 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+    <div id="add-associate-modal" class="pui-modal pui-modal--closed" tabindex="-1">
+      <div class="pui-modal__inner animated slideInUp faster">
+        <div class="pui-modal__header">
+          <button class="button pui-modal__close" data-modal="add-associate-modal">Close <i class="pi-times"></i></button>
+          <strong class="text-navy text--size-lg">Add New Associate</strong>
+        </div>
+        <div class="pui-modal__content">
+          <form action="submit" class="pui-form block-container blocks p-2 tablet-up-2 lg-tablet-up-3">
+            <label for="" class="pui-form__field block">
+              First Name
+              <input type="text">
+            </label>
+            <label for="" class="pui-form__field block">
+              Middle Name
+              <input type="text">
+            </label>
+            <label for="" class="pui-form__field block">
+              Last Name
+              <input type="text">
+            </label>
+            <label for="" class="pui-form__field block">
+              Prefix
+              <input type="text">
+            </label>
+            <label for="" class="pui-form__field block">
+              Suffix
+              <input type="text">
+            </label>
+            <fieldset class="pui-form__field block">
+              <legend>Gender</legend>
+              <div class="pui-form__option-group">
+                <input id="male" type="radio" name="choose-one">
+                <label for="male">
+                  <div class="input-icons">
+                    <i class='pi-circle pi-lg'></i>
+                    <i class='pi-circle-solid'></i>
+                  </div>
+                  Male
+                </label>
+                <input id="female" type="radio" name="choose-one">
+                <label for="female">
+                  <div class="input-icons">
+                    <i class='pi-circle pi-lg'></i>
+                    <i class='pi-circle-solid'></i>
+                  </div>
+                  Female
+                </label>
+              </div>
+            </fieldset>
+            <label for="" class="pui-form__field block">
+              Birthdate
+              <input type="date">
+            </label>
+            <label for="" class="pui-form__field block">
+              Email
+              <input type="email">
+            </label>
+            <label for="" class="pui-form__field block">
+              Phone Number
+              <input type="tel">
+            </label>
+            <div class="block lg-tablet-up--fill mt-3 flex--center-content">
+              <button class="button button--post button--lg">
+                Submit
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
