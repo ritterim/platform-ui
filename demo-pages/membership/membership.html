@@ -104,10 +104,10 @@
       background-color: rgba(145, 185, 220, 0.6);
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
+    /* 
+      This code should go into a pui-plugins file in the platform
+      You can still use the css vars from Platform UI.
+     */
     .contact-tabs-container {
       flex-direction: row-reverse;
       transition: .2s;
@@ -435,32 +435,23 @@
             <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
           </label>
           <div class="pui-tab-panel p-4">
-            <!-- <div class="block-container flex--justify-between">
-              <div class="block tablet-up-4 flex flex--align-center mb-3">
-                <div class="block-container flex--align-end w-100 py-2">
-                  <div class="block">
-                    Showing 10 out of 61
-                    <button title="Load more" aria-label="Load more" class="button button--secondary ml-2">
-                      <i aria-hidden="true" class="pi-sync"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
+            <div class="block-container flex--justify-end">
               <div class="block tablet-up-6 flex flex--justify-end flex--align-center mb-3">
-                <button data-modal="large-modal" class="button pui-modal__open">
+                <strong class="text-navy text-size--lg">New Associate</strong>
+                <button data-modal="large-modal" class="button pui-modal__open ml-2">
                   Add <i aria-hidden="true" class="pi-plus"></i>
                 </button>
               </div>
-            </div> -->
-            <div id="top" class="block-container contact-tabs-container background-white p-3">
+            </div>
+            <div id="top" class="block-container contact-tabs-container background-white">
   
               <div class="flex text--size-xl text--uppercase contact-tabs flex--justify-between mb-3">
-                <a href="#d" data-href="d" class="contact-tab active">d</a>
-                <a href="#k" data-href="k" class="contact-tab">k</a>
-                <a href="#m" data-href="m" class="contact-tab">m</a>
-                <a href="#p" data-href="p" class="contact-tab">p</a>
-                <a href="#s" data-href="s" class="contact-tab">s</a>
-                <a href="#w" data-href="w" class="contact-tab">w</a>    
+                <a href="#d" data-location="d" class="contact-tab active">d</a>
+                <a href="#k" data-location="k" class="contact-tab">k</a>
+                <a href="#m" data-location="m" class="contact-tab">m</a>
+                <a href="#p" data-location="p" class="contact-tab">p</a>
+                <a href="#s" data-location="s" class="contact-tab">s</a>
+                <a href="#w" data-location="w" class="contact-tab">w</a>    
               </div>
               
               <div class="contact-tabs__result pui-form">
@@ -737,39 +728,51 @@
     const tabLinks = document.querySelectorAll('.contact-tab');
     const topAction = document.querySelectorAll('.top-action');
 
+    // get the height of the header
     const headerHeight = document.querySelector('.site-header').offsetHeight;  
 
-    tabLinks.forEach(t => {
-      t.addEventListener('click', (e) =>  {
+    tabLinks.forEach(tab => {
+      tab.addEventListener('click', (e) =>  {
         e.preventDefault();
-        const href = t.getAttribute('data-href');
-        const target = document.getElementById(href);
+        // get's data attr value from clicked tab
+        const location = tab.getAttribute('data-location');
+        // target element to scroll to based off corresponding data-location value
+        const target = document.getElementById(location);
+        // get the size of the body relative to viewport
         const bodyRect = document.body.getBoundingClientRect();
-        const _elementPosition = target.getBoundingClientRect().top;
-        const offset   = _elementPosition - bodyRect.top - headerHeight;
+        // get the distance of the top of the target relative to the viewport top
+        const targetPosition = target.getBoundingClientRect().top;
+        // offset position accounting for height of the header
+        const offset   = targetPosition - bodyRect.top - headerHeight;
         window.scrollTo({
           top: offset,
           behavior: "smooth"
         });
+        // clear active classes on tabs
         clearActive();
-        t.classList.add('active');
+        // add active to clicked tab
+        tab.classList.add('active');
       })
     })
 
+    // function to remove active from all tabs
     function clearActive() {
       const activeTab = document.querySelectorAll('.contact-tab.active')
-      activeTab.forEach(t => {
-        t.classList.remove('active')
+      activeTab.forEach(tab => {
+        tab.classList.remove('active')
       })
     }
 
-    const element = document.querySelector('.contact-tabs-container');
-    const elementPosition = element.getBoundingClientRect().top;
+    // tabs container
+    const container = document.querySelector('.contact-tabs-container');
+    // tabs container distance from top of viewport
+    const containerPosition = container.getBoundingClientRect().top;
 
     topAction.forEach(link => {
       link.addEventListener('click', (e) => {
         e.preventDefault();
-        const offsetPosition = elementPosition - headerHeight;
+        // get the difference of the top of container and height of the header.
+        const offsetPosition = containerPosition - headerHeight;
         window.scrollTo({
           top: offsetPosition,
           behavior: "smooth"
