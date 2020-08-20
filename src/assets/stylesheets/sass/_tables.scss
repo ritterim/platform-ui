@@ -147,7 +147,7 @@
 .pui-table {
   $border-radius: map.get(config.$radius, 'default');
   $table-border: 1px solid color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold * 2));
-  $responsive-table-bottom-gap: variables.$spacer * 1.5;
+  $responsive-table-bottom-gap: map.get(variables.$spacers, 2);
   $responsive-table-label-bg: map.get(variables.$greyscale, 'lighter');
   width: 100%;
   background-color: transparent;
@@ -216,9 +216,10 @@
         display: block;
 
         td {
-          align-items: center;
+          align-items: flex-start;
           border: none;
           display: flex;
+          flex-direction: column;
           justify-content: space-between;
           text-align: right;
 
@@ -235,7 +236,9 @@
       }
 
       tr + tr {
+        border-top: 1px solid color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold * 2));
         margin-top: $responsive-table-bottom-gap;
+        padding-top: $responsive-table-bottom-gap;
       }
       /* Get table cells to act like rows */
     }
