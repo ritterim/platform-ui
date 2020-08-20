@@ -132,7 +132,7 @@
       }
     }
     .contact-tabs__result {
-      flex: 1 1 auto;
+      flex: 1 1 auto;      
     }
     .contact-tabs-container .contact-tabs .contact-tab {
       width: 100%;
@@ -153,6 +153,15 @@
       border-color: var(--pui-navy);
       color: var(--pui-navy);
       font-weight: bold;
+    }
+    
+    @media (max-width: 767px) {
+      .contact-tabs__result {
+        width: 80%;
+      }
+      .contact-tabs-container .contact-tabs {
+        width: 20%;
+      }
     }
   </style>
 </head>
@@ -437,7 +446,7 @@
           <div class="pui-tab-panel p-4">
             <div class="block-container flex--justify-end mb-4">
               <div class="block tablet-up-6 flex flex--justify-end flex--align-center">
-                <strong class="text-navy text-size--lg">New Associate</strong>
+                <strong class="text-navy">New Associate</strong>
                 <button data-modal="large-modal" class="button pui-modal__open ml-2">
                   Add <i aria-hidden="true" class="pi-plus"></i>
                 </button>
@@ -492,10 +501,16 @@
                         Dormammu
                       </td>
                       <td data-label="Department">
-                        <input name="dept" type="text">
+                        <label class="pui-form__field">
+                          <span class="sr-only">Department</span>
+                          <input name="dept" type="text">
+                        </label>
                       </td>
                       <td data-label="Title">
-                        <input name="title" type="text" value="Dark Dimension Ruler">
+                        <label for="" class="pui-form__field">
+                          <span class="sr-only">Title</span>
+                          <input name="title" type="text" value="Dark Dimension Ruler">
+                        </label>
                       </td>
                       <td>
                         <button class="icon-menu__action button--plain text-negative--hover pointer">
@@ -528,10 +543,16 @@
                         Kaecilius
                       </td>
                       <td data-label="Department">
-                        <input name="dept" type="text">
+                        <label for="" class="pui-form__field">
+                          <span class="sr-only">Department</span>
+                          <input name="dept" type="text">
+                        </label>
                       </td>
                       <td data-label="Title">
-                        <input name="title" type="text" value="Master of the Mystic Arts">
+                        <label for="" class="pui-form__field">
+                          <span class="sr-only">Title</span>
+                          <input name="title" type="text" value="Master of the Mystic Arts">
+                        </label>
                       </td>
                       <td>
                         <button class="icon-menu__action button--plain text-negative--hover pointer">
@@ -564,10 +585,16 @@
                         Karl Mordo
                       </td>
                       <td data-label="Department">
-                        <input name="dept" type="text">
+                        <label for="" class="pui-form__field">
+                          <span class="sr-only">Department</span>
+                          <input name="dept" type="text">
+                        </label>
                       </td>
                       <td data-label="Title">
-                        <input name="title" type="text" value="Master of the Mystic Arts">
+                        <label for="" class="pui-form__field">
+                          <span class="sr-only">Title</span>
+                          <input name="title" type="text" value="Master of the Mystic Arts">
+                        </label>
                       </td>
                       <td>
                         <button class="icon-menu__action button--plain text-negative--hover pointer">
@@ -600,10 +627,16 @@
                         Christine Palmer
                       </td>
                       <td data-label="Department">
-                        <input name="dept" type="text" value="ER">
+                        <label for="" class="pui-form__field">
+                          <span class="sr-only">Department</span>
+                          <input name="dept" type="text" value="ER">
+                        </label>
                       </td>
                       <td data-label="Title">
-                        <input name="title" type="text" value="Emergency Surgeon">
+                        <label for="" class="pui-form__field">
+                          <span class="sr-only">Title</span>
+                          <input name="title" type="text" value="Emergency Surgeon">
+                        </label>
                       </td>
                       <td>
                         <button class="icon-menu__action button--plain text-negative--hover pointer">
@@ -630,10 +663,16 @@
                         Johnathan Pangborn
                       </td>
                       <td data-label="Department">
-                        <input name="dept" type="text">
+                        <label for="" class="pui-form__field">
+                          <span class="sr-only">Department</span>
+                          <input name="dept" type="text">
+                        </label>
                       </td>
                       <td data-label="Title">
-                        <input name="title" type="text">
+                        <label for="" class="pui-form__field">
+                          <span class="sr-only">Title</span>
+                          <input name="title" type="text">
+                        </label>
                       </td>
                       <td>
                         <button class="icon-menu__action button--plain text-negative--hover pointer">
@@ -666,10 +705,16 @@
                         Stephen Strange
                       </td>
                       <td data-label="Department">
-                        <input name="dept" type="text">
+                        <label for="" class="pui-form__field">
+                          <span class="sr-only">Department</span>
+                          <input name="dept" type="text">
+                        </label>
                       </td>
                       <td data-label="Title">
-                        <input name="title" type="text" value="Neurosurgeon">
+                        <label for="" class="pui-form__field">
+                          <span class="sr-only">Title</span>
+                          <input name="title" type="text" value="Neurosurgeon">
+                        </label>
                       </td>
                       <td>
                         <button class="icon-menu__action button--plain text-negative--hover pointer">
@@ -702,10 +747,16 @@
                         Wong
                       </td>
                       <td data-label="Department">
-                        <input name="dept" type="text" value="Library">
+                        <label for="" class="pui-form__field">
+                          <span class="sr-only">Department</span>
+                          <input name="dept" type="text" value="Library">
+                        </label>
                       </td>
                       <td data-label="Title">
-                        <input name="title" type="text" value="Master of the Mystic Arts">
+                        <label for="" class="pui-form__field">
+                          <span class="sr-only">Title</span>
+                          <input name="title" type="text" value="Master of the Mystic Arts">
+                        </label>
                       </td>
                       <td>
                         <button class="icon-menu__action button--plain text-negative--hover pointer">
