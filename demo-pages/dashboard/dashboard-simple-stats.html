@@ -10,7 +10,7 @@
   
 <style>
     .pui-tab-panel {
-        background-color: #e2e3e5;
+        background-color: var(--pui-lighter);
         border: none;
     }
     @media (min-width: 767px) {
@@ -22,14 +22,14 @@
         height: 2rem;;
         }
         .pui-tabs input[type=radio]:checked+.pui-tab {
-        background-color: #e58967;
-        border-radius: 5rem;
-        color: white;
+        background-color: var(--pui-salmon);
+        border-radius: var(--pui-button);
+        color: var(--pui-white);
         border: none;
         } 
         .pui-tabs input[type=radio]:not(:checked)+.pui-tab:hover {
-        background-color: #e2e3e5;
-        border-radius: 5rem;
+            background-color: var(--pui-lighter);
+            border-radius: var(--pui-button);
         border: none;
         } 
         .pui-tab:before{
@@ -439,9 +439,6 @@
         </div>
     </div>
     
-
-
-
   </main>
   <script src="/src/assets/js/platform-ui.min.js"></script>
 </body>
