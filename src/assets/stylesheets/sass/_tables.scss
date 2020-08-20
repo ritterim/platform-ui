@@ -220,8 +220,6 @@
           border: none;
           display: flex;
           flex-direction: column;
-          justify-content: space-between;
-          text-align: right;
 
           &:before {
             content: attr(data-label);
