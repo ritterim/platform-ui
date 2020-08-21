@@ -244,8 +244,12 @@
 //
 // | Block Flex Utilities | | |  |
 // |-------------|------------|------------|---------------|
-// | [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) property| `flex-shrink: 1`| `flex-grow: 1`| `width: auto` |
-// | class      | `block-shrink` | `block--fill` | `block-tablet-shrink` |
+// | [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) property| `width: auto`| `flex-grow: 1`| `width: 100%` |
+// | class      | `block--shrink` | `block--fill` | `block--full` |
+// 
+// Breakpoint classes can be added to each of these utilities as well. So, for example, you could have a `block-8` from mobile up. 
+// Then, at a laptop size you wanted the block to shrink to the size of it's content, you could add the class `laptop-up--shrink`.
+// This would give the styles `width: auto` within that set media query. So you're block would have the classes, `block block-8 laptop-up--shrink`.
 //
 //
 // ### Block grid breakpoints
