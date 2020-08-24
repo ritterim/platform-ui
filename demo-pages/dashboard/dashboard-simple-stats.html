@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="/src/assets/stylesheets/platform-ui.min.css">
+  
+<style>
+    .pui-tab-panel {
+        background-color: var(--pui-lighter);
+        border: none;
+    }
+    @media (min-width: 767px) {
+        .pui-tabs {
+        justify-content: center;
+        }
+        .pui-tabs .pui-tab {
+        flex: 0 0 auto;
+        height: 2rem;;
+        }
+        .pui-tabs input[type=radio]:checked+.pui-tab {
+        background-color: var(--pui-salmon);
+        border-radius: var(--pui-button);
+        color: var(--pui-white);
+        border: none;
+        } 
+        .pui-tabs input[type=radio]:not(:checked)+.pui-tab:hover {
+            background-color: var(--pui-lighter);
+            border-radius: var(--pui-button);
+        border: none;
+        } 
+        .pui-tab:before{
+        display: none;
+        }
+        .pui-tab-panel {
+            margin-top: 1rem;
+        }
+    }
+</style>
+
+</head>
+<body class="flex flex--column background-lighter">
+    <header class="site-header site-header--fixed">
+      <div class="site-menu primary inverted site-menu-wrapper">
+        <div class="block-container background-navy w-100">
+          <div class="block block-8 lg-tablet-up-4 lg-tablet-up--fill flex">
+            <a href="/demo-pages/call-center.html" class="site-menu__item">
+              <span class="card__header-icon pill--circle-medium background-purple text-white mr-2">
+                D
+              </span>
+              <span class="text--size-lg hide-tablet-down">
+                Hello Dev
+              </span>
+            </a>
+            <div class="site-menu__item search">
+              <form role="search" aria-label="CRM" _lpchecked="1" class="w-100">
+                <div class="flex flex--align-center">
+                  <label for="search-input" class="sr-only">Search</label>
+                  <input type="text" id="search-input" placeholder="Type to search..."
+                    class="placeholder--light text-white">
+                  <i aria-hidden="true" class="pi-search"></i>
+                </div>
+              </form>
+            </div>
+          </div>
+          <button
+            class="site-menu-mobile-action button--plain text-white hide-lg-tablet-up pos-abs pin-right mr-2 pin-center-top">
+            <span class="sr-only">Toggle Navigation</span>
+            <i aria-hidden="true" focusable="false" class="pi-menu pi-xl"></i>
+          </button>
+          <nav class="block block--shrink site-menu primary inverted">
+            <a href="#" class="site-menu__item">
+              <i class="mr-1 pi-phone" aria-hidden="true"></i>
+              Call Center
+            </a>
+            <div class="site-menu__item dropdown p-0">
+              <a href="#" class="dropdown__trigger p-3">
+                Organizations <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+              </a>
+              <ul class="dropdown__content pin-right post-list">
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/agencies" class="flex p-3"><i class="users icon"></i>
+                    Agencies
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/businesses" class="flex p-3"><i class="business-icon icon"></i>
+                    Businesses
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/carriers" class="flex p-3"><i class="carrier-icon icon"></i>
+                    Carriers
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="site-menu__item dropdown p-0">
+              <a href="#" class="dropdown__trigger p-3">
+                People <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+              </a>
+              <ul class="dropdown__content pin-right post-list">
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/agents" class="flex p-3"><i class="agent-icon icon"></i>
+                    Agents
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/associates" class="flex p-3"><i class="associate-icon icon"></i>
+                    Associates
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/users" class="flex p-3"><i class="user-icon icon"></i>
+                    Users
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/consumers" class="flex p-3"><i class="user-icon icon"></i>
+                    Consumers
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/agents/map?term=Harrisburg%2C%20PA%2017110" class="flex p-3">
+                    <i class="map icon"></i>
+                    Map Agents
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="site-menu__item dropdown p-0">
+              <a href="#" class="dropdown__trigger p-3">
+                Flow <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+              </a>
+              <ul class="dropdown__content pin-right post-list">
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/flow/agents" class="flex p-3"><i class="id badge icon"></i>
+                    Agents
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/flow/agencies" class="flex p-3"><i class="users icon"></i>
+                    Agencies
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/flow/contracts" class="flex p-3"><i class="open folder icon"></i>
+                    Contracts
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/flow/campaigns" class="flex p-3" style=""><i class="address-card icon"></i>
+                    Campaigns
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/flow/submissions" class="flex p-3" style=""><i class="file icon"></i>
+                    Submissions
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/flow/enrollments" class="flex p-3" style=""><i class="certificate icon"></i>
+                    Enrollments
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/flow/payment-methods" class="flex p-3" style=""><i class="money bill icon"></i>
+                    Payment Methods
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/flow/crm" class="flex p-3" style=""><i class="briefcase icon"></i>
+                    CRM
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="site-menu__item dropdown p-0">
+              <a href="#" class="dropdown__trigger p-3">
+                <span class="sr-only">RIMDev</span>
+                <span class="card__header-icon pill--circle-medium background-white text-navy">
+                  <i class="pi-rimdev" aria-hidden="true"></i>
+                </span>
+                <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+              </a>
+              <ul class="dropdown__content pin-right post-list">
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/rimdev" class="flex p-3">
+                    Permissions
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/form-builder" class="flex p-3">
+                    Form Builder
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/_features" class="flex p-3">
+                    Feature Flags
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/_self" class="flex p-3">
+                    Claims Diagnostics
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="site-menu__item dropdown p-0">
+              <a href="#" class="dropdown__trigger p-3">
+                Recent <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+              </a>
+              <ul class="dropdown__content pin-right post-list dropdown">
+                <li class="post-item p-0 m-0">
+                  <a href="/admin/agents/c057f20a-fbc8-403c-9777-9e0701310cf8/edit" title="Last viewed on 5/6/2020"
+                    class="flex p-3"><i class="grey icon id badge"></i> <i class="yellow vertical ellipsis icon"></i>
+                    Gregory Gudis
+                  </a>
+                </li>
+                <!---->
+                <div class="left menu">
+                  <li class="post-item m-0 p-0">
+                    <a href="/admin/agents/c057f20a-fbc8-403c-9777-9e0701310cf8/contracts?id=263135" class="flex p-3">
+                      Contract for Accendo Insurance Company
+                    </a>
+                  </li>
+                  <li class="post-item m-0 p-0">
+                    <a href="/admin/agents/c057f20a-fbc8-403c-9777-9e0701310cf8/edit?ui=medicareful" class="flex p-3">
+                      Medicareful
+                    </a>
+                  </li>
+                  <li class="post-item m-0 p-0 border-b border--color-lighter">
+                    <a href="/admin/agents/c057f20a-fbc8-403c-9777-9e0701310cf8/edit?ui=payments" class="flex p-3">
+                      Payments
+                    </a>
+                  </li>
+                </div>
+                <li class="post-item p-0 m-0">
+                  <a href="/admin/agencies/62f89954-d3ea-4d96-96d7-c98bbd2470ec/edit" title="Last viewed on 4/21/2020"
+                    class="flex p-3"><i class="grey icon users"></i> <i class="yellow vertical ellipsis icon"></i>
+                    Ritter Insurance Marketing
+                  </a>
+                </li>
+                <!---->
+                <div class="left menu">
+                  <li class="post-item m-0 p-0">
+                    <a href="/admin/agencies/62f89954-d3ea-4d96-96d7-c98bbd2470ec/contracts?id=136337" class="flex p-3">
+                      Contract for Aetna-Referral
+                    </a>
+                  </li>
+                  <li class="post-item m-0 p-0">
+                    <a href="/admin/agencies/62f89954-d3ea-4d96-96d7-c98bbd2470ec/edit?ui=profile" class="flex p-3">
+                      Profile
+                    </a>
+                  </li>
+                  <li class="post-item m-0 p-0 border-b border--color-lighter">
+                    <a href="/admin/agencies/62f89954-d3ea-4d96-96d7-c98bbd2470ec/edit?ui=contact" class="flex p-3">
+                      Contact
+                    </a>
+                  </li>
+                </div>
+                <!---->
+                <li class="post-item m-0 p-0">
+                  <a class="flex p-3">
+                    <i class="red icon close"></i> Clear Recent Items
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+
+  <main class="header-fixed py-4 px-5">
+    <div class="block-container blocks px-3 mb-4">
+        <div class="block">
+            <div class="pui-tabs">
+
+<!--Simple Stats Tab-->              
+                <input type="radio" id="tab-input-a" name="tabs" checked>
+                <label for="tab-input-a" class="pui-tab flex flex--justify-between">
+                    Simple Stats
+                    <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
+                </label>
+
+                <div class="pui-tab-panel mb-3 ">
+                  <div class="pui-card mb-3">
+                      <h3 class="text-salmon text--center text--uppercase m-3 border-b border--color-lighter">Agents</h3>
+                        <div class="block-container blocks p-2 laptop-up-3 desktop-up-4">
+                            <div class="block">
+                                <div class="text--center">
+                                  <div class="pui-stat text-navy text--size-xxl">0</div>
+                                    <div>Active Agents</div>
+                                  </div>
+                            </div>
+
+                            <div class="block">
+                              <div class="text--center">
+                                <div class="pui-stat text-navy text--size-xxl">0</div>
+                                <div>Active Direct to Ritter</div>
+                              </div>
+                            </div>
+
+                            <div class="block">
+                              <div class="text--center">
+                                <div class="pui-stat text-navy text--size-xxl">0</div>
+                                <div>Prospects</div>
+                              </div>
+                            </div>
+
+                            <div class="block">
+                              <div class="text--center">
+                                <div class="pui-stat text-navy text--size-xxl">0</div>
+                                <div>New Leads</div>
+                              </div>
+                            </div>
+
+                            <div class="block">
+                              <div class="text--center">
+                                <div class="pui-stat text-navy text--size-xxl">0</div>
+                                <div>Total Agents</div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pui-card mb-3">
+                      <h3 class="text-salmon text--center text--uppercase m-3 border-b border--color-lighter">Contracts</h3>
+                        <div class="block-container blocks p-2 laptop-up-3 desktop-up-4">
+                          <div class="block">
+                            <div class="text--center">
+                              <div class="pui-stat text-navy text--size-xxl">0</div>
+                              <div>Appointed</div>
+                            </div>
+                          </div>
+
+                          <div class="block">
+                            <div class="text--center">
+                              <div class="pui-stat text-navy text--size-xxl">0</div>
+                              <div>Returned Incomplete</div>
+                            </div>
+                          </div>
+    
+                          <div class="block">
+                            <div class="text--center">
+                              <div class="pui-stat text-navy text--size-xxl">0</div>
+                              <div>Returned</div>
+                            </div>
+                          </div>
+                            </div>
+                        </div>
+
+                        <div class="pui-card">
+                          <h3 class="text-salmon text--center text--uppercase m-3 border-b border--color-lighter">Applications</h3>
+
+                            <div class="block-container blocks p-2 laptop-up-3 desktop-up-4">
+                              <div class="block">
+                                <div class="text--center">
+                                  <div class="pui-stat text-navy text--size-xxl">0</div>
+                                  <div>Production</div>
+                                </div>
+                              </div>
+    
+                                <div class="block">
+                                  <div class="text--center">
+                                    <div class="pui-stat text-navy text--size-xxl">0</div>
+                                    <div>Paper Submissions</div>
+                                  </div>
+                                </div>
+    
+                                <div class="block">
+                                  <div class="text--center">
+                                    <div class="pui-stat text-navy text--size-xxl">0</div>
+                                    <div>Medicareful Submissions</div>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+<!--Simple Stats Tab END -->
+
+
+<!--Contracts Tab-->
+                <input type="radio" id="tab-input-b" name="tabs">
+                <label for="tab-input-b" class="pui-tab flex flex--justify-between">
+                    Contracts
+                    <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
+                </label>
+                <div class="pui-tab-panel">
+                    <div class="pui-card mb-3">
+                    <img src="https://placeimg.com/640/480/animals?t=1565635267224" style="max-width: 100%;">
+                    </div>
+                </div>
+
+                <input type="radio" id="tab-input-c" name="tabs">
+                <label for="tab-input-c" class="pui-tab flex flex--justify-between">
+                    Applications
+                    <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
+                </label>
+                <div class="pui-tab-panel">
+                    <img src="https://placeimg.com/640/480/animals?t=1565635322782" style="max-width: 100%;">
+                </div>
+
+                <input type="radio" id="tab-input-d" name="tabs">
+                <label for="tab-input-d" class="pui-tab flex flex--justify-between">
+                    Admin Support
+                    <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
+                </label>
+                <div class="pui-tab-panel">
+                    <img src="https://placeimg.com/640/480/animals?t=1565635322782" style="max-width: 100%;">
+                </div>
+
+                <input type="radio" id="tab-input-e" name="tabs">
+                <label for="tab-input-e" class="pui-tab flex flex--justify-between">
+                    Agent Acquisition
+                    <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
+                </label>
+                <div class="pui-tab-panel">
+                    <img src="https://placeimg.com/640/480/animals?t=1565635322782" style="max-width: 100%;">
+                </div>
+
+                <input type="radio" id="tab-input-f" name="tabs">
+                <label for="tab-input-f" class="pui-tab flex flex--justify-between">
+                    Reports
+                    <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
+                </label>
+                <div class="pui-tab-panel">
+                    <img src="https://placeimg.com/640/480/animals?t=1565635322782" style="max-width: 100%;">
+                </div>
+
+                <input type="radio" id="tab-input-g" name="tabs">
+                <label for="tab-input-g" class="pui-tab flex flex--justify-between">
+                    Upload
+                    <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
+                </label>
+                <div class="pui-tab-panel">
+                    <img src="https://placeimg.com/640/480/animals?t=1565635322782" style="max-width: 100%;">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+  </main>
+  <script src="/src/assets/js/platform-ui.min.js"></script>
+</body>
+</html>
