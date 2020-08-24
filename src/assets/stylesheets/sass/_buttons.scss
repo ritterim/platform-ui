@@ -46,7 +46,7 @@
 //
 // If you want to display text only on hover, add a data attribute named `data-button-text`, this will insert the value of that attribute on hover.
 //
-// You can use `has-text` in combination with `data-button-text="Some Text" and you will get the same result. See the last button in the example below.
+// You can use `has-text` in combination with `data-button-text="Some Text"` and you will get the same result. See the last button in the example below.
 // 
 // - .button
 // - .button .button--secondary
@@ -54,9 +54,11 @@
 // 
 //
 // Markup:
-// <div class="button-group">
+// <div class="button-group mb-3">
 //   <button class="button button--secondary has-text">Open <i class="pi-download"></i></button>
 //   <button class="button button--secondary" data-button-text="Download"><i class="pi-download"></i></button>
+// </div>
+// <div class="button-group">
 //   <button class="button button--secondary loading" data-button-text="Download"><i class="pi-download"></i></button>
 //   <button class="button button--secondary has-text" data-button-text="Has Text"><i class="pi-download"></i></button>
 // </div>
@@ -338,10 +340,24 @@
     &[data-button-text] {
       transition: config.$transitions;
 
+      @include mixins.breakpoint(tablet, max) {
+        width: auto;
+        padding: 0 map.get(variables.$spacers, 1 );
+      }      
+
       &:after {
-        display: none;
-        width: 0;
         content: attr(data-button-text);
+
+        @include mixins.breakpoint(tablet, max) {
+          width: auto;
+          display: inline-block;
+          padding-right: map.get(variables.$spacers, 2 );
+        }
+
+        @include mixins.breakpoint(tablet, min) {
+          display: none;
+          width: 0;
+        }
       }
 
       &:hover {
@@ -415,15 +431,6 @@
     &.has-text {
       padding: 0 map.get(variables.$spacers, 2 );
       width: auto;
-
-      @include mixins.breakpoint(lg-tablet, max) {
-        font-size: 0;
-        width: 2rem;
-
-        i {
-          font-size: initial;
-        }
-      }
     }
   }
 
