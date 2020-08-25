@@ -103,6 +103,7 @@ ul {
           font-weight: 900;
           left: -(map.get(variables.$spacers, 4));
           position: absolute;
+          transform: rotate(-145deg);
         }
       }
     }
