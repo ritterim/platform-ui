@@ -80,7 +80,7 @@
   flex-direction: column;
 
    > .site-menu {
-    flex: 1 1 auto;
+    flex: 1 1 50%;
 
     // sets a max-height of each menu if there are 2 menus
     &:nth-child(2),
