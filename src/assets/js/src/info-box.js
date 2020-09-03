@@ -7,3 +7,12 @@ if(infoBox) {
     this.nextSibling.nextSibling.classList.toggle('hidden');
   });
 }
+
+var infoBox2 = document.querySelector('.pui-info-box--left');
+
+if(infoBox2) {
+  document.querySelector('.toggle-hidden--left').addEventListener('click', function(e){
+    e.preventDefault();
+    this.nextSibling.nextSibling.classList.toggle('hidden');
+  });
+}
