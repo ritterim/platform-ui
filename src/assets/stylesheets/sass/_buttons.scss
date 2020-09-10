@@ -280,7 +280,7 @@
       bottom: 0;
     }
 
-    &:not([data-button-text]) {
+    &:not([data-button-text]):not(.has-text) {
       &:after {
         @extend %pui-loader;
         @include mixins.square(variables.$spacer);
@@ -332,7 +332,6 @@
     }
 
     &.has-text {
-      padding: 0 map.get(variables.$spacers, 2 );
       width: 2rem;
 
       @include mixins.breakpoint(lg-tablet, max) {
@@ -344,6 +343,7 @@
       }
 
       @include mixins.breakpoint(lg-tablet, min) {
+        padding: 0 map.get(variables.$spacers, 2 );
         width: auto;
       }
     }
@@ -392,12 +392,16 @@
         box-shadow: 0 0 0 .3rem color.adjust(config.$button-secondary-background, $lightness: math.percentage(config.$hue-threshold));
       }
 
-      &[data-button-text] {
+      &[data-button-text],
+      &.has-text {
         background-color: config.$button-primary-hover;
         border-color: inherit;
         box-shadow: 0 0 0 .3rem color.adjust(config.$button-secondary-background, $lightness: math.percentage(config.$hue-threshold));
-        padding: 0 map.get(variables.$spacers, 1 );
-        width: auto;
+
+        @include mixins.breakpoint(lg-tablet, min) {
+          padding: 0 map.get(variables.$spacers, 1 );
+          width: auto;
+        }
 
         &:before {
           @extend %pui-loader;
@@ -415,11 +419,14 @@
           top: 0;
         }
 
-        &:after {
-          content: attr(data-button-text);
-          width: auto;
-          display: inline-block;
-          padding-right: map.get(variables.$spacers, 2 );
+
+        @include mixins.breakpoint(lg-tablet, min) {
+          &:after {
+            content: attr(data-button-text);
+            width: auto;
+            display: inline-block;
+            padding-right: map.get(variables.$spacers, 2 );
+          }
         }
 
         i {
