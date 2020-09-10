@@ -48,20 +48,11 @@
 //
 // You can use `has-text` in combination with `data-button-text="Some Text"` and you will get the same result. See the last button in the example below.
 // 
-// If the secondary button has the data attribute of `data-button-text`, the text will display at the mobile screen size. Above mobile, it will 
-// display on hover.
-// 
-// - .button
-// - .button .button--secondary
-// - .button .button--secondary .has-text
-// 
 //
 // Markup:
-// <div class="button-group mb-3">
+// <div class="button-group">
 //   <button class="button button--secondary has-text">Open <i class="pi-download"></i></button>
 //   <button class="button button--secondary" data-button-text="Download"><i class="pi-download"></i></button>
-// </div>
-// <div class="button-group">
 //   <button class="button button--secondary loading" data-button-text="Download"><i class="pi-download"></i></button>
 //   <button class="button button--secondary has-text" data-button-text="Has Text"><i class="pi-download"></i></button>
 // </div>
@@ -289,7 +280,7 @@
       bottom: 0;
     }
 
-    &:not([data-button-text]) {
+    &:not([data-button-text]):not(.has-text) {
       &:after {
         @extend %pui-loader;
         @include mixins.square(variables.$spacer);
@@ -340,52 +331,58 @@
       box-shadow: 0 0 0 .3rem color.adjust(config.$button-secondary-background, $lightness: math.percentage(config.$hue-threshold));
     }
 
+    &.has-text {
+      width: 2rem;
+
+      @include mixins.breakpoint(lg-tablet, max) {
+        font-size: 0;
+
+        i {
+          font-size: initial;
+        }
+      }
+
+      @include mixins.breakpoint(lg-tablet, min) {
+        padding: 0 map.get(variables.$spacers, 2 );
+        width: auto;
+      }
+    }
+
     &[data-button-text] {
       transition: config.$transitions;
 
-      @include mixins.breakpoint(tablet, max) {
-        width: auto;
-        padding: 0 map.get(variables.$spacers, 1 );
-      }      
-
       &:after {
+        display: none;
+        width: 0;
         content: attr(data-button-text);
-
-        @include mixins.breakpoint(tablet, max) {
-          width: auto;
-          display: inline-block;
-          padding-right: map.get(variables.$spacers, 2 );
-        }
-
-        @include mixins.breakpoint(tablet, min) {
-          display: none;
-          width: 0;
-        }
       }
 
       &:hover {
-        width: auto;
-        padding: 0 map.get(variables.$spacers, 1 );
 
-        &:after {
+        @include mixins.breakpoint(lg-tablet, min) {
+          padding: 0 map.get(variables.$spacers, 1 );
           width: auto;
-          display: inline-block;
-          padding-right: map.get(variables.$spacers, 2 );
-        }
 
+          &:after {
+            width: auto;
+            display: inline-block;
+            padding-right: map.get(variables.$spacers, 2 );
+          }
+        }
       }
 
       &.has-text {
-        width: auto;
+        font-size: initial;
         padding: 0 map.get(variables.$spacers, 1 );
 
-        &:after {
-          width: auto;
-          display: inline-block;
-          padding-right: map.get(variables.$spacers, 2 );
+        @include mixins.breakpoint(lg-tablet, min) {
+          &:after {
+            width: auto;
+            display: inline-block;
+            padding-right: map.get(variables.$spacers, 2 );
+          }
         }
       }
-
     }
 
     &.loading {
@@ -395,12 +392,16 @@
         box-shadow: 0 0 0 .3rem color.adjust(config.$button-secondary-background, $lightness: math.percentage(config.$hue-threshold));
       }
 
-      &[data-button-text] {
+      &[data-button-text],
+      &.has-text {
         background-color: config.$button-primary-hover;
         border-color: inherit;
         box-shadow: 0 0 0 .3rem color.adjust(config.$button-secondary-background, $lightness: math.percentage(config.$hue-threshold));
-        padding: 0 map.get(variables.$spacers, 1 );
-        width: auto;
+
+        @include mixins.breakpoint(lg-tablet, min) {
+          padding: 0 map.get(variables.$spacers, 1 );
+          width: auto;
+        }
 
         &:before {
           @extend %pui-loader;
@@ -418,22 +419,20 @@
           top: 0;
         }
 
-        &:after {
-          content: attr(data-button-text);
-          width: auto;
-          display: inline-block;
-          padding-right: map.get(variables.$spacers, 2 );
+
+        @include mixins.breakpoint(lg-tablet, min) {
+          &:after {
+            content: attr(data-button-text);
+            width: auto;
+            display: inline-block;
+            padding-right: map.get(variables.$spacers, 2 );
+          }
         }
 
         i {
           display: none;
         }
       }
-    }
-
-    &.has-text {
-      padding: 0 map.get(variables.$spacers, 2 );
-      width: auto;
     }
   }
 
