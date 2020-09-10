@@ -150,7 +150,21 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
             background-color: $tab-active-color;
           }
         }
+
+        + .pui-tab-panel {
+          display: block;
+        }
       }
+
+      &.un-checked {
+        + label {
+          font-weight: 300;
+          
+          + .pui-tab-panel {
+            display: none!important;
+          }
+        } 
+      }    
     }
   }
 
@@ -216,12 +230,12 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
             }
           }
         }
-
-        + .pui-tab-panel {
-          display: none;
-        }
       }
     }
+  }
+
+  .pui-tab-panel {
+    display: none;
   }
 }
 
