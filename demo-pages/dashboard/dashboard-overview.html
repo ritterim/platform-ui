@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,50 +8,50 @@
     <link rel="stylesheet" href="/src/assets/stylesheets/platform-ui.min.css">
     <style>
         .pui-card {
-            height: 100%;
-        }
+        height: 100%;
+    }
         .pui-card__content {
         max-height: 25rem;
         overflow: auto;
-        }
-        /* add class new to new video */
-        .new {
-        display: inline-flex;
-        background: var(--pui-skyblue);
-        width: 24px;
-        height: 24px;
-        position: relative;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-        margin-left: .5rem;
-        }
-        .new:before,
-        .new:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 24px;
-        width: 24px;
-        background: var(--pui-skyblue);
-        }
-        .new:before {
-        transform: rotate(30deg);
-        }
-        .new:after {
-        display: flex;
-        content: "NEW";
-        font-size: 8px;
-        font-weight: bold;
-        justify-content: center;
-        align-items: center;
-        color: var(--pui-navy);
-        transform: rotate(60deg);
-        }
+    }
+    /* add class new to new video */
+    .new {
+      display: inline-flex;
+      background: var(--pui-skyblue);
+      width: 24px;
+      height: 24px;
+      position: relative;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      margin-left: .5rem;
+    }
+    .new:before,
+    .new:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 24px;
+      width: 24px;
+      background: var(--pui-skyblue);
+    }
+    .new:before {
+      transform: rotate(30deg);
+    }
+    .new:after {
+      display: flex;
+      content: "NEW";
+      font-size: 8px;
+      font-weight: bold;
+      justify-content: center;
+      align-items: center;
+      color: var(--pui-navy);
+      transform: rotate(60deg);
+    }
+        
     </style>
 </head>
-
 <body class="flex flex--column background-light-mid">
     <header class="site-header site-header--fixed">
         <div class="site-menu primary inverted site-menu-wrapper">
@@ -229,7 +228,6 @@
                                     Gregory Gudis
                                 </a>
                             </li>
-                            <!---->
                             <div class="left menu">
                                 <li class="post-item m-0 p-0">
                                     <a href="/admin/agents/c057f20a-fbc8-403c-9777-9e0701310cf8/contracts?id=263135"
@@ -255,7 +253,6 @@
                                     Ritter Insurance Marketing
                                 </a>
                             </li>
-                            <!---->
                             <div class="left menu">
                                 <li class="post-item m-0 p-0">
                                     <a href="/admin/agencies/62f89954-d3ea-4d96-96d7-c98bbd2470ec/contracts?id=136337"
@@ -276,7 +273,6 @@
                                     </a>
                                 </li>
                             </div>
-                            <!---->
                             <li class="post-item m-0 p-0">
                                 <a class="flex p-3">
                                     <i class="red icon close"></i> Clear Recent Items
@@ -288,10 +284,6 @@
             </div>
         </div>
     </header>
-
-
-
-
     <main>
         <div class="crm-view_item overview px-4 py-6" data-view="overview">
             <h1 class="text--center text-navy">
@@ -382,6 +374,7 @@
                                     </div>
                                 </li>
                             </ul>
+
                         </div>
                     </div>
                 </div>
@@ -893,9 +886,10 @@
                         </div>
                     </div>
                 </div>
+
 <!--First Look END-->
 
-<!--Video Training-->
+ <!--Video Training-->
                 <div class="block">
                     <div class="pui-card">
                         <div class="pui-card__header">
@@ -1030,7 +1024,133 @@
                 </div>
 <!--Call Center END-->
 
+<!--Sales Territory Map-->
+                <div class="block">
+                    <div class="pui-card">
+                        <div class="pui-card__header">
+                            <div class="pui-card__group w-100">
+                                <img class="icon" src="/src/assets/images/svg/map.svg" alt="">
+                                <div class="pui-card__title">Map Agents</div>
+                            </div>
+                            <div class="button-group flex--align-center"><a href="clients" class="button">
+                                    View Map <i aria-hidden="true" class="pi-map"></i></a>
+                            </div>
+                        </div>
+                        <div class="pui-card__content">
+                            <form action="" class="pui-form  block-container tablet-up-3 laptop-up-4 desktop-up-6 blocks">
+                                <div class="block-12 pui-form--rounded mb-3">
+                                    <label for="dob" class="pui-form__field has-icon--right">
+                                        <input id="Search" type="text" required placeholder="Harrisburg, PA 17110">
+                                        <i class="pi-search background-white"></i>
+                                    </label>
+                                </div>
+                                <div class="block-6 pr-3">
+                                    <label for="Option" class="pui-form__field">Distance
+                                        <div class="pui-form__select-wrapper">
+                                            <select name="Option Select" id="Option">
+                                                <option value="Option1">Exact location</option>
+                                                <option value="Option2">Withn 5 miles</option>
+                                                <option value="Option3">Withn 10 miles</option>
+                                                <option value="Option4">Withn 15 miles</option>
+                                                <option value="Option5">Withn 20 miles</option>
+                                                <option value="Option6">Withn 25 miles</option>
+                                                <option value="Option7">Withn 50 miles</option>
+                                                <option value="Option8">Withn 100 miles</option>
+                                            </select>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="block-6">
+                                    <label for="Option" class="pui-form__field">Global Product Level
+                                        <div class="pui-form__select-wrapper">
+                                            <select name="Option Select" id="Option">
+                                                <option value="Option1">All</option>
+                                                <option value="Option2">1</option>
+                                                <option value="Option3">2</option>
+                                                <option value="Option4">3</option>
+                                                <option value="Option5">4</option>
+                                                <option value="Option6">5</option>
+                                                <option value="Option7">6</option>
+                                                <option value="Option8">7</option>
+                                                <option value="Option9">8</option>
+                                                <option value="Option10">9</option>
+                                                <option value="Option11">10</option>
+                                            </select>
+                                        </div>
+                                    </label>
+                                </div>
+                            </form>
+
+                            <div class="block-container blocks p-2 m-3">
+                                <div class="block tablet-up--shrink flex flex--align-end">
+                                    <span class="mr-2">Showing 4 out of 10</span>
+                                    <button title="Load more clients" aria-label="Load more clients" data-button-text="Load More"
+                                        class="button button--secondary">
+                                        <i aria-hidden="true" class="pi-redo"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <ul class="post-list">
+                                <li class="post-item">
+                                    <div class="block-container blocks flex flex--align-start">
+                                        <div class="block block-9 desktop-up--fill">
+                                            <p><span class="text-navy text--bold">Danny Ford</span><br>
+                                                ernesto.schuppe99@yahoo.com <br>
+                                                (679) 260-3387
+                                            </p>
+                                        </div>
+                                        <div class="block block-3 desktop-up--shrink flex flex--justify-end">
+                                            <div><i class="pi-map-marker text-salmon mx-2"></i> 5 <em>mi</em></div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="post-item">
+                                    <div class="block-container blocks  flex flex--align-start">
+                                        <div class="block block-9 desktop-up--fill">
+                                            <p><span class="text-navy text--bold">Danny Ford</span><br>
+                                                ernesto.schuppe99@yahoo.com <br>
+                                                (679) 260-3387
+                                            </p>
+                                        </div>
+                                        <div class="block block-3 desktop-up--shrink flex flex--justify-end">
+                                            <div><i class="pi-map-marker text-salmon mx-2"></i> 5 <em>mi</em></div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="post-item">
+                                    <div class="block-container blocks flex flex--align-start">
+                                        <div class="block block-9 desktop-up--fill">
+                                            <p><span class="text-navy text--bold">Danny Ford</span><br>
+                                                ernesto.schuppe99@yahoo.com <br>
+                                                (679) 260-3387
+                                            </p>
+                                        </div>
+                                        <div class="block block-3 desktop-up--shrink flex flex--justify-end">
+                                            <div><i class="pi-map-marker text-salmon mx-2"></i> 5 <em>mi</em></div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="post-item">
+                                    <div class="block-container blocks flex flex--align-start">
+                                        <div class="block block-9 desktop-up--fill">
+                                            <p><span class="text-navy text--bold">Danny Ford</span><br>
+                                                ernesto.schuppe99@yahoo.com <br>
+                                                (679) 260-3387
+                                            </p>
+                                        </div>
+                                        <div class="block block-3 desktop-up--shrink flex flex--justify-end">
+                                            <div><i class="pi-map-marker text-salmon mx-2"></i> 5 <em>mi</em></div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+<!--Sales Territory Map END-->
+
             </div>
+        </div>
         </div>
     </main>
 
