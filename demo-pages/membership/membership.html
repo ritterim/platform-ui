@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Memberships</title>
+
+  <link rel="stylesheet" href="/src/assets/stylesheets/platform-ui.min.css">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="../../src/assets/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../src/assets/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="../../src/assets/images/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../src/assets/images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../src/assets/images/favicon/site.webmanifest">
+  <link rel="mask-icon" href="../../src/assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <style>
+    /*
+         *  This css will need to live in the platform along with custom
+         *  mobile menu css.
+         *  See src/Platform/Content/css/sass/platform-ui-plugins.scss
+         */
+    .site-header--fixed {
+      height: calc(var(--pui-menu-height) * 2) !important;
+    }
+
+    .site-header--fixed+.header-fixed {
+      margin-top: calc(var(--pui-menu-height) * 2) !important;
+    }
+
+    .site-header--fixed .site-menu-wrapper:nth-child(2) .site-menu.active,
+    .site-menu-wrapper.site-header--fixed:nth-child(2) .site-menu.active {
+      max-height: calc(100vh - (var(--pui-menu-height) * 2));
+    }
+
+    /* accordion stuff */
+    .pui-accordion--nested {
+      border: none;
+      position: relative;
+      z-index: 1;
+    }
+    .pui-accordion--nested.active {
+      border: none;
+      box-shadow: none;
+    }
+    .pui-accordion--nested.active > .pui-accordion__content-nested {
+      display: flex;
+    }
+    .pui-accordion--nested .pui-accordion__header {
+      font-weight: bold;
+    }
+    .pui-accordion__content--nested {
+      position: relative;
+      z-index: 11;
+    }
+    .pui-accordion {
+      z-index: 5;
+      position: relative;
+    }
+    .modal-open .pui-accordion {
+      position: static;
+      z-index: 0;
+    }
+    .pui-accordion .pui-drawer {
+      padding: 6.5rem 2rem;
+    }
+    .top-accordion {
+      position: relative;
+      z-index: 10;
+    }
+    .drop-target {
+      border: .3rem dashed var(--pui-light-mid);
+      color: var(--pui-light);
+      font-size: 150%;
+      font-weight: bold;
+      text-align: center;
+      margin: 1rem 0;
+      padding: 2rem;
+    }
+
+    /* downlines styles */
+    .no-left-border {
+      border-left: 0;
+    }
+    .background-skyblue-alpha-1 {
+      background-color: rgba(145, 185, 220, 0.1);
+    }
+    .background-skyblue-alpha-2 {
+      background-color: rgba(145, 185, 220, 0.2);
+    }
+    .background-skyblue-alpha-3 {
+      background-color: rgba(145, 185, 220, 0.3);
+    }
+    .background-skyblue-alpha-4 {
+      background-color: rgba(145, 185, 220, 0.4);
+    }
+    .background-skyblue-alpha-5 {
+      background-color: rgba(145, 185, 220, 0.5);
+    }
+    .background-skyblue-alpha-6 {
+      background-color: rgba(145, 185, 220, 0.6);
+    }
+
+    /* 
+      This code should go into a pui-plugins file in the platform
+      You can still use the css vars from Platform UI.
+     */
+    .contact-tabs-container {
+      flex-direction: row-reverse;
+      transition: .2s;
+    }
+    @media (min-width: 768px) {
+      .contact-tabs-container {
+        flex-direction: column;
+      }
+    }
+    .contact-tabs-container .contact-tabs {
+      display: flex;
+      flex-direction: column;
+      height: calc(100vh - var(--pui-menu-height) * 2);
+      position: sticky;
+      top: 144px;
+    }
+    @media (min-width: 768px) {
+      .contact-tabs-container .contact-tabs {
+        flex-direction: row;
+        position: inherit;
+        height: inherit;
+      }
+    }
+    .contact-tabs__result {
+      flex: 1 1 auto;      
+    }
+    .contact-tabs-container .contact-tabs .contact-tab {
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      border-left: 0.25rem solid var(--pui-lighter);
+    }
+    @media (min-width: 768px) {
+      .contact-tabs-container .contact-tabs .contact-tab {
+        border-left: 0;
+        border-bottom: 0.25rem solid var(--pui-lighter);
+      }
+    }
+    .contact-tabs-container .contact-tabs .contact-tab.active, .contact-tabs-container .contact-tabs .contact-tab:focus, .contact-tabs-container .contact-tabs .contact-tab:hover {
+      border-color: var(--pui-navy);
+      color: var(--pui-navy);
+      font-weight: bold;
+    }
+    
+    @media (max-width: 767px) {
+      .contact-tabs__result {
+        padding-right: 1rem;
+        width: 80%;
+      }
+      .contact-tabs-container .contact-tabs {
+        width: 20%;
+      }
+    }
+  </style>
+</head>
+
+<body class="flex flex--column">
+  <header class="site-header site-header--fixed">
+    <div class="site-menu primary inverted site-menu-wrapper">
+      <div class="block-container background-navy w-100">
+        <div class="block block-8 lg-tablet-up-4 lg-tablet-up--fill flex">
+          <a href="/demo-pages/crm-example.html" class="site-menu__item">
+            <span class="card__header-icon pill--circle-medium background-purple text-white mr-2">
+              D
+            </span>
+            <span class="text--size-lg hide-tablet-down">
+              Hello Dev
+            </span>
+          </a>
+          <div class="site-menu__item search">
+            <form role="search" aria-label="CRM" _lpchecked="1" class="w-100">
+              <div class="flex flex--align-center">
+                <label for="search-input" class="sr-only">Search</label>
+                <input type="text" id="search-input" placeholder="Type to search..."
+                  class="placeholder--light text-white">
+                <i aria-hidden="true" class="pi-search"></i>
+              </div>
+            </form>
+          </div>
+        </div>
+        <button
+          class="site-menu-mobile-action button--plain text-white hide-lg-tablet-up pos-abs pin-right mr-2 pin-center-top">
+          <span class="sr-only">Toggle Navigation</span>
+          <i aria-hidden="true" focusable="false" class="pi-menu pi-xl"></i>
+        </button>
+        <nav class="block block--shrink site-menu primary inverted">
+          <div class="site-menu__item dropdown p-0">
+            <a href="#" class="dropdown__trigger p-3">
+              Organizations <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+            </a>
+            <ul class="dropdown__content pin-right post-list">
+              <li class="post-item m-0 p-0">
+                <a href="/admin/agencies" class="flex p-3"><i class="users icon"></i>
+                  Agencies
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/businesses" class="flex p-3"><i class="business-icon icon"></i>
+                  Businesses
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/carriers" class="flex p-3"><i class="carrier-icon icon"></i>
+                  Carriers
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="site-menu__item dropdown p-0">
+            <a href="#" class="dropdown__trigger p-3">
+              People <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+            </a>
+            <ul class="dropdown__content pin-right post-list">
+              <li class="post-item m-0 p-0">
+                <a href="/admin/agents" class="flex p-3"><i class="agent-icon icon"></i>
+                  Agents
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/associates" class="flex p-3"><i class="associate-icon icon"></i>
+                  Associates
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/users" class="flex p-3"><i class="user-icon icon"></i>
+                  Users
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/consumers" class="flex p-3"><i class="user-icon icon"></i>
+                  Consumers
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/agents/map?term=Harrisburg%2C%20PA%2017110" class="flex p-3">
+                  <i class="map icon"></i>
+                  Map Agents
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="site-menu__item dropdown p-0">
+            <a href="#" class="dropdown__trigger p-3">
+              Flow <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+            </a>
+            <ul class="dropdown__content pin-right post-list">
+              <li class="post-item m-0 p-0">
+                <a href="/admin/flow/agents" class="flex p-3"><i class="id badge icon"></i>
+                  Agents
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/flow/agencies" class="flex p-3"><i class="users icon"></i>
+                  Agencies
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/flow/contracts" class="flex p-3"><i class="open folder icon"></i>
+                  Contracts
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/flow/campaigns" class="flex p-3" style=""><i class="address-card icon"></i>
+                  Campaigns
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/flow/submissions" class="flex p-3" style=""><i class="file icon"></i>
+                  Submissions
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/flow/enrollments" class="flex p-3" style=""><i class="certificate icon"></i>
+                  Enrollments
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/flow/payment-methods" class="flex p-3" style=""><i class="money bill icon"></i>
+                  Payment Methods
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/flow/crm" class="flex p-3" style=""><i class="briefcase icon"></i>
+                  CRM
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="site-menu__item dropdown p-0">
+            <a href="#" class="dropdown__trigger p-3">
+              <span class="sr-only">RIMDev</span>
+              <span class="card__header-icon pill--circle-medium background-white text-navy">
+                <i class="pi-rimdev" aria-hidden="true"></i>
+              </span>
+              <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+            </a>
+            <ul class="dropdown__content pin-right post-list">
+              <li class="post-item m-0 p-0">
+                <a href="/admin/rimdev" class="flex p-3">
+                  Permissions
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/form-builder" class="flex p-3">
+                  Form Builder
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/_features" class="flex p-3">
+                  Feature Flags
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/_self" class="flex p-3">
+                  Claims Diagnostics
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="site-menu__item dropdown p-0">
+            <a href="#" class="dropdown__trigger p-3">
+              Recent <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+            </a>
+            <ul class="dropdown__content pin-right post-list dropdown">
+              <li class="post-item p-0 m-0">
+                <a href="/admin/agents/c057f20a-fbc8-403c-9777-9e0701310cf8/edit" title="Last viewed on 5/6/2020"
+                  class="flex p-3"><i class="grey icon id badge"></i> <i class="yellow vertical ellipsis icon"></i>
+                  Gregory Gudis
+                </a>
+              </li>
+              <!---->
+              <div class="left menu">
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/agents/c057f20a-fbc8-403c-9777-9e0701310cf8/contracts?id=263135" class="flex p-3">
+                    Contract for Accendo Insurance Company
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/agents/c057f20a-fbc8-403c-9777-9e0701310cf8/edit?ui=medicareful" class="flex p-3">
+                    Medicareful
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0 border-b border--color-lighter">
+                  <a href="/admin/agents/c057f20a-fbc8-403c-9777-9e0701310cf8/edit?ui=payments" class="flex p-3">
+                    Payments
+                  </a>
+                </li>
+              </div>
+              <li class="post-item p-0 m-0">
+                <a href="/admin/agencies/62f89954-d3ea-4d96-96d7-c98bbd2470ec/edit" title="Last viewed on 4/21/2020"
+                  class="flex p-3"><i class="grey icon users"></i> <i class="yellow vertical ellipsis icon"></i>
+                  Ritter Insurance Marketing
+                </a>
+              </li>
+              <!---->
+              <div class="left menu">
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/agencies/62f89954-d3ea-4d96-96d7-c98bbd2470ec/contracts?id=136337" class="flex p-3">
+                    Contract for Aetna-Referral
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/agencies/62f89954-d3ea-4d96-96d7-c98bbd2470ec/edit?ui=profile" class="flex p-3">
+                    Profile
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0 border-b border--color-lighter">
+                  <a href="/admin/agencies/62f89954-d3ea-4d96-96d7-c98bbd2470ec/edit?ui=contact" class="flex p-3">
+                    Contact
+                  </a>
+                </li>
+              </div>
+              <!---->
+              <li class="post-item m-0 p-0">
+                <a class="flex p-3">
+                  <i class="red icon close"></i> Clear Recent Items
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="site-menu site-menu-wrapper">
+      <div class="block-container background-white flex--nowrap w-100">
+        <div class="block block-4 lg-tablet-up--fill ">
+          <div class="w-100 dropdown h-100 p-0">
+            <a href="#" class="dropdown__trigger p-3 w-100">
+              <span class="card__header-icon pill--circle-medium background-salmon text-white mr-2">
+                <i class="pi-building text-white"></i>
+              </span>
+              <div class="text--size-lg">
+                Gregory Gudis
+              </div>
+              <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+            </a>
+            <div class="dropdown__content pin-left">
+              <a href="#" class="flex p-3">
+                <div class="pill background-olive">
+                  Active
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <button
+          class="site-menu-mobile-action button--plain text-white hide-lg-tablet-up pos-abs pin-right mr-2 pin-center-top">
+          <span class="sr-only">Toggle Navigation</span>
+          <i aria-hidden="true" focusable="false" class="pi-menu pi-xl text-navy"></i>
+        </button>
+        <nav class="site-menu site-menu block block--shrink w-100 flex--justify-between">
+          <a href="#" class="site-menu__item">
+            Contracts
+          </a>
+          <a href="#" class="site-menu__item">
+            Submissions
+          </a>
+          <a href="#" class="site-menu__item active">
+            Memberships
+          </a>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <main class="header-fixed background-light-mid flex--grow py-4 px-5">
+    <div class="block-container blocks px-3 mb-4">
+      <div class="block">
+        <div class="pui-tabs">
+          <input type="radio" id="tab-input-a" name="tabs" checked>
+          <label for="tab-input-a" class="pui-tab flex flex--justify-between">
+            Members
+            <div class="pill pill--circle text-navy border border--color-navy ml-2">
+              75
+            </div>
+          </label>
+          <div class="pui-tab-panel p-4">
+            <div class="block-container flex--justify-end mb-4">
+              <div class="block tablet-up-6 flex flex--justify-end flex--align-center">
+                <button data-modal="add-associate-modal" class="button pui-modal__open ml-2">
+                  Add <i aria-hidden="true" class="pi-plus"></i>
+                </button>
+              </div>
+            </div>
+            <div id="top" class="block-container contact-tabs-container background-white">
+  
+              <div class="flex text--size-xl text--uppercase contact-tabs flex--justify-between mb-3">
+                <a href="#d" data-location="d" class="contact-tab active">d</a>
+                <a href="#k" data-location="k" class="contact-tab">k</a>
+                <a href="#m" data-location="m" class="contact-tab">m</a>
+                <a href="#p" data-location="p" class="contact-tab">p</a>
+                <a href="#s" data-location="s" class="contact-tab">s</a>
+                <a href="#w" data-location="w" class="contact-tab">w</a>    
+              </div>
+              
+              <div class="contact-tabs__result pui-form">
+                
+                <table class="pui-table">
+                  <thead>
+                    <tr>
+                      <th>Action</th>
+                      <th>Member</th>
+                      <th>Department</th>
+                      <th>Title</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr id="d">
+                      <td colspan="5" data-label="D" class="pos-rel text--size-lg text-navy text--bold">
+                        <span class="hide-tablet-down">D</span>
+                        <a href="#top" class="button top-action pos-abs pin-right mr-3">Top <i class="pi-arrow-up"></i></a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td data-label="Actions">
+                        <div class="icon-menu">
+                          <div class="icon-menu__item">
+                            <button class="icon-menu__action button--plain text-negative--hover pointer">
+                              <i class="pi-user-solid" aria-hidden="hidden"></i>
+                            </button>
+                          </div>
+                          <div class="icon-menu__item">
+                            <button class="icon-menu__action button--plain text-positive--hover pointer">
+                              <i class="pi-user-circle" aria-hidden="hidden"></i>
+                            </button>
+                          </div>
+                        </div>            
+                      </td>
+                      <td data-label="Member">
+                        Dormammu
+                      </td>
+                      <td data-label="Department">
+                        <label class="pui-form__field">
+                          <span class="sr-only">Department</span>
+                          <input name="dept" type="text">
+                        </label>
+                      </td>
+                      <td data-label="Title">
+                        <label for="" class="pui-form__field">
+                          <span class="sr-only">Title</span>
+                          <input name="title" type="text" value="Dark Dimension Ruler">
+                        </label>
+                      </td>
+                      <td>
+                        <button class="icon-menu__action button--plain text-negative--hover pointer">
+                          <i class="pi-trash" aria-hidden="hidden"></i>
+                        </button>            
+                      </td>
+                    </tr>
+                    <tr id="k">
+                      <td colspan="5" data-label="K" class="pos-rel text--size-lg text-navy text--bold">
+                        <span class="hide-tablet-down">K</span>
+                        <a href="#top" class="button top-action pos-abs pin-right mr-3">Top <i class="pi-arrow-up"></i></a>
+                      </td>
+                    </tr>        
+                    <tr>
+                      <td data-label="Actions">
+                        <div class="icon-menu">
+                          <div class="icon-menu__item">
+                            <button class="icon-menu__action button--plain text-negative--hover pointer">
+                              <i class="pi-user-solid" aria-hidden="hidden"></i>
+                            </button>
+                          </div>
+                          <div class="icon-menu__item">
+                            <button class="icon-menu__action button--plain text-positive--hover pointer">
+                              <i class="pi-user-circle" aria-hidden="hidden"></i>
+                            </button>
+                          </div>
+                        </div>            
+                      </td>
+                      <td data-label="Member">
+                        Kaecilius
+                      </td>
+                      <td data-label="Department">
+                        <label for="" class="pui-form__field">
+                          <span class="sr-only">Department</span>
+                          <input name="dept" type="text">
+                        </label>
+                      </td>
+                      <td data-label="Title">
+                        <label for="" class="pui-form__field">
+                          <span class="sr-only">Title</span>
+                          <input name="title" type="text" value="Master of the Mystic Arts">
+                        </label>
+                      </td>
+                      <td>
+                        <button class="icon-menu__action button--plain text-negative--hover pointer">
+                          <i class="pi-trash" aria-hidden="hidden"></i>
+                        </button>            
+                      </td>
+                    </tr>     
+                    <tr id="m">
+                      <td colspan="5" data-label="M" class="pos-rel text--size-lg text-navy text--bold">
+                        <span class="hide-tablet-down">M</span>
+                        <a href="#top" class="button top-action pos-abs pin-right mr-3">Top <i class="pi-arrow-up"></i></a>
+                      </td>
+                    </tr>          
+                    <tr>
+                      <td data-label="Actions">
+                        <div class="icon-menu">
+                          <div class="icon-menu__item">
+                            <button class="icon-menu__action button--plain text-negative--hover pointer">
+                              <i class="pi-user-solid" aria-hidden="hidden"></i>
+                            </button>
+                          </div>
+                          <div class="icon-menu__item">
+                            <button class="icon-menu__action button--plain text-positive--hover pointer">
+                              <i class="pi-user-circle" aria-hidden="hidden"></i>
+                            </button>
+                          </div>
+                        </div>            
+                      </td>
+                      <td data-label="Member">
+                        Karl Mordo
+                      </td>
+                      <td data-label="Department">
+                        <label for="" class="pui-form__field">
+                          <span class="sr-only">Department</span>
+                          <input name="dept" type="text">
+                        </label>
+                      </td>
+                      <td data-label="Title">
+                        <label for="" class="pui-form__field">
+                          <span class="sr-only">Title</span>
+                          <input name="title" type="text" value="Master of the Mystic Arts">
+                        </label>
+                      </td>
+                      <td>
+                        <button class="icon-menu__action button--plain text-negative--hover pointer">
+                          <i class="pi-trash" aria-hidden="hidden"></i>
+                        </button>            
+                      </td>
+                    </tr>  
+                    <tr id="p">
+                      <td colspan="5" data-label="P" class="pos-rel text--size-lg text-navy text--bold">
+                        <span class="hide-tablet-down">P</span>
+                        <a href="#top" class="button top-action pos-abs pin-right mr-3">Top <i class="pi-arrow-up"></i></a>
+                      </td>
+                    </tr>    
+                    <tr>
+                      <td data-label="Actions">
+                        <div class="icon-menu">
+                          <div class="icon-menu__item">
+                            <button class="icon-menu__action button--plain text-negative--hover pointer">
+                              <i class="pi-user-solid" aria-hidden="hidden"></i>
+                            </button>
+                          </div>
+                          <div class="icon-menu__item">
+                            <button class="icon-menu__action button--plain text-positive--hover pointer">
+                              <i class="pi-user-circle" aria-hidden="hidden"></i>
+                            </button>
+                          </div>
+                        </div>            
+                      </td>
+                      <td data-label="Member">
+                        Christine Palmer
+                      </td>
+                      <td data-label="Department">
+                        <label for="" class="pui-form__field">
+                          <span class="sr-only">Department</span>
+                          <input name="dept" type="text" value="ER">
+                        </label>
+                      </td>
+                      <td data-label="Title">
+                        <label for="" class="pui-form__field">
+                          <span class="sr-only">Title</span>
+                          <input name="title" type="text" value="Emergency Surgeon">
+                        </label>
+                      </td>
+                      <td>
+                        <button class="icon-menu__action button--plain text-negative--hover pointer">
+                          <i class="pi-trash" aria-hidden="hidden"></i>
+                        </button>            
+                      </td>
+                    </tr>
+                    <tr>
+                      <td data-label="Actions">
+                        <div class="icon-menu">
+                          <div class="icon-menu__item">
+                            <button class="icon-menu__action button--plain text-negative--hover pointer">
+                              <i class="pi-user-solid" aria-hidden="hidden"></i>
+                            </button>
+                          </div>
+                          <div class="icon-menu__item">
+                            <button class="icon-menu__action button--plain text-positive--hover pointer">
+                              <i class="pi-user-circle" aria-hidden="hidden"></i>
+                            </button>
+                          </div>
+                        </div>            
+                      </td>
+                      <td data-label="Member">
+                        Johnathan Pangborn
+                      </td>
+                      <td data-label="Department">
+                        <label for="" class="pui-form__field">
+                          <span class="sr-only">Department</span>
+                          <input name="dept" type="text">
+                        </label>
+                      </td>
+                      <td data-label="Title">
+                        <label for="" class="pui-form__field">
+                          <span class="sr-only">Title</span>
+                          <input name="title" type="text">
+                        </label>
+                      </td>
+                      <td>
+                        <button class="icon-menu__action button--plain text-negative--hover pointer">
+                          <i class="pi-trash" aria-hidden="hidden"></i>
+                        </button>            
+                      </td>
+                    </tr>  
+                    <tr id="s">
+                      <td colspan="5" data-label="S" class="pos-rel text--size-lg text-navy text--bold">
+                        <span class="hide-tablet-down">S</span>
+                        <a href="#top" class="button top-action pos-abs pin-right mr-3">Top <i class="pi-arrow-up"></i></a>
+                      </td>
+                    </tr>     
+                    <tr>
+                      <td data-label="Actions">
+                        <div class="icon-menu">
+                          <div class="icon-menu__item">
+                            <button class="icon-menu__action button--plain text-negative--hover pointer">
+                              <i class="pi-user-solid" aria-hidden="hidden"></i>
+                            </button>
+                          </div>
+                          <div class="icon-menu__item">
+                            <button class="icon-menu__action button--plain text-positive--hover pointer">
+                              <i class="pi-user-circle" aria-hidden="hidden"></i>
+                            </button>
+                          </div>
+                        </div>            
+                      </td>
+                      <td data-label="Member">
+                        Stephen Strange
+                      </td>
+                      <td data-label="Department">
+                        <label for="" class="pui-form__field">
+                          <span class="sr-only">Department</span>
+                          <input name="dept" type="text">
+                        </label>
+                      </td>
+                      <td data-label="Title">
+                        <label for="" class="pui-form__field">
+                          <span class="sr-only">Title</span>
+                          <input name="title" type="text" value="Neurosurgeon">
+                        </label>
+                      </td>
+                      <td>
+                        <button class="icon-menu__action button--plain text-negative--hover pointer">
+                          <i class="pi-trash" aria-hidden="hidden"></i>
+                        </button>            
+                      </td>
+                    </tr>    
+                    <tr id="w">
+                      <td colspan="5" data-label="W" class="pos-rel text--size-lg text-navy text--bold">
+                        <span class="hide-tablet-down">W</span>
+                        <a href="#top" class="button top-action pos-abs pin-right mr-3">Top <i class="pi-arrow-up"></i></a>
+                      </td>
+                    </tr>   
+                    <tr>
+                      <td data-label="Actions">
+                        <div class="icon-menu">
+                          <div class="icon-menu__item">
+                            <button class="icon-menu__action button--plain text-negative--hover pointer">
+                              <i class="pi-user-solid" aria-hidden="hidden"></i>
+                            </button>
+                          </div>
+                          <div class="icon-menu__item">
+                            <button class="icon-menu__action button--plain text-positive--hover pointer">
+                              <i class="pi-user-circle" aria-hidden="hidden"></i>
+                            </button>
+                          </div>
+                        </div>            
+                      </td>
+                      <td data-label="Member">
+                        Wong
+                      </td>
+                      <td data-label="Department">
+                        <label for="" class="pui-form__field">
+                          <span class="sr-only">Department</span>
+                          <input name="dept" type="text" value="Library">
+                        </label>
+                      </td>
+                      <td data-label="Title">
+                        <label for="" class="pui-form__field">
+                          <span class="sr-only">Title</span>
+                          <input name="title" type="text" value="Master of the Mystic Arts">
+                        </label>
+                      </td>
+                      <td>
+                        <button class="icon-menu__action button--plain text-negative--hover pointer">
+                          <i class="pi-trash" aria-hidden="hidden"></i>
+                        </button>            
+                      </td>
+                    </tr>        
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="add-associate-modal" class="pui-modal pui-modal--closed" tabindex="-1">
+      <div class="pui-modal__inner animated slideInUp faster">
+        <div class="pui-modal__header">
+          <button class="button pui-modal__close" data-modal="add-associate-modal">Close <i class="pi-times"></i></button>
+          <strong class="text-navy text--size-lg">Add New Associate</strong>
+        </div>
+        <div class="pui-modal__content">
+          <form action="submit" class="pui-form block-container blocks p-2 tablet-up-2 lg-tablet-up-3">
+            <label for="" class="pui-form__field block">
+              First Name
+              <input type="text">
+            </label>
+            <label for="" class="pui-form__field block">
+              Middle Name
+              <input type="text">
+            </label>
+            <label for="" class="pui-form__field block">
+              Last Name
+              <input type="text">
+            </label>
+            <label for="" class="pui-form__field block">
+              Prefix
+              <input type="text">
+            </label>
+            <label for="" class="pui-form__field block">
+              Suffix
+              <input type="text">
+            </label>
+            <fieldset class="pui-form__field block">
+              <legend>Gender</legend>
+              <div class="pui-form__option-group">
+                <input id="male" type="radio" name="choose-one">
+                <label for="male">
+                  <div class="input-icons">
+                    <i class='pi-circle pi-lg'></i>
+                    <i class='pi-circle-solid'></i>
+                  </div>
+                  Male
+                </label>
+                <input id="female" type="radio" name="choose-one">
+                <label for="female">
+                  <div class="input-icons">
+                    <i class='pi-circle pi-lg'></i>
+                    <i class='pi-circle-solid'></i>
+                  </div>
+                  Female
+                </label>
+              </div>
+            </fieldset>
+            <label for="" class="pui-form__field block">
+              Birthdate
+              <input type="date">
+            </label>
+            <label for="" class="pui-form__field block">
+              Email
+              <input type="email">
+            </label>
+            <label for="" class="pui-form__field block">
+              Phone Number
+              <input type="tel">
+            </label>
+            <div class="block lg-tablet-up--fill mt-3 flex--center-content">
+              <button class="button button--post button--lg">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="/src/assets/js/platform-ui.min.js"></script>
+  <script>
+    const tabLinks = document.querySelectorAll('.contact-tab');
+    const topAction = document.querySelectorAll('.top-action');
+
+    // get the height of the header
+    const headerHeight = document.querySelector('.site-header').offsetHeight;  
+
+    tabLinks.forEach(tab => {
+      tab.addEventListener('click', (e) =>  {
+        e.preventDefault();
+        // get's data attr value from clicked tab
+        const location = tab.getAttribute('data-location');
+        // target element to scroll to based off corresponding data-location value
+        const target = document.getElementById(location);
+        // get the size of the body relative to viewport
+        const bodyRect = document.body.getBoundingClientRect();
+        // get the distance of the top of the target relative to the viewport top
+        const targetPosition = target.getBoundingClientRect().top;
+        // offset position accounting for height of the header
+        const offset   = targetPosition - bodyRect.top - headerHeight;
+        window.scrollTo({
+          top: offset,
+          behavior: "smooth"
+        });
+        // clear active classes on tabs
+        clearActive();
+        // add active to clicked tab
+        tab.classList.add('active');
+      })
+    })
+
+    // function to remove active from all tabs
+    function clearActive() {
+      const activeTab = document.querySelectorAll('.contact-tab.active')
+      activeTab.forEach(tab => {
+        tab.classList.remove('active')
+      })
+    }
+
+    // tabs container
+    const container = document.querySelector('.contact-tabs-container');
+    // tabs container distance from top of viewport
+    const containerPosition = container.getBoundingClientRect().top;
+
+    topAction.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        // get the difference of the top of container and height of the header.
+        const offsetPosition = containerPosition - headerHeight;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      })
+    })
+
+  </script>
+</body>
+
+</html>
