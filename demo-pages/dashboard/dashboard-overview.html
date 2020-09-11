@@ -15,6 +15,41 @@
         max-height: 25rem;
         overflow: auto;
         }
+        /* add class new to new video */
+        .new {
+        display: inline-flex;
+        background: var(--pui-skyblue);
+        width: 24px;
+        height: 24px;
+        position: relative;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        margin-left: .5rem;
+        }
+        .new:before,
+        .new:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 24px;
+        width: 24px;
+        background: var(--pui-skyblue);
+        }
+        .new:before {
+        transform: rotate(30deg);
+        }
+        .new:after {
+        display: flex;
+        content: "NEW";
+        font-size: 8px;
+        font-weight: bold;
+        justify-content: center;
+        align-items: center;
+        color: var(--pui-navy);
+        transform: rotate(60deg);
+        }
     </style>
 </head>
 
