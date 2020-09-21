@@ -1,12 +1,11 @@
 const tabList = document.querySelector('.pui-tabs');
 
 if (tabList) {
-  let pageWidth;
   let isMobile;
   const tab = document.querySelectorAll('.pui-tab');
 
   function checkPageWidth() {
-    pageWidth = window.innerWidth;
+    let pageWidth = window.innerWidth;
 
     if(pageWidth < 768) {
       isMobile = true;
@@ -76,6 +75,7 @@ if (tabList) {
     })
   }  
 
+  // if screen is under 768, run mobile tabs JS
   if (isMobile) {
     fireMobileTabs();
   }
