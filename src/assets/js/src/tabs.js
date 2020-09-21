@@ -10,7 +10,6 @@ if (tabList) {
     if(elm.previousElementSibling.checked) {
       if(elm.previousElementSibling.classList.contains('un-checked')) {
         elm.previousElementSibling.classList.remove('un-checked');
-        // elm.previousElementSibling.removeAttribute('checked');
         elm.previousElementSibling.setAttribute('checked', true);
       } else {
         uncheck();
