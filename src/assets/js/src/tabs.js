@@ -1,40 +1,62 @@
 const tabList = document.querySelector('.pui-tabs');
 
 if (tabList) {
-  let width = window.innerWidth;
-  const tabs = document.querySelectorAll('.pui-tab');
-  const tabPanel = document.querySelectorAll('.pui-tab-panel');
-  const activeTab = document.querySelectorAll('.pui-tabs input:checked + label')
+  const width = window.innerWidth;
+  const tab = document.querySelectorAll('.pui-tab');
 
-  if (width < 990.9) {
+  if (width < 767.9) {
 
-    var radioState = true;
-    function test(element){
-      if (radioState == false) {
-        check();
-        radioState = true;
-      } else {
-        uncheck();
-        radioState = false;
-      }
+    function mobileTabs(tab){
 
-      function check() {
-        element.previousElementSibling.setAttribute('checked', true);
-        element.previousElementSibling.classList.remove('un-checked');
-      }
-      function uncheck() {
-        element.previousElementSibling.setAttribute('checked', false);
-        if (element.classList.contains('un-checked')) {
-          element.classList.remove('un-checked');
+      if(tab.previousElementSibling.checked) {
+        if(tab.previousElementSibling.classList.contains('un-checked')) {
+          tab.previousElementSibling.classList.remove('un-checked');
+          tab.previousElementSibling.removeAttribute('checked');
+        } else {
+          uncheck();
         }
-        element.previousElementSibling.classList.add('un-checked');
+      } else {
+        clearUnChecked();
+        return;
+      }
+
+      function clearUnChecked() {
+        tab.forEach(function(el) {
+          // removes un-checked from all tabs
+          el.previousElementSibling.classList.remove('un-checked');
+        })
+      }
+
+      function uncheck() {
+        // sets checked attribute to false
+        tab.previousElementSibling.setAttribute('checked', false);
+        // adds class to hide pui-tab-panel with css
+        tab.previousElementSibling.classList.add('un-checked');
       }
     }
 
-    tabs.forEach(function(el) {
+    tab.forEach(function(el) {
       el.addEventListener('click', function() {
-        test(el);
+        // checks for flat tabs look
+        if(el.closest(".pui-tabs").classList.contains('pui-tabs--flat')) {
+
+          // checks for responsive class added to flat tabs
+          if(el.closest('.pui-tabs').classList.contains('responsive')) {
+            mobileTabs(el);
+          } else {
+            return;
+          }
+        } else {
+          mobileTabs(el);
+        }        
       })
+    })
+  } else {
+    // if above mobile breakpoint, remove un-checked from all tabs
+    tab.forEach(function(el) {
+      if(el.previousElementSibling.classList.contains('un-checked')) {
+        el.previousElementSibling.classList.remove('un-checked');
+      }
     })
   }
 }
