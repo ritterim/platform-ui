@@ -1,20 +1,9 @@
 const tabList = document.querySelector('.pui-tabs');
 
 if (tabList) {
-  let isMobile;
   const tab = document.querySelectorAll('.pui-tab');
 
-  function checkPageWidth() {
-    let pageWidth = window.innerWidth;
-
-    if(pageWidth < 768) {
-      isMobile = true;
-    } else {
-      isMobile = false;
-    }
-  }
-
-  checkPageWidth();
+  const pageWidth = window.innerWidth;
 
   function mobileTabs(elm){
 
@@ -58,7 +47,6 @@ if (tabList) {
   function fireMobileTabs() {
     tab.forEach(function(el) {
       el.addEventListener('click', function() {
-        console.log('click');
         // checks for flat tabs look
         if(el.closest(".pui-tabs").classList.contains('pui-tabs--flat')) {
   
@@ -76,7 +64,7 @@ if (tabList) {
   }  
 
   // if screen is under 768, run mobile tabs JS
-  if (isMobile) {
+  if (pageWidth < 768) {
     fireMobileTabs();
   }
   
