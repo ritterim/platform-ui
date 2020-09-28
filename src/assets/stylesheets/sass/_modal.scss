@@ -137,6 +137,40 @@
 // 
 // Styleguide Components.modaldialog
 
+// Message Modal
+// 
+// If you would like to add a message to a modal, you can add it after `pui-modal__content`. If the message is a sibling
+//  of `pui-modal__content`, the message will be the full width of the modal as seen in the example. You can simply use
+// use the message inside `pui-modal__content` if you would like the message to have the same padding as the rest of of
+//  the modal content. If you want the message to be aligned to the bottom of the modal you'll need to remove the margin
+// of the message with a spacer modifier class (`my-0`, `m-0`). See the example below.
+// 
+// Note: This look may not be best for the larger modals. It may be better to include the message inside the `pui-modal__content`
+// container.
+// 
+// Markup:
+// <div id="message-modal" class="pui-modal pui-modal--centered pui-modal--closed" tabindex="-1">
+//   <div class="pui-modal__inner animated slideInUp faster">
+//     <div class="pui-modal__header">
+//       <button class="button pui-modal__close" data-modal="message-modal">Close <i class="pi-times"></i></button>
+//       Message Modal
+//     </div>
+//     <div class="pui-modal__content">
+//       <p class="text--size-lg text--center">Are you sure you want to select these options?</p>
+//     </div>
+//     <div class="pui-message pui-message--warning m-0">
+//       <p>This is an example of a message that displays a warning but not necessarily an error.</p>
+//     </div>
+//   </div>
+// </div>
+// <div class="block-container mobile-up-1 tablet-up-4 desktop-up-5 blocks px-2 mb-3">
+//     <div class="block">
+//         <button class="button button--post button--lg pui-modal__open" data-modal="message-modal">Fire Message Modal</button>
+//     </div>
+// </div>
+// 
+// Styleguide Components.modalmessage
+
 .pui-modal {
   $header-height: 6rem;
 
