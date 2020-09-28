@@ -76,14 +76,12 @@
   // --check-wrapper is meant to be used with a checkmark icon
   &__check-wrapper {
 
-    $small-spacer: map.get(variables.$spacers, 2)  / 2;
-
     color: white;
     bottom: -1px;
     right: -1px;
-    height: calc(#{variables.$spacer} + .2);
+    height: 1rem;
     position: absolute;
-    width: calc(#{variables.$spacer} + .2);
+    width: 1.2rem;
     
     // triangle for check background
     &:after {
@@ -91,7 +89,7 @@
       width: 0;
       height: 0;
       border-style: solid;
-      border-width: 0 0 1.2rem 1.2rem;
+      border-width: 0 0 1rem 1.2rem;
       border-color: transparent transparent map.get(variables.$error-colors, 'positive') transparent;
       position: absolute;
       bottom: 0;
@@ -104,7 +102,7 @@
       font-size: map.get(variables.$font-percentage, 'xxs');
       position: absolute;
       bottom: 0; 
-      right: -2px;
+      right: 2px;
       z-index: 2;
     }
 
