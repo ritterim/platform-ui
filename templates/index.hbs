@@ -114,8 +114,8 @@
         the "#if @first" block as seen below.
       }}
       {{#each sections}}
-        <div id="pui-{{referenceURI}}" class="pb-3{{#unless @first}} border-b border--color-lighter pt-7 mt-2{{/unless}}{{#if @first}} pt-5{{/if}}{{#if @last}} no-border{{/if}} {{#if @root.template.isItem}}is-fullscreen{{/if}}">
-          <h{{#if @first}}1{{else}}2{{/if}} class="pui-style-title {{#if @first}}text--bold text--size-xxl{{/if}} mb-3">
+        <div id="pui-{{referenceURI}}" class="pb-3 page-anchor-target{{#unless @last}} mb-6{{/unless}}{{#unless @first}} border-b border--color-lighter{{/unless}}{{#if @last}} no-border{{/if}} {{#if @root.template.isItem}}is-fullscreen{{/if}}">
+          <h{{#if @first}}1{{else}}2{{/if}} class="pui-style-title {{#if @first}}text--bold text--size-xxl mt-0{{/if}} mb-3">
             <a class="pui-style-title__permalink {{#if @first}} text-navy{{else}} text-dark{{/if}}" href="#pui-{{referenceURI}}">
               <div class="pui-style-title__ref text-base text--size-xxs">
                 Section {{referenceNumber}}
