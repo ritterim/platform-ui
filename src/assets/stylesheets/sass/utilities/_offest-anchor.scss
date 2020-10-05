@@ -1,0 +1,36 @@
+// This prevents the top of a page anchor from being hidden behind the 
+// fixed header.
+
+@use "config";
+
+.page-anchor-target {
+  
+  .header-fixed & {
+    
+    &:before {
+      display: block; 
+      content: " "; 
+      margin-top: -(config.$menu-height);
+      height: config.$menu-height;
+      visibility: hidden; 
+      pointer-events: none;
+    }
+  }
+}
+
+// Page Anchor Offset
+// 
+// You can use this class in cases when you have a fixed header on your site and you have 
+// anchors within a page. This utility class prevents the top of the anchor target from 
+// being hidden behind the fixed header.
+// 
+// Add the class to the target of the anchor.
+// 
+// Markup:
+// <p class="mb-4"><a href="#heading">Click here</a> to jump to the heading below.</p>
+// <p class="mb-6">This is just a random block.</p>
+// <div id="heading" class="page-anchor-target">
+//   <h2>Heading</h2>
+// </div>
+// 
+// Styleguide Utilities.PageAnchorOffset
