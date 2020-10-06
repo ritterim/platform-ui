@@ -1,0 +1,94 @@
+@use "config";
+
+// Background Images
+// 
+// **Note** This section leverages javascript and is not pure css.
+// 
+// You can use platform UI to add background images using data attributes and some javascript.
+// 
+// For starters, you'll need to add the class `background-image` onto the element where you want to use add an image.
+// From there, use data attributes to change the look of the background image.
+// 
+// See the example below to see it all come together. You may notice a `ratio-` class on the image container. We talk
+// more about that [here.](/section-utilities.html#pui-utilities-backgroundratio)
+// 
+// | class | data attribute(s) | scenarios |
+// |---|---|---|
+// |`background-image`|`data-background-image`| image path;`no-repeat`, position `center`, and size `cover` all default |
+// || `data-background-position`|  overrides default |
+// || `data-background-size` | overrides default |
+// || `data-background-repeat`| overrides default |
+// 
+// Markup:
+// <div class="block-container blocks my-3 flex--column">
+//   <div class="block block-6">
+//   <!-- Add data attributes for specific background image styles -->
+//     <div 
+//          class="background-image ratio-16_9" 
+//          data-background-image="http://www.fillmurray.com/300/200" 
+//          data-background-position="top left" 
+//          data-background-size="100%" 
+//          data-background-repeat="repeat">
+//     </div>    
+//   </div>
+// </div>
+// 
+// Styleguide Utilities.Background
+
+.background-image {
+  // default styles
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+
+// Background Ratio
+// 
+// Set the size of an element equal to a common ratio with the `ratio-{val}` class.
+// 
+// | class | ratio |
+// |---|---|
+// |`.ratio-1_1`|1:1|
+// |`.ratio-2_1`| 2:1|
+// |`.ratio-4_3`| 4:3 |
+// |`.ratio-16_9`| 16:9|
+// 
+// Markup:
+// <div class="block-container tablet-up-2 laptop-up-4 blocks my-3 px-2">
+//   <div class="block">
+//     <div class="background-navy ratio-1_1 flex--center-content">
+// <strong class="text-white text--size-lg">1:1</strong>
+//     </div>    
+//   </div>
+//   <div class="block">
+//     <div class="background-skyblue ratio-2_1 flex--center-content">
+// <strong class="text--size-lg">2:1</strong>
+//     </div>    
+//   </div>
+//   <div class="block">
+//     <div class="background-med-blue ratio-4_3 flex--center-content">
+// <strong class="text-white text--size-lg">4:3</strong>
+//     </div>    
+//   </div>
+//   <div class="block">
+//     <div class="background-lightblue ratio-16_9 flex--center-content">
+// <strong class="text--size-lg">16:9</strong>
+//     </div>    
+//   </div>
+// </div>
+// 
+// Styleguide Utilities.BackgroundRatio
+
+@each $ratio, $percent in config.$bg-size {
+  .ratio-#{$ratio} {
+    
+    // this will set the ratio of the container
+    &:before {
+      content: "";
+      display: block;
+      padding-top: $percent;
+      position: relative;   
+    }
+  }
+}
