@@ -263,3 +263,14 @@ $loader-colors: (
   'inverted': $loader-color-inverted,
   'inverted-top': $loader-border-top-inverted
 ) !default;
+
+
+// ---------------------
+// For Ratio
+// ---------------------
+$bg-size: (
+  1_1: 100%,
+  2_1: 50%,
+  4_3: 75%,
+  16_9: 56.25%
+);
