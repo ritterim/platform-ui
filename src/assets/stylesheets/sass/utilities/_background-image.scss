@@ -12,7 +12,7 @@
 // See the example below to see it all come together. You may notice a `ratio-` class on the image container. We talk
 // more about that [here.](/section-utilities.html#pui-utilities-backgroundratio)
 // 
-// | class | data attribute(s) | scenarios |
+// | Class | Data Attribute(s) | Scenarios |
 // |---|---|---|
 // |`background-image`|`data-background-image`| image path;`no-repeat`, position `center`, and size `cover` all default |
 // || `data-background-position`|  overrides default |
@@ -92,3 +92,72 @@
     }
   }
 }
+
+
+
+// Background Gradient
+// 
+// **Note** This section leverages javascript and is not pure css. This feature will also not work in IE.
+// 
+// You can create your own custom linear gradient. Start by adding the `linear-gradient` class. From there,
+// enter the values you like for your direction and color using the appropriate data attributes. See the
+// example and table below. 
+// 
+// | Class | Data Attributes | Scenarios |
+// |---|---|---|
+// |`linear-gradient`|`data-gradient-direction`| background-image: linear-gradient(`0deg`, rgb(2, 0, 36), rgb(0, 212, 255)) |
+// || `data-gradient-start`| linear-gradient(0deg, `rgb(2, 0, 36)`, rgb(0, 212, 255)) |
+// || `data-gradient-stop` | linear-gradient(0deg, rgb(2, 0, 36), `rgb(0, 212, 255)`) |
+// || `data-gradient-fallback`| Add a fallback `background-color` |
+// 
+// <div class="mb-4"></div>
+// Keep in mind you can use platform UI [color variables](/section-color.html) as well. Something like `data-gradient-start="var(--pui-navy)"`
+// will work just fine.
+// 
+// You can also change the distance of your colors by adding a perceentage in the data attribute value for `data-gradient-start` and or
+// `data-gradient-start`. Something like `data-gradient-start="var(--pui-navy) 20%"` would render just fine. See the first example.
+// 
+// Markup:
+// <div class="block-container tablet-up-2 laptop-up-4 blocks my-3 px-2">
+//   <div class="block">
+// <!-- Add data attributes to create your gradient -->
+//     <div 
+//          class="linear-gradient ratio-16_9"
+//          data-gradient-direction="0deg"
+//          data-gradient-start="#020024 20%"
+//          data-gradient-stop="#00d4ff"
+//          data-gradient-fallback="#020024">
+//     </div>
+//   </div>
+//   <div class="block">
+//     <div 
+//          class="linear-gradient ratio-16_9"
+//          data-gradient-direction="90deg"
+//          data-gradient-start="var(--pui-navy)"
+//          data-gradient-stop="var(--pui-blue)"
+//          data-gradient-fallback="var(--pui-navy)">
+//     </div>
+//   </div>
+//   <div class="block">
+//     <div 
+//          class="linear-gradient ratio-16_9"
+//          data-gradient-direction="to left top"
+//          data-gradient-start="var(--pui-violet)"
+//          data-gradient-stop="var(--pui-purple)"
+//          data-gradient-fallback="var(--pui-purple)">
+//     </div>
+//   </div>
+//   <div class="block">
+//     <div 
+//          class="linear-gradient ratio-16_9"
+//          data-gradient-direction="270deg"
+//          data-gradient-start="var(--pui-green)"
+//          data-gradient-stop="var(--pui-teal)"
+//          data-gradient-fallback="var(--pui-green)">
+//     </div>
+//   </div>
+// </div>
+// 
+// 
+// 
+// Styleguide Utilities.BackgroundGradient
