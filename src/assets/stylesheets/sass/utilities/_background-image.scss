@@ -149,11 +149,12 @@
 //   </div>
 //   <div class="block">
 //     <div 
-//          class="linear-gradient ratio-16_9"
-//          data-gradient-direction="270deg"
+//          class="linear-gradient background-image ratio-16_9"
+//          data-gradient-direction="to right"
 //          data-gradient-start="var(--pui-green)"
-//          data-gradient-stop="var(--pui-teal)"
-//          data-gradient-fallback="var(--pui-green)">
+//          data-gradient-stop="transparent"
+//          data-gradient-fallback="var(--pui-green)"
+//          data-background-image="http://www.fillmurray.com/300/200" >
 //     </div>
 //   </div>
 // </div>
@@ -161,3 +162,27 @@
 // 
 // 
 // Styleguide Utilities.BackgroundGradient
+
+
+// Background Image and Gradient
+// 
+// You can get really fancy with your backgrounds by adding a gradient over a background image.
+// To do this, you will need both classes `linear-gradient background-image`. From there, add 
+// the appropriate data attributes to get your desired image and gradient.
+// 
+// Markup:
+// <div class="block-container tablet-up-2 laptop-up-4 blocks my-3 px-2">
+//   <div class="block">
+// <!-- Add data attributes to create your gradient and image -->
+//     <div 
+//          class="linear-gradient background-image ratio-16_9"
+//          data-gradient-direction="to right"
+//          data-gradient-start="var(--pui-green)"
+//          data-gradient-stop="transparent"
+//          data-gradient-fallback="var(--pui-green)"
+//          data-background-image="http://www.fillmurray.com/300/200" >
+//     </div>
+//   </div>
+// </div>
+// 
+// Styleguide Utilities.BackgroundImageGradient
