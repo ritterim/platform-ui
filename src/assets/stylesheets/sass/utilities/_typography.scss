@@ -133,18 +133,30 @@
 //
 // Styleguide Typography.Utilities.Sizing
 
+// Case
+//
+// Case encompasses both word and sentence case. 
+//
+// Markup:
+// <p class="text--uppercase">This is uppercase.</p>
+// <p class="text--lowercase">This is lowercase.</p>
+// <p class="text--capitalize">This is capitalize.</p>
+// <p class="text--sentencecase">This IS SENTENCE caSe.</p>
+//
+// Styleguide Typography.Utilities.Case
+
 // General
 //
 // General utilities add class-based css transforms like `uppercase` and `bold`. See the chart below for the full list.
 //
 // | General           |                    |                     |                      |
 // | ----------------- | ------------------ | ------------------- | -------------------- |
-// | `text--uppercase` | `text--underline`  | `text--bold`         | `text--nowrap` <i class="pi-warning text-orange"></i>      |
+// | `text--underline` | `text-underline--hover`  | `text--bold`         | `text--nowrap` <i class="pi-warning text-orange"></i>      |
 // | `text--center` <i class="pi-warning text-orange"></i>   | `text--right` <i class="pi-warning text-orange"></i>                    |                     |                      |
-// | `text-underline--hover` |   |         |      |
 //
 // | <i class="pi-warning text-orange"></i> NOTE: A `flex--` utility should be used were possible. |
 // | --
+//
 //
 // The `text-underline--hover` class will add an animated underline to links or any element you add the class to. By default, the underline color is the
 // standard link color in the platform(light blue). If you want to change the color of the element and the underline on hover you can add a `text-{color}--hover`
@@ -176,9 +188,7 @@
 // Styleguide Typography.Utilities.TextShadow
 
 .text {
-  &--uppercase {
-    text-transform: uppercase;
-  }
+
   &--underline {
     text-decoration: underline;
   }
@@ -193,6 +203,22 @@
   }
   &--right {
     text-align: right;
+  }
+
+  &--capitalize {
+    text-transform: capitalize;
+  }
+  &--uppercase {
+    text-transform: uppercase;
+  }
+  &--lowercase {
+    text-transform: lowercase;
+  }
+  &--sentencecase {
+    text-transform: lowercase;
+    &:first-letter {
+      text-transform: uppercase;
+    }
   }
 
   &-underline--hover {
