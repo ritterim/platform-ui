@@ -1,5 +1,5 @@
-let closeDrawer = document.querySelectorAll('.pui-drawer__close');
-let openDrawer = document.querySelectorAll('.pui-drawer__open');
+let closeDrawer = document.querySelectorAll('.pui-drawer__close, .drawer__close');
+let openDrawer = document.querySelectorAll('.pui-drawer__open, .drawer__open');
 
 if(closeDrawer) {
   closeDrawer.forEach(function(el) {
