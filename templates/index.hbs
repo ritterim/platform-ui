@@ -80,7 +80,13 @@
   {{/unless}}
     <main class="pb-4 header-fixed {{#unless homepage}}px-4 background-white block block-9 desktop-10{{/unless}}" aria-label="Content">
       {{#if homepage}}
-      <div class="crm-banner animated slideInDown fast flex--center-content flex--column pt-6 p-3" style="background-image: linear-gradient(to right, white, transparent), url('site-assets/images/style-guide-background.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+      <div 
+        class="animated slideInDown fast flex--center-content flex--column pt-6 p-3 background-image linear-gradient" 
+        data-gradient-direction="to right"
+        data-gradient-start="var(--white)"
+        data-gradient-stop="transparent"
+        data-gradient-fallback="var(--white)"
+        data-background-image="site-assets/images/style-guide-background.jpg">
         <h1 class="my-4">Welcome to the Platform UI Style Guide</h1>
         <p>Platform UI is the CSS framework we've developed to maintain the Ritter Platform of agent tools.</p>
         <a href="/section-_getting-started.html" class="button button--post button--lg">Get Started v{{ options.version }}</a>
