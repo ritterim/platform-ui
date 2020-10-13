@@ -13,16 +13,16 @@
 
 <body class="flex flex--column">
 
-  <div class="pui-modal pui-modal--full" tabindex="-1">
-    <div class="pui-modal__inner animated slideInUp faster">
-      <div class="pui-modal__header flex flex--justify-between">
+  <div class="modal modal--full" tabindex="-1">
+    <div class="modal__inner animated slideInUp faster">
+      <div class="modal__header flex flex--justify-between">
         <strong class="text-navy text--size-lg">Compliance view for {Agent Name}</strong>
         <button class="button">
           Close
           <i class="pi-times"></i>
         </button>
       </div>
-      <div class="pui-modal__content pui-form">
+      <div class="modal__content form">
         <div class="block-container">
           <div class="block block-9 flex flex--align-center">
             <div class="pill pill--split mr-2">
@@ -63,8 +63,8 @@
         <div class="block-container mt-4">
           <div class="block">
 
-            <div class="pui-accordion active">
-              <div class="pui-accordion__header p-3 block-container">
+            <div class="accordion active">
+              <div class="accordion__header p-3 block-container">
                 <div class="block block-1 flex flex--align-center">
                   <div class="pill pill--circle-empty negative"></div>
                 </div>
@@ -86,19 +86,19 @@
                 </div>
               </div>
 
-              <div class="pui-accordion__content p-3">
-                <div class="block-container pui-form blocks p-2 tablet-up-4">
+              <div class="accordion__content p-3">
+                <div class="block-container form blocks p-2 tablet-up-4">
                   <div class="block">
-                    <label for="company" class="pui-form__field has-icon--right">
+                    <label for="company" class="form__field has-icon--right">
                       Company
                       <input id="company" type="text">
                       <i class="pi-search"></i>
                     </label>
                   </div>
                   <div class="block">
-                    <label for="product" class="pui-form__field">
+                    <label for="product" class="form__field">
                       Product
-                      <div class="pui-form__select-wrapper">
+                      <div class="form__select-wrapper">
                         <select name="Product Select" id="product">
                           <option value="County1">Medicare Advantage</option>
                         </select>
@@ -106,14 +106,14 @@
                     </label>
                   </div>
                   <div class="block">
-                    <label for="opened" class="pui-form__field has-icon--right">
+                    <label for="opened" class="form__field has-icon--right">
                       Opened
                       <input id="opened" type="date">
                       <i class="pi-calendar"></i>
                     </label>
                   </div>
                   <div class="block">
-                    <label for="closed" class="pui-form__field has-icon--right">
+                    <label for="closed" class="form__field has-icon--right">
                       Closed
                       <input id="closed" type="date">
                       <i class="pi-calendar"></i>
@@ -121,11 +121,11 @@
                   </div>
                 </div>
 
-                <div class="block-container pui-form blocks px-2 py-3 tablet-up-4">
+                <div class="block-container form blocks px-2 py-3 tablet-up-4">
                   <div class="block">
-                    <label for="issue" class="pui-form__field">
+                    <label for="issue" class="form__field">
                       Issue
-                      <div class="pui-form__select-wrapper">
+                      <div class="form__select-wrapper">
                         <select name="Product Select" id="issue">
                           <option value="">Something</option>
                         </select>
@@ -133,9 +133,9 @@
                     </label>
                   </div>
                   <div class="block">
-                    <label for="sub" class="pui-form__field">
+                    <label for="sub" class="form__field">
                       Sub-Issue
-                      <div class="pui-form__select-wrapper">
+                      <div class="form__select-wrapper">
                         <select name="Product Select" id="sub">
                           <option value="">Something</option>
                         </select>
@@ -143,9 +143,9 @@
                     </label>
                   </div>
                   <div class="block">
-                    <label for="substantiated" class="pui-form__field">
+                    <label for="substantiated" class="form__field">
                       Substantiation
-                      <div class="pui-form__select-wrapper">
+                      <div class="form__select-wrapper">
                         <select name="Product Select" id="substantiated">
                           <option value="">Something</option>
                         </select>
@@ -153,7 +153,7 @@
                     </label>
                   </div>
                   <div class="block">
-                    <input class="pui-form__checkbox" id="corrective" type="checkbox">
+                    <input class="form__checkbox" id="corrective" type="checkbox">
                     <label for="corrective">
                       <div class="input-icons">
                         <i class="pi-circle"></i>
@@ -162,7 +162,7 @@
                       Corrective action taken
                     </label>
 
-                    <input class="pui-form__checkbox" id="ritter" type="checkbox">
+                    <input class="form__checkbox" id="ritter" type="checkbox">
                     <label for="ritter">
                       <div class="input-icons">
                         <i class="pi-circle"></i>
@@ -173,7 +173,7 @@
 
                   </div>
                 </div>
-                <div class="pui-message pui-message--info" data-header="Sub-issue(s)">
+                <div class="message message--info" data-header="Sub-issue(s)">
                   <ul>
                     <li class="flex flex--justify-between">
                       Enrollee Did Not Understand Plan Benefits Or Services, Misstatement Of Plan Benefits Or Services
@@ -197,8 +197,8 @@
 
                 </div>
 
-                <div class="pui-accordion">
-                  <div class="pui-accordion__header p-2 block-container flex--justify-between">
+                <div class="accordion">
+                  <div class="accordion__header p-2 block-container flex--justify-between">
                     <span class="flex--center-content">
                       <i class="pi-angle-right text--size-xl mr-3"></i>
                       <i class="pi-file-text mr-2"></i>
@@ -211,15 +211,15 @@
                       <button class="button mr-2">Add <i class="pi-plus" aria-hidden="true"></i></button>
                     </span>
                   </div>
-                  <div class="pui-accordion__content">
-                    <div class="pui-message pui-message--info">
+                  <div class="accordion__content">
+                    <div class="message message--info">
                       <p>There are currently no attachments.</p>
                     </div>
                   </div>
                 </div>
                 <div class="block-container pt-2">
                   <div class="block block-6 flex flex--align-center">
-                    <div class="pill pill--circle-large mr-2" data-placement="right" data-pui-tooltip="Last edited by Van Hang 2/3/2020">
+                    <div class="pill pill--circle-large mr-2" data-placement="right" data-tooltip="Last edited by Van Hang 2/3/2020">
                       VH
                     </div>
                     Created by Van Hang <i class="pi-calendar text-med-blue mx-2" aria-hidden="true"></i> Jan 20, 2020 12:42 PM

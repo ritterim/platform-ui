@@ -15,14 +15,14 @@
      *  See src/Platform/Content/css/sass/platform-ui-plugins.scss
      */
     .site-header--fixed {
-      height: calc(var(--pui-menu-height) * 2 )!important;
+      height: calc(var(--menu-height) * 2 )!important;
     }
     .site-header--fixed + .header-fixed {
-      margin-top: calc(var(--pui-menu-height) * 2 )!important;
+      margin-top: calc(var(--menu-height) * 2 )!important;
     }
     .site-header--fixed .site-menu-wrapper:nth-child(2) .site-menu.active,
     .site-menu-wrapper.site-header--fixed:nth-child(2) .site-menu.active {
-      max-height: calc(100vh - (var(--pui-menu-height) * 2));
+      max-height: calc(100vh - (var(--menu-height) * 2));
     }
   </style>
 
@@ -300,7 +300,7 @@
           <a href="#" class="site-menu__item">
             Reports
           </a>
-          <a href="#" class="site-menu__item pui-drawer__open" data-drawer="touches">
+          <a href="#" class="site-menu__item drawer__open" data-drawer="touches">
             <i class="pi-phone"></i>
           </a>
           <a href="#" class="site-menu__item">
@@ -326,13 +326,13 @@
         <div class="block lg-tablet-up-8 laptop-up-9">
             <div class="block-container flex--justify-end mb-4">
             </div>
-            <div class="pui-tabs">
+            <div class="tabs">
               <input type="radio" id="tab-input-a" name="tabs" checked>
-              <label for="tab-input-a" class="pui-tab flex flex--justify-between">
+              <label for="tab-input-a" class="tab flex flex--justify-between">
                   Submissions
                   <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
               </label>
-              <div class="pui-tab-panel p-0">
+              <div class="tab-panel p-0">
                 <div class="block-container p-4 mb-3">
                   <div class="block block-6 flex flex--align-center">
                     Showing XX of XXX
@@ -341,13 +341,13 @@
                     </button>
                   </div>
                   <div class="block block-6 flex flex--justify-end">
-                    <button class="button button--secondary mr-2 pui-drawer__open" data-button-text="Filters" data-drawer="filters">
+                    <button class="button button--secondary mr-2 drawer__open" data-button-text="Filters" data-drawer="filters">
                         <i aria-hidden="true" class="pi-filter"></i>
                     </button>
                     <button class="button button--secondary mr-2" data-button-text="Export">
                         <i aria-hidden="true" class="pi-download"></i>
                     </button>
-                    <button class="button pui-modal__open" data-modal="large-modal">
+                    <button class="button modal__open" data-modal="large-modal">
                       Add
                       <i class="pi-plus" aria-hidden="true"></i>
                     </button>
@@ -356,14 +356,14 @@
                 <div class="block-container px-4">
                   <p>Demo <strong>modal</strong>, <strong>filters</strong>, and <strong>touches</strong>.</p>
                 </div>
-                <div class="pui-message pui-message--info mb-0" data-header="record created by">
+                <div class="message message--info mb-0" data-header="record created by">
                   <p>John Hammond on 00/00/00</p>
                 </div>
               </div>
 
             </div>
 
-            <div id="filters" class="pui-drawer pui-drawer-right pui-drawer--closed animated slideInRight">
+            <div id="filters" class="drawer drawer-right drawer--closed animated slideInRight">
               <div class="flex flex--align-center flex--justify-between background-lightblue p-4">
                 <div class="flex flex--align-center">
                   <strong class="text-navy text--size-lg">Filters</strong>
@@ -371,14 +371,14 @@
                     <i class="pi-sync"></i>
                   </button>
                 </div>
-                <button class="button pui-drawer__close" data-drawer="right" data-drawer="filters">Close <i class="pi-times" aria-hidden="true"></i></button>
+                <button class="button drawer__close" data-drawer="right" data-drawer="filters">Close <i class="pi-times" aria-hidden="true"></i></button>
               </div>
-              <div class="block-container p-4 pui-form">
+              <div class="block-container p-4 form">
                 <div class="block">
-                  <label for="carrier" class="pui-form__field">Carrier
+                  <label for="carrier" class="form__field">Carrier
                     <input id="carrier" type="text" placeholder="Choose">
                   </label>
-                  <label for="client-name" class="pui-form__field">Client
+                  <label for="client-name" class="form__field">Client
                     <input id="client-name" type="text" placeholder="Type to search">
                   </label>
                 </div>
@@ -414,9 +414,9 @@
               </div>
             </div>
 
-            <div id="touches" class="pui-drawer pui-drawer-right pui-drawer--closed animated slideInRight">
-              <div class="pui-drawer__inner">
-                <div class="pui-drawer__header flex flex--align-center flex--justify-between background-lightblue p-4">
+            <div id="touches" class="drawer drawer-right drawer--closed animated slideInRight">
+              <div class="drawer__inner">
+                <div class="drawer__header flex flex--align-center flex--justify-between background-lightblue p-4">
                   <div class="flex flex--align-center">
                     <button class="button button--secondary mr-2">
                       <i class="pi-plus"></i>
@@ -424,15 +424,15 @@
                     <strong class="text-navy text--size-lg">Touches</strong>
 
                   </div>
-                  <button class="button pui-drawer__close" data-drawer="right" data-drawer="touches">Close <i class="pi-times" aria-hidden="true"></i></button>
+                  <button class="button drawer__close" data-drawer="right" data-drawer="touches">Close <i class="pi-times" aria-hidden="true"></i></button>
                 </div>
-                <div class="pui-drawer__content">
+                <div class="drawer__content">
 
-                  <div class="block-container blocks py-3 pui-form">
+                  <div class="block-container blocks py-3 form">
                     <div class="block pt-0">
-                      <label for="method" class="pui-form__field">
+                      <label for="method" class="form__field">
                         Method
-                        <div class="pui-form__select-wrapper">
+                        <div class="form__select-wrapper">
                           <select name="County Select" id="method">
                             <option></option>
                             <option>Email</option>
@@ -481,10 +481,10 @@
         </div>
 
         <div class="block mt-6 lg-tablet-up-4 laptop-up-3">
-          <div class="pui-card text-base background-note mt-2 p-4 h-auto">
+          <div class="card text-base background-note mt-2 p-4 h-auto">
 
-            <div class="pui-card__header">
-              <div class="pui-card__group">
+            <div class="card__header">
+              <div class="card__group">
                 <button title="Add Note" aria-label="Add Note" class="button button--secondary">
                     <i aria-hidden="true" class="pi-plus"></i>
                 </button>
@@ -495,8 +495,8 @@
                   <i aria-hidden="true" class="pi-arrow-right"></i>
               </button>
             </div>
-            <ol class="pui-list pui-list--bordered">
-              <li class="pui-list__item py-3">
+            <ol class="list list--bordered">
+              <li class="list__item py-3">
                 <strong class="" title="Last edited by Ted Krueger 01/27/2020">
                   <i aria-hidden="true" class="pi-speech-bubble text-light"></i>
                   Ted Krueger 01/27/2020
@@ -536,7 +536,7 @@
                   <i class="pi-angle-down-double text--size-lg rotate-180"></i>
                 </div>
               </li>
-              <li class="pui-list__item py-3">
+              <li class="list__item py-3">
                 <strong class="" title="Last edited by Ted Krueger 01/27/2020">
                   <i aria-hidden="true" class="pi-speech-bubble text-light"></i>
                   Ted Krueger 01/27/2020
@@ -578,31 +578,31 @@
 
 
     </div>
-    <div id="large-modal" class="pui-modal pui-modal--large pui-modal--closed" tabindex="-1">
-      <div class="pui-modal__inner animated slideInUp faster">
-        <div class="pui-modal__header">
-          <button class="button pui-modal__close" data-modal="centered-modal">Close <i class="pi-times"></i></button>
+    <div id="large-modal" class="modal modal--large modal--closed" tabindex="-1">
+      <div class="modal__inner animated slideInUp faster">
+        <div class="modal__header">
+          <button class="button modal__close" data-modal="centered-modal">Close <i class="pi-times"></i></button>
           <strong class="text--size-lg text-navy">Add new submission</strong>
         </div>
-        <div class="pui-modal__content">
-          <div class="block-container blocks p-2 pui-form tablet-up-4">
+        <div class="modal__content">
+          <div class="block-container blocks p-2 form tablet-up-4">
             <div class="block">
-              <label for="first-name" class="pui-form__field">First Name
+              <label for="first-name" class="form__field">First Name
                 <input id="first-name" type="text" placeholder="First Name">
               </label>
             </div>
             <div class="block">
-              <label for="last-name" class="pui-form__field error">Last Name
+              <label for="last-name" class="form__field error">Last Name
                 <input id="last-name" type="text" placeholder="Last Name">
               </label>
             </div>
             <div class="block">
-              <label for="dob" class="pui-form__field">Age or DOB
+              <label for="dob" class="form__field">Age or DOB
                 <input id="dob" type="date">
               </label>
             </div>
             <div class="block">
-              <label for="zipcode" class="pui-form__field">ZIP Code
+              <label for="zipcode" class="form__field">ZIP Code
                 <input id="zipcode" type="tel" placeholder="e.g.90012" pattern="^\d{5,6}(?:[-\s]\d{4})?$">
               </label>
             </div>

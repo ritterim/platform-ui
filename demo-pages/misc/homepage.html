@@ -24,14 +24,14 @@
        *  See src/Platform/Content/css/sass/platform-ui-plugins.scss
        */
       .site-header--fixed {
-        height: calc(var(--pui-menu-height) * 2 )!important;
+        height: calc(var(--menu-height) * 2 )!important;
       }
       .site-header--fixed + .header-fixed {
-        margin-top: calc(var(--pui-menu-height) * 2 )!important;
+        margin-top: calc(var(--menu-height) * 2 )!important;
       }
       .site-header--fixed .site-menu-wrapper:nth-child(2) .site-menu.active,
       .site-menu-wrapper.site-header--fixed:nth-child(2) .site-menu.active {
-        max-height: calc(100vh - (var(--pui-menu-height) * 2));
+        max-height: calc(100vh - (var(--menu-height) * 2));
       }
     </style>
 </head>
@@ -308,7 +308,7 @@
           <a href="#" class="site-menu__item">
             Reports
           </a>
-          <a href="#" class="site-menu__item pui-drawer__open" data-drawer="touches">
+          <a href="#" class="site-menu__item drawer__open" data-drawer="touches">
             <i class="pi-phone"></i>
           </a>
           <a href="#" class="site-menu__item">
@@ -369,7 +369,7 @@
     <section class="py-5 background-lighter block-container flex--justify-center">
       <div class="block block-10 desktop-up-8">
         <div class="block-container">
-          <div class="block pui-card">
+          <div class="block card">
             <div class="block-container blocks px-3">
               <div class="block tablet-up-8">
                 <h3 class="text-teal mb-3">Things we love</h3>
@@ -402,11 +402,11 @@
         <div class="block-container blocks p-3 tablet-up-2 lg-tablet-up-3 desktop-up-5">
           <h1 class="text-teal text--size-xl text--center mb-4 w-100">Meet The Team</h1>
           <div class="block">
-            <div class="pui-card">
+            <div class="card">
               <div class="block-container mb-4">
                 <div class="block block-8">
                   <h2 class="text-teal mb-3">Person Name</h2>
-                  <ul class="pui-list">
+                  <ul class="list">
                     <li>
                       <i class='pi-circle-solid pi-sm'></i>Fact
                     </li>
@@ -433,11 +433,11 @@
             </div>
           </div>
           <div class="block">
-            <div class="pui-card">
+            <div class="card">
               <div class="block-container mb-4">
                 <div class="block block-8">
                   <h2 class="text-teal mb-3">Person Name</h2>
-                  <ul class="pui-list">
+                  <ul class="list">
                     <li>
                       <i class='pi-circle-solid pi-sm'></i>Fact
                     </li>
@@ -464,11 +464,11 @@
             </div>
           </div>
           <div class="block">
-            <div class="pui-card">
+            <div class="card">
               <div class="block-container mb-4">
                 <div class="block block-8">
                   <h2 class="text-teal mb-3">Person Name</h2>
-                  <ul class="pui-list">
+                  <ul class="list">
                     <li>
                       <i class='pi-circle-solid pi-sm'></i>Fact
                     </li>
@@ -495,11 +495,11 @@
             </div>
           </div>
           <div class="block">
-            <div class="pui-card">
+            <div class="card">
               <div class="block-container mb-4">
                 <div class="block block-8">
                   <h2 class="text-teal mb-3">Person Name</h2>
-                  <ul class="pui-list">
+                  <ul class="list">
                     <li>
                       <i class='pi-circle-solid pi-sm'></i>Fact
                     </li>
@@ -526,11 +526,11 @@
             </div>
           </div>
           <div class="block">
-            <div class="pui-card">
+            <div class="card">
               <div class="block-container mb-4">
                 <div class="block block-8">
                   <h2 class="text-teal mb-3">Person Name</h2>
-                  <ul class="pui-list">
+                  <ul class="list">
                     <li>
                       <i class='pi-circle-solid pi-sm'></i>Fact
                     </li>
@@ -557,11 +557,11 @@
             </div>
           </div>
           <div class="block">
-            <div class="pui-card">
+            <div class="card">
               <div class="block-container mb-4">
                 <div class="block block-8">
                   <h2 class="text-teal mb-3">Person Name</h2>
-                  <ul class="pui-list">
+                  <ul class="list">
                     <li>
                       <i class='pi-circle-solid pi-sm'></i>Fact
                     </li>
@@ -588,11 +588,11 @@
             </div>
           </div>
           <div class="block">
-            <div class="pui-card">
+            <div class="card">
               <div class="block-container mb-4">
                 <div class="block block-8">
                   <h2 class="text-teal mb-3">Person Name</h2>
-                  <ul class="pui-list">
+                  <ul class="list">
                     <li>
                       <i class='pi-circle-solid pi-sm'></i>Fact
                     </li>
@@ -619,11 +619,11 @@
             </div>
           </div>
           <div class="block">
-            <div class="pui-card">
+            <div class="card">
               <div class="block-container mb-4">
                 <div class="block block-8">
                   <h2 class="text-teal mb-3">Person Name</h2>
-                  <ul class="pui-list">
+                  <ul class="list">
                     <li>
                       <i class='pi-circle-solid pi-sm'></i>Fact
                     </li>
@@ -661,7 +661,7 @@
             <div class="block tablet-up-6">
               <h2 class="text-white text--size-md mb-3">Find your way</h2>
               <nav>
-                <ul class="pui-list">
+                <ul class="list">
                   <li>
                     <a href="#" class="text-lighter text-white--hover">About</a>
                   </li>
@@ -686,7 +686,7 @@
             <div class="block tablet-up-6">
               <h2 class="text-white text--size-md mb-3">What we build</h2>
               <nav>
-                <ul class="pui-list">
+                <ul class="list">
                   <li>
                     <a href="#" class="text-lighter text-white--hover">Websites</a>
                   </li>
@@ -706,19 +706,19 @@
         </div>
         <div class="block tablet-up-6 lg-tablet-up-4 laptop-up-3 mb-4">
           <h2 class="text-white text--size-md mb-3">Get in touch</h2>
-          <form action="submit" class="pui-form block-container blocks mb-3">
+          <form action="submit" class="form block-container blocks mb-3">
             <div class="block">
-              <label for="first-name" class="pui-form__field text-white">Name
+              <label for="first-name" class="form__field text-white">Name
                 <input class="background-white rounded-1 px-2" id="first-name" type="text" placeholder="Name">
               </label>
             </div>
             <div class="block">
-              <label for="email" class="pui-form__field text-white">Email
+              <label for="email" class="form__field text-white">Email
                 <input class="background-white rounded-1 px-2" id="email" type="text" placeholder="Email">
               </label>
             </div>
             <div class="block">
-              <div class="pui-form__field pui-form__button-group">
+              <div class="form__field form__button-group">
                 <button class="button button--post">Contact Us</button>
               </div>
             </div>
@@ -729,7 +729,7 @@
         <div class="block flex--center-content flex--column">
           <h2 class="text-white text--size-md mb-3">Connect With Us</h2>
           <nav>
-            <ul class="pui-list flex">
+            <ul class="list flex">
               <li>
                 <a href="#" class="text-lighter text-white--hover px-3">
                   <i class='pi-instagram pi-xl'></i>

@@ -24,47 +24,47 @@
          *  See src/Platform/Content/css/sass/platform-ui-plugins.scss
          */
     .site-header--fixed {
-      height: calc(var(--pui-menu-height) * 2) !important;
+      height: calc(var(--menu-height) * 2) !important;
     }
 
     .site-header--fixed+.header-fixed {
-      margin-top: calc(var(--pui-menu-height) * 2) !important;
+      margin-top: calc(var(--menu-height) * 2) !important;
     }
 
     .site-header--fixed .site-menu-wrapper:nth-child(2) .site-menu.active,
     .site-menu-wrapper.site-header--fixed:nth-child(2) .site-menu.active {
-      max-height: calc(100vh - (var(--pui-menu-height) * 2));
+      max-height: calc(100vh - (var(--menu-height) * 2));
     }
 
     /* accordion stuff */
-    .pui-accordion--nested {
+    .accordion--nested {
       border: none;
       position: relative;
       z-index: 1;
     }
-    .pui-accordion--nested.active {
+    .accordion--nested.active {
       border: none;
       box-shadow: none;
     }
-    .pui-accordion--nested.active > .pui-accordion__content-nested {
+    .accordion--nested.active > .accordion__content-nested {
       display: flex;
     }
-    .pui-accordion--nested .pui-accordion__header {
+    .accordion--nested .accordion__header {
       font-weight: bold;
     }
-    .pui-accordion__content--nested {
+    .accordion__content--nested {
       position: relative;
       z-index: 11;
     }
-    .pui-accordion {
+    .accordion {
       z-index: 5;
       position: relative;
     }
-    .modal-open .pui-accordion {
+    .modal-open .accordion {
       position: static;
       z-index: 0;
     }
-    .pui-accordion .pui-drawer {
+    .accordion .drawer {
       padding: 6.5rem 2rem;
     }
     .top-accordion {
@@ -72,8 +72,8 @@
       z-index: 10;
     }
     .drop-target {
-      border: .3rem dashed var(--pui-light-mid);
-      color: var(--pui-light);
+      border: .3rem dashed var(--light-mid);
+      color: var(--light);
       font-size: 150%;
       font-weight: bold;
       text-align: center;
@@ -105,7 +105,7 @@
     }
 
     /* 
-      This code should go into a pui-plugins file in the platform
+      This code should go into a plugins file in the platform
       You can still use the css vars from Platform UI.
      */
     .contact-tabs-container {
@@ -120,7 +120,7 @@
     .contact-tabs-container .contact-tabs {
       display: flex;
       flex-direction: column;
-      height: calc(100vh - var(--pui-menu-height) * 2);
+      height: calc(100vh - var(--menu-height) * 2);
       position: sticky;
       top: 144px;
     }
@@ -141,17 +141,17 @@
       display: flex;
       align-items: center;
       padding: 1rem;
-      border-left: 0.25rem solid var(--pui-lighter);
+      border-left: 0.25rem solid var(--lighter);
     }
     @media (min-width: 768px) {
       .contact-tabs-container .contact-tabs .contact-tab {
         border-left: 0;
-        border-bottom: 0.25rem solid var(--pui-lighter);
+        border-bottom: 0.25rem solid var(--lighter);
       }
     }
     .contact-tabs-container .contact-tabs .contact-tab.active, .contact-tabs-container .contact-tabs .contact-tab:focus, .contact-tabs-container .contact-tabs .contact-tab:hover {
-      border-color: var(--pui-navy);
-      color: var(--pui-navy);
+      border-color: var(--navy);
+      color: var(--navy);
       font-weight: bold;
     }
     
@@ -438,18 +438,18 @@
   <main class="header-fixed background-light-mid flex--grow py-4 px-5">
     <div class="block-container blocks px-3 mb-4">
       <div class="block">
-        <div class="pui-tabs">
+        <div class="tabs">
           <input type="radio" id="tab-input-a" name="tabs" checked>
-          <label for="tab-input-a" class="pui-tab flex flex--justify-between">
+          <label for="tab-input-a" class="tab flex flex--justify-between">
             Members
             <div class="pill pill--circle text-navy border border--color-navy ml-2">
               75
             </div>
           </label>
-          <div class="pui-tab-panel p-4">
+          <div class="tab-panel p-4">
             <div class="block-container flex--justify-end mb-4">
               <div class="block tablet-up-6 flex flex--justify-end flex--align-center">
-                <button data-modal="add-associate-modal" class="button pui-modal__open ml-2">
+                <button data-modal="add-associate-modal" class="button modal__open ml-2">
                   Add <i aria-hidden="true" class="pi-plus"></i>
                 </button>
               </div>
@@ -465,9 +465,9 @@
                 <a href="#w" data-location="w" class="contact-tab">w</a>    
               </div>
               
-              <div class="contact-tabs__result pui-form">
+              <div class="contact-tabs__result form">
                 
-                <table class="pui-table">
+                <table class="table">
                   <thead>
                     <tr>
                       <th>Action</th>
@@ -503,13 +503,13 @@
                         Dormammu
                       </td>
                       <td data-label="Department">
-                        <label class="pui-form__field">
+                        <label class="form__field">
                           <span class="sr-only">Department</span>
                           <input name="dept" type="text">
                         </label>
                       </td>
                       <td data-label="Title">
-                        <label for="" class="pui-form__field">
+                        <label for="" class="form__field">
                           <span class="sr-only">Title</span>
                           <input name="title" type="text" value="Dark Dimension Ruler">
                         </label>
@@ -545,13 +545,13 @@
                         Kaecilius
                       </td>
                       <td data-label="Department">
-                        <label for="" class="pui-form__field">
+                        <label for="" class="form__field">
                           <span class="sr-only">Department</span>
                           <input name="dept" type="text">
                         </label>
                       </td>
                       <td data-label="Title">
-                        <label for="" class="pui-form__field">
+                        <label for="" class="form__field">
                           <span class="sr-only">Title</span>
                           <input name="title" type="text" value="Master of the Mystic Arts">
                         </label>
@@ -587,13 +587,13 @@
                         Karl Mordo
                       </td>
                       <td data-label="Department">
-                        <label for="" class="pui-form__field">
+                        <label for="" class="form__field">
                           <span class="sr-only">Department</span>
                           <input name="dept" type="text">
                         </label>
                       </td>
                       <td data-label="Title">
-                        <label for="" class="pui-form__field">
+                        <label for="" class="form__field">
                           <span class="sr-only">Title</span>
                           <input name="title" type="text" value="Master of the Mystic Arts">
                         </label>
@@ -629,13 +629,13 @@
                         Christine Palmer
                       </td>
                       <td data-label="Department">
-                        <label for="" class="pui-form__field">
+                        <label for="" class="form__field">
                           <span class="sr-only">Department</span>
                           <input name="dept" type="text" value="ER">
                         </label>
                       </td>
                       <td data-label="Title">
-                        <label for="" class="pui-form__field">
+                        <label for="" class="form__field">
                           <span class="sr-only">Title</span>
                           <input name="title" type="text" value="Emergency Surgeon">
                         </label>
@@ -665,13 +665,13 @@
                         Johnathan Pangborn
                       </td>
                       <td data-label="Department">
-                        <label for="" class="pui-form__field">
+                        <label for="" class="form__field">
                           <span class="sr-only">Department</span>
                           <input name="dept" type="text">
                         </label>
                       </td>
                       <td data-label="Title">
-                        <label for="" class="pui-form__field">
+                        <label for="" class="form__field">
                           <span class="sr-only">Title</span>
                           <input name="title" type="text">
                         </label>
@@ -707,13 +707,13 @@
                         Stephen Strange
                       </td>
                       <td data-label="Department">
-                        <label for="" class="pui-form__field">
+                        <label for="" class="form__field">
                           <span class="sr-only">Department</span>
                           <input name="dept" type="text">
                         </label>
                       </td>
                       <td data-label="Title">
-                        <label for="" class="pui-form__field">
+                        <label for="" class="form__field">
                           <span class="sr-only">Title</span>
                           <input name="title" type="text" value="Neurosurgeon">
                         </label>
@@ -749,13 +749,13 @@
                         Wong
                       </td>
                       <td data-label="Department">
-                        <label for="" class="pui-form__field">
+                        <label for="" class="form__field">
                           <span class="sr-only">Department</span>
                           <input name="dept" type="text" value="Library">
                         </label>
                       </td>
                       <td data-label="Title">
-                        <label for="" class="pui-form__field">
+                        <label for="" class="form__field">
                           <span class="sr-only">Title</span>
                           <input name="title" type="text" value="Master of the Mystic Arts">
                         </label>
@@ -774,37 +774,37 @@
         </div>
       </div>
     </div>
-    <div id="add-associate-modal" class="pui-modal pui-modal--closed" tabindex="-1">
-      <div class="pui-modal__inner animated slideInUp faster">
-        <div class="pui-modal__header">
-          <button class="button pui-modal__close" data-modal="add-associate-modal">Close <i class="pi-times"></i></button>
+    <div id="add-associate-modal" class="modal modal--closed" tabindex="-1">
+      <div class="modal__inner animated slideInUp faster">
+        <div class="modal__header">
+          <button class="button modal__close" data-modal="add-associate-modal">Close <i class="pi-times"></i></button>
           <strong class="text-navy text--size-lg">Add New Associate</strong>
         </div>
-        <div class="pui-modal__content">
-          <form action="submit" class="pui-form block-container blocks p-2 tablet-up-2 lg-tablet-up-3">
-            <label for="" class="pui-form__field block">
+        <div class="modal__content">
+          <form action="submit" class="form block-container blocks p-2 tablet-up-2 lg-tablet-up-3">
+            <label for="" class="form__field block">
               First Name
               <input type="text">
             </label>
-            <label for="" class="pui-form__field block">
+            <label for="" class="form__field block">
               Middle Name
               <input type="text">
             </label>
-            <label for="" class="pui-form__field block">
+            <label for="" class="form__field block">
               Last Name
               <input type="text">
             </label>
-            <label for="" class="pui-form__field block">
+            <label for="" class="form__field block">
               Prefix
               <input type="text">
             </label>
-            <label for="" class="pui-form__field block">
+            <label for="" class="form__field block">
               Suffix
               <input type="text">
             </label>
-            <fieldset class="pui-form__field block">
+            <fieldset class="form__field block">
               <legend>Gender</legend>
-              <div class="pui-form__option-group">
+              <div class="form__option-group">
                 <input id="male" type="radio" name="choose-one">
                 <label for="male">
                   <div class="input-icons">
@@ -823,15 +823,15 @@
                 </label>
               </div>
             </fieldset>
-            <label for="" class="pui-form__field block">
+            <label for="" class="form__field block">
               Birthdate
               <input type="date">
             </label>
-            <label for="" class="pui-form__field block">
+            <label for="" class="form__field block">
               Email
               <input type="email">
             </label>
-            <label for="" class="pui-form__field block">
+            <label for="" class="form__field block">
               Phone Number
               <input type="tel">
             </label>
