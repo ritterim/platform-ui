@@ -8,38 +8,38 @@
 
 // Tabs
 //
-// The content for a tabbed section needs to live inside the `.pui-tabs` class. The tabs are radio inputs.
+// The content for a tabbed section needs to live inside the `.tabs` class. The tabs are radio inputs.
 // Be sure to add a specific `id` to the input and add a `for` to the label with a value that matches the
-// corresponding input. The label needs the class of `pui-tab`.
+// corresponding input. The label needs the class of `tab`.
 //
-// The content for the tabs needs the class of `pui-tab-panel` and it needs to be directly after the `pui-tab` label.
+// The content for the tabs needs the class of `tab-panel` and it needs to be directly after the `tab` label.
 //
-// The tabs themselves or the `.pui-tab` have a specific width of `16rem` as well as a specific
+// The tabs themselves or the `.tab` have a specific width of `16rem` as well as a specific
 // height of `4rem`.
 // 
 // Work in progress. At a mobile resolution (below 768px) an active tab will collapse when clicked. 
 //
 // Markup:
-// <div class="pui-tabs">
+// <div class="tabs">
 //   <input type="radio" id="tab-input-a" name="tabs" checked>
-//   <label for="tab-input-a" class="pui-tab">
+//   <label for="tab-input-a" class="tab">
 //     <i class="pi-folder-open" focusable="false" aria-hidden="hidden"></i> Tab 1
 //   </label>
-//   <div class="pui-tab-panel">
+//   <div class="tab-panel">
 //     <img src="https://placeimg.com/640/480/animals?t=1565635383449" style="max-width: 100%;">
 //   </div>
 //   <input type="radio" id="tab-input-b" name="tabs">
-//   <label for="tab-input-b" class="pui-tab">
+//   <label for="tab-input-b" class="tab">
 //     <i class="pi-folder" focusable="false" aria-hidden="hidden"></i> Tab 2
 //   </label>
-//   <div class="pui-tab-panel">
+//   <div class="tab-panel">
 //     <img src="https://placeimg.com/640/480/animals?t=1565635267224" style="max-width: 100%;">
 //   </div>
 //   <input type="radio" id="tab-input-c" name="tabs">
-//   <label for="tab-input-c" class="pui-tab">
+//   <label for="tab-input-c" class="tab">
 //     <i class="pi-users" focusable="false" aria-hidden="hidden"></i> Tab 3
 //   </label>
-//   <div class="pui-tab-panel">
+//   <div class="tab-panel">
 //     <img src="https://placeimg.com/640/480/animals?t=1565635322782" style="max-width: 100%;">
 //   </div>
 // </div>
@@ -50,29 +50,29 @@
 
 // Tabs Flat
 // 
-// If you want the borders removed from the tabs, add the class `pui-tab--flat` to the `pui-tab`.
+// If you want the borders removed from the tabs, add the class `tab--flat` to the `tab`.
 // 
 // Markup:
-// <div class="pui-tabs pui-tabs--flat">
+// <div class="tabs tabs--flat">
 //   <input type="radio" id="tab-input-2a" name="tabs-2" checked>
-//   <label for="tab-input-2a" class="pui-tab">
+//   <label for="tab-input-2a" class="tab">
 //     <i class="pi-folder-open" focusable="false" aria-hidden="hidden"></i> Tab 1
 //   </label>
-//   <div class="pui-tab-panel">
+//   <div class="tab-panel">
 //     <img src="https://placeimg.com/640/480/animals?t=1565635383449" style="max-width: 100%;">
 //   </div>
 //   <input type="radio" id="tab-input-2b" name="tabs-2">
-//   <label for="tab-input-2b" class="pui-tab">
+//   <label for="tab-input-2b" class="tab">
 //     <i class="pi-folder" focusable="false" aria-hidden="hidden"></i> Tab 2
 //   </label>
-//   <div class="pui-tab-panel">
+//   <div class="tab-panel">
 //     <img src="https://placeimg.com/640/480/animals?t=1565635267224" style="max-width: 100%;">
 //   </div>
 //   <input type="radio" id="tab-input-2c" name="tabs-2">
-//   <label for="tab-input-2c" class="pui-tab">
+//   <label for="tab-input-2c" class="tab">
 //     <i class="pi-users" focusable="false" aria-hidden="hidden"></i> Tab 3
 //   </label>
-//   <div class="pui-tab-panel">
+//   <div class="tab-panel">
 //     <img src="https://placeimg.com/640/480/animals?t=1565635322782" style="max-width: 100%;">
 //   </div>
 // </div>
@@ -83,30 +83,30 @@
 // Tabs Flat-Responsive 
 // 
 // The flat tabs do not change at lower/higher screen resolutions. You can make the tabs respond, however, by adding
-// the class `responsive` to `pui-tabs pui-tabs--flat`. This will make the tabs stack at the mobile breakpoint and 
+// the class `responsive` to `tabs tabs--flat`. This will make the tabs stack at the mobile breakpoint and 
 // go back to the flat tab look above mobile.
 // 
 // Markup:
-// <div class="pui-tabs pui-tabs--flat responsive">
+// <div class="tabs tabs--flat responsive">
 //   <input type="radio" id="tab-input-ar" name="tabs-r" checked>
-//   <label for="tab-input-ar" class="pui-tab">
+//   <label for="tab-input-ar" class="tab">
 //     <i class="pi-folder-open" focusable="false" aria-hidden="hidden"></i> Tab 1
 //   </label>
-//   <div class="pui-tab-panel">
+//   <div class="tab-panel">
 //     <img src="https://placeimg.com/640/480/animals?t=1565635383449" style="max-width: 100%;">
 //   </div>
 //   <input type="radio" id="tab-input-br" name="tabs-r">
-//   <label for="tab-input-br" class="pui-tab">
+//   <label for="tab-input-br" class="tab">
 //     <i class="pi-folder" focusable="false" aria-hidden="hidden"></i> Tab 2
 //   </label>
-//   <div class="pui-tab-panel">
+//   <div class="tab-panel">
 //     <img src="https://placeimg.com/640/480/animals?t=1565635267224" style="max-width: 100%;">
 //   </div>
 //   <input type="radio" id="tab-input-cr" name="tabs-r">
-//   <label for="tab-input-cr" class="pui-tab">
+//   <label for="tab-input-cr" class="tab">
 //     <i class="pi-users" focusable="false" aria-hidden="hidden"></i> Tab 3
 //   </label>
-//   <div class="pui-tab-panel">
+//   <div class="tab-panel">
 //     <img src="https://placeimg.com/640/480/animals?t=1565635322782" style="max-width: 100%;">
 //   </div>
 // </div>
@@ -118,7 +118,8 @@ $tab-height:          3rem;
 $tab-active-color:    map.get(config.$brand-colors, 'navy' );
 $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold * 2));
 
-.pui-tabs {
+.pui-tabs,
+.tabs {
 
   @include mixins.breakpoint(tablet, min) {
     display: flex;
@@ -135,7 +136,8 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
     position: absolute;
 
     &:checked {
-      + .pui-tab {
+      + .pui-tab,
+      + .tab {
         border: 1px solid $tab-border-color;
         border-bottom-color: map.get(variables.$greyscale, 'white' );
         font-weight: 600;
@@ -153,7 +155,8 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
           }
         }
 
-        + .pui-tab-panel {
+        + .pui-tab-panel,
+        + .tab-panel {
           display: block;
         }
       }
@@ -162,7 +165,8 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
         + label {
           font-weight: 300;
           
-          + .pui-tab-panel {
+          + .pui-tab-panel,
+          + .tab-panel {
             display: none!important;
           }
         } 
@@ -170,7 +174,8 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
     }
   }
 
-  .pui-tab {
+  .pui-tab,
+  .tab {
     align-items: center;
     display: flex;
     height: $tab-height;
@@ -218,7 +223,8 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
   
   input[type=radio] {
     &:not(:checked) {
-      + .pui-tab {
+      + .pui-tab,
+      + .tab {
 
         @media (pointer: fine) {
           &:hover {
@@ -236,18 +242,21 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
     }
   }
 
-  .pui-tab-panel {
+  .pui-tab-panel,
+  .tab-panel {
     display: none;
   }
 }
 
-.pui-tabs--flat {
+.pui-tabs--flat,
+.tabs--flat {
   display: flex;
   flex-wrap: wrap;
 
   input[type=radio] {
     &:not(:checked) {
-      + .pui-tab {
+      + .pui-tab,
+      + .tab {
         @media (pointer: fine) {
           &:hover {
             background-color: map.get(variables.$greyscale, 'white' );
@@ -263,7 +272,8 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
     }
 
     &:checked {
-      + .pui-tab {
+      + .pui-tab,
+      + .tab {
         border: none;
         color: $tab-active-color;
         
@@ -274,7 +284,8 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
     }
   }
 
-  .pui-tab {
+  .pui-tab,
+  .tab {
     background: map.get(variables.$greyscale, 'white');
     border: none;
     color: map.get(variables.$greyscale, 'base' );

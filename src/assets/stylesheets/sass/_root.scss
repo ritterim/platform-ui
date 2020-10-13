@@ -16,25 +16,25 @@ $platform-colors: () !default;
 :root {
     @if meta.type-of($all-colors) == 'map' {
         @each $name, $color in $all-colors {
-            --pui-#{$name}: #{$color};
+            --#{$name}: #{$color};
         }
     }
     @if meta.type-of($platform-colors) == 'map' {
         @each $name, $color in $platform-colors {
-            --pui-#{$name}: #{$color};
+            --#{$name}: #{$color};
         }
     }
     @each $breakpoint, $width in config.$breakpoints {
-        --pui-#{$breakpoint}: #{$width};
+        --#{$breakpoint}: #{$width};
     }
     @each $size, $width in config.$image-size {
-        --pui-#{$size}: #{$width};
+        --#{$size}: #{$width};
     }
     @each $type, $size in config.$radius {
-        --pui-#{$type}: #{$size};
+        --#{$type}: #{$size};
     }
-    --pui-menu-height: #{config.$menu-height};
-    --pui-duration: #{config.$duration};
-    --pui-transitions: #{config.$transitions};
-    --pui-opacity: #{config.$opacity};
+    --menu-height: #{config.$menu-height};
+    --duration: #{config.$duration};
+    --transitions: #{config.$transitions};
+    --opacity: #{config.$opacity};
 }

@@ -282,7 +282,7 @@
 
     &:not([data-button-text]):not(.has-text) {
       &:after {
-        @extend %pui-loader;
+        @extend %loader;
         @include mixins.square(variables.$spacer);
         box-sizing: border-box;
         content: "";
@@ -404,7 +404,7 @@
         }
 
         &:before {
-          @extend %pui-loader;
+          @extend %loader;
           @include mixins.square(variables.$spacer);
           background-color: unset;
           box-sizing: border-box;
