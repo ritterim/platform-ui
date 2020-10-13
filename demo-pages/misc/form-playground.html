@@ -26,10 +26,10 @@
   <main>
 
     <section>
-      <form action="" class="pui-form">
+      <form action="" class="form">
         <div class="block-container">
           <div class="block block-10">
-            <label for="first-name" class="pui-form__field">
+            <label for="first-name" class="form__field">
               <input id="first-name" type="text" placeholder="First Name" class="readonly" readonly value="This is a readonly input. When you select edit, the readonly attribute will be removed.">
             </label>
           </div>
@@ -50,7 +50,7 @@
         </div>
         <div class="block-container">
           <div class="block block-10">
-            <label for="message" class="pui-form__field">
+            <label for="message" class="form__field">
               <textarea id="message" name="message" class="readonly js-textarea" readonly>This is a readonly textarea. When you select edit, the readonly attribute will be removed.</textarea>
             </label>
           </div>
@@ -73,40 +73,40 @@
     </section>
     <section>
       <h4>Forms</h4>
-      <form action="" class="pui-form block-container tablet-up-3 laptop-up-4 desktop-up-6 blocks mb-3 py-2 px-2">
+      <form action="" class="form block-container tablet-up-3 laptop-up-4 desktop-up-6 blocks mb-3 py-2 px-2">
         <div class="block">
-          <label for="first-name" class="pui-form__field">First Name
+          <label for="first-name" class="form__field">First Name
             <input id="first-name" type="text" placeholder="First Name">
           </label>
         </div>
         <div class="block">
-          <label for="last-name" class="pui-form__field error">Last Name
+          <label for="last-name" class="form__field error">Last Name
             <input id="last-name" type="text" placeholder="Last Name">
           </label>
         </div>
         <div class="block">
-          <label for="dob" class="pui-form__field has-icon--right">Age or DOB
+          <label for="dob" class="form__field has-icon--right">Age or DOB
             <i class="pi-calendar text-med-blue background-white"></i>
             <input id="dob" type="date">
           </label>
         </div>
         <div class="block">
-          <label for="zipcode" class="pui-form__field">ZIP Code
+          <label for="zipcode" class="form__field">ZIP Code
             <input id="zipcode" type="tel" placeholder="e.g.90012" pattern="^\d{5,6}(?:[-\s]\d{4})?$">
           </label>
         </div>
         <div class="block">
-          <fieldset class="pui-form__field error">
+          <fieldset class="form__field error">
             <legend>Error on entire fieldset</legend>
-            <div class="pui-form__option-group">
-              <input class="pui-form__checkbox" id="youcan-this-one" type="checkbox">
+            <div class="form__option-group">
+              <input class="form__checkbox" id="youcan-this-one" type="checkbox">
               <label for="youcan-this-one">
                 <div class="input-icons">
                   <i class='pi-circle'></i>
                   <i class='pi-check pi-heavy'></i>
                 </div>This
               </label>
-              <input class="pui-form__checkbox" id="youcan-that-one" type="checkbox">
+              <input class="form__checkbox" id="youcan-that-one" type="checkbox">
               <label for="youcan-that-one">
                 <div class="input-icons">
                   <i class='pi-circle'></i>
@@ -117,10 +117,10 @@
           </fieldset>
         </div>
         <div class="block">
-          <fieldset class="pui-form__field">
+          <fieldset class="form__field">
             <legend>Error on individual input</legend>
-            <div class="pui-form__option-group">
-              <input class="pui-form__checkbox error" id="gender-this-one" type="checkbox">
+            <div class="form__option-group">
+              <input class="form__checkbox error" id="gender-this-one" type="checkbox">
               <label for="gender-this-one">
                 <div class="input-icons">
                   <i class='pi-circle'></i>
@@ -128,7 +128,7 @@
                 </div>
                 This One
               </label>
-              <input class="pui-form__checkbox" id="gender-that-one" type="checkbox">
+              <input class="form__checkbox" id="gender-that-one" type="checkbox">
               <label for="gender-that-one">
                 <div class="input-icons">
                   <i class='pi-circle'></i>
@@ -140,10 +140,10 @@
           </fieldset>
         </div>
         <div class="block">
-          <fieldset class="pui-form__field">
+          <fieldset class="form__field">
             <legend>Gender</legend>
-            <div class="pui-form__option-group">
-              <input class="pui-form__radio" id="gender-male" type="radio" name="gender">
+            <div class="form__option-group">
+              <input class="form__radio" id="gender-male" type="radio" name="gender">
               <label for="gender-male">
                 <div class="input-icons">
                   <i class='pi-circle'></i>
@@ -151,7 +151,7 @@
                 </div>
                 Male
               </label>
-              <input class="pui-form__radio" id="gender-female" type="radio" name="gender">
+              <input class="form__radio" id="gender-female" type="radio" name="gender">
               <label for="gender-female">
                 <div class="input-icons">
                   <i class='pi-circle'></i>
@@ -163,8 +163,8 @@
           </fieldset>
         </div>
         <div class="block">
-          <label for="zipcode" class="pui-form__field">County
-            <div class="pui-form__select-wrapper">
+          <label for="zipcode" class="form__field">County
+            <div class="form__select-wrapper">
               <select name="County Select" id="county">
                 <option value="County1">County 1</option>
                 <option value="County2">County 2</option>
@@ -177,14 +177,14 @@
           </label>
         </div>
         <div class="block">
-          <fieldset class="pui-form__field">
+          <fieldset class="form__field">
             <legend>Are You</legend>
-            <div class="pui-toggle">
-              <input class="pui-toggle__input" id="non-smoking-2" type="radio" checked name="height">
+            <div class="toggle">
+              <input class="toggle__input" id="non-smoking-2" type="radio" checked name="height">
               <label for="non-smoking-2">
                 <i class='pi-check pi-heavy'></i> Non-Smoking
               </label>
-              <input class="pui-toggle__input" id="smoking-2" type="radio" name="height">
+              <input class="toggle__input" id="smoking-2" type="radio" name="height">
               <label for="smoking-2">
                 <i class='pi-check pi-heavy'></i> Smoking
               </label>
@@ -192,19 +192,19 @@
           </fieldset>
         </div>
         <div class="block">
-          <label for="dob" class="pui-form__field has-icon">Application Date
+          <label for="dob" class="form__field has-icon">Application Date
             <input id="dob" type="date">
             <i class="pi-calendar text-med-blue background-white"></i>
           </label>
         </div>
         <div class="block">
-          <label for="time" class="pui-form__field has-icon--right">Your Time
+          <label for="time" class="form__field has-icon--right">Your Time
             <i class="far fa-clock"></i>
             <input id="time" type="time" placeholder="10:00 AM">
           </label>
         </div>
         <div class="block">
-          <div class="pui-form__field pui-form__button-group">
+          <div class="form__field form__button-group">
             <button class="button button--post button--lg">Quote Now</button>
           </div>
         </div>
@@ -212,12 +212,12 @@
     </section>
 
     <section class="my-4">
-      <form action="" class="pui-form block-container tablet-up-3 laptop-up-4 desktop-up-6 blocks mb-3 py-2 px-2">
+      <form action="" class="form block-container tablet-up-3 laptop-up-4 desktop-up-6 blocks mb-3 py-2 px-2">
         <div class="block">
-          <fieldset class="pui-form__field">
+          <fieldset class="form__field">
             <legend>Choose</legend>
-            <div class="pui-form__option-group">
-              <input class="pui-form__checkbox" id="1-gender-this-one" type="checkbox">
+            <div class="form__option-group">
+              <input class="form__checkbox" id="1-gender-this-one" type="checkbox">
               <label for="1-gender-this-one">
                 <div class="input-icons">
                   <i class='pi-circle'></i>
@@ -225,7 +225,7 @@
                 </div>
                 One
               </label>
-              <input class="pui-form__checkbox" id="1-gender-that-one" type="checkbox">
+              <input class="form__checkbox" id="1-gender-that-one" type="checkbox">
               <label for="1-gender-that-one">
                 <div class="input-icons">
                   <i class='pi-circle'></i>
@@ -233,7 +233,7 @@
                 </div>
                 Green
               </label>
-              <input class="pui-form__checkbox" id="1-gender-this-one-a" type="checkbox">
+              <input class="form__checkbox" id="1-gender-this-one-a" type="checkbox">
               <label for="1-gender-this-one-a">
                 <div class="input-icons">
                   <i class='pi-circle'></i>
@@ -241,7 +241,7 @@
                 </div>
                 Four
               </label>
-              <input class="pui-form__checkbox" id="1-gender-that-one-b" type="checkbox">
+              <input class="form__checkbox" id="1-gender-that-one-b" type="checkbox">
               <label for="1-gender-that-one-b">
                 <div class="input-icons">
                   <i class='pi-circle'></i>
@@ -253,9 +253,9 @@
           </fieldset>
         </div>
         <div class="block">
-          <fieldset class="pui-form__field">
+          <fieldset class="form__field">
             <legend>Options</legend>
-              <input class="pui-form__radio" id="1-gender-male" type="radio" name="1-gender">
+              <input class="form__radio" id="1-gender-male" type="radio" name="1-gender">
               <label for="1-gender-male">
                 <div class="input-icons">
                   <i class='pi-circle'></i>
@@ -263,7 +263,7 @@
                 </div>
                 One Fish
               </label>
-              <input class="pui-form__radio" id="1-gender-female" type="radio" name="1-gender">
+              <input class="form__radio" id="1-gender-female" type="radio" name="1-gender">
               <label for="1-gender-female">
                 <div class="input-icons">
                   <i class='pi-circle'></i>
@@ -271,7 +271,7 @@
                 </div>
                 Two Fish
               </label>
-              <input class="pui-form__radio" id="1-gender-male-1" type="radio" name="1-gender">
+              <input class="form__radio" id="1-gender-male-1" type="radio" name="1-gender">
               <label for="1-gender-male-1">
                 <div class="input-icons">
                   <i class='pi-circle'></i>
@@ -279,7 +279,7 @@
                 </div>
                 Red Fish
               </label>
-              <input class="pui-form__radio" id="1-gender-female-1" type="radio" name="1-gender">
+              <input class="form__radio" id="1-gender-female-1" type="radio" name="1-gender">
               <label for="1-gender-female-1">
                 <div class="input-icons">
                   <i class='pi-circle'></i>
@@ -290,8 +290,8 @@
           </fieldset>
         </div>
         <div class="block">
-          <label for="zipcode" class="pui-form__field">County
-            <select class="pui-select" name="County Select" id="county">
+          <label for="zipcode" class="form__field">County
+            <select class="select" name="County Select" id="county">
               <option value="County1">County 1</option>
               <option value="County2">County 2</option>
               <option value="County3">County 3</option>
@@ -302,15 +302,15 @@
           </label>
         </div>
         <fieldset class="block">
-          <fieldset class="pui-form__field">
+          <fieldset class="form__field">
             <legend>Are You</legend>
-            <div class="pui-toggle--test">
-              <input class="pui-toggle__input" id="1-non-smoking-2" type="radio" checked name="height">
+            <div class="toggle--test">
+              <input class="toggle__input" id="1-non-smoking-2" type="radio" checked name="height">
               <label for="1-non-smoking-2">
-                <span class="pui-toggle__label">
+                <span class="toggle__label">
                   <i class='pi-check pi-heavy'></i> Non-Smoking
                 </span>
-                <span class="pui-toggle__label">
+                <span class="toggle__label">
                   <i class='pi-check pi-heavy'></i> Smoking
                 </span>
               </label>
@@ -321,40 +321,40 @@
     </section>
     <section>
       <h4 class="mb-3">Fancy Form</h4>
-      <form action="" class="pui-form block-container blocks-px-2 blocks-mb-3">
+      <form action="" class="form block-container blocks-px-2 blocks-mb-3">
         <div class="block block-laptop-6">
-          <div class="pui-form__field pui-form__field--fancy">
+          <div class="form__field form__field--fancy">
             <input id="first-name" type="text" required placeholder="Jane">
             <label for="first-name">First Name</label>
           </div>
         </div>
         <div class="block block-laptop-6">
-          <div class="pui-form__field pui-form__field--fancy error">
+          <div class="form__field form__field--fancy error">
             <input id="last-name" type="text" required placeholder="Smith">
             <label for="last-name">Last Name</label>
           </div>
         </div>
         <div class="block block-laptop-4">
-          <div class="pui-form__field pui-form__field--fancy">
+          <div class="form__field form__field--fancy">
             <input id="dob" type="date" required placeholder="01/23/1985">
             <label for="dob">Age or DOB</label>
           </div>
         </div>
         <div class="block block-laptop-4">
-          <div class="pui-form__field pui-form__field--fancy">
+          <div class="form__field form__field--fancy">
             <input id="time" type="time" required placeholder="10:00 AM">
             <label for="time">What Time</label>
           </div>
         </div>
         <div class="block block-laptop-4">
-          <div class="pui-form__field pui-form__field--fancy">
+          <div class="form__field form__field--fancy">
             <input id="zipcode" type="tel" pattern="^\d{5,6}(?:[-\s]\d{4})?$" required placeholder="12345">
             <label for="zipcode">ZIP Code</label>
           </div>
         </div>
         <div class="block block-laptop-6">
-          <div class="pui-form__field pui-form__field--fancy">
-            <div class="pui-form__select-wrapper">
+          <div class="form__field form__field--fancy">
+            <div class="form__select-wrapper">
               <select name="County Select" id="county" required placeholder="County">
                 <option value=""></option>
                 <option value="County1">County 1</option>
@@ -372,40 +372,40 @@
     </section>
     <section class="mt-5">
       <h4>Forms</h4>
-      <form action="" class="pui-form pui-form--rounded block-container tablet-up-3 laptop-up-4 desktop-up-6 blocks mb-3 py-2 px-2">
+      <form action="" class="form form--rounded block-container tablet-up-3 laptop-up-4 desktop-up-6 blocks mb-3 py-2 px-2">
         <div class="block">
-          <label for="first-name" class="pui-form__field">First Name
+          <label for="first-name" class="form__field">First Name
             <input id="first-name" type="text" placeholder="First Name">
           </label>
         </div>
         <div class="block">
-          <label for="last-name" class="pui-form__field">Last Name
+          <label for="last-name" class="form__field">Last Name
             <input id="last-name" type="text" placeholder="Last Name">
           </label>
         </div>
         <div class="block">
-          <label for="dob" class="pui-form__field has-icon--right">Age or DOB
+          <label for="dob" class="form__field has-icon--right">Age or DOB
             <i class="pi-calendar text-med-blue background-white"></i>
             <input id="dob" type="date">
           </label>
         </div>
         <div class="block">
-          <label for="zipcode" class="pui-form__field">ZIP Code
+          <label for="zipcode" class="form__field">ZIP Code
             <input id="zipcode" type="tel" placeholder="e.g.90012" pattern="^\d{5,6}(?:[-\s]\d{4})?$">
           </label>
         </div>
         <div class="block">
-          <fieldset class="pui-form__field error">
+          <fieldset class="form__field error">
             <legend>Error on entire fieldset</legend>
-            <div class="pui-form__option-group">
-              <input class="pui-form__checkbox" id="youcan-this-one" type="checkbox">
+            <div class="form__option-group">
+              <input class="form__checkbox" id="youcan-this-one" type="checkbox">
               <label for="youcan-this-one">
                 <div class="input-icons">
                   <i class='pi-circle'></i>
                   <i class='pi-check pi-heavy'></i>
                 </div>This
               </label>
-              <input class="pui-form__checkbox" id="youcan-that-one" type="checkbox">
+              <input class="form__checkbox" id="youcan-that-one" type="checkbox">
               <label for="youcan-that-one">
                 <div class="input-icons">
                   <i class='pi-circle'></i>
@@ -416,10 +416,10 @@
           </fieldset>
         </div>
         <div class="block">
-          <fieldset class="pui-form__field">
+          <fieldset class="form__field">
             <legend>Error on individual input</legend>
-            <div class="pui-form__option-group">
-              <input class="pui-form__checkbox error" id="gender-this-one" type="checkbox">
+            <div class="form__option-group">
+              <input class="form__checkbox error" id="gender-this-one" type="checkbox">
               <label for="gender-this-one">
                 <div class="input-icons">
                   <i class='pi-circle'></i>
@@ -427,7 +427,7 @@
                 </div>
                 This One
               </label>
-              <input class="pui-form__checkbox" id="gender-that-one" type="checkbox">
+              <input class="form__checkbox" id="gender-that-one" type="checkbox">
               <label for="gender-that-one">
                 <div class="input-icons">
                   <i class='pi-circle'></i>
@@ -439,10 +439,10 @@
           </fieldset>
         </div>
         <div class="block">
-          <fieldset class="pui-form__field">
+          <fieldset class="form__field">
             <legend>Gender</legend>
-            <div class="pui-form__option-group">
-              <input class="pui-form__radio" id="gender-male" type="radio" name="gender">
+            <div class="form__option-group">
+              <input class="form__radio" id="gender-male" type="radio" name="gender">
               <label for="gender-male">
                 <div class="input-icons">
                   <i class='pi-circle'></i>
@@ -450,7 +450,7 @@
                 </div>
                 Male
               </label>
-              <input class="pui-form__radio" id="gender-female" type="radio" name="gender">
+              <input class="form__radio" id="gender-female" type="radio" name="gender">
               <label for="gender-female">
                 <div class="input-icons">
                   <i class='pi-circle'></i>
@@ -462,8 +462,8 @@
           </fieldset>
         </div>
         <div class="block">
-          <label for="zipcode" class="pui-form__field">County
-            <div class="pui-form__select-wrapper">
+          <label for="zipcode" class="form__field">County
+            <div class="form__select-wrapper">
               <select name="County Select" id="county">
                 <option value="County1">County 1</option>
                 <option value="County2">County 2</option>
@@ -476,14 +476,14 @@
           </label>
         </div>
         <div class="block">
-          <fieldset class="pui-form__field" disabled>
+          <fieldset class="form__field" disabled>
             <legend>Are You</legend>
-            <div class="pui-toggle">
-              <input class="pui-toggle__input" id="non-smoking-3" type="radio" checked name="height-2">
+            <div class="toggle">
+              <input class="toggle__input" id="non-smoking-3" type="radio" checked name="height-2">
               <label for="non-smoking-3">
                 <i class='pi-check pi-heavy'></i> Non-Smoking
               </label>
-              <input class="pui-toggle__input" id="smoking-3" type="radio" name="height-2">
+              <input class="toggle__input" id="smoking-3" type="radio" name="height-2">
               <label for="smoking-3">
                 <i class='pi-check pi-heavy'></i> Smoking
               </label>
@@ -491,19 +491,19 @@
           </fieldset>
         </div>
         <div class="block">
-          <label for="dob" class="pui-form__field has-icon">Application Date
+          <label for="dob" class="form__field has-icon">Application Date
             <input id="dob" type="date">
             <i class="pi-calendar text-med-blue background-white"></i>
           </label>
         </div>
         <div class="block">
-          <label for="time" class="pui-form__field has-icon--right">Your Time
+          <label for="time" class="form__field has-icon--right">Your Time
             <i class="far fa-clock"></i>
             <input id="time" type="time" placeholder="10:00 AM">
           </label>
         </div>
         <div class="block">
-          <div class="pui-form__field pui-form__button-group">
+          <div class="form__field form__button-group">
             <button class="button button--post button--lg">Quote Now</button>
           </div>
         </div>

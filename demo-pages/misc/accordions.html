@@ -15,14 +15,14 @@
       *  See src/Platform/Content/css/sass/platform-ui-plugins.scss
       */
     .site-header--fixed {
-      height: calc(var(--pui-menu-height) * 2 )!important;
+      height: calc(var(--menu-height) * 2 )!important;
     }
     .site-header--fixed + .header-fixed {
-      margin-top: calc(var(--pui-menu-height) * 2 )!important;
+      margin-top: calc(var(--menu-height) * 2 )!important;
     }
     .site-header--fixed .site-menu-wrapper:nth-child(2) .site-menu.active,
     .site-menu-wrapper.site-header--fixed:nth-child(2) .site-menu.active {
-      max-height: calc(100vh - (var(--pui-menu-height) * 2));
+      max-height: calc(100vh - (var(--menu-height) * 2));
     }
   </style>
 </head>
@@ -299,7 +299,7 @@
           <a href="#" class="site-menu__item">
             Reports
           </a>
-          <a href="#" class="site-menu__item pui-drawer__open" data-drawer="touches">
+          <a href="#" class="site-menu__item drawer__open" data-drawer="touches">
             <i class="pi-phone"></i>
           </a>
           <a href="#" class="site-menu__item">
@@ -325,13 +325,13 @@
         <div class="block lg-tablet-up-8 laptop-up-9">
             <div class="block-container flex--justify-end mb-4">
             </div>
-            <div class="pui-tabs">
+            <div class="tabs">
                 <input type="radio" id="tab-input-a" name="tabs" checked>
-                <label for="tab-input-a" class="pui-tab flex flex--justify-between">
+                <label for="tab-input-a" class="tab flex flex--justify-between">
                     Submissions
                     <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
                 </label>
-                <div class="pui-tab-panel p-4">
+                <div class="tab-panel p-4">
                     <div class="block-container mb-3">
                       <div class="block block-6 flex flex--align-center">
                         Showing XX of XXX <button type="button" class="button button--secondary ml-2" aria-label="Load more"><i class="pi-sync"></i></button>
@@ -342,9 +342,9 @@
                     </div>
 
                     <!-- Start Accordion -->
-                    <div class="pui-accordion active">
+                    <div class="accordion active">
                       <!-- Accordion Header -->
-                        <div class="pui-accordion__header p-2 block-container">
+                        <div class="accordion__header p-2 block-container">
 
                           <div class="block block-3 flex flex--column">
                             <span class="text-med-blue">Clover Health Plans</span>
@@ -402,13 +402,13 @@
                         <!-- End Accordion Header -->
 
                         <!-- Start Accordion Content -->
-                        <div class="pui-accordion__content p-4">
+                        <div class="accordion__content p-4">
 
-                          <div class="block-container blocks p-2 tablet-up-2 pui-form">
+                          <div class="block-container blocks p-2 tablet-up-2 form">
                             <div class="block">
-                              <label for="action" class="pui-form__field">
+                              <label for="action" class="form__field">
                                 Action
-                                <div class="pui-form__select-wrapper">
+                                <div class="form__select-wrapper">
                                   <select name="County Select" id="action">
                                     <option value="County1">Option</option>
                                   </select>
@@ -416,9 +416,9 @@
                               </label>
                             </div>
                             <div class="block">
-                              <label for="form" class="pui-form__field">
+                              <label for="form" class="form__field">
                                 Form
-                                <div class="pui-form__select-wrapper">
+                                <div class="form__select-wrapper">
                                   <select name="County Select" id="form">
                                     <option value="County1">Option</option>
                                   </select>
@@ -437,7 +437,7 @@
                             </div>
 
                             <div class="block block-12 mt-3">
-                              <table class="pui-table">
+                              <table class="table">
                                 <thead>
                                   <tr>
                                     <th>Type</th>
@@ -478,14 +478,14 @@
                               </table>
                             </div>
                             <div class="block block-12">
-                              <div class="pui-message pui-message--success" data-header="Enrollment #">
+                              <div class="message message--success" data-header="Enrollment #">
                                 <p>123456789 (eligible), Effective 01/01/2020 </p>
                               </div>
                             </div>
                           </div>
 
-                          <div class="pui-accordion active">
-                            <div class="pui-accordion__header p-2 block-container flex--justify-between">
+                          <div class="accordion active">
+                            <div class="accordion__header p-2 block-container flex--justify-between">
                               <span class="flex">
                                 <i class="pi-angle-right text--size-xl mr-3"></i>
                                 <i class="pi-note mr-2"></i> Submission Note (2)
@@ -495,18 +495,18 @@
                                 <button class="button">View All <i class="pi-arrow-right" aria-hidden="true"></i></button>
                               </span>
                             </div>
-                            <div class="pui-accordion__content">
+                            <div class="accordion__content">
                               <div class="block-container blocks tablet-up-3 flex--align-center flex--justify-between overflow-x--scroll">
                                 <div class="block">
-                                  <div class="background-note pui-card m-2 py-3 pl-3 pr-0">
+                                  <div class="background-note card m-2 py-3 pl-3 pr-0">
                                     <div class="block-container">
                                       <div class="block-10">
-                                        <div class="pui-card__header">
-                                          <strong class="pui-card__group">
+                                        <div class="card__header">
+                                          <strong class="card__group">
                                             <i class="pi-speech-bubble"></i> John Hammond 00/00/0000
                                           </strong>
                                         </div>
-                                        <div class="pui-card__content">
+                                        <div class="card__content">
                                           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis sem, iaculis vitae posuere ac, blandit vel neque.
                                         </div>
                                       </div>
@@ -539,15 +539,15 @@
                                   </div>
                                 </div>
                                 <div class="block">
-                                  <div class="background-note pui-card m-2 py-3 pl-3 pr-0">
+                                  <div class="background-note card m-2 py-3 pl-3 pr-0">
                                     <div class="block-container">
                                       <div class="block-10">
-                                        <div class="pui-card__header">
-                                          <strong class="pui-card__group">
+                                        <div class="card__header">
+                                          <strong class="card__group">
                                             <i class="pi-speech-bubble"></i> John Hammond 00/00/0000
                                           </strong>
                                         </div>
-                                        <div class="pui-card__content">
+                                        <div class="card__content">
                                           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis sem, iaculis vitae posuere ac, blandit vel neque.
                                         </div>
                                       </div>
@@ -580,15 +580,15 @@
                                   </div>
                                 </div>
                                 <div class="block">
-                                  <div class="background-note pui-card m-2 py-3 pl-3 pr-0">
+                                  <div class="background-note card m-2 py-3 pl-3 pr-0">
                                     <div class="block-container">
                                       <div class="block-10">
-                                        <div class="pui-card__header">
-                                          <strong class="pui-card__group">
+                                        <div class="card__header">
+                                          <strong class="card__group">
                                             <i class="pi-speech-bubble"></i> John Hammond 00/00/0000
                                           </strong>
                                         </div>
-                                        <div class="pui-card__content">
+                                        <div class="card__content">
                                           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis sem, iaculis vitae posuere ac, blandit vel neque.
                                         </div>
                                       </div>
@@ -625,8 +625,8 @@
                             </div>
 
                           </div>
-                          <div class="pui-accordion">
-                            <div class="pui-accordion__header p-2 block-container flex--justify-between">
+                          <div class="accordion">
+                            <div class="accordion__header p-2 block-container flex--justify-between">
                               <span class="flex">
                                 <i class="pi-angle-right text--size-xl mr-3"></i>
                                 <i class="pi-note mr-2"></i> Attachments (0)
@@ -635,8 +635,8 @@
                                 <button class="button mr-2">Add <i class="pi-plus" aria-hidden="true"></i></button>
                               </span>
                             </div>
-                            <div class="pui-accordion__content">
-                              <div class="pui-message pui-message--info">
+                            <div class="accordion__content">
+                              <div class="message message--info">
                                 <p>This submission has no attachments.</p>
                               </div>
                             </div>
@@ -647,28 +647,28 @@
                     </div>
                 </div>
                 <input type="radio" id="tab-input-b" name="tabs">
-                <label for="tab-input-b" class="pui-tab flex flex--justify-between">
+                <label for="tab-input-b" class="tab flex flex--justify-between">
                     Downlines
                     <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
                 </label>
-                <div class="pui-tab-panel">
+                <div class="tab-panel">
                     <img src="https://placeimg.com/640/480/animals?t=1565635267224">
                 </div>
                 <input type="radio" id="tab-input-c" name="tabs">
-                <label for="tab-input-c" class="pui-tab flex flex--justify-between">
+                <label for="tab-input-c" class="tab flex flex--justify-between">
                     Uploads
                     <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
                 </label>
-                <div class="pui-tab-panel">
+                <div class="tab-panel">
                     <img src="https://placeimg.com/640/480/animals?t=1565635322782">
                 </div>
             </div>
         </div>
         <div class="block mt-6 lg-tablet-up-4 laptop-up-3">
-          <div class="pui-card text-base background-note mt-2 p-4 h-auto">
+          <div class="card text-base background-note mt-2 p-4 h-auto">
 
-            <div class="pui-card__header">
-              <div class="pui-card__group">
+            <div class="card__header">
+              <div class="card__group">
                 <button title="Add Note" aria-label="Add Note" class="button button--secondary">
                     <i aria-hidden="true" class="pi-plus"></i>
                 </button>
@@ -678,8 +678,8 @@
                 </button>
               </div>
             </div>
-            <ol class="pui-list pui-list--bordered">
-              <li class="pui-list__item py-3">
+            <ol class="list list--bordered">
+              <li class="list__item py-3">
                 <strong class="" title="Last edited by Ted Krueger 01/27/2020">
                   <i aria-hidden="true" class="pi-speech-bubble text-light"></i>
                   Ted Krueger 01/27/2020
@@ -719,7 +719,7 @@
                   <i class="pi-angle-down-double text--size-lg rotate-180"></i>
                 </div>
               </li>
-              <li class="pui-list__item py-3">
+              <li class="list__item py-3">
                 <strong class="" title="Last edited by Ted Krueger 01/27/2020">
                   <i aria-hidden="true" class="pi-speech-bubble text-light"></i>
                   Ted Krueger 01/27/2020

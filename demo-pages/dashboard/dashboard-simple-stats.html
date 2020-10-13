@@ -9,33 +9,33 @@
   <link rel="stylesheet" href="/src/assets/stylesheets/platform-ui.min.css">
   
 <style>
-    .pui-tab-panel {
-        background-color: var(--pui-lighter);
+    .tab-panel {
+        background-color: var(--lighter);
         border: none;
     }
     @media (min-width: 767px) {
-        .pui-tabs {
+        .tabs {
         justify-content: center;
         }
-        .pui-tabs .pui-tab {
+        .tabs .tab {
         flex: 0 0 auto;
         height: 2rem;;
         }
-        .pui-tabs input[type=radio]:checked+.pui-tab {
-        background-color: var(--pui-salmon);
-        border-radius: var(--pui-button);
-        color: var(--pui-white);
+        .tabs input[type=radio]:checked+.tab {
+        background-color: var(--salmon);
+        border-radius: var(--button);
+        color: var(--white);
         border: none;
         } 
-        .pui-tabs input[type=radio]:not(:checked)+.pui-tab:hover {
-            background-color: var(--pui-lighter);
-            border-radius: var(--pui-button);
+        .tabs input[type=radio]:not(:checked)+.tab:hover {
+            background-color: var(--lighter);
+            border-radius: var(--button);
         border: none;
         } 
-        .pui-tab:before{
+        .tab:before{
         display: none;
         }
-        .pui-tab-panel {
+        .tab-panel {
             margin-top: 1rem;
         }
     }
@@ -279,103 +279,103 @@
   <main class="header-fixed py-4 px-5">
     <div class="block-container blocks px-3 mb-4">
         <div class="block">
-            <div class="pui-tabs">
+            <div class="tabs">
 
 <!--Simple Stats Tab-->              
                 <input type="radio" id="tab-input-a" name="tabs" checked>
-                <label for="tab-input-a" class="pui-tab flex flex--justify-between">
+                <label for="tab-input-a" class="tab flex flex--justify-between">
                     Simple Stats
                     <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
                 </label>
 
-                <div class="pui-tab-panel mb-3 ">
-                  <div class="pui-card mb-3">
+                <div class="tab-panel mb-3 ">
+                  <div class="card mb-3">
                       <h3 class="text-salmon text--center text--uppercase m-3 border-b border--color-lighter">Agents</h3>
                         <div class="block-container blocks p-2 laptop-up-3 desktop-up-4">
                             <div class="block">
                                 <div class="text--center">
-                                  <div class="pui-stat text-navy text--size-xxl">0</div>
+                                  <div class="stat text-navy text--size-xxl">0</div>
                                     <div>Active Agents</div>
                                   </div>
                             </div>
 
                             <div class="block">
                               <div class="text--center">
-                                <div class="pui-stat text-navy text--size-xxl">0</div>
+                                <div class="stat text-navy text--size-xxl">0</div>
                                 <div>Active Direct to Ritter</div>
                               </div>
                             </div>
 
                             <div class="block">
                               <div class="text--center">
-                                <div class="pui-stat text-navy text--size-xxl">0</div>
+                                <div class="stat text-navy text--size-xxl">0</div>
                                 <div>Prospects</div>
                               </div>
                             </div>
 
                             <div class="block">
                               <div class="text--center">
-                                <div class="pui-stat text-navy text--size-xxl">0</div>
+                                <div class="stat text-navy text--size-xxl">0</div>
                                 <div>New Leads</div>
                               </div>
                             </div>
 
                             <div class="block">
                               <div class="text--center">
-                                <div class="pui-stat text-navy text--size-xxl">0</div>
+                                <div class="stat text-navy text--size-xxl">0</div>
                                 <div>Total Agents</div>
                               </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="pui-card mb-3">
+                    <div class="card mb-3">
                       <h3 class="text-salmon text--center text--uppercase m-3 border-b border--color-lighter">Contracts</h3>
                         <div class="block-container blocks p-2 laptop-up-3 desktop-up-4">
                           <div class="block">
                             <div class="text--center">
-                              <div class="pui-stat text-navy text--size-xxl">0</div>
+                              <div class="stat text-navy text--size-xxl">0</div>
                               <div>Appointed</div>
                             </div>
                           </div>
 
                           <div class="block">
                             <div class="text--center">
-                              <div class="pui-stat text-navy text--size-xxl">0</div>
+                              <div class="stat text-navy text--size-xxl">0</div>
                               <div>Returned Incomplete</div>
                             </div>
                           </div>
     
                           <div class="block">
                             <div class="text--center">
-                              <div class="pui-stat text-navy text--size-xxl">0</div>
+                              <div class="stat text-navy text--size-xxl">0</div>
                               <div>Returned</div>
                             </div>
                           </div>
                             </div>
                         </div>
 
-                        <div class="pui-card">
+                        <div class="card">
                           <h3 class="text-salmon text--center text--uppercase m-3 border-b border--color-lighter">Applications</h3>
 
                             <div class="block-container blocks p-2 laptop-up-3 desktop-up-4">
                               <div class="block">
                                 <div class="text--center">
-                                  <div class="pui-stat text-navy text--size-xxl">0</div>
+                                  <div class="stat text-navy text--size-xxl">0</div>
                                   <div>Production</div>
                                 </div>
                               </div>
     
                                 <div class="block">
                                   <div class="text--center">
-                                    <div class="pui-stat text-navy text--size-xxl">0</div>
+                                    <div class="stat text-navy text--size-xxl">0</div>
                                     <div>Paper Submissions</div>
                                   </div>
                                 </div>
     
                                 <div class="block">
                                   <div class="text--center">
-                                    <div class="pui-stat text-navy text--size-xxl">0</div>
+                                    <div class="stat text-navy text--size-xxl">0</div>
                                     <div>Medicareful Submissions</div>
                                   </div>
                                 </div>
@@ -387,58 +387,58 @@
 
 <!--Contracts Tab-->
                 <input type="radio" id="tab-input-b" name="tabs">
-                <label for="tab-input-b" class="pui-tab flex flex--justify-between">
+                <label for="tab-input-b" class="tab flex flex--justify-between">
                     Contracts
                     <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
                 </label>
-                <div class="pui-tab-panel">
-                    <div class="pui-card mb-3">
+                <div class="tab-panel">
+                    <div class="card mb-3">
                     <img src="https://placeimg.com/640/480/animals?t=1565635267224" style="max-width: 100%;">
                     </div>
                 </div>
 
                 <input type="radio" id="tab-input-c" name="tabs">
-                <label for="tab-input-c" class="pui-tab flex flex--justify-between">
+                <label for="tab-input-c" class="tab flex flex--justify-between">
                     Applications
                     <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
                 </label>
-                <div class="pui-tab-panel">
+                <div class="tab-panel">
                     <img src="https://placeimg.com/640/480/animals?t=1565635322782" style="max-width: 100%;">
                 </div>
 
                 <input type="radio" id="tab-input-d" name="tabs">
-                <label for="tab-input-d" class="pui-tab flex flex--justify-between">
+                <label for="tab-input-d" class="tab flex flex--justify-between">
                     Admin Support
                     <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
                 </label>
-                <div class="pui-tab-panel">
+                <div class="tab-panel">
                     <img src="https://placeimg.com/640/480/animals?t=1565635322782" style="max-width: 100%;">
                 </div>
 
                 <input type="radio" id="tab-input-e" name="tabs">
-                <label for="tab-input-e" class="pui-tab flex flex--justify-between">
+                <label for="tab-input-e" class="tab flex flex--justify-between">
                     Agent Acquisition
                     <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
                 </label>
-                <div class="pui-tab-panel">
+                <div class="tab-panel">
                     <img src="https://placeimg.com/640/480/animals?t=1565635322782" style="max-width: 100%;">
                 </div>
 
                 <input type="radio" id="tab-input-f" name="tabs">
-                <label for="tab-input-f" class="pui-tab flex flex--justify-between">
+                <label for="tab-input-f" class="tab flex flex--justify-between">
                     Reports
                     <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
                 </label>
-                <div class="pui-tab-panel">
+                <div class="tab-panel">
                     <img src="https://placeimg.com/640/480/animals?t=1565635322782" style="max-width: 100%;">
                 </div>
 
                 <input type="radio" id="tab-input-g" name="tabs">
-                <label for="tab-input-g" class="pui-tab flex flex--justify-between">
+                <label for="tab-input-g" class="tab flex flex--justify-between">
                     Upload
                     <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
                 </label>
-                <div class="pui-tab-panel">
+                <div class="tab-panel">
                     <img src="https://placeimg.com/640/480/animals?t=1565635322782" style="max-width: 100%;">
                 </div>
             </div>

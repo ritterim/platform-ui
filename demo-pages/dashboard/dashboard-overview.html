@@ -7,17 +7,17 @@
     <title>Call Center view</title>
     <link rel="stylesheet" href="/src/assets/stylesheets/platform-ui.min.css">
     <style>
-        .pui-card {
+        .card {
         height: 100%;
     }
-        .pui-card__content {
+        .card__content {
         max-height: 25rem;
         overflow: auto;
     }
     /* add class new to new video */
     .new {
       display: inline-flex;
-      background: var(--pui-skyblue);
+      background: var(--skyblue);
       width: 24px;
       height: 24px;
       position: relative;
@@ -34,7 +34,7 @@
       left: 0;
       height: 24px;
       width: 24px;
-      background: var(--pui-skyblue);
+      background: var(--skyblue);
     }
     .new:before {
       transform: rotate(30deg);
@@ -46,7 +46,7 @@
       font-weight: bold;
       justify-content: center;
       align-items: center;
-      color: var(--pui-navy);
+      color: var(--navy);
       transform: rotate(60deg);
     }
         
@@ -292,36 +292,36 @@
             <div class="block-container blocks px-2 pb-3 tablet-up-2 laptop-up-3 desktop-up-4 ">
 <!--Statistics-->
                 <div class="block">
-                    <div class="pui-card">
-                        <div class="pui-card__header">
-                            <div class="pui-card__group">
+                    <div class="card">
+                        <div class="card__header">
+                            <div class="card__group">
                                 <img class="icon" src="/src/assets/images/svg/statistics.svg" alt="Statistics">
-                                <div class="pui-card__title">Statistics</div>
+                                <div class="card__title">Statistics</div>
                             </div>
                             <div class="button-group flex--align-center"><a href="#" class="button">
                                     View Report <i aria-hidden="true" class="pi-chart-bar"></i></a>
                             </div>
                         </div>
-                        <div class="pui-card__content">
+                        <div class="card__content">
                             <ul class="post-list">
                                 <li class="post-item">
                                     <div class="post-item__title text--bold text--center text-salmon">Agents</div>
                                     <div class="block-container blocks flex--justify-center">
                                         <div class="block block-3 mr-3">
                                             <div class="text--center">
-                                                <div class="pui-stat text-navy text--size-xl">11,745</div>
+                                                <div class="stat text-navy text--size-xl">11,745</div>
                                                 <div>Active Agents</div>
                                             </div>
                                         </div>
                                         <div class="block block-3 mr-3">
                                             <div class="text--center">
-                                                <div class="pui-stat text-navy text--size-xl">4,868</div>
+                                                <div class="stat text-navy text--size-xl">4,868</div>
                                                 <div>Active Direct to Ritter</div>
                                             </div>
                                         </div>
                                         <div class="block block-3">
                                             <div class="text--center">
-                                                <div class="pui-stat text-navy text--size-xl">2,094</div>
+                                                <div class="stat text-navy text--size-xl">2,094</div>
                                                 <div>Prospects</div>
                                             </div>
                                         </div>
@@ -332,19 +332,19 @@
                                     <div class="block-container blocks flex--justify-center">
                                         <div class="block block-3 mr-3">
                                             <div class="text--center">
-                                                <div class="pui-stat text-navy text--size-xl">59,880</div>
+                                                <div class="stat text-navy text--size-xl">59,880</div>
                                                 <div>Appointed</div>
                                             </div>
                                         </div>
                                         <div class="block block-3 mr-3">
                                             <div class="text--center">
-                                                <div class="pui-stat text-navy text--size-xl">469</div>
+                                                <div class="stat text-navy text--size-xl">469</div>
                                                 <div>Returned Incomplete</div>
                                             </div>
                                         </div>
                                         <div class="block block-3">
                                             <div class="text--center">
-                                                <div class="pui-stat text-navy text--size-xl">328</div>
+                                                <div class="stat text-navy text--size-xl">328</div>
                                                 <div>Returned</div>
                                             </div>
                                         </div>
@@ -355,19 +355,19 @@
                                     <div class="block-container blocks flex--justify-center">
                                         <div class="block block-3 mr-3">
                                             <div class="text--center">
-                                                <div class="pui-stat text-navy text--size-xl">149,915</div>
+                                                <div class="stat text-navy text--size-xl">149,915</div>
                                                 <div>Production</div>
                                             </div>
                                         </div>
                                         <div class="block block-3 mr-3">
                                             <div class="text--center">
-                                                <div class="pui-stat text-navy text--size-xl">20,692</div>
+                                                <div class="stat text-navy text--size-xl">20,692</div>
                                                 <div>Paper Submissions</div>
                                             </div>
                                         </div>
                                         <div class="block block-3">
                                             <div class="text--center">
-                                                <div class="pui-stat text-navy text--size-xl">37,712</div>
+                                                <div class="stat text-navy text--size-xl">37,712</div>
                                                 <div>Medicareful Submissions</div>
                                             </div>
                                         </div>
@@ -382,25 +382,25 @@
 
 <!--Compliance-->
                 <div class="block">
-                    <div class="pui-card">
-                        <div class="pui-card__header">
-                            <div class="pui-card__group">
+                    <div class="card">
+                        <div class="card__header">
+                            <div class="card__group">
                                 <img class="icon" src="/src/assets/images/svg/compliance.svg" alt="Compliance">
-                                <div class="pui-card__title">Compliance</div>
+                                <div class="card__title">Compliance</div>
                             </div>
                         </div>
-                        <div class="pui-card__content">
+                        <div class="card__content">
                             <div class="post-item__title text--bold text--center text-salmon">Cases Effective Year</div>
                             <div class="block-container blocks flex--justify-center">
                                 <div class="block block-4 mr-3">
                                     <div class="text--center">
-                                        <div class="pui-stat text-navy text--size-xl">17</div>
+                                        <div class="stat text-navy text--size-xl">17</div>
                                         <div>Open Cases</div>
                                     </div>
                                 </div>
                                 <div class="block block-4 mr-3">
                                     <div class="text--center">
-                                        <div class="pui-stat text-navy text--size-xl">527</div>
+                                        <div class="stat text-navy text--size-xl">527</div>
                                         <div>Closed Cases</div>
                                     </div>
                                 </div>
@@ -443,14 +443,14 @@
 
 <!--First Look-->
                 <div class="block">
-                    <div class="pui-card">
-                        <div class="pui-card__header">
-                            <div class="pui-card__group w-100">
+                    <div class="card">
+                        <div class="card__header">
+                            <div class="card__group w-100">
                                 <img class="icon" src="/src/assets/images/svg/first-look.svg" alt="">
-                                <div class="pui-card__title">Carrier First Look</div>
+                                <div class="card__title">Carrier First Look</div>
                             </div>
                         </div>
-                        <div data-v-29ee113a="" class="pui-card__content">
+                        <div data-v-29ee113a="" class="card__content">
                             <ul data-v-29ee113a="" class="post-list">
                                 <li data-v-29ee113a="" class="post-item">
                                     <div data-v-29ee113a="" class="post-item__title"><a data-v-29ee113a="" href="https://firstlook.aetna.com"
@@ -891,14 +891,14 @@
 
  <!--Video Training-->
                 <div class="block">
-                    <div class="pui-card">
-                        <div class="pui-card__header">
-                            <div class="pui-card__group w-100">
+                    <div class="card">
+                        <div class="card__header">
+                            <div class="card__group w-100">
                                 <img class="icon" src="/src/assets/images/svg/video.svg" alt="Video">
-                                <div class="pui-card__title">Video Training</div>
+                                <div class="card__title">Video Training</div>
                             </div>
                         </div>
-                        <div class="pui-card__content">
+                        <div class="card__content">
                             <ul class="post-list">
                                 <li class="post-item">
                                     <div class="block-container blocks px-2 flex flex--align-start">
@@ -960,36 +960,36 @@
 
 <!--Call Center-->
                 <div class="block">
-                    <div class="pui-card">
-                        <div class="pui-card__header">
-                            <div class="pui-card__group w-100">
+                    <div class="card">
+                        <div class="card__header">
+                            <div class="card__group w-100">
                                 <img class="icon" src="/src/assets/images/svg/call-center.svg" alt="">
-                                <div class="pui-card__title">Call Center</div>
+                                <div class="card__title">Call Center</div>
                             </div>
                             <div class="button-group flex--align-center"><a href="clients" class="button">
                                     Call Center <i aria-hidden="true" class="pi-headset"></i></a>
                             </div>
                         </div>
-                        <div class="pui-card__content">
+                        <div class="card__content">
                             <ul class="post-list">
                                 <li class="post-item">
                                     <div class="post-item__title text--bold text--center text-salmon">Today's Stats</div>
                                     <div class="block-container blocks flex--justify-center">
                                         <div class="block block-3 mr-3">
                                             <div class="text--center">
-                                                <div class="pui-stat text-navy text--size-xl">157</div>
+                                                <div class="stat text-navy text--size-xl">157</div>
                                                 <div>Total Calls</div>
                                             </div>
                                         </div>
                                         <div class="block block-3 mr-3">
                                             <div class="text--center">
-                                                <div class="pui-stat text-navy text--size-xl">23</div>
+                                                <div class="stat text-navy text--size-xl">23</div>
                                                 <div>Missed Calls</div>
                                             </div>
                                         </div>
                                         <div class="block block-3">
                                             <div class="text--center">
-                                                <div class="pui-stat text-navy text--size-xl">17</div>
+                                                <div class="stat text-navy text--size-xl">17</div>
                                                 <div>Calls Per Hour</div>
                                             </div>
                                         </div>
@@ -999,19 +999,19 @@
                                     <div class="block-container blocks flex--justify-center">
                                         <div class="block block-3 mr-3">
                                             <div class="text--center">
-                                                <div class="pui-stat text-navy text--size-xl">0:47</div>
+                                                <div class="stat text-navy text--size-xl">0:47</div>
                                                 <div>Avg Duration</div>
                                             </div>
                                         </div>
                                         <div class="block block-3 mr-3">
                                             <div class="text--center">
-                                                <div class="pui-stat text-navy text--size-xl">7</div>
+                                                <div class="stat text-navy text--size-xl">7</div>
                                                 <div>Avg Queue Size</div>
                                             </div>
                                         </div>
                                         <div class="block block-3">
                                             <div class="text--center">
-                                                <div class="pui-stat text-navy text--size-xl">97%</div>
+                                                <div class="stat text-navy text--size-xl">97%</div>
                                                 <div>Online Time</div>
                                             </div>
                                         </div>
@@ -1026,27 +1026,27 @@
 
 <!--Sales Territory Map-->
                 <div class="block">
-                    <div class="pui-card">
-                        <div class="pui-card__header">
-                            <div class="pui-card__group w-100">
+                    <div class="card">
+                        <div class="card__header">
+                            <div class="card__group w-100">
                                 <img class="icon" src="/src/assets/images/svg/map.svg" alt="">
-                                <div class="pui-card__title">Map Agents</div>
+                                <div class="card__title">Map Agents</div>
                             </div>
                             <div class="button-group flex--align-center"><a href="clients" class="button">
                                     View Map <i aria-hidden="true" class="pi-map"></i></a>
                             </div>
                         </div>
-                        <div class="pui-card__content">
-                            <form action="" class="pui-form  block-container tablet-up-3 laptop-up-4 desktop-up-6 blocks">
-                                <div class="block-12 pui-form--rounded mb-3">
-                                    <label for="dob" class="pui-form__field has-icon--right">
+                        <div class="card__content">
+                            <form action="" class="form  block-container tablet-up-3 laptop-up-4 desktop-up-6 blocks">
+                                <div class="block-12 form--rounded mb-3">
+                                    <label for="dob" class="form__field has-icon--right">
                                         <input id="Search" type="text" required placeholder="Harrisburg, PA 17110">
                                         <i class="pi-search background-white"></i>
                                     </label>
                                 </div>
                                 <div class="block-6 pr-3">
-                                    <label for="Option" class="pui-form__field">Distance
-                                        <div class="pui-form__select-wrapper">
+                                    <label for="Option" class="form__field">Distance
+                                        <div class="form__select-wrapper">
                                             <select name="Option Select" id="Option">
                                                 <option value="Option1">Exact location</option>
                                                 <option value="Option2">Withn 5 miles</option>
@@ -1061,8 +1061,8 @@
                                     </label>
                                 </div>
                                 <div class="block-6">
-                                    <label for="Option" class="pui-form__field">Global Product Level
-                                        <div class="pui-form__select-wrapper">
+                                    <label for="Option" class="form__field">Global Product Level
+                                        <div class="form__select-wrapper">
                                             <select name="Option Select" id="Option">
                                                 <option value="Option1">All</option>
                                                 <option value="Option2">1</option>

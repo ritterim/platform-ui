@@ -11,46 +11,46 @@
 // Markup:
 // <div class="block-container blocks tablet-up-6">
 // <div class="block">
-// <div class="pui-info-box" style="width: 32px">
+// <div class="info-box" style="width: 32px">
 //   <button class="button button--secondary toggle-hidden" role="button" aria-label="Toggle">
 //     <i class="pi-filter" aria-hidden="hidden"></i>
 //   </button>
-//   <div class="pui-info-box__content hidden">
-//     <button class="button pui-info-box__close">
+//   <div class="info-box__content hidden">
+//     <button class="button info-box__close">
 //       Close <i class="pi-times" aria-hidden="hidden"></i>
 //     </button>
-//     <form action="" class="block-container block-mb-4 pui-form">
-//       <label for="dob" class="block pui-form__field has-icon">Birthday
+//     <form action="" class="block-container block-mb-4 form">
+//       <label for="dob" class="block form__field has-icon">Birthday
 //         <input id="dob" type="date" placeholder="DD/MM/YYYY">
 //         <i class="pi-calendar text-skyblue background-white"></i>
 //       </label>
-//       <fieldset class="block pui-form__field">
+//       <fieldset class="block form__field">
 //         <legend>Please Choose</legend>
-//         <div class="pui-toggle">
-//           <div class="pui-toggle__content">
-//             <input class="pui-toggle__input" id="smoking" type="radio" checked name="rate">
+//         <div class="toggle">
+//           <div class="toggle__content">
+//             <input class="toggle__input" id="smoking" type="radio" checked name="rate">
 //             <label for="smoking">This one</label>
 //           </div>
-//           <div class="pui-toggle__content">
-//             <input class="pui-toggle__input" id="non-smoking" type="radio" name="rate">
+//           <div class="toggle__content">
+//             <input class="toggle__input" id="non-smoking" type="radio" name="rate">
 //             <label for="non-smoking">That one</label>
 //           </div>
 //         </div>
 //       </fieldset>
-//       <fieldset class="block pui-form__field">
+//       <fieldset class="block form__field">
 //         <legend>Also Choose</legend>
-//         <div class="pui-toggle">
-//           <div class="pui-toggle__content">
-//             <input class="pui-toggle__input" id="Single" type="radio" checked name="household">
+//         <div class="toggle">
+//           <div class="toggle__content">
+//             <input class="toggle__input" id="Single" type="radio" checked name="household">
 //             <label for="Single">Red Fish</label>
 //           </div>
-//           <div class="pui-toggle__content">
-//             <input class="pui-toggle__input" id="household" type="radio" name="household">
+//           <div class="toggle__content">
+//             <input class="toggle__input" id="household" type="radio" name="household">
 //             <label for="household">Blue Fish</label>
 //           </div>
 //         </div>
 //       </fieldset>
-//       <fieldset class="block pui-form__field">
+//       <fieldset class="block form__field">
 //         <legend id="radio-heading">Pick Some Letters</legend>
 //         <div class="block-container" role="radiogroup" aria-labelledby="radio-heading">
 //           <div class="block-3 my-2 px-1">
@@ -115,7 +115,7 @@
 //           </div>
 //         </div>
 //       </fieldset>
-//       <div class="pui-form__field pui-form__button-group">
+//       <div class="form__field form__button-group">
 //         <button class="button button--post button--lg">Submit</button>
 //       </div>
 //     </form>
@@ -123,18 +123,18 @@
 // </div>
 // </div>
 // <div class="block">
-// <div class="pui-info-box pui-info-box--left">
+// <div class="info-box info-box--left">
 //   <a href="https://ritterim.com" class="toggle-hidden--left" aria-label="Toggle">Text Link - Left info box</a>
-//   <div class="pui-info-box__content hidden">
-//     <button class="button pui-info-box__close">
+//   <div class="info-box__content hidden">
+//     <button class="button info-box__close">
 //       Close <i class="pi-times" aria-hidden="hidden"></i>
 //     </button>
-//     <form action="" class="block-container block-mb-4 pui-form">
-//       <label for="dob" class="block pui-form__field has-icon">Birthday
+//     <form action="" class="block-container block-mb-4 form">
+//       <label for="dob" class="block form__field has-icon">Birthday
 //         <input id="dob" type="date" placeholder="DD/MM/YYYY">
 //         <i class="pi-calendar text-skyblue background-white"></i>
 //       </label>
-//       <fieldset class="block pui-form__field">
+//       <fieldset class="block form__field">
 //         <legend id="radio-heading">Pick Some Letters</legend>
 //         <div class="block-container" role="radiogroup" aria-labelledby="radio-heading">
 //           <div class="block-3 my-2 px-1">
@@ -199,7 +199,7 @@
 //           </div>
 //         </div>
 //       </fieldset>
-//       <div class="pui-form__field pui-form__button-group">
+//       <div class="form__field form__button-group">
 //         <button class="button button--post button--lg">Submit</button>
 //       </div>
 //     </form>
@@ -210,7 +210,8 @@
 //
 // Styleguide Components.info
 
-.pui-info-box {
+.pui-info-box,
+.info-box {
   $self: &;
   position: relative;
 

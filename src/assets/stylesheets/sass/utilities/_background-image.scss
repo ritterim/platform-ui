@@ -10,7 +10,7 @@
 // From there, use data attributes to change the look of the background image.
 // 
 // See the example below to see it all come together. You may notice a `ratio-` class on the image container. We talk
-// more about that [here.](/section-utilities.html#pui-utilities-backgroundratio)
+// more about that [here.](/section-utilities.html#utilities-backgroundratio)
 // 
 // | Class | Data Attribute(s) | Scenarios |
 // |---|---|---|
@@ -111,11 +111,11 @@
 // || `data-gradient-fallback`| Add a fallback `background-color` |
 // 
 // <div class="mb-4"></div>
-// Keep in mind you can use platform UI [color variables](/section-color.html) as well. Something like `data-gradient-start="var(--pui-navy)"`
+// Keep in mind you can use platform UI [color variables](/section-color.html) as well. Something like `data-gradient-start="var(--navy)"`
 // will work just fine.
 // 
 // You can also change the distance of your colors by adding a perceentage in the data attribute value for `data-gradient-start` and or
-// `data-gradient-start`. Something like `data-gradient-start="var(--pui-navy) 20%"` would render just fine. See the first example.
+// `data-gradient-start`. Something like `data-gradient-start="var(--navy) 20%"` would render just fine. See the first example.
 // 
 // Markup:
 // <div class="block-container tablet-up-2 laptop-up-4 blocks my-3 px-2">
@@ -133,27 +133,27 @@
 //     <div 
 //          class="linear-gradient ratio-16_9"
 //          data-gradient-direction="90deg"
-//          data-gradient-start="var(--pui-navy)"
-//          data-gradient-stop="var(--pui-blue)"
-//          data-gradient-fallback="var(--pui-navy)">
+//          data-gradient-start="var(--navy)"
+//          data-gradient-stop="var(--blue)"
+//          data-gradient-fallback="var(--navy)">
 //     </div>
 //   </div>
 //   <div class="block">
 //     <div 
 //          class="linear-gradient ratio-16_9"
 //          data-gradient-direction="to left top"
-//          data-gradient-start="var(--pui-violet)"
-//          data-gradient-stop="var(--pui-purple)"
-//          data-gradient-fallback="var(--pui-purple)">
+//          data-gradient-start="var(--violet)"
+//          data-gradient-stop="var(--purple)"
+//          data-gradient-fallback="var(--purple)">
 //     </div>
 //   </div>
 //   <div class="block">
 //     <div 
 //          class="linear-gradient background-image ratio-16_9"
 //          data-gradient-direction="to right"
-//          data-gradient-start="var(--pui-green)"
+//          data-gradient-start="var(--green)"
 //          data-gradient-stop="transparent"
-//          data-gradient-fallback="var(--pui-green)"
+//          data-gradient-fallback="var(--green)"
 //          data-background-image="http://placeimg.com/640/360/nature" >
 //     </div>
 //   </div>
@@ -177,9 +177,9 @@
 //     <div 
 //          class="linear-gradient background-image ratio-16_9"
 //          data-gradient-direction="to right"
-//          data-gradient-start="var(--pui-green)"
+//          data-gradient-start="var(--green)"
 //          data-gradient-stop="transparent"
-//          data-gradient-fallback="var(--pui-green)"
+//          data-gradient-fallback="var(--green)"
 //          data-background-image="http://placeimg.com/640/360/nature" >
 //     </div>
 //   </div>

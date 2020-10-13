@@ -24,47 +24,47 @@
     *  See src/Platform/Content/css/sass/platform-ui-plugins.scss
     */
     .site-header--fixed {
-      height: calc(var(--pui-menu-height) * 2) !important;
+      height: calc(var(--menu-height) * 2) !important;
     }
 
     .site-header--fixed+.header-fixed {
-      margin-top: calc(var(--pui-menu-height) * 2) !important;
+      margin-top: calc(var(--menu-height) * 2) !important;
     }
 
     .site-header--fixed .site-menu-wrapper:nth-child(2) .site-menu.active,
     .site-menu-wrapper.site-header--fixed:nth-child(2) .site-menu.active {
-      max-height: calc(100vh - (var(--pui-menu-height) * 2));
+      max-height: calc(100vh - (var(--menu-height) * 2));
     }
 
     /* accordion stuff */
-    .pui-accordion--nested {
+    .accordion--nested {
       border: none;
       position: relative;
       z-index: 1;
     }
-    .pui-accordion--nested.active {
+    .accordion--nested.active {
       border: none;
       box-shadow: none;
     }
-    .pui-accordion--nested.active > .pui-accordion__content-nested {
+    .accordion--nested.active > .accordion__content-nested {
       display: flex;
     }
-    .pui-accordion--nested .pui-accordion__header {
+    .accordion--nested .accordion__header {
       font-weight: bold;
     }
-    .pui-accordion__content--nested {
+    .accordion__content--nested {
       position: relative;
       z-index: 11;
     }
-    .pui-accordion {
+    .accordion {
       z-index: 5;
       position: relative;
     }
-    .modal-open .pui-accordion {
+    .modal-open .accordion {
       position: static;
       z-index: 0;
     }
-    .pui-accordion .pui-drawer {
+    .accordion .drawer {
       padding: 6.5rem 2rem;
     }
     .top-accordion {
@@ -72,8 +72,8 @@
       z-index: 10;
     }
     .drop-target {
-      border: .3rem dashed var(--pui-light-mid);
-      color: var(--pui-light);
+      border: .3rem dashed var(--light-mid);
+      color: var(--light);
       font-size: 150%;
       font-weight: bold;
       text-align: center;
@@ -120,7 +120,7 @@
       padding: .5rem 1rem;
     }
     .hierarchy .hierarchy__item:before, .hierarchy .hierarchy__item:after {
-      background-color: var(--pui-light);
+      background-color: var(--light);
       content: "";
       position: absolute;
       left: 0;
@@ -419,16 +419,16 @@
   <main class="header-fixed background-light-mid flex--grow py-4 px-5">
     <div class="block-container blocks px-3 mb-4">
       <div class="block">
-        <div class="pui-tabs">
+        <div class="tabs">
           <input type="radio" id="tab-input-a" name="tabs" checked>
-          <label for="tab-input-a" class="pui-tab flex flex--justify-between">
+          <label for="tab-input-a" class="tab flex flex--justify-between">
             Master Uplines
             <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
           </label>
-          <div class="pui-tab-panel p-4">
-            <div class="block-container flex--justify-between pui-form mb-4">
-              <div class="block tablet-up-5 lg-tablet-up-4 laptop-up-3 pui-form">
-                <label for="filter" class="pui-form__field has-icon--right">Filter
+          <div class="tab-panel p-4">
+            <div class="block-container flex--justify-between form mb-4">
+              <div class="block tablet-up-5 lg-tablet-up-4 laptop-up-3 form">
+                <label for="filter" class="form__field has-icon--right">Filter
                   <input id="filter" type="search" placeholder="">
                   <i class="pi-search"></i>
                 </label>

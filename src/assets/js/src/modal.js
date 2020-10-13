@@ -1,13 +1,13 @@
-let closeModal = document.querySelectorAll('.pui-modal__close');
-let openModal = document.querySelectorAll('.pui-modal__open');
+let closeModal = document.querySelectorAll('.pui-modal__close, .modal__close');
+let openModal = document.querySelectorAll('.pui-modal__open, .modal__open');
 
 function modalClose(elm) {
-  elm.classList.add('pui-modal--closed');
+  elm.classList.add('pui-modal--closed', 'modal--closed');
   document.body.classList.remove('modal-open');
 }
 
 function modalOpen(elm) {
-  elm.classList.remove('pui-modal--closed');
+  elm.classList.remove('pui-modal--closed', 'modal--closed');
   document.body.classList.add('modal-open');
   elm.focus();
 }

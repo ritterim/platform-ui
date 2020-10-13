@@ -24,47 +24,47 @@
          *  See src/Platform/Content/css/sass/platform-ui-plugins.scss
          */
     .site-header--fixed {
-      height: calc(var(--pui-menu-height) * 2) !important;
+      height: calc(var(--menu-height) * 2) !important;
     }
 
     .site-header--fixed+.header-fixed {
-      margin-top: calc(var(--pui-menu-height) * 2) !important;
+      margin-top: calc(var(--menu-height) * 2) !important;
     }
 
     .site-header--fixed .site-menu-wrapper:nth-child(2) .site-menu.active,
     .site-menu-wrapper.site-header--fixed:nth-child(2) .site-menu.active {
-      max-height: calc(100vh - (var(--pui-menu-height) * 2));
+      max-height: calc(100vh - (var(--menu-height) * 2));
     }
 
     /* accordion stuff */
-    .pui-accordion--nested {
+    .accordion--nested {
       border: none;
       position: relative;
       z-index: 1;
     }
-    .pui-accordion--nested.active {
+    .accordion--nested.active {
       border: none;
       box-shadow: none;
     }
-    .pui-accordion--nested.active > .pui-accordion__content-nested {
+    .accordion--nested.active > .accordion__content-nested {
       display: flex;
     }
-    .pui-accordion--nested .pui-accordion__header {
+    .accordion--nested .accordion__header {
       font-weight: bold;
     }
-    .pui-accordion__content--nested {
+    .accordion__content--nested {
       position: relative;
       z-index: 11;
     }
-    .pui-accordion {
+    .accordion {
       z-index: 5;
       position: relative;
     }
-    .modal-open .pui-accordion {
+    .modal-open .accordion {
       position: static;
       z-index: 0;
     }
-    .pui-accordion .pui-drawer {
+    .accordion .drawer {
       padding: 6.5rem 2rem;
     }
     .top-accordion {
@@ -72,8 +72,8 @@
       z-index: 10;
     }
     .drop-target {
-      border: .3rem dashed var(--pui-light-mid);
-      color: var(--pui-light);
+      border: .3rem dashed var(--light-mid);
+      color: var(--light);
       font-size: 150%;
       font-weight: bold;
       text-align: center;
@@ -377,13 +377,13 @@
   <main class="header-fixed background-light-mid flex--grow py-4 px-5">
     <div class="block-container blocks px-3 mb-4">
       <div class="block">
-        <div class="pui-tabs">
+        <div class="tabs">
           <input type="radio" id="tab-input-a" name="tabs" checked>
-          <label for="tab-input-a" class="pui-tab flex flex--justify-between">
+          <label for="tab-input-a" class="tab flex flex--justify-between">
             Active
             <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
           </label>
-          <div class="pui-tab-panel p-4">
+          <div class="tab-panel p-4">
             <div class="block-container flex--justify-between">
               <div class="block tablet-up-4 flex flex--align-center mb-3">
                 <div class="block-container flex--align-end w-100 py-2">
@@ -401,13 +401,13 @@
                     class="pi-filter"></i></button>
                 <button data-button-text="Export" aria-label="Export" class="button button--secondary mr-2"><i
                     aria-hidden="true" class="pi-download"></i></button>
-                <button data-modal="large-modal" class="button pui-modal__open">
+                <button data-modal="large-modal" class="button modal__open">
                   Add <i aria-hidden="true" class="pi-plus"></i>
                 </button>
               </div>
             </div>
-            <div class="pui-accordion active">
-              <div class="block-container flex--justify-between pui-accordion__header pointer px-2" tabindex="0">
+            <div class="accordion active">
+              <div class="block-container flex--justify-between accordion__header pointer px-2" tabindex="0">
                 <div class="block tablet-up-4 flex flex--column px-2 py-3">
                   <span class="text-med-blue">Humana</span>
                   <span title="Direct Pay Test (2020)" class="truncate-with-ellipsis">
@@ -463,15 +463,15 @@
                   </div>
                 </div>
               </div>
-              <div class="pui-accordion__content p-3 fade-in-from-none-enter-active">
+              <div class="accordion__content p-3 fade-in-from-none-enter-active">
                 <div class="block-container blocks px-3">
                   <div class="block">
                     <div class="mb-3">
-                      <div class="block-container blocks p-2 tablet-up-2 pui-form">
+                      <div class="block-container blocks p-2 tablet-up-2 form">
                         <div class="block">
-                          <label class="pui-form__field">
+                          <label class="form__field">
                             Set contract status to
-                            <div class="pui-form__select-wrapper">
+                            <div class="form__select-wrapper">
                               <select>
                                 <option value="Appointed">Appointed</option>
                                 <option value="Appointed - Overrides Only">Appointed - Overrides Only</option>
@@ -505,20 +505,20 @@
                       </div>
                     </div>
                     <div class="mb-3">
-                      <form action="" class="pui-form block-container tablet-up-3 laptop-up-4 desktop-up-5 blocks mb-3 p-2">
+                      <form action="" class="form block-container tablet-up-3 laptop-up-4 desktop-up-5 blocks mb-3 p-2">
                         <div class="block">
-                          <label for="awn" class="pui-form__field">General AWN
+                          <label for="awn" class="form__field">General AWN
                             <input id="awn" type="text" placeholder="9006591">
                           </label>
                         </div>
                         <div class="block">
-                          <label for="advance-amount" class="pui-form__field">Advance Amount
+                          <label for="advance-amount" class="form__field">Advance Amount
                             <input id="advance-amount" type="text" placeholder="9006591">
                           </label>
                         </div>
                         <div class="block">
-                          <label for="Option" class="pui-form__field">Level
-                            <div class="pui-form__select-wrapper">
+                          <label for="Option" class="form__field">Level
+                            <div class="form__select-wrapper">
                               <select name="Option Select" id="Option">
                                 <option value="Option1">Option 1</option>
                                 <option value="Option2">Option 2</option>
@@ -531,14 +531,14 @@
                           </label>
                         </div>
                         <div class="block">
-                          <fieldset class="pui-form__field">
+                          <fieldset class="form__field">
                             <legend>Annual Rollover</legend>
-                            <div class="pui-toggle">
-                              <div class="pui-toggle__content">
+                            <div class="toggle">
+                              <div class="toggle__content">
                                 <input id="tall" type="radio" checked="" name="height">
                                 <label for="tall"><i class="pi-check pi-heavy"></i> Yes</label>
                               </div>
-                              <div class="pui-toggle__content">
+                              <div class="toggle__content">
                                 <input id="short" type="radio" name="height">
                                 <label for="short"><i class="pi-check pi-heavy"></i> No</label>
                               </div>
@@ -546,13 +546,13 @@
                           </fieldset>
                         </div>
                         <div class="block">
-                          <label for="upline" class="pui-form__field has-icon--right">Upline
+                          <label for="upline" class="form__field has-icon--right">Upline
                             <input id="upline" type="search" placeholder="">
                             <i class="pi-search background-white"></i>
                           </label>
                         </div>
                         <div class="block">
-                          <label for="signing-agent" class="pui-form__field has-icon--right">Signing Agent
+                          <label for="signing-agent" class="form__field has-icon--right">Signing Agent
                             <input id="signing-agent" type="search" placeholder="">
                             <i class="pi-search background-white"></i>
                           </label>
@@ -568,9 +568,9 @@
                       </div>
                       <div class="block-container tablet-up-3">
                         <div class="block">
-                          <div class="pui-card flex--center-content flex--column background-skyblue-alpha-1 border--color-skyblue">
-                            <div class="pui-stat pui-stat--md text-salmon">
-                              <span class="pui-stat__number">0</span>
+                          <div class="card flex--center-content flex--column background-skyblue-alpha-1 border--color-skyblue">
+                            <div class="stat stat--md text-salmon">
+                              <span class="stat__number">0</span>
                             </div>
                             <span>
                               <i class="pi-users text-light mr-2"></i><a href="#">Downlines</a>  
@@ -578,13 +578,13 @@
                           </div>
                         </div>
                           <div class="block">
-                          <div class="pui-card flex--center-content flex--column background-skyblue-alpha-2 border--color-skyblue">
+                          <div class="card flex--center-content flex--column background-skyblue-alpha-2 border--color-skyblue">
                             <a 
                               href="#" 
-                              class="pui-stat pui-stat--md text-salmon" 
+                              class="stat stat--md text-salmon" 
                               data-stat-label="Really Long Company Name" 
                               aria-label="Really Long Company Name">
-                              <span class="pui-stat__number">7</span>
+                              <span class="stat__number">7</span>
                             </a>
                             <span>
                               <i class="pi-user-solid text-light mr-2"></i><a href="#">Principal Name</a>  
@@ -596,13 +596,13 @@
                           </div>
                         </div>
                           <div class="block">
-                          <div class="pui-card flex--center-content flex--column background-skyblue-alpha-3 border--color-skyblue">
+                          <div class="card flex--center-content flex--column background-skyblue-alpha-3 border--color-skyblue">
                             <a 
                               href="#" 
-                              class="pui-stat pui-stat--md text-salmon" 
+                              class="stat stat--md text-salmon" 
                               data-stat-label="Company Name" 
                               aria-label="Company Name">
-                              <span class="pui-stat__number">10</span>
+                              <span class="stat__number">10</span>
                             </a>
                             <span>
                               <i class="pi-user-solid text-light mr-2"></i><a href="#">Principal Name</a>  
@@ -817,15 +817,15 @@
                           </div>
                         </div>
                         <div class="block-container">
-                          <fieldset class="pui-form__field pui-form block block--shrink">
+                          <fieldset class="form__field form block block--shrink">
                             <legend class="sr-only">Select All States or Deselect all</legend>
-                            <div class="pui-toggle mt-0">
-                              <div class="pui-toggle__content">
-                                <input class="pui-toggle__input" id="all-states-1" type="radio" checked="" name="states-active">
+                            <div class="toggle mt-0">
+                              <div class="toggle__content">
+                                <input class="toggle__input" id="all-states-1" type="radio" checked="" name="states-active">
                                 <label for="all-states-1"><i class="pi-check"></i> All States</label>
                               </div>
-                              <div class="pui-toggle__content">
-                                <input class="pui-toggle__input" id="deselect-1" type="radio" name="states-active">
+                              <div class="toggle__content">
+                                <input class="toggle__input" id="deselect-1" type="radio" name="states-active">
                                 <label for="deselect-1"><i class="pi-check"></i> Deselect</label>
                               </div>
                             </div>
@@ -833,8 +833,8 @@
                         </div>
                       </div>
                     </div>
-                    <div class="pui-accordion pui-accordion--nested my-2 active">
-                      <div class="pui-accordion__header p-2 block-container flex--justify-between">
+                    <div class="accordion accordion--nested my-2 active">
+                      <div class="accordion__header p-2 block-container flex--justify-between">
                         <div class="flex--center-content">
                           <button title="Show Notes" aria-label="Show Notes" class="button--plain flex px-3">
                             <i aria-hidden="true" class="pi-angle-right pi-lg transition rotate-90"></i>
@@ -848,14 +848,14 @@
                           <button class="button">View All <i aria-hidden="true" class="pi-arrow-right"></i></button>
                         </div>
                       </div>
-                      <div class="pui-accordion__content pui-accordion__content--nested p-3 active">
+                      <div class="accordion__content accordion__content--nested p-3 active">
                         <div class="block-container blocks tablet-up-3 flex--align-start overflow-x--scroll">
                           <div class="block">
-                            <div class="background-note pui-card m-2 py-3 pl-3 pr-0">
+                            <div class="background-note card m-2 py-3 pl-3 pr-0">
                               <div class="block-container">
                                 <div class="block-10">
-                                  <div class="pui-card__header">
-                                    <strong title="Last edited by Ted Krueger 08/12/2020" class="pui-card__group">
+                                  <div class="card__header">
+                                    <strong title="Last edited by Ted Krueger 08/12/2020" class="card__group">
                                       <i aria-hidden="true" class="pi-speech-bubble"></i>
                                       Ted Krueger 08/12/2020
                                     </strong>
@@ -903,8 +903,8 @@
                         </div>
                       </div>
                     </div>
-                    <div class="pui-accordion pui-accordion--nested my-2">
-                      <div class="pui-accordion__header p-2 block-container flex--justify-between">
+                    <div class="accordion accordion--nested my-2">
+                      <div class="accordion__header p-2 block-container flex--justify-between">
                         <div class="flex--center-content">
                           <button title="Show Notes" aria-label="Show Notes" class="button--plain flex px-3">
                             <i aria-hidden="true" class="pi-angle-right pi-lg transition"></i>
@@ -918,23 +918,23 @@
                           <i aria-hidden="true" class="pi-plus"></i></button>
                         </div>
                       </div>
-                      <div class="pui-accordion__content pui-accordion__content--nested p-3">
+                      <div class="accordion__content accordion__content--nested p-3">
                         <div class="mb-4">
                           <p class="mb-0"><strong>2019</strong></p>
-                          <div class="pui-form flex flex--align-end mb-3">
+                          <div class="form flex flex--align-end mb-3">
                             <div class="pill background-navy text-white mr-2">
                               HMO <i aria-hidden="true" class="ml-2 pi-times-solid"></i>
                             </div>
-                            <label for="hmo-certificate" class="pui-form__field">
+                            <label for="hmo-certificate" class="form__field">
                               <span class="sr-only">Enter a date</span>
                               <input id="hmo-certificate" type="date" min="2019-01-01" max="2019-12-31">
                             </label>
                           </div>
-                          <div class="pui-form flex flex--align-end mb-3">
+                          <div class="form flex flex--align-end mb-3">
                             <div class="pill background-navy text-white mr-2">
                               PPO <i aria-hidden="true" class="ml-2 pi-times-solid"></i>
                             </div>
-                            <label for="PPO-certificate" class="pui-form__field">
+                            <label for="PPO-certificate" class="form__field">
                               <span class="sr-only">Enter a date</span>
                               <input id="PPO-certificate" type="date" value="2019-06-01" min="2019-01-01" max="2019-12-31">
                             </label>
@@ -942,11 +942,11 @@
                         </div>
                         <div class="mb-4">
                           <p class="mb-0"><strong>2020</strong></p>
-                          <div class="pui-form flex flex--align-end mb-3">
+                          <div class="form flex flex--align-end mb-3">
                             <div class="pill background-navy text-white mr-2">
                               PDP <i aria-hidden="true" class="ml-2 pi-times-solid"></i>
                             </div>
-                            <label for="PDP-certificate" class="pui-form__field">
+                            <label for="PDP-certificate" class="form__field">
                               <span class="sr-only">Enter a date</span>
                               <input id="PDP-certificate" type="date" value="2020-08-20" min="2020-01-01" max="2020-12-31">
                             </label>
@@ -954,13 +954,13 @@
                         </div>
                         <!-- For messaging purposes only. :point-down-finger-emoji -->
                         <p>If there are no certifications, this message will display.</p> 
-                        <div class="pui-message pui-message--info">
+                        <div class="message message--info">
                           <p>This product has no available certifications. See its contract template for more details.</p>
                         </div>
                       </div>
                     </div>
-                    <div class="pui-accordion pui-accordion--nested my-2">
-                      <div class="pui-accordion__header p-2 block-container flex--justify-between">
+                    <div class="accordion accordion--nested my-2">
+                      <div class="accordion__header p-2 block-container flex--justify-between">
                         <div class="flex--center-content">
                           <button title="Show Notes" aria-label="Show Notes" class="button--plain flex px-3">
                             <i aria-hidden="true" class="pi-angle-right pi-lg transition"></i>
@@ -970,19 +970,19 @@
                           <div class="ml-1 pill pill--circle p-0">0</div>
                         </div>
                         <div class="flex flex--align-center">
-                          <button class="button pui-modal__open" data-modal="request-contract-work-modal">
+                          <button class="button modal__open" data-modal="request-contract-work-modal">
                             Request <i aria-hidden="true" class="pi-plus"></i>
                           </button>
                         </div>
                       </div>
-                      <div class="pui-accordion__content pui-accordion__content--nested p-3">
-                        <div class="pui-message pui-message--info">
+                      <div class="accordion__content accordion__content--nested p-3">
+                        <div class="message message--info">
                           You have no Contract Work requested.
                         </div>
                       </div>
                     </div>
-                    <div class="pui-accordion pui-accordion--nested my-2">
-                      <div class="pui-accordion__header p-2 block-container flex--justify-between">
+                    <div class="accordion accordion--nested my-2">
+                      <div class="accordion__header p-2 block-container flex--justify-between">
                         <div class="flex--center-content">
                           <button title="Show Notes" aria-label="Show Notes" class="button--plain flex px-3">
                             <i aria-hidden="true" class="pi-angle-right pi-lg transition"></i>
@@ -996,7 +996,7 @@
                           <i aria-hidden="true" class="pi-plus"></i></button>
                         </div>
                       </div>
-                      <div class="pui-accordion__content pui-accordion__content-nested overflow-x--auto">
+                      <div class="accordion__content accordion__content-nested overflow-x--auto">
                         <div>
                           <div data-v-01488a82="" class="w-100">
                             <form data-v-01488a82="">
@@ -1014,7 +1014,7 @@
                             <button disabled="disabled" class="button button--post">Submit</button>
                           </div>
                         </div>
-                        <div class="pui-message pui-message--info">
+                        <div class="message message--info">
                           There are no Files.
                         </div>
                       </div>
@@ -1025,26 +1025,26 @@
             </div>
           </div>
           <input type="radio" id="tab-input-b" name="tabs">
-          <label for="tab-input-b" class="pui-tab flex flex--justify-between">
+          <label for="tab-input-b" class="tab flex flex--justify-between">
             Inactive
             <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
           </label>
-          <div class="pui-tab-panel p-4">
+          <div class="tab-panel p-4">
             <p>See Attachments tab</p>
           </div>
           <input type="radio" id="tab-input-c" name="tabs">
-          <label for="tab-input-c" class="pui-tab flex flex--justify-between">
+          <label for="tab-input-c" class="tab flex flex--justify-between">
             Downlines
             <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
           </label>
-          <div class="pui-tab-panel p-4">
+          <div class="tab-panel p-4">
             <div class="block-container flex--justify-between">
               <div class="block tablet-up-8 flex flex--align-center mb-3">
-                <div class="block-container tablet-up-2 lg-tablet-up-3 w-100 blocks p-2 pui-form">
+                <div class="block-container tablet-up-2 lg-tablet-up-3 w-100 blocks p-2 form">
                   <div class="block">
-                    <label class="pui-form__field">
+                    <label class="form__field">
                       Agent/Agency
-                      <div class="pui-form__select-wrapper">
+                      <div class="form__select-wrapper">
                         <select>
                           <option value="Gregory Gudis">Gregory Gudis</option>
                           <option value="Bachmeier, Gudis & Associates LLC">Bachmeier, Gudis & Associates LLC</option>
@@ -1053,13 +1053,13 @@
                     </label>
                   </div>
                   <div class="block">
-                    <label for="upline" class="pui-form__field has-icon--right">Upline
+                    <label for="upline" class="form__field has-icon--right">Upline
                       <input id="upline" type="search" placeholder="">
                       <i class="pi-search background-white"></i>
                     </label>
                   </div>
                   <div class="block">
-                    <label for="signing-agent" class="pui-form__field has-icon--right">Signing Agent
+                    <label for="signing-agent" class="form__field has-icon--right">Signing Agent
                       <input id="signing-agent" type="search" placeholder="">
                       <i class="pi-search background-white"></i>
                     </label>
@@ -1075,7 +1075,7 @@
                     class="pi-filter"></i></button>
                 <button data-button-text="Export" aria-label="Export" class="button button--secondary mx-1"><i
                     aria-hidden="true" class="pi-download"></i></button>
-                <button data-modal="large-modal" class="button pui-modal__open">
+                <button data-modal="large-modal" class="button modal__open">
                   Add <i aria-hidden="true" class="pi-plus"></i>
                 </button>
               </div>
@@ -1104,8 +1104,8 @@
                 </div>
               </div> 
               <div class="pl-4">
-                <div class="pui-accordion">
-                  <div class="block-container flex--justify-between pui-accordion__header pointer px-2" tabindex="0">
+                <div class="accordion">
+                  <div class="block-container flex--justify-between accordion__header pointer px-2" tabindex="0">
                     <div class="block tablet-up-4 flex flex--column px-2 py-3">
                       <span class="text-med-blue">Humana</span>
                       <span title="Direct Pay Test (2020)" class="truncate-with-ellipsis">
@@ -1161,15 +1161,15 @@
                       </div>
                     </div>
                   </div>
-                  <div class="pui-accordion__content p-3 fade-in-from-none-enter-active">
+                  <div class="accordion__content p-3 fade-in-from-none-enter-active">
                     <div class="block-container blocks px-3">
                       <div class="block">
                         <div class="mb-3">
-                          <div class="block-container blocks p-2 tablet-up-2 pui-form">
+                          <div class="block-container blocks p-2 tablet-up-2 form">
                             <div class="block">
-                              <label class="pui-form__field">
+                              <label class="form__field">
                                 Set contract status to
-                                <div class="pui-form__select-wrapper">
+                                <div class="form__select-wrapper">
                                   <select>
                                     <option value="Appointed">Appointed</option>
                                     <option value="Appointed - Overrides Only">Appointed - Overrides Only</option>
@@ -1203,20 +1203,20 @@
                           </div>
                         </div>
                         <div class="mb-3">
-                          <form action="" class="pui-form block-container tablet-up-3 laptop-up-4 desktop-up-5 blocks mb-3 p-2">
+                          <form action="" class="form block-container tablet-up-3 laptop-up-4 desktop-up-5 blocks mb-3 p-2">
                             <div class="block">
-                              <label for="awn" class="pui-form__field">General AWN
+                              <label for="awn" class="form__field">General AWN
                                 <input id="awn" type="text" placeholder="9006591">
                               </label>
                             </div>
                             <div class="block">
-                              <label for="advance-amount" class="pui-form__field">Advance Amount
+                              <label for="advance-amount" class="form__field">Advance Amount
                                 <input id="advance-amount" type="text" placeholder="9006591">
                               </label>
                             </div>
                             <div class="block">
-                              <label for="Option" class="pui-form__field">Level
-                                <div class="pui-form__select-wrapper">
+                              <label for="Option" class="form__field">Level
+                                <div class="form__select-wrapper">
                                   <select name="Option Select" id="Option">
                                     <option value="Option1">Option 1</option>
                                     <option value="Option2">Option 2</option>
@@ -1229,14 +1229,14 @@
                               </label>
                             </div>
                             <div class="block">
-                              <fieldset class="pui-form__field">
+                              <fieldset class="form__field">
                                 <legend>Annual Rollover</legend>
-                                <div class="pui-toggle">
-                                  <div class="pui-toggle__content">
+                                <div class="toggle">
+                                  <div class="toggle__content">
                                     <input id="tall" type="radio" checked="" name="height">
                                     <label for="tall"><i class="pi-check pi-heavy"></i> Yes</label>
                                   </div>
-                                  <div class="pui-toggle__content">
+                                  <div class="toggle__content">
                                     <input id="short" type="radio" name="height">
                                     <label for="short"><i class="pi-check pi-heavy"></i> No</label>
                                   </div>
@@ -1244,13 +1244,13 @@
                               </fieldset>
                             </div>
                             <div class="block">
-                              <label for="upline" class="pui-form__field has-icon--right">Upline
+                              <label for="upline" class="form__field has-icon--right">Upline
                                 <input id="upline" type="search" placeholder="">
                                 <i class="pi-search background-white"></i>
                               </label>
                             </div>
                             <div class="block">
-                              <label for="signing-agent" class="pui-form__field has-icon--right">Signing Agent
+                              <label for="signing-agent" class="form__field has-icon--right">Signing Agent
                                 <input id="signing-agent" type="search" placeholder="">
                                 <i class="pi-search background-white"></i>
                               </label>
@@ -1266,9 +1266,9 @@
                           </div>
                           <div class="block-container tablet-up-3">
                             <div class="block">
-                              <div class="pui-card flex--center-content flex--column background-skyblue-alpha-1 border--color-skyblue">
-                                <div class="pui-stat pui-stat--md text-salmon">
-                                  <span class="pui-stat__number">0</span>
+                              <div class="card flex--center-content flex--column background-skyblue-alpha-1 border--color-skyblue">
+                                <div class="stat stat--md text-salmon">
+                                  <span class="stat__number">0</span>
                                 </div>
                                 <span>
                                   <i class="pi-users text-light mr-2"></i><a href="#">Downlines</a>  
@@ -1276,13 +1276,13 @@
                               </div>
                             </div>
                               <div class="block">
-                              <div class="pui-card flex--center-content flex--column background-skyblue-alpha-2 border--color-skyblue">
+                              <div class="card flex--center-content flex--column background-skyblue-alpha-2 border--color-skyblue">
                                 <a 
                                   href="#" 
-                                  class="pui-stat pui-stat--md text-salmon" 
+                                  class="stat stat--md text-salmon" 
                                   data-stat-label="Really Long Company Name" 
                                   aria-label="Really Long Company Name">
-                                  <span class="pui-stat__number">7</span>
+                                  <span class="stat__number">7</span>
                                 </a>
                                 <span>
                                   <i class="pi-user-solid text-light mr-2"></i><a href="#">Principal Name</a>  
@@ -1294,13 +1294,13 @@
                               </div>
                             </div>
                               <div class="block">
-                              <div class="pui-card flex--center-content flex--column background-skyblue-alpha-3 border--color-skyblue">
+                              <div class="card flex--center-content flex--column background-skyblue-alpha-3 border--color-skyblue">
                                 <a 
                                   href="#" 
-                                  class="pui-stat pui-stat--md text-salmon" 
+                                  class="stat stat--md text-salmon" 
                                   data-stat-label="Company Name" 
                                   aria-label="Company Name">
-                                  <span class="pui-stat__number">10</span>
+                                  <span class="stat__number">10</span>
                                 </a>
                                 <span>
                                   <i class="pi-user-solid text-light mr-2"></i><a href="#">Principal Name</a>  
@@ -1491,15 +1491,15 @@
                               </div>
                             </div>
                             <div class="block-container">
-                              <fieldset class="pui-form__field pui-form block block--shrink">
+                              <fieldset class="form__field form block block--shrink">
                                 <legend class="sr-only">Select All States or Deselect all</legend>
-                                <div class="pui-toggle mt-0">
-                                  <div class="pui-toggle__content">
-                                    <input class="pui-toggle__input" id="all-states-1" type="radio" checked="" name="states">
+                                <div class="toggle mt-0">
+                                  <div class="toggle__content">
+                                    <input class="toggle__input" id="all-states-1" type="radio" checked="" name="states">
                                     <label for="all-states-1"><i class="pi-check"></i> All States</label>
                                   </div>
-                                  <div class="pui-toggle__content">
-                                    <input class="pui-toggle__input" id="deselect-1" type="radio" name="states">
+                                  <div class="toggle__content">
+                                    <input class="toggle__input" id="deselect-1" type="radio" name="states">
                                     <label for="deselect-1"><i class="pi-check"></i> Deselect</label>
                                   </div>
                                 </div>
@@ -1507,8 +1507,8 @@
                             </div>
                           </div>
                         </div>
-                        <div class="pui-accordion pui-accordion--nested my-2 active">
-                          <div class="pui-accordion__header p-2 block-container flex--justify-between">
+                        <div class="accordion accordion--nested my-2 active">
+                          <div class="accordion__header p-2 block-container flex--justify-between">
                             <div class="flex--center-content">
                               <button title="Show Notes" aria-label="Show Notes" class="button--plain flex px-3">
                                 <i aria-hidden="true" class="pi-angle-right pi-lg transition rotate-90"></i>
@@ -1522,14 +1522,14 @@
                               <button class="button">View All <i aria-hidden="true" class="pi-arrow-right"></i></button>
                             </div>
                           </div>
-                          <div class="pui-accordion__content pui-accordion__content--nested p-3 active">
+                          <div class="accordion__content accordion__content--nested p-3 active">
                             <div class="block-container blocks tablet-up-3 flex--align-start overflow-x--scroll">
                               <div class="block">
-                                <div class="background-note pui-card m-2 py-3 pl-3 pr-0">
+                                <div class="background-note card m-2 py-3 pl-3 pr-0">
                                   <div class="block-container">
                                     <div class="block-10">
-                                      <div class="pui-card__header">
-                                        <strong title="Last edited by Ted Krueger 08/12/2020" class="pui-card__group">
+                                      <div class="card__header">
+                                        <strong title="Last edited by Ted Krueger 08/12/2020" class="card__group">
                                           <i aria-hidden="true" class="pi-speech-bubble"></i>
                                           Ted Krueger 08/12/2020
                                         </strong>
@@ -1577,8 +1577,8 @@
                             </div>
                           </div>
                         </div>
-                        <div class="pui-accordion pui-accordion--nested my-2">
-                          <div class="pui-accordion__header p-2 block-container flex--justify-between">
+                        <div class="accordion accordion--nested my-2">
+                          <div class="accordion__header p-2 block-container flex--justify-between">
                             <div class="flex--center-content">
                               <button title="Show Notes" aria-label="Show Notes" class="button--plain flex px-3">
                                 <i aria-hidden="true" class="pi-angle-right pi-lg transition"></i>
@@ -1592,23 +1592,23 @@
                               <i aria-hidden="true" class="pi-plus"></i></button>
                             </div>
                           </div>
-                          <div class="pui-accordion__content pui-accordion__content--nested p-3">
+                          <div class="accordion__content accordion__content--nested p-3">
                             <div class="mb-4">
                               <p class="mb-0"><strong>2019</strong></p>
-                              <div class="pui-form flex flex--align-end mb-3">
+                              <div class="form flex flex--align-end mb-3">
                                 <div class="pill background-navy text-white mr-2">
                                   HMO <i aria-hidden="true" class="ml-2 pi-times-solid"></i>
                                 </div>
-                                <label for="hmo-certificate" class="pui-form__field">
+                                <label for="hmo-certificate" class="form__field">
                                   <span class="sr-only">Enter a date</span>
                                   <input id="hmo-certificate" type="date" min="2019-01-01" max="2019-12-31">
                                 </label>
                               </div>
-                              <div class="pui-form flex flex--align-end mb-3">
+                              <div class="form flex flex--align-end mb-3">
                                 <div class="pill background-navy text-white mr-2">
                                   PPO <i aria-hidden="true" class="ml-2 pi-times-solid"></i>
                                 </div>
-                                <label for="PPO-certificate" class="pui-form__field">
+                                <label for="PPO-certificate" class="form__field">
                                   <span class="sr-only">Enter a date</span>
                                   <input id="PPO-certificate" type="date" value="2019-06-01" min="2019-01-01" max="2019-12-31">
                                 </label>
@@ -1616,11 +1616,11 @@
                             </div>
                             <div class="mb-4">
                               <p class="mb-0"><strong>2020</strong></p>
-                              <div class="pui-form flex flex--align-end mb-3">
+                              <div class="form flex flex--align-end mb-3">
                                 <div class="pill background-navy text-white mr-2">
                                   PDP <i aria-hidden="true" class="ml-2 pi-times-solid"></i>
                                 </div>
-                                <label for="PDP-certificate" class="pui-form__field">
+                                <label for="PDP-certificate" class="form__field">
                                   <span class="sr-only">Enter a date</span>
                                   <input id="PDP-certificate" type="date" value="2020-08-20" min="2020-01-01" max="2020-12-31">
                                 </label>
@@ -1628,13 +1628,13 @@
                             </div>
                             <!-- For messaging purposes only. :point-down-finger-emoji -->
                             <p>If there are no certifications, this message will display.</p> 
-                            <div class="pui-message pui-message--info">
+                            <div class="message message--info">
                               <p>This product has no available certifications. See its contract template for more details.</p>
                             </div>
                           </div>
                         </div>
-                        <div class="pui-accordion pui-accordion--nested my-2">
-                          <div class="pui-accordion__header p-2 block-container flex--justify-between">
+                        <div class="accordion accordion--nested my-2">
+                          <div class="accordion__header p-2 block-container flex--justify-between">
                             <div class="flex--center-content">
                               <button title="Show Notes" aria-label="Show Notes" class="button--plain flex px-3">
                                 <i aria-hidden="true" class="pi-angle-right pi-lg transition"></i>
@@ -1644,19 +1644,19 @@
                               <div class="ml-1 pill pill--circle p-0">0</div>
                             </div>
                             <div class="flex flex--align-center">
-                              <button class="button pui-modal__open" data-modal="request-contract-work-modal">
+                              <button class="button modal__open" data-modal="request-contract-work-modal">
                                 Request <i aria-hidden="true" class="pi-plus"></i>
                               </button>
                             </div>
                           </div>
-                          <div class="pui-accordion__content pui-accordion__content--nested p-3">
-                            <div class="pui-message pui-message--info">
+                          <div class="accordion__content accordion__content--nested p-3">
+                            <div class="message message--info">
                               You have no Contract Work requested.
                             </div>
                           </div>
                         </div>
-                        <div class="pui-accordion pui-accordion--nested my-2">
-                          <div class="pui-accordion__header p-2 block-container flex--justify-between">
+                        <div class="accordion accordion--nested my-2">
+                          <div class="accordion__header p-2 block-container flex--justify-between">
                             <div class="flex--center-content">
                               <button title="Show Notes" aria-label="Show Notes" class="button--plain flex px-3">
                                 <i aria-hidden="true" class="pi-angle-right pi-lg transition"></i>
@@ -1670,7 +1670,7 @@
                               <i aria-hidden="true" class="pi-plus"></i></button>
                             </div>
                           </div>
-                          <div class="pui-accordion__content pui-accordion__content-nested overflow-x--auto">
+                          <div class="accordion__content accordion__content-nested overflow-x--auto">
                             <div>
                               <div data-v-01488a82="" class="w-100">
                                 <form data-v-01488a82="">
@@ -1688,7 +1688,7 @@
                                 <button disabled="disabled" class="button button--post">Submit</button>
                               </div>
                             </div>
-                            <div class="pui-message pui-message--info">
+                            <div class="message message--info">
                               There are no Files.
                             </div>
                           </div>
@@ -1697,8 +1697,8 @@
                     </div>
                   </div>
                 </div>
-                <div class="pui-accordion">
-                  <div class="block-container flex--justify-between pui-accordion__header pointer px-2" tabindex="0">
+                <div class="accordion">
+                  <div class="block-container flex--justify-between accordion__header pointer px-2" tabindex="0">
                     <div class="block tablet-up-4 flex flex--column px-2 py-3">
                       <span class="text-med-blue">Humana</span>
                       <span title="Direct Pay Test (2020)" class="truncate-with-ellipsis">
@@ -1755,8 +1755,8 @@
                     </div>
                   </div>
                 </div>
-                <div class="pui-accordion">
-                  <div class="block-container flex--justify-between pui-accordion__header pointer px-2" tabindex="0">
+                <div class="accordion">
+                  <div class="block-container flex--justify-between accordion__header pointer px-2" tabindex="0">
                     <div class="block tablet-up-4 flex flex--column px-2 py-3">
                       <span class="text-med-blue">Humana</span>
                       <span title="Direct Pay Test (2020)" class="truncate-with-ellipsis">
@@ -1813,8 +1813,8 @@
                     </div>
                   </div>
                 </div>
-                <div class="pui-accordion">
-                  <div class="block-container flex--justify-between pui-accordion__header pointer px-2" tabindex="0">
+                <div class="accordion">
+                  <div class="block-container flex--justify-between accordion__header pointer px-2" tabindex="0">
                     <div class="block tablet-up-4 flex flex--column px-2 py-3">
                       <span class="text-med-blue">Humana</span>
                       <span title="Direct Pay Test (2020)" class="truncate-with-ellipsis">
@@ -1885,8 +1885,8 @@
                 </div>
               </div> 
               <div class="pl-4">
-                <div class="pui-accordion">
-                  <div class="block-container flex--justify-between pui-accordion__header pointer px-2" tabindex="0">
+                <div class="accordion">
+                  <div class="block-container flex--justify-between accordion__header pointer px-2" tabindex="0">
                     <div class="block tablet-up-4 flex flex--column px-2 py-3">
                       <span class="text-med-blue">Humana</span>
                       <span title="Direct Pay Test (2020)" class="truncate-with-ellipsis">
@@ -1942,15 +1942,15 @@
                       </div>
                     </div>
                   </div>
-                  <div class="pui-accordion__content p-3 fade-in-from-none-enter-active">
+                  <div class="accordion__content p-3 fade-in-from-none-enter-active">
                     <div class="block-container blocks px-3">
                       <div class="block">
                         <div class="mb-3">
-                          <div class="block-container blocks p-2 tablet-up-2 pui-form">
+                          <div class="block-container blocks p-2 tablet-up-2 form">
                             <div class="block">
-                              <label class="pui-form__field">
+                              <label class="form__field">
                                 Set contract status to
-                                <div class="pui-form__select-wrapper">
+                                <div class="form__select-wrapper">
                                   <select>
                                     <option value="Appointed">Appointed</option>
                                     <option value="Appointed - Overrides Only">Appointed - Overrides Only</option>
@@ -1984,20 +1984,20 @@
                           </div>
                         </div>
                         <div class="mb-3">
-                          <form action="" class="pui-form block-container tablet-up-3 laptop-up-4 desktop-up-5 blocks mb-3 p-2">
+                          <form action="" class="form block-container tablet-up-3 laptop-up-4 desktop-up-5 blocks mb-3 p-2">
                             <div class="block">
-                              <label for="awn" class="pui-form__field">General AWN
+                              <label for="awn" class="form__field">General AWN
                                 <input id="awn" type="text" placeholder="9006591">
                               </label>
                             </div>
                             <div class="block">
-                              <label for="advance-amount" class="pui-form__field">Advance Amount
+                              <label for="advance-amount" class="form__field">Advance Amount
                                 <input id="advance-amount" type="text" placeholder="9006591">
                               </label>
                             </div>
                             <div class="block">
-                              <label for="Option" class="pui-form__field">Level
-                                <div class="pui-form__select-wrapper">
+                              <label for="Option" class="form__field">Level
+                                <div class="form__select-wrapper">
                                   <select name="Option Select" id="Option">
                                     <option value="Option1">Option 1</option>
                                     <option value="Option2">Option 2</option>
@@ -2010,14 +2010,14 @@
                               </label>
                             </div>
                             <div class="block">
-                              <fieldset class="pui-form__field">
+                              <fieldset class="form__field">
                                 <legend>Annual Rollover</legend>
-                                <div class="pui-toggle">
-                                  <div class="pui-toggle__content">
+                                <div class="toggle">
+                                  <div class="toggle__content">
                                     <input id="tall" type="radio" checked="" name="height">
                                     <label for="tall"><i class="pi-check pi-heavy"></i> Yes</label>
                                   </div>
-                                  <div class="pui-toggle__content">
+                                  <div class="toggle__content">
                                     <input id="short" type="radio" name="height">
                                     <label for="short"><i class="pi-check pi-heavy"></i> No</label>
                                   </div>
@@ -2025,13 +2025,13 @@
                               </fieldset>
                             </div>
                             <div class="block">
-                              <label for="upline" class="pui-form__field has-icon--right">Upline
+                              <label for="upline" class="form__field has-icon--right">Upline
                                 <input id="upline" type="search" placeholder="">
                                 <i class="pi-search background-white"></i>
                               </label>
                             </div>
                             <div class="block">
-                              <label for="signing-agent" class="pui-form__field has-icon--right">Signing Agent
+                              <label for="signing-agent" class="form__field has-icon--right">Signing Agent
                                 <input id="signing-agent" type="search" placeholder="">
                                 <i class="pi-search background-white"></i>
                               </label>
@@ -2047,9 +2047,9 @@
                           </div>
                           <div class="block-container tablet-up-3">
                             <div class="block">
-                              <div class="pui-card flex--center-content flex--column background-skyblue-alpha-1 border--color-skyblue">
-                                <div class="pui-stat pui-stat--md text-salmon">
-                                  <span class="pui-stat__number">0</span>
+                              <div class="card flex--center-content flex--column background-skyblue-alpha-1 border--color-skyblue">
+                                <div class="stat stat--md text-salmon">
+                                  <span class="stat__number">0</span>
                                 </div>
                                 <span>
                                   <i class="pi-users text-light mr-2"></i><a href="#">Downlines</a>  
@@ -2057,13 +2057,13 @@
                               </div>
                             </div>
                               <div class="block">
-                              <div class="pui-card flex--center-content flex--column background-skyblue-alpha-2 border--color-skyblue">
+                              <div class="card flex--center-content flex--column background-skyblue-alpha-2 border--color-skyblue">
                                 <a 
                                   href="#" 
-                                  class="pui-stat pui-stat--md text-salmon" 
+                                  class="stat stat--md text-salmon" 
                                   data-stat-label="Really Long Company Name" 
                                   aria-label="Really Long Company Name">
-                                  <span class="pui-stat__number">7</span>
+                                  <span class="stat__number">7</span>
                                 </a>
                                 <span>
                                   <i class="pi-user-solid text-light mr-2"></i><a href="#">Principal Name</a>  
@@ -2075,13 +2075,13 @@
                               </div>
                             </div>
                               <div class="block">
-                              <div class="pui-card flex--center-content flex--column background-skyblue-alpha-3 border--color-skyblue">
+                              <div class="card flex--center-content flex--column background-skyblue-alpha-3 border--color-skyblue">
                                 <a 
                                   href="#" 
-                                  class="pui-stat pui-stat--md text-salmon" 
+                                  class="stat stat--md text-salmon" 
                                   data-stat-label="Company Name" 
                                   aria-label="Company Name">
-                                  <span class="pui-stat__number">10</span>
+                                  <span class="stat__number">10</span>
                                 </a>
                                 <span>
                                   <i class="pi-user-solid text-light mr-2"></i><a href="#">Principal Name</a>  
@@ -2272,15 +2272,15 @@
                               </div>
                             </div>
                             <div class="block-container">
-                              <fieldset class="pui-form__field pui-form block block--shrink">
+                              <fieldset class="form__field form block block--shrink">
                                 <legend class="sr-only">Select All States or Deselect all</legend>
-                                <div class="pui-toggle mt-0">
-                                  <div class="pui-toggle__content">
-                                    <input class="pui-toggle__input" id="all-states-1" type="radio" checked="" name="states">
+                                <div class="toggle mt-0">
+                                  <div class="toggle__content">
+                                    <input class="toggle__input" id="all-states-1" type="radio" checked="" name="states">
                                     <label for="all-states-1"><i class="pi-check"></i> All States</label>
                                   </div>
-                                  <div class="pui-toggle__content">
-                                    <input class="pui-toggle__input" id="deselect-1" type="radio" name="states">
+                                  <div class="toggle__content">
+                                    <input class="toggle__input" id="deselect-1" type="radio" name="states">
                                     <label for="deselect-1"><i class="pi-check"></i> Deselect</label>
                                   </div>
                                 </div>
@@ -2288,8 +2288,8 @@
                             </div>
                           </div>
                         </div>
-                        <div class="pui-accordion pui-accordion--nested my-2 active">
-                          <div class="pui-accordion__header p-2 block-container flex--justify-between">
+                        <div class="accordion accordion--nested my-2 active">
+                          <div class="accordion__header p-2 block-container flex--justify-between">
                             <div class="flex--center-content">
                               <button title="Show Notes" aria-label="Show Notes" class="button--plain flex px-3">
                                 <i aria-hidden="true" class="pi-angle-right pi-lg transition rotate-90"></i>
@@ -2303,14 +2303,14 @@
                               <button class="button">View All <i aria-hidden="true" class="pi-arrow-right"></i></button>
                             </div>
                           </div>
-                          <div class="pui-accordion__content pui-accordion__content--nested p-3 active">
+                          <div class="accordion__content accordion__content--nested p-3 active">
                             <div class="block-container blocks tablet-up-3 flex--align-start overflow-x--scroll">
                               <div class="block">
-                                <div class="background-note pui-card m-2 py-3 pl-3 pr-0">
+                                <div class="background-note card m-2 py-3 pl-3 pr-0">
                                   <div class="block-container">
                                     <div class="block-10">
-                                      <div class="pui-card__header">
-                                        <strong title="Last edited by Ted Krueger 08/12/2020" class="pui-card__group">
+                                      <div class="card__header">
+                                        <strong title="Last edited by Ted Krueger 08/12/2020" class="card__group">
                                           <i aria-hidden="true" class="pi-speech-bubble"></i>
                                           Ted Krueger 08/12/2020
                                         </strong>
@@ -2358,8 +2358,8 @@
                             </div>
                           </div>
                         </div>
-                        <div class="pui-accordion pui-accordion--nested my-2">
-                          <div class="pui-accordion__header p-2 block-container flex--justify-between">
+                        <div class="accordion accordion--nested my-2">
+                          <div class="accordion__header p-2 block-container flex--justify-between">
                             <div class="flex--center-content">
                               <button title="Show Notes" aria-label="Show Notes" class="button--plain flex px-3">
                                 <i aria-hidden="true" class="pi-angle-right pi-lg transition"></i>
@@ -2373,23 +2373,23 @@
                               <i aria-hidden="true" class="pi-plus"></i></button>
                             </div>
                           </div>
-                          <div class="pui-accordion__content pui-accordion__content--nested p-3">
+                          <div class="accordion__content accordion__content--nested p-3">
                             <div class="mb-4">
                               <p class="mb-0"><strong>2019</strong></p>
-                              <div class="pui-form flex flex--align-end mb-3">
+                              <div class="form flex flex--align-end mb-3">
                                 <div class="pill background-navy text-white mr-2">
                                   HMO <i aria-hidden="true" class="ml-2 pi-times-solid"></i>
                                 </div>
-                                <label for="hmo-certificate" class="pui-form__field">
+                                <label for="hmo-certificate" class="form__field">
                                   <span class="sr-only">Enter a date</span>
                                   <input id="hmo-certificate" type="date" min="2019-01-01" max="2019-12-31">
                                 </label>
                               </div>
-                              <div class="pui-form flex flex--align-end mb-3">
+                              <div class="form flex flex--align-end mb-3">
                                 <div class="pill background-navy text-white mr-2">
                                   PPO <i aria-hidden="true" class="ml-2 pi-times-solid"></i>
                                 </div>
-                                <label for="PPO-certificate" class="pui-form__field">
+                                <label for="PPO-certificate" class="form__field">
                                   <span class="sr-only">Enter a date</span>
                                   <input id="PPO-certificate" type="date" value="2019-06-01" min="2019-01-01" max="2019-12-31">
                                 </label>
@@ -2397,11 +2397,11 @@
                             </div>
                             <div class="mb-4">
                               <p class="mb-0"><strong>2020</strong></p>
-                              <div class="pui-form flex flex--align-end mb-3">
+                              <div class="form flex flex--align-end mb-3">
                                 <div class="pill background-navy text-white mr-2">
                                   PDP <i aria-hidden="true" class="ml-2 pi-times-solid"></i>
                                 </div>
-                                <label for="PDP-certificate" class="pui-form__field">
+                                <label for="PDP-certificate" class="form__field">
                                   <span class="sr-only">Enter a date</span>
                                   <input id="PDP-certificate" type="date" value="2020-08-20" min="2020-01-01" max="2020-12-31">
                                 </label>
@@ -2409,13 +2409,13 @@
                             </div>
                             <!-- For messaging purposes only. :point-down-finger-emoji -->
                             <p>If there are no certifications, this message will display.</p> 
-                            <div class="pui-message pui-message--info">
+                            <div class="message message--info">
                               <p>This product has no available certifications. See its contract template for more details.</p>
                             </div>
                           </div>
                         </div>
-                        <div class="pui-accordion pui-accordion--nested my-2">
-                          <div class="pui-accordion__header p-2 block-container flex--justify-between">
+                        <div class="accordion accordion--nested my-2">
+                          <div class="accordion__header p-2 block-container flex--justify-between">
                             <div class="flex--center-content">
                               <button title="Show Notes" aria-label="Show Notes" class="button--plain flex px-3">
                                 <i aria-hidden="true" class="pi-angle-right pi-lg transition"></i>
@@ -2425,19 +2425,19 @@
                               <div class="ml-1 pill pill--circle p-0">0</div>
                             </div>
                             <div class="flex flex--align-center">
-                              <button class="button pui-modal__open" data-modal="request-contract-work-modal">
+                              <button class="button modal__open" data-modal="request-contract-work-modal">
                                 Request <i aria-hidden="true" class="pi-plus"></i>
                               </button>
                             </div>
                           </div>
-                          <div class="pui-accordion__content pui-accordion__content--nested p-3">
-                            <div class="pui-message pui-message--info">
+                          <div class="accordion__content accordion__content--nested p-3">
+                            <div class="message message--info">
                               You have no Contract Work requested.
                             </div>
                           </div>
                         </div>
-                        <div class="pui-accordion pui-accordion--nested my-2">
-                          <div class="pui-accordion__header p-2 block-container flex--justify-between">
+                        <div class="accordion accordion--nested my-2">
+                          <div class="accordion__header p-2 block-container flex--justify-between">
                             <div class="flex--center-content">
                               <button title="Show Notes" aria-label="Show Notes" class="button--plain flex px-3">
                                 <i aria-hidden="true" class="pi-angle-right pi-lg transition"></i>
@@ -2451,7 +2451,7 @@
                               <i aria-hidden="true" class="pi-plus"></i></button>
                             </div>
                           </div>
-                          <div class="pui-accordion__content pui-accordion__content-nested overflow-x--auto">
+                          <div class="accordion__content accordion__content-nested overflow-x--auto">
                             <div>
                               <div data-v-01488a82="" class="w-100">
                                 <form data-v-01488a82="">
@@ -2469,7 +2469,7 @@
                                 <button disabled="disabled" class="button button--post">Submit</button>
                               </div>
                             </div>
-                            <div class="pui-message pui-message--info">
+                            <div class="message message--info">
                               There are no Files.
                             </div>
                           </div>
@@ -2478,8 +2478,8 @@
                     </div>
                   </div>
                 </div>
-                <div class="pui-accordion">
-                  <div class="block-container flex--justify-between pui-accordion__header pointer px-2" tabindex="0">
+                <div class="accordion">
+                  <div class="block-container flex--justify-between accordion__header pointer px-2" tabindex="0">
                     <div class="block tablet-up-4 flex flex--column px-2 py-3">
                       <span class="text-med-blue">Humana</span>
                       <span title="Direct Pay Test (2020)" class="truncate-with-ellipsis">
@@ -2540,17 +2540,17 @@
             </div>
           </div>
           <input type="radio" id="tab-input-d" name="tabs">
-          <label for="tab-input-d" class="pui-tab flex flex--justify-between">
+          <label for="tab-input-d" class="tab flex flex--justify-between">
             RTS Checker
             <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
           </label>
-          <div class="pui-tab-panel p-4">
+          <div class="tab-panel p-4">
             <div class="mb-4">
-              <div class="block-container tablet-up-2 lg-tablet-up-5 w-100 blocks p-2 pui-form">
+              <div class="block-container tablet-up-2 lg-tablet-up-5 w-100 blocks p-2 form">
                 <div class="block">
-                  <label class="pui-form__field">
+                  <label class="form__field">
                     Product
-                    <div class="pui-form__select-wrapper">
+                    <div class="form__select-wrapper">
                       <select id="product">
                         <option value="medicare-advantage-rx">
                           MAPD
@@ -2569,14 +2569,14 @@
                   </label>
                 </div>
                 <div class="block">
-                  <label for="zipcode" class="pui-form__field">Zip Code
+                  <label for="zipcode" class="form__field">Zip Code
                     <input id="zipcode" type="tel" placeholder="">
                   </label>
                 </div>
                 <div class="block">
-                  <label class="pui-form__field">
+                  <label class="form__field">
                     County
-                    <div class="pui-form__select-wrapper">
+                    <div class="form__select-wrapper">
                       <select id="product">
                         <option value="medicare-advantage-rx">
                           Herkimer
@@ -2586,9 +2586,9 @@
                   </label>
                 </div>
                 <div class="block">
-                  <label class="pui-form__field">
+                  <label class="form__field">
                     Plan Year
-                    <div class="pui-form__select-wrapper">
+                    <div class="form__select-wrapper">
                       <select id="product">
                         <option value="medicare-advantage-rx">
                           2019
@@ -2601,14 +2601,14 @@
                   </label>
                 </div>
                 <div class="block flex flex--align-end">
-                  <button type="button" class="button button--post p-2 pui-modal__close" data-modal="request-contract-work-modal">
+                  <button type="button" class="button button--post p-2 modal__close" data-modal="request-contract-work-modal">
                     Search <i focusable="false" aria-hidden="true" class="pi-search"></i>
                   </button>
                 </div>
               </div>
             </div>
-            <div class="pui-accordion active">
-              <div class="pui-accordion__header block-container p-3 tablet-up-3">
+            <div class="accordion active">
+              <div class="accordion__header block-container p-3 tablet-up-3">
                 <div class="block flex flex--column">
                   <strong>Carrier</strong>
                   CDPHP Medicare Advantage
@@ -2632,16 +2632,16 @@
                 </div>
                 <i class="pos-abs pin-right pin-center-top pi-angle-up mr-3"></i>
               </div>
-              <div class="pui-accordion__content active">
-                <div class="pui-message pui-message--error my-0">
+              <div class="accordion__content active">
+                <div class="message message--error my-0">
                   <p class="m-0">
                     No matching appointed and certified contracts in the year of 2019 with a product of 'Medicare Advantage' in the state of 'NY' matching the selected plan (MA-H3388-001-000).
                   </p>
                 </div>      
               </div>
             </div>
-            <div class="pui-accordion">
-              <div class="pui-accordion__header block-container p-3 tablet-up-3">
+            <div class="accordion">
+              <div class="accordion__header block-container p-3 tablet-up-3">
                 <div class="block flex flex--column">
                   <strong>Carrier</strong>
                   Highmark Inc.
@@ -2663,8 +2663,8 @@
                 </div>
                 <i class="pos-abs pin-right pin-center-top pi-angle-down mr-3"></i>
               </div>
-              <div class="pui-accordion__content">
-                <div class="pui-message pui-message--error my-0">
+              <div class="accordion__content">
+                <div class="message message--error my-0">
                   <ul>
                     <li>Matched 'Medicare Advantage' product certification "Certification" (8/13/2019).</li>
                     <li>Found ready-to-sell carrier contract 'Highmark' (#118532).</li>
@@ -2672,8 +2672,8 @@
                 </div>      
               </div>
             </div>
-            <div class="pui-accordion">
-              <div class="pui-accordion__header block-container p-3 tablet-up-3">
+            <div class="accordion">
+              <div class="accordion__header block-container p-3 tablet-up-3">
                 <div class="block flex flex--column">
                   <strong>Carrier</strong>
                   Highmark Inc.
@@ -2695,8 +2695,8 @@
                 </div>
                 <i class="pos-abs pin-right pin-center-top pi-angle-down mr-3"></i>
               </div>
-              <div class="pui-accordion__content">
-                <div class="pui-message pui-message--info my-0">
+              <div class="accordion__content">
+                <div class="message message--info my-0">
                   <ul>
                     <li>Matched 'Medicare Advantage' product certification "Certification" (8/13/2019).</li>
                     <li>Found ready-to-sell carrier contract 'Highmark' (#118532).</li>
@@ -2709,22 +2709,22 @@
       </div>
     </div>
   </main>
-  <div id="request-contract-work-modal" class="pui-modal pui-modal--small pui-modal--closed" tabindex="-1">
-    <div class="pui-modal__inner animated slideInUp faster">
-      <div class="pui-modal__header flex flex--align-center">
+  <div id="request-contract-work-modal" class="modal modal--small modal--closed" tabindex="-1">
+    <div class="modal__inner animated slideInUp faster">
+      <div class="modal__header flex flex--align-center">
         Request Work On <strong>Direct Pay Test (2020)</strong>
       </div>
-      <div class="pui-modal__content">
-        <form class="pui-form">
-          <label for="reason" class="pui-form__field mb-3">Reason
+      <div class="modal__content">
+        <form class="form">
+          <label for="reason" class="form__field mb-3">Reason
             <input class="background-white" id="reason" type="text" placeholder="">
           </label>
-          <label for="details" class="pui-form__field mb-3">Details
+          <label for="details" class="form__field mb-3">Details
             <textarea class="background-white" id="details" type="text" placeholder=""></textarea>
           </label>
           <div class="flex--center-content mt-2">
-            <button type="cancel" class="button mr-2 p-2 pui-modal__close" data-modal="request-contract-work-modal">Cancel</button>
-            <button type="button" class="button button--post p-2 pui-modal__close" data-modal="request-contract-work-modal">Add <i focusable="false" aria-hidden="true" class="pi-plus"></i></button>
+            <button type="cancel" class="button mr-2 p-2 modal__close" data-modal="request-contract-work-modal">Cancel</button>
+            <button type="button" class="button button--post p-2 modal__close" data-modal="request-contract-work-modal">Add <i focusable="false" aria-hidden="true" class="pi-plus"></i></button>
           </div>
         </form>
       </div>

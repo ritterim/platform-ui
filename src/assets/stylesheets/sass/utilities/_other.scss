@@ -41,7 +41,7 @@
 // If you want to remove the background color and border color on an element, add the class `transparent`.
 //
 // Markup:
-// <div class="block-container pui-card background-lighter">
+// <div class="block-container card background-lighter">
 //   <div class="block-6">
 //     <button class="button">Button</button>
 //   </div>
@@ -98,14 +98,14 @@
 // Markup:
 // <div class="block-container blocks-px-3">
 //   <div class="block block-6 flex--center-content" style="height: 3rem">
-//     <div class="pui-loader pui-loader--sm"></div>
-//     <div class="pui-loader mx-4"></div>
-//     <div class="pui-loader pui-loader--lg"></div>
+//     <div class="loader loader--sm"></div>
+//     <div class="loader mx-4"></div>
+//     <div class="loader loader--lg"></div>
 //   </div>
 //   <div class="block block-6 background-navy flex--center-content" style="height: 3rem">
-//     <div class="pui-loader pui-loader--sm inverted"></div>
-//     <div class="pui-loader inverted mx-4"></div>
-//     <div class="pui-loader pui-loader--lg inverted"></div>
+//     <div class="loader loader--sm inverted"></div>
+//     <div class="loader inverted mx-4"></div>
+//     <div class="loader loader--lg inverted"></div>
 //   </div>
 // </div>
 //
@@ -115,8 +115,9 @@
     transform: rotate(360deg);
   }
 }
-%pui-loader,
-.pui-loader {
+%loader,
+.pui-loader,
+.loader {
   animation: rotation 1s infinite linear;
   border: 2px solid map.get(config.$loader-colors, 'primary');
   border-radius: map.get(variables.$radius, 'round');
@@ -126,7 +127,8 @@
   @include mixins.square(1.4rem, 'max');
 }
 
-.pui-loader {
+.pui-loader,
+.loader {
 
   &.inverted {
     border-color: map.get(config.$loader-colors, 'inverted');
@@ -151,7 +153,7 @@
 // If you want to ensure that the mouse is a pointer on hover add the class `pointer`.
 //
 // Markup:
-// <div class="pui-card">
+// <div class="card">
 //   <h3>Hover over the text below</h3>
 //   <p class="pointer">This is a standard p and doesn't have a pointer, unless you hover.</p>
 // </div>
@@ -314,9 +316,9 @@
 // <section>
 //   <div class="block-container">
 //     <div class="block block-4">
-//       <div class="pui-card hover-scale">
+//       <div class="card hover-scale">
 //         <h4 class="pb-2 mb-2">Hover over this</h4>
-//         <div class="pui-card__content">
+//         <div class="card__content">
 //           <p>Notice how it scales on hover</p>
 //         </div>
 //       </div>
@@ -344,17 +346,17 @@
 // <section>
 //   <div class="block-container blocks px-2">
 //     <div class="block block-4">
-//       <div class="pui-card hover-shadow">
+//       <div class="card hover-shadow">
 //         <h4 class="pb-2 mb-2">Hover over this</h4>
-//         <div class="pui-card__content">
+//         <div class="card__content">
 //           <p>Notice how it shadows on hover</p>
 //         </div>
 //       </div>
 //     </div>
 //     <div class="block block-4">
-//       <div class="pui-card hover-shadow hover-scale">
+//       <div class="card hover-shadow hover-scale">
 //         <h4 class="pb-2 mb-2">Hover over this</h4>
-//         <div class="pui-card__content">
+//         <div class="card__content">
 //           <p>Notice how it shadows on hover</p>
 //         </div>
 //       </div>
@@ -375,7 +377,7 @@
 // Transition
 //
 // Using the `transition` class adds `transition: .2s;` to an element. You could use this to make specific hover effects by toggling a class.
-// For example, if you wanted the border-color on a `pui-card` to change on a click, you could add the `transition` class, and toggle the class `border--color-{color}`.
+// For example, if you wanted the border-color on a `card` to change on a click, you could add the `transition` class, and toggle the class `border--color-{color}`.
 //
 // Styleguide Utilities.Transition
 

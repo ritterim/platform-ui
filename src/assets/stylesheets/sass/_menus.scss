@@ -526,7 +526,7 @@
       .site-menu {
 
         &.active {
-          max-height: calc(100vh - var(--pui-menu-height));
+          max-height: calc(100vh - var(--menu-height));
           overflow-y: auto;
           overflow-x: hidden;
         }

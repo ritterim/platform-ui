@@ -9,30 +9,30 @@
 // Accordion
 //
 // Leverage spacing utility classes for padding and margin for the content within the accordion.
-// To show the content of the accordion toggle the class `active` on `pui-accordion`. These accordions are also keyboard accessible.
+// To show the content of the accordion toggle the class `active` on `accordion`. These accordions are also keyboard accessible.
 //
 // Platform UI accordions were designed to be stacked.
 //
 // Markup:
-// <div class="pui-accordion">
-//    <a href="#" class="pui-accordion__header px-3 py-3 flex--justify-between flex--align-center">
+// <div class="accordion">
+//    <a href="#" class="accordion__header px-3 py-3 flex--justify-between flex--align-center">
 //      <div class="flex flex--align-center">
 //        <p>This is an accordion header. </p>
 //      </div>
-//      <i class="pi-angle-down pui-accordion__icon text-med-blue"></i>
+//      <i class="pi-angle-down accordion__icon text-med-blue"></i>
 //    </a>
-//    <div class="pui-accordion__content px-3 py-3">
+//    <div class="accordion__content px-3 py-3">
 //      <p>This is the accordion content.</p>
 //    </div>
 //  </div>
-// <div class="pui-accordion">
-//    <a href="#" class="pui-accordion__header px-3 py-3 flex--justify-between flex--align-center">
+// <div class="accordion">
+//    <a href="#" class="accordion__header px-3 py-3 flex--justify-between flex--align-center">
 //      <div class="flex flex--align-center">
 //        <p>This is an accordion header. </p>
 //      </div>
-//      <i class="pi-angle-down pui-accordion__icon text-med-blue"></i>
+//      <i class="pi-angle-down accordion__icon text-med-blue"></i>
 //    </a>
-//    <div class="pui-accordion__content px-3 py-3">
+//    <div class="accordion__content px-3 py-3">
 //      <p>This is the accordion content.</p>
 //    </div>
 //  </div>
@@ -44,14 +44,14 @@
 // Adding `.active` changes the default header bar background and hover highlight.
 //
 // Markup:
-// <div class="pui-accordion active">
-//    <a href="#" class="pui-accordion__header px-3 py-3 flex--justify-between flex--align-center">
+// <div class="accordion active">
+//    <a href="#" class="accordion__header px-3 py-3 flex--justify-between flex--align-center">
 //      <div class="flex flex--align-center">
 //        <p>This is an accordion header.</p>
 //      </div>
-//      <i class="pi-angle-down pui-accordion__icon text-med-blue"></i>
+//      <i class="pi-angle-down accordion__icon text-med-blue"></i>
 //    </a>
-//    <div class="pui-accordion__content px-3 py-3">
+//    <div class="accordion__content px-3 py-3">
 //      <p>This is the accordion content.</p>
 //    </div>
 //  </div>
@@ -63,25 +63,25 @@
 // Nesting accordions gives the appearance of active accordions within.
 //
 // Markup:
-// <div class="pui-accordion active">
-//    <a href="#" class="pui-accordion__header px-3 py-3 flex--justify-between flex--align-center">
+// <div class="accordion active">
+//    <a href="#" class="accordion__header px-3 py-3 flex--justify-between flex--align-center">
 //      <div class="flex flex--align-center">
 //        <p>This is an accordion header.</p>
 //      </div>
-//      <i class="pi-angle-down pui-accordion__icon text-med-blue"></i>
+//      <i class="pi-angle-down accordion__icon text-med-blue"></i>
 //    </a>
-//   <div class="pui-accordion__content">
+//   <div class="accordion__content">
 //     <div class="px-3 py-3">
 //       <p>This is the accordion content.</p>
 //     </div>
-//     <div class="pui-accordion">
-//       <a href="#" class="pui-accordion__header px-3 py-3 flex flex--justify-between flex--align-center">
+//     <div class="accordion">
+//       <a href="#" class="accordion__header px-3 py-3 flex flex--justify-between flex--align-center">
 //         <div class="flex flex--align-center">
 //           <p>This is a nested accordion header.</p>
 //         </div>
-//         <i class="pi-angle-down pui-accordion__icon text-med-blue"></i>
+//         <i class="pi-angle-down accordion__icon text-med-blue"></i>
 //       </a>
-//       <div class="pui-accordion__content">
+//       <div class="accordion__content">
 //         <div class="px-3 py-3">
 //           <p>This is the nested accordion content.</p>
 //         </div>
@@ -93,7 +93,8 @@
 // Styleguide Components.Accordion.Nested
 
 
-.pui-accordion {
+.pui-accordion,
+.accordion {
 
   $self: &;
   $accordion-primary-color: map.get(variables.$greyscale, 'base');
@@ -119,7 +120,8 @@
   &:not(.active):hover {
     border-color: $accordion-hover-border;
 
-    .pui-accordion__header {
+    .pui-accordion__header,
+    .accordion__header {
       background-color: $accordion-secondary-background;
     }
   }
@@ -130,10 +132,12 @@
     border-color: transparent;
     box-shadow: 0px 0px 0px 2px $accordion-hover-border;
 
-    > .pui-accordion__header {
+    > .pui-accordion__header,
+    > .accordion__header {
       background-color: $accordion-secondary-background;
 
-      .pui-accordion__icon {
+      .pui-accordion__icon,
+      .accordion__icon {
         @extend %rotate-180;
       }
     }

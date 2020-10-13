@@ -1,7 +1,7 @@
-const tabList = document.querySelector('.pui-tabs');
+const tabList = document.querySelector('.pui-tabs, .tabs');
 
 if (tabList) {
-  const tab = document.querySelectorAll('.pui-tab');
+  const tab = document.querySelectorAll('.pui-tab, .pui-tab');
 
   const pageWidth = window.innerWidth;
 
@@ -22,7 +22,7 @@ if (tabList) {
 
     function clearUnChecked() {
       tab.forEach(function(el) {
-        const checked = el.closest('.pui-tabs');
+        const checked = el.closest('.pui-tabs, .tabs');
         checked.querySelectorAll('input[checked="true"]').forEach(function(check) {
           check.setAttribute('checked', false);
         })
@@ -47,7 +47,7 @@ if (tabList) {
     tab.forEach(function(el) {
       el.addEventListener('click', function() {
         // checks for flat tabs look
-        if(el.closest(".pui-tabs").classList.contains('pui-tabs--flat')) {
+        if(el.closest(".pui-tabs").classList.contains('pui-tabs--flat', 'tabs--flat')) {
   
           // checks for responsive class added to flat tabs
           if(el.closest('.pui-tabs').classList.contains('responsive')) {

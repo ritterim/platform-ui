@@ -7,17 +7,17 @@
 
 // Tables
 //
-// Default table. Use the `pui-table` class to get the table styles applied.
+// Default table. Use the `table` class to get the table styles applied.
 //
 // Attach any `click` event directly to the `<th>` for a larger click target.
 //
 // These tables are responsive. They get the mobile view below the mobile breakpoint.
 // You need to add the `data-label="{th - name}"` to the corresponding `<td>`. See the markup below.
 //
-// Turn row hover off by adding `pui-table--no-hover`
+// Turn row hover off by adding `table--no-hover`
 //
 // Markup:
-// <table class="pui-table">
+// <table class="table">
 //   <thead>
 //     <tr>
 //       <th>Company</th>
@@ -95,9 +95,9 @@
 //   </tbody>
 // </table>
 //
-// Sometimes you don't want a resposive table? just add `unresponsive` to `pui-table`
+// Sometimes you don't want a resposive table? just add `unresponsive` to `table`
 //
-// <table class="pui-table unresponsive">
+// <table class="table unresponsive">
 //   <thead>
 //     <tr>
 //       <th></th>
@@ -144,7 +144,8 @@
 //
 // Styleguide Tables
 
-.pui-table {
+.pui-table,
+.table {
   $border-radius: map.get(config.$radius, 'default');
   $table-border: 1px solid color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold * 2));
   $responsive-table-bottom-gap: map.get(variables.$spacers, 2);

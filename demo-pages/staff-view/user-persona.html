@@ -14,11 +14,11 @@
      *  mobile menu css.
      */
     .double-menu .site-header--fixed {
-      height: calc(var(--pui-menu-height) * 2) !important;
+      height: calc(var(--menu-height) * 2) !important;
     }
 
     .double-menu .site-header--fixed+.header-fixed {
-      margin-top: calc(var(--pui-menu-height) * 2) !important;
+      margin-top: calc(var(--menu-height) * 2) !important;
     }
 
     /* specifically targets notes */
@@ -27,8 +27,8 @@
     }
 
     .drop-target {
-      border: 0.3rem dashed var(--pui-light-mid);
-      color: var(--pui-light);
+      border: 0.3rem dashed var(--light-mid);
+      color: var(--light);
       font-weight: bold;
       text-align: center;
       margin: 1rem 0;
@@ -310,7 +310,7 @@
           <a href="#" class="site-menu__item">
             Reports
           </a>
-          <a href="#" class="site-menu__item pui-drawer__open" data-drawer="touches">
+          <a href="#" class="site-menu__item drawer__open" data-drawer="touches">
             <i class="pi-phone"></i>
           </a>
           <a href="#" class="site-menu__item">
@@ -334,13 +334,13 @@
   <main class="header-fixed background-light-mid flex--grow py-4 px-5">
     <div class="block-container blocks px-3 mb-4">
       <div class="block laptop-up-9">
-        <div class="pui-tabs">
+        <div class="tabs">
           <input type="radio" id="tab-input-a" name="tabs" checked>
-          <label for="tab-input-a" class="pui-tab flex flex--justify-between">
+          <label for="tab-input-a" class="tab flex flex--justify-between">
             Detail
             <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
           </label>
-          <div class="pui-tab-panel p-4">
+          <div class="tab-panel p-4">
             <div class="block-container blocks p-2">
               <div class="block block--shrink">
                 <button class="button--plain text-light text-base--hover">
@@ -358,7 +358,7 @@
               </div>
             </div>
             <div class="mt-4">
-              <table class="pui-table pui-table--no-hover">
+              <table class="table table--no-hover">
                 <thead>
                   <tr>
                     <th>Agreement</th>
@@ -395,12 +395,12 @@
             </div>
             <div class="mt-4">
               <p class="text-navy text--bold text--size-lg">Email Change Process</p>
-              <div class="pui-form block-container blocks p-2 mb-2">
-                <div class="pui-form__field block tablet-up-6 lg-tablet-up-4 desktop-up-3">
+              <div class="form block-container blocks p-2 mb-2">
+                <div class="form__field block tablet-up-6 lg-tablet-up-4 desktop-up-3">
                   <label for="email">Current Email Address</label>
                   <input id="email" type="email" value="greg.gudis@bgainsurance.net" readonly>
                 </div>
-                <div class="pui-form__field block tablet-up-6 lg-tablet-up-4 desktop-up-3">
+                <div class="form__field block tablet-up-6 lg-tablet-up-4 desktop-up-3">
                   <label for="new-email">Enter new email address</label>
                   <input id="new-email" type="email" placeholder="">
                 </div>
@@ -415,17 +415,17 @@
             </div>
           </div>
           <input type="radio" id="tab-input-b" name="tabs">
-          <label for="tab-input-b" class="pui-tab flex flex--justify-between">
+          <label for="tab-input-b" class="tab flex flex--justify-between">
             Permissions
             <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
           </label>
-          <div class="pui-tab-panel p-4">
+          <div class="tab-panel p-4">
             <p class="text-navy text--bold text--size-lg">Global Roles</p>
-            <div class="pui-form block-container mb-4">
+            <div class="form block-container mb-4">
               <div class="block tablet-up-6 lg-tablet-up-4 desktop-up-3 mb-3">
-                <label for="Option" class="pui-form__field">
+                <label for="Option" class="form__field">
                   <span class="sr-only">Choose a role</span>
-                  <div class="pui-form__select-wrapper">
+                  <div class="form__select-wrapper">
                     <select name="Option Select" id="Option">
                       <option value="Choose" selected disabled>Choose</option>
                       <option value="Option1">Option 1</option>
@@ -462,18 +462,18 @@
               </div>
             </div>
             <div>
-              <div class="pui-accordion">
-                <div class="pui-accordion__header px-3 py-3 flex--align-center pointer">
+              <div class="accordion">
+                <div class="accordion__header px-3 py-3 flex--align-center pointer">
                   <p class="text-navy text--bold text--size-lg mb-0 mr-2">Application Permissions</p>
-                  <i class="pi-angle-down pui-accordion__icon text-navy text--bold"></i>
+                  <i class="pi-angle-down accordion__icon text-navy text--bold"></i>
                 </div>
-                <div class="pui-accordion__content px-2 py-2">
-                  <div class="pui-accordion">
-                    <div class="pui-accordion__header py-3 px-2 flex--align-center pointer">
-                      <i class="pi-angle-down pui-accordion__icon"></i>
+                <div class="accordion__content px-2 py-2">
+                  <div class="accordion">
+                    <div class="accordion__header py-3 px-2 flex--align-center pointer">
+                      <i class="pi-angle-down accordion__icon"></i>
                       <p class="mb-0 ml-2">Accounts API</p>
                     </div>
-                    <div class="pui-accordion__content py-2 px-2">
+                    <div class="accordion__content py-2 px-2">
                       <div class="block-container background-lighter border-y border--color-light p-3">
                         <div class="block-6"></div>
                         <div class="block-6">
@@ -626,12 +626,12 @@
                       </div>
                     </div>
                   </div>
-                  <div class="pui-accordion">
-                    <div class="pui-accordion__header py-3 px-2 flex--align-center pointer">
-                      <i class="pi-angle-down pui-accordion__icon"></i>
+                  <div class="accordion">
+                    <div class="accordion__header py-3 px-2 flex--align-center pointer">
+                      <i class="pi-angle-down accordion__icon"></i>
                       <p class="mb-0 ml-2">Agent Payments</p>
                     </div>
-                    <div class="pui-accordion__content py-2 px-2">
+                    <div class="accordion__content py-2 px-2">
                       <div class="block-container background-lighter border-y border--color-light p-3">
                         <div class="block-6"></div>
                         <div class="block-6">
@@ -778,12 +778,12 @@
                       </div>
                     </div>
                   </div>
-                  <div class="pui-accordion">
-                    <div class="pui-accordion__header py-3 px-2 flex--align-center pointer">
-                      <i class="pi-angle-down pui-accordion__icon"></i>
+                  <div class="accordion">
+                    <div class="accordion__header py-3 px-2 flex--align-center pointer">
+                      <i class="pi-angle-down accordion__icon"></i>
                       <p class="mb-0 ml-2">Attachments API</p>
                     </div>
-                    <div class="pui-accordion__content py-2 px-2">
+                    <div class="accordion__content py-2 px-2">
                       <div class="block-container background-lighter border-y border--color-light p-3">
                         <div class="block-6"></div>
                         <div class="block-6">
@@ -930,12 +930,12 @@
                       </div>
                     </div>
                   </div>
-                  <div class="pui-accordion">
-                    <div class="pui-accordion__header py-3 px-2 flex--align-center pointer">
-                      <i class="pi-angle-down pui-accordion__icon"></i>
+                  <div class="accordion">
+                    <div class="accordion__header py-3 px-2 flex--align-center pointer">
+                      <i class="pi-angle-down accordion__icon"></i>
                       <p class="mb-0 ml-2">Content Search</p>
                     </div>
-                    <div class="pui-accordion__content py-2 px-2">
+                    <div class="accordion__content py-2 px-2">
                       <div class="block-container background-lighter border-y border--color-light p-3">
                         <div class="block-6"></div>
                         <div class="block-6">
@@ -1082,12 +1082,12 @@
                       </div>
                     </div>
                   </div>
-                  <div class="pui-accordion">
-                    <div class="pui-accordion__header py-3 px-2 flex--align-center pointer">
-                      <i class="pi-angle-down pui-accordion__icon"></i>
+                  <div class="accordion">
+                    <div class="accordion__header py-3 px-2 flex--align-center pointer">
+                      <i class="pi-angle-down accordion__icon"></i>
                       <p class="mb-0 ml-2">Contracting API</p>
                     </div>
-                    <div class="pui-accordion__content py-2 px-2">
+                    <div class="accordion__content py-2 px-2">
                       <div class="block-container background-lighter border-y border--color-light p-3">
                         <div class="block-6"></div>
                         <div class="block-6">
@@ -1242,9 +1242,9 @@
         </div>
       </div>
       <div class="block mt-5 lg-tablet-up-4 laptop-up-3 pos-fix hide-laptop-down">
-        <div class="pui-card text-base background-note p-4 h-auto">
-          <div class="pui-card__header">
-            <div class="pui-card__group">
+        <div class="card text-base background-note p-4 h-auto">
+          <div class="card__header">
+            <div class="card__group">
               <button title="Add Note" aria-label="Add Note" class="button button--secondary">
                 <i aria-hidden="true" class="pi-plus"></i>
               </button>
@@ -1255,8 +1255,8 @@
               <i aria-hidden="true" class="pi-arrow-right"></i>
             </button>
           </div>
-          <ol class="pui-list pui-list--bordered">
-            <li class="pui-list__item py-3">
+          <ol class="list list--bordered">
+            <li class="list__item py-3">
               <strong class="" title="Last edited by Ted Krueger 01/27/2020">
                 <i aria-hidden="true" class="pi-speech-bubble text-light"></i>
                 Ted Krueger 01/27/2020
@@ -1301,7 +1301,7 @@
                 <i class="pi-angle-down-double text--size-lg rotate-180"></i>
               </div>
             </li>
-            <li class="pui-list__item py-3">
+            <li class="list__item py-3">
               <strong class="" title="Last edited by Ted Krueger 01/27/2020">
                 <i aria-hidden="true" class="pi-speech-bubble text-light"></i>
                 Ted Krueger 01/27/2020

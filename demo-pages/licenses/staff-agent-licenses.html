@@ -14,11 +14,11 @@
      *  mobile menu css.
      */
     .double-menu .site-header--fixed {
-      height: calc(var(--pui-menu-height) * 2) !important;
+      height: calc(var(--menu-height) * 2) !important;
     }
 
     .double-menu .site-header--fixed+.header-fixed {
-      margin-top: calc(var(--pui-menu-height) * 2) !important;
+      margin-top: calc(var(--menu-height) * 2) !important;
     }
 
     /* specifically targets notes */
@@ -27,8 +27,8 @@
     }
 
     .drop-target {
-      border: 0.3rem dashed var(--pui-light-mid);
-      color: var(--pui-light);
+      border: 0.3rem dashed var(--light-mid);
+      color: var(--light);
       font-weight: bold;
       text-align: center;
       margin: 1rem 0;
@@ -310,7 +310,7 @@
           <a href="#" class="site-menu__item">
             Reports
           </a>
-          <a href="#" class="site-menu__item pui-drawer__open" data-drawer="touches">
+          <a href="#" class="site-menu__item drawer__open" data-drawer="touches">
             <i class="pi-phone"></i>
           </a>
           <a href="#" class="site-menu__item">
@@ -334,13 +334,13 @@
   <main class="header-fixed background-light-mid flex--grow py-4 px-5">
     <div class="block-container blocks px-3 mb-4">
       <div class="block laptop-up-9">
-        <div class="pui-tabs">
+        <div class="tabs">
           <input type="radio" id="tab-input-a" name="tabs" checked>
-          <label for="tab-input-a" class="pui-tab flex flex--justify-between">
+          <label for="tab-input-a" class="tab flex flex--justify-between">
             Active
             <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
           </label>
-          <div class="pui-tab-panel p-4">
+          <div class="tab-panel p-4">
             <div class="block-container flex--justify-between">
               <div class="block block-6 mb-3">
                 Showing 100 out of 333
@@ -352,14 +352,14 @@
                 <button data-button-text="Refresh NIPR" aria-controls="refresh-nipr" aria-label="Refresh NIPR" class="button button--secondary mr-2">
                   <i aria-hidden="true" class="pi-redo"></i>
                 </button>
-                <button data-modal="large-modal" class="button pui-modal__open">
+                <button data-modal="large-modal" class="button modal__open">
                   Add
                   <i aria-hidden="true" class="pi-plus"></i>
                 </button>
               </div>
             </div>
-            <div class="pui-accordion overflow-hidden">
-              <div class="block-container flex--justify-between pui-accordion__header pointer px-2" tabindex="0">
+            <div class="accordion overflow-hidden">
+              <div class="block-container flex--justify-between accordion__header pointer px-2" tabindex="0">
                 <div class="block block-4 tablet-up-3 flex flex--align-center p-2">
                   <div class="text-med-blue">
                     <div class="pez pressed" aria-label="Pennsylvania">PA</div>
@@ -392,9 +392,9 @@
                   </div>
                 </div>
               </div>
-              <div class="pui-accordion__content p-2">
+              <div class="accordion__content p-2">
                 <h4>Lines of Authority</h4>
-                <table class="pui-table pui-table--no-hover">
+                <table class="table table--no-hover">
                   <thead>
                     <tr>
                       <th>Issued</th>
@@ -422,8 +422,8 @@
                 </table>
               </div>
             </div>
-            <div class="pui-accordion overflow-hidden">
-              <div class="block-container flex--justify-between pui-accordion__header pointer px-2" tabindex="0">
+            <div class="accordion overflow-hidden">
+              <div class="block-container flex--justify-between accordion__header pointer px-2" tabindex="0">
                 <div class="block block-4 tablet-up-3 flex flex--align-center p-2">
                   <div class="text-med-blue">
                     <div class="pez pressed" aria-label="New Jersey">NJ</div>
@@ -455,9 +455,9 @@
                   </div>
                 </div>
               </div>
-              <div class="pui-accordion__content p-2">
+              <div class="accordion__content p-2">
                 <h4>Lines of Authority</h4>
-                <table class="pui-table pui-table--no-hover">
+                <table class="table table--no-hover">
                   <thead>
                     <tr>
                       <th>Issued</th>
@@ -501,8 +501,8 @@
                 </table>
               </div>
             </div>
-            <div class="pui-accordion overflow-hidden">
-              <div class="block-container flex--justify-between pui-accordion__header pointer px-2" tabindex="0">
+            <div class="accordion overflow-hidden">
+              <div class="block-container flex--justify-between accordion__header pointer px-2" tabindex="0">
                 <div class="block block-4 tablet-up-3 flex flex--align-center p-2">
                   <div class="text-med-blue">
                     <div class="pez pressed" aria-label="Michigan">MI</div>
@@ -534,9 +534,9 @@
                   </div>
                 </div>
               </div>
-              <div class="pui-accordion__content p-2">
+              <div class="accordion__content p-2">
                 <h4>Lines of Authority</h4>
-                <table class="pui-table pui-table--no-hover">
+                <table class="table table--no-hover">
                   <thead>
                     <tr>
                       <th>Issued</th>
@@ -566,11 +566,11 @@
             </div>
           </div>
           <input type="radio" id="tab-input-b" name="tabs">
-          <label for="tab-input-b" class="pui-tab flex flex--justify-between">
+          <label for="tab-input-b" class="tab flex flex--justify-between">
             Inactive
             <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
           </label>
-          <div class="pui-tab-panel p-4">
+          <div class="tab-panel p-4">
             <div class="block-container flex--justify-between">
               <div class="block block-6 mb-3">
                 Showing 5 out of 5
@@ -579,14 +579,14 @@
                 <button data-button-text="Refresh NIPR" aria-controls="refresh-nipr" aria-label="Refresh NIPR" class="button button--secondary mr-2">
                   <i aria-hidden="true" class="pi-redo"></i>
                 </button>
-                <button data-modal="large-modal" class="button pui-modal__open">
+                <button data-modal="large-modal" class="button modal__open">
                   Add
                   <i aria-hidden="true" class="pi-plus"></i>
                 </button>
               </div>
             </div>
-            <div class="pui-accordion overflow-hidden">
-              <div class="block-container flex--justify-between pui-accordion__header pointer px-2" tabindex="0">
+            <div class="accordion overflow-hidden">
+              <div class="block-container flex--justify-between accordion__header pointer px-2" tabindex="0">
                 <div class="block block-4 tablet-up-3 flex flex--align-center p-2">
                   <div class="text-med-blue">
                     <div class="pez pressed" aria-label="New Jersey">NJ</div>
@@ -609,9 +609,9 @@
                   <div>4</div>
                 </div>
               </div>
-              <div class="pui-accordion__content p-2">
+              <div class="accordion__content p-2">
                 <h4>Lines of Authority</h4>
-                <table class="pui-table pui-table--no-hover">
+                <table class="table table--no-hover">
                   <thead>
                     <tr>
                       <th>Issued</th>
@@ -655,8 +655,8 @@
                 </table>
               </div>
             </div>
-            <div class="pui-accordion overflow-hidden">
-              <div class="block-container flex--justify-between pui-accordion__header pointer px-2" tabindex="0">
+            <div class="accordion overflow-hidden">
+              <div class="block-container flex--justify-between accordion__header pointer px-2" tabindex="0">
                 <div class="block block-4 tablet-up-3 flex flex--align-center p-2">
                   <div class="text-med-blue">
                     <div class="pez pressed" aria-label="Pennsylvania">PA</div>
@@ -679,9 +679,9 @@
                   <div>2</div>
                 </div>
               </div>
-              <div class="pui-accordion__content p-2">
+              <div class="accordion__content p-2">
                 <h4>Lines of Authority</h4>
-                <table class="pui-table pui-table--no-hover">
+                <table class="table table--no-hover">
                   <thead>
                     <tr>
                       <th>Issued</th>
@@ -711,11 +711,11 @@
             </div>
           </div>
           <input type="radio" id="tab-input-c" name="tabs">
-          <label for="tab-input-c" class="pui-tab flex flex--justify-between">
+          <label for="tab-input-c" class="tab flex flex--justify-between">
             NIPR
             <i focusable="false" aria-hidden="hidden" class="pi-angle-down show-mobile-only pi-lg transition"></i>
           </label>
-          <div class="pui-tab-panel p-4">
+          <div class="tab-panel p-4">
             <div class="block-container flex--justify-end">
               <div class="block tablet-up-6 flex flex--justify-end flex--align-center mb-3">
                 <button data-button-text="Refresh NIPR" aria-controls="refresh-nipr" aria-label="Refresh NIPR" class="button button--secondary mr-2">
@@ -723,7 +723,7 @@
                 </button>
               </div>
             </div>
-            <table class="pui-table">
+            <table class="table">
               <thead>
                 <tr>
                   <th>Date</th>
@@ -799,9 +799,9 @@
         </div>
       </div>
       <div class="block mt-5 lg-tablet-up-4 laptop-up-3 pos-fix hide-laptop-down">
-        <div class="pui-card text-base background-note p-4 h-auto">
-          <div class="pui-card__header">
-            <div class="pui-card__group">
+        <div class="card text-base background-note p-4 h-auto">
+          <div class="card__header">
+            <div class="card__group">
               <button title="Add Note" aria-label="Add Note" class="button button--secondary">
                 <i aria-hidden="true" class="pi-plus"></i>
               </button>
@@ -812,8 +812,8 @@
               <i aria-hidden="true" class="pi-arrow-right"></i>
             </button>
           </div>
-          <ol class="pui-list pui-list--bordered">
-            <li class="pui-list__item py-3">
+          <ol class="list list--bordered">
+            <li class="list__item py-3">
               <strong class="" title="Last edited by Ted Krueger 01/27/2020">
                 <i aria-hidden="true" class="pi-speech-bubble text-light"></i>
                 Ted Krueger 01/27/2020
@@ -858,7 +858,7 @@
                 <i class="pi-angle-down-double text--size-lg rotate-180"></i>
               </div>
             </li>
-            <li class="pui-list__item py-3">
+            <li class="list__item py-3">
               <strong class="" title="Last edited by Ted Krueger 01/27/2020">
                 <i aria-hidden="true" class="pi-speech-bubble text-light"></i>
                 Ted Krueger 01/27/2020
