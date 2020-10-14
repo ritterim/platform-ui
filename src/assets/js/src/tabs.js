@@ -1,7 +1,7 @@
 const tabList = document.querySelector('.pui-tabs, .tabs');
 
 if (tabList) {
-  const tab = document.querySelectorAll('.pui-tab, .pui-tab');
+  const tab = document.querySelectorAll('.pui-tab, .tab');
 
   const pageWidth = window.innerWidth;
 
@@ -47,10 +47,10 @@ if (tabList) {
     tab.forEach(function(el) {
       el.addEventListener('click', function() {
         // checks for flat tabs look
-        if(el.closest(".pui-tabs").classList.contains('pui-tabs--flat', 'tabs--flat')) {
+        if(el.closest('.pui-tabs, .tabs').classList.contains('pui-tabs--flat', 'tabs--flat')) {
   
           // checks for responsive class added to flat tabs
-          if(el.closest('.pui-tabs').classList.contains('responsive')) {
+          if(el.closest('.pui-tabs, .tabs').classList.contains('responsive')) {
             mobileTabs(el);
           } else {
             return;
