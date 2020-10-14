@@ -20,15 +20,18 @@
 // || `data-background-repeat`| overrides default |
 // 
 // Markup:
-// <div class="block-container blocks my-3 flex--column">
-//   <div class="block block-6">
+// <div class="block-container blocks my-3">
+//   <div class="block">
 //   <!-- Add data attributes for specific background image styles -->
 //     <div 
-//          class="background-image ratio-16_9" 
-//          data-background-image="http://placeimg.com/640/360/nature" 
-//          data-background-position="top left" 
-//          data-background-size="100%" 
-//          data-background-repeat="repeat">
+//        class="background-image p-4" 
+//        data-background-image="http://placeimg.com/1000/400/nature" 
+//        data-background-position="center center" 
+//        data-background-size="cover" 
+//        data-background-repeat="no-repeat">
+//          <div class="background-black w-50 p-4">
+//            <h1 class="mb-3 mt-0 text-white">Hero Heading</h1>
+//            <p class="text-white mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elit elit, efficitur a purus eget, porttitor aliquam turpis.</p>
 //     </div>    
 //   </div>
 // </div>
