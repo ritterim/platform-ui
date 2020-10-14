@@ -47,7 +47,7 @@ if (tabList) {
     tab.forEach(function(el) {
       el.addEventListener('click', function() {
         // checks for flat tabs look
-        if(el.closest(".pui-tabs, .tabs").classList.contains('pui-tabs--flat', 'tabs--flat')) {
+        if(el.closest('.pui-tabs, .tabs').classList.contains('pui-tabs--flat', 'tabs--flat')) {
   
           // checks for responsive class added to flat tabs
           if(el.closest('.pui-tabs, .tabs').classList.contains('responsive')) {
