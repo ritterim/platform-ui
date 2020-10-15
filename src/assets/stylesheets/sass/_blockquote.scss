@@ -34,25 +34,26 @@
 // Blockquote Colors
 // 
 // As previously mentioned, the default color of the left border is light gray, but you can change it if you like.
-// You can add a modifier class like `bloackquote-{color}`, so `background-navy` will change the color to use the definied navy color.
-// You can view our list of colors [greyscale](/section-color.html#kssref-color-greyscale), [brand colors](/section-color.html#kssref-color-brandcolors), and [secondary colors](/section-color.html#kssref-color-secondarycolors) maps.
+// You can change the color of the border by using a border utility. For example, adding the class `border--color-navy`, 
+// to the blockquote, will change the border to navy. Learn more about [border utilities](/section-utilities.html#utilities-borders).
+// You can view our list of colors available [greyscale](/section-color.html#kssref-color-greyscale), [brand colors](/section-color.html#kssref-color-brandcolors), and [secondary colors](/section-color.html#kssref-color-secondarycolors) maps.
 // 
 // Markup:
 // <p>
 //     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 // </p>
-// <blockquote class="blockquote-navy">
+// <blockquote class="border--color-navy">
 //     <p>Anger is an acid that can do more harm to the vessel in which it is stored than to anything on which it is poured.</p>
 //     <footer>—Mark Twain</footer>
 // </blockquote>
-// <blockquote class="blockquote-dark">
+// <blockquote class="border--color-dark">
 //     <p>Beauty lies in the eyes of the beholder.</p>
 //     <footer>—Plato</footer>
 // </blockquote>
 // <p>
 //     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 // </p>
-// <blockquote class="blockquote-violet">
+// <blockquote class="border--color-violet">
 //     <p>Tell me and I forget. Teach me and I remember. Involve me and I learn.</p>
 //     <footer>—Benjamin Franklin</footer>
 // </blockquote>
@@ -76,20 +77,5 @@ blockquote {
 
   footer {
     margin-top: map.get(variables.$spacers, 3);
-  }
-}
-
-$blockquote-colors: () !default;
-
-@if meta.type-of(config.$config-colors) == 'map' {
-  $blockquote-colors: map.merge(config.$config-colors, variables.$greyscale);
-} @else {
-  $blockquote-colors: map.merge(variables.$greyscale, $blockquote-colors);
-  @warn "$config-colors is not set or empty";
-}
-
-@each $name, $color in $blockquote-colors {
-  .blockquote-#{$name} {
-    border-left-color: $color;
   }
 }
