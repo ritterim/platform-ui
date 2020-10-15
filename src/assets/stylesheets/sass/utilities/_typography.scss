@@ -151,8 +151,9 @@
 //
 // | General           |                    |                     |                      |
 // | ----------------- | ------------------ | ------------------- | -------------------- |
-// | `text--underline` | `text-underline--hover`  | `text--bold`         | `text--nowrap` <i class="pi-warning text-orange"></i>      |
-// | `text--center` <i class="pi-warning text-orange"></i>   | `text--right` <i class="pi-warning text-orange"></i>                    |                     |                      |
+// | `text--underline` | `text-underline--hover`  | `text--bold` | `text--nowrap` <i class="pi-warning text-orange"></i> |
+// | `text--center` <i class="pi-warning text-orange"></i>   | `text--right` <i class="pi-warning text-orange"></i> | `text--capitalize` | `text--uppercase` |
+// | `text--lowercase`   | `text--sentencecase` | `text--italic` |  |
 //
 // | <i class="pi-warning text-orange"></i> NOTE: A `flex--` utility should be used were possible. |
 // | --
@@ -219,6 +220,10 @@
     &:first-letter {
       text-transform: uppercase;
     }
+  }
+
+  &--italic {
+    font-style: italic;
   }
 
   &-underline--hover {
