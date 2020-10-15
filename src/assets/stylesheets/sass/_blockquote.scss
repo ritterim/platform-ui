@@ -1,0 +1,95 @@
+@use "config";
+@use "mixins";
+@use "utilities";
+@use "variables";
+@use "sass:color";
+@use "sass:math";
+@use "sass:map";
+@use "sass:meta";
+
+// Blockquote
+// 
+// Our blockquotes are similar to the browser default. We added a left border, which is a light gray by default. 
+// If you add a `cite` to your blockquote, the style will remain italic, which is the browser default. 
+// 
+// Markup:
+// <p>
+//     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+// </p>
+// <blockquote>
+//     <p>Anger is an acid that can do more harm to the vessel in which it is stored than to anything on which it is poured.</p>
+//     <footer>—Mark Twain</footer>
+// </blockquote>
+// <p>
+//     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+// </p>
+// <blockquote cite="https://www.goodreads.com/quotes/tag/american-literature">
+//     <p>Perhaps as you went along you did learn something. I did not care what it was all about. All I wanted to know was how to live in it. Maybe if you found out how to live in it you learned from that what it was all about.</p>
+//     <footer>—Ernest Hemingway, <cite>The Sun Also Rises</cite></footer>
+// </blockquote>
+// 
+// Styleguide Components.Blockquote
+
+
+// Blockquote Colors
+// 
+// As previously mentioned, the default color of the left border is light gray, but you can change it if you like.
+// You can add a modifier class like `bloackquote-{color}`, so `background-navy` will change the color to use the definied navy color.
+// You can view our list of colors [greyscale](/section-color.html#kssref-color-greyscale), [brand colors](/section-color.html#kssref-color-brandcolors), and [secondary colors](/section-color.html#kssref-color-secondarycolors) maps.
+// 
+// Markup:
+// <p>
+//     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+// </p>
+// <blockquote class="blockquote-navy">
+//     <p>Anger is an acid that can do more harm to the vessel in which it is stored than to anything on which it is poured.</p>
+//     <footer>—Mark Twain</footer>
+// </blockquote>
+// <blockquote class="blockquote-dark">
+//     <p>Beauty lies in the eyes of the beholder.</p>
+//     <footer>—Plato</footer>
+// </blockquote>
+// <p>
+//     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+// </p>
+// <blockquote class="blockquote-violet">
+//     <p>Tell me and I forget. Teach me and I remember. Involve me and I learn.</p>
+//     <footer>—Benjamin Franklin</footer>
+// </blockquote>
+// 
+// Styleguide Components.Blockquote.Colors
+
+
+blockquote {
+  border-left: thick solid map.get(variables.$greyscale, 'light');
+  margin-bottom: map.get(variables.$spacers, 3);
+  padding: map.get(variables.$spacers, 3) 0 map.get(variables.$spacers, 3) map.get(variables.$spacers, 3) * 1.5;
+  position: relative;
+
+  p {
+    margin-bottom: 0;
+
+    + p {
+      margin-top: map.get(variables.$spacers, 3);
+    }
+  }
+
+  footer {
+    margin-top: map.get(variables.$spacers, 3);
+  }
+}
+
+$blockquote-colors: () !default;
+
+@if meta.type-of(config.$config-colors) == 'map' {
+  $blockquote-colors: map.merge(config.$config-colors, variables.$greyscale);
+} @else {
+  $blockquote-colors: map.merge(variables.$greyscale, $blockquote-colors);
+  @warn "$config-colors is not set or empty";
+}
+
+@each $name, $color in $blockquote-colors {
+  .blockquote-#{$name} {
+    border-left-color: $color;
+  }
+}
