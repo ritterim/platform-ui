@@ -109,13 +109,13 @@
 
   &.inverted {
 
-    .site-menu__item:not(.search) {
+    .site-menu__item {
       a {
         @extend %inverted;  
       }
     }
     
-    a.site-menu__item:not(.search) {
+    a.site-menu__item {
       @extend %inverted;
     }
   }
@@ -145,7 +145,7 @@
 
   @media (pointer: fine) {
     &:hover {
-      &:not(.search):not(.active) {
+      &:not(.active) {
         background-color: color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05));
       }
     }
@@ -154,33 +154,9 @@
   .primary & {
     @media (pointer: fine) {
       &:hover {
-        &:not(.search):not(.active) {
+        &:not(.active) {
           background-color: color.adjust(config.$primary-menu-color, $lightness: math.percentage(-.05));
         }
-      }
-    }
-  }
-
-  &.search {
-    flex-grow: 1;
-    padding: 0 map.get(variables.$spacers, 3 );
-    @extend %flex-center;
-
-    @include mixins.breakpoint(tablet, min) {
-      padding: 0 map.get(variables.$spacers, 4);
-    }
-
-
-    input[type=text] {
-      background: transparent;
-      border: none;
-      font-weight: lighter;
-      width: 100%;
-      height: 100%;
-      outline: none;
-
-      &::placeholder {
-        color: map.get(variables.$greyscale, 'light');
       }
     }
   }
