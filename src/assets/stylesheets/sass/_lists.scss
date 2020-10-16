@@ -56,7 +56,8 @@
 // List - Bordered
 // 
 // You can have a bordered list by adding the `list--bordered` modifier. Be sure to add the class `list__item` to the li.
-// This adds a border-bottom to each `li` except the last.
+// This adds a border-bottom to each `li` except the last. A `padding-bottom: .5rem` is added to each `li` to match the 
+// `margin-bottom` in order to create a cleaner separation from the bottom border.
 // 
 // Markup:
 // <ul class="list list--bordered">
@@ -121,6 +122,34 @@
 // Weight: 5
 // 
 // Styleguide Components.Lists.Breadcrumbs
+
+
+// List - Other Examples
+// 
+// Using our utilities, icons, and modifiers, you can create some pretty fancy lists. We think so anyway.
+// Substitute a font-icon for `list-style-type`.
+// 
+// Markup:
+// <p>Checkout Our Blogs<p>
+// <ul class="list">
+//   <li class="flex">
+//     <i class="pi-arrow-solid-right text-salmon mr-3"></i> <p class="border-b border--color-lighter pb-2 mb-0 flex--grow">How To</p>
+//   </li>
+//   <li class="flex">
+//     <i class="pi-arrow-solid-right text-salmon mr-3"></i> <p class="border-b border--color-lighter pb-2 mb-0 flex--grow">People to meet</p>
+//   </li>
+//   <li class="flex">
+//     <i class="pi-arrow-solid-right text-salmon mr-3"></i> <p class="border-b border--color-lighter pb-2 mb-0 flex--grow">Places to go</p>
+//   </li>
+//   <li class="flex">
+//     <i class="pi-arrow-solid-right text-salmon mr-3"></i> <p class="border-b border--color-lighter pb-2 mb-0 flex--grow">Things to do</p>
+//   </li>
+// </ul>
+// 
+// Weight: 6
+// 
+// Styleguide Components.Lists.Other
+
 
 ul {
   margin: 0;
@@ -215,6 +244,7 @@ ul {
   &--bordered {
 
     #{$list}__item {
+      padding-bottom: map.get(variables.$spacers, 2);
 
       &:not(:last-of-type) {
         border-bottom: 1px solid map.get(variables.$greyscale, 'light-mid');
