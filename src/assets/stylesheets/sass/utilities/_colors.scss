@@ -6,7 +6,7 @@
 // Background Colors
 //
 // These classes are to be used to set, or change a background-color on a specific element. Similar to our `text-{color}` classes.
-// You can view our list of colors [greyscale](/section-color.html#kssref-color-greyscale), [brand colors](/section-color.html#kssref-color-brandcolors), and [secondary colors](/section-color.html#kssref-color-secondarycolors) maps.
+// You can view our list of colors [greyscale](/section-color.html#kssref-color-greyscale), [brand colors](/section-color.html#kssref-color-brandcolors), and [secondary colors](/section-color.html#kssref-color-secondarycolors) maps. Alpha transparency can also be set for any background color available. Alpha values range from 10% - 90% on the tens, for example `background-black-a90` sets the background of the element to black with 90% alpha.
 //
 // | Greyscale               |                          |                           |                            |
 // | ----------------------- | ------------------------ | ------------------------- | -------------------------- |
@@ -77,6 +77,14 @@ $platform-colors: () !default;
         }
       }
     }
+
+    // Add alpha transparency  
+    @for $i from 1 through 9 {
+      .background-#{$name}-a#{$i}0 {
+        background-color: rgba($color, $i * .1) !important;
+      }
+    }
+
   }
 }
 
@@ -104,6 +112,14 @@ $platform-colors: map.merge(config.$platform-colors, $platform-colors);
         }
       }
     }
+
+    // Add alpha transparency  
+    @for $i from 1 through 9 {
+      .background-#{$name}-a#{$i}0 {
+        background-color: rgba($color, $i * .1) !important;
+      }
+    }
+
   }
 }
 
@@ -119,6 +135,12 @@ $platform-colors: map.merge(config.$platform-colors, $platform-colors);
     // background color
     .background-#{$name} {
       background-color: $color !important;
+    }
+    // Add alpha transparency  
+    @for $i from 1 through 9 {
+      .background-#{$name}-a#{$i}0 {
+        background-color: rgba($color, $i * .1) !important;
+      }
     }
   }
 }
