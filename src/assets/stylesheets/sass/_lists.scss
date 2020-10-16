@@ -6,45 +6,25 @@
 // Lists
 //
 // The `ul` within platform-ui have `margin: 0` and a `padding-left: 1rem`. The `li`s in those lists have `margin-bottom: .5rem`.
-// Each `post-item` also has a `border-bottom` all except the last item in the list.
-//
-//  Styleguide Components.Lists
-
-// Post Lists
-//
-// A `post-list` is a pretty basic list. The margin and padding is removed from the list itself. The `post-item`s which should be added to the `li`s
-// in the list, have a `padding-bottom: 1rem` and `margin-bottom: 1rem`.
-//
-// Adding the class `post-list--inline` gives the list an inline look using `display: flex`.
-//
-// You can add some arrow icons to be in front of each `li` by adding the class `post-list--arrow`.
 //
 // Markup:
-// <ul class="post-list">
-//   <li class="post-item">This is a list item.</li>
-//   <li class="post-item">This is a list item.</li>
-//   <li class="post-item">This is a list item.</li>
+// <ul>
+//   <li>Dogs</li>
+//   <li>Cats</li>
+//   <li>Birds</li>
 // </ul>
-// <br>
-// <ul class="post-list post-list--inline">
-//   <li class="post-item">This is an inline list item.</li>
-//   <li class="post-item">This is an inline list item.</li>
-//   <li class="post-item">This is an inline list item.</li>
-// </ul>
-// <br>
-// <ul class="post-list post-list--arrow">
-//   <li class="post-item">This is a list item with a leading arrow.</li>
-//   <li class="post-item">This is a list item with a leading arrow.</li>
-//   <li class="post-item">This is a list item with a leading arrow.</li>
-// </ul>
-//
-// Styleguide Components.Lists.Post
+// <div class="my-3"></div>
+// <ol>
+//   <li>First</li>
+//   <li>Second</li>
+//   <li>Third</li>
+// </ol>
+// 
+//  Styleguide Components.Lists
 
 // List
 //
-// The list is a simplified list that strips the `list-style-type`, `margin`, and `padding`.
-// You can have a bordered list by adding the `list--bordered` modifier. Be sure to add the class `list__item` to the li.
-// This puts a top border on the list, as well as a border-bottom on each li.
+// Our list is simplified and strips the `list-style-type`, `margin`, and `padding` from the user agent stylesheet.
 //
 // Markup:
 // <ul class="list">
@@ -52,16 +32,95 @@
 //   <li>This is a list item.</li>
 //   <li>This is a list item.</li>
 // </ul>
-// <br>
-// <div class="mt-4">
-//   <ul class="list list--bordered">
-//     <li class="list__item">This is a list item.</li>
-//     <li class="list__item">This is a list item.</li>
-//     <li class="list__item">This is a list item.</li>
-//   </ul>
-// </div>
 //
 // Styleguide Components.Lists.RimList
+
+
+// List - Inline
+// 
+// You can create an inline list by adding the `list--inline` modifier to `list`. This adds `display: flex` to the list rather than 
+// adding `display: inline` to each `li` inside the list. 
+// 
+// Markup:
+// <ul class="list list--inline">
+//   <li>Inline list item.</li>
+//   <li>Inline list item.</li>
+//   <li>Inline list item.</li>
+// </ul>
+// 
+// Weight: 3
+// 
+// Styleguide Components.Lists.ListInline
+
+
+// List - Bordered
+// 
+// You can have a bordered list by adding the `list--bordered` modifier. Be sure to add the class `list__item` to the li.
+// This adds a border-bottom to each `li` except the last.
+// 
+// Markup:
+// <ul class="list list--bordered">
+//   <li class="list__item">This is a list item.</li>
+//   <li class="list__item">This is a list item.</li>
+//   <li class="list__item">This is a list item.</li>
+// </ul>
+// 
+// Weight: 4
+// 
+// Styleguide Components.Lists.ListBordered
+
+
+// List - Breadcrumbs
+// 
+// You can use our list classes as well as some other utilities to build yourself a simple breadcrumb trail.
+// In the example below we're using `list list--inline` to change the direction of the flow for the list items.
+// This removes any user agent styles for margin and padding as well as the list style type. Adding `list--inline`
+// also gives a `margin-right` to each `li` in the list. This can be changed with our (spacing utilities)[/section-utilities.html#utilities-spacers].
+// From there, we added an angle right icon to show direction of the breadcrumbs. You can switch this out for any icon you'd like.
+// 
+// Adding `aria-label="breadcrumbs"` to a `nav` wrapping the list as well as adding `aria-current="page"` to 
+// the current page will help with accessibility. In an example like breadcrumbs, we thhink it is important to use a list element
+// and to wrap it in a `nav`. The nav will help direct screen readers. As far as the list, since there is an order to the breadcrumbs
+// you can use an `ol` but using a `ul` is just fine too.
+// 
+// Markup:
+// <nav aria-label="breadcrumbs">
+//   <ol class="list list--inline">
+//     <li class="flex flex--align-center">
+//       <a href="#">Home</a> <i class="pi-angle-right ml-2"></i>
+//     </li>
+//     <li class="flex flex--align-center">
+//       <a href="#">Blog</a> <i class="pi-angle-right ml-2"></i>
+//     </li>
+//     <li class="flex flex--align-center">
+//       <a href="#">Blog Category</a> <i class="pi-angle-right ml-2"></i>
+//     </li>
+//     <li class="flex flex--align-center">
+//       <span aria-current="page">Blog Post</span>
+//     </li>
+//   </ol>
+// </nav>
+// <div class="my-3"></div
+// <nav aria-label="breadcrumbs">
+//   <ol class="list list--inline">
+//     <li class="flex flex--align-center">
+//       <a href="#">Home</a> <span class="ml-2">/</span>
+//     </li>
+//     <li class="flex flex--align-center">
+//       <a href="#">Blog</a> <span class="ml-2">/</span>
+//     </li>
+//     <li class="flex flex--align-center">
+//       <a href="#">Blog Category</a> <span class="ml-2">/</span>
+//     </li>
+//     <li class="flex flex--align-center">
+//       <span aria-current="page">Blog Post</span>
+//     </li>
+//   </ol>
+// </nav>
+// 
+// Weight: 5
+// 
+// Styleguide Components.Lists.Breadcrumbs
 
 ul {
   margin: 0;
@@ -69,75 +128,6 @@ ul {
 
   li {
     margin: 0 0 map.get(variables.$spacers, 2);
-  }
-}
-
-.post {
-
-  &-list {
-    list-style: none;
-    flex-grow: 1;
-    margin: 0;
-    padding: 0;
-
-    @include mixins.breakpoint(desktop, max) {
-      margin: 0;
-    }
-
-    &--inline {
-      display: flex;
-      flex-wrap: wrap;
-    }
-
-    &--arrow {
-      margin: 0 variables.$spacer;
-      padding: 0 0 0 map.get(variables.$spacers, 4);
-
-      .post-item {
-
-        &:before {
-          color: map.get(config.$brand-colors, 'salmon');
-          content: '\f114';
-          display: inline-block;
-          font-family: platform-icons;
-          font-weight: 900;
-          left: -(map.get(variables.$spacers, 4));
-          position: absolute;
-          transform: rotate(-145deg);
-        }
-      }
-    }
-  }
-
-  &-item {
-    margin: 0 0 variables.$spacer;
-    padding: 0 0 variables.$spacer;
-    position: relative;
-
-    &:not(:last-of-type) {
-      border-bottom: 1px solid map.get(variables.$greyscale, 'lighter');
-    }
-
-    &__duration {
-      color: map.get(variables.$greyscale, 'light');
-      font-size: map.get(variables.$font-percentage, 'sm');
-      margin-bottom: map.get(variables.$spacers, 1);
-
-      &:before {
-        content: '\f14a';
-        font-family: platform-icons;
-        margin: 0 map.get(variables.$spacers, 2) 0 0;
-      }
-    }
-
-    &__title {
-      margin-bottom: map.get(variables.$spacers, 1);
-    }
-
-    &__link {
-      font-size: map.get(variables.$font-percentage, 'sm');
-      font-weight: bold;
-    }
   }
 }
 
@@ -154,10 +144,10 @@ ul {
       position: relative;
 
       img {
-          height: auto;
-          width: 100%;
-          max-width: 100%;
-          opacity: .5;
+        height: auto;
+        width: 100%;
+        max-width: 100%;
+        opacity: .5;
       }
 
       &--video {
@@ -223,10 +213,20 @@ ul {
   padding: 0;
 
   &--bordered {
-    border-top: 1px solid map.get(variables.$greyscale, 'light-mid' );
 
     #{$list}__item {
-      border-bottom: 1px solid map.get(variables.$greyscale, 'light-mid' );
+
+      &:not(:last-of-type) {
+        border-bottom: 1px solid map.get(variables.$greyscale, 'light-mid');
+      }
+    }
+  }
+
+  &.list--inline {
+    display: flex;
+
+    li {
+      margin: 0 map.get(variables.$spacers, 2) 0 0;
     }
   }
 }
