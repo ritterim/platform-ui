@@ -76,7 +76,7 @@
 // You can use our list classes as well as some other utilities to build yourself a simple breadcrumb trail.
 // In the example below we're using `list list--inline` to change the direction of the flow for the list items.
 // This removes any user agent styles for margin and padding as well as the list style type. Adding `list--inline`
-// also gives a `margin-right` to each `li` in the list. This can be changed with our (spacing utilities)[/section-utilities.html#utilities-spacers].
+// also gives a `margin-right` to each `li` in the list. This can be changed with our [spacing utilities](/section-utilities.html#utilities-spacers).
 // From there, we added an angle right icon to show direction of the breadcrumbs. You can switch this out for any icon you'd like.
 // 
 // Adding `aria-label="breadcrumbs"` to a `nav` wrapping the list as well as adding `aria-current="page"` to 
@@ -130,6 +130,7 @@
 // Substitute a font-icon for `list-style-type`.
 // 
 // Markup:
+// <p>Old POst List Example</p>
 // <p>Checkout Our Blogs<p>
 // <ul class="list">
 //   <li class="flex">
@@ -149,6 +150,15 @@
 // Weight: 6
 // 
 // Styleguide Components.Lists.Other
+
+
+// List - Post List
+// 
+// <i class="pi-warning text-orange"></i> **NOTE**: This list style is deprecated as of <strong class="text-navy">v1.1.15</strong>. To see how to recreate this look using utility classes, see our [example](/section-components.html#components-lists-other) above. 
+// 
+// Weight: 7
+// 
+// Styleguide Components.Lists.PostList
 
 
 ul {
