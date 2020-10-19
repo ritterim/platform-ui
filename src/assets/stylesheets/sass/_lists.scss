@@ -151,14 +151,20 @@
 // 
 // Styleguide Components.Lists.Other
 
-
-// List - Post List
+// Post Lists
 // 
 // <i class="pi-warning text-orange"></i> **NOTE**: This list style is deprecated as of <strong class="text-navy">v1.1.15</strong>. To see how to recreate this look using utility classes, see our [example](/section-components.html#components-lists-other) above. 
+//
+// A `post-list` is a pretty basic list. The margin and padding is removed from the list itself. The `post-item`s which should be added to the `li`s
+// in the list, have a `padding-bottom: 1rem` and `margin-bottom: 1rem`.
+//
+// Adding the class `post-list--inline` gives the list an inline look using `display: flex`.
+//
+// You can add some arrow icons to be in front of each `li` by adding the class `post-list--arrow`.
+//
+// Weight: 2
 // 
-// Weight: 7
-// 
-// Styleguide Components.Lists.PostList
+// Styleguide Components.Lists.Post
 
 
 ul {
@@ -167,6 +173,75 @@ ul {
 
   li {
     margin: 0 0 map.get(variables.$spacers, 2);
+  }
+}
+
+.post {
+
+  &-list {
+    list-style: none;
+    flex-grow: 1;
+    margin: 0;
+    padding: 0;
+
+    @include mixins.breakpoint(desktop, max) {
+      margin: 0;
+    }
+
+    &--inline {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &--arrow {
+      margin: 0 variables.$spacer;
+      padding: 0 0 0 map.get(variables.$spacers, 4);
+
+      .post-item {
+
+        &:before {
+          color: map.get(config.$brand-colors, 'salmon');
+          content: '\f114';
+          display: inline-block;
+          font-family: platform-icons;
+          font-weight: 900;
+          left: -(map.get(variables.$spacers, 4));
+          position: absolute;
+          transform: rotate(-145deg);
+        }
+      }
+    }
+  }
+
+  &-item {
+    margin: 0 0 variables.$spacer;
+    padding: 0 0 variables.$spacer;
+    position: relative;
+
+    &:not(:last-of-type) {
+      border-bottom: 1px solid map.get(variables.$greyscale, 'lighter');
+    }
+
+    &__duration {
+      color: map.get(variables.$greyscale, 'light');
+      font-size: map.get(variables.$font-percentage, 'sm');
+      margin-bottom: map.get(variables.$spacers, 1);
+
+      &:before {
+        content: '\f14a';
+        font-family: platform-icons;
+        margin: 0 map.get(variables.$spacers, 2) 0 0;
+      }
+    }
+
+    &__title {
+      margin-bottom: map.get(variables.$spacers, 1);
+    }
+
+    &__link {
+      font-size: map.get(variables.$font-percentage, 'sm');
+      font-weight: bold;
+    }
   }
 }
 
