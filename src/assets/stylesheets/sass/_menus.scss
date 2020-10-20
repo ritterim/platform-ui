@@ -107,39 +107,6 @@
 }
 
 
-.dropdown {
-  position: relative;
-
-  &.dropdown-active {
-
-    > .dropdown__trigger {
-      color: color.adjust(map.get(config.$platform-colors, 'link'), $lightness: math.percentage(-.15));
-      
-      + .dropdown__content {
-        max-height: 100vh;
-        overflow-y: auto;
-        overflow-x: hidden;
-        z-index: 6;
-      }
-    }
-  }
-}
-
-.dropdown__content {
-  background-color: map.get(variables.$greyscale, 'lighter');
-  height: auto;
-  left: 0;
-  max-height: 0;
-  min-width: 12rem;
-  width: 100%;
-  overflow: hidden;
-  position: absolute;
-  transition: all .2s ease-in-out;
-  top: calc(100% + 1px);
-  z-index: 5;
-}
-
-
 // New stuff
 
 $all-colors: () !default;
@@ -169,17 +136,22 @@ $all-colors: () !default;
     line-height: 1;
     transition: config.$transitions;
     padding: map.get(variables.$spacers, 2) map.get(variables.$spacers, 3);
-  
-    @media (pointer: fine) {
-      &:hover {
-        &:not(.active) {
-          color: color.adjust(map.get(config.$platform-colors, 'link'), $lightness: math.percentage(-.15));
+  }
+
+  &:not([class*=background-]) {
+
+    a {
+      @media (pointer: fine) {
+        &:hover {
+          &:not(.active) {
+            color: color.adjust(map.get(config.$platform-colors, 'link'), $lightness: math.percentage(-.15));
+          }
         }
       }
-    }
-  
-    &.active {
-      color: color.adjust(map.get(config.$platform-colors, 'link'), $lightness: math.percentage(-.15));
+    
+      &.active {
+        color: color.adjust(map.get(config.$platform-colors, 'link'), $lightness: math.percentage(-.15));
+      }
     }
   }
 
@@ -265,15 +237,42 @@ $all-colors: () !default;
       background-color: $color !important;
 
       a {
+        @if lightness($color) > 50 and lightness($color) < 75 {
+          color: map.get(variables.$greyscale, 'dark');
+        } @else if lightness($color) > 50 {
+          color: map.get(variables.$greyscale, 'dark');
+        } @else {
+          color: map.get(variables.$greyscale, 'white');
+        }
   
         &.active {
           background-color: color.adjust($color, $lightness: math.percentage(-.1));
+        }
+
+        &.dropdown-active {
+          @if lightness($color) > 50 and lightness($color) < 75 {
+            color: map.get(variables.$greyscale, 'dark');
+          } @else if lightness($color) > 50 {
+            color: map.get(variables.$greyscale, 'dark');
+          } @else {
+            color: map.get(variables.$greyscale, 'white');
+          }
+  
+          > .dropdown__trigger {
+            @if lightness($color) > 50 and lightness($color) < 75 {
+              color: map.get(variables.$greyscale, 'dark');
+            } @else if lightness($color) > 50 {
+              color: map.get(variables.$greyscale, 'dark');
+            } @else {
+              color: map.get(variables.$greyscale, 'white');
+            }
+          }
         }
   
         @media (pointer: fine) {
           &:hover {
             &:not(.active) {
-              background-color: color.adjust($color, $lightness: math.percentage(-.1));
+              background-color: color.adjust($color, $lightness: math.percentage(-.05));
             }
           }
         }
@@ -319,6 +318,38 @@ $all-colors: () !default;
         }
       }
     }
+  }
+
+  .dropdown {
+    position: relative;
+  
+    &.dropdown-active {
+  
+      > .dropdown__trigger {
+        color: color.adjust(map.get(config.$platform-colors, 'link'), $lightness: math.percentage(-.15));
+        
+        + .dropdown__content {
+          max-height: 100vh;
+          overflow-y: auto;
+          overflow-x: hidden;
+          z-index: 6;
+        }
+      }
+    }
+  }
+  
+  .dropdown__content {
+    background-color: map.get(variables.$greyscale, 'lighter');
+    height: auto;
+    left: 0;
+    max-height: 0;
+    min-width: 12rem;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    transition: all .2s ease-in-out;
+    top: calc(100% + 1px);
+    z-index: 5;
   }
 
   .dropdown__trigger {
