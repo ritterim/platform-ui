@@ -76,11 +76,12 @@
 // Styleguide Menus.Fixed
 
 .site-header {
+  // **Move to platform plugins**
+
   // display: flex;
   // font-family: map.get(config.$fonts, 'base');
   // flex-direction: column;
 
-  // **Move to platform plugins**
   //  > .site-menu {
   //   flex: 1 1 50%;
 
@@ -90,6 +91,7 @@
   //     max-height: 50%;
   //   }
   // }
+  // **Move to platform plugins**
 
   &.site-header--fixed {
     position: fixed;
@@ -104,141 +106,37 @@
   }
 }
 
-.site-menu {
-  background-color: map.get(variables.$greyscale, 'white');
-  color: config.$primary-menu-color;
-  display: flex;
-}
-
-
-.site-menu__item {
-  // border-left: 1px solid color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.15));
-  // border-bottom: 1px solid transparent;
-  // display: flex;
-  // flex: 0 0 auto;
-  // padding: map.get(variables.$spacers, 3);
-  // transition: config.$transitions;
-  // @extend %flex-center;
-
-  // @media (pointer: fine) {
-  //   &:hover {
-  //     &:not(.active) {
-  //       background-color: color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05));
-  //     }
-  //   }
-  // }
-}
-
-
-
 
 .dropdown {
   position: relative;
 
   &.dropdown-active {
-    background-color: color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05));
 
-    > .dropdown__trigger + .dropdown__content {
-      max-height: 100vh;
-      overflow-y: auto;
-      overflow-x: hidden;
-    }
-  }
-
-  // &.site-menu__item {
-
-    // @media (pointer: fine) {
-    //   &:hover {
-    //     border-bottom-color: rgba(map.get(variables.$greyscale, 'lighter'), .5);
-    //   }
-    // }
-
-    &.dropdown-active {
-      background-color: color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05));
-      border-bottom-color: rgba(map.get(variables.$greyscale, 'lighter'), .5);
-    }
-
-    .dropdown__content {
-      background-color: color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05)); 
-  
-      &-item {
-  
-        &:hover {
-          background-color: rgba(color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05)), .3);
-        }
-  
-        &:not(:first-child) {
-          @include mixins.breakpoint(tablet, min) {
-            border-top: 1px solid rgba(map.get(variables.$greyscale, 'lighter'), .5);
-          }        
-        }
-  
-        i[class*="pi-"] {
-          padding-right: map.get(variables.$spacers, 3);
-          width: 1.2rem;
-          @extend %flex-center;
-        }
+    > .dropdown__trigger {
+      color: color.adjust(map.get(config.$platform-colors, 'link'), $lightness: math.percentage(-.15));
+      
+      + .dropdown__content {
+        max-height: 100vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        z-index: 6;
       }
     }
-  // }
-}
-
-.dropdown__trigger {
-  align-items: center;
-  display: flex;
-  // height: 100%;
-  // width: 100%;
-
-  // &:hover {
-  //   background-color: color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05));
-  // }
+  }
 }
 
 .dropdown__content {
-  background-color: color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05));
+  background-color: map.get(variables.$greyscale, 'lighter');
   height: auto;
   left: 0;
   max-height: 0;
-  // min-width: 15rem;
   min-width: 12rem;
   width: 100%;
   overflow: hidden;
   position: absolute;
-  transition: max-height .2s ease-in-out;
+  transition: all .2s ease-in-out;
   top: calc(100% + 1px);
   z-index: 5;
-
-  &-item {
-    border-left: 0;
-    display: flex;
-    justify-content: flex-start;
-    padding: map.get(variables.$spacers, 3);
-
-    @media (max-width: (config.$show-mobile-menu - 1)) {
-      border-top: none;
-      padding: map.get(variables.$spacers, 2 );
-    }
-
-    &:hover {
-      background-color: rgba(color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.05)), .3);
-    }
-
-    &:not(:first-child) {
-      @include mixins.breakpoint(tablet, min) {
-        border-top: 1px solid rgba(map.get(variables.$greyscale, 'lighter'), .5);
-      }        
-    }
-
-    &.profile {
-      flex-direction: column;
-    }
-
-    i[class*="pi-"] {
-      padding-right: map.get(variables.$spacers, 3);
-      width: 1.2rem;
-      @extend %flex-center;
-    }
-  }
 }
 
 
@@ -254,6 +152,9 @@ $all-colors: () !default;
 }
 
 .site-menu {
+  background-color: map.get(variables.$greyscale, 'white');
+  color: config.$primary-menu-color;
+  display: flex;
   list-style: none;
   padding: 0;
 
@@ -264,6 +165,7 @@ $all-colors: () !default;
 
   // default site-menu link hovers
   a {
+    display: block;
     line-height: 1;
     transition: config.$transitions;
     padding: map.get(variables.$spacers, 2) map.get(variables.$spacers, 3);
@@ -271,13 +173,13 @@ $all-colors: () !default;
     @media (pointer: fine) {
       &:hover {
         &:not(.active) {
-          color: color.adjust(map.get(config.$platform-colors, 'link'), $lightness: math.percentage(-.1));
+          color: color.adjust(map.get(config.$platform-colors, 'link'), $lightness: math.percentage(-.15));
         }
       }
     }
   
     &.active {
-      color: color.adjust(map.get(config.$platform-colors, 'link'), $lightness: math.percentage(-.1));
+      color: color.adjust(map.get(config.$platform-colors, 'link'), $lightness: math.percentage(-.15));
     }
   }
 
@@ -289,7 +191,7 @@ $all-colors: () !default;
       position: relative;
 
       &:after {
-        background-color: map.get(config.$platform-colors, 'link');
+        background-color: color.adjust(map.get(config.$platform-colors, 'link'), $lightness: math.percentage(-.15));
         bottom: 0;
         content: '';
         height: 2px;
@@ -418,38 +320,13 @@ $all-colors: () !default;
       }
     }
   }
-}
 
-
-
-// --------------
-// New nav-menu
-// --------------
-
-.nav-menu {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-
-  &.hover-border {
-
-    a {
-      border-bottom: 2px solid transparent;
-      margin: 0 map.get(variables.$spacers, 3);
-      padding: map.get(variables.$spacers, 2) 0;
-      transition: config.$transitions;
-      
-      &:hover {
-        border-bottom-color: map.get(config.$platform-colors, 'link');
-      }
-    }
-  }
-
-  a {
-    padding: map.get(variables.$spacers, 2) map.get(variables.$spacers, 3);
+  .dropdown__trigger {
+    align-items: center;
+    display: flex;
   }
 }
+
 
 
 
