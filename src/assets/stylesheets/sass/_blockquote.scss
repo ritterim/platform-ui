@@ -63,7 +63,7 @@
 
 
 blockquote {
-  border-left: thick solid map.get(variables.$greyscale, 'light');
+  border-left: map.get(variables.$spacers, 2) solid map.get(variables.$greyscale, 'light');
   margin-bottom: map.get(variables.$spacers, 3);
   padding: map.get(variables.$spacers, 3) 0 map.get(variables.$spacers, 3) map.get(variables.$spacers, 3) * 1.5;
   position: relative;
