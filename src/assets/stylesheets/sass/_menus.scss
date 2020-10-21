@@ -334,6 +334,7 @@ $all-colors: () !default;
 
 // Dropdown
 .dropdown {
+  display: flex;
   position: relative;
 
   ul,
@@ -371,12 +372,15 @@ $all-colors: () !default;
     min-width: 12rem;
     width: 100%;
     overflow: hidden;
-    padding: map.get(variables.$spacers, 2) 0;
     position: absolute;
     transition: all .2s ease-in-out;
     top: 100%;
     visibility: hidden;
     z-index: 5;
+
+    a {
+      padding: .75rem variables.$spacer;
+    }
   }
 }
 
@@ -494,41 +498,15 @@ $all-colors: () !default;
         transition: max-height config.$transitions ease-in;
         z-index: 2;
       }
-
-      .site-menu__item {
-
-        // &:not(:last-child) {
-        //   border-bottom: 1px solid color.adjust(map.get(variables.$greyscale, 'lighter'), $lightness: math.percentage(-.15));
-        // }
-      }
     }
 
-    .site-menu__item {
-      border-left: none;
-      justify-content: flex-start;
+    .dropdown {
+      flex-direction: column;
+      justify-content: center;
 
-      &.dropdown {
-        align-items: flex-start;
-        flex-direction: column;
-
-        .dropdown__content {
-          @media (max-width: (config.$show-mobile-menu - 1)) {
-            background-color: unset;
-            position: static;
-        
-            &-item {
-        
-              &:first-of-type {
-                margin-top: map.get(variables.$spacers, 2 );
-              }
-            }  
-          }
-        }
+      .dropdown__content {
+        position: static;
       }
-
-      &.dropdown-active {
-        background-color: unset;
-      }   
     }
 
     // Accounts for fixed header height and max-height of open nav
