@@ -50,10 +50,10 @@
 // Image Card
 //
 // Images can be placed at the top of cards. The `<img>` element gets the class `card__image` and is expected to be the first child element of the card.
-// When `rounded-` modifiers are used on the card, the image takes on the radius as well. Other modifiers can be used as needed.
+// When `rounded-` modifiers are used on the card, the image takes on the radius as well. Other modifiers can be used as needed. If you're using cards inside a block layout, adding the class `cards` to the `block-container` the cards inside will have equal height.
 //
 // Markup:
-// <div class="block-container blocks p-3 mb-3 tablet-up-4">
+// <div class="block-container cards blocks p-3 mb-3 tablet-up-4">
 // <div class="block">
 // <div class="card rounded-3">
 //     <img class="card__image background-lightblue p-3" src="site-assets/images/svg/course-1.svg" alt="" />
@@ -276,6 +276,10 @@
   background-color: map.get(variables.$greyscale, "white");
   border: 1px solid color.adjust(map.get(variables.$greyscale, "light"), $lightness: math.percentage(config.$hue-threshold * 2));
   padding: config.$card-padding;
+
+  .cards & {
+    height: 100%;
+  }
 
   &__image {
     width: calc(100% + (#{config.$card-padding} * 2));
