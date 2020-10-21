@@ -50,7 +50,7 @@
 // Image Card
 //
 // Images can be placed at the top of cards. The `<img>` element gets the class `card__image` and is expected to be the first child element of the card.
-// When `rounded-` modifiers are used on the card, the image takes on the radius as well. Other modifiers can be used as needed. If you're using cards inside a block layout, adding the class `cards` to the `block-container` the cards inside will have equal height.
+// When `rounded-` modifiers are used on the card, the image takes on the radius as well. Other modifiers can be used as needed. If you're using cards inside a block layout, adding the `cards` class to the `block-container` will give the cards inside equal height.
 //
 // Markup:
 // <div class="block-container cards blocks p-3 mb-3 tablet-up-4">
