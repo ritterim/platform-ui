@@ -218,6 +218,7 @@ $all-colors: () !default;
       }
     }
 
+
     .dropdown-active {
 
       > .dropdown__trigger {
@@ -228,6 +229,7 @@ $all-colors: () !default;
       }
     }
 
+    // Border hover colors
     @each $name, $color in $all-colors {
       &.hover-border--#{$name} {
 
@@ -240,6 +242,7 @@ $all-colors: () !default;
       }
     }
   }
+
 
   .dropdown__content {
     left: 0;
@@ -256,6 +259,7 @@ $all-colors: () !default;
     }
   }
 
+  // changes position of dropdowns when open
   &.flex--justify-end {
 
     .dropdown__content {
@@ -282,9 +286,7 @@ $all-colors: () !default;
       background-color: $color !important;
 
       a {
-        @if lightness($color) > 50 and lightness($color) < 75 {
-          color: map.get(variables.$greyscale, 'dark');
-        } @else if lightness($color) > 50 {
+        @if lightness($color) > 50 {
           color: map.get(variables.$greyscale, 'dark');
         } @else {
           color: map.get(variables.$greyscale, 'white');
@@ -304,9 +306,7 @@ $all-colors: () !default;
       }
 
       .dropdown-active {
-        @if lightness($color) > 50 and lightness($color) < 75 {
-          color: map.get(variables.$greyscale, 'dark');
-        } @else if lightness($color) > 50 {
+        @if lightness($color) > 50 {
           color: map.get(variables.$greyscale, 'dark');
         } @else {
           color: map.get(variables.$greyscale, 'white');
@@ -315,9 +315,7 @@ $all-colors: () !default;
         > .dropdown__trigger {
           background-color: color.adjust($color, $lightness: math.percentage(-.05));
           
-          @if lightness($color) > 50 and lightness($color) < 75 {
-            color: map.get(variables.$greyscale, 'dark');
-          } @else if lightness($color) > 50 {
+          @if lightness($color) > 50 {
             color: map.get(variables.$greyscale, 'dark');
           } @else {
             color: map.get(variables.$greyscale, 'white');
