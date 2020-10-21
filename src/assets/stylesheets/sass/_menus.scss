@@ -218,6 +218,16 @@ $all-colors: () !default;
       }
     }
 
+    .dropdown-active {
+
+      > .dropdown__trigger {
+        
+        &:after {
+          opacity: 1;
+        }
+      }
+    }
+
     @each $name, $color in $all-colors {
       &.hover-border--#{$name} {
 
@@ -231,66 +241,11 @@ $all-colors: () !default;
     }
   }
 
-
-  @each $name, $color in $all-colors {
-    &.background-#{$name} {
-      background-color: $color !important;
-
-      a {
-        @if lightness($color) > 50 and lightness($color) < 75 {
-          color: map.get(variables.$greyscale, 'dark');
-        } @else if lightness($color) > 50 {
-          color: map.get(variables.$greyscale, 'dark');
-        } @else {
-          color: map.get(variables.$greyscale, 'white');
-        }
-  
-        &.active {
-          background-color: color.adjust($color, $lightness: math.percentage(-.1));
-        }
-
-        &.dropdown-active {
-          @if lightness($color) > 50 and lightness($color) < 75 {
-            color: map.get(variables.$greyscale, 'dark');
-          } @else if lightness($color) > 50 {
-            color: map.get(variables.$greyscale, 'dark');
-          } @else {
-            color: map.get(variables.$greyscale, 'white');
-          }
-  
-          > .dropdown__trigger {
-            @if lightness($color) > 50 and lightness($color) < 75 {
-              color: map.get(variables.$greyscale, 'dark');
-            } @else if lightness($color) > 50 {
-              color: map.get(variables.$greyscale, 'dark');
-            } @else {
-              color: map.get(variables.$greyscale, 'white');
-            }
-          }
-        }
-  
-        @media (pointer: fine) {
-          &:hover {
-            &:not(.active) {
-              background-color: color.adjust($color, $lightness: math.percentage(-.05));
-            }
-          }
-        }
-      }
-    }
-  }
-
   .dropdown__content {
     left: 0;
   }
 
   .dropdown {
-
-    ul,
-    ol {
-      list-style: none;
-      padding: 0;
-    }
 
     &:last-of-type {
 
@@ -320,41 +275,110 @@ $all-colors: () !default;
     }
   }
 
-  .dropdown {
-    position: relative;
-  
-    &.dropdown-active {
-  
-      > .dropdown__trigger {
-        color: color.adjust(map.get(config.$platform-colors, 'link'), $lightness: math.percentage(-.15));
-        
-        + .dropdown__content {
-          max-height: 100vh;
-          overflow-y: auto;
-          overflow-x: hidden;
-          z-index: 6;
+
+  // Color specific 
+  @each $name, $color in $all-colors {
+    &.background-#{$name} {
+      background-color: $color !important;
+
+      a {
+        @if lightness($color) > 50 and lightness($color) < 75 {
+          color: map.get(variables.$greyscale, 'dark');
+        } @else if lightness($color) > 50 {
+          color: map.get(variables.$greyscale, 'dark');
+        } @else {
+          color: map.get(variables.$greyscale, 'white');
         }
+  
+        &.active {
+          background-color: color.adjust($color, $lightness: math.percentage(-.1));
+        }
+  
+        @media (pointer: fine) {
+          &:hover {
+            &:not(.active) {
+              background-color: color.adjust($color, $lightness: math.percentage(-.05));
+            }
+          }
+        }
+      }
+
+      .dropdown-active {
+        @if lightness($color) > 50 and lightness($color) < 75 {
+          color: map.get(variables.$greyscale, 'dark');
+        } @else if lightness($color) > 50 {
+          color: map.get(variables.$greyscale, 'dark');
+        } @else {
+          color: map.get(variables.$greyscale, 'white');
+        }
+
+        > .dropdown__trigger {
+          background-color: color.adjust($color, $lightness: math.percentage(-.05));
+          
+          @if lightness($color) > 50 and lightness($color) < 75 {
+            color: map.get(variables.$greyscale, 'dark');
+          } @else if lightness($color) > 50 {
+            color: map.get(variables.$greyscale, 'dark');
+          } @else {
+            color: map.get(variables.$greyscale, 'white');
+          }
+        }
+      }
+
+      .dropdown__content {
+        background-color: $color;
+        border-color: $color;
       }
     }
   }
+}
+
+
+// Dropdown
+.dropdown {
+  position: relative;
+
+  ul,
+  ol {
+    list-style: none;
+    padding: 0;
+  }
+
+  &.dropdown-active {
+
+    > .dropdown__trigger {
+      color: color.adjust(map.get(config.$platform-colors, 'link'), $lightness: math.percentage(-.15));
+      
+      + .dropdown__content {
+        max-height: 100vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        visibility: visible;
+        z-index: 6;
+      }
+    }
+  }
+
+  .dropdown__trigger {
+    align-items: center;
+    display: flex;
+  }
   
   .dropdown__content {
-    background-color: map.get(variables.$greyscale, 'lighter');
+    background-color: map.get(variables.$greyscale, 'white');
+    border: 1px solid map.get(variables.$greyscale, 'lighter');
     height: auto;
     left: 0;
     max-height: 0;
     min-width: 12rem;
     width: 100%;
     overflow: hidden;
+    padding: map.get(variables.$spacers, 2) 0;
     position: absolute;
     transition: all .2s ease-in-out;
-    top: calc(100% + 1px);
+    top: 100%;
+    visibility: hidden;
     z-index: 5;
-  }
-
-  .dropdown__trigger {
-    align-items: center;
-    display: flex;
   }
 }
 
