@@ -21,7 +21,7 @@
 // Styleguide Utilities.Flex
 
 .flex {
-  display: flex;
+  display: flex !important;;
 
   &-inline {
     display: inline-flex !important;
