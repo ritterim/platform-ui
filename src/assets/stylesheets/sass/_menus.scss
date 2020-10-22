@@ -404,7 +404,10 @@ $all-colors: () !default;
   }
   
   .dropdown__content {
-    background-color: map.get(variables.$greyscale, 'white');
+    @media (min-width: (config.$show-mobile-menu)) {
+      background-color: map.get(variables.$greyscale, 'white');
+    }
+    
     border: 1px solid map.get(variables.$greyscale, 'lighter');
     height: auto;
     left: 0;
@@ -572,11 +575,8 @@ $all-colors: () !default;
       }
 
       .dropdown {
-        flex-direction: column;
-        justify-content: center;
 
         .dropdown__content {
-          background-color: inherit;
           border: none;
           position: static;
         }
