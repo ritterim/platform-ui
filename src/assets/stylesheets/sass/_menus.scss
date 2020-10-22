@@ -534,13 +534,13 @@ $all-colors: () !default;
       transition: all config.$transitions ease-in-out;
       overflow: hidden;
       visibility: hidden;
+      z-index: 2;
   
       &.active {
         max-height: 100vh;
         overflow-y: auto;
         overflow-x: hidden;
         visibility: visible;
-        z-index: 2;
       }
 
 
