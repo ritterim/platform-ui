@@ -138,7 +138,7 @@ $all-colors: () !default;
     padding: map.get(variables.$spacers, 2) map.get(variables.$spacers, 3);
   }
 
-  &:not([class*=site-menu--background-]) {
+  &:not([class*=background-]) {
 
     a {
       @media (pointer: fine) {
@@ -305,7 +305,7 @@ $all-colors: () !default;
 
   // Color specific 
   @each $name, $color in $all-colors {
-    &.site-menu--background-#{$name} {
+    &.background-#{$name} {
       background-color: $color !important;
 
       a {
@@ -531,12 +531,15 @@ $all-colors: () !default;
       position: absolute;
       right: 0;
       top: 100%;
-      transition: max-height config.$transitions ease-out;
+      transition: all config.$transitions ease-in-out;
       overflow: hidden;
+      visibility: hidden;
   
       &.active {
         max-height: 100vh;
-        transition: max-height config.$transitions ease-in;
+        overflow-y: auto;
+        overflow-x: hidden;
+        visibility: visible;
         z-index: 2;
       }
 
@@ -560,7 +563,7 @@ $all-colors: () !default;
           }      
         }
 
-        &:not([class*=site-menu--background-]) {
+        &:not([class*=background-]) {
 
           &.active {
             border-bottom: 1px solid;
