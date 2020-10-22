@@ -334,6 +334,8 @@ $all-colors: () !default;
 // Dropdown
 .dropdown {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   position: relative;
 
   ul,
@@ -345,7 +347,7 @@ $all-colors: () !default;
   &.dropdown-active {
 
     > .dropdown__trigger {
-      color: color.adjust(map.get(config.$platform-colors, 'link'), $lightness: math.percentage(-.15));
+      text-shadow: 1px 0 0 currentColor;
       
       + .dropdown__content {
         max-height: 100vh;
