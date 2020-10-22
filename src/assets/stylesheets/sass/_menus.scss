@@ -119,8 +119,6 @@ $all-colors: () !default;
 }
 
 .site-menu {
-  background-color: map.get(variables.$greyscale, 'white');
-  color: config.$primary-menu-color;
   display: flex;
   list-style: none;
   padding: 0;
@@ -132,6 +130,7 @@ $all-colors: () !default;
 
   // default site-menu link hovers
   a {
+    color: inherit;
     display: block;
     line-height: 1;
     transition: config.$transitions;
@@ -144,13 +143,13 @@ $all-colors: () !default;
       @media (pointer: fine) {
         &:hover {
           &:not(.active) {
-            color: color.adjust(map.get(config.$platform-colors, 'link'), $lightness: math.percentage(-.15));
+            text-shadow: 1px 0 0 currentColor;
           }
         }
       }
     
       &.active {
-        color: color.adjust(map.get(config.$platform-colors, 'link'), $lightness: math.percentage(-.15));
+        text-shadow: 1px 0 0 currentColor;
       }
     }
   }
