@@ -119,6 +119,7 @@ $all-colors: () !default;
 }
 
 .site-menu {
+  background-color: inherit;
   display: flex;
   list-style: none;
   padding: 0;
@@ -137,7 +138,7 @@ $all-colors: () !default;
     padding: map.get(variables.$spacers, 2) map.get(variables.$spacers, 3);
   }
 
-  &:not([class*=background-]) {
+  &:not([class*=site-menu--background-]) {
 
     a {
       @media (pointer: fine) {
@@ -304,7 +305,7 @@ $all-colors: () !default;
 
   // Color specific 
   @each $name, $color in $all-colors {
-    &.background-#{$name} {
+    &.site-menu--background-#{$name} {
       background-color: $color !important;
 
       a {
@@ -506,6 +507,7 @@ $all-colors: () !default;
 
 .site-menu-wrapper {
   @media (max-width: (config.$show-mobile-menu - 1)) {
+    background-color: inherit;
     position: relative;
   }
 
@@ -539,46 +541,55 @@ $all-colors: () !default;
       }
 
 
-    // Side border modifier
-    &.site-menu--bordered {
+      // Side border modifier
+      &.site-menu--bordered {
 
-      > a,
-      > li > a {
-        border-top: 1px solid;
-      }
+        > a,
+        > li > a {
+          border-top: 1px solid;
+        }
 
-      > a:first-of-type {
-        border-top: none;
-      }
-
-      > li:first-of-type {
-
-        > a {
+        > a:first-of-type {
           border-top: none;
-        }      
+        }
+
+        > li:first-of-type {
+
+          > a {
+            border-top: none;
+          }      
+        }
+
+        &:not([class*=site-menu--background-]) {
+
+          &.active {
+            border-bottom: 1px solid;
+          }
+        }
       }
-    }
-    }
 
-    .dropdown {
-      flex-direction: column;
-      justify-content: center;
+      .dropdown {
+        flex-direction: column;
+        justify-content: center;
 
-      .dropdown__content {
-        position: static;
+        .dropdown__content {
+          background-color: inherit;
+          border: none;
+          position: static;
+        }
       }
-    }
 
-    // Accounts for fixed header height and max-height of open nav
-    &.site-header--fixed,
-    .site-header--fixed & {
+      // Accounts for fixed header height and max-height of open nav
+      &.site-header--fixed,
+      .site-header--fixed & {
 
-      .site-menu {
+        .site-menu {
 
-        &.active {
-          max-height: calc(100vh - var(--menu-height));
-          overflow-y: auto;
-          overflow-x: hidden;
+          &.active {
+            max-height: calc(100vh - var(--menu-height));
+            overflow-y: auto;
+            overflow-x: hidden;
+          }
         }
       }
     }
