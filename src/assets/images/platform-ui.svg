@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="35.477" height="46.197" viewBox="0 0 35.477 46.197">
   <style>
-    path { fill: #003f70; }
+    path, #Ellipse_2 { fill: #003f70; }
   </style>
   <g id="Group_344" data-name="Group 344" transform="translate(-322.342 -861.727)">
     <circle id="Ellipse_2" data-name="Ellipse 2" cx="2.104" cy="2.104" r="2.104" transform="translate(341.861 869.998)" fill="#fff"/>
