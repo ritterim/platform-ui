@@ -203,7 +203,7 @@
 // You can change the color of your border hovers by adding the modifier of `hover-border--{color}`.
 // 
 // Markup:
-// <ul class="site-menu hover-border hover-border--navy">
+// <ul class="site-menu hover-border hover-border--med-blue">
 //   <li>
 //     <a href="#">Menu Item 1</a>
 //   </li>
@@ -618,6 +618,10 @@
 
 // Site Menu - Responsive
 // 
+// | <i class="pi-warning text-orange"></i> NOTE: This component requires the use of JavaScript |
+// | --
+// 
+// The site-menu is not responsive by default. You 
 // 
 // Markup:
 // <nav class="site-menu-wrapper background-skyblue flex p-2">
@@ -628,19 +632,19 @@
 //   </button>
 //   <ul class="site-menu site-menu--bordered">
 //     <li class="flex flex--align-center">
-//       <a href="#">Menu Item 1</a>
+//       <a href="#" class="flex--grow">Menu Item 1</a>
 //     </li>
 //     <li class="flex flex--align-center">
-//       <a href="#">Menu Item 2</a>
+//       <a href="#" class="flex--grow">Menu Item 2</a>
 //     </li>
 //     <li class="flex flex--align-center">
-//       <a href="#">Menu Item 3</a>
+//       <a href="#" class="flex--grow">Menu Item 3</a>
 //     </li>
 //     <li class="flex flex--align-center">
-//       <a href="#">Menu Item 4</a>
+//       <a href="#" class="flex--grow">Menu Item 4</a>
 //     </li>
 //     <li class="flex flex--align-center">
-//       <a href="#">Menu Item 5</a>
+//       <a href="#" class="flex--grow">Menu Item 5</a>
 //     </li>
 //   </ul>
 // </nav>
