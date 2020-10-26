@@ -431,7 +431,7 @@
 
 // Block Spacing
 //
-// - Spacing is based on [Platform UI spacing]() with the following changes in  behaviour; Attaching padding to the horizontal axis, `px-2`, with a modifier of `blocks` will add that spacing to the `block-container`.
+// - Spacing is based on [Platform UI spacing]() with the following changes in behavior; Attaching padding to the horizontal axis, `px-2`, with a modifier of `blocks` will add that spacing to the `block-container`.
 // - Without the `blocks` modifier, placing `block-container px-2` will apply the horizontal axis padding to the `block` children within the container.
 // 
 // Each block in the example below has `padding: .5rem` applied.
