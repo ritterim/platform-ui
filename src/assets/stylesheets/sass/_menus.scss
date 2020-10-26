@@ -745,7 +745,20 @@
 //
 // To get a fixed header you can set the desired height in the config file. The `site-header` needs the modifier, `site-header--fixed`. This is what gives the header the `position: fixed` style.
 // In order to ensure that you have proper space between your header and main content, add the class `header-fixed` to the direct sibling of your `site-header`.
-// To see this in action, inspect the header of this style guide.
+// We use this in this styleguide.
+// 
+// Your code could look something like this:
+// 
+// ```html
+// <header class="site-header site-header--fixed">
+//   Header Content Here
+// </header>
+// <main class="header-fixed">
+//   Main content here
+// </main>
+// ```
+// 
+// <div class="my-3"></div>
 //
 // Styleguide Menus.Fixed
 
