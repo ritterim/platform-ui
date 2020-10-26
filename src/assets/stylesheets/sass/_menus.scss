@@ -238,6 +238,8 @@
 // By default, the dropdowns will open positioned to the left of their parent, all except for the last dropdown in the menu. 
 // This will help prevent any dropdowns from opening off the page. 
 // 
+// The dropdowns inhherit the hover states of the site-menu.
+// 
 // Markup:
 // <ul class="site-menu">
 //   <li class="dropdown">
@@ -485,6 +487,7 @@
 // | <i class="pi-warning text-orange"></i> NOTE: This component requires the use of JavaScript |
 // | --
 // 
+// <div class="my-3"></div>
 // Like we mentioned above, by default, the dropdowns will open positioned to the left of their parent, all except for the last dropdown in the menu. 
 // This will help prevent any dropdowns from opening off the page. 
 // 
@@ -621,16 +624,100 @@
 // | <i class="pi-warning text-orange"></i> NOTE: This component requires the use of JavaScript |
 // | --
 // 
-// The site-menu is not responsive by default. You 
+// <div class="my-3"></div>
+// The site-menu is not responsive by default. There are a couple key things you'll need to add inorder to have a responsive 
+// menu that drops down on smaller screen sizes.
+// 
+// First, you will need to wrap your `site-menu` in a `site-menu-wrapper` class. This will ensure the menu is positioned correctly.
+// Seconds you will need a button to toggle the menu. Add `<button class="site-menu-mobile-action">` as a sibling preceding your `site-menu`.
+// This button is displayed at the same resolution as the mobile `site-menu`. You can add position modifiers to it in order to place it 
+// where you like. See the example below.
+// 
+// Scale your browser window to see the mobile menu.
 // 
 // Markup:
 // <nav class="site-menu-wrapper background-skyblue flex p-2">
 //   <img src="../../src/assets/images/platform-ui.svg" alt="" class="mr-4">
-//   <button class="site-menu-mobile-action button--plain text-white hide-lg-tablet-up pos-abs pin-right mr-2 pin-center-top">
+//   <button class="site-menu-mobile-action button--plain text-white pos-abs pin-right mr-2 pin-center-top">
 //     <span class="sr-only">Toggle Navigation</span>
 //     <i aria-hidden="true" focusable="false" class="pi-menu pi-xl text-navy"></i>
 //   </button>
-//   <ul class="site-menu site-menu--bordered">
+//   <ul class="site-menu">
+//     <li class="flex flex--align-center">
+//       <a href="#" class="flex--grow">Menu Item 1</a>
+//     </li>
+//     <li class="flex flex--align-center">
+//       <a href="#" class="flex--grow">Menu Item 2</a>
+//     </li>
+//     <li class="dropdown">
+//       <a href="#" class="dropdown__trigger">
+//         Menu Item 3
+//         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+//       </a>
+//       <ul class="dropdown__content">
+//         <li>
+//           <a href="#">Dropdown Item 1</a>
+//         </li>
+//         <li>
+//           <a href="#">Dropdown Item 2</a>
+//         </li>
+//         <li>
+//           <a href="#">Dropdown Item 3</a>
+//         </li>
+//         <li>
+//           <a href="#">Dropdown Item 4</a>
+//         </li>
+//         <li>
+//           <a href="#">Dropdown Item 5</a>
+//         </li>
+//       </ul>
+//     </li>
+//     <li class="dropdown">
+//       <a href="#" class="dropdown__trigger">
+//         Menu Item 4
+//         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+//       </a>
+//       <ul class="dropdown__content">
+//         <li>
+//           <a href="#">Dropdown Item 1</a>
+//         </li>
+//         <li>
+//           <a href="#">Dropdown Item 2</a>
+//         </li>
+//         <li>
+//           <a href="#">Dropdown Item 3</a>
+//         </li>
+//         <li>
+//           <a href="#">Dropdown Item 4</a>
+//         </li>
+//         <li>
+//           <a href="#">Dropdown Item 5</a>
+//         </li>
+//       </ul>
+//     </li>
+//     <li class="flex flex--align-center">
+//       <a href="#" class="flex--grow">Menu Item 5</a>
+//     </li>
+//   </ul>
+// </nav>
+// 
+// Weight: 7
+// 
+// Styleguide Menus.SiteMenu.Responsive
+
+
+// Site Menu - Responsive inner dropdown
+// 
+// Dropdowns can be used inside the responsive `site-menu` as well. 
+// 
+// Markup:
+// <nav class="site-menu-wrapper background-skyblue flex p-2">
+//   <img src="../../src/assets/images/platform-ui.svg" alt="" class="mr-4">
+//   <button class="site-menu-mobile-action button--plain text-white pos-abs pin-right mr-2 pin-center-top">
+//     <span class="sr-only">Toggle Navigation</span>
+//     <i aria-hidden="true" focusable="false" class="pi-menu pi-xl text-navy"></i>
+//   </button>
+//   <ul class="site-menu">
 //     <li class="flex flex--align-center">
 //       <a href="#" class="flex--grow">Menu Item 1</a>
 //     </li>
@@ -649,7 +736,7 @@
 //   </ul>
 // </nav>
 // 
-// Weight: 7
+// Weight: 8
 // 
 // Styleguide Menus.SiteMenu.Responsive
 
