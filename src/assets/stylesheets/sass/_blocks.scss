@@ -432,7 +432,7 @@
 // Block Spacing
 //
 // - Spacing is based on [Platform UI spacing]() with the following changes in behavior; Attaching padding to the horizontal axis, `px-2`, with a modifier of `blocks` will add that spacing to the `block-container`.
-// - Without the `blocks` modifier, placing `block-container px-2` will apply the horizontal axis padding to the `block` children within the container.
+// - Without the `blocks` modifier, placing `block-container px-2` will not apply the horizontal axis padding to the `block` children within the container but rather apply `padding: 0 .5rem` to the block-container.
 // 
 // Each block in the example below has `padding: .5rem` applied.
 // 
@@ -514,7 +514,7 @@
 
 // Blocks - Card height
 // 
-// The block layout uses flexbox. So based on your markup, the height of the content inside a block may vary. If you used a `card` with in your
+// The block layout uses flexbox. So based on your markup, the height of the content inside a block may vary. If you used a `card` within your
 // blocks, like we have been in the examples, you might notice the height is off based on the content. To fix this, you can add the class `cards`
 // to the parent `block-container`. This will give `height: 100%` to each `card` inside a `block`.
 // 
