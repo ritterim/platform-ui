@@ -91,7 +91,7 @@
 // 
 // If you want to give your site menu a background color but you're not interested in the hover effect that comes with 
 // adding the background utility to the site-menu, you're in luck. The site-menu will inherit the background color of 
-// it's parent. So, if you wanted to make your site-menu a light grey you could. Wrap it in an element with the class 
+// it's parent. So, if you wanted to make your site-menu a light grey you could wrap it in an element with the class 
 // `background-lighter` and you'll get just that. This will not change the color of the menu items, however. So be sure 
 // to add the necessary color modifiers where you need to. See the second code example. 
 // 
@@ -625,7 +625,7 @@
 // | --
 // 
 // <div class="my-3"></div>
-// The site-menu is not responsive by default. There are a couple key things you'll need to add inorder to have a responsive 
+// The site-menu is not responsive by default. There are a couple key things you'll need to add in order to have a responsive 
 // menu that drops down on smaller screen sizes.
 // 
 // First, you will need to wrap your `site-menu` in a `site-menu-wrapper` class. This will ensure the menu is positioned correctly.
