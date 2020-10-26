@@ -5,7 +5,7 @@
 
 // Background Colors
 //
-// These classes are to be used to set, or change a background-color on a specific element. Similar to our `text-{color}` classes.
+// The map below can be used to set, or change a background-color on a specific element with one, or both of the classes `background-{color}` and `background-{color}--hover`.
 // You can view our list of colors [greyscale](/section-color.html#kssref-color-greyscale), [brand colors](/section-color.html#kssref-color-brandcolors), and [secondary colors](/section-color.html#kssref-color-secondarycolors) maps. Alpha transparency can also be set for any background color available. Alpha values range from 10% - 90% on the tens, for example `background-black-a90` sets the background of the element to black with 90% alpha.
 //
 // | Greyscale               |                          |                           |                            |
@@ -66,6 +66,14 @@ $platform-colors: () !default;
     // background color
     .background-#{$name} {
       background-color: $color !important;
+
+      &--hover {
+        transition: config.$transitions;
+
+        &:hover {
+          background-color: $color !important;
+        }
+      }
 
       &.button {
 
