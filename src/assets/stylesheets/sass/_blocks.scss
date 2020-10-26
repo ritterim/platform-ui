@@ -14,9 +14,7 @@
 // - Each `.block` has a width of 100%. From there, you can add modifiers to each block to take up the desired amount of columns 
 // in the 12 column grid.
 // - You can use responsive modifiers on each block as well. These modiifiers change the width (or amount of columns taken) of 
-// individual blocks from eachh breakpoint and up. The berakpoint modifiers use min-width media quries.
-// - You don't need to give a `block` a size modifier. If you want a block to take up an entire row, you would want something like: 
-// `<div class="block">`. 
+// individual blocks from each breakpoint and up. The breakpoint modifiers use min-width media queries.
 // - The `block-{number}` will always reflect the mobile, smallest breakpoint, value.
 //
 // 
@@ -26,8 +24,8 @@
 // - `block-container` can also act as a row.
 // - `block-container` has modifiers to allow auto-placement based on responsive breakpoints.
 // - Adding a `{breakpoint}-up-{value}` class will create a grid of equally size blocks within the grid. For example: `
-// block-container tablet-up-2 laptop-up-4` would result in a gid with 2 blocks per row starting at the table resolution, 
-// then when the screen size reaches the laptop resolution, you would see 4 blocks per row. Each block woul have the same width as well.
+// block-container tablet-up-2 laptop-up-4` would result in a gid with 2 blocks per row starting at the tablet resolution, 
+// then when the screen size reaches the laptop resolution, you would see 4 blocks per row. Each block would have the same width as well.
 // 
 // ### 12 Columns
 //
