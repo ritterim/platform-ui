@@ -24,7 +24,7 @@
 // - `block-container` can also act as a row.
 // - `block-container` has modifiers to allow auto-placement based on responsive breakpoints.
 // - Adding a `{breakpoint}-up-{value}` class will create a grid of equally size blocks within the grid. For example: `
-// block-container tablet-up-2 laptop-up-4` would result in a gid with 2 blocks per row starting at the tablet resolution, 
+// block-container tablet-up-2 laptop-up-4` would result in a grid with 2 blocks per row starting at the tablet resolution, 
 // then when the screen size reaches the laptop resolution, you would see 4 blocks per row. Each block would have the same width as well.
 // 
 // ### 12 Columns
