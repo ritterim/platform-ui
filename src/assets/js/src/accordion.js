@@ -1,7 +1,7 @@
-let accordionHeader = document.querySelectorAll('.pui-accordion__header, .accordion__header');
+let accordionHeaders = document.querySelectorAll('.pui-accordion__header, .accordion__header');
 
-if (accordionHeader) {
-  accordionHeader.forEach(function(el) {
+if (accordionHeaders) {
+  accordionHeaders.forEach(function(el) {
     el.addEventListener('click', function(e) {
       let accordion = el.parentElement;
       e.preventDefault();
