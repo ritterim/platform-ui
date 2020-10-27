@@ -151,12 +151,9 @@
 // Markup:
 // <div id="message-modal" class="modal modal--centered modal--closed" tabindex="-1">
 //   <div class="modal__inner animated slideInUp faster">
-//     <div class="modal__header">
-//       <button class="button modal__close" data-modal="message-modal">Close <i class="pi-times"></i></button>
-//       Message Modal
-//     </div>
 //     <div class="modal__content">
-//       <p class="text--size-lg text--center">Are you sure you want to select these options?</p>
+//       <button class="button modal__close pos-abs pin-right pin-top mr-3 mt-3" data-modal="message-modal">Close <i class="pi-times"></i></button>
+//       <p class="text--size-lg text--center mt-4">Are you sure you want to select these options?</p>
 //     </div>
 //     <div class="message message--warning m-0">
 //       <p>This is an example of a message that displays a warning but not necessarily an error.</p>

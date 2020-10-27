@@ -196,36 +196,15 @@
 
 // Colors
 //
-// We loop through a map to give you these color variations. The white button is not in this map however. A white ghost button, on hover, will resemble 
-// our standard `.button` look. You can get really fancy if you want by adding a specific text color on hover with any of these buttons. See the second
-// ghost white button example below. 
+// Buttons can be customized by using <a href="section-utilities.html#utilities-color-background">`background`</a>, <a href="section-typography.html#typography-utilities-color">`text`</a>, and `hover` (grouped with the <a href="section-utilities.html#utilities-color-background">`background`</a> and <a href="section-typography.html#typography-utilities-color">`text`</a> color documentation) utilities. See some examples below.
 //
 // Markup:
 // <div class="button-group mb-4 p-2">
-//   <button class="button button--navy">Navy</button>
-//   <button class="button button--skyblue">Skyblue</button>
-//   <button class="button button--lightblue">Lightblue</button>
-//   <button class="button button--med-blue">Med-blue</button>
-//   <button class="button button--beige">Beige</button>
-//   <button class="button button--peach">Peach</button>
-//   <button class="button button--salmon">Salmon</button>
-//   <button class="button button--brown">Brown</button>
-//   <button class="button button--orange">Orange</button>
-// </div>
-// <div class="button-group mb-4 p-2 background-lighter">
-//   <button class="button button--ghost button--navy">Navy</button>
-//   <button class="button button--ghost button--skyblue">Skyblue</button>
-//   <button class="button button--ghost button--lightblue">Lightblue</button>
-//   <button class="button button--ghost button--med-blue">Med-blue</button>
-//   <button class="button button--ghost button--beige">Beige</button>
-//   <button class="button button--ghost button--peach">Peach</button>
-//   <button class="button button--ghost button--salmon">Salmon</button>
-//   <button class="button button--ghost button--brown">Brown</button>
-//   <button class="button button--ghost button--orange">Orange</button>
-// </div>
-// <div class="button-group p-2 background-med-blue">
-//   <button class="button button--white button--ghost">Button</button>
-//   <button class="button button--white button--ghost text-med-blue--hover">Button</button>
+//   <button class="button background-lightblue background-skyblue--hover text-navy text-white--hover border--color-med-blue">Blue</button>
+//   <button class="button background-skyblue background-navy--hover text-navy text-white--hover border--color-navy">Blue</button>
+//   <button class="button background-beige background-brown--hover text-brown text-white--hover border--color-brown">Brown</button>
+//   <button class="button background-gold background-yellow--hover text-black border--color-yellow">Yellow</button>
+//   <button class="button background-light-mid background-dark--hover text-dark text-white--hover border--color-dark">Dark Grey</button>
 // </div>
 //
 // Styleguide Components.Button.Colors
@@ -434,14 +413,6 @@
         }
       }
     }
-  }
-
-  &.button--ghost {
-    background-color: transparent;
-
-    &:hover {
-      background-color: config.$button-primary-color;
-    }
   }  
 
   &--post {
@@ -482,69 +453,6 @@
     background: transparent;
     border: none;
     color: inherit;
-  }
-
-  @each $name, $color in config.$brand-colors {
-    &--#{$name} {
-      background-color: $color;
-      border-color: $color;
-      @if lightness($color) > 50 and lightness($color) < 75 {
-        color: color.adjust($color, $lightness: math.percentage(-.5));
-      } @else if lightness($color) > 50 {
-        color: color.adjust($color, $lightness: math.percentage(-.7));
-      } @else {
-        color: map.get(variables.$greyscale, 'white');
-      }
-
-      &:hover {
-        background-color: map.get(variables.$greyscale, 'white');
-        border-color: $color;
-        @if lightness($color) > 50 and lightness($color) < 75 {
-          color: color.adjust($color, $lightness: math.percentage(-.5));
-        } @else if lightness($color) > 50 {
-          color: color.adjust($color, $lightness: math.percentage(-.7));
-        } @else {
-          color: $color;
-        }
-      }
-
-      &.button--ghost {
-        @if lightness($color) > 50 and lightness($color) < 75 {
-          color: color.adjust($color, $lightness: math.percentage(-.4));
-        } @else if lightness($color) > 50 {
-          color: color.adjust($color, $lightness: math.percentage(-.6));
-        } @else {
-          color: $color;
-        }
-
-        &:hover {
-          background-color: $color;
-          border-color: $color;
-          @if lightness($color) > 50 and lightness($color) < 75 {
-            color: color.adjust($color, $lightness: math.percentage(-.3));
-          } @else if lightness($color) > 50 {
-            color: color.adjust($color, $lightness: math.percentage(-.5));
-          } @else {
-            color: map.get(variables.$greyscale, 'white');
-          }
-        }
-      }
-    }
-  }
-
-  &--white {
-    background-color: map.get(variables.$greyscale, 'white');
-    border-color: map.get(variables.$greyscale, 'white');
-
-    &.button--ghost {
-      color: map.get(variables.$greyscale, 'white');
-
-      &:hover {
-        background-color: map.get(variables.$greyscale, 'white');
-        border-color: map.get(variables.$greyscale, 'white');
-        color: config.$button-primary-color;
-      }
-    }
   }
 }
 
