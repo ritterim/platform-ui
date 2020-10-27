@@ -13,7 +13,7 @@ if(closeDrawer) {
   });
 }
 
-if(openDrawer)
+if(openDrawer) {
   openDrawer.forEach(drawer => {
     drawer.addEventListener('click', () => {
       toggleDrawer(document.getElementById(drawer.dataset.drawer));
