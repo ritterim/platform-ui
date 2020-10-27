@@ -43,9 +43,12 @@ p {
 }
 
 a {
-  color: map.get(config.$platform-colors, 'link');
   text-decoration: none;
   transition: config.$transitions;
+
+  &:not(.site-menu a) {
+    color: map.get(config.$platform-colors, 'link');
+  }
 }
 
 button {

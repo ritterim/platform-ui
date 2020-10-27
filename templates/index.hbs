@@ -22,23 +22,27 @@
   <meta name="theme-color" content="#ffffff">
 </head>
 <body id="kss-node" class="{{#if template.isHomepage}}background-lighter{{/if}}">
-  <header class="site-header site-header--fixed border-b border--color-skyblue">
-    <nav class="site-menu flex flex--justify-between">
-      <div class="flex flex--justify-start pl-3">
-        <a class="flex w-50" href="/">
-          <img class="w-100" src="site-assets/images/svg/RitterInsuranceLogo.svg" alt="Ritter Insurance Marketing">
-        </a>
-      </div>
-      <div class="flex flex--justify-end">
-        <a class="site-menu__item text--bold text-navy px-3" href="https://docs.ritterim.com">
-          <img class="icon--svg-small" src="site-assets/images/svg/ritter-docs.svg" alt="">
-          Ritter Docs
-        </a>
-        <a class="site-menu__item text--bold text-navy px-3" href="https://ritterim.com">
-          <img class="icon--svg-small" src="site-assets/images/svg/ritter-website.svg" alt="">
-          Ritterim.com
-        </a>
-      </div>
+  <header class="site-header site-header--fixed border-b border--color-skyblue flex flex--justify-between background-white">
+    <div class="flex flex--justify-start pl-3">
+      <a class="flex w-50" href="/">
+        <img class="w-100" src="site-assets/images/svg/RitterInsuranceLogo.svg" alt="Ritter Insurance Marketing">
+      </a>
+    </div>
+    <nav>
+      <ul class="site-menu h-100 background-white">
+        <li class="flex">
+          <a class="flex h-100 flex--align-center text--bold text-navy px-3 border-l border--color-light" href="https://docs.ritterim.com">
+            <img class="icon--svg-small" src="site-assets/images/svg/ritter-docs.svg" alt="">
+            Ritter Docs
+          </a>
+        </li>
+        <li class="flex">
+          <a class="flex h-100 flex--align-center text--bold text-navy px-3 border-l border--color-light" href="https://ritterim.com">
+            <img class="icon--svg-small" src="site-assets/images/svg/ritter-website.svg" alt="">
+            Ritterim.com
+          </a>
+        </li>
+      </ul>
     </nav>
   </header>
 
