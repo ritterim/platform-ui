@@ -58,8 +58,7 @@
 //
 // Markup:
 // <div class="pill">
-//  <div class="pill__close"><i class="pi-times-solid text-salmon"></i></div>
-//   Active
+//   Active <i class="pi-times-solid text-salmon ml-1 pointer"></i>
 // </div>
 //
 // Styleguide Components.Pill.Close
@@ -153,15 +152,6 @@
     // if icon present - flex it
     i {
       display: flex;
-    }
-  }
-
-  &__close {
-    position: absolute;
-    right: -.2rem;
-    top: -.6rem;
-    :hover {
-      cursor: pointer;
     }
   }
 
