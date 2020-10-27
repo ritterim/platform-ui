@@ -1,10 +1,10 @@
-var toggleAside = document.querySelector('.aside-tab');
+let toggleAside = document.querySelector('.aside-tab');
 if(!toggleAside) return;
 
-var aside = document.querySelector('.platform');
-var rotateIcon = document.querySelector('.aside-tab i');
+let aside = document.querySelector('.platform');
+let rotateIcon = document.querySelector('.aside-tab i');
 
-toggleAside.addEventListener('click', function() {
+toggleAside.addEventListener('click', () => {
   aside.classList.toggle('toggle');
   rotateIcon.classList.toggle('rotate-180');
 });

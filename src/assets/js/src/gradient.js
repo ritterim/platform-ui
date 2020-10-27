@@ -1,8 +1,8 @@
-var bgGradients = document.querySelectorAll('.linear-gradient');
+let bgGradients = document.querySelectorAll('.linear-gradient');
 
 if(bgGradients) return;
 
-bgGradient.forEach(function(elem){
+bgGradient.forEach(elem => {
   const direction = elem.dataset.gradientDirection;
   const start = elem.dataset.gradientStart;
   const stop = elem.dataset.gradientStop;
@@ -18,13 +18,11 @@ bgGradient.forEach(function(elem){
       elem.style.backgroundColor = fallback;
     }
     
-    elem.style.backgroundImage = 'linear-gradient('
-      + direction + ', ' + start + ', ' + stop + ')';
+    elem.style.backgroundImage = `linear-gradient('${direction}, ${start}, ${stop})`;
 
     if(elem.classList.contains('background-image')) {
       if(img) {
-        elem.style.backgroundImage = 'linear-gradient('
-      + direction + ', ' + start + ', ' + stop + '), url('+img+')';
+        elem.style.backgroundImage = `linear-gradient('${direction}, ${start}, ${stop}'), url('${img}')`;
       }
       if(position) {
         elem.style.backgroundPosition = position;
