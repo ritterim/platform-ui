@@ -7,52 +7,63 @@
 // Pez
 //
 // Pez represent square and rectangular rounded labels throughout the platform.
-// A Pez can support color by adding a text or background modifier as do Pills.
+// A Pez can support color by adding a text or background modifier.
 //
 // Pez were created to handle a specific need in our system for georaphic states. States and Products are used as buttons, so they are here as well.
 // 
 // For accessibility purposes, add `aria-label="{state name}"`.
 //
-// Pez have 3 states, default, disabled, and pressed
+// Pez have 3 states, default, disabled, and pressed.
+//
+// <div class="message message--info" data-header="Quick Tip">
+//  <p>Look at <a href="section-components.html#components-pill">pills</a> a similar style and inspiration.</p>
+// </div>
 //
 // Markup:
-// <div class="pez" aria-label="Alaska">
-//   AK
+// <div class="mb-4">
+//   <p class="mb-1 text--bold">Default Display</p>
+//   <div class="pez" aria-label="Alaska">AK</div>
+//   <div class="pez disabled" aria-label="Washington DC">DC</div>
+//   <div class="pez pressed" aria-label="Georgia">GA</div>
 // </div>
-// <div class="pez disabled" aria-label="Washington DC">
-//   DC
+// <h4 class="text--bold mb-3">Other Examples:</h4>
+// <div class="block-container blocks cards mb-4 p-2">
+//   <p class="block block-12 mb-1 mx-2 text-white background-navy text--bold">Choose your toppings:</p>
+//   <div class="block tablet-up-6">
+//     <div class="card">
+//       <p class="mb-1">Meat</p>
+//       <div class="pez m-1" aria-label="Pepperoni">Pepperoni</div>
+//       <div class="pez m-1" aria-label="Sausage">Sausage</div>
+//       <div class="pez m-1 background-olive text-dark border--color-olive" aria-label="Ham">Ham</div>
+//       <div class="pez m-1" aria-label="Buffalo Chicken">Buffalo Chicken</div>
+//     </div>
+//   </div>
+//   <div class="block tablet-up-6">
+//     <div class="card">
+//       <p class="mb-1">Veggies and Fruit</p>
+//       <div class="pez m-1 background-olive text-dark border--color-olive" aria-label="Onions">Onions</div>
+//       <div class="pez m-1" aria-label="Mushrooms">Mushrooms</div>
+//       <div class="pez disabled m-2" aria-label="Anchovies">Anchovies</div>
+//       <div class="pez m-1 background-olive text-dark border--color-olive" aria-label="Black Olives">Black Olives</div>
+//       <div class="pez m-1 background-olive text-dark border--color-olive" aria-label="Tomatoes">Tomatoes</div>
+//       <div class="pez m-1" aria-label="Peppers">Peppers</div>
+//       <div class="pez m-1" aria-label="Sun-dried Tomatoes">Sun-dried Tomatoes</div>
+//     </div>
+//   </div>
 // </div>
-// <div class="pez pressed" aria-label="Georgia">
-//   GA
+// <div class="block-container blocks p-2">
+//   <div class="block tablet-up-4">
+//     <p class="text-bold text-navy mb-1 border-b">Tags:</p>
+//     <div class="pez background-lightblue text-navy px-1 py-1" aria-label="Healthcare">Healthcare</div>
+//     <div class="pez background-lightblue text-navy px-1 py-1" aria-label="Personal Health">Personal Health</div>
+//     <div class="pez background-lightblue text-navy px-1 py-1" aria-label="Exercise">Exercise</div>
+//     <div class="pez background-lightblue text-navy px-1 py-1" aria-label="Weight Loss">Weight Loss</div>
+//     <div class="pez background-lightblue text-navy px-1 py-1" aria-label="Diet">Diet</div>
+//     <div class="pez background-lightblue text-navy px-1 py-1" aria-label="Healthy Eating">Healthy Eating</div>    
+//   </div>
 // </div>
 //
 // Styleguide Components.Pez
-
-// Corner label
-//
-// Pez can also have corner labels. These were designed to be used with the platform icon `pi-check`.
-//
-// Markup:
-// <button class="pez" aria-label="Alaska">
-//   AK
-//   <div class="pez__check-wrapper">
-//     <i class="pi-check" aria-hidden="true"></i>
-//   </div>
-// </button>
-// <button class="pez disabled" aria-label="Washington DC">
-//   DC
-//   <div class="pez__check-wrapper">
-//     <i class="pi-check" aria-hidden="true"></i>
-//   </div>
-// </button>
-// <button class="pez pressed" aria-label="Georgia">
-//   GA
-//   <div class="pez__check-wrapper">
-//     <i class="pi-check" aria-hidden="true"></i>
-//   </div>
-// </button>
-//
-// Styleguide Components.Pez.CornerLabel
 
 
 .pez {
@@ -73,49 +84,8 @@
   position: relative;
   transition: config.$transitions;
 
-  // --check-wrapper is meant to be used with a checkmark icon
-  &__check-wrapper {
-
-    color: white;
-    bottom: -1px;
-    right: -1px;
-    height: 1rem;
-    position: absolute;
-    width: 1.2rem;
-    
-    // triangle for check background
-    &:after {
-      content: "";
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 0 0 1rem 1.2rem;
-      border-color: transparent transparent map.get(variables.$error-colors, 'positive') transparent;
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      z-index: 1;
-    }
-
-    .pi-check {
-      display: block;
-      font-size: map.get(variables.$font-percentage, 'xxs');
-      position: absolute;
-      bottom: 0; 
-      right: 2px;
-      z-index: 2;
-    }
-
-    .pill {
-      position: absolute;
-      bottom: 2px;
-      right: 2px;
-      z-index: 2;
-    }
-  }
-
   &.disabled {
-    cursor: none;
+    cursor: not-allowed;
     font-weight: normal;
     opacity: config.$opacity / 2;
   }
