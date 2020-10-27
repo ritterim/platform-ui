@@ -488,18 +488,19 @@
 // | --
 // 
 // <div class="my-3"></div>
-// Like we mentioned above, by default, the dropdowns will open positioned to the left of their parent, all except for the last dropdown in the menu. 
-// This will help prevent any dropdowns from opening off the page. 
 // 
-// This will change based on the alignment of the site-menu. The site-menu uses `display: flex` so if you change the value of 
-// `justify-content` the position of the dropdowns change. If you add `flex--justify-end` to the site menu, the  alignment of 
-// the menu items will shift to the right and the dropdowns will open positioned to the right of their parent, all except for the first. 
+// Like we mentioned above, by default, the dropdowns will open positioned to the left of their parent.
+//  
+// Dropdowns can be changed to open centered, or open from the right. This can be changed by adding the modifier class
+// of `dropdown--centered` or `dropdown--right` to the `dropdown` class.
+// 
+// See the example below.
 // 
 // Markup:
-// <ul class="site-menu flex--justify-end">
-//   <li class="dropdown">
+// <ul class="site-menu">
+//   <li class="dropdown dropdown--center">
 //     <a href="#" class="dropdown__trigger">
-//       Menu Item 1
+//       Dropdown Center
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //     </a>
 //     <ul class="dropdown__content">
@@ -520,9 +521,9 @@
 //       </li>
 //     </ul>
 //   </li>
-//   <li class="dropdown">
+//   <li class="dropdown dropdown--right">
 //     <a href="#" class="dropdown__trigger">
-//       Menu Item 2
+//       Dropdown Right
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //     </a>
 //     <ul class="dropdown__content">
@@ -962,32 +963,21 @@ $all-colors: () !default;
   }
 
   .dropdown {
-
-    &:last-of-type {
+    
+    // changes position of dropdowns when open
+    &.dropdown--right {
 
       .dropdown__content {
         left: auto;
         right: 0;
       }
     }
-  }
 
-  // changes position of dropdowns when open
-  &.flex--justify-end {
+    &.dropdown--center {
 
-    .dropdown__content {
-      left: auto;
-      right: 0;
-    }
-
-    .dropdown {
-
-      &:first-of-type {
-        
-        .dropdown__content {
-          left: 0;
-          right: auto;
-        }
+      .dropdown__content {
+        left: 50%;
+        transform: translateX(-50%);
       }
     }
   }
