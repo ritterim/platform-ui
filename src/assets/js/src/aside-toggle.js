@@ -1,10 +1,10 @@
 var toggleAside = document.querySelector('.aside-tab');
-if (toggleAside) {
-  var aside = document.querySelector('.platform');
-  var rotateIcon = document.querySelector('.aside-tab i')
+if(!toggleAside) return;
 
-  toggleAside.addEventListener('click', function() {
-    aside.classList.toggle('toggle');
-    rotateIcon.classList.toggle('rotate-180');
-  });
-}
+var aside = document.querySelector('.platform');
+var rotateIcon = document.querySelector('.aside-tab i');
+
+toggleAside.addEventListener('click', function() {
+  aside.classList.toggle('toggle');
+  rotateIcon.classList.toggle('rotate-180');
+});

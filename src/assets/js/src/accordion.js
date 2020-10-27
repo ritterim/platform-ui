@@ -1,18 +1,16 @@
 let accordionHeaders = document.querySelectorAll('.pui-accordion__header, .accordion__header');
 
-if (accordionHeaders) {
-  accordionHeaders.forEach(function(el) {
-    el.addEventListener('click', function(e) {
-      let accordion = el.parentElement;
-      e.preventDefault();
-      accordion.querySelector('.pui-accordion__content, .accordion__content').classList.toggle('active');
-    });
-    el.addEventListener('keydown', function(e) {
-      let accordion = el.parentElement;
-      if (e.keyCode === 13) {
-        e.preventDefault();
-        accordion.querySelector('.pui-accordion__content, .accordion__content').classList.toggle('active');
-      }
-    });
+if (!accordionHeaders) return;
+
+accordionHeaders.forEach(function(accordion) {
+  accordion.addEventListener('click', function(e) {
+    e.preventDefault();
+    accordion.parentElement.querySelector('.pui-accordion__content, .accordion__content').classList.toggle('active');
   });
-}
+  accordion.addEventListener('keydown', function(e) {
+    if (e.keyCode === 13) {
+      e.preventDefault();
+      accordion.parentElement.querySelector('.pui-accordion__content, .accordion__content').classList.toggle('active');
+    }
+  });
+});
