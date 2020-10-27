@@ -65,32 +65,6 @@
 //
 // Styleguide Components.Pez
 
-// Corner label
-//
-// Pez can also have corner labels. These were designed to be used with the platform icon `pi-check`.
-//
-// Markup:
-// <button class="pez" aria-label="Alaska">
-//   AK
-//   <div class="pez__check-wrapper">
-//     <i class="pi-check" aria-hidden="true"></i>
-//   </div>
-// </button>
-// <button class="pez disabled" aria-label="Washington DC">
-//   DC
-//   <div class="pez__check-wrapper">
-//     <i class="pi-check" aria-hidden="true"></i>
-//   </div>
-// </button>
-// <button class="pez pressed" aria-label="Georgia">
-//   GA
-//   <div class="pez__check-wrapper">
-//     <i class="pi-check" aria-hidden="true"></i>
-//   </div>
-// </button>
-//
-// Styleguide Components.Pez.CornerLabel
-
 
 .pez {
 
@@ -109,47 +83,6 @@
   padding: calc(#{variables.$spacer} * .45);
   position: relative;
   transition: config.$transitions;
-
-  // --check-wrapper is meant to be used with a checkmark icon
-  &__check-wrapper {
-
-    color: white;
-    bottom: -1px;
-    right: -1px;
-    height: 1rem;
-    position: absolute;
-    width: 1.2rem;
-    
-    // triangle for check background
-    &:after {
-      content: "";
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 0 0 1rem 1.2rem;
-      border-color: transparent transparent map.get(variables.$error-colors, 'positive') transparent;
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      z-index: 1;
-    }
-
-    .pi-check {
-      display: block;
-      font-size: map.get(variables.$font-percentage, 'xxs');
-      position: absolute;
-      bottom: 0; 
-      right: 2px;
-      z-index: 2;
-    }
-
-    .pill {
-      position: absolute;
-      bottom: 2px;
-      right: 2px;
-      z-index: 2;
-    }
-  }
 
   &.disabled {
     cursor: not-allowed;
