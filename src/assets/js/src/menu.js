@@ -13,7 +13,7 @@ let openDropdown = (item) => {
   }
 }
 
-if(hasDropdown) {
+if(hasDropdowns) {
   const links = document.querySelectorAll('.dropdown .dropdown__trigger')
   const dropdownLinks = document.querySelectorAll('.dropdown__content a')
 
@@ -41,7 +41,7 @@ if(hasDropdown) {
 let menuActions = document.querySelectorAll('.site-menu-mobile-action');
 
 if(menuActions) {
-  menuActions.forEach(action {
+  menuActions.forEach(action => {
     action.addEventListener('click', e => {
       e.preventDefault;
       let wrapper = el.closest('.site-menu-wrapper');

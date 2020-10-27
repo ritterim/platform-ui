@@ -1,16 +1,16 @@
 let editReadonly = document.querySelector('.js-edit-readonly');
 let editTextarea = document.querySelector('.js-edit-textarea');
 
-if(!editReadonly && !editTextarea) return;
+if(editReadonly && editTextarea) {
+  editReadonly.addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelector('.readonly').removeAttribute('readonly');
+    document.querySelector('.readonly').focus();
+  });
 
-editReadonly.addEventListener('click', e => {
-  e.preventDefault();
-  document.querySelector('.readonly').removeAttribute('readonly');
-  document.querySelector('.readonly').focus();
-});
-
-editTextarea.addEventListener('click', e => {
-  e.preventDefault();
-  document.querySelector('.js-textarea').removeAttribute('readonly');
-  document.querySelector('.js-textarea').focus();
-});
+  editTextarea.addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelector('.js-textarea').removeAttribute('readonly');
+    document.querySelector('.js-textarea').focus();
+  });
+}
