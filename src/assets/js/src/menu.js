@@ -6,7 +6,7 @@ let openDropdown = (item) => {
   if(menuItem.classList.contains('dropdown-active')) {
     menuItem.classList.remove('dropdown-active');
   } else {
-    hasDropdown.forEach(node => {
+    hasDropdowns.forEach(node => {
       node.classList.remove('dropdown-active');
     });
     menuItem.classList.toggle('dropdown-active');
