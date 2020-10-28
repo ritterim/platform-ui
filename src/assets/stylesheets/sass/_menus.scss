@@ -345,7 +345,7 @@
 // By default, the dropdowns will open positioned to the left of their parent, all except for the last dropdown in the menu. 
 // This will help prevent any dropdowns from opening off the page. 
 // 
-// The dropdowns inhherit the hover states of the site-menu.
+// The dropdowns inherit the hover states of the site-menu.
 // 
 // <h4 class="text--bold mb-3">Example:</h4>
 // <div class="background-white">
@@ -1095,6 +1095,51 @@
 // Weight: 6
 // 
 // Styleguide Menus.SiteMenu.DropdownAlign
+
+
+// Site Menu - Dropdowns Extras
+// 
+// It's important to know that the `dropdown__content` is what is being hidden within this component. If you want to add some custom
+// styling, whether you use some of our utilities or a custom stylesheet, we recommend doing that on a child element inside the 
+// dropwdown__content.
+// 
+// For example, say you wanted to increase the padding and add a border. Use a `<div>` for the `dropdown__content` and add the padding 
+// and border utilities to whatever child element you use inside the dropdown, in this case a list. See the example below.
+// 
+// Markup:
+// <div class="background-white">
+//   <ul class="site-menu">
+//     <li class="dropdown dropdown--center">
+//       <a href="#" class="dropdown__trigger">
+//         Dropdown Center
+//         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+//       </a>
+//       <div class="dropdown__content">
+//         <ul class="border border--color-navy py-4">
+//           <li>
+//             <a href="#">Dropdown Item 1</a>
+//           </li>
+//           <li>
+//             <a href="#">Dropdown Item 2</a>
+//           </li>
+//           <li>
+//             <a href="#">Dropdown Item 3</a>
+//           </li>
+//           <li>
+//             <a href="#">Dropdown Item 4</a>
+//           </li>
+//           <li>
+//             <a href="#">Dropdown Item 5</a>
+//           </li>
+//         </ul>
+//       </div>
+//     </li>
+//   </ul>
+// </div>
+// 
+// Weight: 7
+// 
+// Styleguide Menus.SiteMenu.DropdownExtra
 
 
 // Site Menu - Responsive
