@@ -1,20 +1,22 @@
-let closeDrawer = document.querySelectorAll('.pui-drawer__close, .drawer__close');
-let openDrawer = document.querySelectorAll('.pui-drawer__open, .drawer__open');
+let closeDrawer = document.querySelectorAll('.drawer__close');
+let openDrawer = document.querySelectorAll('.drawer__open');
+
+let toggleDrawer = (drawer) => {
+  drawer.classList.toggle('drawer--closed');
+}
 
 if(closeDrawer) {
-  closeDrawer.forEach(function(el) {
-    el.addEventListener('click', function() {
-      let drawer = document.getElementById(el.dataset.drawer);
-      drawer.classList.toggle('pui-drawer--closed');
+  closeDrawer.forEach(drawer => {
+    drawer.addEventListener('click', () => {
+      toggleDrawer(document.getElementById(drawer.dataset.drawer));
     });
   });
 }
 
 if(openDrawer) {
-  openDrawer.forEach(function(el) {
-    el.addEventListener('click', function() {
-      let drawer = document.getElementById(el.dataset.drawer);
-      drawer.classList.toggle('pui-drawer--closed');
+  openDrawer.forEach(drawer => {
+    drawer.addEventListener('click', () => {
+      toggleDrawer(document.getElementById(drawer.dataset.drawer));
     });
   });
 }

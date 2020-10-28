@@ -1,9 +1,8 @@
-var menuAction = document.querySelector('.mobile-menu-action');
+let menuAction = document.querySelector('.mobile-menu-action');
 
-if (menuAction) {
-  var body = document.querySelector('.platform');
-
-  menuAction.addEventListener('click', function() {
+if(menuAction) {
+  let body = document.querySelector('.platform');
+  menuAction.addEventListener('click', () => {
     body.classList.toggle('menu-open');
   });
 }

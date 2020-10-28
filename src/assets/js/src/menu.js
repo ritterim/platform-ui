@@ -1,5 +1,5 @@
-let  dropdownMenu = document.querySelectorAll('.dropdown-content');
-let  hasDropdown = document.querySelectorAll('.dropdown');
+let  dropdownMenus = document.querySelectorAll('.dropdown-content');
+let  hasDropdowns = document.querySelectorAll('.dropdown');
 
 let openDropdown = (item) => {
   let menuItem = item.closest('.dropdown');
@@ -13,36 +13,36 @@ let openDropdown = (item) => {
   }
 }
 
-if (hasDropdown) {
+if(hasDropdowns) {
   const links = document.querySelectorAll('.dropdown .dropdown__trigger')
   const dropdownLinks = document.querySelectorAll('.dropdown__content a')
 
-  links.forEach( (el) => {
-    el.addEventListener('click', (e) => {
+  links.forEach(link => {
+    link.addEventListener('click', e => {
       e.stopPropagation();
       e.preventDefault();
-      openDropdown(el);
+      openDropdown(link);
     })
-    el.addEventListener('keydown', (e) => {
+    link.addEventListener('keydown', e => {
       if (e.keyCode === 13) {
         e.preventDefault();
-        openDropdown(el);
+        openDropdown(link);
       }
     })
   });
 
-  dropdownLinks.forEach((el) => {
-    el.addEventListener('click', (e) => {
+  dropdownLinks.forEach(dropdownLink => {
+    dropdownLink.addEventListener('click', e => {
       e.stopPropagation();
     })
   });
 }
 
-let menuAction = document.querySelectorAll('.site-menu-mobile-action');
+let menuActions = document.querySelectorAll('.site-menu-mobile-action');
 
-if (menuAction) {
-  menuAction.forEach(function(el) {
-    el.addEventListener('click', (e) => {
+if(menuActions) {
+  menuActions.forEach(action => {
+    action.addEventListener('click', e => {
       e.preventDefault;
       let wrapper = el.closest('.site-menu-wrapper');
       wrapper.querySelector('.site-menu').classList.toggle('active');

@@ -1,15 +1,14 @@
-const editReadonly = document.querySelector('.js-edit-readonly');
+let editReadonly = document.querySelector('.js-edit-readonly');
+let editTextarea = document.querySelector('.js-edit-textarea');
 
-if (editReadonly) {
-  const editTextarea = document.querySelector('.js-edit-textarea');
-
-  editReadonly.addEventListener('click', function(e){
+if(editReadonly && editTextarea) {
+  editReadonly.addEventListener('click', e => {
     e.preventDefault();
     document.querySelector('.readonly').removeAttribute('readonly');
     document.querySelector('.readonly').focus();
   });
 
-  editTextarea.addEventListener('click', function(e){
+  editTextarea.addEventListener('click', e => {
     e.preventDefault();
     document.querySelector('.js-textarea').removeAttribute('readonly');
     document.querySelector('.js-textarea').focus();
