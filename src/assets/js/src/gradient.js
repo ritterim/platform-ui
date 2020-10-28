@@ -17,11 +17,12 @@ if(bgGradients) {
         elem.style.backgroundColor = fallback;
       }
       
-      elem.style.backgroundImage = `linear-gradient('${direction}, ${start}, ${stop})`;
+      let gradient = `linear-gradient(${direction}, ${start}, ${stop})`;
+      elem.style.backgroundImage = gradient;
 
       if(elem.classList.contains('background-image')) {
         if(img) {
-          elem.style.backgroundImage = `linear-gradient('${direction}, ${start}, ${stop}'), url('${img}')`;
+          elem.style.backgroundImage = `${gradient}, url(${img})`;
         }
         if(position) {
           elem.style.backgroundPosition = position;
