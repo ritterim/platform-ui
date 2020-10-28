@@ -1506,7 +1506,6 @@ $all-colors: () !default;
 
       .dropdown__content {
         background-color: $color;
-        border-color: $color;
       }
 
 
@@ -1550,7 +1549,6 @@ $all-colors: () !default;
         max-height: 100vh;
         overflow-y: auto;
         overflow-x: hidden;
-        visibility: visible;
         z-index: 6;
       }
     }
@@ -1567,7 +1565,6 @@ $all-colors: () !default;
     }
     
     background-color: inherit;
-    border: 1px solid map.get(variables.$greyscale, 'lighter');
     height: auto;
     left: 0;
     max-height: 0;
@@ -1577,7 +1574,6 @@ $all-colors: () !default;
     position: absolute;
     transition: all .2s ease-in-out;
     top: 100%;
-    visibility: hidden;
     z-index: 5;
 
     a {
