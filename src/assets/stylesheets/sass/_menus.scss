@@ -19,19 +19,19 @@
 // <div class="background-white">
 //   <ul class="site-menu">
 //     <li>
-//       <a href="#">Menu Item 1</a>
+//       <a class="site-menu__item" href="#">Menu Item 1</a>
 //     </li>
 //     <li>
-//       <a href="#">Menu Item 2</a>
+//       <a class="site-menu__item" href="#">Menu Item 2</a>
 //     </li>
 //     <li>
-//       <a href="#">Menu Item 3</a>
+//       <a class="site-menu__item" href="#">Menu Item 3</a>
 //     </li>
 //     <li>
-//       <a href="#">Menu Item 4</a>
+//       <a class="site-menu__item" href="#">Menu Item 4</a>
 //     </li>
 //     <li>
-//       <a href="#">Menu Item 5</a>
+//       <a class="site-menu__item" href="#">Menu Item 5</a>
 //     </li>
 //   </ul>
 // </div>
@@ -41,19 +41,19 @@
 // ```html
 // <ul class="site-menu">
 //   <li>
-//     <a href="#">Menu Item 1</a>
+//     <a class="site-menu__item" href="#">Menu Item 1</a>
 //   </li>
 //   <li>
-//     <a href="#">Menu Item 2</a>
+//     <a class="site-menu__item" href="#">Menu Item 2</a>
 //   </li>
 //   <li>
-//     <a href="#">Menu Item 3</a>
+//     <a class="site-menu__item" href="#">Menu Item 3</a>
 //   </li>
 //   <li>
-//     <a href="#">Menu Item 4</a>
+//     <a class="site-menu__item" href="#">Menu Item 4</a>
 //   </li>
 //   <li>
-//     <a href="#">Menu Item 5</a>
+//     <a class="site-menu__item" href="#">Menu Item 5</a>
 //   </li>
 // </ul>
 // ```
@@ -76,37 +76,37 @@
 // Markup:
 // <ul class="site-menu background-navy">
 //   <li>
-//     <a href="#">Menu Item 1</a>
+//     <a class="site-menu__item" href="#">Menu Item 1</a>
 //   </li>
 //   <li>
-//     <a href="#">Menu Item 2</a>
+//     <a class="site-menu__item" href="#">Menu Item 2</a>
 //   </li>
 //   <li>
-//     <a href="#">Menu Item 3</a>
+//     <a class="site-menu__item" href="#">Menu Item 3</a>
 //   </li>
 //   <li>
-//     <a href="#">Menu Item 4</a>
+//     <a class="site-menu__item" href="#">Menu Item 4</a>
 //   </li>
 //   <li>
-//     <a href="#">Menu Item 5</a>
+//     <a class="site-menu__item" href="#">Menu Item 5</a>
 //   </li>
 // </ul>
 // <nav class="mt-4">
 //   <ul class="site-menu background-yellow">
 //     <li>
-//       <a href="#">Menu Item 1</a>
+//       <a class="site-menu__item" href="#">Menu Item 1</a>
 //     </li>
 //     <li>
-//       <a href="#">Menu Item 2</a>
+//       <a class="site-menu__item" href="#">Menu Item 2</a>
 //     </li>
 //     <li>
-//       <a href="#">Menu Item 3</a>
+//       <a class="site-menu__item" href="#">Menu Item 3</a>
 //     </li>
 //     <li>
-//       <a href="#">Menu Item 4</a>
+//       <a class="site-menu__item" href="#">Menu Item 4</a>
 //     </li>
 //     <li>
-//       <a href="#">Menu Item 5</a>
+//       <a class="site-menu__item" href="#">Menu Item 5</a>
 //     </li>
 //   </ul>
 // </nav>
@@ -130,38 +130,38 @@
 // <nav class="background-lighter">
 //   <ul class="site-menu">
 //     <li>
-//       <a href="#">Menu Item 1</a>
+//       <a class="site-menu__item" href="#">Menu Item 1</a>
 //     </li>
 //     <li>
-//       <a href="#">Menu Item 2</a>
+//       <a class="site-menu__item" href="#">Menu Item 2</a>
 //     </li>
 //     <li>
-//       <a href="#">Menu Item 3</a>
+//       <a class="site-menu__item" href="#">Menu Item 3</a>
 //     </li>
 //     <li>
-//       <a href="#">Menu Item 4</a>
+//       <a class="site-menu__item" href="#">Menu Item 4</a>
 //     </li>
 //     <li>
-//       <a href="#">Menu Item 5</a>
+//       <a class="site-menu__item" href="#">Menu Item 5</a>
 //     </li>
 //   </ul>
 // </nav>
 // <nav class="mt-4 background-navy">
 //   <ul class="site-menu text-white">
 //     <li>
-//       <a href="#">Menu Item 1</a>
+//       <a class="site-menu__item" href="#">Menu Item 1</a>
 //     </li>
 //     <li>
-//       <a href="#">Menu Item 2</a>
+//       <a class="site-menu__item" href="#">Menu Item 2</a>
 //     </li>
 //     <li>
-//       <a href="#">Menu Item 3</a>
+//       <a class="site-menu__item" href="#">Menu Item 3</a>
 //     </li>
 //     <li>
-//       <a href="#">Menu Item 4</a>
+//       <a class="site-menu__item" href="#">Menu Item 4</a>
 //     </li>
 //     <li>
-//       <a href="#">Menu Item 5</a>
+//       <a class="site-menu__item" href="#">Menu Item 5</a>
 //     </li>
 //   </ul>
 // </nav>
@@ -179,19 +179,19 @@
 // <div class="background-white">
 //   <ul class="site-menu site-menu--bordered">
 //     <li>
-//       <a href="#">Menu Item 1</a>
+//       <a class="site-menu__item" href="#">Menu Item 1</a>
 //     </li>
 //     <li>
-//       <a href="#">Menu Item 2</a>
+//       <a class="site-menu__item" href="#">Menu Item 2</a>
 //     </li>
 //     <li>
-//       <a href="#">Menu Item 3</a>
+//       <a class="site-menu__item" href="#">Menu Item 3</a>
 //     </li>
 //     <li>
-//       <a href="#">Menu Item 4</a>
+//       <a class="site-menu__item" href="#">Menu Item 4</a>
 //     </li>
 //     <li>
-//       <a href="#">Menu Item 5</a>
+//       <a class="site-menu__item" href="#">Menu Item 5</a>
 //     </li>
 //   </ul>
 // </div>
@@ -201,19 +201,19 @@
 // ```html
 // <ul class="site-menu site-menu--bordered">
 //   <li>
-//     <a href="#">Menu Item 1</a>
+//     <a class="site-menu__item" href="#">Menu Item 1</a>
 //   </li>
 //   <li>
-//     <a href="#">Menu Item 2</a>
+//     <a class="site-menu__item" href="#">Menu Item 2</a>
 //   </li>
 //   <li>
-//     <a href="#">Menu Item 3</a>
+//     <a class="site-menu__item" href="#">Menu Item 3</a>
 //   </li>
 //   <li>
-//     <a href="#">Menu Item 4</a>
+//     <a class="site-menu__item" href="#">Menu Item 4</a>
 //   </li>
 //   <li>
-//     <a href="#">Menu Item 5</a>
+//     <a class="site-menu__item" href="#">Menu Item 5</a>
 //   </li>
 // </ul>
 // ```
@@ -233,19 +233,19 @@
 // <div class="background-white">
 //   <ul class="site-menu hover-border">
 //     <li>
-//       <a href="#">Menu Item 1</a>
+//       <a class="site-menu__item" href="#">Menu Item 1</a>
 //     </li>
 //     <li>
-//       <a href="#">Menu Item 2</a>
+//       <a class="site-menu__item" href="#">Menu Item 2</a>
 //     </li>
 //     <li>
-//       <a href="#">Menu Item 3</a>
+//       <a class="site-menu__item" href="#">Menu Item 3</a>
 //     </li>
 //     <li>
-//       <a href="#">Menu Item 4</a>
+//       <a class="site-menu__item" href="#">Menu Item 4</a>
 //     </li>
 //     <li>
-//       <a href="#">Menu Item 5</a>
+//       <a class="site-menu__item" href="#">Menu Item 5</a>
 //     </li>
 //   </ul>
 // </div>
@@ -255,19 +255,19 @@
 // ```html
 // <ul class="site-menu hover-border">
 //   <li>
-//     <a href="#">Menu Item 1</a>
+//     <a class="site-menu__item" href="#">Menu Item 1</a>
 //   </li>
 //   <li>
-//     <a href="#">Menu Item 2</a>
+//     <a class="site-menu__item" href="#">Menu Item 2</a>
 //   </li>
 //   <li>
-//     <a href="#">Menu Item 3</a>
+//     <a class="site-menu__item" href="#">Menu Item 3</a>
 //   </li>
 //   <li>
-//     <a href="#">Menu Item 4</a>
+//     <a class="site-menu__item" href="#">Menu Item 4</a>
 //   </li>
 //   <li>
-//     <a href="#">Menu Item 5</a>
+//     <a class="site-menu__item" href="#">Menu Item 5</a>
 //   </li>
 // </ul>
 // ```
@@ -287,19 +287,19 @@
 // <div class="background-white">
 //   <ul class="site-menu hover-border hover-border--med-blue">
 //     <li>
-//       <a href="#">Menu Item 1</a>
+//       <a class="site-menu__item" href="#">Menu Item 1</a>
 //     </li>
 //     <li>
-//       <a href="#">Menu Item 2</a>
+//       <a class="site-menu__item" href="#">Menu Item 2</a>
 //     </li>
 //     <li>
-//       <a href="#">Menu Item 3</a>
+//       <a class="site-menu__item" href="#">Menu Item 3</a>
 //     </li>
 //     <li>
-//       <a href="#">Menu Item 4</a>
+//       <a class="site-menu__item" href="#">Menu Item 4</a>
 //     </li>
 //     <li>
-//       <a href="#">Menu Item 5</a>
+//       <a class="site-menu__item" href="#">Menu Item 5</a>
 //     </li>
 //   </ul>
 // </div>
@@ -309,19 +309,19 @@
 // ```html
 // <ul class="site-menu hover-border hover-border--med-blue">
 //   <li>
-//     <a href="#">Menu Item 1</a>
+//     <a class="site-menu__item" href="#">Menu Item 1</a>
 //   </li>
 //   <li>
-//     <a href="#">Menu Item 2</a>
+//     <a class="site-menu__item" href="#">Menu Item 2</a>
 //   </li>
 //   <li>
-//     <a href="#">Menu Item 3</a>
+//     <a class="site-menu__item" href="#">Menu Item 3</a>
 //   </li>
 //   <li>
-//     <a href="#">Menu Item 4</a>
+//     <a class="site-menu__item" href="#">Menu Item 4</a>
 //   </li>
 //   <li>
-//     <a href="#">Menu Item 5</a>
+//     <a class="site-menu__item" href="#">Menu Item 5</a>
 //   </li>
 // </ul>
 // ```
@@ -351,7 +351,7 @@
 // <div class="background-white">
 //   <ul class="site-menu">
 //     <li class="dropdown">
-//       <a href="#" class="dropdown__trigger">
+//       <a href="#" class="site-menu__item dropdown__trigger">
 //         Menu Item 1
 //         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //       </a>
@@ -374,7 +374,7 @@
 //       </ul>
 //     </li>
 //     <li class="dropdown">
-//       <a href="#" class="dropdown__trigger">
+//       <a href="#" class="site-menu__item dropdown__trigger">
 //         Menu Item 2
 //         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //       </a>
@@ -397,7 +397,7 @@
 //       </ul>
 //     </li>
 //     <li class="dropdown">
-//       <a href="#" class="dropdown__trigger">
+//       <a href="#" class="site-menu__item dropdown__trigger">
 //         Menu Item 3
 //         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //       </a>
@@ -420,7 +420,7 @@
 //       </ul>
 //     </li>
 //     <li class="dropdown">
-//       <a href="#" class="dropdown__trigger">
+//       <a href="#" class="site-menu__item dropdown__trigger">
 //         Menu Item 4
 //         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //       </a>
@@ -443,7 +443,7 @@
 //       </ul>
 //     </li>
 //     <li class="dropdown">
-//       <a href="#" class="dropdown__trigger">
+//       <a href="#" class="site-menu__item dropdown__trigger">
 //         Menu Item 5
 //         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //       </a>
@@ -470,7 +470,7 @@
 // <p class="mt-4">The dropdowns with a background utility applied. <i class="pi-arrow-down"></i></p>
 // <ul class="site-menu background-navy">
 //   <li class="dropdown">
-//     <a href="#" class="dropdown__trigger">
+//     <a href="#" class="site-menu__item dropdown__trigger">
 //       Menu Item 1
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //     </a>
@@ -493,7 +493,7 @@
 //     </ul>
 //   </li>
 //   <li class="dropdown">
-//     <a href="#" class="dropdown__trigger">
+//     <a href="#" class="site-menu__item dropdown__trigger">
 //       Menu Item 2
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //     </a>
@@ -516,7 +516,7 @@
 //     </ul>
 //   </li>
 //   <li class="dropdown">
-//     <a href="#" class="dropdown__trigger">
+//     <a href="#" class="site-menu__item dropdown__trigger">
 //       Menu Item 3
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //     </a>
@@ -539,7 +539,7 @@
 //     </ul>
 //   </li>
 //   <li class="dropdown">
-//     <a href="#" class="dropdown__trigger">
+//     <a href="#" class="site-menu__item dropdown__trigger">
 //       Menu Item 4
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //     </a>
@@ -562,7 +562,7 @@
 //     </ul>
 //   </li>
 //   <li class="dropdown">
-//     <a href="#" class="dropdown__trigger">
+//     <a href="#" class="site-menu__item dropdown__trigger">
 //       Menu Item 5
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //     </a>
@@ -591,7 +591,7 @@
 // ```html
 // <ul class="site-menu">
 //   <li class="dropdown">
-//     <a href="#" class="dropdown__trigger">
+//     <a href="#" class="site-menu__item dropdown__trigger">
 //       Menu Item 1
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //     </a>
@@ -614,7 +614,7 @@
 //     </ul>
 //   </li>
 //   <li class="dropdown">
-//     <a href="#" class="dropdown__trigger">
+//     <a href="#" class="site-menu__item dropdown__trigger">
 //       Menu Item 2
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //     </a>
@@ -637,7 +637,7 @@
 //     </ul>
 //   </li>
 //   <li class="dropdown">
-//     <a href="#" class="dropdown__trigger">
+//     <a href="#" class="site-menu__item dropdown__trigger">
 //       Menu Item 3
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //     </a>
@@ -660,7 +660,7 @@
 //     </ul>
 //   </li>
 //   <li class="dropdown">
-//     <a href="#" class="dropdown__trigger">
+//     <a href="#" class="site-menu__item dropdown__trigger">
 //       Menu Item 4
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //     </a>
@@ -683,7 +683,7 @@
 //     </ul>
 //   </li>
 //   <li class="dropdown">
-//     <a href="#" class="dropdown__trigger">
+//     <a href="#" class="site-menu__item dropdown__trigger">
 //       Menu Item 5
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //     </a>
@@ -709,7 +709,7 @@
 // <p class="mt-4">The dropdowns with a background utility applied. <i class="pi-arrow-down"></i></p>
 // <ul class="site-menu background-navy">
 //   <li class="dropdown">
-//     <a href="#" class="dropdown__trigger">
+//     <a href="#" class="site-menu__item dropdown__trigger">
 //       Menu Item 1
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //     </a>
@@ -732,7 +732,7 @@
 //     </ul>
 //   </li>
 //   <li class="dropdown">
-//     <a href="#" class="dropdown__trigger">
+//     <a href="#" class="site-menu__item dropdown__trigger">
 //       Menu Item 2
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //     </a>
@@ -755,7 +755,7 @@
 //     </ul>
 //   </li>
 //   <li class="dropdown">
-//     <a href="#" class="dropdown__trigger">
+//     <a href="#" class="site-menu__item dropdown__trigger">
 //       Menu Item 3
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //     </a>
@@ -778,7 +778,7 @@
 //     </ul>
 //   </li>
 //   <li class="dropdown">
-//     <a href="#" class="dropdown__trigger">
+//     <a href="#" class="site-menu__item dropdown__trigger">
 //       Menu Item 4
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //     </a>
@@ -801,7 +801,7 @@
 //     </ul>
 //   </li>
 //   <li class="dropdown">
-//     <a href="#" class="dropdown__trigger">
+//     <a href="#" class="site-menu__item dropdown__trigger">
 //       Menu Item 5
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //     </a>
@@ -851,7 +851,7 @@
 // <div class="background-white">
 //   <ul class="site-menu">
 //     <li class="dropdown dropdown--center">
-//       <a href="#" class="dropdown__trigger">
+//       <a href="#" class="site-menu__item dropdown__trigger">
 //         Dropdown Center
 //         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //       </a>
@@ -874,7 +874,7 @@
 //       </ul>
 //     </li>
 //     <li class="dropdown dropdown--right">
-//       <a href="#" class="dropdown__trigger">
+//       <a href="#" class="site-menu__item dropdown__trigger">
 //         Dropdown Right
 //         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //       </a>
@@ -897,7 +897,7 @@
 //       </ul>
 //     </li>
 //     <li class="dropdown">
-//       <a href="#" class="dropdown__trigger">
+//       <a href="#" class="site-menu__item dropdown__trigger">
 //         Menu Item 3
 //         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //       </a>
@@ -920,7 +920,7 @@
 //       </ul>
 //     </li>
 //     <li class="dropdown">
-//       <a href="#" class="dropdown__trigger">
+//       <a href="#" class="site-menu__item dropdown__trigger">
 //         Menu Item 4
 //         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //       </a>
@@ -943,7 +943,7 @@
 //       </ul>
 //     </li>
 //     <li class="dropdown">
-//       <a href="#" class="dropdown__trigger">
+//       <a href="#" class="site-menu__item dropdown__trigger">
 //         Menu Item 5
 //         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //       </a>
@@ -973,7 +973,7 @@
 // ```html
 // <ul class="site-menu">
 //   <li class="dropdown dropdown--center">
-//     <a href="#" class="dropdown__trigger">
+//     <a href="#" class="site-menu__item dropdown__trigger">
 //       Dropdown Center
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //     </a>
@@ -996,7 +996,7 @@
 //     </ul>
 //   </li>
 //   <li class="dropdown dropdown--right">
-//     <a href="#" class="dropdown__trigger">
+//     <a href="#" class="site-menu__item dropdown__trigger">
 //       Dropdown Right
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //     </a>
@@ -1019,7 +1019,7 @@
 //     </ul>
 //   </li>
 //   <li class="dropdown">
-//     <a href="#" class="dropdown__trigger">
+//     <a href="#" class="site-menu__item dropdown__trigger">
 //       Menu Item 3
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //     </a>
@@ -1042,7 +1042,7 @@
 //     </ul>
 //   </li>
 //   <li class="dropdown">
-//     <a href="#" class="dropdown__trigger">
+//     <a href="#" class="site-menu__item dropdown__trigger">
 //       Menu Item 4
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //     </a>
@@ -1065,7 +1065,7 @@
 //     </ul>
 //   </li>
 //   <li class="dropdown">
-//     <a href="#" class="dropdown__trigger">
+//     <a href="#" class="site-menu__item dropdown__trigger">
 //       Menu Item 5
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //     </a>
@@ -1110,7 +1110,7 @@
 // <div class="background-white">
 //   <ul class="site-menu">
 //     <li class="dropdown dropdown--center">
-//       <a href="#" class="dropdown__trigger">
+//       <a href="#" class="site-menu__item dropdown__trigger">
 //         Dropdown Center
 //         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //       </a>
@@ -1208,7 +1208,7 @@
 //       <a href="#" class="flex--grow">Menu Item 2</a>
 //     </li>
 //     <li class="dropdown">
-//       <a href="#" class="dropdown__trigger">
+//       <a href="#" class="site-menu__item dropdown__trigger">
 //         Menu Item 3
 //         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //       </a>
@@ -1231,7 +1231,7 @@
 //       </ul>
 //     </li>
 //     <li class="dropdown">
-//       <a href="#" class="dropdown__trigger">
+//       <a href="#" class="site-menu__item dropdown__trigger">
 //         Menu Item 4
 //         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //       </a>
@@ -1353,7 +1353,8 @@ $all-colors: () !default;
 
   &:not([class*=background-]) {
 
-    a {
+    a,
+    .site-menu__item {
       @media (pointer: fine) {
         &:hover {
           &:not(.active) {
@@ -1372,7 +1373,8 @@ $all-colors: () !default;
   // site-menu border on hover
   &.hover-border {
 
-    a {
+    a,
+    .site-menu__item {
       position: relative;
 
       &:after {
@@ -1446,7 +1448,8 @@ $all-colors: () !default;
     @each $name, $color in $all-colors {
       &.hover-border--#{$name} {
 
-        a {
+        a,
+        .site-menu__item {
 
           &:after {
             background-color: $color;
@@ -1462,17 +1465,20 @@ $all-colors: () !default;
 
     @media (min-width: (config.$show-mobile-menu)) {
       > a,
-      > li > a {
+      .site-menu__item
+      > li > a, {
         border-left: 1px solid map.get(variables.$greyscale, 'base');
       }
   
-      > a:first-of-type {
+      > a:first-of-type,
+      .site-menu__item:first-of-type {
         border-left: none;
       }
   
       > li:first-of-type {
   
-        > a {
+        > a,
+        .site-menu__item {
           border-left: none;
         }
       }
@@ -1510,7 +1516,8 @@ $all-colors: () !default;
     &.background-#{$name} {
       background-color: $color !important;
 
-      a {
+      a,
+      .site-menu__item {
         @if lightness($color) > 50 {
           color: map.get(variables.$greyscale, 'dark');
         } @else {
@@ -1558,7 +1565,8 @@ $all-colors: () !default;
       &.site-menu--bordered {
 
         > a,
-        > li > a {
+        > li > a,
+        .site-menu__item {
           @if lightness($color) > 50 {
            border-color: map.get(variables.$greyscale, 'dark');
           } @else {
@@ -1675,17 +1683,20 @@ $all-colors: () !default;
       &.site-menu--bordered {
 
         > a,
-        > li > a {
+        > li > a,
+        .site-menu__item {
           border-top: 1px solid;
         }
 
-        > a:first-of-type {
+        > a:first-of-type,
+        .site-menu__item:first-of-type {
           border-top: none;
         }
 
         > li:first-of-type {
 
-          > a {
+          > a,
+          .site-menu__item {
             border-top: none;
           }      
         }
