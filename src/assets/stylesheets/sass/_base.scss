@@ -21,7 +21,7 @@ body {
   font-size: map.get(config.$fonts, 'size');
   font-weight: 300;
   height: 100%;
-  line-height: map.get(config.$fonts, 'line-height');
+  line-height: 1.618;
   margin: 0;
   padding: 0;
 }
@@ -32,13 +32,36 @@ body {
     color: map.get(variables.$greyscale, 'base' );
     font-family: map.get(config.$fonts, 'headline');
     font-weight: 500;
-    line-height: map.get(config.$fonts, 'headline-line-height');
+    line-height: 1.618;
     margin-bottom: variables.$spacer;
   }
 }
 
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.8rem ;
+}
+
+h3 {
+  font-size: 1.6rem ;
+}
+
+h4 {
+  font-size: 1.4rem ;
+}
+
+h5 {
+  font-size: 1.2rem;
+}
+
+h6 {
+  font-size: map.get(config.$fonts, 'size');
+}
+
 p {
-  line-height: map.get(config.$fonts, 'line-height');
   margin: 0 0 variables.$spacer 0;
 }
 

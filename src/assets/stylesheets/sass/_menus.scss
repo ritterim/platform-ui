@@ -1789,7 +1789,6 @@ $all-colors: () !default;
 
   &__item {
     border-right: 1px solid map.get(variables.$greyscale, 'light' );
-    position: relative;
 
     &:first-of-type {
       padding-left: 0;
