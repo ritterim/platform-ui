@@ -21,7 +21,7 @@ body {
   font-size: map.get(config.$fonts, 'size');
   font-weight: 300;
   height: 100%;
-  line-height: calc(16px * 1.618);
+  line-height: 1.618;
   margin: 0;
   padding: 0;
 }
@@ -32,7 +32,7 @@ body {
     color: map.get(variables.$greyscale, 'base' );
     font-family: map.get(config.$fonts, 'headline');
     font-weight: 500;
-    line-height: calc(16px * 1.618);
+    line-height: 1.618;
     margin-bottom: variables.$spacer;
   }
 }
