@@ -1469,20 +1469,20 @@ $all-colors: () !default;
 
     @media (min-width: (config.$show-mobile-menu)) {
       > a,
-      .dropdown__trigger,
+      > .dropdown__trigger,
       > li > a, {
         border-left: 1px solid map.get(variables.$greyscale, 'base');
       }
   
       > a:first-of-type,
-      .dropdown__trigger:first-of-type {
+      > .dropdown__trigger:first-of-type {
         border-left: none;
       }
   
       > li:first-of-type {
   
         > a,
-        .dropdown__trigger {
+        > .dropdown__trigger {
           border-left: none;
         }
       }
@@ -1570,7 +1570,7 @@ $all-colors: () !default;
 
         > a,
         > li > a,
-        .dropdown__trigger {
+        > .dropdown__trigger {
           @if lightness($color) > 50 {
            border-color: map.get(variables.$greyscale, 'dark');
           } @else {
@@ -1693,14 +1693,14 @@ $all-colors: () !default;
         }
 
         > a:first-of-type,
-        .dropdown__trigger:first-of-type {
+        > .dropdown__trigger:first-of-type {
           border-top: none;
         }
 
         > li:first-of-type {
 
           > a,
-          .dropdown__trigger {
+          > .dropdown__trigger {
             border-top: none;
           }      
         }
