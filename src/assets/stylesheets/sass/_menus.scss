@@ -227,7 +227,7 @@
 
 // Site Menu - Hover Border
 // 
-// Adding the class `hover-border` to your `site-menu` will give the `<a>`s in the menu a bottom border on hover.
+// Adding the class `hover-border` to your `site-menu` will give the `<buton>`s in the menu a bottom border on hover.
 // 
 // <h4 class="text--bold mb-3">Example:</h4>
 // <div class="background-white">
@@ -347,14 +347,17 @@
 // 
 // The dropdowns inherit the hover states of the site-menu.
 // 
+// Also note that the `dropdown__trigger` can be on a `button` as well as an `a`. If you use a button, be sure to add the class
+// `button--plain` to disable the default Platform UI button styles.
+// 
 // <h4 class="text--bold mb-3">Example:</h4>
 // <div class="background-white">
 //   <ul class="site-menu">
 //     <li class="dropdown">
-//       <a href="#" class="dropdown__trigger">
+//       <button class="dropdown__trigger button--plain">
 //         Menu Item 1
 //         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//       </a>
+//       </button>
 //       <ul class="dropdown__content">
 //         <li>
 //           <a href="#">Dropdown Item 1</a>
@@ -374,7 +377,7 @@
 //       </ul>
 //     </li>
 //     <li class="dropdown">
-//       <a href="#" class="dropdown__trigger">
+//       <a class="dropdown__trigger">
 //         Menu Item 2
 //         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //       </a>
@@ -397,10 +400,10 @@
 //       </ul>
 //     </li>
 //     <li class="dropdown">
-//       <a href="#" class="dropdown__trigger">
+//       <button class="dropdown__trigger button--plain">
 //         Menu Item 3
 //         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//       </a>
+//       </button>
 //       <ul class="dropdown__content">
 //         <li>
 //           <a href="#">Dropdown Item 1</a>
@@ -420,10 +423,10 @@
 //       </ul>
 //     </li>
 //     <li class="dropdown">
-//       <a href="#" class="dropdown__trigger">
+//       <button class="dropdown__trigger button--plain">
 //         Menu Item 4
 //         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//       </a>
+//       </button>
 //       <ul class="dropdown__content">
 //         <li>
 //           <a href="#">Dropdown Item 1</a>
@@ -443,10 +446,10 @@
 //       </ul>
 //     </li>
 //     <li class="dropdown">
-//       <a href="#" class="dropdown__trigger">
+//       <button class="dropdown__trigger button--plain">
 //         Menu Item 5
 //         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//       </a>
+//       </button>
 //       <ul class="dropdown__content">
 //         <li>
 //           <a href="#">Dropdown Item 1</a>
@@ -470,10 +473,10 @@
 // <p class="mt-4">The dropdowns with a background utility applied. <i class="pi-arrow-down"></i></p>
 // <ul class="site-menu background-navy">
 //   <li class="dropdown">
-//     <a href="#" class="dropdown__trigger">
+//     <button class="dropdown__trigger button--plain">
 //       Menu Item 1
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//     </a>
+//     </button>
 //     <ul class="dropdown__content">
 //       <li>
 //         <a href="#">Dropdown Item 1</a>
@@ -493,10 +496,10 @@
 //     </ul>
 //   </li>
 //   <li class="dropdown">
-//     <a href="#" class="dropdown__trigger">
+//     <button class="dropdown__trigger button--plain">
 //       Menu Item 2
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//     </a>
+//     </button>
 //     <ul class="dropdown__content">
 //       <li>
 //         <a href="#">Dropdown Item 1</a>
@@ -516,10 +519,10 @@
 //     </ul>
 //   </li>
 //   <li class="dropdown">
-//     <a href="#" class="dropdown__trigger">
+//     <button class="dropdown__trigger button--plain">
 //       Menu Item 3
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//     </a>
+//     </button>
 //     <ul class="dropdown__content">
 //       <li>
 //         <a href="#">Dropdown Item 1</a>
@@ -539,10 +542,10 @@
 //     </ul>
 //   </li>
 //   <li class="dropdown">
-//     <a href="#" class="dropdown__trigger">
+//     <button class="dropdown__trigger button--plain">
 //       Menu Item 4
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//     </a>
+//     </button>
 //     <ul class="dropdown__content">
 //       <li>
 //         <a href="#">Dropdown Item 1</a>
@@ -562,10 +565,10 @@
 //     </ul>
 //   </li>
 //   <li class="dropdown">
-//     <a href="#" class="dropdown__trigger">
+//     <button class="dropdown__trigger button--plain">
 //       Menu Item 5
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//     </a>
+//     </button>
 //     <ul class="dropdown__content">
 //       <li>
 //         <a href="#">Dropdown Item 1</a>
@@ -591,10 +594,10 @@
 // ```html
 // <ul class="site-menu">
 //   <li class="dropdown">
-//     <a href="#" class="dropdown__trigger">
+//     <button class="dropdown__trigger button--plain">
 //       Menu Item 1
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//     </a>
+//     </button>
 //     <ul class="dropdown__content">
 //       <li>
 //         <a href="#">Dropdown Item 1</a>
@@ -614,10 +617,10 @@
 //     </ul>
 //   </li>
 //   <li class="dropdown">
-//     <a href="#" class="dropdown__trigger">
+//     <button class="dropdown__trigger button--plain">
 //       Menu Item 2
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//     </a>
+//     </button>
 //     <ul class="dropdown__content">
 //       <li>
 //         <a href="#">Dropdown Item 1</a>
@@ -637,10 +640,10 @@
 //     </ul>
 //   </li>
 //   <li class="dropdown">
-//     <a href="#" class="dropdown__trigger">
+//     <button class="dropdown__trigger button--plain">
 //       Menu Item 3
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//     </a>
+//     </button>
 //     <ul class="dropdown__content">
 //       <li>
 //         <a href="#">Dropdown Item 1</a>
@@ -660,10 +663,10 @@
 //     </ul>
 //   </li>
 //   <li class="dropdown">
-//     <a href="#" class="dropdown__trigger">
+//     <button class="dropdown__trigger button--plain">
 //       Menu Item 4
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//     </a>
+//     </button>
 //     <ul class="dropdown__content">
 //       <li>
 //         <a href="#">Dropdown Item 1</a>
@@ -683,10 +686,10 @@
 //     </ul>
 //   </li>
 //   <li class="dropdown">
-//     <a href="#" class="dropdown__trigger">
+//     <button class="dropdown__trigger button--plain">
 //       Menu Item 5
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//     </a>
+//     </button>
 //     <ul class="dropdown__content">
 //       <li>
 //         <a href="#">Dropdown Item 1</a>
@@ -709,10 +712,10 @@
 // <p class="mt-4">The dropdowns with a background utility applied. <i class="pi-arrow-down"></i></p>
 // <ul class="site-menu background-navy">
 //   <li class="dropdown">
-//     <a href="#" class="dropdown__trigger">
+//     <button class="dropdown__trigger button--plain">
 //       Menu Item 1
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//     </a>
+//     </button>
 //     <ul class="dropdown__content">
 //       <li>
 //         <a href="#">Dropdown Item 1</a>
@@ -732,10 +735,10 @@
 //     </ul>
 //   </li>
 //   <li class="dropdown">
-//     <a href="#" class="dropdown__trigger">
+//     <button class="dropdown__trigger button--plain">
 //       Menu Item 2
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//     </a>
+//     </button>
 //     <ul class="dropdown__content">
 //       <li>
 //         <a href="#">Dropdown Item 1</a>
@@ -755,10 +758,10 @@
 //     </ul>
 //   </li>
 //   <li class="dropdown">
-//     <a href="#" class="dropdown__trigger">
+//     <button class="dropdown__trigger button--plain">
 //       Menu Item 3
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//     </a>
+//     </button>
 //     <ul class="dropdown__content">
 //       <li>
 //         <a href="#">Dropdown Item 1</a>
@@ -778,10 +781,10 @@
 //     </ul>
 //   </li>
 //   <li class="dropdown">
-//     <a href="#" class="dropdown__trigger">
+//     <button class="dropdown__trigger button--plain">
 //       Menu Item 4
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//     </a>
+//     </button>
 //     <ul class="dropdown__content">
 //       <li>
 //         <a href="#">Dropdown Item 1</a>
@@ -801,10 +804,10 @@
 //     </ul>
 //   </li>
 //   <li class="dropdown">
-//     <a href="#" class="dropdown__trigger">
+//     <button class="dropdown__trigger button--plain">
 //       Menu Item 5
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//     </a>
+//     </button>
 //     <ul class="dropdown__content">
 //       <li>
 //         <a href="#">Dropdown Item 1</a>
@@ -851,10 +854,10 @@
 // <div class="background-white">
 //   <ul class="site-menu">
 //     <li class="dropdown dropdown--center">
-//       <a href="#" class="dropdown__trigger">
+//       <button class="dropdown__trigger button--plain">
 //         Dropdown Center
 //         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//       </a>
+//       </button>
 //       <ul class="dropdown__content">
 //         <li>
 //           <a href="#">Dropdown Item 1</a>
@@ -874,10 +877,10 @@
 //       </ul>
 //     </li>
 //     <li class="dropdown dropdown--right">
-//       <a href="#" class="dropdown__trigger">
+//       <button class="dropdown__trigger button--plain">
 //         Dropdown Right
 //         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//       </a>
+//       </button>
 //       <ul class="dropdown__content">
 //         <li>
 //           <a href="#">Dropdown Item 1</a>
@@ -897,10 +900,10 @@
 //       </ul>
 //     </li>
 //     <li class="dropdown">
-//       <a href="#" class="dropdown__trigger">
+//       <button class="dropdown__trigger button--plain">
 //         Menu Item 3
 //         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//       </a>
+//       </button>
 //       <ul class="dropdown__content">
 //         <li>
 //           <a href="#">Dropdown Item 1</a>
@@ -920,10 +923,10 @@
 //       </ul>
 //     </li>
 //     <li class="dropdown">
-//       <a href="#" class="dropdown__trigger">
+//       <button class="dropdown__trigger button--plain">
 //         Menu Item 4
 //         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//       </a>
+//       </button>
 //       <ul class="dropdown__content">
 //         <li>
 //           <a href="#">Dropdown Item 1</a>
@@ -943,10 +946,10 @@
 //       </ul>
 //     </li>
 //     <li class="dropdown">
-//       <a href="#" class="dropdown__trigger">
+//       <button class="dropdown__trigger button--plain">
 //         Menu Item 5
 //         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//       </a>
+//       </button>
 //       <ul class="dropdown__content">
 //         <li>
 //           <a href="#">Dropdown Item 1</a>
@@ -973,10 +976,10 @@
 // ```html
 // <ul class="site-menu">
 //   <li class="dropdown dropdown--center">
-//     <a href="#" class="dropdown__trigger">
+//     <button class="dropdown__trigger button--plain">
 //       Dropdown Center
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//     </a>
+//     </button>
 //     <ul class="dropdown__content">
 //       <li>
 //         <a href="#">Dropdown Item 1</a>
@@ -996,10 +999,10 @@
 //     </ul>
 //   </li>
 //   <li class="dropdown dropdown--right">
-//     <a href="#" class="dropdown__trigger">
+//     <button class="dropdown__trigger button--plain">
 //       Dropdown Right
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//     </a>
+//     </button>
 //     <ul class="dropdown__content">
 //       <li>
 //         <a href="#">Dropdown Item 1</a>
@@ -1019,10 +1022,10 @@
 //     </ul>
 //   </li>
 //   <li class="dropdown">
-//     <a href="#" class="dropdown__trigger">
+//     <button class="dropdown__trigger button--plain">
 //       Menu Item 3
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//     </a>
+//     </button>
 //     <ul class="dropdown__content">
 //       <li>
 //         <a href="#">Dropdown Item 1</a>
@@ -1042,10 +1045,10 @@
 //     </ul>
 //   </li>
 //   <li class="dropdown">
-//     <a href="#" class="dropdown__trigger">
+//     <button class="dropdown__trigger button--plain">
 //       Menu Item 4
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//     </a>
+//     </button>
 //     <ul class="dropdown__content">
 //       <li>
 //         <a href="#">Dropdown Item 1</a>
@@ -1065,10 +1068,10 @@
 //     </ul>
 //   </li>
 //   <li class="dropdown">
-//     <a href="#" class="dropdown__trigger">
+//     <button class="dropdown__trigger button--plain">
 //       Menu Item 5
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//     </a>
+//     </button>
 //     <ul class="dropdown__content">
 //       <li>
 //         <a href="#">Dropdown Item 1</a>
@@ -1110,10 +1113,10 @@
 // <div class="background-white">
 //   <ul class="site-menu">
 //     <li class="dropdown dropdown--center">
-//       <a href="#" class="dropdown__trigger">
+//       <button class="dropdown__trigger button--plain">
 //         Dropdown Center
 //         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//       </a>
+//       </button>
 //       <div class="dropdown__content">
 //         <ul class="border border--color-navy py-4">
 //           <li>
@@ -1208,7 +1211,7 @@
 //       <a href="#" class="flex--grow">Menu Item 2</a>
 //     </li>
 //     <li class="dropdown">
-//       <a href="#" class="dropdown__trigger">
+//       <a class="dropdown__trigger">
 //         Menu Item 3
 //         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //       </a>
@@ -1231,10 +1234,10 @@
 //       </ul>
 //     </li>
 //     <li class="dropdown">
-//       <a href="#" class="dropdown__trigger">
+//       <button class="dropdown__trigger button--plain">
 //         Menu Item 4
 //         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//       </a>
+//       </butbuttonon>
 //       <ul class="dropdown__content">
 //         <li>
 //           <a href="#">Dropdown Item 1</a>
@@ -1343,7 +1346,8 @@ $all-colors: () !default;
 
 
   // default site-menu link hovers
-  a {
+  a,
+  .dropdown__trigger {
     color: inherit;
     display: block;
     line-height: 1;
@@ -1353,7 +1357,8 @@ $all-colors: () !default;
 
   &:not([class*=background-]) {
 
-    a {
+    a,
+    .dropdown__trigger {
       @media (pointer: fine) {
         &:hover {
           &:not(.active) {
@@ -1372,7 +1377,8 @@ $all-colors: () !default;
   // site-menu border on hover
   &.hover-border {
 
-    a {
+    a,
+    .dropdown__trigger {
       position: relative;
 
       &:after {
@@ -1446,7 +1452,8 @@ $all-colors: () !default;
     @each $name, $color in $all-colors {
       &.hover-border--#{$name} {
 
-        a {
+        a,
+        .dropdown__trigger {
 
           &:after {
             background-color: $color;
@@ -1462,17 +1469,20 @@ $all-colors: () !default;
 
     @media (min-width: (config.$show-mobile-menu)) {
       > a,
-      > li > a {
+      .dropdown__trigger,
+      > li > a, {
         border-left: 1px solid map.get(variables.$greyscale, 'base');
       }
   
-      > a:first-of-type {
+      > a:first-of-type,
+      .dropdown__trigger:first-of-type {
         border-left: none;
       }
   
       > li:first-of-type {
   
-        > a {
+        > a,
+        .dropdown__trigger {
           border-left: none;
         }
       }
@@ -1510,7 +1520,8 @@ $all-colors: () !default;
     &.background-#{$name} {
       background-color: $color !important;
 
-      a {
+      a,
+      .dropdown__trigger {
         @if lightness($color) > 50 {
           color: map.get(variables.$greyscale, 'dark');
         } @else {
@@ -1558,7 +1569,8 @@ $all-colors: () !default;
       &.site-menu--bordered {
 
         > a,
-        > li > a {
+        > li > a,
+        .dropdown__trigger {
           @if lightness($color) > 50 {
            border-color: map.get(variables.$greyscale, 'dark');
           } @else {
@@ -1675,17 +1687,20 @@ $all-colors: () !default;
       &.site-menu--bordered {
 
         > a,
-        > li > a {
+        > li > a,
+        .dropdown__trigger {
           border-top: 1px solid;
         }
 
-        > a:first-of-type {
+        > a:first-of-type,
+        .dropdown__trigger:first-of-type {
           border-top: none;
         }
 
         > li:first-of-type {
 
-          > a {
+          > a,
+          .dropdown__trigger {
             border-top: none;
           }      
         }
