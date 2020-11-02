@@ -1571,7 +1571,8 @@ $all-colors: () !default;
 
         > a,
         > li > a,
-        > .dropdown__trigger {
+        > .dropdown__trigger,
+        > li .dropdown__trigger {
           @if lightness($color) > 50 {
            border-color: map.get(variables.$greyscale, 'dark');
           } @else {
