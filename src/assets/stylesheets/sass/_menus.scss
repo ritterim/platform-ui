@@ -1470,7 +1470,8 @@ $all-colors: () !default;
     @media (min-width: (config.$show-mobile-menu)) {
       > a,
       > .dropdown__trigger,
-      > li > a, {
+      > li > a,
+      > li .dropdown__trigger {
         border-left: 1px solid map.get(variables.$greyscale, 'base');
       }
   
@@ -1688,7 +1689,8 @@ $all-colors: () !default;
 
         > a,
         > li > a,
-        .dropdown__trigger {
+        > .dropdown__trigger,
+        > li .dropdown__trigger {
           border-top: 1px solid;
         }
 
