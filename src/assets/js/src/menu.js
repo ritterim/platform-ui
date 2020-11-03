@@ -44,7 +44,7 @@ if(menuActions) {
   menuActions.forEach(action => {
     action.addEventListener('click', e => {
       e.preventDefault;
-      let wrapper = el.closest('.site-menu-wrapper');
+      let wrapper = action.closest('.site-menu-wrapper');
       wrapper.querySelector('.site-menu').classList.toggle('active');
     })
   })

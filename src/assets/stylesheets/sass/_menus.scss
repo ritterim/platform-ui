@@ -218,7 +218,7 @@
 // </ul>
 // ```
 // 
-// // <div class="my-4"></div>
+// <div class="my-4"></div>
 // 
 // Weight: 3
 // 
@@ -1609,6 +1609,10 @@ $all-colors: () !default;
         overflow-y: auto;
         overflow-x: hidden;
         z-index: 6;
+
+        .site-header--fixed & {
+          max-height: calc(100vh - #{config.$menu-height});
+        }
       }
     }
   }
@@ -1738,6 +1742,18 @@ $all-colors: () !default;
         }
       }
     }
+  }
+}
+
+// Fixed header with mobile site-menu
+.site-header--fixed {
+
+  &.site-menu-wrapper,
+  .site-menu-wrapper {
+
+    .site-menu.active {
+      max-height: calc(100vh - #{config.$menu-height});
+    }  
   }
 }
 
