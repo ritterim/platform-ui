@@ -1335,6 +1335,8 @@ $all-colors: () !default;
 }
 
 .site-menu {
+  --menu-text-color: inherit;
+
   background-color: inherit;
   display: flex;
   list-style: none;
@@ -1348,7 +1350,7 @@ $all-colors: () !default;
   // default site-menu link hovers
   a,
   .dropdown__trigger {
-    color: inherit;
+    color: var(--menu-text-color);
     display: block;
     line-height: 1;
     transition: config.$transitions;
@@ -1466,13 +1468,14 @@ $all-colors: () !default;
 
   // Side border modifier
   &.site-menu--bordered {
+    --menu-border-color: var(--base, #666666);
 
     @media (min-width: (config.$show-mobile-menu)) {
       > a,
       > .dropdown__trigger,
       > li > a,
       > li .dropdown__trigger {
-        border-left: 1px solid map.get(variables.$greyscale, 'base');
+        border-left: 1px solid var(--menu-border-color);
       }
   
       > a:first-of-type,
@@ -1524,9 +1527,9 @@ $all-colors: () !default;
       a,
       .dropdown__trigger {
         @if lightness($color) > 50 {
-          color: map.get(variables.$greyscale, 'dark');
+          --menu-text-color: var(--dark, #333);
         } @else {
-          color: map.get(variables.$greyscale, 'white');
+          --menu-text-color: var(--white, #fff);
         }
   
         &.active {
@@ -1543,21 +1546,10 @@ $all-colors: () !default;
       }
 
       .dropdown-active {
-        @if lightness($color) > 50 {
-          color: map.get(variables.$greyscale, 'dark');
-        } @else {
-          color: map.get(variables.$greyscale, 'white');
-        }
 
         > .dropdown__trigger {
           background-color: color.adjust($color, $lightness: math.percentage(-.05));
           text-shadow: none;
-          
-          @if lightness($color) > 50 {
-            color: map.get(variables.$greyscale, 'dark');
-          } @else {
-            color: map.get(variables.$greyscale, 'white');
-          }
         }
       }
 
@@ -1568,16 +1560,10 @@ $all-colors: () !default;
 
       // Site menu border modifier
       &.site-menu--bordered {
-
-        > a,
-        > li > a,
-        > .dropdown__trigger,
-        > li .dropdown__trigger {
-          @if lightness($color) > 50 {
-           border-color: map.get(variables.$greyscale, 'dark');
-          } @else {
-            border-color: map.get(variables.$greyscale, 'white');
-          }
+        @if lightness($color) > 50 {
+          --menu-border-color: var(--dark);
+        } @else {
+          --menu-border-color: var(--white);
         }
       }
     }
@@ -1735,7 +1721,7 @@ $all-colors: () !default;
         .site-menu {
 
           &.active {
-            max-height: calc(100vh - var(--menu-height));
+            max-height: calc(100vh - var(--menu-height, 4.5rem));
             overflow-y: auto;
             overflow-x: hidden;
           }
