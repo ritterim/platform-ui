@@ -1335,6 +1335,8 @@ $all-colors: () !default;
 }
 
 .site-menu {
+  --menu-text-color: inherit;
+
   background-color: inherit;
   display: flex;
   list-style: none;
@@ -1348,7 +1350,7 @@ $all-colors: () !default;
   // default site-menu link hovers
   a,
   .dropdown__trigger {
-    color: inherit;
+    color: var(--menu-text-color);
     display: block;
     line-height: 1;
     transition: config.$transitions;
@@ -1466,21 +1468,24 @@ $all-colors: () !default;
 
   // Side border modifier
   &.site-menu--bordered {
+    --menu-border-color: var(--base, #666666);
 
     @media (min-width: (config.$show-mobile-menu)) {
       > a,
       > .dropdown__trigger,
       > li > a,
-      > li .dropdown__trigger {
-        border-left: 1px solid map.get(variables.$greyscale, 'base');
+      > li .dropdown__trigger,
+      > .dropdown .dropdown__trigger {
+        border-left: 1px solid var(--menu-border-color);
       }
   
-      > a:first-of-type,
-      > .dropdown__trigger:first-of-type {
+      > a:first-child,
+      > .dropdown__trigger:first-child {
         border-left: none;
       }
   
-      > li:first-of-type {
+      > li:first-child,
+      > .dropdown:first-child {
   
         > a,
         > .dropdown__trigger {
@@ -1519,14 +1524,16 @@ $all-colors: () !default;
   // Color specific 
   @each $name, $color in $all-colors {
     &.background-#{$name} {
+      --item-hover-color: #{color.adjust($color, $lightness: math.percentage(-.05))};
+
       background-color: $color !important;
 
       a,
       .dropdown__trigger {
         @if lightness($color) > 50 {
-          color: map.get(variables.$greyscale, 'dark');
+          --menu-text-color: var(--dark, #{map.get(variables.$greyscale, 'dark')});
         } @else {
-          color: map.get(variables.$greyscale, 'white');
+          --menu-text-color: var(--white, #{map.get(variables.$greyscale, 'white')});
         }
   
         &.active {
@@ -1536,28 +1543,17 @@ $all-colors: () !default;
         @media (pointer: fine) {
           &:hover {
             &:not(.active) {
-              background-color: color.adjust($color, $lightness: math.percentage(-.05));
+              background-color: var(--item-hover-color, #{color.adjust($color, $lightness: math.percentage(-.05))});
             }
           }
         }
       }
 
       .dropdown-active {
-        @if lightness($color) > 50 {
-          color: map.get(variables.$greyscale, 'dark');
-        } @else {
-          color: map.get(variables.$greyscale, 'white');
-        }
 
         > .dropdown__trigger {
-          background-color: color.adjust($color, $lightness: math.percentage(-.05));
+          background-color: var(--item-hover-color, #{color.adjust($color, $lightness: math.percentage(-.05))});
           text-shadow: none;
-          
-          @if lightness($color) > 50 {
-            color: map.get(variables.$greyscale, 'dark');
-          } @else {
-            color: map.get(variables.$greyscale, 'white');
-          }
         }
       }
 
@@ -1568,16 +1564,10 @@ $all-colors: () !default;
 
       // Site menu border modifier
       &.site-menu--bordered {
-
-        > a,
-        > li > a,
-        > .dropdown__trigger,
-        > li .dropdown__trigger {
-          @if lightness($color) > 50 {
-           border-color: map.get(variables.$greyscale, 'dark');
-          } @else {
-            border-color: map.get(variables.$greyscale, 'white');
-          }
+        @if lightness($color) > 50 {
+          --menu-border-color: var(--dark, #{map.get(variables.$greyscale, 'dark')});
+        } @else {
+          --menu-border-color: var(--white, #{map.get(variables.$greyscale, 'white')});
         }
       }
     }
@@ -1638,10 +1628,6 @@ $all-colors: () !default;
     transition: all .2s ease-in-out;
     top: 100%;
     z-index: 5;
-
-    a {
-      padding: .75rem variables.$spacer;
-    }
   }
 }
 
@@ -1695,7 +1681,8 @@ $all-colors: () !default;
         > a,
         > li > a,
         > .dropdown__trigger,
-        > li .dropdown__trigger {
+        > li .dropdown__trigger,
+        > .dropdown .dropdown__trigger {
           border-top: 1px solid;
         }
 
@@ -1704,7 +1691,8 @@ $all-colors: () !default;
           border-top: none;
         }
 
-        > li:first-of-type {
+        > li:first-of-type,
+        > .dropdown:first-child {
 
           > a,
           > .dropdown__trigger {
@@ -1735,7 +1723,7 @@ $all-colors: () !default;
         .site-menu {
 
           &.active {
-            max-height: calc(100vh - var(--menu-height));
+            max-height: calc(100vh - var(--menu-height, 4.5rem));
             overflow-y: auto;
             overflow-x: hidden;
           }
