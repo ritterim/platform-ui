@@ -1683,15 +1683,15 @@ $all-colors: () !default;
         > .dropdown__trigger,
         > li .dropdown__trigger,
         > .dropdown .dropdown__trigger {
-          border-top: 1px solid;
+          border-top: 1px solid var(--menu-border-color);
         }
 
-        > a:first-of-type,
-        > .dropdown__trigger:first-of-type {
+        > a:first-child,
+        > .dropdown__trigger:first-child {
           border-top: none;
         }
 
-        > li:first-of-type,
+        > li:first-child,
         > .dropdown:first-child {
 
           > a,
