@@ -1095,8 +1095,8 @@ legend {
 
     &:focus {
       outline: none;
-      border-bottom-color: map.get(config.$platform-colors, 'focus' );
-      box-shadow: 0 0 2px 0 map.get(config.$platform-colors, 'focus' );
+      border-bottom-color: map.get(config.$site-colors, 'focus' );
+      box-shadow: 0 0 2px 0 map.get(config.$site-colors, 'focus' );
       transition: box-shadow config.$duration, border-color config.$duration ease-in-out, border-width config.$duration ease;
     }
   }
@@ -1415,7 +1415,7 @@ legend {
     }
 
     &:checked + label {
-      background-color: map.get(config.$platform-colors, 'link' );
+      background-color: map.get(config.$site-colors, 'link' );
       color: map.get(variables.$greyscale, 'white' );
       font-weight: inherit;
 
@@ -1481,8 +1481,8 @@ input[type="checkbox"].pill-filter, input[type="radio"].pill-filter {
   + label {
     background-color: map.get(variables.$greyscale, 'white');
     border-radius: map.get(config.$radius, 'button');
-    color: map.get(config.$platform-colors, 'link');
-    border: 1px solid map.get(config.$platform-colors, 'link');
+    color: map.get(config.$site-colors, 'link');
+    border: 1px solid map.get(config.$site-colors, 'link');
     height: auto;
     justify-content: center;
     margin: .25rem;
@@ -1508,7 +1508,7 @@ input[type="checkbox"].pill-filter, input[type="radio"].pill-filter {
   }
 
   &:checked + label {
-    background-color: map.get(config.$platform-colors, 'link' );
+    background-color: map.get(config.$site-colors, 'link' );
     font-weight: 400;
     color: map.get(variables.$greyscale, 'white');
 

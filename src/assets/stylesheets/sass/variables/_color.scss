@@ -48,8 +48,8 @@ $greyscale: (
 // Styleguide Color.ErrorColors
 
 $error-colors: (
-  'positive': map.get(config.$secondary-colors, 'olive'),
-  'negative': map.get(config.$secondary-colors, 'red'),
+  'positive': #b5cc18,
+  'negative': tomato,
   'neutral': map.get($greyscale, 'light')
 );
 

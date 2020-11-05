@@ -47,12 +47,6 @@
 // | `text-navy`       | `text-skyblue`     | `text-med-blue`     | `text-beige`         |
 // | `text-peach`      | `text-salmon`      | `text-brown`        | `text-orange`        |
 //
-// | Secondary colors  |                    |                     |                      |
-// | ----------------- | ------------------ | ------------------- | -------------------- |
-// | `text-red`        | `text-olive`       | `text-purple`       | `text-yellow`        |
-// | `text-pink`       | `text-cyan`        | `text-violet`       | `text-blue`          |
-// | `text-green`      | `text-teal`        | `text-gold`         |                      |
-//
 // Markup:
 // <div class="card block-container mb-3 flex--align-center">
 //   <div class="block block-6">
@@ -186,7 +180,7 @@
     position: relative;
 
     &:after {
-      background-color: map.get(config.$platform-colors, 'link');
+      background-color: map.get(config.$site-colors, 'link');
       bottom: 0;
       content: '';
       height: 1px;

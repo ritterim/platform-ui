@@ -18,12 +18,6 @@
 // | `background-navy`       | `background-skyblue`     | `background-med-blue`     | `background-beige`         |
 // | `background-peach`      | `background-salmon`      | `background-brown`        | `background-orange`        |
 //
-// | Secondary colors        |                          |                           |                            |
-// | ----------------------- | ------------------------ | ------------------------- | -------------------------- |
-// | `background-red`        | `background-olive`       | `background-purple`       | `background-yellow`        |
-// | `background-pink`       | `background-cyan`        | `background-violet`       | `background-blue`          |
-// | `background-green`      | `background-teal`        | `background-gold`         |                            |
-//
 // | Remove a background color |                          |                           |                            |
 // | ------------------------- | ------------------------ | ------------------------- | -------------------------- |
 // | `background-transparent`  |                          |                           |                            |
@@ -31,7 +25,7 @@
 // Styleguide Utilities.Color.Background
 
 $all-colors: () !default;
-$platform-colors: () !default;
+$site-colors: () !default;
 
 @if meta.type-of(config.$config-colors) == 'map' {
   $all-colors: map.merge(config.$config-colors, variables.$greyscale);
@@ -74,41 +68,6 @@ $platform-colors: () !default;
           background-color: $color !important;
         }
       }
-
-      &.button {
-
-        &.loading {
-
-          &:before {
-            background-color: $color !important;
-          }
-        }
-      }
-    }
-
-    // Add alpha transparency  
-    @for $i from 1 through 9 {
-      .background-#{$name}-a#{$i}0 {
-        background-color: rgba($color, $i * .1) !important;
-      }
-    }
-
-  }
-}
-
-$platform-colors: map.merge(config.$platform-colors, $platform-colors);
-
-@if meta.type-of($platform-colors) == 'map' {
-  @each $name, $color in $platform-colors {
-    // text color
-    .text-#{$name} {
-      border-color: $color !important;
-      color: $color !important;
-      transition: .2s;
-    }
-    // background color
-    .background-#{$name} {
-      background-color: $color !important;
 
       &.button {
 

@@ -4,7 +4,7 @@
 @use "sass:meta";
 
 $all-colors: () !default;
-$platform-colors: () !default;
+$site-colors: () !default;
 
 @if meta.type-of(config.$config-colors) == 'map' {
     $all-colors: map.merge(config.$config-colors, variables.$greyscale);
@@ -19,8 +19,8 @@ $platform-colors: () !default;
             --#{$name}: #{$color};
         }
     }
-    @if meta.type-of($platform-colors) == 'map' {
-        @each $name, $color in $platform-colors {
+    @if meta.type-of($site-colors) == 'map' {
+        @each $name, $color in $site-colors {
             --#{$name}: #{$color};
         }
     }

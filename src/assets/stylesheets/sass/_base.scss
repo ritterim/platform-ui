@@ -66,7 +66,7 @@ p {
 }
 
 a {
-  color: map.get(config.$platform-colors, 'link');
+  color: map.get(config.$site-colors, 'link');
   text-decoration: none;
   transition: config.$transitions;
 }

@@ -3,7 +3,7 @@
 
 // Needed maps whether populated below of not. //-- DO NOT DELETE
 $config-colors: () !default;
-$platform-colors: () !default;
+$site-colors: () !default;
 
 
 // ------------------
@@ -21,20 +21,6 @@ $brand-colors: (
   'salmon': #e58967,
   'brown':  #866657,
   'orange': #f48418
-) !default;
-
-$secondary-colors: (
-  'red':    tomato,
-  'olive':  #b5cc18,
-  'purple': lighten(purple, 10%),
-  'yellow': #FBBD08, // semantic-ui yellow
-  'pink': pink,
-  'cyan':   cyan,
-  'violet': #6435C9,
-  'blue':   dodgerblue,
-  'green': #21BA45,
-  'teal': teal,
-  'gold': #ffcc00
 ) !default;
 
 // $brand-colors and $secondary colors will be made available as text and background colors
@@ -58,42 +44,22 @@ $secondary-colors: (
 //
 // Styleguide Color.BrandColors
 
-// Secondary Colors
-//
-// Colors:
-// red: tomato
-// olive: #b5cc18
-// purple: purple
-// yellow: #FBBD08
-// pink: pink
-// cyan: cyan
-// violet: #6435C9
-// blue: #3f7bad
-// green: #21BA45
-// teal: teal
-// gold: #ffcc00
-//
-// Styleguide Color.SecondaryColors
 
-@if meta.variable-exists('secondary-colors') {
-  $config-colors: map.merge($brand-colors, $secondary-colors);
-} @else {
-  $config-colors: map.merge($brand-colors, $config-colors);
-}
+$config-colors: map.merge($brand-colors, $config-colors);
 
 // Default colors used in the Ritter Platform
 
-$platform-focus-color: map.get($config-colors, 'med-blue') !default;
-$platform-menu-color: map.get($config-colors, 'navy') !default;
-$platform-link-color: map.get($config-colors, 'med-blue') !default;
-$platform-help-color: map.get($config-colors, 'lightblue') !default;
-$platform-note-color: #FFFDF5 !default;
-$platform-help-text-color: map.get($config-colors, 'navy') !default;
+$site-focus-color: map.get($config-colors, 'med-blue') !default;
+$site-menu-color: map.get($config-colors, 'navy') !default;
+$site-link-color: map.get($config-colors, 'med-blue') !default;
+$site-help-color: map.get($config-colors, 'lightblue') !default;
+$site-note-color: #FFFDF5 !default;
+$site-help-text-color: map.get($config-colors, 'navy') !default;
 
-// Platform colors need to be placed back in a map
-// Removing platform-colors will not affect compilation
+// Site colors need to be placed back in a map
+// Removing site-colors will not affect compilation
 
-// Platform Colors
+// Site Colors
 //
 // Colors:
 // focus: #3f7bad
@@ -103,19 +69,19 @@ $platform-help-text-color: map.get($config-colors, 'navy') !default;
 // note: #FFFDF5
 // help-text: #003f70
 //
-// Styleguide Color.PlatformColors
+// Styleguide Color.SiteColors
 
-$platform-colors-vars: (
-  'focus' : $platform-focus-color,
-  'menu' : $platform-menu-color,
-  'link' : $platform-link-color,
-  'help' : $platform-help-color,
-  'note' : $platform-note-color,
-  'help-text' : $platform-help-text-color
+$site-colors-vars: (
+  'focus' : $site-focus-color,
+  'menu' : $site-menu-color,
+  'link' : $site-link-color,
+  'help' : $site-help-color,
+  'note' : $site-note-color,
+  'help-text' : $site-help-text-color
 ) !default;
 
-@if meta.type-of($platform-colors-vars) == 'map' {
-  $platform-colors: map.merge($platform-colors-vars, $platform-colors);
+@if meta.type-of($site-colors-vars) == 'map' {
+  $site-colors: map.merge($site-colors-vars, $site-colors);
 }
 
 
@@ -169,7 +135,7 @@ $radius: (
 // --------------------
 
 // colors
-$primary-menu-color: map.get($platform-colors, 'menu');
+$primary-menu-color: map.get($site-colors, 'menu');
 
 
 
