@@ -1524,14 +1524,16 @@ $all-colors: () !default;
   // Color specific 
   @each $name, $color in $all-colors {
     &.background-#{$name} {
+      --item-hover-color: #{color.adjust($color, $lightness: math.percentage(-.05))};
+
       background-color: $color !important;
 
       a,
       .dropdown__trigger {
         @if lightness($color) > 50 {
-          --menu-text-color: var(--dark, #333);
+          --menu-text-color: var(--dark, #{map.get(variables.$greyscale, 'dark')});
         } @else {
-          --menu-text-color: var(--white, #fff);
+          --menu-text-color: var(--white, #{map.get(variables.$greyscale, 'white')});
         }
   
         &.active {
@@ -1541,7 +1543,7 @@ $all-colors: () !default;
         @media (pointer: fine) {
           &:hover {
             &:not(.active) {
-              background-color: color.adjust($color, $lightness: math.percentage(-.05));
+              background-color: var(--item-hover-color, #{color.adjust($color, $lightness: math.percentage(-.05))});
             }
           }
         }
@@ -1550,7 +1552,7 @@ $all-colors: () !default;
       .dropdown-active {
 
         > .dropdown__trigger {
-          background-color: color.adjust($color, $lightness: math.percentage(-.05));
+          background-color: var(--item-hover-color, #{color.adjust($color, $lightness: math.percentage(-.05))});
           text-shadow: none;
         }
       }
@@ -1563,9 +1565,9 @@ $all-colors: () !default;
       // Site menu border modifier
       &.site-menu--bordered {
         @if lightness($color) > 50 {
-          --menu-border-color: var(--dark);
+          --menu-border-color: var(--dark, #{map.get(variables.$greyscale, 'dark')});
         } @else {
-          --menu-border-color: var(--white);
+          --menu-border-color: var(--white, #{map.get(variables.$greyscale, 'white')});
         }
       }
     }
@@ -1626,10 +1628,6 @@ $all-colors: () !default;
     transition: all .2s ease-in-out;
     top: 100%;
     z-index: 5;
-
-    a {
-      padding: .75rem variables.$spacer;
-    }
   }
 }
 
