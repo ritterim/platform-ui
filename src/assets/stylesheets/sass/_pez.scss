@@ -72,7 +72,6 @@
   border: 1px solid color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold * 1.5));
   border-radius: map.get(variables.$spacers, 1);
   color: color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(-(config.$hue-threshold * 2.5)));
-  cursor: pointer;
   display: inline-flex;
   font-size: map.get(variables.$font-percentage,'sm');
   font-weight: bold;
