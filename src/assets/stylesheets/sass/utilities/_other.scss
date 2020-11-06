@@ -223,7 +223,7 @@
 // rounded corners based on $spacers map
 @each $unit, $rem in variables.$spacers {
   .rounded-#{$unit} {
-    border-radius: #{$rem};
+    border-radius: #{$rem}!important;
   }
 }
 

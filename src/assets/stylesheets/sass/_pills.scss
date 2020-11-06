@@ -33,6 +33,8 @@
 //   Active
 // </div>
 //
+// Weight: 1
+// 
 // Styleguide Components.Pill.Default
 
 // Split
@@ -48,10 +50,12 @@
 // </div>
 // <div class="pill pill--split text-white background-navy">
 //   <div class="pill__content background-salmon">Left</div>
-//   <div class="pill__content background-olive">Middle</div>
+//   <div class="pill__content background-positive">Middle</div>
 //   <div class="pill__content background-skyblue">Right</div>
 // </div>
 //
+// Weight: 2
+// 
 // Styleguide Components.Pill.Split
 
 // Close
@@ -61,6 +65,8 @@
 //   Active <i class="pi-times-solid text-salmon ml-1 pointer"></i>
 // </div>
 //
+// Weight: 3
+// 
 // Styleguide Components.Pill.Close
 
 // Circle
@@ -91,7 +97,61 @@
 //   33
 // </div>
 //
+// Weight: 4
+// 
 // Styleguide Components.Pill.Circle
+
+// Pill Examples
+// 
+// You can create the depricated Pez example using pills and other utilities. 
+// 
+// Markup:
+// <div class="mb-4">
+//   <p class="mb-1 text--bold">Default Display</p>
+//   <div class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer" aria-label="Alaska">AK</div>
+//   <div class="pill m-1 background-lighter border border--color-light text-light p-2 rounded-1" aria-label="Washington DC">DC</div>
+//   <div class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer" aria-label="Georgia">GA</div>
+// </div>
+// <h4 class="text--bold mb-3">Other Examples:</h4>
+// <div class="block-container blocks cards mb-4 p-2">
+//   <p class="block block-12 mb-1 mx-2 text-white background-navy text--bold">Choose your toppings:</p>
+//   <div class="block tablet-up-6">
+//     <div class="card">
+//       <p class="mb-1">Meat</p>
+//       <div class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer" aria-label="Pepperoni">Pepperoni</div>
+//       <div class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer" aria-label="Sausage">Sausage</div>
+//       <div class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer background-positive text-dark border--color-positive" aria-label="Ham">Ham</div>
+//       <div class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer" aria-label="Buffalo Chicken">Buffalo Chicken</div>
+//     </div>
+//   </div>
+//   <div class="block tablet-up-6">
+//     <div class="card">
+//       <p class="mb-1">Veggies and Fruit</p>
+//       <div class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer background-positive text-dark border--color-positive" aria-label="Onions">Onions</div>
+//       <div class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer" aria-label="Mushrooms">Mushrooms</div>
+//       <div class="pill m-1 background-lighter border border--color-light text-light p-2 rounded-1" aria-label="Anchovies">Anchovies</div>
+//       <div class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer background-positive text-dark border--color-positive" aria-label="Black Olives">Black Olives</div>
+//       <div class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer background-positive text-dark border--color-positive" aria-label="Tomatoes">Tomatoes</div>
+//       <div class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer" aria-label="Peppers">Peppers</div>
+//       <div class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer" aria-label="Sun-dried Tomatoes">Sun-dried Tomatoes</div>
+//     </div>
+//   </div>
+// </div>
+// <div class="block-container blocks p-2">
+//   <div class="block tablet-up-4">
+//     <p class="text-bold text-navy mb-1 border-b">Tags:</p>
+//     <div class="pill m-1 rounded-1 pointer background-lightblue text-navy px-1 py-1" aria-label="Healthcare">Healthcare</div>
+//     <div class="pill m-1 rounded-1 pointer background-lightblue text-navy px-1 py-1" aria-label="Personal Health">Personal Health</div>
+//     <div class="pill m-1 rounded-1 pointer background-lightblue text-navy px-1 py-1" aria-label="Exercise">Exercise</div>
+//     <div class="pill m-1 rounded-1 pointer background-lightblue text-navy px-1 py-1" aria-label="Weight Loss">Weight Loss</div>
+//     <div class="pill m-1 rounded-1 pointer background-lightblue text-navy px-1 py-1" aria-label="Diet">Diet</div>
+//     <div class="pill m-1 rounded-1 pointer background-lightblue text-navy px-1 py-1" aria-label="Healthy Eating">Healthy Eating</div>    
+//   </div>
+// </div>
+// 
+// Weight: 5
+// 
+// Styleguide Components.Pill.Examples
 
 
 
@@ -107,7 +167,6 @@
   color: $primary-color;
   display: inline-flex;
   font-size: map.get(variables.$font-percentage, 'sm');
-  line-height: 1.15;
   padding: map.get(variables.$spacers, 1) map.get(variables.$spacers, 2);
   position: relative;
 
@@ -118,7 +177,7 @@
     padding: 0;
     .pill__label {
       background-color: rgba($primary-color, .3);
-      padding: map.get(variables.$spacers, 2);
+      padding: map.get(variables.$spacers, 1) map.get(variables.$spacers, 2);
     }
   }
 
@@ -148,7 +207,7 @@
   }
 
   &__content {
-    padding: map.get(variables.$spacers, 2);
+    padding: map.get(variables.$spacers, 1) map.get(variables.$spacers, 2);
     // if icon present - flex it
     i {
       display: flex;
