@@ -168,7 +168,6 @@
   display: inline-flex;
   font-size: map.get(variables.$font-percentage, 'sm');
   padding: map.get(variables.$spacers, 1) map.get(variables.$spacers, 2);
-  position: relative;
 
   &--split {
     align-items: center;
