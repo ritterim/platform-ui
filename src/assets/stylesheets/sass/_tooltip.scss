@@ -60,7 +60,7 @@
     background-color: $background-color;
     border-radius: $triangle;
     color: map.get(variables.$greyscale, 'white');
-    content: attr(data-tooltip);
+    content: attr(data-pui-tooltip);
     font-size: map.get(config.$fonts, 'size');
     font-size: map.get(variables.$font-percentage, 'sm');
     font-weight: normal;
@@ -165,6 +165,13 @@
   &[class*=tooltip-]:hover::before {
     visibility: visible;
     opacity: 1;
+  }
+}
+
+[data-tooltip] {
+  
+  &:after {
+    content: attr(data-tooltip);
   }
 }
 
