@@ -60,7 +60,7 @@
 
 @each $key, $val in variables.$flex-justify {
   .flex--justify-#{$key} {
-    justify-content: #{$val};
+    justify-content: #{$val}!important;
   }
 }
 

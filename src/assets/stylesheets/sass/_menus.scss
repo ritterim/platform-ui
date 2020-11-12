@@ -6,6 +6,72 @@
 @use "sass:meta";
 @use "sass:math";
 
+// Responsive Menu
+// 
+// If you want the site menu to be responsive, add the class `site-menu-wrapper` to the parent element of the `site-menu`. 
+// In the example below, the class is added to the `header`. You will also need to add a button to toggle the menu. Below, you see we 
+// added a button with the class `site-menu-mobile-action`. For accessibility purposes, we included button text with an `sr-only` class. 
+// The menu mobile menu will respond below the `tablet` resolution and the menu button will display as well.
+// If you want to add an icon to the dropdown targets, make sure the icon has the class `dropdown__trigger-icon`. This icon will rotate when the dropdown
+// is active. In the example below we're using a platform icon. `<i class="pi-angle-right mx-2 dropdown__trigger-icon"></i>`
+// 
+// 
+// Markup: 
+// <header class="background-light site-menu-wrapper py-3 px-3">
+//   <a href="#" class="site-logo">
+//       <img src="site-assets/images/svg/RitterInsuranceLogo.svg" alt="Logo">
+//   </a>
+//   <button class="site-menu-mobile-action button--plain text-white">
+//       <span class="sr-only">Toggle Navigation</span>
+//       <i aria-hidden="true" focusable="false" class="pi-menu pi-xl"></i>
+//   </button>
+//   <nav class="site-menu background-light">
+//       <a href="#" class="site-menu__item">
+//           About
+//       </a>
+//       <div class="dropdown">
+//           <a href="#" class="site-menu__item dropdown__trigger flex flex--justify-between w-100">
+//               Blog <i class="pi-angle-right mx-2 dropdown__trigger-icon"></i>
+//           </a>
+//           <div class="dropdown__content pin-right">
+//               <a href="#">
+//                   Blog Post
+//               </a>
+//               <a href="#">
+//                   Blog Post
+//               </a>
+//               <a href="#">
+//                   Blog Post
+//               </a>
+//           </div>
+//       </div>
+//       <div class="dropdown">
+//           <a href="#" class="site-menu__item dropdown__trigger flex flex--justify-between w-100">
+//               Dropdown <i class="pi-angle-right mx-2 dropdown__trigger-icon"></i>
+//           </a>
+//           <div class="dropdown__content pin-right">
+//               <a href="#">
+//                   Dropdown Item
+//               </a>
+//               <a href="#">
+//                   Dropdown Item
+//               </a>
+//               <a href="#">
+//                   Dropdown Item
+//               </a>
+//           </div>
+//       </div>
+//       <a href="#" class="site-menu__item dropdown__trigger">
+//           Contact
+//       </a>
+//       <a href="#" class="site-menu__item dropdown__trigger">
+//           Events
+//       </a>
+//   </nav>
+// </header>
+// 
+// Styleguide Menus.Responsive
+
 // Site Menu
 //
 // Here is a simple menu. This should be used inside your site header. It would work great as a navigation menu.
@@ -15,6 +81,29 @@
 // The site-menu does not have a specific background-color applied but rather inherits background colors from it's parent.
 // As does the dropdown menu. To learn more checkout how to apply [background colors to the menu](/section-menus.html#menus-sitemenu-background).
 //
+// 
+// <header class="site-menu-wrapper">
+//     <a href="/" class="site-menu-logo">
+//         <img src="site-assets/images/svg/RitterInsuranceLogo.svg" alt="Site Logo" />
+//     </a>
+//     <nav class="site-menu">
+//         <a href="#" class="site-menu__item">Menu Item 1</a>
+//         <a href="#" class="site-menu__item">Menu Item 2</a>
+//         <a href="#" class="site-menu__item">Menu Item 3</a>
+//         <a href="#" class="site-menu__item">Menu Item 4</a>
+//         <div class="site-menu__item dropdown">
+//             <a href="#" class="dropdown__trigger">Dropdown Item 1</a>
+//             <div class="dropdown__content">
+//                 <a href="#">Dropdown Link 1</a>
+//                 <a href="#">Dropdown Link 2</a>
+//                 <a href="#">Dropdown Link 3</a>
+//                 <a href="#">Dropdown Link 4</a>
+//             </div>
+//         </div>
+//     </nav>
+// </header>
+// 
+// 
 // <h4 class="text--bold mb-3">Example:</h4>
 // <div class="background-white">
 //   <ul class="site-menu">
@@ -1309,6 +1398,17 @@
 // Site Menu
 // **********************
 
+.site-menu-wrapper {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+
+  // Link wrapping a site logo
+  .site-logo {
+    display: flex;
+  }
+}
+
 $all-colors: () !default;
 
 @if meta.type-of(config.$config-colors) == 'map' {
@@ -1321,6 +1421,7 @@ $all-colors: () !default;
 .site-menu {
   --menu-text-color: inherit;
 
+  align-items: center;
   background-color: inherit;
   display: flex;
   list-style: none;
@@ -1332,9 +1433,8 @@ $all-colors: () !default;
 
 
   // default site-menu link hovers
-  a,
-  .dropdown__trigger,
-  .site-menu__link {
+  .site-menu__item,
+  .dropdown__item {
     color: var(--menu-text-color);
     display: block;
     line-height: 1;
@@ -1344,9 +1444,8 @@ $all-colors: () !default;
 
   &:not([class*=background-]) {
 
-    a,
-    .dropdown__trigger,
-    .site-menu__link {
+    .site-menu__item,
+    .dropdown__item {
       @media (pointer: fine) {
         &:hover {
           &:not(.active) {
@@ -1365,9 +1464,8 @@ $all-colors: () !default;
   // site-menu border on hover
   &.hover-border {
 
-    a,
-    .dropdown__trigger,
-    .site-menu__link {
+    .site-menu__item,
+    .dropdown__item {
       position: relative;
 
       &:after {
@@ -1458,36 +1556,22 @@ $all-colors: () !default;
     --menu-border-color: var(--base, #666666);
 
     @media (min-width: (config.$show-mobile-menu)) {
-      > a,
-      > .dropdown__trigger,
-      > .site-menu__link,
-      > li > a,
-      > li .dropdown__trigger,
-      > li .site-menu__link,
-      > .dropdown .dropdown__trigger {
+      > .site-menu__item,
+      > .dropdown__item {
         border-left: 1px solid var(--menu-border-color);
       }
   
-      > a:first-child,
-      > .dropdown__trigger:first-child,
-      > .site-menu__link:first-child {
+      > .site-menu__item:first-child,
+      > .dropdown__item:first-child {
         border-left: none;
-      }
-  
-      > li:first-child,
-      > .dropdown:first-child {
-  
-        > a,
-        > .dropdown__trigger,
-        > .site-menu__link {
-          border-left: none;
-        }
       }
     }
   }
 
 
   .dropdown__content {
+    display: flex;
+    flex-direction: column;
     left: 0;
   }
 
@@ -1519,9 +1603,8 @@ $all-colors: () !default;
 
       background-color: $color !important;
 
-      a,
-      .dropdown__trigger,
-      .site-menu__link {
+      .site-menu__item,
+      .dropdown__item {
         @if lightness($color) > 50 {
           --menu-text-color: var(--dark, #{map.get(variables.$greyscale, 'dark')});
         } @else {
@@ -1605,10 +1688,6 @@ $all-colors: () !default;
   }
   
   .dropdown__content {
-    @media (min-width: (config.$show-mobile-menu)) {
-      background-color: map.get(variables.$greyscale, 'white');
-    }
-    
     background-color: inherit;
     height: auto;
     left: 0;
@@ -1635,6 +1714,10 @@ $all-colors: () !default;
   }
 
   .site-menu-mobile-action {
+    appearance: none;
+    background: transparent;
+    border: none;
+    color: inherit;
 
     @media (min-width: (config.$show-mobile-menu)) {
       display: none;
@@ -1648,6 +1731,7 @@ $all-colors: () !default;
   @media (max-width: (config.$show-mobile-menu - 1)) {
 
     .site-menu {
+      align-items: baseline;
       flex-direction: column;
       left: 0;
       max-height: 0;
@@ -1670,30 +1754,14 @@ $all-colors: () !default;
       // Side border modifier
       &.site-menu--bordered {
 
-        > a,
-        > li > a,
-        > .dropdown__trigger,
-        > li .dropdown__trigger,
-        > .site-menu__link,
-        > li > .site-menu__link,
-        > .dropdown .dropdown__trigger {
+        > .site-menu__item,
+        > .dropdown__item {
           border-top: 1px solid var(--menu-border-color);
         }
 
-        > a:first-child,
-        > .dropdown__trigger:first-child,
-        > .site-menu__link:first-child {
+        > .site-menu__item:first-child,
+        > .dropdown__item:first-child {
           border-top: none;
-        }
-
-        > li:first-child,
-        > .dropdown:first-child {
-
-          > a,
-          > .dropdown__trigger,
-          > .site-menu__link {
-            border-top: none;
-          }      
         }
 
         &:not([class*=background-]) {
@@ -1705,6 +1773,7 @@ $all-colors: () !default;
       }
 
       .dropdown {
+        width: 100%;
 
         .dropdown__content {
           border: none;
@@ -1725,6 +1794,11 @@ $all-colors: () !default;
           }
         }
       }
+    }
+
+    .site-menu__item,
+    .dropdown__item {
+      width: 100%;
     }
   }
 }
