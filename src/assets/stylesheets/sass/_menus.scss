@@ -42,24 +42,24 @@
 //     <a href="/" class="site-logo">
 //         <img src="https://via.placeholder.com/150x50.png?text=Site+Logo" alt="Site Logo" />
 //     </a>
-//     <button class="site-menu-mobile-action">
+//     <a class="site-menu-mobile-action">
 //       <span class="sr-only">Toggle Navigation</span>
 //       <i aria-hidden="true" focusable="false" class="pi-menu pi-xl"></i>
-//     </button>
+//     </a>
 //     <nav class="site-menu">
-//         <a href="#" class="site-menu__item">Item 1</a>
-//         <a href="#" class="site-menu__item">Item 2</a>
-//         <a href="#" class="site-menu__item">Item 3</a>
-//         <a href="#" class="site-menu__item">Item 4</a>
+//         <a href="#0" class="site-menu__item">Item 1</a>
+//         <a href="#0" class="site-menu__item">Item 2</a>
+//         <a href="#0" class="site-menu__item">Item 3</a>
+//         <a href="#0" class="site-menu__item">Item 4</a>
 //         <div class="dropdown">
-//             <a href="#" class="site-menu__item dropdown__trigger">
+//             <a href="#0" class="site-menu__item dropdown__trigger">
 //               Item 1 <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //             </a>
 //             <div class="dropdown__content">
-//                 <a href="#" class="dropdown__item">Link 1</a>
-//                 <a href="#" class="dropdown__item">Link 2</a>
-//                 <a href="#" class="dropdown__item">Link 3</a>
-//                 <a href="#" class="dropdown__item">Link 4</a>
+//                 <a href="#0" class="dropdown__item">Link 1</a>
+//                 <a href="#0" class="dropdown__item">Link 2</a>
+//                 <a href="#0" class="dropdown__item">Link 3</a>
+//                 <a href="#0" class="dropdown__item">Link 4</a>
 //             </div>
 //         </div>
 //     </nav>
@@ -84,18 +84,18 @@
 // 
 // Markup:
 // <nav class="site-menu background-navy">
-//   <a href="#" class="site-menu__item">Item 1</a>
-//   <a href="#" class="site-menu__item">Item 2</a>
-//   <a href="#" class="site-menu__item">Item 3</a>
-//   <a href="#" class="site-menu__item">Item 4</a>
-//   <a href="#" class="site-menu__item">Item 5</a>
+//   <a href="#0" class="site-menu__item">Item 1</a>
+//   <a href="#0" class="site-menu__item">Item 2</a>
+//   <a href="#0" class="site-menu__item">Item 3</a>
+//   <a href="#0" class="site-menu__item">Item 4</a>
+//   <a href="#0" class="site-menu__item">Item 5</a>
 // </nav>
 // <nav class="mt-4 site-menu background-lighter">
-//   <a href="#" class="site-menu__item">Item 1</a>
-//   <a href="#" class="site-menu__item">Item 2</a>
-//   <a href="#" class="site-menu__item">Item 3</a>
-//   <a href="#" class="site-menu__item">Item 4</a>
-//   <a href="#" class="site-menu__item">Item 5</a>
+//   <a href="#0" class="site-menu__item">Item 1</a>
+//   <a href="#0" class="site-menu__item">Item 2</a>
+//   <a href="#0" class="site-menu__item">Item 3</a>
+//   <a href="#0" class="site-menu__item">Item 4</a>
+//   <a href="#0" class="site-menu__item">Item 5</a>
 //   </ul>
 // </nav>
 // 
@@ -111,19 +111,19 @@
 // Markup:
 //   <ul class="site-menu site-menu--bordered">
 //     <li>
-//       <a href="#" class="site-menu__item">Item 1</a>
+//       <a href="#0" class="site-menu__item">Item 1</a>
 //     </li>
 //     <li>
-//       <a href="#" class="site-menu__item">Item 2</a>
+//       <a href="#0" class="site-menu__item">Item 2</a>
 //     </li>
 //     <li>
-//       <a href="#" class="site-menu__item">Item 3</a>
+//       <a href="#0" class="site-menu__item">Item 3</a>
 //     </li>
 //     <li>
-//       <a href="#" class="site-menu__item">Item 4</a>
+//       <a href="#0" class="site-menu__item">Item 4</a>
 //     </li>
 //     <li>
-//       <a href="#" class="site-menu__item">Item 5</a>
+//       <a href="#0" class="site-menu__item">Item 5</a>
 //     </li>
 //   </ul>
 // 
@@ -144,37 +144,37 @@
 // Markup:
 //   <ul class="site-menu hover-border">
 //     <li>
-//       <a href="#" class="site-menu__item">Item 1</a>
+//       <a href="#0" class="site-menu__item">Item 1</a>
 //     </li>
 //     <li>
-//       <a href="#" class="site-menu__item">Item 2</a>
+//       <a href="#0" class="site-menu__item">Item 2</a>
 //     </li>
 //     <li>
-//       <a href="#" class="site-menu__item">Item 3</a>
+//       <a href="#0" class="site-menu__item">Item 3</a>
 //     </li>
 //     <li>
-//       <a href="#" class="site-menu__item">Item 4</a>
+//       <a href="#0" class="site-menu__item">Item 4</a>
 //     </li>
 //     <li>
-//       <a href="#" class="site-menu__item">Item 5</a>
+//       <a href="#0" class="site-menu__item">Item 5</a>
 //     </li>
 //   </ul>
 //   <div class="my-3"></div>
 //   <ul class="site-menu hover-border hover-border--navy">
 //     <li>
-//       <a href="#" class="site-menu__item">Item 1</a>
+//       <a href="#0" class="site-menu__item">Item 1</a>
 //     </li>
 //     <li>
-//       <a href="#" class="site-menu__item">Item 2</a>
+//       <a href="#0" class="site-menu__item">Item 2</a>
 //     </li>
 //     <li>
-//       <a href="#" class="site-menu__item">Item 3</a>
+//       <a href="#0" class="site-menu__item">Item 3</a>
 //     </li>
 //     <li>
-//       <a href="#" class="site-menu__item">Item 4</a>
+//       <a href="#0" class="site-menu__item">Item 4</a>
 //     </li>
 //     <li>
-//       <a href="#" class="site-menu__item">Item 5</a>
+//       <a href="#0" class="site-menu__item">Item 5</a>
 //     </li>
 //   </ul>
 // 
@@ -215,25 +215,25 @@
 // <nav class="background-white">
 //   <ul class="site-menu">
 //     <li class="dropdown">
-//       <button class="site-menu__item dropdown__trigger button--plain">
+//       <a class="site-menu__item dropdown__trigger">
 //         Item 1
 //         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//       </button>
+//       </a>
 //       <ul class="dropdown__content">
 //         <li>
-//           <a href="#" class="dropdown__item">Item 1</a>
+//           <a href="#0" class="dropdown__item">Item 1</a>
 //         </li>
 //         <li>
-//           <a href="#" class="dropdown__item">Item 2</a>
+//           <a href="#0" class="dropdown__item">Item 2</a>
 //         </li>
 //         <li>
-//           <a href="#" class="dropdown__item">Item 3</a>
+//           <a href="#0" class="dropdown__item">Item 3</a>
 //         </li>
 //         <li>
-//           <a href="#" class="dropdown__item">Item 4</a>
+//           <a href="#0" class="dropdown__item">Item 4</a>
 //         </li>
 //         <li>
-//           <a href="#" class="dropdown__item">Item 5</a>
+//           <a href="#0" class="dropdown__item">Item 5</a>
 //         </li>
 //       </ul>
 //     </li>
@@ -244,88 +244,88 @@
 //       </a>
 //       <ul class="dropdown__content">
 //         <li>
-//           <a href="#" class="dropdown__item">Item 1</a>
+//           <a href="#0" class="dropdown__item">Item 1</a>
 //         </li>
 //         <li>
-//           <a href="#" class="dropdown__item">Item 2</a>
+//           <a href="#0" class="dropdown__item">Item 2</a>
 //         </li>
 //         <li>
-//           <a href="#" class="dropdown__item">Item 3</a>
+//           <a href="#0" class="dropdown__item">Item 3</a>
 //         </li>
 //         <li>
-//           <a href="#" class="dropdown__item">Item 4</a>
+//           <a href="#0" class="dropdown__item">Item 4</a>
 //         </li>
 //         <li>
-//           <a href="#" class="dropdown__item">Item 5</a>
+//           <a href="#0" class="dropdown__item">Item 5</a>
 //         </li>
 //       </ul>
 //     </li>
 //     <li class="dropdown">
-//       <button class="site-menu__item dropdown__trigger button--plain">
+//       <a class="site-menu__item dropdown__trigger">
 //         Item 3
 //         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//       </button>
+//       </a>
 //       <ul class="dropdown__content">
 //         <li>
-//           <a href="#" class="dropdown__item">Item 1</a>
+//           <a href="#0" class="dropdown__item">Item 1</a>
 //         </li>
 //         <li>
-//           <a href="#" class="dropdown__item">Item 2</a>
+//           <a href="#0" class="dropdown__item">Item 2</a>
 //         </li>
 //         <li>
-//           <a href="#" class="dropdown__item">Item 3</a>
+//           <a href="#0" class="dropdown__item">Item 3</a>
 //         </li>
 //         <li>
-//           <a href="#" class="dropdown__item">Item 4</a>
+//           <a href="#0" class="dropdown__item">Item 4</a>
 //         </li>
 //         <li>
-//           <a href="#" class="dropdown__item">Item 5</a>
+//           <a href="#0" class="dropdown__item">Item 5</a>
 //         </li>
 //       </ul>
 //     </li>
 //     <li class="dropdown">
-//       <button class="site-menu__item dropdown__trigger button--plain">
+//       <a class="site-menu__item dropdown__trigger">
 //         Item 4
 //         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//       </button>
+//       </a>
 //       <ul class="dropdown__content">
 //         <li>
-//           <a href="#" class="dropdown__item">Item 1</a>
+//           <a href="#0" class="dropdown__item">Item 1</a>
 //         </li>
 //         <li>
-//           <a href="#" class="dropdown__item">Item 2</a>
+//           <a href="#0" class="dropdown__item">Item 2</a>
 //         </li>
 //         <li>
-//           <a href="#" class="dropdown__item">Item 3</a>
+//           <a href="#0" class="dropdown__item">Item 3</a>
 //         </li>
 //         <li>
-//           <a href="#" class="dropdown__item">Item 4</a>
+//           <a href="#0" class="dropdown__item">Item 4</a>
 //         </li>
 //         <li>
-//           <a href="#" class="dropdown__item">Item 5</a>
+//           <a href="#0" class="dropdown__item">Item 5</a>
 //         </li>
 //       </ul>
 //     </li>
 //     <li class="dropdown">
-//       <button class="site-menu__item dropdown__trigger button--plain">
+//       <a class="site-menu__item dropdown__trigger">
 //         Item 5
 //         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//       </button>
+//       </a>
 //       <ul class="dropdown__content">
 //         <li>
-//           <a href="#" class="dropdown__item">Item 1</a>
+//           <a href="#0" class="dropdown__item">Item 1</a>
 //         </li>
 //         <li>
-//           <a href="#" class="dropdown__item">Item 2</a>
+//           <a href="#0" class="dropdown__item">Item 2</a>
 //         </li>
 //         <li>
-//           <a href="#" class="dropdown__item">Item 3</a>
+//           <a href="#0" class="dropdown__item">Item 3</a>
 //         </li>
 //         <li>
-//           <a href="#" class="dropdown__item">Item 4</a>
+//           <a href="#0" class="dropdown__item">Item 4</a>
 //         </li>
 //         <li>
-//           <a href="#" class="dropdown__item">Item 5</a>
+//           <a href="#0" class="dropdown__item">Item 5</a>
 //         </li>
 //       </ul>
 //     </li>
@@ -334,117 +334,117 @@
 // <p class="mt-4">The dropdowns with a background utility applied. <i class="pi-arrow-down"></i></p>
 // <ul class="site-menu background-navy">
 //   <li class="dropdown">
-//     <button class="site-menu__item dropdown__trigger button--plain">
+//     <a class="site-menu__item dropdown__trigger">
 //       Item 1
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//     </button>
+//     </a>
 //     <ul class="dropdown__content">
 //       <li>
-//         <a href="#" class="dropdown__item">Item 1</a>
+//         <a href="#0" class="dropdown__item">Item 1</a>
 //       </li>
 //       <li>
-//         <a href="#" class="dropdown__item">Item 2</a>
+//         <a href="#0" class="dropdown__item">Item 2</a>
 //       </li>
 //       <li>
-//         <a href="#" class="dropdown__item">Item 3</a>
+//         <a href="#0" class="dropdown__item">Item 3</a>
 //       </li>
 //       <li>
-//         <a href="#" class="dropdown__item">Item 4</a>
+//         <a href="#0" class="dropdown__item">Item 4</a>
 //       </li>
 //       <li>
-//         <a href="#" class="dropdown__item">Item 5</a>
+//         <a href="#0" class="dropdown__item">Item 5</a>
 //       </li>
 //     </ul>
 //   </li>
 //   <li class="dropdown">
-//     <button class="site-menu__item dropdown__trigger button--plain">
+//     <a class="site-menu__item dropdown__trigger">
 //       Item 2
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//     </button>
+//     </a>
 //     <ul class="dropdown__content">
 //       <li>
-//         <a href="#" class="dropdown__item">Item 1</a>
+//         <a href="#0" class="dropdown__item">Item 1</a>
 //       </li>
 //       <li>
-//         <a href="#" class="dropdown__item">Item 2</a>
+//         <a href="#0" class="dropdown__item">Item 2</a>
 //       </li>
 //       <li>
-//         <a href="#" class="dropdown__item">Item 3</a>
+//         <a href="#0" class="dropdown__item">Item 3</a>
 //       </li>
 //       <li>
-//         <a href="#" class="dropdown__item">Item 4</a>
+//         <a href="#0" class="dropdown__item">Item 4</a>
 //       </li>
 //       <li>
-//         <a href="#" class="dropdown__item">Item 5</a>
+//         <a href="#0" class="dropdown__item">Item 5</a>
 //       </li>
 //     </ul>
 //   </li>
 //   <li class="dropdown">
-//     <button class="site-menu__item dropdown__trigger button--plain">
+//     <a class="site-menu__item dropdown__trigger">
 //       Item 3
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//     </button>
+//     </a>
 //     <ul class="dropdown__content">
 //       <li>
-//         <a href="#" class="dropdown__item">Item 1</a>
+//         <a href="#0" class="dropdown__item">Item 1</a>
 //       </li>
 //       <li>
-//         <a href="#" class="dropdown__item">Item 2</a>
+//         <a href="#0" class="dropdown__item">Item 2</a>
 //       </li>
 //       <li>
-//         <a href="#" class="dropdown__item">Item 3</a>
+//         <a href="#0" class="dropdown__item">Item 3</a>
 //       </li>
 //       <li>
-//         <a href="#" class="dropdown__item">Item 4</a>
+//         <a href="#0" class="dropdown__item">Item 4</a>
 //       </li>
 //       <li>
-//         <a href="#" class="dropdown__item">Item 5</a>
+//         <a href="#0" class="dropdown__item">Item 5</a>
 //       </li>
 //     </ul>
 //   </li>
 //   <li class="dropdown">
-//     <button class="site-menu__item dropdown__trigger button--plain">
+//     <a class="site-menu__item dropdown__trigger">
 //       Item 4
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//     </button>
+//     </a>
 //     <ul class="dropdown__content">
 //       <li>
-//         <a href="#" class="dropdown__item">Item 1</a>
+//         <a href="#0" class="dropdown__item">Item 1</a>
 //       </li>
 //       <li>
-//         <a href="#" class="dropdown__item">Item 2</a>
+//         <a href="#0" class="dropdown__item">Item 2</a>
 //       </li>
 //       <li>
-//         <a href="#" class="dropdown__item">Item 3</a>
+//         <a href="#0" class="dropdown__item">Item 3</a>
 //       </li>
 //       <li>
-//         <a href="#" class="dropdown__item">Item 4</a>
+//         <a href="#0" class="dropdown__item">Item 4</a>
 //       </li>
 //       <li>
-//         <a href="#" class="dropdown__item">Item 5</a>
+//         <a href="#0" class="dropdown__item">Item 5</a>
 //       </li>
 //     </ul>
 //   </li>
 //   <li class="dropdown">
-//     <button class="site-menu__item dropdown__trigger button--plain">
+//     <a class="site-menu__item dropdown__trigger">
 //       Item 5
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//     </button>
+//     </a>
 //     <ul class="dropdown__content">
 //       <li>
-//         <a href="#" class="dropdown__item">Item 1</a>
+//         <a href="#0" class="dropdown__item">Item 1</a>
 //       </li>
 //       <li>
-//         <a href="#" class="dropdown__item">Item 2</a>
+//         <a href="#0" class="dropdown__item">Item 2</a>
 //       </li>
 //       <li>
-//         <a href="#" class="dropdown__item">Item 3</a>
+//         <a href="#0" class="dropdown__item">Item 3</a>
 //       </li>
 //       <li>
-//         <a href="#" class="dropdown__item">Item 4</a>
+//         <a href="#0" class="dropdown__item">Item 4</a>
 //       </li>
 //       <li>
-//         <a href="#" class="dropdown__item">Item 5</a>
+//         <a href="#0" class="dropdown__item">Item 5</a>
 //       </li>
 //     </ul>
 //   </li>
@@ -951,7 +951,7 @@ $all-colors: () !default;
 // Simpy change the `<icon>` class to the desired font-awesome icon you want. Then, add the `text-{color}--hover`
 // class to the `icon-menu__action`. To see a list of available hover colors [click here](/section-typography.html#kssref-typography-utilities-color).
 //
-// In the example below, we're using `<div>`s on the `icon-menu__action` to build the menus. You could use a `<button>` or an `<a>` to improve accessibility
+// In the example below, we're using `<div>`s on the `icon-menu__action` to build the menus. You could use a `<a>` or an `<a>` to improve accessibility
 // depending on exactly what you need. If you use a less semantic element like `<div>`, we would recommend adding `role="button"`.
 //
 // Also notice that the `pointer` class was added to those elements that do not have a `cursor: pointer` applied to them by default.
@@ -968,31 +968,31 @@ $all-colors: () !default;
 // Markup:
 // <div class="icon-menu">
 //   <div class="icon-menu__item">
-//     <button class="icon-menu__action button--plain text-negative--hover pointer">
+//     <a href="#0" class="icon-menu__action text-negative--hover">
 //       <i class="pi-trash" aria-hidden="hidden"></i>
-//     </button>
+//     </a>
 //   </div>
 //   <div class="icon-menu__item">
-//     <button class="icon-menu__action button--plain text-positive--hover pointer">
+//     <a href="#0" class="icon-menu__action text-positive--hover">
 //       <i class="pi-edit" aria-hidden="hidden"></i>
-//     </button>
+//     </a>
 //   </div>
 //   <div class="icon-menu__item">
-//     <button class="icon-menu__action button--plain text-red--hover pointer">
+//     <a href="#0" class="icon-menu__action text-red--hover">
 //       <i class="pi-clock" aria-hidden="hidden"></i>
-//     </button>
+//     </a>
 //   </div>
 // </div>
 // <div class="icon-menu icon-menu--vertical">
 //   <div class="icon-menu__item">
-//     <button class="icon-menu__action button--plain text-negative--hover pointer">
+//     <a href="#0" class="icon-menu__action text-negative--hover">
 //       <i class="pi-trash" aria-hidden="hidden"></i>
-//     </button>
+//     </a>
 //   </div>
 //   <div class="icon-menu__item">
-//     <button class="icon-menu__action button--plain text-positive--hover pointer">
+//     <a href="#0" class="icon-menu__action text-positive--hover">
 //       <i class="pi-edit" aria-hidden="hidden"></i>
-//     </button>
+//     </a>
 //   </div>
 // </div>
 //
