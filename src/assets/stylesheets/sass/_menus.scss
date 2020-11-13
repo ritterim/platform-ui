@@ -6,148 +6,64 @@
 @use "sass:meta";
 @use "sass:math";
 
-// Responsive Menu
-// 
-// If you want the site menu to be responsive, add the class `site-menu-wrapper` to the parent element of the `site-menu`. 
-// In the example below, the class is added to the `header`. You will also need to add a button to toggle the menu. Below, you see we 
-// added a button with the class `site-menu-mobile-action`. For accessibility purposes, we included button text with an `sr-only` class. 
-// The menu mobile menu will respond below the `tablet` resolution and the menu button will display as well.
-// If you want to add an icon to the dropdown targets, make sure the icon has the class `dropdown__trigger-icon`. This icon will rotate when the dropdown
-// is active. In the example below we're using a platform icon. `<i class="pi-angle-right mx-2 dropdown__trigger-icon"></i>`
-// 
-// 
-// Markup: 
-// <header class="background-light site-menu-wrapper py-3 px-3">
-//   <a href="#" class="site-logo">
-//       <img src="site-assets/images/svg/RitterInsuranceLogo.svg" alt="Logo">
-//   </a>
-//   <button class="site-menu-mobile-action button--plain text-white">
-//       <span class="sr-only">Toggle Navigation</span>
-//       <i aria-hidden="true" focusable="false" class="pi-menu pi-xl"></i>
-//   </button>
-//   <nav class="site-menu background-light">
-//       <a href="#" class="site-menu__item">
-//           About
-//       </a>
-//       <div class="dropdown">
-//           <a href="#" class="site-menu__item dropdown__trigger flex flex--justify-between w-100">
-//               Blog <i class="pi-angle-right mx-2 dropdown__trigger-icon"></i>
-//           </a>
-//           <div class="dropdown__content pin-right">
-//               <a href="#">
-//                   Blog Post
-//               </a>
-//               <a href="#">
-//                   Blog Post
-//               </a>
-//               <a href="#">
-//                   Blog Post
-//               </a>
-//           </div>
-//       </div>
-//       <div class="dropdown">
-//           <a href="#" class="site-menu__item dropdown__trigger flex flex--justify-between w-100">
-//               Dropdown <i class="pi-angle-right mx-2 dropdown__trigger-icon"></i>
-//           </a>
-//           <div class="dropdown__content pin-right">
-//               <a href="#">
-//                   Dropdown Item
-//               </a>
-//               <a href="#">
-//                   Dropdown Item
-//               </a>
-//               <a href="#">
-//                   Dropdown Item
-//               </a>
-//           </div>
-//       </div>
-//       <a href="#" class="site-menu__item dropdown__trigger">
-//           Contact
-//       </a>
-//       <a href="#" class="site-menu__item dropdown__trigger">
-//           Events
-//       </a>
-//   </nav>
-// </header>
-// 
-// Styleguide Menus.Responsive
 
 // Site Menu
 //
 // Here is a simple menu. This should be used inside your site header. It would work great as a navigation menu.
 // The link colors are set to inherit the color defined by the `body`. In this case, `#333`. The links have a subtle
 // shadow on mouse over to give the links a nice hover effect.
-// 
-// The site-menu does not have a specific background-color applied but rather inherits background colors from it's parent.
-// As does the dropdown menu. To learn more checkout how to apply [background colors to the menu](/section-menus.html#menus-sitemenu-background).
 //
+// Our site-menu works great for a site navigation that lives inside your header. It's fully responsive out of the box. Just be sure to use
+// the appropriate class names. Your site-menu should be wrapped in a `site-menu-wrapper` this ensures the porper position is applied to the wrapper
+// and allows the responsive menu to function properly. 
 // 
+// If you have a logo that links to your home page, wrap that in an `a` with the class `site-logo`.
+// 
+// In order to fire the responsive site-menu you will need an action. Use `site-menu-mobile-action`
+// on a `button` or `a`. From there, use any font-icon you'd like to reflect the mobile menu. Feel free to use our icon `pi-menu` which reflects the 
+// industry standard "hamburger menu". 
+// 
+// Next, your `site-menu` should follow the `site-mobiile-menu-action`. In other words, they should be siblings. Inside your site-menu. add the class
+// `site-menu__item` to any link, or anything that you want to be perceived as a link. 
+// 
+// If you want to have a dropdown menu within the site-menu you can. Add `dropdown__trigger` to a `site-menu__item`. Add an element with the class of
+// `dropdown__content` as a sibling to your `dropdown__trigger`. Finally, wrap these elements in a `dropdown` class. When you click on the `dropdown__trigger`
+// your dropdown__content will appear. You can put anything inside the dropdown__content. If you have a list of links and you want them to look like the rest
+// of the links inside your site-menu, add the class `dropdown__item`. 
+// 
+// We built the site-menu to be light, and work well for your needs. It does not come with a background color set. However, the site-menu will inherit 
+// it's parent background-colors. You can read more about this below in the documentation.
+// 
+// | <i class="pi-warning text-orange"></i> NOTE: The responsive menu and the dropdown menus require the use of JavaScript |
+// | --
+// 
+// Markup:
 // <header class="site-menu-wrapper">
-//     <a href="/" class="site-menu-logo">
-//         <img src="site-assets/images/svg/RitterInsuranceLogo.svg" alt="Site Logo" />
+//     <a href="/" class="site-logo">
+//         <img src="https://via.placeholder.com/150x50.png?text=Site+Logo" alt="Site Logo" />
 //     </a>
+//     <button class="site-menu-mobile-action">
+//       <span class="sr-only">Toggle Navigation</span>
+//       <i aria-hidden="true" focusable="false" class="pi-menu pi-xl"></i>
+//     </button>
 //     <nav class="site-menu">
-//         <a href="#" class="site-menu__item">Menu Item 1</a>
-//         <a href="#" class="site-menu__item">Menu Item 2</a>
-//         <a href="#" class="site-menu__item">Menu Item 3</a>
-//         <a href="#" class="site-menu__item">Menu Item 4</a>
-//         <div class="site-menu__item dropdown">
-//             <a href="#" class="dropdown__trigger">Dropdown Item 1</a>
+//         <a href="#" class="site-menu__item">Item 1</a>
+//         <a href="#" class="site-menu__item">Item 2</a>
+//         <a href="#" class="site-menu__item">Item 3</a>
+//         <a href="#" class="site-menu__item">Item 4</a>
+//         <div class="dropdown">
+//             <a href="#" class="site-menu__item dropdown__trigger">
+//               Item 1 <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+//             </a>
 //             <div class="dropdown__content">
-//                 <a href="#">Dropdown Link 1</a>
-//                 <a href="#">Dropdown Link 2</a>
-//                 <a href="#">Dropdown Link 3</a>
-//                 <a href="#">Dropdown Link 4</a>
+//                 <a href="#" class="dropdown__item">Link 1</a>
+//                 <a href="#" class="dropdown__item">Link 2</a>
+//                 <a href="#" class="dropdown__item">Link 3</a>
+//                 <a href="#" class="dropdown__item">Link 4</a>
 //             </div>
 //         </div>
 //     </nav>
 // </header>
-// 
-// 
-// <h4 class="text--bold mb-3">Example:</h4>
-// <div class="background-white">
-//   <ul class="site-menu">
-//     <li>
-//       <a href="#">Menu Item 1</a>
-//     </li>
-//     <li>
-//       <a href="#">Menu Item 2</a>
-//     </li>
-//     <li>
-//       <a href="#">Menu Item 3</a>
-//     </li>
-//     <li>
-//       <a href="#">Menu Item 4</a>
-//     </li>
-//     <li>
-//       <a href="#">Menu Item 5</a>
-//     </li>
-//   </ul>
-// </div>
-// <div class="my-3"></div>
-// <h4 class="mb-3">Markup:</h4>
-// 
-// ```html
-// <ul class="site-menu">
-//   <li>
-//     <a href="#">Menu Item 1</a>
-//   </li>
-//   <li>
-//     <a href="#">Menu Item 2</a>
-//   </li>
-//   <li>
-//     <a href="#">Menu Item 3</a>
-//   </li>
-//   <li>
-//     <a href="#">Menu Item 4</a>
-//   </li>
-//   <li>
-//     <a href="#">Menu Item 5</a>
-//   </li>
-// </ul>
-// ```
-// 
-// <div class="my-4"></div>
 //
 // Weight: -1
 //
@@ -162,41 +78,24 @@
 // will be white. If te background color is a lighter color, the link color will be `var(--dark)`. Which is currently set to
 // the body color.
 // 
+// <div class="message message--warning" data-header="">
+//   <p>If you want your site-menu to have a background-color without the inherit hover effects, just wrap the <code>site-menu</code> in an element with a <code>background-{color}</code> class. The site-menu and dropdowns will inherit background colors from their parents.</p>
+// </div>
+// 
 // Markup:
-// <ul class="site-menu background-navy">
-//   <li>
-//     <a href="#">Menu Item 1</a>
-//   </li>
-//   <li>
-//     <a href="#">Menu Item 2</a>
-//   </li>
-//   <li>
-//     <a href="#">Menu Item 3</a>
-//   </li>
-//   <li>
-//     <a href="#">Menu Item 4</a>
-//   </li>
-//   <li>
-//     <a href="#">Menu Item 5</a>
-//   </li>
-// </ul>
-// <nav class="mt-4">
-//   <ul class="site-menu background-lighter">
-//     <li>
-//       <a href="#">Menu Item 1</a>
-//     </li>
-//     <li>
-//       <a href="#">Menu Item 2</a>
-//     </li>
-//     <li>
-//       <a href="#">Menu Item 3</a>
-//     </li>
-//     <li>
-//       <a href="#">Menu Item 4</a>
-//     </li>
-//     <li>
-//       <a href="#">Menu Item 5</a>
-//     </li>
+// <nav class="site-menu background-navy">
+//   <a href="#" class="site-menu__item">Item 1</a>
+//   <a href="#" class="site-menu__item">Item 2</a>
+//   <a href="#" class="site-menu__item">Item 3</a>
+//   <a href="#" class="site-menu__item">Item 4</a>
+//   <a href="#" class="site-menu__item">Item 5</a>
+// </nav>
+// <nav class="mt-4 site-menu background-lighter">
+//   <a href="#" class="site-menu__item">Item 1</a>
+//   <a href="#" class="site-menu__item">Item 2</a>
+//   <a href="#" class="site-menu__item">Item 3</a>
+//   <a href="#" class="site-menu__item">Item 4</a>
+//   <a href="#" class="site-menu__item">Item 5</a>
 //   </ul>
 // </nav>
 // 
@@ -205,109 +104,29 @@
 // Styleguide Menus.SiteMenu.Background
 
 
-// Site Menu - Background Color: no background hover
-// 
-// If you want to give your site menu a background color but you're not interested in the hover effect that comes with 
-// adding the background utility to the site-menu, you're in luck. The site-menu will inherit the background color of 
-// it's parent. So, if you wanted to make your site-menu a light grey you could wrap it in an element with the class 
-// `background-lighter` and you'll get just that. This will not change the color of the menu items, however. So be sure 
-// to add the necessary color modifiers where you need to. See the second code example. 
-// 
-// If you're going to wrap your menu in a parent element, it's probably best to use a semantic element like `nav`.
-// 
-// Markup:
-// <nav class="background-lighter">
-//   <ul class="site-menu">
-//     <li>
-//       <a href="#">Menu Item 1</a>
-//     </li>
-//     <li>
-//       <a href="#">Menu Item 2</a>
-//     </li>
-//     <li>
-//       <a href="#">Menu Item 3</a>
-//     </li>
-//     <li>
-//       <a href="#">Menu Item 4</a>
-//     </li>
-//     <li>
-//       <a href="#">Menu Item 5</a>
-//     </li>
-//   </ul>
-// </nav>
-// <nav class="mt-4 background-navy">
-//   <ul class="site-menu text-white">
-//     <li>
-//       <a href="#">Menu Item 1</a>
-//     </li>
-//     <li>
-//       <a href="#">Menu Item 2</a>
-//     </li>
-//     <li>
-//       <a href="#">Menu Item 3</a>
-//     </li>
-//     <li>
-//       <a href="#">Menu Item 4</a>
-//     </li>
-//     <li>
-//       <a href="#">Menu Item 5</a>
-//     </li>
-//   </ul>
-// </nav>
-// 
-// Weight: 2
-// 
-// Styleguide Menus.SiteMenu.BackgroundHover
-
-
 // Site Menu - Bordered
 // 
 // Adding the modifier class of `site-menu--bordered` will add borders separating each menu item.
 // 
-// <h4 class="text--bold mb-3">Example:</h4>
-// <div class="background-white">
+// Markup:
 //   <ul class="site-menu site-menu--bordered">
 //     <li>
-//       <a href="#">Menu Item 1</a>
+//       <a href="#" class="site-menu__item">Item 1</a>
 //     </li>
 //     <li>
-//       <a href="#">Menu Item 2</a>
+//       <a href="#" class="site-menu__item">Item 2</a>
 //     </li>
 //     <li>
-//       <a href="#">Menu Item 3</a>
+//       <a href="#" class="site-menu__item">Item 3</a>
 //     </li>
 //     <li>
-//       <a href="#">Menu Item 4</a>
+//       <a href="#" class="site-menu__item">Item 4</a>
 //     </li>
 //     <li>
-//       <a href="#">Menu Item 5</a>
+//       <a href="#" class="site-menu__item">Item 5</a>
 //     </li>
 //   </ul>
-// </div>
-// <div class="my-3"></div>
-// <h4 class="mb-3">Markup:</h4>
 // 
-// ```html
-// <ul class="site-menu site-menu--bordered">
-//   <li>
-//     <a href="#">Menu Item 1</a>
-//   </li>
-//   <li>
-//     <a href="#">Menu Item 2</a>
-//   </li>
-//   <li>
-//     <a href="#">Menu Item 3</a>
-//   </li>
-//   <li>
-//     <a href="#">Menu Item 4</a>
-//   </li>
-//   <li>
-//     <a href="#">Menu Item 5</a>
-//   </li>
-// </ul>
-// ```
-// 
-// <div class="my-4"></div>
 // 
 // Weight: 3
 // 
@@ -318,108 +137,51 @@
 // 
 // Adding the class `hover-border` to your `site-menu` will give the `<buton>`s in the menu a bottom border on hover.
 // 
-// <h4 class="text--bold mb-3">Example:</h4>
-// <div class="background-white">
+// <div class="message message--warning" data-header="">
+//   <p>You can change the color of your border hovers by adding the modifier of <code>hover-border--{color}</code>.</p>
+// </div>
+// 
+// Markup:
 //   <ul class="site-menu hover-border">
 //     <li>
-//       <a href="#">Menu Item 1</a>
+//       <a href="#" class="site-menu__item">Item 1</a>
 //     </li>
 //     <li>
-//       <a href="#">Menu Item 2</a>
+//       <a href="#" class="site-menu__item">Item 2</a>
 //     </li>
 //     <li>
-//       <a href="#">Menu Item 3</a>
+//       <a href="#" class="site-menu__item">Item 3</a>
 //     </li>
 //     <li>
-//       <a href="#">Menu Item 4</a>
+//       <a href="#" class="site-menu__item">Item 4</a>
 //     </li>
 //     <li>
-//       <a href="#">Menu Item 5</a>
+//       <a href="#" class="site-menu__item">Item 5</a>
 //     </li>
 //   </ul>
-// </div>
-// <div class="my-3"></div>
-// <h4 class="mb-3">Markup:</h4>
+//   <div class="my-3"></div>
+//   <ul class="site-menu hover-border hover-border--navy">
+//     <li>
+//       <a href="#" class="site-menu__item">Item 1</a>
+//     </li>
+//     <li>
+//       <a href="#" class="site-menu__item">Item 2</a>
+//     </li>
+//     <li>
+//       <a href="#" class="site-menu__item">Item 3</a>
+//     </li>
+//     <li>
+//       <a href="#" class="site-menu__item">Item 4</a>
+//     </li>
+//     <li>
+//       <a href="#" class="site-menu__item">Item 5</a>
+//     </li>
+//   </ul>
 // 
-// ```html
-// <ul class="site-menu hover-border">
-//   <li>
-//     <a href="#">Menu Item 1</a>
-//   </li>
-//   <li>
-//     <a href="#">Menu Item 2</a>
-//   </li>
-//   <li>
-//     <a href="#">Menu Item 3</a>
-//   </li>
-//   <li>
-//     <a href="#">Menu Item 4</a>
-//   </li>
-//   <li>
-//     <a href="#">Menu Item 5</a>
-//   </li>
-// </ul>
-// ```
-// 
-// // <div class="my-4"></div>
 // 
 // Weight: 4
 // 
 // Styleguide Menus.SiteMenu.HoverBorder
-
-
-// Site Menu - Hover Border Color
-// 
-// You can change the color of your border hovers by adding the modifier of `hover-border--{color}`.
-// 
-// <h4 class="text--bold mb-3">Example:</h4>
-// <div class="background-white">
-//   <ul class="site-menu hover-border hover-border--med-blue">
-//     <li>
-//       <a href="#">Menu Item 1</a>
-//     </li>
-//     <li>
-//       <a href="#">Menu Item 2</a>
-//     </li>
-//     <li>
-//       <a href="#">Menu Item 3</a>
-//     </li>
-//     <li>
-//       <a href="#">Menu Item 4</a>
-//     </li>
-//     <li>
-//       <a href="#">Menu Item 5</a>
-//     </li>
-//   </ul>
-// </div>
-// <div class="my-3"></div>
-// <h4 class="mb-3">Markup:</h4>
-// 
-// ```html
-// <ul class="site-menu hover-border hover-border--med-blue">
-//   <li>
-//     <a href="#">Menu Item 1</a>
-//   </li>
-//   <li>
-//     <a href="#">Menu Item 2</a>
-//   </li>
-//   <li>
-//     <a href="#">Menu Item 3</a>
-//   </li>
-//   <li>
-//     <a href="#">Menu Item 4</a>
-//   </li>
-//   <li>
-//     <a href="#">Menu Item 5</a>
-//   </li>
-// </ul>
-// ```
-// 
-// // <div class="my-4"></div>
-// 
-// Weight: 4
-// 
-// Styleguide Menus.SiteMenu.HoverBorderColor
 
 
 // Site Menu - Dropdown
@@ -439,921 +201,258 @@
 // Also note that the `dropdown__trigger` can be on a `button` as well as an `a`. If you use a button, be sure to add the class
 // `button--plain` to disable the default Platform UI button styles.
 // 
-// <h4 class="text--bold mb-3">Example:</h4>
-// <div class="background-white">
+// Like we mentioned above, by default, the dropdowns will open positioned to the left of their parent.
+//  
+// <div class="message message--warning" data-header="">
+//   <p>By default, the dropdowns will open positioned to the left of their parent but you can change the alignment.</p>
+//   <p>Dropdowns can be changed to open centered, or open from the right. This can be changed by adding the modifier class
+//      of <code>dropdown--centered</code> or <code>dropdown--right</code> to the <code>dropdown</code> class.
+//   </p>
+// </div>
+// 
+//
+// Markup:
+// <nav class="background-white">
 //   <ul class="site-menu">
 //     <li class="dropdown">
-//       <button class="dropdown__trigger button--plain">
-//         Menu Item 1
+//       <button class="site-menu__item dropdown__trigger button--plain">
+//         Item 1
 //         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //       </button>
 //       <ul class="dropdown__content">
 //         <li>
-//           <a href="#">Dropdown Item 1</a>
+//           <a href="#" class="dropdown__item">Item 1</a>
 //         </li>
 //         <li>
-//           <a href="#">Dropdown Item 2</a>
+//           <a href="#" class="dropdown__item">Item 2</a>
 //         </li>
 //         <li>
-//           <a href="#">Dropdown Item 3</a>
+//           <a href="#" class="dropdown__item">Item 3</a>
 //         </li>
 //         <li>
-//           <a href="#">Dropdown Item 4</a>
+//           <a href="#" class="dropdown__item">Item 4</a>
 //         </li>
 //         <li>
-//           <a href="#">Dropdown Item 5</a>
+//           <a href="#" class="dropdown__item">Item 5</a>
 //         </li>
 //       </ul>
 //     </li>
 //     <li class="dropdown">
-//       <a class="dropdown__trigger">
-//         Menu Item 2
+//       <a class="site-menu__item dropdown__trigger">
+//         Item 2
 //         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //       </a>
 //       <ul class="dropdown__content">
 //         <li>
-//           <a href="#">Dropdown Item 1</a>
+//           <a href="#" class="dropdown__item">Item 1</a>
 //         </li>
 //         <li>
-//           <a href="#">Dropdown Item 2</a>
+//           <a href="#" class="dropdown__item">Item 2</a>
 //         </li>
 //         <li>
-//           <a href="#">Dropdown Item 3</a>
+//           <a href="#" class="dropdown__item">Item 3</a>
 //         </li>
 //         <li>
-//           <a href="#">Dropdown Item 4</a>
+//           <a href="#" class="dropdown__item">Item 4</a>
 //         </li>
 //         <li>
-//           <a href="#">Dropdown Item 5</a>
-//         </li>
-//       </ul>
-//     </li>
-//     <li class="dropdown">
-//       <button class="dropdown__trigger button--plain">
-//         Menu Item 3
-//         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//       </button>
-//       <ul class="dropdown__content">
-//         <li>
-//           <a href="#">Dropdown Item 1</a>
-//         </li>
-//         <li>
-//           <a href="#">Dropdown Item 2</a>
-//         </li>
-//         <li>
-//           <a href="#">Dropdown Item 3</a>
-//         </li>
-//         <li>
-//           <a href="#">Dropdown Item 4</a>
-//         </li>
-//         <li>
-//           <a href="#">Dropdown Item 5</a>
+//           <a href="#" class="dropdown__item">Item 5</a>
 //         </li>
 //       </ul>
 //     </li>
 //     <li class="dropdown">
-//       <button class="dropdown__trigger button--plain">
-//         Menu Item 4
+//       <button class="site-menu__item dropdown__trigger button--plain">
+//         Item 3
 //         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //       </button>
 //       <ul class="dropdown__content">
 //         <li>
-//           <a href="#">Dropdown Item 1</a>
+//           <a href="#" class="dropdown__item">Item 1</a>
 //         </li>
 //         <li>
-//           <a href="#">Dropdown Item 2</a>
+//           <a href="#" class="dropdown__item">Item 2</a>
 //         </li>
 //         <li>
-//           <a href="#">Dropdown Item 3</a>
+//           <a href="#" class="dropdown__item">Item 3</a>
 //         </li>
 //         <li>
-//           <a href="#">Dropdown Item 4</a>
+//           <a href="#" class="dropdown__item">Item 4</a>
 //         </li>
 //         <li>
-//           <a href="#">Dropdown Item 5</a>
+//           <a href="#" class="dropdown__item">Item 5</a>
 //         </li>
 //       </ul>
 //     </li>
 //     <li class="dropdown">
-//       <button class="dropdown__trigger button--plain">
-//         Menu Item 5
+//       <button class="site-menu__item dropdown__trigger button--plain">
+//         Item 4
 //         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //       </button>
 //       <ul class="dropdown__content">
 //         <li>
-//           <a href="#">Dropdown Item 1</a>
+//           <a href="#" class="dropdown__item">Item 1</a>
 //         </li>
 //         <li>
-//           <a href="#">Dropdown Item 2</a>
+//           <a href="#" class="dropdown__item">Item 2</a>
 //         </li>
 //         <li>
-//           <a href="#">Dropdown Item 3</a>
+//           <a href="#" class="dropdown__item">Item 3</a>
 //         </li>
 //         <li>
-//           <a href="#">Dropdown Item 4</a>
+//           <a href="#" class="dropdown__item">Item 4</a>
 //         </li>
 //         <li>
-//           <a href="#">Dropdown Item 5</a>
+//           <a href="#" class="dropdown__item">Item 5</a>
+//         </li>
+//       </ul>
+//     </li>
+//     <li class="dropdown">
+//       <button class="site-menu__item dropdown__trigger button--plain">
+//         Item 5
+//         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+//       </button>
+//       <ul class="dropdown__content">
+//         <li>
+//           <a href="#" class="dropdown__item">Item 1</a>
+//         </li>
+//         <li>
+//           <a href="#" class="dropdown__item">Item 2</a>
+//         </li>
+//         <li>
+//           <a href="#" class="dropdown__item">Item 3</a>
+//         </li>
+//         <li>
+//           <a href="#" class="dropdown__item">Item 4</a>
+//         </li>
+//         <li>
+//           <a href="#" class="dropdown__item">Item 5</a>
 //         </li>
 //       </ul>
 //     </li>
 //   </ul>
-// </div>
+// </nav>
 // <p class="mt-4">The dropdowns with a background utility applied. <i class="pi-arrow-down"></i></p>
 // <ul class="site-menu background-navy">
 //   <li class="dropdown">
-//     <button class="dropdown__trigger button--plain">
-//       Menu Item 1
+//     <button class="site-menu__item dropdown__trigger button--plain">
+//       Item 1
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //     </button>
 //     <ul class="dropdown__content">
 //       <li>
-//         <a href="#">Dropdown Item 1</a>
+//         <a href="#" class="dropdown__item">Item 1</a>
 //       </li>
 //       <li>
-//         <a href="#">Dropdown Item 2</a>
+//         <a href="#" class="dropdown__item">Item 2</a>
 //       </li>
 //       <li>
-//         <a href="#">Dropdown Item 3</a>
+//         <a href="#" class="dropdown__item">Item 3</a>
 //       </li>
 //       <li>
-//         <a href="#">Dropdown Item 4</a>
+//         <a href="#" class="dropdown__item">Item 4</a>
 //       </li>
 //       <li>
-//         <a href="#">Dropdown Item 5</a>
+//         <a href="#" class="dropdown__item">Item 5</a>
 //       </li>
 //     </ul>
 //   </li>
 //   <li class="dropdown">
-//     <button class="dropdown__trigger button--plain">
-//       Menu Item 2
+//     <button class="site-menu__item dropdown__trigger button--plain">
+//       Item 2
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //     </button>
 //     <ul class="dropdown__content">
 //       <li>
-//         <a href="#">Dropdown Item 1</a>
+//         <a href="#" class="dropdown__item">Item 1</a>
 //       </li>
 //       <li>
-//         <a href="#">Dropdown Item 2</a>
+//         <a href="#" class="dropdown__item">Item 2</a>
 //       </li>
 //       <li>
-//         <a href="#">Dropdown Item 3</a>
+//         <a href="#" class="dropdown__item">Item 3</a>
 //       </li>
 //       <li>
-//         <a href="#">Dropdown Item 4</a>
+//         <a href="#" class="dropdown__item">Item 4</a>
 //       </li>
 //       <li>
-//         <a href="#">Dropdown Item 5</a>
+//         <a href="#" class="dropdown__item">Item 5</a>
 //       </li>
 //     </ul>
 //   </li>
 //   <li class="dropdown">
-//     <button class="dropdown__trigger button--plain">
-//       Menu Item 3
+//     <button class="site-menu__item dropdown__trigger button--plain">
+//       Item 3
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //     </button>
 //     <ul class="dropdown__content">
 //       <li>
-//         <a href="#">Dropdown Item 1</a>
+//         <a href="#" class="dropdown__item">Item 1</a>
 //       </li>
 //       <li>
-//         <a href="#">Dropdown Item 2</a>
+//         <a href="#" class="dropdown__item">Item 2</a>
 //       </li>
 //       <li>
-//         <a href="#">Dropdown Item 3</a>
+//         <a href="#" class="dropdown__item">Item 3</a>
 //       </li>
 //       <li>
-//         <a href="#">Dropdown Item 4</a>
+//         <a href="#" class="dropdown__item">Item 4</a>
 //       </li>
 //       <li>
-//         <a href="#">Dropdown Item 5</a>
+//         <a href="#" class="dropdown__item">Item 5</a>
 //       </li>
 //     </ul>
 //   </li>
 //   <li class="dropdown">
-//     <button class="dropdown__trigger button--plain">
-//       Menu Item 4
+//     <button class="site-menu__item dropdown__trigger button--plain">
+//       Item 4
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //     </button>
 //     <ul class="dropdown__content">
 //       <li>
-//         <a href="#">Dropdown Item 1</a>
+//         <a href="#" class="dropdown__item">Item 1</a>
 //       </li>
 //       <li>
-//         <a href="#">Dropdown Item 2</a>
+//         <a href="#" class="dropdown__item">Item 2</a>
 //       </li>
 //       <li>
-//         <a href="#">Dropdown Item 3</a>
+//         <a href="#" class="dropdown__item">Item 3</a>
 //       </li>
 //       <li>
-//         <a href="#">Dropdown Item 4</a>
+//         <a href="#" class="dropdown__item">Item 4</a>
 //       </li>
 //       <li>
-//         <a href="#">Dropdown Item 5</a>
+//         <a href="#" class="dropdown__item">Item 5</a>
 //       </li>
 //     </ul>
 //   </li>
 //   <li class="dropdown">
-//     <button class="dropdown__trigger button--plain">
-//       Menu Item 5
+//     <button class="site-menu__item dropdown__trigger button--plain">
+//       Item 5
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //     </button>
 //     <ul class="dropdown__content">
 //       <li>
-//         <a href="#">Dropdown Item 1</a>
+//         <a href="#" class="dropdown__item">Item 1</a>
 //       </li>
 //       <li>
-//         <a href="#">Dropdown Item 2</a>
+//         <a href="#" class="dropdown__item">Item 2</a>
 //       </li>
 //       <li>
-//         <a href="#">Dropdown Item 3</a>
+//         <a href="#" class="dropdown__item">Item 3</a>
 //       </li>
 //       <li>
-//         <a href="#">Dropdown Item 4</a>
+//         <a href="#" class="dropdown__item">Item 4</a>
 //       </li>
 //       <li>
-//         <a href="#">Dropdown Item 5</a>
+//         <a href="#" class="dropdown__item">Item 5</a>
 //       </li>
 //     </ul>
 //   </li>
 // </ul>
-// <div class="my-3"></div>
-// <h4 class="mb-3">Markup:</h4>
-// 
-// ```html
-// <ul class="site-menu">
-//   <li class="dropdown">
-//     <button class="dropdown__trigger button--plain">
-//       Menu Item 1
-//       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//     </button>
-//     <ul class="dropdown__content">
-//       <li>
-//         <a href="#">Dropdown Item 1</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 2</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 3</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 4</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 5</a>
-//       </li>
-//     </ul>
-//   </li>
-//   <li class="dropdown">
-//     <button class="dropdown__trigger button--plain">
-//       Menu Item 2
-//       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//     </button>
-//     <ul class="dropdown__content">
-//       <li>
-//         <a href="#">Dropdown Item 1</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 2</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 3</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 4</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 5</a>
-//       </li>
-//     </ul>
-//   </li>
-//   <li class="dropdown">
-//     <button class="dropdown__trigger button--plain">
-//       Menu Item 3
-//       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//     </button>
-//     <ul class="dropdown__content">
-//       <li>
-//         <a href="#">Dropdown Item 1</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 2</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 3</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 4</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 5</a>
-//       </li>
-//     </ul>
-//   </li>
-//   <li class="dropdown">
-//     <button class="dropdown__trigger button--plain">
-//       Menu Item 4
-//       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//     </button>
-//     <ul class="dropdown__content">
-//       <li>
-//         <a href="#">Dropdown Item 1</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 2</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 3</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 4</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 5</a>
-//       </li>
-//     </ul>
-//   </li>
-//   <li class="dropdown">
-//     <button class="dropdown__trigger button--plain">
-//       Menu Item 5
-//       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//     </button>
-//     <ul class="dropdown__content">
-//       <li>
-//         <a href="#">Dropdown Item 1</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 2</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 3</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 4</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 5</a>
-//       </li>
-//     </ul>
-//   </li>
-// </ul>
-// <p class="mt-4">The dropdowns with a background utility applied. <i class="pi-arrow-down"></i></p>
-// <ul class="site-menu background-navy">
-//   <li class="dropdown">
-//     <button class="dropdown__trigger button--plain">
-//       Menu Item 1
-//       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//     </button>
-//     <ul class="dropdown__content">
-//       <li>
-//         <a href="#">Dropdown Item 1</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 2</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 3</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 4</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 5</a>
-//       </li>
-//     </ul>
-//   </li>
-//   <li class="dropdown">
-//     <button class="dropdown__trigger button--plain">
-//       Menu Item 2
-//       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//     </button>
-//     <ul class="dropdown__content">
-//       <li>
-//         <a href="#">Dropdown Item 1</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 2</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 3</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 4</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 5</a>
-//       </li>
-//     </ul>
-//   </li>
-//   <li class="dropdown">
-//     <button class="dropdown__trigger button--plain">
-//       Menu Item 3
-//       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//     </button>
-//     <ul class="dropdown__content">
-//       <li>
-//         <a href="#">Dropdown Item 1</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 2</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 3</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 4</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 5</a>
-//       </li>
-//     </ul>
-//   </li>
-//   <li class="dropdown">
-//     <button class="dropdown__trigger button--plain">
-//       Menu Item 4
-//       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//     </button>
-//     <ul class="dropdown__content">
-//       <li>
-//         <a href="#">Dropdown Item 1</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 2</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 3</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 4</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 5</a>
-//       </li>
-//     </ul>
-//   </li>
-//   <li class="dropdown">
-//     <button class="dropdown__trigger button--plain">
-//       Menu Item 5
-//       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//     </button>
-//     <ul class="dropdown__content">
-//       <li>
-//         <a href="#">Dropdown Item 1</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 2</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 3</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 4</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 5</a>
-//       </li>
-//     </ul>
-//   </li>
-// </ul>
-// ```
-// 
-// <div class="my-4"></div>
 // 
 // Weight: 5
 // 
 // Styleguide Menus.SiteMenu.Dropdown
-
-
-// Site Menu - Dropdown Alignment
-// 
-// | <i class="pi-warning text-orange"></i> NOTE: This component requires the use of JavaScript |
-// | --
-// 
-// <div class="my-3"></div>
-// 
-// Like we mentioned above, by default, the dropdowns will open positioned to the left of their parent.
-//  
-// Dropdowns can be changed to open centered, or open from the right. This can be changed by adding the modifier class
-// of `dropdown--centered` or `dropdown--right` to the `dropdown` class.
-// 
-// See the example below.
-// 
-// <h4 class="text--bold mb-3">Example:</h4>
-// <div class="background-white">
-//   <ul class="site-menu">
-//     <li class="dropdown dropdown--center">
-//       <button class="dropdown__trigger button--plain">
-//         Dropdown Center
-//         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//       </button>
-//       <ul class="dropdown__content">
-//         <li>
-//           <a href="#">Dropdown Item 1</a>
-//         </li>
-//         <li>
-//           <a href="#">Dropdown Item 2</a>
-//         </li>
-//         <li>
-//           <a href="#">Dropdown Item 3</a>
-//         </li>
-//         <li>
-//           <a href="#">Dropdown Item 4</a>
-//         </li>
-//         <li>
-//           <a href="#">Dropdown Item 5</a>
-//         </li>
-//       </ul>
-//     </li>
-//     <li class="dropdown dropdown--right">
-//       <button class="dropdown__trigger button--plain">
-//         Dropdown Right
-//         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//       </button>
-//       <ul class="dropdown__content">
-//         <li>
-//           <a href="#">Dropdown Item 1</a>
-//         </li>
-//         <li>
-//           <a href="#">Dropdown Item 2</a>
-//         </li>
-//         <li>
-//           <a href="#">Dropdown Item 3</a>
-//         </li>
-//         <li>
-//           <a href="#">Dropdown Item 4</a>
-//         </li>
-//         <li>
-//           <a href="#">Dropdown Item 5</a>
-//         </li>
-//       </ul>
-//     </li>
-//     <li class="dropdown">
-//       <button class="dropdown__trigger button--plain">
-//         Menu Item 3
-//         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//       </button>
-//       <ul class="dropdown__content">
-//         <li>
-//           <a href="#">Dropdown Item 1</a>
-//         </li>
-//         <li>
-//           <a href="#">Dropdown Item 2</a>
-//         </li>
-//         <li>
-//           <a href="#">Dropdown Item 3</a>
-//         </li>
-//         <li>
-//           <a href="#">Dropdown Item 4</a>
-//         </li>
-//         <li>
-//           <a href="#">Dropdown Item 5</a>
-//         </li>
-//       </ul>
-//     </li>
-//     <li class="dropdown">
-//       <button class="dropdown__trigger button--plain">
-//         Menu Item 4
-//         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//       </button>
-//       <ul class="dropdown__content">
-//         <li>
-//           <a href="#">Dropdown Item 1</a>
-//         </li>
-//         <li>
-//           <a href="#">Dropdown Item 2</a>
-//         </li>
-//         <li>
-//           <a href="#">Dropdown Item 3</a>
-//         </li>
-//         <li>
-//           <a href="#">Dropdown Item 4</a>
-//         </li>
-//         <li>
-//           <a href="#">Dropdown Item 5</a>
-//         </li>
-//       </ul>
-//     </li>
-//     <li class="dropdown">
-//       <button class="dropdown__trigger button--plain">
-//         Menu Item 5
-//         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//       </button>
-//       <ul class="dropdown__content">
-//         <li>
-//           <a href="#">Dropdown Item 1</a>
-//         </li>
-//         <li>
-//           <a href="#">Dropdown Item 2</a>
-//         </li>
-//         <li>
-//           <a href="#">Dropdown Item 3</a>
-//         </li>
-//         <li>
-//           <a href="#">Dropdown Item 4</a>
-//         </li>
-//         <li>
-//           <a href="#">Dropdown Item 5</a>
-//         </li>
-//       </ul>
-//     </li>
-//   </ul>
-// </div>
-// <div class="my-3"></div>
-// <h4 class="mb-3">Markup:</h4>
-// 
-// ```html
-// <ul class="site-menu">
-//   <li class="dropdown dropdown--center">
-//     <button class="dropdown__trigger button--plain">
-//       Dropdown Center
-//       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//     </button>
-//     <ul class="dropdown__content">
-//       <li>
-//         <a href="#">Dropdown Item 1</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 2</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 3</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 4</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 5</a>
-//       </li>
-//     </ul>
-//   </li>
-//   <li class="dropdown dropdown--right">
-//     <button class="dropdown__trigger button--plain">
-//       Dropdown Right
-//       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//     </button>
-//     <ul class="dropdown__content">
-//       <li>
-//         <a href="#">Dropdown Item 1</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 2</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 3</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 4</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 5</a>
-//       </li>
-//     </ul>
-//   </li>
-//   <li class="dropdown">
-//     <button class="dropdown__trigger button--plain">
-//       Menu Item 3
-//       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//     </button>
-//     <ul class="dropdown__content">
-//       <li>
-//         <a href="#">Dropdown Item 1</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 2</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 3</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 4</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 5</a>
-//       </li>
-//     </ul>
-//   </li>
-//   <li class="dropdown">
-//     <button class="dropdown__trigger button--plain">
-//       Menu Item 4
-//       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//     </button>
-//     <ul class="dropdown__content">
-//       <li>
-//         <a href="#">Dropdown Item 1</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 2</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 3</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 4</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 5</a>
-//       </li>
-//     </ul>
-//   </li>
-//   <li class="dropdown">
-//     <button class="dropdown__trigger button--plain">
-//       Menu Item 5
-//       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//     </button>
-//     <ul class="dropdown__content">
-//       <li>
-//         <a href="#">Dropdown Item 1</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 2</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 3</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 4</a>
-//       </li>
-//       <li>
-//         <a href="#">Dropdown Item 5</a>
-//       </li>
-//     </ul>
-//   </li>
-// </ul>
-// ```
-// 
-// <div class="my-4"></div>
-// 
-// Weight: 6
-// 
-// Styleguide Menus.SiteMenu.DropdownAlign
-
-
-// Site Menu - Dropdowns Extras
-// 
-// It's important to know that the `dropdown__content` is what is being hidden within this component. If you want to add some custom
-// styling, whether you use some of our utilities or a custom stylesheet, we recommend doing that on a child element inside the 
-// dropwdown__content.
-// 
-// For example, say you wanted to increase the padding and add a border. Use a `<div>` for the `dropdown__content` and add the padding 
-// and border utilities to whatever child element you use inside the dropdown, in this case a list. See the example below.
-// 
-// Markup:
-// <div class="background-white">
-//   <ul class="site-menu">
-//     <li class="dropdown dropdown--center">
-//       <button class="dropdown__trigger button--plain">
-//         Dropdown Center
-//         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//       </button>
-//       <div class="dropdown__content">
-//         <ul class="border border--color-navy py-4">
-//           <li>
-//             <a href="#">Dropdown Item 1</a>
-//           </li>
-//           <li>
-//             <a href="#">Dropdown Item 2</a>
-//           </li>
-//           <li>
-//             <a href="#">Dropdown Item 3</a>
-//           </li>
-//           <li>
-//             <a href="#">Dropdown Item 4</a>
-//           </li>
-//           <li>
-//             <a href="#">Dropdown Item 5</a>
-//           </li>
-//         </ul>
-//       </div>
-//     </li>
-//   </ul>
-// </div>
-// 
-// Weight: 7
-// 
-// Styleguide Menus.SiteMenu.DropdownExtra
-
-
-// Site Menu - Responsive
-// 
-// | <i class="pi-warning text-orange"></i> NOTE: This component requires the use of JavaScript |
-// | --
-// 
-// <div class="my-3"></div>
-// The site-menu is not responsive by default. There are a couple key things you'll need to add in order to have a responsive 
-// menu that drops down on smaller screen sizes.
-// 
-// First, you will need to wrap your `site-menu` in a `site-menu-wrapper` class. This will ensure the menu is positioned correctly.
-// Seconds you will need a button to toggle the menu. Add `<button class="site-menu-mobile-action">` as a sibling preceding your `site-menu`.
-// This button is displayed at the same resolution as the mobile `site-menu`. You can add position modifiers to it in order to place it 
-// where you like. See the example below.
-// 
-// Scale your browser window to see the mobile menu.
-// 
-// Markup:
-// <nav class="site-menu-wrapper background-skyblue flex p-2">
-//   <img src="../../src/assets/images/platform-ui.svg" alt="" class="mr-4">
-//   <button class="site-menu-mobile-action button--plain text-white pos-abs pin-right mr-2 pin-center-top">
-//     <span class="sr-only">Toggle Navigation</span>
-//     <i aria-hidden="true" focusable="false" class="pi-menu pi-xl text-navy"></i>
-//   </button>
-//   <ul class="site-menu">
-//     <li class="flex flex--align-center">
-//       <a href="#" class="flex--grow">Menu Item 1</a>
-//     </li>
-//     <li class="flex flex--align-center">
-//       <a href="#" class="flex--grow">Menu Item 2</a>
-//     </li>
-//     <li class="flex flex--align-center">
-//       <a href="#" class="flex--grow">Menu Item 3</a>
-//     </li>
-//     <li class="flex flex--align-center">
-//       <a href="#" class="flex--grow">Menu Item 4</a>
-//     </li>
-//     <li class="flex flex--align-center">
-//       <a href="#" class="flex--grow">Menu Item 5</a>
-//     </li>
-//   </ul>
-// </nav>
-// 
-// Weight: 7
-// 
-// Styleguide Menus.SiteMenu.Responsive
-
-
-// Site Menu - Responsive inner dropdown
-// 
-// Dropdowns can be used inside the responsive `site-menu` as well. 
-// 
-// Markup:
-// <nav class="site-menu-wrapper background-skyblue flex p-2">
-//   <img src="../../src/assets/images/platform-ui.svg" alt="" class="mr-4">
-//   <button class="site-menu-mobile-action button--plain text-white pos-abs pin-right mr-2 pin-center-top">
-//     <span class="sr-only">Toggle Navigation</span>
-//     <i aria-hidden="true" focusable="false" class="pi-menu pi-xl text-navy"></i>
-//   </button>
-//   <ul class="site-menu">
-//     <li class="flex flex--align-center">
-//       <a href="#" class="flex--grow">Menu Item 1</a>
-//     </li>
-//     <li class="flex flex--align-center">
-//       <a href="#" class="flex--grow">Menu Item 2</a>
-//     </li>
-//     <li class="dropdown">
-//       <a class="dropdown__trigger">
-//         Menu Item 3
-//         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//       </a>
-//       <ul class="dropdown__content">
-//         <li>
-//           <a href="#">Dropdown Item 1</a>
-//         </li>
-//         <li>
-//           <a href="#">Dropdown Item 2</a>
-//         </li>
-//         <li>
-//           <a href="#">Dropdown Item 3</a>
-//         </li>
-//         <li>
-//           <a href="#">Dropdown Item 4</a>
-//         </li>
-//         <li>
-//           <a href="#">Dropdown Item 5</a>
-//         </li>
-//       </ul>
-//     </li>
-//     <li class="dropdown">
-//       <button class="dropdown__trigger button--plain">
-//         Menu Item 4
-//         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//       </butbuttonon>
-//       <ul class="dropdown__content">
-//         <li>
-//           <a href="#">Dropdown Item 1</a>
-//         </li>
-//         <li>
-//           <a href="#">Dropdown Item 2</a>
-//         </li>
-//         <li>
-//           <a href="#">Dropdown Item 3</a>
-//         </li>
-//         <li>
-//           <a href="#">Dropdown Item 4</a>
-//         </li>
-//         <li>
-//           <a href="#">Dropdown Item 5</a>
-//         </li>
-//       </ul>
-//     </li>
-//     <li class="flex flex--align-center">
-//       <a href="#" class="flex--grow">Menu Item 5</a>
-//     </li>
-//   </ul>
-// </nav>
-// 
-// Weight: 8
-// 
-// Styleguide Menus.SiteMenu.ResponsiveInner
 
 
 // Fixed Header
@@ -1436,7 +535,7 @@ $all-colors: () !default;
   .site-menu__item,
   .dropdown__item {
     color: var(--menu-text-color);
-    display: block;
+    display: flex;
     line-height: 1;
     transition: config.$transitions;
     padding: map.get(variables.$spacers, 2) map.get(variables.$spacers, 3);
@@ -1539,8 +638,8 @@ $all-colors: () !default;
     @each $name, $color in $all-colors {
       &.hover-border--#{$name} {
 
-        a,
-        .dropdown__trigger {
+        .site-menu__item,
+        .dropdown__item {
 
           &:after {
             background-color: $color;
@@ -1557,14 +656,27 @@ $all-colors: () !default;
 
     @media (min-width: (config.$show-mobile-menu)) {
       > .site-menu__item,
-      > .dropdown__item {
+      > li > .site-menu__item {
         border-left: 1px solid var(--menu-border-color);
       }
   
-      > .site-menu__item:first-child,
-      > .dropdown__item:first-child {
+      > li:first-child .site-menu__item,
+      > .site-menu__item:first-child {
         border-left: none;
       }
+
+      .dropdown__content {
+
+        > li > .dropdown__item,
+        > .dropdown__item {
+          border-top: 1px solid var(--menu-border-color);
+        }
+
+        > li:first-child .dropdown__item, 
+        > .dropdown__item:first-child {
+          border-top: none;
+        }
+      }      
     }
   }
 
@@ -1755,13 +867,26 @@ $all-colors: () !default;
       &.site-menu--bordered {
 
         > .site-menu__item,
-        > .dropdown__item {
+        > li > .site-menu__item {
           border-top: 1px solid var(--menu-border-color);
         }
-
-        > .site-menu__item:first-child,
-        > .dropdown__item:first-child {
+    
+        > li:first-child .site-menu__item,
+        > .site-menu__item:first-child {
           border-top: none;
+        }
+
+        .dropdown__content {
+
+          > li > .dropdown__item,
+          > .dropdown__item {
+            border-top: 1px solid var(--menu-border-color);
+          }
+
+          > li:first-child .dropdown__item, 
+          > .dropdown__item:first-child {
+            border-top: none;
+          }
         }
 
         &:not([class*=background-]) {
