@@ -38,30 +38,47 @@
 // | --
 // 
 // Markup:
-// <header class="site-menu-wrapper">
+// <header>
+//   <nav class="site-menu-wrapper">
 //     <a href="/" class="site-logo">
 //         <img src="https://via.placeholder.com/150x50.png?text=Site+Logo" alt="Site Logo" />
 //     </a>
-//     <a class="site-menu-mobile-action">
+//     <button class="site-menu-mobile-action">
 //       <span class="sr-only">Toggle Navigation</span>
 //       <i aria-hidden="true" focusable="false" class="pi-menu pi-xl"></i>
-//     </a>
-//     <nav class="site-menu">
+//     </button>
+//     <ul class="site-menu">
+//       <li>
 //         <a href="#0" class="site-menu__item">Item 1</a>
+//       </li>
+//       <li>
 //         <a href="#0" class="site-menu__item">Item 2</a>
+//       </li>
+//       <li>
 //         <a href="#0" class="site-menu__item">Item 3</a>
+//       </li>
+//       <li>
 //         <a href="#0" class="site-menu__item">Item 4</a>
-//         <div class="dropdown">
-//             <a href="#0" class="site-menu__item dropdown__trigger">
-//               Item 1 <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//             </a>
-//             <div class="dropdown__content">
-//                 <a href="#0" class="dropdown__item">Link 1</a>
-//                 <a href="#0" class="dropdown__item">Link 2</a>
-//                 <a href="#0" class="dropdown__item">Link 3</a>
-//                 <a href="#0" class="dropdown__item">Link 4</a>
-//             </div>
-//         </div>
+//       </li>
+//       <li class="dropdown">
+//         <a href="#0" class="site-menu__item dropdown__trigger">
+//           Item 1 <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+//         </a>
+//         <ul class="dropdown__content">
+//           <li>
+//             <a href="#0" class="dropdown__item">Link 1</a>
+//           </li>
+//           <li>
+//             <a href="#0" class="dropdown__item">Link 2</a>
+//           </li>
+//           <li>
+//             <a href="#0" class="dropdown__item">Link 3</a>
+//           </li>
+//           <li>
+//             <a href="#0" class="dropdown__item">Link 4</a>
+//           </li>
+//         </ul>
+//       </li>
 //     </nav>
 // </header>
 //
@@ -83,21 +100,40 @@
 // </div>
 // 
 // Markup:
-// <nav class="site-menu background-navy">
-//   <a href="#0" class="site-menu__item">Item 1</a>
-//   <a href="#0" class="site-menu__item">Item 2</a>
-//   <a href="#0" class="site-menu__item">Item 3</a>
-//   <a href="#0" class="site-menu__item">Item 4</a>
-//   <a href="#0" class="site-menu__item">Item 5</a>
-// </nav>
-// <nav class="mt-4 site-menu background-lighter">
-//   <a href="#0" class="site-menu__item">Item 1</a>
-//   <a href="#0" class="site-menu__item">Item 2</a>
-//   <a href="#0" class="site-menu__item">Item 3</a>
-//   <a href="#0" class="site-menu__item">Item 4</a>
-//   <a href="#0" class="site-menu__item">Item 5</a>
-//   </ul>
-// </nav>
+// <ul class="site-menu background-navy">
+//   <li>
+//     <a href="#0" class="site-menu__item">Item 1</a>
+//   </li>
+//   <li>
+//     <a href="#0" class="site-menu__item">Item 2</a>
+//   </li>
+//   <li>
+//     <a href="#0" class="site-menu__item">Item 3</a>
+//   </li>
+//   <li>
+//     <a href="#0" class="site-menu__item">Item 4</a>
+//   </li>
+//   <li>
+//     <a href="#0" class="site-menu__item">Item 5</a>
+//   </li>
+// </ul>
+// <ul class="mt-4 site-menu background-lighter">
+//   <li>
+//     <a href="#0" class="site-menu__item">Item 1</a>
+//   </li>
+//   <li>
+//     <a href="#0" class="site-menu__item">Item 2</a>
+//   </li>
+//   <li>
+//     <a href="#0" class="site-menu__item">Item 3</a>
+//   </li>
+//   <li>
+//     <a href="#0" class="site-menu__item">Item 4</a>
+//   </li>
+//   <li>
+//     <a href="#0" class="site-menu__item">Item 5</a>
+//   </li>
+// </ul>
 // 
 // Weight: 1
 // 
