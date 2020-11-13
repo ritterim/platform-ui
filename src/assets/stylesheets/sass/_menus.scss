@@ -26,7 +26,7 @@
 // Next, your `site-menu` should follow the `site-mobile-menu-action`. In other words, they should be siblings. Inside your site-menu add the class
 // `site-menu__item` to any link, or anything that you want to be perceived as a link. 
 // 
-// If you want to have a dropdown menu within the site-menu you can. Add `dropdown__trigger` to a `site-menu__item`. Add an element with the class of
+// If you want to have a dropdown menu within the site-menu, you can add `dropdown__trigger` to a `site-menu__item`, or add an element with the class of
 // `dropdown__content` as a sibling to your `dropdown__trigger`. Finally, wrap these elements in a `dropdown` class. When you click on the `dropdown__trigger`
 // your dropdown__content will appear. You can put anything inside the dropdown__content. If you have a list of links and you want them to look like the rest
 // of the links inside your site-menu, add the class `dropdown__item`. 
