@@ -14,7 +14,7 @@
 // shadow on mouse over to give the links a nice hover effect.
 //
 // Our site-menu works great for a site navigation that lives inside your header. It's fully responsive out of the box. Just be sure to use
-// the appropriate class names. Your site-menu should be wrapped in a `site-menu-wrapper` this ensures the porper position is applied to the wrapper
+// the appropriate class names. Your site-menu should be wrapped in a `site-menu-wrapper`. This ensures the proper position is applied to the wrapper
 // and allows the responsive menu to function properly. 
 // 
 // If you have a logo that links to your home page, wrap that in an `a` with the class `site-logo`.
@@ -23,16 +23,16 @@
 // on a `button` or `a`. From there, use any font-icon you'd like to reflect the mobile menu. Feel free to use our icon `pi-menu` which reflects the 
 // industry standard "hamburger menu". 
 // 
-// Next, your `site-menu` should follow the `site-mobiile-menu-action`. In other words, they should be siblings. Inside your site-menu. add the class
+// Next, your `site-menu` should follow the `site-mobile-menu-action`. In other words, they should be siblings. Inside your site-menu add the class
 // `site-menu__item` to any link, or anything that you want to be perceived as a link. 
 // 
-// If you want to have a dropdown menu within the site-menu you can. Add `dropdown__trigger` to a `site-menu__item`. Add an element with the class of
+// If you want to have a dropdown menu within the site-menu, you can add `dropdown__trigger` to a `site-menu__item`, or add an element with the class of
 // `dropdown__content` as a sibling to your `dropdown__trigger`. Finally, wrap these elements in a `dropdown` class. When you click on the `dropdown__trigger`
 // your dropdown__content will appear. You can put anything inside the dropdown__content. If you have a list of links and you want them to look like the rest
 // of the links inside your site-menu, add the class `dropdown__item`. 
 // 
 // We built the site-menu to be light, and work well for your needs. It does not come with a background color set. However, the site-menu will inherit 
-// it's parent background-colors. You can read more about this below in the documentation.
+// its parent background-colors. You can read more about this below in the documentation.
 // 
 // | <i class="pi-warning text-orange"></i> NOTE: The responsive menu and the dropdown menus require the use of JavaScript |
 // | --
@@ -92,7 +92,7 @@
 // You can add a background color to your `site-menu`. This will accomplish two things. First, the background color of your
 // menu will change. Second, the hover effect on the links in the menu will reflect a darker version of the background color 
 // you set. The color of the links will also change based on the color of the site-menu. If the color is dark, the link color 
-// will be white. If te background color is a lighter color, the link color will be `var(--dark)`. Which is currently set to
+// will be white. If the background color is a lighter color, the link color will be `var(--dark)`. Which is currently set to
 // the body color.
 // 
 // <div class="message message--warning" data-header="">
@@ -171,7 +171,7 @@
 
 // Site Menu - Hover Border
 // 
-// Adding the class `hover-border` to your `site-menu` will give the `<buton>`s in the menu a bottom border on hover.
+// Adding the class `hover-border` to your `site-menu` will give the `<button>`s in the menu a bottom border on hover.
 // 
 // <div class="message message--warning" data-header="">
 //   <p>You can change the color of your border hovers by adding the modifier of <code>hover-border--{color}</code>.</p>
@@ -225,8 +225,8 @@
 // | <i class="pi-warning text-orange"></i> NOTE: This component requires the use of JavaScript |
 // | --
 // 
-// You can add a dropdown submenu to your site-menu. The markup for this component is pretty specific. Be sure to include the folowing classes.
-// You will need a `dropdown` class wrapping 2 sibling elements, a `dropdown__trigger` and your `dropdown__content`. View the example below to 
+// You can add a dropdown submenu to your site-menu. The markup for this component is pretty specific. Be sure to include the following classes.
+// You will need a `dropdown` class wrapping two sibling elements, a `dropdown__trigger` and your `dropdown__content`. View the example below to 
 // see how this structure works. 
 // 
 // By default, the dropdowns will open positioned to the left of their parent, all except for the last dropdown in the menu. 
