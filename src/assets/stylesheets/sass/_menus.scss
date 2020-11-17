@@ -122,16 +122,16 @@
 // Styleguide Menus.SiteMenu.Bordered
 
 
-// Site Menu - Hover Border
+// Site Menu - Hover Underline
 // 
-// Adding the class `hover-border` to your `site-menu` will give the `<button>`s in the menu a bottom border on hover.
+// Adding the class `hover-underline` to your `site-menu` will give the `<button>`s in the menu a bottom border on hover.
 // 
 // <div class="message message--warning" data-header="">
-//   <p>You can change the color of your border hovers by adding the modifier of <code>hover-border--{color}</code>.</p>
+//   <p>You can change the color of your border hovers by adding the modifier of <code>hover-underline--{color}</code>.</p>
 // </div>
 // 
 // Markup:
-//   <nav class="site-menu hover-border">
+//   <nav class="site-menu hover-underline">
 //     <a href="#" class="site-menu__item">Item 1</a>
 //     <a href="#" class="site-menu__item">Item 2</a>
 //     <a href="#" class="site-menu__item">Item 3</a>
@@ -139,7 +139,7 @@
 //     <a href="#" class="site-menu__item">Item 5</a>
 //   </nav>
 //   <div class="my-3"></div>
-//   <nav class="site-menu hover-border hover-border--navy">
+//   <nav class="site-menu hover-underline hover-underline--med-blue">
 //     <a href="#" class="site-menu__item">Item 1</a>
 //     <a href="#" class="site-menu__item">Item 2</a>
 //     <a href="#" class="site-menu__item">Item 3</a>
@@ -150,7 +150,7 @@
 // 
 // Weight: 4
 // 
-// Styleguide Menus.SiteMenu.HoverBorder
+// Styleguide Menus.SiteMenu.HoverUnderline
 
 
 // Site Menu - Dropdown
@@ -434,8 +434,8 @@ $all-colors: () !default;
   }
 
 
-  // site-menu border on hover
-  &.hover-border {
+  // site-menu underline on hover
+  &.hover-underline {
 
     .site-menu__item,
     .dropdown__item {
@@ -510,7 +510,7 @@ $all-colors: () !default;
 
     // Border hover colors
     @each $name, $color in $all-colors {
-      &.hover-border--#{$name} {
+      &.hover-underline--#{$name} {
 
         .site-menu__item,
         .dropdown__item {
