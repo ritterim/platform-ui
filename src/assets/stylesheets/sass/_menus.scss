@@ -408,6 +408,7 @@ $all-colors: () !default;
   // default site-menu link hovers
   .site-menu__item,
   .dropdown__item {
+    align-items: center;
     color: var(--menu-text-color);
     display: flex;
     line-height: 1;
