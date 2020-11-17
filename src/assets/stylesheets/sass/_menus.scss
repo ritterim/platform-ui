@@ -531,12 +531,14 @@ $all-colors: () !default;
 
     @media (min-width: (config.$show-mobile-menu)) {
       > .site-menu__item,
-      > li > .site-menu__item {
+      > li > .site-menu__item,
+      > .dropdown > .site-menu__item {
         border-left: 1px solid var(--menu-border-color);
       }
   
       > li:first-child .site-menu__item,
-      > .site-menu__item:first-child {
+      > .site-menu__item:first-child,
+      > .dropdown:first-child > .site-menu__item {
         border-left: none;
       }
 
@@ -742,12 +744,14 @@ $all-colors: () !default;
       &.site-menu--bordered {
 
         > .site-menu__item,
-        > li > .site-menu__item {
+        > li > .site-menu__item,
+        > .dropdown > .site-menu__item {
           border-top: 1px solid var(--menu-border-color);
         }
     
         > li:first-child .site-menu__item,
-        > .site-menu__item:first-child {
+        > .site-menu__item:first-child,
+        > .dropdown:first-child > .site-menu__item {
           border-top: none;
         }
 
