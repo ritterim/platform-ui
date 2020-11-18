@@ -29,7 +29,7 @@
 // If you want to have a dropdown menu within the site-menu, you can add `dropdown__trigger` to a `site-menu__item`, or add an element with the class of
 // `dropdown__content` as a sibling to your `dropdown__trigger`. Finally, wrap these elements in a `dropdown` class. When you click on the `dropdown__trigger`
 // your dropdown__content will appear. You can put anything inside the dropdown__content. If you have a list of links and you want them to look like the rest
-// of the links inside your site-menu, add the class `dropdown__item`. 
+// of the links inside your site-menu, add the class `dropdown__content-item`. 
 // 
 // We built the site-menu to be light, and work well for your needs. It does not come with a background color set. However, the site-menu will inherit 
 // its parent background-colors. You can read more about this below in the documentation.
@@ -56,10 +56,10 @@
 //           Item 1 <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //         </a>
 //         <div class="dropdown__content">
-//           <a href="#" class="dropdown__item">Link 1</a>
-//           <a href="#" class="dropdown__item">Link 2</a>
-//           <a href="#" class="dropdown__item">Link 3</a>
-//           <a href="#" class="dropdown__item">Link 4</a>
+//           <a href="#" class="dropdown__content-item">Link 1</a>
+//           <a href="#" class="dropdown__content-item">Link 2</a>
+//           <a href="#" class="dropdown__content-item">Link 3</a>
+//           <a href="#" class="dropdown__content-item">Link 4</a>
 //         </div>
 //       </div>
 //     </nav>
@@ -189,11 +189,11 @@
 //         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //       </div>
 //       <div class="dropdown__content">
-//         <a href="#" class="dropdown__item">Item 1</a>
-//         <a href="#" class="dropdown__item">Item 2</a>
-//         <a href="#" class="dropdown__item">Item 3</a>
-//         <a href="#" class="dropdown__item">Item 4</a>
-//         <a href="#" class="dropdown__item">Item 5</a>
+//         <a href="#" class="dropdown__content-item">Item 1</a>
+//         <a href="#" class="dropdown__content-item">Item 2</a>
+//         <a href="#" class="dropdown__content-item">Item 3</a>
+//         <a href="#" class="dropdown__content-item">Item 4</a>
+//         <a href="#" class="dropdown__content-item">Item 5</a>
 //       </div>
 //     </div>
 //     <div class="dropdown">
@@ -202,11 +202,11 @@
 //         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //       </div>
 //       <div class="dropdown__content">
-//         <a href="#" class="dropdown__item">Item 1</a>
-//         <a href="#" class="dropdown__item">Item 2</a>
-//         <a href="#" class="dropdown__item">Item 3</a>
-//         <a href="#" class="dropdown__item">Item 4</a>
-//         <a href="#" class="dropdown__item">Item 5</a>
+//         <a href="#" class="dropdown__content-item">Item 1</a>
+//         <a href="#" class="dropdown__content-item">Item 2</a>
+//         <a href="#" class="dropdown__content-item">Item 3</a>
+//         <a href="#" class="dropdown__content-item">Item 4</a>
+//         <a href="#" class="dropdown__content-item">Item 5</a>
 //       </div>
 //     </div>
 //     <div class="dropdown">
@@ -215,11 +215,11 @@
 //         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //       </div>
 //       <div class="dropdown__content">
-//         <a href="#" class="dropdown__item">Item 1</a>
-//         <a href="#" class="dropdown__item">Item 2</a>
-//         <a href="#" class="dropdown__item">Item 3</a>
-//         <a href="#" class="dropdown__item">Item 4</a>
-//         <a href="#" class="dropdown__item">Item 5</a>
+//         <a href="#" class="dropdown__content-item">Item 1</a>
+//         <a href="#" class="dropdown__content-item">Item 2</a>
+//         <a href="#" class="dropdown__content-item">Item 3</a>
+//         <a href="#" class="dropdown__content-item">Item 4</a>
+//         <a href="#" class="dropdown__content-item">Item 5</a>
 //       </div>
 //     </div>
 //     <div class="dropdown">
@@ -228,11 +228,11 @@
 //         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //       </div>
 //       <div class="dropdown__content">
-//         <a href="#" class="dropdown__item">Item 1</a>
-//         <a href="#" class="dropdown__item">Item 2</a>
-//         <a href="#" class="dropdown__item">Item 3</a>
-//         <a href="#" class="dropdown__item">Item 4</a>
-//         <a href="#" class="dropdown__item">Item 5</a>
+//         <a href="#" class="dropdown__content-item">Item 1</a>
+//         <a href="#" class="dropdown__content-item">Item 2</a>
+//         <a href="#" class="dropdown__content-item">Item 3</a>
+//         <a href="#" class="dropdown__content-item">Item 4</a>
+//         <a href="#" class="dropdown__content-item">Item 5</a>
 //       </div>
 //     </div>
 //     <div class="dropdown">
@@ -241,11 +241,11 @@
 //         <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //       </div>
 //       <div class="dropdown__content">
-//         <a href="#" class="dropdown__item">Item 1</a>
-//         <a href="#" class="dropdown__item">Item 2</a>
-//         <a href="#" class="dropdown__item">Item 3</a>
-//         <a href="#" class="dropdown__item">Item 4</a>
-//         <a href="#" class="dropdown__item">Item 5</a>
+//         <a href="#" class="dropdown__content-item">Item 1</a>
+//         <a href="#" class="dropdown__content-item">Item 2</a>
+//         <a href="#" class="dropdown__content-item">Item 3</a>
+//         <a href="#" class="dropdown__content-item">Item 4</a>
+//         <a href="#" class="dropdown__content-item">Item 5</a>
 //       </div>
 //     </div>
 //   </nav>
@@ -258,11 +258,11 @@
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //     </div>
 //     <div class="dropdown__content">
-//       <a href="#" class="dropdown__item">Item 1</a>
-//       <a href="#" class="dropdown__item">Item 2</a>
-//       <a href="#" class="dropdown__item">Item 3</a>
-//       <a href="#" class="dropdown__item">Item 4</a>
-//       <a href="#" class="dropdown__item">Item 5</a>
+//       <a href="#" class="dropdown__content-item">Item 1</a>
+//       <a href="#" class="dropdown__content-item">Item 2</a>
+//       <a href="#" class="dropdown__content-item">Item 3</a>
+//       <a href="#" class="dropdown__content-item">Item 4</a>
+//       <a href="#" class="dropdown__content-item">Item 5</a>
 //     </div>
 //   </div>
 //   <div class="dropdown">
@@ -271,11 +271,11 @@
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //     </div>
 //     <div class="dropdown__content">
-//       <a href="#" class="dropdown__item">Item 1</a>
-//       <a href="#" class="dropdown__item">Item 2</a>
-//       <a href="#" class="dropdown__item">Item 3</a>
-//       <a href="#" class="dropdown__item">Item 4</a>
-//       <a href="#" class="dropdown__item">Item 5</a>
+//       <a href="#" class="dropdown__content-item">Item 1</a>
+//       <a href="#" class="dropdown__content-item">Item 2</a>
+//       <a href="#" class="dropdown__content-item">Item 3</a>
+//       <a href="#" class="dropdown__content-item">Item 4</a>
+//       <a href="#" class="dropdown__content-item">Item 5</a>
 //     </div>
 //   </div>
 //   <div class="dropdown">
@@ -284,11 +284,11 @@
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //     </div>
 //     <div class="dropdown__content">
-//       <a href="#" class="dropdown__item">Item 1</a>
-//       <a href="#" class="dropdown__item">Item 2</a>
-//       <a href="#" class="dropdown__item">Item 3</a>
-//       <a href="#" class="dropdown__item">Item 4</a>
-//       <a href="#" class="dropdown__item">Item 5</a>
+//       <a href="#" class="dropdown__content-item">Item 1</a>
+//       <a href="#" class="dropdown__content-item">Item 2</a>
+//       <a href="#" class="dropdown__content-item">Item 3</a>
+//       <a href="#" class="dropdown__content-item">Item 4</a>
+//       <a href="#" class="dropdown__content-item">Item 5</a>
 //     </div>
 //   </div>
 //   <div class="dropdown">
@@ -297,11 +297,11 @@
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //     </div>
 //     <div class="dropdown__content">
-//       <a href="#" class="dropdown__item">Item 1</a>
-//       <a href="#" class="dropdown__item">Item 2</a>
-//       <a href="#" class="dropdown__item">Item 3</a>
-//       <a href="#" class="dropdown__item">Item 4</a>
-//       <a href="#" class="dropdown__item">Item 5</a>
+//       <a href="#" class="dropdown__content-item">Item 1</a>
+//       <a href="#" class="dropdown__content-item">Item 2</a>
+//       <a href="#" class="dropdown__content-item">Item 3</a>
+//       <a href="#" class="dropdown__content-item">Item 4</a>
+//       <a href="#" class="dropdown__content-item">Item 5</a>
 //     </div>
 //   </div>
 //   <div class="dropdown">
@@ -310,11 +310,11 @@
 //       <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
 //     </div>
 //     <div class="dropdown__content">
-//       <a href="#" class="dropdown__item">Item 1</a>
-//       <a href="#" class="dropdown__item">Item 2</a>
-//       <a href="#" class="dropdown__item">Item 3</a>
-//       <a href="#" class="dropdown__item">Item 4</a>
-//       <a href="#" class="dropdown__item">Item 5</a>
+//       <a href="#" class="dropdown__content-item">Item 1</a>
+//       <a href="#" class="dropdown__content-item">Item 2</a>
+//       <a href="#" class="dropdown__content-item">Item 3</a>
+//       <a href="#" class="dropdown__content-item">Item 4</a>
+//       <a href="#" class="dropdown__content-item">Item 5</a>
 //     </div>
 //   </div>
 // </nav>
@@ -407,7 +407,7 @@ $all-colors: () !default;
 
   // default site-menu link hovers
   .site-menu__item,
-  .dropdown__item {
+  .dropdown__content-item {
     align-items: center;
     color: var(--menu-text-color);
     display: flex;
@@ -419,7 +419,7 @@ $all-colors: () !default;
   &:not([class*=background-]) {
 
     .site-menu__item,
-    .dropdown__item {
+    .dropdown__content-item {
       @media (pointer: fine) {
         &:hover {
           &:not(.active) {
@@ -439,7 +439,7 @@ $all-colors: () !default;
   &.hover-underline {
 
     .site-menu__item,
-    .dropdown__item {
+    .dropdown__content-item {
       position: relative;
 
       &:after {
@@ -514,7 +514,7 @@ $all-colors: () !default;
       &.hover-underline--#{$name} {
 
         .site-menu__item,
-        .dropdown__item {
+        .dropdown__content-item {
 
           &:after {
             background-color: $color;
@@ -544,16 +544,16 @@ $all-colors: () !default;
 
       .dropdown__content {
 
-        > li > .dropdown__item,
-        > .dropdown__item {
+        > li > .dropdown__content-item,
+        > .dropdown__content-item {
           border-top: 1px solid var(--menu-border-color);
         }
 
-        > li:first-child .dropdown__item, 
-        > .dropdown__item:first-child {
+        > li:first-child .dropdown__content-item, 
+        > .dropdown__content-item:first-child {
           border-top: none;
         }
-      }      
+      }
     }
   }
 
@@ -593,7 +593,7 @@ $all-colors: () !default;
       background-color: $color !important;
 
       .site-menu__item,
-      .dropdown__item {
+      .dropdown__content-item {
         @if lightness($color) > 50 {
           --menu-text-color: var(--dark, #{map.get(variables.$greyscale, 'dark')});
         } @else {
@@ -757,13 +757,13 @@ $all-colors: () !default;
 
         .dropdown__content {
 
-          > li > .dropdown__item,
-          > .dropdown__item {
+          > li > .dropdown__content-item,
+          > .dropdown__content-item {
             border-top: 1px solid var(--menu-border-color);
           }
 
-          > li:first-child .dropdown__item, 
-          > .dropdown__item:first-child {
+          > li:first-child .dropdown__content-item, 
+          > .dropdown__content-item:first-child {
             border-top: none;
           }
         }
@@ -801,7 +801,7 @@ $all-colors: () !default;
     }
 
     .site-menu__item,
-    .dropdown__item {
+    .dropdown__content-item {
       width: 100%;
     }
   }
