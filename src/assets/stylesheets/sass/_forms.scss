@@ -657,7 +657,8 @@ legend {
   &--stacked {
     flex-flow: column;
 
-    #{ $self }__field {
+    #{ $self }__field,
+    .form__field {
       max-width: none;
 
       &:last-child {
@@ -665,7 +666,8 @@ legend {
       }
     }
 
-    #{ $self }__button-group {
+    #{ $self }__button-group,
+    .form__button-group {
       justify-content: center;
 
       button {
@@ -732,7 +734,8 @@ legend {
       border-color: map.get(variables.$greyscale, 'white' );
     }
 
-    #{ $self }__select-wrapper {
+    #{ $self }__select-wrapper,
+    .form__select-wrapper {
 
       &:after {
         border-color: map.get(variables.$greyscale, 'white' );
@@ -781,7 +784,9 @@ legend {
     input[type="week"],
     textarea,
     #{ $self }__select-wrapper,
-    #{ $self }__option-group {
+    .form__select-wrapper,
+    #{ $self }__option-group,
+    .form__option-group {
       margin-top: map.get(variables.$spacers, 2);
       width: 100%;
     }
@@ -906,7 +911,8 @@ legend {
     }
 
     // Fancy label animations
-    &#{ $self }__field--fancy {
+    &#{ $self }__field--fancy,
+    &.form__field--fancy {
       position: relative;
 
       &.error {
@@ -1001,7 +1007,8 @@ legend {
         cursor: pointer;
       }
 
-      #{ $self }__select-wrapper {
+      #{ $self }__select-wrapper,
+      .form__select-wrapper {
         position: static;
       }
 
