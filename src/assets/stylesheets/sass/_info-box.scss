@@ -212,7 +212,6 @@
 
 .pui-info-box,
 .info-box {
-  $self: &;
   position: relative;
 
   &__content {
@@ -263,7 +262,8 @@
     }
   }
   &--left {
-    #{$self}__content {
+    .pui-info-box__content,
+    .info-box__content {
       left: -4.5rem;
       right: auto;
 

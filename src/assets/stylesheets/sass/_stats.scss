@@ -73,7 +73,6 @@
 
 .pui-stat,
 .stat {
-    $self: &;
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -88,7 +87,8 @@
     }
 
     &--sm {
-        #{$self}__number {
+        .pui-stat__number,
+        .stat__number {
             font-size: map.get(variables.$font-percentage, 'md' );
         }
 
@@ -99,13 +99,15 @@
     }
 
     &--md {
-        #{$self}__number {
+        .pui-stat__number,
+        .stat__number {
             font-size: map.get(variables.$font-percentage, 'xl' );
         }
     }
 
     &--lg {
-        #{$self}__number {
+        .pui-stat__number,
+        .stat__number {
             font-size: map.get(variables.$font-percentage, 'xxl' );
         }
     }

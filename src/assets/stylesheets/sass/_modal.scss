@@ -178,7 +178,6 @@
     height: 100%;
   }
 
-  $self: &;
   background: rgba(map.get(variables.$greyscale, 'black'), .5);
   position: fixed;
   z-index: 500;
@@ -273,7 +272,8 @@
     position: relative;
     width: 100%;
 
-    #{$self}__close {
+    .pui-modal__close,
+    .modal__close {
       position: absolute;
       right: -1rem;
       top: 50%;

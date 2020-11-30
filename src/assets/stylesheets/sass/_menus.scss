@@ -879,7 +879,6 @@ $all-colors: () !default;
 
 // icon menu
 .icon-menu {
-  $self: &;
   align-items: center;
   display: flex;
 
@@ -910,7 +909,8 @@ $all-colors: () !default;
   &--vertical {
     flex-direction: column;
     justify-content: center;
-    #{$self}__item {
+
+    .icon-menu__item {
       border: 0;
       border-bottom: 1px solid map.get(variables.$greyscale, 'light' );
       padding: map.get(variables.$spacers, 1) 0;

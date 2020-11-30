@@ -96,7 +96,6 @@
 .pui-accordion,
 .accordion {
 
-  $self: &;
   $accordion-primary-color: map.get(variables.$greyscale, 'base');
   $accordion-primary-background: map.get(variables.$greyscale, 'white');
   $accordion-secondary-background: map.get(variables.$greyscale, 'lighter');
@@ -156,10 +155,12 @@
 
   &__content {
 
-    > #{$self} {
+    > .pui-accordion,
+    > .accordion {
       border: none;
       &:not(.active):hover {
-        #{$self}__header {
+        .pui-accordion__header,
+        .accordion__header {
           background-color: $accordion-primary-background;
         }
       }
@@ -167,7 +168,8 @@
         border: none;
         box-shadow: none;
       }
-      > #{$self} {
+      > .pui-accordion,
+      > .accordion {
          &__header {
           background-color: $accordion-primary-background;
           font-weight: bold;

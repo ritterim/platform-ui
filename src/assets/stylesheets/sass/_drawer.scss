@@ -88,7 +88,6 @@
 
 .pui-drawer,
 .drawer {
-  $self: &;
   background-color: config.$drawer-background;
   box-shadow: 0 -1rem 2rem rgba(map.get(variables.$greyscale, 'black'), .4);
   display: flex;
@@ -113,7 +112,8 @@
 
   &--single-row {
     & {
-      #{$self}__inner {
+      .pui-drawer__inner,
+      .drawer__inner {
         min-height: 8rem !important;
       }
     }
@@ -128,7 +128,8 @@
       padding-top: map.get(variables.$spacers, 5);
     }
 
-    #{$self}__close {
+    .pui-drawer__close,
+    .drawer__close {
       position: absolute;
       right: -#{variables.$spacer};
       top: 50%;
