@@ -588,8 +588,6 @@ legend {
   $error-color: color.adjust(map.get(variables.$error-colors, 'negative'), $lightness: math.percentage(-(config.$hue-threshold * 2)));
   $error-background: map.get(variables.$message-colors, 'error' );
 
-
-  $self: &;
   color: color.adjust(map.get(variables.$greyscale, 'base' ), $lightness: math.percentage(.05));
 
   .input-icons {
@@ -657,7 +655,7 @@ legend {
   &--stacked {
     flex-flow: column;
 
-    #{ $self }__field,
+    .pui-form__field,
     .form__field {
       max-width: none;
 
@@ -666,7 +664,7 @@ legend {
       }
     }
 
-    #{ $self }__button-group,
+    .pui-form__button-group,
     .form__button-group {
       justify-content: center;
 
@@ -734,7 +732,7 @@ legend {
       border-color: map.get(variables.$greyscale, 'white' );
     }
 
-    #{ $self }__select-wrapper,
+    .pui-form__select-wrapper,
     .form__select-wrapper {
 
       &:after {
@@ -783,9 +781,9 @@ legend {
     input[type="month"],
     input[type="week"],
     textarea,
-    #{ $self }__select-wrapper,
+    .pui-form__select-wrapper,
     .form__select-wrapper,
-    #{ $self }__option-group,
+    .pui-form__option-group,
     .form__option-group {
       margin-top: map.get(variables.$spacers, 2);
       width: 100%;
@@ -911,7 +909,7 @@ legend {
     }
 
     // Fancy label animations
-    &#{ $self }__field--fancy,
+    &.pui-form__field--fancy,
     &.form__field--fancy {
       position: relative;
 
@@ -1007,7 +1005,7 @@ legend {
         cursor: pointer;
       }
 
-      #{ $self }__select-wrapper,
+      .pui-form__select-wrapper,
       .form__select-wrapper {
         position: static;
       }
