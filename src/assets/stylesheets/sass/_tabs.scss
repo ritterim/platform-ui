@@ -120,12 +120,12 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
 
 @mixin tabs($pui: null) {
 
-  $self: null;
+  $tab: null;
 
   @if $pui {
-    $self: '.pui-tab';
+    $tab: '.pui-tab';
   } @else {
-    $self: '.tab';
+    $tab: '.tab';
   }
 
   @include mixins.breakpoint(tablet, min) {
@@ -143,7 +143,7 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
     position: absolute;
 
     &:checked {
-      + #{$self} {
+      + #{$tab} {
         border: 1px solid $tab-border-color;
         border-bottom-color: map.get(variables.$greyscale, 'white' );
         font-weight: 600;
@@ -161,7 +161,7 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
           }
         }
 
-        + #{$self}-panel {
+        + #{$tab}-panel {
           display: block;
         }
       }
@@ -170,7 +170,7 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
         + label {
           font-weight: 300;
           
-          + #{$self}-panel {
+          + #{$tab}-panel {
             display: none!important;
           }
         } 
@@ -178,7 +178,7 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
     }
   }
 
-  #{$self} {
+  #{$tab} {
     align-items: center;
     display: flex;
     height: $tab-height;
@@ -226,7 +226,7 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
   
   input[type=radio] {
     &:not(:checked) {
-      + #{$self} {
+      + #{$tab} {
 
         @media (pointer: fine) {
           &:hover {
@@ -244,7 +244,7 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
     }
   }
 
-  #{$self}-panel {
+  #{$tab}-panel {
     display: none;
   }
 }
@@ -260,12 +260,12 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
 
 @mixin tabs-flat($pui: null) {
 
-  $self: null;
+  $tab: null;
 
   @if $pui {
-    $self: '.pui-tab';
+    $tab: '.pui-tab';
   } @else {
-    $self: '.tab';
+    $tab: '.tab';
   }
 
   display: flex;
@@ -273,7 +273,7 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
 
   input[type=radio] {
     &:not(:checked) {
-      + #{$self} {
+      + #{$tab} {
         @media (pointer: fine) {
           &:hover {
             background-color: map.get(variables.$greyscale, 'white' );
@@ -289,7 +289,7 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
     }
 
     &:checked {
-      + #{$self} {
+      + #{$tab} {
         border: none;
         color: $tab-active-color;
         
@@ -300,7 +300,7 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
     }
   }
 
-  #{$self} {
+  #{$tab} {
     background: map.get(variables.$greyscale, 'white');
     border: none;
     color: map.get(variables.$greyscale, 'base' );
@@ -325,7 +325,7 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
     }
   }
 
-  #{$self}-panel {
+  #{$tab}-panel {
     border: none;
     border-top: 1px solid $tab-border-color;
     z-index: auto;
@@ -342,7 +342,7 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
       flex-wrap: unset;
     }    
 
-    #{$self} {
+    #{$tab} {
       @include mixins.breakpoint(tablet, max) {
         align-items: center;
         border: 1px solid $tab-active-color;
@@ -368,7 +368,7 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
     input[type=radio] {
   
       &:checked {
-        + #{$self} {          
+        + #{$tab} {          
           @include mixins.breakpoint(tablet, max) {
             border: 1px solid $tab-border-color;
             border-bottom: none;
@@ -379,7 +379,7 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
       }
     }
 
-    #{$self}-panel {
+    #{$tab}-panel {
       @include mixins.breakpoint(tablet, max) {
         background-color: map.get(variables.$greyscale, 'white');
         border: 1px solid $tab-border-color;
