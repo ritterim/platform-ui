@@ -118,8 +118,15 @@ $tab-height:          3rem;
 $tab-active-color:    map.get(config.$brand-colors, 'navy' );
 $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold * 2));
 
-.pui-tabs,
-.tabs {
+@mixin tabs($pui: null) {
+
+  $self: null;
+
+  @if $pui {
+    $self: '.pui-tab';
+  } @else {
+    $self: '.tab';
+  }
 
   @include mixins.breakpoint(tablet, min) {
     display: flex;
@@ -136,8 +143,7 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
     position: absolute;
 
     &:checked {
-      + .pui-tab,
-      + .tab {
+      + #{$self} {
         border: 1px solid $tab-border-color;
         border-bottom-color: map.get(variables.$greyscale, 'white' );
         font-weight: 600;
@@ -155,8 +161,7 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
           }
         }
 
-        + .pui-tab-panel,
-        + .tab-panel {
+        + #{$self}-panel {
           display: block;
         }
       }
@@ -165,8 +170,7 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
         + label {
           font-weight: 300;
           
-          + .pui-tab-panel,
-          + .tab-panel {
+          + #{$self}-panel {
             display: none!important;
           }
         } 
@@ -174,8 +178,7 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
     }
   }
 
-  .pui-tab,
-  .tab {
+  #{$self} {
     align-items: center;
     display: flex;
     height: $tab-height;
@@ -223,8 +226,7 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
   
   input[type=radio] {
     &:not(:checked) {
-      + .pui-tab,
-      + .tab {
+      + #{$self} {
 
         @media (pointer: fine) {
           &:hover {
@@ -242,21 +244,36 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
     }
   }
 
-  .pui-tab-panel,
-  .tab-panel {
+  #{$self}-panel {
     display: none;
   }
 }
 
-.pui-tabs--flat,
-.tabs--flat {
+.pui-tabs {
+  @include tabs(true);
+}
+
+.tabs {
+  @include tabs();
+}
+
+
+@mixin tabs-flat($pui: null) {
+
+  $self: null;
+
+  @if $pui {
+    $self: '.pui-tab';
+  } @else {
+    $self: '.tab';
+  }
+
   display: flex;
   flex-wrap: wrap;
 
   input[type=radio] {
     &:not(:checked) {
-      + .pui-tab,
-      + .tab {
+      + #{$self} {
         @media (pointer: fine) {
           &:hover {
             background-color: map.get(variables.$greyscale, 'white' );
@@ -272,8 +289,7 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
     }
 
     &:checked {
-      + .pui-tab,
-      + .tab {
+      + #{$self} {
         border: none;
         color: $tab-active-color;
         
@@ -284,8 +300,7 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
     }
   }
 
-  .pui-tab,
-  .tab {
+  #{$self} {
     background: map.get(variables.$greyscale, 'white');
     border: none;
     color: map.get(variables.$greyscale, 'base' );
@@ -310,8 +325,7 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
     }
   }
 
-  .pui-tab-panel,
-  .tab-panel {
+  #{$self}-panel {
     border: none;
     border-top: 1px solid $tab-border-color;
     z-index: auto;
@@ -328,8 +342,7 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
       flex-wrap: unset;
     }    
 
-    .pui-tab,
-    .tab {
+    #{$self} {
       @include mixins.breakpoint(tablet, max) {
         align-items: center;
         border: 1px solid $tab-active-color;
@@ -355,8 +368,7 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
     input[type=radio] {
   
       &:checked {
-        + .pui-tab,
-        + .tab {          
+        + #{$self} {          
           @include mixins.breakpoint(tablet, max) {
             border: 1px solid $tab-border-color;
             border-bottom: none;
@@ -367,8 +379,7 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
       }
     }
 
-    .pui-tab-panel,
-    .tab-panel {
+    #{$self}-panel {
       @include mixins.breakpoint(tablet, max) {
         background-color: map.get(variables.$greyscale, 'white');
         border: 1px solid $tab-border-color;
@@ -377,8 +388,15 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
   }
 }
 
-.pui-tab-panel,
-.tab-panel {
+.pui-tabs--flat {
+  @include tabs-flat(true);
+}
+
+.tabs--flat {
+  @include tabs-flat;
+}
+
+@mixin tab-panel {
   background-color: map.get(variables.$greyscale, 'white');
   border: 1px solid $tab-border-color;
   padding: map.get(variables.$spacers, 2 );
@@ -395,4 +413,12 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
     padding-top: calc(#{map.get(variables.$spacers, 2 )} + 1px);
     z-index: 1;
   }
+}
+
+.pui-tab-panel {
+  @include tab-panel;
+}
+
+.tab-panel {
+  @include tab-panel;
 }

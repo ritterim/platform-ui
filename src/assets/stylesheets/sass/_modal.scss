@@ -168,8 +168,7 @@
 // 
 // Styleguide Components.modalmessage
 
-.pui-modal,
-.modal {
+@mixin modal {
   $header-height: 6rem;
 
   // print entire modal
@@ -195,8 +194,7 @@
 
   &--full {
 
-    > .pui-modal__inner,
-    > .modal__inner {
+    > #{$self}__inner {
       margin: auto;
       width: 100%;
       position: absolute;
@@ -205,8 +203,7 @@
       left: 0;
       right: 0;
 
-      .pui-modal__content,
-      .modal__content {
+      #{$self}__content {
         height: calc(100% - #{$header-height});
         overflow-x: hidden;
         overflow-y: auto;
@@ -216,8 +213,7 @@
 
   &--small {
 
-    > .pui-modal__inner,
-    > .modal__inner {
+    > #{$self}__inner {
       @include mixins.breakpoint(tablet, min) {
         width: 40vw;
       }
@@ -229,8 +225,7 @@
 
   &--large {
 
-    > .pui-modal__inner,
-    > .modal__inner {
+    > #{$self}__inner {
       @include mixins.breakpoint(tablet, min) {
         width: 80vw;
       }
@@ -294,6 +289,14 @@
       width: 100%;
     }
   }
+}
+
+.pui-modal {
+  @include modal;
+}
+
+.modal {
+  @include modal;
 }
 
 body.modal-open {

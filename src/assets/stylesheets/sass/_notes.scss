@@ -2,17 +2,15 @@
 @use "variables";
 @use "sass:map";
 
-.pui-note,
-.note {
+@mixin note {
   $orange: map.get(config.$brand-colors, 'salmon' );
-
+  $self: &;
   position: relative;
 
   &:hover {
     cursor: pointer;
 
-    .pui-note__header,
-    .note__header {
+    #{$self}__header {
 
       i {
         color: $orange;
@@ -21,15 +19,13 @@
 
     &:not(.note-open) {
 
-      .pui-note__inner,
-      .note__inner {
+      #{$self}__inner {
         max-width: 90%;
         transform: translate(19px, 0) scale(1.1);
       }
     }
 
-    .pui-note__toggle,
-    .note__toggle {
+    #{$self}__toggle {
       color: $orange;
     }
   }
@@ -75,4 +71,12 @@
       visibility: visible;
     }
   }
+}
+
+.pui-note {
+  @include note;
+}
+
+.note {
+  @include note;
 }

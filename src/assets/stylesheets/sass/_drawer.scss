@@ -86,8 +86,7 @@
 //
 // Styleguide Components.Drawer.Left
 
-.pui-drawer,
-.drawer {
+@mixin drawer {
   $self: &;
   background-color: config.$drawer-background;
   box-shadow: 0 -1rem 2rem rgba(map.get(variables.$greyscale, 'black'), .4);
@@ -105,8 +104,7 @@
     overflow-y: visible;
     overflow-x: hidden;
 
-    .pui-drawer-bottom &,
-    .drawer-bottom {
+    #{$self}-bottom & {
       max-height: 80vh;
     }
   }
@@ -155,37 +153,33 @@
       bottom: 3.5rem;
     }
   }
-}
 
+  // Drawer animates from the side
+  #{$self}-right,
+  #{$self}-left {
+    bottom: 0;
+    box-shadow: 0 -.5rem 2rem rgba(map.get(variables.$greyscale, 'black'), math.percentage(config.$hue-threshold / 2));
+    flex-direction: column;
+    height: config.$drawer-side-height;
+    position: fixed;
+    transition: all ease-in-out config.$transitions;
+    z-index: 500;
+    width: config.$drawer-side-width;
 
-// Drawer animates from the side
-.pui-drawer-right,
-.drawer-right, 
-.pui-drawer-left,
-.drawer-left {
-  bottom: 0;
-  box-shadow: 0 -.5rem 2rem rgba(map.get(variables.$greyscale, 'black'), math.percentage(config.$hue-threshold / 2));
-  flex-direction: column;
-  height: config.$drawer-side-height;
-  position: fixed;
-  transition: all ease-in-out config.$transitions;
-  z-index: 500;
-  width: config.$drawer-side-width;
-
-  &[hidden] {
-    display: none;
+    &[hidden] {
+      display: none;
+    }
+  }
+  #{$self}-right {
+    left: auto;
+    right: 0;
+  }
+  #{$self}-left {
+    right: auto;
+    left: 0;
   }
 }
-.pui-drawer-right,
-.drawer-right {
-  left: auto;
-  right: 0;
-}
-.pui-drawer-left,
-.drawer-left {
-  right: auto;
-  left: 0;
-}
+
 
 #kss-node {
   .pui-drawer__open,
@@ -201,4 +195,12 @@
 
 .side-content {
   height: calc(100% - 4rem);
+}
+
+.pui-drawer {
+  @include drawer;
+}
+
+.drawer {
+  @include drawer;
 }

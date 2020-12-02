@@ -269,8 +269,7 @@
 // Styleguide Components.Cards.Overflow
 
 
-.pui-card,
-.card {
+@mixin card {
   $self: &;
 
   background-color: map.get(variables.$greyscale, "white");
@@ -310,8 +309,7 @@
       }
     }
 
-    .pui-card__group,
-    .card__group {
+    #{$self}__group {
       align-items: center;
     }
   }
@@ -382,4 +380,12 @@
     justify-content: space-between;
     margin-top: config.$card-footer-top-margin;
   }
+}
+
+.pui-card {
+  @include card;
+}
+
+.card {
+  @include card;
 }
