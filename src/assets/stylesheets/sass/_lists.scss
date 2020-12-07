@@ -322,8 +322,7 @@ ol {
 }
 
 
-.pui-list,
-.list {
+@mixin list {
   $list: &;
 
   list-style-type: none;
@@ -348,4 +347,12 @@ ol {
       margin: 0 map.get(variables.$spacers, 2) 0 0;
     }
   }
+}
+
+.pui-list {
+  @include list;
+}
+
+.list {
+  @include list;
 }

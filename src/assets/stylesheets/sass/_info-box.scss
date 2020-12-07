@@ -210,8 +210,7 @@
 //
 // Styleguide Components.info
 
-.pui-info-box,
-.info-box {
+@mixin info-box {
   $self: &;
   position: relative;
 
@@ -295,4 +294,12 @@
     right: .5rem;
     top: .5rem;
   }
+}
+
+.pui-info-box {
+  @include info-box;
+}
+
+.info-box {
+  @include info-box;
 }

@@ -93,9 +93,8 @@
 // Styleguide Components.Accordion.Nested
 
 
-.pui-accordion,
-.accordion {
 
+@mixin accordion {
   $self: &;
   $accordion-primary-color: map.get(variables.$greyscale, 'base');
   $accordion-primary-background: map.get(variables.$greyscale, 'white');
@@ -120,8 +119,7 @@
   &:not(.active):hover {
     border-color: $accordion-hover-border;
 
-    .pui-accordion__header,
-    .accordion__header {
+    #{$self}__header {
       background-color: $accordion-secondary-background;
     }
   }
@@ -132,12 +130,10 @@
     border-color: transparent;
     box-shadow: 0px 0px 0px 2px $accordion-hover-border;
 
-    > .pui-accordion__header,
-    > .accordion__header {
+    > #{$self}__header {
       background-color: $accordion-secondary-background;
 
-      .pui-accordion__icon,
-      .accordion__icon {
+      #{$self}__icon {
         @extend %rotate-180;
       }
     }
@@ -168,11 +164,11 @@
         box-shadow: none;
       }
       > #{$self} {
-         &__header {
+          &__header {
           background-color: $accordion-primary-background;
           font-weight: bold;
-         }
-       }
+          }
+        }
     }
     border-top: none;
     display: none;
@@ -183,5 +179,12 @@
       display: block;
     }
   }
+}
 
+.pui-accordion {
+  @include accordion;
+}
+
+.accordion {
+  @include accordion;
 }

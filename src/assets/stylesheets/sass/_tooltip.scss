@@ -46,8 +46,7 @@
 // Styleguide Components.Tooltip
 
 
-[data-pui-tooltip],
-[data-tooltip] {
+@mixin tooltip {
 
   $triangle: map.get(config.$radius, 'default');
   $background-color: rgba(map.get(variables.$greyscale, 'dark'), .9);
@@ -60,7 +59,6 @@
     background-color: $background-color;
     border-radius: $triangle;
     color: map.get(variables.$greyscale, 'white');
-    content: attr(data-pui-tooltip);
     font-size: map.get(config.$fonts, 'size');
     font-size: map.get(variables.$font-percentage, 'sm');
     font-weight: normal;
@@ -168,7 +166,16 @@
   }
 }
 
+[data-pui-tooltip] {
+  @include tooltip;
+
+  &:after {
+    content: attr(data-pui-tooltip);
+  }
+}
+
 [data-tooltip] {
+  @include tooltip;
   
   &:after {
     content: attr(data-tooltip);
@@ -176,7 +183,14 @@
 }
 
 // not fully realized :(
-.pui-tooltip--help,
-.tooltip--help {
+@mixin tooltip-help {
   color: map.get(config.$brand-colors, 'med-blue') !important;
+}
+
+.pui-tooltip--help {
+  @include tooltip-help;
+}
+
+.tooltip--help {
+  @include tooltip-help;
 }

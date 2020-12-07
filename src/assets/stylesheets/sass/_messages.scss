@@ -37,8 +37,7 @@
 //
 //Styleguide Components.Messages
 
-.pui-message,
-.message {
+@mixin message {
   $self: &;
   display: flex;
   flex-direction: column;
@@ -81,4 +80,12 @@
       }
     }
   }
+}
+
+.pui-message {
+  @include message;
+}
+
+.message {
+  @include message;
 }

@@ -583,11 +583,9 @@ legend {
   white-space: normal;
 }
 
-.pui-form,
-.form {
+@mixin form {
   $error-color: color.adjust(map.get(variables.$error-colors, 'negative'), $lightness: math.percentage(-(config.$hue-threshold * 2)));
   $error-background: map.get(variables.$message-colors, 'error' );
-
 
   $self: &;
   color: color.adjust(map.get(variables.$greyscale, 'base' ), $lightness: math.percentage(.05));
@@ -678,8 +676,7 @@ legend {
     }
   }
 
-  &.pui-form--light,
-  &.form--light {
+  &#{$self}--light {
     color: map.get(variables.$greyscale, 'white' );
 
     input[type="text"],
@@ -740,8 +737,7 @@ legend {
     }
   }
 
-  &.pui-form--bordered,
-  &.form--bordered {
+  &#{$self}--bordered {
 
     input[type="text"],
     input[type="search"],
@@ -1224,14 +1220,21 @@ legend {
       }
     }
 
-    .pui-form__select-wrapper,
-    .form__select-wrapper {
+    #{$self}__select-wrapper {
 
       &:after {
         right: .7rem;
       }
     }
   }
+}
+
+.pui-form {
+  @include form;
+}
+
+.form {
+  @include form;
 }
 
 // Readonly Input
@@ -1358,8 +1361,7 @@ legend {
 // 
 // Styleguide Forms.ToggleDisabled
 
-.pui-toggle,
-.toggle {
+@mixin toggle {
   border: 1px solid map.get(variables.$greyscale, 'light' );
   border-radius: map.get(config.$radius, 'button');
   display: flex;
@@ -1427,6 +1429,28 @@ legend {
   }
 }
 
+.pui-toggle {
+  @include toggle;
+}
+
+.toggle {
+  @include toggle;
+}
+
+@mixin toggle-disabled {
+  pointer-events: none;
+
+  input[type="checkbox"],
+  input[type="radio"] {
+
+    &:checked + label {
+      background-color: color.adjust(map.get(variables.$greyscale, 'light' ), $lightness: math.percentage(config.$hue-threshold)) !important;
+      border-color: color.adjust(map.get(variables.$greyscale, 'light' ), $lightness: math.percentage(config.$hue-threshold)) !important;
+      color: map.get(variables.$greyscale, 'white') !important;
+    }
+  }
+}
+
 fieldset:disabled {
   cursor: not-allowed;
 
@@ -1434,19 +1458,12 @@ fieldset:disabled {
     cursor: default;
   }
   
-  .pui-toggle,
-  .toggle {
-    pointer-events: none;
-
-    input[type="checkbox"],
-    input[type="radio"] {
+  .pui-toggle {
+    @include toggle-disabled;
+  }
   
-      &:checked + label {
-        background-color: color.adjust(map.get(variables.$greyscale, 'light' ), $lightness: math.percentage(config.$hue-threshold)) !important;
-        border-color: color.adjust(map.get(variables.$greyscale, 'light' ), $lightness: math.percentage(config.$hue-threshold)) !important;
-        color: map.get(variables.$greyscale, 'white') !important;
-      }
-    }
+  .toggle {
+    @include toggle-disabled;
   }
 
   input[type="checkbox"],

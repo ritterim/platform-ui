@@ -71,43 +71,48 @@
 //
 // Styleguide Components.Stats
 
-.pui-stat,
-.stat {
-    $self: &;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    font-size: map.get(variables.$font-percentage, 'lg' );
-    font-weight: bold;
+@mixin stat {
+  $self: &;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-size: map.get(variables.$font-percentage, "lg");
+  font-weight: bold;
+
+  &[data-stat-label]:after {
+    content: attr(data-stat-label);
+    color: map.get(variables.$greyscale, "base");
+    font-size: map.get(config.$fonts, "size");
+    font-weight: normal;
+  }
+
+  &--sm {
+    #{$self}__number {
+      font-size: map.get(variables.$font-percentage, "md");
+    }
 
     &[data-stat-label]:after {
-        content: attr(data-stat-label);
-        color: map.get(variables.$greyscale, 'base');
-        font-size: map.get(config.$fonts, 'size' );
-        font-weight: normal;
+      font-size: map.get(variables.$font-percentage, "xs");
     }
+  }
 
-    &--sm {
-        #{$self}__number {
-            font-size: map.get(variables.$font-percentage, 'md' );
-        }
-
-        &[data-stat-label]:after {
-            font-size: map.get(variables.$font-percentage, 'xs' );
-        }
-
+  &--md {
+    #{$self}__number {
+      font-size: map.get(variables.$font-percentage, "xl");
     }
+  }
 
-    &--md {
-        #{$self}__number {
-            font-size: map.get(variables.$font-percentage, 'xl' );
-        }
+  &--lg {
+    #{$self}__number {
+      font-size: map.get(variables.$font-percentage, "xxl");
     }
+  }
+}
 
-    &--lg {
-        #{$self}__number {
-            font-size: map.get(variables.$font-percentage, 'xxl' );
-        }
-    }
+.pui-stat {
+  @include stat;
+}
 
+.stat {
+  @include stat;
 }
