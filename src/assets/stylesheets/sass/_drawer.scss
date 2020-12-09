@@ -36,6 +36,10 @@
 // </div>
 // <div id="single-row" class="drawer drawer-bottom drawer--single-row drawer--closed animated slideInUp fastest">
 //   <div class="drawer__inner animated slideInUp fastest">
+//     <div class="drawer__header">
+//       <button class="button drawer__close" data-drawer="default">Close <i class="pi-times" aria-hidden="true"></i></button>
+//       <h3 class="mb-2">Small Drawer</h3>
+//     </div>
 //     <div class="drawer__content">
 //       <button class="button drawer__close" data-drawer="single-row">Close <i class="pi-times" aria-hidden="true"></i></button>
 //       <p>Single row drawer without a header.</p>
@@ -155,8 +159,8 @@
   }
 
   // Drawer animates from the side
-  #{$self}-right,
-  #{$self}-left {
+  &-right,
+  &-left {
     bottom: 0;
     box-shadow: 0 -.5rem 2rem rgba(map.get(variables.$greyscale, 'black'), math.percentage(config.$hue-threshold / 2));
     flex-direction: column;
@@ -170,11 +174,11 @@
       display: none;
     }
   }
-  #{$self}-right {
+  &-right {
     left: auto;
     right: 0;
   }
-  #{$self}-left {
+  &-left {
     right: auto;
     left: 0;
   }
