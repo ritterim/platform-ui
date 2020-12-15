@@ -7,6 +7,10 @@
 // Info Box
 //
 // Click the button to toggle the info box.
+// 
+// <div class="message message--warning" data-header="">
+//   <p>If you need an info box on the left side of the window, you may want to add the modifier class of <code>info-box--left</code> to your info-box, to ensure that the content doesn't open outside of the viewport.</p>
+// </div>
 //
 // Markup:
 // <div class="block-container blocks tablet-up-6">
@@ -124,7 +128,7 @@
 // </div>
 // <div class="block">
 // <div class="info-box info-box--left">
-//   <a href="https://ritterim.com" class="toggle-hidden--left" aria-label="Toggle">Text Link - Left info box</a>
+//   <a href="#" class="toggle-hidden" aria-label="Toggle">Text Link - Left info box</a>
 //   <div class="info-box__content hidden">
 //     <button class="button info-box__close">
 //       Close <i class="pi-times" aria-hidden="hidden"></i>
