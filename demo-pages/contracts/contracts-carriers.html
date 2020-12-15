@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Carriers</title>
+
+    <link rel="stylesheet" href="/src/assets/stylesheets/platform-ui.min.css" />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="src/assets/images/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="src/assets/images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="src/assets/images/favicon/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="src/assets/images/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="src/assets/images/favicon/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="src/assets/images/favicon/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <style>
+      /*
+         *  This css will need to live in the platform along with custom
+         *  mobile menu css.
+         *  See src/Platform/Content/css/sass/platform-ui-plugins.scss
+         */
+      .site-header--fixed {
+        height: calc(var(--menu-height) * 2) !important;
+      }
+      .site-header--fixed + .header-fixed {
+        margin-top: calc(var(--menu-height) * 2) !important;
+      }
+      .site-header--fixed .site-menu-wrapper:nth-child(2) .site-menu.active,
+      .site-menu-wrapper.site-header--fixed:nth-child(2) .site-menu.active {
+        max-height: calc(100vh - (var(--menu-height) * 2));
+      }
+      .background-note {
+        background-color: #FFFDF5 !important; 
+      }
+    </style>
+  </head>
+  <body class="flex flex--column">
+    <header class="site-header site-header--fixed">
+      <div class="site-menu primary inverted site-menu-wrapper">
+        <div class="block-container background-navy w-100">
+          <div class="block block-8 lg-tablet-up-4 lg-tablet-up--fill flex">
+            <a href="/demo-pages/crm-example.html" class="site-menu__item">
+              <span
+                class="card__header-icon pill--circle-medium background-purple text-white mr-2"
+              >
+                D
+              </span>
+              <span class="text--size-lg hide-tablet-down">
+                Hello Dev
+              </span>
+            </a>
+            <div class="site-menu__item search">
+              <form role="search" aria-label="CRM" _lpchecked="1" class="w-100">
+                <div class="flex flex--align-center">
+                  <label for="search-input" class="sr-only">Search</label>
+                  <input
+                    type="text"
+                    id="search-input"
+                    placeholder="Type to search..."
+                    class="placeholder--light text-white"
+                  />
+                  <i aria-hidden="true" class="pi-search"></i>
+                </div>
+              </form>
+            </div>
+          </div>
+          <button
+            class="site-menu-mobile-action button--plain text-white hide-lg-tablet-up pos-abs pin-right mr-2 pin-center-top"
+          >
+            <span class="sr-only">Toggle Navigation</span>
+            <i aria-hidden="true" focusable="false" class="pi-menu pi-xl"></i>
+          </button>
+          <nav class="block block--shrink site-menu primary inverted">
+            <div class="site-menu__item dropdown p-0">
+              <a href="#" class="dropdown__trigger p-3">
+                Organizations
+                <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+              </a>
+              <ul class="dropdown__content pin-right post-list">
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/agencies" class="flex p-3"
+                    ><i class="users icon"></i>
+                    Agencies
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/businesses" class="flex p-3"
+                    ><i class="business-icon icon"></i>
+                    Businesses
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/carriers" class="flex p-3"
+                    ><i class="carrier-icon icon"></i>
+                    Carriers
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="site-menu__item dropdown p-0">
+              <a href="#" class="dropdown__trigger p-3">
+                People <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+              </a>
+              <ul class="dropdown__content pin-right post-list">
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/agents" class="flex p-3"
+                    ><i class="agent-icon icon"></i>
+                    Agents
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/associates" class="flex p-3"
+                    ><i class="associate-icon icon"></i>
+                    Associates
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/users" class="flex p-3"
+                    ><i class="user-icon icon"></i>
+                    Users
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/consumers" class="flex p-3"
+                    ><i class="user-icon icon"></i>
+                    Consumers
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a
+                    href="/admin/agents/map?term=Harrisburg%2C%20PA%2017110"
+                    class="flex p-3"
+                  >
+                    <i class="map icon"></i>
+                    Map Agents
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="site-menu__item dropdown p-0">
+              <a href="#" class="dropdown__trigger p-3">
+                Flow <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+              </a>
+              <ul class="dropdown__content pin-right post-list">
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/flow/agents" class="flex p-3"
+                    ><i class="id badge icon"></i>
+                    Agents
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/flow/agencies" class="flex p-3"
+                    ><i class="users icon"></i>
+                    Agencies
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/flow/contracts" class="flex p-3"
+                    ><i class="open folder icon"></i>
+                    Contracts
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/flow/campaigns" class="flex p-3" style=""
+                    ><i class="address-card icon"></i>
+                    Campaigns
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/flow/submissions" class="flex p-3" style=""
+                    ><i class="file icon"></i>
+                    Submissions
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/flow/enrollments" class="flex p-3" style=""
+                    ><i class="certificate icon"></i>
+                    Enrollments
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a
+                    href="/admin/flow/payment-methods"
+                    class="flex p-3"
+                    style=""
+                    ><i class="money bill icon"></i>
+                    Payment Methods
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/flow/crm" class="flex p-3" style=""
+                    ><i class="briefcase icon"></i>
+                    CRM
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="site-menu__item dropdown p-0">
+              <a href="#" class="dropdown__trigger p-3">
+                <span class="sr-only">RIMDev</span>
+                <span
+                  class="card__header-icon pill--circle-medium background-white text-navy"
+                >
+                  <i class="pi-rimdev" aria-hidden="true"></i>
+                </span>
+                <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+              </a>
+              <ul class="dropdown__content pin-right post-list">
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/rimdev" class="flex p-3">
+                    Permissions
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/form-builder" class="flex p-3">
+                    Form Builder
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/_features" class="flex p-3">
+                    Feature Flags
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/_self" class="flex p-3">
+                    Claims Diagnostics
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="site-menu__item dropdown p-0">
+              <a href="#" class="dropdown__trigger p-3">
+                Recent <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+              </a>
+              <ul class="dropdown__content pin-right post-list dropdown">
+                <li class="post-item p-0 m-0">
+                  <a
+                    href="/admin/agents/c057f20a-fbc8-403c-9777-9e0701310cf8/edit"
+                    title="Last viewed on 5/6/2020"
+                    class="flex p-3"
+                    ><i class="grey icon id badge"></i>
+                    <i class="yellow vertical ellipsis icon"></i>
+                    Gregory Gudis
+                  </a>
+                </li>
+                <!---->
+                <div class="left menu">
+                  <li class="post-item m-0 p-0">
+                    <a
+                      href="/admin/agents/c057f20a-fbc8-403c-9777-9e0701310cf8/contracts?id=263135"
+                      class="flex p-3"
+                    >
+                      Contract for Accendo Insurance Company
+                    </a>
+                  </li>
+                  <li class="post-item m-0 p-0">
+                    <a
+                      href="/admin/agents/c057f20a-fbc8-403c-9777-9e0701310cf8/edit?ui=medicareful"
+                      class="flex p-3"
+                    >
+                      Medicareful
+                    </a>
+                  </li>
+                  <li class="post-item m-0 p-0 border-b border--color-lighter">
+                    <a
+                      href="/admin/agents/c057f20a-fbc8-403c-9777-9e0701310cf8/edit?ui=payments"
+                      class="flex p-3"
+                    >
+                      Payments
+                    </a>
+                  </li>
+                </div>
+                <li class="post-item p-0 m-0">
+                  <a
+                    href="/admin/agencies/62f89954-d3ea-4d96-96d7-c98bbd2470ec/edit"
+                    title="Last viewed on 4/21/2020"
+                    class="flex p-3"
+                    ><i class="grey icon users"></i>
+                    <i class="yellow vertical ellipsis icon"></i>
+                    Ritter Insurance Marketing
+                  </a>
+                </li>
+                <!---->
+                <div class="left menu">
+                  <li class="post-item m-0 p-0">
+                    <a
+                      href="/admin/agencies/62f89954-d3ea-4d96-96d7-c98bbd2470ec/contracts?id=136337"
+                      class="flex p-3"
+                    >
+                      Contract for Aetna-Referral
+                    </a>
+                  </li>
+                  <li class="post-item m-0 p-0">
+                    <a
+                      href="/admin/agencies/62f89954-d3ea-4d96-96d7-c98bbd2470ec/edit?ui=profile"
+                      class="flex p-3"
+                    >
+                      Profile
+                    </a>
+                  </li>
+                  <li class="post-item m-0 p-0 border-b border--color-lighter">
+                    <a
+                      href="/admin/agencies/62f89954-d3ea-4d96-96d7-c98bbd2470ec/edit?ui=contact"
+                      class="flex p-3"
+                    >
+                      Contact
+                    </a>
+                  </li>
+                </div>
+                <!---->
+                <li class="post-item m-0 p-0">
+                  <a class="flex p-3">
+                    <i class="red icon close"></i> Clear Recent Items
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <div class="site-menu site-menu-wrapper">
+        <div class="block-container background-white flex--nowrap w-100">
+          <div class="block block-4 lg-tablet-up--fill ">
+            <div class="w-100 dropdown h-100 p-0">
+              <a href="#" class="dropdown__trigger p-3 w-100">
+                <span
+                  class="card__header-icon pill--circle-medium background-salmon text-white mr-2"
+                >
+                  <i class="pi-building text-white"></i>
+                </span>
+                <div class="text--size-lg">
+                  Humana
+                </div>
+                <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+              </a>
+              <div class="dropdown__content pin-left">
+                <a href="#" class="flex p-3">
+                  <div class="pill background-olive">
+                    Active
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <button
+            class="site-menu-mobile-action button--plain text-white hide-lg-tablet-up pos-abs pin-right mr-2 pin-center-top"
+          >
+            <span class="sr-only">Toggle Navigation</span>
+            <i
+              aria-hidden="true"
+              focusable="false"
+              class="pi-menu pi-xl text-navy"
+            ></i>
+          </button>
+          <nav
+            class="site-menu site-menu block block--shrink w-100 flex--justify-between"
+          >
+            <a href="#" class="site-menu__item">
+              Contracts
+            </a>
+            <a href="#" class="site-menu__item">
+              Memberships
+            </a>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main class="header-fixed background-light-mid flex--grow py-4 px-5">
+      <div class="block-container blocks px-3 mb-4">
+        <div class="block lg-tablet-up-8 laptop-up-9">
+          <!-- Part 2 stuff below -->
+          <!-- <div class="block-container flex--justify-end mb-4">
+            <fieldset class="form__field form block block--shrink">
+              <legend class="sr-only">Select All States or Deselect all</legend>
+              <div class="toggle background-white mt-0">
+                <div class="toggle__content">
+                  <input
+                    class="toggle__input"
+                    id="active"
+                    type="radio"
+                    checked=""
+                    name="active"
+                  />
+                  <label for="active"><i class="pi-check"></i> Active</label>
+                </div>
+                <div class="toggle__content">
+                  <input
+                    class="toggle__input"
+                    id="inactive"
+                    type="radio"
+                    name="active"
+                  />
+                  <label for="inactive"
+                    ><i class="pi-check"></i> Inactive</label
+                  >
+                </div>
+              </div>
+            </fieldset>
+          </div> -->
+          <!-- Part 2 stuff above -->
+          <div class="tabs">
+            <input type="radio" id="tab-input-a" name="tabs" checked />
+            <label for="tab-input-a" class="tab">
+              Active
+              <i
+                focusable="false"
+                aria-hidden="hidden"
+                class="pi-angle-down show-mobile-only pi-lg transition"
+              ></i>
+            </label>
+            <div class="tab-panel py-4 px-4">
+              <!-- Part 2 stuff below -->
+              <!-- <div class="flex flex--justify-end w-100 mb-4">
+                <button class="button">
+                  Add <i class="pi-plus" aria-hidden="true"></i>
+                </button>
+              </div> -->
+              <!-- Part 2 stuff above -->
+              <div class="accordion active">
+                <div
+                  class="accordion__header px-4 py-4 flex flex--justify-between"
+                >
+                  <span class="text--bold text-base">Humana</span>
+                  <button
+                    class="text-light text-negative--hover pointer button--plain"
+                    aria-label="Remove Carrier"
+                  >
+                    <i class="pi-trash" aria-hidden="hidden"></i>
+                  </button>
+                </div>
+                <div
+                  class="accordion__content px-4 py-4 fade-in-from-none-enter-active"
+                >
+                  <div class="block-container blocks px-3">
+                    <div class="block tablet-up-4 lg-tablet-up-3">
+                      <h2 class="text-base text--size-md mb-0 mb-3">Setup</h2>
+                      <form action="" class="form">
+                        <fieldset class="form__field mb-4">
+                          <legend class="sr-only">Choose</legend>
+                          <div class="flex flex--column">
+                            <input
+                              class="form__checkbox"
+                              id="per-state"
+                              type="checkbox"
+                            />
+                            <label for="per-state" class="mb-2">
+                              <div class="input-icons">
+                                <i class="pi-circle pi-lg"></i>
+                                <i class="pi-check pi-lg"></i>
+                              </div>
+                              Allow per-state agent writting number
+                            </label>
+                            <input
+                              class="form__checkbox"
+                              id="non-licensed"
+                              type="checkbox"
+                            />
+                            <label for="non-licensed" class="mb-2">
+                              <div class="input-icons">
+                                <i class="pi-circle pi-lg"></i>
+                                <i class="pi-check pi-lg"></i>
+                              </div>
+                              Allow non-licensed states for overrides
+                            </label>
+                            <input
+                              class="form__checkbox"
+                              id="staff"
+                              type="checkbox"
+                            />
+                            <label for="staff" class="mb-2">
+                              <div class="input-icons">
+                                <i class="pi-circle pi-lg"></i>
+                                <i class="pi-check pi-lg"></i>
+                              </div>
+                              Enabled for staff
+                            </label>
+                            <input
+                              class="form__checkbox"
+                              id="agents"
+                              type="checkbox"
+                            />
+                            <label for="agents">
+                              <div class="input-icons">
+                                <i class="pi-circle pi-lg"></i>
+                                <i class="pi-check pi-lg"></i>
+                              </div>
+                              Enabled for agents
+                            </label>
+                          </div>
+                        </fieldset>
+                        <label for="third-party" class="form__field mb-4"
+                          >Third Party Provider
+                          <div class="form__select-wrapper">
+                            <select name="County Select" id="third-party">
+                              <option value="" selected></option>
+                              <option value="County1">County 1</option>
+                              <option value="County2">County 2</option>
+                              <option value="County3">County 3</option>
+                              <option value="County4">County 4</option>
+                              <option value="County5">County 5</option>
+                              <option value="County6">County 6</option>
+                            </select>
+                          </div>
+                        </label>
+                        <!-- Part 2 stuff below -->
+                        <!-- <fieldset class="form__field">
+                          <legend class="sr-only">Are You</legend>
+                          <div class="toggle">
+                            <div class="toggle__content">
+                              <input
+                                class="toggle__input"
+                                id="digital"
+                                type="radio"
+                                checked=""
+                                name="height"
+                              />
+                              <label for="digital"
+                                ><i class="pi-check"></i> Digital</label
+                              >
+                            </div>
+                            <div class="toggle__content">
+                              <input
+                                class="toggle__input"
+                                id="paper"
+                                type="radio"
+                                name="height"
+                              />
+                              <label for="paper"
+                                ><i class="pi-check"></i> Paper</label
+                              >
+                            </div>
+                          </div>
+                        </fieldset> -->
+                        <!-- Part 2 stuff above -->
+                      </form>
+                    </div>
+                    <div
+                      class="block tablet-up-8 lg-tablet-up-9 pb-2 border-l border--color-light-mid"
+                    >
+                      <div class="mb-4">
+                        <div class="flex flex--justify-between flex--align-center mb-3">
+                          <h2 class="text-base text--size-md mb-0">Products and States</h2>
+                          <!-- Part 2 Stuff below -->
+                          <!-- <button class="button">
+                            Add <i class="pi-plus" aria-hidden="true"></i>
+                          </button> -->
+                          <!-- Part 2 Stuff above -->
+                        </div>
+                        <div class="block-container blocks mx-1 mt-1 mb-3">
+                          <button class="block block--shrink button border--color-navy text-navy background-beige background-white--hover" >
+                            Medicare Advantage
+                            <i
+                              class="pi-times-solid ml-2 mr-0 text--size-lg"
+                            ></i>
+                          </button>
+                          <button class="block block--shrink button text-navy border--color-navy background-beige--hover" >
+                            Prescription Drug Plan
+                            <i
+                              class="pi-times-solid ml-2 mr-0 text--size-lg"
+                            ></i>
+                          </button>
+                        </div>
+                        <div class="flex flex--wrap">
+                          <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                        </div>
+                        <!-- Part 2 stuff below -->
+                        <!-- <div class="block-container">
+                          <fieldset
+                            class="form__field form block block--shrink"
+                          >
+                            <legend class="sr-only">
+                              Select All States or Deselect all
+                            </legend>
+                            <div class="toggle">
+                              <div class="toggle__content">
+                                <input
+                                  class="toggle__input"
+                                  id="all-states"
+                                  type="radio"
+                                  checked=""
+                                  name="height"
+                                />
+                                <label for="all-states"
+                                  ><i class="pi-check"></i> All States</label
+                                >
+                              </div>
+                              <div class="toggle__content">
+                                <input
+                                  class="toggle__input"
+                                  id="deselect"
+                                  type="radio"
+                                  name="height"
+                                />
+                                <label for="deselect"
+                                  ><i class="pi-check"></i> Deselect</label
+                                >
+                              </div>
+                            </div>
+                          </fieldset>
+                        </div> -->
+                        <!-- Part 2 stuff above -->
+                      </div>
+                      <div class="mb-3">
+                        <div
+                          class="flex flex--justify-between flex--align-center mb-3"
+                        >
+                          <h2 class="text-base text--size-md mb-0">Certifications</h2>
+                          <!-- Part 2 Stuff below -->
+                          <!-- <button class="button">
+                            Add <i class="pi-plus" aria-hidden="true"></i>
+                          </button> -->
+                          <!-- Part 2 Stuff above -->
+                        </div>
+                        <div class="w-100 flex flex--wrap">
+                          <div
+                            class="pill background-navy text-white mr-1 mb-2"
+                          >
+                            HMO
+                            <i
+                              aria-hidden="true"
+                              class="ml-2 pi-times-solid"
+                            ></i>
+                          </div>
+                          <div
+                            class="pill background-navy text-white mr-1 mb-2"
+                          >
+                            PFFS
+                            <i
+                              aria-hidden="true"
+                              class="ml-2 pi-times-solid"
+                            ></i>
+                          </div>
+                          <div
+                            class="pill background-navy text-white mr-1 mb-2"
+                          >
+                            PPO
+                            <i
+                              aria-hidden="true"
+                              class="ml-2 pi-times-solid"
+                            ></i>
+                          </div>
+                          <div
+                            class="pill background-navy text-white mr-1 mb-2"
+                          >
+                            SNP
+                            <i
+                              aria-hidden="true"
+                              class="ml-2 pi-times-solid"
+                            ></i>
+                          </div>
+                          <div
+                            class="pill background-navy text-white mr-1 mb-2"
+                          >
+                            CarePlus
+                            <i
+                              aria-hidden="true"
+                              class="ml-2 pi-times-solid"
+                            ></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <input type="radio" id="tab-input-b" name="tabs" />
+            <label for="tab-input-b" class="tab">
+              Inactive
+              <i
+                focusable="false"
+                aria-hidden="hidden"
+                class="pi-angle-down show-mobile-only pi-lg transition"
+              ></i>
+            </label>
+            <div class="tab-panel">
+              <img src="https://placeimg.com/640/480/animals?t=1565635267224" />
+            </div>
+            <input type="radio" id="tab-input-c" name="tabs" />
+            <label for="tab-input-c" class="tab">
+              Internal
+              <i
+                focusable="false"
+                aria-hidden="hidden"
+                class="pi-angle-down show-mobile-only pi-lg transition"
+              ></i>
+            </label>
+            <div class="tab-panel">
+              <img src="https://placeimg.com/640/480/animals?t=1565635322782" />
+            </div>
+          </div>
+        </div>
+        <div class="block lg-tablet-up-4 laptop-up-3">
+          <div class="background-note pt-3 pb-3 px-4">
+            <div class="h-100">
+              <div
+                class="flex flex--align-center flex--justify-between pb-3 flex--wrap"
+              >
+                <div class="flex flex--align-center">
+                  <button
+                    title="Add Note"
+                    aria-label="Add Note"
+                    class="button button--secondary"
+                  >
+                    <i aria-hidden="true" class="pi-plus"></i>
+                  </button>
+                  <h2 class="ml-2 mb-0 text--size-lg text-navy">Notes</h2>
+                </div>
+                <button class="button my-2">
+                  View All 27 <i aria-hidden="true" class="pi-arrow-right"></i>
+                </button>
+              </div>
+              <div class="side-content">
+                <ol class="h-100 overflow-y overflow-x--hidden list">
+                  <li class="list__item border-t border--color-light-mid">
+                    <div class="text-base py-3 px-1">                      
+                      <div
+                        title="Last edited by Ted Krueger 01/27/2020"
+                        class="flex flex--align-start mb-2"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="pi-speech-bubble text-light"
+                        ></i>
+                        <strong class="text-light ml-2"
+                          >Ted Krueger 01/27/2020</strong
+                        >
+                      </div>
+                      <p class="mb-0">
+                        This is a test note. I'm creating one of these for the
+                        same reason that I created a test Task.
+                      </p>
+                    </div>
+                  </li>
+                  <li class="list__item border-t border--color-light-mid">
+                    <div class="text-base py-3 px-1">                      
+                      <div
+                        title="Last edited by Ted Krueger 01/27/2020"
+                        class="flex flex--align-start mb-2"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="pi-speech-bubble text-light"
+                        ></i>
+                        <strong class="text-light ml-2"
+                          >Ted Krueger 01/27/2020</strong
+                        >
+                      </div>
+                      <p class="mb-0">
+                        This is a test note. I'm creating one of these for the
+                        same reason that I created a test Task.
+                      </p>
+                    </div>
+                  </li>
+                  <li class="list__item border-t border--color-light-mid">
+                    <div class="text-base py-3 px-1">                      
+                      <div
+                        title="Last edited by Ted Krueger 01/27/2020"
+                        class="flex flex--align-start mb-2"
+                      >
+                        <i
+                          aria-hidden="true"
+                          class="pi-speech-bubble text-light"
+                        ></i>
+                        <strong class="text-light ml-2"
+                          >Ted Krueger 01/27/2020</strong
+                        >
+                      </div>
+                      <p class="mb-0">
+                        This is a test note. I'm creating one of these for the
+                        same reason that I created a test Task.
+                      </p>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="/src/assets/js/platform-ui.min.js"></script>
+  </body>
+</html>
