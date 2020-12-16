@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Campaigns</title>
+
+  <link rel="stylesheet" href="/src/assets/stylesheets/platform-ui.min.css">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="../../src/assets/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../src/assets/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="../../src/assets/images/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../src/assets/images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../src/assets/images/favicon/site.webmanifest">
+  <link rel="mask-icon" href="../../src/assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <style>
+    /*
+           *  This css will need to live in the platform along with custom
+           *  mobile menu css.
+           *  See src/Platform/Content/css/sass/platform-ui-plugins.scss
+           */
+    .site-header--fixed {
+      height: calc(var(--menu-height) * 2) !important;
+    }
+  
+    .site-header--fixed+.header-fixed {
+      margin-top: calc(var(--menu-height) * 2) !important;
+    }
+  
+    .site-header--fixed .site-menu-wrapper:nth-child(2) .site-menu.active,
+    .site-menu-wrapper.site-header--fixed:nth-child(2) .site-menu.active {
+      max-height: calc(100vh - (var(--menu-height) * 2));
+    }
+
+    .block.pos-fix.hide-laptop-down {
+      right: 2rem;
+    }
+  </style>
+</head>
+
+<body class="flex flex--column">
+  <header class="site-header site-header--fixed">
+    <div class="site-menu primary inverted site-menu-wrapper">
+      <div class="block-container background-navy w-100">
+        <div class="block block-8 lg-tablet-up-4 lg-tablet-up--fill flex">
+          <a href="/demo-pages/crm-example.html" class="site-menu__item">
+            <span class="card__header-icon pill--circle-medium background-purple text-white mr-2">
+              D
+            </span>
+            <span class="text--size-lg hide-tablet-down">
+              Hello Dev
+            </span>
+          </a>
+          <div class="site-menu__item search">
+            <form role="search" aria-label="CRM" _lpchecked="1" class="w-100">
+              <div class="flex flex--align-center">
+                <label for="search-input" class="sr-only">Search</label>
+                <input type="text" id="search-input" placeholder="Type to search..."
+                  class="placeholder--light text-white">
+                <i aria-hidden="true" class="pi-search"></i>
+              </div>
+            </form>
+          </div>
+        </div>
+        <button
+          class="site-menu-mobile-action button--plain text-white hide-lg-tablet-up pos-abs pin-right mr-2 pin-center-top">
+          <span class="sr-only">Toggle Navigation</span>
+          <i aria-hidden="true" focusable="false" class="pi-menu pi-xl"></i>
+        </button>
+        <nav class="block block--shrink site-menu primary inverted">
+          <div class="site-menu__item dropdown p-0">
+            <a href="#" class="dropdown__trigger p-3">
+              Organizations <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+            </a>
+            <ul class="dropdown__content pin-right post-list">
+              <li class="post-item m-0 p-0">
+                <a href="/admin/agencies" class="flex p-3"><i class="users icon"></i>
+                  Agencies
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/businesses" class="flex p-3"><i class="business-icon icon"></i>
+                  Businesses
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/carriers" class="flex p-3"><i class="carrier-icon icon"></i>
+                  Carriers
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="site-menu__item dropdown p-0">
+            <a href="#" class="dropdown__trigger p-3">
+              People <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+            </a>
+            <ul class="dropdown__content pin-right post-list">
+              <li class="post-item m-0 p-0">
+                <a href="/admin/agents" class="flex p-3"><i class="agent-icon icon"></i>
+                  Agents
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/associates" class="flex p-3"><i class="associate-icon icon"></i>
+                  Associates
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/users" class="flex p-3"><i class="user-icon icon"></i>
+                  Users
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/consumers" class="flex p-3"><i class="user-icon icon"></i>
+                  Consumers
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/agents/map?term=Harrisburg%2C%20PA%2017110" class="flex p-3">
+                  <i class="map icon"></i>
+                  Map Agents
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="site-menu__item dropdown p-0">
+            <a href="#" class="dropdown__trigger p-3">
+              Flow <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+            </a>
+            <ul class="dropdown__content pin-right post-list">
+              <li class="post-item m-0 p-0">
+                <a href="/admin/flow/agents" class="flex p-3"><i class="id badge icon"></i>
+                  Agents
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/flow/agencies" class="flex p-3"><i class="users icon"></i>
+                  Agencies
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/flow/contracts" class="flex p-3"><i class="open folder icon"></i>
+                  Contracts
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/flow/campaigns" class="flex p-3" style=""><i class="address-card icon"></i>
+                  Campaigns
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/flow/submissions" class="flex p-3" style=""><i class="file icon"></i>
+                  Submissions
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/flow/enrollments" class="flex p-3" style=""><i class="certificate icon"></i>
+                  Enrollments
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/flow/payment-methods" class="flex p-3" style=""><i class="money bill icon"></i>
+                  Payment Methods
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/flow/crm" class="flex p-3" style=""><i class="briefcase icon"></i>
+                  CRM
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="site-menu__item dropdown p-0">
+            <a href="#" class="dropdown__trigger p-3">
+              <span class="sr-only">RIMDev</span>
+              <span class="card__header-icon pill--circle-medium background-white text-navy">
+                <i class="pi-rimdev" aria-hidden="true"></i>
+              </span>
+              <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+            </a>
+            <ul class="dropdown__content pin-right post-list">
+              <li class="post-item m-0 p-0">
+                <a href="/admin/rimdev" class="flex p-3">
+                  Permissions
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/admin/form-builder" class="flex p-3">
+                  Form Builder
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/_features" class="flex p-3">
+                  Feature Flags
+                </a>
+              </li>
+              <li class="post-item m-0 p-0">
+                <a href="/_self" class="flex p-3">
+                  Claims Diagnostics
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="site-menu__item dropdown p-0">
+            <a href="#" class="dropdown__trigger p-3">
+              Recent <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+            </a>
+            <ul class="dropdown__content pin-right post-list dropdown">
+              <li class="post-item p-0 m-0">
+                <a href="/admin/agents/c057f20a-fbc8-403c-9777-9e0701310cf8/edit" title="Last viewed on 5/6/2020"
+                  class="flex p-3"><i class="grey icon id badge"></i> <i class="yellow vertical ellipsis icon"></i>
+                  Gregory Gudis
+                </a>
+              </li>
+              <!---->
+              <div class="left menu">
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/agents/c057f20a-fbc8-403c-9777-9e0701310cf8/contracts?id=263135" class="flex p-3">
+                    Contract for Accendo Insurance Company
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/agents/c057f20a-fbc8-403c-9777-9e0701310cf8/edit?ui=medicareful" class="flex p-3">
+                    Medicareful
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0 border-b border--color-lighter">
+                  <a href="/admin/agents/c057f20a-fbc8-403c-9777-9e0701310cf8/edit?ui=payments" class="flex p-3">
+                    Payments
+                  </a>
+                </li>
+              </div>
+              <li class="post-item p-0 m-0">
+                <a href="/admin/agencies/62f89954-d3ea-4d96-96d7-c98bbd2470ec/edit" title="Last viewed on 4/21/2020"
+                  class="flex p-3"><i class="grey icon users"></i> <i class="yellow vertical ellipsis icon"></i>
+                  Ritter Insurance Marketing
+                </a>
+              </li>
+              <!---->
+              <div class="left menu">
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/agencies/62f89954-d3ea-4d96-96d7-c98bbd2470ec/contracts?id=136337" class="flex p-3">
+                    Contract for Aetna-Referral
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0">
+                  <a href="/admin/agencies/62f89954-d3ea-4d96-96d7-c98bbd2470ec/edit?ui=profile" class="flex p-3">
+                    Profile
+                  </a>
+                </li>
+                <li class="post-item m-0 p-0 border-b border--color-lighter">
+                  <a href="/admin/agencies/62f89954-d3ea-4d96-96d7-c98bbd2470ec/edit?ui=contact" class="flex p-3">
+                    Contact
+                  </a>
+                </li>
+              </div>
+              <!---->
+              <li class="post-item m-0 p-0">
+                <a class="flex p-3">
+                  <i class="red icon close"></i> Clear Recent Items
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="site-menu site-menu-wrapper">
+      <div class="block-container background-white flex--nowrap w-100">
+        <div class="block block-4 lg-tablet-up--fill ">
+          <div class="w-100 dropdown h-100 p-0">
+            <a href="#" class="dropdown__trigger p-3 w-100">
+              <span class="card__header-icon pill--circle-medium background-salmon text-white mr-2">
+                <i class="pi-building text-white"></i>
+              </span>
+              <div class="text--size-lg">
+                Gregory Gudis
+              </div>
+              <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+            </a>
+            <div class="dropdown__content pin-left">
+              <a href="#" class="flex p-3">
+                <div class="pill background-olive">
+                  Active
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <button
+          class="site-menu-mobile-action button--plain text-white hide-lg-tablet-up pos-abs pin-right mr-2 pin-center-top">
+          <span class="sr-only">Toggle Navigation</span>
+          <i aria-hidden="true" focusable="false" class="pi-menu pi-xl text-navy"></i>
+        </button>
+        <nav class="site-menu site-menu block block--shrink w-100 flex--justify-between">
+          <a href="#" class="site-menu__item">
+            Contracts
+          </a>
+          <a href="#" class="site-menu__item">
+            Submissions
+          </a>
+          <a href="#" class="site-menu__item">
+            Hierarchy
+          </a>
+          <a href="#" class="site-menu__item">
+            Memberships
+          </a>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <main class="header-fixed background-light-mid flex--grow py-4 px-5">
+    <div class="block-container blocks px-3 mb-4">
+      <div class="block laptop-up-9">
+        <div class="tabs">
+          <input type="radio" id="tab-input-a" name="tabs" checked>
+          <label for="tab-input-a" class="tab">
+            <i class="pi-handshake pr-1" focusable="false" aria-hidden="hidden"></i>Marketing Leads
+          </label>
+          <div class="tab-panel p-4">
+            <div class="block-container mb-3">
+              <div class="block block-6 flex flex--align-center">
+                Showing XX of XXX
+                <button class="button button--secondary ml-2"><i class='pi-sync'></i></button>
+              </div>
+              <div class="block block-6 flex flex--justify-end">
+                <button class="button button--secondary"><i class='pi-plus'></i></button>
+              </div>
+            </div>
+            <div class="accordion">
+              <a href="#" class="accordion__header px-3 py-3 flex--justify-between block-container">
+                <div class="block block-2 flex flex--column">
+                  <div>
+                    John Doe
+                    <div class="pill pill--circle-empty positive"></div>
+                  </div>
+                  <span>johndoe@gmail.com</span>
+                  <span class="text-black">2087121212</span>
+                </div>
+                <div class="block block-8">
+                  <div class="block-container tablet-up-5">
+                    <div class="block flex flex--column">
+                      <strong class="text-black">Campaign</strong>
+                      <span class="text-black">Undersea Insurance</span>
+                    </div>
+                    <div class="block flex flex--column">
+                      <strong class="text-black">Sales Rep</strong>
+                      <span class="text-black">Rick James</span>
+                    </div>
+                    <div class="block flex flex--column">
+                      <strong class="text-black">Campaign Status</strong>
+                      <span class="text-black">Follow Up 3</span>
+                    </div>
+                    <div class="block flex flex--column">
+                      <strong class="text-black">Audience</strong>
+                      <i class='pi-ban'></i>
+                    </div>
+                    <div class="block flex flex--column">
+                      <strong class="text-black">Next Touch</strong>
+                      <i class='pi-ban'></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="block block-1 flex--align-self-center">
+                  <div class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer"
+                    aria-label="Georgia">PA</div>
+                </div>
+                <div class="block block-1 flex--align-self-center">
+                  <button class="icon-menu__action button--plain text-navy--hover flex--align-center">
+                    <i class='pi-trash'></i>
+                  </button>
+                </div>
+              </a>
+              <div class="accordion__content px-3 py-3">
+                <form action="" class="form block-container tablet-up-3 laptop-up-4 blocks mb-3 p-2">
+                  <div class="block">
+                    <label for="first-name" class="form__field">First Name
+                      <input id="first-name" type="text" placeholder="First Name">
+                    </label>
+                  </div>
+                  <div class="block">
+                    <label for="last-name" class="form__field">Last Name
+                      <input id="last-name" type="text" placeholder="Last Name">
+                    </label>
+                  </div>
+                  <div class="block">
+                    <label for="audience" class="form__field">Audience
+                      <div class="form__select-wrapper">
+                        <select name="audience select" id="audience">
+                          <option value="audience1">Choose</option>
+                          <option value="audience2">Consumer</option>
+                        </select>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="block">
+                    <label for="next-touch" class="form__field">Next touch
+                      <input id="next-touch" type="date">
+                    </label>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="accordion">
+              <a href="#" class="accordion__header px-3 py-3 flex--justify-between block-container">
+                <div class="block block-2 flex flex--column">
+                  <div>
+                    <span class="text-black">Bob Sponge</span>
+                    <div class="pill pill--circle-empty negative"></div>
+                  </div>
+                  <span>bobsponge@gmail.com</span>
+                  <span class="text-black">2087121212</span>
+                </div>
+                <div class="block block-8">
+                  <div class="block-container tablet-up-5">
+                    <div class="block flex flex--column">
+                      <strong class="text-black">Campaign</strong>
+                      <span class="text-black">Undersea Insurance</span>
+                    </div>
+                    <div class="block flex flex--column">
+                      <strong class="text-black">Sales Rep</strong>
+                      <span class="text-black">Pat Rick</span>
+                    </div>
+                    <div class="block flex flex--column">
+                      <strong class="text-black">Campaign Status</strong>
+                      <span class="text-black">Initial</span>
+                    </div>
+                    <div class="block flex flex--column">
+                      <strong class="text-black">Audience</strong>
+                      <i class='pi-ban'></i>
+                    </div>
+                    <div class="block flex flex--column">
+                      <strong class="text-black">Next Touch</strong>
+                      <i class='pi-ban'></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="block block-1 flex--align-self-center">
+                  <div class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer"
+                    aria-label="Georgia">FL</div>
+                </div>
+                <div class="block block-1 flex--align-self-center">
+                  <button class="icon-menu__action button--plain text-navy--hover flex--align-center">
+                    <i class='pi-trash'></i>
+                  </button>
+                </div>
+              </a>
+              <div class="accordion__content px-3 py-3">
+                <p>This is the accordion content.</p>
+              </div>
+            </div>
+          </div>
+          <input type="radio" id="tab-input-b" name="tabs">
+          <label for="tab-input-b" class="tab">
+            <i class="pi-bullhorn pr-1" focusable="false" aria-hidden="hidden"></i>Campaigns
+          </label>
+        </div>
+      </div>
+      <div class="block mt-5 lg-tablet-up-4 laptop-up-3 pos-fix hide-laptop-down">
+        <div class="card text-base background-note p-4 h-auto">
+      
+          <div class="card__header">
+            <div class="card__group">
+              <button title="Add Note" aria-label="Add Note" class="button button--secondary">
+                <i aria-hidden="true" class="pi-plus"></i>
+              </button>
+              <strong class="text-navy text--size-lg">Notes</strong>
+            </div>
+            <button class="button">
+              View All 27
+              <i aria-hidden="true" class="pi-arrow-right"></i>
+            </button>
+          </div>
+          <ol class="list list--bordered">
+            <li class="list__item py-3">
+              <strong class="" title="Last edited by Ted Krueger 01/27/2020">
+                <i aria-hidden="true" class="pi-speech-bubble text-light"></i>
+                Austin Asbury 12/16/2020
+              </strong>
+              <p class="pt-2">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tristique viverra posuere. Pellentesque vitae
+                turpis a lectus rutrum finibus. Fusce vitae sapien et purus fermentum feugiat. Donec finibus ante vel risus
+                euismod lobortis. Morbi vehicula posuere dolor, et eleifend metus cursus eget. Pellentesque habitant morbi
+                tristique senectus et netus et malesuada fames ac turpis egestas. Donec dapibus porttitor consectetur. Etiam
+                fringilla arcu in urna placerat, vel mollis turpis malesuada. Aliquam pharetra, tellus a varius pharetra, urna
+                ligula tempus eros, ac porttitor arcu magna sed ex.
+              </p>
+              <div class="pill text-salmon">
+                Something
+              </div>
+              <div class="pill text-salmon">
+                Something
+              </div>
+              <div class="flex flex--column flex--align-center">
+                <div class="icon-menu py-2 flex--justify-center">
+                  <div class="icon-menu__item">
+                    <button class="icon-menu__action button--plain text-navy--hover pointer">
+                      <i class="pi-tag" aria-hidden="hidden"></i>
+                    </button>
+                  </div>
+                  <div class="icon-menu__item">
+                    <button class="icon-menu__action button--plain text-navy--hover pointer">
+                      <i class="pi-edit" aria-hidden="hidden"></i>
+                    </button>
+                  </div>
+                  <div class="icon-menu__item">
+                    <button class="icon-menu__action button--plain text-navy--hover pointer">
+                      <i class="pi-lock" aria-hidden="hidden"></i>
+                    </button>
+                  </div>
+                  <div class="icon-menu__item">
+                    <button class="icon-menu__action button--plain text-negative--hover pointer">
+                      <i class="pi-trash" aria-hidden="hidden"></i>
+                    </button>
+                  </div>
+                </div>
+                <i class="pi-angle-down-double text--size-lg rotate-180"></i>
+              </div>
+            </li>
+            <li class="list__item py-3">
+              <strong class="" title="Last edited by Ted Krueger 01/27/2020">
+                <i aria-hidden="true" class="pi-speech-bubble text-light"></i>
+                Austin Asbury 12/16/2020
+              </strong>
+              <p class="pt-2 truncate-with-ellipsis">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tristique viverra posuere. Pellentesque vitae
+                turpis a lectus rutrum finibus. Fusce vitae sapien et purus fermentum feugiat. Donec finibus ante vel risus
+                euismod lobortis. Morbi vehicula posuere dolor, et eleifend metus cursus eget. Pellentesque habitant morbi
+                tristique senectus et netus et malesuada fames ac turpis egestas. Donec dapibus porttitor consectetur. Etiam
+                fringilla arcu in urna placerat, vel mollis turpis malesuada. Aliquam pharetra, tellus a varius pharetra, urna
+                ligula tempus eros, ac porttitor arcu magna sed ex. Donec rutrum ante quis lectus elementum, sed venenatis
+                elit interdum. Integer rhoncus nibh vel libero porta scelerisque. Etiam gravida sit amet turpis in
+                pellentesque.
+              </p>
+              <div class="pill text-salmon">
+                Something
+              </div>
+              <div class="flex flex--column flex--align-center">
+                <div class="icon-menu py-2 flex--justify-center hidden">
+                  <div class="icon-menu__item">
+                    <button class="icon-menu__action button--plain text-navy--hover pointer">
+                      <i class="pi-tag" aria-hidden="hidden"></i>
+                    </button>
+                  </div>
+                  <div class="icon-menu__item">
+                    <button class="icon-menu__action button--plain text-navy--hover pointer">
+                      <i class="pi-edit" aria-hidden="hidden"></i>
+                    </button>
+                  </div>
+                  <div class="icon-menu__item">
+                    <button class="icon-menu__action button--plain text-navy--hover pointer">
+                      <i class="pi-lock" aria-hidden="hidden"></i>
+                    </button>
+                  </div>
+                  <div class="icon-menu__item">
+                    <button class="icon-menu__action button--plain text-negative--hover pointer">
+                      <i class="pi-trash" aria-hidden="hidden"></i>
+                    </button>
+                  </div>
+                </div>
+                <i class="pi-angle-down-double text--size-lg"></i>
+              </div>
+            </li>
+          </ol>
+        </div>
+    </div>
+  </main>
+
+  <script src="/src/assets/js/platform-ui.min.js"></script>
+</body>
+</html>
