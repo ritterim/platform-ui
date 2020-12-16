@@ -61,19 +61,6 @@
 //
 // Styleguide Components.Button.SecondaryText
 
-// Post
-//
-// Used exclsively in Post, or blog, content imported into the platform. e.g., CRM dashboard.
-//
-// - .button .button--post
-// - .button .button--post .button--lg
-//
-// Markup:
-// <button class="button button--post mb-2">Post Button</button>
-// <button class="button button--post button--lg">Large Post Button</button>
-//
-// Styleguide Components.Button.Post
-
 // Group
 //
 // Evenly space any group of buttons.
@@ -208,6 +195,20 @@
 // </div>
 //
 // Styleguide Components.Button.Colors
+
+// Post
+// 
+// <i class="pi-warning text-orange"></i> **NOTE**: This button style is deprecated as of <strong class="text-navy">v1.2.2</strong>. To see how to recreate this look using utility classes, see the example below. 
+//
+// Used in CTA scenarios 
+// 
+// Markup:
+// <button class="button button--secondary has-text">Post Button</button>
+// <button class="button button--secondary has-text button--lg px-3 py-2 h-auto">Large Post Button</button>
+//
+// Weight: 2
+// 
+// Styleguide Components.Button.Post
 
 
 .button {
@@ -414,25 +415,6 @@
       }
     }
   }  
-
-  &--post {
-    background-color: config.$button-secondary-background;
-    border: 1px solid config.$button-secondary-background;
-    color: config.$button-secondary-color;
-    transition: config.$transitions;
-
-    &.active,
-    &:hover {
-      background-color: config.$button-primary-hover;
-    }
-
-    &.loading {
-
-      &:before {
-        background-color: config.$button-primary-hover;
-      }
-    }
-  }
 
   &--lg {
     font-size: map.get(variables.$font-percentage, 'lg');
