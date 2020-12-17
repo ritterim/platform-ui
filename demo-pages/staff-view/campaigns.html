@@ -376,7 +376,7 @@
                 </div>
               </a>
               <div class="accordion__content px-3 py-3">
-                <form action="" class="form block-container tablet-up-3 laptop-up-5 blocks mb-3 p-2">
+                <form action="" class="form block-container blocks tablet-up-3 laptop-up-5 mb-3 p-2 border-b border--width-5">
                   <div class="block">
                     <label for="sales-rep" class="form__field has-icon--right">Sales Rep
                       <input id="sales-rep" type="text" placeholder="Type to search">
@@ -387,14 +387,14 @@
                     <label for="campaign" class="form__field">Campaign Status
                       <div class="form__select-wrapper">
                         <select name="campaign select" id="campaign">
-                          <option value="campaign1">Initial</option>
-                          <option value="campaign2">Choose</option>
-                          <option value="campaign3">Bad</option>
-                          <option value="campaign4">Cold / Dead Lead</option>
-                          <option value="campaign5">Do Not Contact</option>
-                          <option value="campaign6">Follow Up 1</option>
-                          <option value="campaign7">Follow Up 2</option>
-                          <option value="campaign8">Follow Up 3</option>
+                          <option value="campaign1">Choose</option>
+                          <option value="campaign2">Bad</option>
+                          <option value="campaign3">Cold / Dead Lead</option>
+                          <option value="campaign4">Do Not Contact</option>
+                          <option value="campaign5">Follow Up 1</option>
+                          <option value="campaign6">Follow Up 2</option>
+                          <option value="campaign7">Follow Up 3</option>
+                          <option value="campaign8" selected>Initial</option>
                           <option value="campaign9">No Follow Up Needed</option>
                           <option value="campaign10">Success</option>
                         </select>
@@ -418,38 +418,38 @@
                   </div>
                   <div class="block flex flex--align-center">
                     <div class="toggle mr-2">
-                      <input id="Tall-2" type="radio" checked name="height">
-                      <label for="Tall-2"> 
+                      <input id="off" type="radio" checked name="register">
+                      <label for="off"> 
                       </label>
-                      <input id="Short-2" type="radio" name="height">
-                      <label for="Short-2">
+                      <input id="on" type="radio" name="register">
+                      <label for="on">
                       </label>
                     </div>
                     Register
                     <button class="button button--secondary ml-3"><i class='pi-phone'></i></button>
                   </div>
                 </form>
-                <div class="block-container">
-                  <div class="block-3 flex flex--column">
+                <div class="block-container blocks px-2 border-b border--width-5">
+                  <div class="block-3 flex flex--column py-4 pl-2">
                     <strong class="text-black">Campaign</strong>
                     <span class="text-med-blue">John Doe Demo</span>
                   </div>
-                  <div class="block-3 flex flex--column">
+                  <div class="block-3 flex flex--column py-4">
                     <strong class="text-black">Campaign ID</strong>
                     <span class="text-med-blue">3399393</span>
                   </div>
-                  <div class="block-3 flex flex--column">
+                  <div class="block-3 flex flex--column py-4">
                     <strong class="text-black">Created</strong>
                     <span class="text-med-blue">12/07/2020</span>
                   </div>
                 </div>
-                <div class="block-container">
+                <div class="block-container blocks px-2 my-5 border-b border--width-5">
                   <div class="block">
                     <strong>Campaign Attachments (0)</strong>
                   </div>
                 </div>
                 <form action="" class="form">
-                  <div class="block-container tablet-up-3 laptop-up-4 blocks mb-3 p-2">
+                  <div class="block-container tablet-up-3 laptop-up-4 blocks my-3 p-2">
                     <div class="block">
                       <label for="first-name" class="form__field has-icon--right">First Name
                         <input id="first-name" type="text" value="John">
@@ -513,13 +513,158 @@
                       </label>
                     </div>
                     <div class="block">
-                      <label for="address-street-1" class="form__field">Address Street 1
-                        <input id="address-street-1" type="text">
+                      <label for="state" class="form__field">State
+                        <div class="form__select-wrapper">
+                          <select name="state select" id="state">
+                            <option value="state1">Alabama</option>
+                            <option value="state2">Alaska</option>
+                            <option value="state3">Arizona</option>
+                            <option value="state4">Arkansas</option>
+                            <option value="state5">California</option>
+                            <option value="state6">Colorado</option>
+                            <option value="state7">Connecticut</option>
+                            <option value="state8">Delaware</option>
+                            <option value="state9">Florida</option>
+                            <option value="state10">Georgia</option>
+                            <option value="state11">Hawaii</option>
+                            <option value="state12">Idaho</option>
+                            <option value="state13">Illinois</option>
+                            <option value="state14">Indiana</option>
+                            <option value="state15">Iowa</option>
+                            <option value="state16">Kansas</option>
+                            <option value="state17">Kentucky</option>
+                            <option value="state18">Louisiana</option>
+                            <option value="state19">Maine</option>
+                            <option value="state20">Maryland</option>
+                            <option value="state21">Massachusetts</option>
+                            <option value="state22">Michigan</option>
+                            <option value="state23">Minnesota</option>
+                            <option value="state24">Mississippi</option>
+                            <option value="state25">Missouri</option>
+                            <option value="state26">Montana</option>
+                            <option value="state27">Nebraska</option>
+                            <option value="state28">Nevada</option>
+                            <option value="state29">New Hampshire</option>
+                            <option value="state30">New Jersey</option>
+                            <option value="state31">New Mexico</option>
+                            <option value="state32">New York</option>
+                            <option value="state33">North Carolina</option>
+                            <option value="state34">North Dakota</option>
+                            <option value="state35">Ohio</option>
+                            <option value="state36">Oklahoma</option>
+                            <option value="state37">Oregon</option>
+                            <option value="state38">Pennsylvania</option>
+                            <option value="state39">Rhode Island</option>
+                            <option value="state40">South Carolina</option>
+                            <option value="state41">South Dakota</option>
+                            <option value="state42">Tennessee</option>
+                            <option value="state43">Texas</option>
+                            <option value="state44">Utah</option>
+                            <option value="state45">Vermont</option>
+                            <option value="state46">Virginia</option>
+                            <option value="state47">Washington</option>
+                            <option value="state48">West Virginia</option>
+                            <option value="state49">Wisconsin</option>
+                            <option value="state50">Wyoming</option>
+                          </select>
+                        </div>
                       </label>
                     </div>
                     <div class="block">
                       <label for="zip" class="form__field">Zip
                         <input id="zip" type="text">
+                      </label>
+                    </div>
+                  </div>
+                  <div class="block-container blocks tablet-up-3 mb-3 p-2">
+                    <div class="block">
+                      <label for="county" class="form__field">County
+                        <div class="form__select-wrapper">
+                          <select name="county select" id="county">
+                          </select>
+                        </div>
+                      </label>
+                    </div>
+                    <div class="block">
+                      <label for="npn" class="form__field">NPN
+                        <input id="npn" type="text">
+                      </label>
+                    </div>
+                  </div>
+                  <strong>Communications</strong>
+                  <div class="block-container blocks tablet-up-4 mb-3 p-2">
+                    <div class="block">
+                      <label for="source" class="form__field">Source
+                        <div class="form__select-wrapper">
+                          <select name="source select" id="source">
+                            <option value="source1">outbound</option>
+                            <option value="source2">inbound</option>
+                            <option value="source3">SilverpopMailing</option>
+                            <option value="source4">ims</option>
+                            <option value="source5">uir</option>
+                            <option value="source6">inn</option>
+                            <option value="source7">accupoint</option>
+                            <option value="source8">insurance-forums.com</option>
+                            <option value="source9">ritterim.com</option>
+                            <option value="source10">agentsurvivalguide.com</option>
+                            <option value="source11">facebook.com</option>
+                            <option value="source12">instagram.com</option>
+                            <option value="source13">twitter.com</option>
+                            <option value="source14">linkedin.com</option>
+                            <option value="source15">wistia.com</option>
+                            <option value="source16">youtube.com</option>
+                            <option value="source17">google.com</option>
+                            <option value="source18">podbean.com</option>
+                            <option value="source19">webex</option>
+                            <option value="source20">Agent Dashboard</option>
+                            <option value="source21">nahu</option>
+                            <option value="source22">carrier</option>
+                            <option value="source23">cpbj</option>
+                          </select>
+                        </div>
+                      </label>
+                    </div>
+                    <div class="block">
+                      <label for="type" class="form__field">Type
+                        <div class="form__select-wrapper">
+                          <select name="type select" id="type">
+                            <option value="type1">call</option>
+                            <option value="type2">email</option>
+                            <option value="type3">ad_inline</option>
+                            <option value="type4">email_vendor</option>
+                            <option value="type5">homepage_banner</option>
+                            <option value="type6">mailer</option>
+                            <option value="type7">promo_box</option>
+                            <option value="type8">post</option>
+                            <option value="type9">post_paid</option>
+                            <option value="type10">video</option>
+                            <option value="type11">post_video</option>
+                            <option value="type12">post_video_paid</option>
+                            <option value="type13">ad_search</option>
+                            <option value="type14">ad_display</option>
+                            <option value="type15">ad_remarketing</option>
+                            <option value="type16">ad_banner</option>
+                            <option value="type17">ad_remarketing</option>
+                            <option value="type18">ad_banner</option>
+                            <option value="type19">post_sticky</option>
+                            <option value="type20">referral</option>
+                            <option value="type21">email_signature</option>
+                            <option value="type22">email_confirmation</option>
+                            <option value="type23">modal</option>
+                            <option value="type24">episode</option>
+                            <option value="type25">ad</option>
+                            <option value="type26">transfer</option>
+                            <option value="type27">webinar</option>
+                            <option value="type28">organic</option>
+                            <option value="type29">ad_newsletter</option>
+                            <option value="type30">email_newsletter</option>
+                          </select>
+                        </div>
+                      </label>
+                    </div>
+                    <div class="block">
+                      <label for="content" class="form__field">Content
+                        <input id="content" type="text">
                       </label>
                     </div>
                   </div>
@@ -531,6 +676,537 @@
           <label for="tab-input-b" class="tab">
             <i class="pi-bullhorn pr-1" focusable="false" aria-hidden="hidden"></i>Campaigns
           </label>
+          <div class="tab-panel p-4">
+            <div class="block-container mb-3">
+              <div class="block block-6 flex flex--align-center">
+                Showing XX of XX
+                <button class="button button--secondary ml-2 disabled"><i class='pi-sync'></i></button>
+              </div>
+              <div class="block block-6 flex flex--justify-end">
+                <button class="button button--secondary"><i class='pi-plus'></i></button>
+              </div>
+            </div>
+            <div class="accordion">
+              <a href="#" class="accordion__header px-3 py-3 block-container">
+                <div class="block block-11">
+                  <div class="block-container tablet-up-5">
+                    <div class="block flex flex--column">
+                      <strong class="text-black">Campaign</strong>
+                      <span class="text-black">John Doe Demo</span>
+                    </div>
+                    <div class="block flex flex--column">
+                      <strong class="text-black">Campaign ID</strong>
+                      <span class="text-black">Agency_2020</span>
+                      <span class="text-black">UID: 205</span>
+                    </div>
+                    <div class="block flex--align-self-center">
+                      <div class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer"
+                        aria-label="All States">All States</div>
+                    </div>
+                    <div class="block flex flex--column">
+                      <strong class="text-black">Start Date</strong>
+                      <span class="text-black">12/17/2020</span>
+                    </div>
+                    <div class="block flex flex--column">
+                      <strong class="text-black">End Date</strong>
+                      <i class='pi-ban'></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="block block-1 flex--align-self-center">
+                  <button class="icon-menu__action button--plain text-navy--hover flex--align-center">
+                    <i class='pi-trash'></i>
+                  </button>
+                </div>
+              </a>
+              <div class="accordion__content px-3 py-3">
+                <div class="block-container blocks px-2 border-b border--width-5">
+                  <div class="block-3 flex flex--column py-3 pl-2">
+                    <strong class="text-black">Comm. Source</strong>
+                    <i class='pi-ban'></i>
+                  </div>
+                  <div class="block-3 flex flex--column py-3">
+                    <strong class="text-black">Comm. Type</strong>
+                    <i class='pi-ban'></i>
+                  </div>
+                  <div class="block-3 flex flex--column py-3">
+                    <strong class="text-black">Status</strong>
+                    <i class='pi-ban'></i>
+                  </div>
+                </div>
+                <div class="block flex flex--align-center flex--justify-end mt-4">
+                  <div class="toggle mr-2">
+                    <input id="off" type="radio" checked name="duplicates">
+                    <label for="off">
+                    </label>
+                    <input id="on" type="radio" name="duplicates">
+                    <label for="on">
+                    </label>
+                  </div>
+                  Allow Duplicates
+                </div>
+                <form action="" class="form">
+                  <div class="block-container tablet-up-3 laptop-up-2 blocks my-3 p-2">
+                    <div class="block">
+                      <label for="campaign" class="form__field has-icon--right">Campaign
+                        <input id="campaign" type="text" value="John Doe Demo">
+                        <i class='pi-badge-alt'></i>
+                      </label>
+                    </div>
+                    <div class="block">
+                      <label for="campaign-id" class="form__field">Campaign ID
+                        <input id="middle-name" type="text" value="Agency_2020">
+                      </label>
+                    </div>
+                  </div>
+                  <div class="block-container tablet-up-3 blocks mb-3 p-2">
+                    <div class="block">
+                      <label for="start-date" class="form__field">Start Date
+                        <input id="start-date" type="date">
+                      </label>
+                    </div>
+                    <div class="block">
+                      <label for="end-date" class="form__field">End Date
+                        <input id="end-date" type="date">
+                      </label>
+                    </div>
+                    <div class="block">
+                      <label for="category" class="form__field">Category
+                        <div class="form__select-wrapper">
+                          <select name="category select" id="category">
+                            <option value="category1">Development</option>
+                            <option value="category2">Engagement</option>
+                            <option value="category3">Nurturing</option>
+                            <option value="category4">Recruitment</option>
+                            <option value="category5">Retention</option>
+                          </select>
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="block-container tablet-up-3 blocks mb-3 p-2">
+                    <div class="block">
+                      <label for="birthdate" class="form__field">Birthdate
+                        <input id="birthdate" type="date">
+                      </label>
+                    </div>
+                    <div class="block">
+                      <label for="address-street-1" class="form__field">Address Street 1
+                        <input id="address-street-1" type="text">
+                      </label>
+                    </div>
+                    <div class="block">
+                      <label for="address-street-2" class="form__field">Address Street 2
+                        <input id="address-street-2" type="text">
+                      </label>
+                    </div>
+                  </div>
+                  <div class="block-container tablet-up-3 blocks mb-3 p-2">
+                    <div class="block">
+                      <label for="city" class="form__field">City
+                        <input id="city" type="text">
+                      </label>
+                    </div>
+                    <div class="block">
+                      <label for="state" class="form__field">State
+                        <div class="form__select-wrapper">
+                          <select name="state select" id="state">
+                            <option value="state1">Alabama</option>
+                            <option value="state2">Alaska</option>
+                            <option value="state3">Arizona</option>
+                            <option value="state4">Arkansas</option>
+                            <option value="state5">California</option>
+                            <option value="state6">Colorado</option>
+                            <option value="state7">Connecticut</option>
+                            <option value="state8">Delaware</option>
+                            <option value="state9">Florida</option>
+                            <option value="state10">Georgia</option>
+                            <option value="state11">Hawaii</option>
+                            <option value="state12">Idaho</option>
+                            <option value="state13">Illinois</option>
+                            <option value="state14">Indiana</option>
+                            <option value="state15">Iowa</option>
+                            <option value="state16">Kansas</option>
+                            <option value="state17">Kentucky</option>
+                            <option value="state18">Louisiana</option>
+                            <option value="state19">Maine</option>
+                            <option value="state20">Maryland</option>
+                            <option value="state21">Massachusetts</option>
+                            <option value="state22">Michigan</option>
+                            <option value="state23">Minnesota</option>
+                            <option value="state24">Mississippi</option>
+                            <option value="state25">Missouri</option>
+                            <option value="state26">Montana</option>
+                            <option value="state27">Nebraska</option>
+                            <option value="state28">Nevada</option>
+                            <option value="state29">New Hampshire</option>
+                            <option value="state30">New Jersey</option>
+                            <option value="state31">New Mexico</option>
+                            <option value="state32">New York</option>
+                            <option value="state33">North Carolina</option>
+                            <option value="state34">North Dakota</option>
+                            <option value="state35">Ohio</option>
+                            <option value="state36">Oklahoma</option>
+                            <option value="state37">Oregon</option>
+                            <option value="state38">Pennsylvania</option>
+                            <option value="state39">Rhode Island</option>
+                            <option value="state40">South Carolina</option>
+                            <option value="state41">South Dakota</option>
+                            <option value="state42">Tennessee</option>
+                            <option value="state43">Texas</option>
+                            <option value="state44">Utah</option>
+                            <option value="state45">Vermont</option>
+                            <option value="state46">Virginia</option>
+                            <option value="state47">Washington</option>
+                            <option value="state48">West Virginia</option>
+                            <option value="state49">Wisconsin</option>
+                            <option value="state50">Wyoming</option>
+                          </select>
+                        </div>
+                      </label>
+                    </div>
+                    <div class="block">
+                      <label for="zip" class="form__field">Zip
+                        <input id="zip" type="text">
+                      </label>
+                    </div>
+                  </div>
+                  <div class="block-container blocks tablet-up-3 mb-3 p-2">
+                    <div class="block">
+                      <label for="county" class="form__field">County
+                        <div class="form__select-wrapper">
+                          <select name="county select" id="county">
+                          </select>
+                        </div>
+                      </label>
+                    </div>
+                    <div class="block">
+                      <label for="npn" class="form__field">NPN
+                        <input id="npn" type="text">
+                      </label>
+                    </div>
+                  </div>
+                  <strong>Communications</strong>
+                  <div class="block-container blocks tablet-up-4 mb-3 p-2">
+                    <div class="block">
+                      <label for="source" class="form__field">Source
+                        <div class="form__select-wrapper">
+                          <select name="source select" id="source">
+                            <option value="source1">outbound</option>
+                            <option value="source2">inbound</option>
+                            <option value="source3">SilverpopMailing</option>
+                            <option value="source4">ims</option>
+                            <option value="source5">uir</option>
+                            <option value="source6">inn</option>
+                            <option value="source7">accupoint</option>
+                            <option value="source8">insurance-forums.com</option>
+                            <option value="source9">ritterim.com</option>
+                            <option value="source10">agentsurvivalguide.com</option>
+                            <option value="source11">facebook.com</option>
+                            <option value="source12">instagram.com</option>
+                            <option value="source13">twitter.com</option>
+                            <option value="source14">linkedin.com</option>
+                            <option value="source15">wistia.com</option>
+                            <option value="source16">youtube.com</option>
+                            <option value="source17">google.com</option>
+                            <option value="source18">podbean.com</option>
+                            <option value="source19">webex</option>
+                            <option value="source20">Agent Dashboard</option>
+                            <option value="source21">nahu</option>
+                            <option value="source22">carrier</option>
+                            <option value="source23">cpbj</option>
+                          </select>
+                        </div>
+                      </label>
+                    </div>
+                    <div class="block">
+                      <label for="type" class="form__field">Type
+                        <div class="form__select-wrapper">
+                          <select name="type select" id="type">
+                            <option value="type1">call</option>
+                            <option value="type2">email</option>
+                            <option value="type3">ad_inline</option>
+                            <option value="type4">email_vendor</option>
+                            <option value="type5">homepage_banner</option>
+                            <option value="type6">mailer</option>
+                            <option value="type7">promo_box</option>
+                            <option value="type8">post</option>
+                            <option value="type9">post_paid</option>
+                            <option value="type10">video</option>
+                            <option value="type11">post_video</option>
+                            <option value="type12">post_video_paid</option>
+                            <option value="type13">ad_search</option>
+                            <option value="type14">ad_display</option>
+                            <option value="type15">ad_remarketing</option>
+                            <option value="type16">ad_banner</option>
+                            <option value="type17">ad_remarketing</option>
+                            <option value="type18">ad_banner</option>
+                            <option value="type19">post_sticky</option>
+                            <option value="type20">referral</option>
+                            <option value="type21">email_signature</option>
+                            <option value="type22">email_confirmation</option>
+                            <option value="type23">modal</option>
+                            <option value="type24">episode</option>
+                            <option value="type25">ad</option>
+                            <option value="type26">transfer</option>
+                            <option value="type27">webinar</option>
+                            <option value="type28">organic</option>
+                            <option value="type29">ad_newsletter</option>
+                            <option value="type30">email_newsletter</option>
+                          </select>
+                        </div>
+                      </label>
+                    </div>
+                    <div class="block">
+                      <label for="content" class="form__field">Content
+                        <input id="content" type="text">
+                      </label>
+                    </div>
+                  </div>
+                </form>
+                <div class="block-container blocks px-2 border-b border--width-5">
+                  <div class="block-3 flex flex--column py-4 pl-2">
+                    <strong class="text-black">Campaign</strong>
+                    <span class="text-med-blue">John Doe Demo</span>
+                  </div>
+                  <div class="block-3 flex flex--column py-4">
+                    <strong class="text-black">Campaign ID</strong>
+                    <span class="text-med-blue">3399393</span>
+                  </div>
+                  <div class="block-3 flex flex--column py-4">
+                    <strong class="text-black">Created</strong>
+                    <span class="text-med-blue">12/07/2020</span>
+                  </div>
+                </div>
+                <div class="block-container blocks px-2 my-5 border-b border--width-5">
+                  <div class="block">
+                    <strong>Campaign Attachments (0)</strong>
+                  </div>
+                </div>
+                <form action="" class="form">
+                  <div class="block-container tablet-up-3 laptop-up-4 blocks my-3 p-2">
+                    <div class="block">
+                      <label for="first-name" class="form__field has-icon--right">First Name
+                        <input id="first-name" type="text" value="John">
+                        <i class='pi-badge-alt'></i>
+                      </label>
+                    </div>
+                    <div class="block">
+                      <label for="middle-name" class="form__field">Middle Name
+                        <input id="middle-name" type="text">
+                      </label>
+                    </div>
+                    <div class="block">
+                      <label for="last-name" class="form__field">Last Name
+                        <input id="last-name" type="text" value="Doe">
+                      </label>
+                    </div>
+                    <div class="block">
+                      <label for="suffix" class="form__field">Suffix
+                        <input id="suffix" type="text">
+                      </label>
+                    </div>
+                  </div>
+                  <div class="block-container tablet-up-3 blocks mb-3 p-2">
+                    <div class="block">
+                      <label for="primary-email" class="form__field">Primary Email
+                        <input id="primary-email" type="text" value="johndoe@gmail.com">
+                      </label>
+                    </div>
+                    <div class="block">
+                      <label for="primary-phone" class="form__field">Primary Phone
+                        <input id="primary-phone" type="text" value="2087121212">
+                      </label>
+                    </div>
+                    <div class="block">
+                      <label for="alternate-phone" class="form__field">Alternate Phone
+                        <input id="alternate-phone" type="text">
+                      </label>
+                    </div>
+                  </div>
+                  <div class="block-container tablet-up-3 blocks mb-3 p-2">
+                    <div class="block">
+                      <label for="birthdate" class="form__field">Birthdate
+                        <input id="birthdate" type="date">
+                      </label>
+                    </div>
+                    <div class="block">
+                      <label for="address-street-1" class="form__field">Address Street 1
+                        <input id="address-street-1" type="text">
+                      </label>
+                    </div>
+                    <div class="block">
+                      <label for="address-street-2" class="form__field">Address Street 2
+                        <input id="address-street-2" type="text">
+                      </label>
+                    </div>
+                  </div>
+                  <div class="block-container tablet-up-3 blocks mb-3 p-2">
+                    <div class="block">
+                      <label for="city" class="form__field">City
+                        <input id="city" type="text">
+                      </label>
+                    </div>
+                    <div class="block">
+                      <label for="state" class="form__field">State
+                        <div class="form__select-wrapper">
+                          <select name="state select" id="state">
+                            <option value="state1">Alabama</option>
+                            <option value="state2">Alaska</option>
+                            <option value="state3">Arizona</option>
+                            <option value="state4">Arkansas</option>
+                            <option value="state5">California</option>
+                            <option value="state6">Colorado</option>
+                            <option value="state7">Connecticut</option>
+                            <option value="state8">Delaware</option>
+                            <option value="state9">Florida</option>
+                            <option value="state10">Georgia</option>
+                            <option value="state11">Hawaii</option>
+                            <option value="state12">Idaho</option>
+                            <option value="state13">Illinois</option>
+                            <option value="state14">Indiana</option>
+                            <option value="state15">Iowa</option>
+                            <option value="state16">Kansas</option>
+                            <option value="state17">Kentucky</option>
+                            <option value="state18">Louisiana</option>
+                            <option value="state19">Maine</option>
+                            <option value="state20">Maryland</option>
+                            <option value="state21">Massachusetts</option>
+                            <option value="state22">Michigan</option>
+                            <option value="state23">Minnesota</option>
+                            <option value="state24">Mississippi</option>
+                            <option value="state25">Missouri</option>
+                            <option value="state26">Montana</option>
+                            <option value="state27">Nebraska</option>
+                            <option value="state28">Nevada</option>
+                            <option value="state29">New Hampshire</option>
+                            <option value="state30">New Jersey</option>
+                            <option value="state31">New Mexico</option>
+                            <option value="state32">New York</option>
+                            <option value="state33">North Carolina</option>
+                            <option value="state34">North Dakota</option>
+                            <option value="state35">Ohio</option>
+                            <option value="state36">Oklahoma</option>
+                            <option value="state37">Oregon</option>
+                            <option value="state38">Pennsylvania</option>
+                            <option value="state39">Rhode Island</option>
+                            <option value="state40">South Carolina</option>
+                            <option value="state41">South Dakota</option>
+                            <option value="state42">Tennessee</option>
+                            <option value="state43">Texas</option>
+                            <option value="state44">Utah</option>
+                            <option value="state45">Vermont</option>
+                            <option value="state46">Virginia</option>
+                            <option value="state47">Washington</option>
+                            <option value="state48">West Virginia</option>
+                            <option value="state49">Wisconsin</option>
+                            <option value="state50">Wyoming</option>
+                          </select>
+                        </div>
+                      </label>
+                    </div>
+                    <div class="block">
+                      <label for="zip" class="form__field">Zip
+                        <input id="zip" type="text">
+                      </label>
+                    </div>
+                  </div>
+                  <div class="block-container blocks tablet-up-3 mb-3 p-2">
+                    <div class="block">
+                      <label for="county" class="form__field">County
+                        <div class="form__select-wrapper">
+                          <select name="county select" id="county">
+                          </select>
+                        </div>
+                      </label>
+                    </div>
+                    <div class="block">
+                      <label for="npn" class="form__field">NPN
+                        <input id="npn" type="text">
+                      </label>
+                    </div>
+                  </div>
+                  <strong>Communications</strong>
+                  <div class="block-container blocks tablet-up-4 mb-3 p-2">
+                    <div class="block">
+                      <label for="source" class="form__field">Source
+                        <div class="form__select-wrapper">
+                          <select name="source select" id="source">
+                            <option value="source1">outbound</option>
+                            <option value="source2">inbound</option>
+                            <option value="source3">SilverpopMailing</option>
+                            <option value="source4">ims</option>
+                            <option value="source5">uir</option>
+                            <option value="source6">inn</option>
+                            <option value="source7">accupoint</option>
+                            <option value="source8">insurance-forums.com</option>
+                            <option value="source9">ritterim.com</option>
+                            <option value="source10">agentsurvivalguide.com</option>
+                            <option value="source11">facebook.com</option>
+                            <option value="source12">instagram.com</option>
+                            <option value="source13">twitter.com</option>
+                            <option value="source14">linkedin.com</option>
+                            <option value="source15">wistia.com</option>
+                            <option value="source16">youtube.com</option>
+                            <option value="source17">google.com</option>
+                            <option value="source18">podbean.com</option>
+                            <option value="source19">webex</option>
+                            <option value="source20">Agent Dashboard</option>
+                            <option value="source21">nahu</option>
+                            <option value="source22">carrier</option>
+                            <option value="source23">cpbj</option>
+                          </select>
+                        </div>
+                      </label>
+                    </div>
+                    <div class="block">
+                      <label for="type" class="form__field">Type
+                        <div class="form__select-wrapper">
+                          <select name="type select" id="type">
+                            <option value="type1">call</option>
+                            <option value="type2">email</option>
+                            <option value="type3">ad_inline</option>
+                            <option value="type4">email_vendor</option>
+                            <option value="type5">homepage_banner</option>
+                            <option value="type6">mailer</option>
+                            <option value="type7">promo_box</option>
+                            <option value="type8">post</option>
+                            <option value="type9">post_paid</option>
+                            <option value="type10">video</option>
+                            <option value="type11">post_video</option>
+                            <option value="type12">post_video_paid</option>
+                            <option value="type13">ad_search</option>
+                            <option value="type14">ad_display</option>
+                            <option value="type15">ad_remarketing</option>
+                            <option value="type16">ad_banner</option>
+                            <option value="type17">ad_remarketing</option>
+                            <option value="type18">ad_banner</option>
+                            <option value="type19">post_sticky</option>
+                            <option value="type20">referral</option>
+                            <option value="type21">email_signature</option>
+                            <option value="type22">email_confirmation</option>
+                            <option value="type23">modal</option>
+                            <option value="type24">episode</option>
+                            <option value="type25">ad</option>
+                            <option value="type26">transfer</option>
+                            <option value="type27">webinar</option>
+                            <option value="type28">organic</option>
+                            <option value="type29">ad_newsletter</option>
+                            <option value="type30">email_newsletter</option>
+                          </select>
+                        </div>
+                      </label>
+                    </div>
+                    <div class="block">
+                      <label for="content" class="form__field">Content
+                        <input id="content" type="text">
+                      </label>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="block mt-5 lg-tablet-up-4 laptop-up-3 pos-fix hide-laptop-down">
