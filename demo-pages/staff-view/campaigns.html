@@ -332,7 +332,7 @@
               </div>
             </div>
             <div class="accordion">
-              <a href="#" class="accordion__header px-3 py-3 flex--justify-between block-container">
+              <a href="#" class="accordion__header px-3 py-3 block-container">
                 <div class="block block-2 flex flex--column">
                   <div>
                     John Doe
@@ -345,15 +345,15 @@
                   <div class="block-container tablet-up-5">
                     <div class="block flex flex--column">
                       <strong class="text-black">Campaign</strong>
-                      <span class="text-black">Undersea Insurance</span>
+                      <span class="text-black truncate-with-ellipsis">John Doe Demo</span>
                     </div>
                     <div class="block flex flex--column">
                       <strong class="text-black">Sales Rep</strong>
-                      <span class="text-black">Rick James</span>
+                      <span class="text-black">John Doe</span>
                     </div>
                     <div class="block flex flex--column">
                       <strong class="text-black">Campaign Status</strong>
-                      <span class="text-black">Follow Up 3</span>
+                      <span class="text-black">Initial</span>
                     </div>
                     <div class="block flex flex--column">
                       <strong class="text-black">Audience</strong>
@@ -376,15 +376,29 @@
                 </div>
               </a>
               <div class="accordion__content px-3 py-3">
-                <form action="" class="form block-container tablet-up-3 laptop-up-4 blocks mb-3 p-2">
+                <form action="" class="form block-container tablet-up-3 laptop-up-5 blocks mb-3 p-2">
                   <div class="block">
-                    <label for="first-name" class="form__field">First Name
-                      <input id="first-name" type="text" placeholder="First Name">
+                    <label for="sales-rep" class="form__field has-icon--right">Sales Rep
+                      <input id="sales-rep" type="text" placeholder="Type to search">
+                      <i class='pi-search'></i>
                     </label>
                   </div>
                   <div class="block">
-                    <label for="last-name" class="form__field">Last Name
-                      <input id="last-name" type="text" placeholder="Last Name">
+                    <label for="campaign" class="form__field">Campaign Status
+                      <div class="form__select-wrapper">
+                        <select name="campaign select" id="campaign">
+                          <option value="campaign1">Initial</option>
+                          <option value="campaign2">Choose</option>
+                          <option value="campaign3">Bad</option>
+                          <option value="campaign4">Cold / Dead Lead</option>
+                          <option value="campaign5">Do Not Contact</option>
+                          <option value="campaign6">Follow Up 1</option>
+                          <option value="campaign7">Follow Up 2</option>
+                          <option value="campaign8">Follow Up 3</option>
+                          <option value="campaign9">No Follow Up Needed</option>
+                          <option value="campaign10">Success</option>
+                        </select>
+                      </div>
                     </label>
                   </div>
                   <div class="block">
@@ -402,55 +416,114 @@
                       <input id="next-touch" type="date">
                     </label>
                   </div>
+                  <div class="block flex flex--align-center">
+                    <div class="toggle mr-2">
+                      <input id="Tall-2" type="radio" checked name="height">
+                      <label for="Tall-2"> 
+                      </label>
+                      <input id="Short-2" type="radio" name="height">
+                      <label for="Short-2">
+                      </label>
+                    </div>
+                    Register
+                    <button class="button button--secondary ml-3"><i class='pi-phone'></i></button>
+                  </div>
                 </form>
-              </div>
-            </div>
-            <div class="accordion">
-              <a href="#" class="accordion__header px-3 py-3 flex--justify-between block-container">
-                <div class="block block-2 flex flex--column">
-                  <div>
-                    <span class="text-black">Bob Sponge</span>
-                    <div class="pill pill--circle-empty negative"></div>
+                <div class="block-container">
+                  <div class="block-3 flex flex--column">
+                    <strong class="text-black">Campaign</strong>
+                    <span class="text-med-blue">John Doe Demo</span>
                   </div>
-                  <span>bobsponge@gmail.com</span>
-                  <span class="text-black">2087121212</span>
-                </div>
-                <div class="block block-8">
-                  <div class="block-container tablet-up-5">
-                    <div class="block flex flex--column">
-                      <strong class="text-black">Campaign</strong>
-                      <span class="text-black">Undersea Insurance</span>
-                    </div>
-                    <div class="block flex flex--column">
-                      <strong class="text-black">Sales Rep</strong>
-                      <span class="text-black">Pat Rick</span>
-                    </div>
-                    <div class="block flex flex--column">
-                      <strong class="text-black">Campaign Status</strong>
-                      <span class="text-black">Initial</span>
-                    </div>
-                    <div class="block flex flex--column">
-                      <strong class="text-black">Audience</strong>
-                      <i class='pi-ban'></i>
-                    </div>
-                    <div class="block flex flex--column">
-                      <strong class="text-black">Next Touch</strong>
-                      <i class='pi-ban'></i>
-                    </div>
+                  <div class="block-3 flex flex--column">
+                    <strong class="text-black">Campaign ID</strong>
+                    <span class="text-med-blue">3399393</span>
+                  </div>
+                  <div class="block-3 flex flex--column">
+                    <strong class="text-black">Created</strong>
+                    <span class="text-med-blue">12/07/2020</span>
                   </div>
                 </div>
-                <div class="block block-1 flex--align-self-center">
-                  <div class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer"
-                    aria-label="Georgia">FL</div>
+                <div class="block-container">
+                  <div class="block">
+                    <strong>Campaign Attachments (0)</strong>
+                  </div>
                 </div>
-                <div class="block block-1 flex--align-self-center">
-                  <button class="icon-menu__action button--plain text-navy--hover flex--align-center">
-                    <i class='pi-trash'></i>
-                  </button>
-                </div>
-              </a>
-              <div class="accordion__content px-3 py-3">
-                <p>This is the accordion content.</p>
+                <form action="" class="form">
+                  <div class="block-container tablet-up-3 laptop-up-4 blocks mb-3 p-2">
+                    <div class="block">
+                      <label for="first-name" class="form__field has-icon--right">First Name
+                        <input id="first-name" type="text" value="John">
+                        <i class='pi-badge-alt'></i>
+                      </label>
+                    </div>
+                    <div class="block">
+                      <label for="middle-name" class="form__field">Middle Name
+                        <input id="middle-name" type="text">
+                      </label>
+                    </div>
+                    <div class="block">
+                      <label for="last-name" class="form__field">Last Name
+                        <input id="last-name" type="text" value="Doe">
+                      </label>
+                    </div>
+                    <div class="block">
+                      <label for="suffix" class="form__field">Suffix
+                        <input id="suffix" type="text">
+                      </label>
+                    </div>
+                  </div>
+                  <div class="block-container tablet-up-3 blocks mb-3 p-2">
+                    <div class="block">
+                      <label for="primary-email" class="form__field">Primary Email
+                        <input id="primary-email" type="text" value="johndoe@gmail.com">
+                      </label>
+                    </div>
+                    <div class="block">
+                      <label for="primary-phone" class="form__field">Primary Phone
+                        <input id="primary-phone" type="text" value="2087121212">
+                      </label>
+                    </div>
+                    <div class="block">
+                      <label for="alternate-phone" class="form__field">Alternate Phone
+                        <input id="alternate-phone" type="text">
+                      </label>
+                    </div>
+                  </div>
+                  <div class="block-container tablet-up-3 blocks mb-3 p-2">
+                    <div class="block">
+                      <label for="birthdate" class="form__field">Birthdate
+                        <input id="birthdate" type="date">
+                      </label>
+                    </div>
+                    <div class="block">
+                      <label for="address-street-1" class="form__field">Address Street 1
+                        <input id="address-street-1" type="text">
+                      </label>
+                    </div>
+                    <div class="block">
+                      <label for="address-street-2" class="form__field">Address Street 2
+                        <input id="address-street-2" type="text">
+                      </label>
+                    </div>
+                  </div>
+                  <div class="block-container tablet-up-3 blocks mb-3 p-2">
+                    <div class="block">
+                      <label for="city" class="form__field">City
+                        <input id="city" type="text">
+                      </label>
+                    </div>
+                    <div class="block">
+                      <label for="address-street-1" class="form__field">Address Street 1
+                        <input id="address-street-1" type="text">
+                      </label>
+                    </div>
+                    <div class="block">
+                      <label for="zip" class="form__field">Zip
+                        <input id="zip" type="text">
+                      </label>
+                    </div>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
