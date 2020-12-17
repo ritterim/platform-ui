@@ -62,340 +62,15 @@
   </head>
   <body class="flex flex--column">
     <header class="site-header site-header--fixed">
-      <div class="site-menu primary inverted site-menu-wrapper">
-        <div class="block-container background-navy w-100">
-          <div class="block block-8 lg-tablet-up-4 lg-tablet-up--fill flex">
-            <a href="/demo-pages/crm-example.html" class="site-menu__item">
-              <span
-                class="card__header-icon pill--circle-medium background-purple text-white mr-2"
-              >
-                D
-              </span>
-              <span class="text--size-lg hide-tablet-down">
-                Hello Dev
-              </span>
-            </a>
-            <div class="site-menu__item search">
-              <form role="search" aria-label="CRM" _lpchecked="1" class="w-100">
-                <div class="flex flex--align-center">
-                  <label for="search-input" class="sr-only">Search</label>
-                  <input
-                    type="text"
-                    id="search-input"
-                    placeholder="Type to search..."
-                    class="placeholder--light text-white"
-                  />
-                  <i aria-hidden="true" class="pi-search"></i>
-                </div>
-              </form>
-            </div>
-          </div>
-          <button
-            class="site-menu-mobile-action button--plain text-white hide-lg-tablet-up pos-abs pin-right mr-2 pin-center-top"
-          >
-            <span class="sr-only">Toggle Navigation</span>
-            <i aria-hidden="true" focusable="false" class="pi-menu pi-xl"></i>
-          </button>
-          <nav class="block block--shrink site-menu primary inverted">
-            <div class="site-menu__item dropdown p-0">
-              <a href="#" class="dropdown__trigger p-3">
-                Organizations
-                <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-              </a>
-              <ul class="dropdown__content pin-right post-list">
-                <li class="post-item m-0 p-0">
-                  <a href="/admin/agencies" class="flex p-3"
-                    ><i class="users icon"></i>
-                    Agencies
-                  </a>
-                </li>
-                <li class="post-item m-0 p-0">
-                  <a href="/admin/businesses" class="flex p-3"
-                    ><i class="business-icon icon"></i>
-                    Businesses
-                  </a>
-                </li>
-                <li class="post-item m-0 p-0">
-                  <a href="/admin/carriers" class="flex p-3"
-                    ><i class="carrier-icon icon"></i>
-                    Carriers
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div class="site-menu__item dropdown p-0">
-              <a href="#" class="dropdown__trigger p-3">
-                People <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-              </a>
-              <ul class="dropdown__content pin-right post-list">
-                <li class="post-item m-0 p-0">
-                  <a href="/admin/agents" class="flex p-3"
-                    ><i class="agent-icon icon"></i>
-                    Agents
-                  </a>
-                </li>
-                <li class="post-item m-0 p-0">
-                  <a href="/admin/associates" class="flex p-3"
-                    ><i class="associate-icon icon"></i>
-                    Associates
-                  </a>
-                </li>
-                <li class="post-item m-0 p-0">
-                  <a href="/admin/users" class="flex p-3"
-                    ><i class="user-icon icon"></i>
-                    Users
-                  </a>
-                </li>
-                <li class="post-item m-0 p-0">
-                  <a href="/admin/consumers" class="flex p-3"
-                    ><i class="user-icon icon"></i>
-                    Consumers
-                  </a>
-                </li>
-                <li class="post-item m-0 p-0">
-                  <a
-                    href="/admin/agents/map?term=Harrisburg%2C%20PA%2017110"
-                    class="flex p-3"
-                  >
-                    <i class="map icon"></i>
-                    Map Agents
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div class="site-menu__item dropdown p-0">
-              <a href="#" class="dropdown__trigger p-3">
-                Flow <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-              </a>
-              <ul class="dropdown__content pin-right post-list">
-                <li class="post-item m-0 p-0">
-                  <a href="/admin/flow/agents" class="flex p-3"
-                    ><i class="id badge icon"></i>
-                    Agents
-                  </a>
-                </li>
-                <li class="post-item m-0 p-0">
-                  <a href="/admin/flow/agencies" class="flex p-3"
-                    ><i class="users icon"></i>
-                    Agencies
-                  </a>
-                </li>
-                <li class="post-item m-0 p-0">
-                  <a href="/admin/flow/contracts" class="flex p-3"
-                    ><i class="open folder icon"></i>
-                    Contracts
-                  </a>
-                </li>
-                <li class="post-item m-0 p-0">
-                  <a href="/admin/flow/campaigns" class="flex p-3" style=""
-                    ><i class="address-card icon"></i>
-                    Campaigns
-                  </a>
-                </li>
-                <li class="post-item m-0 p-0">
-                  <a href="/admin/flow/submissions" class="flex p-3" style=""
-                    ><i class="file icon"></i>
-                    Submissions
-                  </a>
-                </li>
-                <li class="post-item m-0 p-0">
-                  <a href="/admin/flow/enrollments" class="flex p-3" style=""
-                    ><i class="certificate icon"></i>
-                    Enrollments
-                  </a>
-                </li>
-                <li class="post-item m-0 p-0">
-                  <a
-                    href="/admin/flow/payment-methods"
-                    class="flex p-3"
-                    style=""
-                    ><i class="money bill icon"></i>
-                    Payment Methods
-                  </a>
-                </li>
-                <li class="post-item m-0 p-0">
-                  <a href="/admin/flow/crm" class="flex p-3" style=""
-                    ><i class="briefcase icon"></i>
-                    CRM
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div class="site-menu__item dropdown p-0">
-              <a href="#" class="dropdown__trigger p-3">
-                <span class="sr-only">RIMDev</span>
-                <span
-                  class="card__header-icon pill--circle-medium background-white text-navy"
-                >
-                  <i class="pi-rimdev" aria-hidden="true"></i>
-                </span>
-                <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-              </a>
-              <ul class="dropdown__content pin-right post-list">
-                <li class="post-item m-0 p-0">
-                  <a href="/admin/rimdev" class="flex p-3">
-                    Permissions
-                  </a>
-                </li>
-                <li class="post-item m-0 p-0">
-                  <a href="/admin/form-builder" class="flex p-3">
-                    Form Builder
-                  </a>
-                </li>
-                <li class="post-item m-0 p-0">
-                  <a href="/_features" class="flex p-3">
-                    Feature Flags
-                  </a>
-                </li>
-                <li class="post-item m-0 p-0">
-                  <a href="/_self" class="flex p-3">
-                    Claims Diagnostics
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div class="site-menu__item dropdown p-0">
-              <a href="#" class="dropdown__trigger p-3">
-                Recent <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-              </a>
-              <ul class="dropdown__content pin-right post-list dropdown">
-                <li class="post-item p-0 m-0">
-                  <a
-                    href="/admin/agents/c057f20a-fbc8-403c-9777-9e0701310cf8/edit"
-                    title="Last viewed on 5/6/2020"
-                    class="flex p-3"
-                    ><i class="grey icon id badge"></i>
-                    <i class="yellow vertical ellipsis icon"></i>
-                    Gregory Gudis
-                  </a>
-                </li>
-                <!---->
-                <div class="left menu">
-                  <li class="post-item m-0 p-0">
-                    <a
-                      href="/admin/agents/c057f20a-fbc8-403c-9777-9e0701310cf8/contracts?id=263135"
-                      class="flex p-3"
-                    >
-                      Contract for Accendo Insurance Company
-                    </a>
-                  </li>
-                  <li class="post-item m-0 p-0">
-                    <a
-                      href="/admin/agents/c057f20a-fbc8-403c-9777-9e0701310cf8/edit?ui=medicareful"
-                      class="flex p-3"
-                    >
-                      Medicareful
-                    </a>
-                  </li>
-                  <li class="post-item m-0 p-0 border-b border--color-lighter">
-                    <a
-                      href="/admin/agents/c057f20a-fbc8-403c-9777-9e0701310cf8/edit?ui=payments"
-                      class="flex p-3"
-                    >
-                      Payments
-                    </a>
-                  </li>
-                </div>
-                <li class="post-item p-0 m-0">
-                  <a
-                    href="/admin/agencies/62f89954-d3ea-4d96-96d7-c98bbd2470ec/edit"
-                    title="Last viewed on 4/21/2020"
-                    class="flex p-3"
-                    ><i class="grey icon users"></i>
-                    <i class="yellow vertical ellipsis icon"></i>
-                    Ritter Insurance Marketing
-                  </a>
-                </li>
-                <!---->
-                <div class="left menu">
-                  <li class="post-item m-0 p-0">
-                    <a
-                      href="/admin/agencies/62f89954-d3ea-4d96-96d7-c98bbd2470ec/contracts?id=136337"
-                      class="flex p-3"
-                    >
-                      Contract for Aetna-Referral
-                    </a>
-                  </li>
-                  <li class="post-item m-0 p-0">
-                    <a
-                      href="/admin/agencies/62f89954-d3ea-4d96-96d7-c98bbd2470ec/edit?ui=profile"
-                      class="flex p-3"
-                    >
-                      Profile
-                    </a>
-                  </li>
-                  <li class="post-item m-0 p-0 border-b border--color-lighter">
-                    <a
-                      href="/admin/agencies/62f89954-d3ea-4d96-96d7-c98bbd2470ec/edit?ui=contact"
-                      class="flex p-3"
-                    >
-                      Contact
-                    </a>
-                  </li>
-                </div>
-                <!---->
-                <li class="post-item m-0 p-0">
-                  <a class="flex p-3">
-                    <i class="red icon close"></i> Clear Recent Items
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </div>
+      <div class="site-menu background-light h-50">
       </div>
-      <div class="site-menu site-menu-wrapper">
-        <div class="block-container background-white flex--nowrap w-100">
-          <div class="block block-4 lg-tablet-up--fill ">
-            <div class="w-100 dropdown h-100 p-0">
-              <a href="#" class="dropdown__trigger p-3 w-100">
-                <span
-                  class="card__header-icon pill--circle-medium background-salmon text-white mr-2"
-                >
-                  <i class="pi-building text-white"></i>
-                </span>
-                <div class="text--size-lg">
-                  Humana
-                </div>
-                <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-              </a>
-              <div class="dropdown__content pin-left">
-                <a href="#" class="flex p-3">
-                  <div class="pill background-olive">
-                    Active
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-          <button
-            class="site-menu-mobile-action button--plain text-white hide-lg-tablet-up pos-abs pin-right mr-2 pin-center-top"
-          >
-            <span class="sr-only">Toggle Navigation</span>
-            <i
-              aria-hidden="true"
-              focusable="false"
-              class="pi-menu pi-xl text-navy"
-            ></i>
-          </button>
-          <nav
-            class="site-menu site-menu block block--shrink w-100 flex--justify-between"
-          >
-            <a href="#" class="site-menu__item">
-              Contracts
-            </a>
-            <a href="#" class="site-menu__item">
-              Memberships
-            </a>
-          </nav>
-        </div>
+      <div class="site-menu background-white h-50">
       </div>
     </header>
     <main class="header-fixed background-light-mid flex--grow py-4 px-5">
       <div class="block-container blocks px-3 mb-4">
         <div class="block lg-tablet-up-8 laptop-up-9">
-          <!-- Part 2 stuff below -->
-          <!-- <div class="block-container flex--justify-end mb-4">
+           <div class="block-container flex--justify-end mb-4">
             <fieldset class="form__field form block block--shrink">
               <legend class="sr-only">Select All States or Deselect all</legend>
               <div class="toggle background-white mt-0">
@@ -422,8 +97,7 @@
                 </div>
               </div>
             </fieldset>
-          </div> -->
-          <!-- Part 2 stuff above -->
+          </div> 
           <div class="tabs">
             <input type="radio" id="tab-input-a" name="tabs" checked />
             <label for="tab-input-a" class="tab">
@@ -435,13 +109,11 @@
               ></i>
             </label>
             <div class="tab-panel py-4 px-4">
-              <!-- Part 2 stuff below -->
-              <!-- <div class="flex flex--justify-end w-100 mb-4">
+               <div class="flex flex--justify-end w-100 mb-4">
                 <button class="button">
                   Add <i class="pi-plus" aria-hidden="true"></i>
                 </button>
-              </div> -->
-              <!-- Part 2 stuff above -->
+              </div> 
               <div class="accordion active">
                 <div
                   class="accordion__header px-4 py-4 flex flex--justify-between"
@@ -469,8 +141,8 @@
                               id="per-state"
                               type="checkbox"
                             />
-                            <label for="per-state" class="mb-2">
-                              <div class="input-icons">
+                            <label for="per-state" class="mb-2 pl-4">
+                              <div class="input-icons pos-abs">
                                 <i class="pi-circle pi-lg"></i>
                                 <i class="pi-check pi-lg"></i>
                               </div>
@@ -481,8 +153,8 @@
                               id="non-licensed"
                               type="checkbox"
                             />
-                            <label for="non-licensed" class="mb-2">
-                              <div class="input-icons">
+                            <label for="non-licensed" class="mb-2 pl-4">
+                              <div class="input-icons pos-abs">
                                 <i class="pi-circle pi-lg"></i>
                                 <i class="pi-check pi-lg"></i>
                               </div>
@@ -493,8 +165,8 @@
                               id="staff"
                               type="checkbox"
                             />
-                            <label for="staff" class="mb-2">
-                              <div class="input-icons">
+                            <label for="staff" class="mb-2 pl-4">
+                              <div class="input-icons pos-abs">
                                 <i class="pi-circle pi-lg"></i>
                                 <i class="pi-check pi-lg"></i>
                               </div>
@@ -505,8 +177,8 @@
                               id="agents"
                               type="checkbox"
                             />
-                            <label for="agents">
-                              <div class="input-icons">
+                            <label for="agents" class="pl-4">
+                              <div class="input-icons pos-abs">
                                 <i class="pi-circle pi-lg"></i>
                                 <i class="pi-check pi-lg"></i>
                               </div>
@@ -528,8 +200,7 @@
                             </select>
                           </div>
                         </label>
-                        <!-- Part 2 stuff below -->
-                        <!-- <fieldset class="form__field">
+                         <fieldset class="form__field">
                           <legend class="sr-only">Are You</legend>
                           <div class="toggle">
                             <div class="toggle__content">
@@ -556,8 +227,7 @@
                               >
                             </div>
                           </div>
-                        </fieldset> -->
-                        <!-- Part 2 stuff above -->
+                        </fieldset> 
                       </form>
                     </div>
                     <div
@@ -566,11 +236,9 @@
                       <div class="mb-4">
                         <div class="flex flex--justify-between flex--align-center mb-3">
                           <h2 class="text-base text--size-md mb-0">Products and States</h2>
-                          <!-- Part 2 Stuff below -->
-                          <!-- <button class="button">
+                          <button class="button">
                             Add <i class="pi-plus" aria-hidden="true"></i>
-                          </button> -->
-                          <!-- Part 2 Stuff above -->
+                          </button>
                         </div>
                         <div class="block-container blocks mx-1 mt-1 mb-3">
                           <button class="block block--shrink button border--color-navy text-navy background-beige background-white--hover" >
@@ -638,8 +306,7 @@
                           <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
                           <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
                         </div>
-                        <!-- Part 2 stuff below -->
-                        <!-- <div class="block-container">
+                         <div class="block-container">
                           <fieldset
                             class="form__field form block block--shrink"
                           >
@@ -672,65 +339,456 @@
                               </div>
                             </div>
                           </fieldset>
-                        </div> -->
-                        <!-- Part 2 stuff above -->
+                        </div> 
                       </div>
-                      <div class="mb-3">
-                        <div
-                          class="flex flex--justify-between flex--align-center mb-3"
-                        >
-                          <h2 class="text-base text--size-md mb-0">Certifications</h2>
-                          <!-- Part 2 Stuff below -->
-                          <!-- <button class="button">
-                            Add <i class="pi-plus" aria-hidden="true"></i>
-                          </button> -->
-                          <!-- Part 2 Stuff above -->
+                      <div class="mb-4">
+                        <div class="accordion no-border">
+                          <div
+                            class="flex flex--justify-between flex--align-center mb-3"
+                          >
+                            <div class="flex flex--align-center">
+                              <i class="pi-angle-down mr-3 text--size-xl"></i>
+                              <h2 class="text-base text--size-md mb-0">Certifications</h2>
+                            </div>
+                            <button class="button">
+                              Add <i class="pi-plus" aria-hidden="true"></i>
+                            </button>
+                          </div>
+                          <!-- Set active by default. Allow accordions to toggle closed. -->
+                          <div class="accordion__content active">
+                            <div class="w-100 flex flex--wrap">
+                              <div
+                                class="pill background-med-blue py-1 text-white mr-1 mb-2"
+                              >
+                                HMO
+                                <i
+                                  aria-hidden="true"
+                                  class="ml-2 pi-times-solid"
+                                ></i>
+                              </div>
+                              <div
+                                class="pill background-med-blue py-1 text-white mr-1 mb-2"
+                              >
+                                PFFS
+                                <i
+                                  aria-hidden="true"
+                                  class="ml-2 pi-times-solid"
+                                ></i>
+                              </div>
+                              <div
+                                class="pill background-med-blue py-1 text-white mr-1 mb-2"
+                              >
+                                PPO
+                                <i
+                                  aria-hidden="true"
+                                  class="ml-2 pi-times-solid"
+                                ></i>
+                              </div>
+                              <div
+                                class="pill background-med-blue py-1 text-white mr-1 mb-2"
+                              >
+                                SNP
+                                <i
+                                  aria-hidden="true"
+                                  class="ml-2 pi-times-solid"
+                                ></i>
+                              </div>
+                              <div
+                                class="pill background-med-blue py-1 text-white mr-1 mb-2"
+                              >
+                                CarePlus
+                                <i
+                                  aria-hidden="true"
+                                  class="ml-2 pi-times-solid"
+                                ></i>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <div class="w-100 flex flex--wrap">
-                          <div
-                            class="pill background-navy text-white mr-1 mb-2"
-                          >
-                            HMO
-                            <i
-                              aria-hidden="true"
-                              class="ml-2 pi-times-solid"
-                            ></i>
+                      </div>
+                      <div class="mb-4">
+                        <div class="accordion no-border">
+                          <div class="flex flex--justify-between flex--align-center mb-3">
+                            <div class="flex flex--align-center">
+                              <i class="pi-angle-down mr-3 text--size-xl"></i>
+                              <h2 class="text-base text--size-md mb-0">Carrier File(s)</h2>
+                            </div>
+                            <button class="button">
+                              Add <i class="pi-plus" aria-hidden="true"></i>
+                            </button>
                           </div>
-                          <div
-                            class="pill background-navy text-white mr-1 mb-2"
-                          >
-                            PFFS
-                            <i
-                              aria-hidden="true"
-                              class="ml-2 pi-times-solid"
-                            ></i>
+                          <!-- Set active by default. Allow accordions to toggle closed. -->
+                          <div class="accordion__content active">
+                            <div class="tabs">
+                              <input type="radio" id="general" name="carrier-tabs" checked>
+                              <label for="general" class="tab">
+                                General
+                              </label>
+                              <div class="tab-panel p-0">
+                                <div class="my-3 px-3">
+                                  <p class="mb-0">Showing 3 out of 3</p>
+                                </div>
+                                <table class="table">
+                                  <thead>
+                                    <tr>
+                                      <th>Action</th>
+                                      <th>Levels</th>
+                                      <th>Digital</th>
+                                      <th>Files</th>
+                                      <th>Uploaded</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>
+                                        <div class="icon-menu">
+                                          <div class="icon-menu__item">
+                                            <a href="#" class="icon-menu__action text-positive--hover">
+                                              <i class="pi-download" aria-hidden="hidden"></i>
+                                            </a>
+                                          </div>
+                                          <div class="icon-menu__item">
+                                            <a href="#" class="icon-menu__action text-positive--hover">
+                                              <i class="pi-eye" aria-hidden="hidden"></i>
+                                            </a>
+                                          </div>
+                                        </div>
+                                      </td>
+                                      <td>
+                                        1-5
+                                      </td>
+                                      <td>
+                                        <i class="pi-check text--size-xl"></i>
+                                      </td>
+                                      <td>
+                                        Contract.pdf
+                                      </td>
+                                      <td>
+                                        <div class="icon-menu">
+                                          <div class="icon-menu__item">
+                                            <a href="#" class="icon-menu__action text-positive--hover">
+                                              <i class="pi-edit" aria-hidden="hidden"></i>
+                                            </a>
+                                          </div>
+                                          <div class="icon-menu__item">
+                                            <a href="#" class="icon-menu__action text-negative--hover">
+                                              <i class="pi-trash" aria-hidden="hidden"></i>
+                                            </a>
+                                          </div>
+                                        </div>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                        <div class="icon-menu">
+                                          <div class="icon-menu__item">
+                                            <a href="#" class="icon-menu__action text-positive--hover">
+                                              <i class="pi-download" aria-hidden="hidden"></i>
+                                            </a>
+                                          </div>
+                                          <div class="icon-menu__item">
+                                            <a href="#" class="icon-menu__action text-positive--hover">
+                                              <i class="pi-eye" aria-hidden="hidden"></i>
+                                            </a>
+                                          </div>
+                                        </div>
+                                      </td>
+                                      <td>
+                                        1-5
+                                      </td>
+                                      <td></td>
+                                      <td>
+                                        Contract.pdf
+                                      </td>
+                                      <td>
+                                        <div class="icon-menu">
+                                          <div class="icon-menu__item">
+                                            <a href="#" class="icon-menu__action text-positive--hover">
+                                              <i class="pi-edit" aria-hidden="hidden"></i>
+                                            </a>
+                                          </div>
+                                          <div class="icon-menu__item">
+                                            <a href="#" class="icon-menu__action text-negative--hover">
+                                              <i class="pi-trash" aria-hidden="hidden"></i>
+                                            </a>
+                                          </div>
+                                        </div>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                        <div class="icon-menu">
+                                          <div class="icon-menu__item">
+                                            <a href="#" class="icon-menu__action text-positive--hover">
+                                              <i class="pi-download" aria-hidden="hidden"></i>
+                                            </a>
+                                          </div>
+                                          <div class="icon-menu__item">
+                                            <a href="#" class="icon-menu__action text-positive--hover">
+                                              <i class="pi-eye" aria-hidden="hidden"></i>
+                                            </a>
+                                          </div>
+                                        </div>
+                                      </td>
+                                      <td>
+                                        1-5
+                                      </td>
+                                      <td>
+                                        <i class="pi-check text--size-xl"></i>
+                                      </td>
+                                      <td>
+                                        Contract.pdf
+                                      </td>
+                                      <td>
+                                        <div class="icon-menu">
+                                          <div class="icon-menu__item">
+                                            <a href="#" class="icon-menu__action text-positive--hover">
+                                              <i class="pi-edit" aria-hidden="hidden"></i>
+                                            </a>
+                                          </div>
+                                          <div class="icon-menu__item">
+                                            <a href="#" class="icon-menu__action text-negative--hover">
+                                              <i class="pi-trash" aria-hidden="hidden"></i>
+                                            </a>
+                                          </div>
+                                        </div>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                              <input type="radio" id="schedule" name="carrier-tabs">
+                              <label for="schedule" class="tab">
+                                Schedule
+                              </label>
+                              <div class="tab-panel">
+                                <!-- tab content should be the same as General tab -->
+                                <div class="background-lighter flex--center-content" style="height: 320px">
+                                  <strong>
+                                    This tab should be the same as the General tab
+                                  </strong>
+                                </div>
+                              </div>
+                            </div>
                           </div>
+                        </div>
+                      </div>
+                      <div class="mb-4">
+                        <div class="accordion no-border">
                           <div
-                            class="pill background-navy text-white mr-1 mb-2"
+                            class="flex flex--justify-between flex--align-center mb-3"
                           >
-                            PPO
-                            <i
-                              aria-hidden="true"
-                              class="ml-2 pi-times-solid"
-                            ></i>
+                            <div class="flex flex--align-center">
+                              <i class="pi-angle-down mr-3 text--size-xl"></i>
+                              <h2 class="text-base text--size-md mb-0">Cover Sheet</h2>
+                            </div>
+                            <div class="flex flex--align-center">
+                              <p class="mb-0 mr-3">Set as default</p>
+                              <button class="pill pill--circle-medium pointer button--plain">
+                                <i aria-hidden="true" focusable="false" class="pi-check pi-lg"></i>
+                              </button>
+                            </div>
                           </div>
-                          <div
-                            class="pill background-navy text-white mr-1 mb-2"
-                          >
-                            SNP
-                            <i
-                              aria-hidden="true"
-                              class="ml-2 pi-times-solid"
-                            ></i>
+                          <!-- Set active by default. Allow accordions to toggle closed. -->
+                          <div class="accordion__content active">
+                            <!-- placeholder for cover sheet plugin -->
+                            <div class="w-100 flex flex--wrap card background-light flex--center-content">
+                              <span class="text-white">Placeholder for Cover Sheet</span>
+                            </div>
+                            <!-- placeholder for cover sheet plugin -->
                           </div>
-                          <div
-                            class="pill background-navy text-white mr-1 mb-2"
-                          >
-                            CarePlus
-                            <i
-                              aria-hidden="true"
-                              class="ml-2 pi-times-solid"
-                            ></i>
+                        </div>
+                      </div>
+                      <div class="mb-4">
+                        <div class="accordion no-border">
+                          <div class="flex flex--justify-between flex--align-center mb-3">
+                            <div class="flex flex--align-center">
+                              <i class="pi-angle-down mr-3 text--size-xl"></i>
+                              <h2 class="text-base text--size-md mb-0">Commissions</h2>
+                            </div>
+                            <button class="button">
+                              Add <i class="pi-plus" aria-hidden="true"></i>
+                            </button>
+                          </div>
+                          <!-- Set active by default. Allow accordions to toggle closed. -->
+                          <div class="accordion__content active">
+                            <div class="tabs">
+                              <input type="radio" id="initial" name="commissions" checked>
+                              <label for="initial" class="tab">
+                                Initial
+                              </label>
+                              <div class="tab-panel p-0">
+                                <div class="my-3 px-3">
+                                  <div class="block-container">
+                                    <div class="block lg-tablet-up-10">
+                                      <div class="block-container flex--align-center blocks p-2">
+                                        <div class="block lg-tablet-up-6 laptop-up--shrink flex flex--align-center">
+                                          <strong class="pr-2">Effective Date:</strong>
+                                          <date>00/00/0000</date>
+                                        </div>
+                                        <div class="block lg-tablet-up-6 laptop-up--shrink flex flex--align-center">
+                                          <strong class="pr-2">Expiration Date:</strong>
+                                          <date>00/00/0000</date>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="block lg-tablet-up-2 flex flex--justify-end flex--align-center">
+                                      <button class="button button--secondary">
+                                        <i class="pi-edit"></i>
+                                        <span class="sr-only">Edit</span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                                <table class="table">
+                                  <thead>
+                                    <tr>
+                                      <th>Levels</th>
+                                      <th>Commissions/States</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>
+                                        0
+                                      </td>
+                                      <td>
+                                        <span class="mr-2">50%</span>
+                                        <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
+                                          <i class="pi-globe"></i>
+                                        </span>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                        1
+                                      </td>
+                                      <td>
+                                        <span class="mr-2">55%</span>
+                                        <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
+                                          <i class="pi-globe"></i>
+                                        </span>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                        2
+                                      </td>
+                                      <td>
+                                        <div>
+                                          <span class="mr-2">60%</span>
+                                          <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
+                                            <strong>
+                                              NJ
+                                            </strong>
+                                          </span>
+                                          <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
+                                            <strong>
+                                              MD
+                                            </strong>
+                                          </span>
+                                          <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
+                                            <strong>
+                                              VA
+                                            </strong>
+                                          </span>
+                                          <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
+                                            <strong>
+                                              WV
+                                            </strong>
+                                          </span>
+                                          <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
+                                            <strong>
+                                              ID
+                                            </strong>
+                                          </span>
+                                          <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
+                                            <strong>
+                                              IL
+                                            </strong>
+                                          </span>
+                                          <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
+                                            <strong>
+                                              IN
+                                            </strong>
+                                          </span>
+                                          <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
+                                            <strong>
+                                              KS
+                                            </strong>
+                                          </span>
+                                        </div>
+                                        <div>
+                                          <span class="mr-2">58%</span>
+                                          <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
+                                            <strong>
+                                              PA
+                                            </strong>
+                                          </span>
+                                          <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
+                                            <strong>
+                                              MI
+                                            </strong>
+                                          </span>
+                                          <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
+                                            <strong>
+                                              ME
+                                            </strong>
+                                          </span>
+                                          <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
+                                            <strong>
+                                              MN
+                                            </strong>
+                                          </span>
+                                        </div>
+                                        <div>
+                                          <span class="mr-2">52%</span>
+                                          <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
+                                            <i class="pi-globe"></i>
+                                          </span>
+                                        </div>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                              <input type="radio" id="second" name="commissions">
+                              <label for="second" class="tab">
+                                Second Stage
+                              </label>
+                              <div class="tab-panel">
+                                <!-- tab content should be the same as Initial tab -->
+                                <div class="background-lighter flex--center-content" style="height: 428px">
+                                  <strong>
+                                    This tab should be the same as the Initial tab
+                                  </strong>
+                                </div>
+                              </div>
+                              <input type="radio" id="third" name="commissions">
+                              <label for="third" class="tab">
+                                Third Stage
+                              </label>
+                              <div class="tab-panel">
+                                <!-- tab content should be the same as Initial tab -->
+                                <div class="background-lighter flex--center-content" style="height: 428px">
+                                  <strong>
+                                    This tab should be the same as the Initial tab
+                                  </strong>
+                                </div>
+                              </div>
+                              <input type="radio" id="fourth" name="commissions">
+                              <label for="fourth" class="tab">
+                                Fourth Stage
+                              </label>
+                              <div class="tab-panel">
+                                <!-- tab content should be the same as Initial tab -->
+                                <div class="background-lighter flex--center-content" style="height: 428px">
+                                  <strong>
+                                    This tab should be the same as the Initial tab
+                                  </strong>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -749,7 +807,12 @@
               ></i>
             </label>
             <div class="tab-panel">
-              <img src="https://placeimg.com/640/480/animals?t=1565635267224" />
+              <!-- tab content should be the same as Active tab -->
+              <div class="background-lighter flex--center-content" style="height: 350px">
+                <strong>
+                  This tab should be the same as the Active tab
+                </strong>
+              </div>
             </div>
             <input type="radio" id="tab-input-c" name="tabs" />
             <label for="tab-input-c" class="tab">
@@ -761,95 +824,21 @@
               ></i>
             </label>
             <div class="tab-panel">
-              <img src="https://placeimg.com/640/480/animals?t=1565635322782" />
+              <!-- tab content should be the same as Active tab -->
+              <div class="background-lighter flex--center-content" style="height: 350px">
+                <strong>
+                  This tab should be the same as the Active tab
+                </strong>
+              </div>
             </div>
           </div>
         </div>
         <div class="block lg-tablet-up-4 laptop-up-3">
-          <div class="background-note pt-3 pb-3 px-4">
-            <div class="h-100">
-              <div
-                class="flex flex--align-center flex--justify-between pb-3 flex--wrap"
-              >
-                <div class="flex flex--align-center">
-                  <button
-                    title="Add Note"
-                    aria-label="Add Note"
-                    class="button button--secondary"
-                  >
-                    <i aria-hidden="true" class="pi-plus"></i>
-                  </button>
-                  <h2 class="ml-2 mb-0 text--size-lg text-navy">Notes</h2>
-                </div>
-                <button class="button my-2">
-                  View All 27 <i aria-hidden="true" class="pi-arrow-right"></i>
-                </button>
-              </div>
-              <div class="side-content">
-                <ol class="h-100 overflow-y overflow-x--hidden list">
-                  <li class="list__item border-t border--color-light-mid">
-                    <div class="text-base py-3 px-1">                      
-                      <div
-                        title="Last edited by Ted Krueger 01/27/2020"
-                        class="flex flex--align-start mb-2"
-                      >
-                        <i
-                          aria-hidden="true"
-                          class="pi-speech-bubble text-light"
-                        ></i>
-                        <strong class="text-light ml-2"
-                          >Ted Krueger 01/27/2020</strong
-                        >
-                      </div>
-                      <p class="mb-0">
-                        This is a test note. I'm creating one of these for the
-                        same reason that I created a test Task.
-                      </p>
-                    </div>
-                  </li>
-                  <li class="list__item border-t border--color-light-mid">
-                    <div class="text-base py-3 px-1">                      
-                      <div
-                        title="Last edited by Ted Krueger 01/27/2020"
-                        class="flex flex--align-start mb-2"
-                      >
-                        <i
-                          aria-hidden="true"
-                          class="pi-speech-bubble text-light"
-                        ></i>
-                        <strong class="text-light ml-2"
-                          >Ted Krueger 01/27/2020</strong
-                        >
-                      </div>
-                      <p class="mb-0">
-                        This is a test note. I'm creating one of these for the
-                        same reason that I created a test Task.
-                      </p>
-                    </div>
-                  </li>
-                  <li class="list__item border-t border--color-light-mid">
-                    <div class="text-base py-3 px-1">                      
-                      <div
-                        title="Last edited by Ted Krueger 01/27/2020"
-                        class="flex flex--align-start mb-2"
-                      >
-                        <i
-                          aria-hidden="true"
-                          class="pi-speech-bubble text-light"
-                        ></i>
-                        <strong class="text-light ml-2"
-                          >Ted Krueger 01/27/2020</strong
-                        >
-                      </div>
-                      <p class="mb-0">
-                        This is a test note. I'm creating one of these for the
-                        same reason that I created a test Task.
-                      </p>
-                    </div>
-                  </li>
-                </ol>
-              </div>
-            </div>
+          <!-- placeholder notes block -->
+          <div class="background-light py-3 px-4 flex--center-content" style="height: 400px;">
+            <p class="text-white text--size-xl">
+              Notes Placeholder
+            </p>
           </div>
         </div>
       </div>
