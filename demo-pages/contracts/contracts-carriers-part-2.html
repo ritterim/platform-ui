@@ -67,10 +67,10 @@
       <div class="site-menu background-white h-50">
       </div>
     </header>
-    <main class="header-fixed background-light-mid flex--grow py-4 px-5">
-      <div class="block-container blocks px-3 mb-4">
-        <div class="block lg-tablet-up-8 laptop-up-9">
-           <div class="block-container flex--justify-end mb-4">
+    <main class="header-fixed background-light-mid flex--grow py-4 px-3">
+      <div class="block-container blocks mb-4">
+        <div class="block laptop-up-9">
+          <div class="flex flex--justify-end mb-4">
             <fieldset class="form__field form block block--shrink">
               <legend class="sr-only">Select All States or Deselect all</legend>
               <div class="toggle background-white mt-0">
@@ -105,19 +105,22 @@
               <i
                 focusable="false"
                 aria-hidden="hidden"
-                class="pi-angle-down show-mobile-only pi-lg transition"
+                class="pi-angle-down show-mobile-only pi-lg transition ml-2"
               ></i>
             </label>
             <div class="tab-panel py-4 px-4">
                <div class="flex flex--justify-end w-100 mb-4">
-                <button class="button">
+                <button class="button button--secondary hide-laptop-up">
+                  <i class="pi-copy"></i>
+                  <span class="sr-only">Notes</span>
+                </button>
+                <button class="button ml-3">
                   Add <i class="pi-plus" aria-hidden="true"></i>
                 </button>
-              </div> 
+              </div>
+              <!-- the .active class is added for visual purposes here. Make sure that this toggles like the rest of the accordiong in the platform. -->
               <div class="accordion active">
-                <div
-                  class="accordion__header px-4 py-4 flex flex--justify-between"
-                >
+                <div class="accordion__header px-4 py-4 flex flex--justify-between">
                   <span class="text--bold text-base">Humana</span>
                   <button
                     class="text-light text-negative--hover pointer button--plain"
@@ -126,113 +129,125 @@
                     <i class="pi-trash" aria-hidden="hidden"></i>
                   </button>
                 </div>
-                <div
-                  class="accordion__content px-4 py-4 fade-in-from-none-enter-active"
-                >
-                  <div class="block-container blocks px-3">
-                    <div class="block tablet-up-4 lg-tablet-up-3">
+                <div class="accordion__content px-3 py-3 fade-in-from-none-enter-active">
+                  <div class="block-container blocks p-3">
+                    <div class="block lg-tablet-up-3">
                       <h2 class="text-base text--size-md mb-0 mb-3">Setup</h2>
                       <form action="" class="form">
                         <fieldset class="form__field mb-4">
                           <legend class="sr-only">Choose</legend>
-                          <div class="flex flex--column">
-                            <input
-                              class="form__checkbox"
-                              id="per-state"
-                              type="checkbox"
-                            />
-                            <label for="per-state" class="mb-2 pl-4">
-                              <div class="input-icons pos-abs">
-                                <i class="pi-circle pi-lg"></i>
-                                <i class="pi-check pi-lg"></i>
-                              </div>
-                              Allow per-state agent writting number
-                            </label>
-                            <input
-                              class="form__checkbox"
-                              id="non-licensed"
-                              type="checkbox"
-                            />
-                            <label for="non-licensed" class="mb-2 pl-4">
-                              <div class="input-icons pos-abs">
-                                <i class="pi-circle pi-lg"></i>
-                                <i class="pi-check pi-lg"></i>
-                              </div>
-                              Allow non-licensed states for overrides
-                            </label>
-                            <input
-                              class="form__checkbox"
-                              id="staff"
-                              type="checkbox"
-                            />
-                            <label for="staff" class="mb-2 pl-4">
-                              <div class="input-icons pos-abs">
-                                <i class="pi-circle pi-lg"></i>
-                                <i class="pi-check pi-lg"></i>
-                              </div>
-                              Enabled for staff
-                            </label>
-                            <input
-                              class="form__checkbox"
-                              id="agents"
-                              type="checkbox"
-                            />
-                            <label for="agents" class="pl-4">
-                              <div class="input-icons pos-abs">
-                                <i class="pi-circle pi-lg"></i>
-                                <i class="pi-check pi-lg"></i>
-                              </div>
-                              Enabled for agents
-                            </label>
+                          <div class="block-container tablet-up-2 lg-tablet-up-1">
+                            <div class="block">
+                              <input
+                                class="form__checkbox"
+                                id="per-state"
+                                type="checkbox"
+                              />
+                              <label for="per-state" class="mb-2">
+                                <div class="input-icons">
+                                  <i class="pi-circle pi-lg"></i>
+                                  <i class="pi-check pi-lg"></i>
+                                </div>
+                                Allow per-state agent writting number
+                              </label>
+                            </div>
+                            <div class="block">
+                              <input
+                                class="form__checkbox"
+                                id="non-licensed"
+                                type="checkbox"
+                              />
+                              <label for="non-licensed" class="mb-2">
+                                <div class="input-icons">
+                                  <i class="pi-circle pi-lg"></i>
+                                  <i class="pi-check pi-lg"></i>
+                                </div>
+                                Allow non-licensed states for overrides
+                              </label>
+                            </div>
+                            <div class="block">
+                              <input
+                                class="form__checkbox"
+                                id="staff"
+                                type="checkbox"
+                              />
+                              <label for="staff" class="mb-2">
+                                <div class="input-icons">
+                                  <i class="pi-circle pi-lg"></i>
+                                  <i class="pi-check pi-lg"></i>
+                                </div>
+                                Enabled for staff
+                              </label>
+                            </div>
+                            <div class="block">
+                              <input
+                                class="form__checkbox"
+                                id="agents"
+                                type="checkbox"
+                              />
+                              <label for="agents">
+                                <div class="input-icons">
+                                  <i class="pi-circle pi-lg"></i>
+                                  <i class="pi-check pi-lg"></i>
+                                </div>
+                                Enabled for agents
+                              </label>
+                            </div>
                           </div>
                         </fieldset>
-                        <label for="third-party" class="form__field mb-4"
-                          >Third Party Provider
-                          <div class="form__select-wrapper">
-                            <select name="County Select" id="third-party">
-                              <option value="" selected></option>
-                              <option value="County1">County 1</option>
-                              <option value="County2">County 2</option>
-                              <option value="County3">County 3</option>
-                              <option value="County4">County 4</option>
-                              <option value="County5">County 5</option>
-                              <option value="County6">County 6</option>
-                            </select>
+                        <div class="block-container blocks p-3">
+                          <div class="block tablet-up-6 lg-tablet-up-12">
+                            <label for="third-party" class="form__field"
+                              >Third Party Provider
+                              <div class="form__select-wrapper">
+                                <select name="County Select" id="third-party">
+                                  <option value="" selected></option>
+                                  <option value="County1">County 1</option>
+                                  <option value="County2">County 2</option>
+                                  <option value="County3">County 3</option>
+                                  <option value="County4">County 4</option>
+                                  <option value="County5">County 5</option>
+                                  <option value="County6">County 6</option>
+                                </select>
+                              </div>
+                            </label>
                           </div>
-                        </label>
-                         <fieldset class="form__field">
-                          <legend class="sr-only">Are You</legend>
-                          <div class="toggle">
-                            <div class="toggle__content">
-                              <input
-                                class="toggle__input"
-                                id="digital"
-                                type="radio"
-                                checked=""
-                                name="height"
-                              />
-                              <label for="digital"
-                                ><i class="pi-check"></i> Digital</label
-                              >
-                            </div>
-                            <div class="toggle__content">
-                              <input
-                                class="toggle__input"
-                                id="paper"
-                                type="radio"
-                                name="height"
-                              />
-                              <label for="paper"
-                                ><i class="pi-check"></i> Paper</label
-                              >
-                            </div>
+                          <div class="block tablet-up-6 lg-tablet-up--shrink">
+                            <fieldset class="form__field">
+                              <legend class="sr-only">Are You</legend>
+                              <div class="toggle m-0">
+                                <div class="toggle__content">
+                                  <input
+                                    class="toggle__input"
+                                    id="digital"
+                                    type="radio"
+                                    checked=""
+                                    name="height"
+                                  />
+                                  <label for="digital"
+                                    ><i class="pi-check"></i> Digital</label
+                                  >
+                                </div>
+                                <div class="toggle__content">
+                                  <input
+                                    class="toggle__input"
+                                    id="paper"
+                                    type="radio"
+                                    name="height"
+                                  />
+                                  <label for="paper"
+                                    ><i class="pi-check"></i> Paper</label
+                                  >
+                                </div>
+                              </div>
+                            </fieldset>
                           </div>
-                        </fieldset> 
+                        </div>
                       </form>
                     </div>
-                    <div
-                      class="block tablet-up-8 lg-tablet-up-9 pb-2 border-l border--color-light-mid"
-                    >
+                    <div class="block lg-tablet-up-9 pb-2 pos-rel">
+                      <div class="border-l border--color-light-mid pos-abs pin-left pin-top pin-bottom hide-lg-tablet-down" style="width: 1px;"></div>
+                      <div class="border-t border--color-light-mid pos-abs pin-left pin-top pin-right hide-lg-tablet-up" style="height: 1px;"></div>
                       <div class="mb-4">
                         <div class="flex flex--justify-between flex--align-center mb-3">
                           <h2 class="text-base text--size-md mb-0">Products and States</h2>
@@ -424,8 +439,8 @@
                               <label for="general" class="tab">
                                 General
                               </label>
-                              <div class="tab-panel p-0">
-                                <div class="my-3 px-3">
+                              <div class="tab-panel pt-3 pr-0 pb-0 pl-0">
+                                <div class="mb-3 px-3">
                                   <p class="mb-0">Showing 3 out of 3</p>
                                 </div>
                                 <table class="table">
@@ -440,7 +455,7 @@
                                   </thead>
                                   <tbody>
                                     <tr>
-                                      <td>
+                                      <td data-label="Action">
                                         <div class="icon-menu">
                                           <div class="icon-menu__item">
                                             <a href="#" class="icon-menu__action text-positive--hover">
@@ -454,16 +469,16 @@
                                           </div>
                                         </div>
                                       </td>
-                                      <td>
+                                      <td data-label="Levels">
                                         1-5
                                       </td>
-                                      <td>
+                                      <td data-label="Digital">
                                         <i class="pi-check text--size-xl"></i>
                                       </td>
-                                      <td>
+                                      <td data-label="Files">
                                         Contract.pdf
                                       </td>
-                                      <td>
+                                      <td data-label="Uploaded">
                                         <div class="icon-menu">
                                           <div class="icon-menu__item">
                                             <a href="#" class="icon-menu__action text-positive--hover">
@@ -479,7 +494,7 @@
                                       </td>
                                     </tr>
                                     <tr>
-                                      <td>
+                                      <td data-label="Action">
                                         <div class="icon-menu">
                                           <div class="icon-menu__item">
                                             <a href="#" class="icon-menu__action text-positive--hover">
@@ -493,14 +508,14 @@
                                           </div>
                                         </div>
                                       </td>
-                                      <td>
+                                      <td data-label="Levels">
                                         1-5
                                       </td>
                                       <td></td>
-                                      <td>
+                                      <td data-label="Files">
                                         Contract.pdf
                                       </td>
-                                      <td>
+                                      <td data-label="Uploaded">
                                         <div class="icon-menu">
                                           <div class="icon-menu__item">
                                             <a href="#" class="icon-menu__action text-positive--hover">
@@ -516,7 +531,7 @@
                                       </td>
                                     </tr>
                                     <tr>
-                                      <td>
+                                      <td data-label="Action">
                                         <div class="icon-menu">
                                           <div class="icon-menu__item">
                                             <a href="#" class="icon-menu__action text-positive--hover">
@@ -530,16 +545,16 @@
                                           </div>
                                         </div>
                                       </td>
-                                      <td>
+                                      <td data-label="Levels">
                                         1-5
                                       </td>
-                                      <td>
+                                      <td data-label="Digital">
                                         <i class="pi-check text--size-xl"></i>
                                       </td>
-                                      <td>
+                                      <td data-label="Files">
                                         Contract.pdf
                                       </td>
-                                      <td>
+                                      <td data-label="Uploaded">
                                         <div class="icon-menu">
                                           <div class="icon-menu__item">
                                             <a href="#" class="icon-menu__action text-positive--hover">
@@ -617,8 +632,8 @@
                               <label for="initial" class="tab">
                                 Initial
                               </label>
-                              <div class="tab-panel p-0">
-                                <div class="my-3 px-3">
+                              <div class="tab-panel pt-3 pr-0 pb-0 pl-0">
+                                <div class="mb-3 px-3">
                                   <div class="block-container">
                                     <div class="block lg-tablet-up-10">
                                       <div class="block-container flex--align-center blocks p-2">
@@ -649,10 +664,10 @@
                                   </thead>
                                   <tbody>
                                     <tr>
-                                      <td>
+                                      <td data-label="Levels">
                                         0
                                       </td>
-                                      <td>
+                                      <td data-label="Commissions/States">
                                         <span class="mr-2">50%</span>
                                         <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
                                           <i class="pi-globe"></i>
@@ -660,10 +675,10 @@
                                       </td>
                                     </tr>
                                     <tr>
-                                      <td>
+                                      <td data-label="Levels">
                                         1
                                       </td>
-                                      <td>
+                                      <td data-label="Commissions/States">
                                         <span class="mr-2">55%</span>
                                         <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
                                           <i class="pi-globe"></i>
@@ -671,10 +686,10 @@
                                       </td>
                                     </tr>
                                     <tr>
-                                      <td>
+                                      <td data-label="Levels">
                                         2
                                       </td>
-                                      <td>
+                                      <td data-label="Commissions/States">
                                         <div>
                                           <span class="mr-2">60%</span>
                                           <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
@@ -803,7 +818,7 @@
               <i
                 focusable="false"
                 aria-hidden="hidden"
-                class="pi-angle-down show-mobile-only pi-lg transition"
+                class="pi-angle-down show-mobile-only pi-lg transition ml-2"
               ></i>
             </label>
             <div class="tab-panel">
@@ -820,7 +835,7 @@
               <i
                 focusable="false"
                 aria-hidden="hidden"
-                class="pi-angle-down show-mobile-only pi-lg transition"
+                class="pi-angle-down show-mobile-only pi-lg transition ml-2"
               ></i>
             </label>
             <div class="tab-panel">
@@ -833,7 +848,7 @@
             </div>
           </div>
         </div>
-        <div class="block lg-tablet-up-4 laptop-up-3">
+        <div class="block laptop-up-3 hide-laptop-down pl-3">
           <!-- placeholder notes block -->
           <div class="background-light py-3 px-4 flex--center-content" style="height: 400px;">
             <p class="text-white text--size-xl">
