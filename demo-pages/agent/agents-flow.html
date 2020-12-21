@@ -10,6 +10,8 @@
         rel="stylesheet"
         href="https://unpkg.com/@ritterim/platform-ui/dist/platform-ui.min.css" />
 
+  <link rel="stylesheet" href="../assets/skeletons/skeletons.css">
+
   <style>
     /* This is just to move the notes section to the right side... */
     .block.pos-fix.hide-laptop-down {
@@ -20,8 +22,8 @@
 
 <body class="flex flex--column">
   <!-- Header -->
-  <header class="pos-fixed w-100 background-navy p-0 flex flex--align-center" style="height:65px;">
-    <span class="text-white text--bold text--uppercase mx-4">Nav</span>
+  <header class="pos-fixed w-100 background-navy p-0 block-container flex--align-center" style="height:65px;">
+    <h2 class="skeleton skeleton--sm mx-4 block block-1"></h2>
   </header>
 
   <!-- Main -->
@@ -355,6 +357,10 @@
               <strong class="text-navy text--size-lg">Notes</strong>
             </div>
           </div>
+          <h2 class="skeleton skeleton--md"></h2>
+          <p class="skeleton" data-lines="4"></p>
+          <p class="skeleton" data-lines="2"></p>
+          <p class="skeleton" data-lines="3"></p>
         </div>
       </div>
     </div>
@@ -430,6 +436,7 @@
   </div>
 
   <script src="https://unpkg.com/@ritterim/platform-ui/dist/js/platform-ui.min.js"></script>
+  <script src="../assets/skeletons/skeletons.js"></script>
 </body>
 
 </html>
