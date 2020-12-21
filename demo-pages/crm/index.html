@@ -1,0 +1,1772 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CRM Flow</title>
+
+    <link rel="stylesheet" href="/src/assets/stylesheets/platform-ui.min.css">
+    <style>
+
+    </style>
+
+</head>
+
+<body class="background-light-mid">
+    <header class="site-header site-header--fixed background-navy"></header>
+    <main class="header-fixed py-4 px-5">
+        <div class="tabs">
+            <input type="radio" id="tab-input-a" name="tabs" checked>
+            <label for="tab-input-a" class="tab">
+                Clients
+            </label>
+            <div class="tab-panel p-4">
+                <div class="block-container flex--justify-between">
+                    <div class="block tablet-up-4 py-2 mb-3">
+                        Showing 100 out of 5,294
+                        <button type="button" title="Load more" aria-label="Load more"
+                            class="button button--secondary ml-2"><i aria-hidden="true" class="pi-sync"></i>
+                        </button>
+                    </div>
+                    <div class="block flex flex--justify-end tablet-up-6 py-2 mb-3">
+                        <button data-button-text="Filters" data-drawer="filters" aria-controls="submission-filters"
+                            aria-label="Filters" class="button button--secondary mr-2">
+                            <i aria-hidden="true" class="pi-filter"></i>
+                        </button>
+                        <button data-button-text="Export" aria-label="Export" class="button button--secondary mr-2">
+                            <i aria-hidden="true" class="pi-download"></i>
+                        </button>
+                        <button data-modal="add-client-modal" class="button modal__open">
+                            Add
+                            <i aria-hidden="true" class="pi-plus"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="accordion">
+                    <div class="accordion__header block-container pointer p-3">
+                        <div class="block tablet-up-2">
+                            <div class="text--bold">Name</div>
+                            Chelsea Merge
+                        </div>
+                        <div class="block tablet-up-3">
+                            <div class="text--bold">Owners</div>
+                            <div class="pill mb-1 mr-1 truncate-with-ellipsis">Chelsea Testpass</div>
+                        </div>
+                        <div class="block tablet-up-1">
+                            <div class="text--bold">eSOA</div>
+                            <div class="pill pill--circle text-white background-positive">
+                                2
+                            </div>
+                        </div>
+                        <div class="block tablet-up-2">
+                            <div class="text--bold">Email</div>
+                            <div class="truncate-with-ellipsis">chelsea.testpass@gmail.com</div>
+                        </div>
+                        <div class="block tablet-up-1">
+                            <div class="text--bold">Source</div>
+                            T65
+                        </div>
+                        <div class="block tablet-up-1">
+                            <div class="text--bold">Created</div>
+                            <div>Medicareful</div>
+                            <div>12/03/2020</div>
+                        </div>
+                        <div class="block tablet-up-1">
+                            <div class="text--bold">Modified</div>
+                            <div>Chelsea Lundy</div>
+                            <div>12/16/2020</div>
+                        </div>
+                        <div class="block tablet-up-1 flex flex--justify-end flex--align-center">
+                            <i class="pi-angle-down accordion__icon" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="accordion__content px-3 py-3">
+                        <div class="accordion mb-3 pointer">
+                            <div class="accordion__header block-container flex--justify-between background-white">
+                                <div class="block block--shrink flex flex--align-center">
+                                    <button title="Show Owners" aria-label="Show Owners" class="button--plain">
+                                        <i aria-hidden="true" class="pi-angle-right pi-lg mr-2"></i>
+                                    </button>
+                                    <i aria-hidden="true" class="pi-user-tie mr-2"></i>
+                                    Owners
+                                    <div class="pill pill--circle ml-2">1</div>
+                                </div>
+                                <div class="block block--shrink">
+                                    <button data-modal="add-owner-modal" class="button modal__open">
+                                        Add
+                                        <i aria-hidden="true" class="pi-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="accordion__content py-2 px-3">
+                                <div class="block-container mb-3">
+                                    <div class="block block--shrink form">
+                                        <label for="text-695" class="form__field has-icon--right">
+                                            Add Owner
+                                            <input id="text-695" placeholder="Type to search" type="text" />
+                                            <i aria-hidden="true" class="pi-search text-base"></i>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="pill">
+                                    Chelsea Testpass <i class="pi-times-solid text-salmon ml-1 pointer" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion mb-3 pointer">
+                            <div class="accordion__header block-container flex--justify-between background-white">
+                                <div class="block block--shrink flex flex--align-center">
+                                    <button title="Show Owners" aria-label="Show Owners" class="button--plain">
+                                        <i aria-hidden="true" class="pi-angle-right pi-lg mr-2"></i>
+                                    </button>
+                                    <i aria-hidden="true" class="pi-file-text mr-2"></i>
+                                    eScopes
+                                    <div class="pill pill--circle ml-2">2</div>
+                                </div>
+                            </div>
+                            <div class="accordion__content py-2 px-3">
+                                <table class="table">
+                                    <thead>
+                                      <tr>
+                                        <th>Products</th>
+                                        <th>Beneficiary | Relationship</th>
+                                        <th>Created</th>
+                                        <th>Client/Rep Signed</th>
+                                        <th>Agent Signed</th>
+                                        <th>Download</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td data-label="Products">
+                                            <div class="pill mb-1 mr-1 truncate-with-ellipsis">Dental Vision Hearing</div>
+                                            <div class="pill mb-1 mr-1 truncate-with-ellipsis">Hospital Indemnity</div>
+                                        </td>
+                                        <td data-label="Beneficiary">
+                                            Jane Doe | Daughter
+                                        </td>
+                                        <td data-label="Created">
+                                            12/12/2020
+                                        </td>
+                                        <td data-label="Client/Rep Signed">
+                                            12/12/2020
+                                        </td>
+                                        <td data-label="Agent Signed">
+                                            12/12/2020
+                                        </td>
+                                        <td data-label="Download" class="text--center">
+                                            <button class="button button--secondary" role="button" aria-label="Download">
+                                                <i class="pi-download" aria-hidden="true"></i>
+                                            </button>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td data-label="Products">
+                                            <div class="pill mb-1 mr-1 truncate-with-ellipsis">Dental Vision Hearing</div>
+                                            <div class="pill mb-1 mr-1 truncate-with-ellipsis">Hospital Indemnity</div>
+                                        </td>
+                                        <td data-label="Beneficiary">
+                                            <i class="pi-ban" aria-hidden="true"></i> | <i class="pi-ban" aria-hidden="true"></i>
+                                        </td>
+                                        <td data-label="Created">
+                                            12/12/2020
+                                        </td>
+                                        <td data-label="Client/Rep Signed">
+                                            12/12/2020
+                                        </td>
+                                        <td data-label="Agent Signed">
+                                            12/12/2020
+                                        </td>
+                                        <td data-label="Download" class="text--center">
+                                            <button class="button button--secondary" role="button" aria-label="Download" disabled>
+                                                <i class="pi-download" aria-hidden="true"></i>
+                                            </button>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                            </div>
+                        </div>
+                        <div class="accordion mb-3 pointer">
+                            <div class="accordion__header block-container flex--justify-between background-white">
+                                <div class="block block--shrink flex flex--align-center">
+                                    <button title="Show Owners" aria-label="Show Owners" class="button--plain">
+                                        <i aria-hidden="true" class="pi-angle-right pi-lg mr-2"></i>
+                                    </button>
+                                    <i aria-hidden="true" class="pi-attachment mr-2"></i>
+                                    Attachments
+                                    <div class="pill pill--circle ml-2">0</div>
+                                </div>
+                                <div class="block block--shrink">
+                                    <button class="button">
+                                        Add
+                                        <i aria-hidden="true" class="pi-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="accordion__content py-2 px-3">
+                                Drop in attachments component
+                            </div>
+                        </div>
+                        <div class="accordion mb-3 pointer">
+                            <div class="accordion__header block-container flex--justify-between background-white">
+                                <div class="block block--shrink flex flex--align-center">
+                                    <button title="Show Owners" aria-label="Show Owners" class="button--plain">
+                                        <i aria-hidden="true" class="pi-angle-right pi-lg mr-2"></i>
+                                    </button>
+                                    <i aria-hidden="true" class="pi-user mr-2"></i>
+                                    Client
+                                </div>
+                            </div>
+                            <div class="accordion__content py-2 px-3">
+                                <form class="form px-3">
+                                    <div class="block-container blocks">
+                                        <div class="block">
+                                            <div class="block-container blocks p-2 tablet-up-2">
+                                                <div class="block">
+                                                    <label class="form__field">
+                                                        First Name
+                                                        <input type="text" value="John" required="required" />
+                                                    </label>
+                                                </div>
+                                                <div class="block">
+                                                    <label class="form__field">
+                                                        Last Name
+                                                        <input type="text" value="Doe" required="required" />
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="block-container blocks p-2 tablet-up-2">
+                                                <div class="block">
+                                                    <label class="form__field">
+                                                        Primary Email
+                                                        <input type="text" value="test@test.com" />
+                                                    </label>
+                                                </div>
+                                                <div class="block">
+                                                    <label class="form__field">
+                                                        Alternate Email
+                                                        <input type="text" />
+                                                    </label>
+                                                </div>
+                                                <div class="block">
+                                                    <label class="form__field">
+                                                        Primary Phone
+                                                        <input type="tel" value="123-456-7890" />
+                                                    </label>
+                                                </div>
+                                                <div class="block">
+                                                    <label class="form__field">
+                                                        Alternate Phone
+                                                        <input type="tel" />
+                                                    </label>
+                                                </div>
+                                                <div class="block">
+                                                    <label class="form__field">
+                                                        Mobile Phone
+                                                        <input type="tel" >
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h2 class="my-3">Primary Address</h2>
+                                        <div class="block-container blocks p-2 tablet-up-2">
+                                            <div class="block">
+                                                <label class="form__field">
+                                                    Address 1
+                                                    <input type="text" />
+                                                </label>
+                                            </div>
+                                            <div class="block">
+                                                <label class="form__field">
+                                                    Address 2
+                                                    <input type="text">
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="block-container blocks p-2 tablet-up-2">
+                                            <div class="block">
+                                                <label class="form__field">
+                                                    City
+                                                    <input type="text" />
+                                                </label>
+                                            </div>
+                                            <div class="block">
+                                                <label class="form__field">
+                                                    Zip
+                                                    <input type="tel" maxlength="5" />
+                                                </label>
+                                            </div>
+                                            <div class="block">
+                                                <label class="form__field">
+                                                    County
+                                                    <span 
+                                                        data-tooltip="Enter a zip code to get a list of counties."
+                                                        aria-label="Enter a zip code to get a list of counties."
+                                                        class="tooltip-right tooltip-mobile text-med-blue mr-2">
+                                                        <i
+                                                            focusable="false" 
+                                                            aria-hidden="true"
+                                                            class="pi-help-solid">
+                                                        </i>
+                                                    </span>
+                                                    <div class="form__select-wrapper">
+                                                        <select disabled="disabled">
+                                                            <option value=""></option>
+                                                        </select>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                            <div class="block">
+                                                <label class="form__field">
+                                                    State
+                                                    <span
+                                                        data-tooltip="Select a county to set the state."
+                                                        aria-label="Select a county to set the state."
+                                                        class="tooltip-right tooltip-mobile text-med-blue mr-2">
+                                                        <i
+                                                            focusable="false" aria-hidden="true"
+                                                            class="pi-help-solid">
+                                                        </i>
+                                                    </span>
+                                                    <div class="form__select-wrapper">
+                                                        <select disabled="disabled">
+                                                            <option value=""></option>
+                                                            <option value="AL">
+                                                                Alabama
+                                                            </option>
+                                                            <option value="AK">
+                                                                Alaska
+                                                            </option>
+                                                            <option value="AZ">
+                                                                Arizona
+                                                            </option>
+                                                        </select>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h2 class="my-3">Alternate Address</h2>
+                                        <div class="block-container blocks p-2 tablet-up-2">
+                                            <div class="block">
+                                                <label class="form__field">
+                                                    Address 1
+                                                    <input type="text" />
+                                                </label>
+                                            </div>
+                                            <div class="block">
+                                                <label class="form__field">
+                                                    Address 2
+                                                    <input type="text" />
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="block-container blocks p-2 tablet-up-2">
+                                            <div class="block">
+                                                <label class="form__field">
+                                                    City
+                                                    <input type="text" />
+                                                </label>
+                                            </div>
+                                            <div class="block">
+                                                <label class="form__field">
+                                                    Zip
+                                                    <input type="tel" maxlength="5" />
+                                                </label>
+                                            </div>
+                                            <div class="block">
+                                                <label class="form__field">
+                                                    County
+                                                    <span 
+                                                        data-tooltip="Enter a zip code to get a list of counties."
+                                                        aria-label="Enter a zip code to get a list of counties."
+                                                        class="tooltip-right tooltip-mobile text-med-blue mr-2">
+                                                        <i
+                                                            focusable="false" 
+                                                            aria-hidden="true"
+                                                            class="pi-help-solid">
+                                                        </i>
+                                                    </span>
+                                                    <div class="form__select-wrapper">
+                                                        <select disabled="disabled">
+                                                            <option value=""></option>
+                                                        </select>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                            <div class="block">
+                                                <label class="form__field">
+                                                    State
+                                                    <span 
+                                                        data-tooltip="Select a county to set the state."
+                                                        aria-label="Select a county to set the state."
+                                                        class="tooltip-right tooltip-mobile text-med-blue mr-2">
+                                                        <i
+                                                            focusable="false" 
+                                                            aria-hidden="true"
+                                                            class="pi-help-solid">
+                                                        </i>
+                                                    </span>
+                                                    <div class="form__select-wrapper">
+                                                        <select disabled="disabled">
+                                                            <option value=""></option>
+                                                            <option value="AL">
+                                                                Alabama
+                                                            </option>
+                                                            <option value="AK">
+                                                                Alaska
+                                                            </option>
+                                                            <option value="AZ">
+                                                                Arizona
+                                                            </option>
+                                                        </select>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h2 class="my-3">Details</h2>
+                                    <div class="block-container blocks p-2 tablet-up-2">
+                                        <div class="block">
+                                            <label class="form__field has-icon--right">
+                                                Date of Birth
+                                                <input type="date" max="2999-12-31" /> 
+                                                <i aria-hidden="true" class="pi-calendar"></i>
+                                            </label>
+                                        </div>
+                                        <div class="block">
+                                            <fieldset class="form__field">
+                                                <legend>Gender</legend>
+                                                <div class="form__option-group">
+                                                    <input id="M" type="radio" name="gender" class="form__radio" value="M"> 
+                                                    <label for="M">
+                                                        <div class="input-icons">
+                                                            <i class="pi-circle pi-lg" aria-hidden="true"></i> 
+                                                            <i class="pi-circle-solid" aria-hidden="true"></i>
+                                                        </div>
+                                                        Male
+                                                    </label>
+                                                    <input id="F" type="radio" name="gender" class="form__radio" value="F"> 
+                                                    <label for="F">
+                                                        <div class="input-icons">
+                                                            <i class="pi-circle pi-lg" aria-hidden="true"></i> 
+                                                            <i class="pi-circle-solid" aria-hidden="true"></i>
+                                                        </div>
+                                                        Female
+                                                    </label>
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                        <div class="block">
+                                            <label class="form__field">
+                                                Marital Status
+                                                <div class="form__select-wrapper">
+                                                    <select>
+                                                        <option value=""></option>
+                                                        <option value="Single">
+                                                            Single
+                                                        </option>
+                                                        <option value="Married">
+                                                            Married
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="block">
+                                            <label class="form__field">
+                                                Spouse Name
+                                                <input type="text" />
+                                            </label>
+                                        </div>
+                                        <div class="block">
+                                            <label class="form__field">
+                                                SSN
+                                                <input type="text" />
+                                            </label>
+                                        </div>
+                                        <div class="block">
+                                            <label class="form__field">
+                                                Medicare Identifier
+                                                <input type="text" />
+                                            </label>
+                                        </div>
+                                        <div class="block">
+                                            <label class="form__field">
+                                                Reference Number
+                                                <input type="text" />
+                                            </label>
+                                        </div>
+                                        <div class="block">
+                                            <label class="form__field">
+                                                Drug Purchase Preference
+                                                <div class="form__select-wrapper">
+                                                    <select>
+                                                        <option value=""></option>
+                                                        <option value="MailOrderOnly">
+                                                            Mail Order Only
+                                                        </option>
+                                                        <option value="Mixed">
+                                                            Mixed
+                                                        </option>
+                                                        <option value="None">
+                                                            None
+                                                        </option>
+                                                        <option value="PharmacyOnly">
+                                                            Pharmacy Only
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <h2 class="my-3">Effective Dates</h2>
+                                    <div class="block-container blocks p-2 tablet-up-2">
+                                        <div class="block">
+                                            <label class="form__field has-icon--right">
+                                                Part A
+                                                <input type="date" /> 
+                                                <i aria-hidden="true" class="pi-calendar"></i>
+                                            </label>
+                                        </div>
+                                        <div class="block">
+                                            <label class="form__field has-icon--right">
+                                                Part B
+                                                <input type="date" /> 
+                                                <i aria-hidden="true" class="pi-calendar"></i>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <h2 class="my-3">Lead</h2>
+                                    <div class="block-container blocks p-2 tablet-up-2">
+                                        <div class="block">
+                                            <label class="form__field">
+                                                Type
+                                                <div class="form__select-wrapper">
+                                                    <select>
+                                                        <option value="Prospect">
+                                                            Prospect
+                                                        </option>
+                                                        <option value="Lead">
+                                                            Lead
+                                                        </option>
+                                                        <option value="Client">
+                                                            Client
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="block">
+                                            <label class="form__field">
+                                                Workflow Status
+                                                <div class="form__select-wrapper">
+                                                    <select>
+                                                        <option value="RxListReceived">
+                                                            Rx List Received
+                                                        </option>
+                                                        <option value="BenefitReviewPending">
+                                                            Benefit Review Pending
+                                                        </option>
+                                                        <option value="BenefitReviewCompleteNoChange">
+                                                            Benefit Review Complete—No Change
+                                                        </option>
+                                                        <option value="BenefitReviewCompletedContactClient">
+                                                            Benefit Review Completed—Contact Client
+                                                        </option>
+                                                        <option value="EnrollmentPending">
+                                                            Enrollment Pending
+                                                        </option>
+                                                        <option value="EnrollmentCompleted">
+                                                            Enrollment Completed
+                                                        </option>
+                                                        <option value="BenefitReviewClosed">
+                                                            Benefit Review Closed
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="block-container blocks p-2 tablet-up-2">
+                                        <div class="block">
+                                            <label class="form__field has-icon--right">
+                                                Date Assigned
+                                                <input type="date" readonly="readonly" /> 
+                                                <i aria-hidden="true" class="pi-calendar"></i>
+                                            </label>
+                                        </div>
+                                        <div class="block">
+                                            <label class="form__field has-icon--right">
+                                                Date Generated
+                                                <input type="date" readonly="readonly" />
+                                                <i aria-hidden="true" class="pi-calendar"></i>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <h2 class="my-3">Authorized Representative</h2>
+                                    <div class="block-container blocks p-2 tablet-up-2">
+                                        <div class="block">
+                                            <label class="form__field">
+                                                First Name
+                                                <input type="text" />
+                                            </label>
+                                        </div>
+                                        <div class="block">
+                                            <label class="form__field">
+                                                Last Name
+                                                <input type="text" />
+                                            </label>
+                                        </div>
+                                        <div class="block mb-4">
+                                            <label class="form__field">
+                                                Relationship
+                                                <input type="text" />
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex--justify-center mb-0">
+                                        <button aria-label="Save" type="submit" class="button background-salmon text-white button--lg">
+                                            Save
+                                            <span class="sr-only" style="display: none;">
+                                                Loading...
+                                            </span> 
+                                            <i aria-hidden="true" class="pi-save"></i>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion">
+                    <div class="accordion__header block-container pointer p-3">
+                        <div class="block tablet-up-2">
+                            <div class="text--bold">Name</div>
+                            Charles Pilates
+                        </div>
+                        <div class="block tablet-up-3">
+                            <div class="text--bold">Owners</div>
+                            <div class="pill mb-1 mr-1 truncate-with-ellipsis">Chelsea Testpass</div>
+                        </div>
+                        <div class="block tablet-up-1">
+                            <div class="text--bold">eSOA</div>
+                            <div class="pill pill--circle text-white background-positive">
+                                0
+                            </div>
+                        </div>
+                        <div class="block tablet-up-2">
+                            <div class="text--bold">Email</div>
+                            <div class="truncate-with-ellipsis">chelsea.testpass@gmail.com</div>
+                        </div>
+                        <div class="block tablet-up-1">
+                            <div class="text--bold">Source</div>
+                            T65
+                        </div>
+                        <div class="block tablet-up-1">
+                            <div class="text--bold">Created</div>
+                            <div>Medicareful</div>
+                            <div>12/03/2020</div>
+                        </div>
+                        <div class="block tablet-up-1">
+                            <div class="text--bold">Modified</div>
+                            <div>Chelsea Lundy</div>
+                            <div>12/16/2020</div>
+                        </div>
+                        <div class="block tablet-up-1 flex flex--justify-end flex--align-center">
+                            <i class="pi-angle-down accordion__icon" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="accordion__content px-3 py-3">
+                        <div class="accordion mb-3 pointer">
+                            <div class="accordion__header block-container flex--justify-between background-white">
+                                <div class="block block--shrink flex flex--align-center">
+                                    <button title="Show Owners" aria-label="Show Owners" class="button--plain">
+                                        <i aria-hidden="true" class="pi-angle-right pi-lg mr-2"></i>
+                                    </button>
+                                    <i aria-hidden="true" class="pi-user-tie mr-2"></i>
+                                    Owners
+                                    <div class="pill pill--circle ml-2">1</div>
+                                </div>
+                                <div class="block block--shrink">
+                                    <button data-modal="add-owner-modal" class="button modal__open">
+                                        Add
+                                        <i aria-hidden="true" class="pi-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="accordion__content py-2 px-3">
+                                <div class="block-container mb-3">
+                                    <div class="block block--shrink form">
+                                        <label for="text-695" class="form__field has-icon--right">
+                                            Add Owner
+                                            <input id="text-695" placeholder="Type to search" type="text" />
+                                            <i aria-hidden="true" class="pi-search text-base"></i>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="pill">
+                                    Chelsea Testpass <i class="pi-times-solid text-salmon ml-1 pointer" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion mb-3 pointer">
+                            <div class="accordion__header block-container flex--justify-between background-white">
+                                <div class="block block--shrink flex flex--align-center">
+                                    <button title="Show Owners" aria-label="Show Owners" class="button--plain">
+                                        <i aria-hidden="true" class="pi-angle-right pi-lg mr-2"></i>
+                                    </button>
+                                    <i aria-hidden="true" class="pi-file-text mr-2"></i>
+                                    eScopes
+                                    <div class="pill pill--circle ml-2">0</div>
+                                </div>
+                            </div>
+                            <div class="accordion__content py-2 px-3">
+                                <div class="message message--info">
+                                    <p>There are no eScopes associated with this person.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion mb-3 pointer">
+                            <div class="accordion__header block-container flex--justify-between background-white">
+                                <div class="block block--shrink flex flex--align-center">
+                                    <button title="Show Owners" aria-label="Show Owners" class="button--plain">
+                                        <i aria-hidden="true" class="pi-angle-right pi-lg mr-2"></i>
+                                    </button>
+                                    <i aria-hidden="true" class="pi-attachment mr-2"></i>
+                                    Attachments
+                                    <div class="pill pill--circle ml-2">0</div>
+                                </div>
+                                <div class="block block--shrink">
+                                    <button class="button">
+                                        Add
+                                        <i aria-hidden="true" class="pi-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="accordion__content py-2 px-3">
+                                Drop in attachments component
+                            </div>
+                        </div>
+                        <div class="accordion mb-3 pointer">
+                            <div class="accordion__header block-container flex--justify-between background-white">
+                                <div class="block block--shrink flex flex--align-center">
+                                    <button title="Show Owners" aria-label="Show Owners" class="button--plain">
+                                        <i aria-hidden="true" class="pi-angle-right pi-lg mr-2"></i>
+                                    </button>
+                                    <i aria-hidden="true" class="pi-user mr-2"></i>
+                                    Client
+                                </div>
+                            </div>
+                            <div class="accordion__content py-2 px-3">
+                                <form class="form px-3">
+                                    <div class="block-container blocks">
+                                        <div class="block">
+                                            <div class="block-container blocks p-2 tablet-up-2">
+                                                <div class="block">
+                                                    <label class="form__field">
+                                                        First Name
+                                                        <input type="text" value="Charles" required="required" />
+                                                    </label>
+                                                </div>
+                                                <div class="block">
+                                                    <label class="form__field">
+                                                        Last Name
+                                                        <input type="text" value="Pilates" required="required" />
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="block-container blocks p-2 tablet-up-2">
+                                                <div class="block">
+                                                    <label class="form__field">
+                                                        Primary Email
+                                                        <input type="text" value="test@test.com" />
+                                                    </label>
+                                                </div>
+                                                <div class="block">
+                                                    <label class="form__field">
+                                                        Alternate Email
+                                                        <input type="text" />
+                                                    </label>
+                                                </div>
+                                                <div class="block">
+                                                    <label class="form__field">
+                                                        Primary Phone
+                                                        <input type="tel" value="123-456-7890" />
+                                                    </label>
+                                                </div>
+                                                <div class="block">
+                                                    <label class="form__field">
+                                                        Alternate Phone
+                                                        <input type="tel" />
+                                                    </label>
+                                                </div>
+                                                <div class="block">
+                                                    <label class="form__field">
+                                                        Mobile Phone
+                                                        <input type="tel" >
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h2 class="my-3">Primary Address</h2>
+                                        <div class="block-container blocks p-2 tablet-up-2">
+                                            <div class="block">
+                                                <label class="form__field">
+                                                    Address 1
+                                                    <input type="text" />
+                                                </label>
+                                            </div>
+                                            <div class="block">
+                                                <label class="form__field">
+                                                    Address 2
+                                                    <input type="text">
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="block-container blocks p-2 tablet-up-2">
+                                            <div class="block">
+                                                <label class="form__field">
+                                                    City
+                                                    <input type="text" />
+                                                </label>
+                                            </div>
+                                            <div class="block">
+                                                <label class="form__field">
+                                                    Zip
+                                                    <input type="tel" maxlength="5" />
+                                                </label>
+                                            </div>
+                                            <div class="block">
+                                                <label class="form__field">
+                                                    County
+                                                    <span 
+                                                        data-tooltip="Enter a zip code to get a list of counties."
+                                                        aria-label="Enter a zip code to get a list of counties."
+                                                        class="tooltip-right tooltip-mobile text-med-blue mr-2">
+                                                        <i
+                                                            focusable="false" 
+                                                            aria-hidden="true"
+                                                            class="pi-help-solid">
+                                                        </i>
+                                                    </span>
+                                                    <div class="form__select-wrapper">
+                                                        <select disabled="disabled">
+                                                            <option value=""></option>
+                                                        </select>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                            <div class="block">
+                                                <label class="form__field">
+                                                    State
+                                                    <span
+                                                        data-tooltip="Select a county to set the state."
+                                                        aria-label="Select a county to set the state."
+                                                        class="tooltip-right tooltip-mobile text-med-blue mr-2">
+                                                        <i
+                                                            focusable="false" aria-hidden="true"
+                                                            class="pi-help-solid">
+                                                        </i>
+                                                    </span>
+                                                    <div class="form__select-wrapper">
+                                                        <select disabled="disabled">
+                                                            <option value=""></option>
+                                                            <option value="AL">
+                                                                Alabama
+                                                            </option>
+                                                            <option value="AK">
+                                                                Alaska
+                                                            </option>
+                                                            <option value="AZ">
+                                                                Arizona
+                                                            </option>
+                                                        </select>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h2 class="my-3">Alternate Address</h2>
+                                        <div class="block-container blocks p-2 tablet-up-2">
+                                            <div class="block">
+                                                <label class="form__field">
+                                                    Address 1
+                                                    <input type="text" />
+                                                </label>
+                                            </div>
+                                            <div class="block">
+                                                <label class="form__field">
+                                                    Address 2
+                                                    <input type="text" />
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="block-container blocks p-2 tablet-up-2">
+                                            <div class="block">
+                                                <label class="form__field">
+                                                    City
+                                                    <input type="text" />
+                                                </label>
+                                            </div>
+                                            <div class="block">
+                                                <label class="form__field">
+                                                    Zip
+                                                    <input type="tel" maxlength="5" />
+                                                </label>
+                                            </div>
+                                            <div class="block">
+                                                <label class="form__field">
+                                                    County
+                                                    <span 
+                                                        data-tooltip="Enter a zip code to get a list of counties."
+                                                        aria-label="Enter a zip code to get a list of counties."
+                                                        class="tooltip-right tooltip-mobile text-med-blue mr-2">
+                                                        <i
+                                                            focusable="false" 
+                                                            aria-hidden="true"
+                                                            class="pi-help-solid">
+                                                        </i>
+                                                    </span>
+                                                    <div class="form__select-wrapper">
+                                                        <select disabled="disabled">
+                                                            <option value=""></option>
+                                                        </select>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                            <div class="block">
+                                                <label class="form__field">
+                                                    State
+                                                    <span 
+                                                        data-tooltip="Select a county to set the state."
+                                                        aria-label="Select a county to set the state."
+                                                        class="tooltip-right tooltip-mobile text-med-blue mr-2">
+                                                        <i
+                                                            focusable="false" 
+                                                            aria-hidden="true"
+                                                            class="pi-help-solid">
+                                                        </i>
+                                                    </span>
+                                                    <div class="form__select-wrapper">
+                                                        <select disabled="disabled">
+                                                            <option value=""></option>
+                                                            <option value="AL">
+                                                                Alabama
+                                                            </option>
+                                                            <option value="AK">
+                                                                Alaska
+                                                            </option>
+                                                            <option value="AZ">
+                                                                Arizona
+                                                            </option>
+                                                        </select>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h2 class="my-3">Details</h2>
+                                    <div class="block-container blocks p-2 tablet-up-2">
+                                        <div class="block">
+                                            <label class="form__field has-icon--right">
+                                                Date of Birth
+                                                <input type="date" max="2999-12-31" /> 
+                                                <i aria-hidden="true" class="pi-calendar"></i>
+                                            </label>
+                                        </div>
+                                        <div class="block">
+                                            <fieldset class="form__field">
+                                                <legend>Gender</legend>
+                                                <div class="form__option-group">
+                                                    <input id="M" type="radio" name="gender" class="form__radio" value="M"> 
+                                                    <label for="M">
+                                                        <div class="input-icons">
+                                                            <i class="pi-circle pi-lg" aria-hidden="true"></i> 
+                                                            <i class="pi-circle-solid" aria-hidden="true"></i>
+                                                        </div>
+                                                        Male
+                                                    </label>
+                                                    <input id="F" type="radio" name="gender" class="form__radio" value="F"> 
+                                                    <label for="F">
+                                                        <div class="input-icons">
+                                                            <i class="pi-circle pi-lg" aria-hidden="true"></i> 
+                                                            <i class="pi-circle-solid" aria-hidden="true"></i>
+                                                        </div>
+                                                        Female
+                                                    </label>
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                        <div class="block">
+                                            <label class="form__field">
+                                                Marital Status
+                                                <div class="form__select-wrapper">
+                                                    <select>
+                                                        <option value=""></option>
+                                                        <option value="Single">
+                                                            Single
+                                                        </option>
+                                                        <option value="Married">
+                                                            Married
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="block">
+                                            <label class="form__field">
+                                                Spouse Name
+                                                <input type="text" />
+                                            </label>
+                                        </div>
+                                        <div class="block">
+                                            <label class="form__field">
+                                                SSN
+                                                <input type="text" />
+                                            </label>
+                                        </div>
+                                        <div class="block">
+                                            <label class="form__field">
+                                                Medicare Identifier
+                                                <input type="text" />
+                                            </label>
+                                        </div>
+                                        <div class="block">
+                                            <label class="form__field">
+                                                Reference Number
+                                                <input type="text" />
+                                            </label>
+                                        </div>
+                                        <div class="block">
+                                            <label class="form__field">
+                                                Drug Purchase Preference
+                                                <div class="form__select-wrapper">
+                                                    <select>
+                                                        <option value=""></option>
+                                                        <option value="MailOrderOnly">
+                                                            Mail Order Only
+                                                        </option>
+                                                        <option value="Mixed">
+                                                            Mixed
+                                                        </option>
+                                                        <option value="None">
+                                                            None
+                                                        </option>
+                                                        <option value="PharmacyOnly">
+                                                            Pharmacy Only
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <h2 class="my-3">Effective Dates</h2>
+                                    <div class="block-container blocks p-2 tablet-up-2">
+                                        <div class="block">
+                                            <label class="form__field has-icon--right">
+                                                Part A
+                                                <input type="date" /> 
+                                                <i aria-hidden="true" class="pi-calendar"></i>
+                                            </label>
+                                        </div>
+                                        <div class="block">
+                                            <label class="form__field has-icon--right">
+                                                Part B
+                                                <input type="date" /> 
+                                                <i aria-hidden="true" class="pi-calendar"></i>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <h2 class="my-3">Lead</h2>
+                                    <div class="block-container blocks p-2 tablet-up-2">
+                                        <div class="block">
+                                            <label class="form__field">
+                                                Type
+                                                <div class="form__select-wrapper">
+                                                    <select>
+                                                        <option value="Prospect">
+                                                            Prospect
+                                                        </option>
+                                                        <option value="Lead">
+                                                            Lead
+                                                        </option>
+                                                        <option value="Client">
+                                                            Client
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="block">
+                                            <label class="form__field">
+                                                Workflow Status
+                                                <div class="form__select-wrapper">
+                                                    <select>
+                                                        <option value="RxListReceived">
+                                                            Rx List Received
+                                                        </option>
+                                                        <option value="BenefitReviewPending">
+                                                            Benefit Review Pending
+                                                        </option>
+                                                        <option value="BenefitReviewCompleteNoChange">
+                                                            Benefit Review Complete—No Change
+                                                        </option>
+                                                        <option value="BenefitReviewCompletedContactClient">
+                                                            Benefit Review Completed—Contact Client
+                                                        </option>
+                                                        <option value="EnrollmentPending">
+                                                            Enrollment Pending
+                                                        </option>
+                                                        <option value="EnrollmentCompleted">
+                                                            Enrollment Completed
+                                                        </option>
+                                                        <option value="BenefitReviewClosed">
+                                                            Benefit Review Closed
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="block-container blocks p-2 tablet-up-2">
+                                        <div class="block">
+                                            <label class="form__field has-icon--right">
+                                                Date Assigned
+                                                <input type="date" readonly="readonly" /> 
+                                                <i aria-hidden="true" class="pi-calendar"></i>
+                                            </label>
+                                        </div>
+                                        <div class="block">
+                                            <label class="form__field has-icon--right">
+                                                Date Generated
+                                                <input type="date" readonly="readonly" />
+                                                <i aria-hidden="true" class="pi-calendar"></i>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <h2 class="my-3">Authorized Representative</h2>
+                                    <div class="block-container blocks p-2 tablet-up-2">
+                                        <div class="block">
+                                            <label class="form__field">
+                                                First Name
+                                                <input type="text" />
+                                            </label>
+                                        </div>
+                                        <div class="block">
+                                            <label class="form__field">
+                                                Last Name
+                                                <input type="text" />
+                                            </label>
+                                        </div>
+                                        <div class="block mb-4">
+                                            <label class="form__field">
+                                                Relationship
+                                                <input type="text" />
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex--justify-center mb-0">
+                                        <button aria-label="Save" type="submit" class="button background-salmon text-white button--lg">
+                                            Save
+                                            <span class="sr-only" style="display: none;">
+                                                Loading...
+                                            </span> 
+                                            <i aria-hidden="true" class="pi-save"></i>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input type="radio" id="tab-input-b" name="tabs">
+            <label for="tab-input-b" class="tab">
+                Scopes
+            </label>
+            <div class="tab-panel p-4">
+                <div class="block-container">
+                    <div class="block block--shrink py-2 mb-3">
+                        Showing 100 out of 5,294
+                        <button type="button" title="Load more" aria-label="Load more"
+                            class="button button--secondary ml-2"><i aria-hidden="true" class="pi-sync"></i>
+                        </button>
+                    </div>
+                </div>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Client<br/>(Date Signed)</th>
+                        <th>Beneficiary | <br/>Relationship</th>
+                        <th>Agent<br/>(Date Signed)</th>
+                        <th>Status</th>
+                        <th>Complete</th>
+                        <th>Products</th>
+                        <th>Created</th>
+                        <th>Modified</th>
+                        <th>Download</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td data-label="Client">
+                          Alfreds Futterkiste
+                        </td>
+                        <td data-label="Beneficiary">
+                          Maria Anders
+                        </td>
+                        <td data-label="Agent">
+                          Agent TestZ
+                        </td>
+                        <td data-label="Status">
+                          Active
+                        </td>
+                        <td data-label="Complete" class="text--center">
+                          <i class="pi-check-cirle-solid text-positive" aria-hidden="true"></i>
+                        </td>
+                        <td data-label="Products">
+                            <div class="pill mb-1 mr-1 truncate-with-ellipsis">Dental Vision Hearing</div>
+                            <div class="pill mb-1 mr-1 truncate-with-ellipsis">Hospital Indemnity</div>
+                        </td>
+                        <td data-label="Created">
+                            Chelsea Lundy<br/>
+                            12/12/2019
+                        </td>
+                        <td data-label="Modified">
+                            Chelsea Lundy<br/>
+                            2/18/2020
+                        </td>
+                        <td data-label="Download" class="text--center">
+                            <button class="button button--secondary" role="button" aria-label="Download">
+                                <i class="pi-download" aria-hidden="true"></i>
+                            </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td data-label="Client">
+                          Rust Cohle
+                        </td>
+                        <td data-label="Beneficiary">
+                          Maria Anders
+                        </td>
+                        <td data-label="Agent">
+                          Tim Test Agent
+                        </td>
+                        <td data-label="Status">
+                          Active
+                        </td>
+                        <td data-label="Complete" class="text--center">
+                          <i class="pi-check-cirle-solid text-positive" aria-hidden="true"></i>
+                        </td>
+                        <td data-label="Products">
+                            <div class="pill mb-1 mr-1 truncate-with-ellipsis">Dental Vision Hearing</div>
+                            <div class="pill mb-1 mr-1 truncate-with-ellipsis">Hospital Indemnity</div>
+                            <div class="pill mb-1 mr-1 truncate-with-ellipsis">PDP</div>
+                            <div class="pill mb-1 mr-1 truncate-with-ellipsis">Medicare Advantage</div>
+                        </td>
+                        <td data-label="Created">
+                            Chelsea Lundy<br/>
+                            12/12/2019
+                        </td>
+                        <td data-label="Modified">
+                            Chelsea Lundy<br/>
+                            2/18/2020
+                        </td>
+                        <td data-label="Download" class="text--center">
+                            <button class="button button--secondary" role="button" aria-label="Download" disabled>
+                                <i class="pi-download" aria-hidden="true"></i>
+                            </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td data-label="Client">
+                          George Orwell
+                        </td>
+                        <td data-label="Beneficiary">
+                          Test Bene
+                        </td>
+                        <td data-label="Agent">
+                          Agent TestZ
+                        </td>
+                        <td data-label="Status">
+                          Active
+                        </td>
+                        <td data-label="Complete" class="text--center">
+                          <i class="pi-check-cirle-solid text-positive" aria-hidden="true"></i>
+                        </td>
+                        <td data-label="Products">
+                            <div class="pill mb-1 mr-1 truncate-with-ellipsis">Dental Vision Hearing</div>
+                            <div class="pill mb-1 mr-1 truncate-with-ellipsis">Hospital Indemnity</div>
+                            <div class="pill mb-1 mr-1 truncate-with-ellipsis">Med Supp</div>
+                        </td>
+                        <td data-label="Created">
+                            Agent Lundy<br/>
+                            12/12/2019
+                        </td>
+                        <td data-label="Modified">
+                            Agent Lundy<br/>
+                            2/18/2020
+                        </td>
+                        <td data-label="Download" class="text--center">
+                            <button class="button button--secondary" role="button" aria-label="Download">
+                                <i class="pi-download" aria-hidden="true"></i>
+                            </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div class="block-container">
+                    <div class="block block--shrink py-2 mb-3">
+                        Showing 100 out of 5,294
+                        <button type="button" title="Load more" aria-label="Load more"
+                            class="button button--secondary ml-2"><i aria-hidden="true" class="pi-sync"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="add-client-modal" class="modal modal--large modal--closed" tabindex="-1">
+            <div class="modal__inner animated slideInUp faster">
+              <div class="modal__header">
+                <button class="button modal__close" data-modal="add-client-modal">Close <i class="pi-times" aria-hidden="true"></i></button>
+                <h2 class="m-0 text-navy text--bold">Add Client</h2>
+              </div>
+              <div class="modal__content">
+                <form class="form">
+                    <div class="block-container blocks">
+                        <div class="block">
+                            <div class="block-container blocks p-2 tablet-up-2">
+                                <div class="block">
+                                    <label class="form__field error">
+                                        First Name
+                                        <span>Required</span> 
+                                        <input type="text" required="required" />
+                                    </label>
+                                </div>
+                                <div class="block">
+                                    <label class="form__field">
+                                        Last Name
+                                        <input type="text" required="required" />
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="block-container blocks p-2 tablet-up-2">
+                                <div class="block">
+                                    <label class="form__field">
+                                        Primary Email
+                                        <input type="text" />
+                                    </label>
+                                </div>
+                                <div class="block">
+                                    <label class="form__field">
+                                        Alternate Email
+                                        <input type="text" />
+                                    </label>
+                                </div>
+                                <div class="block">
+                                    <label class="form__field">
+                                        Primary Phone
+                                        <input type="tel" />
+                                    </label>
+                                </div>
+                                <div class="block">
+                                    <label class="form__field">
+                                        Alternate Phone
+                                        <input type="tel" />
+                                    </label>
+                                </div>
+                                <div class="block">
+                                    <label class="form__field">
+                                        Mobile Phone
+                                        <input type="tel" >
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="my-3">Primary Address</h2>
+                        <div class="block-container blocks p-2 tablet-up-2">
+                            <div class="block">
+                                <label class="form__field">
+                                    Address 1
+                                    <input type="text" />
+                                </label>
+                            </div>
+                            <div class="block">
+                                <label class="form__field">
+                                    Address 2
+                                    <input type="text">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="block-container blocks p-2 tablet-up-2">
+                            <div class="block">
+                                <label class="form__field">
+                                    City
+                                    <input type="text" />
+                                </label>
+                            </div>
+                            <div class="block">
+                                <label class="form__field">
+                                    Zip
+                                    <input type="tel" maxlength="5" />
+                                </label>
+                            </div>
+                            <div class="block">
+                                <label class="form__field">
+                                    County
+                                    <span 
+                                        data-tooltip="Enter a zip code to get a list of counties."
+                                        aria-label="Enter a zip code to get a list of counties."
+                                        class="tooltip-right tooltip-mobile text-med-blue mr-2">
+                                        <i
+                                            focusable="false" 
+                                            aria-hidden="true"
+                                            class="pi-help-solid">
+                                        </i>
+                                    </span>
+                                    <div class="form__select-wrapper">
+                                        <select disabled="disabled">
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="block">
+                                <label class="form__field">
+                                    State
+                                    <span
+                                        data-tooltip="Select a county to set the state."
+                                        aria-label="Select a county to set the state."
+                                        class="tooltip-right tooltip-mobile text-med-blue mr-2">
+                                        <i
+                                            focusable="false" aria-hidden="true"
+                                            class="pi-help-solid">
+                                        </i>
+                                    </span>
+                                    <div class="form__select-wrapper">
+                                        <select disabled="disabled">
+                                            <option value=""></option>
+                                            <option value="AL">
+                                                Alabama
+                                            </option>
+                                            <option value="AK">
+                                                Alaska
+                                            </option>
+                                            <option value="AZ">
+                                                Arizona
+                                            </option>
+                                        </select>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="my-3">Alternate Address</h2>
+                        <div class="block-container blocks p-2 tablet-up-2">
+                            <div class="block">
+                                <label class="form__field">
+                                    Address 1
+                                    <input type="text" />
+                                </label>
+                            </div>
+                            <div class="block">
+                                <label class="form__field">
+                                    Address 2
+                                    <input type="text" />
+                                </label>
+                            </div>
+                        </div>
+                        <div class="block-container blocks p-2 tablet-up-2">
+                            <div class="block">
+                                <label class="form__field">
+                                    City
+                                    <input type="text" />
+                                </label>
+                            </div>
+                            <div class="block">
+                                <label class="form__field">
+                                    Zip
+                                    <input type="tel" maxlength="5" />
+                                </label>
+                            </div>
+                            <div class="block">
+                                <label class="form__field">
+                                    County
+                                    <span 
+                                        data-tooltip="Enter a zip code to get a list of counties."
+                                        aria-label="Enter a zip code to get a list of counties."
+                                        class="tooltip-right tooltip-mobile text-med-blue mr-2">
+                                        <i
+                                            focusable="false" 
+                                            aria-hidden="true"
+                                            class="pi-help-solid">
+                                        </i>
+                                    </span>
+                                    <div class="form__select-wrapper">
+                                        <select disabled="disabled">
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="block">
+                                <label class="form__field">
+                                    State
+                                    <span 
+                                        data-tooltip="Select a county to set the state."
+                                        aria-label="Select a county to set the state."
+                                        class="tooltip-right tooltip-mobile text-med-blue mr-2">
+                                        <i
+                                            focusable="false" 
+                                            aria-hidden="true"
+                                            class="pi-help-solid">
+                                        </i>
+                                    </span>
+                                    <div class="form__select-wrapper">
+                                        <select disabled="disabled">
+                                            <option value=""></option>
+                                            <option value="AL">
+                                                Alabama
+                                            </option>
+                                            <option value="AK">
+                                                Alaska
+                                            </option>
+                                            <option value="AZ">
+                                                Arizona
+                                            </option>
+                                        </select>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <h2 class="my-3">Details</h2>
+                    <div class="block-container blocks p-2 tablet-up-2">
+                        <div class="block">
+                            <label class="form__field has-icon--right">
+                                Date of Birth
+                                <input type="date" max="2999-12-31" /> 
+                                <i aria-hidden="true" class="pi-calendar"></i>
+                            </label>
+                        </div>
+                        <div class="block">
+                            <fieldset class="form__field">
+                                <legend>Gender</legend>
+                                <div class="form__option-group">
+                                    <input id="M" type="radio" name="gender" class="form__radio" value="M"> 
+                                    <label for="M">
+                                        <div class="input-icons">
+                                            <i class="pi-circle pi-lg" aria-hidden="true"></i> 
+                                            <i class="pi-circle-solid" aria-hidden="true"></i>
+                                        </div>
+                                        Male
+                                    </label>
+                                    <input id="F" type="radio" name="gender" class="form__radio" value="F"> 
+                                    <label for="F">
+                                        <div class="input-icons">
+                                            <i class="pi-circle pi-lg" aria-hidden="true"></i> 
+                                            <i class="pi-circle-solid" aria-hidden="true"></i>
+                                        </div>
+                                        Female
+                                    </label>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="block">
+                            <label class="form__field">
+                                Marital Status
+                                <div class="form__select-wrapper">
+                                    <select>
+                                        <option value=""></option>
+                                        <option value="Single">
+                                            Single
+                                        </option>
+                                        <option value="Married">
+                                            Married
+                                        </option>
+                                    </select>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="block">
+                            <label class="form__field">
+                                Spouse Name
+                                <input type="text" />
+                            </label>
+                        </div>
+                        <div class="block">
+                            <label class="form__field">
+                                SSN
+                                <input type="text" />
+                            </label>
+                        </div>
+                        <div class="block">
+                            <label class="form__field">
+                                Medicare Identifier
+                                <input type="text" />
+                            </label>
+                        </div>
+                        <div class="block">
+                            <label class="form__field">
+                                Reference Number
+                                <input type="text" />
+                            </label>
+                        </div>
+                        <div class="block">
+                            <label class="form__field">
+                                Drug Purchase Preference
+                                <div class="form__select-wrapper">
+                                    <select>
+                                        <option value=""></option>
+                                        <option value="MailOrderOnly">
+                                            Mail Order Only
+                                        </option>
+                                        <option value="Mixed">
+                                            Mixed
+                                        </option>
+                                        <option value="None">
+                                            None
+                                        </option>
+                                        <option value="PharmacyOnly">
+                                            Pharmacy Only
+                                        </option>
+                                    </select>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <h2 class="my-3">Effective Dates</h2>
+                    <div class="block-container blocks p-2 tablet-up-2">
+                        <div class="block">
+                            <label class="form__field has-icon--right">
+                                Part A
+                                <input type="date" /> 
+                                <i aria-hidden="true" class="pi-calendar"></i>
+                            </label>
+                        </div>
+                        <div class="block">
+                            <label class="form__field has-icon--right">
+                                Part B
+                                <input type="date" /> 
+                                <i aria-hidden="true" class="pi-calendar"></i>
+                            </label>
+                        </div>
+                    </div>
+                    <h2 class="my-3">Lead</h2>
+                    <div class="block-container blocks p-2 tablet-up-2">
+                        <div class="block">
+                            <label class="form__field">
+                                Type
+                                <div class="form__select-wrapper">
+                                    <select>
+                                        <option value="Prospect">
+                                            Prospect
+                                        </option>
+                                        <option value="Lead">
+                                            Lead
+                                        </option>
+                                        <option value="Client">
+                                            Client
+                                        </option>
+                                    </select>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="block">
+                            <label class="form__field">
+                                Workflow Status
+                                <div class="form__select-wrapper">
+                                    <select>
+                                        <option value="RxListReceived">
+                                            Rx List Received
+                                        </option>
+                                        <option value="BenefitReviewPending">
+                                            Benefit Review Pending
+                                        </option>
+                                        <option value="BenefitReviewCompleteNoChange">
+                                            Benefit Review Complete—No Change
+                                        </option>
+                                        <option value="BenefitReviewCompletedContactClient">
+                                            Benefit Review Completed—Contact Client
+                                        </option>
+                                        <option value="EnrollmentPending">
+                                            Enrollment Pending
+                                        </option>
+                                        <option value="EnrollmentCompleted">
+                                            Enrollment Completed
+                                        </option>
+                                        <option value="BenefitReviewClosed">
+                                            Benefit Review Closed
+                                        </option>
+                                    </select>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="block-container blocks p-2 tablet-up-2">
+                        <div class="block">
+                            <label class="form__field has-icon--right">
+                                Date Assigned
+                                <input type="date" readonly="readonly" /> 
+                                <i aria-hidden="true" class="pi-calendar"></i>
+                            </label>
+                        </div>
+                        <div class="block">
+                            <label class="form__field has-icon--right">
+                                Date Generated
+                                <input type="date" readonly="readonly" />
+                                <i aria-hidden="true" class="pi-calendar"></i>
+                            </label>
+                        </div>
+                    </div>
+                    <h2 class="my-3">Authorized Representative</h2>
+                    <div class="block-container blocks p-2 tablet-up-2">
+                        <div class="block">
+                            <label class="form__field">
+                                First Name
+                                <input type="text" />
+                            </label>
+                        </div>
+                        <div class="block">
+                            <label class="form__field">
+                                Last Name
+                                <input type="text" />
+                            </label>
+                        </div>
+                        <div class="block mb-4">
+                            <label class="form__field">
+                                Relationship
+                                <input type="text" />
+                            </label>
+                        </div>
+                    </div>
+                    <div class="flex flex--justify-center mb-0">
+                        <button aria-label="Save" type="submit" class="button background-salmon text-white button--lg">
+                            Save
+                            <span class="sr-only" style="display: none;">
+                                Loading...
+                            </span> 
+                            <i aria-hidden="true" class="pi-save"></i>
+                        </button>
+                    </div>
+                </form>
+              </div>
+            </div>
+        </div>
+    </main>
+    <script src="/src/assets/js/platform-ui.min.js"></script>
+</body>
