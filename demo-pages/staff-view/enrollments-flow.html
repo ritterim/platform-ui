@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Enrollments Flow</title>
+
+    <link rel="stylesheet" href="/src/assets/stylesheets/platform-ui.min.css" />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="src/assets/images/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="src/assets/images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="src/assets/images/favicon/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="src/assets/images/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="src/assets/images/favicon/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="src/assets/images/favicon/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <style>
+      /*
+         *  This css will need to live in the platform along with custom
+         *  mobile menu css.
+         *  See src/Platform/Content/css/sass/platform-ui-plugins.scss
+         */
+      .site-header--fixed {
+        height: calc(var(--menu-height) * 2) !important;
+      }
+      .site-header--fixed + .header-fixed {
+        margin-top: calc(var(--menu-height) * 2) !important;
+      }
+      .site-header--fixed .site-menu-wrapper:nth-child(2) .site-menu.active,
+      .site-menu-wrapper.site-header--fixed:nth-child(2) .site-menu.active {
+        max-height: calc(100vh - (var(--menu-height) * 2));
+      }
+      .background-note {
+        background-color: #FFFDF5 !important; 
+      }
+    </style>
+  </head>
+  <body class="flex flex--column">
+    <header class="site-header site-header--fixed">
+      <div class="site-menu background-light h-50">
+      </div>
+      <div class="site-menu background-white h-50">
+      </div>
+    </header>
+    <main class="header-fixed background-light-mid flex--grow py-4 px-3">
+      <div class="block-container blocks mb-4">
+        <div class="block laptop-up-9">
+          <div class="tabs">
+            <input type="radio" id="tab-input-a" name="tabs" checked />
+            <label for="tab-input-a" class="tab">
+              Enrollments
+              <i
+                focusable="false"
+                aria-hidden="hidden"
+                class="pi-angle-down show-mobile-only pi-lg transition ml-2"
+              ></i>
+            </label>
+            <div class="tab-panel py-4 px-4">
+              <div class="flex flex--justify-end w-100 mb-4">
+                <button class="button button--secondary hide-laptop-up">
+                  <i class="pi-copy"></i>
+                  <span class="sr-only">Notes</span>
+                </button>
+                <button class="button ml-3">
+                  Add <i class="pi-plus" aria-hidden="true"></i>
+                </button>
+              </div>
+              
+            </div>
+            <input type="radio" id="tab-input-b" name="tabs" />
+            <label for="tab-input-b" class="tab">
+              Enrollment Batches
+              <i
+                focusable="false"
+                aria-hidden="hidden"
+                class="pi-angle-down show-mobile-only pi-lg transition ml-2"
+              ></i>
+            </label>
+            <div class="tab-panel">
+              <!-- the .active class is added for visual purposes here. Make sure that this toggles like the rest of the accordiong in the platform. -->
+              <div class="accordion active">
+                <div class="accordion__header px-4 py-4 flex flex--justify-between">
+                  <span class="text--bold text-base">Humana</span>
+                  <button
+                    class="text-light text-negative--hover pointer button--plain"
+                    aria-label="Remove Carrier"
+                  >
+                    <i class="pi-trash" aria-hidden="hidden"></i>
+                  </button>
+                </div>
+                <div class="accordion__content px-3 py-3 fade-in-from-none-enter-active">
+                  <div class="block-container blocks p-3">
+                    <div class="block lg-tablet-up-3">
+                      <h2 class="text-base text--size-md mb-0 mb-3">Setup</h2>
+                      <form action="" class="form">
+                        <fieldset class="form__field mb-4">
+                          <legend class="sr-only">Choose</legend>
+                          <div class="block-container tablet-up-2 lg-tablet-up-1">
+                            <div class="block">
+                              <input
+                                class="form__checkbox"
+                                id="per-state"
+                                type="checkbox"
+                              />
+                              <label for="per-state" class="mb-2">
+                                <div class="input-icons">
+                                  <i class="pi-circle pi-lg"></i>
+                                  <i class="pi-check pi-lg"></i>
+                                </div>
+                                Allow per-state agent writting number
+                              </label>
+                            </div>
+                            <div class="block">
+                              <input
+                                class="form__checkbox"
+                                id="non-licensed"
+                                type="checkbox"
+                              />
+                              <label for="non-licensed" class="mb-2">
+                                <div class="input-icons">
+                                  <i class="pi-circle pi-lg"></i>
+                                  <i class="pi-check pi-lg"></i>
+                                </div>
+                                Allow non-licensed states for overrides
+                              </label>
+                            </div>
+                            <div class="block">
+                              <input
+                                class="form__checkbox"
+                                id="staff"
+                                type="checkbox"
+                              />
+                              <label for="staff" class="mb-2">
+                                <div class="input-icons">
+                                  <i class="pi-circle pi-lg"></i>
+                                  <i class="pi-check pi-lg"></i>
+                                </div>
+                                Enabled for staff
+                              </label>
+                            </div>
+                            <div class="block">
+                              <input
+                                class="form__checkbox"
+                                id="agents"
+                                type="checkbox"
+                              />
+                              <label for="agents">
+                                <div class="input-icons">
+                                  <i class="pi-circle pi-lg"></i>
+                                  <i class="pi-check pi-lg"></i>
+                                </div>
+                                Enabled for agents
+                              </label>
+                            </div>
+                          </div>
+                        </fieldset>
+                        <div class="block-container blocks p-3">
+                          <div class="block tablet-up-6 lg-tablet-up-12">
+                            <label for="third-party" class="form__field"
+                              >Third Party Provider
+                              <div class="form__select-wrapper">
+                                <select name="County Select" id="third-party">
+                                  <option value="" selected></option>
+                                  <option value="County1">County 1</option>
+                                  <option value="County2">County 2</option>
+                                  <option value="County3">County 3</option>
+                                  <option value="County4">County 4</option>
+                                  <option value="County5">County 5</option>
+                                  <option value="County6">County 6</option>
+                                </select>
+                              </div>
+                            </label>
+                          </div>
+                          <div class="block tablet-up-6 lg-tablet-up--shrink">
+                            <fieldset class="form__field">
+                              <legend class="sr-only">Are You</legend>
+                              <div class="toggle m-0">
+                                <div class="toggle__content">
+                                  <input
+                                    class="toggle__input"
+                                    id="digital"
+                                    type="radio"
+                                    checked=""
+                                    name="height"
+                                  />
+                                  <label for="digital"
+                                    ><i class="pi-check"></i> Digital</label
+                                  >
+                                </div>
+                                <div class="toggle__content">
+                                  <input
+                                    class="toggle__input"
+                                    id="paper"
+                                    type="radio"
+                                    name="height"
+                                  />
+                                  <label for="paper"
+                                    ><i class="pi-check"></i> Paper</label
+                                  >
+                                </div>
+                              </div>
+                            </fieldset>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="block lg-tablet-up-9 pb-2 pos-rel">
+                      <div class="border-l border--color-light-mid pos-abs pin-left pin-top pin-bottom hide-lg-tablet-down" style="width: 1px;"></div>
+                      <div class="border-t border--color-light-mid pos-abs pin-left pin-top pin-right hide-lg-tablet-up" style="height: 1px;"></div>
+                      <div class="mb-4">
+                        <div class="flex flex--justify-between flex--align-center mb-3">
+                          <h2 class="text-base text--size-md mb-0">Products and States</h2>
+                          <button class="button">
+                            Add <i class="pi-plus" aria-hidden="true"></i>
+                          </button>
+                        </div>
+                        <div class="block-container blocks mx-1 mt-1 mb-3">
+                          <button class="block block--shrink button border--color-navy text-navy background-beige background-white--hover" >
+                            Medicare Advantage
+                            <i
+                              class="pi-times-solid ml-2 mr-0 text--size-lg"
+                            ></i>
+                          </button>
+                          <button class="block block--shrink button text-navy border--color-navy background-beige--hover" >
+                            Prescription Drug Plan
+                            <i
+                              class="pi-times-solid ml-2 mr-0 text--size-lg"
+                            ></i>
+                          </button>
+                        </div>
+                        <div class="flex flex--wrap">
+                          <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                          <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">AK</button>
+                        </div>
+                          <div class="block-container">
+                          <fieldset
+                            class="form__field form block block--shrink"
+                          >
+                            <legend class="sr-only">
+                              Select All States or Deselect all
+                            </legend>
+                            <div class="toggle">
+                              <div class="toggle__content">
+                                <input
+                                  class="toggle__input"
+                                  id="all-states"
+                                  type="radio"
+                                  checked=""
+                                  name="height"
+                                />
+                                <label for="all-states"
+                                  ><i class="pi-check"></i> All States</label
+                                >
+                              </div>
+                              <div class="toggle__content">
+                                <input
+                                  class="toggle__input"
+                                  id="deselect"
+                                  type="radio"
+                                  name="height"
+                                />
+                                <label for="deselect"
+                                  ><i class="pi-check"></i> Deselect</label
+                                >
+                              </div>
+                            </div>
+                          </fieldset>
+                        </div> 
+                      </div>
+                      <div class="mb-4">
+                        <div class="accordion no-border">
+                          <div
+                            class="flex flex--justify-between flex--align-center mb-3"
+                          >
+                            <div class="flex flex--align-center">
+                              <i class="pi-angle-down mr-3 text--size-xl"></i>
+                              <h2 class="text-base text--size-md mb-0">Certifications</h2>
+                            </div>
+                            <button class="button">
+                              Add <i class="pi-plus" aria-hidden="true"></i>
+                            </button>
+                          </div>
+                          <!-- Set active by default. Allow accordions to toggle closed. -->
+                          <div class="accordion__content active">
+                            <div class="w-100 flex flex--wrap">
+                              <div
+                                class="pill background-med-blue py-1 text-white mr-1 mb-2"
+                              >
+                                HMO
+                                <i
+                                  aria-hidden="true"
+                                  class="ml-2 pi-times-solid"
+                                ></i>
+                              </div>
+                              <div
+                                class="pill background-med-blue py-1 text-white mr-1 mb-2"
+                              >
+                                PFFS
+                                <i
+                                  aria-hidden="true"
+                                  class="ml-2 pi-times-solid"
+                                ></i>
+                              </div>
+                              <div
+                                class="pill background-med-blue py-1 text-white mr-1 mb-2"
+                              >
+                                PPO
+                                <i
+                                  aria-hidden="true"
+                                  class="ml-2 pi-times-solid"
+                                ></i>
+                              </div>
+                              <div
+                                class="pill background-med-blue py-1 text-white mr-1 mb-2"
+                              >
+                                SNP
+                                <i
+                                  aria-hidden="true"
+                                  class="ml-2 pi-times-solid"
+                                ></i>
+                              </div>
+                              <div
+                                class="pill background-med-blue py-1 text-white mr-1 mb-2"
+                              >
+                                CarePlus
+                                <i
+                                  aria-hidden="true"
+                                  class="ml-2 pi-times-solid"
+                                ></i>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="mb-4">
+                        <div class="accordion no-border">
+                          <div class="flex flex--justify-between flex--align-center mb-3">
+                            <div class="flex flex--align-center">
+                              <i class="pi-angle-down mr-3 text--size-xl"></i>
+                              <h2 class="text-base text--size-md mb-0">Carrier File(s)</h2>
+                            </div>
+                            <button class="button">
+                              Add <i class="pi-plus" aria-hidden="true"></i>
+                            </button>
+                          </div>
+                          <!-- Set active by default. Allow accordions to toggle closed. -->
+                          <div class="accordion__content active">
+                            <div class="tabs">
+                              <input type="radio" id="general" name="carrier-tabs" checked>
+                              <label for="general" class="tab">
+                                General
+                              </label>
+                              <div class="tab-panel pt-3 pr-0 pb-0 pl-0">
+                                <div class="mb-3 px-3">
+                                  <p class="mb-0">Showing 3 out of 3</p>
+                                </div>
+                                <table class="table">
+                                  <thead>
+                                    <tr>
+                                      <th>Action</th>
+                                      <th>Levels</th>
+                                      <th>Digital</th>
+                                      <th>Files</th>
+                                      <th>Uploaded</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td data-label="Action">
+                                        <div class="icon-menu">
+                                          <div class="icon-menu__item">
+                                            <a href="#" class="icon-menu__action text-positive--hover">
+                                              <i class="pi-download" aria-hidden="hidden"></i>
+                                            </a>
+                                          </div>
+                                          <div class="icon-menu__item">
+                                            <a href="#" class="icon-menu__action text-positive--hover">
+                                              <i class="pi-eye" aria-hidden="hidden"></i>
+                                            </a>
+                                          </div>
+                                        </div>
+                                      </td>
+                                      <td data-label="Levels">
+                                        1-5
+                                      </td>
+                                      <td data-label="Digital">
+                                        <i class="pi-check text--size-xl"></i>
+                                      </td>
+                                      <td data-label="Files">
+                                        Contract.pdf
+                                      </td>
+                                      <td data-label="Uploaded">
+                                        <div class="icon-menu">
+                                          <div class="icon-menu__item">
+                                            <a href="#" class="icon-menu__action text-positive--hover">
+                                              <i class="pi-edit" aria-hidden="hidden"></i>
+                                            </a>
+                                          </div>
+                                          <div class="icon-menu__item">
+                                            <a href="#" class="icon-menu__action text-negative--hover">
+                                              <i class="pi-trash" aria-hidden="hidden"></i>
+                                            </a>
+                                          </div>
+                                        </div>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td data-label="Action">
+                                        <div class="icon-menu">
+                                          <div class="icon-menu__item">
+                                            <a href="#" class="icon-menu__action text-positive--hover">
+                                              <i class="pi-download" aria-hidden="hidden"></i>
+                                            </a>
+                                          </div>
+                                          <div class="icon-menu__item">
+                                            <a href="#" class="icon-menu__action text-positive--hover">
+                                              <i class="pi-eye" aria-hidden="hidden"></i>
+                                            </a>
+                                          </div>
+                                        </div>
+                                      </td>
+                                      <td data-label="Levels">
+                                        1-5
+                                      </td>
+                                      <td></td>
+                                      <td data-label="Files">
+                                        Contract.pdf
+                                      </td>
+                                      <td data-label="Uploaded">
+                                        <div class="icon-menu">
+                                          <div class="icon-menu__item">
+                                            <a href="#" class="icon-menu__action text-positive--hover">
+                                              <i class="pi-edit" aria-hidden="hidden"></i>
+                                            </a>
+                                          </div>
+                                          <div class="icon-menu__item">
+                                            <a href="#" class="icon-menu__action text-negative--hover">
+                                              <i class="pi-trash" aria-hidden="hidden"></i>
+                                            </a>
+                                          </div>
+                                        </div>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td data-label="Action">
+                                        <div class="icon-menu">
+                                          <div class="icon-menu__item">
+                                            <a href="#" class="icon-menu__action text-positive--hover">
+                                              <i class="pi-download" aria-hidden="hidden"></i>
+                                            </a>
+                                          </div>
+                                          <div class="icon-menu__item">
+                                            <a href="#" class="icon-menu__action text-positive--hover">
+                                              <i class="pi-eye" aria-hidden="hidden"></i>
+                                            </a>
+                                          </div>
+                                        </div>
+                                      </td>
+                                      <td data-label="Levels">
+                                        1-5
+                                      </td>
+                                      <td data-label="Digital">
+                                        <i class="pi-check text--size-xl"></i>
+                                      </td>
+                                      <td data-label="Files">
+                                        Contract.pdf
+                                      </td>
+                                      <td data-label="Uploaded">
+                                        <div class="icon-menu">
+                                          <div class="icon-menu__item">
+                                            <a href="#" class="icon-menu__action text-positive--hover">
+                                              <i class="pi-edit" aria-hidden="hidden"></i>
+                                            </a>
+                                          </div>
+                                          <div class="icon-menu__item">
+                                            <a href="#" class="icon-menu__action text-negative--hover">
+                                              <i class="pi-trash" aria-hidden="hidden"></i>
+                                            </a>
+                                          </div>
+                                        </div>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                              <input type="radio" id="schedule" name="carrier-tabs">
+                              <label for="schedule" class="tab">
+                                Schedule
+                              </label>
+                              <div class="tab-panel">
+                                <!-- tab content should be the same as General tab -->
+                                <div class="background-lighter flex--center-content" style="height: 320px">
+                                  <strong>
+                                    This tab should be the same as the General tab
+                                  </strong>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="mb-4">
+                        <div class="accordion no-border">
+                          <div
+                            class="flex flex--justify-between flex--align-center mb-3"
+                          >
+                            <div class="flex flex--align-center">
+                              <i class="pi-angle-down mr-3 text--size-xl"></i>
+                              <h2 class="text-base text--size-md mb-0">Cover Sheet</h2>
+                            </div>
+                            <div class="flex flex--align-center">
+                              <p class="mb-0 mr-3">Set as default</p>
+                              <button class="pill pill--circle-medium pointer button--plain">
+                                <i aria-hidden="true" focusable="false" class="pi-check pi-lg"></i>
+                              </button>
+                            </div>
+                          </div>
+                          <!-- Set active by default. Allow accordions to toggle closed. -->
+                          <div class="accordion__content active">
+                            <!-- placeholder for cover sheet plugin -->
+                            <div class="w-100 flex flex--wrap card background-light flex--center-content">
+                              <span class="text-white">Placeholder for Cover Sheet</span>
+                            </div>
+                            <!-- placeholder for cover sheet plugin -->
+                          </div>
+                        </div>
+                      </div>
+                      <div class="mb-4">
+                        <div class="accordion no-border">
+                          <div class="flex flex--justify-between flex--align-center mb-3">
+                            <div class="flex flex--align-center">
+                              <i class="pi-angle-down mr-3 text--size-xl"></i>
+                              <h2 class="text-base text--size-md mb-0">Commissions</h2>
+                            </div>
+                            <button class="button">
+                              Add <i class="pi-plus" aria-hidden="true"></i>
+                            </button>
+                          </div>
+                          <!-- Set active by default. Allow accordions to toggle closed. -->
+                          <div class="accordion__content active">
+                            <div class="tabs">
+                              <input type="radio" id="initial" name="commissions" checked>
+                              <label for="initial" class="tab">
+                                Initial
+                              </label>
+                              <div class="tab-panel pt-3 pr-0 pb-0 pl-0">
+                                <div class="mb-3 px-3">
+                                  <div class="block-container">
+                                    <div class="block lg-tablet-up-10">
+                                      <div class="block-container flex--align-center blocks p-2">
+                                        <div class="block lg-tablet-up-6 laptop-up--shrink flex flex--align-center">
+                                          <strong class="pr-2">Effective Date:</strong>
+                                          <date>00/00/0000</date>
+                                        </div>
+                                        <div class="block lg-tablet-up-6 laptop-up--shrink flex flex--align-center">
+                                          <strong class="pr-2">Expiration Date:</strong>
+                                          <date>00/00/0000</date>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="block lg-tablet-up-2 flex flex--justify-end flex--align-center">
+                                      <button class="button button--secondary">
+                                        <i class="pi-edit"></i>
+                                        <span class="sr-only">Edit</span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                                <table class="table">
+                                  <thead>
+                                    <tr>
+                                      <th>Levels</th>
+                                      <th>Commissions/States</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td data-label="Levels">
+                                        0
+                                      </td>
+                                      <td data-label="Commissions/States">
+                                        <span class="mr-2">50%</span>
+                                        <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
+                                          <i class="pi-globe"></i>
+                                        </span>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td data-label="Levels">
+                                        1
+                                      </td>
+                                      <td data-label="Commissions/States">
+                                        <span class="mr-2">55%</span>
+                                        <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
+                                          <i class="pi-globe"></i>
+                                        </span>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td data-label="Levels">
+                                        2
+                                      </td>
+                                      <td data-label="Commissions/States">
+                                        <div>
+                                          <span class="mr-2">60%</span>
+                                          <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
+                                            <strong>
+                                              NJ
+                                            </strong>
+                                          </span>
+                                          <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
+                                            <strong>
+                                              MD
+                                            </strong>
+                                          </span>
+                                          <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
+                                            <strong>
+                                              VA
+                                            </strong>
+                                          </span>
+                                          <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
+                                            <strong>
+                                              WV
+                                            </strong>
+                                          </span>
+                                          <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
+                                            <strong>
+                                              ID
+                                            </strong>
+                                          </span>
+                                          <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
+                                            <strong>
+                                              IL
+                                            </strong>
+                                          </span>
+                                          <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
+                                            <strong>
+                                              IN
+                                            </strong>
+                                          </span>
+                                          <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
+                                            <strong>
+                                              KS
+                                            </strong>
+                                          </span>
+                                        </div>
+                                        <div>
+                                          <span class="mr-2">58%</span>
+                                          <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
+                                            <strong>
+                                              PA
+                                            </strong>
+                                          </span>
+                                          <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
+                                            <strong>
+                                              MI
+                                            </strong>
+                                          </span>
+                                          <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
+                                            <strong>
+                                              ME
+                                            </strong>
+                                          </span>
+                                          <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
+                                            <strong>
+                                              MN
+                                            </strong>
+                                          </span>
+                                        </div>
+                                        <div>
+                                          <span class="mr-2">52%</span>
+                                          <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
+                                            <i class="pi-globe"></i>
+                                          </span>
+                                        </div>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                              <input type="radio" id="second" name="commissions">
+                              <label for="second" class="tab">
+                                Second Stage
+                              </label>
+                              <div class="tab-panel">
+                                <!-- tab content should be the same as Initial tab -->
+                                <div class="background-lighter flex--center-content" style="height: 428px">
+                                  <strong>
+                                    This tab should be the same as the Initial tab
+                                  </strong>
+                                </div>
+                              </div>
+                              <input type="radio" id="third" name="commissions">
+                              <label for="third" class="tab">
+                                Third Stage
+                              </label>
+                              <div class="tab-panel">
+                                <!-- tab content should be the same as Initial tab -->
+                                <div class="background-lighter flex--center-content" style="height: 428px">
+                                  <strong>
+                                    This tab should be the same as the Initial tab
+                                  </strong>
+                                </div>
+                              </div>
+                              <input type="radio" id="fourth" name="commissions">
+                              <label for="fourth" class="tab">
+                                Fourth Stage
+                              </label>
+                              <div class="tab-panel">
+                                <!-- tab content should be the same as Initial tab -->
+                                <div class="background-lighter flex--center-content" style="height: 428px">
+                                  <strong>
+                                    This tab should be the same as the Initial tab
+                                  </strong>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>            
+          </div>
+        </div>
+        <div class="block laptop-up-3 hide-laptop-down pl-3">
+          <!-- placeholder notes block -->
+          <div class="background-light py-3 px-4 flex--center-content" style="height: 400px;">
+            <p class="text-white text--size-xl">
+              Notes Placeholder
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="/src/assets/js/platform-ui.min.js"></script>
+  </body>
+</html>
