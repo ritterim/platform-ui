@@ -162,7 +162,7 @@
   &-right,
   &-left {
     bottom: 0;
-    box-shadow: 0 -.5rem 2rem rgba(map.get(variables.$greyscale, 'black'), math.percentage(config.$hue-threshold / 2));
+    box-shadow: 0 -.5rem 2rem rgba(map.get(variables.$greyscale, 'black'), math.percentage(.5));
     flex-direction: column;
     height: config.$drawer-side-height;
     position: fixed;
