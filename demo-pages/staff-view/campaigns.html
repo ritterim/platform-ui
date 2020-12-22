@@ -371,60 +371,62 @@
                   </button>
                 </div>
               </div>
-              <div class="accordion__content pb-3">
-                <form action="" class="form block-container blocks tablet-up-3 py-3 laptop-up-5 mb-3">
-                  <div class="block px-2">
-                    <label for="sales-rep" class="form__field has-icon--right">Sales Rep
-                      <input id="sales-rep" type="text" placeholder="Type to search">
-                      <i class="pi-search" aria-hidden="true"></i>
-                    </label>
-                  </div>
-                  <div class="block px-2">
-                    <label for="campaign" class="form__field">Campaign Status
-                      <div class="form__select-wrapper">
-                        <select name="campaign select" id="campaign">
-                          <option value="campaign1">Choose</option>
-                          <option value="campaign2">Bad</option>
-                          <option value="campaign3">Cold / Dead Lead</option>
-                          <option value="campaign4">Do Not Contact</option>
-                          <option value="campaign5">Follow Up 1</option>
-                          <option value="campaign6">Follow Up 2</option>
-                          <option value="campaign7">Follow Up 3</option>
-                          <option value="campaign8" selected>Initial</option>
-                          <option value="campaign9">No Follow Up Needed</option>
-                          <option value="campaign10">Success</option>
-                        </select>
-                      </div>
-                    </label>
-                  </div>
-                  <div class="block px-2">
-                    <label for="audience" class="form__field">Audience
-                      <div class="form__select-wrapper">
-                        <select name="audience select" id="audience">
-                          <option value="audience1">Choose</option>
-                          <option value="audience2">Consumer</option>
-                        </select>
-                      </div>
-                    </label>
-                  </div>
-                  <div class="block px-2">
-                    <label for="next-touch" class="form__field">Next touch
-                      <input id="next-touch" type="date">
-                    </label>
-                  </div>
-                  <div class="block flex flex--align-center pl-2">
-                    <div class="toggle mr-2">
-                      <input id="off" type="radio" checked name="register">
-                      <label for="off"> 
-                      </label>
-                      <input id="on" type="radio" name="register">
-                      <label for="on">
+              <div class="accordion__content pb-3 px-3">
+                <div class="my-3">
+                  <form action="" class="form block-container blocks tablet-up-3 laptop-up-5 my-3 px-2">
+                    <div class="block">
+                      <label for="sales-rep" class="form__field has-icon--right">Sales Rep
+                        <input id="sales-rep" type="text" placeholder="Type to search">
+                        <i class="pi-search" aria-hidden="true"></i>
                       </label>
                     </div>
-                    Register
-                    <button class="button button--secondary ml-3"><i class="pi-phone" aria-hidden="true"></i></button>
-                  </div>
-                </form>
+                    <div class="block">
+                      <label for="campaign" class="form__field">Campaign Status
+                        <div class="form__select-wrapper">
+                          <select name="campaign select" id="campaign">
+                            <option value="campaign1">Choose</option>
+                            <option value="campaign2">Bad</option>
+                            <option value="campaign3">Cold / Dead Lead</option>
+                            <option value="campaign4">Do Not Contact</option>
+                            <option value="campaign5">Follow Up 1</option>
+                            <option value="campaign6">Follow Up 2</option>
+                            <option value="campaign7">Follow Up 3</option>
+                            <option value="campaign8" selected>Initial</option>
+                            <option value="campaign9">No Follow Up Needed</option>
+                            <option value="campaign10">Success</option>
+                          </select>
+                        </div>
+                      </label>
+                    </div>
+                    <div class="block">
+                      <label for="audience" class="form__field">Audience
+                        <div class="form__select-wrapper">
+                          <select name="audience select" id="audience">
+                            <option value="audience1">Choose</option>
+                            <option value="audience2">Consumer</option>
+                          </select>
+                        </div>
+                      </label>
+                    </div>
+                    <div class="block">
+                      <label for="next-touch" class="form__field">Next touch
+                        <input id="next-touch" type="date">
+                      </label>
+                    </div>
+                    <div class="block flex flex--align-center">
+                      <div class="toggle mr-2 mt-0">
+                        <input id="off" type="radio" checked name="register">
+                        <label for="off"> 
+                        </label>
+                        <input id="on" type="radio" name="register">
+                        <label for="on">
+                        </label>
+                      </div>
+                      Register
+                      <button class="button button--secondary ml-3"><i class="pi-phone" aria-hidden="true"></i></button>
+                    </div>
+                  </form>
+                </div>
                 <div class="message message--info" data-header="">
                   <div class="block-container blocks background-lightblue pl-2 tablet-up-3">
                     <div class="block flex flex--column py-4">
@@ -441,11 +443,11 @@
                     </div>
                   </div>
                 </div>
-                <div class="border-b pl-3 py-5">
+                <div class="border-b py-5">
                   <h2 class="text-base text--size-md mb-0">Campaign Attachments (0)</h2>
                 </div>
-                <form action="" class="form px-3">
-                  <div class="block-container tablet-up-3 laptop-up-4 blocks my-3 p-2">
+                <div class="my-3">
+                  <form action="" class="form block-container blocks my-3 px-2 tablet-up-2 lg-tablet-up-3 desktop-up-4">
                     <div class="block">
                       <label for="first-name" class="form__field has-icon--right">First Name
                         <input id="first-name" type="text" value="John">
@@ -467,8 +469,6 @@
                         <input id="suffix" type="text">
                       </label>
                     </div>
-                  </div>
-                  <div class="block-container tablet-up-3 blocks mb-3 p-2">
                     <div class="block">
                       <label for="primary-email" class="form__field">Primary Email
                         <input id="primary-email" type="text" value="johndoe@gmail.com">
@@ -484,8 +484,6 @@
                         <input id="alternate-phone" type="text">
                       </label>
                     </div>
-                  </div>
-                  <div class="block-container tablet-up-3 blocks mb-3 p-2">
                     <div class="block">
                       <label for="birthdate" class="form__field">Birthdate
                         <input id="birthdate" type="date">
@@ -501,8 +499,6 @@
                         <input id="address-street-2" type="text">
                       </label>
                     </div>
-                  </div>
-                  <div class="block-container tablet-up-3 blocks mb-3 p-2">
                     <div class="block">
                       <label for="city" class="form__field">City
                         <input id="city" type="text">
@@ -571,8 +567,6 @@
                         <input id="zip" type="text">
                       </label>
                     </div>
-                  </div>
-                  <div class="block-container blocks tablet-up-3 mb-3 p-2">
                     <div class="block">
                       <label for="county" class="form__field">County
                         <div class="form__select-wrapper">
@@ -586,85 +580,85 @@
                         <input id="npn" type="text">
                       </label>
                     </div>
-                  </div>
-                  <h2 class="text-base text--size-md mb-0">Communications</h2>
-                  <div class="block-container blocks tablet-up-4 mb-3 p-2">
-                    <div class="block">
-                      <label for="source" class="form__field">Source
-                        <div class="form__select-wrapper">
-                          <select name="source select" id="source">
-                            <option value="source1">outbound</option>
-                            <option value="source2">inbound</option>
-                            <option value="source3">SilverpopMailing</option>
-                            <option value="source4">ims</option>
-                            <option value="source5">uir</option>
-                            <option value="source6">inn</option>
-                            <option value="source7">accupoint</option>
-                            <option value="source8">insurance-forums.com</option>
-                            <option value="source9">ritterim.com</option>
-                            <option value="source10">agentsurvivalguide.com</option>
-                            <option value="source11">facebook.com</option>
-                            <option value="source12">instagram.com</option>
-                            <option value="source13">twitter.com</option>
-                            <option value="source14">linkedin.com</option>
-                            <option value="source15">wistia.com</option>
-                            <option value="source16">youtube.com</option>
-                            <option value="source17">google.com</option>
-                            <option value="source18">podbean.com</option>
-                            <option value="source19">webex</option>
-                            <option value="source20">Agent Dashboard</option>
-                            <option value="source21">nahu</option>
-                            <option value="source22">carrier</option>
-                            <option value="source23">cpbj</option>
-                          </select>
-                        </div>
-                      </label>
+                    <div class="block-container blocks pl-2 pr-2 my-3 block-12 tablet-up-2 lg-tablet-up-3 desktop-up-4">
+                      <h2 class="text-base text--size-md mb-0 block-12 pl-2 my-3">Communications</h2>
+                      <div class="block">
+                        <label for="source" class="form__field">Source
+                          <div class="form__select-wrapper">
+                            <select name="source select" id="source">
+                              <option value="source1">outbound</option>
+                              <option value="source2">inbound</option>
+                              <option value="source3">SilverpopMailing</option>
+                              <option value="source4">ims</option>
+                              <option value="source5">uir</option>
+                              <option value="source6">inn</option>
+                              <option value="source7">accupoint</option>
+                              <option value="source8">insurance-forums.com</option>
+                              <option value="source9">ritterim.com</option>
+                              <option value="source10">agentsurvivalguide.com</option>
+                              <option value="source11">facebook.com</option>
+                              <option value="source12">instagram.com</option>
+                              <option value="source13">twitter.com</option>
+                              <option value="source14">linkedin.com</option>
+                              <option value="source15">wistia.com</option>
+                              <option value="source16">youtube.com</option>
+                              <option value="source17">google.com</option>
+                              <option value="source18">podbean.com</option>
+                              <option value="source19">webex</option>
+                              <option value="source20">Agent Dashboard</option>
+                              <option value="source21">nahu</option>
+                              <option value="source22">carrier</option>
+                              <option value="source23">cpbj</option>
+                            </select>
+                          </div>
+                        </label>
+                      </div>
+                      <div class="block">
+                        <label for="type" class="form__field">Type
+                          <div class="form__select-wrapper">
+                            <select name="type select" id="type">
+                              <option value="type1">call</option>
+                              <option value="type2">email</option>
+                              <option value="type3">ad_inline</option>
+                              <option value="type4">email_vendor</option>
+                              <option value="type5">homepage_banner</option>
+                              <option value="type6">mailer</option>
+                              <option value="type7">promo_box</option>
+                              <option value="type8">post</option>
+                              <option value="type9">post_paid</option>
+                              <option value="type10">video</option>
+                              <option value="type11">post_video</option>
+                              <option value="type12">post_video_paid</option>
+                              <option value="type13">ad_search</option>
+                              <option value="type14">ad_display</option>
+                              <option value="type15">ad_remarketing</option>
+                              <option value="type16">ad_banner</option>
+                              <option value="type17">ad_remarketing</option>
+                              <option value="type18">ad_banner</option>
+                              <option value="type19">post_sticky</option>
+                              <option value="type20">referral</option>
+                              <option value="type21">email_signature</option>
+                              <option value="type22">email_confirmation</option>
+                              <option value="type23">modal</option>
+                              <option value="type24">episode</option>
+                              <option value="type25">ad</option>
+                              <option value="type26">transfer</option>
+                              <option value="type27">webinar</option>
+                              <option value="type28">organic</option>
+                              <option value="type29">ad_newsletter</option>
+                              <option value="type30">email_newsletter</option>
+                            </select>
+                          </div>
+                        </label>
+                      </div>
+                      <div class="block">
+                        <label for="content" class="form__field">Content
+                          <input id="content" type="text">
+                        </label>
+                      </div>
                     </div>
-                    <div class="block">
-                      <label for="type" class="form__field">Type
-                        <div class="form__select-wrapper">
-                          <select name="type select" id="type">
-                            <option value="type1">call</option>
-                            <option value="type2">email</option>
-                            <option value="type3">ad_inline</option>
-                            <option value="type4">email_vendor</option>
-                            <option value="type5">homepage_banner</option>
-                            <option value="type6">mailer</option>
-                            <option value="type7">promo_box</option>
-                            <option value="type8">post</option>
-                            <option value="type9">post_paid</option>
-                            <option value="type10">video</option>
-                            <option value="type11">post_video</option>
-                            <option value="type12">post_video_paid</option>
-                            <option value="type13">ad_search</option>
-                            <option value="type14">ad_display</option>
-                            <option value="type15">ad_remarketing</option>
-                            <option value="type16">ad_banner</option>
-                            <option value="type17">ad_remarketing</option>
-                            <option value="type18">ad_banner</option>
-                            <option value="type19">post_sticky</option>
-                            <option value="type20">referral</option>
-                            <option value="type21">email_signature</option>
-                            <option value="type22">email_confirmation</option>
-                            <option value="type23">modal</option>
-                            <option value="type24">episode</option>
-                            <option value="type25">ad</option>
-                            <option value="type26">transfer</option>
-                            <option value="type27">webinar</option>
-                            <option value="type28">organic</option>
-                            <option value="type29">ad_newsletter</option>
-                            <option value="type30">email_newsletter</option>
-                          </select>
-                        </div>
-                      </label>
-                    </div>
-                    <div class="block">
-                      <label for="content" class="form__field">Content
-                        <input id="content" type="text">
-                      </label>
-                    </div>
-                  </div>
-                </form>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
@@ -711,7 +705,7 @@
                   </button>
                 </div>
               </div>
-              <div class="accordion__content pb-3">
+              <div class="accordion__content pb-3 px-3">
                 <div class="message message--info" data-header="">
                   <div class="block-container blocks pl-3 tablet-up-3">
                     <div class="block flex flex--column py-3">
@@ -729,7 +723,7 @@
                   </div>
                 </div>
                 <div class="flex flex--align-center flex--justify-end mt-4 px-3">
-                  <div class="toggle mr-2">
+                  <div class="toggle mr-2 mt-0">
                     <input id="one" type="radio" name="duplicates">
                     <label for="one">
                     </label>
@@ -739,8 +733,8 @@
                   </div>
                   Allow Duplicates
                 </div>
-                <form action="" class="form px-3">
-                  <div class="block-container tablet-up-3 laptop-up-2 blocks my-3 p-2">
+                <div class="my-3">
+                  <form action="" class="form block-container blocks my-3 px-2 tablet-up-2 lg-tablet-up-4">
                     <div class="block">
                       <label for="campaign" class="form__field has-icon--right">Campaign
                         <input id="campaign" type="text" value="John Doe Demo">
@@ -752,8 +746,6 @@
                         <input id="middle-name" type="text" value="Agency_2020">
                       </label>
                     </div>
-                  </div>
-                  <div class="block-container tablet-up-3 blocks mb-3 p-2">
                     <div class="block">
                       <label for="start-date" class="form__field">Start Date
                         <input id="start-date" type="date">
@@ -777,8 +769,6 @@
                         </div>
                       </label>
                     </div>
-                  </div>
-                  <div class="block-container tablet-up-3 blocks mb-3 p-2">
                     <div class="block">
                       <label for="product" class="form__field">Product
                         <select multiple="product" name="product select" id="product">
@@ -835,128 +825,128 @@
                         </select>
                       </label>
                     </div>
-                  </div>
-                  <h2 class="text-base text--size-md mb-0">Region</h2>
-                  <div class="block-container blocks p-2">
-                    <div class="block-6 mb-2">
-                      <label for="region" class="form__field">
-                        <div class="form__select-wrapper">
-                          <select name="region select" id="region">
-                            <option value="region1">Select region</option>
-                            <option value="region2">California</option>
-                            <option value="region3">Great Lakes</option>
-                            <option value="region4">Keystone</option>
-                            <option value="region5">Mid Atlantic</option>
-                            <option value="region6">Mid West</option>
-                            <option value="region7">Northeast</option>
-                            <option value="region8">NY Metro</option>
-                            <option value="region9">Philly Metro</option>
-                            <option value="region10">South</option>
-                            <option value="region11">West</option>
-                          </select>
+                    <div class="block-container blocks pl-2 pr-2 my-3">
+                      <h2 class="text-base text--size-md mb-0 block-12 pl-2">Region</h2>
+                      <div class="block block-6">
+                        <label for="region" class="form__field">
+                          <div class="form__select-wrapper">
+                            <select name="region select" id="region">
+                              <option value="region1">Select region</option>
+                              <option value="region2">California</option>
+                              <option value="region3">Great Lakes</option>
+                              <option value="region4">Keystone</option>
+                              <option value="region5">Mid Atlantic</option>
+                              <option value="region6">Mid West</option>
+                              <option value="region7">Northeast</option>
+                              <option value="region8">NY Metro</option>
+                              <option value="region9">Philly Metro</option>
+                              <option value="region10">South</option>
+                              <option value="region11">West</option>
+                            </select>
+                          </div>
+                        </label>
+                      </div>
+                      <div class="flex flex--wrap">
+                        <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">AL</button>
+                        <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">AK</button>
+                        <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">AZ</button>
+                        <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">AR</button>
+                        <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">CA</button>
+                        <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">CO</button>
+                        <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">CT</button>
+                        <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">DE</button>
+                        <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">DC</button>
+                        <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">FL</button>
+                        <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">GA</button>
+                        <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">HI</button>
+                        <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">ID</button>
+                        <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">IL</button>
+                        <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">IN</button>
+                        <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">IA</button>
+                        <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">KS</button>
+                        <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">KY</button>
+                        <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">LA</button>
+                        <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">ME</button>
+                        <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">MD</button>
+                        <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">MA</button>
+                        <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">MI</button>
+                        <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">MN</button>
+                        <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">MS</button>
+                        <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">MO</button>
+                        <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">MT</button>
+                        <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">NE</button>
+                        <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">NV</button>
+                        <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">NH</button>
+                        <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">NJ</button>
+                        <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">NM</button>
+                        <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">NY</button>
+                        <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">NC</button>
+                        <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">ND</button>
+                        <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">OH</button>
+                        <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">OK</button>
+                        <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">OR</button>
+                        <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">PA</button>
+                        <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">PR</button>
+                        <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">RI</button>
+                        <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">SC</button>
+                        <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">SD</button>
+                        <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">TN</button>
+                        <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">TX</button>
+                        <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">UT</button>
+                        <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">VT</button>
+                        <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">VA</button>
+                        <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">WA</button>
+                        <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">WV</button>
+                        <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">WI</button>
+                        <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">WY</button>
+                      </div>
+                      <div class="flex flex--align-center">
+                        <div class="toggle">
+                          <input id="single" type="radio" name="all-states" checked>
+                          <label for="single">
+                            <i class="pi-check" aria-hidden="true"></i>All States
+                          </label>
+                          <input id="all" type="radio" name="all-states">
+                          <label for="all">
+                            <i class="pi-check" aria-hidden="true"></i>Deselect
+                          </label>
                         </div>
-                      </label>
+                      </div>
                     </div>
-                  </div>
-                  <div class="flex flex--wrap">
-                    <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">AL</button>
-                    <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">AK</button>
-                    <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">AZ</button>
-                    <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">AR</button>
-                    <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">CA</button>
-                    <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">CO</button>
-                    <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">CT</button>
-                    <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">DE</button>
-                    <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">DC</button>
-                    <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">FL</button>
-                    <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">GA</button>
-                    <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">HI</button>
-                    <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">ID</button>
-                    <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">IL</button>
-                    <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">IN</button>
-                    <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">IA</button>
-                    <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">KS</button>
-                    <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">KY</button>
-                    <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">LA</button>
-                    <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">ME</button>
-                    <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">MD</button>
-                    <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">MA</button>
-                    <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">MI</button>
-                    <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">MN</button>
-                    <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">MS</button>
-                    <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">MO</button>
-                    <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">MT</button>
-                    <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">NE</button>
-                    <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">NV</button>
-                    <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">NH</button>
-                    <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">NJ</button>
-                    <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">NM</button>
-                    <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">NY</button>
-                    <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">NC</button>
-                    <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">ND</button>
-                    <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">OH</button>
-                    <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">OK</button>
-                    <button class="pill m-1 background-skyblue border border--color-med-blue text-navy p-2 rounded-1 pointer">OR</button>
-                    <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">PA</button>
-                    <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">PR</button>
-                    <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">RI</button>
-                    <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">SC</button>
-                    <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">SD</button>
-                    <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">TN</button>
-                    <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">TX</button>
-                    <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">UT</button>
-                    <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">VT</button>
-                    <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">VA</button>
-                    <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">WA</button>
-                    <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">WV</button>
-                    <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">WI</button>
-                    <button class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer">WY</button>
-                  </div>
-                  <div class="flex flex--align-center">
-                    <div class="toggle">
-                      <input id="single" type="radio" name="all-states" checked>
-                      <label for="single">
-                        <i class="pi-check" aria-hidden="true"></i>All States
-                      </label>
-                      <input id="all" type="radio" name="all-states">
-                      <label for="all">
-                        <i class="pi-check" aria-hidden="true"></i>Deselect
-                      </label>
-                    </div>
-                  </div>
-                  <div class="my-4">
-                    <div class="flex flex--align-center mb-4">
-                      <h2 class="text-base text--size-md mb-0 mr-2">Attachments (0)</h2>
-                      <button class="button button--secondary"><i class="pi-plus" aria-hidden="true"></i></button>
-                    </div>
-                    <strong>No files currently attached to this resource.</strong>
-                  </div>
-                  <h2 class="text-base text--size-md mb-0">Add Leads</h2>
-                  <div class="block-container blocks p-2 tablet-up-2">
                     <div class="block">
-                      <label for="marketer" class="form__field has-icon--right">Marketer
-                        <input id="marketer" type="text" placeholder="Type to search">
-                        <i class="pi-search" aria-hidden="true"></i>
-                      </label>
+                      <div class="flex flex--align-center mb-4">
+                        <h2 class="text-base text--size-md mb-0 mr-2">Attachments (0)</h2>
+                        <button class="button button--secondary"><i class="pi-plus" aria-hidden="true"></i></button>
+                      </div>
+                      <strong>No files currently attached to this resource.</strong>
                     </div>
-                    <div class="block flex--align-self-center">
-                      <button class="button button--secondary"><i class="pi-upload" aria-hidden="true"></i></button>
-                      Upload Leads
+                    <div class="block-container blocks block-12 pl-2 pr-2 my-3 tablet-up-2">
+                      <h2 class="text-base text--size-md mb-0 block-12 pl-2">Add Leads</h2>
+                      <div class="block">
+                        <label for="marketer" class="form__field has-icon--right">Marketer
+                          <input id="marketer" type="text" placeholder="Type to search">
+                          <i class="pi-search" aria-hidden="true"></i>
+                        </label>
+                      </div>
+                      <div class="block flex--align-self-center">
+                        <button class="button button--secondary"><i class="pi-upload" aria-hidden="true"></i></button>
+                        Upload Leads
+                      </div>
+                      <div class="block">
+                        <button class="button button--secondary"><i class="pi-user-solid" aria-hidden="true"></i></button>
+                        George Forge
+                        <i class="pi-calendar" aria-hidden="true"></i>
+                        Tue Dec 24 2020 @ 11:59 pm
+                      </div>
+                      <div class="block">
+                        <button class="button button--secondary"><i class="pi-user-solid" aria-hidden="true"></i></button>
+                        Bob Slob
+                        <i class="pi-calendar" aria-hidden="true"></i>
+                        Tue Dec 25 2020 @ 8:00 am
+                      </div>
                     </div>
-                  </div>
-                  <div class="my-2">
-                    <button class="button button--secondary"><i class="pi-user-solid" aria-hidden="true"></i></button>
-                    George Forge
-                    <i class="pi-calendar" aria-hidden="true"></i>
-                    Tue Dec 24 2020 @ 11:59 pm
-                  </div>
-                  <div class="my-2">
-                    <button class="button button--secondary"><i class="pi-user-solid" aria-hidden="true"></i></button>
-                    Bob Slob
-                    <i class="pi-calendar" aria-hidden="true"></i>
-                    Tue Dec 25 2020 @ 8:00 am
-                  </div>
-                </form>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
