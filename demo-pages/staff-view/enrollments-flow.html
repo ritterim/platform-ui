@@ -62,7 +62,7 @@
   </head>
   <body class="flex flex--column">
     <header class="site-header site-header--fixed">
-      <div class="site-menu background-light h-50">
+      <div class="site-menu background-navy h-50">
       </div>
       <div class="site-menu background-white h-50">
       </div>
@@ -81,16 +81,227 @@
               ></i>
             </label>
             <div class="tab-panel py-4 px-4">
-              <div class="flex flex--justify-end w-100 mb-4">
-                <button class="button button--secondary hide-laptop-up">
-                  <i class="pi-copy"></i>
-                  <span class="sr-only">Notes</span>
-                </button>
-                <button class="button ml-3">
-                  Add <i class="pi-plus" aria-hidden="true"></i>
-                </button>
+              <!-- Results & Actions Row -->
+              <div class="block-container flex--justify-between">
+
+                <!-- Results Displayed -->
+                <div class="tablet-up-4 flex flex--align-center mb-3">
+                  <div class="block">
+                    Showing 100 of 49,824
+                    <button
+                      type="button"
+                      title="Load more"
+                      aria-label="Load more"
+                      class="button button--secondary ml-2">
+                      <i aria-hidden="true" class="pi-sync"></i>
+                    </button>
+                  </div>
+                </div>
+  
+                <!-- Actions -->
+                <div class="tablet-up-8 flex flex--justify-end flex--align-center mb-3">
+  
+                  <!-- Filter Drawer Toggle -->
+                  <button
+                    data-button-text="Filters"
+                    aria-controls="sorting-filters"
+                    aria-label="Filters"
+                    class="button button--secondary mr-2 drawer__open"
+                    data-drawer="right"
+                    aria-expanded="true">
+                    <i aria-hidden="true" class="pi-filter"></i>
+                  </button>
+                  <button 
+                    class="button button--secondary hide-laptop-up drawer__open" 
+                    aria-label="Show Notes"
+                    data-drawer="notes-drawer">
+                    <i aria-hidden="true" class="pi-copy"></i>
+                    <span class="sr-only">Notes</span>
+                  </button>
+                </div>
               </div>
-              
+              <div class="mb-4">
+                <form action="" class="form block-container tablet-up-2 lg-tablet-up-3 laptop-up-4 blocks px-2 py-3">
+                  <div class="block">
+                    <label for="carrier" class="form__field">Carrier
+                      <div class="form__select-wrapper">
+                        <select name="Carrier Select" id="carrier">
+                          <option value="Carrier1">Carrier 1</option>
+                          <option value="Carrier2">Carrier 2</option>
+                          <option value="Carrier3">Carrier 3</option>
+                          <option value="Carrier4">Carrier 4</option>
+                          <option value="Carrier5">Carrier 5</option>
+                          <option value="Carrier6">Carrier 6</option>
+                        </select>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="block">
+                    <label for="client-name" class="form__field has-icon--right">Client Name
+                      <i class="pi-search" aria-hidden="true"></i>
+                      <input id="client-name" type="text" placeholder="Type to search">
+                    </label>
+                  </div>
+                  <div class="block">
+                    <label for="status" class="form__field">Status
+                      <div class="form__select-wrapper">
+                        <select name="Status Select" id="status">
+                          <option value="Status1">Status 1</option>
+                          <option value="Status2">Status 2</option>
+                          <option value="Status3">Status 3</option>
+                          <option value="Status4">Status 4</option>
+                          <option value="Status5">Status 5</option>
+                          <option value="Status6">Status 6</option>
+                        </select>
+                      </div>
+                    </label>
+                  </div>                
+                  <div class="block">
+                    <label for="agent-name" class="form__field has-icon--right">Agent Name
+                      <i class="pi-search" aria-hidden="true"></i>
+                      <input id="agent-name" type="text" placeholder="Type to search">
+                    </label>
+                  </div>                
+                </form>
+              </div>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>
+                      Carrier
+                    </th>
+                    <th>
+                      Client Name /
+                      <br> Member ID
+                    </th>
+                    <th>
+                      Agent Name
+                    </th>
+                    <th>
+                      Effective Date
+                    </th>
+                    <th>
+                      Plan Name
+                    </th>
+                    <th>
+                      Carrier Status
+                    </th>
+                    <th>
+                      Status
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td data-label="Carrier">
+                      <div>Excellus</div>
+                    </td>
+                    <td data-label="Client Name / Member ID">
+                      <div>The Client</div>
+                      <div title="Member ID">
+                        N123456789</div>
+                    </td>
+                    <td data-label="Agent Name">
+                      <div>The Agent</div>
+                    </td>
+                    <td data-label="Effective Date">
+                      <div>01/01/2019</div>
+                    </td>
+                    <td data-label="Plan Name">
+                      <div>N1234-53452 <span>(MA)</span></div>
+                    </td>
+                    <td data-label="Carrier Status">
+                      <div>Unknown</div>
+                    </td>
+                    <td data-label="Status">
+                      <div class="flex flex--align-center">
+                        <div class="pill pill--circle-empty positive mr-2"></div> Enrolled
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Carrier">
+                      <div>Excellus</div>
+                    </td>
+                    <td data-label="Client Name / Member ID">
+                      <div>The Client</div>
+                      <div title="Member ID">
+                        N123456789</div>
+                    </td>
+                    <td data-label="Agent Name">
+                      <div>The Agent</div>
+                    </td>
+                    <td data-label="Effective Date">
+                      <div>01/01/2019</div>
+                    </td>
+                    <td data-label="Plan Name">
+                      <div>N1234-53452 <span>(MA)</span></div>
+                    </td>
+                    <td data-label="Carrier Status">
+                      <div>Unknown</div>
+                    </td>
+                    <td data-label="Status">
+                      <div class="flex flex--align-center">
+                        <div class="pill pill--circle-empty positive mr-2"></div> Enrolled
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Carrier">
+                      <div>Excellus</div>
+                    </td>
+                    <td data-label="Client Name / Member ID">
+                      <div>The Client</div>
+                      <div title="Member ID">
+                        N123456789</div>
+                    </td>
+                    <td data-label="Agent Name">
+                      <div>The Agent</div>
+                    </td>
+                    <td data-label="Effective Date">
+                      <div>01/01/2019</div>
+                    </td>
+                    <td data-label="Plan Name">
+                      <div>N1234-53452 <span>(MA)</span></div>
+                    </td>
+                    <td data-label="Carrier Status">
+                      <div>Unknown</div>
+                    </td>
+                    <td data-label="Status">
+                      <div class="flex flex--align-center">
+                        <div class="pill pill--circle-empty positive mr-2"></div> Enrolled
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Carrier">
+                      <div>Excellus</div>
+                    </td>
+                    <td data-label="Client Name / Member ID">
+                      <div>The Client</div>
+                      <div title="Member ID">
+                        N123456789</div>
+                    </td>
+                    <td data-label="Agent Name">
+                      <div>The Agent</div>
+                    </td>
+                    <td data-label="Effective Date">
+                      <div>01/01/2019</div>
+                    </td>
+                    <td data-label="Plan Name">
+                      <div>N1234-53452 <span>(MA)</span></div>
+                    </td>
+                    <td data-label="Carrier Status">
+                      <div>Unknown</div>
+                    </td>
+                    <td data-label="Status">
+                      <div class="flex flex--align-center">
+                        <div class="pill pill--circle-empty positive mr-2"></div> Enrolled
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
             <input type="radio" id="tab-input-b" name="tabs" />
             <label for="tab-input-b" class="tab">
@@ -639,117 +850,6 @@
                                     </div>
                                   </div>
                                 </div>
-                                <table class="table">
-                                  <thead>
-                                    <tr>
-                                      <th>Levels</th>
-                                      <th>Commissions/States</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                    <tr>
-                                      <td data-label="Levels">
-                                        0
-                                      </td>
-                                      <td data-label="Commissions/States">
-                                        <span class="mr-2">50%</span>
-                                        <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
-                                          <i class="pi-globe"></i>
-                                        </span>
-                                      </td>
-                                    </tr>
-                                    <tr>
-                                      <td data-label="Levels">
-                                        1
-                                      </td>
-                                      <td data-label="Commissions/States">
-                                        <span class="mr-2">55%</span>
-                                        <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
-                                          <i class="pi-globe"></i>
-                                        </span>
-                                      </td>
-                                    </tr>
-                                    <tr>
-                                      <td data-label="Levels">
-                                        2
-                                      </td>
-                                      <td data-label="Commissions/States">
-                                        <div>
-                                          <span class="mr-2">60%</span>
-                                          <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
-                                            <strong>
-                                              NJ
-                                            </strong>
-                                          </span>
-                                          <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
-                                            <strong>
-                                              MD
-                                            </strong>
-                                          </span>
-                                          <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
-                                            <strong>
-                                              VA
-                                            </strong>
-                                          </span>
-                                          <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
-                                            <strong>
-                                              WV
-                                            </strong>
-                                          </span>
-                                          <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
-                                            <strong>
-                                              ID
-                                            </strong>
-                                          </span>
-                                          <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
-                                            <strong>
-                                              IL
-                                            </strong>
-                                          </span>
-                                          <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
-                                            <strong>
-                                              IN
-                                            </strong>
-                                          </span>
-                                          <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
-                                            <strong>
-                                              KS
-                                            </strong>
-                                          </span>
-                                        </div>
-                                        <div>
-                                          <span class="mr-2">58%</span>
-                                          <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
-                                            <strong>
-                                              PA
-                                            </strong>
-                                          </span>
-                                          <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
-                                            <strong>
-                                              MI
-                                            </strong>
-                                          </span>
-                                          <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
-                                            <strong>
-                                              ME
-                                            </strong>
-                                          </span>
-                                          <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
-                                            <strong>
-                                              MN
-                                            </strong>
-                                          </span>
-                                        </div>
-                                        <div>
-                                          <span class="mr-2">52%</span>
-                                          <span class="pill m-1 background-skyblue border border--color-med-blue text-navy py-1 px-2 rounded-1 pointer">
-                                            <i class="pi-globe"></i>
-                                          </span>
-                                        </div>
-                                      </td>
-                                    </tr>
-                                  </tbody>
-                                </table>
                               </div>
                               <input type="radio" id="second" name="commissions">
                               <label for="second" class="tab">
@@ -804,6 +904,80 @@
             <p class="text-white text--size-xl">
               Notes Placeholder
             </p>
+          </div>
+        </div>
+      </div>
+      <!-- Drawer -->
+      <div id="right" class="drawer-right drawer--closed background-white pb-6">
+        <div class="flex flex--align-center flex--justify-between background-lightblue p-4">
+          <div class="flex flex--align-center">
+            <strong class="text-navy text--size-lg">Sorting</strong>
+          </div>
+          <button data-drawer="right" class="button drawer__close">
+            Close
+            <i aria-hidden="true" class="pi-times"></i>
+          </button>
+        </div>
+        <div class="p-4 h-100">
+      
+          <!-- Sorting -->
+          <div class="flex flex--column mr-3">
+            <div class="mb-3 flex flex--align-center">
+              <div class="pill pill--split mr-2">
+                <a href="#" class="pill__content background-light-mid--hover pointer">
+                  <i class="pi-angle-up"></i>
+                </a>
+                <a href="#" class="pill__content background-light-mid--hover pointer">
+                  <i class="pi-angle-down"></i>
+                </a>
+              </div>
+              Sales Modified Date
+            </div>
+            <div class="mb-3 flex flex--align-center">
+              <div class="pill pill--split mr-2">
+                <a href="#" class="pill__content background-light-mid--hover pointer">
+                  <i class="pi-angle-up"></i>
+                </a>
+                <a href="#" class="pill__content background-light-mid--hover pointer" Î>
+                  <i class="pi-angle-down"></i>
+                </a>
+              </div>
+              Modified Date
+            </div>
+            <div class="mb-3 flex flex--align-center">
+              <div class="pill pill--split mr-2">
+                <a class="pill__content background-light-mid--hover pointer">
+                  <i class="pi-angle-up"></i>
+                </a>
+                <a href="#" class="pill__content background-light-mid--hover pointer">
+                  <i class="pi-angle-down"></i>
+                </a>
+              </div>
+              Created Date
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Notes Drawer -->
+      <div
+        id="notes-drawer"
+        class="drawer-right drawer--closed hide-laptop-up background-white pb-6">
+        <div class="flex flex--align-center flex--justify-between background-lightblue p-4">
+          <div class="flex flex--align-center">
+            <strong class="text-navy text--size-lg">Notes</strong>
+          </div>
+          <button data-drawer="notes-drawer" class="button drawer__close">
+            Close
+            <i aria-hidden="true" class="pi-times"></i>
+          </button>
+        </div>
+        <div class="px-4 pt-2">
+          <div class="block-container blocks p-2"></div>
+        </div>
+        <div class="p-4 h-100">
+          <!-- Notes -->
+          <div class="flex flex--column mr-3">
+            
           </div>
         </div>
       </div>
