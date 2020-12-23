@@ -294,7 +294,18 @@
               ></i>
             </label>
             <div class="tab-panel p-4">
-              <div class="flex flex--justify-end mb-3">
+              <div class="flex flex--justify-end mb-4">  
+                <!-- Filter Drawer Toggle -->
+                <button
+                  data-button-text="Filters"
+                  aria-controls="sorting-filters"
+                  aria-label="Filters"
+                  class="button button--secondary mr-2 drawer__open"
+                  data-drawer="filters"
+                  aria-expanded="true">
+                  <i aria-hidden="true" class="pi-filter"></i>
+                  <span class="sr-only">Filteres</span>
+                </button>
                 <button 
                   class="button button--secondary hide-laptop-up drawer__open" 
                   aria-label="Show Notes"
@@ -304,7 +315,7 @@
                 </button>
               </div>
               <!-- the .active class is added for visual purposes here. Make sure that this toggles like the rest of the accordiong in the platform. -->
-              <div class="accordion active">
+              <div class="accordion mb-3 active">
                 <div class="accordion__header p-2 block-container">
 
                   <div class="block tablet-up-2 flex flex--column p-2">
@@ -345,15 +356,73 @@
                   </div>
                 </div>
               </div>
+              <!-- the .active class is added for visual purposes here. Make sure that this toggles like the rest of the accordiong in the platform. -->
+              <div class="accordion active">
+                <div class="accordion__header p-2 block-container">
+
+                  <div class="block tablet-up-2 flex flex--column p-2">
+                    <strong>Carrier</strong>
+                  </div>
+
+                  <div class="block tablet-up-10 px-2">
+                    <div class="block-container tablet-up-5 blocks p-2">
+                      <div class="block flex flex--column">
+                        <strong>File Name</strong>
+                        this-is-a-file-name.xml
+                      </div>
+                      <div class="block flex flex--column">
+                        <strong>Uploaded By</strong>
+                        John Doe
+                      </div>
+                      <div class="block flex flex--column">
+                        <strong>Processed On</strong>
+                        12/23/2020
+                      </div>
+                      <div class="block flex flex--column">
+                        <strong>Processed</strong>
+                        <span>3 records</span>
+                      </div>
+                      <div class="block flex flex--column w-auto">
+                        <strong>Status <div class="pill pill--circle-empty-dot negative"></div></strong>                        
+                        <div class="pill pill--split">
+                          <span class="pill__label background-white text-base">1</span>
+                          <span class="pill__content background-negative text-white">Failure</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion__content px-3 py-3 fade-in-from-none-enter-active">
+                  <div class="message message--error">
+                    <p>Unable to identify the carrier for the file Test.Excellus.MA.xlsx. Has the format for the file changed?</p>
+                    <p>
+                      <strong>Submissions API</strong>
+                      <date>11/06/2020</date>
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>            
           </div>
         </div>
+        <!-- placeholder notes block -->
         <div class="block laptop-up-3 hide-laptop-down pl-3">
-          <!-- placeholder notes block -->
-          <div class="background-light py-3 px-4 flex--center-content" style="height: 400px;">
-            <p class="text-white text--size-xl">
-              Notes Placeholder
-            </p>
+          <div class="card text-base background-note mt-2 p-4 h-auto" style="height:578px !important;">
+            <div class="card__header">
+              <div class="card__group">
+                <button
+                        title="Add Note"
+                        aria-label="Add Note"
+                        class="button button--secondary">
+                  <i aria-hidden="true" class="pi-plus"></i>
+                </button>
+                <strong class="text-navy text--size-lg">Notes</strong>
+              </div>
+            </div>
+            <h2 class="skeleton skeleton--md"></h2>
+            <p class="skeleton" data-lines="4"></p>
+            <p class="skeleton" data-lines="2"></p>
+            <p class="skeleton" data-lines="3"></p>
           </div>
         </div>
       </div>
@@ -452,6 +521,76 @@
           </div>
         </div>
       </div>
+      <!-- Filters Drawer -->
+      <div id="filters" class="drawer-right drawer--closed background-white pb-6">
+        <div class="flex flex--align-center flex--justify-between background-lightblue p-4">
+          <div class="flex flex--align-center">
+            <strong class="text-navy text--size-lg">Enrollment Batches Filters</strong>
+          </div>
+          <button data-drawer="filters" class="button drawer__close">
+            Close
+            <i aria-hidden="true" class="pi-times"></i>
+          </button>
+        </div>
+        <div class="p-4 h-100">
+          <div class="mb-3">
+            <form action="" class="form block-container blocks px-2 mb-3 pb-2">
+              <div class="block">
+                <label for="carrier" class="form__field">Carrier
+                  <div class="form__select-wrapper">
+                    <select name="Carrier Select" id="carrier">
+                      <option value="Carrier1">Carrier 1</option>
+                      <option value="Carrier2">Carrier 2</option>
+                      <option value="Carrier3">Carrier 3</option>
+                      <option value="Carrier4">Carrier 4</option>
+                      <option value="Carrier5">Carrier 5</option>
+                      <option value="Carrier6">Carrier 6</option>
+                    </select>
+                  </div>
+                </label>
+              </div>
+              <div class="block">
+                <label for="status" class="form__field">Status
+                  <div class="form__select-wrapper">
+                    <select name="Status Select" id="status">
+                      <option value="Status1">Status 1</option>
+                      <option value="Status2">Status 2</option>
+                      <option value="Status3">Status 3</option>
+                      <option value="Status4">Status 4</option>
+                      <option value="Status5">Status 5</option>
+                      <option value="Status6">Status 6</option>
+                    </select>
+                  </div>
+                </label>
+              </div>
+              <div class="block">
+                <label for="client-name" class="form__field has-icon--right">Created By
+                  <i class="pi-search" aria-hidden="true"></i>
+                  <input id="client-name" type="text" placeholder="Type to search">
+                </label>
+              </div>  
+              <div class="block">
+                <label for="file-name" class="form__field has-icon--right">File Name
+                  <i class="pi-search" aria-hidden="true"></i>
+                  <input id="file-name" type="text" placeholder="Type to search">
+                </label>
+              </div>
+              <div class="block block-6">
+                <label for="start-date" class="form__field has-icon--right">Start
+                  <i class="pi-calendar" aria-hidden="true"></i>
+                  <input id="start-date" type="date">
+                </label>
+              </div>  
+              <div class="block block-6">
+                <label for="end-date" class="form__field has-icon--right">End
+                  <i class="pi-calendar" aria-hidden="true"></i>
+                  <input id="end-date" type="date">
+                </label>
+              </div>               
+            </form>
+          </div>
+        </div>
+      </div>
       <!-- Notes Drawer -->
       <div
         id="notes-drawer"
@@ -470,12 +609,13 @@
         </div>
         <div class="p-4 h-100">
           <!-- Notes -->
-          <div class="flex flex--column mr-3">
-            
-          </div>
+          <h2 class="skeleton skeleton--md"></h2>
+          <p class="skeleton" data-lines="4"></p>
+          <p class="skeleton" data-lines="2"></p>
+          <p class="skeleton" data-lines="3"></p>
         </div>
       </div>
-      <div id="upload-modal" class="modal modal--closed" tabindex="-1">
+      <div id="upload-modal" class="modal modal--closed modal--centered" tabindex="-1">
         <div class="modal__inner animated slideInUp faster">
           <div class="modal__header">
             <button class="button modal__close" data-modal="upload-modal">Close <i class="pi-times"></i></button>
