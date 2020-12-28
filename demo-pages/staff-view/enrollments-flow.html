@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Enrollments Flow</title>
+
+    <link rel="stylesheet" href="/src/assets/stylesheets/platform-ui.min.css" />
+    <link rel="stylesheet" href="../assets/skeletons/skeletons.css">
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="src/assets/images/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="src/assets/images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="src/assets/images/favicon/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="src/assets/images/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="src/assets/images/favicon/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="src/assets/images/favicon/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <style>
+      /*
+         *  This css will need to live in the platform along with custom
+         *  mobile menu css.
+         *  See src/Platform/Content/css/sass/platform-ui-plugins.scss
+         */
+      .site-header--fixed {
+        height: calc(var(--menu-height) * 2) !important;
+      }
+      .site-header--fixed + .header-fixed {
+        margin-top: calc(var(--menu-height) * 2) !important;
+      }
+      .site-header--fixed .site-menu-wrapper:nth-child(2) .site-menu.active,
+      .site-menu-wrapper.site-header--fixed:nth-child(2) .site-menu.active {
+        max-height: calc(100vh - (var(--menu-height) * 2));
+      }
+      .background-note {
+        background-color: #FFFDF5 !important; 
+      }
+    </style>
+  </head>
+  <body class="flex flex--column">
+    <header class="site-header site-header--fixed">
+      <div class="site-menu background-navy h-50">
+      </div>
+      <div class="site-menu background-white h-50">
+      </div>
+    </header>
+    <main class="header-fixed background-light-mid flex--grow py-4 px-3">
+      <div class="block-container blocks mb-4">
+        <div class="block laptop-up-9">
+          <div class="tabs">
+            <input type="radio" id="tab-input-a" name="tabs" checked />
+            <label for="tab-input-a" class="tab">
+              Enrollments
+              <i
+                focusable="false"
+                aria-hidden="hidden"
+                class="pi-angle-down show-mobile-only pi-lg transition ml-2"
+              ></i>
+            </label>
+            <div class="tab-panel p-4">
+              <!-- Results & Actions Row -->
+              <div class="block-container flex--justify-between mb-3">
+
+                <!-- Results Displayed -->
+                <div class="block tablet-up-6 flex flex--align-center mb-3">
+                  Showing 100 of 49,824
+                  <button
+                    type="button"
+                    title="Load more"
+                    aria-label="Load more"
+                    class="button button--secondary ml-2">
+                    <i aria-hidden="true" class="pi-sync"></i>
+                  </button>
+                </div>
+  
+                <!-- Actions -->
+                <div class="block tablet-up-6 flex flex--justify-end flex--align-center mb-3">
+
+                  <!-- Upload Enrollments Button -->
+                  <button 
+                    class="button button--secondary mr-2 modal__open" 
+                    data-modal="upload-modal"
+                    data-button-text="Upload Enrollments">
+                    <i class="pi-upload-cloud" aria-hidden="true"></i>
+                    <span class="sr-only">Upload Enrollments</span>
+                  </button>
+
+                  <!-- Download Enrollments Button -->
+                  <button 
+                    class="button button--secondary mr-2"
+                    data-button-text="Download Enrollments">
+                    <i class="pi-download" aria-hidden="true"></i>
+                    <span class="sr-only">Download Enrollments</span>
+                  </button>
+
+                  <!-- Show Stats Button -->
+                  <button 
+                    class="button button--secondary mr-2 modal__open" 
+                    data-modal="statistics-modal"
+                    data-button-text="Show Stats">
+                    <i class="pi-chart-line-up" aria-hidden="true"></i>
+                    <span class="sr-only">Show Stats</span>
+                  </button>
+  
+                  <!-- Filter Drawer Toggle -->
+                  <button
+                    data-button-text="Filters"
+                    aria-controls="sorting-filters"
+                    aria-label="Filters"
+                    class="button button--secondary mr-2 drawer__open"
+                    data-drawer="right"
+                    aria-expanded="true">
+                    <i aria-hidden="true" class="pi-filter"></i>
+                  </button>
+                  <button 
+                    class="button button--secondary hide-laptop-up drawer__open" 
+                    aria-label="Show Notes"
+                    data-drawer="notes-drawer">
+                    <i aria-hidden="true" class="pi-copy"></i>
+                    <span class="sr-only">Notes</span>
+                  </button>
+                </div>
+              </div>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>
+                      Carrier
+                    </th>
+                    <th>
+                      Client Name /
+                      <br> Member ID
+                    </th>
+                    <th>
+                      Agent Name
+                    </th>
+                    <th>
+                      Effective Date
+                    </th>
+                    <th>
+                      Plan Name
+                    </th>
+                    <th>
+                      Carrier Status
+                    </th>
+                    <th>
+                      Status
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td data-label="Carrier">
+                      <div>Excellus</div>
+                    </td>
+                    <td data-label="Client Name / Member ID">
+                      <div>The Client</div>
+                      <div title="Member ID">
+                        N123456789</div>
+                    </td>
+                    <td data-label="Agent Name">
+                      <div>The Agent</div>
+                    </td>
+                    <td data-label="Effective Date">
+                      <div>01/01/2019</div>
+                    </td>
+                    <td data-label="Plan Name">
+                      <div>N1234-53452 <span>(MA)</span></div>
+                    </td>
+                    <td data-label="Carrier Status">
+                      <div>Unknown</div>
+                    </td>
+                    <td data-label="Status">
+                      <div class="flex flex--align-center">
+                        <div class="pill pill--circle-empty positive mr-2"></div> Enrolled
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Carrier">
+                      <div>Excellus</div>
+                    </td>
+                    <td data-label="Client Name / Member ID">
+                      <div>The Client</div>
+                      <div title="Member ID">
+                        N123456789</div>
+                    </td>
+                    <td data-label="Agent Name">
+                      <div>The Agent</div>
+                    </td>
+                    <td data-label="Effective Date">
+                      <div>01/01/2019</div>
+                    </td>
+                    <td data-label="Plan Name">
+                      <div>N1234-53452 <span>(MA)</span></div>
+                    </td>
+                    <td data-label="Carrier Status">
+                      <div>Unknown</div>
+                    </td>
+                    <td data-label="Status">
+                      <div class="flex flex--align-center">
+                        <div class="pill pill--circle-empty positive mr-2"></div> Enrolled
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Carrier">
+                      <div>Excellus</div>
+                    </td>
+                    <td data-label="Client Name / Member ID">
+                      <div>The Client</div>
+                      <div title="Member ID">
+                        N123456789</div>
+                    </td>
+                    <td data-label="Agent Name">
+                      <div>The Agent</div>
+                    </td>
+                    <td data-label="Effective Date">
+                      <div>01/01/2019</div>
+                    </td>
+                    <td data-label="Plan Name">
+                      <div>N1234-53452 <span>(MA)</span></div>
+                    </td>
+                    <td data-label="Carrier Status">
+                      <div>Unknown</div>
+                    </td>
+                    <td data-label="Status">
+                      <div class="flex flex--align-center">
+                        <div class="pill pill--circle-empty positive mr-2"></div> Enrolled
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Carrier">
+                      <div>Excellus</div>
+                    </td>
+                    <td data-label="Client Name / Member ID">
+                      <div>The Client</div>
+                      <div title="Member ID">
+                        N123456789</div>
+                    </td>
+                    <td data-label="Agent Name">
+                      <div>The Agent</div>
+                    </td>
+                    <td data-label="Effective Date">
+                      <div>01/01/2019</div>
+                    </td>
+                    <td data-label="Plan Name">
+                      <div>N1234-53452 <span>(MA)</span></div>
+                    </td>
+                    <td data-label="Carrier Status">
+                      <div>Unknown</div>
+                    </td>
+                    <td data-label="Status">
+                      <div class="flex flex--align-center">
+                        <div class="pill pill--circle-empty positive mr-2"></div> Enrolled
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <input type="radio" id="tab-input-b" name="tabs" />
+            <label for="tab-input-b" class="tab">
+              Enrollment Batches
+              <i
+                focusable="false"
+                aria-hidden="hidden"
+                class="pi-angle-down show-mobile-only pi-lg transition ml-2"
+              ></i>
+            </label>
+            <div class="tab-panel p-4">
+              <div class="flex flex--justify-end mb-4">  
+                <!-- Filter Drawer Toggle -->
+                <button
+                  data-button-text="Filters"
+                  aria-controls="sorting-filters"
+                  aria-label="Filters"
+                  class="button button--secondary mr-2 drawer__open"
+                  data-drawer="filters"
+                  aria-expanded="true">
+                  <i aria-hidden="true" class="pi-filter"></i>
+                  <span class="sr-only">Filteres</span>
+                </button>
+                <button 
+                  class="button button--secondary hide-laptop-up drawer__open" 
+                  aria-label="Show Notes"
+                  data-drawer="notes-drawer">
+                  <i aria-hidden="true" class="pi-copy"></i>
+                  <span class="sr-only">Notes</span>
+                </button>
+              </div>
+              <!-- the .active class is added for visual purposes here. Make sure that this toggles like the rest of the accordiong in the platform. -->
+              <div class="accordion mb-3 active">
+                <div class="accordion__header p-2 block-container">
+
+                  <div class="block tablet-up-2 flex flex--column p-2">
+                    <strong>Carrier</strong>
+                    Excellus
+                  </div>
+
+                  <div class="block tablet-up-10 px-2">
+                    <div class="block-container tablet-up-5 blocks p-2">
+                      <div class="block flex flex--column">
+                        <strong>File Name</strong>
+                        this-is-a-file-name.xml
+                      </div>
+                      <div class="block flex flex--column">
+                        <strong>Uploaded By</strong>
+                        John Doe
+                      </div>
+                      <div class="block flex flex--column">
+                        <strong>Processed On</strong>
+                        12/23/2020
+                      </div>
+                      <div class="block flex flex--column">
+                        <strong>Processed</strong>
+                        <span>3 records</span>
+                      </div>
+                      <div class="block flex flex--column w-auto">
+                        <strong>Status <div class="pill pill--circle-empty-dot positive"></div></strong>                        
+                        <div class="pill text-white background-positive">
+                          Success
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion__content px-3 py-3 fade-in-from-none-enter-active">
+                  <div class="message message--success" data-header="">
+                    <p class="mt-0">3 records successfully processed.</p>
+                  </div>
+                </div>
+              </div>
+              <!-- the .active class is added for visual purposes here. Make sure that this toggles like the rest of the accordiong in the platform. -->
+              <div class="accordion active">
+                <div class="accordion__header p-2 block-container">
+
+                  <div class="block tablet-up-2 flex flex--column p-2">
+                    <strong>Carrier</strong>
+                  </div>
+
+                  <div class="block tablet-up-10 px-2">
+                    <div class="block-container tablet-up-5 blocks p-2">
+                      <div class="block flex flex--column">
+                        <strong>File Name</strong>
+                        this-is-a-file-name.xml
+                      </div>
+                      <div class="block flex flex--column">
+                        <strong>Uploaded By</strong>
+                        John Doe
+                      </div>
+                      <div class="block flex flex--column">
+                        <strong>Processed On</strong>
+                        12/23/2020
+                      </div>
+                      <div class="block flex flex--column">
+                        <strong>Processed</strong>
+                        <span>3 records</span>
+                      </div>
+                      <div class="block flex flex--column w-auto">
+                        <strong>Status <div class="pill pill--circle-empty-dot negative"></div></strong>                        
+                        <div class="pill pill--split">
+                          <span class="pill__label background-white text-base">1</span>
+                          <span class="pill__content background-negative text-white">Failure</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion__content px-3 py-3 fade-in-from-none-enter-active">
+                  <div class="message message--error">
+                    <p>Unable to identify the carrier for the file Test.Excellus.MA.xlsx. Has the format for the file changed?</p>
+                    <p>
+                      <strong>Submissions API</strong>
+                      <date>11/06/2020</date>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>            
+          </div>
+        </div>
+        <!-- placeholder notes block -->
+        <div class="block laptop-up-3 hide-laptop-down pl-3">
+          <div class="card text-base background-note mt-2 p-4 h-auto" style="height:578px !important;">
+            <div class="card__header">
+              <div class="card__group">
+                <button
+                        title="Add Note"
+                        aria-label="Add Note"
+                        class="button button--secondary">
+                  <i aria-hidden="true" class="pi-plus"></i>
+                </button>
+                <strong class="text-navy text--size-lg">Notes</strong>
+              </div>
+            </div>
+            <h2 class="skeleton skeleton--md"></h2>
+            <p class="skeleton" data-lines="4"></p>
+            <p class="skeleton" data-lines="2"></p>
+            <p class="skeleton" data-lines="3"></p>
+          </div>
+        </div>
+      </div>
+      <!-- Drawer -->
+      <div id="right" class="drawer-right drawer--closed background-white pb-6">
+        <div class="flex flex--align-center flex--justify-between background-lightblue p-4">
+          <div class="flex flex--align-center">
+            <strong class="text-navy text--size-lg">Sorting</strong>
+          </div>
+          <button data-drawer="right" class="button drawer__close">
+            Close
+            <i aria-hidden="true" class="pi-times"></i>
+          </button>
+        </div>
+        <div class="p-4 h-100">
+          <div class="mb-3">
+            <form action="" class="form block-container blocks mb-3">
+              <div class="block">
+                <label for="carrier" class="form__field">Carrier
+                  <div class="form__select-wrapper">
+                    <select name="Carrier Select" id="carrier">
+                      <option value="Carrier1">Carrier 1</option>
+                      <option value="Carrier2">Carrier 2</option>
+                      <option value="Carrier3">Carrier 3</option>
+                      <option value="Carrier4">Carrier 4</option>
+                      <option value="Carrier5">Carrier 5</option>
+                      <option value="Carrier6">Carrier 6</option>
+                    </select>
+                  </div>
+                </label>
+              </div>
+              <div class="block">
+                <label for="client-name" class="form__field has-icon--right">Client Name
+                  <i class="pi-search" aria-hidden="true"></i>
+                  <input id="client-name" type="text" placeholder="Type to search">
+                </label>
+              </div>
+              <div class="block">
+                <label for="status" class="form__field">Status
+                  <div class="form__select-wrapper">
+                    <select name="Status Select" id="status">
+                      <option value="Status1">Status 1</option>
+                      <option value="Status2">Status 2</option>
+                      <option value="Status3">Status 3</option>
+                      <option value="Status4">Status 4</option>
+                      <option value="Status5">Status 5</option>
+                      <option value="Status6">Status 6</option>
+                    </select>
+                  </div>
+                </label>
+              </div>                
+              <div class="block">
+                <label for="agent-name" class="form__field has-icon--right">Agent Name
+                  <i class="pi-search" aria-hidden="true"></i>
+                  <input id="agent-name" type="text" placeholder="Type to search">
+                </label>
+              </div>                
+            </form>
+          </div>
+      
+          <!-- Sorting -->
+          <div class="flex flex--column mr-3">
+            <div class="mb-3 flex flex--align-center">
+              <div class="pill pill--split mr-2">
+                <a href="#" class="pill__content background-light-mid--hover pointer">
+                  <i class="pi-angle-up"></i>
+                </a>
+                <a href="#" class="pill__content background-light-mid--hover pointer">
+                  <i class="pi-angle-down"></i>
+                </a>
+              </div>
+              Sales Modified Date
+            </div>
+            <div class="mb-3 flex flex--align-center">
+              <div class="pill pill--split mr-2">
+                <a href="#" class="pill__content background-light-mid--hover pointer">
+                  <i class="pi-angle-up"></i>
+                </a>
+                <a href="#" class="pill__content background-light-mid--hover pointer" Î>
+                  <i class="pi-angle-down"></i>
+                </a>
+              </div>
+              Modified Date
+            </div>
+            <div class="mb-3 flex flex--align-center">
+              <div class="pill pill--split mr-2">
+                <a class="pill__content background-light-mid--hover pointer">
+                  <i class="pi-angle-up"></i>
+                </a>
+                <a href="#" class="pill__content background-light-mid--hover pointer">
+                  <i class="pi-angle-down"></i>
+                </a>
+              </div>
+              Created Date
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Filters Drawer -->
+      <div id="filters" class="drawer-right drawer--closed background-white pb-6">
+        <div class="flex flex--align-center flex--justify-between background-lightblue p-4">
+          <div class="flex flex--align-center">
+            <strong class="text-navy text--size-lg">Enrollment Batches Filters</strong>
+          </div>
+          <button data-drawer="filters" class="button drawer__close">
+            Close
+            <i aria-hidden="true" class="pi-times"></i>
+          </button>
+        </div>
+        <div class="p-4 h-100">
+          <div class="mb-3">
+            <form action="" class="form block-container blocks px-2 mb-3 pb-2">
+              <div class="block">
+                <label for="carrier" class="form__field">Carrier
+                  <div class="form__select-wrapper">
+                    <select name="Carrier Select" id="carrier">
+                      <option value="Carrier1">Carrier 1</option>
+                      <option value="Carrier2">Carrier 2</option>
+                      <option value="Carrier3">Carrier 3</option>
+                      <option value="Carrier4">Carrier 4</option>
+                      <option value="Carrier5">Carrier 5</option>
+                      <option value="Carrier6">Carrier 6</option>
+                    </select>
+                  </div>
+                </label>
+              </div>
+              <div class="block">
+                <label for="status" class="form__field">Status
+                  <div class="form__select-wrapper">
+                    <select name="Status Select" id="status">
+                      <option value="Status1">Status 1</option>
+                      <option value="Status2">Status 2</option>
+                      <option value="Status3">Status 3</option>
+                      <option value="Status4">Status 4</option>
+                      <option value="Status5">Status 5</option>
+                      <option value="Status6">Status 6</option>
+                    </select>
+                  </div>
+                </label>
+              </div>
+              <div class="block">
+                <label for="client-name" class="form__field has-icon--right">Created By
+                  <i class="pi-search" aria-hidden="true"></i>
+                  <input id="client-name" type="text" placeholder="Type to search">
+                </label>
+              </div>  
+              <div class="block">
+                <label for="file-name" class="form__field has-icon--right">File Name
+                  <i class="pi-search" aria-hidden="true"></i>
+                  <input id="file-name" type="text" placeholder="Type to search">
+                </label>
+              </div>
+              <div class="block block-6">
+                <label for="start-date" class="form__field has-icon--right">Start
+                  <i class="pi-calendar" aria-hidden="true"></i>
+                  <input id="start-date" type="date">
+                </label>
+              </div>  
+              <div class="block block-6">
+                <label for="end-date" class="form__field has-icon--right">End
+                  <i class="pi-calendar" aria-hidden="true"></i>
+                  <input id="end-date" type="date">
+                </label>
+              </div>               
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- Notes Drawer -->
+      <div
+        id="notes-drawer"
+        class="drawer-right drawer--closed hide-laptop-up background-white pb-6">
+        <div class="flex flex--align-center flex--justify-between background-lightblue p-4">
+          <div class="flex flex--align-center">
+            <strong class="text-navy text--size-lg">Notes</strong>
+          </div>
+          <button data-drawer="notes-drawer" class="button drawer__close">
+            Close
+            <i aria-hidden="true" class="pi-times"></i>
+          </button>
+        </div>
+        <div class="px-4 pt-2">
+          <div class="block-container blocks p-2"></div>
+        </div>
+        <div class="p-4 h-100">
+          <!-- Notes -->
+          <h2 class="skeleton skeleton--md"></h2>
+          <p class="skeleton" data-lines="4"></p>
+          <p class="skeleton" data-lines="2"></p>
+          <p class="skeleton" data-lines="3"></p>
+        </div>
+      </div>
+      <div id="upload-modal" class="modal modal--closed modal--centered" tabindex="-1">
+        <div class="modal__inner animated slideInUp faster">
+          <div class="modal__header">
+            <button class="button modal__close" data-modal="upload-modal">Close <i class="pi-times"></i></button>
+            <strong>New Upload</strong>
+          </div>
+          <div class="modal__content">
+            <form data-v-01488a82="">
+              <label data-v-01488a82="" for="file-picker" class="sr-only">Upload File</label> 
+              <input data-v-01488a82="" type="file" multiple="multiple" id="file-picker" class="main-file-target file-target" style="display: none;">
+            </form>
+            <div data-v-01488a82="" class="drop-target flex flex--align-center flex--column">
+              Drag multiple files here or choose manually
+              <button data-v-01488a82="" type="button" aria-label="upload files" autofocus="autofocus" class="button button--secondary">
+                <i data-v-01488a82="" aria-hidden="true" focusable="false" class="pi-upload-cloud"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="statistics-modal" class="modal modal--closed" tabindex="-1">
+        <div class="modal__inner animated slideInUp faster">
+          <div class="modal__header">
+            <button class="button modal__close" data-modal="statistics-modal">Close <i class="pi-times"></i></button>
+            <strong>Statistics</strong>
+          </div>
+          <div class="modal__content">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Carrier</th>
+                  <th>Counts</th>
+                  <th>Last Updated</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Carrier">CareFirst</td>
+                  <td data-label="Counts">7</td>
+                  <td data-label="Last Updated">
+                    August 20, 2020 11:22 AM
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Carrier">Lasso Healthcare</td>
+                  <td data-label="Counts">3,045</td>
+                  <td data-label="Last Updated">
+                    August 17, 2020 2:52 PM
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Carrier">AmeriHealth VIP SNP</td>
+                  <td data-label="Counts">358</td>
+                  <td data-label="Last Updated">
+                    August 18, 2020 8:02 AM
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Carrier">HealthNow</td>
+                  <td data-label="Counts">1,058</td>
+                  <td data-label="Last Updated">
+                    August 18, 2020 2:37 PM
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Carrier">Humana</td>
+                  <td data-label="Counts">5,956</td>
+                  <td data-label="Last Updated">
+                    August 18, 2020 2:54 PM
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Carrier">Aetna</td>
+                  <td data-label="Counts">6,491</td>
+                  <td data-label="Last Updated">
+                    August 24, 2020 2:52 PM
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Carrier">Johns Hopkins</td>
+                  <td data-label="Counts">160</td>
+                  <td data-label="Last Updated">
+                    July 31, 2020 9:58 AM
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Carrier">Excellus</td>
+                  <td data-label="Counts">6,700</td>
+                  <td data-label="Last Updated">
+                    November 9, 2020 2:29 PM
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Carrier">Anthem</td>
+                  <td data-label="Counts">4,156</td>
+                  <td data-label="Last Updated">
+                    August 18, 2020 1:20 PM
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Carrier">SilverScript</td>
+                  <td data-label="Counts">1,386</td>
+                  <td data-label="Last Updated">
+                    August 18, 2020 2:10 PM
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Carrier">Capital Blue Cross</td>
+                  <td data-label="Counts">332</td>
+                  <td data-label="Last Updated">
+                    August 14, 2020 3:43 PM
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Carrier">Clover Health Plans</td>
+                  <td data-label="Counts">8,780</td>
+                  <td data-label="Last Updated">
+                    August 18, 2020 1:39 PM
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Carrier">Regence</td>
+                  <td data-label="Counts">298</td>
+                  <td data-label="Last Updated">
+                    August 11, 2020 8:49 AM
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Carrier">Wellcare</td>
+                  <td data-label="Counts">10,625</td>
+                  <td data-label="Last Updated">
+                    August 18, 2020 3:02 PM
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Carrier">Vibra Health Plan</td>
+                  <td data-label="Counts">335</td>
+                  <td data-label="Last Updated">
+                    August 18, 2020 11:06 AM
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Carrier">Geisinger Health Plan</td>
+                  <td data-label="Counts">384</td>
+                  <td data-label="Last Updated">
+                    August 7, 2020 9:12 AM
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Carrier">United Healthcare</td>
+                  <td data-label="Counts">3,081</td>
+                  <td data-label="Last Updated">
+                    July 23, 2020 7:20 PM
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Carrier">Emblem</td>
+                  <td data-label="Counts">623</td>
+                  <td data-label="Last Updated">
+                    August 18, 2020 2:10 PM
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Carrier">Envision Insurance Company</td>
+                  <td data-label="Counts">3,239</td>
+                  <td data-label="Last Updated">
+                    August 18, 2020 1:01 PM
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Carrier">IBC</td>
+                  <td data-label="Counts">5,455</td>
+                  <td data-label="Last Updated">
+                    August 18, 2020 12:38 PM
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Carrier">Highmark</td>
+                  <td data-label="Counts">692</td>
+                  <td data-label="Last Updated">
+                    August 18, 2020 10:30 AM
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="/src/assets/js/platform-ui.min.js"></script>
+    <script src="../assets/skeletons/skeletons.js"></script>
+  </body>
+</html>

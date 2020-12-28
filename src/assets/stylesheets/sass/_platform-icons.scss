@@ -1,10 +1,10 @@
 @font-face {
     font-family: "platform-icons";
-    src: url("./platform-icons.eot?a71778e4aa33d85fb6f76c41b3fe3dbf?#iefix") format("embedded-opentype"),
-url("./platform-icons.woff2?a71778e4aa33d85fb6f76c41b3fe3dbf") format("woff2"),
-url("./platform-icons.woff?a71778e4aa33d85fb6f76c41b3fe3dbf") format("woff"),
-url("./platform-icons.ttf?a71778e4aa33d85fb6f76c41b3fe3dbf") format("truetype"),
-url("./platform-icons.svg?a71778e4aa33d85fb6f76c41b3fe3dbf#platform-icons") format("svg");
+    src: url("./platform-icons.eot?d9da1447c07e87aaefaf8a9a27ad5e85?#iefix") format("embedded-opentype"),
+url("./platform-icons.woff2?d9da1447c07e87aaefaf8a9a27ad5e85") format("woff2"),
+url("./platform-icons.woff?d9da1447c07e87aaefaf8a9a27ad5e85") format("woff"),
+url("./platform-icons.ttf?d9da1447c07e87aaefaf8a9a27ad5e85") format("truetype"),
+url("./platform-icons.svg?d9da1447c07e87aaefaf8a9a27ad5e85#platform-icons") format("svg");
     font-style: normal;
     font-weight: normal;
 }
@@ -224,10 +224,10 @@ i[class^="pi-"]:before, i[class*=" pi-"]:before {
 .pi-bell:before {
   content: "\f13c";
 }
-.pi-check-circle:before {
+.pi-check-circle-solid:before {
   content: "\f13d";
 }
-.pi-check-cirle-solid:before {
+.pi-check-circle:before {
   content: "\f13e";
 }
 .pi-check:before {
