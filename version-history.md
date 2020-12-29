@@ -1,6 +1,9 @@
 # Version History
 
 ---
+## 1.2.4
+    - New tab default styles
+        - Fully responsive 
 
 ## 1.2.3
     - Fix icon spelling, all references to `pi-check-cirle-solid` will need updated to `pi-check-circle-solid`
