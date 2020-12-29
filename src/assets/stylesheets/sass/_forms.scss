@@ -301,7 +301,7 @@
 //             <i class='pi-circle pi-lg'></i>
 //             <i class='pi-check pi-heavy'></i>
 //           </div>
-//           This One
+//           This One is very very long for testing
 //         </label>
 //         <input id="choose-that-one" type="checkbox">
 //         <label for="choose-that-one">
@@ -309,7 +309,7 @@
 //             <i class='pi-circle pi-lg'></i>
 //             <i class='pi-check pi-heavy'></i>
 //           </div>
-//           That One
+//           That One is very very long for testing. Even longer really.
 //         </label>
 //         <input id="choose-that-one-2" type="checkbox">
 //         <label for="choose-that-one-2">
@@ -592,8 +592,7 @@ legend {
 
   .input-icons {
     left: 0; top: 0;
-    margin-right: map.get(variables.$spacers, 2);
-    position: relative;
+    position: absolute;
     @include mixins.square(1.5rem);
 
     [class^="pi-"] {
@@ -633,6 +632,7 @@ legend {
       font-weight: 400;
       margin-right: variables.$spacer;
       margin-top: variables.$spacer * .75;
+      padding-left: map.get(variables.$spacers, 4);
       position: relative;
       vertical-align: baseline;
     }
