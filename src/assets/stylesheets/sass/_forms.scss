@@ -592,8 +592,7 @@ legend {
 
   .input-icons {
     left: 0; top: 0;
-    margin-right: map.get(variables.$spacers, 2);
-    position: relative;
+    position: absolute;
     @include mixins.square(1.5rem);
 
     [class^="pi-"] {
@@ -633,6 +632,7 @@ legend {
       font-weight: 400;
       margin-right: variables.$spacer;
       margin-top: variables.$spacer * .75;
+      padding-left: map.get(variables.$spacers, 4);
       position: relative;
       vertical-align: baseline;
     }
