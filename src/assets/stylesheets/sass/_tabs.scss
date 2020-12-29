@@ -7,6 +7,8 @@
 @use "sass:math";
 
 // Tabs
+// 
+// <div class="pill mb-3"><i class="pi-bolt text-salmon mr-2"></i> Requires JS</div>
 //
 // The content for a tabbed section needs to live inside the `.tabs` class. The tabs are radio inputs.
 // Be sure to add a specific `id` to the input and add a `for` to the label with a value that matches the
@@ -80,14 +82,12 @@
 // Styleguide Components.Tabs.Flat
 
 
-// Tabs Flat-Responsive 
+// Tabs Flat Unresponsive 
 // 
-// The flat tabs do not change at lower/higher screen resolutions. You can make the tabs respond, however, by adding
-// the class `responsive` to `tabs tabs--flat`. This will make the tabs stack at the mobile breakpoint and 
-// go back to the flat tab look above mobile.
+// If you want the tabs to keep the flat look at every screen size add the class `unresponsive` to `tabs tabs--flat`.
 // 
 // Markup:
-// <div class="tabs tabs--flat responsive">
+// <div class="tabs tabs--flat unresponsive">
 //   <input type="radio" id="tab-input-ar" name="tabs-r" checked>
 //   <label for="tab-input-ar" class="tab">
 //     <i class="pi-folder-open" focusable="false" aria-hidden="hidden"></i> Tab 1
@@ -115,7 +115,7 @@
 
 
 $tab-height:          3rem;
-$tab-active-color:    map.get(config.$brand-colors, 'navy' );
+$tab-color:    map.get(variables.$greyscale, 'base' );
 $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold * 2));
 
 @mixin tabs($pui: null) {
@@ -154,10 +154,10 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
 
         @include mixins.breakpoint(tablet, min) {
           background-color: map.get(variables.$greyscale, 'white');
-          color: $tab-active-color;
+          color: $tab-color;
 
           &:before {
-            background-color: $tab-active-color;
+            background-color: $tab-color;
           }
         }
 
@@ -187,8 +187,8 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
     transition: config.$transitions;
 
     @include mixins.breakpoint(tablet, max) {
-      border: 1px solid $tab-active-color;
-      background: $tab-active-color;
+      border: 1px solid $tab-color;
+      background: $tab-color;
       color: map.get(variables.$greyscale, 'white');
       margin-top: map.get(variables.$spacers, 1 );
 
@@ -232,7 +232,7 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
           &:hover {
             background-color: map.get(variables.$greyscale, 'white' );
             border-color: $tab-border-color;
-            color: $tab-active-color;
+            color: $tab-color;
             font-weight: 600;
     
             @include mixins.breakpoint(tablet, min) {
@@ -268,8 +268,13 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
     $tab: '.tab';
   }
 
-  display: flex;
-  flex-wrap: wrap;
+  display: block;
+  flex-wrap: unset;
+
+  @include mixins.breakpoint(tablet, min) {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
   input[type=radio] {
     &:not(:checked) {
@@ -277,11 +282,11 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
         @media (pointer: fine) {
           &:hover {
             background-color: map.get(variables.$greyscale, 'white' );
-            color: rgba($tab-active-color, .7);
+            color: rgba($tab-color, .7);
             font-weight: 600;
 
             &::before {
-              background-color: rgba($tab-active-color, .7);
+              background-color: rgba($tab-color, .7);
             }
           }
         }
@@ -289,91 +294,118 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
     }
 
     &:checked {
-      + #{$tab} {
-        border: none;
-        color: $tab-active-color;
+      + #{$tab} {        
+        border: 1px solid $tab-border-color;
+        border-bottom: none;
+        color: map.get(variables.$greyscale, 'white');
+        font-weight: 600;
+
+        @include mixins.breakpoint(tablet, min) {
+          border: none;
+          color: $tab-color;
+        }
         
         &:before {
-          background-color: $tab-active-color;
+          background-color: $tab-color;
         }
       }
     }
   }
 
   #{$tab} {
-    background: map.get(variables.$greyscale, 'white');
-    border: none;
-    color: map.get(variables.$greyscale, 'base' );
-    flex: 0 0 auto;
-    height: auto;
-    margin: 0 1rem;
-    order: 1;
-    z-index: auto;
+    align-items: center;
+    border: 1px solid $tab-color;
+    background: $tab-color;
+    color: map.get(variables.$greyscale, 'white');
+    display: flex;
+    height: $tab-height;
+    margin: map.get(variables.$spacers, 1 ) 0 0;
+    padding: map.get(variables.$spacers, 2 ) variables.$spacer;
+    position: relative;
+    transition: .2s;
 
-    &:before {
-      background-color: transparent;
+    &:first-of-type {
+      margin-top: 0;
+    }
+
+    @include mixins.breakpoint(tablet, min) {
+      background: map.get(variables.$greyscale, 'white');
       border: none;
-      bottom: 0;
-      content: '';
-      height: .3rem;
-      left: 0;
-      position: absolute;
-      right: 0;
-      top: unset;
-      transition: config.$transitions;
-      width: auto;
+      color: map.get(variables.$greyscale, 'base' );
+      flex: 0 0 auto;
+      height: auto;
+      margin: 0 1rem;
+      order: 1;
+      z-index: auto;
+
+      &:before {
+        background-color: transparent;
+        border: none;
+        bottom: 0;
+        content: '';
+        height: .3rem;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: unset;
+        transition: config.$transitions;
+        width: auto;
+      }
     }
   }
 
   #{$tab}-panel {
-    border: none;
-    border-top: 1px solid $tab-border-color;
-    z-index: auto;
+    background-color: map.get(variables.$greyscale, 'white');
+    border: 1px solid $tab-border-color;
 
-    @include mixins.breakpoint(tablet, max) {
-      flex-grow: 1;
-      order: 99;      
+    @include mixins.breakpoint(tablet, min) {
+      border: none;
+      border-top: 1px solid $tab-border-color;
+      z-index: auto;
     }
   }
 
-  &.responsive {
+  // unresponsive flat tabs
+  &.unresponsive {
     @include mixins.breakpoint(tablet, max) {
-      display: block;
-      flex-wrap: unset;
-    }    
+      display: flex;
+      flex-wrap: wrap;
+    }
 
     #{$tab} {
       @include mixins.breakpoint(tablet, max) {
-        align-items: center;
-        border: 1px solid $tab-active-color;
-        background: $tab-active-color;
-        color: map.get(variables.$greyscale, 'white');
-        display: flex;
-        height: $tab-height;
-        margin: map.get(variables.$spacers, 1 ) 0 0;
-        padding: map.get(variables.$spacers, 2 ) variables.$spacer;
-        position: relative;
-        transition: .2s;
-
-        &:before {
-          display: none;
-        }
+        background: map.get(variables.$greyscale, 'white');
+        border: none;
+        color: map.get(variables.$greyscale, 'base' );
+        flex: 0 0 auto;
+        height: auto;
+        margin: 0 1rem;
+        order: 1;
+        z-index: auto;
   
-        &:first-of-type {
-          margin-top: 0;
+        &:before {
+          background-color: transparent;
+          border: none;
+          bottom: 0;
+          content: '';
+          height: .3rem;
+          left: 0;
+          position: absolute;
+          right: 0;
+          top: unset;
+          transition: config.$transitions;
+          width: auto;
         }
       }
     }
 
     input[type=radio] {
-  
+
       &:checked {
         + #{$tab} {          
           @include mixins.breakpoint(tablet, max) {
-            border: 1px solid $tab-border-color;
-            border-bottom: none;
-            color: map.get(variables.$greyscale, 'white');
-            font-weight: 600;
+            border: none;
+            color: $tab-color;
           }
         }
       }
@@ -381,9 +413,12 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
 
     #{$tab}-panel {
       @include mixins.breakpoint(tablet, max) {
-        background-color: map.get(variables.$greyscale, 'white');
-        border: 1px solid $tab-border-color;
-      }     
+        flex-grow: 1;
+        order: 99;
+        border: none;
+        border-top: 1px solid $tab-border-color;
+        z-index: auto;
+      }
     }
   }
 }
