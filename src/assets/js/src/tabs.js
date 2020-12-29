@@ -4,18 +4,19 @@ if (tabList) {
   const tabs = document.querySelectorAll('.pui-tab, .tab');  
 
   let mobileTabs = (tab) => {
-    if(!tab.previousElementSibling) debugger;
+    // if tab input is checked
     if(tab.previousElementSibling.checked) {
+
+      // if the checked tab has the un-checked class remove it and set the checked attribute to true
       if(tab.previousElementSibling.classList.contains('un-checked')) {
         tab.previousElementSibling.classList.remove('un-checked');
         tab.previousElementSibling.setAttribute('checked', true);
-        console.log('mobiletabs if');
       } else {
+        // uncheck the tab
         uncheck(tab);
       }
     } else {
       clearUnChecked();
-      console.log('mobiletabs else');
       tab.previousElementSibling.setAttribute('checked', true);
       return;
     }
@@ -24,6 +25,8 @@ if (tabList) {
   let clearUnChecked = () => {
     tabs.forEach(tab =>  {
       const checked = tab.closest('.pui-tabs, .tabs');
+
+      // sets any checked radio to false
       checked.querySelectorAll('input[checked="true"]').forEach(check => {
         check.setAttribute('checked', false);
       })
@@ -41,13 +44,12 @@ if (tabList) {
   let uncheck = (tab) => {
     tab.previousElementSibling.setAttribute('checked', false);
     tab.previousElementSibling.classList.add('un-checked');
-    console.log('add un-checked');
   }
 
   let onTabClicked = (evt) => {
+    // do not run if flat tabs has unresponsive class
+    // this is for tabs--flat
     if(evt.target.closest('.pui-tabs, .tabs').classList.contains('unresponsive')) {
-      console.log('unresponsive');
-      // do not run if flat tabs has unresponsive class
       return;
     } else {
       // call mobileTabs function
@@ -62,26 +64,30 @@ if (tabList) {
   }
 
   let checkRunTabs = () => {
+    // bool check to only run JS below 768px
     let resizerHandled = false;
+
+    // ensure click event only fires once
     tabs.forEach(tab => {
       tab.removeEventListener('click', onTabClicked);
     })
+
     pageWidth = window.innerWidth || document.documentElement.clientWidth;
-    if (pageWidth > 768) {
-      console.log('Wide viewport');
+    if (pageWidth > 767.9) {
+      // above mobile resolutions, remove any un-checked class on tabs
       tabs.forEach(tab => {
         if (tab.classList.contains('un-checked')) {
           tab.classList.remove('un-checked');
         }
       })
+
       resizerHandled = false;
-      console.log(resizerHandled);
       return;
     } else {
       if (resizerHandled === false ) {
         fireMobileTabs();
+        // set bool to true so function only runs oonce
         resizerHandled = true;
-        console.log(resizerHandled);
       }
     }
   }
@@ -89,7 +95,8 @@ if (tabList) {
   window.addEventListener('resize', checkRunTabs, false);
 
   let pageWidth = window.innerWidth || document.documentElement.clientWidth;
-  if (pageWidth < 768) {
+  // run tabs JS once on pageload
+  if (pageWidth < 767.9) {
     checkRunTabs();
   }
 }
