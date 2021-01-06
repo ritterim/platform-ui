@@ -5,6 +5,7 @@
 @use "sass:color";
 @use "sass:math";
 @use "sass:map";
+@use "sass:meta";
 
 // Button
 //
@@ -212,6 +213,8 @@
 
 
 .button {
+  $self: &;
+
   align-items: center;
   background-color: config.$button-primary-background;
   border: 1px solid color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold * 2));
@@ -294,6 +297,11 @@
       }
     }
   }
+
+  @each $unit, $rem in config.$brand-colors {
+
+  }
+  &#{$self}-
 
   &--secondary {
     background-color: config.$button-secondary-background;
@@ -435,6 +443,52 @@
     background: transparent;
     border: none;
     color: inherit;
+  }
+
+  // Button colors
+  $button-colors: () !default;
+
+  @if meta.type-of(config.$config-colors) == 'map' {
+    $button-colors: map.merge(config.$config-colors, variables.$greyscale);
+  } @else {
+    $button-colors: map.merge(variables.$greyscale, $button-colors);
+    @warn "$config-colors is not set or empty";
+  }
+
+  @if meta.type-of($button-colors) == 'map' {
+    @each $name, $color in $button-colors {   
+
+      &--#{$name} {
+        --button-background: #{$color};
+        --button-border: var(--button-background);
+        --button-hover-background: #{color.adjust($color, $lightness: math.percentage(-.05))};
+        --button-hover-color: ;
+
+        @if lightness($color) > 65 and lightness($color) < 90 {
+          --button-color: #{map.get(variables.$greyscale, 'dark')};
+          --button-hover-color: #{color.adjust(map.get(variables.$greyscale, 'dark'), $lightness: math.percentage(-.05))};
+        } @else if lightness($color) > 50 and lightness($color) < 65 {
+          --button-color: #{color.adjust(map.get(variables.$greyscale, 'dark'), $lightness: math.percentage(-.01))};
+          --button-hover-color: #{color.adjust(map.get(variables.$greyscale, 'dark'), $lightness: math.percentage(-.06))};
+        } @else if lightness($color) > 90 {
+          --button-color: #{map.get(variables.$greyscale, 'base')};
+          --button-hover-color: #{color.adjust(map.get(variables.$greyscale, 'base'), $lightness: math.percentage(-.05))};
+        } @else {
+          --button-color: #{map.get(variables.$greyscale, 'white')};
+          --button-hover-color: #{color.adjust(map.get(variables.$greyscale, 'white'), $lightness: math.percentage(-.05))};
+        }
+
+        background-color: var(--button-background);
+        border-color: var(--button-border);
+        color: var(--button-color);
+  
+        &:hover {
+          background-color: var(--button-hover-background);
+          border-color: var(--button-hover-background);
+          color: var(--button-hover-color);
+        }
+      }
+    }
   }
 }
 
