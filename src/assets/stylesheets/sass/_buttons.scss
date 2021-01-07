@@ -298,10 +298,6 @@
     }
   }
 
-  @each $unit, $rem in config.$brand-colors {
-
-  }
-
   &--secondary {
     background-color: config.$button-secondary-background;
     border: 1px solid config.$button-secondary-background;
@@ -444,6 +440,14 @@
     color: inherit;
   }
 
+  &.button--ghost {
+    background-color: transparent;
+
+    &:hover {
+      background-color: config.$button-primary-hover;
+    }
+  }
+
   // Button colors
   $button-colors: () !default;
 
@@ -460,7 +464,12 @@
       &--#{$name} {
         --button-background: #{$color};
         --button-border: var(--button-background);
+        // darken the background-color by 10% on hover
         --button-hover-background: #{color.adjust($color, $lightness: math.percentage(-(config.$hue-threshold)))};
+
+        background-color: var(--button-background);
+        border-color: var(--button-border);
+        color: var(--button-color);
 
         // set colors to work based on WCAG AA
         @if lightness($color) > 65 and lightness($color) < 90 {
@@ -474,10 +483,6 @@
           --button-color: #{map.get(variables.$greyscale, 'white')};
           --button-hover-background: #{color.adjust($color, $lightness: math.percentage(config.$hue-threshold))};
         }
-
-        background-color: var(--button-background);
-        border-color: var(--button-border);
-        color: var(--button-color);
   
         &:hover {
           background-color: var(--button-hover-background);
@@ -499,6 +504,27 @@
             // border-color: initial - same as standard .button
             border-color: initial;
             box-shadow: 0 0 0 .3rem var(--box-shadow);
+          }
+        }
+
+        &.button--ghost {
+          --button-color: #{$color};
+          --button-hover-background: #{$color};
+
+          &:hover {
+            background-color: var(--button-hover-background);
+          
+            // set colors to work based on WCAG AA
+            @if lightness($color) > 65 and lightness($color) < 90 {
+              color: #{map.get(variables.$greyscale, 'dark')};
+            } @else if lightness($color) > 50 and lightness($color) < 65 {
+              color: #{color.adjust(map.get(variables.$greyscale, 'dark'), $lightness: math.percentage(-.01))};
+            } @else if lightness($color) > 90 {
+              color: #{map.get(variables.$greyscale, 'base')};
+            } @else {
+              // If the $color is dark, set the color to white and lighten the hover background.
+              color: #{map.get(variables.$greyscale, 'white')};
+            }
           }
         }
       }
