@@ -492,11 +492,14 @@
 
         &.button--secondary {
           // lighten the box-shadow by 20% of background-color
-          --box-shadow: #{color.adjust($color, $lightness: math.percentage(config.$hue-threshold * 2))};
+          --box-shadow: #{color.adjust($color, $lightness: math.percentage(config.$hue-threshold))};
 
           @if lightness($color) <= 50 {
             // For our darkest buttons we lighten the box-shadow by 30%
             --box-shadow: #{color.adjust($color, $lightness: math.percentage(config.$hue-threshold * 3))};
+          } @else if lightness($color) > 90 {
+            // if the colors lightness value is greater than 90% only lighten the box-shadow be 2%
+            --box-shadow: #{color.adjust($color, $lightness: math.percentage(.02 ))};            
           }
       
           &.active,
