@@ -460,21 +460,19 @@
       &--#{$name} {
         --button-background: #{$color};
         --button-border: var(--button-background);
-        --button-hover-background: #{color.adjust($color, $lightness: math.percentage(-.05))};
-        --button-hover-color: ;
+        --button-hover-background: #{color.adjust($color, $lightness: math.percentage(-(config.$hue-threshold)))};
 
+        // set colors to work based on WCAG AA
         @if lightness($color) > 65 and lightness($color) < 90 {
           --button-color: #{map.get(variables.$greyscale, 'dark')};
-          --button-hover-color: #{color.adjust(map.get(variables.$greyscale, 'dark'), $lightness: math.percentage(-.05))};
         } @else if lightness($color) > 50 and lightness($color) < 65 {
           --button-color: #{color.adjust(map.get(variables.$greyscale, 'dark'), $lightness: math.percentage(-.01))};
-          --button-hover-color: #{color.adjust(map.get(variables.$greyscale, 'dark'), $lightness: math.percentage(-.06))};
         } @else if lightness($color) > 90 {
           --button-color: #{map.get(variables.$greyscale, 'base')};
-          --button-hover-color: #{color.adjust(map.get(variables.$greyscale, 'base'), $lightness: math.percentage(-.05))};
         } @else {
+          // If the $color is dark, set the color to white and lighten the hover background.
           --button-color: #{map.get(variables.$greyscale, 'white')};
-          --button-hover-color: #{color.adjust(map.get(variables.$greyscale, 'white'), $lightness: math.percentage(-.05))};
+          --button-hover-background: #{color.adjust($color, $lightness: math.percentage(config.$hue-threshold))};
         }
 
         background-color: var(--button-background);
@@ -484,34 +482,23 @@
         &:hover {
           background-color: var(--button-hover-background);
           border-color: var(--button-hover-background);
-          color: var(--button-hover-color);
+          color: var(--button-color);
         }
 
         &.button--secondary {
-          // --button-hover-background: #{color.adjust($color, $lightness: math.percentage(-.05))};
+          // lighten the box-shadow by 20% of background-color
+          --box-shadow: #{color.adjust($color, $lightness: math.percentage(config.$hue-threshold * 2))};
 
-          @if lightness($color) > 65 and lightness($color) < 90 {
-            --button-color: #{map.get(variables.$greyscale, 'dark')};
-            --button-hover-color: #{color.adjust(map.get(variables.$greyscale, 'dark'), $lightness: math.percentage(-.05))};
-          } @else if lightness($color) > 50 and lightness($color) < 65 {
-            --button-color: #{color.adjust(map.get(variables.$greyscale, 'dark'), $lightness: math.percentage(-.01))};
-            --button-hover-color: #{color.adjust(map.get(variables.$greyscale, 'dark'), $lightness: math.percentage(-.06))};
-          } @else if lightness($color) > 90 {
-            --button-color: #{map.get(variables.$greyscale, 'base')};
-            --button-hover-color: #{color.adjust(map.get(variables.$greyscale, 'base'), $lightness: math.percentage(-.05))};
-          } @else {
-            --button-color: #{map.get(variables.$greyscale, 'white')};
-            --button-hover-color: #{color.adjust(map.get(variables.$greyscale, 'white'), $lightness: math.percentage(-.05))};
+          @if lightness($color) <= 50 {
+            // For our darkest buttons we lighten the box-shadow by 30%
+            --box-shadow: #{color.adjust($color, $lightness: math.percentage(config.$hue-threshold * 3))};
           }
-
-          background-color: var(--button-background);
-          border: 1px solid var(--button-border);
-          color: var(--button-color);
       
           &.active,
           &:hover {
-            background-color: var(--button-hover-background);
-            box-shadow: 0 0 0 .3rem color.adjust($color, $lightness: math.percentage(config.$hue-threshold));
+            // border-color: initial - same as standard .button
+            border-color: initial;
+            box-shadow: 0 0 0 .3rem var(--box-shadow);
           }
         }
       }
