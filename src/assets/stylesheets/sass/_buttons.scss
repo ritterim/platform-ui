@@ -483,12 +483,12 @@
   
         &:hover {
           background-color: var(--button-hover-background);
-          // border-color: var(--button-hover-background);
+          border-color: var(--button-hover-background);
           color: var(--button-hover-color);
         }
 
         &.button--secondary {
-          --button-hover-background: #{color.adjust($color, $lightness: math.percentage(-.1))};
+          // --button-hover-background: #{color.adjust($color, $lightness: math.percentage(-.05))};
 
           @if lightness($color) > 65 and lightness($color) < 90 {
             --button-color: #{map.get(variables.$greyscale, 'dark')};
@@ -512,7 +512,6 @@
           &:hover {
             background-color: var(--button-hover-background);
             box-shadow: 0 0 0 .3rem color.adjust($color, $lightness: math.percentage(config.$hue-threshold));
-            border-color: initial;
           }
         }
       }
