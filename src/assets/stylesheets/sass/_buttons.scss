@@ -301,7 +301,6 @@
   @each $unit, $rem in config.$brand-colors {
 
   }
-  &#{$self}-
 
   &--secondary {
     background-color: config.$button-secondary-background;
@@ -484,8 +483,37 @@
   
         &:hover {
           background-color: var(--button-hover-background);
-          border-color: var(--button-hover-background);
+          // border-color: var(--button-hover-background);
           color: var(--button-hover-color);
+        }
+
+        &.button--secondary {
+          --button-hover-background: #{color.adjust($color, $lightness: math.percentage(-.1))};
+
+          @if lightness($color) > 65 and lightness($color) < 90 {
+            --button-color: #{map.get(variables.$greyscale, 'dark')};
+            --button-hover-color: #{color.adjust(map.get(variables.$greyscale, 'dark'), $lightness: math.percentage(-.05))};
+          } @else if lightness($color) > 50 and lightness($color) < 65 {
+            --button-color: #{color.adjust(map.get(variables.$greyscale, 'dark'), $lightness: math.percentage(-.01))};
+            --button-hover-color: #{color.adjust(map.get(variables.$greyscale, 'dark'), $lightness: math.percentage(-.06))};
+          } @else if lightness($color) > 90 {
+            --button-color: #{map.get(variables.$greyscale, 'base')};
+            --button-hover-color: #{color.adjust(map.get(variables.$greyscale, 'base'), $lightness: math.percentage(-.05))};
+          } @else {
+            --button-color: #{map.get(variables.$greyscale, 'white')};
+            --button-hover-color: #{color.adjust(map.get(variables.$greyscale, 'white'), $lightness: math.percentage(-.05))};
+          }
+
+          background-color: var(--button-background);
+          border: 1px solid var(--button-border);
+          color: var(--button-color);
+      
+          &.active,
+          &:hover {
+            background-color: var(--button-hover-background);
+            box-shadow: 0 0 0 .3rem color.adjust($color, $lightness: math.percentage(config.$hue-threshold));
+            border-color: initial;
+          }
         }
       }
     }
