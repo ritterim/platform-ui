@@ -4,6 +4,7 @@
 
 ## Version TBD (Not yet updated)
     - Button background colors
+    - Alpha color variations to :root
 
 ## 1.2.5
     - Correct alignment on checkboxes and radios
