@@ -2,7 +2,7 @@
 
 ---
 
-## Version TBD (Not yet updated)
+## 1.2.6
     - Button background colors
     - Alpha color variations to :root
 
