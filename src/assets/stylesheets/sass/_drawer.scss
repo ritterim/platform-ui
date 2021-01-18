@@ -167,8 +167,12 @@
     height: config.$drawer-side-height;
     position: fixed;
     transition: all ease-in-out config.$transitions;
+    width: 100%;
     z-index: 500;
-    width: config.$drawer-side-width;
+
+    @include mixins.breakpoint(tablet, min) {
+      width: config.$drawer-side-width;
+    }
 
     &[hidden] {
       display: none;
