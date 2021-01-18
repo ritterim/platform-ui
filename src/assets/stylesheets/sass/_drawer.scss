@@ -37,11 +37,10 @@
 // <div id="single-row" class="drawer drawer-bottom drawer--single-row drawer--closed animated slideInUp fastest">
 //   <div class="drawer__inner animated slideInUp fastest">
 //     <div class="drawer__header">
-//       <button class="button drawer__close" data-drawer="default">Close <i class="pi-times" aria-hidden="true"></i></button>
+//       <button class="button drawer__close" data-drawer="single-row">Close <i class="pi-times" aria-hidden="true"></i></button>
 //       <h3 class="mb-2">Small Drawer</h3>
 //     </div>
 //     <div class="drawer__content">
-//       <button class="button drawer__close" data-drawer="single-row">Close <i class="pi-times" aria-hidden="true"></i></button>
 //       <p>Single row drawer without a header.</p>
 //     </div>
 //   </div>
@@ -56,7 +55,7 @@
 //
 // Markup:
 // <button class="button button--post button--lg drawer__open" data-drawer="right">Toggle right drawer</button>
-// <div id="right" class="drawer drawer-right slide-right-enter-active drawer--closed background-note pt-5 pb-3 px-4">
+// <div id="right" class="drawer drawer-right slide-right-enter-active drawer--closed pt-5 pb-3 px-4">
 //   <div class="flex flex--align-center flex--justify-between pb-3 mb-2">
 //     <div class="flex flex--align-center">
 //       <button class="button button--secondary js-toggle-form">
@@ -76,7 +75,7 @@
 //
 // Markup:
 // <button class="button button--post button--lg drawer__open" data-drawer="left">Toggle left drawer</button>
-// <div id="left" class="drawer drawer-left slide-left-enter-active drawer--closed background-note pt-5 pb-3 px-4">
+// <div id="left" class="drawer drawer-left slide-left-enter-active drawer--closed pt-5 pb-3 px-4">
 //   <div class="flex flex--align-center flex--justify-between pb-3 mb-2">
 //     <div class="flex flex--align-center">
 //       <button class="button button--secondary js-toggle-form">
@@ -89,6 +88,26 @@
 // </div>
 //
 // Styleguide Components.Drawer.Left
+
+// Drawer Top
+//
+// This Drawer slides in from the top.
+//
+// Markup:
+// <button class="button button--post button--lg drawer__open" data-drawer="top">Toggle top drawer</button>
+// <div id="top" class="drawer drawer-top slide-top-enter-active drawer--closed p-4">
+//   <div class="flex flex--align-center flex--justify-between pb-3 mb-2">
+//     <div class="flex flex--align-center">
+//       <button class="button button--secondary js-toggle-form">
+//         <i class="pi-plus"></i>
+//       </button>
+//       <h2 class="ml-2 my-0 text-navy">Drawer Top</h2>
+//     </div>
+//     <button class="button drawer__close" data-drawer="top">Close <i class="pi-times" aria-hidden="true"></i></button>
+//   </div>
+// </div>
+//
+// Styleguide Components.Drawer.Top
 
 @mixin drawer {
   $self: &;
@@ -152,7 +171,6 @@
   &__open {
     cursor: pointer;
 
-
     @include mixins.breakpoint(tablet, max) {
       bottom: 3.5rem;
     }
@@ -164,11 +182,14 @@
     bottom: 0;
     box-shadow: 0 -.5rem 2rem rgba(map.get(variables.$greyscale, 'black'), math.percentage(.5));
     flex-direction: column;
-    height: config.$drawer-side-height;
+    height: 100%;
     position: fixed;
     transition: all ease-in-out config.$transitions;
-    width: 100%;
     z-index: 500;
+
+    .header-fixed & {
+      height: calc(100% - #{config.$menu-height});
+    }
 
     @include mixins.breakpoint(tablet, min) {
       width: config.$drawer-side-width;
@@ -178,13 +199,26 @@
       display: none;
     }
   }
+
   &-right {
     left: auto;
     right: 0;
   }
+
   &-left {
     right: auto;
     left: 0;
+  }
+
+  // Drawer Opens from the top
+  &-top {
+    bottom: unset;
+    box-shadow: 0 1rem 2rem rgba(map.get(variables.$greyscale, 'black'), .4);
+    top: 0;
+
+    .header-fixed & {
+      top: config.$menu-height;
+    }
   }
 }
 
