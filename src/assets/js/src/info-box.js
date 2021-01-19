@@ -1,22 +1,19 @@
-let infoBox = document.querySelectorAll('.pui-info-box, .info-box');
+let infoBoxes = document.querySelectorAll('.pui-info-box, .info-box');
 
-if(infoBox) {
-  let hidden = document.querySelectorAll('.toggle-hidden');
-  let boxClose = document.querySelectorAll('.info-box__close');
-  
-  hidden.forEach(button => {
-    button.addEventListener('click', e => {
-      e.preventDefault();
-      button.nextSibling.nextSibling.classList.toggle('hidden');
+if (infoBoxes) {
+  infoBoxes.forEach((infoBox) => {
+    const toggle = infoBox.querySelector('.toggle-hidden');
+    const content = infoBox.querySelector('.info-box__content');
+    const closeButtons = infoBox.querySelectorAll('.info-box__close');
+
+    toggle.addEventListener('click', () => {
+      content.classList.toggle('hidden');
     });
-  });
 
-  if (boxClose) {
-    boxClose.forEach(btn => {
-      btn.addEventListener('click', e => {
-        e.preventDefault();
-        btn.parentElement.classList.toggle('hidden');
+    closeButtons.forEach((closeButton) => {
+      closeButton.addEventListener('click', () => {
+        content.classList.add('hidden');
       });
     });
-  }
+  });
 }

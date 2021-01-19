@@ -1,4 +1,5 @@
 @use "config";
+@use "mixins";
 @use "variables";
 @use "sass:color";
 @use "sass:map";
@@ -214,6 +215,14 @@
 //
 // Styleguide Components.info
 
+
+
+
+
+
+
+
+
 @mixin info-box {
   $self: &;
   position: relative;
@@ -221,14 +230,16 @@
   &__content {
     background-color: map.get(variables.$greyscale, 'white');
     border: 1px solid color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold * 2));
-    box-shadow: 0 2px 4px 2px map.get(variables.$greyscale, 'lighter' );
+    box-shadow: 0 1rem 2rem rgba(map.get(variables.$greyscale, 'black'), .4);
     margin-top: variables.$spacer;
-    min-width: 20rem;
+    width:100%;
+    @include mixins.breakpoint(tablet, min) {
+      width:20rem;
+    }
     padding: map.get(variables.$spacers, 5) map.get(variables.$spacers, 4);
     position: absolute;
-    right: -4.5rem;
     z-index: 50;
-
+    top:100%;
     &:before {
       content: '';
       position: absolute;
@@ -237,9 +248,10 @@
       border-style: solid;
       border-width: 0 8px 12px 8px;
       border-color: transparent transparent map.get(variables.$greyscale, 'white') transparent;
-      right: 82px;
       top: -12px;
-      z-index: 51;
+      left:0;
+      margin:0 map.get(variables.$spacers, 4);
+      z-index:1;
     }
 
     &:after {
@@ -250,45 +262,20 @@
       border-style: solid;
       border-width: 0 10px 14px 10px;
       border-color: transparent transparent color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold * 2));
-      right: 80px;
       top: -14px;
-      z-index: 49;
+      left:-2px;
+      margin:0 map.get(variables.$spacers, 4);
+      z-index: 0;
     }
     &.content--right {
       /* for use if the button is affixed to the right side of the screen with nothing to buffer it */
-      right: -3rem;
       &:before {
-        right: 59px;
+        left:auto;
+        right:1px;
       }
-      &:after {
-        right: 57px;
-      }
-    }
-  }
-  &--left {
-    #{$self}__content {
-      left: -4.5rem;
-      right: auto;
-
-      &:before {
-        left: 82px;
-        right: auto;
-      }
-  
-      &:after {
-        left: 80px;
-        right: auto;
-      }
-
-      &.content--left {
-        /* for use if the button is affixed to the left side of the screen with nothing to buffer it */
-        left: -3rem;
-        &:before {
-          left: 59px;
-        }
-        &:after {
-          left: 57px;
-        }
+      &:after{
+        left:auto;
+        right:-1px;
       }
     }
   }
