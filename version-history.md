@@ -1,6 +1,12 @@
 # Version History
 
 ---
+## Updates
+    - Create Top Drawer
+        - Set top position based on fixed header
+    - Drawer Left and Right
+        - Full width at mobile
+        - Set height for drawers left and right based on fixed header
 
 ## 1.2.6
     - Button background colors
