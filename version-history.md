@@ -7,6 +7,9 @@
     - Drawer Left and Right
         - Full width at mobile
         - Set height for drawers left and right based on fixed header
+    - Info Box
+      - Made responsive
+      - Set default alignment to left, with optional right alignment
 
 ## 1.2.6
     - Button background colors
