@@ -565,15 +565,6 @@
     pointer-events: none;
   }
 
-  &:not(.button--secondary):not(.mobile-menu-action):not(.close-action) {
-
-    i {
-      @include mixins.breakpoint(lg-tablet, max) {
-        display: none;
-      }
-    }
-  }
-
   &--secondary {
     background-color: config.$button-secondary-background;
     border: 1px solid config.$button-secondary-background;
