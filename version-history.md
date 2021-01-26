@@ -1,7 +1,7 @@
 # Version History
 
 ---
-## Updates
+## 1.2.7
     - Create Top Drawer
         - Set top position based on fixed header
     - Drawer Left and Right
