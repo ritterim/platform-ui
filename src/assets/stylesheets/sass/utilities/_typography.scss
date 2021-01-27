@@ -205,10 +205,16 @@
       text-shadow: .3rem .3rem .5rem $color;
     }
   }
-  // font size based on percentages
-  @each $name, $percentage in variables.$font-percentage {
+  // font size based on scale
+  @each $name, $scale in variables.$font-scale {
     &--size-#{$name} {
-      font-size: $percentage !important;
+      font-size: $scale !important;
     }
+  }
+}
+
+[class^="text--size-"]{
+  *{
+    font-size:inherit;
   }
 }

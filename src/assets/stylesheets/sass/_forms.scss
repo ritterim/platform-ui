@@ -805,7 +805,7 @@ legend {
 
       i {
         bottom: 0;
-        font-size: map.get(variables.$font-percentage, 'md');
+        font-size: map.get(variables.$font-scale, 'md');
         left: .5rem;
         line-height: 1;
         position: absolute;
@@ -818,7 +818,7 @@ legend {
         i {
           bottom: 0;
           color: map.get(config.$brand-colors, 'med-blue' );
-          font-size: map.get(variables.$font-percentage, 'md');
+          font-size: map.get(variables.$font-scale, 'md');
           line-height: 1;
           pointer-events: none;
           position: absolute;
@@ -1510,7 +1510,7 @@ input[type="checkbox"].pill-filter, input[type="radio"].pill-filter {
     padding: map.get(variables.$spacers, 2) 1.5rem;
     transition: config.$transitions;
     i {
-      font-size: map.get(variables.$font-percentage, 'xs');
+      font-size: map.get(variables.$font-scale, 'xs');
     }
 
     &:before {

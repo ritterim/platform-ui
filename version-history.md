@@ -1,6 +1,9 @@
 # Version History
 
 ---
+## Updates
+    - Changed Text Size scale from percentages to rems
+      - Made sure Text Size utility class can be applied to either parent or child element and work as expected
 ## 1.2.7
     - Create Top Drawer
         - Set top position based on fixed header

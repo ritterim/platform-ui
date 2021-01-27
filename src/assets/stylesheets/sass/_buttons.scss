@@ -687,7 +687,7 @@
   }  
 
   &--lg {
-    font-size: map.get(variables.$font-percentage, 'lg');
+    font-size: map.get(variables.$font-scale, 'lg');
     padding: config.$button-large-padding;
 
     &.loading {
