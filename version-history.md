@@ -2,7 +2,7 @@
 
 ---
 
-## 1.2.8
+## 1.2.10
     - Fixed issues with `.info-box`:
       - Removed inline `width:32px` from style guide example
       - Added `.preventDefault()` to the toggle click listener
