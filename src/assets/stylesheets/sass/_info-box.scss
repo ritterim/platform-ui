@@ -16,7 +16,7 @@
 // Markup:
 // <div class="block-container blocks tablet-up-6">
 // <div class="block">
-// <div class="info-box" style="width: 32px">
+// <div class="info-box">
 //   <button class="button button--secondary toggle-hidden" role="button" aria-label="Toggle">
 //     <i class="pi-filter" aria-hidden="hidden"></i>
 //   </button>
@@ -250,7 +250,7 @@
       border-color: transparent transparent map.get(variables.$greyscale, 'white') transparent;
       top: -12px;
       left:0;
-      margin:0 map.get(variables.$spacers, 4);
+      margin:0 map.get(variables.$spacers, 2);
       z-index:1;
     }
 
@@ -264,7 +264,7 @@
       border-color: transparent transparent color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold * 2));
       top: -14px;
       left:-2px;
-      margin:0 map.get(variables.$spacers, 4);
+      margin:0 map.get(variables.$spacers, 2);
       z-index: 0;
     }
     &.content--right {
