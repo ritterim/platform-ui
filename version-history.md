@@ -1,6 +1,12 @@
 # Version History
 
 ---
+
+## 1.2.10
+    - Fixed issues with `.info-box`:
+      - Removed inline `width:32px` from style guide example
+      - Added `.preventDefault()` to the toggle click listener
+      - Adjusted margin of the arrow
 ## 1.2.7
     - Create Top Drawer
         - Set top position based on fixed header

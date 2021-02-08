@@ -6,7 +6,8 @@ if (infoBoxes) {
     const content = infoBox.querySelector('.info-box__content');
     const closeButtons = infoBox.querySelectorAll('.info-box__close');
 
-    toggle.addEventListener('click', () => {
+    toggle.addEventListener('click', (e) => {
+      e.preventDefault();
       content.classList.toggle('hidden');
     });
 
