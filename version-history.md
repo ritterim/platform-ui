@@ -11,6 +11,8 @@
         - Made responsive
         - Set default alignment to left, with optional right alignment
     - Icons will show in buttons at all resolutiions
+    - Background transparent class
+    - Border-color transparent class
 
 ## 1.2.6
     - Button background colors
