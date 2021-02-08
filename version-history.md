@@ -7,6 +7,13 @@
       - Removed inline `width:32px` from style guide example
       - Added `.preventDefault()` to the toggle click listener
       - Adjusted margin of the arrow
+      
+## 1.2.9
+    - Add Commissions icon
+    
+## 1.2.8
+    Add toggle-small form option
+    
 ## 1.2.7
     - Create Top Drawer
         - Set top position based on fixed header
