@@ -2,6 +2,9 @@
 
 ---
 
+## 1.2.11
+    - Add new Text icono to platform icons
+
 ## 1.2.10
     - Fixed issues with `.info-box`:
       - Removed inline `width:32px` from style guide example
