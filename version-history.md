@@ -3,7 +3,7 @@
 ---
 
 ## 1.2.11
-    - Add new Text icono to platform icons
+    - Add new Text icon to platform icons
 
 ## 1.2.10
     - Fixed issues with `.info-box`:
