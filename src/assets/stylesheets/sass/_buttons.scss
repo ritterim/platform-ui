@@ -84,27 +84,27 @@
 //
 // Markup:
 // <div class="button-group">
-//   <button class="button loading mb-2" aria-label="Loading...">
+//   <button class="button loading mb-2">
 //     Submit
-//     <span class="sr-only">Loading...</span>
+//     <span class="sr-only" aria-busy="true" aria-live="polite">Loading...</span>
 //   </button>
-//   <button class="button button--lg loading mb-2" aria-label="Loading...">
+//   <button class="button button--lg loading mb-2">
 //     Submit
-//     <span class="sr-only">Loading...</span>
+//     <span class="sr-only" aria-busy="true" aria-live="polite">Loading...</span>
 //   </button>
-//   <button class="button button--secondary loading mb-2" aria-label="Download" aria-label="Loading...">
+//   <button class="button button--secondary loading mb-2" aria-label="Download">
 //     <i class="pi-download" aria-hidden="hidden"></i>
-//     <span class="sr-only">Loading...</span>
+//     <span class="sr-only" aria-busy="true" aria-live="polite">Loading...</span>
 //   </button>
-//   <button class="button button--post loading mb-2" aria-label="Loading...">
+//   <button class="button button--post loading mb-2">
 //     Submit
-//     <span class="sr-only">Loading...</span>
+//     <span class="sr-only" aria-busy="true" aria-live="polite">Loading...</span>
 //   </button>
 // </div>
 //
-// Notice: For styleguide purposes all of the code is rendered here. The things that should be
-// toggled are the `aria-label="Loading"` and the text in the button. So for example, on
-// submit, you would add `<span class="sr-only">Loading...</span>` the class
+// Notice: For styleguide purposes all of the code is rendered here. On
+// submit, you would toggle the class `loading` on the button and 
+// `<span class="sr-only" aria-busy="true" aria-live="polite">Loading...</span>` inside the button, the class
 // `sr-only` is key to prevent the button from changin size.
 //
 // Styleguide Components.Button.Loading
