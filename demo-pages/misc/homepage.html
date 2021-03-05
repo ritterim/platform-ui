@@ -18,22 +18,22 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
   <style>
-      /*
-       *  This css will need to live in the platform along with custom
-       *  mobile menu css.
-       *  See src/Platform/Content/css/sass/platform-ui-plugins.scss
-       */
-      .site-header--fixed {
-        height: calc(var(--menu-height) * 2 )!important;
-      }
-      .site-header--fixed + .header-fixed {
-        margin-top: calc(var(--menu-height) * 2 )!important;
-      }
-      .site-header--fixed .site-menu-wrapper:nth-child(2) .site-menu.active,
-      .site-menu-wrapper.site-header--fixed:nth-child(2) .site-menu.active {
-        max-height: calc(100vh - (var(--menu-height) * 2));
-      }
-    </style>
+    /*
+      *  This css will need to live in the platform along with custom
+      *  mobile menu css.
+      *  See src/Platform/Content/css/sass/platform-ui-plugins.scss
+      */
+    .site-header--fixed {
+      height: calc(var(--menu-height) * 2 )!important;
+    }
+    .site-header--fixed + .header-fixed {
+      margin-top: calc(var(--menu-height) * 2 )!important;
+    }
+    .site-header--fixed .site-menu-wrapper:nth-child(2) .site-menu.active,
+    .site-menu-wrapper.site-header--fixed:nth-child(2) .site-menu.active {
+      max-height: calc(100vh - (var(--menu-height) * 2));
+    }
+  </style>
 </head>
 <body>
   <header class="site-header site-header--fixed">
@@ -330,8 +330,8 @@
     </div>
   </header>
   <main class="header-fixed">
-    <section class="background-lighter py-6 flex--center-content">
-      <div class="flex flex--column text--center">
+    <section class="background-lighter py-6 flex--center-content pos-rel">
+      <div class="flex flex--column text--center pos-abs pin-center">
         <h1 class="my-3 text-teal">Welcome To Our Homepage</h1>
         <p>This page was built entirely using platform-ui code. Pretty cool, huh? We think so.</p>
       </div>
@@ -339,7 +339,7 @@
     <section class="py-5 block-container flex--justify-center">
       <div class="block block-10 desktop-up-8">
         <div class="block-container tablet-up-2 laptop-up-3 blocks px-2 py-4">
-          <div class="block flex flex--column flex--align-center flex--justify-start text--center">
+          <div class="block flex flex--column flex--align-center flex--justify-start text--center hide-lg-tablet-down show-lg-tablet-up">
             <div class="image--round-small mb-3">
               <img src="https://images.unsplash.com/photo-1565191999001-551c187427bb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" alt="pretty">
             </div>
