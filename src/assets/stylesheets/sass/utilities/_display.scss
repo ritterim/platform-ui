@@ -87,6 +87,15 @@
       @else if $d == show {
         @media (min-width: ($size)) {
           display: block !important;
+
+          &.flex,
+          &.block-container {
+            display: flex !important;
+          }
+
+          &.flex-inline {
+            display: inline-flex !important;
+          }
         }
       }
     }
@@ -102,18 +111,21 @@
       @if $index {
         // if there is another key above the selected key, run this
         @if $index < length(config.$breakpoints) {
-          @if $d == hide {	
-            display: block !important;	
-          }	
-          @else {	
-            display: none !important;	
-          }
           @media (min-width : ($size)) and (max-width: map.get(config.$breakpoints, mixins.nextKey($breakpoint) )  - 1 ) {
             @if $d == hide {
               display: none !important;
             }
             @else {
               display: block !important;
+
+              &.flex,
+              &.block-container {
+                display: flex !important;
+              }
+  
+              &.flex-inline {
+                display: inline-flex !important;
+              }
             }
           }
         }
@@ -122,13 +134,27 @@
 
     // Display utility for a max-width media query
     .#{$d}-#{$breakpoint}-down {
-      @if $index {
+      // if $breakpoint is not mobile run it
+      @if $index > 1 {
         @media (max-width: map.get(config.$breakpoints, $breakpoint) - 1) {
-          @if $d == hide {
-            display: none !important;
-          }
-          @else {
-            display: block !important;
+          @if $breakpoint == 'mobiile' {
+            
+          } @else {
+            @if $d == hide {
+              display: none !important;
+            }
+            @else {
+              display: block !important;
+  
+              &.flex,
+              &.block-container {
+                display: flex !important;
+              }
+  
+              &.flex-inline {
+                display: inline-flex !important;
+              }
+            }
           }
         }
       }
