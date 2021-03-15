@@ -1,6 +1,8 @@
 # Version History
 
 ---
+## 1.2.12
+    - Add ability to use `.flex` on breakpoint display utility
 
 ## 1.2.11
     - Add new Text icon to platform icons
