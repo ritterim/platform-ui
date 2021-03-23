@@ -655,30 +655,6 @@ legend {
     }
   }
 
-  &--stacked {
-    flex-flow: column;
-
-    #{ $self }__field {
-      max-width: none;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-
-    #{ $self }__button-group {
-      justify-content: center;
-
-      button {
-        max-width: none;
-      }
-    }
-
-    textarea {
-      min-height: 8rem;
-    }
-  }
-
   &#{$self}--light {
     color: map.get(variables.$greyscale, 'white' );
 
