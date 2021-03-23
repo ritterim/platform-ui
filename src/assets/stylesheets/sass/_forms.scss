@@ -31,6 +31,9 @@
 // To get the animation, add the class `form__field--fancy` to the `form__field`.
 // You will also need to change the markup slightly. Instead of a `label` the `form__field` should now be a `div`
 // put the `label` under the `input` as a sibling of the `form__field` `div`. See markup below.
+// 
+// In order to account for the transform of the label, we increased the margin-top on inputs inside a fancy form field. 
+// This can be changed by using a [spacing modifier](/styleguide/section-utilities.html#utilities-spacers), however.
 //
 // **Note:** Firefox does not have a way to hide the date and time placeholder for those inputs. This style of form would
 // probably be best for a simple form that has text inputs.
@@ -1026,6 +1029,25 @@ legend {
         top: 50%;
         transition: .2s ease-in;
         transform: translateY(-50%);
+      }
+
+      input[type="text"],
+      input[type="search"],
+      input[type="date"],
+      input[type="email"],
+      input[type="textarea"],
+      input[type="tel"],
+      input[type="password"],
+      input[type="number"],
+      input[type="time"],
+      input[type="url"],
+      input[type="datetime-local"],
+      input[type="month"],
+      input[type="week"],
+      textarea,
+      #{ $self }__select-wrapper,
+      #{ $self }__option-group {
+        margin-top: map.get(variables.$spacers, 3) + .75;
       }
     }
   }
