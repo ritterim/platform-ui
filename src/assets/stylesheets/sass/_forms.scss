@@ -31,6 +31,9 @@
 // To get the animation, add the class `form__field--fancy` to the `form__field`.
 // You will also need to change the markup slightly. Instead of a `label` the `form__field` should now be a `div`
 // put the `label` under the `input` as a sibling of the `form__field` `div`. See markup below.
+// 
+// In order to account for the transform of the label, we increased the margin-top on inputs inside a fancy form field. 
+// This can be changed by using a [spacing modifier](/styleguide/section-utilities.html#utilities-spacers), however.
 //
 // **Note:** Firefox does not have a way to hide the date and time placeholder for those inputs. This style of form would
 // probably be best for a simple form that has text inputs.
@@ -129,6 +132,37 @@
 // Styleguide Forms.BorderRounded
 
 
+// Form Light
+// 
+// Adding a `form--light` modifier gives the form a white theme. Thhe text color and border colors are both white.
+// 
+// The light modifier works with [form--bordered](styleguide/section-forms.html#forms-border) and [form--rounded](styleguide/section-forms.html#forms-borderrounded).
+// 
+// Markup:
+// <div class="background-navy p-3">
+//   <form action="" class="form form--light block-container tablet-up-3 laptop-up-4 desktop-up-6 blocks mb-3 p-2">
+//     <div class="block form__field">
+//       <label for="first-name">First Name</label>
+//       <input id="first-name" type="text" placeholder="First Name" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAfBJREFUWAntVk1OwkAUZkoDKza4Utm61iP0AqyIDXahN2BjwiHYGU+gizap4QDuegWN7lyCbMSlCQjU7yO0TOlAi6GwgJc0fT/fzPfmzet0crmD7HsFBAvQbrcrw+Gw5fu+AfOYvgylJ4TwCoVCs1ardYTruqfj8fgV5OUMSVVT93VdP9dAzpVvm5wJHZFbg2LQ2pEYOlZ/oiDvwNcsFoseY4PBwMCrhaeCJyKWZU37KOJcYdi27QdhcuuBIb073BvTNL8ln4NeeR6NRi/wxZKQcGurQs5oNhqLshzVTMBewW/LMU3TTNlO0ieTiStjYhUIyi6DAp0xbEdgTt+LE0aCKQw24U4llsCs4ZRJrYopB6RwqnpA1YQ5NGFZ1YQ41Z5S8IQQdP5laEBRJcD4Vj5DEsW2gE6s6g3d/YP/g+BDnT7GNi2qCjTwGd6riBzHaaCEd3Js01vwCPIbmWBRx1nwAN/1ov+/drgFWIlfKpVukyYihtgkXNp4mABK+1GtVr+SBhJDbBIubVw+Cd/TDgKO2DPiN3YUo6y/nDCNEIsqTKH1en2tcwA9FKEItyDi3aIh8Gl1sRrVnSDzNFDJT1bAy5xpOYGn5fP5JuL95ZjMIn1ya7j5dPGfv0A5eAnpZUY3n5jXcoec5J67D9q+VuAPM47D3XaSeL4AAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
+//     </div>
+//     <div class="block form__field">
+//       <label for="last-name">Last Name</label>
+//       <input id="last-name" type="text" placeholder="Last Name">
+//     </div>
+//     <div class="block form__field">
+//       <label for="dob">Birthday</label>
+//       <input id="dob" type="date">
+//     </div>
+//     <div class="block form__field">
+//       <label for="zipcode">ZIP Code</label>
+//       <input id="zipcode" type="tel" placeholder="e.g.90012" pattern="^\d{5,6}(?:[-\s]\d{4})?$">
+//     </div>
+//   </form>
+// </div>
+// 
+// Styleguide Forms.Lighht
+
+
 // Time Icon
 //
 // The select wrapper displays an arrow down icon. We can change that by adding the class `time`
@@ -212,16 +246,16 @@
 //     <fieldset class="form__field">
 //       <legend>Error on individual input</legend>
 //       <div class="form__option-group">
-//         <input class="form__checkbox error" id="gender-this-one" type="checkbox">
-//         <label for="gender-this-one">
+//         <input class="form__checkbox error" id="a-gender-this-one" type="checkbox">
+//         <label for="a-gender-this-one">
 //           <div class="input-icons">
 //             <i class='pi-circle'></i>
 //             <i class='pi-check pi-heavy'></i>
 //           </div>
 //           This One
 //         </label>
-//         <input class="form__checkbox" id="gender-that-one" type="checkbox">
-//         <label for="gender-that-one">
+//         <input class="form__checkbox" id="a-gender-that-one" type="checkbox">
+//         <label for="a-gender-that-one">
 //           <div class="input-icons">
 //             <i class='pi-circle'></i>
 //             <i class='pi-check pi-heavy'></i>
@@ -652,30 +686,6 @@ legend {
     }
   }
 
-  &--stacked {
-    flex-flow: column;
-
-    #{ $self }__field {
-      max-width: none;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-
-    #{ $self }__button-group {
-      justify-content: center;
-
-      button {
-        max-width: none;
-      }
-    }
-
-    textarea {
-      min-height: 8rem;
-    }
-  }
-
   &#{$self}--light {
     color: map.get(variables.$greyscale, 'white' );
 
@@ -699,6 +709,39 @@ legend {
 
       &::placeholder {
         color: map.get(variables.$greyscale, 'white' );
+      }
+
+      &:focus {
+        box-shadow: 0 0 2px 1px map.get(variables.$greyscale, 'white' );
+        outline: none;
+      }
+    }
+
+    ::-webkit-calendar-picker-indicator {
+      filter: invert(1);
+    }
+
+    &.form--rounded,
+    &.form--bordered,
+    &.pui-form--bordered,
+    &.pui-form--rounded {
+
+      input[type="text"],
+      input[type="search"],
+      input[type="date"],
+      input[type="email"],
+      input[type="textarea"],
+      input[type="tel"],
+      input[type="password"],
+      input[type="number"],
+      input[type="time"],
+      input[type="url"],
+      input[type="datetime-local"],
+      input[type="month"],
+      input[type="week"],
+      textarea,
+      select {
+        border-color: map.get(variables.$greyscale, 'white' );
       }
     }
 
@@ -1026,6 +1069,25 @@ legend {
         top: 50%;
         transition: .2s ease-in;
         transform: translateY(-50%);
+      }
+
+      input[type="text"],
+      input[type="search"],
+      input[type="date"],
+      input[type="email"],
+      input[type="textarea"],
+      input[type="tel"],
+      input[type="password"],
+      input[type="number"],
+      input[type="time"],
+      input[type="url"],
+      input[type="datetime-local"],
+      input[type="month"],
+      input[type="week"],
+      textarea,
+      #{ $self }__select-wrapper,
+      #{ $self }__option-group {
+        margin-top: map.get(variables.$spacers, 3) + .75;
       }
     }
   }

@@ -1,6 +1,12 @@
 # Version History
 
 ---
+## 1.2.13
+    - Form Light updated and added to docs
+    - Increase margin-top on inputs inside fancy forms
+    - Remove form--stacked
+    - Remove border-radius from tables
+
 ## 1.2.12
     - Add ability to use `.flex` on breakpoint display utility
 

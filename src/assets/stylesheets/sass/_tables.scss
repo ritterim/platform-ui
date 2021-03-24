@@ -145,13 +145,11 @@
 // Styleguide Tables
 
 @mixin table {
-  $border-radius: map.get(config.$radius, 'default');
   $table-border: 1px solid color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold * 2));
   $responsive-table-bottom-gap: map.get(variables.$spacers, 2);
   $responsive-table-label-bg: map.get(variables.$greyscale, 'lighter');
   width: 100%;
   background-color: transparent;
-  border-radius: $border-radius;
   border-collapse: separate;
   border-spacing: 0;
   @include mixins.breakpoint(tablet, max) {
@@ -166,10 +164,6 @@
     text-align: left;
     @include mixins.breakpoint(tablet, max) {
       border: none;
-    }
-
-    tr {
-      border-radius: $border-radius $border-radius 0 0;
     }
 
     th {
