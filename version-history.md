@@ -1,6 +1,9 @@
 # Version History
 
 ---
+## 1.2.14
+    - Display: none added to show-breakpoint-only classes
+
 ## 1.2.13
     - Form Light updated and added to docs
     - Increase margin-top on inputs inside fancy forms
