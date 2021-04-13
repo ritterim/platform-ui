@@ -86,6 +86,19 @@ function css() {
     .pipe(connect.reload())
 }
 
+function theme() {
+  return src([
+    'src/assets/stylesheets/sass/theme.scss',                // intro.js theme
+  ])
+  .pipe(sass())
+  .pipe(concat('platform-ui-theme.min.css'))
+  .pipe(postcss([autoprefixer(), nano()]))
+  .pipe(header(puiHeader))
+  .pipe(dest('src/assets/stylesheets/'))
+  .pipe(dest('dist/'))
+  .pipe(connect.reload())
+}
+
 function js() {
   return src([
       'src/assets/js/polyfill/main.js',
@@ -128,6 +141,7 @@ function watchFiles() {
 
 exports.build = series(generateIconFonts, generateIconAssets, css, js, styleguide, copyStaticAssets);
 exports.css = css;
+exports.theme = theme;
 exports.js = js;
 exports.generateIconAssets = generateIconAssets;
 exports.generateIconFonts = generateIconFonts;

@@ -15,6 +15,7 @@
   "scripts": {
     "start": "npm install && gulp",
     "build": "gulp build",
+    "theme": "gulp theme",
     "generate-assets": "icon-font-generator src/assets/icons/svg/**/*.svg -o dist -n platform-icons -j -p pi --center --htmltp templates/html.hbs --csstp templates/css.hbs",
     "test": "echo \"Error: no test specified\" && exit 1",
     "ver": "echo \"$npm_package_version\""
