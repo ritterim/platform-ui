@@ -285,6 +285,24 @@
     right: .5rem;
     top: .5rem;
   }
+
+  // .info-box--left 
+  &--left {
+
+    .info-box__content {
+      right: 0;
+
+      &:before {
+        left:auto;
+        right:1px;
+      }
+
+      &:after{
+        left:auto;
+        right:-1px;
+      }
+    }
+  }
 }
 
 .pui-info-box {
