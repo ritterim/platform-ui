@@ -4,6 +4,12 @@
 ## 1.2.16
     - info-box--left modifier
 
+## 1.2.15
+    - New icons added
+        - radio button selected
+        - magic wand
+        - bomb
+
 ## 1.2.14
     - Display: none added to show-breakpoint-only classes
 
