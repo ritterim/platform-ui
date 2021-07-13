@@ -185,7 +185,8 @@
     height: 100%;
     position: fixed;
     transition: all ease-in-out config.$transitions;
-    z-index: 500;
+    // z-index lower than the fixed header
+    z-index: 99;
 
     .header-fixed & {
       height: calc(100% - #{config.$menu-height});
