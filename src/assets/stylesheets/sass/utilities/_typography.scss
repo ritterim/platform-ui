@@ -143,37 +143,13 @@
   &--underline {
     text-decoration: underline;
   }
+
   &--bold {
     font-weight: bold;
   }
+
   &--nowrap {
     white-space: nowrap;
-  }
-  &--center {
-    text-align: center;
-  }
-  &--right {
-    text-align: right;
-  }
-
-  &--capitalize {
-    text-transform: capitalize;
-  }
-  &--uppercase {
-    text-transform: uppercase;
-  }
-  &--lowercase {
-    text-transform: lowercase;
-  }
-  &--sentencecase {
-    text-transform: lowercase;
-    &:first-letter {
-      text-transform: uppercase;
-    }
-  }
-
-  &--italic {
-    font-style: italic;
   }
 
   &-underline--hover {
@@ -195,6 +171,33 @@
 
       &:after {
         width: 100%;
+      }
+    }
+  }
+
+  // font-style
+  @each $key, $val in variables.$font-style {
+    &--#{$key} {
+      font-style: #{$val};
+    }
+  }
+
+  // text-align
+  @each $key, $val in variables.$text-align {
+    &--#{$key} {
+      text-align: #{$val};
+    }
+  }
+
+  // text-transform
+  @each $key, $val in variables.$text-transform {
+    &--#{$key} {
+      text-transform: #{$val};
+
+      @if $key == sentencecase {
+        &:first-letter {
+          text-transform: uppercase;
+        }
       }
     }
   }

@@ -11,3 +11,21 @@ $font-percentage: (
   'xl': 150%,
   'xxl': 200%
 );
+
+$font-style: (
+  'italic': italic,
+  'normal': normal
+);
+
+$text-align: (
+  'left': left,
+  'right': right,
+  'center': center
+);
+
+$text-transform: (
+  'capitalize': capitalize,
+  'uppercase': uppercase,
+  'lowercase': lowercase,
+  'sentencecase': lowercase
+);
