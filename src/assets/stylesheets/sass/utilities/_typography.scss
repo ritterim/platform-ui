@@ -99,11 +99,14 @@
 //
 // General utilities add class-based css transforms like `uppercase` and `bold`. See the chart below for the full list.
 //
-// | General           |                    |                     |                      |
-// | ----------------- | ------------------ | ------------------- | -------------------- |
-// | `text--underline` | `text-underline--hover`  | `text--bold` | `text--nowrap` <i class="pi-warning text-orange"></i> |
-// | `text--center` <i class="pi-warning text-orange"></i>   | `text--right` <i class="pi-warning text-orange"></i> | `text--capitalize` | `text--uppercase` |
-// | `text--lowercase`   | `text--sentencecase` | `text--italic` |  |
+// | General                                |                                         |                                          |                                           |
+// | -------------------------------------- | --------------------------------------- | ---------------------------------------- | ----------------------------------------- |
+// | `text--underline`                      | `text-underline--hover`                 |                                          |                                           |
+// | `text--bold`                           |                                         |                                          |                                           |
+// | `text--nowrap` <i class="pi-warning text-orange"></i> |                          |                                          |                                           |
+// | `text--left` <i class="pi-warning text-orange"></i> | `text--right` <i class="pi-warning text-orange"></i> | `text--center` <i class="pi-warning text-orange"></i> |    |
+// | `text--capitalize`                     | `text--uppercase`                       | `text--lowercase`                        | `text--sentencecase`                      |
+// | `text--italic`                         | `text--normal`                          |                                          |                                           |
 //
 // | <i class="pi-warning text-orange"></i> NOTE: A `flex--` utility should be used were possible. |
 // | --
@@ -143,37 +146,13 @@
   &--underline {
     text-decoration: underline;
   }
+
   &--bold {
     font-weight: bold;
   }
+
   &--nowrap {
     white-space: nowrap;
-  }
-  &--center {
-    text-align: center;
-  }
-  &--right {
-    text-align: right;
-  }
-
-  &--capitalize {
-    text-transform: capitalize;
-  }
-  &--uppercase {
-    text-transform: uppercase;
-  }
-  &--lowercase {
-    text-transform: lowercase;
-  }
-  &--sentencecase {
-    text-transform: lowercase;
-    &:first-letter {
-      text-transform: uppercase;
-    }
-  }
-
-  &--italic {
-    font-style: italic;
   }
 
   &-underline--hover {
@@ -195,6 +174,33 @@
 
       &:after {
         width: 100%;
+      }
+    }
+  }
+
+  // font-style
+  @each $key, $val in variables.$font-style {
+    &--#{$key} {
+      font-style: #{$val};
+    }
+  }
+
+  // text-align
+  @each $key, $val in variables.$text-align {
+    &--#{$key} {
+      text-align: #{$val};
+    }
+  }
+
+  // text-transform
+  @each $key, $val in variables.$text-transform {
+    &--#{$key} {
+      text-transform: #{$val};
+
+      @if $key == sentencecase {
+        &:first-letter {
+          text-transform: uppercase;
+        }
       }
     }
   }

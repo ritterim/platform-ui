@@ -1,6 +1,14 @@
 # Version History
 
 ---
+## 1.2.18
+    - add font-style: normal utility (text--normal)
+    - add text-align: left utility (text--left)
+    - lower side drawer z-index below the fixed header
+
+## 1.2.17
+    - info-box display: inline-block
+
 ## 1.2.16
     - info-box--left modifier
 

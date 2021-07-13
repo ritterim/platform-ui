@@ -14,8 +14,6 @@
 // </div>
 //
 // Markup:
-// <div class="block-container blocks tablet-up-6">
-// <div class="block">
 // <div class="info-box">
 //   <button class="button button--secondary toggle-hidden" role="button" aria-label="Toggle">
 //     <i class="pi-filter" aria-hidden="hidden"></i>
@@ -126,9 +124,7 @@
 //     </form>
 //   </div>
 // </div>
-// </div>
-// <div class="block">
-// <div class="info-box info-box--left">
+// <div class="info-box info-box--left ml-5">
 //   <a href="#" class="toggle-hidden" aria-label="Toggle">Text Link - Left info box</a>
 //   <div class="info-box__content hidden">
 //     <button class="button info-box__close">
@@ -211,7 +207,6 @@
 //   </div>
 // </div>
 // </div>
-// </div>
 //
 // Styleguide Components.info
 
@@ -225,6 +220,7 @@
 
 @mixin info-box {
   $self: &;
+  display: inline-block;
   position: relative;
 
   &__content {
