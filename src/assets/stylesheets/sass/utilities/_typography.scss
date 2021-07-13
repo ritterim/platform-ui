@@ -99,11 +99,14 @@
 //
 // General utilities add class-based css transforms like `uppercase` and `bold`. See the chart below for the full list.
 //
-// | General           |                    |                     |                      |
-// | ----------------- | ------------------ | ------------------- | -------------------- |
-// | `text--underline` | `text-underline--hover`  | `text--bold` | `text--nowrap` <i class="pi-warning text-orange"></i> |
-// | `text--center` <i class="pi-warning text-orange"></i>   | `text--right` <i class="pi-warning text-orange"></i> | `text--capitalize` | `text--uppercase` |
-// | `text--lowercase`   | `text--sentencecase` | `text--italic` |  |
+// | General                                |                                         |                                          |                                           |
+// | -------------------------------------- | --------------------------------------- | ---------------------------------------- | ----------------------------------------- |
+// | `text--underline`                      | `text-underline--hover`                 |                                          |                                           |
+// | `text--bold`                           |                                         |                                          |                                           |
+// | `text--nowrap` <i class="pi-warning text-orange"></i> |                          |                                          |                                           |
+// | `text--left` <i class="pi-warning text-orange"></i> | `text--right` <i class="pi-warning text-orange"></i> | `text--center` <i class="pi-warning text-orange"></i> |    |
+// | `text--capitalize`                     | `text--uppercase`                       | `text--lowercase`                        | `text--sentencecase`                      |
+// | `text--italic`                         | `text--normal`                          |                                          |                                           |
 //
 // | <i class="pi-warning text-orange"></i> NOTE: A `flex--` utility should be used were possible. |
 // | --
