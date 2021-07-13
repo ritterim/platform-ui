@@ -1,6 +1,9 @@
 # Version History
 
 ---
+## 1.2.17
+    - info-box display: inline-block
+
 ## 1.2.16
     - info-box--left modifier
 
