@@ -5,6 +5,7 @@ if(carousel) {
   let slide = document.querySelectorAll('.carousel__slide');
   let slideLength = slide.length
   let slideArr = [];
+  let hasNav = document.querySelector('.has-nav');
 
   // start at 0 for array position
   // build array
@@ -45,6 +46,35 @@ if(carousel) {
   // TODO:
   // Autoplay slider
   // setInterval(changeSlideVal, 1000);
+
+  // Add a nav list to the carousel
+  if(hasNav) {
+
+    let list = document.createElement('ol');
+
+    slide.forEach(() => {
+      let li = document.createElement('li')
+      let button = document.createElement('button');
+      li.appendChild(button);
+      list.appendChild(li);
+    });
+
+    carousel.appendChild(list);
+
+    let nav = document.querySelector('.carousel ol');
+    let navClasses = ['carousel__nav', 'list'];
+    nav.classList.add(...navClasses);
+
+    let navItem = document.querySelectorAll('.carousel__nav li')
+    navItem.forEach(li => {
+      li.classList.add('carousel__nav-item');
+    });
+
+    let navButton = document.querySelectorAll('.carousel__nav-item button');
+    navButton.forEach(btn => {
+      btn.classList.add('carousel__nav-button');
+    });
+  }
 
   // show first slide in carousel
   let initialSlide = document.querySelector('.carousel__slide[data-slide="'+slideArr[0]+'"]');

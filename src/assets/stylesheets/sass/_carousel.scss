@@ -1,6 +1,7 @@
 .carousel {
   $self: &;
 
+  display: inline-flex;
   position: relative;
 
   &__slider {
