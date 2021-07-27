@@ -5,7 +5,6 @@ if(carousel) {
   let slide = document.querySelectorAll('.carousel__slide');
   let slideLength = slide.length
   let slideArr = [];
-  let hasNav = document.querySelector('.has-nav');
 
   // start at 0 for array position
   // build array
@@ -48,6 +47,7 @@ if(carousel) {
   // setInterval(changeSlideVal, 1000);
 
   // Add a nav list to the carousel
+  let hasNav = document.querySelector('.has-nav');
   if(hasNav) {
 
     let list = document.createElement('ol');
