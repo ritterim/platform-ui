@@ -21,19 +21,19 @@ if(carousel) {
     counter = counter + 1;
   })
 
-  let up = true;
+  let max = true;
   let slideVal = 0
   let increment = 1;
 
   let changeSlideVal = () => {
-    if (up == true && slideVal <= slideLength) {
+    if (max == true && slideVal <= slideLength) {
       slideVal += increment
 
       if (slideVal == slideLength) {
         slideVal = 0
       }
     } else {
-      up = false
+      max = false
       slideVal -= increment;
 
       if (slideVal == -1) {
@@ -59,10 +59,10 @@ if(carousel) {
 
       if(arrow.classList.contains('carousel__arrow--next')) {
         // Go forward
-        up = true;
+        max = true;
       } else {
         // Go backward
-        up = false;
+        max = false;
       }
 
       // changes slideVal
