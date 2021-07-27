@@ -1,0 +1,46 @@
+.carousel {
+  $self: &;
+
+  position: relative;
+
+  &__slider {
+    display: flex;
+    position: relative;
+    width: 100%;
+  }
+
+  &__slide {
+    position: relative;
+    width: 100%;
+
+    &:not(.active) {
+      display: none;
+    }
+  }
+
+  // .carousel__arrow
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    i {
+      font-size: 3rem;
+    }
+
+    &--prev {
+      left: 0;
+    }
+
+    &--next {
+      right: 0;
+    }
+  }
+
+  button#{$self}__arrow {
+    appearance: none;
+    background: transparent;
+    border: none;
+    color: inherit;
+  }
+}
