@@ -1,6 +1,9 @@
 .carousel {
   $self: &;
 
+  --nav-button: var(--light-mid);
+  --nav-button-active: var(--base);
+
   display: inline-flex;
   position: relative;
 
@@ -43,5 +46,43 @@
     background: transparent;
     border: none;
     color: inherit;
+  }
+
+  &.has-nav {
+    padding-bottom: 3rem;
+  }
+
+  &__nav {
+    bottom: 0;
+    display: flex;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+  }
+
+  &__nav-button {
+    appearance: none;
+    background: transparent;
+    border: none;
+    color: inherit;
+    padding: 1.5rem;
+    position: relative;
+
+    &.active {
+
+      &:after {
+        background-color: var(--nav-button-active);
+      }
+    }
+
+    &:after {
+      content: '';
+      background-color: var(--nav-button);
+      border-radius: 5rem;
+      padding: .25rem 1rem;
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
 }

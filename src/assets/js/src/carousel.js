@@ -71,8 +71,37 @@ if(carousel) {
     });
 
     let navButton = document.querySelectorAll('.carousel__nav-item button');
+    let num = 0
     navButton.forEach(btn => {
       btn.classList.add('carousel__nav-button');
+      btn.setAttribute('data-nav', num);
+
+      num = num + 1;
+    });
+
+    // highlight first button in nav
+    let initialNav = document.querySelector('.carousel__nav-button[data-nav="'+slideArr[0]+'"]');
+    initialNav.classList.add('active');
+
+    navButton.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        let targetButton = e.target;
+        
+        if(document.querySelector('.carousel__nav-button.active') !== null) {
+          document.querySelector('.carousel__nav-button.active').classList.remove('active')
+        }
+
+        targetButton.classList.add('active')
+        
+        // set slideVal to data attr from clicked nav button
+        slideVal = parseInt(targetButton.dataset.nav);
+
+        if (document.querySelector('.carousel__slide.active') !== null) {
+          document.querySelector('.carousel__slide.active').classList.remove('active');
+        }
+        // Show active slide
+        document.querySelector('.carousel__slide[data-slide="'+slideVal+'"]').classList.add('active');
+      });
     });
   }
 
@@ -99,7 +128,17 @@ if(carousel) {
       changeSlideVal();
 
       // Show active slide
-      document.querySelector('.carousel__slide[data-slide="'+slideArr[slideVal]+'"]').classList.add('active');
+      document.querySelector('.carousel__slide[data-slide="'+slideVal+'"]').classList.add('active');
+
+      // Set nav button
+      if(hasNav) {
+        if(document.querySelector('.carousel__nav-button.active') !== null) {
+          document.querySelector('.carousel__nav-button.active').classList.remove('active')
+        }
+        // Show active nav button
+        document.querySelector('.carousel__nav-button[data-nav="'+slideVal+'"]').classList.add('active');
+      }
+      
     })
   })
 }
