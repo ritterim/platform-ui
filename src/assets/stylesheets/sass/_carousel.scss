@@ -3,16 +3,26 @@
 
   --nav-button: var(--light-mid);
   --nav-button-active: var(--base);
+  --nav-spacing: 3rem;
 
   display: inline-flex;
+  padding: 0 2rem 0;
   position: relative;
+
+  &.has-nav {
+    padding-bottom: var(--nav-spacing);
+  }
 
   &__slider {
     display: flex;
     position: relative;
     width: 100%;
   }
+  
 
+  // ----------------
+  // slides
+  // ----------------
   &__slide {
     position: relative;
     width: 100%;
@@ -21,12 +31,23 @@
       display: none;
     }
   }
+  // ----------------
+  // end slides
+  // ----------------
 
+
+  // ----------------
   // .carousel__arrow
+  // ----------------
   &__arrow {
+    padding: 0 .5rem;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+
+    .has-nav & {
+      top: calc(50% - (var(--nav-spacing)/2));
+    }
 
     i {
       font-size: 3rem;
@@ -47,11 +68,14 @@
     border: none;
     color: inherit;
   }
+  // ----------------
+  // end arrows
+  // ----------------
 
-  &.has-nav {
-    padding-bottom: 3rem;
-  }
 
+  // ----------------
+  // carousel Nav
+  // ----------------
   &__nav {
     bottom: 0;
     display: flex;
@@ -85,4 +109,7 @@
       transform: translate(-50%, -50%);
     }
   }
+  // ----------------
+  // end carousel Nav
+  // ----------------
 }
