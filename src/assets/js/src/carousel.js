@@ -3,10 +3,10 @@ let carousels = document.querySelectorAll('.carousel');
 if(carousels) {
   carousels.forEach(carousel => {
     let slides = carousel.querySelectorAll('.carousel__slide');
-    let slideLength = slides.length
+    let slideLength = slides.length;
     let slideArr = [];
     let next = true;
-    let slideVal = 0
+    let slideVal = 0;
     let increment = 1;
   
     // start at 0 for array position
