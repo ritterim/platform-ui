@@ -1,3 +1,78 @@
+@use "config";
+@use "mixins";
+@use "variables";
+@use "sass:color";
+@use "sass:math";
+@use "sass:map";
+
+// Carousel
+//
+// To build a carousel, start by adding the class `carousel`. This class works best on any block level element. 
+// `carousel` houses the actual sliding elements, as well as the buttons and navigation (optional). 
+//
+// Within the carousel wrapper, you will need to create a `carousel__slider`. This will contain the individual 
+// sliding elements. These elements require the class `carousel__slide`. The `carousel__slider` class can be added to any 
+// block level element including a list (ol, ul).
+//
+// Nav buttons need to be added to the carousel as siblings of the `carousel__slider`. Each button needs the class 
+// `carousel__arrow`. Add the class `carousel__arrow--prev` to the left button and `carousel__arrow--next` to 
+// the right button. You can add the appropriate [font icons](/section-icons.html) to these buttons. See example below.
+//
+//
+// Markup:
+// <div class="carousel">
+//   <ol class="carousel__slider">
+//     <li class="carousel__slide">
+//       <img class="w-100" src="https://picsum.photos/id/1012/1000/400" alt="">
+//     </li>
+//     <li class="carousel__slide">
+//       <img class="w-100" src="https://picsum.photos/id/1020/1000/400" alt="">
+//     </li>
+//     <li class="carousel__slide">
+//       <img class="w-100" src="https://picsum.photos/id/100/1000/400" alt="">
+//     </li>
+//   </ol>
+//   <button class="carousel__arrow carousel__arrow--prev">
+//     <i class="pi-angle-left"></i>
+//   </button>
+//   <button class="carousel__arrow carousel__arrow--next">
+//     <i class="pi-angle-right"></i>
+//   </button>
+// </div>
+// 
+// Styleguide Components.Carousel
+
+
+// Carousel Has Nav
+// 
+// If you want your carousel to have a navigation, add the class `has-nav` to your `carousel`. See example below.
+// 
+// The navigation shows which slide in the carousel is active and allows users to go to specific slides by selecting
+// the corresponding nav dot.
+// 
+// Markup:
+// <div class="carousel has-nav">
+//   <div class="carousel__slider">
+//     <div class="carousel__slide">
+//       <img class="w-100" src="https://picsum.photos/id/1013/1000/400" alt="">
+//     </div>
+//     <div class="carousel__slide">
+//       <img class="w-100" src="https://picsum.photos/id/1023/1000/400" alt="">
+//     </div>
+//     <div class="carousel__slide">
+//       <img class="w-100" src="https://picsum.photos/id/103/1000/400" alt="">
+//     </div>
+//   </div>
+//   <button class="carousel__arrow carousel__arrow--prev">
+//     <i class="pi-angle-left"></i>
+//   </button>
+//   <button class="carousel__arrow carousel__arrow--next">
+//     <i class="pi-angle-right"></i>
+//   </button>
+// </div>
+// 
+// Styleguide Components.Carousel.HasNav
+
 .carousel {
   $self: &;
 
@@ -30,6 +105,10 @@
     &:not(.active) {
       display: none;
     }
+  }
+
+  li.carousel__slide {
+    list-style-type: none;
   }
   // ----------------
   // end slides
