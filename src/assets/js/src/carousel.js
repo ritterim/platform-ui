@@ -22,12 +22,12 @@ if(carousels) {
         // add data attribute (data-slide="1") for slide target
         slide.setAttribute('data-slide', counter);
     
-        counter = counter + 1;
+        counter++;
       })
     }
   
     let changeSlideVal = () => {
-      if (next == true && slideVal <= slideLength) {
+      if (next && (slideVal <= slideLength)) {
         slideVal += increment;
   
         if (slideVal == slideLength) {
@@ -38,7 +38,7 @@ if(carousels) {
         slideVal -= increment;
   
         if (slideVal == -1) {
-          slideVal = slideLength -1;
+          slideVal = slideLength - 1;
         }
       }
     }
