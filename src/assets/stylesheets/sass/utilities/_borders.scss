@@ -54,8 +54,10 @@
 // 
 // You can also apply a border to a specific direction (`border-{direction}-color--{color}`). For example: `border-r--color-navy` would apply `border-right-color: navy`.
 // 
+// A border color can be removed from an element or direction by using, `border--color-transparent` or `border-{direction}--color-transparent`.
+// 
 // Markup:
-// <div class="card">
+// <div class="card border--color-navy">
 //   <h4 class="pb-2 mb-2">Card Header</h4>
 //   <div class="card__content block-container blocks px-3">
 //     <div class="block block-6 border-r border-r--color-med-blue">
