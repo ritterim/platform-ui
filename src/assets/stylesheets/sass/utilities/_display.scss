@@ -4,8 +4,24 @@
 @use "sass:map";
 
 // Display
+// 
+// New display utilities for Platform UI.
+// 
+// | Class Name              | Display Value           |
+// | ----------------------- | ----------------------- |
+// | `display--none`         | `display: none`         |
+// | `display--block`        | `display: block`        |
+// | `display--inline-block` | `display: inline-block` |
+// | `display--inline`       | `display: inline`       |
+// | `display--flex`         | `display: flex`         |
+// | `display--inline-flex`  | `display: inline-flex`  |
+// 
+// Styleguide Utilities.Display
+
+
+// Display: Responsive
 //
-// Our display utilities allow you to show or hide code at specific resolutions.
+// Our responsive display utilities allow you to show or hide code at specific resolutions.
 //
 // If you want to simply add `display: none` to an element you can use the class `hidden`.
 //
@@ -53,8 +69,10 @@
 // | `hide-desktop-up`              | `display: none;`           | `@media (min-width: 1800px)`                                              |
 // | `hide-desktop-down`            | `display: none;`           | `@media (max-width: 1799px)`                                              |
 //
+// 
+// 
 //
-// Styleguide Utilities.Display
+// Styleguide Utilities.Display.Responsive
 
 
 .hidden {
