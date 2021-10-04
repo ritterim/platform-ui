@@ -1,5 +1,6 @@
 @use "config";
 @use "mixins";
+@use "variables";
 @use "sass:map";
 
 // Display
@@ -73,6 +74,11 @@
   }
 }
 
+@each $display in variables.$displays {
+  .display--#{$display} {
+    display: $display !important;
+  }
+}
 
 @each $breakpoint, $size in config.$breakpoints {
   @each $display, $d in (s: show, h: hide) {
@@ -86,12 +92,22 @@
         @media (min-width: ($size)) {
           display: block !important;
 
+          &.display--inline-block {
+            display: inline-block !important;
+          }
+
+          &.display--inline {
+            display: inline !important;
+          }
+
           &.flex,
+          &.display--flex,
           &.block-container {
             display: flex !important;
           }
 
-          &.flex-inline {
+          &.flex-inline,
+          &.display--inline-flex  {
             display: inline-flex !important;
           }
         }
@@ -121,12 +137,22 @@
             @else {
               display: block !important;
 
+              &.display--inline-block {
+                display: inline-block !important;
+              }
+
+              &.display--inline {
+                display: inline !important;
+              }
+
               &.flex,
+              &.display--flex,
               &.block-container {
                 display: flex !important;
               }
   
-              &.flex-inline {
+              &.flex-inline,
+              &.display--inline-flex  {
                 display: inline-flex !important;
               }
             }
@@ -148,13 +174,23 @@
             }
             @else {
               display: block !important;
+
+              &.display--inline-block {
+                display: inline-block !important;
+              }
+
+              &.display--inline {
+                display: inline !important;
+              }
   
               &.flex,
+              &.display--flex,
               &.block-container {
                 display: flex !important;
               }
   
-              &.flex-inline {
+              &.flex-inline,
+              &.display--inline-flex {
                 display: inline-flex !important;
               }
             }
