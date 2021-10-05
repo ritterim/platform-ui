@@ -1,6 +1,10 @@
 # Version History
 
 ---
+## 1.2.22
+    - `display--` prefix for display utility classes.
+    - remove `color: initial` from border--color- utility classes
+
 ## 1.2.21
     - has-icon classes work on `select` dropdowns
 
