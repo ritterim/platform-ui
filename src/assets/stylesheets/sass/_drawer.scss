@@ -8,9 +8,9 @@
 //
 // Drawers slide up or in-from-right.
 //
-// There are some key classes you need for the drawer to work properly. Be sure to use `drawer drawer--closed` on each drawer.
+// There are some key classes you need for the drawer to work properly.
 // From this point, you want to add the proper animation class to the drawer. In the examples below, we have the classes set for the
-// direction of the drawer animation. Now all you need to do is toggle the class `drawer--closed` to show or hide the drawer.
+// direction of the drawer animation. Now all you need to do is toggle the class `drawer--active` to show or hide the drawer.
 //
 // You can have a drawer open from the bottom by using the class `drawer-bottom`. To have a drawer open from the right
 // use `drawer-right`.
@@ -23,7 +23,7 @@
 //   <button class="button button--post button--lg drawer__open mr-2" data-drawer="default">Toggle default drawer</button>
 //   <button class="button button--post button--lg drawer__open" data-drawer="single-row">Toggle single row drawer</button>
 // </div>
-// <div id="default" class="drawer drawer-bottom drawer--closed animated slideInUp fastest">
+// <div id="default" class="drawer drawer-bottom animated slideInUp fastest">
 //   <div class="drawer__inner animated slideInUp fastest">
 //     <div class="drawer__header">
 //       <button class="button drawer__close" data-drawer="default">Close <i class="pi-times" aria-hidden="true"></i></button>
@@ -34,7 +34,7 @@
 //     </div>
 //   </div>
 // </div>
-// <div id="single-row" class="drawer drawer-bottom drawer--single-row drawer--closed animated slideInUp fastest">
+// <div id="single-row" class="drawer drawer-bottom drawer--single-row animated slideInUp fastest">
 //   <div class="drawer__inner animated slideInUp fastest">
 //     <div class="drawer__header">
 //       <button class="button drawer__close" data-drawer="single-row">Close <i class="pi-times" aria-hidden="true"></i></button>
@@ -55,7 +55,7 @@
 //
 // Markup:
 // <button class="button button--post button--lg drawer__open" data-drawer="right">Toggle right drawer</button>
-// <div id="right" class="drawer drawer-right slide-right-enter-active drawer--closed pt-5 pb-3 px-4">
+// <div id="right" class="drawer drawer-right slide-right-enter-active pt-5 pb-3 px-4">
 //   <div class="flex flex--align-center flex--justify-between pb-3 mb-2">
 //     <div class="flex flex--align-center">
 //       <button class="button button--secondary js-toggle-form">
@@ -75,7 +75,7 @@
 //
 // Markup:
 // <button class="button button--post button--lg drawer__open" data-drawer="left">Toggle left drawer</button>
-// <div id="left" class="drawer drawer-left slide-left-enter-active drawer--closed pt-5 pb-3 px-4">
+// <div id="left" class="drawer drawer-left slide-left-enter-active pt-5 pb-3 px-4">
 //   <div class="flex flex--align-center flex--justify-between pb-3 mb-2">
 //     <div class="flex flex--align-center">
 //       <button class="button button--secondary js-toggle-form">
@@ -95,7 +95,7 @@
 //
 // Markup:
 // <button class="button button--post button--lg drawer__open" data-drawer="top">Toggle top drawer</button>
-// <div id="top" class="drawer drawer-top slide-top-enter-active drawer--closed p-4">
+// <div id="top" class="drawer drawer-top slide-top-enter-active p-4">
 //   <div class="flex flex--align-center flex--justify-between pb-3 mb-2">
 //     <div class="flex flex--align-center">
 //       <button class="button button--secondary js-toggle-form">
@@ -113,7 +113,7 @@
   $self: &;
   background-color: config.$drawer-background;
   box-shadow: 0 -1rem 2rem rgba(map.get(variables.$greyscale, 'black'), .4);
-  display: flex;
+  display: none;
   flex-direction: column;
   width: 100%;
   position: fixed;
@@ -165,8 +165,8 @@
     padding: config.$drawer-primary-padding;
     position: relative;
   }
-  &--closed {
-    display: none;
+  &--active {
+    display: flex;
   }
   &__open {
     cursor: pointer;
