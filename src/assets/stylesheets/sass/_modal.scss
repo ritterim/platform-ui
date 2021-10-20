@@ -5,7 +5,7 @@
 
 // Modal
 //
-// Modal default state is closed. Toggling `.modal--closed` on both the `.modal--overlay` and `.modal` will diplay the modal.
+// Modal default state is closed. Toggling `.modal--active` on both the `.modal--overlay` and `.modal` will diplay the modal.
 //
 // `.modal__close` on the close button is also a handle for JS.
 //
@@ -18,7 +18,7 @@
 // You may run into issues where the background scrolls while your modal is open. To prevent this behavior, add the `.modal-open` class to your body element when a modal is open. See demo below for example and note how adding the `.modal-open` class to the body on open makes the background scroll bar go away.
 //
 // Markup:
-// <div id="default-modal" class="modal modal--closed" tabindex="-1">
+// <div id="default-modal" class="modal" tabindex="-1">
 //   <div class="modal__inner animated slideInUp faster">
 //     <div class="modal__header">
 //       <button class="button modal__close" data-modal="default-modal">Close <i class="pi-times"></i></button>
@@ -35,7 +35,7 @@
 //     </div>
 //   </div>
 // </div>
-// <div id="small-modal" class="modal modal--small modal--closed" tabindex="-1">
+// <div id="small-modal" class="modal modal--small" tabindex="-1">
 //   <div class="modal__inner animated slideInUp faster">
 //     <div class="modal__header">
 //       <button class="button modal__close" data-modal="small-modal">Close <i class="pi-times"></i></button>
@@ -46,7 +46,7 @@
 //     </div>
 //   </div>
 // </div>
-// <div id="centered-modal" class="modal modal--centered modal--closed" tabindex="-1">
+// <div id="centered-modal" class="modal modal--centered" tabindex="-1">
 //   <div class="modal__inner animated slideInUp faster">
 //     <div class="modal__header">
 //       <button class="button modal__close" data-modal="centered-modal">Close <i class="pi-times"></i></button>
@@ -57,7 +57,7 @@
 //     </div>
 //   </div>
 // </div>
-// <div id="large-modal" class="modal modal--large modal--closed" tabindex="-1">
+// <div id="large-modal" class="modal modal--large" tabindex="-1">
 //   <div class="modal__inner animated slideInUp faster">
 //     <div class="modal__header">
 //       <button class="button modal__close" data-modal="large-modal">Close <i class="pi-times"></i></button>
@@ -68,7 +68,7 @@
 //     </div>
 //   </div>
 // </div>
-// <div id="full-modal" class="modal modal--full modal--closed" tabindex="-1">
+// <div id="full-modal" class="modal modal--full" tabindex="-1">
 //   <div class="modal__inner animated slideInUp faster">
 //     <div class="modal__header">
 //       <button class="button modal__close" data-modal="full-modal">Close <i class="pi-times"></i></button>
@@ -112,7 +112,7 @@
 // header can seem unecessarry. See the code example below.
 // 
 // Markup:
-// <div id="dialog" class="modal modal--small modal--centered modal--closed" tabindex="-1">
+// <div id="dialog" class="modal modal--small modal--centered" tabindex="-1">
 //   <div class="modal__inner animated slideInUp faster">
 //     <div class="modal__content">
 //       <p class="text--size-lg text--center">Are you sure you want to select these options?</p>
@@ -149,7 +149,7 @@
 // container.
 // 
 // Markup:
-// <div id="message-modal" class="modal modal--centered modal--closed" tabindex="-1">
+// <div id="message-modal" class="modal modal--centered" tabindex="-1">
 //   <div class="modal__inner animated slideInUp faster">
 //     <div class="modal__content">
 //       <button class="button modal__close pos-abs pin-right pin-top mr-3 mt-3" data-modal="message-modal">Close <i class="pi-times"></i></button>
@@ -179,6 +179,7 @@
 
   $self: &;
   background: rgba(map.get(variables.$greyscale, 'black'), .5);
+  display: none;
   position: fixed;
   z-index: 500;
   overflow-x: hidden;
@@ -188,8 +189,8 @@
   right: 0;
   left: 0;
 
-  &--closed {
-    display: none;
+  &--active {
+    display: block;
   }
 
   &--full {
