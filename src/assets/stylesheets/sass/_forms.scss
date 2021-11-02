@@ -296,9 +296,19 @@
 //     </label>
 //   </div>
 //   <div class="block">
-//     <div class="form__field form__button-group">
-//       <button class="button button--post button--lg">Submit</button>
-//     </div>
+//    <label for="Option" class="form__field has-icon--right">Option
+//      <div class="form__select-wrapper">
+//        <select name="Option Select" id="Option">
+//          <option value="Option1">Option 1</option>
+//          <option value="Option2">Option 2</option>
+//          <option value="Option3">Option 3</option>
+//          <option value="Option4">Option 4</option>
+//          <option value="Option5">Option 5</option>
+//          <option value="Option6">Option 6</option>
+//        </select>
+//      </div>
+//      <i class="pi-plus text-med-blue"></i>
+//    </label>
 //   </div>
 // </form>
 //
@@ -1211,6 +1221,14 @@ legend {
       top: 50%;
       transform: rotate(-45deg) translateY(-50%);
       width: .3rem;
+    }
+
+    .has-icon &,
+    .has-icon--right & {
+
+      &:after {
+        display: none;
+      }
     }
 
     &.time {

@@ -46,9 +46,30 @@
 // | `border--width-{1}`|                     |                 |                 |
 //
 //
-// The `border--color-{color}` class combines the [brand colors](/section-color.html#kssref-color-brandcolors), and [secondary colors](/section-color.html#kssref-color-secondarycolors) maps.
-//
 // Styleguide Utilities.Borders
+
+// Border Colors
+// 
+// The `border--color-{color}` class combines the [brand colors](/section-color.html#kssref-color-brandcolors), and [secondary colors](/section-color.html#kssref-color-secondarycolors) maps.
+// 
+// You can also apply a border to a specific direction (`border-{direction}-color--{color}`). For example: `border-r--color-navy` would apply `border-right-color: navy`.
+// 
+// A border color can be removed from an element or direction by using, `border--color-transparent` or `border-{direction}--color-transparent`.
+// 
+// Markup:
+// <div class="card border--color-navy">
+//   <h4 class="pb-2 mb-2">Card Header</h4>
+//   <div class="card__content block-container blocks px-3">
+//     <div class="block block-6 border-r border-r--color-med-blue">
+//       <p>Here is some generic content for testing purposes. Don't worry about the actualy content of this card.</p>
+//     </div>
+//     <div class="block block-6">
+//       <p>The idea is to show how cool we can get with making borders.</p>
+//     </div>
+//   </div>
+// </div>
+// 
+// Styleguide Utilities.Borders.Colors
 
 .no-border {
   border: none !important;
@@ -105,7 +126,6 @@
 @each $name, $color in colors.$all-colors {
   .border--color-#{$name} {
     border-color: $color !important;
-    color: initial;
   }
 }
 

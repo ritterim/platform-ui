@@ -1,8 +1,16 @@
 # Version History
 
 ---
-## 1.2.20
-    - Updated transitions on text utilities, site menu to fix odd behavior
+## 1.2.23
+- Updated transitions on text utilities, site menu to fix odd behavior
+## 1.2.22
+    - `display--` prefix for display utility classes.
+    - remove `color: initial` from border--color- utility classes
+
+## 1.2.21
+    - has-icon classes work on `select` dropdowns
+
+
 ## 1.2.18
     - add font-style: normal utility (text--normal)
     - add text-align: left utility (text--left)
