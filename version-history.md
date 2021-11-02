@@ -1,6 +1,8 @@
 # Version History
 
 ---
+## 1.2.23
+- Updated transitions on text utilities, site menu to fix odd behavior
 ## 1.2.22
     - `display--` prefix for display utility classes.
     - remove `color: initial` from border--color- utility classes

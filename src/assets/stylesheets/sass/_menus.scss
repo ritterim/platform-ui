@@ -412,8 +412,11 @@ $all-colors: () !default;
     color: var(--menu-text-color);
     display: flex;
     line-height: 1;
-    transition: config.$transitions;
     padding: map.get(variables.$spacers, 2) map.get(variables.$spacers, 3);
+  }
+  
+  .dropdown__content-item{
+    transition: config.$transitions;
   }
 
   &:not([class*=background-]) {
