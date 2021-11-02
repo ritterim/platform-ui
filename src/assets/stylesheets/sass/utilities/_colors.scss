@@ -42,9 +42,9 @@ $site-colors: () !default;
         border-color: $color !important;
       }
       color: $color !important;
-      transition: .2s;
+
       &--hover {
-        transition: config.$transitions;
+        transition: background-color config.$transitions, color config.$transitions;
 
         &.text-underline--hover {
           &:after {
@@ -62,7 +62,7 @@ $site-colors: () !default;
       background-color: $color !important;
 
       &--hover {
-        transition: config.$transitions;
+        transition: background-color config.$transitions;
 
         &:hover {
           background-color: $color !important;
@@ -96,7 +96,6 @@ $site-colors: () !default;
     .text-#{$name} {
       border-color: $color !important;
       color: $color !important;
-      transition: .2s;
     }
     // background color
     .background-#{$name} {
