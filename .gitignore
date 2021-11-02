@@ -1,13 +1,7 @@
 .DS_Store
 .vscode/
 node_modules/
-dist/*.eot
-dist/*.svg
-dist/*.ttf
-dist/*.woff
-dist/*.woff2
-dist/js
-dist/platform-ui.min.css
+dist/
 src/assets/*.pdf
 src/assets/*.csv
 src/assets/*.txt
