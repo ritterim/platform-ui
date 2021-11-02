@@ -1,6 +1,8 @@
 # Version History
 
 ---
+## 1.2.20
+    - Updated transitions on text utilities, site menu to fix odd behavior
 ## 1.2.18
     - add font-style: normal utility (text--normal)
     - add text-align: left utility (text--left)
