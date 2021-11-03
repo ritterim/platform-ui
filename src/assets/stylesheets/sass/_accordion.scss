@@ -110,7 +110,7 @@
   color: $accordion-primary-color;
   font-family: map.get(config.$fonts, 'base');
   font-size: 100%;
-  transition: config.$transitions;
+  transition: border-color config.$transitions;
 
   &:last-of-type {
     border-bottom-color: $accordion-primary-border-color;
@@ -142,12 +142,12 @@
   &__header {
     display: flex;
     position: relative;
-    transition: config.$transitions;
+    transition: background-color config.$transitions;
     z-index: 10;
   }
 
   &__icon {
-    transition: config.$transitions;
+    transition: transform config.$transitions;
   }
 
   &__content {
