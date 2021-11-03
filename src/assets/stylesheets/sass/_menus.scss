@@ -419,6 +419,10 @@ $all-colors: () !default;
     transition: config.$transitions;
   }
 
+  .site-menu__item{
+    transition: border config.$transitions, text-shadow config.$transitions;
+  }
+
   &:not([class*=background-]) {
 
     .site-menu__item,

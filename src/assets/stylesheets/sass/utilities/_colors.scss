@@ -43,7 +43,7 @@ $site-colors: () !default;
       }
       color: $color !important;
       &--hover {
-        transition: background-color config.$transitions, color config.$transitions;
+        transition: background-color config.$transitions;
 
         &.text-underline--hover {
           &:after {

@@ -1,6 +1,8 @@
 # Version History
 
 ---
+## 1.2.24
+- Updated transitions on accordion, site-menu items, text utilties
 ## 1.2.23
 - Updated transitions on text utilities, site menu to fix odd behavior
 ## 1.2.22
