@@ -1,10 +1,13 @@
 # Version History
 
 ---
+## 1.2.25 
+    - add hospital-small icon
+    - fixes lock-solid icon
 ## 1.2.24
-- Updated transitions on accordion, site-menu items, text utilties
+    - Updated transitions on accordion, site-menu items, text utilties
 ## 1.2.23
-- Updated transitions on text utilities, site menu to fix odd behavior
+    - Updated transitions on text utilities, site menu to fix odd behavior
 ## 1.2.22
     - `display--` prefix for display utility classes.
     - remove `color: initial` from border--color- utility classes
