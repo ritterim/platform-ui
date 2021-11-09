@@ -7,18 +7,16 @@ const connect = require('gulp-connect');
 const header = require('gulp-header');
 const kss = require('kss');
 const merge = require('merge-stream');
-const nano = require('cssnano');
+const cssnano = require('cssnano');
 const pjson = require('./package.json');
-const postcss = require("gulp-postcss");
-const rename = require("gulp-rename");
+const postcss = require('gulp-postcss');
+const rename = require('gulp-rename');
 const run = require('gulp-run');
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));
 const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
 const year = new Date().getFullYear();
 const { watch } = require('gulp');
-
-sass.compiler = require('sass');
 
 const puiHeader = ['/*!',
   '  Platform UI v' + pjson.version + ' | ' + pjson.name + '\n',
@@ -71,6 +69,10 @@ function generateIconAssets() {
 }
 
 function css() {
+  const plugins = [
+    autoprefixer(),
+    cssnano()
+  ];
   return src([
       'node_modules/normalize.css/normalize.css',             // normalize.css
       'src/assets/stylesheets/sass/main.scss',                // platform ui scss
@@ -79,7 +81,7 @@ function css() {
     ])
     .pipe(sass())
     .pipe(concat('platform-ui.min.css'))
-    .pipe(postcss([autoprefixer(), nano()]))
+    .pipe(postcss( plugins ))
     .pipe(header( puiHeader ))
     .pipe(dest('src/assets/stylesheets/'))
     .pipe(dest('dist/'))
