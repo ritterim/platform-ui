@@ -9,8 +9,6 @@
 //
 // `.modal__close` on the close button is also a handle for JS.
 //
-// Animation note: using `animated` must be placed on `.modal__inner` to maintain correct positioning.
-//
 // The default size of the modal is `medium`, you can use `modal--small`, `modal--large`, or `modal--full` for different sized modals.
 //
 // You can center a modal in the middle of the window with the modifier `modal--centered`.
@@ -19,7 +17,7 @@
 //
 // Markup:
 // <div id="default-modal" class="modal" tabindex="-1">
-//   <div class="modal__inner animated slideInUp faster">
+//   <div class="modal__inner">
 //     <div class="modal__header">
 //       <button class="button modal__close" data-modal="default-modal">Close <i class="pi-times"></i></button>
 //       Standard Modal
@@ -36,7 +34,7 @@
 //   </div>
 // </div>
 // <div id="small-modal" class="modal modal--small" tabindex="-1">
-//   <div class="modal__inner animated slideInUp faster">
+//   <div class="modal__inner">
 //     <div class="modal__header">
 //       <button class="button modal__close" data-modal="small-modal">Close <i class="pi-times"></i></button>
 //       Modal
@@ -47,7 +45,7 @@
 //   </div>
 // </div>
 // <div id="centered-modal" class="modal modal--centered" tabindex="-1">
-//   <div class="modal__inner animated slideInUp faster">
+//   <div class="modal__inner">
 //     <div class="modal__header">
 //       <button class="button modal__close" data-modal="centered-modal">Close <i class="pi-times"></i></button>
 //       Modal
@@ -58,7 +56,7 @@
 //   </div>
 // </div>
 // <div id="large-modal" class="modal modal--large" tabindex="-1">
-//   <div class="modal__inner animated slideInUp faster">
+//   <div class="modal__inner">
 //     <div class="modal__header">
 //       <button class="button modal__close" data-modal="large-modal">Close <i class="pi-times"></i></button>
 //       Modal
@@ -69,7 +67,7 @@
 //   </div>
 // </div>
 // <div id="full-modal" class="modal modal--full" tabindex="-1">
-//   <div class="modal__inner animated slideInUp faster">
+//   <div class="modal__inner">
 //     <div class="modal__header">
 //       <button class="button modal__close" data-modal="full-modal">Close <i class="pi-times"></i></button>
 //       Modal
@@ -113,7 +111,7 @@
 // 
 // Markup:
 // <div id="dialog" class="modal modal--small modal--centered" tabindex="-1">
-//   <div class="modal__inner animated slideInUp faster">
+//   <div class="modal__inner">
 //     <div class="modal__content">
 //       <p class="text--size-lg text--center">Are you sure you want to select these options?</p>
 //       <div class="block-container blocks p-3"> 
@@ -150,7 +148,7 @@
 // 
 // Markup:
 // <div id="message-modal" class="modal modal--centered" tabindex="-1">
-//   <div class="modal__inner animated slideInUp faster">
+//   <div class="modal__inner">
 //     <div class="modal__content">
 //       <button class="button modal__close pos-abs pin-right pin-top mr-3 mt-3" data-modal="message-modal">Close <i class="pi-times"></i></button>
 //       <p class="text--size-lg text--center mt-4">Are you sure you want to select these options?</p>
