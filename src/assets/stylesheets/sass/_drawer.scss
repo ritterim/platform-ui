@@ -121,6 +121,10 @@
   bottom: 0;
   left: 0;
 
+  &--active {
+    display: flex;
+  }
+
   &__inner {
     height: 100%;
     min-height: 50vh;
@@ -165,9 +169,7 @@
     padding: config.$drawer-primary-padding;
     position: relative;
   }
-  &--active {
-    display: flex;
-  }
+
   &__open {
     cursor: pointer;
 
