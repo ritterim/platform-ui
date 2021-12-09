@@ -187,7 +187,6 @@
     flex-direction: column;
     height: 100%;
     position: fixed;
-    transition: all ease-in-out config.$transitions;
     // z-index lower than the fixed header
     z-index: 99;
 
