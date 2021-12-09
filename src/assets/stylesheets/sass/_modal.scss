@@ -177,7 +177,6 @@
 
   $self: &;
   background: rgba(map.get(variables.$greyscale, 'black'), .5);
-  display: none;
   position: fixed;
   z-index: 500;
   overflow-x: hidden;
@@ -186,9 +185,16 @@
   bottom: 0;
   right: 0;
   left: 0;
+  visibility: hidden;
+  opacity: 0;
+
+  @media (prefers-reduced-motion: no-preference) {
+    transition: config.$transitions ease-in-out;
+  }
 
   &--active {
-    display: block;
+    visibility: visible;
+    opacity: 1;
   }
 
   &--full {
@@ -243,6 +249,15 @@
   &__inner {
     background: map.get(variables.$greyscale, 'white');
     margin: map.get(variables.$spacers, 4) auto;
+    transform: translate(0 ,100%);
+
+    @media (prefers-reduced-motion: no-preference) {
+      transition: config.$transitions ease-in-out;
+    }
+
+    .modal--active & {
+      transform: translate(0, 0);
+    }
 
     @include mixins.breakpoint(tablet, max) {
       height: auto;
