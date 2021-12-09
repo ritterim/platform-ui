@@ -1,6 +1,9 @@
 # Version History
 
 ---
+## 1.2.26
+    - Remove --closed classes from drawers and modals
+    - Use --active classes to open drawers and modals
 ## 1.2.25 
     - add hospital-small icon
     - fixes lock-solid icon

@@ -2,12 +2,12 @@ let closeModalButtons = document.querySelectorAll('.pui-modal__close, .modal__cl
 let openModalButtons = document.querySelectorAll('.pui-modal__open, .modal__open');
 
 let modalClose = (modal) => {
-  modal.classList.add('pui-modal--closed', 'modal--closed');
+  modal.classList.remove('pui-modal--active', 'modal--active');
   document.body.classList.remove('modal-open');
 }
 
 let modalOpen = (modal) => {
-  modal.classList.remove('pui-modal--closed', 'modal--closed');
+  modal.classList.add('pui-modal--active', 'modal--active');
   document.body.classList.add('modal-open');
   modal.focus();
 }
