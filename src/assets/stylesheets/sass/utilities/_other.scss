@@ -148,21 +148,45 @@
 }
 
 
-// Cursor Pointer
+// Cursors
 //
-// If you want to ensure that the mouse is a pointer on hover add the class `pointer`.
+// If you need to specify the type of cursor to use, you can apply the following any of the following cursor utilities:
 //
-// Markup:
+// | Cursor Type            | Class                 | 
+// | ---------------------- | --------------------- | 
+// | Default                | `.cursor--default`    | 
+// | Pointer                | `.cursor--pointer`    | 
+// | Not-allowed            | `.cursor--not-allowed`| 
+// | Help                   | `.cursor--help`       |
+//
+//
+// #### Example:
 // <div class="card">
 //   <h3>Hover over the text below</h3>
-//   <p class="pointer">This is a standard p and doesn't have a pointer, unless you hover.</p>
+//   <p class="cursor--pointer">This is a standard p and doesn't have a pointer, unless you hover.</p>
 // </div>
 //
 // Styleguide Utilities.Cursor
 
-.pointer {
+$cursors: (
+  pointer,
+  default,
+  not-allowed,
+  help
+);
+
+.pointer{
   cursor: pointer;
 }
+
+@each $cursor in $cursors{
+  .cursor{
+    &--#{$cursor} {
+      cursor: $cursor
+    }
+  }
+}
+
 
 
 // Position
