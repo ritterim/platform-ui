@@ -6,68 +6,137 @@
 @use "sass:meta";
 @use "sass:math";
 
+// Menus
+// 
+// Below you will find documentation and examples for our [site-menu](#menus-sitemenu) and [icon-menu](#menus-iconmenu). The site-menu works well as the main navigation for your site. 
+// The icon-menu works well at grouping clickable icons together.
+// 
+// Styleguide Menus
 
 // Site Menu
+// 
+// Our site-menu was built to be used in the header as a main site navigation. This is the standard look and structure of a site-menu. 
+// You can customize a site-menu in a few ways:
+//  - Add a [background-color](/styleguide/section-menus.html#menus-sitemenu-background)
+//  - Add [borders](/styleguide/section-menus.html#menus-sitemenu-bordered) separating menu items
+//  - Add an [underline on hover](/styleguide/section-menus.html#menus-sitemenu-hoverunderline) to menu items
+//  - Use a [dropdown](/styleguide/section-menus.html#menus-sitemenu-dropdown) in your menu
+// 
+// You can also make it [responsive!](/styleguide/section-menus.html#menus-sitemenu-responsive)
+// 
+// Markup:
+// <nav class="site-menu">
+//   <a href="#" class="site-menu__item">Item 1</a>
+//   <a href="#" class="site-menu__item">Item 2</a>
+//   <a href="#" class="site-menu__item">Item 3</a>
+//   <a href="#" class="site-menu__item">Item 4</a>
+//   <a href="#" class="site-menu__item">Item 5</a>
+// </nav>
+// 
+// Weight: -1
+// 
+// Styleguide Menus.SiteMenu
+
+// Site Menu - Responsive
+// 
+// To make the site-menu work on smaller (mobile) devices there are a couple of things you need to add. First, be sure to wrap the menu in 
+// `site-menu-wrapper`. This is essentially a relative positioned container that allows the menu to atach to. From here all you need is 
+// to add the button to open the menu. Use the class `site-menu-mobile-action` to toggle the menu. **Note:** It's best practice to use 
+// a `<button>` in this case. See the example below. 
+// 
+// All the button does is toggle the menu so you'll want to add an icon inside. You can use our `pi-menu` here to use the standard "hamburger menu." 
+// Since this button is outside of the `site-menu`, be sure to add the approriate color to it. For example, if you have a navy background you woould 
+// probably want to add `text-white` to the button.
+// 
+// Add the button before the `site-menu` as a sibling. Both the `site-menu-mobile-action` and `site-menu` need to be children of the 
+// `site-menu-wrapper` for things to work properly. 
+// 
+// | <i class="pi-warning text-orange"></i> NOTE: The responsive menu and the dropdown menus require the use of JavaScript |
+// | --
+// 
+// **Note:** `background-white` was added to the `site-menu-wrapper` wrapping the site-menu in order to improve the visibility of the example.
+// 
+// Markup:
+// <div class="site-menu-wrapper background-white">
+//   <button class="site-menu-mobile-action">
+//     <span class="sr-only">Toggle Navigation</span>
+//     <i aria-hidden="true" focusable="false" class="pi-menu pi-xl"></i>
+//   </button>
+//   <nav class="site-menu">
+//     <a href="#" class="site-menu__item">Item 1</a>
+//     <a href="#" class="site-menu__item">Item 2</a>
+//     <a href="#" class="site-menu__item">Item 3</a>
+//     <a href="#" class="site-menu__item">Item 4</a>
+//     <div class="dropdown">
+//       <a href="#" class="site-menu__item dropdown__trigger">
+//         Item 1 <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+//       </a>
+//       <div class="dropdown__content">
+//         <a href="#" class="dropdown__content-item">Link 1</a>
+//         <a href="#" class="dropdown__content-item">Link 2</a>
+//         <a href="#" class="dropdown__content-item">Link 3</a>
+//         <a href="#" class="dropdown__content-item">Link 4</a>
+//       </div>
+//     </div>
+//   </nav>
+// </div>
+// 
+// Weight: 6
+// 
+// Styleguide Menus.SiteMenu.Responsive
+
+// Site Menu - Header Example
+// 
+// Below is an example of a site header that uses a `site-menu` as the main navigation. The navigation is responsive. 
+// You can see if you scale your screen down. 
 //
-// Here is a simple menu. This should be used inside your site header. It would work great as a navigation menu.
-// The link colors are set to inherit the color defined by the `body`. In this case, `#333`. The links have a subtle
-// shadow on mouse over to give the links a nice hover effect.
-//
-// Our site-menu works great for a site navigation that lives inside your header. It's fully responsive out of the box. Just be sure to use
-// the appropriate class names. Your site-menu should be wrapped in a `site-menu-wrapper`. This ensures the proper position is applied to the wrapper
-// and allows the responsive menu to function properly. 
+// We wrapped the site-menu in `site-menu-wrapper`. This ensures the proper position is applied to the wrapper and allows 
+// the responsive menu to function properly. 
 // 
 // If you have a logo that links to your home page, wrap that in an `a` with the class `site-logo`.
 // 
-// In order to fire the responsive site-menu you will need an action. Use `site-menu-mobile-action`
-// on a `button` or `a`. From there, use any font-icon you'd like to reflect the mobile menu. Feel free to use our icon `pi-menu` which reflects the 
-// industry standard "hamburger menu". 
+// Notice that this header has a navy background. You can add a background color to the site-menu and it will handle all of the text colors
+// and hovers. The dropdown menu will also work with this color. But this is separate from the reast of the header. So in this case we add 
+// `background-navy` to the `header` as well. We also added some padding too. These are all things that can be handled by using more of our
+// [utility classes](/section-utilities.html).
 // 
-// Next, your `site-menu` should follow the `site-mobile-menu-action`. In other words, they should be siblings. Inside your site-menu add the class
-// `site-menu__item` to any link, or anything that you want to be perceived as a link. 
-// 
-// If you want to have a dropdown menu within the site-menu, you can add `dropdown__trigger` to a `site-menu__item`, or add an element with the class of
-// `dropdown__content` as a sibling to your `dropdown__trigger`. Finally, wrap these elements in a `dropdown` class. When you click on the `dropdown__trigger`
-// your dropdown__content will appear. You can put anything inside the dropdown__content. If you have a list of links and you want them to look like the rest
-// of the links inside your site-menu, add the class `dropdown__content-item`. 
-// 
-// We built the site-menu to be light, and work well for your needs. It does not come with a background color set. However, the site-menu will inherit 
-// its parent background-colors. You can read more about this below in the documentation.
+// Another thinig to notice is the use of `dropdown--right` on the dropdown in the menu. Since it is on the far right of the header we don't 
+// want it breaking and "hanging off" the menu. Using `dropdown--right` modifier positions the `dropdown__content` to the right of it's parent. 
 // 
 // | <i class="pi-warning text-orange"></i> NOTE: The responsive menu and the dropdown menus require the use of JavaScript |
 // | --
 // 
 // Markup:
-// <header class="site-menu-wrapper">
-//     <a href="/" class="site-logo">
-//         <img src="https://via.placeholder.com/150x50.png?text=Site+Logo" alt="Site Logo" />
-//     </a>
-//     <button class="site-menu-mobile-action">
-//       <span class="sr-only">Toggle Navigation</span>
-//       <i aria-hidden="true" focusable="false" class="pi-menu pi-xl"></i>
-//     </button>
-//     <nav class="site-menu">
-//       <a href="#" class="site-menu__item">Item 1</a>
-//       <a href="#" class="site-menu__item">Item 2</a>
-//       <a href="#" class="site-menu__item">Item 3</a>
-//       <a href="#" class="site-menu__item">Item 4</a>
-//       <div class="dropdown">
-//         <a href="#" class="site-menu__item dropdown__trigger">
-//           Item 1 <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
-//         </a>
-//         <div class="dropdown__content">
-//           <a href="#" class="dropdown__content-item">Link 1</a>
-//           <a href="#" class="dropdown__content-item">Link 2</a>
-//           <a href="#" class="dropdown__content-item">Link 3</a>
-//           <a href="#" class="dropdown__content-item">Link 4</a>
-//         </div>
+// <header class="site-menu-wrapper background-navy p-2">
+//   <a href="/" class="site-logo">
+//       <img src="https://via.placeholder.com/150x50.png?text=Site+Logo" alt="Site Logo" />
+//   </a>
+//   <button class="site-menu-mobile-action text-white">
+//     <span class="sr-only">Toggle Navigation</span>
+//     <i aria-hidden="true" focusable="false" class="pi-menu pi-xl"></i>
+//   </button>
+//   <nav class="site-menu background-navy">
+//     <a href="#" class="site-menu__item">Item 1</a>
+//     <a href="#" class="site-menu__item">Item 2</a>
+//     <a href="#" class="site-menu__item">Item 3</a>
+//     <a href="#" class="site-menu__item">Item 4</a>
+//     <div class="dropdown dropdown--right">
+//       <a href="#" class="site-menu__item dropdown__trigger">
+//         Item 1 <i class="ml-1 pi-angle-down" aria-hidden="true"></i>
+//       </a>
+//       <div class="dropdown__content">
+//         <a href="#" class="dropdown__content-item">Link 1</a>
+//         <a href="#" class="dropdown__content-item">Link 2</a>
+//         <a href="#" class="dropdown__content-item">Link 3</a>
+//         <a href="#" class="dropdown__content-item">Link 4</a>
 //       </div>
-//     </nav>
+//     </div>
+//   </nav>
 // </header>
 //
-// Weight: -1
+// Weight: 7
 //
-// Styleguide Menus.SiteMenu
+// Styleguide Menus.SiteMenu.Example
 
 
 // Site Menu - Background Color
@@ -77,6 +146,9 @@
 // you set. The color of the links will also change based on the color of the site-menu. If the color is dark, the link color 
 // will be white. If the background color is a lighter color, the link color will be `var(--dark)`. Which is currently set to
 // the body color.
+// 
+// We built the site-menu to be light, and work well for your needs. It does not come with a background color set. However, the site-menu will inherit 
+// its parent background-colors. You can read more about this below in the documentation.
 // 
 // <div class="message message--warning" data-header="">
 //   <p>If you want your site-menu to have a background-color without the inherit hover effects, just wrap the <code>site-menu</code> in an element with a <code>background-{color}</code> class. The site-menu and dropdowns will inherit background colors from their parents.</p>
@@ -127,7 +199,7 @@
 // Adding the class `hover-underline` to your `site-menu` will give the `<button>`s in the menu a bottom border on hover.
 // 
 // <div class="message message--warning" data-header="">
-//   <p>You can change the color of your border hovers by adding the modifier of <code>hover-underline--{color}</code>.</p>
+//   <p class="mt-0">You can change the color of your border hovers by adding the modifier of <code>hover-underline--{color}</code>.</p>
 // </div>
 // 
 // Markup:
@@ -178,6 +250,11 @@
 //      of <code>dropdown--centered</code> or <code>dropdown--right</code> to the <code>dropdown</code> class.
 //   </p>
 // </div>
+// 
+// | <i class="pi-warning text-orange"></i> NOTE: The responsive menu and the dropdown menus require the use of JavaScript |
+// | --
+// 
+// **Note:** `background-white` was added to the `div` wrapping the site-menu in order to improve the visibility of the example.
 // 
 //
 // Markup:
@@ -342,6 +419,8 @@
 // ```
 // 
 // <div class="my-3"></div>
+// 
+// Weight: 9
 //
 // Styleguide Menus.Fixed
 
@@ -882,6 +961,8 @@ $all-colors: () !default;
 //   </div>
 // </div>
 //
+// Weight: 8
+// 
 // Styleguide Menus.IconMenu
 
 // icon menu
