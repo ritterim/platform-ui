@@ -34,16 +34,16 @@
 // | -----------------| ------------------------------------------ | -----------------------------|
 // | `show-print`     | Show on printed media                      | `@media print`               |
 // | `hide-print`     | Hide on printed media                      | `@media print`               |
-// | `show`           | Show on mobile devices and higher          | No specified resolution      |
-// | `show:tablet`    | Show on tablet devices and higher          | `@media (min-width: 768px)`  |
-// | `show:lg-tablet` | Show on large tablets devices and higher   | `@media (min-width: 991px)`  |
-// | `show:laptop`    | Show on laptop devices and higher          | `@media (min-width: 1240px)` |
-// | `show:desktop`   | Show on desktop devices and higher         | `@media (min-width: 1800px)` |
-// | `hide`           | Hide on mobile devices and higher          | No specified resolution      |
-// | `hide:tablet`    | Hide on tablet devices and higher          | `@media (min-width: 768px)`  |
-// | `hide:lg-tablet` | Hide on large tablet devices and higher    | `@media (min-width: 991px)`  |
-// | `hide:laptop`    | Hide on laptop devices and higher          | `@media (min-width: 1240px)` |
-// | `hide:desktop`   | Hide on desktop devices and higher         | `@media (min-width: 1800px)` |
+// | `show`           | Show at all screen sizes                   | No specified resolution      |
+// | `show:tablet`    | Show at our tablet breakpoint and up       | `@media (min-width: 768px)`  |
+// | `show:lg-tablet` | Show at our large tablet breakpoint and up | `@media (min-width: 991px)`  |
+// | `show:laptop`    | Show Show at our laptop breakpoint and up  | `@media (min-width: 1240px)` |
+// | `show:desktop`   | Show at our desktop breakpoint and up      | `@media (min-width: 1800px)` |
+// | `hide`           | Hide on all screen sizes                   | No specified resolution      |
+// | `hide:tablet`    | Hide on our tablet breakpoint and up       | `@media (min-width: 768px)`  |
+// | `hide:lg-tablet` | Hide on our large tablet breakpoint and up | `@media (min-width: 991px)`  |
+// | `hide:laptop`    | Hide on our laptop breakpoint and up       | `@media (min-width: 1240px)` |
+// | `hide:desktop`   | Hide on our desktop breakpoint and up      | `@media (min-width: 1800px)` |
 //
 // <div class="mb-4"></div>
 //
