@@ -1,6 +1,9 @@
 # Version History
 
 ---
+## 1.3.0
+    - Add in new responsive display classes
+    - Add in new cursor utilities
 ## 1.2.26
     - Remove --closed classes from drawers and modals
     - Use --active classes to open drawers and modals
