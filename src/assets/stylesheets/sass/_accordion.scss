@@ -137,6 +137,9 @@
         @extend %rotate-180;
       }
     }
+    .accordion__content {
+      display: block;
+    }
   }
 
   &__header {
@@ -174,10 +177,6 @@
     display: none;
     position: relative;
     z-index: 0;
-
-    &.active {
-      display: block;
-    }
   }
 }
 
