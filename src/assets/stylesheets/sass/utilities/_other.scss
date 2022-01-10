@@ -226,7 +226,7 @@ $cursors: (
 
 @each $pos, $letter in variables.$xy-border {
   .pin-#{$pos} {
-    #{$pos}: 0;
+    #{$pos}: 0 !important;
   }
 
   .pin-center {
@@ -235,7 +235,7 @@ $cursors: (
     transform: translate(-50%, -50%);
     
     &-#{$pos} {
-      #{$pos}: 50%;
+      #{$pos}: 50% !important;
       @if $pos == top or $pos == bottom {
         transform: translateY(-50%);
       } @else {
