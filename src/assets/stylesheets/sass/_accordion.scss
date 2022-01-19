@@ -137,7 +137,7 @@
         @extend %rotate-180;
       }
     }
-    .accordion__content {
+    #{$self}__content {
       display: block;
     }
   }
