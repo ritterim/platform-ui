@@ -1,6 +1,8 @@
 # Version History
 
 ---
+## 1.3.2
+    - Fix active accordion bug for pui- prefixed accordions
 ## 1.3.1
     - Add !important to position modifiers
     - Add active class to accordion
