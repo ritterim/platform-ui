@@ -1,10 +1,13 @@
 # Version History
 
 ---
+## 1.3.1
+    - Add !important to position modifiers
+    - Add active class to accordion
+    - Remove padding-right from input type date,time
 ## 1.3.0
     - Add in new responsive display classes
     - Add in new cursor utilities
-    - Remove padding-right from input type date,time
 ## 1.2.26
     - Remove --closed classes from drawers and modals
     - Use --active classes to open drawers and modals
