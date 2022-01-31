@@ -137,7 +137,7 @@
         @extend %rotate-180;
       }
     }
-    #{$self}__content {
+    > #{$self}__content {
       display: block;
     }
   }
