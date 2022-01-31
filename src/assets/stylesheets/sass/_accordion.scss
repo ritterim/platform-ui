@@ -167,11 +167,11 @@
         box-shadow: none;
       }
       > #{$self} {
-          &__header {
-          background-color: $accordion-primary-background;
-          font-weight: bold;
-          }
+        &__header {
+        background-color: $accordion-primary-background;
+        font-weight: bold;
         }
+      }
     }
     border-top: none;
     display: none;
