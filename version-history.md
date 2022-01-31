@@ -1,6 +1,8 @@
 # Version History
 
 ---
+## 1.3.4
+    - Use > selector to toggle accordion__content
 ## 1.3.3
     - Fix bug with `pin-center` utility
 ## 1.3.2
