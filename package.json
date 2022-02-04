@@ -8,16 +8,13 @@
     "/dist",
     "/src"
   ],
-  "modules": {
-    "name": "platform icons",
-    "version": "0.4.0"
-  },
   "scripts": {
     "start": "npm install && gulp",
     "build": "gulp build",
     "generate-assets": "icon-font-generator src/assets/icons/svg/**/*.svg -o dist -n platform-icons -j -p pi --center --htmltp templates/html.hbs --csstp templates/css.hbs",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "ver": "echo \"$npm_package_version\""
+    "ver": "echo \"$npm_package_version\"",
+    "publish": "./publish.sh"
   },
   "browserslist": [
     "last 2 version",
