@@ -15,11 +15,11 @@ then
     read -r -p "🤘 Ready to publish? [y/N] " response
     if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]
     then
-        echo "🚀 ${cyan}Starting fresh build...${nc}"
-        npm run build || exit $?
         echo "👉 ${cyan}Incrementing version using 'patch'...${nc}"
         npm version patch || exit $?
         nv=$(perl -ne 'if (/"version": "(.*)"/) { print $1 . "\n" }' package.json)
+        echo "🚀 ${cyan}Building a fresh copy for ${yellow}$nv${cyan}...${nc}"
+        npm run build || exit $?
         echo "👉 ${cyan}Publishing ${yellow}$nv${cyan} to npm...${nc}"
         npm publish --access public || exit $?
         echo "${cyan}Well done!${nc} 🥃"
