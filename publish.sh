@@ -15,8 +15,30 @@ then
     read -r -p "🤘 Ready to publish? [y/N] " response
     if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]
     then
-        echo "👉 ${cyan}Incrementing version using 'patch'...${nc}"
-        npm version patch || exit $?
+        PS3="What type of release are you publishing? "
+        releases=("major" "minor" "patch" "Quit")
+        select type in "${releases[@]}"; do
+            case $type in
+                "major")
+                    echo "Creating a $type release..."
+                    npm version $type
+                    ;;
+                "minor")
+                    echo "Creating a $type release..."
+                    npm version $type
+                    ;;
+                "patch")
+                    echo "Creating a $type release..."
+                    npm version $type
+                break
+                    ;;
+            "Quit")
+                echo "${yellow}Need more help on releases${nc} 👉 https://semver.org/"
+                exit
+                ;;
+                *) echo "invalid option $REPLY";;
+            esac
+        done
         nv=$(perl -ne 'if (/"version": "(.*)"/) { print $1 . "\n" }' package.json)
         echo "🚀 ${cyan}Building a fresh copy for ${yellow}$nv${cyan}...${nc}"
         npm run build || exit $?
@@ -27,6 +49,6 @@ then
         echo "${yellow}Well, you tried.${nc} 😔"
     fi
 else
-    echo "${yellow}Do a fetch and rebase before you try again.${nc} 😔"
+    echo "${yellow}Do a${nc} fetch${yellow} and ${nc}rebase ${yellow}before you try again.${nc} 😔"
     echo ""
 fi
