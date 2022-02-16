@@ -1,6 +1,10 @@
 # Version History
 
 ---
+## 1.3.6
+    - Change max-width to min-width in loader classes to prevent bug at mobile screen sizes
+## 1.3.5
+    - Update font files
 ## 1.3.4
     - Use > selector to toggle accordion__content
 ## 1.3.3
