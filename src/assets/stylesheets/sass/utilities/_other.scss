@@ -124,7 +124,7 @@
   border-top-color: map.get(config.$loader-colors, 'primary-top');
   margin: 0;
   @include mixins.square(1.4rem);
-  @include mixins.square(1.4rem, 'max');
+  @include mixins.square(1.4rem, 'min');
 }
 
 .pui-loader,
@@ -137,12 +137,12 @@
 
   &--sm {
     @include mixins.square(.9rem);
-    @include mixins.square(.9rem, 'max');
+    @include mixins.square(.9rem, 'min');
   }
 
   &--lg {
     @include mixins.square(2rem);
-    @include mixins.square(2rem, 'max');
+    @include mixins.square(2rem, 'min');
   }
 
 }
