@@ -1,6 +1,10 @@
 # Version History
 
 ---
+##1.3.7
+    - Specify -50% for Y axis on mobile tooltip
+    - Improve mobile infox-box
+        - Center info-box with fixed positioning. Similar to tooltip.
 ## 1.3.6
     - Change max-width to min-width in loader classes to prevent bug at mobile screen sizes
 ## 1.3.5
