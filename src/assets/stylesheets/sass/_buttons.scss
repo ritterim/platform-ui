@@ -543,6 +543,7 @@
       &:after {
         @extend %loader;
         @include mixins.square(variables.$spacer);
+        @include mixins.square(variables.$spacer, min);
         box-sizing: border-box;
         content: "";
         display: block;
