@@ -1,7 +1,9 @@
 # Version History
 
 ---
-##1.3.7
+## 1.3.8
+    - Set a min-width to 1rem for loaders in loading buttons
+## 1.3.7
     - Specify -50% for Y axis on mobile tooltip
     - Improve mobile infox-box
         - Center info-box with fixed positioning. Similar to tooltip.
