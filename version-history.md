@@ -1,6 +1,8 @@
 # Version History
 
 ---
+## 1.3.9
+    - Update font sizing from percentages to rem
 ## 1.3.8
     - Set a min-width to 1rem for loaders in loading buttons
 ## 1.3.7

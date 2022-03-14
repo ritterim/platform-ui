@@ -76,7 +76,7 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  font-size: map.get(variables.$font-percentage, "lg");
+  font-size: map.get(variables.$font-scale, "lg");
   font-weight: bold;
 
   &[data-stat-label]:after {
@@ -88,23 +88,23 @@
 
   &--sm {
     #{$self}__number {
-      font-size: map.get(variables.$font-percentage, "md");
+      font-size: map.get(variables.$font-scale, "md");
     }
 
     &[data-stat-label]:after {
-      font-size: map.get(variables.$font-percentage, "xs");
+      font-size: map.get(variables.$font-scale, "xs");
     }
   }
 
   &--md {
     #{$self}__number {
-      font-size: map.get(variables.$font-percentage, "xl");
+      font-size: map.get(variables.$font-scale, "xl");
     }
   }
 
   &--lg {
     #{$self}__number {
-      font-size: map.get(variables.$font-percentage, "xxl");
+      font-size: map.get(variables.$font-scale, "xxl");
     }
   }
 }

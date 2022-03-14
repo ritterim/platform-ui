@@ -1,15 +1,12 @@
-
-
-$font-scale: .3; //NOTE: define where we use this
-
-$font-percentage: (
-  'xxs': 50%,
-  'xs': 70%,
-  'sm': 85%,
-  'md': 115%,
-  'lg': 125%,
-  'xl': 150%,
-  'xxl': 200%
+$font-scale: (
+  "xxs": 0.5rem,
+  "xs": 0.75rem,
+  "sm": 0.85rem,
+  "base": 1rem,
+  "md": 1.15rem,
+  "lg": 1.25rem,
+  "xl": 1.5rem,
+  "xxl": 2rem
 );
 
 $font-style: (
