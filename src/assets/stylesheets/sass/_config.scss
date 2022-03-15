@@ -151,24 +151,6 @@ $transitions: .2s;
 $hue-threshold: .1;   // NOTE: Set to .1 to use with math.percentage
 $opacity: .9;
 
-
-
-
-// --------------------
-// Fonts
-// --------------------
-
-$fonts: (
-  'base': #{'Nunito Sans', sans-serif},
-  'code': #{'Inconsolata', 'Courier', monospace},
-  'color': #333333,
-  'headline': #{'Roboto', sans-serif},
-  'headline-line-height': 2.5rem,
-  'line-height': 1.5,
-  'size': 1rem
-);
-
-
 // --------------------
 // Drawers
 // --------------------

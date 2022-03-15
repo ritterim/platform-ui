@@ -59,7 +59,6 @@
     background-color: $background-color;
     border-radius: $triangle;
     color: map.get(variables.$greyscale, 'white');
-    font-size: map.get(config.$fonts, 'size');
     font-size: map.get(variables.$font-scale, 'sm');
     font-weight: normal;
     line-height: 1.15rem;

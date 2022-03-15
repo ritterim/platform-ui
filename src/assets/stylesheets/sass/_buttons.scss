@@ -498,8 +498,6 @@
   color: config.$button-primary-color;
   cursor: pointer;
   display: inline-flex;
-  font-family: map.get(config.$fonts, 'base');
-  font-size: map.get(config.$fonts, 'size');
   justify-content: center;
   line-height: 1.15 !important;
   padding: config.$button-primary-padding;

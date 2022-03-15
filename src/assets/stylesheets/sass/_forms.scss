@@ -1145,8 +1145,7 @@ legend {
     border-radius: 0; // specify no border-radius to override mobile user agent styles
     color: map.get(variables.$greyscale, 'base' );
     display: block;
-    font-family: map.get(config.$fonts, 'base');
-    font-size: map.get(config.$fonts, 'size');
+    font-size: 1rem;
     min-height: 2.2rem;
     padding: map.get(variables.$spacers, 1 ) map.get(variables.$spacers, 2 );
     width: 100%;
