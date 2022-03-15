@@ -1,6 +1,10 @@
 # Version History
 
 ---
+## 1.3.9
+    - Add !important to cursor utility classes
+    - cursor not allowed on disabled checkboxes
+    - improved disabled styles in forms
 ## 1.3.8
     - Set a min-width to 1rem for loaders in loading buttons
 ## 1.3.7

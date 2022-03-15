@@ -631,6 +631,8 @@ legend {
   $error-color: color.adjust(map.get(variables.$error-colors, 'negative'), $lightness: math.percentage(-(config.$hue-threshold * 2)));
   $error-background: map.get(variables.$message-colors, 'error' );
 
+  --disabled-color: #{color.adjust(map.get(variables.$greyscale, 'light' ), $lightness: math.percentage(config.$hue-threshold))};
+
   $self: &;
   color: color.adjust(map.get(variables.$greyscale, 'base' ), $lightness: math.percentage(.05));
 
@@ -1300,6 +1302,34 @@ legend {
       }
     }
   }
+
+
+  // Disabled styles for all inputs
+  input,
+  select,
+  textarea {
+
+    &:disabled {
+      color: var(--disabled-color) !important;
+      cursor: not-allowed;
+
+      + i[class*="pi-"] {
+        color: var(--disabled-color) !important;
+      }
+    }
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+
+    &:disabled {
+
+      + label {
+        color: var(--disabled-color) !important;
+        cursor: not-allowed;
+      }
+    }
+  }
 }
 
 .pui-form {
@@ -1517,8 +1547,8 @@ legend {
   input[type="radio"] {
 
     &:checked + label {
-      background-color: color.adjust(map.get(variables.$greyscale, 'light' ), $lightness: math.percentage(config.$hue-threshold)) !important;
-      border-color: color.adjust(map.get(variables.$greyscale, 'light' ), $lightness: math.percentage(config.$hue-threshold)) !important;
+      background-color: var(--disabled-color) !important;
+      border-color: var(--disabled-color) !important;
       color: map.get(variables.$greyscale, 'white') !important;
     }
   }
@@ -1543,7 +1573,8 @@ fieldset:disabled {
   input[type="radio"] {
 
     + label {
-      color: color.adjust(map.get(variables.$greyscale, 'light' ), $lightness: math.percentage(config.$hue-threshold)) !important;
+      color: var(--disabled-color) !important;
+      cursor: not-allowed;
     }
   }
 }
