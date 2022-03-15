@@ -59,7 +59,7 @@
     background-color: $background-color;
     border-radius: $triangle;
     color: map.get(variables.$greyscale, 'white');
-    font-size: map.get(variables.$font-scale, 'sm');
+    font-size: map.get(variables.$font-percentage, 'sm');
     font-weight: normal;
     line-height: 1.15rem;
     opacity: 0;
