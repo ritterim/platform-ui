@@ -79,7 +79,7 @@
   border-radius: map.get(variables.$spacers, 1);
   color: color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(-(config.$hue-threshold * 2.5)));
   display: inline-flex;
-  font-size: map.get(variables.$font-percentage,'sm');
+  font-size: map.get(variables.$font-scale,'sm');
   font-weight: bold;
   justify-content: center;
   margin: map.get(variables.$spacers, 1) / 2;

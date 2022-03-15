@@ -1,6 +1,10 @@
 # Version History
 
 ---
+## 1.3.10
+    - Update font sizing from percentages to rem
+    - Updated font scale
+    - Removed default font preferences
 ## 1.3.9
     - Add !important to cursor utility classes
     - cursor not allowed on disabled checkboxes

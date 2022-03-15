@@ -228,7 +228,7 @@ ol {
 
     &__duration {
       color: map.get(variables.$greyscale, 'light');
-      font-size: map.get(variables.$font-percentage, 'sm');
+      font-size: map.get(variables.$font-scale, 'sm');
       margin-bottom: map.get(variables.$spacers, 1);
 
       &:before {
@@ -243,7 +243,7 @@ ol {
     }
 
     &__link {
-      font-size: map.get(variables.$font-percentage, 'sm');
+      font-size: map.get(variables.$font-scale, 'sm');
       font-weight: bold;
     }
   }
@@ -284,7 +284,7 @@ ol {
           content: '\f16e';
           color: map.get(variables.$greyscale, 'white');
           font-family: platform-icons;
-          font-size: map.get(variables.$font-percentage, 'lg') * 2;
+          font-size: map.get(variables.$font-scale, 'lg') * 2;
           font-weight: 900;
           left: 50%;
           position: absolute;

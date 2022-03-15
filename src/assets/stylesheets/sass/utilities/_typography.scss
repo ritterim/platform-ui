@@ -62,17 +62,19 @@
 
 // Sizing
 //
-// `text--size-{ size }` leverages percetages for smaller or larger text. The defaut `font-size` is `1rem`.
+// `text--size-{ size }` leverages scale for smaller or larger text. The defaut `font-size` is `1rem`.
 //
 // | Text sizing       |         |
 // | ----------------- | ------- |
-// | `text--size-xxs`  | `50%`   |
-// | `text--size-xs`   | `70%`   |
-// | `text--size-sm`   | `85%`   |
-// | `text--size-md`   | `115%`  |
-// | `text--size-lg`   | `125%`  |
-// | `text--size-xl`   | `150%`  |
-// | `text--size-xxl`  | `200%`  |
+// | `text--size-2xs`  | `0.422rem`   |
+// | `text--size-xs`   | `0.563rem`   |
+// | `text--size-sm`   | `0.75rem`   |
+// | `text--size-base`   | `1rem`   |
+// | `text--size-md`   | `1.333rem`  |
+// | `text--size-lg`   | `1.777rem`  |
+// | `text--size-xl`   | `2.369rem`  |
+// | `text--size-2xl`  | `3.157rem`  |
+// | `text--size-3xl`  | `3.157rem`  |
 //
 // Markup:
 // <div class="card block-container mb-3 flex--align-center">
@@ -211,10 +213,10 @@
       text-shadow: .3rem .3rem .5rem $color;
     }
   }
-  // font size based on percentages
-  @each $name, $percentage in variables.$font-percentage {
+  // font size based on scale
+  @each $name, $scale in variables.$font-scale {
     &--size-#{$name} {
-      font-size: $percentage !important;
+      font-size: $scale !important;
     }
   }
 }

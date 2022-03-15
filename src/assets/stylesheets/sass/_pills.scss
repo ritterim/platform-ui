@@ -166,7 +166,7 @@
   border-radius: $border-radius;
   color: $primary-color;
   display: inline-flex;
-  font-size: map.get(variables.$font-percentage, 'sm');
+  font-size: map.get(variables.$font-scale, 'sm');
   padding: map.get(variables.$spacers, 1) map.get(variables.$spacers, 2);
 
   &--split {
