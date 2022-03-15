@@ -176,13 +176,13 @@ $cursors: (
 );
 
 .pointer{
-  cursor: pointer;
+  cursor: pointer!important;
 }
 
 @each $cursor in $cursors{
   .cursor{
     &--#{$cursor} {
-      cursor: $cursor
+      cursor: $cursor!important;
     }
   }
 }
