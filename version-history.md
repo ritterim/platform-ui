@@ -1,13 +1,14 @@
 # Version History
 
 ---
+## 1.3.10
+    - Update font sizing from percentages to rem
+    - Updated font scale
+    - Removed default font preferences
 ## 1.3.9
     - Add !important to cursor utility classes
     - cursor not allowed on disabled checkboxes
     - improved disabled styles in forms
-    - Update font sizing from percentages to rem
-    - Updated font scale
-    - Removed default font preferences
 ## 1.3.8
     - Set a min-width to 1rem for loaders in loading buttons
 ## 1.3.7
