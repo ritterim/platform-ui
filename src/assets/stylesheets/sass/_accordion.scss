@@ -108,7 +108,6 @@
   border: 1px solid transparent;
   border-top-color: $accordion-primary-border-color;
   color: $accordion-primary-color;
-  font-family: map.get(config.$fonts, 'base');
   font-size: 100%;
   transition: border-color config.$transitions;
 
