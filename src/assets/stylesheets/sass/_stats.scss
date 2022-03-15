@@ -82,7 +82,7 @@
   &[data-stat-label]:after {
     content: attr(data-stat-label);
     color: map.get(variables.$greyscale, "base");
-    font-size: map.get(config.$fonts, "size");
+    font-size: 1rem;
     font-weight: normal;
   }
 

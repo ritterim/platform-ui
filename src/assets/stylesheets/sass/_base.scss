@@ -17,8 +17,8 @@ html,
 body {
   box-sizing: border-box;
   color: map.get(variables.$greyscale, 'dark');
-  font-family: map.get(config.$fonts, 'base');
-  font-size: map.get(config.$fonts, 'size');
+  font-size: 1rem;
+  font-family: sans-serif;
   font-weight: 300;
   height: 100%;
   line-height: 1.618;
@@ -30,7 +30,6 @@ body {
 @for $i from 1 through 6 {
   h#{$i} {
     color: map.get(variables.$greyscale, 'base' );
-    font-family: map.get(config.$fonts, 'headline');
     font-weight: 500;
     line-height: 1.618;
     margin-bottom: variables.$spacer;
@@ -58,7 +57,7 @@ h5 {
 }
 
 h6 {
-  font-size: map.get(config.$fonts, 'size');
+  font-size: 1rem;
 }
 
 p {
