@@ -96,7 +96,7 @@
 //     <i class="pi-download" aria-hidden="hidden"></i>
 //     <span class="sr-only" aria-busy="true" aria-live="polite">Loading...</span>
 //   </button>
-//   <button class="button button--post loading mb-2">
+//   <button class="button loading mb-2">
 //     Submit
 //     <span class="sr-only" aria-busy="true" aria-live="polite">Loading...</span>
 //   </button>
@@ -164,7 +164,7 @@
 //     Lock
 //     <i class="pi-lock" aria-hidden="hidden"></i>
 //   </button>
-//   <button class="button button--post" disabled>
+//   <button class="button" disabled>
 //     Submit
 //   </button>
 // </div>
@@ -472,20 +472,6 @@
 // </div>
 //
 // Styleguide Components.Button.Colors
-
-// Post
-// 
-// <i class="pi-warning text-orange"></i> **NOTE**: This button style is deprecated as of <strong class="text-navy">v1.2.2</strong>. To see how to recreate this look using utility classes, see the example below. 
-//
-// Used in CTA scenarios 
-// 
-// Markup:
-// <button class="button button--secondary has-text">Post Button</button>
-// <button class="button button--secondary has-text button--lg px-3 py-2 h-auto">Large Post Button</button>
-//
-// Weight: 2
-// 
-// Styleguide Components.Button.Post
 
 
 .button {
