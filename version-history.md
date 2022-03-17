@@ -1,6 +1,11 @@
 # Version History
 
 ---
+## 1.3.11
+    - Removed `.pez` component
+    - Removed `.button--post` documentation
+    - Removed `.time` form class
+
 ## 1.3.10
     - Update font sizing from percentages to rem
     - Updated font scale
