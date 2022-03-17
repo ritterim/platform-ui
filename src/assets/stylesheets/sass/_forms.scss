@@ -163,35 +163,6 @@
 // Styleguide Forms.Lighht
 
 
-// Time Icon
-//
-// The select wrapper displays an arrow down icon. We can change that by adding the class `time`
-// to the class `form__select-wrapper`. So the classes would be `form__select-wrapper time`.
-// This will replace the arrow down icon with a clock icon.
-//
-// Markup:
-// <form action="" class="form block-container">
-//   <div class="block block-4">
-//     <label for="task-1-time" class="form__field">
-//       <span class="sr-only">Time Icon Example</span>
-//       <div class="form__select-wrapper time" id="task-1-time">
-//         <select class="px-2" name="Select a time" id="task-1-time-select">
-//           <option value="8:00 AM">8:00 AM</option>
-//           <option value="8:30 AM">8:30 AM</option>
-//           <option value="9:00 AM">9:00 AM</option>
-//           <option value="9:30 AM">9:30 AM</option>
-//           <option value="10:00 AM">10:00 AM</option>
-//           <option value="10:30 AM">10:30 AM</option>
-//         </select>
-//         <i class="pi-clock"></i>
-//       </div>
-//     </label>
-//   </div>
-// </form>
-//
-// Styleguide Forms.TimeIcon
-
-
 // Error styles
 //
 // If there is an error on a specific input after submission, add the `error` class to the specific `form__field`. 
@@ -559,7 +530,7 @@
 //   </div>
 //   <div class="block">
 //     <div class="form__field form__button-group">
-//       <button class="button button--post button--lg">Submit</button>
+//       <button class="button button--lg">Submit</button>
 //     </div>
 //   </div>
 // </form>
@@ -1225,21 +1196,8 @@ legend {
         display: none;
       }
     }
-
-    &.time {
-
-      &:after {
-        display: none;
-      }
-
-      i {
-        position: absolute;
-        top: .75rem;
-        right: 0;
-      }
-    }
   }
-
+  
   select {
     -webkit-appearance: none;
     appearance: none;

@@ -20,8 +20,8 @@
 //
 // Markup:
 // <div class="block-container">
-//   <button class="button button--post button--lg drawer__open mr-2" data-drawer="default">Toggle default drawer</button>
-//   <button class="button button--post button--lg drawer__open" data-drawer="single-row">Toggle single row drawer</button>
+//   <button class="button button--lg drawer__open mr-2" data-drawer="default">Toggle default drawer</button>
+//   <button class="button button--lg drawer__open" data-drawer="single-row">Toggle single row drawer</button>
 // </div>
 // <div id="default" class="drawer drawer-bottom">
 //   <div class="drawer__inner">
@@ -54,7 +54,7 @@
 // This Drawer slides in from the right.
 //
 // Markup:
-// <button class="button button--post button--lg drawer__open" data-drawer="right">Toggle right drawer</button>
+// <button class="button button--lg drawer__open" data-drawer="right">Toggle right drawer</button>
 // <div id="right" class="drawer drawer-right pt-5 pb-3 px-4">
 //   <div class="flex flex--align-center flex--justify-between pb-3 mb-2">
 //     <div class="flex flex--align-center">
@@ -74,7 +74,7 @@
 // This Drawer slides in from the left.
 //
 // Markup:
-// <button class="button button--post button--lg drawer__open" data-drawer="left">Toggle left drawer</button>
+// <button class="button button--lg drawer__open" data-drawer="left">Toggle left drawer</button>
 // <div id="left" class="drawer drawer-left pt-5 pb-3 px-4">
 //   <div class="flex flex--align-center flex--justify-between pb-3 mb-2">
 //     <div class="flex flex--align-center">
@@ -94,7 +94,7 @@
 // This Drawer slides in from the top.
 //
 // Markup:
-// <button class="button button--post button--lg drawer__open" data-drawer="top">Toggle top drawer</button>
+// <button class="button button--lg drawer__open" data-drawer="top">Toggle top drawer</button>
 // <div id="top" class="drawer drawer-top p-4">
 //   <div class="flex flex--align-center flex--justify-between pb-3 mb-2">
 //     <div class="flex flex--align-center">
