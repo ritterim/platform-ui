@@ -1,6 +1,9 @@
 # Version History
 
 ---
+## 1.3.13
+    - Removed AnimateCSS from Platform UI
+    - Removed HighlightJS from Platform UI
 ## 1.3.12
     - Remove z-index from toggle option
 ## 1.3.11

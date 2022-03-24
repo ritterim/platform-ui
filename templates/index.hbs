@@ -11,6 +11,12 @@
   <link href="https://fonts.googleapis.com/css?family=Nunito+Sans|Roboto|Inconsolata&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="site-assets/stylesheets/platform-ui.min.css">
   {{{styles}}}
+  <link rel="stylesheet"
+      href="https://unpkg.com/highlight.js@11.5.0/styles/base16/solarized-light.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
 
   <link rel="apple-touch-icon" sizes="180x180" href="site-assets/images/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="site-assets/images/favicon/favicon-32x32.png">
@@ -242,7 +248,10 @@
   <!-- SCRIPTS -->
 
   <script src="site-assets/js/platform-ui.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
   <script>
+    hljs.highlightAll();
+
     {{!-- Specific JS for tables. Markdown does not
     support adding classes --}}
     var table = document.querySelectorAll('table');
@@ -254,6 +263,5 @@
 
   </script>
   {{{scripts}}}
-
 </body>
 </html>

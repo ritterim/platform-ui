@@ -76,8 +76,6 @@ function css() {
   return src([
       'node_modules/normalize.css/normalize.css',             // normalize.css
       'src/assets/stylesheets/sass/main.scss',                // platform ui scss
-      'node_modules/highlight.js/styles/solarized-light.css', // highlight.js
-      'node_modules/animate.css/animate.min.css'              // animate.css
     ])
     .pipe(sass())
     .pipe(concat('platform-ui.min.css'))
