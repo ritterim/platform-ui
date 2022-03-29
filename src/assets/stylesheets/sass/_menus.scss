@@ -46,12 +46,12 @@
 // 
 // The button simply toggles the menu, so you'll want to add an icon inside. You can use our `pi-menu` here to take advantage of the standard "hamburger menu." 
 // Since this button is outside of the `site-menu`, be sure to add the approriate color to it. For example, if you have a navy background you would 
-// probably want to add `text-white` to the button.
+// probably want to add `text--white` to the button.
 // 
 // Add the button before the `site-menu` as a sibling. Both the `site-menu-mobile-action` and `site-menu` need to be children of the 
 // `site-menu-wrapper` for things to work properly. 
 // 
-// | <i class="pi-warning text-orange"></i> NOTE: The responsive menu and the dropdown menus require the use of JavaScript |
+// | <i class="pi-warning text--orange"></i> NOTE: The responsive menu and the dropdown menus require the use of JavaScript |
 // | --
 // 
 // **Note:** `background-white` was added to the `site-menu-wrapper` in order to improve the visibility of the example.
@@ -103,7 +103,7 @@
 // Another thing to notice is the use of `dropdown--right` on the dropdown in the menu. Since it's on the far right of the header, we don't 
 // want it breaking and "hanging off" the menu. Using the `dropdown--right` modifier positions the `dropdown__content` to the right of its parent. 
 // 
-// | <i class="pi-warning text-orange"></i> NOTE: The responsive menu and the dropdown menus require the use of JavaScript |
+// | <i class="pi-warning text--orange"></i> NOTE: The responsive menu and the dropdown menus require the use of JavaScript |
 // | --
 // 
 // Markup:
@@ -227,7 +227,7 @@
 
 // Site Menu - Dropdown
 // 
-// | <i class="pi-warning text-orange"></i> NOTE: This component requires the use of JavaScript |
+// | <i class="pi-warning text--orange"></i> NOTE: This component requires the use of JavaScript |
 // | --
 // 
 // You can add a dropdown submenu to your site-menu. The markup for this component is pretty specific. Be sure to include the following classes.
@@ -251,7 +251,7 @@
 //   </p>
 // </div>
 // 
-// | <i class="pi-warning text-orange"></i> NOTE: The responsive menu and the dropdown menus require the use of JavaScript |
+// | <i class="pi-warning text--orange"></i> NOTE: The responsive menu and the dropdown menus require the use of JavaScript |
 // | --
 // 
 // **Note:** `background-white` was added to the `div` wrapping the site-menu in order to improve the visibility of the example.
@@ -913,7 +913,7 @@ $all-colors: () !default;
 // When you need a horizontal list of icons, look no further than "Icon Menu". Use the mark up below
 // to get the list you want. Be sure to use the specific `icon-menu` classes. With this strcuture you have
 // the freedom to use any icon you want and make that icon change to whatever color you want on hover.
-// Simpy change the `<icon>` class to the desired font-awesome icon you want. Then, add the `text-{color}--hover`
+// Simpy change the `<icon>` class to the desired font-awesome icon you want. Then, add the `text-hover--{color}`
 // class to the `icon-menu__action`. To see a list of available hover colors [click here](/section-typography.html#kssref-typography-utilities-color).
 //
 // In the example below, we're using `<div>`s on the `icon-menu__action` to build the menus. You could use a `<a>` or an `<a>` to improve accessibility
@@ -923,7 +923,7 @@ $all-colors: () !default;
 // 
 // Adding `icon-menu icon-menu--vertical` creates a vertical icon menu.
 //
-// | <i class="fpi-warning text-orange"></i> Be sure to always wrap the font icon in another element. We don't want to have the click event be on the `<icon>` itself.|
+// | <i class="fpi-warning text--orange"></i> Be sure to always wrap the font icon in another element. We don't want to have the click event be on the `<icon>` itself.|
 // | ---
 //
 //
@@ -933,29 +933,29 @@ $all-colors: () !default;
 // Markup:
 // <div class="icon-menu">
 //   <div class="icon-menu__item">
-//     <a href="#" class="icon-menu__action text-negative--hover">
+//     <a href="#" class="icon-menu__action text-hover--negative">
 //       <i class="pi-trash" aria-hidden="hidden"></i>
 //     </a>
 //   </div>
 //   <div class="icon-menu__item">
-//     <a href="#" class="icon-menu__action text-positive--hover">
+//     <a href="#" class="icon-menu__action text-hover--positive">
 //       <i class="pi-edit" aria-hidden="hidden"></i>
 //     </a>
 //   </div>
 //   <div class="icon-menu__item">
-//     <a href="#" class="icon-menu__action text-red--hover">
+//     <a href="#" class="icon-menu__action text-hover--red">
 //       <i class="pi-clock" aria-hidden="hidden"></i>
 //     </a>
 //   </div>
 // </div>
 // <div class="icon-menu icon-menu--vertical">
 //   <div class="icon-menu__item">
-//     <a href="#" class="icon-menu__action text-negative--hover">
+//     <a href="#" class="icon-menu__action text-hover--negative">
 //       <i class="pi-trash" aria-hidden="hidden"></i>
 //     </a>
 //   </div>
 //   <div class="icon-menu__item">
-//     <a href="#" class="icon-menu__action text-positive--hover">
+//     <a href="#" class="icon-menu__action text-hover--positive">
 //       <i class="pi-edit" aria-hidden="hidden"></i>
 //     </a>
 //   </div>

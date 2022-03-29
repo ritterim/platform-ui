@@ -37,12 +37,14 @@ $site-colors: () !default;
 @if meta.type-of($all-colors) == 'map' {
   @each $name, $color in $all-colors {
     // text color
-    .text-#{$name} {
+    .text {
       &.pill {
         border-color: $color !important;
       }
-      color: $color !important;
-      &--hover {
+      &--#{$name}{
+        color: $color !important;
+      }
+      &-hover--#{$name} {
         transition: background-color config.$transitions;
 
         &.text-underline--hover {

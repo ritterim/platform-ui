@@ -35,25 +35,25 @@
 
 // Color
 //
-// `text-{ color }`, `text-{ color }--hover` combines our [greyscale](/section-color.html#kssref-color-greyscale), [brand colors](/section-color.html#kssref-color-brandcolors), and [secondary colors](/section-color.html#kssref-color-secondarycolors) maps.
+// `text--{ color }`, `text-hover--{ color }` combines our [greyscale](/section-color.html#kssref-color-greyscale), [brand colors](/section-color.html#kssref-color-brandcolors), and [secondary colors](/section-color.html#kssref-color-secondarycolors) maps.
 //
 // | Greyscale         |                    |                     |                      |
 // | ----------------- | ------------------ | ------------------- | -------------------- |
-// | `text-white`      | `text-lighter`     | `text-light-mid`    | `text-light`         |
-// | `text-base`       | `text-dark`        | `text-black`        |                      |
+// | `text--white`      | `text--lighter`     | `text--light-mid`    | `text--light`         |
+// | `text--base`       | `text--dark`        | `text--black`        |                      |
 //
 // | Brand colors      |                    |                     |                      |
 // | ----------------- | ------------------ | ------------------- | -------------------- |
-// | `text-navy`       | `text-skyblue`     | `text-med-blue`     | `text-beige`         |
-// | `text-peach`      | `text-salmon`      | `text-brown`        | `text-orange`        |
+// | `text--navy`       | `text--skyblue`     | `text--med-blue`     | `text--beige`         |
+// | `text--peach`      | `text--salmon`      | `text--brown`        | `text--orange`        |
 //
 // Markup:
 // <div class="card block-container mb-3 flex--align-center">
 //   <div class="block block-6">
 //     <p>
-//       <span class="text-orange">Orange Text</span> | 
-//       <span class="text-med-blue--hover">Blue Text on Hover</span> | 
-//       <span class="text-navy text-skyblue--hover">Navy Text, Sky Blue on Hover</span>
+//       <span class="text--orange">Orange Text</span> | 
+//       <span class="text-hover--med-blue">Blue Text on Hover</span> | 
+//       <span class="text--navy text-hover--skyblue">Navy Text, Sky Blue on Hover</span>
 //     </p>
 //   </div>
 // </div>
@@ -105,24 +105,24 @@
 // | -------------------------------------- | --------------------------------------- | ---------------------------------------- | ----------------------------------------- |
 // | `text--underline`                      | `text-underline--hover`                 |                                          |                                           |
 // | `text--bold`                           |                                         |                                          |                                           |
-// | `text--nowrap` <i class="pi-warning text-orange"></i> |                          |                                          |                                           |
-// | `text--left` <i class="pi-warning text-orange"></i> | `text--right` <i class="pi-warning text-orange"></i> | `text--center` <i class="pi-warning text-orange"></i> |    |
+// | `text--nowrap` <i class="pi-warning text--orange"></i> |                          |                                          |                                           |
+// | `text--left` <i class="pi-warning text--orange"></i> | `text--right` <i class="pi-warning text--orange"></i> | `text--center` <i class="pi-warning text--orange"></i> |    |
 // | `text--capitalize`                     | `text--uppercase`                       | `text--lowercase`                        | `text--sentencecase`                      |
 // | `text--italic`                         | `text--normal`                          |                                          |                                           |
 //
-// | <i class="pi-warning text-orange"></i> NOTE: A `flex--` utility should be used were possible. |
+// | <i class="pi-warning text--orange"></i> NOTE: A `flex--` utility should be used were possible. |
 // | --
 //
 //
 // The `text-underline--hover` class will add an animated underline to links or any element you add the class to. By default, the underline color is the
-// standard link color in the platform(light blue). If you want to change the color of the element and the underline on hover you can add a `text-{color}--hover`
+// standard link color in the platform(light blue). If you want to change the color of the element and the underline on hover you can add a `text-hover--{color}`
 // class. This will change the color of the underline as well as the element with the hover color class.
 //
 // Markup:
 // <div class="card block-container mb-3 flex--align-center">
 //   <div class="block">
 //     <p>Text underline on hover <a class="text-underline--hover">standard</a>.</p>
-//     <p>Text underline on hover <a class="text-underline--hover text-red--hover">red</a>.</p>
+//     <p>Text underline on hover <a class="text-underline--hover text-hover--salmon">salmon</a>.</p>
 //   </div>
 // </div>
 //
