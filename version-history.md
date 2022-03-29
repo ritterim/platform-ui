@@ -1,6 +1,12 @@
 # Version History
 
 ---
+## 1.4.0
+    - Updated BEM syntax on color utilities:
+      - `text--{color}`
+      - `text-hover--{color}`
+      - `background--{color}`
+      - `background-hover--{color}`
 ## 1.3.13
     - Removed AnimateCSS from Platform UI
     - Removed HighlightJS from Platform UI
