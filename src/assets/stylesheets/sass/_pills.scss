@@ -23,13 +23,13 @@
 // <div class="pill">
 //   Active
 // </div>
-// <div class="pill text--white background-navy">
+// <div class="pill text--white background--navy">
 //   Active
 // </div>
-// <div class="pill text--white background-skyblue">
+// <div class="pill text--white background--skyblue">
 //   Active
 // </div>
-// <div class="pill text--white background-salmon">
+// <div class="pill text--white background--salmon">
 //   Active
 // </div>
 //
@@ -44,14 +44,14 @@
 //   <div class="pill__label">Left:</div>
 //   <div class="pill__content">Right</div>
 // </div>
-// <div class="pill pill--split text--white background-peach">
+// <div class="pill pill--split text--white background--peach">
 //   <div class="pill__label text--brown">Left:</div>
 //   <div class="pill__content">Right</div>
 // </div>
-// <div class="pill pill--split text--white background-navy">
-//   <div class="pill__content background-salmon">Left</div>
-//   <div class="pill__content background-positive">Middle</div>
-//   <div class="pill__content background-skyblue">Right</div>
+// <div class="pill pill--split text--white background--navy">
+//   <div class="pill__content background--salmon">Left</div>
+//   <div class="pill__content background--positive">Middle</div>
+//   <div class="pill__content background--skyblue">Right</div>
 // </div>
 //
 // Weight: 2
@@ -81,19 +81,19 @@
 // <div class="pill pill--circle">
 //   33
 // </div>
-// <div class="pill pill--circle text--white background-salmon">
+// <div class="pill pill--circle text--white background--salmon">
 //   33
 // </div>
 // <div class="pill pill--circle-medium">
 //   33
 // </div>
-// <div class="pill pill--circle-medium text--white background-salmon">
+// <div class="pill pill--circle-medium text--white background--salmon">
 //   33
 // </div>
 // <div class="pill pill--circle-large">
 //   33
 // </div>
-// <div class="pill pill--circle-large text--white background-salmon">
+// <div class="pill pill--circle-large text--white background--salmon">
 //   33
 // </div>
 //
@@ -108,44 +108,44 @@
 // Markup:
 // <div class="mb-4">
 //   <p class="mb-1 text--bold">Default Display</p>
-//   <div class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer" aria-label="Alaska">AK</div>
-//   <div class="pill m-1 background-lighter border border--color-light text--light p-2 rounded-1" aria-label="Washington DC">DC</div>
-//   <div class="pill m-1 background-skyblue border border--color-med-blue text--navy p-2 rounded-1 pointer" aria-label="Georgia">GA</div>
+//   <div class="pill m-1 background--light-mid border border--color-light p-2 rounded-1 pointer" aria-label="Alaska">AK</div>
+//   <div class="pill m-1 background--lighter border border--color-light text--light p-2 rounded-1" aria-label="Washington DC">DC</div>
+//   <div class="pill m-1 background--skyblue border border--color-med-blue text--navy p-2 rounded-1 pointer" aria-label="Georgia">GA</div>
 // </div>
 // <h4 class="text--bold mb-3">Other Examples:</h4>
 // <div class="block-container blocks cards mb-4 p-2">
-//   <p class="block block-12 mb-1 mx-2 text--white background-navy text--bold">Choose your toppings:</p>
+//   <p class="block block-12 mb-1 mx-2 text--white background--navy text--bold">Choose your toppings:</p>
 //   <div class="block tablet-up-6">
 //     <div class="card">
 //       <p class="mb-1">Meat</p>
-//       <div class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer" aria-label="Pepperoni">Pepperoni</div>
-//       <div class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer" aria-label="Sausage">Sausage</div>
-//       <div class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer background-positive text--dark border--color-positive" aria-label="Ham">Ham</div>
-//       <div class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer" aria-label="Buffalo Chicken">Buffalo Chicken</div>
+//       <div class="pill m-1 background--light-mid border border--color-light p-2 rounded-1 pointer" aria-label="Pepperoni">Pepperoni</div>
+//       <div class="pill m-1 background--light-mid border border--color-light p-2 rounded-1 pointer" aria-label="Sausage">Sausage</div>
+//       <div class="pill m-1 background--light-mid border border--color-light p-2 rounded-1 pointer background--positive text--dark border--color-positive" aria-label="Ham">Ham</div>
+//       <div class="pill m-1 background--light-mid border border--color-light p-2 rounded-1 pointer" aria-label="Buffalo Chicken">Buffalo Chicken</div>
 //     </div>
 //   </div>
 //   <div class="block tablet-up-6">
 //     <div class="card">
 //       <p class="mb-1">Veggies and Fruit</p>
-//       <div class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer background-positive text--dark border--color-positive" aria-label="Onions">Onions</div>
-//       <div class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer" aria-label="Mushrooms">Mushrooms</div>
-//       <div class="pill m-1 background-lighter border border--color-light text--light p-2 rounded-1" aria-label="Anchovies">Anchovies</div>
-//       <div class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer background-positive text--dark border--color-positive" aria-label="Black Olives">Black Olives</div>
-//       <div class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer background-positive text--dark border--color-positive" aria-label="Tomatoes">Tomatoes</div>
-//       <div class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer" aria-label="Peppers">Peppers</div>
-//       <div class="pill m-1 background-light-mid border border--color-light p-2 rounded-1 pointer" aria-label="Sun-dried Tomatoes">Sun-dried Tomatoes</div>
+//       <div class="pill m-1 background--light-mid border border--color-light p-2 rounded-1 pointer background--positive text--dark border--color-positive" aria-label="Onions">Onions</div>
+//       <div class="pill m-1 background--light-mid border border--color-light p-2 rounded-1 pointer" aria-label="Mushrooms">Mushrooms</div>
+//       <div class="pill m-1 background--lighter border border--color-light text--light p-2 rounded-1" aria-label="Anchovies">Anchovies</div>
+//       <div class="pill m-1 background--light-mid border border--color-light p-2 rounded-1 pointer background--positive text--dark border--color-positive" aria-label="Black Olives">Black Olives</div>
+//       <div class="pill m-1 background--light-mid border border--color-light p-2 rounded-1 pointer background--positive text--dark border--color-positive" aria-label="Tomatoes">Tomatoes</div>
+//       <div class="pill m-1 background--light-mid border border--color-light p-2 rounded-1 pointer" aria-label="Peppers">Peppers</div>
+//       <div class="pill m-1 background--light-mid border border--color-light p-2 rounded-1 pointer" aria-label="Sun-dried Tomatoes">Sun-dried Tomatoes</div>
 //     </div>
 //   </div>
 // </div>
 // <div class="block-container blocks p-2">
 //   <div class="block tablet-up-4">
 //     <p class="text-bold text--navy mb-1 border-b">Tags:</p>
-//     <div class="pill m-1 rounded-1 pointer background-lightblue text--navy px-1 py-1" aria-label="Healthcare">Healthcare</div>
-//     <div class="pill m-1 rounded-1 pointer background-lightblue text--navy px-1 py-1" aria-label="Personal Health">Personal Health</div>
-//     <div class="pill m-1 rounded-1 pointer background-lightblue text--navy px-1 py-1" aria-label="Exercise">Exercise</div>
-//     <div class="pill m-1 rounded-1 pointer background-lightblue text--navy px-1 py-1" aria-label="Weight Loss">Weight Loss</div>
-//     <div class="pill m-1 rounded-1 pointer background-lightblue text--navy px-1 py-1" aria-label="Diet">Diet</div>
-//     <div class="pill m-1 rounded-1 pointer background-lightblue text--navy px-1 py-1" aria-label="Healthy Eating">Healthy Eating</div>    
+//     <div class="pill m-1 rounded-1 pointer background--lightblue text--navy px-1 py-1" aria-label="Healthcare">Healthcare</div>
+//     <div class="pill m-1 rounded-1 pointer background--lightblue text--navy px-1 py-1" aria-label="Personal Health">Personal Health</div>
+//     <div class="pill m-1 rounded-1 pointer background--lightblue text--navy px-1 py-1" aria-label="Exercise">Exercise</div>
+//     <div class="pill m-1 rounded-1 pointer background--lightblue text--navy px-1 py-1" aria-label="Weight Loss">Weight Loss</div>
+//     <div class="pill m-1 rounded-1 pointer background--lightblue text--navy px-1 py-1" aria-label="Diet">Diet</div>
+//     <div class="pill m-1 rounded-1 pointer background--lightblue text--navy px-1 py-1" aria-label="Healthy Eating">Healthy Eating</div>    
 //   </div>
 // </div>
 // 

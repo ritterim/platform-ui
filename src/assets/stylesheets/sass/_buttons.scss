@@ -204,7 +204,7 @@
 //     <div class="block">
 //       <button class="button button--skyblue">Skyblue</button>
 //     </div>
-//     <div class="block background-light">
+//     <div class="block background--light">
 //       <button class="button button--lightblue">Light Blue</button>
 //     </div>
 //     <div class="block">
@@ -227,7 +227,7 @@
 //     </div>
 //   </div>
 //   <div class="block-container tablet-up-4 laptop-up-6 blocks p-2">
-//     <div class="block background-navy">
+//     <div class="block background--navy">
 //       <button class="button button--white">White</button>
 //     </div>
 //     <div class="block">
@@ -293,7 +293,7 @@
 //     <div class="block">
 //       <button class="button button--secondary button--skyblue has-text" data-button-text="Has Text"><i class="pi-download"></i></button>
 //     </div>
-//     <div class="block background-light">
+//     <div class="block background--light">
 //       <button class="button button--secondary button--lightblue"><i class="pi-download"></i></button>
 //     </div>
 //     <div class="block">
@@ -316,13 +316,13 @@
 //     </div>
 //   </div>
 //   <div class="block-container tablet-up-4 laptop-up-6 blocks p-2">
-//     <div class="block background-navy">
+//     <div class="block background--navy">
 //       <button class="button button--secondary button--white"><i class="pi-download"></i></button>
 //     </div>
-//     <div class="block background-navy">
+//     <div class="block background--navy">
 //       <button class="button button--secondary button--lighter"><i class="pi-download"></i></button>
 //     </div>
-//     <div class="block background-navy">
+//     <div class="block background--navy">
 //       <button class="button button--secondary button--light-mid"><i class="pi-download"></i></button>
 //     </div>
 //     <div class="block">
@@ -384,7 +384,7 @@
 //     <div class="block">
 //       <button class="button button--ghost button--skyblue">Skyblue</button>
 //     </div>
-//     <div class="block background-light">
+//     <div class="block background--light">
 //       <button class="button button--ghost button--lightblue">Lightblue</button>
 //     </div>
 //     <div class="block">
@@ -407,13 +407,13 @@
 //     </div>
 //   </div>
 //   <div class="block-container tablet-up-4 laptop-up-6 blocks p-2">
-//     <div class="block background-light">
+//     <div class="block background--light">
 //       <button class="button button--ghost button--white">White</button>
 //     </div>
-//     <div class="block background-light">
+//     <div class="block background--light">
 //       <button class="button button--ghost button--lighter">Lighter</button>
 //     </div>
-//     <div class="block background-light">
+//     <div class="block background--light">
 //       <button class="button button--ghost button--light-mid">Light Mid</button>
 //     </div>
 //     <div class="block">
@@ -464,11 +464,11 @@
 //
 // Markup:
 // <div class="button-group mb-4 p-2">
-//   <button class="button background-lightblue background-skyblue--hover text--navy text-hover--white border--color-med-blue">Blue</button>
-//   <button class="button background-skyblue background-navy--hover text--navy text-hover--white border--color-navy">Blue</button>
-//   <button class="button background-beige background-brown--hover text--brown text-hover--white border--color-brown">Brown</button>
-//   <button class="button background-lighter background-orange--hover text--black border--color-orange">Orange</button>
-//   <button class="button background-light-mid background-dark--hover text--dark text-hover--white border--color-dark">Dark Grey</button>
+//   <button class="button background--lightblue background-hover--skyblue text--navy text-hover--white border--color-med-blue">Blue</button>
+//   <button class="button background--skyblue background-hover--navy text--navy text-hover--white border--color-navy">Blue</button>
+//   <button class="button background--beige background-hover--brown text--brown text-hover--white border--color-brown">Brown</button>
+//   <button class="button background--lighter background-hover--orange text--black border--color-orange">Orange</button>
+//   <button class="button background--light-mid background-hover--dark text--dark text-hover--white border--color-dark">Dark Grey</button>
 // </div>
 //
 // Styleguide Components.Button.Colors
@@ -716,7 +716,7 @@
       &--#{$name} {
         --button-background: #{$color};
         --button-border: var(--button-background);
-        // darken the background-color by 10% on hover
+        // darken the background--color by 10% on hover
         --button-hover-background: #{color.adjust($color, $lightness: math.percentage(-(config.$hue-threshold)))};
 
         background-color: var(--button-background);
@@ -743,7 +743,7 @@
         }
 
         &.button--secondary {
-          // lighten the box-shadow by 10% of background-color
+          // lighten the box-shadow by 10% of background--color
           --box-shadow: #{color.adjust($color, $lightness: math.percentage(config.$hue-threshold))};
 
           @if lightness($color) <= 50 {

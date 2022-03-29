@@ -139,7 +139,7 @@
 // The light modifier works with [form--bordered](styleguide/section-forms.html#forms-border) and [form--rounded](styleguide/section-forms.html#forms-borderrounded).
 // 
 // Markup:
-// <div class="background-navy p-3">
+// <div class="background--navy p-3">
 //   <form action="" class="form form--light block-container tablet-up-3 laptop-up-4 desktop-up-6 blocks mb-3 p-2">
 //     <div class="block form__field">
 //       <label for="first-name">First Name</label>
@@ -251,13 +251,13 @@
 //   <div class="block">
 //     <label for="dob" class="form__field has-icon--right">Birthday
 //       <input id="dob" type="date">
-//       <i class="pi-calendar background-white"></i>
+//       <i class="pi-calendar background--white"></i>
 //     </label>
 //   </div>
 //   <div class="block">
 //     <label for="date" class="form__field has-icon">Date
 //       <input id="date" type="date">
-//       <i class="pi-calendar text--med-blue background-white"></i>
+//       <i class="pi-calendar text--med-blue background--white"></i>
 //     </label>
 //   </div>
 //   <div class="block">
@@ -520,7 +520,7 @@
 //   <div class="block">
 //     <label for="date-1" class="form__field has-icon">Date
 //       <input id="date-1" type="date">
-//       <i class="pi-calendar text-skyblue background-white"></i>
+//       <i class="pi-calendar text-skyblue background--white"></i>
 //     </label>
 //   </div>
 //   <div class="block">
