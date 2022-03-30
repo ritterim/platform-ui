@@ -27,19 +27,19 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
 </head>
-<body id="kss-node" class="overflow-x--hidden{{#if template.isHomepage}} background-lighter{{/if}}">
-  <header class="site-header site-header--fixed border-b border--color-skyblue flex flex--justify-between background-white">
+<body id="kss-node" class="overflow-x--hidden{{#if template.isHomepage}} background--lighter{{/if}}">
+  <header class="site-header site-header--fixed border-b border--color-skyblue flex flex--justify-between background--white">
     <div class="flex flex--justify-start pl-3">
       <a class="flex w-50" href="/">
         <img class="w-100" src="site-assets/images/svg/RitterInsuranceLogo.svg" alt="Ritter Insurance Marketing">
       </a>
     </div>
-    <nav class="site-menu site-menu--bordered background-white text-navy">
-      <a class="site-menu__item h-100 flex--align-center text--bold text-navy border-l border--color-light" href="https://docs.ritterim.com">
+    <nav class="site-menu site-menu--bordered background--white text--navy">
+      <a class="site-menu__item h-100 flex--align-center text--bold text--navy border-l border--color-light" href="https://docs.ritterim.com">
         <img class="icon--svg-small" src="site-assets/images/svg/ritter-docs.svg" alt="">
         Ritter Docs
       </a>
-      <a class="site-menu__item h-100 flex--align-center text--bold text-navy px-3 border--color-light" href="https://ritterim.com">
+      <a class="site-menu__item h-100 flex--align-center text--bold text--navy px-3 border--color-light" href="https://ritterim.com">
         <img class="icon--svg-small" src="site-assets/images/svg/ritter-website.svg" alt="">
         Ritterim.com
       </a>
@@ -66,23 +66,23 @@
       <nav class="h-100 overflow-y--scroll pb-7" aria-label="Style Guide">
         <ul class="list">
           <li class="list__item mb-0">
-            <a class="flex p-3 pos-rel{{#unless template.homepage}} hover-scale text-base{{/unless}}{{#if template.isHomepage}} background-skyblue text-navy text--bold{{/if}}" href="./">
+            <a class="flex p-3 pos-rel{{#unless template.homepage}} hover-scale text--base{{/unless}}{{#if template.isHomepage}} background--skyblue text--navy text--bold{{/if}}" href="./">
               <strong>Home v{{ options.version }}</strong>
               <i class="pos-abs pin-right pin-center-top mr-3 fad pi-house"></i>
             </a>
           </li>
         {{#each menu}}
           <li class="list__item mb-0">
-            <a class="flex p-3 pos-rel{{#unless isActive}} hover-scale text-base{{/unless}}{{#if isActive}} background-skyblue text-navy text--bold{{/if}}" href="section-{{referenceURI}}.html">
+            <a class="flex p-3 pos-rel{{#unless isActive}} hover-scale text--base{{/unless}}{{#if isActive}} background--skyblue text--navy text--bold{{/if}}" href="section-{{referenceURI}}.html">
               <strong>{{referenceNumber}}</strong><span class="ml-2">{{header}}</span>
               <i class="pos-abs pin-right pin-center-top mr-3 fal pi-angle-down text--size-xl{{#if isActive}} rotate-180{{/if}}"></i>
             </a>
             {{#if isActive}}
               {{#if children}}
-                <ul class="list pl-1 background-lighter style-nav__child-list">
+                <ul class="list pl-1 background--lighter style-nav__child-list">
                 {{#each children}}
                   <li class="mb-0">
-                    <a class="flex px-3 py-3 hover-scale text-base" href="section-{{../referenceURI}}.html#{{referenceURI}}">
+                    <a class="flex px-3 py-3 hover-scale text--base" href="section-{{../referenceURI}}.html#{{referenceURI}}">
                       <strong>{{referenceNumber}}</strong><span class="ml-2">{{header}}</span>
                     </a>
                   </li>
@@ -96,7 +96,7 @@
       </nav>
     </aside>
   {{/unless}}
-    <main class="pb-4 header-fixed block{{#if homepage}} block-10 desktop-up-8 py-4{{/if}} {{#unless homepage}}px-4 background-white block-9 desktop-up-10{{/unless}}" aria-label="Content">
+    <main class="pb-4 header-fixed block{{#if homepage}} block-10 desktop-up-8 py-4{{/if}} {{#unless homepage}}px-4 background--white block-9 desktop-up-10{{/unless}}" aria-label="Content">
     
       {{#if template.isHomepage}}
         {{#if homepage}}
@@ -106,7 +106,7 @@
 
               {{#each menu}}
                 <div class="block{{#if isActive}} active{{/if}}">
-                  <a class="card h-100 flex--center-content flex--column rounded-1 text-salmon--hover" href="section-{{referenceURI}}.html">
+                  <a class="card h-100 flex--center-content flex--column rounded-1 text-hover--salmon" href="section-{{referenceURI}}.html">
                     <img class="py-2" src="site-assets/images/svg/{{header}}.svg" alt="">
                     <span class="py-1">{{header}}</span>
                     <span class="py-1">Learn More <i class="arrow-right"></i><i class="angle-right"></i></span>
@@ -127,10 +127,10 @@
       {{#each sections}}
         <div id="{{referenceURI}}" class="pb-3 page-anchor-target{{#unless @last}} mb-6{{/unless}}{{#unless @first}} border-b border--color-lighter{{/unless}}{{#if @last}} no-border{{/if}} {{#if @root.template.isItem}}is-fullscreen{{/if}}">
           <h{{#if @first}}1{{else}}2{{/if}} class="style-title {{#if @first}}text--bold text--size-xxl mt-0{{/if}} mb-3">
-            <a class="style-title__permalink {{#if @first}} text-navy{{else}} text-dark{{/if}}" href="#{{referenceURI}}">
-              <div class="style-title__ref text-base text--size-xxs">
+            <a class="style-title__permalink {{#if @first}} text--navy{{else}} text--dark{{/if}}" href="#{{referenceURI}}">
+              <div class="style-title__ref text--base text--size-xxs">
                 Section {{referenceNumber}}
-                <span class="style-title__permalink-hash text-light">
+                <span class="style-title__permalink-hash text--light">
                   {{#if @root.hasNumericReferences}}
                     #permalink
                   {{else}}
@@ -140,7 +140,7 @@
               </div>
               {{header}}
             </a>
-            <hr class="w-25 background-orange" style="height: .3rem;">
+            <hr class="w-25 background--orange" style="height: .3rem;">
           </h{{#if @first}}1{{else}}2{{/if}}>
 
           {{#if description}}
@@ -153,10 +153,10 @@
             <ul class="list block-container tablet-up-3 laptop-up-4 blocks p-2">
               {{#each colors}}
                 <li class="block">
-                  <figure class="h-100 background-white border border--color-lighter m-0 p-0">
+                  <figure class="h-100 background--white border border--color-lighter m-0 p-0">
                     <div style="background-color:{{color}}; height: 3em;"></div>
                     <figcaption class="p-2 flex flex--column">
-                      <strong class="text--bold text-dark">{{name}}</strong>
+                      <strong class="text--bold text--dark">{{name}}</strong>
                       {{color}}
                     </figcaption>
                   </figure>

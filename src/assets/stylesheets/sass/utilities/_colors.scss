@@ -5,22 +5,22 @@
 
 // Background Colors
 //
-// The map below can be used to set, or change a background-color on a specific element with one, or both of the classes `background-{color}` and `background-{color}--hover`.
-// You can view our list of colors [greyscale](/section-color.html#kssref-color-greyscale), [brand colors](/section-color.html#kssref-color-brandcolors), and [secondary colors](/section-color.html#kssref-color-secondarycolors) maps. Alpha transparency can also be set for any background color available. Alpha values range from 10% - 90% on the tens, for example `background-black-a90` sets the background of the element to black with 90% alpha.
+// The map below can be used to set, or change a background-color on a specific element with one, or both of the classes `background--{color}` and `background-hover--{color}`.
+// You can view our list of colors [greyscale](/section-color.html#kssref-color-greyscale), [brand colors](/section-color.html#kssref-color-brandcolors), and [secondary colors](/section-color.html#kssref-color-secondarycolors) maps. Alpha transparency can also be set for any background color available. Alpha values range from 10% - 90% on the tens, for example `background--black-a90` sets the background of the element to black with 90% alpha.
 //
 // | Greyscale               |                          |                           |                            |
 // | ----------------------- | ------------------------ | ------------------------- | -------------------------- |
-// | `background-white`      | `background-lighter`     | `background-light-mid`    | `background-light`         |
-// | `background-base`       | `background-dark`        | `background-black`        |                            |
+// | `background--white`      | `background--lighter`     | `background--light-mid`    | `background--light`         |
+// | `background--base`       | `background--dark`        | `background--black`        |                            |
 //
 // | Brand colors            |                          |                           |                            |
 // | ----------------------- | ------------------------ | ------------------------- | -------------------------- |
-// | `background-navy`       | `background-skyblue`     | `background-med-blue`     | `background-beige`         |
-// | `background-peach`      | `background-salmon`      | `background-brown`        | `background-orange`        |
+// | `background--navy`       | `background--skyblue`     | `background--med-blue`     | `background--beige`         |
+// | `background--peach`      | `background--salmon`      | `background--brown`        | `background--orange`        |
 //
 // | Remove a background color |                          |                           |                            |
 // | ------------------------- | ------------------------ | ------------------------- | -------------------------- |
-// | `background-transparent`  |                          |                           |                            |
+// | `background--transparent`  |                          |                           |                            |
 // 
 // Styleguide Utilities.Color.Background
 
@@ -37,12 +37,14 @@ $site-colors: () !default;
 @if meta.type-of($all-colors) == 'map' {
   @each $name, $color in $all-colors {
     // text color
-    .text-#{$name} {
-      &.pill {
-        border-color: $color !important;
+    .text {
+      &--#{$name}{
+        color: $color !important;
+        &.pill {
+          border-color: $color !important;
+        }
       }
-      color: $color !important;
-      &--hover {
+      &-hover--#{$name} {
         transition: background-color config.$transitions;
 
         &.text-underline--hover {
@@ -56,9 +58,21 @@ $site-colors: () !default;
         }
       }
     }
+
     // background color
-    .background-#{$name} {
-      background-color: $color !important;
+    .background {
+      &--#{$name}{
+        background-color: $color !important;
+        &.button {
+
+          &.loading {
+
+            &:before {
+              background-color: $color !important;
+            }
+          }
+        }
+      }
 
       &--hover {
         transition: background-color config.$transitions;
@@ -67,21 +81,11 @@ $site-colors: () !default;
           background-color: $color !important;
         }
       }
-
-      &.button {
-
-        &.loading {
-
-          &:before {
-            background-color: $color !important;
-          }
-        }
-      }
     }
 
     // Add alpha transparency  
     @for $i from 1 through 9 {
-      .background-#{$name}-a#{$i}0 {
+      .background--#{$name}-a#{$i}0 {
         background-color: rgba($color, $i * .1) !important;
       }
     }
@@ -92,18 +96,18 @@ $site-colors: () !default;
 @if meta.type-of(variables.$error-colors) == 'map' {
   @each $name, $color in variables.$error-colors {
     // text color
-    .text-#{$name} {
+    .text--#{$name} {
       border-color: $color !important;
       color: $color !important;
       transition: .2s;
     }
     // background color
-    .background-#{$name} {
+    .background--#{$name} {
       background-color: $color !important;
     }
     // Add alpha transparency  
     @for $i from 1 through 9 {
-      .background-#{$name}-a#{$i}0 {
+      .background--#{$name}-a#{$i}0 {
         background-color: rgba($color, $i * .1) !important;
       }
     }
@@ -111,6 +115,6 @@ $site-colors: () !default;
 }
 
 // transparent color
-.background-transparent {
+.background--transparent {
   background-color: transparent!important;
 }

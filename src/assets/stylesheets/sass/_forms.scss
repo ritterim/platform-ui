@@ -139,7 +139,7 @@
 // The light modifier works with [form--bordered](styleguide/section-forms.html#forms-border) and [form--rounded](styleguide/section-forms.html#forms-borderrounded).
 // 
 // Markup:
-// <div class="background-navy p-3">
+// <div class="background--navy p-3">
 //   <form action="" class="form form--light block-container tablet-up-3 laptop-up-4 desktop-up-6 blocks mb-3 p-2">
 //     <div class="block form__field">
 //       <label for="first-name">First Name</label>
@@ -251,13 +251,13 @@
 //   <div class="block">
 //     <label for="dob" class="form__field has-icon--right">Birthday
 //       <input id="dob" type="date">
-//       <i class="pi-calendar background-white"></i>
+//       <i class="pi-calendar background--white"></i>
 //     </label>
 //   </div>
 //   <div class="block">
 //     <label for="date" class="form__field has-icon">Date
 //       <input id="date" type="date">
-//       <i class="pi-calendar text-med-blue background-white"></i>
+//       <i class="pi-calendar text--med-blue background--white"></i>
 //     </label>
 //   </div>
 //   <div class="block">
@@ -278,7 +278,7 @@
 //          <option value="Option6">Option 6</option>
 //        </select>
 //      </div>
-//      <i class="pi-plus text-med-blue"></i>
+//      <i class="pi-plus text--med-blue"></i>
 //    </label>
 //   </div>
 // </form>
@@ -520,7 +520,7 @@
 //   <div class="block">
 //     <label for="date-1" class="form__field has-icon">Date
 //       <input id="date-1" type="date">
-//       <i class="pi-calendar text-skyblue background-white"></i>
+//       <i class="pi-calendar text-skyblue background--white"></i>
 //     </label>
 //   </div>
 //   <div class="block">
@@ -1305,7 +1305,7 @@ legend {
 // to the input or textarea. In your javascript only toggle the `readonly` attribute on or off when the user
 // would select the option to edit the text.
 //
-// | <i class="pi-warning text-orange"></i> NOTE: The `js-` classes in the example below are just for test purposes. You do not need them.** |
+// | <i class="pi-warning text--orange"></i> NOTE: The `js-` classes in the example below are just for test purposes. You do not need them.** |
 // | --
 //
 // Markup:
@@ -1320,12 +1320,12 @@ legend {
 //     <div class="block block-2 flex flex--align-center flex--justify-end">
 //       <div class="icon-menu">
 //         <div class="icon-menu__item">
-//           <a href="#" class="icon-menu__action text-positive--hover js-edit-readonly" role="button">
+//           <a href="#" class="icon-menu__action text-hover--positive js-edit-readonly" role="button">
 //             <i class="pi-edit" aria-hidden="hidden"></i>
 //           </a>
 //         </div>
 //         <div class="icon-menu__item">
-//           <a href="#" class="icon-menu__action text-negative--hover" role="button">
+//           <a href="#" class="icon-menu__action text-hover--negative" role="button">
 //             <i class="pi-trash" aria-hidden="hidden"></i>
 //           </a>
 //         </div>
@@ -1342,12 +1342,12 @@ legend {
 //     <div class="block block-2 flex flex--align-center flex--justify-end">
 //       <div class="icon-menu">
 //         <div class="icon-menu__item">
-//           <a href="#" class="icon-menu__action text-positive--hover js-edit-textarea" role="button">
+//           <a href="#" class="icon-menu__action text-hover--positive js-edit-textarea" role="button">
 //             <i class="pi-edit" aria-hidden="hidden"></i>
 //           </a>
 //         </div>
 //         <div class="icon-menu__item">
-//           <a href="#" class="icon-menu__action text-negative--hover" role="button">
+//           <a href="#" class="icon-menu__action text-hover--negative" role="button">
 //             <i class="pi-trash" aria-hidden="hidden"></i>
 //           </a>
 //         </div>

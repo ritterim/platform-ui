@@ -56,32 +56,32 @@
 // <div class="block-container cards blocks p-3 mb-3 tablet-up-4">
 // <div class="block">
 // <div class="card rounded-3">
-//     <img class="card__image background-lightblue p-3" src="site-assets/images/svg/course-1.svg" alt="" />
+//     <img class="card__image background--lightblue p-3" src="site-assets/images/svg/course-1.svg" alt="" />
 //     <div class="card__content">
 //         <div class="flex flex--justify-between">
 //             <div class="text--bold text--uppercase">Part 1</div>
 //             <div class="text--bold flex flex--align-center">
-//                 <i class="pi-clock text-navy mr-1" aria-hidden="true"></i>
+//                 <i class="pi-clock text--navy mr-1" aria-hidden="true"></i>
 //                 1:45
 //             </div>
 //         </div>
-//         <h3 class="text-med-blue">Card Title</h3>
+//         <h3 class="text--med-blue">Card Title</h3>
 //         <p>Donec malesuada semper risus vitae placerat. Morbi tristique, odio vel hendrerit sollicitudin, massa orci blandit felis, ac vehicula nulla mauris vitae arcu.</p>
 //     </div>
 // </div>
 // </div>
 // <div class="block">
 // <div class="card">
-//     <img class="card__image background-lightblue p-3" src="site-assets/images/svg/course-1.svg" alt="" />
+//     <img class="card__image background--lightblue p-3" src="site-assets/images/svg/course-1.svg" alt="" />
 //     <div class="card__content">
 //         <div class="flex flex--justify-between">
 //             <div class="text--bold text--uppercase">Part 1</div>
 //             <div class="text--bold flex flex--align-center">
-//                 <i class="pi-clock text-navy mr-1" aria-hidden="true"></i>
+//                 <i class="pi-clock text--navy mr-1" aria-hidden="true"></i>
 //                 1:45
 //             </div>
 //         </div>
-//         <h3 class="text-med-blue">Card Title</h3>
+//         <h3 class="text--med-blue">Card Title</h3>
 //         <p>Donec malesuada semper risus vitae placerat. Morbi tristique, odio vel hendrerit sollicitudin, massa orci blandit felis, ac vehicula nulla mauris vitae arcu.</p>
 //     </div>
 // </div>
@@ -93,11 +93,11 @@
 //         <div class="flex flex--justify-between">
 //             <div class="text--bold text--uppercase">Part 1</div>
 //             <div class="text--bold flex flex--align-center">
-//                 <i class="pi-clock text-navy mr-1" aria-hidden="true"></i>
+//                 <i class="pi-clock text--navy mr-1" aria-hidden="true"></i>
 //                 1:45
 //             </div>
 //         </div>
-//         <h3 class="text-med-blue">Card Title</h3>
+//         <h3 class="text--med-blue">Card Title</h3>
 //         <p>Donec malesuada semper risus vitae placerat. Morbi tristique, odio vel hendrerit sollicitudin, massa orci blandit felis, ac vehicula nulla mauris vitae arcu.</p>
 //     </div>
 // </div>
@@ -109,11 +109,11 @@
 //         <div class="flex flex--justify-between">
 //             <div class="text--bold text--uppercase">Part 1</div>
 //             <div class="text--bold flex flex--align-center">
-//                 <i class="pi-clock text-navy mr-1" aria-hidden="true"></i>
+//                 <i class="pi-clock text--navy mr-1" aria-hidden="true"></i>
 //                 1:45
 //             </div>
 //         </div>
-//         <h3 class="text-med-blue">Card Title</h3>
+//         <h3 class="text--med-blue">Card Title</h3>
 //         <p>Donec malesuada semper risus vitae placerat. Morbi tristique, odio vel hendrerit sollicitudin, massa orci blandit felis, ac vehicula nulla mauris vitae arcu.</p>
 //     </div>
 // </div>
@@ -136,8 +136,8 @@
 //                 <div class="card__title card__title--normal">Card Header</div>
 //             </div>
 //             <div class="card__header-actions"><a role="button" aria-label="remove"
-//                     class="card-action text-light"><i class="pi-trash" aria-hidden="true"></i></a>
-//                 <a role="button" aria-label="edit" class="card-action text-light"><i class="pi-edit"
+//                     class="card-action text--light"><i class="pi-trash" aria-hidden="true"></i></a>
+//                 <a role="button" aria-label="edit" class="card-action text--light"><i class="pi-edit"
 //                         aria-hidden="true"></i></a></div>
 //         </div>
 //         <div class="card__content">
@@ -145,14 +145,14 @@
 //         </div>
 //         <div class="card__footer card__footer">
 //             <div>
-//                 <p><i class="pi-calendar text-skyblue" aria-hidden="true"></i> <time
+//                 <p><i class="pi-calendar text--skyblue" aria-hidden="true"></i> <time
 //                         datetime="22 Jul 2019">22 Jul 2019</time></p>
-//                 <p><i class="pi-clock text-skyblue" aria-hidden="true"></i> <time datetime="9:15 am">9:15
+//                 <p><i class="pi-clock text--skyblue" aria-hidden="true"></i> <time datetime="9:15 am">9:15
 //                         am</time></p>
 //             </div>
 //             <div class="div-btn">
 //                 <div class="check-circle">
-//                     <div class="pill pill--circle-large text-light"><i class="pi-check pi-xl" aria-hidden="true"></i>
+//                     <div class="pill pill--circle-large text--light"><i class="pi-check pi-xl" aria-hidden="true"></i>
 //                     </div>
 //                     <p class="check-circle__status">Complete</p>
 //                 </div>
@@ -171,8 +171,8 @@
 //                 <h2 class="card__title card__title--normal">Testing stuff</h2>
 //             </div>
 //             <div class="card__header-actions"><a role="button" aria-label="remove"
-//                     class="card-action text-light"><i class="pi-trash" aria-hidden="true"></i></a>
-//                 <a role="button" aria-label="edit" class="card-action text-light"><i class="pi-edit"
+//                     class="card-action text--light"><i class="pi-trash" aria-hidden="true"></i></a>
+//                 <a role="button" aria-label="edit" class="card-action text--light"><i class="pi-edit"
 //                         aria-hidden="true"></i></a></div>
 //         </div>
 //         <div class="card__content card__content--scroll">
@@ -210,14 +210,14 @@
 //         </div>
 //         <div class="card__footer card__footer">
 //             <div>
-//                 <p><i class="pi-calendar text-skyblue" aria-hidden="true"></i> <time
+//                 <p><i class="pi-calendar text--skyblue" aria-hidden="true"></i> <time
 //                         datetime="23 Jul 2019">23 Jul 2019</time></p>
-//                 <p><i class="pi-clock text-skyblue" aria-hidden="true"></i> <time datetime="12:00 am">12:00
+//                 <p><i class="pi-clock text--skyblue" aria-hidden="true"></i> <time datetime="12:00 am">12:00
 //                         am</time></p>
 //             </div>
 //             <div class="div-btn">
 //                 <div class="check-circle">
-//                     <div class="pill pill--circle-large text-light"><i class="pi-check pi-xl" aria-hidden="true"></i>
+//                     <div class="pill pill--circle-large text--light"><i class="pi-check pi-xl" aria-hidden="true"></i>
 //                     </div>
 //                     <p class="check-circle__status">Complete</p>
 //                 </div>
@@ -236,8 +236,8 @@
 //                 <h2 class="card__title card__title--normal">Call Carol</h2>
 //             </div>
 //             <div class="card__header-actions"><a role="button" aria-label="remove"
-//                     class="card-action text-light"><i class="pi-trash" aria-hidden="true"></i></a>
-//                 <a role="button" aria-label="edit" class="card-action text-light"><i class="pi-edit"
+//                     class="card-action text--light"><i class="pi-trash" aria-hidden="true"></i></a>
+//                 <a role="button" aria-label="edit" class="card-action text--light"><i class="pi-edit"
 //                         aria-hidden="true"></i></a></div>
 //         </div>
 //         <div class="card__content">
@@ -245,14 +245,14 @@
 //         </div>
 //         <div class="card__footer card__footer">
 //             <div>
-//                 <p><i class="pi-calendar text-skyblue" aria-hidden="true"></i> <time
+//                 <p><i class="pi-calendar text--skyblue" aria-hidden="true"></i> <time
 //                         datetime="23 Jul 2019">23 Jul 2019</time></p>
-//                 <p><i class="pi-clock text-skyblue" aria-hidden="true"></i> <time datetime="6:30 pm">6:30
+//                 <p><i class="pi-clock text--skyblue" aria-hidden="true"></i> <time datetime="6:30 pm">6:30
 //                         pm</time></p>
 //             </div>
 //             <div class="div-btn">
 //                 <div class="check-circle">
-//                     <div class="pill pill--circle-large text-light"><i class="pi-check pi-xl" aria-hidden="true"></i>
+//                     <div class="pill pill--circle-large text--light"><i class="pi-check pi-xl" aria-hidden="true"></i>
 //                     </div>
 //                     <p class="check-circle__status">Complete</p>
 //                 </div>
