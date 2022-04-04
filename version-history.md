@@ -1,6 +1,8 @@
 # Version History
 
 ---
+## Next Update
+    -   Remove padding: 1rem from `section`
 ## 1.4.0
     - Updated BEM syntax on color utilities:
       - `text--{color}`
