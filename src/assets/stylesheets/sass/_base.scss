@@ -78,10 +78,6 @@ strong {
   font-weight: bold;
 }
 
-section {
-  padding: variables.$spacer;
-}
-
 hr {
   background-color: map.get(variables.$greyscale, 'base');
   border: none;
