@@ -2,7 +2,10 @@
 
 ---
 ## Next Update
-    -   Remove padding: 1rem from `section`
+    - Removes unnecessary console.warning in accordions JavaScript
+
+## 1.4.2
+    - Remove padding: 1rem from `section`
 ## 1.4.0
     - Updated BEM syntax on color utilities:
       - `text--{color}`
