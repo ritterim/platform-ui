@@ -1,7 +1,7 @@
 # Version History
 
 ---
-## Next Update
+## 1.4.3
     - Removes unnecessary console.warning in accordions JavaScript
 
 ## 1.4.2
