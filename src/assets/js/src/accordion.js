@@ -2,7 +2,6 @@ let accordionHeaders = document.querySelectorAll('.pui-accordion__header, .accor
 
 if(accordionHeaders) {
   accordionHeaders.forEach(accordion => {
-    console.warn(accordion.parentElement);
     accordion.addEventListener('click', e => {
       e.preventDefault();
       accordion.parentElement.classList.toggle('active');
