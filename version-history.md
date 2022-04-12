@@ -1,6 +1,8 @@
 # Version History
 
 ---
+## 1.4.4
+    - Toggle Small renamed to switch
 ## 1.4.3
     - Removes unnecessary console.warning in accordions JavaScript
     - Fixes `background-hover--${color}` utilities

@@ -1538,9 +1538,9 @@ fieldset:disabled {
 
 
 
-// Toggle Option Small
+// Switch
 // 
-// For a smaller toggle component, use the class `toggle-small`. This is a great option for a checkbox. The idea for this toggle is to 
+// For a smaller toggle component, use the class `switch`. This is a great option for a checkbox. The idea for this toggle is to 
 // use only one input and label. Think of it as a light switch. One item, one or off. 
 // 
 // Markup:
@@ -1548,7 +1548,7 @@ fieldset:disabled {
 //   <div class="block-container">
 //     <fieldset class="pui-form__field block-4">
 //       <legend>Active</legend>
-//       <div class="toggle-small">
+//       <div class="switch">
 //         <input id="active" type="checkbox" name="active">
 //         <label for="active">
 //         </label>
@@ -1559,8 +1559,8 @@ fieldset:disabled {
 // 
 // Styleguide Forms.ToggleSmall
 
-//   Small toggle
-.toggle-small {
+// Switch
+.switch {
 
   input[type="checkbox"],
   input[type="radio"] {
