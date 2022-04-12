@@ -28,7 +28,7 @@
 // Fancy Forms
 //
 // You want a fancy form that animates the `label`? You got it.
-// To get the animation, add the class `form__field--fancy` to the `form__field`.
+// To get the animation, add the class `form--fancy` to the `form`.
 // You will also need to change the markup slightly. Instead of a `label` the `form__field` should now be a `div`
 // put the `label` under the `input` as a sibling of the `form__field` `div`. See markup below.
 // 
@@ -39,20 +39,20 @@
 // probably be best for a simple form that has text inputs.
 //
 // Markup:
-// <form action="" class="form">
-//   <div class="form__field form__field--fancy">
+// <form action="" class="form form--fancy">
+//   <div class="form__field">
 //     <input id="first-name" type="text" required placeholder="Jane">
 //     <label for="first-name">First Name</label>
 //   </div>
-//   <div class="form__field form__field--fancy">
+//   <div class="form__field">
 //     <input id="last-name" type="text" required placeholder="Smith">
 //     <label for="last-name">Last Name</label>
 //   </div>
-//   <div class="form__field form__field--fancy">
+//   <div class="form__field">
 //     <input id="zipcode" type="tel" pattern="^\d{5,6}(?:[-\s]\d{4})?$" required placeholder="12345">
 //     <label for="zipcode">ZIP Code</label>
 //   </div>
-//   <div class="form__field form__field--fancy">
+//   <div class="form__field">
 //     <div class="form__select-wrapper">
 //       <select name="Option Select" id="Option" required placeholder="Option">
 //         <option value=""></option>
@@ -920,9 +920,10 @@ legend {
         }
       }
     }
+  }
 
-    // Fancy label animations
-    &#{ $self }__field--fancy {
+  &#{$self}--fancy{
+    #{$self}__field{
       position: relative;
 
       &.error {
@@ -989,7 +990,7 @@ legend {
 
       ::-webkit-input-placeholder {
         /* WebKit browsers */
-         color: transparent !important;
+        color: transparent !important;
       }
       ::-moz-placeholder {
           /* Mozilla Firefox 19+ */
