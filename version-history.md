@@ -1,8 +1,10 @@
 # Version History
 
 ---
-# 1.4.5
+# 1.4.6
     - Refactored fancy form to used with `form--fancy` as a modifier on forms
+## 1.4.5
+    - Secondary buttons show text for has-text at all screen sizes.
 ## 1.4.4
     - Toggle Small renamed to switch
 ## 1.4.3

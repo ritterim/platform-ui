@@ -567,20 +567,8 @@
     }
 
     &.has-text {
-      width: 2rem;
-
-      @include mixins.breakpoint(lg-tablet, max) {
-        font-size: 0;
-
-        i {
-          font-size: initial;
-        }
-      }
-
-      @include mixins.breakpoint(lg-tablet, min) {
-        padding: 0 map.get(variables.$spacers, 2 );
-        width: auto;
-      }
+      padding: 0 map.get(variables.$spacers, 2 );
+      width: auto;
     }
 
     &[data-button-text] {
@@ -607,15 +595,12 @@
       }
 
       &.has-text {
-        font-size: initial;
         padding: 0 map.get(variables.$spacers, 1 );
 
-        @include mixins.breakpoint(lg-tablet, min) {
-          &:after {
-            width: auto;
-            display: inline-block;
-            padding-right: map.get(variables.$spacers, 2 );
-          }
+        &:after {
+          width: auto;
+          display: inline-block;
+          padding-right: map.get(variables.$spacers, 2 );
         }
       }
     }
@@ -632,11 +617,8 @@
         background-color: config.$button-primary-hover;
         border-color: inherit;
         box-shadow: 0 0 0 .3rem color.adjust(config.$button-secondary-background, $lightness: math.percentage(config.$hue-threshold));
-
-        @include mixins.breakpoint(lg-tablet, min) {
-          padding: 0 map.get(variables.$spacers, 1 );
-          width: auto;
-        }
+        padding: 0 map.get(variables.$spacers, 1 );
+        width: auto;
 
         &:before {
           @extend %loader;
@@ -654,14 +636,11 @@
           top: 0;
         }
 
-
-        @include mixins.breakpoint(lg-tablet, min) {
-          &:after {
-            content: attr(data-button-text);
-            width: auto;
-            display: inline-block;
-            padding-right: map.get(variables.$spacers, 2 );
-          }
+        &:after {
+          content: attr(data-button-text);
+          width: auto;
+          display: inline-block;
+          padding-right: map.get(variables.$spacers, 2 );
         }
 
         i {
