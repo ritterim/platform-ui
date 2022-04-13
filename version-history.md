@@ -1,6 +1,8 @@
 # Version History
 
 ---
+## 1.4.5
+    - Sceondary buttons show text for has-text at all screen sizes.
 ## 1.4.4
     - Toggle Small renamed to switch
 ## 1.4.3
