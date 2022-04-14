@@ -1,6 +1,8 @@
 # Version History
 
 ---
+# 1.4.7
+    - Added individual border-radius utilities
 # 1.4.6
     - Refactored fancy form to used with `form--fancy` as a modifier on forms
 ## 1.4.5
