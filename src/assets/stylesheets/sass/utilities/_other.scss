@@ -245,10 +245,52 @@ $cursors: (
   } 
 }
 
+// Rounded
+// 
+// Add rounded edges to all corners of an element, or individual corners
+// 
+// | Classes             |                                          |
+// | ------------------- | ---------------------------------------- |
+// | `rounded--{0-7}`    | Adds rounded edges to all corners        |
+// | `rounded-tl--{0-7}` | Adds rounded edge to top left corner     |
+// | `rounded-tr--{0-7}` | Adds rounded edge to top right corner    |
+// | `rounded-bl--{0-7}` | Adds rounded edge to bottom left corner  |
+// | `rounded-br--{0-7}` | Adds rounded edge to bottom right corner |
+//
+// #### Example:
+// <div class="rounded-3 card mb-4">
+//   Card Content
+// </div>
+// <div class="rounded--3 card mb-4">
+//   Card Content
+// </div>
+// 
+// <div class="rounded-tl--3 rounded-br--3 card mb-4">
+//   Card Content
+// </div>
+//
+//
+//
+// Styleguide Utilities.Rounded
+
+$corners:(
+  'tl': 'top-left',
+  'tr': 'top-right',
+  'bl': 'bottom-left',
+  'br': 'bottom-right'
+);
+
 // rounded corners based on $spacers map
 @each $unit, $rem in variables.$spacers {
-  .rounded-#{$unit} {
+  .rounded-#{$unit},
+  .rounded--#{$unit} {
     border-radius: #{$rem}!important;
+  }
+
+  @each $corner, $value in $corners {
+    .rounded-#{$corner}--#{$unit}{
+      border-#{$value}-radius: #{$rem}!important;
+    }
   }
 }
 
