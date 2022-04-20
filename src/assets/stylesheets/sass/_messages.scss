@@ -39,10 +39,10 @@
 
 @mixin message {
   $self: &;
-  display: flex;
-  flex-direction: column;
+  
   margin: map.get(variables.$spacers, 2 ) 0;
   padding: map.get(variables.$spacers, 2 );
+  
   p {
     margin: map.get(variables.$spacers, 2 ) 0;
   }
@@ -69,10 +69,10 @@
       color: color.adjust($color, $lightness: math.percentage(-(config.$hue-threshold * 6)));
       &:before {
         content: $name;
-        display: flex;
+        display: block;
         font-size: 80%;
         font-weight: bold;
-        margin-bottom: map.get(variables.$spacers, 2 );
+        margin-bottom: map.get(variables.$spacers, 3 );
         text-transform: uppercase;
       }
       &[data-header]:before {
