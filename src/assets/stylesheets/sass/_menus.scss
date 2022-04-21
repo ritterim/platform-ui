@@ -585,7 +585,7 @@ $all-colors: () !default;
     }
 
 
-    .dropdown-active {
+    .active {
 
       > .dropdown__trigger {
         
@@ -699,7 +699,7 @@ $all-colors: () !default;
         }
       }
 
-      .dropdown-active {
+      .active {
 
         > .dropdown__trigger {
           background-color: var(--item-hover-color, #{color.adjust($color, $lightness: math.percentage(-.05))});
@@ -739,7 +739,7 @@ $all-colors: () !default;
     padding: 0;
   }
 
-  &.dropdown-active {
+  &.active {
 
     > .dropdown__trigger {
       text-shadow: 1px 0 0 currentColor;
