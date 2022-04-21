@@ -8,12 +8,12 @@ if (infoBoxes) {
 
     toggle.addEventListener('click', (e) => {
       e.preventDefault();
-      content.classList.toggle('hidden');
+      content.parentElement.classList.toggle('active');
     });
 
     closeButtons.forEach((closeButton) => {
       closeButton.addEventListener('click', () => {
-        content.classList.add('hidden');
+        content.parentElement.classList.add('active');
       });
     });
   });
