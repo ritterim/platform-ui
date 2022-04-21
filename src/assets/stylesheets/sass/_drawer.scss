@@ -10,7 +10,7 @@
 //
 // There are some key classes you need for the drawer to work properly.
 // From this point, you want to add the proper animation class to the drawer. In the examples below, we have the classes set for the
-// direction of the drawer animation. Now all you need to do is toggle the class `drawer--active` to show or hide the drawer.
+// direction of the drawer animation. Now all you need to do is toggle the class `active` to show or hide the drawer.
 //
 // You can have a drawer open from the bottom by using the class `drawer-bottom`. To have a drawer open from the right
 // use `drawer-right`.
@@ -229,7 +229,7 @@
     }
   }
 
-  &.drawer--active {
+  &.active {
     transform: translate(0%);
     visibility: visible;
   }
