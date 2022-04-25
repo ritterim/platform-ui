@@ -5,7 +5,7 @@
 
 // Modal
 //
-// Modal default state is closed. Toggling `.modal--active` on the `.modal` will diplay the modal.
+// Modal default state is closed. Toggling `.active` on the `.modal` will diplay the modal.
 //
 // `.modal__close` on the close button is also a handle for JS.
 //
@@ -192,9 +192,13 @@
     transition: config.$transitions ease-in-out;
   }
 
-  &--active {
+  &.active {
     visibility: visible;
     opacity: 1;
+
+    #{$self}__inner {
+      transform: translate(0, 0);
+    }
   }
 
   &--full {
@@ -253,10 +257,6 @@
 
     @media (prefers-reduced-motion: no-preference) {
       transition: config.$transitions ease-in-out;
-    }
-
-    .modal--active & {
-      transform: translate(0, 0);
     }
 
     @include mixins.breakpoint(tablet, max) {

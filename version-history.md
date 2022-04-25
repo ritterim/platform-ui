@@ -1,6 +1,8 @@
 # Version History
 
 ---
+# 1.4.10
+    - modals use `active` state class
 # 1.4.9
     - info-box uses `active` to show content
     - drawers use `active` to display drawer
