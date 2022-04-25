@@ -20,7 +20,7 @@
 //   <button class="button button--secondary toggle-hidden" role="button" aria-label="Toggle">
 //     <i class="pi-filter" aria-hidden="hidden"></i>
 //   </button>
-//   <div class="info-box__content hidden">
+//   <div class="info-box__content">
 //     <button class="button info-box__close">
 //       Close <i class="pi-times" aria-hidden="hidden"></i>
 //     </button>
@@ -34,7 +34,7 @@
 // </div>
 // <div class="info-box info-box--left ml-5">
 //   <a href="#" class="toggle-hidden" aria-label="Toggle">Text Link - Left info box</a>
-//   <div class="info-box__content hidden">
+//   <div class="info-box__content">
 //     <button class="button info-box__close">
 //       Close <i class="pi-times" aria-hidden="hidden"></i>
 //     </button>
@@ -130,10 +130,18 @@
   display: inline-block;
   position: relative;
 
+  &.active {
+
+    .info-box__content {
+      display: block!important;
+    }
+  }
+
   &__content {
     background-color: map.get(variables.$greyscale, 'white');
     border: 1px solid color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold * 2));
     box-shadow: 0 1rem 2rem rgba(map.get(variables.$greyscale, 'black'), .4);
+    display: none;
     margin-top: variables.$spacer;
     padding: map.get(variables.$spacers, 5) map.get(variables.$spacers, 4);
     position: absolute;
