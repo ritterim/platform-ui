@@ -664,6 +664,76 @@
 // Styleguide Layout.Blocks.Utilities
 
 
+// Blocks - Max Width Container
+// 
+// <div class="max-container">
+//   <div class="block-container blocks p-2 tablet-up-2 laptop-up-3 desktop-up-4">
+//     <div class="block">
+//       <div class="card">
+//         <strong class="text--navy">block</strong>
+//       </div>
+//     </div>
+//     <div class="block">
+//       <div class="card">
+//         <strong class="text--navy">block</strong>
+//       </div>
+//     </div>
+//     <div class="block">
+//       <div class="card">
+//         <strong class="text--navy">block</strong>
+//       </div>
+//     </div>
+//     <div class="block">
+//       <div class="card">
+//         <strong class="text--navy">block</strong>
+//       </div>
+//     </div>
+//     <div class="block block--fill">
+//       <div class="card">
+//         <strong class="text--navy">block block--fill</strong>
+//       </div>
+//     </div>
+//   </div>
+// </div>
+// <div class="my-3"></div>
+// 
+// ```html
+// <div class="max-container">
+//   <div class="block-container blocks p-2 tablet-up-2 laptop-up-3 desktop-up-4">
+//     <div class="block">
+//       <div class="card">
+//         <strong class="text--navy">block</strong>
+//       </div>
+//     </div>
+//     <div class="block">
+//       <div class="card">
+//         <strong class="text--navy">block</strong>
+//       </div>
+//     </div>
+//     <div class="block">
+//       <div class="card">
+//         <strong class="text--navy">block</strong>
+//       </div>
+//     </div>
+//     <div class="block">
+//       <div class="card">
+//         <strong class="text--navy">block</strong>
+//       </div>
+//     </div>
+//     <div class="block block--fill">
+//       <div class="card">
+//         <strong class="text--navy">block block--fill</strong>
+//       </div>
+//     </div>
+//   </div>
+// </div>
+// ```
+// 
+// Weight: 7
+// 
+// Styleguide Layout.Blocks.Max
+
+
 
 // Block layout
 .block-container {
@@ -860,4 +930,13 @@
       }
     }
   }
+}
+
+
+// max-width on a block-container
+.max-container {  
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--max-container);
+  width: 100%;
 }
