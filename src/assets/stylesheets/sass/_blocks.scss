@@ -666,6 +666,9 @@
 
 // Blocks - Max Width Container
 // 
+// The `max-container` adds a max-width to your content. The size is set to `1440px` and is added to the `:root` with the `--max-container` custom property.
+// you can change this size in your project by setting `--max-container` to a different value.
+// 
 // <div class="max-container">
 //   <div class="block-container blocks p-2 tablet-up-2 laptop-up-3 desktop-up-4">
 //     <div class="block">
