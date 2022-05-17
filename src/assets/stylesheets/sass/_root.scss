@@ -51,4 +51,5 @@ $site-colors: () !default;
     --duration: #{config.$duration};
     --transitions: #{config.$transitions};
     --opacity: #{config.$opacity};
+    --max-container: 1440px;
 }
