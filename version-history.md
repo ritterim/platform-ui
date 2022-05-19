@@ -1,6 +1,8 @@
 # Version History
 
 ---
+# 1.4.12
+    - Bug: remove active class on info-box when clicking info-box__close
 # 1.4.11
     - max-container class for adding max-width on block-containers
 # 1.4.10
