@@ -1,6 +1,8 @@
 # Version History
 
 ---
+# 1.4.11
+    - max-container class for adding max-width on block-containers
 # 1.4.10
     - modals use `active` state class
 # 1.4.9
