@@ -13,7 +13,7 @@ if (infoBoxes) {
 
     closeButtons.forEach((closeButton) => {
       closeButton.addEventListener('click', () => {
-        content.parentElement.classList.add('active');
+        content.parentElement.classList.remove('active');
       });
     });
   });
