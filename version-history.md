@@ -1,6 +1,8 @@
 # Version History
 
 ---
+# 1.4.13
+    - Remove icon--svg classes
 # 1.4.12
     - Bug: remove active class on info-box when clicking info-box__close
 # 1.4.11
