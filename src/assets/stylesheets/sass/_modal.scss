@@ -166,7 +166,7 @@
 // 
 // Styleguide Components.modalmessage
 
-@mixin modal {
+.modal {
   $header-height: 6rem;
 
   // print entire modal
@@ -302,10 +302,6 @@
       width: 100%;
     }
   }
-}
-
-.modal {
-  @include modal;
 }
 
 body.modal-open {

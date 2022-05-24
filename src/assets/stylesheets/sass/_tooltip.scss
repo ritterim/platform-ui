@@ -174,10 +174,6 @@
 }
 
 // not fully realized :(
-@mixin tooltip-help {
-  color: map.get(config.$brand-colors, 'med-blue') !important;
-}
-
 .tooltip--help {
-  @include tooltip-help;
+  color: map.get(config.$brand-colors, 'med-blue') !important;
 }

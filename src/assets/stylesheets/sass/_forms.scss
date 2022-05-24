@@ -598,7 +598,7 @@ legend {
   white-space: normal;
 }
 
-@mixin form {
+.form {
   $error-color: color.adjust(map.get(variables.$error-colors, 'negative'), $lightness: math.percentage(-(config.$hue-threshold * 2)));
   $error-background: map.get(variables.$message-colors, 'error' );
 
@@ -1289,10 +1289,6 @@ legend {
   }
 }
 
-.form {
-  @include form;
-}
-
 // Readonly Input
 //
 // This style is for editable inputs as well as textareas. If you want to display the text or value of an
@@ -1417,7 +1413,7 @@ legend {
 // 
 // Styleguide Forms.ToggleDisabled
 
-@mixin toggle {
+.toggle {
   border: 1px solid map.get(variables.$greyscale, 'light' );
   border-radius: map.get(config.$radius, 'button');
   display: flex;
@@ -1482,10 +1478,6 @@ legend {
       }
     }
   }
-}
-
-.toggle {
-  @include toggle;
 }
 
 @mixin toggle-disabled {

@@ -118,7 +118,7 @@ $tab-height:          3rem;
 $tab-color:    map.get(variables.$greyscale, 'base' );
 $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold * 2));
 
-@mixin tabs {
+.tabs {
 
   @include mixins.breakpoint(tablet, min) {
     display: flex;
@@ -241,12 +241,8 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
   }
 }
 
-.tabs {
-  @include tabs();
-}
 
-
-@mixin tabs-flat {
+.tabs--flat {
 
   display: block;
   flex-wrap: unset;
@@ -403,11 +399,7 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
   }
 }
 
-.tabs--flat {
-  @include tabs-flat;
-}
-
-@mixin tab-panel {
+.tab-panel {
   background-color: map.get(variables.$greyscale, 'white');
   border: 1px solid $tab-border-color;
   padding: map.get(variables.$spacers, 2 );
@@ -424,8 +416,4 @@ $tab-border-color:    color.adjust(map.get(variables.$greyscale, 'light'), $ligh
     padding-top: calc(#{map.get(variables.$spacers, 2 )} + 1px);
     z-index: 1;
   }
-}
-
-.tab-panel {
-  @include tab-panel;
 }

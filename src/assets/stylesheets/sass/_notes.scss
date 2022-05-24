@@ -2,7 +2,7 @@
 @use "variables";
 @use "sass:map";
 
-@mixin note {
+.note {
   $orange: map.get(config.$brand-colors, 'salmon' );
   $self: &;
   position: relative;
@@ -71,8 +71,4 @@
       visibility: visible;
     }
   }
-}
-
-.note {
-  @include note;
 }
