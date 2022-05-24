@@ -116,7 +116,6 @@
   }
 }
 %loader,
-.pui-loader,
 .loader {
   animation: rotation 1s infinite linear;
   border: 2px solid map.get(config.$loader-colors, 'primary');
@@ -127,7 +126,6 @@
   @include mixins.square(1.4rem, 'min');
 }
 
-.pui-loader,
 .loader {
 
   &.inverted {

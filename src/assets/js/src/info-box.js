@@ -1,4 +1,4 @@
-let infoBoxes = document.querySelectorAll('.pui-info-box, .info-box');
+let infoBoxes = document.querySelectorAll('.info-box');
 
 if (infoBoxes) {
   infoBoxes.forEach((infoBox) => {

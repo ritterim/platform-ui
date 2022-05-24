@@ -165,14 +165,6 @@
   }
 }
 
-[data-pui-tooltip] {
-  @include tooltip;
-
-  &:after {
-    content: attr(data-pui-tooltip);
-  }
-}
-
 [data-tooltip] {
   @include tooltip;
   
@@ -184,10 +176,6 @@
 // not fully realized :(
 @mixin tooltip-help {
   color: map.get(config.$brand-colors, 'med-blue') !important;
-}
-
-.pui-tooltip--help {
-  @include tooltip-help;
 }
 
 .tooltip--help {

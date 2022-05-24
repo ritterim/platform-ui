@@ -237,7 +237,6 @@
 
 
 #kss-node {
-  .pui-drawer__open,
   .drawer__open {
     position: relative;
     bottom: inherit;
@@ -250,10 +249,6 @@
 
 .side-content {
   height: calc(100% - 4rem);
-}
-
-.pui-drawer {
-  @include drawer;
 }
 
 .drawer {
