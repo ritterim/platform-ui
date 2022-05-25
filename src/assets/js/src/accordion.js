@@ -1,4 +1,4 @@
-let accordionHeaders = document.querySelectorAll('.pui-accordion__header, .accordion__header');
+let accordionHeaders = document.querySelectorAll('.accordion__header');
 
 if(accordionHeaders) {
   accordionHeaders.forEach(accordion => {

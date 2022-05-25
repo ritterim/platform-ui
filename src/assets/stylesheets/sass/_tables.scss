@@ -144,7 +144,7 @@
 //
 // Styleguide Tables
 
-@mixin table {
+.table {
   $table-border: 1px solid color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold * 2));
   $responsive-table-bottom-gap: map.get(variables.$spacers, 2);
   $responsive-table-label-bg: map.get(variables.$greyscale, 'lighter');
@@ -250,12 +250,4 @@
   &--condensed {
     // coming
   }
-}
-
-.pui-table {
-  @include table;
-}
-
-.table {
-  @include table;
 }

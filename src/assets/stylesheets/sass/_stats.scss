@@ -71,7 +71,7 @@
 //
 // Styleguide Components.Stats
 
-@mixin stat {
+.stat {
   $self: &;
   align-items: center;
   display: flex;
@@ -107,12 +107,4 @@
       font-size: map.get(variables.$font-scale, "xxl");
     }
   }
-}
-
-.pui-stat {
-  @include stat;
-}
-
-.stat {
-  @include stat;
 }

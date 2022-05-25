@@ -269,7 +269,7 @@
 // Styleguide Components.Cards.Overflow
 
 
-@mixin card {
+.card {
   $self: &;
 
   background-color: map.get(variables.$greyscale, "white");
@@ -379,12 +379,4 @@
     justify-content: space-between;
     margin-top: config.$card-footer-top-margin;
   }
-}
-
-.pui-card {
-  @include card;
-}
-
-.card {
-  @include card;
 }

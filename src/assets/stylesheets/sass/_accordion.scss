@@ -94,7 +94,7 @@
 
 
 
-@mixin accordion {
+.accordion {
   $self: &;
   $accordion-primary-color: map.get(variables.$greyscale, 'base');
   $accordion-primary-background: map.get(variables.$greyscale, 'white');
@@ -177,12 +177,4 @@
     position: relative;
     z-index: 0;
   }
-}
-
-.pui-accordion {
-  @include accordion;
-}
-
-.accordion {
-  @include accordion;
 }

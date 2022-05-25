@@ -125,7 +125,7 @@
 
 
 
-@mixin info-box {
+.info-box {
   $self: &;
   display: inline-block;
   position: relative;
@@ -233,12 +233,4 @@
       }
     }
   }
-}
-
-.pui-info-box {
-  @include info-box;
-}
-
-.info-box {
-  @include info-box;
 }

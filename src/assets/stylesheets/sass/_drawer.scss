@@ -109,7 +109,7 @@
 //
 // Styleguide Components.Drawer.Top
 
-@mixin drawer {
+.drawer {
   $self: &;
   background-color: config.$drawer-background;
   box-shadow: 0 -1rem 2rem rgba(map.get(variables.$greyscale, 'black'), .4);
@@ -237,7 +237,6 @@
 
 
 #kss-node {
-  .pui-drawer__open,
   .drawer__open {
     position: relative;
     bottom: inherit;
@@ -250,12 +249,4 @@
 
 .side-content {
   height: calc(100% - 4rem);
-}
-
-.pui-drawer {
-  @include drawer;
-}
-
-.drawer {
-  @include drawer;
 }

@@ -1,5 +1,5 @@
-let closeModalButtons = document.querySelectorAll('.pui-modal__close, .modal__close');
-let openModalButtons = document.querySelectorAll('.pui-modal__open, .modal__open');
+let closeModalButtons = document.querySelectorAll('.modal__close');
+let openModalButtons = document.querySelectorAll('.modal__open');
 
 let modalClose = (modal) => {
   modal.classList.remove('active');

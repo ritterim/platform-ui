@@ -1,7 +1,7 @@
-const tabList = document.querySelector('.pui-tabs, .tabs');
+const tabList = document.querySelector('.tabs');
 
 if (tabList) {
-  const tabs = document.querySelectorAll('.pui-tab, .tab');  
+  const tabs = document.querySelectorAll('.tab');  
 
   let mobileTabs = (tab) => {
     // if tab input is checked
@@ -24,7 +24,7 @@ if (tabList) {
 
   let clearUnChecked = () => {
     tabs.forEach(tab =>  {
-      const checked = tab.closest('.pui-tabs, .tabs');
+      const checked = tab.closest('.tabs');
 
       // sets any checked radio to false
       checked.querySelectorAll('input[checked="true"]').forEach(check => {
@@ -40,7 +40,7 @@ if (tabList) {
   };
 
   // sets checked attribute to false
-  // adds class to hide pui-tab-panel with css
+  // adds class to hide tab-panel with css
   let uncheck = (tab) => {
     tab.previousElementSibling.setAttribute('checked', false);
     tab.previousElementSibling.classList.add('un-checked');
@@ -49,7 +49,7 @@ if (tabList) {
   let onTabClicked = (evt) => {
     // do not run if flat tabs has unresponsive class
     // this is for tabs--flat
-    if(evt.target.closest('.pui-tabs, .tabs').classList.contains('unresponsive')) {
+    if(evt.target.closest('.tabs').classList.contains('unresponsive')) {
       return;
     } else {
       // call mobileTabs function

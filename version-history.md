@@ -1,6 +1,8 @@
 # Version History
 
 ---
+# 1.5.1
+    - Remove pui- prefix 
 # 1.5.0
     - Remove icon--svg classes
 # 1.4.12

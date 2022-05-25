@@ -37,7 +37,7 @@
 //
 //Styleguide Components.Messages
 
-@mixin message {
+.message {
   $self: &;
   
   margin: map.get(variables.$spacers, 2 ) 0;
@@ -80,12 +80,4 @@
       }
     }
   }
-}
-
-.pui-message {
-  @include message;
-}
-
-.message {
-  @include message;
 }
