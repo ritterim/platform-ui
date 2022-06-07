@@ -1,6 +1,8 @@
 # Version History
 
 ---
+# 1.5.2
+    - Makes all icons have a consistent width
 # 1.5.1
     - Remove pui- prefix 
 # 1.5.0

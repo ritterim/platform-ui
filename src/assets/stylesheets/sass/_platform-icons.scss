@@ -19,9 +19,12 @@ i[class^="pi-"], i[class*=" pi-"] {
 }
 
 i[class^="pi-"]:before, i[class*=" pi-"]:before {
-  display: inline-block;
+  display: inline-flex;
+  height: 100%;
+  justify-content: center;
   speak: none;
   text-decoration: inherit;
+  width: 1.55em;
 }
 
 .pi-xs {
