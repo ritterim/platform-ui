@@ -824,7 +824,7 @@ legend {
       input[type="week"],
       textarea,
       select {
-        padding-left: map.get(variables.$spacers, 4);
+        padding-left: map.get(variables.$spacers, 5);
       }
 
       i {
