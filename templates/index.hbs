@@ -81,16 +81,16 @@
       <nav class="h-100 overflow-y--scroll pb-7" aria-label="Style Guide">
         <ul class="list">
           <li class="list__item mb-0">
-            <a class="flex p-3 pos-rel{{#unless template.homepage}} hover-scale text--base{{/unless}}{{#if template.isHomepage}} background--skyblue text--navy text--bold{{/if}}" href="./">
+            <a class="flex flex--align-center flex--justify-between p-3 pos-rel{{#unless template.homepage}} hover-scale text--base{{/unless}}{{#if template.isHomepage}} background--skyblue text--navy text--bold{{/if}}" href="./">
               <strong>Home v{{ options.version }}</strong>
-              <i class="pos-abs pin-right pin-center-top mr-3 fad pi-house"></i>
+              <i class="pi-house"></i>
             </a>
           </li>
         {{#each menu}}
           <li class="list__item mb-0">
-            <a class="flex p-3 pos-rel{{#unless isActive}} hover-scale text--base{{/unless}}{{#if isActive}} background--skyblue text--navy text--bold{{/if}}" href="section-{{referenceURI}}.html">
-              <strong>{{referenceNumber}}</strong><span class="ml-2">{{header}}</span>
-              <i class="pos-abs pin-right pin-center-top mr-3 fal pi-angle-down text--size-lg{{#if isActive}} rotate-180{{/if}}"></i>
+            <a class="flex flex--align-center flex--justify-between p-2 pos-rel{{#unless isActive}} hover-scale text--base{{/unless}}{{#if isActive}} background--skyblue text--navy text--bold{{/if}}" href="section-{{referenceURI}}.html">
+              <span><strong class="mr-2">{{referenceNumber}}</strong>{{header}}</span>
+              <i class="pi-angle-down text--size-lg{{#if isActive}} rotate-180{{/if}}"></i>
             </a>
             {{#if isActive}}
               {{#if children}}
