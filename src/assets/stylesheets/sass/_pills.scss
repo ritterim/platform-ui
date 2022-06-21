@@ -168,6 +168,7 @@
   display: inline-flex;
   font-size: map.get(variables.$font-scale, 'sm');
   padding: map.get(variables.$spacers, 1) map.get(variables.$spacers, 2);
+  line-height: 1.5;
 
   &--split {
     align-items: center;
