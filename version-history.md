@@ -1,6 +1,13 @@
 # Version History
 
 ---
+# 1.5.5
+    - Remove default width from icons
+# 1.5.4
+    - Set `line-height: 1.5` for the `.pill` class to center content within pills for WebKit browsers
+# 1.5.3
+    - Adjusted left side nav stucture
+    - Added more padding to form input `has-icon` class
 # 1.5.2
     - Makes all icons have a consistent width
 # 1.5.1
