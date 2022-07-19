@@ -26,7 +26,7 @@
 //       <img class="w-100" src="https://picsum.photos/id/1012/1000/400" alt="">
 //     </li>
 //     <li class="carousel__slide">
-//       <img class="w-100" src="https://picsum.photos/id/1020/1000/400" alt="">
+//       <img class="w-100" src="https://picsum.photos/id/1020/1000/600" alt="">
 //     </li>
 //     <li class="carousel__slide">
 //       <img class="w-100" src="https://picsum.photos/id/100/1000/400" alt="">
@@ -90,8 +90,20 @@
 
   &__slider {
     display: flex;
+    align-items: center;
+    overflow: hidden;
     position: relative;
-    width: 100%;
+
+    @supports (aspect-ratio: 2) {
+      aspect-ratio: 2;
+    }
+
+    @supports not (aspect-ratio: 2) {
+      &:before {
+        content: '';
+        padding-top: 50%;
+      }
+    }
   }
   
 
@@ -100,10 +112,13 @@
   // ----------------
   &__slide {
     position: relative;
-    width: 100%;
+    left: -100%;
+    top: 50%;
+    transform: translateY(-50%);
 
-    &:not(.active) {
-      display: none;
+    &.active {
+      left: 0;
+      position: absolute;
     }
   }
 
