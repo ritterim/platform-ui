@@ -26,7 +26,7 @@
 //       <img class="w-100" src="https://picsum.photos/id/1012/1000/400" alt="">
 //     </li>
 //     <li class="carousel__slide">
-//       <img class="w-100" src="https://picsum.photos/id/1020/1000/400" alt="">
+//       <img class="w-100" src="https://picsum.photos/id/1020/1000/600" alt="">
 //     </li>
 //     <li class="carousel__slide">
 //       <img class="w-100" src="https://picsum.photos/id/100/1000/400" alt="">
@@ -90,8 +90,24 @@
 
   &__slider {
     display: flex;
+    align-items: center;
+    overflow: hidden;
     position: relative;
-    width: 100%;
+
+    // fallback for dum dum browsers that don't support aspect-ratio
+    &:before {
+      content: '';
+      padding-top: 50%;
+    }
+
+    // use aspect ration to set height of slider
+    @supports (aspect-ratio: 2) {
+      aspect-ratio: 2;
+
+      &::before {
+        display: none; 
+      }
+    }
   }
   
 
@@ -99,11 +115,12 @@
   // slides
   // ----------------
   &__slide {
+    display: none;
     position: relative;
     width: 100%;
 
-    &:not(.active) {
-      display: none;
+    &.active {
+      display: flex;
     }
   }
 
