@@ -113,14 +113,12 @@
   // slides
   // ----------------
   &__slide {
+    display: none;
     position: relative;
-    left: -100%;
-    top: 50%;
-    transform: translateY(-50%);
+    width: 100%;
 
     &.active {
-      left: 0;
-      position: absolute;
+      display: flex;
     }
   }
 
