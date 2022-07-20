@@ -94,10 +94,12 @@
     overflow: hidden;
     position: relative;
 
+    // use aspect ration to set height of slider
     @supports (aspect-ratio: 2) {
       aspect-ratio: 2;
     }
 
+    // fallback for dum dum browsers that don't support aspect-ratio
     @supports not (aspect-ratio: 2) {
       &:before {
         content: '';
