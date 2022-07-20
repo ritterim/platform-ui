@@ -94,16 +94,18 @@
     overflow: hidden;
     position: relative;
 
+    // fallback for dum dum browsers that don't support aspect-ratio
+    &:before {
+      content: '';
+      padding-top: 50%;
+    }
+
     // use aspect ration to set height of slider
     @supports (aspect-ratio: 2) {
       aspect-ratio: 2;
-    }
 
-    // fallback for dum dum browsers that don't support aspect-ratio
-    @supports not (aspect-ratio: 2) {
-      &:before {
-        content: '';
-        padding-top: 50%;
+      &::before {
+        display: none;
       }
     }
   }
