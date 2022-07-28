@@ -254,13 +254,11 @@ $displays: (
 );
 
 .hide {
-  --display: none;
-  display: var(--display)!important;
+  display: none!important;
 }
 
 .show {
-  --display: block;
-  display: var(--display)!important;
+  display: block!important;
 }
 
 @each $breakpoint, $breakpointValue in config.$breakpoints {
@@ -277,31 +275,31 @@ $displays: (
         @if $index > 1 {
           @if $display == show {
             @media (min-width: $breakpointValue) {
-              --display: block!important;
+              display: block!important;
 
               &.display--inline-block {
-                --display: inline-block !important;
+                display: inline-block !important;
               }
 
               &.display--inline {
-                --display: inline !important;
+                display: inline !important;
               }
   
               &.flex,
               &.flex--center-content,
               &.display--flex,
               &.block-container {
-                --display: flex !important;
+                display: flex !important;
               }
   
               &.flex-inline,
               &.display--inline-flex {
-                --display: inline-flex !important;
+                display: inline-flex !important;
               }
             }
           } @else {
             @media (min-width: $breakpointValue) {
-              --display: none!important;
+              display: none!important;
             }
           }
         }
