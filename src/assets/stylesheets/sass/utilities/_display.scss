@@ -254,11 +254,13 @@ $displays: (
 );
 
 .hide {
-  display: none;
+  --display: none;
+  display: var(--display)!important;
 }
 
 .show {
-  display: block;
+  --display: block;
+  display: var(--display)!important;
 }
 
 @each $breakpoint, $breakpointValue in config.$breakpoints {
@@ -271,15 +273,35 @@ $displays: (
     @if $index {
       // if there is another key above the selected key, run this
       .#{$display}\:#{$breakpoint} {
-        //   no need for a mobile (min-width: 0)
+        // no need for a mobile (min-width: 0)
         @if $index > 1 {
           @if $display == show {
             @media (min-width: $breakpointValue) {
-              display: #{$d};
+              --display: block!important;
+
+              &.display--inline-block {
+                --display: inline-block !important;
+              }
+
+              &.display--inline {
+                --display: inline !important;
+              }
+  
+              &.flex,
+              &.flex--center-content,
+              &.display--flex,
+              &.block-container {
+                --display: flex !important;
+              }
+  
+              &.flex-inline,
+              &.display--inline-flex {
+                --display: inline-flex !important;
+              }
             }
           } @else {
             @media (min-width: $breakpointValue) {
-              display: #{$d};
+              --display: none!important;
             }
           }
         }
