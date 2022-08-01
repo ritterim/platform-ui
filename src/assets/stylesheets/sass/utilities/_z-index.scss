@@ -1,0 +1,41 @@
+@use "config";
+@use "variables";
+@use "sass:map";
+
+
+// Z-Index
+//
+//
+// Markup:
+// <div class="flex">
+//   <div class="background--navy text--white border--color-white flex--center-content border border--width-2 rounded--7 pos-rel z-100" style="height: 5rem; width: 5rem"></div>
+//   <div class="background--navy text--white border--color-white flex--center-content border border--width-2 rounded--7 pos-rel z-70" style="height: 5rem; width: 5rem; margin-left: -.5rem"></div>
+//   <div class="background--navy text--white border--color-white flex--center-content border border--width-2 rounded--7 pos-rel z-50" style="height: 5rem; width: 5rem; margin-left: -.5rem"></div>
+//   <div class="background--navy text--white border--color-white flex--center-content border border--width-2 rounded--7 pos-rel z-30" style="height: 5rem; width: 5rem; margin-left: -.5rem"></div>
+//   <div class="background--navy text--white border--color-white flex--center-content border border--width-2 rounded--7 pos-rel z-10" style="height: 5rem; width: 5rem; margin-left: -.5rem"></div>
+// </div>
+//
+//
+// Styleguide Utilities.Zindex
+
+
+// Z-Index - JS method
+//
+//
+// Markup:
+// <div class="flex">
+//   <div class="background--navy text--white border--color-white flex--center-content border border--width-2 rounded--7 pos-rel" style="height: 5rem; width: 5rem" data-z="501"></div>
+//   <div class="background--navy text--white border--color-white flex--center-content border border--width-2 rounded--7 pos-rel" style="height: 5rem; width: 5rem; margin-left: -.5rem" data-z="30"></div>
+//   <div class="background--navy text--white border--color-white flex--center-content border border--width-2 rounded--7 pos-rel" style="height: 5rem; width: 5rem; margin-left: -.5rem" data-z="27"></div>
+//   <div class="background--navy text--white border--color-white flex--center-content border border--width-2 rounded--7 pos-rel" style="height: 5rem; width: 5rem; margin-left: -.5rem" data-z="600"></div>
+//   <div class="background--navy text--white border--color-white flex--center-content border border--width-2 rounded--7 pos-rel" style="height: 5rem; width: 5rem; margin-left: -.5rem" data-z="1"></div>
+// </div>
+//
+//
+// Styleguide Utilities.Zindex-JS
+
+@for $i from 1 through 10 {
+  .z-#{$i}0 {
+    z-index: #{$i}0!important;
+  }
+}
