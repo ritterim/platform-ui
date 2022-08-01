@@ -34,6 +34,10 @@
 //
 // Styleguide Utilities.Zindex-JS
 
+.z-0 {
+  z-index: 0!important;
+}
+
 @for $i from 1 through 10 {
   .z-#{$i}0 {
     z-index: #{$i}0!important;
