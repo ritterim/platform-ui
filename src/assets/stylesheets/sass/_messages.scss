@@ -11,6 +11,9 @@
 //
 // Markup:
 // <div class="message message--error">
+//   <h2 class="message__heading">Error</h2>
+//   <p>This is an example of a message that fires after an error has occured. </p>
+//   <p>This is an example of a message that fires after an error has occured. </p>
 //   <p>This is an example of a message that fires after an error has occured. </p>
 // </div>
 // <div class="message message--success">
@@ -39,13 +42,15 @@
 
 .message {
   $self: &;
+  --message-background: var(--lighter);
+  --message-border: var(--base);
+  --message-color: var(--dark);
   
+  background-color: var(--message-background);
+  border-left: thick solid var(--message-border);
+  color: var(--message-color);
   margin: map.get(variables.$spacers, 2 ) 0;
   padding: map.get(variables.$spacers, 2 );
-  
-  p {
-    margin: map.get(variables.$spacers, 2 ) 0;
-  }
 
   // button close needs to be an independant concept to be placed
   // anywhere
@@ -55,29 +60,32 @@
     top: map.get(variables.$spacers, 2 );
     right: map.get(variables.$spacers, 2 );
   }
+
+  &__heading {
+    color: var(--message-color);
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: map.get(variables.$spacers, 2 );
+  }
+
   .button--close {
     float: right;
   }
+  
+  > p {
+    margin-bottom: map.get(variables.$spacers, 2 );
 
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
   // ----------
 
   @each $name, $color in variables.$message-colors {
     &--#{$name} {
-      background-color: $color;
-      border-left: 1px solid color.adjust($color, $lightness: math.percentage(-(config.$hue-threshold * 5)));
-      border-left-width: thick;
-      color: color.adjust($color, $lightness: math.percentage(-(config.$hue-threshold * 6)));
-      &:before {
-        content: $name;
-        display: block;
-        font-size: 80%;
-        font-weight: bold;
-        margin-bottom: map.get(variables.$spacers, 3 );
-        text-transform: uppercase;
-      }
-      &[data-header]:before {
-        content: attr(data-header);
-      }
+      --message-background: #{$color};
+      --message-border: #{color.adjust($color, $lightness: math.percentage(-(config.$hue-threshold * 5)))};
+      --message-color: #{color.adjust($color, $lightness: math.percentage(-(config.$hue-threshold * 6)))};
     }
   }
 }
