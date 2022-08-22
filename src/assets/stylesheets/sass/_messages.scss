@@ -67,10 +67,6 @@
     font-weight: bold;
     margin-bottom: map.get(variables.$spacers, 2 );
   }
-
-  .button--close {
-    float: right;
-  }
   
   > p {
     margin-bottom: map.get(variables.$spacers, 2 );
