@@ -5,7 +5,6 @@ const clean = require('gulp-clean');
 const concat = require('gulp-concat');
 const connect = require('gulp-connect');
 const header = require('gulp-header');
-const kss = require('kss');
 const merge = require('merge-stream');
 const cssnano = require('cssnano');
 const pjson = require('./package.json');
@@ -46,11 +45,7 @@ function copyStaticAssets() {
 }
 
 function generateIconAssets() {
-    const iconsIndex = src('dist/platform-icons.html')
-      .pipe(clean())
-      .pipe(dest('./styleguide'));
-
-    const iconsCss = src('dist/platform-icons.css')
+    const iconsCss = src('dist/platform-icons.css', {'allowEmpty' : true})
       .pipe(clean())
       .pipe(rename('_platform-icons.scss'))
       .pipe(dest('src/assets/stylesheets/sass'));
@@ -64,7 +59,7 @@ function generateIconAssets() {
       ])
       .pipe(dest('src/assets/stylesheets/'));
 
-    return merge(iconsIndex, iconsCss, iconsFonts)
+    return merge(iconsCss, iconsFonts)
       .pipe(connect.reload());
 }
 
@@ -102,15 +97,6 @@ function js() {
     .pipe(connect.reload())
 }
 
-function styleguide() {
-  return kss({
-    source: 'src/assets/stylesheets/',
-    destination: 'styleguide/',
-    builder: 'templates',
-    version: pjson.version
-  });
-}
-
 function generateIconFonts() {
   return run('npm run generate-assets').exec();
 }
@@ -126,12 +112,11 @@ function watchFiles() {
     copyStaticAssets);
 }
 
-exports.build = series(generateIconFonts, generateIconAssets, css, js, styleguide, copyStaticAssets);
+exports.build = series(generateIconFonts, generateIconAssets, css, js, copyStaticAssets);
 exports.css = css;
 exports.js = js;
 exports.generateIconAssets = generateIconAssets;
 exports.generateIconFonts = generateIconFonts;
-exports.styleguide = styleguide;
 exports.serve = serve;
 exports.copyStaticAssets = copyStaticAssets;
-exports.default = parallel(series(generateIconFonts, generateIconAssets, css, styleguide, copyStaticAssets), js, serve, watchFiles);
+exports.default = parallel(series(generateIconFonts, generateIconAssets, css, copyStaticAssets), js, serve, watchFiles);
