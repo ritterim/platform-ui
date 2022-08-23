@@ -54,7 +54,6 @@
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2",
     "icon-font-generator": "^2.1.10",
-    "kss": "3.0.0-beta.25",
     "merge-stream": "^2.0.0",
     "normalize.css": "^8.0.1",
     "postcss": "^8.3.11",
