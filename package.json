@@ -11,7 +11,7 @@
   "scripts": {
     "start": "npm install && gulp",
     "build": "gulp build",
-    "generate-assets": "icon-font-generator src/assets/icons/svg/**/*.svg -o dist -n platform-icons -j -p pi --center --csstp templates/css.hbs",
+    "generate-assets": "icon-font-generator src/assets/icons/svg/**/*.svg -o dist -n platform-icons -j -p pi --center --htmltp templates/html.hbs --csstp templates/css.hbs",
     "test": "echo \"Error: no test specified\" && exit 1",
     "ver": "echo \"$npm_package_version\"",
     "deploy": "./deploy-to-npm.sh"
@@ -54,6 +54,7 @@
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2",
     "icon-font-generator": "^2.1.10",
+    "kss": "3.0.0-beta.25",
     "merge-stream": "^2.0.0",
     "normalize.css": "^8.0.1",
     "postcss": "^8.3.11",
