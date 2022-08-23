@@ -45,6 +45,10 @@ function copyStaticAssets() {
 }
 
 function generateIconAssets() {
+    const iconsIndex = src('dist/platform-icons.html', {'allowEmpty' : true})
+      .pipe(clean())
+      .pipe(dest('./styleguide'));
+
     const iconsCss = src('dist/platform-icons.css', {'allowEmpty' : true})
       .pipe(clean())
       .pipe(rename('_platform-icons.scss'))
@@ -59,7 +63,7 @@ function generateIconAssets() {
       ])
       .pipe(dest('src/assets/stylesheets/'));
 
-    return merge(iconsCss, iconsFonts)
+    return merge(iconsIndex, iconsCss, iconsFonts)
       .pipe(connect.reload());
 }
 
