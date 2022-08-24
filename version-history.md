@@ -1,6 +1,20 @@
 # Version History
 
 ---
+# 1.5.9 
+    - Fix early publish for message refactor. 
+    - Message `p` spacing cleaned up
+    - data-header="none" added to messages with no header
+
+# 1.5.8
+    - Dum dum message refactor publish (Bad version)
+
+# 1.5.7
+    - z-index utility added
+
+# 1.5.6
+    - Different display values for new responsive display utilities
+    - Add `!important` to new utilities
 # 1.5.5
     - Remove default width from icons
 # 1.5.4
