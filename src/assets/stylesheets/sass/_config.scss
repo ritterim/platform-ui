@@ -26,25 +26,6 @@ $brand-colors: (
 // $brand-colors and $secondary colors will be made available as text and background colors
 // e.g., .text--{color} .background--{color}
 
-// You only need to document color is the commented forms
-// if you're generating the style guide.
-
-// Brand Colors
-//
-// Colors:
-// navy: #003f70
-// skyblue: #91b9dc
-// lightblue: #E5F5FF
-// med-blue: #3f7bad
-// beige: #ecd7b1
-// peach: #dfa278
-// salmon: #e58967
-// brown: #866657
-// orange: #f48418
-//
-// Styleguide Color.BrandColors
-
-
 $config-colors: map.merge($brand-colors, $config-colors);
 
 // Default colors used in the Ritter Platform
@@ -58,18 +39,6 @@ $site-help-text-color: map.get($config-colors, 'navy') !default;
 
 // Site colors need to be placed back in a map
 // Removing site-colors will not affect compilation
-
-// Site Colors
-//
-// Colors:
-// focus: #3f7bad
-// menu: #003f70
-// link: #3f7bad
-// help: #E5F5FF
-// note: #FFFDF5
-// help-text: #003f70
-//
-// Styleguide Color.SiteColors
 
 $site-colors-vars: (
   'focus' : $site-focus-color,
@@ -104,8 +73,6 @@ $breakpoints: (
 $show-mobile-menu: 991px;
 
 
-
-
 // --------------------
 // Sizes
 // --------------------
@@ -138,8 +105,6 @@ $radius: (
 $primary-menu-color: map.get($site-colors, 'menu');
 
 
-
-
 // --------------------
 // Timing
 // --------------------
@@ -151,6 +116,7 @@ $transitions: .2s;
 $hue-threshold: .1;   // NOTE: Set to .1 to use with math.percentage
 $opacity: .9;
 
+
 // --------------------
 // Drawers
 // --------------------
@@ -161,8 +127,6 @@ $drawer-primary-padding: 2rem;
 
 $drawer-side-height: calc(100% - #{$menu-height});
 $drawer-side-width: 27rem;
-
-
 
 
 // --------------------
@@ -183,8 +147,6 @@ $button-large-padding: .5rem 1rem;
 $button-group-margin: 0 .25rem;
 
 
-
-
 // --------------------
 // Cards
 // --------------------
@@ -192,8 +154,6 @@ $button-group-margin: 0 .25rem;
 $card-padding: 1rem;
 $card-footer-top-margin: 1rem;
 $card-min-height: 23rem;
-
-
 
 
 // --------------------
