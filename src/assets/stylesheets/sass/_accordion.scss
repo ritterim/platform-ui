@@ -1,98 +1,9 @@
-
 @use "config";
 @use "mixins";
 @use "variables";
 @use "sass:color";
 @use "sass:math";
 @use "sass:map";
-
-// Accordion
-//
-// Leverage spacing utility classes for padding and margin for the content within the accordion.
-// To show the content of the accordion toggle the class `active` on `accordion`. These accordions are also keyboard accessible.
-//
-// Platform UI accordions were designed to be stacked.
-//
-// Markup:
-// <div class="accordion">
-//    <a href="#" class="accordion__header px-3 py-3 flex--justify-between flex--align-center">
-//      <div class="flex flex--align-center">
-//        This is an accordion header.
-//      </div>
-//      <i class="pi-angle-down accordion__icon text--med-blue"></i>
-//    </a>
-//    <div class="accordion__content px-3 py-3">
-//      <p>This is the accordion content.</p>
-//    </div>
-//  </div>
-// <div class="accordion">
-//    <a href="#" class="accordion__header px-3 py-3 flex--justify-between flex--align-center">
-//      <div class="flex flex--align-center">
-//        This is an accordion header.
-//      </div>
-//      <i class="pi-angle-down accordion__icon text--med-blue"></i>
-//    </a>
-//    <div class="accordion__content px-3 py-3">
-//      <p>This is the accordion content.</p>
-//    </div>
-//  </div>
-//
-// Styleguide Components.Accordion
-
-// Active
-//
-// Adding `.active` changes the default header bar background and hover highlight.
-//
-// Markup:
-// <div class="accordion active">
-//    <a href="#" class="accordion__header px-3 py-3 flex--justify-between flex--align-center">
-//      <div class="flex flex--align-center">
-//        This is an accordion header.
-//      </div>
-//      <i class="pi-angle-down accordion__icon text--med-blue"></i>
-//    </a>
-//    <div class="accordion__content px-3 py-3">
-//      <p>This is the accordion content.</p>
-//    </div>
-//  </div>
-//
-// Styleguide Components.Accordion.Active
-
-// Nested
-//
-// Nesting accordions gives the appearance of active accordions within.
-//
-// Markup:
-// <div class="accordion active">
-//    <a href="#" class="accordion__header px-3 py-3 flex--justify-between flex--align-center">
-//      <div class="flex flex--align-center">
-//        This is an accordion header.
-//      </div>
-//      <i class="pi-angle-down accordion__icon text--med-blue"></i>
-//    </a>
-//   <div class="accordion__content">
-//     <div class="px-3 py-3">
-//       <p>This is the accordion content.</p>
-//     </div>
-//     <div class="accordion">
-//       <a href="#" class="accordion__header px-3 py-3 flex flex--justify-between flex--align-center">
-//         <div class="flex flex--align-center">
-//           This is a nested accordion header.
-//         </div>
-//         <i class="pi-angle-down accordion__icon text--med-blue"></i>
-//       </a>
-//       <div class="accordion__content">
-//         <div class="px-3 py-3">
-//           <p>This is the nested accordion content.</p>
-//         </div>
-//       </div>
-//     </div>
-//   </div>
-// </div>
-//
-// Styleguide Components.Accordion.Nested
-
-
 
 .accordion {
   $self: &;
