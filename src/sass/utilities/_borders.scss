@@ -1,0 +1,78 @@
+@use "../variables";
+@use "../utilities/colors";
+
+.no-border {
+  border: none !important;
+}
+
+%border,
+.border {
+  border: 1px solid;
+
+  &-x {
+    border-left: 1px solid;
+    border-right: 1px solid;
+    @for $i from 1 through 5 {
+      &.border--width-#{$i} {
+        border-width: 0 #{$i}px !important;
+      }
+    }
+  }
+
+  &-y {
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    @for $i from 1 through 5 {
+      &.border--width-#{$i} {
+        border-width: #{$i}px 0 !important;
+      }
+    }
+  }
+
+  // Specific Border sides
+  @each $direction, $d in variables.$xy-border {
+
+    // Direction
+    &-#{$d} {
+      border-#{$direction}: 1px solid!important;
+
+      @for $i from 1 through 5 {
+        &.border--width-#{$i} {
+          border-#{$direction}-width: #{$i}px !important;
+        }
+      }
+    }
+  }
+
+
+  @for $i from 1 through 5 {
+    &--width-#{$i} {
+      border-width: #{$i}px !important;
+    }
+  }
+}
+
+// Border Colors
+@each $name, $color in colors.$all-colors {
+  .border--color-#{$name} {
+    border-color: $color !important;
+  }
+}
+
+.border--color-transparent {
+  border-color: transparent !important;
+}
+
+// Specific side colors
+@each $direction, $d in variables.$xy-border {
+
+  @each $name, $color in colors.$all-colors {
+    .border-#{$d}--color-#{$name} {
+      border-#{$direction}-color: $color !important;
+    }
+  }
+
+  .border-#{$d}--color-transparent {
+    border-#{$direction}-color: transparent !important;
+  }
+}

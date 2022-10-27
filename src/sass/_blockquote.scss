@@ -1,0 +1,31 @@
+@use "./config";
+@use "./mixins";
+@use "./utilities";
+@use "./variables";
+@use "sass:color";
+@use "sass:math";
+@use "sass:map";
+@use "sass:meta";
+
+blockquote {
+  border-left: map.get(variables.$spacers, 2) solid map.get(variables.$greyscale, 'light');
+  margin-bottom: map.get(variables.$spacers, 3);
+  padding: map.get(variables.$spacers, 3) 0 map.get(variables.$spacers, 3) map.get(variables.$spacers, 3) * 1.5;
+  position: relative;
+
+  p {
+    margin-bottom: 0;
+
+    + p {
+      margin-top: map.get(variables.$spacers, 3);
+    }
+  }
+
+  footer {
+    margin-top: map.get(variables.$spacers, 3);
+  }
+
+  cite {
+    font-style: normal;
+  }
+}

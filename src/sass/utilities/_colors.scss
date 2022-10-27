@@ -1,0 +1,100 @@
+@use "../config";
+@use "../variables";
+@use "sass:map";
+@use "sass:meta";
+
+// Background Colors
+$all-colors: () !default;
+$site-colors: () !default;
+
+@if meta.type-of(config.$config-colors) == 'map' {
+  $all-colors: map.merge(config.$config-colors, variables.$greyscale);
+} @else {
+  $all-colors: map.merge(variables.$greyscale, $all-colors);
+  @warn "$config-colors is not set or empty";
+}
+
+@if meta.type-of($all-colors) == 'map' {
+  @each $name, $color in $all-colors {
+    // text color
+    .text {
+      &--#{$name}{
+        color: $color !important;
+        &.pill {
+          border-color: $color !important;
+        }
+      }
+      &-hover--#{$name} {
+        transition: background-color config.$transitions;
+
+        &.text-underline--hover {
+          &:after {
+            background-color: $color !important;
+          }
+        }
+
+        &:hover {
+          color: $color !important;
+        }
+      }
+    }
+
+    // background color
+    .background {
+      &--#{$name}{
+        background-color: $color !important;
+        &.button {
+
+          &.loading {
+
+            &:before {
+              background-color: $color !important;
+            }
+          }
+        }
+      }
+
+      &-hover--#{$name} {
+        transition: background-color config.$transitions;
+
+        &:hover {
+          background-color: $color !important;
+        }
+      }
+    }
+
+    // Add alpha transparency  
+    @for $i from 1 through 9 {
+      .background--#{$name}-a#{$i}0 {
+        background-color: rgba($color, $i * .1) !important;
+      }
+    }
+  }
+}
+
+// error Colors
+@if meta.type-of(variables.$error-colors) == 'map' {
+  @each $name, $color in variables.$error-colors {
+    // text color
+    .text--#{$name} {
+      border-color: $color !important;
+      color: $color !important;
+      transition: .2s;
+    }
+    // background color
+    .background--#{$name} {
+      background-color: $color !important;
+    }
+    // Add alpha transparency  
+    @for $i from 1 through 9 {
+      .background--#{$name}-a#{$i}0 {
+        background-color: rgba($color, $i * .1) !important;
+      }
+    }
+  }
+}
+
+// transparent color
+.background--transparent {
+  background-color: transparent!important;
+}

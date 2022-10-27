@@ -1,0 +1,148 @@
+@use "./config";
+@use "./mixins";
+@use "./variables";
+@use "sass:map";
+
+.modal {
+  $header-height: 6rem;
+
+  // print entire modal
+  @media print {
+    visibility: visible;
+    height: 100%;
+  }
+
+  $self: &;
+  background: rgba(map.get(variables.$greyscale, 'black'), .5);
+  position: fixed;
+  z-index: 500;
+  overflow-x: hidden;
+  overflow-y: auto;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+
+  @media (prefers-reduced-motion: no-preference) {
+    transition: config.$transitions ease-in-out;
+  }
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+
+    #{$self}__inner {
+      transform: translate(0, 0);
+    }
+  }
+
+  &--full {
+
+    > #{$self}__inner {
+      margin: auto;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      #{$self}__content {
+        height: calc(100% - #{$header-height});
+        overflow-x: hidden;
+        overflow-y: auto;
+      }
+    }
+  }
+
+  &--small {
+
+    > #{$self}__inner {
+      @include mixins.breakpoint(tablet, min) {
+        width: 40vw;
+      }
+      @include mixins.breakpoint(desktop, min) {
+        width: 20vw;
+      }
+    }
+  }
+
+  &--large {
+
+    > #{$self}__inner {
+      @include mixins.breakpoint(tablet, min) {
+        width: 80vw;
+      }
+    }
+  }
+
+  &--centered {
+    @extend %flex-center;
+  }
+
+
+  &__open {
+    cursor: pointer;
+  }
+
+  &__inner {
+    background: map.get(variables.$greyscale, 'white');
+    margin: map.get(variables.$spacers, 4) auto;
+    transform: translate(0 ,100%);
+
+    @media (prefers-reduced-motion: no-preference) {
+      transition: config.$transitions ease-in-out;
+    }
+
+    @include mixins.breakpoint(tablet, max) {
+      height: auto;
+      margin: auto;
+      width: 100%;
+    }
+
+    @include mixins.breakpoint(tablet, min) {
+      width: 65vw;
+    }
+    @include mixins.breakpoint(desktop, min) {
+      width: 45vw;
+    }
+  }
+
+  &__header {
+    background-color: map.get(config.$brand-colors, 'lightblue');
+    color: map.get(variables.$greyscale, 'base');
+    height: $header-height;
+    padding: 2rem;
+    position: relative;
+    width: 100%;
+
+    #{$self}__close {
+      position: absolute;
+      right: -1rem;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__content {
+    padding: 2rem;
+    position: relative;
+
+    &--video {
+      display: flex;
+      height: 100%;
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+    }
+  }
+}
+
+body.modal-open {
+  // REF: https://css-tricks.com/prevent-page-scrolling-when-a-modal-is-open/#article-header-id-0
+  height: 100vh;
+  overflow-y: hidden;
+}

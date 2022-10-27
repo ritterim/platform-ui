@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Platform UI</title>
+</head>
+
+<body>
+  <div class="block-container">
+    <div class="block-4">
+      <div class="card">
+        <h1>Hello World!</h1>
+        <button class="button button--lg modal__open"
+                data-modal="default-modal">Standard Modal</button>
+        <!-- Standard Modal -->
+        <div id="default-modal"
+             class="modal">
+          <div class="modal__inner">
+            <div class="modal__header">
+              <button class="button modal__close"
+                      data-modal="default-modal">
+                Close
+                <i class="pi-times"></i>
+              </button>
+              <!-- Modal Header goes here! -->
+            </div>
+            <div class="modal__content">
+              <!-- Modal content goes here! -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module"
+          src="/main.js"></script>
+</body>
+
+</html>
