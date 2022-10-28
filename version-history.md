@@ -1,6 +1,8 @@
 # Version History
 
 ---
+# 1.6.0
+    - Migrated build process to Vite
 # 1.5.9 
     - Fix early publish for message refactor. 
     - Message `p` spacing cleaned up
