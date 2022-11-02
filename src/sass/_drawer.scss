@@ -1,13 +1,13 @@
-@use "./config";
-@use "./mixins";
-@use "./variables";
+@use "config";
+@use "mixins";
+@use "variables";
 @use "sass:math";
 @use "sass:map";
 
 .drawer {
   $self: &;
   background-color: config.$drawer-background;
-  box-shadow: 0 -1rem 2rem rgba(map.get(variables.$greyscale, 'black'), .4);
+  box-shadow: 0 -1rem 2rem rgba(map.get(variables.$greyscale, "black"), 0.4);
   flex-direction: column;
   width: 100%;
   position: fixed;
@@ -16,7 +16,7 @@
   left: 0;
   transform: translate(0, 100%);
   visibility: hidden;
-  
+
   @media (prefers-reduced-motion: no-preference) {
     transition: config.$transitions ease-in-out;
   }
@@ -78,7 +78,7 @@
   &-right,
   &-left {
     bottom: 0;
-    box-shadow: 0 -.5rem 2rem rgba(map.get(variables.$greyscale, 'black'), math.percentage(.5));
+    box-shadow: 0 -0.5rem 2rem rgba(map.get(variables.$greyscale, "black"), math.percentage(0.5));
     flex-direction: column;
     height: 100%;
     position: fixed;
@@ -113,7 +113,7 @@
   // Drawer Opens from the top
   &-top {
     bottom: unset;
-    box-shadow: 0 1rem 2rem rgba(map.get(variables.$greyscale, 'black'), .4);
+    box-shadow: 0 1rem 2rem rgba(map.get(variables.$greyscale, "black"), 0.4);
     top: 0;
     transform: translate(0, -100%);
 
@@ -130,7 +130,6 @@
   }
 }
 
-
 #kss-node {
   .drawer__open {
     position: relative;
@@ -138,7 +137,6 @@
     right: inherit;
   }
 }
-
 
 // side content stuff
 

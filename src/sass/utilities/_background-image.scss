@@ -9,18 +9,16 @@
   background-size: cover;
 }
 
-
 // Background Ratio
 
 @each $ratio, $percent in config.$bg-size {
   .ratio-#{$ratio} {
-    
     // this will set the ratio of the container
     &:before {
       content: "";
       display: block;
       padding-top: $percent;
-      position: relative;   
+      position: relative;
     }
   }
 }

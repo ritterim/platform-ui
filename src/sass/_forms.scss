@@ -1,6 +1,6 @@
-@use "./config";
-@use "./mixins";
-@use "./variables";
+@use "config";
+@use "mixins";
+@use "variables";
 @use "sass:color";
 @use "sass:map";
 @use "sass:math";
@@ -21,24 +21,35 @@ legend {
 }
 
 .form {
-  $error-color: color.adjust(map.get(variables.$error-colors, 'negative'), $lightness: math.percentage(-(config.$hue-threshold * 2)));
-  $error-background: map.get(variables.$message-colors, 'error' );
+  $error-color: color.adjust(
+    map.get(variables.$error-colors, "negative"),
+    $lightness: math.percentage(-(config.$hue-threshold * 2))
+  );
+  $error-background: map.get(variables.$message-colors, "error");
 
-  --disabled-color: #{color.adjust(map.get(variables.$greyscale, 'light' ), $lightness: math.percentage(config.$hue-threshold))};
+  --disabled-color: #{color.adjust(
+      map.get(variables.$greyscale, "light"),
+      $lightness: math.percentage(config.$hue-threshold)
+    )};
 
   $self: &;
-  color: color.adjust(map.get(variables.$greyscale, 'base' ), $lightness: math.percentage(.05));
+  color: color.adjust(
+    map.get(variables.$greyscale, "base"),
+    $lightness: math.percentage(0.05)
+  );
 
   .input-icons {
-    left: 0; top: 0;
+    left: 0;
+    top: 0;
     position: absolute;
     @include mixins.square(1.5rem);
 
     [class^="pi-"] {
       line-height: 1;
       position: absolute;
-      left: 50%; top: 50%;
-      transform: translate(-50%, -50%);      
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
 
       &:nth-of-type(2) {
         transform: translate(-50%, -50%) scale(0);
@@ -52,47 +63,43 @@ legend {
     opacity: 0;
     position: absolute;
     width: auto;
-  
-    &:checked + label {      
-  
-      .input-icons {
 
+    &:checked + label {
+      .input-icons {
         [class^="pi-"]:nth-of-type(2) {
           transform: translate(-50%, -50%) scale(1);
         }
       }
     }
-  
+
     + label {
       align-items: center;
-      color: map.get(variables.$greyscale, 'base');
+      color: map.get(variables.$greyscale, "base");
       cursor: pointer;
       display: flex;
       font-weight: 400;
       margin-right: variables.$spacer;
-      margin-top: variables.$spacer * .75;
+      margin-top: variables.$spacer * 0.75;
       padding-left: map.get(variables.$spacers, 4);
       position: relative;
       vertical-align: baseline;
     }
 
     &.error {
-
       + label {
         color: $error-color;
       }
     }
   }
-  
+
   input[type="radio"] {
-  
     &:checked + label {
       cursor: default;
     }
   }
 
   &#{$self}--light {
-    color: map.get(variables.$greyscale, 'white' );
+    color: map.get(variables.$greyscale, "white");
 
     input[type="text"],
     input[type="search"],
@@ -109,15 +116,15 @@ legend {
     input[type="week"],
     textarea,
     select {
-      border-bottom-color: map.get(variables.$greyscale, 'white' );
-      color: map.get(variables.$greyscale, 'white' );
+      border-bottom-color: map.get(variables.$greyscale, "white");
+      color: map.get(variables.$greyscale, "white");
 
       &::placeholder {
-        color: map.get(variables.$greyscale, 'white' );
+        color: map.get(variables.$greyscale, "white");
       }
 
       &:focus {
-        box-shadow: 0 0 2px 1px map.get(variables.$greyscale, 'white' );
+        box-shadow: 0 0 2px 1px map.get(variables.$greyscale, "white");
         outline: none;
       }
     }
@@ -128,7 +135,6 @@ legend {
 
     &.form--rounded,
     &.form--bordered {
-
       input[type="text"],
       input[type="search"],
       input[type="date"],
@@ -144,15 +150,14 @@ legend {
       input[type="week"],
       textarea,
       select {
-        border-color: map.get(variables.$greyscale, 'white' );
+        border-color: map.get(variables.$greyscale, "white");
       }
     }
 
     input[type="checkbox"],
     input[type="radio"] {
-
       + label {
-        color: map.get(variables.$greyscale, 'white');
+        color: map.get(variables.$greyscale, "white");
 
         &:before {
           border: 1px solid;
@@ -162,29 +167,25 @@ legend {
     }
 
     input[type="checkbox"] {
-
       + label {
-
         &:after {
-          color: map.get(variables.$greyscale, 'white');
+          color: map.get(variables.$greyscale, "white");
         }
       }
     }
 
     textarea {
-      border-color: map.get(variables.$greyscale, 'white' );
+      border-color: map.get(variables.$greyscale, "white");
     }
 
     #{ $self }__select-wrapper {
-
       &:after {
-        border-color: map.get(variables.$greyscale, 'white' );
+        border-color: map.get(variables.$greyscale, "white");
       }
     }
   }
 
   &#{$self}--bordered {
-
     input[type="text"],
     input[type="search"],
     input[type="date"],
@@ -200,8 +201,8 @@ legend {
     input[type="week"],
     textarea,
     select {
-      border-color: map.get(variables.$greyscale, 'light' );
-      border-radius: map.get(config.$radius, 'default' );
+      border-color: map.get(variables.$greyscale, "light");
+      border-radius: map.get(config.$radius, "default");
     }
   }
 
@@ -251,8 +252,8 @@ legend {
 
       i {
         bottom: 0;
-        font-size: map.get(variables.$font-scale, 'md');
-        left: .5rem;
+        font-size: map.get(variables.$font-scale, "md");
+        left: 0.5rem;
         line-height: 1;
         position: absolute;
         transform: translateY(-50%);
@@ -263,13 +264,13 @@ legend {
 
         i {
           bottom: 0;
-          color: map.get(config.$brand-colors, 'med-blue' );
-          font-size: map.get(variables.$font-scale, 'md');
+          color: map.get(config.$brand-colors, "med-blue");
+          font-size: map.get(variables.$font-scale, "md");
           line-height: 1;
           pointer-events: none;
           position: absolute;
           transform: translateY(-50%);
-          right: .5rem;
+          right: 0.5rem;
         }
 
         input[type="text"],
@@ -291,7 +292,6 @@ legend {
             opacity: 0;
           }
         }
-
       }
 
       input[type="date"],
@@ -301,11 +301,10 @@ legend {
           opacity: 0;
         }
       }
-
     }
 
     &.error {
-      color: $error-color!important;
+      color: $error-color !important;
 
       input[type="text"],
       input[type="search"],
@@ -324,13 +323,12 @@ legend {
       select {
         background-color: $error-background;
         border-color: $error-color !important;
-        border-radius: map.get(config.$radius, 'default' );
-        padding-left: map.get(variables.$spacers, 2 );
+        border-radius: map.get(config.$radius, "default");
+        padding-left: map.get(variables.$spacers, 2);
       }
 
       input[type="checkbox"],
       input[type="radio"] {
-
         &:not(:checked) + label {
           color: $error-color;
 
@@ -342,22 +340,21 @@ legend {
     }
   }
 
-  &#{$self}--fancy{
-    #{$self}__field{
+  &#{$self}--fancy {
+    #{$self}__field {
       position: relative;
 
       &.error {
-
         label {
-          color: $error-color!important;
+          color: $error-color !important;
           font-size: 80%;
           top: -1rem;
           transform: translate(0) scale(1);
           left: 0;
         }
 
-        input:not([type=checkbox]),
-        input:not([type=radio]),
+        input:not([type="checkbox"]),
+        input:not([type="radio"]),
         textarea {
           background-color: $error-background;
           border: 1px solid $error-color !important;
@@ -371,16 +368,16 @@ legend {
         }
       }
 
-      input:not([type=checkbox]),
-      input:not([type=radio]),
+      input:not([type="checkbox"]),
+      input:not([type="radio"]),
       textarea {
         background: transparent;
         border: none;
-        border-bottom: 1px solid map.get(variables.$greyscale, 'light' );
+        border-bottom: 1px solid map.get(variables.$greyscale, "light");
         border-radius: 0;
-        color: map.get(variables.$greyscale, 'base' );
-        padding: map.get(variables.$spacers, 1 );
-        transition: .2s ease-in;
+        color: map.get(variables.$greyscale, "base");
+        padding: map.get(variables.$spacers, 1);
+        transition: 0.2s ease-in;
 
         &:focus ~ label,
         &:valid ~ label {
@@ -390,7 +387,10 @@ legend {
         }
 
         &:focus {
-          border-bottom-color: map.get(config.$brand-colors, 'med-blue' ) !important;
+          border-bottom-color: map.get(
+            config.$brand-colors,
+            "med-blue"
+          ) !important;
           outline: none !important;
         }
       }
@@ -405,7 +405,7 @@ legend {
 
       input:focus::-webkit-datetime-edit,
       input:valid::-webkit-datetime-edit {
-        color: map.get(variables.$greyscale, 'base' );
+        color: map.get(variables.$greyscale, "base");
       }
 
       ::-webkit-input-placeholder {
@@ -413,12 +413,12 @@ legend {
         color: transparent !important;
       }
       ::-moz-placeholder {
-          /* Mozilla Firefox 19+ */
-          color: transparent !important;
+        /* Mozilla Firefox 19+ */
+        color: transparent !important;
       }
 
       input::placeholder {
-          color: transparent !important;
+        color: transparent !important;
       }
 
       ::-moz-placeholder {
@@ -426,11 +426,11 @@ legend {
       }
 
       input:focus::-webkit-input-placeholder {
-        color: map.get(variables.$greyscale, 'base' )!important;
+        color: map.get(variables.$greyscale, "base") !important;
       }
 
       input:focus::-moz-placeholder {
-        color: map.get(variables.$greyscale, 'base' )!important;
+        color: map.get(variables.$greyscale, "base") !important;
       }
 
       input:focus + label {
@@ -443,7 +443,7 @@ legend {
       }
 
       select {
-        padding-left: map.get(variables.$spacers, 1 );
+        padding-left: map.get(variables.$spacers, 1);
 
         &:focus ~ label,
         &:valid ~ label {
@@ -453,19 +453,22 @@ legend {
         }
 
         &:focus {
-          border-bottom-color: map.get(config.$brand-colors, 'med-blue' ) !important;
+          border-bottom-color: map.get(
+            config.$brand-colors,
+            "med-blue"
+          ) !important;
           outline: none !important;
         }
       }
 
       label {
-        color: map.get(variables.$greyscale, 'light' );
+        color: map.get(variables.$greyscale, "light");
         pointer-events: none;
         position: absolute;
-        left: .25rem;
+        left: 0.25rem;
         line-height: 1;
         top: 50%;
-        transition: .2s ease-in;
+        transition: 0.2s ease-in;
         transform: translateY(-50%);
       }
 
@@ -485,7 +488,7 @@ legend {
       textarea,
       #{ $self }__select-wrapper,
       #{ $self }__option-group {
-        margin-top: map.get(variables.$spacers, 3) + .75;
+        margin-top: map.get(variables.$spacers, 3) + 0.75;
       }
     }
   }
@@ -503,17 +506,16 @@ legend {
     }
   }
 
-
   &__button-group {
     align-items: flex-end;
     display: flex;
     justify-content: flex-start;
-    margin-left: -.25rem;
-    width: calc(100% + .25rem * 2);
+    margin-left: -0.25rem;
+    width: calc(100% + 0.25rem * 2);
 
     button {
       flex-grow: 1;
-      margin: .25rem;
+      margin: 0.25rem;
       max-width: 14.375rem;
     }
   }
@@ -535,24 +537,26 @@ legend {
   select {
     background-color: transparent;
     border: 1px solid transparent;
-    border-bottom-color: map.get(variables.$greyscale, 'light' );
+    border-bottom-color: map.get(variables.$greyscale, "light");
     border-radius: 0; // specify no border-radius to override mobile user agent styles
-    color: map.get(variables.$greyscale, 'base' );
+    color: map.get(variables.$greyscale, "base");
     display: block;
     font-size: 1rem;
     min-height: 2.2rem;
-    padding: map.get(variables.$spacers, 1 ) map.get(variables.$spacers, 2 );
+    padding: map.get(variables.$spacers, 1) map.get(variables.$spacers, 2);
     width: 100%;
 
     &::placeholder {
-      color: map.get(variables.$greyscale, 'base' );
+      color: map.get(variables.$greyscale, "base");
     }
 
     &:focus {
       outline: none;
-      border-bottom-color: map.get(config.$site-colors, 'focus' );
-      box-shadow: 0 0 2px 0 map.get(config.$site-colors, 'focus' );
-      transition: box-shadow config.$duration, border-color config.$duration ease-in-out, border-width config.$duration ease;
+      border-bottom-color: map.get(config.$site-colors, "focus");
+      box-shadow: 0 0 2px 0 map.get(config.$site-colors, "focus");
+      transition: box-shadow config.$duration,
+        border-color config.$duration ease-in-out,
+        border-width config.$duration ease;
     }
   }
 
@@ -567,7 +571,6 @@ legend {
   input[type="datetime-local"],
   input[type="month"],
   input[type="week"] {
-
     &.readonly {
       transition: config.$transitions;
 
@@ -579,7 +582,7 @@ legend {
   }
 
   textarea {
-    border-color: map.get(variables.$greyscale, 'light' );
+    border-color: map.get(variables.$greyscale, "light");
     padding: map.get(variables.$spacers, 1);
     width: 100%;
 
@@ -598,32 +601,32 @@ legend {
     position: relative;
 
     &:after {
-      border: 1px solid map.get(variables.$greyscale, 'base' );
+      border: 1px solid map.get(variables.$greyscale, "base");
       border-width: 0 0 1px 1px;
-      content: '';
-      height: .3rem;
+      content: "";
+      height: 0.3rem;
       pointer-events: none;
       position: absolute;
-      right: .3rem;
+      right: 0.3rem;
       top: 50%;
       transform: rotate(-45deg) translateY(-50%);
-      width: .3rem;
+      width: 0.3rem;
     }
 
     .has-icon &,
     .has-icon--right & {
-
       &:after {
         display: none;
       }
     }
   }
-  
+
   select {
     -webkit-appearance: none;
     appearance: none;
     border-radius: 0;
-    padding: map.get(variables.$spacers, 1) variables.$spacer map.get(variables.$spacers, 1) map.get(variables.$spacers, 2);
+    padding: map.get(variables.$spacers, 1) variables.$spacer
+      map.get(variables.$spacers, 1) map.get(variables.$spacers, 2);
   }
 
   input[type="date"],
@@ -633,14 +636,12 @@ legend {
     display: inline-flex;
 
     &::-webkit-clear-button {
-      margin-right: -.75rem;
+      margin-right: -0.75rem;
     }
   }
 
-
   // form--rounded
   &--rounded {
-
     input[type="text"],
     input[type="search"],
     input[type="date"],
@@ -656,38 +657,33 @@ legend {
     input[type="week"],
     textarea,
     select {
-      border-color: map.get(variables.$greyscale, 'light' );
-      border-radius: map.get(config.$radius, 'button' );
+      border-color: map.get(variables.$greyscale, "light");
+      border-radius: map.get(config.$radius, "button");
     }
 
     .has-icon {
-
       i {
-        left: .75rem;
+        left: 0.75rem;
       }
     }
 
     .has-icon--right {
-
       i {
-        right: .75rem;
+        right: 0.75rem;
       }
     }
 
     #{$self}__select-wrapper {
-
       &:after {
-        right: .7rem;
+        right: 0.7rem;
       }
     }
   }
-
 
   // Disabled styles for all inputs
   input,
   select,
   textarea {
-
     &:disabled {
       color: var(--disabled-color) !important;
       cursor: not-allowed;
@@ -700,9 +696,7 @@ legend {
 
   input[type="checkbox"],
   input[type="radio"] {
-
     &:disabled {
-
       + label {
         color: var(--disabled-color) !important;
         cursor: not-allowed;
@@ -711,10 +705,9 @@ legend {
   }
 }
 
-
 .toggle {
-  border: 1px solid map.get(variables.$greyscale, 'light' );
-  border-radius: map.get(config.$radius, 'button');
+  border: 1px solid map.get(variables.$greyscale, "light");
+  border-radius: map.get(config.$radius, "button");
   display: flex;
   justify-content: space-between;
   margin-top: map.get(variables.$spacers, 2);
@@ -731,11 +724,9 @@ legend {
     opacity: 0;
     position: absolute;
     width: auto;
-  
-    &:checked + label {      
-  
-      .input-icons {
 
+    &:checked + label {
+      .input-icons {
         [class^="pi-"]:nth-of-type(2) {
           transform: translate(-50%, -50%) scale(1);
         }
@@ -744,8 +735,8 @@ legend {
 
     + label {
       align-items: center;
-      border-radius: map.get(config.$radius, 'button');
-      color: map.get(variables.$greyscale, 'base');
+      border-radius: map.get(config.$radius, "button");
+      color: map.get(variables.$greyscale, "base");
       display: flex;
       flex: 1 1 auto;
       justify-content: center;
@@ -767,8 +758,8 @@ legend {
     }
 
     &:checked + label {
-      background-color: map.get(config.$site-colors, 'link' );
-      color: map.get(variables.$greyscale, 'white' );
+      background-color: map.get(config.$site-colors, "link");
+      color: map.get(variables.$greyscale, "white");
       font-weight: inherit;
 
       [class^="pi-"] {
@@ -784,11 +775,10 @@ legend {
 
   input[type="checkbox"],
   input[type="radio"] {
-
     &:checked + label {
       background-color: var(--disabled-color) !important;
       border-color: var(--disabled-color) !important;
-      color: map.get(variables.$greyscale, 'white') !important;
+      color: map.get(variables.$greyscale, "white") !important;
     }
   }
 }
@@ -799,14 +789,13 @@ fieldset:disabled {
   legend {
     cursor: default;
   }
-  
+
   .toggle {
     @include toggle-disabled;
   }
 
   input[type="checkbox"],
   input[type="radio"] {
-
     + label {
       color: var(--disabled-color) !important;
       cursor: not-allowed;
@@ -814,50 +803,59 @@ fieldset:disabled {
   }
 }
 
-
 // Switch
 .switch {
-
   input[type="checkbox"],
   input[type="radio"] {
     opacity: 0;
     position: absolute;
     width: auto;
   }
-  
+
   label {
     background-color: var(--lighter);
-    border: 1px solid color.adjust(map.get(variables.$greyscale, "light"), $lightness: math.percentage(config.$hue-threshold * 2));
+    border: 1px solid
+      color.adjust(
+        map.get(variables.$greyscale, "light"),
+        $lightness: math.percentage(config.$hue-threshold * 2)
+      );
     border-radius: 5rem;
     display: flex;
     height: 1rem;
     padding: 0;
     position: relative;
     width: 2rem;
-    
+
     &:before {
       background-color: var(--lighter);
-      border: 1px solid color.adjust(map.get(variables.$greyscale, "light"), $lightness: math.percentage(config.$hue-threshold * 2));
+      border: 1px solid
+        color.adjust(
+          map.get(variables.$greyscale, "light"),
+          $lightness: math.percentage(config.$hue-threshold * 2)
+        );
       border-radius: 50%;
-      box-shadow: 0 0 2px 0 color.adjust(map.get(variables.$greyscale, "light"), $lightness: math.percentage(config.$hue-threshold * 2));
-      content: '';
+      box-shadow: 0 0 2px 0
+        color.adjust(
+          map.get(variables.$greyscale, "light"),
+          $lightness: math.percentage(config.$hue-threshold * 2)
+        );
+      content: "";
       height: 1.25rem;
       width: 1.25rem;
       left: -20%;
       top: 50%;
       transform: translateY(-50%);
-      transition: .2s ease-in-out;
+      transition: 0.2s ease-in-out;
       position: absolute;
       z-index: 1;
     }
   }
-  
-  input:checked {
 
+  input:checked {
     + label {
       background-color: var(--skyblue);
       border-color: transparent;
-      
+
       &:before {
         background-color: var(--med-blue);
         border-color: transparent;
@@ -869,7 +867,6 @@ fieldset:disabled {
   }
 }
 
-
 [role="radio"],
 [role="checkbox"] {
   position: relative;
@@ -877,34 +874,33 @@ fieldset:disabled {
   width: 100%;
 
   i {
-    left: .5rem;
+    left: 0.5rem;
     position: absolute;
     transform: scale(0);
     transition: transform config.$duration ease;
   }
 
   &[aria-checked="true"] {
-
     i {
       transform: scale(1);
     }
   }
 }
 
-input[type="checkbox"].pill-filter, input[type="radio"].pill-filter {
-
+input[type="checkbox"].pill-filter,
+input[type="radio"].pill-filter {
   + label {
-    background-color: map.get(variables.$greyscale, 'white');
-    border-radius: map.get(config.$radius, 'button');
-    color: map.get(config.$site-colors, 'link');
-    border: 1px solid map.get(config.$site-colors, 'link');
+    background-color: map.get(variables.$greyscale, "white");
+    border-radius: map.get(config.$radius, "button");
+    color: map.get(config.$site-colors, "link");
+    border: 1px solid map.get(config.$site-colors, "link");
     height: auto;
     justify-content: center;
-    margin: .25rem;
+    margin: 0.25rem;
     padding: map.get(variables.$spacers, 2) 1.5rem;
     transition: config.$transitions;
     i {
-      font-size: map.get(variables.$font-scale, 'xs');
+      font-size: map.get(variables.$font-scale, "xs");
     }
 
     &:before {
@@ -912,20 +908,21 @@ input[type="checkbox"].pill-filter, input[type="radio"].pill-filter {
     }
 
     &:after {
-      color: map.get(variables.$greyscale, 'white');
-      left: .5rem;
+      color: map.get(variables.$greyscale, "white");
+      left: 0.5rem;
       opacity: 0;
       top: 50%;
       transform: translateY(-50%);
-      transition: visibility config.$duration ease, opacity config.$duration ease;
+      transition: visibility config.$duration ease,
+        opacity config.$duration ease;
       visibility: hidden;
     }
   }
 
   &:checked + label {
-    background-color: map.get(config.$site-colors, 'link' );
+    background-color: map.get(config.$site-colors, "link");
     font-weight: 400;
-    color: map.get(variables.$greyscale, 'white');
+    color: map.get(variables.$greyscale, "white");
 
     &:after {
       opacity: 1;
@@ -944,29 +941,28 @@ input[type="checkbox"].pill-filter, input[type="radio"].pill-filter {
     $border-radius: 3rem;
     .slider {
       appearance: none;
-      background-color: map.get(config.$brand-colors, 'med-blue');
+      background-color: map.get(config.$brand-colors, "med-blue");
       border-radius: $border-radius;
       width: 100%;
-      height: .5rem;
+      height: 0.5rem;
       margin: 0;
       outline: none;
       transition: config.$transitions;
 
       &:hover {
-        opacity: .7;
+        opacity: 0.7;
       }
       &::-webkit-slider-thumb {
         appearance: none;
         border: 1px solid;
-        border-color: map.get(config.$brand-colors, 'med-blue');
+        border-color: map.get(config.$brand-colors, "med-blue");
         border-radius: $border-radius;
-        background-color: map.get(variables.$greyscale, 'white');
+        background-color: map.get(variables.$greyscale, "white");
         cursor: pointer;
         @include mixins.square(1.3rem);
-
       }
       &::-moz-range-thumb {
-        background-color: map.get(variables.$greyscale, 'white');
+        background-color: map.get(variables.$greyscale, "white");
         cursor: pointer;
         @include mixins.square(25px);
       }

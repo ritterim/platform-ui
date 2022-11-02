@@ -34,8 +34,7 @@
         @media (min-width: ($size)) {
           display: none !important;
         }
-      }
-      @else if $d == show {
+      } @else if $d == show {
         @media (min-width: ($size)) {
           display: block !important;
 
@@ -54,7 +53,7 @@
           }
 
           &.flex-inline,
-          &.display--inline-flex  {
+          &.display--inline-flex {
             display: inline-flex !important;
           }
         }
@@ -62,9 +61,9 @@
     }
 
     // return all keys from a map as a list
-    $mapped__keys : map.keys(config.$breakpoints);
+    $mapped__keys: map.keys(config.$breakpoints);
     // get index of the current name passed
-    $index : (index($mapped__keys, $breakpoint));
+    $index: (index($mapped__keys, $breakpoint));
 
     // Display utility for specific break point
     // this will generate a min-width and max-width media query.
@@ -77,11 +76,10 @@
       @if $index {
         // if there is another key above the selected key, run this
         @if $index < length(config.$breakpoints) {
-          @media (min-width : ($size)) and (max-width: map.get(config.$breakpoints, mixins.nextKey($breakpoint) )  - 1 ) {
+          @media (min-width: ($size)) and (max-width: map.get(config.$breakpoints, mixins.nextKey($breakpoint) )  - 1) {
             @if $d == hide {
               display: none !important;
-            }
-            @else {
+            } @else {
               display: block !important;
 
               &.display--inline-block {
@@ -97,9 +95,9 @@
               &.block-container {
                 display: flex !important;
               }
-  
+
               &.flex-inline,
-              &.display--inline-flex  {
+              &.display--inline-flex {
                 display: inline-flex !important;
               }
             }
@@ -113,13 +111,11 @@
       // if $breakpoint is not mobile run it
       @if $index > 1 {
         @media (max-width: map.get(config.$breakpoints, $breakpoint) - 1) {
-          @if $breakpoint == 'mobiile' {
-            
+          @if $breakpoint == "mobiile" {
           } @else {
             @if $d == hide {
               display: none !important;
-            }
-            @else {
+            } @else {
               display: block !important;
 
               &.display--inline-block {
@@ -129,13 +125,13 @@
               &.display--inline {
                 display: inline !important;
               }
-  
+
               &.flex,
               &.display--flex,
               &.block-container {
                 display: flex !important;
               }
-  
+
               &.flex-inline,
               &.display--inline-flex {
                 display: inline-flex !important;
@@ -151,15 +147,15 @@
 // New Responsive Classes
 $displays: (
   show: block,
-  hide: none
+  hide: none,
 );
 
 .hide {
-  display: none!important;
+  display: none !important;
 }
 
 .show {
-  display: block!important;
+  display: block !important;
 }
 
 @each $breakpoint, $breakpointValue in config.$breakpoints {
@@ -176,7 +172,7 @@ $displays: (
         @if $index > 1 {
           @if $display == show {
             @media (min-width: $breakpointValue) {
-              display: block!important;
+              display: block !important;
 
               &.display--inline-block {
                 display: inline-block !important;
@@ -185,14 +181,14 @@ $displays: (
               &.display--inline {
                 display: inline !important;
               }
-  
+
               &.flex,
               &.flex--center-content,
               &.display--flex,
               &.block-container {
                 display: flex !important;
               }
-  
+
               &.flex-inline,
               &.display--inline-flex {
                 display: inline-flex !important;
@@ -200,7 +196,7 @@ $displays: (
             }
           } @else {
             @media (min-width: $breakpointValue) {
-              display: none!important;
+              display: none !important;
             }
           }
         }

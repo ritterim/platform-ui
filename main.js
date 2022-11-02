@@ -1,5 +1,9 @@
 // Platform UI Styles
+import 'normalize.css';
 import './src/sass/main.scss';
+
+// Polyfill
+import './src/js/polyfill/main';
 
 // Platform UI JavaScript Components
 import './src/js/accordion';

@@ -1,6 +1,6 @@
-@use "./config";
-@use "./mixins";
-@use "./variables";
+@use "config";
+@use "mixins";
+@use "variables";
 @use "sass:color";
 @use "sass:math";
 @use "sass:map";
@@ -10,7 +10,11 @@
   $self: &;
 
   background-color: map.get(variables.$greyscale, "white");
-  border: 1px solid color.adjust(map.get(variables.$greyscale, "light"), $lightness: math.percentage(config.$hue-threshold * 2));
+  border: 1px solid
+    color.adjust(
+      map.get(variables.$greyscale, "light"),
+      $lightness: math.percentage(config.$hue-threshold * 2)
+    );
   padding: config.$card-padding;
 
   .cards & {
@@ -24,7 +28,11 @@
     margin-right: -#{config.$card-padding};
     margin-left: -#{config.$card-padding};
     margin-bottom: config.$card-padding;
-    border-bottom: 1px solid color.adjust(map.get(variables.$greyscale, "light"), $lightness: math.percentage(config.$hue-threshold * 2));
+    border-bottom: 1px solid
+      color.adjust(
+        map.get(variables.$greyscale, "light"),
+        $lightness: math.percentage(config.$hue-threshold * 2)
+      );
   }
 
   &[class*="rounded-"] {
@@ -60,7 +68,10 @@
 
   &-action {
     border-right: 1px solid map.get(variables.$greyscale, "light");
-    color: color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold));
+    color: color.adjust(
+      map.get(variables.$greyscale, "light"),
+      $lightness: math.percentage(config.$hue-threshold)
+    );
     height: 1.5rem;
     padding: 0 0.5rem;
     transition: config.$transitions;

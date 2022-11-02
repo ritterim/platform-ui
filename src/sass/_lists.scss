@@ -1,6 +1,6 @@
-@use "./config";
-@use "./mixins";
-@use "./variables";
+@use "config";
+@use "mixins";
+@use "variables";
 @use "sass:map";
 
 ul {
@@ -17,23 +17,22 @@ ol {
 }
 
 .post {
-
   &-item {
     margin: 0 0 variables.$spacer;
     padding: 0 0 variables.$spacer;
     position: relative;
 
     &:not(:last-of-type) {
-      border-bottom: 1px solid map.get(variables.$greyscale, 'lighter');
+      border-bottom: 1px solid map.get(variables.$greyscale, "lighter");
     }
 
     &__duration {
-      color: map.get(variables.$greyscale, 'light');
-      font-size: map.get(variables.$font-scale, 'sm');
+      color: map.get(variables.$greyscale, "light");
+      font-size: map.get(variables.$font-scale, "sm");
       margin-bottom: map.get(variables.$spacers, 1);
 
       &:before {
-        content: '\f14a';
+        content: "\f14a";
         font-family: platform-icons;
         margin: 0 map.get(variables.$spacers, 2) 0 0;
       }
@@ -44,7 +43,7 @@ ol {
     }
 
     &__link {
-      font-size: map.get(variables.$font-scale, 'sm');
+      font-size: map.get(variables.$font-scale, "sm");
       font-weight: bold;
     }
   }
@@ -58,7 +57,7 @@ ol {
     width: 100%;
 
     .image-link {
-      background-color: map.get(config.$brand-colors, 'med-blue');
+      background-color: map.get(config.$brand-colors, "med-blue");
       display: block;
       position: relative;
 
@@ -66,15 +65,15 @@ ol {
         height: auto;
         width: 100%;
         max-width: 100%;
-        opacity: .5;
+        opacity: 0.5;
       }
 
       &--video {
         position: relative;
 
         &:before {
-          background: rgba(0, 0, 0, .3);
-          content: '';
+          background: rgba(0, 0, 0, 0.3);
+          content: "";
           height: 100%;
           position: absolute;
           width: 100%;
@@ -82,15 +81,15 @@ ol {
         }
 
         &:after {
-          content: '\f16e';
-          color: map.get(variables.$greyscale, 'white');
+          content: "\f16e";
+          color: map.get(variables.$greyscale, "white");
           font-family: platform-icons;
-          font-size: map.get(variables.$font-scale, 'lg') * 2;
+          font-size: map.get(variables.$font-scale, "lg") * 2;
           font-weight: 900;
           left: 50%;
           position: absolute;
           top: 50%;
-          text-shadow: 0 0 .5rem map.get(variables.$greyscale, 'black');
+          text-shadow: 0 0 0.5rem map.get(variables.$greyscale, "black");
           transform: translate(-50%, -50%);
           transition: config.$transitions;
           z-index: 2;
@@ -98,19 +97,19 @@ ol {
         &:hover {
           &:after {
             transform: translate(-50%, -50%) scale(1.2);
-            text-shadow: 0 0 1rem map.get(variables.$greyscale, 'black');
+            text-shadow: 0 0 1rem map.get(variables.$greyscale, "black");
           }
         }
       }
 
       &-caption {
-          bottom: 0;
-          padding: map.get(variables.$spacers, 2);
-          position: absolute;
-          text-align: center;
-          width: 100%;
-          z-index: 5;
-          @extend %flex-center;
+        bottom: 0;
+        padding: map.get(variables.$spacers, 2);
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        z-index: 5;
+        @extend %flex-center;
       }
       &__clear {
         background-color: transparent;
@@ -122,7 +121,6 @@ ol {
   }
 }
 
-
 .list {
   $list: &;
 
@@ -131,12 +129,11 @@ ol {
   padding: 0;
 
   &--bordered {
-
     #{$list}__item {
       padding-bottom: map.get(variables.$spacers, 2);
 
       &:not(:last-of-type) {
-        border-bottom: 1px solid map.get(variables.$greyscale, 'light-mid');
+        border-bottom: 1px solid map.get(variables.$greyscale, "light-mid");
       }
     }
   }

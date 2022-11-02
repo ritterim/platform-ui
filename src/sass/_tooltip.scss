@@ -1,12 +1,11 @@
-@use "./config";
-@use "./mixins";
-@use "./variables";
+@use "config";
+@use "mixins";
+@use "variables";
 @use "sass:map";
 
 @mixin tooltip {
-
-  $triangle: map.get(config.$radius, 'default');
-  $background-color: rgba(map.get(variables.$greyscale, 'dark'), .9);
+  $triangle: map.get(config.$radius, "default");
+  $background-color: rgba(map.get(variables.$greyscale, "dark"), 0.9);
 
   cursor: pointer;
   line-height: 1;
@@ -15,8 +14,8 @@
   &::after {
     background-color: $background-color;
     border-radius: $triangle;
-    color: map.get(variables.$greyscale, 'white');
-    font-size: map.get(variables.$font-scale, 'sm');
+    color: map.get(variables.$greyscale, "white");
+    font-size: map.get(variables.$font-scale, "sm");
     font-weight: normal;
     line-height: 1.15rem;
     opacity: 0;
@@ -46,20 +45,17 @@
           top: 0;
           left: 50%;
           margin-left: -$triangle;
-        } @else
-        if $direction == bottom {
+        } @else if $direction == bottom {
           border-color: transparent transparent $background-color transparent;
           bottom: 0;
           left: 50%;
           margin-left: -$triangle;
-        } @else
-        if $direction == left {
+        } @else if $direction == left {
           border-color: transparent transparent transparent $background-color;
           top: $triangle;
           right: calc(110% - #{$triangle});
           margin-top: -$triangle;
-        } @else
-        if $direction == right {
+        } @else if $direction == right {
           border-color: transparent $background-color transparent transparent;
           top: 50%;
           top: $triangle;
@@ -73,17 +69,14 @@
           bottom: 100%;
           left: 50%;
           transform: translate(-50%);
-        } @else
-        if $direction == bottom {
+        } @else if $direction == bottom {
           top: 100%;
           left: 50%;
           transform: translate(-50%);
-        } @else
-        if $direction == left {
+        } @else if $direction == left {
           top: -$triangle;
           right: calc(110% + #{$triangle});
-        } @else
-        if $direction == right {
+        } @else if $direction == right {
           top: -$triangle;
           left: calc(110% + #{$triangle});
         }
@@ -101,7 +94,8 @@
         font-size: 1rem;
         max-width: 20rem;
         position: fixed;
-        bottom: auto; top: 50%;
+        bottom: auto;
+        top: 50%;
         left: 50%;
         text-align: left;
         transform: translate(-50%, -50%);
@@ -111,12 +105,12 @@
   }
 
   &.tooltip-inline {
-    border-bottom: 2px dotted map.get(config.$brand-colors, 'med-blue');
+    border-bottom: 2px dotted map.get(config.$brand-colors, "med-blue");
     display: inline-block;
   }
 
   &:hover::after,
-  &[class*=tooltip-]:hover::before {
+  &[class*="tooltip-"]:hover::before {
     visibility: visible;
     opacity: 1;
   }
@@ -124,7 +118,7 @@
 
 [data-tooltip] {
   @include tooltip;
-  
+
   &:after {
     content: attr(data-tooltip);
   }
@@ -132,5 +126,5 @@
 
 // not fully realized :(
 .tooltip--help {
-  color: map.get(config.$brand-colors, 'med-blue') !important;
+  color: map.get(config.$brand-colors, "med-blue") !important;
 }

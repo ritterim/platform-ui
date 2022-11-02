@@ -1,8 +1,7 @@
-@use "./config";
-@use "./mixins";
-@use "./variables";
+@use "config";
+@use "mixins";
+@use "variables";
 @use "sass:map";
-
 
 .login {
   aside {

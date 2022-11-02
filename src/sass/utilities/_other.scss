@@ -16,7 +16,6 @@
   }
 }
 
-
 // Transparent
 .transparent {
   background: transparent !important;
@@ -32,8 +31,6 @@
   animation-duration: config.$transitions;
 }
 
-
-
 // Screen reader only
 .sr-only {
   // https://a11yproject.com/posts/how-to-hide-content/
@@ -44,7 +41,6 @@
   position: absolute !important;
 }
 
-
 // Loader
 @keyframes rotation {
   to {
@@ -54,60 +50,50 @@
 %loader,
 .loader {
   animation: rotation 1s infinite linear;
-  border: 2px solid map.get(config.$loader-colors, 'primary');
-  border-radius: map.get(variables.$radius, 'round');
-  border-top-color: map.get(config.$loader-colors, 'primary-top');
+  border: 2px solid map.get(config.$loader-colors, "primary");
+  border-radius: map.get(variables.$radius, "round");
+  border-top-color: map.get(config.$loader-colors, "primary-top");
   margin: 0;
   @include mixins.square(1.4rem);
-  @include mixins.square(1.4rem, 'min');
+  @include mixins.square(1.4rem, "min");
 }
 
 .loader {
-
   &.inverted {
-    border-color: map.get(config.$loader-colors, 'inverted');
-    border-top-color: map.get(config.$loader-colors, 'inverted-top');
+    border-color: map.get(config.$loader-colors, "inverted");
+    border-top-color: map.get(config.$loader-colors, "inverted-top");
   }
 
   &--sm {
-    @include mixins.square(.9rem);
-    @include mixins.square(.9rem, 'min');
+    @include mixins.square(0.9rem);
+    @include mixins.square(0.9rem, "min");
   }
 
   &--lg {
     @include mixins.square(2rem);
-    @include mixins.square(2rem, 'min');
+    @include mixins.square(2rem, "min");
   }
-
 }
-
 
 // Cursors
-$cursors: (
-  pointer,
-  default,
-  not-allowed,
-  help
-);
+$cursors: (pointer, default, not-allowed, help);
 
-.pointer{
-  cursor: pointer!important;
+.pointer {
+  cursor: pointer !important;
 }
 
-@each $cursor in $cursors{
-  .cursor{
+@each $cursor in $cursors {
+  .cursor {
     &--#{$cursor} {
-      cursor: $cursor!important;
+      cursor: $cursor !important;
     }
   }
 }
 
-
-
 // Position
 @each $key, $val in variables.$positions {
   .pos-#{$key} {
-    position: #{$val}!important;
+    position: #{$val} !important;
   }
 }
 
@@ -120,7 +106,7 @@ $cursors: (
     top: 50% !important;
     left: 50% !important;
     transform: translate(-50%, -50%);
-    
+
     &-#{$pos} {
       #{$pos}: 50% !important;
       @if $pos == top or $pos == bottom {
@@ -129,31 +115,30 @@ $cursors: (
         transform: translateX(-50%);
       }
     }
-  } 
+  }
 }
 
 // Rounded
-$corners:(
-  'tl': 'top-left',
-  'tr': 'top-right',
-  'bl': 'bottom-left',
-  'br': 'bottom-right'
+$corners: (
+  "tl": "top-left",
+  "tr": "top-right",
+  "bl": "bottom-left",
+  "br": "bottom-right",
 );
 
 // rounded corners based on $spacers map
 @each $unit, $rem in variables.$spacers {
   .rounded-#{$unit},
   .rounded--#{$unit} {
-    border-radius: #{$rem}!important;
+    border-radius: #{$rem} !important;
   }
 
   @each $corner, $value in $corners {
-    .rounded-#{$corner}--#{$unit}{
-      border-#{$value}-radius: #{$rem}!important;
+    .rounded-#{$corner}--#{$unit} {
+      border-#{$value}-radius: #{$rem} !important;
     }
   }
 }
-
 
 // Height and Width
 @each $size, $letter in (height: h, width: w) {
@@ -181,22 +166,18 @@ $corners:(
   }
 }
 
-
-
-
 // Overflow
 @each $key, $value in variables.$overflow {
- .overflow-#{$key} {
-    overflow: #{$value}!important;
+  .overflow-#{$key} {
+    overflow: #{$value} !important;
   }
 
   @each $axis, $letter in (y: y, x: x) {
     .overflow-#{$letter}--#{$key} {
-      overflow-#{$letter}: #{$value}!important;
+      overflow-#{$letter}: #{$value} !important;
     }
   }
 }
-
 
 // Scale Hover
 .hover-scale {
@@ -207,16 +188,14 @@ $corners:(
   }
 }
 
-
 // Shadow Hover
 .hover-shadow {
   transition: config.$transitions;
 
   &:hover {
-    box-shadow: 0 0 6px 3px map.get(variables.$greyscale, 'lighter' );
+    box-shadow: 0 0 6px 3px map.get(variables.$greyscale, "lighter");
   }
 }
-
 
 // Transition
 .transition {

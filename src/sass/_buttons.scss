@@ -1,7 +1,7 @@
-@use "./config";
-@use "./mixins";
-@use "./utilities";
-@use "./variables";
+@use "config";
+@use "mixins";
+@use "utilities";
+@use "variables";
 @use "sass:color";
 @use "sass:math";
 @use "sass:map";
@@ -12,7 +12,11 @@
 
   align-items: center;
   background-color: config.$button-primary-background;
-  border: 1px solid color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold * 2));
+  border: 1px solid
+    color.adjust(
+      map.get(variables.$greyscale, "light"),
+      $lightness: math.percentage(config.$hue-threshold * 2)
+    );
   border-radius: config.$button-border-radius;
   color: config.$button-primary-color;
   cursor: pointer;
@@ -32,10 +36,16 @@
 
   &:disabled,
   &.disabled {
-    background-color: color.adjust(map.get(variables.$greyscale, 'light' ), $lightness: math.percentage(config.$hue-threshold)) !important;
+    background-color: color.adjust(
+      map.get(variables.$greyscale, "light"),
+      $lightness: math.percentage(config.$hue-threshold)
+    ) !important;
     background-image: none;
-    border-color: color.adjust(map.get(variables.$greyscale, 'light' ), $lightness: math.percentage(config.$hue-threshold)) !important;
-    color: map.get(variables.$greyscale, 'white') !important;
+    border-color: color.adjust(
+      map.get(variables.$greyscale, "light"),
+      $lightness: math.percentage(config.$hue-threshold)
+    ) !important;
+    color: map.get(variables.$greyscale, "white") !important;
     cursor: not-allowed;
     pointer-events: none;
   }
@@ -64,11 +74,11 @@
         box-sizing: border-box;
         content: "";
         display: block;
-        border-color: map.get(config.$loader-colors, 'inverted');
-        border-top-color: map.get(config.$loader-colors, 'inverted-top');
+        border-color: map.get(config.$loader-colors, "inverted");
+        border-top-color: map.get(config.$loader-colors, "inverted-top");
         left: 50%;
-        margin-left: -.5rem;
-        margin-top: -.5rem;
+        margin-left: -0.5rem;
+        margin-top: -0.5rem;
         position: absolute;
         top: 50%;
       }
@@ -96,11 +106,15 @@
     &.active,
     &:hover {
       background-color: config.$button-primary-hover;
-      box-shadow: 0 0 0 .3rem color.adjust(config.$button-secondary-background, $lightness: math.percentage(config.$hue-threshold));
+      box-shadow: 0 0 0 0.3rem
+        color.adjust(
+          config.$button-secondary-background,
+          $lightness: math.percentage(config.$hue-threshold)
+        );
     }
 
     &.has-text {
-      padding: 0 map.get(variables.$spacers, 2 );
+      padding: 0 map.get(variables.$spacers, 2);
       width: auto;
     }
 
@@ -114,43 +128,49 @@
       }
 
       &:hover {
-
         @include mixins.breakpoint(lg-tablet, min) {
-          padding: 0 map.get(variables.$spacers, 1 );
+          padding: 0 map.get(variables.$spacers, 1);
           width: auto;
 
           &:after {
             width: auto;
             display: inline-block;
-            padding-right: map.get(variables.$spacers, 2 );
+            padding-right: map.get(variables.$spacers, 2);
           }
         }
       }
 
       &.has-text {
-        padding: 0 map.get(variables.$spacers, 1 );
+        padding: 0 map.get(variables.$spacers, 1);
 
         &:after {
           width: auto;
           display: inline-block;
-          padding-right: map.get(variables.$spacers, 2 );
+          padding-right: map.get(variables.$spacers, 2);
         }
       }
     }
 
     &.loading {
-
       &:before {
         background-color: config.$button-primary-hover;
-        box-shadow: 0 0 0 .3rem color.adjust(config.$button-secondary-background, $lightness: math.percentage(config.$hue-threshold));
+        box-shadow: 0 0 0 0.3rem
+          color.adjust(
+            config.$button-secondary-background,
+            $lightness: math.percentage(config.$hue-threshold)
+          );
       }
 
       &[data-button-text],
       &.has-text {
         background-color: config.$button-primary-hover;
         border-color: inherit;
-        box-shadow: 0 0 0 .3rem color.adjust(config.$button-secondary-background, $lightness: math.percentage(config.$hue-threshold));
-        padding: 0 map.get(variables.$spacers, 1 );
+        box-shadow: 0 0 0 0.3rem
+          color.adjust(
+            config.$button-secondary-background,
+            $lightness: math.percentage(config.$hue-threshold)
+          );
+        padding: 0 map.get(variables.$spacers, 1);
         width: auto;
 
         &:before {
@@ -159,12 +179,15 @@
           background-color: unset;
           box-sizing: border-box;
           box-shadow: none;
-          content: '';
+          content: "";
           display: block;
           border-color: config.$button-primary-background;
-          border-top-color: color.adjust(map.get(variables.$greyscale, 'base' ), $lightness: math.percentage(config.$hue-threshold * 2));
+          border-top-color: color.adjust(
+            map.get(variables.$greyscale, "base"),
+            $lightness: math.percentage(config.$hue-threshold * 2)
+          );
           left: 0;
-          margin: 0 map.get(variables.$spacers, 1 );
+          margin: 0 map.get(variables.$spacers, 1);
           position: relative;
           top: 0;
         }
@@ -173,7 +196,7 @@
           content: attr(data-button-text);
           width: auto;
           display: inline-block;
-          padding-right: map.get(variables.$spacers, 2 );
+          padding-right: map.get(variables.$spacers, 2);
         }
 
         i {
@@ -181,18 +204,17 @@
         }
       }
     }
-  }  
+  }
 
   &--lg {
-    font-size: map.get(variables.$font-scale, 'lg');
+    font-size: map.get(variables.$font-scale, "lg");
     padding: config.$button-large-padding;
 
     &.loading {
-
       &:after {
         @include mixins.square(variables.$spacer * 1.5);
-        margin-left: -.75rem;
-        margin-top: -.75rem;
+        margin-left: -0.75rem;
+        margin-top: -0.75rem;
       }
     }
   }
@@ -215,21 +237,23 @@
   // Button colors
   $button-colors: () !default;
 
-  @if meta.type-of(config.$config-colors) == 'map' {
+  @if meta.type-of(config.$config-colors) == "map" {
     $button-colors: map.merge(config.$config-colors, variables.$greyscale);
   } @else {
     $button-colors: map.merge(variables.$greyscale, $button-colors);
     @warn "$config-colors is not set or empty";
   }
 
-  @if meta.type-of($button-colors) == 'map' {
-    @each $name, $color in $button-colors {   
-
+  @if meta.type-of($button-colors) == "map" {
+    @each $name, $color in $button-colors {
       &--#{$name} {
         --button-background: #{$color};
         --button-border: var(--button-background);
         // darken the background--color by 10% on hover
-        --button-hover-background: #{color.adjust($color, $lightness: math.percentage(-(config.$hue-threshold)))};
+        --button-hover-background: #{color.adjust(
+            $color,
+            $lightness: math.percentage(-(config.$hue-threshold))
+          )};
 
         background-color: var(--button-background);
         border-color: var(--button-border);
@@ -237,17 +261,23 @@
 
         // set colors to work based on WCAG AA
         @if lightness($color) > 65 and lightness($color) < 90 {
-          --button-color: #{map.get(variables.$greyscale, 'dark')};
+          --button-color: #{map.get(variables.$greyscale, "dark")};
         } @else if lightness($color) > 50 and lightness($color) < 65 {
-          --button-color: #{color.adjust(map.get(variables.$greyscale, 'dark'), $lightness: math.percentage(-.01))};
+          --button-color: #{color.adjust(
+              map.get(variables.$greyscale, "dark"),
+              $lightness: math.percentage(-0.01)
+            )};
         } @else if lightness($color) > 90 {
-          --button-color: #{map.get(variables.$greyscale, 'base')};
+          --button-color: #{map.get(variables.$greyscale, "base")};
         } @else {
           // If the $color is dark, set the color to white and lighten the hover background.
-          --button-color: #{map.get(variables.$greyscale, 'white')};
-          --button-hover-background: #{color.adjust($color, $lightness: math.percentage(config.$hue-threshold))};
+          --button-color: #{map.get(variables.$greyscale, "white")};
+          --button-hover-background: #{color.adjust(
+              $color,
+              $lightness: math.percentage(config.$hue-threshold)
+            )};
         }
-  
+
         &:hover {
           background-color: var(--button-hover-background);
           border-color: var(--button-hover-background);
@@ -256,21 +286,30 @@
 
         &.button--secondary {
           // lighten the box-shadow by 10% of background--color
-          --box-shadow: #{color.adjust($color, $lightness: math.percentage(config.$hue-threshold))};
+          --box-shadow: #{color.adjust(
+              $color,
+              $lightness: math.percentage(config.$hue-threshold)
+            )};
 
           @if lightness($color) <= 50 {
             // For our darkest buttons we lighten the box-shadow by 30%
-            --box-shadow: #{color.adjust($color, $lightness: math.percentage(config.$hue-threshold * 3))};
+            --box-shadow: #{color.adjust(
+                $color,
+                $lightness: math.percentage(config.$hue-threshold * 3)
+              )};
           } @else if lightness($color) > 90 {
             // if the colors lightness value is greater than 90% only lighten the box-shadow be 2%
-            --box-shadow: #{color.adjust($color, $lightness: math.percentage(.02 ))};            
+            --box-shadow: #{color.adjust(
+                $color,
+                $lightness: math.percentage(0.02)
+              )};
           }
-      
+
           &.active,
           &:hover {
             // border-color: initial - same as standard .button
             border-color: initial;
-            box-shadow: 0 0 0 .3rem var(--box-shadow);
+            box-shadow: 0 0 0 0.3rem var(--box-shadow);
           }
         }
 
@@ -280,17 +319,20 @@
 
           &:hover {
             background-color: var(--button-hover-background);
-          
+
             // set colors to work based on WCAG AA
             @if lightness($color) > 65 and lightness($color) < 90 {
-              color: #{map.get(variables.$greyscale, 'dark')};
+              color: #{map.get(variables.$greyscale, "dark")};
             } @else if lightness($color) > 50 and lightness($color) < 65 {
-              color: #{color.adjust(map.get(variables.$greyscale, 'dark'), $lightness: math.percentage(-.01))};
+              color: #{color.adjust(
+                  map.get(variables.$greyscale, "dark"),
+                  $lightness: math.percentage(-0.01)
+                )};
             } @else if lightness($color) > 90 {
-              color: #{map.get(variables.$greyscale, 'base')};
+              color: #{map.get(variables.$greyscale, "base")};
             } @else {
               // If the $color is dark, set the color to white and lighten the hover background.
-              color: #{map.get(variables.$greyscale, 'white')};
+              color: #{map.get(variables.$greyscale, "white")};
             }
           }
         }

@@ -28,30 +28,29 @@
 }
 
 %inverted {
-  color: map.get(variables.$greyscale, 'white') !important;
+  color: map.get(variables.$greyscale, "white") !important;
   transition: config.$transitions;
 }
 
 %scrollbar {
-
   &::-webkit-scrollbar {
-    @include mixins.square(.5rem);
+    @include mixins.square(0.5rem);
   }
 
   &::-webkit-scrollbar-thumb {
     background-clip: padding-box;
-    background-color: map.get(variables.$greyscale, 'light' );
-    border-radius: map.get(variables.$radius, 'button' );
+    background-color: map.get(variables.$greyscale, "light");
+    border-radius: map.get(variables.$radius, "button");
   }
 
   &::-webkit-scrollbar-track {
-    background-color: map.get(variables.$greyscale, 'lighter' );
-    border-radius: map.get(variables.$radius, 'button' );
+    background-color: map.get(variables.$greyscale, "lighter");
+    border-radius: map.get(variables.$radius, "button");
   }
 }
 
 %basic-circle {
-  border-radius: map.get(variables.$radius, 'round');
+  border-radius: map.get(variables.$radius, "round");
   @include mixins.square(variables.$spacer * 1.5);
   @extend %flex-center;
 }

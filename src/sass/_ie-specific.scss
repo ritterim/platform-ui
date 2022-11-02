@@ -1,11 +1,10 @@
-@use "./config";
-@use "./mixins";
-@use "./variables";
+@use "config";
+@use "mixins";
+@use "variables";
 @use "sass:map";
 
 // ie specific
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-
   .site-header {
     top: 0;
   }
@@ -13,18 +12,17 @@
   .content-grid {
     display: flex;
     flex-flow: row wrap;
-    padding: map.get(variables.$spacers, 5 ) variables.$spacer;
+    padding: map.get(variables.$spacers, 5) variables.$spacer;
 
     &.has-side-content {
       justify-content: space-between;
     }
 
     &__heading {
-      margin-bottom: map.get(variables.$spacers, 4 );
+      margin-bottom: map.get(variables.$spacers, 4);
       flex-basis: 100%;
 
       .has-side-content & {
-
         @include mixins.breakpoint(desktop, min) {
           flex: 0 82.3333%;
         }
@@ -35,7 +33,6 @@
       flex-basis: 100%;
 
       .has-side-content & {
-
         @include mixins.breakpoint(desktop, min) {
           flex-basis: 82.3333%;
           order: 1;

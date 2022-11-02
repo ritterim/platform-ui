@@ -1,9 +1,9 @@
-@use "./config";
-@use "./variables";
+@use "config";
+@use "variables";
 @use "sass:map";
 
 .note {
-  $orange: map.get(config.$brand-colors, 'salmon' );
+  $orange: map.get(config.$brand-colors, "salmon");
   $self: &;
   position: relative;
 
@@ -11,14 +11,12 @@
     cursor: pointer;
 
     #{$self}__header {
-
       i {
         color: $orange;
       }
-    } 
+    }
 
     &:not(.note-open) {
-
       #{$self}__inner {
         max-width: 90%;
         transform: translate(19px, 0) scale(1.1);
@@ -33,7 +31,7 @@
   &.note-open:hover {
     cursor: default;
   }
-  
+
   &__inner {
     overflow: hidden;
     transition: max-width config.$transitions, transform config.$transitions;
@@ -48,12 +46,12 @@
   &__toggle {
     background-color: transparent;
     border: none;
-    color: map.get(variables.$greyscale, 'light' );
+    color: map.get(variables.$greyscale, "light");
     cursor: pointer;
     font-size: 100%;
     transition: all ease config.$transitions;
     position: absolute;
-    bottom: .5rem;
+    bottom: 0.5rem;
     left: 50%;
     transform: translateX(-50%);
 

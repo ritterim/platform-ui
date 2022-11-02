@@ -15,7 +15,7 @@
   }
 
   &--nowrap {
-    flex-wrap: nowrap
+    flex-wrap: nowrap;
   }
 
   &--grow {
@@ -43,7 +43,7 @@
 
 @each $key, $val in variables.$flex-justify {
   .flex--justify-#{$key} {
-    justify-content: #{$val}!important;
+    justify-content: #{$val} !important;
   }
 }
 

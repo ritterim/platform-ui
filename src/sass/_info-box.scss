@@ -1,6 +1,6 @@
-@use "./config";
-@use "./mixins";
-@use "./variables";
+@use "config";
+@use "mixins";
+@use "variables";
 @use "sass:color";
 @use "sass:map";
 @use "sass:math";
@@ -11,27 +11,30 @@
   position: relative;
 
   &.active {
-
     .info-box__content {
-      display: block!important;
+      display: block !important;
     }
   }
 
   &__content {
-    background-color: map.get(variables.$greyscale, 'white');
-    border: 1px solid color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold * 2));
-    box-shadow: 0 1rem 2rem rgba(map.get(variables.$greyscale, 'black'), .4);
+    background-color: map.get(variables.$greyscale, "white");
+    border: 1px solid
+      color.adjust(
+        map.get(variables.$greyscale, "light"),
+        $lightness: math.percentage(config.$hue-threshold * 2)
+      );
+    box-shadow: 0 1rem 2rem rgba(map.get(variables.$greyscale, "black"), 0.4);
     display: none;
     margin-top: variables.$spacer;
     padding: map.get(variables.$spacers, 5) map.get(variables.$spacers, 4);
     position: absolute;
-    top:100%;
+    top: 100%;
     width: 20rem;
     z-index: 50;
 
     @include mixins.breakpoint(tablet, max) {
       position: fixed;
-      bottom: auto; 
+      bottom: auto;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -51,65 +54,69 @@
     }
 
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       width: 0;
       height: 0;
       border-style: solid;
       border-width: 0 8px 12px 8px;
-      border-color: transparent transparent map.get(variables.$greyscale, 'white') transparent;
+      border-color: transparent transparent
+        map.get(variables.$greyscale, "white") transparent;
       top: -12px;
-      left:0;
-      margin:0 map.get(variables.$spacers, 2);
-      z-index:1;
+      left: 0;
+      margin: 0 map.get(variables.$spacers, 2);
+      z-index: 1;
     }
 
     &:after {
-      content: '';
+      content: "";
       position: absolute;
       width: 0;
       height: 0;
       border-style: solid;
       border-width: 0 10px 14px 10px;
-      border-color: transparent transparent color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold * 2));
+      border-color: transparent transparent
+        color.adjust(
+          map.get(variables.$greyscale, "light"),
+          $lightness: math.percentage(config.$hue-threshold * 2)
+        );
       top: -14px;
-      left:-2px;
-      margin:0 map.get(variables.$spacers, 2);
+      left: -2px;
+      margin: 0 map.get(variables.$spacers, 2);
       z-index: 0;
     }
     &.content--right {
       /* for use if the button is affixed to the right side of the screen with nothing to buffer it */
       &:before {
-        left:auto;
-        right:1px;
+        left: auto;
+        right: 1px;
       }
-      &:after{
-        left:auto;
-        right:-1px;
+      &:after {
+        left: auto;
+        right: -1px;
       }
     }
   }
 
   &__close {
     position: absolute;
-    right: .5rem;
-    top: .5rem;
+    right: 0.5rem;
+    top: 0.5rem;
   }
 
-  // .info-box--left 
+  // .info-box--left
   &--left {
-
     .info-box__content {
       right: 0;
 
       &:before {
-        left:auto;
-        right:1px;
+        left: auto;
+        right: 1px;
       }
 
-      &:after{
-        left:auto;
-        right:-1px;
+      &:after {
+        left: auto;
+        right: -1px;
       }
     }
   }

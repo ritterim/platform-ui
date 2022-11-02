@@ -1,6 +1,6 @@
-@use "./config";
-@use "./mixins";
-@use "./variables";
+@use "config";
+@use "mixins";
+@use "variables";
 @use "sass:map";
 
 .modal {
@@ -13,7 +13,7 @@
   }
 
   $self: &;
-  background: rgba(map.get(variables.$greyscale, 'black'), .5);
+  background: rgba(map.get(variables.$greyscale, "black"), 0.5);
   position: fixed;
   z-index: 500;
   overflow-x: hidden;
@@ -39,7 +39,6 @@
   }
 
   &--full {
-
     > #{$self}__inner {
       margin: auto;
       width: 100%;
@@ -58,7 +57,6 @@
   }
 
   &--small {
-
     > #{$self}__inner {
       @include mixins.breakpoint(tablet, min) {
         width: 40vw;
@@ -70,7 +68,6 @@
   }
 
   &--large {
-
     > #{$self}__inner {
       @include mixins.breakpoint(tablet, min) {
         width: 80vw;
@@ -82,15 +79,14 @@
     @extend %flex-center;
   }
 
-
   &__open {
     cursor: pointer;
   }
 
   &__inner {
-    background: map.get(variables.$greyscale, 'white');
+    background: map.get(variables.$greyscale, "white");
     margin: map.get(variables.$spacers, 4) auto;
-    transform: translate(0 ,100%);
+    transform: translate(0, 100%);
 
     @media (prefers-reduced-motion: no-preference) {
       transition: config.$transitions ease-in-out;
@@ -111,8 +107,8 @@
   }
 
   &__header {
-    background-color: map.get(config.$brand-colors, 'lightblue');
-    color: map.get(variables.$greyscale, 'base');
+    background-color: map.get(config.$brand-colors, "lightblue");
+    color: map.get(variables.$greyscale, "base");
     height: $header-height;
     padding: 2rem;
     position: relative;

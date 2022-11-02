@@ -1,13 +1,12 @@
-@use "./config";
-@use "./mixins";
-@use "./variables";
+@use "config";
+@use "mixins";
+@use "variables";
 @use "sass:color";
 @use "sass:map";
 @use "sass:meta";
 @use "sass:math";
 
 .site-header {
-
   &.site-header--fixed {
     position: fixed;
     width: 100%;
@@ -20,8 +19,6 @@
     }
   }
 }
-
-
 
 // **********************
 // Site Menu
@@ -45,7 +42,7 @@
 
 $all-colors: () !default;
 
-@if meta.type-of(config.$config-colors) == 'map' {
+@if meta.type-of(config.$config-colors) == "map" {
   $all-colors: map.merge(config.$config-colors, variables.$greyscale);
 } @else {
   $all-colors: map.merge(variables.$greyscale, $all-colors);
@@ -65,7 +62,6 @@ $all-colors: () !default;
     margin: 0;
   }
 
-
   // default site-menu link hovers
   .site-menu__item,
   .dropdown__content-item {
@@ -75,17 +71,16 @@ $all-colors: () !default;
     line-height: 1;
     padding: map.get(variables.$spacers, 2) map.get(variables.$spacers, 3);
   }
-  
-  .dropdown__content-item{
+
+  .dropdown__content-item {
     transition: config.$transitions;
   }
 
-  .site-menu__item{
+  .site-menu__item {
     transition: border config.$transitions, text-shadow config.$transitions;
   }
 
-  &:not([class*=background--]) {
-
+  &:not([class*="background--"]) {
     .site-menu__item,
     .dropdown__content-item {
       @media (pointer: fine) {
@@ -95,25 +90,23 @@ $all-colors: () !default;
           }
         }
       }
-    
+
       &.active {
         text-shadow: 1px 0 0 currentColor;
       }
     }
   }
 
-
   // site-menu underline on hover
   &.hover-underline {
-
     .site-menu__item,
     .dropdown__content-item {
       position: relative;
 
       &:after {
-        background-color: map.get(variables.$greyscale, 'dark');
+        background-color: map.get(variables.$greyscale, "dark");
         bottom: 0;
-        content: '';
+        content: "";
         height: 2px;
         left: 1rem;
         opacity: 0;
@@ -122,7 +115,6 @@ $all-colors: () !default;
         transition: config.$transitions;
       }
 
-      
       @each $unit, $rem in variables.$spacers {
         &.p-#{$unit} {
           &:after {
@@ -146,31 +138,26 @@ $all-colors: () !default;
           }
         }
       }
-  
+
       @media (pointer: fine) {
         &:hover {
           &:not(.active) {
-
             &:after {
               opacity: 1;
             }
           }
         }
       }
-    
-      &.active {
 
+      &.active {
         &:after {
           opacity: 1;
         }
       }
     }
 
-
     .active {
-
       > .dropdown__trigger {
-        
         &:after {
           opacity: 1;
         }
@@ -180,10 +167,8 @@ $all-colors: () !default;
     // Border hover colors
     @each $name, $color in $all-colors {
       &.hover-underline--#{$name} {
-
         .site-menu__item,
         .dropdown__content-item {
-
           &:after {
             background-color: $color;
           }
@@ -191,7 +176,6 @@ $all-colors: () !default;
       }
     }
   }
-
 
   // Side border modifier
   &.site-menu--bordered {
@@ -203,7 +187,7 @@ $all-colors: () !default;
       > .dropdown > .site-menu__item {
         border-left: 1px solid var(--menu-border-color);
       }
-  
+
       > li:first-child .site-menu__item,
       > .site-menu__item:first-child,
       > .dropdown:first-child > .site-menu__item {
@@ -211,20 +195,18 @@ $all-colors: () !default;
       }
 
       .dropdown__content {
-
         > li > .dropdown__content-item,
         > .dropdown__content-item {
           border-top: 1px solid var(--menu-border-color);
         }
 
-        > li:first-child .dropdown__content-item, 
+        > li:first-child .dropdown__content-item,
         > .dropdown__content-item:first-child {
           border-top: none;
         }
       }
     }
   }
-
 
   .dropdown__content {
     display: flex;
@@ -233,10 +215,8 @@ $all-colors: () !default;
   }
 
   .dropdown {
-    
     // changes position of dropdowns when open
     &.dropdown--right {
-
       .dropdown__content {
         left: auto;
         right: 0;
@@ -244,7 +224,6 @@ $all-colors: () !default;
     }
 
     &.dropdown--center {
-
       .dropdown__content {
         left: 50%;
         transform: translateX(-50%);
@@ -252,39 +231,55 @@ $all-colors: () !default;
     }
   }
 
-
-  // Color specific 
+  // Color specific
   @each $name, $color in $all-colors {
     &.background--#{$name} {
-      --item-hover-color: #{color.adjust($color, $lightness: math.percentage(-.05))};
+      --item-hover-color: #{color.adjust(
+          $color,
+          $lightness: math.percentage(-0.05)
+        )};
 
       background-color: $color !important;
 
       .site-menu__item,
       .dropdown__content-item {
         @if lightness($color) > 50 {
-          --menu-text-color: var(--dark, #{map.get(variables.$greyscale, 'dark')});
+          --menu-text-color: var(
+            --dark,
+            #{map.get(variables.$greyscale, "dark")}
+          );
         } @else {
-          --menu-text-color: var(--white, #{map.get(variables.$greyscale, 'white')});
+          --menu-text-color: var(
+            --white,
+            #{map.get(variables.$greyscale, "white")}
+          );
         }
-  
+
         &.active {
-          background-color: color.adjust($color, $lightness: math.percentage(-.1));
+          background-color: color.adjust(
+            $color,
+            $lightness: math.percentage(-0.1)
+          );
         }
-  
+
         @media (pointer: fine) {
           &:hover {
             &:not(.active) {
-              background-color: var(--item-hover-color, #{color.adjust($color, $lightness: math.percentage(-.05))});
+              background-color: var(
+                --item-hover-color,
+                #{color.adjust($color, $lightness: math.percentage(-0.05))}
+              );
             }
           }
         }
       }
 
       .active {
-
         > .dropdown__trigger {
-          background-color: var(--item-hover-color, #{color.adjust($color, $lightness: math.percentage(-.05))});
+          background-color: var(
+            --item-hover-color,
+            #{color.adjust($color, $lightness: math.percentage(-0.05))}
+          );
           text-shadow: none;
         }
       }
@@ -293,19 +288,23 @@ $all-colors: () !default;
         background-color: $color;
       }
 
-
       // Site menu border modifier
       &.site-menu--bordered {
         @if lightness($color) > 50 {
-          --menu-border-color: var(--dark, #{map.get(variables.$greyscale, 'dark')});
+          --menu-border-color: var(
+            --dark,
+            #{map.get(variables.$greyscale, "dark")}
+          );
         } @else {
-          --menu-border-color: var(--white, #{map.get(variables.$greyscale, 'white')});
+          --menu-border-color: var(
+            --white,
+            #{map.get(variables.$greyscale, "white")}
+          );
         }
       }
     }
   }
 }
-
 
 // Dropdown
 .dropdown {
@@ -322,10 +321,9 @@ $all-colors: () !default;
   }
 
   &.active {
-
     > .dropdown__trigger {
       text-shadow: 1px 0 0 currentColor;
-      
+
       + .dropdown__content {
         max-height: 100vh;
         overflow-y: auto;
@@ -343,7 +341,7 @@ $all-colors: () !default;
     align-items: center;
     display: flex;
   }
-  
+
   .dropdown__content {
     background-color: inherit;
     height: auto;
@@ -353,12 +351,11 @@ $all-colors: () !default;
     width: 100%;
     overflow: hidden;
     position: absolute;
-    transition: all .2s ease-in-out;
+    transition: all 0.2s ease-in-out;
     top: 100%;
     z-index: 5;
   }
 }
-
 
 // *****************
 // Mobile site menu
@@ -386,7 +383,6 @@ $all-colors: () !default;
   }
 
   @media (max-width: (config.$show-mobile-menu - 1)) {
-
     .site-menu {
       align-items: baseline;
       flex-direction: column;
@@ -399,7 +395,7 @@ $all-colors: () !default;
       overflow: hidden;
       visibility: hidden;
       z-index: 2;
-  
+
       &.active {
         max-height: 100vh;
         overflow-y: auto;
@@ -407,16 +403,14 @@ $all-colors: () !default;
         visibility: visible;
       }
 
-
       // Side border modifier
       &.site-menu--bordered {
-
         > .site-menu__item,
         > li > .site-menu__item,
         > .dropdown > .site-menu__item {
           border-top: 1px solid var(--menu-border-color);
         }
-    
+
         > li:first-child .site-menu__item,
         > .site-menu__item:first-child,
         > .dropdown:first-child > .site-menu__item {
@@ -424,20 +418,18 @@ $all-colors: () !default;
         }
 
         .dropdown__content {
-
           > li > .dropdown__content-item,
           > .dropdown__content-item {
             border-top: 1px solid var(--menu-border-color);
           }
 
-          > li:first-child .dropdown__content-item, 
+          > li:first-child .dropdown__content-item,
           > .dropdown__content-item:first-child {
             border-top: none;
           }
         }
 
-        &:not([class*=background--]) {
-
+        &:not([class*="background--"]) {
           &.active {
             border-bottom: 1px solid;
           }
@@ -456,9 +448,7 @@ $all-colors: () !default;
       // Accounts for fixed header height and max-height of open nav
       &.site-header--fixed,
       .site-header--fixed & {
-
         .site-menu {
-
           &.active {
             max-height: calc(100vh - var(--menu-height, 4.5rem));
             overflow-y: auto;
@@ -477,16 +467,13 @@ $all-colors: () !default;
 
 // Fixed header with mobile site-menu
 .site-header--fixed {
-
   &.site-menu-wrapper,
   .site-menu-wrapper {
-
     .site-menu.active {
       max-height: calc(100vh - #{config.$menu-height});
-    }  
+    }
   }
 }
-
 
 // icon menu
 .icon-menu {
@@ -495,7 +482,7 @@ $all-colors: () !default;
   display: flex;
 
   &__item {
-    border-right: 1px solid map.get(variables.$greyscale, 'light' );
+    border-right: 1px solid map.get(variables.$greyscale, "light");
 
     &:first-of-type {
       padding-left: 0;
@@ -508,12 +495,15 @@ $all-colors: () !default;
   }
 
   &__action {
-    color: color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold));
+    color: color.adjust(
+      map.get(variables.$greyscale, "light"),
+      $lightness: math.percentage(config.$hue-threshold)
+    );
     @include mixins.square(variables.$spacer * 1.5);
     @extend %flex-center;
 
     &:hover {
-      color: map.get(variables.$error-colors, 'default' );
+      color: map.get(variables.$error-colors, "default");
       transform: scale(1.1);
     }
   }
@@ -523,7 +513,7 @@ $all-colors: () !default;
     justify-content: center;
     #{$self}__item {
       border: 0;
-      border-bottom: 1px solid map.get(variables.$greyscale, 'light' );
+      border-bottom: 1px solid map.get(variables.$greyscale, "light");
       padding: map.get(variables.$spacers, 1) 0;
       &:last-of-type {
         border-bottom: none;
