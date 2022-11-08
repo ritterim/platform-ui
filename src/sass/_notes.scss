@@ -1,0 +1,72 @@
+@use "config";
+@use "variables";
+@use "sass:map";
+
+.note {
+  $orange: map.get(config.$brand-colors, "salmon");
+  $self: &;
+  position: relative;
+
+  &:hover {
+    cursor: pointer;
+
+    #{$self}__header {
+      i {
+        color: $orange;
+      }
+    }
+
+    &:not(.note-open) {
+      #{$self}__inner {
+        max-width: 90%;
+        transform: translate(19px, 0) scale(1.1);
+      }
+    }
+
+    #{$self}__toggle {
+      color: $orange;
+    }
+  }
+
+  &.note-open:hover {
+    cursor: default;
+  }
+
+  &__inner {
+    overflow: hidden;
+    transition: max-width config.$transitions, transform config.$transitions;
+
+    .note-open & {
+      cursor: default;
+      max-width: 90%;
+      transform: translate(19px, 0) scale(1.1);
+    }
+  }
+
+  &__toggle {
+    background-color: transparent;
+    border: none;
+    color: map.get(variables.$greyscale, "light");
+    cursor: pointer;
+    font-size: 100%;
+    transition: all ease config.$transitions;
+    position: absolute;
+    bottom: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+    &:hover {
+      color: $orange;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    .note-open & {
+      opacity: 1;
+      transform: translateX(-50%) rotate(180deg);
+      visibility: visible;
+    }
+  }
+}

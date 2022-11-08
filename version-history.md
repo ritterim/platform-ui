@@ -1,6 +1,12 @@
 # Version History
 
 ---
+# 1.6.0
+    - Migrate build process to Vite
+    - Restructure project directories
+    - Icon SVGs optimize via SVGO
+    - Icon fonts now generate via fantasticon
+
 # 1.5.9 
     - Fix early publish for message refactor. 
     - Message `p` spacing cleaned up

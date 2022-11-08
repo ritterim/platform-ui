@@ -1,0 +1,24 @@
+@use "../config";
+
+// Background Images
+
+.background-image {
+  // default styles
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+// Background Ratio
+
+@each $ratio, $percent in config.$bg-size {
+  .ratio-#{$ratio} {
+    // this will set the ratio of the container
+    &:before {
+      content: "";
+      display: block;
+      padding-top: $percent;
+      position: relative;
+    }
+  }
+}

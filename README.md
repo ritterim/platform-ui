@@ -16,3 +16,12 @@ Documentation for Platform UI is generated on every build using [KSS-Node](https
 - [ ] Documentation (always) 📓
 - [x] Styleguide redesign v0.9 😃
 - [ ] Search UI v1.0 🔎
+
+
+## Scripts
+- `start` - Optimizes icons and generates icon font, then starts the Vite development server
+- `build` - Builds the package, runs all scripts prefixed with "build"
+- `build:svgs` - Optimizes all icon SVGs with SVGO
+- `build:font` - Creates the icon font based off the optimized SVGs
+- `start:vite` - Starts the Vite development server
+- `build:vite` - Optimizes everything and bundles as package

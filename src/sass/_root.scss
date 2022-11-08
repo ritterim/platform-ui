@@ -1,0 +1,55 @@
+@use "config";
+@use "variables";
+@use "sass:map";
+@use "sass:meta";
+
+$all-colors: () !default;
+$site-colors: () !default;
+
+@if meta.type-of(config.$config-colors) == "map" {
+  $all-colors: map.merge(config.$config-colors, variables.$greyscale);
+} @else {
+  $all-colors: map.merge(variables.$greyscale, $all-colors);
+  @warn "$config-colors is not set or empty";
+}
+
+:root {
+  @if meta.type-of($all-colors) == "map" {
+    @each $name, $color in $all-colors {
+      --#{$name}: #{$color};
+
+      @for $i from 1 through 9 {
+        $red: red($color);
+        $green: green($color);
+        $blue: blue($color);
+        --#{$name}-a#{$i}0: rgba(#{$red}, #{$green}, #{$blue}, #{$i * 0.1});
+      }
+    }
+  }
+  @if meta.type-of($site-colors) == "map" {
+    @each $name, $color in $site-colors {
+      --#{$name}: #{$color};
+
+      @for $i from 1 through 9 {
+        $red: red($color);
+        $green: green($color);
+        $blue: blue($color);
+        --#{$name}-a#{$i}0: rgba(#{$red}, #{$green}, #{$blue}, #{$i * 0.1});
+      }
+    }
+  }
+  @each $breakpoint, $width in config.$breakpoints {
+    --#{$breakpoint}: #{$width};
+  }
+  @each $size, $width in config.$image-size {
+    --#{$size}: #{$width};
+  }
+  @each $type, $size in config.$radius {
+    --#{$type}: #{$size};
+  }
+  --menu-height: #{config.$menu-height};
+  --duration: #{config.$duration};
+  --transitions: #{config.$transitions};
+  --opacity: #{config.$opacity};
+  --max-container: 1440px;
+}

@@ -1,0 +1,79 @@
+@use "../config";
+@use "../variables";
+@use "sass:map";
+
+.text {
+  &--underline {
+    text-decoration: underline;
+  }
+
+  &--bold {
+    font-weight: bold;
+  }
+
+  &--nowrap {
+    white-space: nowrap;
+  }
+
+  &-underline--hover {
+    position: relative;
+
+    &:after {
+      background-color: map.get(config.$site-colors, "link");
+      bottom: 0;
+      content: "";
+      height: 1px;
+      left: 0;
+      position: absolute;
+      right: 0;
+      transition: config.$transitions;
+      width: 0;
+    }
+
+    &:hover {
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+
+  // font-style
+  @each $key, $val in variables.$font-style {
+    &--#{$key} {
+      font-style: #{$val};
+    }
+  }
+
+  // text-align
+  @each $key, $val in variables.$text-align {
+    &--#{$key} {
+      text-align: #{$val};
+    }
+  }
+
+  // text-transform
+  @each $key, $val in variables.$text-transform {
+    &--#{$key} {
+      text-transform: #{$val};
+
+      @if $key == sentencecase {
+        &:first-letter {
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+
+  // text shadow using $greyscale
+  @each $name, $color in variables.$greyscale {
+    &--shadow-#{$name} {
+      text-shadow: 0.3rem 0.3rem 0.5rem $color;
+    }
+  }
+  // font size based on scale
+  @each $name, $scale in variables.$font-scale {
+    &--size-#{$name} {
+      font-size: $scale !important;
+    }
+  }
+}

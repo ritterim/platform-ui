@@ -1,0 +1,145 @@
+@use "config";
+@use "mixins";
+@use "variables";
+@use "sass:math";
+@use "sass:map";
+
+.drawer {
+  $self: &;
+  background-color: config.$drawer-background;
+  box-shadow: 0 -1rem 2rem rgba(map.get(variables.$greyscale, "black"), 0.4);
+  flex-direction: column;
+  width: 100%;
+  position: fixed;
+  z-index: 500;
+  bottom: 0;
+  left: 0;
+  transform: translate(0, 100%);
+  visibility: hidden;
+
+  @media (prefers-reduced-motion: no-preference) {
+    transition: config.$transitions ease-in-out;
+  }
+
+  &__inner {
+    height: 100%;
+    min-height: 50vh;
+    overflow-y: visible;
+    overflow-x: hidden;
+
+    #{$self}-bottom & {
+      max-height: 80vh;
+    }
+  }
+
+  &--single-row {
+    & {
+      #{$self}__inner {
+        min-height: 8rem !important;
+      }
+    }
+  }
+
+  &__header {
+    padding: config.$drawer-primary-padding;
+    position: relative;
+    width: 100%;
+
+    @include mixins.breakpoint(tablet, max) {
+      padding-top: map.get(variables.$spacers, 5);
+    }
+
+    #{$self}__close {
+      position: absolute;
+      right: -#{variables.$spacer};
+      top: 50%;
+      transform: translate(-50%, -50%);
+
+      @include mixins.breakpoint(tablet, max) {
+        top: 1.5rem;
+      }
+    }
+  }
+  &__content {
+    overflow-y: auto;
+    padding: config.$drawer-primary-padding;
+    position: relative;
+  }
+
+  &__open {
+    cursor: pointer;
+
+    @include mixins.breakpoint(tablet, max) {
+      bottom: 3.5rem;
+    }
+  }
+
+  // Drawer animates from the side
+  &-right,
+  &-left {
+    bottom: 0;
+    box-shadow: 0 -0.5rem 2rem rgba(map.get(variables.$greyscale, "black"), math.percentage(0.5));
+    flex-direction: column;
+    height: 100%;
+    position: fixed;
+    // z-index lower than the fixed header
+    z-index: 99;
+
+    .header-fixed & {
+      height: calc(100% - #{config.$menu-height});
+    }
+
+    @include mixins.breakpoint(tablet, min) {
+      width: config.$drawer-side-width;
+    }
+
+    &[hidden] {
+      display: none;
+    }
+  }
+
+  &-right {
+    left: auto;
+    right: 0;
+    transform: translate(100%, 0);
+  }
+
+  &-left {
+    right: auto;
+    left: 0;
+    transform: translate(-100%, 0);
+  }
+
+  // Drawer Opens from the top
+  &-top {
+    bottom: unset;
+    box-shadow: 0 1rem 2rem rgba(map.get(variables.$greyscale, "black"), 0.4);
+    top: 0;
+    transform: translate(0, -100%);
+
+    // if header is fixed, account for header height.
+    .header-fixed & {
+      top: config.$menu-height;
+      transform: translateY(calc((-1 * var(--menu-height)) + -100%));
+    }
+  }
+
+  &.active {
+    transform: translate(0%);
+    visibility: visible;
+  }
+}
+
+#kss-node {
+  .drawer__open {
+    position: relative;
+    bottom: inherit;
+    right: inherit;
+  }
+}
+
+// side content stuff
+
+.side-content {
+  height: calc(100% - 4rem);
+}

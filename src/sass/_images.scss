@@ -1,0 +1,37 @@
+@use "config";
+@use "mixins";
+@use "variables";
+@use "sass:map";
+
+.image {
+  &--round {
+    @each $size, $radius in config.$image-size {
+      &-#{$size} {
+        @extend %flex-center;
+        border-radius: map.get(variables.$radius, "round");
+        display: inline-flex;
+        max-width: $radius;
+        max-height: $radius;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+        &::before {
+          content: "";
+          padding-top: 100%;
+        }
+
+        img {
+          height: 100%;
+          width: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,90 @@
+@use "../config";
+@use "sass:color";
+@use "sass:math";
+@use "sass:map";
+
+@mixin breakpoint($breakpoint, $direction: null) {
+  @if map.has-key(config.$breakpoints, $breakpoint) {
+    // Get the breakpoint value.
+    $breakpoint-value: map.get(config.$breakpoints, $breakpoint);
+
+    @if $direction == max {
+      @media (max-width: ($breakpoint-value - 1)) {
+        @content;
+      }
+    } @else if $direction == min {
+      // Write the media query.
+      @media (min-width: $breakpoint-value) {
+        @content;
+      }
+    } @else {
+      @media ($direction: $breakpoint-value) {
+        @content;
+      }
+    }
+
+    // If the breakpoint doesn't exist in the map.
+  } @else {
+    @if $direction == max {
+      @media (max-width: $breakpoint) {
+        @content;
+      }
+    } @else if $direction == min {
+      @media (min-width: $breakpoint) {
+        @content;
+      }
+    } @else {
+      @media ($direction: $breakpoint) {
+        @content;
+      }
+    }
+  }
+}
+
+// Equal Height and Width
+// Set 'min' or 'max' unless straight height, width
+@mixin square($size, $minMax: null) {
+  @if $minMax {
+    #{$minMax}-height: $size;
+    #{$minMax}-width: $size;
+  } @else {
+    width: $size;
+    height: $size;
+  }
+}
+
+// Messages Variant
+@mixin message-variant($background, $color) {
+  background-color: $background;
+  border-color: color.adjust(
+    $background,
+    $lightness: math.percentage(-(config.$hue-threshold * 2))
+  );
+  color: $color;
+
+  * {
+    color: $color;
+  }
+
+  a {
+    color: color.scale(
+      $color,
+      $lightness: math.percentage(-(config.$hue-threshold))
+    );
+    font-weight: 700;
+  }
+}
+
+// Function the gets the next value in the map.
+@function nextKey($current-value, $mapped-list: config.$breakpoints) {
+  // get current key from list
+  $the-list: map.keys($mapped-list);
+
+  //find index of current value and add 1
+  $the-index: (index($the-list, $current-value)) + 1;
+
+  // get value from list with new index
+  $new-value: nth($the-list, $the-index);
+
+  @return $new-value;
+}

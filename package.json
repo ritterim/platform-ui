@@ -1,17 +1,27 @@
 {
   "name": "@ritterim/platform-ui",
-  "version": "1.5.9",
+  "version": "1.6.0",
   "description": "A CSS framework used by Ritter Insurance Marketing (RIM) for our platform of agent tools.",
   "homepage": "https://style.rimdev.io",
   "main": "gulpfile.js",
   "files": [
     "/dist",
-    "/src"
+    "/src",
+    "/main.js",
+    "/README.md",
+    "/package.json",
+    "/vite.config.js",
+    "/.fantasticonrc.js",
+    "/index.html"
   ],
   "scripts": {
-    "start": "npm install && gulp",
-    "build": "gulp build",
-    "generate-assets": "icon-font-generator src/assets/icons/svg/**/*.svg -o dist -n platform-icons -j -p pi --center --htmltp templates/html.hbs --csstp templates/css.hbs",
+    "start": "npm-run-all build:svgs build:font start:vite",
+    "build": "npm-run-all build:*",
+    "build:svgs": "svgo -f ./src/icons/svg/ -o ./src/icons/optimized",
+    "build:font": "fantasticon",
+    "start:vite": "vite",
+    "build:vite": "vite build",
+    "preview:vite": "vite preview",
     "test": "echo \"Error: no test specified\" && exit 1",
     "ver": "echo \"$npm_package_version\"",
     "deploy": "./deploy-to-npm.sh"
@@ -39,26 +49,16 @@
   "devDependencies": {
     "@babel/core": "^7.8.4",
     "@babel/preset-env": "^7.8.4",
-    "autoprefixer": "^9.7.4",
-    "cssnano": "^5.0.10",
-    "gulp": "^4.0.2",
-    "gulp-babel": "^8.0.0",
-    "gulp-clean": "^0.4.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-connect": "^5.7.0",
-    "gulp-header": "^2.0.9",
-    "gulp-postcss": "^9.0.1",
-    "gulp-rename": "^1.4.0",
-    "gulp-run": "^1.7.1",
-    "gulp-sass": "^5.0.0",
-    "gulp-sourcemaps": "^2.6.5",
-    "gulp-uglify": "^3.0.2",
-    "icon-font-generator": "^2.1.10",
-    "kss": "3.0.0-beta.25",
-    "merge-stream": "^2.0.0",
+    "autoprefixer": "^9.8.8",
+    "fantasticon": "^1.2.3",
     "normalize.css": "^8.0.1",
+    "npm-run-all": "^4.1.5",
     "postcss": "^8.3.11",
-    "sass": "^1.25.0"
+    "rollup-plugin-copy": "^3.4.0",
+    "sass": "^1.55.0",
+    "svgo": "^3.0.0",
+    "vite": "^3.2.1",
+    "vite-plugin-banner": "^0.5.0"
   },
   "babel": {
     "presets": [

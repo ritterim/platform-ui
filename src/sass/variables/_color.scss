@@ -1,0 +1,32 @@
+@use "../config";
+
+@use "sass:color";
+@use "sass:math";
+@use "sass:map";
+
+// Colors
+$greyscale: (
+  "white": white,
+  "lighter": #efefef,
+  "light-mid": #e2e3e5,
+  "light": #999,
+  "base": #666666,
+  "dark": #333,
+  "black": #222,
+);
+
+// Error Colors
+$error-colors: (
+  "positive": #b5cc18,
+  "negative": tomato,
+  "neutral": map.get($greyscale, "light"),
+);
+
+// Message Colors
+$message-colors: (
+  "info": map.get(config.$brand-colors, "lightblue"),
+  "note": #ffeeba,
+  "warning": #ffeeba,
+  "error": #ffe5e0,
+  "success": #d4edda,
+);

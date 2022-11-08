@@ -1,0 +1,130 @@
+@use "config";
+@use "mixins";
+@use "variables";
+@use "sass:color";
+@use "sass:math";
+@use "sass:map";
+@use "sass:meta";
+
+.card {
+  $self: &;
+
+  background-color: map.get(variables.$greyscale, "white");
+  border: 1px solid
+    color.adjust(
+      map.get(variables.$greyscale, "light"),
+      $lightness: math.percentage(config.$hue-threshold * 2)
+    );
+  padding: config.$card-padding;
+
+  .cards & {
+    height: 100%;
+  }
+
+  &__image {
+    width: calc(100% + (#{config.$card-padding} * 2));
+    height: auto;
+    margin-top: -#{config.$card-padding};
+    margin-right: -#{config.$card-padding};
+    margin-left: -#{config.$card-padding};
+    margin-bottom: config.$card-padding;
+    border-bottom: 1px solid
+      color.adjust(
+        map.get(variables.$greyscale, "light"),
+        $lightness: math.percentage(config.$hue-threshold * 2)
+      );
+  }
+
+  &[class*="rounded-"] {
+    overflow: hidden;
+  }
+
+  &__header {
+    color: map.get(variables.$greyscale, "base");
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: variables.$spacer;
+    position: relative;
+
+    .icon {
+      max-height: 2rem;
+
+      @include mixins.breakpoint(tablet, max) {
+        display: none;
+      }
+    }
+
+    #{$self}__group {
+      align-items: center;
+    }
+  }
+
+  &__header-actions {
+    display: flex;
+    position: absolute;
+    top: -#{map.get(variables.$spacers, 2)};
+    right: -#{map.get(variables.$spacers, 3)};
+  }
+
+  &-action {
+    border-right: 1px solid map.get(variables.$greyscale, "light");
+    color: color.adjust(
+      map.get(variables.$greyscale, "light"),
+      $lightness: math.percentage(config.$hue-threshold)
+    );
+    height: 1.5rem;
+    padding: 0 0.5rem;
+    transition: config.$transitions;
+    width: 2rem;
+    @extend %flex-center;
+
+    &:hover {
+      color: map.get(variables.$greyscale, "light");
+    }
+
+    &:last-of-type {
+      border-right: none;
+    }
+  }
+
+  &__group {
+    display: flex;
+
+    > * {
+      margin-right: variables.$spacer;
+    }
+  }
+
+  &__title {
+    color: map.get(variables.$greyscale, "base");
+    font-size: 100%;
+    margin-bottom: 0;
+    text-transform: uppercase;
+
+    &--normal {
+      text-transform: none;
+    }
+  }
+
+  &__header-icon {
+    i {
+      .alert & {
+        transform: rotate(-25deg);
+      }
+    }
+  }
+
+  &__content {
+    &--scroll {
+      height: 10rem;
+      overflow-y: auto;
+    }
+  }
+
+  &__footer {
+    align-items: flex-end;
+    display: flex;
+    justify-content: space-between;
+    margin-top: config.$card-footer-top-margin;
+  }
+}

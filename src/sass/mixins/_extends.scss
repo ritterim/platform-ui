@@ -1,0 +1,56 @@
+@use "../config";
+@use "mixins";
+@use "../variables";
+@use "sass:map";
+
+%flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+%truncate-with-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+%rotate-45 {
+  transform: rotate(45deg);
+}
+
+%rotate-90 {
+  transform: rotate(90deg);
+}
+
+%rotate-180 {
+  transform: rotate(180deg);
+}
+
+%inverted {
+  color: map.get(variables.$greyscale, "white") !important;
+  transition: config.$transitions;
+}
+
+%scrollbar {
+  &::-webkit-scrollbar {
+    @include mixins.square(0.5rem);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-clip: padding-box;
+    background-color: map.get(variables.$greyscale, "light");
+    border-radius: map.get(variables.$radius, "button");
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: map.get(variables.$greyscale, "lighter");
+    border-radius: map.get(variables.$radius, "button");
+  }
+}
+
+%basic-circle {
+  border-radius: map.get(variables.$radius, "round");
+  @include mixins.square(variables.$spacer * 1.5);
+  @extend %flex-center;
+}

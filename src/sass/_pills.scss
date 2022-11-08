@@ -1,0 +1,73 @@
+@use "config";
+@use "mixins";
+@use "variables";
+@use "sass:color";
+@use "sass:map";
+@use "sass:math";
+
+.pill {
+  $border-radius: map.get(config.$radius, "button");
+  $primary-background: map.get(variables.$greyscale, "white");
+  $primary-color: map.get(variables.$greyscale, "base");
+
+  border: 1px solid
+    color.adjust(
+      map.get(variables.$greyscale, "light"),
+      $lightness: math.percentage(config.$hue-threshold * 2)
+    );
+  border-radius: $border-radius;
+  color: $primary-color;
+  display: inline-flex;
+  font-size: map.get(variables.$font-scale, "sm");
+  padding: map.get(variables.$spacers, 1) map.get(variables.$spacers, 2);
+  line-height: 1.5;
+
+  &--split {
+    align-items: center;
+    display: inline-flex;
+    overflow: hidden;
+    padding: 0;
+    .pill__label {
+      background-color: rgba($primary-color, 0.3);
+      padding: map.get(variables.$spacers, 1) map.get(variables.$spacers, 2);
+    }
+  }
+
+  &--circle {
+    @extend %basic-circle;
+
+    &-empty {
+      @extend .pill--circle;
+      padding: 0;
+      &-dot {
+        padding: 0;
+        @include mixins.square(map.get(variables.$spacers, 2));
+      }
+      @include mixins.square(variables.$spacer);
+    }
+
+    &-medium {
+      @extend .pill--circle;
+      @include mixins.square(map.get(variables.$spacers, 4));
+    }
+
+    &-large {
+      @extend .pill--circle;
+      @include mixins.square(map.get(variables.$spacers, 5));
+    }
+  }
+
+  &__content {
+    padding: map.get(variables.$spacers, 1) map.get(variables.$spacers, 2);
+    // if icon present - flex it
+    i {
+      display: flex;
+    }
+  }
+
+  &__label {
+    @extend .pill__content;
+    background-color: rgba($primary-background, 0.3);
+    font-weight: 400;
+  }
+}

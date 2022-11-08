@@ -1,0 +1,17 @@
+@use "../config";
+
+// Page Anchor Offset
+// This prevents the top of a page anchor from being hidden behind the
+// fixed header.
+.page-anchor-target {
+  .header-fixed & {
+    &:before {
+      display: block;
+      content: " ";
+      margin-top: -(config.$menu-height);
+      height: config.$menu-height;
+      visibility: hidden;
+      pointer-events: none;
+    }
+  }
+}

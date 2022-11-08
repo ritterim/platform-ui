@@ -1,0 +1,35 @@
+@use "../../public/platform-icons.scss";
+
+i[class^="pi-"],
+i[class*=" pi-"] {
+  height: 100%;
+  display: grid;
+  place-content: center;
+}
+
+i[class^="pi-"]:before,
+i[class*=" pi-"]:before {
+  speak: none;
+  text-decoration: inherit;
+  font-size: inherit;
+}
+
+.pi-xs {
+  font-size: 0.5rem;
+}
+.pi-sm {
+  font-size: 0.75rem;
+}
+.pi-lg {
+  font-size: 1.5rem;
+}
+.pi-xl {
+  font-size: 2rem;
+}
+.pi-xxl {
+  font-size: 3rem;
+}
+
+.pi-heavy {
+  font-weight: 900 !important;
+}
