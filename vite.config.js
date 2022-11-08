@@ -37,7 +37,7 @@ export default defineConfig({
     lib: {
       entry: path.resolve(__dirname, 'main.js'),
       name: 'PlatformUI',
-      fileName: (format) => `platform-ui.min.js`,
+      fileName: (format) => `js/platform-ui.min.js`,
     },
   },
 });

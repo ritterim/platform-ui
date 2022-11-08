@@ -1,6 +1,9 @@
 # Version History
 
 ---
+# 1.6.1 
+    - Fix package JS path
+  
 # 1.6.0
     - Migrate build process to Vite
     - Restructure project directories
