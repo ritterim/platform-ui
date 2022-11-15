@@ -1,6 +1,9 @@
 # Version History
 
 ---
+# 1.6.2
+    - Remove extra variables from :root
+    
 # 1.6.1 
     - Fix package JS path
   
