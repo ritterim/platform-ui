@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Carousel</title>
+
+    <link rel="stylesheet" href="/src/assets/stylesheets/platform-ui.min.css" />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="src/assets/images/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="src/assets/images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="src/assets/images/favicon/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="src/assets/images/favicon/favicon-16x16.png"
+    />
+    <link
+      rel="mask-icon"
+      href="src/assets/images/favicon/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+  <body class="flex flex--column">
+    <div class="p-5 flex--center-content">
+      <div class="carousel has-nav">
+        <div class="carousel__slider">
+          <div class="carousel__slide">
+            <img class="w-100" src="https://picsum.photos/id/1012/1000/400" alt="">
+          </div>
+          <div class="carousel__slide">
+            <img class="w-100" src="https://picsum.photos/id/1020/1000/400" alt="">
+          </div>
+          <div class="carousel__slide">
+            <img class="w-100" src="https://picsum.photos/id/100/1000/400" alt="">
+          </div>
+        </div>
+        <button class="carousel__arrow carousel__arrow--prev">
+          <i class="pi-angle-left"></i>
+        </button>
+        <button class="carousel__arrow carousel__arrow--next">
+          <i class="pi-angle-right"></i>
+        </button>
+      </div>
+    </div>
+
+    <script src="/src/assets/js/platform-ui.min.js"></script>
+  </body>
+</html>
