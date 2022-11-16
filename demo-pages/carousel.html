@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Carousel</title>
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="stylesheet" href="/public/platform-icons.scss">
+  </head>
+  <body class="flex flex--column">
+    <div class="p-5 flex--center-content flex--column">
+      <div class="carousel">
+        <ol class="carousel__slider">
+          <li class="carousel__slide">
+            <img class="w-100" src="https://picsum.photos/id/1012/1000/400" alt="">
+          </li>
+          <li class="carousel__slide">
+            <img class="w-100" src="https://picsum.photos/id/1020/1000/600" alt="">
+          </li>
+          <li class="carousel__slide">
+            <img class="w-100" src="https://picsum.photos/id/100/1000/400" alt="">
+          </li>
+        </ol>
+        <button class="carousel__arrow carousel__arrow--prev">
+          <i class="pi-angle-left"></i>
+        </button>
+        <button class="carousel__arrow carousel__arrow--next">
+          <i class="pi-angle-right"></i>
+        </button>
+      </div>
+      
+      <div class="carousel has-nav">
+        <div class="carousel__slider">
+          <div class="carousel__slide">
+            <img class="w-100" src="https://picsum.photos/id/1013/1000/400" alt="">
+          </div>
+          <div class="carousel__slide">
+            <img class="w-100" src="https://picsum.photos/id/1023/1000/400" alt="">
+          </div>
+          <div class="carousel__slide">
+            <img class="w-100" src="https://picsum.photos/id/103/1000/400" alt="">
+          </div>
+        </div>
+        <button class="carousel__arrow carousel__arrow--prev">
+          <i class="pi-angle-left"></i>
+        </button>
+        <button class="carousel__arrow carousel__arrow--next">
+          <i class="pi-angle-right"></i>
+        </button>
+      </div>
+    </div>
+
+    <script type="module"
+    src="/main.js"></script>
+  </body>
+</html>
