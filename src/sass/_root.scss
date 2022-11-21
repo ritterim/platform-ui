@@ -38,18 +38,10 @@ $site-colors: () !default;
       }
     }
   }
-  @each $breakpoint, $width in config.$breakpoints {
-    --#{$breakpoint}: #{$width};
-  }
-  @each $size, $width in config.$image-size {
-    --#{$size}: #{$width};
-  }
   @each $type, $size in config.$radius {
     --#{$type}: #{$size};
   }
   --menu-height: #{config.$menu-height};
-  --duration: #{config.$duration};
   --transitions: #{config.$transitions};
-  --opacity: #{config.$opacity};
   --max-container: 1440px;
 }

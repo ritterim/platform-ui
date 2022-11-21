@@ -9,6 +9,7 @@ import './src/js/polyfill/main';
 import './src/js/accordion';
 import './src/js/aside-toggle';
 import './src/js/background-image';
+import './src/js/carousel';
 import './src/js/drawer';
 import './src/js/forms';
 import './src/js/gradient';

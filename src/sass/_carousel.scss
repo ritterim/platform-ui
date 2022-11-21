@@ -1,0 +1,157 @@
+@use "config";
+@use "mixins";
+@use "variables";
+@use "sass:color";
+@use "sass:math";
+@use "sass:map";
+
+.carousel {
+  $self: &;
+
+  --nav-button-foreground: var(--base);
+  --nav-button-background: var(--light-mid);
+  --nav-spacing: 3rem;
+
+  display: inline-flex;
+  padding: 0 2rem 0;
+  position: relative;
+
+  &.has-nav {
+    padding-bottom: var(--nav-spacing);
+  }
+
+  &__slider {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+
+    // fallback for dum dum browsers that don't support aspect-ratio
+    &:before {
+      content: '';
+      padding-top: 50%;
+    }
+
+    // use aspect ration to set height of slider
+    @supports (aspect-ratio: 2) {
+      aspect-ratio: 2;
+
+      &::before {
+        display: none; 
+      }
+    }
+  }
+  
+
+  // ----------------
+  // slides
+  // ----------------
+  &__slide {
+    display: none;
+    position: relative;
+    width: 100%;
+
+    &.active {
+      display: flex;
+    }
+  }
+
+  li.carousel__slide {
+    list-style-type: none;
+  }
+  // ----------------
+  // end slides
+  // ----------------
+
+
+  // ----------------
+  // .carousel__arrow
+  // ----------------
+  &__arrow {
+    padding: 0 .5rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    .has-nav & {
+      top: calc(50% - (var(--nav-spacing)/2));
+    }
+
+    i {
+      font-size: 3rem;
+    }
+
+    &--prev {
+      left: 0;
+    }
+
+    &--next {
+      right: 0;
+    }
+  }
+
+  button#{$self}__arrow {
+    appearance: none;
+    background: transparent;
+    border: none;
+    color: inherit;
+  }
+  // ----------------
+  // end arrows
+  // ----------------
+
+
+  // ----------------
+  // carousel Nav
+  // ----------------
+  &__nav {
+    bottom: 0;
+    display: flex;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+  }
+
+  &__nav-button {
+    appearance: none;
+    background: transparent;
+    border: none;
+    color: inherit;
+    padding: 1.5rem;
+    position: relative;
+
+    &.active,
+    &:hover {
+
+      &:before {
+        opacity: 1;
+      }
+    }
+
+    &:before {
+      content: '';
+      background-color: var(--nav-button-foreground);
+      border-radius: 50%;
+      opacity: .3;
+      padding: .5rem;
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      transition: ease opacity .2s;
+      z-index: 2;
+    }
+
+    &:after {
+      content: '';
+      background-color: var(--nav-button-background);
+      border-radius: 50%;
+      padding: .5rem;
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  // ----------------
+  // end carousel Nav
+  // ----------------
+}
