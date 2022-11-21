@@ -3,71 +3,44 @@
   Modify colors in src/js/colors.js
  */
 
-$theme-primary: #003f70 !default;
-$theme-on-primary: #7DADD2 !default;
-$theme-secondary: #91b9dc !default;
-$theme-on-secondary: #32495E !default;
-$theme-button-primary: #3f7bad !default;
-$theme-on-button-primary: #FEFFFF !default;
-$theme-button-secondary: #e58967 !default;
-$theme-on-button-secondary: #5C2A18 !default;
-$theme-message-success: green !default;
-$theme-on-message-success: #E1F6E1 !default;
-$theme-message-error: tomato !default;
-$theme-on-message-error: #5F1305 !default;
-$theme-message-warning: #866657 !default;
-$theme-on-message-warning: #F4EEEB !default;
-$theme-message-info: #3f7bad !default;
-$theme-on-message-info: #FEFFFF !default;
-$theme-text: #333333 !default;
-$theme-on-text: #9B9B9B !default;
-$theme-link: dodgerblue !default;
-$theme-on-link: #251C67 !default;
+$color-primary: #003f70 !default;
+$color-on-primary: #7DADD2 !default;
+$color-secondary: #91b9dc !default;
+$color-button-primary: #3f7bad !default;
+$color-button-secondary: #e58967 !default;
+$color-message-success: green !default;
+$color-message-error: tomato !default;
+$color-message-warning: #866657 !default;
+$color-message-info: #3f7bad !default;
+$color-text: #333333 !default;
+$color-link: dodgerblue !default;
 
 $base-color-tokens: ("primary", "secondary", "button-primary", "button-secondary", "message-success", "message-error", "message-warning", "message-info", "text", "link");
 
 $color-tokens: (
-  "theme-primary": $theme-primary,
-  "theme-on-primary": $theme-on-primary,
-  "theme-secondary": $theme-secondary,
-  "theme-on-secondary": $theme-on-secondary,
-  "theme-button-primary": $theme-button-primary,
-  "theme-on-button-primary": $theme-on-button-primary,
-  "theme-button-secondary": $theme-button-secondary,
-  "theme-on-button-secondary": $theme-on-button-secondary,
-  "theme-message-success": $theme-message-success,
-  "theme-on-message-success": $theme-on-message-success,
-  "theme-message-error": $theme-message-error,
-  "theme-on-message-error": $theme-on-message-error,
-  "theme-message-warning": $theme-message-warning,
-  "theme-on-message-warning": $theme-on-message-warning,
-  "theme-message-info": $theme-message-info,
-  "theme-on-message-info": $theme-on-message-info,
-  "theme-text": $theme-text,
-  "theme-on-text": $theme-on-text,
-  "theme-link": $theme-link,
-  "theme-on-link": $theme-on-link
+  "color-primary": $color-primary,
+  "color-on-primary": $color-on-primary,
+  "color-secondary": $color-secondary,
+  "color-button-primary": $color-button-primary,
+  "color-button-secondary": $color-button-secondary,
+  "color-message-success": $color-message-success,
+  "color-message-error": $color-message-error,
+  "color-message-warning": $color-message-warning,
+  "color-message-info": $color-message-info,
+  "color-text": $color-text,
+  "color-link": $color-link
 ) !default;
 
 @mixin color-tokens() {
-  --theme-primary: #{$theme-primary};
-  --theme-on-primary: #{$theme-on-primary};
-  --theme-secondary: #{$theme-secondary};
-  --theme-on-secondary: #{$theme-on-secondary};
-  --theme-button-primary: #{$theme-button-primary};
-  --theme-on-button-primary: #{$theme-on-button-primary};
-  --theme-button-secondary: #{$theme-button-secondary};
-  --theme-on-button-secondary: #{$theme-on-button-secondary};
-  --theme-message-success: #{$theme-message-success};
-  --theme-on-message-success: #{$theme-on-message-success};
-  --theme-message-error: #{$theme-message-error};
-  --theme-on-message-error: #{$theme-on-message-error};
-  --theme-message-warning: #{$theme-message-warning};
-  --theme-on-message-warning: #{$theme-on-message-warning};
-  --theme-message-info: #{$theme-message-info};
-  --theme-on-message-info: #{$theme-on-message-info};
-  --theme-text: #{$theme-text};
-  --theme-on-text: #{$theme-on-text};
-  --theme-link: #{$theme-link};
-  --theme-on-link: #{$theme-on-link};
+  --color-primary: #{$color-primary};
+  --color-on-primary: #{$color-on-primary};
+  --color-secondary: #{$color-secondary};
+  --color-button-primary: #{$color-button-primary};
+  --color-button-secondary: #{$color-button-secondary};
+  --color-message-success: #{$color-message-success};
+  --color-message-error: #{$color-message-error};
+  --color-message-warning: #{$color-message-warning};
+  --color-message-info: #{$color-message-info};
+  --color-text: #{$color-text};
+  --color-link: #{$color-link};
 }

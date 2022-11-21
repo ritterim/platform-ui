@@ -5,38 +5,47 @@ module.exports = [
   },
   {
     name: "secondary",
-    color: "#91b9dc"
+    color: "#91b9dc",
+    onColor: false
   },
   {
     name: "button-primary",
-    color: "#3f7bad"
+    color: "#3f7bad",
+    onColor: false
   },
   {
     name: "button-secondary",
-    color: "#e58967"
+    color: "#e58967",
+    onColor: false
   },
   {
     name: "message-success",
-    color: "green"
+    color: "green",
+    onColor: false
   },
   {
     name: "message-error",
-    color: "tomato"
+    color: "tomato",
+    onColor: false
   },
   {
     name: "message-warning",
-    color: "#866657"
+    color: "#866657",
+    onColor: false
   },
   {
     name: "message-info",
-    color: "#3f7bad"
+    color: "#3f7bad",
+    onColor: false
   },
   {
     name: "text",
-    color: "#333333"
+    color: "#333333",
+    onColor: false
   },
   {
     name: "link",
-    color: "dodgerblue"
+    color: "dodgerblue",
+    onColor: false
   }
 ];

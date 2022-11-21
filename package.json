@@ -15,7 +15,7 @@
     "/index.html"
   ],
   "scripts": {
-    "tokens": "a11y-color-tokens --tokenPrefix='theme-' --outputDirPath='src/sass/variables' --colorTokensPath='src/js/colors.js' --no-compatibilityDocs",
+    "tokens": "a11y-color-tokens --tokenPrefix='color-' --outputDirPath='src/sass/variables' --colorTokensPath='src/js/colors.js' --no-compatibilityDocs",
     "start": "npm-run-all tokens build:svgs build:font start:vite",
     "build": "npm-run-all tokens build:*",
     "build:svgs": "svgo -f ./src/icons/svg/ -o ./src/icons/optimized",

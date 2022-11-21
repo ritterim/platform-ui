@@ -1,5 +1,6 @@
 @use "../config";
-@use "../variables";
+@use "../mixins/" as *;
+@use "../variables" as *;
 @use "sass:map";
 @use "sass:meta";
 
@@ -8,10 +9,30 @@ $all-colors: () !default;
 $site-colors: () !default;
 
 @if meta.type-of(config.$config-colors) == "map" {
-  $all-colors: map.merge(config.$config-colors, variables.$greyscale);
+  $all-colors: map.merge(config.$config-colors, $greyscale);
 } @else {
-  $all-colors: map.merge(variables.$greyscale, $all-colors);
+  $all-colors: map.merge($greyscale, $all-colors);
   @warn "$config-colors is not set or empty";
+}
+
+// Theme colors
+@each $name, $color in $color-tokens {
+  // Remove "color-" from color-token var
+  $_name: str-replace($name, 'color-', '');
+  
+  @if (str-index($name, '-on-') == null) {
+    .background-#{$_name} {
+      background-color: #{var(--#{$name})};
+    }
+    @debug ".background-#{$_name}";
+    @debug "background-color: #{var(--#{$name})}";
+  }
+
+  .text-#{$_name} {
+    color: #{var(--#{$name})};
+  }
+  @debug ".text-#{$_name}";
+  @debug "color: #{var(--#{$name})}";
 }
 
 @if meta.type-of($all-colors) == "map" {
@@ -71,8 +92,8 @@ $site-colors: () !default;
 }
 
 // error Colors
-@if meta.type-of(variables.$error-colors) == "map" {
-  @each $name, $color in variables.$error-colors {
+@if meta.type-of($error-colors) == "map" {
+  @each $name, $color in $error-colors {
     // text color
     .text--#{$name} {
       border-color: $color !important;
