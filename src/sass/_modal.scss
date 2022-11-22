@@ -13,7 +13,7 @@
   }
 
   $self: &;
-  background: rgba(map.get(var.$greyscale, "black"), 0.5);
+  background: var(--black-a50);
   position: fixed;
   z-index: 500;
   overflow-x: hidden;
@@ -84,7 +84,7 @@
   }
 
   &__inner {
-    background: map.get(var.$greyscale, "white");
+    background: var(--white);
     margin: map.get(var.$spacers, 4) auto;
     transform: translate(0, 100%);
 
@@ -108,7 +108,7 @@
 
   &__header {
     background-color: map.get(config.$brand-colors, "lightblue");
-    color: map.get(var.$greyscale, "base");
+    color: var(--base);
     height: $header-height;
     padding: 2rem;
     position: relative;

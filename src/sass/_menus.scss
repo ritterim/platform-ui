@@ -104,7 +104,7 @@ $all-colors: () !default;
       position: relative;
 
       &:after {
-        background-color: map.get(var.$greyscale, "dark");
+        background-color: var(--dark);
         bottom: 0;
         content: "";
         height: 2px;
@@ -482,7 +482,7 @@ $all-colors: () !default;
   display: flex;
 
   &__item {
-    border-right: 1px solid map.get(var.$greyscale, "light");
+    border-right: 1px solid var(--light);
 
     &:first-of-type {
       padding-left: 0;
@@ -513,7 +513,7 @@ $all-colors: () !default;
     justify-content: center;
     #{$self}__item {
       border: 0;
-      border-bottom: 1px solid map.get(var.$greyscale, "light");
+      border-bottom: 1px solid var(--light);
       padding: map.get(var.$spacers, 1) 0;
       &:last-of-type {
         border-bottom: none;

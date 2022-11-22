@@ -7,7 +7,7 @@
 @use "sass:math";
 
 $tab-height: 3rem;
-$tab-color: map.get(var.$greyscale, "base");
+$tab-color: var(--base);
 $tab-border-color: color.adjust(
   map.get(var.$greyscale, "light"),
   $lightness: math.percentage(config.$hue-threshold * 2)
@@ -31,7 +31,7 @@ $tab-border-color: color.adjust(
     &:checked {
       + .tab {
         border: 1px solid $tab-border-color;
-        border-bottom-color: map.get(var.$greyscale, "white");
+        border-bottom-color: var(--white);
         font-weight: 600;
 
         @include mixin.breakpoint(tablet, max) {
@@ -39,7 +39,7 @@ $tab-border-color: color.adjust(
         }
 
         @include mixin.breakpoint(tablet, min) {
-          background-color: map.get(var.$greyscale, "white");
+          background-color: var(--white);
           color: $tab-color;
 
           &:before {
@@ -75,7 +75,7 @@ $tab-border-color: color.adjust(
     @include mixin.breakpoint(tablet, max) {
       border: 1px solid $tab-color;
       background: $tab-color;
-      color: map.get(var.$greyscale, "white");
+      color: var(--white);
       margin-top: map.get(var.$spacers, 1);
 
       &:first-of-type {
@@ -87,7 +87,7 @@ $tab-border-color: color.adjust(
       flex: 1 1 auto;
       max-width: 16rem;
       border: 1px solid transparent;
-      color: map.get(var.$greyscale, "base");
+      color: var(--base);
       cursor: pointer;
       justify-content: center;
       margin-bottom: -1px;
@@ -115,13 +115,13 @@ $tab-border-color: color.adjust(
       + .tab {
         @media (pointer: fine) {
           &:hover {
-            background-color: map.get(var.$greyscale, "white");
+            background-color: var(--white);
             border-color: $tab-border-color;
             color: $tab-color;
             font-weight: 600;
 
             @include mixin.breakpoint(tablet, min) {
-              border-bottom-color: map.get(var.$greyscale, "white");
+              border-bottom-color: var(--white);
             }
           }
         }
@@ -148,7 +148,7 @@ $tab-border-color: color.adjust(
       + .tab {
         @media (pointer: fine) {
           &:hover {
-            background-color: map.get(var.$greyscale, "white");
+            background-color: var(--white);
             color: rgba($tab-color, 0.7);
             font-weight: 600;
 
@@ -164,7 +164,7 @@ $tab-border-color: color.adjust(
       + .tab {
         border: 1px solid $tab-border-color;
         border-bottom: none;
-        color: map.get(var.$greyscale, "white");
+        color: var(--white);
         font-weight: 600;
 
         @include mixin.breakpoint(tablet, min) {
@@ -183,7 +183,7 @@ $tab-border-color: color.adjust(
     align-items: center;
     border: 1px solid $tab-color;
     background: $tab-color;
-    color: map.get(var.$greyscale, "white");
+    color: var(--white);
     display: flex;
     height: $tab-height;
     margin: map.get(var.$spacers, 1) 0 0;
@@ -196,9 +196,9 @@ $tab-border-color: color.adjust(
     }
 
     @include mixin.breakpoint(tablet, min) {
-      background: map.get(var.$greyscale, "white");
+      background: var(--white);
       border: none;
-      color: map.get(var.$greyscale, "base");
+      color: var(--base);
       flex: 0 0 auto;
       height: auto;
       margin: 0 1rem;
@@ -222,7 +222,7 @@ $tab-border-color: color.adjust(
   }
 
   .tab-panel {
-    background-color: map.get(var.$greyscale, "white");
+    background-color: var(--white);
     border: 1px solid $tab-border-color;
 
     @include mixin.breakpoint(tablet, min) {
@@ -241,9 +241,9 @@ $tab-border-color: color.adjust(
 
     .tab {
       @include mixin.breakpoint(tablet, max) {
-        background: map.get(var.$greyscale, "white");
+        background: var(--white);
         border: none;
-        color: map.get(var.$greyscale, "base");
+        color: var(--base);
         flex: 0 0 auto;
         height: auto;
         margin: 0 1rem;
@@ -290,7 +290,7 @@ $tab-border-color: color.adjust(
 }
 
 .tab-panel {
-  background-color: map.get(var.$greyscale, "white");
+  background-color: var(--white);
   border: 1px solid $tab-border-color;
   padding: map.get(var.$spacers, 2);
   position: relative;

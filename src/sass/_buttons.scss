@@ -45,7 +45,7 @@
       map.get(var.$greyscale, "light"),
       $lightness: math.percentage(config.$hue-threshold)
     ) !important;
-    color: map.get(var.$greyscale, "white") !important;
+    color: var(--white) !important;
     cursor: not-allowed;
     pointer-events: none;
   }
@@ -261,17 +261,17 @@
 
         // set colors to work based on WCAG AA
         @if lightness($color) > 65 and lightness($color) < 90 {
-          --button-color: #{map.get(var.$greyscale, "dark")};
+          --button-color: var(--dark);
         } @else if lightness($color) > 50 and lightness($color) < 65 {
           --button-color: #{color.adjust(
               map.get(var.$greyscale, "dark"),
               $lightness: math.percentage(-0.01)
             )};
         } @else if lightness($color) > 90 {
-          --button-color: #{map.get(var.$greyscale, "base")};
+          --button-color: var(--base);
         } @else {
           // If the $color is dark, set the color to white and lighten the hover background.
-          --button-color: #{map.get(var.$greyscale, "white")};
+          --button-color: var(--white);
           --button-hover-background: #{color.adjust(
               $color,
               $lightness: math.percentage(config.$hue-threshold)
@@ -322,17 +322,17 @@
 
             // set colors to work based on WCAG AA
             @if lightness($color) > 65 and lightness($color) < 90 {
-              color: #{map.get(var.$greyscale, "dark")};
+              color: var(--dark);
             } @else if lightness($color) > 50 and lightness($color) < 65 {
               color: #{color.adjust(
                   map.get(var.$greyscale, "dark"),
                   $lightness: math.percentage(-0.01)
                 )};
             } @else if lightness($color) > 90 {
-              color: #{map.get(var.$greyscale, "base")};
+              color: var(--base);
             } @else {
               // If the $color is dark, set the color to white and lighten the hover background.
-              color: #{map.get(var.$greyscale, "white")};
+              color: var(--white);
             }
           }
         }

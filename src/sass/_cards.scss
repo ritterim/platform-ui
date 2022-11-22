@@ -9,7 +9,7 @@
 .card {
   $self: &;
 
-  background-color: map.get(var.$greyscale, "white");
+  background-color: var(--white);
   border: 1px solid
     color.adjust(
       map.get(var.$greyscale, "light"),
@@ -40,7 +40,7 @@
   }
 
   &__header {
-    color: map.get(var.$greyscale, "base");
+    color: var(--base);
     display: flex;
     justify-content: space-between;
     margin-bottom: var.$spacer;
@@ -67,7 +67,7 @@
   }
 
   &-action {
-    border-right: 1px solid map.get(var.$greyscale, "light");
+    border-right: 1px solid var(--light);
     color: color.adjust(
       map.get(var.$greyscale, "light"),
       $lightness: math.percentage(config.$hue-threshold)
@@ -79,7 +79,7 @@
     @extend %flex-center;
 
     &:hover {
-      color: map.get(var.$greyscale, "light");
+      color: var(--light);
     }
 
     &:last-of-type {
@@ -96,7 +96,7 @@
   }
 
   &__title {
-    color: map.get(var.$greyscale, "base");
+    color: var(--base);
     font-size: 100%;
     margin-bottom: 0;
     text-transform: uppercase;

@@ -5,7 +5,7 @@
 
 @mixin tooltip {
   $triangle: map.get(var.$radius, "default");
-  $background-color: rgba(map.get(var.$greyscale, "dark"), 0.9);
+  $background-color: var(--dark-a90);
 
   cursor: pointer;
   line-height: 1;
@@ -14,7 +14,7 @@
   &::after {
     background-color: $background-color;
     border-radius: $triangle;
-    color: map.get(var.$greyscale, "white");
+    color: var(--white);
     font-size: map.get(var.$font-scale, "sm");
     font-weight: normal;
     line-height: 1.15rem;

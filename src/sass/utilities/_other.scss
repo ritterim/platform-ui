@@ -193,7 +193,7 @@ $corners: (
   transition: var(--transitions);
 
   &:hover {
-    box-shadow: 0 0 6px 3px map.get(var.$greyscale, "lighter");
+    box-shadow: 0 0 6px 3px var(--lighter);
   }
 }
 

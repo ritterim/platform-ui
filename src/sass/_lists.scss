@@ -23,11 +23,11 @@ ol {
     position: relative;
 
     &:not(:last-of-type) {
-      border-bottom: 1px solid map.get(var.$greyscale, "lighter");
+      border-bottom: 1px solid var(--lighter);
     }
 
     &__duration {
-      color: map.get(var.$greyscale, "light");
+      color: var(--light);
       font-size: map.get(var.$font-scale, "sm");
       margin-bottom: map.get(var.$spacers, 1);
 
@@ -82,14 +82,14 @@ ol {
 
         &:after {
           content: "\f16e";
-          color: map.get(var.$greyscale, "white");
+          color: var(--white);
           font-family: platform-icons;
           font-size: map.get(var.$font-scale, "lg") * 2;
           font-weight: 900;
           left: 50%;
           position: absolute;
           top: 50%;
-          text-shadow: 0 0 0.5rem map.get(var.$greyscale, "black");
+          text-shadow: 0 0 0.5rem var(--black);
           transform: translate(-50%, -50%);
           transition: var(--transitions);
           z-index: 2;
@@ -97,7 +97,7 @@ ol {
         &:hover {
           &:after {
             transform: translate(-50%, -50%) scale(1.2);
-            text-shadow: 0 0 1rem map.get(var.$greyscale, "black");
+            text-shadow: 0 0 1rem var(--black);
           }
         }
       }
@@ -133,7 +133,7 @@ ol {
       padding-bottom: map.get(var.$spacers, 2);
 
       &:not(:last-of-type) {
-        border-bottom: 1px solid map.get(var.$greyscale, "light-mid");
+        border-bottom: 1px solid var(--light-mid);
       }
     }
   }

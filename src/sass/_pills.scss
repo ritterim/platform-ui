@@ -7,8 +7,8 @@
 
 .pill {
   $border-radius: map.get(var.$radius, "button");
-  $primary-background: map.get(var.$greyscale, "white");
-  $primary-color: map.get(var.$greyscale, "base");
+  $primary-background: var(--white);
+  $primary-color: var(--base);
 
   border: 1px solid
     color.adjust(

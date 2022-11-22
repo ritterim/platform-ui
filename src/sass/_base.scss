@@ -16,7 +16,7 @@
 html,
 body {
   box-sizing: border-box;
-  color: map.get(var.$greyscale, 'dark');
+  color: var(--dark);
   font-size: 1rem;
   font-family: sans-serif;
   font-weight: 300;
@@ -29,7 +29,7 @@ body {
 // set up h-tags
 @for $i from 1 through 6 {
   h#{$i} {
-    color: map.get(var.$greyscale, 'base' );
+    color: var(--base);
     font-weight: 500;
     line-height: 1.618;
     margin-bottom: var.$spacer;
@@ -79,7 +79,7 @@ strong {
 }
 
 hr {
-  background-color: map.get(var.$greyscale, 'base');
+  background-color: var(--base);
   border: none;
   height: 1px;
   margin: var.$spacer 0;

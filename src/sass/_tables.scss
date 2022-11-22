@@ -6,13 +6,14 @@
 @use "sass:math";
 
 .table {
-  $table-border: 1px solid
-    color.adjust(
-      map.get(var.$greyscale, "light"),
-      $lightness: math.percentage(config.$hue-threshold * 2)
-    );
+  --table-color-light: color.adjust(
+    map.get(var.$greyscale, "light"),
+    $lightness: math.percentage(config.$hue-threshold * 2)
+  );
+
+  $table-border: 1px solid var(--table-color-light);
   $responsive-table-bottom-gap: map.get(var.$spacers, 2);
-  $responsive-table-label-bg: map.get(var.$greyscale, "lighter");
+  $responsive-table-label-bg: var(--lighter);
   width: 100%;
   background-color: transparent;
   border-collapse: separate;
@@ -22,9 +23,9 @@
   }
 
   thead {
-    background-color: map.get(var.$greyscale, "lighter");
-    border-bottom: 1px solid map.get(var.$greyscale, "light");
-    color: map.get(var.$greyscale, "base");
+    background-color: var(--lighter);
+    border-bottom: 1px solid var(--light);
+    color: var(--base);
     font-weight: bold;
     text-align: left;
     @include mixin.breakpoint(tablet, max) {
@@ -32,11 +33,7 @@
     }
 
     th {
-      border: solid
-        color.adjust(
-          map.get(var.$greyscale, "light"),
-          $lightness: math.percentage(config.$hue-threshold * 2)
-        );
+      border: solid var(--table-color-light);
       border-width: 1px 0;
     }
   }
@@ -46,7 +43,7 @@
     transition: calc(var(--transitions) * 3);
     @include mixin.breakpoint(tablet, min) {
       &:hover {
-        background-color: map.get(var.$greyscale, "lighter");
+        background-color: var(--lighter);
       }
     }
 
@@ -56,11 +53,7 @@
     }
 
     td {
-      border-bottom: 1px solid
-        color.adjust(
-          map.get(var.$greyscale, "light"),
-          $lightness: math.percentage(config.$hue-threshold * 2)
-        );
+      border-bottom: 1px solid var(--table-color-light);
     }
 
     &:last-child {
@@ -100,11 +93,7 @@
       }
 
       tr + tr {
-        border-top: 1px solid
-          color.adjust(
-            map.get(var.$greyscale, "light"),
-            $lightness: math.percentage(config.$hue-threshold * 2)
-          );
+        border-top: 1px solid var(--table-color-light);
         margin-top: $responsive-table-bottom-gap;
         padding-top: $responsive-table-bottom-gap;
       }

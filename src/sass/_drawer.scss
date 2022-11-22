@@ -7,7 +7,7 @@
 .drawer {
   $self: &;
   background-color: config.$drawer-background;
-  box-shadow: 0 -1rem 2rem rgba(map.get(var.$greyscale, "black"), 0.4);
+  box-shadow: 0 -1rem 2rem var(--black-a40);
   flex-direction: column;
   width: 100%;
   position: fixed;
@@ -78,7 +78,7 @@
   &-right,
   &-left {
     bottom: 0;
-    box-shadow: 0 -0.5rem 2rem rgba(map.get(var.$greyscale, "black"), math.percentage(0.5));
+    box-shadow: 0 -0.5rem 2rem var(--black-a50);
     flex-direction: column;
     height: 100%;
     position: fixed;
@@ -113,7 +113,7 @@
   // Drawer Opens from the top
   &-top {
     bottom: unset;
-    box-shadow: 0 1rem 2rem rgba(map.get(var.$greyscale, "black"), 0.4);
+    box-shadow: 0 1rem 2rem var(--black-a40);
     top: 0;
     transform: translate(0, -100%);
 

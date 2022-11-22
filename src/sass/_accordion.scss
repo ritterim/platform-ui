@@ -7,13 +7,13 @@
 
 .accordion {
   $self: &;
-  $accordion-primary-color: map.get(var.$greyscale, 'base');
-  $accordion-primary-background: map.get(var.$greyscale, 'white');
-  $accordion-secondary-background: map.get(var.$greyscale, 'lighter');
+  $accordion-primary-color: var(--base);
+  $accordion-primary-background: var(--white);
+  $accordion-secondary-background: var(--lighter);
   $accordion-primary-border-color: color.adjust(map.get(var.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold * 2));
   $accordion-secondary-border-color: color.adjust(map.get(config.$brand-colors, 'med-blue'), $lightness: math.percentage(config.$hue-threshold));
-  $accordion-active-background: map.get(config.$brand-colors, 'med-blue' );
-  $accordion-hover-border: map.get(config.$brand-colors, 'skyblue' );
+  $accordion-active-background: var(--med-blue);
+  $accordion-hover-border: var(--skyblue);
 
   background-color: $accordion-primary-background;
   border: 1px solid transparent;

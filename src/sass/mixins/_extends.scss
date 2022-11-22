@@ -28,7 +28,7 @@
 }
 
 %inverted {
-  color: map.get(var.$greyscale, "white") !important;
+  color: var(--white) !important;
   transition: var(--transitions);
 }
 
@@ -39,12 +39,12 @@
 
   &::-webkit-scrollbar-thumb {
     background-clip: padding-box;
-    background-color: map.get(var.$greyscale, "light");
+    background-color: var(--light);
     border-radius: map.get(var.$radius, "button");
   }
 
   &::-webkit-scrollbar-track {
-    background-color: map.get(var.$greyscale, "lighter");
+    background-color: var(--lighter);
     border-radius: map.get(var.$radius, "button");
   }
 }

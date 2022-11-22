@@ -46,7 +46,7 @@
   &__toggle {
     background-color: transparent;
     border: none;
-    color: map.get(var.$greyscale, "light");
+    color: var(--light);
     cursor: pointer;
     font-size: 100%;
     transition: all ease var(--transitions);
