@@ -1,5 +1,5 @@
 @use "config";
-@use "variables";
+@use "variables" as var;
 @use "sass:map";
 
 .note {
@@ -46,7 +46,7 @@
   &__toggle {
     background-color: transparent;
     border: none;
-    color: map.get(variables.$greyscale, "light");
+    color: map.get(var.$greyscale, "light");
     cursor: pointer;
     font-size: 100%;
     transition: all ease var(--transitions);

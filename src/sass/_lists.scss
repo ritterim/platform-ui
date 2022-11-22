@@ -1,14 +1,14 @@
 @use "config";
 @use "mixins";
-@use "variables";
+@use "variables" as var;
 @use "sass:map";
 
 ul {
   margin: 0;
-  padding: 0 0 0 variables.$spacer;
+  padding: 0 0 0 var.$spacer;
 
   li {
-    margin: 0 0 map.get(variables.$spacers, 2);
+    margin: 0 0 map.get(var.$spacers, 2);
   }
 }
 
@@ -18,32 +18,32 @@ ol {
 
 .post {
   &-item {
-    margin: 0 0 variables.$spacer;
-    padding: 0 0 variables.$spacer;
+    margin: 0 0 var.$spacer;
+    padding: 0 0 var.$spacer;
     position: relative;
 
     &:not(:last-of-type) {
-      border-bottom: 1px solid map.get(variables.$greyscale, "lighter");
+      border-bottom: 1px solid map.get(var.$greyscale, "lighter");
     }
 
     &__duration {
-      color: map.get(variables.$greyscale, "light");
-      font-size: map.get(variables.$font-scale, "sm");
-      margin-bottom: map.get(variables.$spacers, 1);
+      color: map.get(var.$greyscale, "light");
+      font-size: map.get(var.$font-scale, "sm");
+      margin-bottom: map.get(var.$spacers, 1);
 
       &:before {
         content: "\f14a";
         font-family: platform-icons;
-        margin: 0 map.get(variables.$spacers, 2) 0 0;
+        margin: 0 map.get(var.$spacers, 2) 0 0;
       }
     }
 
     &__title {
-      margin-bottom: map.get(variables.$spacers, 1);
+      margin-bottom: map.get(var.$spacers, 1);
     }
 
     &__link {
-      font-size: map.get(variables.$font-scale, "sm");
+      font-size: map.get(var.$font-scale, "sm");
       font-weight: bold;
     }
   }
@@ -82,14 +82,14 @@ ol {
 
         &:after {
           content: "\f16e";
-          color: map.get(variables.$greyscale, "white");
+          color: map.get(var.$greyscale, "white");
           font-family: platform-icons;
-          font-size: map.get(variables.$font-scale, "lg") * 2;
+          font-size: map.get(var.$font-scale, "lg") * 2;
           font-weight: 900;
           left: 50%;
           position: absolute;
           top: 50%;
-          text-shadow: 0 0 0.5rem map.get(variables.$greyscale, "black");
+          text-shadow: 0 0 0.5rem map.get(var.$greyscale, "black");
           transform: translate(-50%, -50%);
           transition: var(--transitions);
           z-index: 2;
@@ -97,14 +97,14 @@ ol {
         &:hover {
           &:after {
             transform: translate(-50%, -50%) scale(1.2);
-            text-shadow: 0 0 1rem map.get(variables.$greyscale, "black");
+            text-shadow: 0 0 1rem map.get(var.$greyscale, "black");
           }
         }
       }
 
       &-caption {
         bottom: 0;
-        padding: map.get(variables.$spacers, 2);
+        padding: map.get(var.$spacers, 2);
         position: absolute;
         text-align: center;
         width: 100%;
@@ -130,10 +130,10 @@ ol {
 
   &--bordered {
     #{$list}__item {
-      padding-bottom: map.get(variables.$spacers, 2);
+      padding-bottom: map.get(var.$spacers, 2);
 
       &:not(:last-of-type) {
-        border-bottom: 1px solid map.get(variables.$greyscale, "light-mid");
+        border-bottom: 1px solid map.get(var.$greyscale, "light-mid");
       }
     }
   }
@@ -142,7 +142,7 @@ ol {
     display: flex;
 
     li {
-      margin: 0 map.get(variables.$spacers, 2) 0 0;
+      margin: 0 map.get(var.$spacers, 2) 0 0;
     }
   }
 }

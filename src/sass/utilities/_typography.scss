@@ -1,5 +1,5 @@
 @use "../config";
-@use "../variables";
+@use "../variables" as var;
 @use "sass:map";
 
 .text {
@@ -38,21 +38,21 @@
   }
 
   // font-style
-  @each $key, $val in variables.$font-style {
+  @each $key, $val in var.$font-style {
     &--#{$key} {
       font-style: #{$val};
     }
   }
 
   // text-align
-  @each $key, $val in variables.$text-align {
+  @each $key, $val in var.$text-align {
     &--#{$key} {
       text-align: #{$val};
     }
   }
 
   // text-transform
-  @each $key, $val in variables.$text-transform {
+  @each $key, $val in var.$text-transform {
     &--#{$key} {
       text-transform: #{$val};
 
@@ -65,13 +65,13 @@
   }
 
   // text shadow using $greyscale
-  @each $name, $color in variables.$greyscale {
+  @each $name, $color in var.$greyscale {
     &--shadow-#{$name} {
       text-shadow: 0.3rem 0.3rem 0.5rem $color;
     }
   }
   // font size based on scale
-  @each $name, $scale in variables.$font-scale {
+  @each $name, $scale in var.$font-scale {
     &--size-#{$name} {
       font-size: $scale !important;
     }

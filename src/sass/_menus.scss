@@ -1,6 +1,6 @@
 @use "config";
-@use "mixins";
-@use "variables";
+@use "mixins" as mixin;
+@use "variables" as var;
 @use "sass:color";
 @use "sass:map";
 @use "sass:meta";
@@ -43,9 +43,9 @@
 $all-colors: () !default;
 
 @if meta.type-of(config.$config-colors) == "map" {
-  $all-colors: map.merge(config.$config-colors, variables.$greyscale);
+  $all-colors: map.merge(config.$config-colors, var.$greyscale);
 } @else {
-  $all-colors: map.merge(variables.$greyscale, $all-colors);
+  $all-colors: map.merge(var.$greyscale, $all-colors);
   @warn "$config-colors is not set or empty";
 }
 
@@ -69,7 +69,7 @@ $all-colors: () !default;
     color: var(--menu-text-color);
     display: flex;
     line-height: 1;
-    padding: map.get(variables.$spacers, 2) map.get(variables.$spacers, 3);
+    padding: map.get(var.$spacers, 2) map.get(var.$spacers, 3);
   }
 
   .dropdown__content-item {
@@ -104,7 +104,7 @@ $all-colors: () !default;
       position: relative;
 
       &:after {
-        background-color: map.get(variables.$greyscale, "dark");
+        background-color: map.get(var.$greyscale, "dark");
         bottom: 0;
         content: "";
         height: 2px;
@@ -115,7 +115,7 @@ $all-colors: () !default;
         transition: var(--transitions);
       }
 
-      @each $unit, $rem in variables.$spacers {
+      @each $unit, $rem in var.$spacers {
         &.p-#{$unit} {
           &:after {
             left: $rem;
@@ -130,7 +130,7 @@ $all-colors: () !default;
           }
         }
 
-        @each $direction, $d in variables.$xy-border {
+        @each $direction, $d in var.$xy-border {
           &.p#{$d}-#{$unit} {
             &:after {
               #{$direction}: #{$rem};
@@ -246,12 +246,12 @@ $all-colors: () !default;
         @if lightness($color) > 50 {
           --menu-text-color: var(
             --dark,
-            #{map.get(variables.$greyscale, "dark")}
+            #{map.get(var.$greyscale, "dark")}
           );
         } @else {
           --menu-text-color: var(
             --white,
-            #{map.get(variables.$greyscale, "white")}
+            #{map.get(var.$greyscale, "white")}
           );
         }
 
@@ -293,12 +293,12 @@ $all-colors: () !default;
         @if lightness($color) > 50 {
           --menu-border-color: var(
             --dark,
-            #{map.get(variables.$greyscale, "dark")}
+            #{map.get(var.$greyscale, "dark")}
           );
         } @else {
           --menu-border-color: var(
             --white,
-            #{map.get(variables.$greyscale, "white")}
+            #{map.get(var.$greyscale, "white")}
           );
         }
       }
@@ -482,7 +482,7 @@ $all-colors: () !default;
   display: flex;
 
   &__item {
-    border-right: 1px solid map.get(variables.$greyscale, "light");
+    border-right: 1px solid map.get(var.$greyscale, "light");
 
     &:first-of-type {
       padding-left: 0;
@@ -496,14 +496,14 @@ $all-colors: () !default;
 
   &__action {
     color: color.adjust(
-      map.get(variables.$greyscale, "light"),
+      map.get(var.$greyscale, "light"),
       $lightness: math.percentage(config.$hue-threshold)
     );
-    @include mixins.square(variables.$spacer * 1.5);
+    @include mixin.square(var.$spacer * 1.5);
     @extend %flex-center;
 
     &:hover {
-      color: map.get(variables.$error-colors, "default");
+      color: map.get(var.$error-colors, "default");
       transform: scale(1.1);
     }
   }
@@ -513,8 +513,8 @@ $all-colors: () !default;
     justify-content: center;
     #{$self}__item {
       border: 0;
-      border-bottom: 1px solid map.get(variables.$greyscale, "light");
-      padding: map.get(variables.$spacers, 1) 0;
+      border-bottom: 1px solid map.get(var.$greyscale, "light");
+      padding: map.get(var.$spacers, 1) 0;
       &:last-of-type {
         border-bottom: none;
       }

@@ -1,6 +1,6 @@
 @use "config";
-@use "mixins";
-@use "variables";
+@use "mixins" as mixin;
+@use "variables" as var;
 @use "sass:map";
 
 // Block layout
@@ -25,7 +25,7 @@
     }
   }
   
-  @each $key, $val in variables.$columns {
+  @each $key, $val in var.$columns {
     .block-#{$val} {
       width: calc(#{$key} * 100%);
 
@@ -40,11 +40,11 @@
     // get index of the current name passed
     $index : (index($mapped__keys, $breakpoint));
 
-    @each $key, $val in variables.$columns {
+    @each $key, $val in var.$columns {
       // on the block
       > .#{$breakpoint}-up-#{$val} {
         @if $index > 1 {
-          @include mixins.breakpoint(#{$name}, min) {
+          @include mixin.breakpoint(#{$name}, min) {
             width: calc(#{$key} * 100%);
           }
         }
@@ -56,7 +56,7 @@
           // do nothing
         } @else {
           > .block {
-            @include mixins.breakpoint(#{$name}, min) {
+            @include mixin.breakpoint(#{$name}, min) {
               width: calc(100% / #{$val});
             }
           }
@@ -74,7 +74,7 @@
     // on the block
     > .#{$breakpoint}-up {
       @if $index > 1 {
-        @include mixins.breakpoint(#{$name}, min) {
+        @include mixin.breakpoint(#{$name}, min) {
 
           &--full {
             width: 100%;
@@ -113,7 +113,7 @@
           width: auto;
         }
 
-        @include mixins.breakpoint(#{$name}, min) {
+        @include mixin.breakpoint(#{$name}, min) {
   
           &.#{$breakpoint}-up--full {
             width: 100%;
@@ -134,8 +134,8 @@
   // Add padding and or margin by direction to container
   // as well as the blocks within the block-container
   @each $prop, $letter in (margin: m, padding: p) {
-    @each $direction, $d in variables.$xy-border {
-      @each $unit, $rem in variables.$spacers {
+    @each $direction, $d in var.$xy-border {
+      @each $unit, $rem in var.$spacers {
         // top, right, bottom, left
         &.blocks.#{$letter}#{$d}-#{$unit} {
           #{$prop}-#{$direction}: 0 !important;
@@ -150,7 +150,7 @@
   // Add x-y padding and or margin to container
   // as well as the blocks within the block-container
   @each $prop, $letter in (margin: m, padding: p) {
-    @each $unit, $rem in variables.$spacers {
+    @each $unit, $rem in var.$spacers {
 
       // x-axis
       &.blocks.#{$letter}x-#{$unit} {
@@ -186,7 +186,7 @@
   // Add surrounding padding and or margin to container
   // as well as the blocks within the block-container
   @each $prop, $letter in (margin: m, padding: p) {
-    @each $unit, $rem in variables.$spacers {
+    @each $unit, $rem in var.$spacers {
       // top, right, bottom, left
       &.blocks.#{$letter}-#{$unit} {
         #{$prop}: 0 !important;

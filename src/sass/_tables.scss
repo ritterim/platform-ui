@@ -1,6 +1,6 @@
 @use "config";
-@use "mixins";
-@use "variables";
+@use "mixins" as mixin;
+@use "variables" as var;
 @use "sass:color";
 @use "sass:map";
 @use "sass:math";
@@ -8,33 +8,33 @@
 .table {
   $table-border: 1px solid
     color.adjust(
-      map.get(variables.$greyscale, "light"),
+      map.get(var.$greyscale, "light"),
       $lightness: math.percentage(config.$hue-threshold * 2)
     );
-  $responsive-table-bottom-gap: map.get(variables.$spacers, 2);
-  $responsive-table-label-bg: map.get(variables.$greyscale, "lighter");
+  $responsive-table-bottom-gap: map.get(var.$spacers, 2);
+  $responsive-table-label-bg: map.get(var.$greyscale, "lighter");
   width: 100%;
   background-color: transparent;
   border-collapse: separate;
   border-spacing: 0;
-  @include mixins.breakpoint(tablet, max) {
+  @include mixin.breakpoint(tablet, max) {
     border: none;
   }
 
   thead {
-    background-color: map.get(variables.$greyscale, "lighter");
-    border-bottom: 1px solid map.get(variables.$greyscale, "light");
-    color: map.get(variables.$greyscale, "base");
+    background-color: map.get(var.$greyscale, "lighter");
+    border-bottom: 1px solid map.get(var.$greyscale, "light");
+    color: map.get(var.$greyscale, "base");
     font-weight: bold;
     text-align: left;
-    @include mixins.breakpoint(tablet, max) {
+    @include mixin.breakpoint(tablet, max) {
       border: none;
     }
 
     th {
       border: solid
         color.adjust(
-          map.get(variables.$greyscale, "light"),
+          map.get(var.$greyscale, "light"),
           $lightness: math.percentage(config.$hue-threshold * 2)
         );
       border-width: 1px 0;
@@ -44,9 +44,9 @@
   tr {
     background-color: transparent;
     transition: calc(var(--transitions) * 3);
-    @include mixins.breakpoint(tablet, min) {
+    @include mixin.breakpoint(tablet, min) {
       &:hover {
-        background-color: map.get(variables.$greyscale, "lighter");
+        background-color: map.get(var.$greyscale, "lighter");
       }
     }
 
@@ -58,7 +58,7 @@
     td {
       border-bottom: 1px solid
         color.adjust(
-          map.get(variables.$greyscale, "light"),
+          map.get(var.$greyscale, "light"),
           $lightness: math.percentage(config.$hue-threshold * 2)
         );
     }
@@ -69,7 +69,7 @@
       }
     }
   }
-  @include mixins.breakpoint(tablet, max) {
+  @include mixin.breakpoint(tablet, max) {
     &:not(.unresponsive) {
       thead tr {
         position: absolute;
@@ -93,7 +93,7 @@
             font-weight: bold;
             line-height: 1.5;
             min-width: 40%;
-            padding-right: map.get(variables.$spacers, 2);
+            padding-right: map.get(var.$spacers, 2);
             text-align: left;
           }
         }
@@ -102,7 +102,7 @@
       tr + tr {
         border-top: 1px solid
           color.adjust(
-            map.get(variables.$greyscale, "light"),
+            map.get(var.$greyscale, "light"),
             $lightness: math.percentage(config.$hue-threshold * 2)
           );
         margin-top: $responsive-table-bottom-gap;
@@ -113,7 +113,7 @@
   }
   &--no-hover {
     tr {
-      @include mixins.breakpoint(tablet, min) {
+      @include mixin.breakpoint(tablet, min) {
         &:hover {
           background-color: initial;
         }

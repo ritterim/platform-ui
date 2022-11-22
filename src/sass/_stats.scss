@@ -1,5 +1,5 @@
 @use "config";
-@use "variables";
+@use "variables" as var;
 @use "sass:map";
 
 .stat {
@@ -7,35 +7,35 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  font-size: map.get(variables.$font-scale, "lg");
+  font-size: map.get(var.$font-scale, "lg");
   font-weight: bold;
 
   &[data-stat-label]:after {
     content: attr(data-stat-label);
-    color: map.get(variables.$greyscale, "base");
+    color: map.get(var.$greyscale, "base");
     font-size: 1rem;
     font-weight: normal;
   }
 
   &--sm {
     #{$self}__number {
-      font-size: map.get(variables.$font-scale, "md");
+      font-size: map.get(var.$font-scale, "md");
     }
 
     &[data-stat-label]:after {
-      font-size: map.get(variables.$font-scale, "xs");
+      font-size: map.get(var.$font-scale, "xs");
     }
   }
 
   &--md {
     #{$self}__number {
-      font-size: map.get(variables.$font-scale, "xl");
+      font-size: map.get(var.$font-scale, "xl");
     }
   }
 
   &--lg {
     #{$self}__number {
-      font-size: map.get(variables.$font-scale, "xxl");
+      font-size: map.get(var.$font-scale, "xxl");
     }
   }
 }

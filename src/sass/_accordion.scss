@@ -1,16 +1,16 @@
 @use "config";
 @use "mixins";
-@use "variables";
+@use "variables" as var;
 @use "sass:color";
 @use "sass:math";
 @use "sass:map";
 
 .accordion {
   $self: &;
-  $accordion-primary-color: map.get(variables.$greyscale, 'base');
-  $accordion-primary-background: map.get(variables.$greyscale, 'white');
-  $accordion-secondary-background: map.get(variables.$greyscale, 'lighter');
-  $accordion-primary-border-color: color.adjust(map.get(variables.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold * 2));
+  $accordion-primary-color: map.get(var.$greyscale, 'base');
+  $accordion-primary-background: map.get(var.$greyscale, 'white');
+  $accordion-secondary-background: map.get(var.$greyscale, 'lighter');
+  $accordion-primary-border-color: color.adjust(map.get(var.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold * 2));
   $accordion-secondary-border-color: color.adjust(map.get(config.$brand-colors, 'med-blue'), $lightness: math.percentage(config.$hue-threshold));
   $accordion-active-background: map.get(config.$brand-colors, 'med-blue' );
   $accordion-hover-border: map.get(config.$brand-colors, 'skyblue' );
@@ -20,7 +20,7 @@
   border-top-color: $accordion-primary-border-color;
   color: $accordion-primary-color;
   font-size: 100%;
-  transition: border-color var(--transitions);
+  transition: border-color config.$transitions;
 
   &:last-of-type {
     border-bottom-color: $accordion-primary-border-color;
@@ -55,12 +55,12 @@
   &__header {
     display: flex;
     position: relative;
-    transition: background-color var(--transitions);
+    transition: background-color config.$transitions;
     z-index: 10;
   }
 
   &__icon {
-    transition: transform var(--transitions);
+    transition: transform config.$transitions;
   }
 
   &__content {

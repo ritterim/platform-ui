@@ -1,6 +1,6 @@
 @use "config";
 @use "mixins";
-@use "variables";
+@use "variables" as var;
 @use "sass:color";
 @use "sass:math";
 @use "sass:map";
@@ -14,8 +14,8 @@
   background-color: var(--message-background);
   border-left: thick solid var(--message-border);
   color: var(--message-color);
-  margin: map.get(variables.$spacers, 2) 0;
-  padding: map.get(variables.$spacers, 2);
+  margin: map.get(var.$spacers, 2) 0;
+  padding: map.get(var.$spacers, 2);
 
   // button close needs to be an independant concept to be placed
   // anywhere
@@ -24,14 +24,14 @@
     display: block;
     font-size: 80%;
     font-weight: bold;
-    margin-bottom: map.get(variables.$spacers, 3);
+    margin-bottom: map.get(var.$spacers, 3);
     text-transform: uppercase;
   }
 
   &__close {
     position: absolute;
-    top: map.get(variables.$spacers, 2);
-    right: map.get(variables.$spacers, 2);
+    top: map.get(var.$spacers, 2);
+    right: map.get(var.$spacers, 2);
   }
 
   &[data-header="none"] {
@@ -44,12 +44,12 @@
     margin-bottom: 0;
 
     + p {
-      margin: map.get(variables.$spacers, 2) 0 0;
+      margin: map.get(var.$spacers, 2) 0 0;
     }
   }
   // ----------
 
-  @each $name, $color in variables.$message-colors {
+  @each $name, $color in var.$message-colors {
     &--#{$name} {
       --message-background: #{$color};
       --message-border: #{color.adjust(

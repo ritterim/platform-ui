@@ -1,13 +1,13 @@
 @use "config";
-@use "mixins";
-@use "variables";
+@use "mixins" as mixin;
+@use "variables" as var;
 @use "sass:math";
 @use "sass:map";
 
 .drawer {
   $self: &;
   background-color: config.$drawer-background;
-  box-shadow: 0 -1rem 2rem rgba(map.get(variables.$greyscale, "black"), 0.4);
+  box-shadow: 0 -1rem 2rem rgba(map.get(var.$greyscale, "black"), 0.4);
   flex-direction: column;
   width: 100%;
   position: fixed;
@@ -45,17 +45,17 @@
     position: relative;
     width: 100%;
 
-    @include mixins.breakpoint(tablet, max) {
-      padding-top: map.get(variables.$spacers, 5);
+    @include mixin.breakpoint(tablet, max) {
+      padding-top: map.get(var.$spacers, 5);
     }
 
     #{$self}__close {
       position: absolute;
-      right: -#{variables.$spacer};
+      right: -#{var.$spacer};
       top: 50%;
       transform: translate(-50%, -50%);
 
-      @include mixins.breakpoint(tablet, max) {
+      @include mixin.breakpoint(tablet, max) {
         top: 1.5rem;
       }
     }
@@ -69,7 +69,7 @@
   &__open {
     cursor: pointer;
 
-    @include mixins.breakpoint(tablet, max) {
+    @include mixin.breakpoint(tablet, max) {
       bottom: 3.5rem;
     }
   }
@@ -78,7 +78,7 @@
   &-right,
   &-left {
     bottom: 0;
-    box-shadow: 0 -0.5rem 2rem rgba(map.get(variables.$greyscale, "black"), math.percentage(0.5));
+    box-shadow: 0 -0.5rem 2rem rgba(map.get(var.$greyscale, "black"), math.percentage(0.5));
     flex-direction: column;
     height: 100%;
     position: fixed;
@@ -89,7 +89,7 @@
       height: calc(100% - #{config.$menu-height});
     }
 
-    @include mixins.breakpoint(tablet, min) {
+    @include mixin.breakpoint(tablet, min) {
       width: config.$drawer-side-width;
     }
 
@@ -113,7 +113,7 @@
   // Drawer Opens from the top
   &-top {
     bottom: unset;
-    box-shadow: 0 1rem 2rem rgba(map.get(variables.$greyscale, "black"), 0.4);
+    box-shadow: 0 1rem 2rem rgba(map.get(var.$greyscale, "black"), 0.4);
     top: 0;
     transform: translate(0, -100%);
 

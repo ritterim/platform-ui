@@ -1,5 +1,5 @@
 @use "../mixins";
-@use "../variables";
+@use "../variables" as var;
 
 // Flex
 
@@ -23,25 +23,25 @@
   }
 }
 
-@each $key, $val in variables.$flex-align {
+@each $key, $val in var.$flex-align {
   .flex--align-#{$key} {
     align-items: #{$val};
   }
 }
 
-@each $key, $val in variables.$flex-align {
+@each $key, $val in var.$flex-align {
   .flex--align-self-#{$key} {
     align-self: #{$val};
   }
 }
 
-@each $key, $val in variables.$flex-direction {
+@each $key, $val in var.$flex-direction {
   .flex--#{$key} {
     flex-direction: #{$val};
   }
 }
 
-@each $key, $val in variables.$flex-justify {
+@each $key, $val in var.$flex-justify {
   .flex--justify-#{$key} {
     justify-content: #{$val} !important;
   }

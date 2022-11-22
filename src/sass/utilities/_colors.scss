@@ -1,6 +1,6 @@
 @use "../config";
-@use "../mixins/" as *;
-@use "../variables" as *;
+@use "../mixins/" as mixin;
+@use "../variables" as var;
 @use "sass:map";
 @use "sass:meta";
 
@@ -9,16 +9,16 @@ $all-colors: () !default;
 $site-colors: () !default;
 
 @if meta.type-of(config.$config-colors) == "map" {
-  $all-colors: map.merge(config.$config-colors, $greyscale);
+  $all-colors: map.merge(config.$config-colors, var.$greyscale);
 } @else {
-  $all-colors: map.merge($greyscale, $all-colors);
+  $all-colors: map.merge(var.$greyscale, $all-colors);
   @warn "$config-colors is not set or empty";
 }
 
 // Theme colors
-@each $name, $color in $color-tokens {
+@each $name, $color in var.$color-tokens {
   // Remove "color-" from color-token var
-  $_name: str-replace($name, 'color-', '');
+  $_name: mixin.str-replace($name, 'color-', '');
   
   @if (str-index($name, '-on-') == null) {
     .background-#{$_name} {
@@ -88,8 +88,8 @@ $site-colors: () !default;
 }
 
 // error Colors
-@if meta.type-of($error-colors) == "map" {
-  @each $name, $color in $error-colors {
+@if meta.type-of(var.$error-colors) == "map" {
+  @each $name, $color in var.$error-colors {
     // text color
     .text--#{$name} {
       border-color: var(--#{$name}) !important;

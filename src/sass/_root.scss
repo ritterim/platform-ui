@@ -1,20 +1,20 @@
-@use "config" as *;
-@use "variables" as *;
+@use "config";
+@use "variables" as var;
 @use "sass:map";
 @use "sass:meta";
 
 $all-colors: () !default;
 $site-colors: () !default;
 
-@if meta.type-of($config-colors) == "map" {
-  $all-colors: map.merge($config-colors, $greyscale);
+@if meta.type-of(config.$config-colors) == "map" {
+  $all-colors: map.merge(config.$config-colors, var.$greyscale);
 } @else {
-  $all-colors: map.merge($greyscale, $all-colors);
+  $all-colors: map.merge(var.$greyscale, $all-colors);
   @warn "$config-colors is not set or empty";
 }
 
 :root {
-  @include color-tokens();
+  @include var.color-tokens();
 
   @if meta.type-of($all-colors) == "map" {
     @each $name, $color in $all-colors {
@@ -40,10 +40,10 @@ $site-colors: () !default;
       }
     }
   }
-  @each $type, $size in $radius {
+  @each $type, $size in var.$radius {
     --#{$type}: #{$size};
   }
-  --menu-height: #{$menu-height};
-  --transitions: #{$transitions};
+  --menu-height: #{config.$menu-height};
+  --transitions: #{config.$transitions};
   --max-container: 1440px;
 }

@@ -1,13 +1,13 @@
 @use "../config";
-@use "../variables";
+@use "../variables" as var;
 @use "sass:map";
 
 // Spacers
 
 // padding and margin by direction
 @each $prop, $letter in (margin: m, padding: p) {
-  @each $direction, $d in variables.$xy-border {
-    @each $unit, $rem in variables.$spacers {
+  @each $direction, $d in var.$xy-border {
+    @each $unit, $rem in var.$spacers {
       .#{$letter}#{$d}-#{$unit} {
         #{$prop}-#{$direction}: #{$rem} !important;
       }
@@ -17,7 +17,7 @@
 
 // padding and margin all around
 @each $prop, $letter in (margin: m, padding: p) {
-  @each $unit, $rem in variables.$spacers {
+  @each $unit, $rem in var.$spacers {
     .#{$letter}-#{$unit} {
       #{$prop}: #{$rem} !important;
     }
@@ -26,7 +26,7 @@
 
 // padding and margin on x and y axis
 @each $prop, $letter in (margin: m, padding: p) {
-  @each $unit, $rem in variables.$spacers {
+  @each $unit, $rem in var.$spacers {
     .#{$letter}x-#{$unit} {
       #{$prop}-left: $rem !important;
       #{$prop}-right: $rem !important;
@@ -40,7 +40,7 @@
 
 // padding and margin for mobile bottom only
 @each $prop, $letter in (margin: m, padding: p) {
-  @each $unit, $rem in variables.$spacers {
+  @each $unit, $rem in var.$spacers {
     .#{$letter}b-mobile-#{$unit} {
       @media (min-width: map.get(config.$breakpoints, mobile)) and (max-width: map.get(config.$breakpoints, tablet) - 1) {
         #{$prop}-bottom: #{$rem} !important;
