@@ -24,15 +24,11 @@ $site-colors: () !default;
     .background-#{$_name} {
       background-color: #{var(--#{$name})};
     }
-    @debug ".background-#{$_name}";
-    @debug "background-color: #{var(--#{$name})}";
   }
 
   .text-#{$_name} {
     color: #{var(--#{$name})};
   }
-  @debug ".text-#{$_name}";
-  @debug "color: #{var(--#{$name})}";
 }
 
 @if meta.type-of($all-colors) == "map" {
