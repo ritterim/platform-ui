@@ -22,12 +22,12 @@ $site-colors: () !default;
   
   @if (str-index($name, '-on-') == null) {
     .background-#{$_name} {
-      background-color: #{var(--#{$name})};
+      background-color: var(--#{$name});
     }
   }
 
   .text-#{$_name} {
-    color: #{var(--#{$name})};
+    color: var(--#{$name});
   }
 }
 
@@ -36,22 +36,22 @@ $site-colors: () !default;
     // text color
     .text {
       &--#{$name} {
-        color: $color !important;
+        color: var(--#{$name}) !important;
         &.pill {
-          border-color: $color !important;
+          border-color: var(--#{$name}) !important;
         }
       }
       &-hover--#{$name} {
-        transition: background-color config.$transitions;
+        transition: background-color var(--transitions);
 
         &.text-underline--hover {
           &:after {
-            background-color: $color !important;
+            background-color: var(--#{$name}) !important;
           }
         }
 
         &:hover {
-          color: $color !important;
+          color: var(--#{$name}) !important;
         }
       }
     }
@@ -59,21 +59,21 @@ $site-colors: () !default;
     // background color
     .background {
       &--#{$name} {
-        background-color: $color !important;
+        background-color:  var(--#{$name})!important;
         &.button {
           &.loading {
             &:before {
-              background-color: $color !important;
+              background-color: var(--#{$name}) !important;
             }
           }
         }
       }
 
       &-hover--#{$name} {
-        transition: background-color config.$transitions;
+        transition: background-color var(--transitions);
 
         &:hover {
-          background-color: $color !important;
+          background-color: var(--#{$name}) !important;
         }
       }
     }
@@ -81,7 +81,7 @@ $site-colors: () !default;
     // Add alpha transparency
     @for $i from 1 through 9 {
       .background--#{$name}-a#{$i}0 {
-        background-color: rgba($color, $i * 0.1) !important;
+        background-color: var(--#{$name}-a#{$i}0) !important;
       }
     }
   }
@@ -92,18 +92,18 @@ $site-colors: () !default;
   @each $name, $color in $error-colors {
     // text color
     .text--#{$name} {
-      border-color: $color !important;
-      color: $color !important;
+      border-color: var(--#{$name}) !important;
+      color: var(--#{$name}) !important;
       transition: 0.2s;
     }
     // background color
     .background--#{$name} {
-      background-color: $color !important;
+      background-color: var(--#{$name}) !important;
     }
     // Add alpha transparency
     @for $i from 1 through 9 {
       .background--#{$name}-a#{$i}0 {
-        background-color: rgba($color, $i * 0.1) !important;
+        background-color: var(--#{$name}-a#{$i}0) !important;
       }
     }
   }

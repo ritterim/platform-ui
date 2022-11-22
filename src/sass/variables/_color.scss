@@ -1,6 +1,6 @@
 @forward "color-tokens";
 
-@use "../config";
+@use "../config" as c;
 
 @use "sass:color";
 @use "sass:math";
@@ -26,7 +26,7 @@ $error-colors: (
 
 // Message Colors
 $message-colors: (
-  "info": map.get(config.$brand-colors, "lightblue"),
+  "info": map.get(c.$brand-colors, "lightblue"),
   "note": #ffeeba,
   "warning": #ffeeba,
   "error": #ffe5e0,
