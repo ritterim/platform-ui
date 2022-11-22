@@ -67,7 +67,7 @@ p {
 a {
   color: map.get(config.$site-colors, 'link');
   text-decoration: none;
-  transition: config.$transitions;
+  transition: var(--transitions);
 }
 
 button {

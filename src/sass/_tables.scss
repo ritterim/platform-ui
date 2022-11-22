@@ -43,7 +43,7 @@
 
   tr {
     background-color: transparent;
-    transition: config.$transitions * 3;
+    transition: calc(var(--transitions) * 3);
     @include mixins.breakpoint(tablet, min) {
       &:hover {
         background-color: map.get(variables.$greyscale, "lighter");

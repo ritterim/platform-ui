@@ -26,7 +26,7 @@
       left: 0;
       position: absolute;
       right: 0;
-      transition: config.$transitions;
+      transition: var(--transitions);
       width: 0;
     }
 

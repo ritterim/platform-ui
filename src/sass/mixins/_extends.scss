@@ -29,7 +29,7 @@
 
 %inverted {
   color: map.get(variables.$greyscale, "white") !important;
-  transition: config.$transitions;
+  transition: var(--transitions);
 }
 
 %scrollbar {

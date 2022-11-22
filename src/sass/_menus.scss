@@ -73,11 +73,11 @@ $all-colors: () !default;
   }
 
   .dropdown__content-item {
-    transition: config.$transitions;
+    transition: var(--transitions);
   }
 
   .site-menu__item {
-    transition: border config.$transitions, text-shadow config.$transitions;
+    transition: border var(--transitions), text-shadow var(--transitions);
   }
 
   &:not([class*="background--"]) {
@@ -112,7 +112,7 @@ $all-colors: () !default;
         opacity: 0;
         position: absolute;
         right: 1rem;
-        transition: config.$transitions;
+        transition: var(--transitions);
       }
 
       @each $unit, $rem in variables.$spacers {
@@ -391,7 +391,7 @@ $all-colors: () !default;
       position: absolute;
       right: 0;
       top: 100%;
-      transition: all config.$transitions ease-in-out;
+      transition: all var(--transitions) ease-in-out;
       overflow: hidden;
       visibility: hidden;
       z-index: 2;

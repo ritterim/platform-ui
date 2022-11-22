@@ -24,7 +24,7 @@
   justify-content: center;
   line-height: 1.15 !important;
   padding: config.$button-primary-padding;
-  transition: config.$transitions;
+  transition: var(--transitions);
   white-space: nowrap;
 
   &.active,
@@ -119,7 +119,7 @@
     }
 
     &[data-button-text] {
-      transition: config.$transitions;
+      transition: var(--transitions);
 
       &:after {
         display: none;

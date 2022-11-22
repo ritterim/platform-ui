@@ -70,7 +70,7 @@ $tab-border-color: color.adjust(
     height: $tab-height;
     padding: map.get(variables.$spacers, 2) variables.$spacer;
     position: relative;
-    transition: config.$transitions;
+    transition: var(--transitions);
 
     @include mixins.breakpoint(tablet, max) {
       border: 1px solid $tab-color;
@@ -102,7 +102,7 @@ $tab-border-color: color.adjust(
         position: absolute;
         right: -1px;
         top: 0;
-        transition: config.$transitions;
+        transition: var(--transitions);
         width: auto;
         border: none;
         border-radius: 0;
@@ -215,7 +215,7 @@ $tab-border-color: color.adjust(
         position: absolute;
         right: 0;
         top: unset;
-        transition: config.$transitions;
+        transition: var(--transitions);
         width: auto;
       }
     }
@@ -260,7 +260,7 @@ $tab-border-color: color.adjust(
           position: absolute;
           right: 0;
           top: unset;
-          transition: config.$transitions;
+          transition: var(--transitions);
           width: auto;
         }
       }

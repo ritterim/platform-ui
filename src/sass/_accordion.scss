@@ -20,7 +20,7 @@
   border-top-color: $accordion-primary-border-color;
   color: $accordion-primary-color;
   font-size: 100%;
-  transition: border-color config.$transitions;
+  transition: border-color var(--transitions);
 
   &:last-of-type {
     border-bottom-color: $accordion-primary-border-color;
@@ -55,12 +55,12 @@
   &__header {
     display: flex;
     position: relative;
-    transition: background-color config.$transitions;
+    transition: background-color var(--transitions);
     z-index: 10;
   }
 
   &__icon {
-    transition: transform config.$transitions;
+    transition: transform var(--transitions);
   }
 
   &__content {

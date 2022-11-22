@@ -91,7 +91,7 @@ ol {
           top: 50%;
           text-shadow: 0 0 0.5rem map.get(variables.$greyscale, "black");
           transform: translate(-50%, -50%);
-          transition: config.$transitions;
+          transition: var(--transitions);
           z-index: 2;
         }
         &:hover {
