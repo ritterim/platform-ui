@@ -3,7 +3,7 @@
 @use "sass:map";
 
 .note {
-  $orange: map.get(config.$brand-colors, "salmon");
+  $orange: var(--salmon);
   $self: &;
   position: relative;
 

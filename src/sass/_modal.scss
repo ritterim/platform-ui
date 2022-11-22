@@ -107,7 +107,7 @@
   }
 
   &__header {
-    background-color: map.get(config.$brand-colors, "lightblue");
+    background-color: var(--lightblue);
     color: var(--base);
     height: $header-height;
     padding: 2rem;

@@ -105,7 +105,7 @@
   }
 
   &.tooltip-inline {
-    border-bottom: 2px dotted map.get(config.$brand-colors, "med-blue");
+    border-bottom: 2px dotted var(--med-blue);
     display: inline-block;
   }
 
@@ -126,5 +126,5 @@
 
 // not fully realized :(
 .tooltip--help {
-  color: map.get(config.$brand-colors, "med-blue") !important;
+  color: var(--med-blue) !important;
 }

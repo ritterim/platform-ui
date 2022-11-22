@@ -57,7 +57,7 @@ ol {
     width: 100%;
 
     .image-link {
-      background-color: map.get(config.$brand-colors, "med-blue");
+      background-color: var(--med-blue);
       display: block;
       position: relative;
 

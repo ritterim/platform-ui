@@ -264,7 +264,7 @@ legend {
 
         i {
           bottom: 0;
-          color: map.get(config.$brand-colors, "med-blue");
+          color: var(--med-blue);
           font-size: map.get(var.$font-scale, "md");
           line-height: 1;
           pointer-events: none;
@@ -387,10 +387,7 @@ legend {
         }
 
         &:focus {
-          border-bottom-color: map.get(
-            config.$brand-colors,
-            "med-blue"
-          ) !important;
+          border-bottom-color: var(--med-blue) !important;
           outline: none !important;
         }
       }
@@ -453,10 +450,7 @@ legend {
         }
 
         &:focus {
-          border-bottom-color: map.get(
-            config.$brand-colors,
-            "med-blue"
-          ) !important;
+          border-bottom-color: var(--med-blue) !important;
           outline: none !important;
         }
       }
@@ -934,7 +928,7 @@ input[type="radio"].pill-filter {
     $border-radius: 3rem;
     .slider {
       appearance: none;
-      background-color: map.get(config.$brand-colors, "med-blue");
+      background-color: var(--med-blue);
       border-radius: $border-radius;
       width: 100%;
       height: 0.5rem;
@@ -948,7 +942,7 @@ input[type="radio"].pill-filter {
       &::-webkit-slider-thumb {
         appearance: none;
         border: 1px solid;
-        border-color: map.get(config.$brand-colors, "med-blue");
+        border-color: var(--med-blue);
         border-radius: $border-radius;
         background-color: var(--white);
         cursor: pointer;
