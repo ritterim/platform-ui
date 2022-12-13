@@ -1,6 +1,8 @@
 # Version History
 
 ---
+# 1.6.3
+    - Update to Vite 4
 # 1.6.2
     - Remove extra variables from :root
     
