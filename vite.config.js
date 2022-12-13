@@ -21,7 +21,6 @@ const puiHeader = [
 export default defineConfig({
   plugins: [banner(puiHeader)],
   css: {
-    devSourceMap: true,
     postcss: {
       plugins: [autoprefixer],
     },
