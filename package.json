@@ -3,7 +3,7 @@
   "version": "1.6.2",
   "description": "A CSS framework used by Ritter Insurance Marketing (RIM) for our platform of agent tools.",
   "homepage": "https://style.rimdev.io",
-  "main": "gulpfile.js",
+  "main": "main.js",
   "files": [
     "/dist",
     "/src",
@@ -57,7 +57,7 @@
     "rollup-plugin-copy": "^3.4.0",
     "sass": "^1.55.0",
     "svgo": "^3.0.0",
-    "vite": "^3.2.1",
+    "vite": "^4.0.1",
     "vite-plugin-banner": "^0.5.0"
   },
   "babel": {
