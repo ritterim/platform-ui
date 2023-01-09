@@ -1,6 +1,8 @@
 # Version History
 
 ---
+# 1.6.4
+    - Remove pointer-events: none; from disabled buttons
 # 1.6.3
     - Update to Vite 4
 # 1.6.2

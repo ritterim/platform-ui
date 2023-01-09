@@ -47,7 +47,6 @@
     ) !important;
     color: map.get(variables.$greyscale, "white") !important;
     cursor: not-allowed;
-    pointer-events: none;
   }
 
   &.loading {
