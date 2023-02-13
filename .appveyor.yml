@@ -4,7 +4,9 @@ environment:
       configuration: publish
 
   NPM_TOKEN:
-    secure: lyc/Fqx6ERTjiCoQoZuEQURQuo+7UP0M1bQJW/HXa+zb8Ly6qRDTY7xci5HJGpUU    
+    secure: lyc/Fqx6ERTjiCoQoZuEQURQuo+7UP0M1bQJW/HXa+zb8Ly6qRDTY7xci5HJGpUU      
+  MYGET_TOKEN_SEC:
+    secure: FPXvRzNaOFOTseYFpP/UCfMuPpPzU5izj4hfHvaFbaQRCbUu0TQMkCY/ltNV4D87
 
 install:
   - ps: Install-Product node $env:nodejs_version
@@ -16,9 +18,6 @@ before_build:
 
 build_script:
   - ./build.cmd
-
-after_build:
-  - ps: ./after_build.ps1
 
 cache:
   - node_modules -> package.json, package-lock.json
@@ -36,7 +35,7 @@ deploy_script:
   - ps: |
       if ($ENV:CONFIGURATION -eq "publish")
       {
-        "@ritterim:registry=https://ritterim.myget.org/F/npm/npm/`r`n//ritterim.myget.org/F/npm/npm/:_authToken=`$`{MYGET_TOKEN`}" | Out-File (Join-Path $ENV:APPVEYOR_BUILD_FOLDER ".npmrc") -Encoding UTF8
+        "@ritterim:registry=https://ritterim.myget.org/F/npm/npm/`r`n//ritterim.myget.org/F/npm/npm/:_authToken=`$`{MYGET_TOKEN_SEC`}" | Out-File (Join-Path $ENV:APPVEYOR_BUILD_FOLDER ".npmrc") -Encoding UTF8
         iex "npm pack"
         iex "npm publish"
       }  
