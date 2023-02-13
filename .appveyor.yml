@@ -1,7 +1,10 @@
 environment:
   matrix:
-    - nodejs_version: STABLE
+    - nodejs_version: LTS
       configuration: publish
+
+  NPM_TOKEN:
+    secure: lyc/Fqx6ERTjiCoQoZuEQURQuo+7UP0M1bQJW/HXa+zb8Ly6qRDTY7xci5HJGpUU    
 
 install:
   - ps: Install-Product node $env:nodejs_version
@@ -20,28 +23,22 @@ after_build:
 cache:
   - node_modules -> package.json, package-lock.json
 
-artifacts:
-  - path: ./styleguide.zip
-    name: Styleguide
-    type: Zip
-
-deploy:
-  - provider: Environment
-    name: Azure App Service Zip (Development)
-    artifact: Styleguide
-    slot: staging
-    app_name: rim-style-east-dev
+deploy_script:
+  - ps: |
+      if ($ENV:CONFIGURATION -eq "publish")
+      {
+        "//registry.npmjs.org/:_authToken=`$`{NPM_TOKEN`}" | Out-File (Join-Path $ENV:APPVEYOR_BUILD_FOLDER ".npmrc") -Encoding UTF8
+        iex "npm pack"
+        iex "npm publish --access public"
+      }
+    on:
+      branch: master  
+  - ps: |
+      if ($ENV:CONFIGURATION -eq "publish")
+      {
+        "@ritterim:registry=https://ritterim.myget.org/F/npm/npm/`r`n//ritterim.myget.org/F/npm/npm/:_authToken=`$`{MYGET_TOKEN`}" | Out-File (Join-Path $ENV:APPVEYOR_BUILD_FOLDER ".npmrc") -Encoding UTF8
+        iex "npm pack"
+        iex "npm publish"
+      }  
     on:
       branch: master
-      configuration: publish
-
-after_deploy:
-    - ps: |
-        if ($ENV:CONFIGURATION -eq "publish")
-        {
-          "@ritterim:registry=https://ritterim.myget.org/F/npm/npm/`r`n//ritterim.myget.org/F/npm/npm/:_authToken=`$`{MYGET_TOKEN`}" | Out-File (Join-Path $ENV:APPVEYOR_BUILD_FOLDER ".npmrc") -Encoding UTF8
-          iex "npm pack"
-          iex "npm publish"
-        }
-      on:
-        branch: master
