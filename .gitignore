@@ -1,6 +1,16 @@
-.DS_Store
-.vscode/
-node_modules/
-dist/
+# Ignore generated files
 src/icons/optimized/*.svg
+!src/icons/optimized/.gitkeep
+
+public/*
+!public/.gitkeep
+
+node_modules
+.DS_Store
+.vscode
+dist
+dist-ssr
+*.local
+
+# Ignore package files
 *.tgz

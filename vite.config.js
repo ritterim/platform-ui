@@ -2,6 +2,8 @@
 const { defineConfig } = require('vite');
 const path = require('path');
 import banner from 'vite-plugin-banner';
+import copy from 'rollup-plugin-copy';
+import handlebars from 'vite-plugin-handlebars';
 import autoprefixer from 'autoprefixer';
 import { resolve } from 'path';
 const pjson = require('./package.json');
@@ -19,7 +21,15 @@ const puiHeader = [
 ].join('\n');
 
 export default defineConfig({
-  plugins: [banner(puiHeader)],
+  plugins: [
+    banner(puiHeader),
+    handlebars(),
+    copy({
+      targets: [
+        { src: './public/platform-icons.json', dest: './src', rename: 'reserved-codepoints.json' }
+      ],
+    }),
+  ],
   css: {
     postcss: {
       plugins: [autoprefixer],
