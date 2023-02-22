@@ -2,17 +2,25 @@
 
 ---
 # 1.7.0
-    - Updates font generation to match sister repo - Platform Icons
-    - adds codepoint mapping
+    - add support for codepoints so codepoint values are never overwritten
+    - add support for handlebars
+    - add handlebars HTML template
     - new icons:
-      - Platform UI logo
-      - ear
-      - bandaid
-      - square
-      - square checkbox
-      - square checkbox - checked
-    - re-named icons:
-      -   
+        - bandaid
+        - check-square-solid
+        - check-square
+        - ear
+        - medicare-card
+        - platform-ui (logo)
+        - podbean
+    - renamed icons:
+        - attachment -> file-attachment
+        - copy       -> file-copy
+        - image      -> file-image
+        - badge-alt  -> id-badge-alt
+        - badge      -> id-badge
+        - doctor     -> user-doctor
+ 
 # 1.6.5 
     - publish to npm and myGet to avoid conflict
 # 1.6.4
