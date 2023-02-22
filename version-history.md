@@ -1,6 +1,20 @@
 # Version History
 
 ---
+# 1.7.0
+    - Updates font generation to match sister repo - Platform Icons
+    - adds codepoint mapping
+    - new icons:
+      - Platform UI logo
+      - ear
+      - bandaid
+      - square
+      - square checkbox
+      - square checkbox - checked
+    - re-named icons:
+      -   
+# 1.6.5 
+    - publish to npm and myGet to avoid conflict
 # 1.6.4
     - Remove pointer-events: none; from disabled buttons
 # 1.6.3

@@ -1,62 +1,50 @@
 @font-face {
-    font-family: "{{ fontName }}";
-    src: {{{ src }}};
+    font-family: "{{ name }}";
+    src: {{{ fontSrc }}};
+}
+
+{{# if selector }}
+{{ selector }}:before {
+{{ else }}
+{{ tag }}[class^="{{prefix}}-"]:before, {{ tag }}[class*=" {{prefix}}-"]:before {
+{{/ if }}
+    font-family: {{ name }} !important;
     font-style: normal;
-    font-weight: normal;
-}
-
-{{# if baseSelector }}
-{{ baseSelector }} {
-{{ else }}
-{{ baseTag }}[class^="{{classPrefix}}"], {{ baseTag }}[class*=" {{classPrefix}}"] {
-{{/ if }}
-  font-family: {{ fontName }};
-  font-style: normal;
-  font-weight: normal;
-  text-decoration: inherit;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-{{# if baseSelector }}
-{{ baseSelector }}:before {
-{{ else }}
-{{ baseTag }}[class^="{{classPrefix}}"]:before, {{ baseTag }}[class*=" {{classPrefix}}"]:before {
-{{/ if }}
-  display: inline-flex;
-  height: 100%;
-  justify-content: center;
-  speak: none;
-  text-decoration: inherit;
-}
-
-{{! Icon sizing }}
-.{{ classPrefix }}xs {
-  font-size: .5rem;
-}
-.{{ classPrefix }}sm {
-  font-size: .75rem;
-}
-.{{ classPrefix }}lg {
-  font-size: 1.5rem;
-}
-.{{ classPrefix }}xl {
-  font-size: 2rem;
-}
-.{{ classPrefix }}xxl {
-  font-size: 3rem;
-}
-
-.{{ classPrefix }}heavy {
-  font-weight: 900 !important;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    speak: none;
+    width: 1.55em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 {{# each codepoints }}
-{{# if ../baseSelector }}
-{{ ../baseSelector }}.{{ ../classPrefix }}{{ @key }}:before {
+{{# if ../selector }}
+{{ ../selector }}.{{ ../prefix }}-{{ @key }}:before {
 {{ else }}
-{{ baseTag }}.{{ ../classPrefix }}{{ @key }}:before {
+{{ tag }}.{{ ../prefix }}-{{ @key }}:before {
 {{/ if }}
-  content: "\\{{ this }}";
+    content: "\\{{ codepoint this }}";
 }
 {{/ each }}
+
+.{{ prefix }}-xs {
+  font-size: .5rem;
+}
+.{{ prefix }}-sm {
+  font-size: .75rem;
+}
+.{{ prefix }}-lg {
+  font-size: 1.5rem;
+}
+.{{ prefix }}-xl {
+  font-size: 2rem;
+}
+.{{ prefix }}-xxl {
+  font-size: 3rem;
+}
+.{{ prefix }}-heavy {
+  font-weight: 900 !important;
+}
