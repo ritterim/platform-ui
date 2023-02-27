@@ -1,7 +1,8 @@
-// const codepoint = require('./src/reserved-codepoints.json');
+const codepoints = require('./src/platform-icons.json');
+
 module.exports = {
-  inputDir: './src/icons/optimized', // (required)
-  outputDir: './public', // (required)
+  inputDir: './src/icons/optimized',
+  outputDir: './public',
   fontTypes: ['ttf', 'woff', 'woff2'],
   assetTypes: ['html', 'json', 'css', 'scss'],
   prefix: 'pi',
@@ -9,9 +10,18 @@ module.exports = {
   name: 'platform-icons',
   fontHeight: 300,
   normalize: true,
+  formatOptions: {
+    json: {
+      indent: 2
+    }
+  },
+  codepoints,
   templates: {
     css: './src/templates/css.hbs',
     html: './src/templates/html.hbs'
   },
-  // codepoints: codepoint
+  pathOptions: {
+    json: './src/platform-icons.json',
+    html: './index.html'
+  }
 };
