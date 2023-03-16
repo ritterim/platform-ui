@@ -1,6 +1,9 @@
 # Version History
 
 ---
+# 1.7.2
+    - specified color for transition property
+
 # 1.7.0
     - add support for codepoints so codepoint values are never overwritten
     - add support for handlebars
