@@ -8,14 +8,13 @@
 {{ else }}
 {{ tag }}[class^="{{prefix}}-"]:before, {{ tag }}[class*=" {{prefix}}-"]:before {
 {{/ if }}
+    display: inline-block;
     font-family: {{ name }} !important;
     font-style: normal;
     font-weight: normal !important;
     font-variant: normal;
     text-transform: none;
     line-height: 1;
-    speak: none;
-    width: 1.55em;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }

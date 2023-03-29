@@ -4,7 +4,7 @@ module.exports = {
   inputDir: './src/icons/optimized',
   outputDir: './public',
   fontTypes: ['ttf', 'woff', 'woff2'],
-  assetTypes: ['html', 'json', 'css', 'scss'],
+  assetTypes: ['html', 'json', 'css'],
   prefix: 'pi',
   tag: 'i',
   name: 'platform-icons',
