@@ -23,7 +23,10 @@
     padding: 1rem;
     position: absolute;
     text-align: center;
-    transition: .3s;
+    transition-property: opacity,
+                         visibility;
+    transition-timing-function: ease;
+    transition-duration: var(--transitions);
     visibility: hidden;
     width: 100%;
   }

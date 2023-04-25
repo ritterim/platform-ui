@@ -34,7 +34,10 @@
 
   &__inner {
     overflow: hidden;
-    transition: max-width config.$transitions, transform config.$transitions;
+    transition-property: max-width,
+                         transform;
+    transition-timing-function: ease;
+    transition-duration: var(--transitions);
 
     .note-open & {
       cursor: default;
@@ -49,7 +52,13 @@
     color: map.get(variables.$greyscale, "light");
     cursor: pointer;
     font-size: 100%;
-    transition: all ease config.$transitions;
+    transition-property: color,
+                         outline,
+                         opacity,
+                         transform,
+                         visibility;
+    transition-timing-function: ease;
+    transition-duration: var(--transitions);
     position: absolute;
     bottom: 0.5rem;
     left: 50%;

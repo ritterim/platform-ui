@@ -73,11 +73,14 @@ $all-colors: () !default;
   }
 
   .dropdown__content-item {
-    transition: config.$transitions;
+    transition: text-shadow ease var(--transitions);
   }
 
   .site-menu__item {
-    transition: border config.$transitions, text-shadow config.$transitions;
+    transition-property: border, 
+                         text-shadow;
+    transition-timing-function: ease;
+    transition-duration: var(--transitions);
   }
 
   &:not([class*="background--"]) {
@@ -112,7 +115,7 @@ $all-colors: () !default;
         opacity: 0;
         position: absolute;
         right: 1rem;
-        transition: config.$transitions;
+        transition: opacity ease var(--transitions);
       }
 
       @each $unit, $rem in variables.$spacers {
@@ -351,7 +354,7 @@ $all-colors: () !default;
     width: 100%;
     overflow: hidden;
     position: absolute;
-    transition: all 0.2s ease-in-out;
+    transition: max-height var(--transitions) ease-in-out;
     top: 100%;
     z-index: 5;
   }
@@ -391,7 +394,10 @@ $all-colors: () !default;
       position: absolute;
       right: 0;
       top: 100%;
-      transition: all config.$transitions ease-in-out;
+      transition-property: max-height,
+                           visibility;
+      transition-timing-function: ease-in-out;
+      transition-duration: var(--transitions);
       overflow: hidden;
       visibility: hidden;
       z-index: 2;

@@ -28,7 +28,7 @@
 }
 
 .animated.fastest {
-  animation-duration: config.$transitions;
+  animation-duration: var(--transitions);
 }
 
 // Screen reader only
@@ -181,7 +181,7 @@ $corners: (
 
 // Scale Hover
 .hover-scale {
-  transition: config.$transitions;
+  transition: transform var(--transitions);
 
   &:hover {
     transform: scale(1.05);
@@ -190,7 +190,7 @@ $corners: (
 
 // Shadow Hover
 .hover-shadow {
-  transition: config.$transitions;
+  transition: box-shadow var(--transitions);
 
   &:hover {
     box-shadow: 0 0 6px 3px map.get(variables.$greyscale, "lighter");
@@ -199,7 +199,7 @@ $corners: (
 
 // Transition
 .transition {
-  transition: config.$transitions;
+  transition: var(--transitions);
 }
 
 .scrollbar {

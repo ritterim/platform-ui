@@ -74,7 +74,9 @@
     );
     height: 1.5rem;
     padding: 0 0.5rem;
-    transition: config.$transitions;
+    transition-property: color;
+    transition-timing-function: ease;
+    transition-duration: var(--transitions);
     width: 2rem;
     @extend %flex-center;
 
