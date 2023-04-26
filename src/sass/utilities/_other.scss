@@ -109,20 +109,17 @@ $cursors: (pointer, default, not-allowed, help);
 
     &-#{$pos} {
       #{$pos}: 50% !important;
-      @if $pos == top or $pos == bottom {
-        @if $pos == top {
-          transform: translateY(-50%);
-        }
-        @if $pos == bottom {
-          transform: translateY(50%);
-        }
-      } @else {
-        @if $pos == left {
-          transform: translateX(-50%);
-        }
-        @if $pos == right {
-          transform: translateX(50%);
-        }
+      @if $pos == top {
+        transform: translateY(-50%);
+      }
+      @if $pos == bottom {
+        transform: translateY(50%);
+      }
+      @if $pos == left {
+        transform: translateX(-50%);
+      }
+      @if $pos == right {
+        transform: translateX(50%);
       }
     }
   }
