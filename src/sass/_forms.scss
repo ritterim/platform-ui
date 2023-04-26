@@ -53,7 +53,7 @@ legend {
 
       &:nth-of-type(2) {
         transform: translate(-50%, -50%) scale(0);
-        transition: transform config.$duration ease;
+        transition: transform var(--transitions) ease;
       }
     }
   }
@@ -377,7 +377,7 @@ legend {
         border-radius: 0;
         color: map.get(variables.$greyscale, "base");
         padding: map.get(variables.$spacers, 1);
-        transition: 0.2s ease-in;
+        transition: var(--transitions) ease-in;
 
         &:focus ~ label,
         &:valid ~ label {
@@ -468,7 +468,7 @@ legend {
         left: 0.25rem;
         line-height: 1;
         top: 50%;
-        transition: 0.2s ease-in;
+        transition: var(--transitions) ease-in;
         transform: translateY(-50%);
       }
 
@@ -554,9 +554,9 @@ legend {
       outline: none;
       border-bottom-color: map.get(config.$site-colors, "focus");
       box-shadow: 0 0 2px 0 map.get(config.$site-colors, "focus");
-      transition: box-shadow config.$duration,
-        border-color config.$duration ease-in-out,
-        border-width config.$duration ease;
+      transition: box-shadow var(--transitions),
+        border-color var(--transitions) ease-in-out,
+        border-width var(--transitions) ease;
     }
   }
 
@@ -572,7 +572,7 @@ legend {
   input[type="month"],
   input[type="week"] {
     &.readonly {
-      transition: config.$transitions;
+      transition: var(--transitions);
 
       &[readonly] {
         border-bottom-color: transparent;
@@ -587,7 +587,7 @@ legend {
     width: 100%;
 
     &.readonly {
-      transition: config.$transitions;
+      transition: var(--transitions);
 
       &[readonly] {
         border-color: transparent;
@@ -845,7 +845,7 @@ fieldset:disabled {
       left: -20%;
       top: 50%;
       transform: translateY(-50%);
-      transition: 0.2s ease-in-out;
+      transition: var(--transitions) ease-in-out;
       position: absolute;
       z-index: 1;
     }
@@ -870,14 +870,14 @@ fieldset:disabled {
 [role="radio"],
 [role="checkbox"] {
   position: relative;
-  transition: config.$transitions;
+  transition: var(--transitions);
   width: 100%;
 
   i {
     left: 0.5rem;
     position: absolute;
     transform: scale(0);
-    transition: transform config.$duration ease;
+    transition: transform var(--transitions) ease;
   }
 
   &[aria-checked="true"] {
@@ -898,7 +898,7 @@ input[type="radio"].pill-filter {
     justify-content: center;
     margin: 0.25rem;
     padding: map.get(variables.$spacers, 2) 1.5rem;
-    transition: config.$transitions;
+    transition: var(--transitions);
     i {
       font-size: map.get(variables.$font-scale, "xs");
     }
@@ -913,8 +913,8 @@ input[type="radio"].pill-filter {
       opacity: 0;
       top: 50%;
       transform: translateY(-50%);
-      transition: visibility config.$duration ease,
-        opacity config.$duration ease;
+      transition: visibility var(--transitions) ease,
+        opacity var(--transitions) ease;
       visibility: hidden;
     }
   }
@@ -947,7 +947,7 @@ input[type="radio"].pill-filter {
       height: 0.5rem;
       margin: 0;
       outline: none;
-      transition: config.$transitions;
+      transition: var(--transitions);
 
       &:hover {
         opacity: 0.7;

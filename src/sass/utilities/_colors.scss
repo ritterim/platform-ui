@@ -25,7 +25,7 @@ $site-colors: () !default;
         }
       }
       &-hover--#{$name} {
-        transition: background-color config.$transitions;
+        transition: background-color var(--transitions);
 
         &.text-underline--hover {
           &:after {
@@ -53,7 +53,7 @@ $site-colors: () !default;
       }
 
       &-hover--#{$name} {
-        transition: background-color config.$transitions;
+        transition: background-color var(--transitions);
 
         &:hover {
           background-color: $color !important;
@@ -77,7 +77,6 @@ $site-colors: () !default;
     .text--#{$name} {
       border-color: $color !important;
       color: $color !important;
-      transition: 0.2s;
     }
     // background color
     .background--#{$name} {
