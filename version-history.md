@@ -1,6 +1,9 @@
 # Version History
 
 ---
+# 1.7.4
+    - pin-center-bottom, -right fixed
+
 # 1.7.2
     - specified color for transition property
 
