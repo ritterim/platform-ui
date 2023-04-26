@@ -25,8 +25,7 @@
     text-align: center;
     transition-property: opacity,
                          visibility;
-    transition-timing-function: ease;
-    transition-duration: var(--transitions);
+    transition: var(--transitions);
     visibility: hidden;
     width: 100%;
   }

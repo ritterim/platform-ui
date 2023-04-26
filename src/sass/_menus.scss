@@ -79,8 +79,7 @@ $all-colors: () !default;
   .site-menu__item {
     transition-property: border, 
                          text-shadow;
-    transition-timing-function: ease;
-    transition-duration: var(--transitions);
+    transition: var(--transitions);
   }
 
   &:not([class*="background--"]) {

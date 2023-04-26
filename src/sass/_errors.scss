@@ -7,9 +7,7 @@
     color: map.get(variables.$error-colors, #{$error}) !important;
 
     &--hover {
-      transition-property: color;
-      transition-timing-function: ease;
-      transition-duration: var(--transitions);
+      transition: color var(--transitions);
       &:hover {
         color: map.get(variables.$error-colors, #{$error}) !important;
       }

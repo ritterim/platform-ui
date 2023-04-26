@@ -92,9 +92,8 @@ ol {
           text-shadow: 0 0 0.5rem map.get(variables.$greyscale, "black");
           transform: translate(-50%, -50%);
           transition-property: transform,
-                               text-shadow;
-          transition-timing-function: ease;                               
-          transition-duration: var(--transitions);
+                               text-shadow;                             
+          transition: var(--transitions);
           z-index: 2;
         }
         
