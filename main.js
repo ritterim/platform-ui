@@ -1,6 +1,9 @@
 // Platform UI Styles
 import 'normalize.css';
 import './src/sass/main.scss';
+// Vite needs to process this file directly to
+// base64 encode the src for font-family
+import './public/platform-icons.css';
 
 // Polyfill
 import './src/js/polyfill/main';
