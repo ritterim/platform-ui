@@ -1,6 +1,6 @@
 @use "config";
-@use "mixins";
-@use "variables";
+@use "mixins" as mixin;
+@use "variables" as var;
 @use "sass:map";
 
 .modal {
@@ -13,7 +13,7 @@
   }
 
   $self: &;
-  background: rgba(map.get(variables.$greyscale, "black"), 0.5);
+  background: var(--black-a50);
   position: fixed;
   z-index: 500;
   overflow-x: hidden;
@@ -26,7 +26,7 @@
   opacity: 0;
 
   @media (prefers-reduced-motion: no-preference) {
-    transition: config.$transitions ease-in-out;
+    transition: var(--transitions) ease-in-out;
   }
 
   &.active {
@@ -58,10 +58,10 @@
 
   &--small {
     > #{$self}__inner {
-      @include mixins.breakpoint(tablet, min) {
+      @include mixin.breakpoint(tablet, min) {
         width: 40vw;
       }
-      @include mixins.breakpoint(desktop, min) {
+      @include mixin.breakpoint(desktop, min) {
         width: 20vw;
       }
     }
@@ -69,7 +69,7 @@
 
   &--large {
     > #{$self}__inner {
-      @include mixins.breakpoint(tablet, min) {
+      @include mixin.breakpoint(tablet, min) {
         width: 80vw;
       }
     }
@@ -84,31 +84,31 @@
   }
 
   &__inner {
-    background: map.get(variables.$greyscale, "white");
-    margin: map.get(variables.$spacers, 4) auto;
+    background: var(--white);
+    margin: map.get(var.$spacers, 4) auto;
     transform: translate(0, 100%);
 
     @media (prefers-reduced-motion: no-preference) {
-      transition: config.$transitions ease-in-out;
+      transition: var(--transitions) ease-in-out;
     }
 
-    @include mixins.breakpoint(tablet, max) {
+    @include mixin.breakpoint(tablet, max) {
       height: auto;
       margin: auto;
       width: 100%;
     }
 
-    @include mixins.breakpoint(tablet, min) {
+    @include mixin.breakpoint(tablet, min) {
       width: 65vw;
     }
-    @include mixins.breakpoint(desktop, min) {
+    @include mixin.breakpoint(desktop, min) {
       width: 45vw;
     }
   }
 
   &__header {
-    background-color: map.get(config.$brand-colors, "lightblue");
-    color: map.get(variables.$greyscale, "base");
+    background-color: var(--lightblue);
+    color: var(--base);
     height: $header-height;
     padding: 2rem;
     position: relative;

@@ -15,8 +15,9 @@
     "/index.html"
   ],
   "scripts": {
-    "start": "npm-run-all build:svgs build:font start:vite",
-    "build": "npm-run-all build:*",
+    "tokens": "a11y-color-tokens --tokenPrefix='color-' --outputDirPath='src/sass/variables' --colorTokensPath='src/js/colors.js' --no-compatibilityDocs",
+    "start": "npm-run-all tokens build:svgs build:font start:vite",
+    "build": "npm-run-all tokens build:*",
     "build:svgs": "svgo -f ./src/icons/svg/ -o ./src/icons/optimized",
     "build:font": "fantasticon",
     "start:vite": "vite",
@@ -49,6 +50,7 @@
   "devDependencies": {
     "@babel/core": "^7.8.4",
     "@babel/preset-env": "^7.8.4",
+    "a11y-color-tokens": "^0.6.0",
     "autoprefixer": "^9.8.8",
     "fantasticon": "^1.2.3",
     "normalize.css": "^8.0.1",

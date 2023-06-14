@@ -1,4 +1,4 @@
-@use "../variables";
+@use "../variables" as var;
 @use "../utilities/colors";
 
 .no-border {
@@ -30,7 +30,7 @@
   }
 
   // Specific Border sides
-  @each $direction, $d in variables.$xy-border {
+  @each $direction, $d in var.$xy-border {
     // Direction
     &-#{$d} {
       border-#{$direction}: 1px solid !important;
@@ -62,7 +62,7 @@
 }
 
 // Specific side colors
-@each $direction, $d in variables.$xy-border {
+@each $direction, $d in var.$xy-border {
   @each $name, $color in colors.$all-colors {
     .border-#{$d}--color-#{$name} {
       border-#{$direction}-color: $color !important;

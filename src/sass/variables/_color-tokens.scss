@@ -1,0 +1,46 @@
+/* 🛑 STOP!
+  Do not change this file directly.
+  Modify colors in src/js/colors.js
+ */
+
+$color-primary: #003f70 !default;
+$color-on-primary: #7DADD2 !default;
+$color-secondary: #91b9dc !default;
+$color-button-primary: #3f7bad !default;
+$color-button-secondary: #e58967 !default;
+$color-message-success: green !default;
+$color-message-error: tomato !default;
+$color-message-warning: #866657 !default;
+$color-message-info: #3f7bad !default;
+$color-text: #333333 !default;
+$color-link: dodgerblue !default;
+
+$base-color-tokens: ("primary", "secondary", "button-primary", "button-secondary", "message-success", "message-error", "message-warning", "message-info", "text", "link");
+
+$color-tokens: (
+  "color-primary": $color-primary,
+  "color-on-primary": $color-on-primary,
+  "color-secondary": $color-secondary,
+  "color-button-primary": $color-button-primary,
+  "color-button-secondary": $color-button-secondary,
+  "color-message-success": $color-message-success,
+  "color-message-error": $color-message-error,
+  "color-message-warning": $color-message-warning,
+  "color-message-info": $color-message-info,
+  "color-text": $color-text,
+  "color-link": $color-link
+) !default;
+
+@mixin color-tokens() {
+  --color-primary: #{$color-primary};
+  --color-on-primary: #{$color-on-primary};
+  --color-secondary: #{$color-secondary};
+  --color-button-primary: #{$color-button-primary};
+  --color-button-secondary: #{$color-button-secondary};
+  --color-message-success: #{$color-message-success};
+  --color-message-error: #{$color-message-error};
+  --color-message-warning: #{$color-message-warning};
+  --color-message-info: #{$color-message-info};
+  --color-text: #{$color-text};
+  --color-link: #{$color-link};
+}

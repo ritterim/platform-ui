@@ -1,9 +1,9 @@
 @use "config";
-@use "variables";
+@use "variables" as var;
 @use "sass:map";
 
 .note {
-  $orange: map.get(config.$brand-colors, "salmon");
+  $orange: var(--salmon);
   $self: &;
   position: relative;
 
@@ -34,7 +34,7 @@
 
   &__inner {
     overflow: hidden;
-    transition: max-width config.$transitions, transform config.$transitions;
+    transition: max-width var(--transitions), transform var(--transitions);
 
     .note-open & {
       cursor: default;
@@ -46,10 +46,10 @@
   &__toggle {
     background-color: transparent;
     border: none;
-    color: map.get(variables.$greyscale, "light");
+    color: var(--light);
     cursor: pointer;
     font-size: 100%;
-    transition: all ease config.$transitions;
+    transition: all ease var(--transitions);
     position: absolute;
     bottom: 0.5rem;
     left: 50%;

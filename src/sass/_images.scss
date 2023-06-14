@@ -1,6 +1,6 @@
 @use "config";
 @use "mixins";
-@use "variables";
+@use "variables" as var;
 @use "sass:map";
 
 .image {
@@ -8,7 +8,7 @@
     @each $size, $radius in config.$image-size {
       &-#{$size} {
         @extend %flex-center;
-        border-radius: map.get(variables.$radius, "round");
+        border-radius: map.get(var.$radius, "round");
         display: inline-flex;
         max-width: $radius;
         max-height: $radius;

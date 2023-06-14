@@ -1,5 +1,6 @@
 @use "../config";
-@use "../variables";
+@use "../mixins/" as mixin;
+@use "../variables" as var;
 @use "sass:map";
 @use "sass:meta";
 
@@ -8,10 +9,26 @@ $all-colors: () !default;
 $site-colors: () !default;
 
 @if meta.type-of(config.$config-colors) == "map" {
-  $all-colors: map.merge(config.$config-colors, variables.$greyscale);
+  $all-colors: map.merge(config.$config-colors, var.$greyscale);
 } @else {
-  $all-colors: map.merge(variables.$greyscale, $all-colors);
+  $all-colors: map.merge(var.$greyscale, $all-colors);
   @warn "$config-colors is not set or empty";
+}
+
+// Theme colors
+@each $name, $color in var.$color-tokens {
+  // Remove "color-" from color-token var
+  $_name: mixin.str-replace($name, 'color-', '');
+  
+  @if (str-index($name, '-on-') == null) {
+    .background-#{$_name} {
+      background-color: var(--#{$name});
+    }
+  }
+
+  .text-#{$_name} {
+    color: var(--#{$name});
+  }
 }
 
 @if meta.type-of($all-colors) == "map" {
@@ -19,22 +36,22 @@ $site-colors: () !default;
     // text color
     .text {
       &--#{$name} {
-        color: $color !important;
+        color: var(--#{$name}) !important;
         &.pill {
-          border-color: $color !important;
+          border-color: var(--#{$name}) !important;
         }
       }
       &-hover--#{$name} {
-        transition: background-color config.$transitions;
+        transition: background-color var(--transitions);
 
         &.text-underline--hover {
           &:after {
-            background-color: $color !important;
+            background-color: var(--#{$name}) !important;
           }
         }
 
         &:hover {
-          color: $color !important;
+          color: var(--#{$name}) !important;
         }
       }
     }
@@ -42,21 +59,21 @@ $site-colors: () !default;
     // background color
     .background {
       &--#{$name} {
-        background-color: $color !important;
+        background-color:  var(--#{$name})!important;
         &.button {
           &.loading {
             &:before {
-              background-color: $color !important;
+              background-color: var(--#{$name}) !important;
             }
           }
         }
       }
 
       &-hover--#{$name} {
-        transition: background-color config.$transitions;
+        transition: background-color var(--transitions);
 
         &:hover {
-          background-color: $color !important;
+          background-color: var(--#{$name}) !important;
         }
       }
     }
@@ -64,29 +81,29 @@ $site-colors: () !default;
     // Add alpha transparency
     @for $i from 1 through 9 {
       .background--#{$name}-a#{$i}0 {
-        background-color: rgba($color, $i * 0.1) !important;
+        background-color: var(--#{$name}-a#{$i}0) !important;
       }
     }
   }
 }
 
 // error Colors
-@if meta.type-of(variables.$error-colors) == "map" {
-  @each $name, $color in variables.$error-colors {
+@if meta.type-of(var.$error-colors) == "map" {
+  @each $name, $color in var.$error-colors {
     // text color
     .text--#{$name} {
-      border-color: $color !important;
-      color: $color !important;
+      border-color: var(--#{$name}) !important;
+      color: var(--#{$name}) !important;
       transition: 0.2s;
     }
     // background color
     .background--#{$name} {
-      background-color: $color !important;
+      background-color: var(--#{$name}) !important;
     }
     // Add alpha transparency
     @for $i from 1 through 9 {
       .background--#{$name}-a#{$i}0 {
-        background-color: rgba($color, $i * 0.1) !important;
+        background-color: var(--#{$name}-a#{$i}0) !important;
       }
     }
   }

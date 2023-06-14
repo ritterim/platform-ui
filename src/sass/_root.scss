@@ -1,5 +1,5 @@
 @use "config";
-@use "variables";
+@use "variables" as var;
 @use "sass:map";
 @use "sass:meta";
 
@@ -7,13 +7,15 @@ $all-colors: () !default;
 $site-colors: () !default;
 
 @if meta.type-of(config.$config-colors) == "map" {
-  $all-colors: map.merge(config.$config-colors, variables.$greyscale);
+  $all-colors: map.merge(config.$config-colors, var.$greyscale);
 } @else {
-  $all-colors: map.merge(variables.$greyscale, $all-colors);
+  $all-colors: map.merge(var.$greyscale, $all-colors);
   @warn "$config-colors is not set or empty";
 }
 
 :root {
+  @include var.color-tokens();
+
   @if meta.type-of($all-colors) == "map" {
     @each $name, $color in $all-colors {
       --#{$name}: #{$color};
@@ -38,7 +40,7 @@ $site-colors: () !default;
       }
     }
   }
-  @each $type, $size in config.$radius {
+  @each $type, $size in var.$radius {
     --#{$type}: #{$size};
   }
   --menu-height: #{config.$menu-height};

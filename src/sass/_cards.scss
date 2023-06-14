@@ -1,6 +1,6 @@
 @use "config";
-@use "mixins";
-@use "variables";
+@use "mixins" as mixin;
+@use "variables" as var;
 @use "sass:color";
 @use "sass:math";
 @use "sass:map";
@@ -9,10 +9,10 @@
 .card {
   $self: &;
 
-  background-color: map.get(variables.$greyscale, "white");
+  background-color: var(--white);
   border: 1px solid
     color.adjust(
-      map.get(variables.$greyscale, "light"),
+      map.get(var.$greyscale, "light"),
       $lightness: math.percentage(config.$hue-threshold * 2)
     );
   padding: config.$card-padding;
@@ -30,7 +30,7 @@
     margin-bottom: config.$card-padding;
     border-bottom: 1px solid
       color.adjust(
-        map.get(variables.$greyscale, "light"),
+        map.get(var.$greyscale, "light"),
         $lightness: math.percentage(config.$hue-threshold * 2)
       );
   }
@@ -40,16 +40,16 @@
   }
 
   &__header {
-    color: map.get(variables.$greyscale, "base");
+    color: var(--base);
     display: flex;
     justify-content: space-between;
-    margin-bottom: variables.$spacer;
+    margin-bottom: var.$spacer;
     position: relative;
 
     .icon {
       max-height: 2rem;
 
-      @include mixins.breakpoint(tablet, max) {
+      @include mixin.breakpoint(tablet, max) {
         display: none;
       }
     }
@@ -62,24 +62,24 @@
   &__header-actions {
     display: flex;
     position: absolute;
-    top: -#{map.get(variables.$spacers, 2)};
-    right: -#{map.get(variables.$spacers, 3)};
+    top: -#{map.get(var.$spacers, 2)};
+    right: -#{map.get(var.$spacers, 3)};
   }
 
   &-action {
-    border-right: 1px solid map.get(variables.$greyscale, "light");
+    border-right: 1px solid var(--light);
     color: color.adjust(
-      map.get(variables.$greyscale, "light"),
+      map.get(var.$greyscale, "light"),
       $lightness: math.percentage(config.$hue-threshold)
     );
     height: 1.5rem;
     padding: 0 0.5rem;
-    transition: config.$transitions;
+    transition: var(--transitions);
     width: 2rem;
     @extend %flex-center;
 
     &:hover {
-      color: map.get(variables.$greyscale, "light");
+      color: var(--light);
     }
 
     &:last-of-type {
@@ -91,12 +91,12 @@
     display: flex;
 
     > * {
-      margin-right: variables.$spacer;
+      margin-right: var.$spacer;
     }
   }
 
   &__title {
-    color: map.get(variables.$greyscale, "base");
+    color: var(--base);
     font-size: 100%;
     margin-bottom: 0;
     text-transform: uppercase;

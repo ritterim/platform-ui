@@ -1,52 +1,49 @@
 @use "config";
-@use "mixins";
-@use "variables";
+@use "mixins" as mixin;
+@use "variables" as var;
 @use "sass:color";
 @use "sass:map";
 @use "sass:math";
 
 .table {
-  $table-border: 1px solid
-    color.adjust(
-      map.get(variables.$greyscale, "light"),
-      $lightness: math.percentage(config.$hue-threshold * 2)
-    );
-  $responsive-table-bottom-gap: map.get(variables.$spacers, 2);
-  $responsive-table-label-bg: map.get(variables.$greyscale, "lighter");
+  --table-color-light: #{color.adjust(
+    map.get(var.$greyscale, "light"),
+    $lightness: math.percentage(config.$hue-threshold * 2)
+  )};
+
+  $table-border: 1px solid var(--table-color-light);
+  $responsive-table-bottom-gap: map.get(var.$spacers, 2);
+  $responsive-table-label-bg: var(--lighter);
   width: 100%;
   background-color: transparent;
   border-collapse: separate;
   border-spacing: 0;
-  @include mixins.breakpoint(tablet, max) {
+  @include mixin.breakpoint(tablet, max) {
     border: none;
   }
 
   thead {
-    background-color: map.get(variables.$greyscale, "lighter");
-    border-bottom: 1px solid map.get(variables.$greyscale, "light");
-    color: map.get(variables.$greyscale, "base");
+    background-color: var(--lighter);
+    border-bottom: 1px solid var(--light);
+    color: var(--base);
     font-weight: bold;
     text-align: left;
-    @include mixins.breakpoint(tablet, max) {
+    @include mixin.breakpoint(tablet, max) {
       border: none;
     }
 
     th {
-      border: solid
-        color.adjust(
-          map.get(variables.$greyscale, "light"),
-          $lightness: math.percentage(config.$hue-threshold * 2)
-        );
+      border: solid var(--table-color-light);
       border-width: 1px 0;
     }
   }
 
   tr {
     background-color: transparent;
-    transition: config.$transitions * 3;
-    @include mixins.breakpoint(tablet, min) {
+    transition: calc(var(--transitions) * 3);
+    @include mixin.breakpoint(tablet, min) {
       &:hover {
-        background-color: map.get(variables.$greyscale, "lighter");
+        background-color: var(--lighter);
       }
     }
 
@@ -56,11 +53,7 @@
     }
 
     td {
-      border-bottom: 1px solid
-        color.adjust(
-          map.get(variables.$greyscale, "light"),
-          $lightness: math.percentage(config.$hue-threshold * 2)
-        );
+      border-bottom: 1px solid var(--table-color-light);
     }
 
     &:last-child {
@@ -69,7 +62,7 @@
       }
     }
   }
-  @include mixins.breakpoint(tablet, max) {
+  @include mixin.breakpoint(tablet, max) {
     &:not(.unresponsive) {
       thead tr {
         position: absolute;
@@ -93,18 +86,14 @@
             font-weight: bold;
             line-height: 1.5;
             min-width: 40%;
-            padding-right: map.get(variables.$spacers, 2);
+            padding-right: map.get(var.$spacers, 2);
             text-align: left;
           }
         }
       }
 
       tr + tr {
-        border-top: 1px solid
-          color.adjust(
-            map.get(variables.$greyscale, "light"),
-            $lightness: math.percentage(config.$hue-threshold * 2)
-          );
+        border-top: 1px solid var(--table-color-light);
         margin-top: $responsive-table-bottom-gap;
         padding-top: $responsive-table-bottom-gap;
       }
@@ -113,7 +102,7 @@
   }
   &--no-hover {
     tr {
-      @include mixins.breakpoint(tablet, min) {
+      @include mixin.breakpoint(tablet, min) {
         &:hover {
           background-color: initial;
         }

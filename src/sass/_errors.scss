@@ -1,22 +1,22 @@
 @use "config";
-@use "variables";
+@use "variables" as var;
 @use "sass:map";
 
 @each $error in (positive, negative, neutral) {
   .text-#{$error} {
-    color: map.get(variables.$error-colors, #{$error}) !important;
+    color: map.get(var.$error-colors, #{$error}) !important;
 
     &--hover {
-      transition: config.$transitions;
+      transition: var(--transitions);
       &:hover {
-        color: map.get(variables.$error-colors, #{$error}) !important;
+        color: map.get(var.$error-colors, #{$error}) !important;
       }
     }
   }
   // for pills
   .pill {
     &.#{$error} {
-      background: map.get(variables.$error-colors, #{$error}) !important;
+      background: map.get(var.$error-colors, #{$error}) !important;
       border: none;
       color: white !important;
     }
