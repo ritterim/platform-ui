@@ -1,6 +1,10 @@
 # Version History
 
 ---
+# 1.8.0
+    - Adds `skip-link` component
+    - Updates dependency packages
+
 # 1.7.4
     - pin-center-bottom, -right fixed
 

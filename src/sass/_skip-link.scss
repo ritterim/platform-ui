@@ -1,0 +1,39 @@
+@use "./variables";
+
+.skip-link {
+  --outline-width: 1px;
+  --outline-style: solid;
+  --outline-color: currentColor;
+
+  display: grid;
+  place-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateY(-100%);
+
+  @media (prefers-reduced-motion: no-preference) {
+    transition: transform var(--transitions) ease;
+  }
+
+  &:focus-within {
+    transform: translateY(0);
+  }
+
+  a {
+    padding: variables.$spacer;
+    text-decoration: underline;
+
+    &:focus,
+    &:focus-visible {
+      outline: var(--outline-width);
+      outline-style: var(--outline-style);
+      outline-color: var(--outline-color);
+    }
+  }
+
+  &--right {
+    left: unset;
+    right: 0;
+  }
+}

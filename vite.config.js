@@ -2,7 +2,6 @@
 const { defineConfig } = require('vite');
 const path = require('path');
 import banner from 'vite-plugin-banner';
-import copy from 'rollup-plugin-copy';
 import handlebars from 'vite-plugin-handlebars';
 import autoprefixer from 'autoprefixer';
 import { resolve } from 'path';
