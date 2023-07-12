@@ -1,6 +1,6 @@
 {
   "name": "@ritterim/platform-ui",
-  "version": "1.8.1",
+  "version": "2.0.0",
   "description": "A CSS framework used by Ritter Insurance Marketing (RIM) for our platform of agent tools.",
   "homepage": "https://platformui.com",
   "main": "main.js",
