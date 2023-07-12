@@ -1,10 +1,10 @@
 @use "config";
-@use "mixins" as mixin;
-@use "variables" as var;
+@use "mixins" as mixins;
+@use "variables" as variables;
 @use "sass:map";
 
 @mixin tooltip {
-  $triangle: map.get(var.$radius, "default");
+  $triangle: map.get(variables.$radius, "default");
   $background-color: var(--dark-a90);
 
   cursor: pointer;
@@ -15,11 +15,11 @@
     background-color: $background-color;
     border-radius: $triangle;
     color: var(--white);
-    font-size: map.get(var.$font-scale, "sm");
+    font-size: map.get(variables.$font-scale, "sm");
     font-weight: normal;
     line-height: 1.15rem;
     opacity: 0;
-    padding: map.get(var.$spacers, 1) map.get(var.$spacers, 2);
+    padding: map.get(variables.$sizes, 1) map.get(variables.$sizes, 2);
     position: absolute;
     text-align: center;
     text-transform: none;
@@ -29,7 +29,7 @@
     z-index: 1;
   }
 
-  @each $direction, $d in var.$xy-border {
+  @each $direction, $d in variables.$xy-border {
     &.tooltip-#{$direction} {
       // arrows
       &::before {
@@ -85,7 +85,7 @@
   }
 
   &.tooltip-mobile {
-    @include mixin.breakpoint(tablet, max) {
+    @include mixins.breakpoint(tablet, max) {
       &::before {
         display: none;
       }

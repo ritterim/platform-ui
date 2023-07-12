@@ -1,6 +1,6 @@
 @use "../config";
-@use "../variables" as var;
-@use "../mixins" as mixin;
+@use "../variables" as variables;
+@use "../mixins" as mixins;
 @use "sass:map";
 
 // Rotate
@@ -51,11 +51,11 @@
 .loader {
   animation: rotation 1s infinite linear;
   border: 2px solid map.get(config.$loader-colors, "primary");
-  border-radius: map.get(var.$radius, "round");
+  border-radius: map.get(variables.$radius, "round");
   border-top-color: map.get(config.$loader-colors, "primary-top");
   margin: 0;
-  @include mixin.square(1.4rem);
-  @include mixin.square(1.4rem, "min");
+  @include mixins.square(1.4rem);
+  @include mixins.square(1.4rem, "min");
 }
 
 .loader {
@@ -65,13 +65,13 @@
   }
 
   &--sm {
-    @include mixin.square(0.9rem);
-    @include mixin.square(0.9rem, "min");
+    @include mixins.square(0.9rem);
+    @include mixins.square(0.9rem, "min");
   }
 
   &--lg {
-    @include mixin.square(2rem);
-    @include mixin.square(2rem, "min");
+    @include mixins.square(2rem);
+    @include mixins.square(2rem, "min");
   }
 }
 
@@ -91,13 +91,13 @@ $cursors: (pointer, default, not-allowed, help);
 }
 
 // Position
-@each $key, $val in var.$positions {
+@each $key, $val in variables.$positions {
   .pos-#{$key} {
     position: #{$val} !important;
   }
 }
 
-@each $pos, $letter in var.$xy-border {
+@each $pos, $letter in variables.$xy-border {
   .pin-#{$pos} {
     #{$pos}: 0 !important;
   }
@@ -134,7 +134,7 @@ $corners: (
 );
 
 // rounded corners based on $spacers map
-@each $unit, $rem in var.$spacers {
+@each $unit, $rem in variables.$sizes {
   .rounded-#{$unit},
   .rounded--#{$unit} {
     border-radius: #{$rem} !important;
@@ -149,7 +149,7 @@ $corners: (
 
 // Height and Width
 @each $size, $letter in (height: h, width: w) {
-  @each $number, $value in var.$quarter-values {
+  @each $number, $value in variables.$quarter-values {
     .#{$letter}-#{$number} {
       #{$size}: #{$value};
     }
@@ -162,7 +162,7 @@ $corners: (
 }
 
 @each $size, $letter in (height: vh, width: vw) {
-  @each $number, $value in var.$quarter-values {
+  @each $number, $value in variables.$quarter-values {
     .#{$letter}-#{$number} {
       @if $letter == vh {
         #{$size}: #{$number}vh;
@@ -174,7 +174,7 @@ $corners: (
 }
 
 // Overflow
-@each $key, $value in var.$overflow {
+@each $key, $value in variables.$overflow {
   .overflow-#{$key} {
     overflow: #{$value} !important;
   }
@@ -188,11 +188,7 @@ $corners: (
 
 // Scale Hover
 .hover-scale {
-<<<<<<< HEAD
-  transition: var(--transitions);
-=======
   transition: transform var(--transitions);
->>>>>>> master
 
   &:hover {
     transform: scale(1.05);

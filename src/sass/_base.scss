@@ -1,5 +1,5 @@
 @use "config";
-@use "variables" as var;
+@use "variables" as variables;
 @use "sass:map";
 
 * {
@@ -32,7 +32,7 @@ body {
     color: var(--base);
     font-weight: 500;
     line-height: 1.618;
-    margin-bottom: var.$spacer;
+    margin-bottom: variables.$size;
   }
 }
 
@@ -41,15 +41,15 @@ h1 {
 }
 
 h2 {
-  font-size: 1.8rem ;
+  font-size: 1.8rem;
 }
 
 h3 {
-  font-size: 1.6rem ;
+  font-size: 1.6rem;
 }
 
 h4 {
-  font-size: 1.4rem ;
+  font-size: 1.4rem;
 }
 
 h5 {
@@ -61,11 +61,11 @@ h6 {
 }
 
 p {
-  margin: 0 0 var.$spacer 0;
+  margin: 0 0 variables.$size 0;
 }
 
 a {
-  color: map.get(config.$site-colors, 'link');
+  color: map.get(config.$site-colors, "link");
   text-decoration: none;
   transition: color ease var(--transitions);
 }
@@ -82,5 +82,5 @@ hr {
   background-color: var(--base);
   border: none;
   height: 1px;
-  margin: var.$spacer 0;
+  margin: variables.$size 0;
 }

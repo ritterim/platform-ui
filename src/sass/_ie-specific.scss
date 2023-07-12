@@ -1,6 +1,6 @@
 @use "config";
-@use "mixins" as mixin;
-@use "variables" as var;
+@use "mixins" as mixins;
+@use "variables" as variables;
 @use "sass:map";
 
 // ie specific
@@ -12,18 +12,18 @@
   .content-grid {
     display: flex;
     flex-flow: row wrap;
-    padding: map.get(var.$spacers, 5) var.$spacer;
+    padding: map.get(variables.$sizes, 5) variables.$size;
 
     &.has-side-content {
       justify-content: space-between;
     }
 
     &__heading {
-      margin-bottom: map.get(var.$spacers, 4);
+      margin-bottom: map.get(variables.$sizes, 4);
       flex-basis: 100%;
 
       .has-side-content & {
-        @include mixin.breakpoint(desktop, min) {
+        @include mixins.breakpoint(desktop, min) {
           flex: 0 82.3333%;
         }
       }
@@ -33,7 +33,7 @@
       flex-basis: 100%;
 
       .has-side-content & {
-        @include mixin.breakpoint(desktop, min) {
+        @include mixins.breakpoint(desktop, min) {
           flex-basis: 82.3333%;
           order: 1;
         }
@@ -43,7 +43,7 @@
     &__side-content {
       display: none;
 
-      @include mixin.breakpoint(desktop, min) {
+      @include mixins.breakpoint(desktop, min) {
         display: block;
         flex-basis: 15.6667%;
         order: 2;

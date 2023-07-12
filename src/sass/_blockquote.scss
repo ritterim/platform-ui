@@ -1,28 +1,29 @@
 @use "config";
 @use "mixins";
 @use "utilities";
-@use "variables" as var;
+@use "variables" as variables;
 @use "sass:color";
 @use "sass:math";
 @use "sass:map";
 @use "sass:meta";
 
 blockquote {
-  border-left: map.get(var.$spacers, 2) solid var(--light);
-  margin-bottom: map.get(var.$spacers, 3);
-  padding: map.get(var.$spacers, 3) 0 map.get(var.$spacers, 3) map.get(var.$spacers, 3) * 1.5;
+  border-left: map.get(variables.$sizes, 2) solid var(--light);
+  margin-bottom: map.get(variables.$sizes, 3);
+  padding: map.get(variables.$sizes, 3) 0 map.get(variables.$sizes, 3)
+    map.get(variables.$sizes, 3) * 1.5;
   position: relative;
 
   p {
     margin-bottom: 0;
 
     + p {
-      margin-top: map.get(var.$spacers, 3);
+      margin-top: map.get(variables.$sizes, 3);
     }
   }
 
   footer {
-    margin-top: map.get(var.$spacers, 3);
+    margin-top: map.get(variables.$sizes, 3);
   }
 
   cite {

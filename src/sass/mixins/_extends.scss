@@ -1,6 +1,6 @@
 @use "../config";
-@use "mixins" as mixin;
-@use "../variables" as var;
+@use "mixins" as mixins;
+@use "../variables" as variables;
 @use "sass:map";
 
 %flex-center {
@@ -33,23 +33,23 @@
 
 %scrollbar {
   &::-webkit-scrollbar {
-    @include mixin.square(0.5rem);
+    @include mixins.square(0.5rem);
   }
 
   &::-webkit-scrollbar-thumb {
     background-clip: padding-box;
     background-color: var(--light);
-    border-radius: map.get(var.$radius, "button");
+    border-radius: map.get(variables.$radius, "button");
   }
 
   &::-webkit-scrollbar-track {
     background-color: var(--lighter);
-    border-radius: map.get(var.$radius, "button");
+    border-radius: map.get(variables.$radius, "button");
   }
 }
 
 %basic-circle {
-  border-radius: map.get(var.$radius, "round");
-  @include mixin.square(var.$spacer * 1.5);
+  border-radius: map.get(variables.$radius, "round");
+  @include mixins.square(variables.$size * 1.5);
   @extend %flex-center;
 }

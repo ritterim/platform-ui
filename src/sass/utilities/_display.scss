@@ -1,6 +1,6 @@
 @use "../config";
-@use "../mixins" as mixin;
-@use "../variables" as var;
+@use "../mixins" as mixins;
+@use "../variables" as variables;
 @use "sass:map";
 
 // Display
@@ -21,7 +21,7 @@
   }
 }
 
-@each $display in var.$displays {
+@each $display in variables.$displays {
   .display--#{$display} {
     display: $display !important;
   }
@@ -76,7 +76,7 @@
       @if $index {
         // if there is another key above the selected key, run this
         @if $index < length(config.$breakpoints) {
-          @media (min-width: ($size)) and (max-width: map.get(config.$breakpoints, mixin.nextKey($breakpoint) )  - 1) {
+          @media (min-width: ($size)) and (max-width: map.get(config.$breakpoints, mixins.nextKey($breakpoint) )  - 1) {
             @if $d == hide {
               display: none !important;
             } @else {

@@ -1,25 +1,25 @@
 @use "config";
-@use "mixins" as mixin;
-@use "variables" as var;
+@use "mixins" as mixins;
+@use "variables" as variables;
 @use "sass:color";
 @use "sass:map";
 @use "sass:math";
 
 .pill {
-  $border-radius: map.get(var.$radius, "button");
+  $border-radius: map.get(variables.$radius, "button");
   $primary-background: var(--white);
   $primary-color: var(--base);
 
   border: 1px solid
     color.adjust(
-      map.get(var.$greyscale, "light"),
+      map.get(variables.$greyscale, "light"),
       $lightness: math.percentage(config.$hue-threshold * 2)
     );
   border-radius: $border-radius;
   color: $primary-color;
   display: inline-flex;
-  font-size: map.get(var.$font-scale, "sm");
-  padding: map.get(var.$spacers, 1) map.get(var.$spacers, 2);
+  font-size: map.get(variables.$font-scale, "sm");
+  padding: map.get(variables.$sizes, 1) map.get(variables.$sizes, 2);
   line-height: 1.5;
 
   &--split {
@@ -29,7 +29,7 @@
     padding: 0;
     .pill__label {
       background-color: rgba($primary-color, 0.3);
-      padding: map.get(var.$spacers, 1) map.get(var.$spacers, 2);
+      padding: map.get(variables.$sizes, 1) map.get(variables.$sizes, 2);
     }
   }
 
@@ -41,24 +41,24 @@
       padding: 0;
       &-dot {
         padding: 0;
-        @include mixin.square(map.get(var.$spacers, 2));
+        @include mixins.square(map.get(variables.$sizes, 2));
       }
-      @include mixin.square(var.$spacer);
+      @include mixins.square(variables.$size);
     }
 
     &-medium {
       @extend .pill--circle;
-      @include mixin.square(map.get(var.$spacers, 4));
+      @include mixins.square(map.get(variables.$sizes, 4));
     }
 
     &-large {
       @extend .pill--circle;
-      @include mixin.square(map.get(var.$spacers, 5));
+      @include mixins.square(map.get(variables.$sizes, 5));
     }
   }
 
   &__content {
-    padding: map.get(var.$spacers, 1) map.get(var.$spacers, 2);
+    padding: map.get(variables.$sizes, 1) map.get(variables.$sizes, 2);
     // if icon present - flex it
     i {
       display: flex;
