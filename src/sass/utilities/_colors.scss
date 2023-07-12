@@ -92,9 +92,8 @@ $site-colors: () !default;
   @each $name, $color in var.$error-colors {
     // text color
     .text--#{$name} {
-      border-color: var(--#{$name}) !important;
-      color: var(--#{$name}) !important;
-      transition: 0.2s;
+      border-color: $color !important;
+      color: $color !important;
     }
     // background color
     .background--#{$name} {

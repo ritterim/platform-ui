@@ -26,7 +26,10 @@
   opacity: 0;
 
   @media (prefers-reduced-motion: no-preference) {
-    transition: var(--transitions) ease-in-out;
+    transition-property: visibility,
+                         opacity;
+    transition-timing-function: ease-in-out;
+    transition-duration: var(--transitions);
   }
 
   &.active {

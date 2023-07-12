@@ -18,7 +18,10 @@
   visibility: hidden;
 
   @media (prefers-reduced-motion: no-preference) {
-    transition: var(--transitions) ease-in-out;
+    transition-duration: transform,
+                         visibility;
+    transition-timing-function: ease-in-out;
+    transition-duration: var(--transitions);
   }
 
   &__inner {

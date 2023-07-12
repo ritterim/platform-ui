@@ -7,7 +7,7 @@
     color: map.get(var.$error-colors, #{$error}) !important;
 
     &--hover {
-      transition: var(--transitions);
+      transition: color var(--transitions);
       &:hover {
         color: map.get(var.$error-colors, #{$error}) !important;
       }

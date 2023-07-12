@@ -40,8 +40,8 @@
 
   tr {
     background-color: transparent;
-    transition: calc(var(--transitions) * 3);
-    @include mixin.breakpoint(tablet, min) {
+    transition: background-color var(--transitions) ease;
+    @include mixins.breakpoint(tablet, min) {
       &:hover {
         background-color: var(--lighter);
       }

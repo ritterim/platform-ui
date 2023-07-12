@@ -1,6 +1,44 @@
 # Version History
 
 ---
+# 1.8.1
+    - Updates fantasticon config to only generate woff2 font file
+# 1.8.0
+    - Adds `skip-link` component
+    - Updates dependency packages
+
+# 1.7.4
+    - pin-center-bottom, -right fixed
+
+# 1.7.2
+    - specified color for transition property
+
+# 1.7.0
+    - add support for codepoints so codepoint values are never overwritten
+    - add support for handlebars
+    - add handlebars HTML template
+    - new icons:
+        - bandaid
+        - check-square-solid
+        - check-square
+        - ear
+        - medicare-card
+        - platform-ui (logo)
+        - podbean
+    - renamed icons:
+        - attachment -> file-attachment
+        - copy       -> file-copy
+        - image      -> file-image
+        - badge-alt  -> id-badge-alt
+        - badge      -> id-badge
+        - doctor     -> user-doctor
+ 
+# 1.6.5 
+    - publish to npm and myGet to avoid conflict
+# 1.6.4
+    - Remove pointer-events: none; from disabled buttons
+# 1.6.3
+    - Update to Vite 4
 # 1.6.2
     - Remove extra variables from :root
     
