@@ -28,15 +28,13 @@
 @use "notes";
 @use "pills";
 @use "stats";
+@use "skip-link";
 @use "tabs";
 @use "tables";
 @use "tooltip";
 
 // special and print
 @use "ie-specific";
-
-// platform-icons
-@use "icons";
 
 // last called
 @use "utilities";

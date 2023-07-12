@@ -1,6 +1,6 @@
 @use "config";
-@use "mixins" as mixin;
-@use "variables" as var;
+@use "mixins" as mixins;
+@use "variables" as variables;
 @use "utilities";
 @use "sass:color";
 @use "sass:map";
@@ -9,12 +9,12 @@
 $tab-height: 3rem;
 $tab-color: var(--base);
 $tab-border-color: color.adjust(
-  map.get(var.$greyscale, "light"),
+  map.get(variables.$greyscale, "light"),
   $lightness: math.percentage(config.$hue-threshold * 2)
 );
 
 .tabs {
-  @include mixin.breakpoint(tablet, min) {
+  @include mixins.breakpoint(tablet, min) {
     display: flex;
     flex-wrap: wrap;
   }
@@ -34,11 +34,11 @@ $tab-border-color: color.adjust(
         border-bottom-color: var(--white);
         font-weight: 600;
 
-        @include mixin.breakpoint(tablet, max) {
+        @include mixins.breakpoint(tablet, max) {
           border-bottom: none;
         }
 
-        @include mixin.breakpoint(tablet, min) {
+        @include mixins.breakpoint(tablet, min) {
           background-color: var(--white);
           color: $tab-color;
 
@@ -68,22 +68,24 @@ $tab-border-color: color.adjust(
     align-items: center;
     display: flex;
     height: $tab-height;
-    padding: map.get(var.$spacers, 2) var.$spacer;
+    padding: map.get(variables.$sizes, 2) variables.$size;
     position: relative;
-    transition: var(--transitions);
+    transition: ease-in-out var(--transitions);
+    transition-property: background-color, border-color, color, font-weight,
+      border-bottom-color;
 
-    @include mixin.breakpoint(tablet, max) {
+    @include mixins.breakpoint(tablet, max) {
       border: 1px solid $tab-color;
       background: $tab-color;
       color: var(--white);
-      margin-top: map.get(var.$spacers, 1);
+      margin-top: map.get(variables.$sizes, 1);
 
       &:first-of-type {
         margin-top: 0;
       }
     }
 
-    @include mixin.breakpoint(tablet, min) {
+    @include mixins.breakpoint(tablet, min) {
       flex: 1 1 auto;
       max-width: 16rem;
       border: 1px solid transparent;
@@ -102,7 +104,7 @@ $tab-border-color: color.adjust(
         position: absolute;
         right: -1px;
         top: 0;
-        transition: var(--transitions);
+        transition: background-color var(--transitions);
         width: auto;
         border: none;
         border-radius: 0;
@@ -120,7 +122,7 @@ $tab-border-color: color.adjust(
             color: $tab-color;
             font-weight: 600;
 
-            @include mixin.breakpoint(tablet, min) {
+            @include mixins.breakpoint(tablet, min) {
               border-bottom-color: var(--white);
             }
           }
@@ -138,7 +140,7 @@ $tab-border-color: color.adjust(
   display: block;
   flex-wrap: unset;
 
-  @include mixin.breakpoint(tablet, min) {
+  @include mixins.breakpoint(tablet, min) {
     display: flex;
     flex-wrap: wrap;
   }
@@ -167,7 +169,7 @@ $tab-border-color: color.adjust(
         color: var(--white);
         font-weight: 600;
 
-        @include mixin.breakpoint(tablet, min) {
+        @include mixins.breakpoint(tablet, min) {
           border: none;
           color: $tab-color;
         }
@@ -186,16 +188,17 @@ $tab-border-color: color.adjust(
     color: var(--white);
     display: flex;
     height: $tab-height;
-    margin: map.get(var.$spacers, 1) 0 0;
-    padding: map.get(var.$spacers, 2) var.$spacer;
+    margin: map.get(variables.$sizes, 1) 0 0;
+    padding: map.get(variables.$sizes, 2) variables.$size;
     position: relative;
-    transition: 0.2s;
+    transition: var(--transitions);
+    transition-property: background-color, color, font-weight;
 
     &:first-of-type {
       margin-top: 0;
     }
 
-    @include mixin.breakpoint(tablet, min) {
+    @include mixins.breakpoint(tablet, min) {
       background: var(--white);
       border: none;
       color: var(--base);
@@ -215,7 +218,7 @@ $tab-border-color: color.adjust(
         position: absolute;
         right: 0;
         top: unset;
-        transition: var(--transitions);
+        transition: background-color var(--transitions);
         width: auto;
       }
     }
@@ -225,7 +228,7 @@ $tab-border-color: color.adjust(
     background-color: var(--white);
     border: 1px solid $tab-border-color;
 
-    @include mixin.breakpoint(tablet, min) {
+    @include mixins.breakpoint(tablet, min) {
       border: none;
       border-top: 1px solid $tab-border-color;
       z-index: auto;
@@ -234,13 +237,13 @@ $tab-border-color: color.adjust(
 
   // unresponsive flat tabs
   &.unresponsive {
-    @include mixin.breakpoint(tablet, max) {
+    @include mixins.breakpoint(tablet, max) {
       display: flex;
       flex-wrap: wrap;
     }
 
     .tab {
-      @include mixin.breakpoint(tablet, max) {
+      @include mixins.breakpoint(tablet, max) {
         background: var(--white);
         border: none;
         color: var(--base);
@@ -260,7 +263,7 @@ $tab-border-color: color.adjust(
           position: absolute;
           right: 0;
           top: unset;
-          transition: var(--transitions);
+          transition: background-color var(--transitions);
           width: auto;
         }
       }
@@ -269,7 +272,7 @@ $tab-border-color: color.adjust(
     input[type="radio"] {
       &:checked {
         + .tab {
-          @include mixin.breakpoint(tablet, max) {
+          @include mixins.breakpoint(tablet, max) {
             border: none;
             color: $tab-color;
           }
@@ -278,7 +281,7 @@ $tab-border-color: color.adjust(
     }
 
     .tab-panel {
-      @include mixin.breakpoint(tablet, max) {
+      @include mixins.breakpoint(tablet, max) {
         flex-grow: 1;
         order: 99;
         border: none;
@@ -292,18 +295,18 @@ $tab-border-color: color.adjust(
 .tab-panel {
   background-color: var(--white);
   border: 1px solid $tab-border-color;
-  padding: map.get(var.$spacers, 2);
+  padding: map.get(variables.$sizes, 2);
   position: relative;
   width: 100%;
 
-  @include mixin.breakpoint(tablet, max) {
+  @include mixins.breakpoint(tablet, max) {
     border-top: transparent;
   }
 
-  @include mixin.breakpoint(tablet, min) {
+  @include mixins.breakpoint(tablet, min) {
     flex-grow: 1;
     order: 99;
-    padding-top: calc(#{map.get(var.$spacers, 2)} + 1px);
+    padding-top: calc(#{map.get(variables.$sizes, 2)} + 1px);
     z-index: 1;
   }
 }

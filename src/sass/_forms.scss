@@ -1,6 +1,6 @@
 @use "config";
-@use "mixins" as mixin;
-@use "variables" as var;
+@use "mixins" as mixins;
+@use "variables" as variables;
 @use "sass:color";
 @use "sass:map";
 @use "sass:math";
@@ -22,19 +22,19 @@ legend {
 
 .form {
   $error-color: color.adjust(
-    map.get(var.$error-colors, "negative"),
+    map.get(variables.$error-colors, "negative"),
     $lightness: math.percentage(-(config.$hue-threshold * 2))
   );
-  $error-background: map.get(var.$message-colors, "error");
+  $error-background: map.get(variables.$message-colors, "error");
 
   --disabled-color: #{color.adjust(
-      map.get(var.$greyscale, "light"),
+      map.get(variables.$greyscale, "light"),
       $lightness: math.percentage(config.$hue-threshold)
     )};
 
   $self: &;
   color: color.adjust(
-    map.get(var.$greyscale, "base"),
+    map.get(variables.$greyscale, "base"),
     $lightness: math.percentage(0.05)
   );
 
@@ -42,7 +42,7 @@ legend {
     left: 0;
     top: 0;
     position: absolute;
-    @include mixin.square(1.5rem);
+    @include mixins.square(1.5rem);
 
     [class^="pi-"] {
       line-height: 1;
@@ -53,7 +53,7 @@ legend {
 
       &:nth-of-type(2) {
         transform: translate(-50%, -50%) scale(0);
-        transition: transform config.$duration ease;
+        transition: transform var(--transitions) ease;
       }
     }
   }
@@ -78,9 +78,9 @@ legend {
       cursor: pointer;
       display: flex;
       font-weight: 400;
-      margin-right: var.$spacer;
-      margin-top: var.$spacer * 0.75;
-      padding-left: map.get(var.$spacers, 4);
+      margin-right: variables.$size;
+      margin-top: variables.$size * 0.75;
+      padding-left: map.get(variables.$sizes, 4);
       position: relative;
       vertical-align: baseline;
     }
@@ -202,7 +202,7 @@ legend {
     textarea,
     select {
       border-color: var(--light);
-      border-radius: map.get(var.$radius, "default");
+      border-radius: map.get(variables.$radius, "default");
     }
   }
 
@@ -225,7 +225,7 @@ legend {
     textarea,
     #{ $self }__select-wrapper,
     #{ $self }__option-group {
-      margin-top: map.get(var.$spacers, 2);
+      margin-top: map.get(variables.$sizes, 2);
       width: 100%;
     }
 
@@ -247,12 +247,12 @@ legend {
       input[type="week"],
       textarea,
       select {
-        padding-left: map.get(var.$spacers, 5);
+        padding-left: map.get(variables.$sizes, 5);
       }
 
       i {
         bottom: 0;
-        font-size: map.get(var.$font-scale, "md");
+        font-size: map.get(variables.$font-scale, "md");
         left: 0.5rem;
         line-height: 1;
         position: absolute;
@@ -265,7 +265,7 @@ legend {
         i {
           bottom: 0;
           color: var(--med-blue);
-          font-size: map.get(var.$font-scale, "md");
+          font-size: map.get(variables.$font-scale, "md");
           line-height: 1;
           pointer-events: none;
           position: absolute;
@@ -282,7 +282,7 @@ legend {
         input[type="url"],
         textarea,
         select {
-          padding-right: map.get(var.$spacers, 4);
+          padding-right: map.get(variables.$sizes, 4);
         }
 
         input[type="date"],
@@ -323,8 +323,8 @@ legend {
       select {
         background-color: $error-background;
         border-color: $error-color !important;
-        border-radius: map.get(var.$radius, "default");
-        padding-left: map.get(var.$spacers, 2);
+        border-radius: map.get(variables.$radius, "default");
+        padding-left: map.get(variables.$sizes, 2);
       }
 
       input[type="checkbox"],
@@ -375,9 +375,9 @@ legend {
         border: none;
         border-bottom: 1px solid var(--light);
         border-radius: 0;
-        color: var(--base);
-        padding: map.get(var.$spacers, 1);
-        transition: 0.2s ease-in;
+        color: map.get(variables.$greyscale, "base");
+        padding: map.get(variables.$spacers, 1);
+        transition: var(--transitions) ease-in;
 
         &:focus ~ label,
         &:valid ~ label {
@@ -440,7 +440,7 @@ legend {
       }
 
       select {
-        padding-left: map.get(var.$spacers, 1);
+        padding-left: map.get(variables.$sizes, 1);
 
         &:focus ~ label,
         &:valid ~ label {
@@ -462,7 +462,7 @@ legend {
         left: 0.25rem;
         line-height: 1;
         top: 50%;
-        transition: 0.2s ease-in;
+        transition: var(--transitions) ease-in;
         transform: translateY(-50%);
       }
 
@@ -482,7 +482,7 @@ legend {
       textarea,
       #{ $self }__select-wrapper,
       #{ $self }__option-group {
-        margin-top: map.get(var.$spacers, 3) + 0.75;
+        margin-top: map.get(variables.$sizes, 3) + 0.75;
       }
     }
   }
@@ -537,7 +537,7 @@ legend {
     display: block;
     font-size: 1rem;
     min-height: 2.2rem;
-    padding: map.get(var.$spacers, 1) map.get(var.$spacers, 2);
+    padding: map.get(variables.$sizes, 1) map.get(variables.$sizes, 2);
     width: 100%;
 
     &::placeholder {
@@ -548,9 +548,9 @@ legend {
       outline: none;
       border-bottom-color: map.get(config.$site-colors, "focus");
       box-shadow: 0 0 2px 0 map.get(config.$site-colors, "focus");
-      transition: box-shadow config.$duration,
-        border-color config.$duration ease-in-out,
-        border-width config.$duration ease;
+      transition: box-shadow var(--transitions),
+        border-color var(--transitions) ease-in-out,
+        border-width var(--transitions) ease;
     }
   }
 
@@ -577,7 +577,7 @@ legend {
 
   textarea {
     border-color: var(--light);
-    padding: map.get(var.$spacers, 1);
+    padding: map.get(variables.$sizes, 1);
     width: 100%;
 
     &.readonly {
@@ -619,8 +619,8 @@ legend {
     -webkit-appearance: none;
     appearance: none;
     border-radius: 0;
-    padding: map.get(var.$spacers, 1) var.$spacer
-      map.get(var.$spacers, 1) map.get(var.$spacers, 2);
+    padding: map.get(variables.$sizes, 1) variables.$size
+      map.get(variables.$sizes, 1) map.get(variables.$sizes, 2);
   }
 
   input[type="date"],
@@ -652,7 +652,7 @@ legend {
     textarea,
     select {
       border-color: var(--light);
-      border-radius: map.get(var.$radius, "button");
+      border-radius: map.get(variables.$radius, "button");
     }
 
     .has-icon {
@@ -701,12 +701,12 @@ legend {
 
 .toggle {
   border: 1px solid var(--light);
-  border-radius: map.get(var.$radius, "button");
+  border-radius: map.get(variables.$radius, "button");
   display: flex;
   justify-content: space-between;
-  margin-top: map.get(var.$spacers, 2);
+  margin-top: map.get(variables.$sizes, 2);
   min-height: 2.2rem;
-  padding: map.get(var.$spacers, 1);
+  padding: map.get(variables.$sizes, 1);
 
   &__content {
     display: flex;
@@ -729,14 +729,14 @@ legend {
 
     + label {
       align-items: center;
-      border-radius: map.get(var.$radius, "button");
+      border-radius: map.get(variables.$radius, "button");
       color: var(--base);
       display: flex;
       flex: 1 1 auto;
       justify-content: center;
       margin: 0;
-      padding: 0 map.get(var.$spacers, 2);
-      padding-left: var.$spacer * 1.3;
+      padding: 0 map.get(variables.$sizes, 2);
+      padding-left: variables.$size * 1.3;
       position: relative;
 
       [class^="pi-"] {
@@ -800,7 +800,7 @@ fieldset:disabled {
 // Switch
 .switch {
   --switch-color-light: color.adjust(
-    map.get(var.$greyscale, "light"),
+    map.get(variables.$greyscale, "light"),
     $lightness: math.percentage(config.$hue-threshold * 2)
   );
 
@@ -832,7 +832,7 @@ fieldset:disabled {
       left: -20%;
       top: 50%;
       transform: translateY(-50%);
-      transition: 0.2s ease-in-out;
+      transition: var(--transitions) ease-in-out;
       position: absolute;
       z-index: 1;
     }
@@ -864,7 +864,7 @@ fieldset:disabled {
     left: 0.5rem;
     position: absolute;
     transform: scale(0);
-    transition: transform config.$duration ease;
+    transition: transform var(--transitions) ease;
   }
 
   &[aria-checked="true"] {
@@ -878,16 +878,16 @@ input[type="checkbox"].pill-filter,
 input[type="radio"].pill-filter {
   + label {
     background-color: var(--white);
-    border-radius: map.get(var.$radius, "button");
+    border-radius: map.get(variables.$radius, "button");
     color: map.get(config.$site-colors, "link");
     border: 1px solid map.get(config.$site-colors, "link");
     height: auto;
     justify-content: center;
     margin: 0.25rem;
-    padding: map.get(var.$spacers, 2) 1.5rem;
+    padding: map.get(variables.$sizes, 2) 1.5rem;
     transition: var(--transitions);
     i {
-      font-size: map.get(var.$font-scale, "xs");
+      font-size: map.get(variables.$font-scale, "xs");
     }
 
     &:before {
@@ -900,8 +900,8 @@ input[type="radio"].pill-filter {
       opacity: 0;
       top: 50%;
       transform: translateY(-50%);
-      transition: visibility config.$duration ease,
-        opacity config.$duration ease;
+      transition: visibility var(--transitions) ease,
+        opacity var(--transitions) ease;
       visibility: hidden;
     }
   }
@@ -946,12 +946,12 @@ input[type="radio"].pill-filter {
         border-radius: $border-radius;
         background-color: var(--white);
         cursor: pointer;
-        @include mixin.square(1.3rem);
+        @include mixins.square(1.3rem);
       }
       &::-moz-range-thumb {
         background-color: var(--white);
         cursor: pointer;
-        @include mixin.square(25px);
+        @include mixins.square(25px);
       }
     }
   }

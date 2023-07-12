@@ -1,24 +1,24 @@
 @use "config";
-@use "mixins" as mixin;
-@use "variables" as var;
+@use "mixins" as mixins;
+@use "variables" as variables;
 @use "sass:color";
 @use "sass:map";
 @use "sass:math";
 
 .table {
   --table-color-light: #{color.adjust(
-    map.get(var.$greyscale, "light"),
-    $lightness: math.percentage(config.$hue-threshold * 2)
-  )};
+      map.get(variables.$greyscale, "light"),
+      $lightness: math.percentage(config.$hue-threshold * 2)
+    )};
 
   $table-border: 1px solid var(--table-color-light);
-  $responsive-table-bottom-gap: map.get(var.$spacers, 2);
+  $responsive-table-bottom-gap: map.get(variables.$sizes, 2);
   $responsive-table-label-bg: var(--lighter);
   width: 100%;
   background-color: transparent;
   border-collapse: separate;
   border-spacing: 0;
-  @include mixin.breakpoint(tablet, max) {
+  @include mixins.breakpoint(tablet, max) {
     border: none;
   }
 
@@ -28,7 +28,7 @@
     color: var(--base);
     font-weight: bold;
     text-align: left;
-    @include mixin.breakpoint(tablet, max) {
+    @include mixins.breakpoint(tablet, max) {
       border: none;
     }
 
@@ -40,8 +40,8 @@
 
   tr {
     background-color: transparent;
-    transition: calc(var(--transitions) * 3);
-    @include mixin.breakpoint(tablet, min) {
+    transition: background-color var(--transitions) ease;
+    @include mixins.breakpoint(tablet, min) {
       &:hover {
         background-color: var(--lighter);
       }
@@ -62,7 +62,7 @@
       }
     }
   }
-  @include mixin.breakpoint(tablet, max) {
+  @include mixins.breakpoint(tablet, max) {
     &:not(.unresponsive) {
       thead tr {
         position: absolute;
@@ -86,7 +86,7 @@
             font-weight: bold;
             line-height: 1.5;
             min-width: 40%;
-            padding-right: map.get(var.$spacers, 2);
+            padding-right: map.get(variables.$sizes, 2);
             text-align: left;
           }
         }
@@ -102,7 +102,7 @@
   }
   &--no-hover {
     tr {
-      @include mixin.breakpoint(tablet, min) {
+      @include mixins.breakpoint(tablet, min) {
         &:hover {
           background-color: initial;
         }

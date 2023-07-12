@@ -1,6 +1,6 @@
 @use "config";
-@use "mixins" as mixin;
-@use "variables" as var;
+@use "mixins" as mixins;
+@use "variables" as variables;
 @use "sass:map";
 
 .modal {
@@ -26,7 +26,9 @@
   opacity: 0;
 
   @media (prefers-reduced-motion: no-preference) {
-    transition: var(--transitions) ease-in-out;
+    transition-property: visibility, opacity;
+    transition-timing-function: ease-in-out;
+    transition-duration: var(--transitions);
   }
 
   &.active {
@@ -58,10 +60,10 @@
 
   &--small {
     > #{$self}__inner {
-      @include mixin.breakpoint(tablet, min) {
+      @include mixins.breakpoint(tablet, min) {
         width: 40vw;
       }
-      @include mixin.breakpoint(desktop, min) {
+      @include mixins.breakpoint(desktop, min) {
         width: 20vw;
       }
     }
@@ -69,7 +71,7 @@
 
   &--large {
     > #{$self}__inner {
-      @include mixin.breakpoint(tablet, min) {
+      @include mixins.breakpoint(tablet, min) {
         width: 80vw;
       }
     }
@@ -85,23 +87,23 @@
 
   &__inner {
     background: var(--white);
-    margin: map.get(var.$spacers, 4) auto;
+    margin: map.get(variables.$sizes, 4) auto;
     transform: translate(0, 100%);
 
     @media (prefers-reduced-motion: no-preference) {
       transition: var(--transitions) ease-in-out;
     }
 
-    @include mixin.breakpoint(tablet, max) {
+    @include mixins.breakpoint(tablet, max) {
       height: auto;
       margin: auto;
       width: 100%;
     }
 
-    @include mixin.breakpoint(tablet, min) {
+    @include mixins.breakpoint(tablet, min) {
       width: 65vw;
     }
-    @include mixin.breakpoint(desktop, min) {
+    @include mixins.breakpoint(desktop, min) {
       width: 45vw;
     }
   }

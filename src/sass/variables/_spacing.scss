@@ -1,12 +1,38 @@
 // padding and margin
-$spacer: 1rem;
-$spacers: (
+$size: 1rem;
+$sizes: (
   0: 0,
-  1: ($spacer * .25),
-  2: ($spacer * .5),
-  3: $spacer,
-  4: ($spacer * 2),
-  5: ($spacer * 3),
-  6: ($spacer * 4.5),
-  7: ($spacer * 6.5)
+  1: (
+    $size * 0.25,
+  ),
+  2: (
+    $size * 0.5,
+  ),
+  3: $size,
+  4: (
+    $size * 2,
+  ),
+  5: (
+    $size * 3,
+  ),
+  6: (
+    $size * 4.5,
+  ),
+  7: (
+    $size * 6.5,
+  ),
+);
+
+$spacers: (
+  p: padding,
+  m: margin,
+);
+
+$spacerDirections: (
+  l: "inline-start",
+  r: "inline-end",
+  t: "block-start",
+  b: "block-end",
+  x: "inline",
+  y: "block",
 );

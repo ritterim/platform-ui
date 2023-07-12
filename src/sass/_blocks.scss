@@ -1,6 +1,6 @@
 @use "config";
-@use "mixins" as mixin;
-@use "variables" as var;
+@use "mixins" as mixins;
+@use "variables" as variables;
 @use "sass:map";
 
 // Block layout
@@ -24,8 +24,8 @@
       width: auto;
     }
   }
-  
-  @each $key, $val in var.$columns {
+
+  @each $key, $val in variables.$columns {
     .block-#{$val} {
       width: calc(#{$key} * 100%);
 
@@ -36,15 +36,15 @@
   }
 
   @each $breakpoint, $name in config.$breakpoints {
-    $mapped__keys : map.keys(config.$breakpoints);
+    $mapped__keys: map.keys(config.$breakpoints);
     // get index of the current name passed
-    $index : (index($mapped__keys, $breakpoint));
+    $index: (index($mapped__keys, $breakpoint));
 
-    @each $key, $val in var.$columns {
+    @each $key, $val in variables.$columns {
       // on the block
       > .#{$breakpoint}-up-#{$val} {
         @if $index > 1 {
-          @include mixin.breakpoint(#{$name}, min) {
+          @include mixins.breakpoint(#{$name}, min) {
             width: calc(#{$key} * 100%);
           }
         }
@@ -56,7 +56,7 @@
           // do nothing
         } @else {
           > .block {
-            @include mixin.breakpoint(#{$name}, min) {
+            @include mixins.breakpoint(#{$name}, min) {
               width: calc(100% / #{$val});
             }
           }
@@ -74,8 +74,7 @@
     // on the block
     > .#{$breakpoint}-up {
       @if $index > 1 {
-        @include mixin.breakpoint(#{$name}, min) {
-
+        @include mixins.breakpoint(#{$name}, min) {
           &--full {
             width: 100%;
           }
@@ -93,14 +92,12 @@
   }
 
   &[class*="-up-"] {
-  
     @each $breakpoint, $name in config.$breakpoints {
-    $mapped__keys : map.keys(config.$breakpoints);
-    // get index of the current name passed
-    $index : (index($mapped__keys, $breakpoint));
-  
-      > .block {
+      $mapped__keys: map.keys(config.$breakpoints);
+      // get index of the current name passed
+      $index: (index($mapped__keys, $breakpoint));
 
+      > .block {
         &--full {
           width: 100%;
         }
@@ -113,16 +110,15 @@
           width: auto;
         }
 
-        @include mixin.breakpoint(#{$name}, min) {
-  
+        @include mixins.breakpoint(#{$name}, min) {
           &.#{$breakpoint}-up--full {
             width: 100%;
           }
-  
+
           &.#{$breakpoint}-up--fill {
             flex-grow: 1;
           }
-  
+
           &.#{$breakpoint}-up--shrink {
             width: auto;
           }
@@ -134,8 +130,8 @@
   // Add padding and or margin by direction to container
   // as well as the blocks within the block-container
   @each $prop, $letter in (margin: m, padding: p) {
-    @each $direction, $d in var.$xy-border {
-      @each $unit, $rem in var.$spacers {
+    @each $direction, $d in variables.$xy-border {
+      @each $unit, $rem in variables.$sizes {
         // top, right, bottom, left
         &.blocks.#{$letter}#{$d}-#{$unit} {
           #{$prop}-#{$direction}: 0 !important;
@@ -150,8 +146,7 @@
   // Add x-y padding and or margin to container
   // as well as the blocks within the block-container
   @each $prop, $letter in (margin: m, padding: p) {
-    @each $unit, $rem in var.$spacers {
-
+    @each $unit, $rem in variables.$sizes {
       // x-axis
       &.blocks.#{$letter}x-#{$unit} {
         #{$prop}-left: 0 !important;
@@ -186,7 +181,7 @@
   // Add surrounding padding and or margin to container
   // as well as the blocks within the block-container
   @each $prop, $letter in (margin: m, padding: p) {
-    @each $unit, $rem in var.$spacers {
+    @each $unit, $rem in variables.$sizes {
       // top, right, bottom, left
       &.blocks.#{$letter}-#{$unit} {
         #{$prop}: 0 !important;
@@ -200,9 +195,8 @@
   }
 }
 
-
 // max-width on a block-container
-.max-container {  
+.max-container {
   margin-left: auto;
   margin-right: auto;
   max-width: var(--max-container);

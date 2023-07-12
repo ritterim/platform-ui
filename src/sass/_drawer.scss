@@ -1,6 +1,6 @@
 @use "config";
-@use "mixins" as mixin;
-@use "variables" as var;
+@use "mixins" as mixins;
+@use "variables" as variables;
 @use "sass:math";
 @use "sass:map";
 
@@ -18,7 +18,9 @@
   visibility: hidden;
 
   @media (prefers-reduced-motion: no-preference) {
-    transition: var(--transitions) ease-in-out;
+    transition-duration: transform, visibility;
+    transition-timing-function: ease-in-out;
+    transition-duration: var(--transitions);
   }
 
   &__inner {
@@ -45,17 +47,17 @@
     position: relative;
     width: 100%;
 
-    @include mixin.breakpoint(tablet, max) {
-      padding-top: map.get(var.$spacers, 5);
+    @include mixins.breakpoint(tablet, max) {
+      padding-top: map.get(variables.$sizes, 5);
     }
 
     #{$self}__close {
       position: absolute;
-      right: -#{var.$spacer};
+      right: -#{variables.$size};
       top: 50%;
       transform: translate(-50%, -50%);
 
-      @include mixin.breakpoint(tablet, max) {
+      @include mixins.breakpoint(tablet, max) {
         top: 1.5rem;
       }
     }
@@ -69,7 +71,7 @@
   &__open {
     cursor: pointer;
 
-    @include mixin.breakpoint(tablet, max) {
+    @include mixins.breakpoint(tablet, max) {
       bottom: 3.5rem;
     }
   }
@@ -89,7 +91,7 @@
       height: calc(100% - #{config.$menu-height});
     }
 
-    @include mixin.breakpoint(tablet, min) {
+    @include mixins.breakpoint(tablet, min) {
       width: config.$drawer-side-width;
     }
 

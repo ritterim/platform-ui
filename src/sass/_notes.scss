@@ -1,5 +1,5 @@
 @use "config";
-@use "variables" as var;
+@use "variables" as variables;
 @use "sass:map";
 
 .note {
@@ -34,7 +34,8 @@
 
   &__inner {
     overflow: hidden;
-    transition: max-width var(--transitions), transform var(--transitions);
+    transition-property: max-width, transform;
+    transition: var(--transitions);
 
     .note-open & {
       cursor: default;
@@ -49,7 +50,8 @@
     color: var(--light);
     cursor: pointer;
     font-size: 100%;
-    transition: all ease var(--transitions);
+    transition-property: color, outline, opacity, transform, visibility;
+    transition: var(--transitions);
     position: absolute;
     bottom: 0.5rem;
     left: 50%;

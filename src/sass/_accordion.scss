@@ -1,6 +1,6 @@
 @use "config";
 @use "mixins";
-@use "variables" as var;
+@use "variables" as variables;
 @use "sass:color";
 @use "sass:math";
 @use "sass:map";
@@ -10,8 +10,14 @@
   $accordion-primary-color: var(--base);
   $accordion-primary-background: var(--white);
   $accordion-secondary-background: var(--lighter);
-  $accordion-primary-border-color: color.adjust(map.get(var.$greyscale, 'light'), $lightness: math.percentage(config.$hue-threshold * 2));
-  $accordion-secondary-border-color: color.adjust(map.get(config.$brand-colors, 'med-blue'), $lightness: math.percentage(config.$hue-threshold));
+  $accordion-primary-border-color: color.adjust(
+    map.get(variables.$greyscale, "light"),
+    $lightness: math.percentage(config.$hue-threshold * 2)
+  );
+  $accordion-secondary-border-color: color.adjust(
+    map.get(config.$brand-colors, "med-blue"),
+    $lightness: math.percentage(config.$hue-threshold)
+  );
   $accordion-active-background: var(--med-blue);
   $accordion-hover-border: var(--skyblue);
 
@@ -33,8 +39,6 @@
       background-color: $accordion-secondary-background;
     }
   }
-
-
 
   &.active {
     border-color: transparent;
@@ -64,7 +68,6 @@
   }
 
   &__content {
-
     > #{$self} {
       border: none;
       &:not(.active):hover {
@@ -78,8 +81,8 @@
       }
       > #{$self} {
         &__header {
-        background-color: $accordion-primary-background;
-        font-weight: bold;
+          background-color: $accordion-primary-background;
+          font-weight: bold;
         }
       }
     }

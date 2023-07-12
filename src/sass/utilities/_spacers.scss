@@ -1,50 +1,68 @@
 @use "../config";
-@use "../variables" as var;
+@use "../variables" as variables;
 @use "sass:map";
 
 // Spacers
+// all around spacing utilities
+@each $spacer, $spacerProperty in variables.$spacers {
+  @each $size, $sizeValue in variables.$sizes {
+    .#{$spacer}-#{$size} {
+      #{$spacerProperty}: #{$sizeValue};
+    }
+  }
+}
 
-// padding and margin by direction
-@each $prop, $letter in (margin: m, padding: p) {
-  @each $direction, $d in var.$xy-border {
-    @each $unit, $rem in var.$spacers {
-      .#{$letter}#{$d}-#{$unit} {
-        #{$prop}-#{$direction}: #{$rem} !important;
+// all around responsive spacing utilities
+@each $breakpoint, $breakpointValue in config.$breakpoints {
+  $mapped__keys: map-keys(config.$breakpoints);
+  // get index of the current name passed
+  $index: (index($mapped__keys, $breakpoint));
+
+  @each $size, $sizeValue in variables.$sizes {
+    @each $spacer, $spacerValue in variables.$spacers {
+      @if $index > 1 {
+        .#{$spacer}-#{$size}\:#{$breakpoint} {
+          @media (min-width: $breakpointValue) {
+            #{$spacerValue}: $sizeValue;
+          }
+        }
       }
     }
   }
 }
 
-// padding and margin all around
-@each $prop, $letter in (margin: m, padding: p) {
-  @each $unit, $rem in var.$spacers {
-    .#{$letter}-#{$unit} {
-      #{$prop}: #{$rem} !important;
-    }
-  }
-}
-
-// padding and margin on x and y axis
-@each $prop, $letter in (margin: m, padding: p) {
-  @each $unit, $rem in var.$spacers {
-    .#{$letter}x-#{$unit} {
-      #{$prop}-left: $rem !important;
-      #{$prop}-right: $rem !important;
-    }
-    .#{$letter}y-#{$unit} {
-      #{$prop}-top: $rem !important;
-      #{$prop}-bottom: $rem !important;
-    }
-  }
-}
-
-// padding and margin for mobile bottom only
-@each $prop, $letter in (margin: m, padding: p) {
-  @each $unit, $rem in var.$spacers {
-    .#{$letter}b-mobile-#{$unit} {
-      @media (min-width: map.get(config.$breakpoints, mobile)) and (max-width: map.get(config.$breakpoints, tablet) - 1) {
-        #{$prop}-bottom: #{$rem} !important;
+// directional spacing utilities
+@each $spacer, $spacerProperty in variables.$spacers {
+  @each $direction, $directionValue in variables.$spacerDirections {
+    @each $size, $sizeValue in variables.$sizes {
+      .#{$spacer}#{$direction}-#{$size} {
+        #{$spacerProperty}-#{$directionValue}: #{$sizeValue};
       }
     }
   }
+}
+
+// responsive directional spacing utilities
+@each $breakpoint, $breakpointValue in config.$breakpoints {
+  $mapped__keys: map-keys(config.$breakpoints);
+  // get index of the current name passed
+  $index: (index($mapped__keys, $breakpoint));
+
+  @each $size, $sizeValue in variables.$sizes {
+    @each $direction, $directionValue in variables.$spacerDirections {
+      @each $spacer, $spacerValue in variables.$spacers {
+        @if $index > 1 {
+          .#{$spacer}#{$direction}-#{$size}\:#{$breakpoint} {
+            @media (min-width: $breakpointValue) {
+              #{$spacerValue}-#{$directionValue}: $sizeValue;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.mx-auto {
+  margin: 0 auto;
 }

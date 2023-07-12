@@ -1,14 +1,14 @@
 @use "config";
 @use "mixins";
-@use "variables" as var;
+@use "variables" as variables;
 @use "sass:map";
 
 ul {
   margin: 0;
-  padding: 0 0 0 var.$spacer;
+  padding: 0 0 0 variables.$size;
 
   li {
-    margin: 0 0 map.get(var.$spacers, 2);
+    margin: 0 0 map.get(variables.$sizes, 2);
   }
 }
 
@@ -18,8 +18,8 @@ ol {
 
 .post {
   &-item {
-    margin: 0 0 var.$spacer;
-    padding: 0 0 var.$spacer;
+    margin: 0 0 variables.$size;
+    padding: 0 0 variables.$size;
     position: relative;
 
     &:not(:last-of-type) {
@@ -28,22 +28,22 @@ ol {
 
     &__duration {
       color: var(--light);
-      font-size: map.get(var.$font-scale, "sm");
-      margin-bottom: map.get(var.$spacers, 1);
+      font-size: map.get(variables.$font-scale, "sm");
+      margin-bottom: map.get(variables.$sizes, 1);
 
       &:before {
         content: "\f14a";
         font-family: platform-icons;
-        margin: 0 map.get(var.$spacers, 2) 0 0;
+        margin: 0 map.get(variables.$sizes, 2) 0 0;
       }
     }
 
     &__title {
-      margin-bottom: map.get(var.$spacers, 1);
+      margin-bottom: map.get(variables.$sizes, 1);
     }
 
     &__link {
-      font-size: map.get(var.$font-scale, "sm");
+      font-size: map.get(variables.$font-scale, "sm");
       font-weight: bold;
     }
   }
@@ -84,16 +84,18 @@ ol {
           content: "\f16e";
           color: var(--white);
           font-family: platform-icons;
-          font-size: map.get(var.$font-scale, "lg") * 2;
+          font-size: map.get(variables.$font-scale, "lg") * 2;
           font-weight: 900;
           left: 50%;
           position: absolute;
           top: 50%;
           text-shadow: 0 0 0.5rem var(--black);
           transform: translate(-50%, -50%);
+          transition-property: transform, text-shadow;
           transition: var(--transitions);
           z-index: 2;
         }
+
         &:hover {
           &:after {
             transform: translate(-50%, -50%) scale(1.2);
@@ -104,7 +106,7 @@ ol {
 
       &-caption {
         bottom: 0;
-        padding: map.get(var.$spacers, 2);
+        padding: map.get(variables.$sizes, 2);
         position: absolute;
         text-align: center;
         width: 100%;
@@ -130,7 +132,7 @@ ol {
 
   &--bordered {
     #{$list}__item {
-      padding-bottom: map.get(var.$spacers, 2);
+      padding-bottom: map.get(variables.$sizes, 2);
 
       &:not(:last-of-type) {
         border-bottom: 1px solid var(--light-mid);
@@ -142,7 +144,7 @@ ol {
     display: flex;
 
     li {
-      margin: 0 map.get(var.$spacers, 2) 0 0;
+      margin: 0 map.get(variables.$sizes, 2) 0 0;
     }
   }
 }

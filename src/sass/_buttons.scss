@@ -1,7 +1,7 @@
 @use "config";
-@use "mixins" as mixin;
+@use "mixins" as mixins;
 @use "utilities";
-@use "variables" as var;
+@use "variables" as variables;
 @use "sass:color";
 @use "sass:math";
 @use "sass:map";
@@ -14,7 +14,7 @@
   background-color: config.$button-primary-background;
   border: 1px solid
     color.adjust(
-      map.get(var.$greyscale, "light"),
+      map.get(variables.$greyscale, "light"),
       $lightness: math.percentage(config.$hue-threshold * 2)
     );
   border-radius: config.$button-border-radius;
@@ -37,17 +37,16 @@
   &:disabled,
   &.disabled {
     background-color: color.adjust(
-      map.get(var.$greyscale, "light"),
+      map.get(variables.$greyscale, "light"),
       $lightness: math.percentage(config.$hue-threshold)
     ) !important;
     background-image: none;
     border-color: color.adjust(
-      map.get(var.$greyscale, "light"),
+      map.get(variables.$greyscale, "light"),
       $lightness: math.percentage(config.$hue-threshold)
     ) !important;
     color: var(--white) !important;
     cursor: not-allowed;
-    pointer-events: none;
   }
 
   &.loading {
@@ -69,8 +68,8 @@
     &:not([data-button-text]):not(.has-text) {
       &:after {
         @extend %loader;
-        @include mixin.square(var.$spacer);
-        @include mixin.square(var.$spacer, min);
+        @include mixins.square(variables.$size);
+        @include mixins.square(variables.$size, min);
         box-sizing: border-box;
         content: "";
         display: block;
@@ -86,7 +85,7 @@
   }
 
   i {
-    margin: 0 map.get(var.$spacers, 1);
+    margin: 0 map.get(variables.$sizes, 1);
   }
 
   [aria-hidden="hidden"] {
@@ -114,7 +113,7 @@
     }
 
     &.has-text {
-      padding: 0 map.get(var.$spacers, 2);
+      padding: 0 map.get(variables.$sizes, 2);
       width: auto;
     }
 
@@ -128,25 +127,25 @@
       }
 
       &:hover {
-        @include mixin.breakpoint(lg-tablet, min) {
-          padding: 0 map.get(var.$spacers, 1);
+        @include mixins.breakpoint(lg-tablet, min) {
+          padding: 0 map.get(variables.$sizes, 1);
           width: auto;
 
           &:after {
             width: auto;
             display: inline-block;
-            padding-right: map.get(var.$spacers, 2);
+            padding-right: map.get(variables.$sizes, 2);
           }
         }
       }
 
       &.has-text {
-        padding: 0 map.get(var.$spacers, 1);
+        padding: 0 map.get(variables.$sizes, 1);
 
         &:after {
           width: auto;
           display: inline-block;
-          padding-right: map.get(var.$spacers, 2);
+          padding-right: map.get(variables.$sizes, 2);
         }
       }
     }
@@ -170,12 +169,12 @@
             config.$button-secondary-background,
             $lightness: math.percentage(config.$hue-threshold)
           );
-        padding: 0 map.get(var.$spacers, 1);
+        padding: 0 map.get(variables.$sizes, 1);
         width: auto;
 
         &:before {
           @extend %loader;
-          @include mixin.square(var.$spacer);
+          @include mixins.square(variables.$size);
           background-color: unset;
           box-sizing: border-box;
           box-shadow: none;
@@ -183,11 +182,11 @@
           display: block;
           border-color: config.$button-primary-background;
           border-top-color: color.adjust(
-            map.get(var.$greyscale, "base"),
+            map.get(variables.$greyscale, "base"),
             $lightness: math.percentage(config.$hue-threshold * 2)
           );
           left: 0;
-          margin: 0 map.get(var.$spacers, 1);
+          margin: 0 map.get(variables.$sizes, 1);
           position: relative;
           top: 0;
         }
@@ -196,7 +195,7 @@
           content: attr(data-button-text);
           width: auto;
           display: inline-block;
-          padding-right: map.get(var.$spacers, 2);
+          padding-right: map.get(variables.$sizes, 2);
         }
 
         i {
@@ -207,12 +206,12 @@
   }
 
   &--lg {
-    font-size: map.get(var.$font-scale, "lg");
+    font-size: map.get(variables.$font-scale, "lg");
     padding: config.$button-large-padding;
 
     &.loading {
       &:after {
-        @include mixin.square(var.$spacer * 1.5);
+        @include mixins.square(variables.$size * 1.5);
         margin-left: -0.75rem;
         margin-top: -0.75rem;
       }
@@ -238,9 +237,9 @@
   $button-colors: () !default;
 
   @if meta.type-of(config.$config-colors) == "map" {
-    $button-colors: map.merge(config.$config-colors, var.$greyscale);
+    $button-colors: map.merge(config.$config-colors, variables.$greyscale);
   } @else {
-    $button-colors: map.merge(var.$greyscale, $button-colors);
+    $button-colors: map.merge(variables.$greyscale, $button-colors);
     @warn "$config-colors is not set or empty";
   }
 
@@ -264,7 +263,7 @@
           --button-color: var(--dark);
         } @else if lightness($color) > 50 and lightness($color) < 65 {
           --button-color: #{color.adjust(
-              map.get(var.$greyscale, "dark"),
+              map.get(variables.$greyscale, "dark"),
               $lightness: math.percentage(-0.01)
             )};
         } @else if lightness($color) > 90 {
@@ -325,7 +324,7 @@
               color: var(--dark);
             } @else if lightness($color) > 50 and lightness($color) < 65 {
               color: #{color.adjust(
-                  map.get(var.$greyscale, "dark"),
+                  map.get(variables.$greyscale, "dark"),
                   $lightness: math.percentage(-0.01)
                 )};
             } @else if lightness($color) > 90 {
