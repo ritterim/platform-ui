@@ -826,6 +826,8 @@ fieldset:disabled {
     height: 1rem;
     padding: 0;
     position: relative;
+    transition: var(--transitions) ease-in-out;
+    transition-property: background-color, border-color;
     width: 2rem;
 
     &:before {
