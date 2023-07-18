@@ -45,6 +45,7 @@ legend {
     @include mixins.square(1.5rem);
 
     [class^="pi-"] {
+      display: flex;
       line-height: 1;
       position: absolute;
       left: 50%;
@@ -746,6 +747,7 @@ legend {
       position: relative;
 
       [class^="pi-"] {
+        display: flex;
         height: auto;
         left: 2px;
         opacity: 0;
