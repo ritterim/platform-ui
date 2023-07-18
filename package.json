@@ -1,6 +1,6 @@
 {
   "name": "@ritterim/platform-ui",
-  "version": "1.8.1",
+  "version": "1.8.2",
   "description": "A CSS framework used by Ritter Insurance Marketing (RIM) for our platform of agent tools.",
   "homepage": "https://platformui.com",
   "main": "main.js",
@@ -17,7 +17,7 @@
   "scripts": {
     "start": "run-s build:svgs build:font start:vite",
     "build": "run-s build:*",
-    "build:svgs": "svgo -f ./src/icons/svg/ -o ./src/icons/optimized",
+    "build:svgs": "rm -f .src/icons/optimized/*.svg && svgo -f ./src/icons/svg/ -o ./src/icons/optimized",
     "build:font": "fantasticon",
     "start:vite": "vite",
     "build:vite": "vite build",
