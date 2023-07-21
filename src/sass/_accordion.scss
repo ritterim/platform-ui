@@ -7,45 +7,44 @@
 
 .accordion {
   $self: &;
-  $accordion-primary-color: var(--base);
-  $accordion-primary-background: var(--white);
-  $accordion-secondary-background: var(--lighter);
-  $accordion-primary-border-color: color.adjust(
-    map.get(variables.$greyscale, "light"),
-    $lightness: math.percentage(config.$hue-threshold * 2)
-  );
-  $accordion-secondary-border-color: color.adjust(
-    map.get(config.$brand-colors, "med-blue"),
-    $lightness: math.percentage(config.$hue-threshold)
-  );
-  $accordion-active-background: var(--med-blue);
-  $accordion-hover-border: var(--skyblue);
+  --accordion-primary-color: var(--navy);
+  --accordion-primary-background: var(--white);
+  --accordion-header-background: var(--lighter);
+  --accordion-primary-border-color: var(--light-mid);
 
-  background-color: $accordion-primary-background;
+  // #ccc Replcaing with light-mid = #e2e3e5
+  // $accordion-primary-border-color: color.adjust(
+  //   map.get(variables.$greyscale, "light"),
+  //   $lightness: math.percentage(config.$hue-threshold * 2)
+  // );
+
+  --accordion-hover-border: var(--skyblue);
+
+  background-color: var(--accordion-primary-background);
   border: 1px solid transparent;
-  border-top-color: $accordion-primary-border-color;
-  color: $accordion-primary-color;
+  border-top-color: var(--accordion-primary-border-color);
+  color: var(--accordion-primary-color);
   font-size: 100%;
   transition: border-color config.$transitions;
 
   &:last-of-type {
-    border-bottom-color: $accordion-primary-border-color;
+    border-bottom-color: var(--accordion-primary-border-color);
   }
 
   &:not(.active):hover {
-    border-color: $accordion-hover-border;
+    border-color: var(--accordion-hover-border);
 
     #{$self}__header {
-      background-color: $accordion-secondary-background;
+      background-color: var(--accordion-header-background);
     }
   }
 
   &.active {
     border-color: transparent;
-    box-shadow: 0px 0px 0px 2px $accordion-hover-border;
+    box-shadow: 0px 0px 0px 2px var(--accordion-hover-border);
 
     > #{$self}__header {
-      background-color: $accordion-secondary-background;
+      background-color: var(--accordion-header-background);
 
       #{$self}__icon {
         @extend %rotate-180;
@@ -72,7 +71,7 @@
       border: none;
       &:not(.active):hover {
         #{$self}__header {
-          background-color: $accordion-primary-background;
+          background-color: var(--accordion-primary-background);
         }
       }
       &.active {
@@ -81,7 +80,7 @@
       }
       > #{$self} {
         &__header {
-          background-color: $accordion-primary-background;
+          background-color: var(--accordion-primary-background);
           font-weight: bold;
         }
       }
