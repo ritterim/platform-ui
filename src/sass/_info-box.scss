@@ -25,8 +25,8 @@
       );
     box-shadow: 0 1rem 2rem var(--black-a40);
     display: none;
-    margin-top: variables.$size;
-    padding: map.get(variables.$sizes, 5) map.get(variables.$sizes, 4);
+    margin-top: var(--space-3);
+    padding: var(--space-5) var(--space-4);
     position: absolute;
     top: 100%;
     width: 20rem;
@@ -64,7 +64,7 @@
         map.get(variables.$greyscale, "white") transparent;
       top: -12px;
       left: 0;
-      margin: 0 map.get(variables.$sizes, 2);
+      margin: 0 var(--space-2);
       z-index: 1;
     }
 
@@ -82,7 +82,7 @@
         );
       top: -14px;
       left: -2px;
-      margin: 0 map.get(variables.$sizes, 2);
+      margin: 0 var(--space-2);
       z-index: 0;
     }
     &.content--right {

@@ -43,7 +43,7 @@
     color: var(--base);
     display: flex;
     justify-content: space-between;
-    margin-bottom: variables.$size;
+    margin-bottom: var(--space-3);
     position: relative;
 
     .icon {
@@ -59,11 +59,12 @@
     }
   }
 
+  // I don't think this is a thing anymore
   &__header-actions {
     display: flex;
     position: absolute;
-    top: -#{map.get(variables.$sizes, 2)};
-    right: -#{map.get(variables.$sizes, 3)};
+    top: calc(var(--space-2) * (-1));
+    right: calc(var(--space-3) * (-1));
   }
 
   &-action {
@@ -91,7 +92,7 @@
     display: flex;
 
     > * {
-      margin-right: variables.$size;
+      margin-right: var(--space-3);
     }
   }
 

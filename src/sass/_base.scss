@@ -32,7 +32,7 @@ body {
     color: var(--base);
     font-weight: 500;
     line-height: 1.618;
-    margin-bottom: variables.$size;
+    margin-bottom: var(--space-3);
   }
 }
 
@@ -61,7 +61,7 @@ h6 {
 }
 
 p {
-  margin: 0 0 variables.$size 0;
+  margin: 0 0 var(--space-3) 0;
 }
 
 a {
@@ -82,5 +82,5 @@ hr {
   background-color: var(--base);
   border: none;
   height: 1px;
-  margin: variables.$size 0;
+  margin: var(--space-3) 0;
 }

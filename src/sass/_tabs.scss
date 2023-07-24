@@ -68,7 +68,7 @@ $tab-border-color: color.adjust(
     align-items: center;
     display: flex;
     height: $tab-height;
-    padding: map.get(variables.$sizes, 2) variables.$size;
+    padding: var(--space-2) var(--space-3);
     position: relative;
     transition: ease-in-out var(--transitions);
     transition-property: background-color, border-color, color, font-weight,
@@ -78,7 +78,7 @@ $tab-border-color: color.adjust(
       border: 1px solid $tab-color;
       background: $tab-color;
       color: var(--white);
-      margin-top: map.get(variables.$sizes, 1);
+      margin-top: var(--space-1);
 
       &:first-of-type {
         margin-top: 0;
@@ -188,8 +188,8 @@ $tab-border-color: color.adjust(
     color: var(--white);
     display: flex;
     height: $tab-height;
-    margin: map.get(variables.$sizes, 1) 0 0;
-    padding: map.get(variables.$sizes, 2) variables.$size;
+    margin: var(--space-1) 0 0;
+    padding: var(--space-2) var(--space-3);
     position: relative;
     transition: var(--transitions);
     transition-property: background-color, color, font-weight;
@@ -295,7 +295,7 @@ $tab-border-color: color.adjust(
 .tab-panel {
   background-color: var(--white);
   border: 1px solid $tab-border-color;
-  padding: map.get(variables.$sizes, 2);
+  padding: var(--space-2);
   position: relative;
   width: 100%;
 
@@ -306,7 +306,7 @@ $tab-border-color: color.adjust(
   @include mixins.breakpoint(tablet, min) {
     flex-grow: 1;
     order: 99;
-    padding-top: calc(#{map.get(variables.$sizes, 2)} + 1px);
+    padding-top: calc(var(--space-2) + 1px);
     z-index: 1;
   }
 }

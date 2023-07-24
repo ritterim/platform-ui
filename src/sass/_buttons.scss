@@ -68,24 +68,23 @@
     &:not([data-button-text]):not(.has-text) {
       &:after {
         @extend %loader;
-        @include mixins.square(variables.$size);
-        @include mixins.square(variables.$size, min);
+        @include mixins.square(var(--space-3));
+        @include mixins.square(var(--space-3), min);
         box-sizing: border-box;
         content: "";
         display: block;
         border-color: map.get(config.$loader-colors, "inverted");
         border-top-color: map.get(config.$loader-colors, "inverted-top");
         left: 50%;
-        margin-left: -0.5rem;
-        margin-top: -0.5rem;
         position: absolute;
         top: 50%;
+        transform: translate(-50%, -50%);
       }
     }
   }
 
   i {
-    margin: 0 map.get(variables.$sizes, 1);
+    margin: 0 var(--space-1);
   }
 
   [aria-hidden="hidden"] {
@@ -113,7 +112,7 @@
     }
 
     &.has-text {
-      padding: 0 map.get(variables.$sizes, 2);
+      padding: 0 var(--space-2);
       width: auto;
     }
 
@@ -128,24 +127,24 @@
 
       &:hover {
         @include mixins.breakpoint(lg-tablet, min) {
-          padding: 0 map.get(variables.$sizes, 1);
+          padding: 0 var(--space-1);
           width: auto;
 
           &:after {
             width: auto;
             display: inline-block;
-            padding-right: map.get(variables.$sizes, 2);
+            padding-right: var(--space-2);
           }
         }
       }
 
       &.has-text {
-        padding: 0 map.get(variables.$sizes, 1);
+        padding: 0 var(--space-1);
 
         &:after {
           width: auto;
           display: inline-block;
-          padding-right: map.get(variables.$sizes, 2);
+          padding-right: var(--space-2);
         }
       }
     }
@@ -169,12 +168,12 @@
             config.$button-secondary-background,
             $lightness: math.percentage(config.$hue-threshold)
           );
-        padding: 0 map.get(variables.$sizes, 1);
+        padding: 0 var(--space-1);
         width: auto;
 
         &:before {
           @extend %loader;
-          @include mixins.square(variables.$size);
+          @include mixins.square(var(--space-3));
           background-color: unset;
           box-sizing: border-box;
           box-shadow: none;
@@ -186,7 +185,7 @@
             $lightness: math.percentage(config.$hue-threshold * 2)
           );
           left: 0;
-          margin: 0 map.get(variables.$sizes, 1);
+          margin: 0 var(--space-1);
           position: relative;
           top: 0;
         }
@@ -195,7 +194,7 @@
           content: attr(data-button-text);
           width: auto;
           display: inline-block;
-          padding-right: map.get(variables.$sizes, 2);
+          padding-right: var(--space-2);
         }
 
         i {
@@ -210,10 +209,10 @@
     padding: config.$button-large-padding;
 
     &.loading {
-      &:after {
-        @include mixins.square(variables.$size * 1.5);
-        margin-left: -0.75rem;
-        margin-top: -0.75rem;
+      &:not([data-button-text]):not(.has-text) {
+        &:after {
+          @include mixins.square(calc(var(--space-3) * 1.5));
+        }
       }
     }
   }

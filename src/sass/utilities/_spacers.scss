@@ -4,13 +4,21 @@
 
 // Spacers
 // all around spacing utilities
+:root {
+  @each $size, $sizeValue in variables.$sizes {
+    --space-#{$size}: #{$sizeValue};
+  }
+}
+
+
 @each $spacer, $spacerProperty in variables.$spacers {
   @each $size, $sizeValue in variables.$sizes {
     .#{$spacer}-#{$size} {
-      #{$spacerProperty}: #{$sizeValue};
+      #{$spacerProperty}: var(--space-#{$size});
     }
   }
 }
+
 
 // all around responsive spacing utilities
 @each $breakpoint, $breakpointValue in config.$breakpoints {
@@ -23,7 +31,7 @@
       @if $index > 1 {
         .#{$spacer}-#{$size}\:#{$breakpoint} {
           @media (min-width: $breakpointValue) {
-            #{$spacerValue}: $sizeValue;
+            #{$spacerValue}: var(--space-#{$size});
           }
         }
       }
@@ -31,16 +39,18 @@
   }
 }
 
+
 // directional spacing utilities
 @each $spacer, $spacerProperty in variables.$spacers {
   @each $direction, $directionValue in variables.$spacerDirections {
     @each $size, $sizeValue in variables.$sizes {
       .#{$spacer}#{$direction}-#{$size} {
-        #{$spacerProperty}-#{$directionValue}: #{$sizeValue};
+        #{$spacerProperty}-#{$directionValue}: var(--space-#{$size});
       }
     }
   }
 }
+
 
 // responsive directional spacing utilities
 @each $breakpoint, $breakpointValue in config.$breakpoints {
@@ -54,7 +64,7 @@
         @if $index > 1 {
           .#{$spacer}#{$direction}-#{$size}\:#{$breakpoint} {
             @media (min-width: $breakpointValue) {
-              #{$spacerValue}-#{$directionValue}: $sizeValue;
+              #{$spacerValue}-#{$directionValue}: var(--space-#{$size});
             }
           }
         }
@@ -62,6 +72,7 @@
     }
   }
 }
+
 
 .mx-auto {
   margin: 0 auto;

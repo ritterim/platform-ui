@@ -21,7 +21,7 @@
   }
 
   a {
-    padding: variables.$size;
+    padding: var(--space-3);
     text-decoration: underline;
 
     &:focus,

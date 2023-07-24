@@ -5,10 +5,10 @@
 
 ul {
   margin: 0;
-  padding: 0 0 0 variables.$size;
+  padding: 0 0 0 var(--space-3);
 
   li {
-    margin: 0 0 map.get(variables.$sizes, 2);
+    margin: 0 0 var(--space-2);
   }
 }
 
@@ -18,8 +18,8 @@ ol {
 
 .post {
   &-item {
-    margin: 0 0 variables.$size;
-    padding: 0 0 variables.$size;
+    margin: 0 0 var(--space-3);
+    padding: 0 0 var(--space-3);
     position: relative;
 
     &:not(:last-of-type) {
@@ -29,17 +29,17 @@ ol {
     &__duration {
       color: var(--light);
       font-size: map.get(variables.$font-scale, "sm");
-      margin-bottom: map.get(variables.$sizes, 1);
+      margin-bottom: var(--space-1);
 
       &:before {
         content: "\f14a";
         font-family: platform-icons;
-        margin: 0 map.get(variables.$sizes, 2) 0 0;
+        margin: 0 var(--space-2) 0 0;
       }
     }
 
     &__title {
-      margin-bottom: map.get(variables.$sizes, 1);
+      margin-bottom: var(--space-1);
     }
 
     &__link {
@@ -106,7 +106,7 @@ ol {
 
       &-caption {
         bottom: 0;
-        padding: map.get(variables.$sizes, 2);
+        padding: var(--space-2);
         position: absolute;
         text-align: center;
         width: 100%;
@@ -132,7 +132,7 @@ ol {
 
   &--bordered {
     #{$list}__item {
-      padding-bottom: map.get(variables.$sizes, 2);
+      padding-bottom: var(--space-2);
 
       &:not(:last-of-type) {
         border-bottom: 1px solid var(--light-mid);
@@ -144,7 +144,7 @@ ol {
     display: flex;
 
     li {
-      margin: 0 map.get(variables.$sizes, 2) 0 0;
+      margin: 0 var(--space-2) 0 0;
     }
   }
 }

@@ -19,7 +19,7 @@
     font-weight: normal;
     line-height: 1.15rem;
     opacity: 0;
-    padding: map.get(variables.$sizes, 1) map.get(variables.$sizes, 2);
+    padding: var(--space-1) var(--space-2);
     position: absolute;
     text-align: center;
     text-transform: none;

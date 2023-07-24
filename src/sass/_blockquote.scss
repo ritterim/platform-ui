@@ -8,22 +8,22 @@
 @use "sass:meta";
 
 blockquote {
-  border-left: map.get(variables.$sizes, 2) solid var(--light);
-  margin-bottom: map.get(variables.$sizes, 3);
-  padding: map.get(variables.$sizes, 3) 0 map.get(variables.$sizes, 3)
-    map.get(variables.$sizes, 3) * 1.5;
+  border-left: var(--space-2) solid var(--light);
+  margin-bottom: var(--space-3);
+  padding: var(--space-3) 0 var(--space-3)
+    calc(var(--space-3) * 1.5);
   position: relative;
 
   p {
     margin-bottom: 0;
 
     + p {
-      margin-top: map.get(variables.$sizes, 3);
+      margin-top: var(--space-3);
     }
   }
 
   footer {
-    margin-top: map.get(variables.$sizes, 3);
+    margin-top: var(--space-3);
   }
 
   cite {

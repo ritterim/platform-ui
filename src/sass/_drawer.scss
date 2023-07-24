@@ -48,12 +48,12 @@
     width: 100%;
 
     @include mixins.breakpoint(tablet, max) {
-      padding-top: map.get(variables.$sizes, 5);
+      padding-top: var(--space-5);
     }
 
     #{$self}__close {
       position: absolute;
-      right: -#{variables.$size};
+      right: calc(var(--space-3) * (-1));
       top: 50%;
       transform: translate(-50%, -50%);
 

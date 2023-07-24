@@ -87,7 +87,7 @@
 
   &__inner {
     background: var(--white);
-    margin: map.get(variables.$sizes, 4) auto;
+    margin: var(--space-4) auto;
     transform: translate(0, 100%);
 
     @media (prefers-reduced-motion: no-preference) {
