@@ -48,11 +48,11 @@
   &.disabled {
     --button-background: color.adjust(
                            map.get(variables.$greyscale, "light"),
-                           $lightness: math.percentage(10%)
+                           $lightness: math.percentage(.1)
                          ) !important;
     --button-border: color.adjust(
                        map.get(variables.$greyscale, "light"),
-                       $lightness: math.percentage(10%)
+                       $lightness: math.percentage(.1)
                      ) !important;
     --button-color: var(--white);
 
@@ -115,7 +115,7 @@
     --button-border-radius: 50%;
     --_button-shadow: var(--button-shadow, #{color.adjust(
                         #e58967,
-                        $lightness: math.percentage(10%)
+                        $lightness: math.percentage(.1)
                       )});
 
     padding: 0;
@@ -178,7 +178,7 @@
         box-shadow: 0 0 0 0.3rem
                     color.adjust(
                       #e58967,
-                      $lightness: math.percentage(10%)
+                      $lightness: math.percentage(.1)
                     );
       }
 
@@ -190,7 +190,7 @@
         box-shadow: 0 0 0 0.3rem
           color.adjust(
             #e58967,
-            $lightness: math.percentage(10%)
+            $lightness: math.percentage(.1)
           );
         padding: 0 var(--space-1);
         width: auto;
@@ -297,7 +297,7 @@
           --button-color: var(--white);
           --button-hover-background: #{color.adjust(
             $color,
-            $lightness: math.percentage(10%)
+            $lightness: math.percentage(.1)
           )};
         }
 
@@ -312,7 +312,7 @@
           // lighten the box-shadow by 10% of background--color
           --box-shadow: #{color.adjust(
             $color,
-            $lightness: math.percentage(10%)
+            $lightness: math.percentage(.1)
           )};
 
           @if lightness($color) <= 50 {
