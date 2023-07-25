@@ -10,45 +10,58 @@
 .button {
   $self: &;
 
+  --_button-border: var(--button-border, var(--light-3));
+  --_button-border-radius: var(--button-border-radius, 5rem);
+
+  --_button-background: var(--button-background, var(--white));
+  --_button-color: var(--button-color, var(--base));
+  --_button-padding: var(--button-padding, .25rem 1rem);
+  --_button-hover: var(--button-hover, #C3552A);
+
+  --_button-secondary-background: var(--button-secondary-background, var(--salmon));
+  --_button-secondary-color: var(--button-secondary-color, var(--white));
+
   align-items: center;
-  background-color: config.$button-primary-background;
-  border: 1px solid
-    color.adjust(
-      map.get(variables.$greyscale, "light"),
-      $lightness: math.percentage(config.$hue-threshold * 2)
-    );
-  border-radius: config.$button-border-radius;
-  color: config.$button-primary-color;
+  background-color: var(--_button-background);
+  border: 1px solid var(--_button-border);
+  border-radius: var(--_button-border-radius);
+  color: var(--_button-color);
   cursor: pointer;
   display: inline-flex;
   justify-content: center;
   line-height: 1.15 !important;
-  padding: config.$button-primary-padding;
+  padding: var(--_button-padding);
   transition: var(--transitions);
   white-space: nowrap;
 
   &.active,
   &:hover {
-    background-color: config.$button-primary-hover;
+    --button-color: var(--white);
+    --button-background: #C3552A;
+
     border-color: initial;
-    color: config.$button-secondary-color;
   }
 
+
+  // .button.disabled
   &:disabled,
   &.disabled {
-    background-color: color.adjust(
-      map.get(variables.$greyscale, "light"),
-      $lightness: math.percentage(config.$hue-threshold)
-    ) !important;
+    --button-background: color.adjust(
+                           map.get(variables.$greyscale, "light"),
+                           $lightness: math.percentage(10%)
+                         ) !important;
+    --button-border: color.adjust(
+                       map.get(variables.$greyscale, "light"),
+                       $lightness: math.percentage(10%)
+                     ) !important;
+    --button-color: var(--white);
+
     background-image: none;
-    border-color: color.adjust(
-      map.get(variables.$greyscale, "light"),
-      $lightness: math.percentage(config.$hue-threshold)
-    ) !important;
-    color: var(--white) !important;
     cursor: not-allowed;
   }
 
+
+  // .button.loading
   &.loading {
     align-items: center;
     overflow: hidden;
@@ -56,7 +69,8 @@
     position: relative;
 
     &:before {
-      background-color: config.$button-primary-hover;
+      --button-background: #C3552A;
+
       content: "";
       position: absolute;
       top: 0;
@@ -91,30 +105,38 @@
     pointer-events: none;
   }
 
+
+  
+  // .button--secondary
   &--secondary {
-    background-color: config.$button-secondary-background;
-    border: 1px solid config.$button-secondary-background;
-    color: config.$button-secondary-color;
-    border-radius: config.$button-border-radius * 100;
+    --button-background: var(--salmon);
+    --button-border: var(--salmon);
+    --button-color: var(--white);
+    --button-border-radius: 50%;
+    --_button-shadow: var(--button-shadow, #{color.adjust(
+                        #e58967,
+                        $lightness: math.percentage(10%)
+                      )});
+
     padding: 0;
     width: 2rem;
     height: 2rem;
     @extend %flex-center;
 
+
     &.active,
     &:hover {
-      background-color: config.$button-primary-hover;
-      box-shadow: 0 0 0 0.3rem
-        color.adjust(
-          config.$button-secondary-background,
-          $lightness: math.percentage(config.$hue-threshold)
-        );
+      --button-background: #C3552A;
+      
+      box-shadow: 0 0 0 0.3rem var(--_button-shadow);
     }
+
 
     &.has-text {
       padding: 0 var(--space-2);
       width: auto;
     }
+
 
     &[data-button-text] {
       transition: var(--transitions);
@@ -151,22 +173,24 @@
 
     &.loading {
       &:before {
-        background-color: config.$button-primary-hover;
+        --button-background: #C3552A;
+
         box-shadow: 0 0 0 0.3rem
-          color.adjust(
-            config.$button-secondary-background,
-            $lightness: math.percentage(config.$hue-threshold)
-          );
+                    color.adjust(
+                      #e58967,
+                      $lightness: math.percentage(10%)
+                    );
       }
 
       &[data-button-text],
       &.has-text {
-        background-color: config.$button-primary-hover;
+        --button-background: #C3552A;
+
         border-color: inherit;
         box-shadow: 0 0 0 0.3rem
           color.adjust(
-            config.$button-secondary-background,
-            $lightness: math.percentage(config.$hue-threshold)
+            #e58967,
+            $lightness: math.percentage(10%)
           );
         padding: 0 var(--space-1);
         width: auto;
@@ -179,7 +203,7 @@
           box-shadow: none;
           content: "";
           display: block;
-          border-color: config.$button-primary-background;
+          border-color: var(--_button-background);
           border-top-color: color.adjust(
             map.get(variables.$greyscale, "base"),
             $lightness: math.percentage(config.$hue-threshold * 2)
@@ -205,8 +229,9 @@
   }
 
   &--lg {
+    --button-padding: .5rem 1rem;
+
     font-size: map.get(variables.$font-scale, "lg");
-    padding: config.$button-large-padding;
 
     &.loading {
       &:not([data-button-text]):not(.has-text) {
@@ -228,7 +253,7 @@
     background-color: transparent;
 
     &:hover {
-      background-color: config.$button-primary-hover;
+      --button-background: #C3552A;
     }
   }
 
@@ -249,9 +274,9 @@
         --button-border: var(--button-background);
         // darken the background--color by 10% on hover
         --button-hover-background: #{color.adjust(
-            $color,
-            $lightness: math.percentage(-(config.$hue-threshold))
-          )};
+          $color,
+          $lightness: math.percentage(-(config.$hue-threshold))
+        )};
 
         background-color: var(--button-background);
         border-color: var(--button-border);
@@ -271,9 +296,9 @@
           // If the $color is dark, set the color to white and lighten the hover background.
           --button-color: var(--white);
           --button-hover-background: #{color.adjust(
-              $color,
-              $lightness: math.percentage(config.$hue-threshold)
-            )};
+            $color,
+            $lightness: math.percentage(10%)
+          )};
         }
 
         &:hover {
@@ -282,25 +307,26 @@
           color: var(--button-color);
         }
 
+
         &.button--secondary {
           // lighten the box-shadow by 10% of background--color
           --box-shadow: #{color.adjust(
-              $color,
-              $lightness: math.percentage(config.$hue-threshold)
-            )};
+            $color,
+            $lightness: math.percentage(10%)
+          )};
 
           @if lightness($color) <= 50 {
             // For our darkest buttons we lighten the box-shadow by 30%
             --box-shadow: #{color.adjust(
-                $color,
-                $lightness: math.percentage(config.$hue-threshold * 3)
-              )};
+              $color,
+              $lightness: math.percentage(config.$hue-threshold * 3)
+            )};
           } @else if lightness($color) > 90 {
             // if the colors lightness value is greater than 90% only lighten the box-shadow be 2%
             --box-shadow: #{color.adjust(
-                $color,
-                $lightness: math.percentage(0.02)
-              )};
+              $color,
+              $lightness: math.percentage(0.02)
+            )};
           }
 
           &.active,
@@ -323,9 +349,9 @@
               color: var(--dark);
             } @else if lightness($color) > 50 and lightness($color) < 65 {
               color: #{color.adjust(
-                  map.get(variables.$greyscale, "dark"),
-                  $lightness: math.percentage(-0.01)
-                )};
+                       map.get(variables.$greyscale, "dark"),
+                       $lightness: math.percentage(-0.01)
+                     )};
             } @else if lightness($color) > 90 {
               color: var(--base);
             } @else {
@@ -339,18 +365,8 @@
   }
 }
 
+
 .button-group {
   display: flex;
-
-  .button {
-    margin: config.$button-group-margin;
-
-    &:first-child {
-      margin-left: 0;
-    }
-
-    &:last-child {
-      margin-right: 0;
-    }
-  }
+  gap: var(--space-2);
 }
