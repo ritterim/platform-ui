@@ -49,6 +49,7 @@
 }
 %loader,
 .loader {
+  // TODO: custom property this and fix where loader is extended = button.scss
   animation: rotation 1s infinite linear;
   border: 2px solid map.get(config.$loader-colors, "primary");
   border-radius: map.get(variables.$radius, "round");
