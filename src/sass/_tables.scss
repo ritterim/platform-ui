@@ -6,10 +6,7 @@
 @use "sass:math";
 
 .table {
-  --table-color-light: #{color.adjust(
-      map.get(variables.$greyscale, "light"),
-      $lightness: math.percentage(config.$hue-threshold * 2)
-    )};
+  --table-color-light: var(--light-3);
 
   $table-border: 1px solid var(--table-color-light);
   $responsive-table-bottom-gap: var(--space-2);

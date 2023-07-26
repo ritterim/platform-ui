@@ -27,10 +27,7 @@ legend {
   );
   $error-background: map.get(variables.$message-colors, "error");
 
-  --disabled-color: #{color.adjust(
-      map.get(variables.$greyscale, "light"),
-      $lightness: math.percentage(config.$hue-threshold)
-    )};
+  --disabled-color: hsl(var(--light-hue), var(--light-sat), calc(var(--light-light) + 10%));
 
   $self: &;
   color: color.adjust(
@@ -799,10 +796,7 @@ fieldset:disabled {
 
 // Switch
 .switch {
-  --switch-color-light: color.adjust(
-    map.get(variables.$greyscale, "light"),
-    $lightness: math.percentage(config.$hue-threshold * 2)
-  );
+  --switch-color-light: var(--light-3);
 
   input[type="checkbox"],
   input[type="radio"] {

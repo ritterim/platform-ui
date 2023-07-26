@@ -498,10 +498,7 @@ $all-colors: () !default;
   }
 
   &__action {
-    color: color.adjust(
-      map.get(variables.$greyscale, "light"),
-      $lightness: math.percentage(config.$hue-threshold)
-    );
+    color: hsl(var(--light-hue), var(--light-sat), calc(var(--light-light) + 10%));
     @include mixins.square(calc(var(--space-3) * 1.5));
     @extend %flex-center;
 

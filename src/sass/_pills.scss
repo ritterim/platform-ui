@@ -10,11 +10,7 @@
   $primary-background: var(--white);
   $primary-color: var(--base);
 
-  border: 1px solid
-    color.adjust(
-      map.get(variables.$greyscale, "light"),
-      $lightness: math.percentage(config.$hue-threshold * 2)
-    );
+  border: 1px solid var(--light-3);
   border-radius: $border-radius;
   color: $primary-color;
   display: inline-flex;

@@ -18,25 +18,51 @@ $site-colors: () !default;
 
   @if meta.type-of($all-colors) == "map" {
     @each $name, $color in $all-colors {
-      --#{$name}: #{$color};
+      // --#{$name}: #{$color};
+
+      $hue: hue($color);
+      $sat: saturation($color);
+      $light: lightness($color);
+
+      --#{$name}-hue: #{$hue};
+      --#{$name}-sat: #{$sat};
+      --#{$name}-light: #{$light};
+
+      --#{$name}: hsl(var(--#{$name}-hue), var(--#{$name}-sat), var(--#{$name}-light));
 
       @for $i from 1 through 9 {
-        $red: red($color);
-        $green: green($color);
-        $blue: blue($color);
-        --#{$name}-a#{$i}0: rgba(#{$red}, #{$green}, #{$blue}, #{$i * 0.1});
+        $hue: hue($color);
+        $sat: saturation($color);
+        $light: lightness($color);
+        --#{$name}-a#{$i}0: hsla(#{$hue}, #{$sat}, #{$light}, #{$i * 0.1});
       }
+
+      // @for $i from 1 through 9 {
+      //   $hue: hue($color);
+      //   $sat: saturation($color);
+      //   $light: lightness($color);
+      //   --#{$name}-l#{$i}0: hsl(#{$hue}, #{$sat}, #{$i * 10%});
+      // }
     }
   }
+
   @if meta.type-of($site-colors) == "map" {
     @each $name, $color in $site-colors {
-      --#{$name}: #{$color};
+      $hue: hue($color);
+      $sat: saturation($color);
+      $light: lightness($color);
+
+      --#{$name}-hue: #{$hue};
+      --#{$name}-sat: #{$sat};
+      --#{$name}-light: #{$light};
+
+      --#{$name}: hsl(var(--#{$name}-hue), var(--#{$name}-sat), var(--#{$name}-light));
 
       @for $i from 1 through 9 {
-        $red: red($color);
-        $green: green($color);
-        $blue: blue($color);
-        --#{$name}-a#{$i}0: rgba(#{$red}, #{$green}, #{$blue}, #{$i * 0.1});
+        $hue: hue($color);
+        $sat: saturation($color);
+        $light: lightness($color);
+        --#{$name}-a#{$i}0: hsla(#{$hue}, #{$sat}, #{$light}, #{$i * 0.1});
       }
     }
   }

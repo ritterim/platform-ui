@@ -8,10 +8,7 @@
 
 $tab-height: 3rem;
 $tab-color: var(--base);
-$tab-border-color: color.adjust(
-  map.get(variables.$greyscale, "light"),
-  $lightness: math.percentage(config.$hue-threshold * 2)
-);
+$tab-border-color: var(--light-3);
 
 .tabs {
   @include mixins.breakpoint(tablet, min) {
