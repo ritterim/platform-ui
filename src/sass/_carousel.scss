@@ -1,67 +1,15 @@
-@use "config";
-@use "mixins";
-@use "variables";
-@use "sass:color";
-@use "sass:math";
-@use "sass:map";
-
 .carousel {
-  $self: &;
+  --_nav-button-foreground: var(--_nav-button-foreground, var(--base));
+  --_nav-button-background: var(--nav-button-background, var(--light-mid));
+  --_nav-spacing: var(--nav-spacing, var(--space-3));
 
-  --nav-button-foreground: var(--base);
-  --nav-button-background: var(--light-mid);
-  --nav-spacing: 3rem;
-
-  display: inline-flex;
-  padding: 0 2rem 0;
   position: relative;
+  width: 100%;
 
-  &.has-nav {
-    padding-bottom: var(--nav-spacing);
-  }
-
-  &__slider {
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    position: relative;
-
-    // fallback for dum dum browsers that don't support aspect-ratio
-    &:before {
-      content: '';
-      padding-top: 50%;
-    }
-
-    // use aspect ration to set height of slider
-    @supports (aspect-ratio: 2) {
-      aspect-ratio: 2;
-
-      &::before {
-        display: none; 
-      }
-    }
-  }
-  
-
-  // ----------------
-  // slides
-  // ----------------
-  &__slide {
-    display: none;
-    position: relative;
-    width: 100%;
-
-    &.active {
-      display: flex;
-    }
-  }
 
   li.carousel__slide {
     list-style-type: none;
   }
-  // ----------------
-  // end slides
-  // ----------------
 
 
   // ----------------
@@ -69,12 +17,10 @@
   // ----------------
   &__arrow {
     padding: 0 .5rem;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    z-index: 3;
 
     .has-nav & {
-      top: calc(50% - (var(--nav-spacing)/2));
+      top: calc(50% - (var(--_nav-spacing)/2));
     }
 
     i {
@@ -89,69 +35,180 @@
       right: 0;
     }
   }
-
-  button#{$self}__arrow {
-    appearance: none;
-    background: transparent;
-    border: none;
-    color: inherit;
-  }
   // ----------------
   // end arrows
   // ----------------
 
 
-  // ----------------
-  // carousel Nav
-  // ----------------
-  &__nav {
-    bottom: 0;
-    display: flex;
-    left: 50%;
-    position: absolute;
-    transform: translateX(-50%);
-  }
+  &.carousel--main {
+    
+    .carousel__slider {
+      min-height: 500px;
+    }
+  
+    .carousel__slide {
+      // prevents slide effect
+      transition: transform ease-in-out 1s;
+      transform: translateX(100%);
+      z-index: -1;
 
-  &__nav-button {
-    appearance: none;
-    background: transparent;
-    border: none;
-    color: inherit;
-    padding: 1.5rem;
-    position: relative;
-
-    &.active,
-    &:hover {
-
-      &:before {
-        opacity: 1;
+      &:first-of-type:not(.previous) {
+        z-index: 2;
       }
-    }
+  
+      &.active {
+        opacity: 1;
+        transform: translateX(0%);
+        z-index: 2;
+      }
 
-    &:before {
-      content: '';
-      background-color: var(--nav-button-foreground);
-      border-radius: 50%;
-      opacity: .3;
-      padding: .5rem;
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      transition: ease opacity .2s;
-      z-index: 2;
-    }
+      &.next {
+        transform: translateX(100%);
+        z-index: 1;
+      }
 
-    &:after {
-      content: '';
-      background-color: var(--nav-button-background);
-      border-radius: 50%;
-      padding: .5rem;
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
+      &.previous {
+        transform: translateX(-100%);
+      }
+
+      &:not(.next):not(.active):not(.previous) {
+        bottom: 1000%;
+      }
     }
   }
   // ----------------
   // end carousel Nav
   // ----------------
+}
+
+
+
+
+.carousel__slider {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+// ----------------
+// slides
+// ----------------
+.carousel__slide {
+  position: relative;
+  display: none;
+  align-items: center;
+  width: 100%;
+  transition: transform 1s ease,-webkit-transform 1s ease;
+  backface-visibility: hidden;
+  perspective: 1000px;
+  
+  &.active,
+  &.next,
+  &.previous {
+    display: block;
+  }
+
+  &.next,
+  &.previous {
+    position: absolute;
+    top: 0;
+  }
+
+  &.active {
+
+    .move-right & {
+      transform: translateX(100%);
+    }
+
+    .move-left & {
+      transform: translateX(-100%);
+    }
+  }
+
+  &.next {
+    transform: translateX(100%);
+
+    .move-left & {
+      transform: translateX(0);
+    }
+  }
+
+  &.previous {
+    transform: translateX(-100%);
+
+    .move-right & {
+      transform: translateX(0);
+    }
+  }
+}
+
+
+// ----------------
+// carousel Nav
+// ----------------
+.carousel__nav {
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+
+  [data-nav="below"] & {
+    bottom: unset;
+    left: unset;
+    transform: unset;
+    position: relative;
+  }
+}
+
+.carousel__nav-button {
+  appearance: none;
+  background: transparent;
+  border: none;
+  color: inherit;
+  padding: 1.5rem;
+  position: relative;
+  z-index: 3;
+
+  &.active,
+  &:hover {
+
+    &:before {
+      opacity: 1;
+    }
+  }
+
+  &.active {
+    pointer-events: none;
+  }
+
+  &:before {
+    content: '';
+    background-color: var(--_nav-button-foreground);
+    opacity: .3;
+    padding-block: .3rem;
+    padding-inline: 1.25rem;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    transition: ease opacity .2s;
+    z-index: 2;
+  }
+
+  &:after {
+    content: '';
+    background-color: var(--_nav-button-background);
+    padding-block: .3rem;
+    padding-inline: 1.25rem;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
