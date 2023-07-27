@@ -5,6 +5,7 @@
 @use "sass:color";
 @use "sass:math";
 @use "sass:map";
+@use "sass:meta";
 
 // Colors
 $greyscale: (
@@ -18,12 +19,62 @@ $greyscale: (
   "black": #222,
 );
 
+$all-colors: () !default;
+$site-colors: () !default;
+
+@if meta.type-of(config.$config-colors) == "map" {
+  $all-colors: map.merge(config.$config-colors, $greyscale);
+} @else {
+  $all-colors: map.merge($greyscale, $all-colors);
+  @warn "$config-colors is not set or empty";
+}
+
+@mixin all-color-tokens() {
+  @each $name, $color in $all-colors {
+  
+    $hue: hue($color);
+    $sat: saturation($color);
+    $light: lightness($color);
+  
+    --#{$name}-hue: #{$hue};
+    --#{$name}-sat: #{$sat};
+    --#{$name}-light: #{$light};
+  
+    --#{$name}: hsl(#{$hue}, #{$sat}, #{$light});
+  
+    @for $i from 1 through 9 {
+      $hue: hue($color);
+      $sat: saturation($color);
+      $light: lightness($color);
+      --#{$name}-a#{$i}0: hsla(#{$hue}, #{$sat}, #{$light}, #{$i * 0.1});
+    }
+  }
+}
+
+
+
 // Error Colors
 $error-colors: (
   "positive": #b5cc18,
   "negative": tomato,
   "neutral": map.get($greyscale, "light"),
 );
+
+@mixin error-tokens() {
+  @each $name, $color in $error-colors {
+    $hue: hue($color);
+    $sat: saturation($color);
+    $light: lightness($color);
+  
+    --#{$name}-hue: #{$hue};
+    --#{$name}-sat: #{$sat};
+    --#{$name}-light: #{$light};
+  
+    --#{$name}: hsl(#{$hue}, #{$sat}, #{$light});
+  }
+}
+
+
 
 // Message Colors
 $message-colors: (
