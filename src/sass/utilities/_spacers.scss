@@ -14,7 +14,7 @@
 @each $spacer, $spacerProperty in variables.$spacers {
   @each $size, $sizeValue in variables.$sizes {
     .#{$spacer}-#{$size} {
-      #{$spacerProperty}: var(--space-#{$size});
+      #{$spacerProperty}: var(--space-#{$size}) !important;
     }
   }
 }
@@ -31,7 +31,7 @@
       @if $index > 1 {
         .#{$spacer}-#{$size}\:#{$breakpoint} {
           @media (min-width: $breakpointValue) {
-            #{$spacerValue}: var(--space-#{$size});
+            #{$spacerValue}: var(--space-#{$size}) !important;
           }
         }
       }
@@ -45,7 +45,7 @@
   @each $direction, $directionValue in variables.$spacerDirections {
     @each $size, $sizeValue in variables.$sizes {
       .#{$spacer}#{$direction}-#{$size} {
-        #{$spacerProperty}-#{$directionValue}: var(--space-#{$size});
+        #{$spacerProperty}-#{$directionValue}: var(--space-#{$size}) !important;
       }
     }
   }
@@ -64,7 +64,7 @@
         @if $index > 1 {
           .#{$spacer}#{$direction}-#{$size}\:#{$breakpoint} {
             @media (min-width: $breakpointValue) {
-              #{$spacerValue}-#{$directionValue}: var(--space-#{$size});
+              #{$spacerValue}-#{$directionValue}: var(--space-#{$size}) !important;
             }
           }
         }
