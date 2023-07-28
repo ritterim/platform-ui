@@ -1,4 +1,4 @@
-@forward "color-tokens";
+@use "color-tokens" as tokens;
 
 @use "../config";
 
@@ -97,4 +97,12 @@ $message-colors: (
   
     --#{$name}: hsl(#{$hue}, #{$sat}, #{$light});
   }
+}
+
+
+:root {
+  @include all-color-tokens();
+  @include tokens.color-tokens();
+  @include error-tokens();
+  @include message-tokens();
 }
