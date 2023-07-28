@@ -84,3 +84,17 @@ $message-colors: (
   "error": #ffe5e0,
   "success": #d4edda,
 );
+
+@mixin message-tokens() {
+  @each $name, $color in $message-colors {
+    $hue: hue($color);
+    $sat: saturation($color);
+    $light: lightness($color);
+  
+    --#{$name}-hue: #{$hue};
+    --#{$name}-sat: #{$sat};
+    --#{$name}-light: #{$light};
+  
+    --#{$name}: hsl(#{$hue}, #{$sat}, #{$light});
+  }
+}

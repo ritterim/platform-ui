@@ -5,10 +5,10 @@
 
 
 :root {
+  @include variables.all-color-tokens();
   @include variables.color-tokens();
   @include variables.error-tokens();
-  @include variables.all-color-tokens();
-
+  @include variables.message-tokens();
 
   @each $type, $size in variables.$radius {
     --#{$type}: #{$size};
