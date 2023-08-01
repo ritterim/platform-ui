@@ -11,11 +11,11 @@
     position: fixed;
     width: 100%;
     top: 0;
-    height: config.$menu-height;
+    height: var(--menu-height);
     z-index: 100;
 
     + .header-fixed {
-      margin-top: config.$menu-height;
+      margin-top: var(--menu-height);
     }
   }
 }
@@ -332,7 +332,7 @@ $all-colors: () !default;
         z-index: 6;
 
         .site-header--fixed & {
-          max-height: calc(100vh - #{config.$menu-height});
+          max-height: calc(100vh - #{var(--menu-height)});
         }
       }
     }
@@ -473,7 +473,7 @@ $all-colors: () !default;
   &.site-menu-wrapper,
   .site-menu-wrapper {
     .site-menu.active {
-      max-height: calc(100vh - #{config.$menu-height});
+      max-height: calc(100vh - #{var(--menu-height)});
     }
   }
 }
