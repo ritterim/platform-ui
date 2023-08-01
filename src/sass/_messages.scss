@@ -14,8 +14,8 @@
   background-color: var(--message-background);
   border-left: thick solid var(--message-border);
   color: var(--message-color);
-  margin: var(--space-2) 0;
-  padding: var(--space-2);
+  margin: var(--size-2) 0;
+  padding: var(--size-2);
 
   // button close needs to be an independant concept to be placed
   // anywhere
@@ -24,14 +24,14 @@
     display: block;
     font-size: 80%;
     font-weight: bold;
-    margin-bottom: var(--space-3);
+    margin-bottom: var(--size-3);
     text-transform: uppercase;
   }
 
   &__close {
     position: absolute;
-    top: var(--space-2);
-    right: var(--space-2);
+    top: var(--size-2);
+    right: var(--size-2);
   }
 
   &[data-header="none"] {
@@ -44,7 +44,7 @@
     margin-bottom: 0;
 
     + p {
-      margin: var(--space-2) 0 0;
+      margin: var(--size-2) 0 0;
     }
   }
   // ----------

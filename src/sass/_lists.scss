@@ -5,10 +5,10 @@
 
 ul {
   margin: 0;
-  padding: 0 0 0 var(--space-3);
+  padding: 0 0 0 var(--size-3);
 
   li {
-    margin: 0 0 var(--space-2);
+    margin: 0 0 var(--size-2);
   }
 }
 
@@ -17,7 +17,7 @@ ol {
   list-style-position: inside;
 
   li {
-    margin: 0 0 var(--space-2);
+    margin: 0 0 var(--size-2);
   }
 }
 
@@ -32,7 +32,7 @@ ol {
     --_list-item-border: var(--list-item-border, var(--light-mid));
 
     .list__item {
-      padding-bottom: var(--space-2);
+      padding-bottom: var(--size-2);
 
       &:not(:last-of-type) {
         border-bottom: 1px solid var(--_list-item-border);
@@ -43,6 +43,6 @@ ol {
 
   &.list--inline {
     display: flex;
-    gap: var(--space-3);
+    gap: var(--size-3);
   }
 }

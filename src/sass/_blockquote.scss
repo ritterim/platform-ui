@@ -13,22 +13,22 @@ blockquote {
                           var(--light)
                         );
 
-  border-left: var(--space-2) solid var(--_blockquote-border);
-  margin-bottom: var(--space-3);
-  padding: var(--space-3) 0 var(--space-3)
-    calc(var(--space-3) * 1.5);
+  border-left: var(--size-2) solid var(--_blockquote-border);
+  margin-bottom: var(--size-3);
+  padding: var(--size-3) 0 var(--size-3)
+    calc(var(--size-3) * 1.5);
   position: relative;
 
   p {
     margin-bottom: 0;
 
     + p {
-      margin-top: var(--space-3);
+      margin-top: var(--size-3);
     }
   }
 
   footer {
-    margin-top: var(--space-3);
+    margin-top: var(--size-3);
   }
 
   cite {

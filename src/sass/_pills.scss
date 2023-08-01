@@ -15,7 +15,7 @@
   color: $primary-color;
   display: inline-flex;
   font-size: map.get(variables.$font-scale, "sm");
-  padding: var(--space-1) var(--space-2);
+  padding: var(--size-1) var(--size-2);
   line-height: 1.5;
 
   &--split {
@@ -25,7 +25,7 @@
     padding: 0;
     .pill__label {
       background-color: rgba($primary-color, 0.3);
-      padding: var(--space-1) var(--space-2);
+      padding: var(--size-1) var(--size-2);
     }
   }
 
@@ -37,24 +37,24 @@
       padding: 0;
       &-dot {
         padding: 0;
-        @include mixins.square(var(--space-2));
+        @include mixins.square(var(--size-2));
       }
-      @include mixins.square(var(--space-3));
+      @include mixins.square(var(--size-3));
     }
 
     &-medium {
       @extend .pill--circle;
-      @include mixins.square(var(--space-4));
+      @include mixins.square(var(--size-4));
     }
 
     &-large {
       @extend .pill--circle;
-      @include mixins.square(var(--space-5));
+      @include mixins.square(var(--size-5));
     }
   }
 
   &__content {
-    padding: var(--space-1) var(--space-2);
+    padding: var(--size-1) var(--size-2);
     // if icon present - flex it
     i {
       display: flex;

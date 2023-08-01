@@ -13,7 +13,7 @@
   display: inline-block;
   position: relative;
 
-  
+
   &.active {
     .info-box__content {
       display: block !important;
@@ -26,8 +26,8 @@
     border: 1px solid var(--_info-box-border);
     box-shadow: 0 1rem 2rem var(--_info-box-shadow);
     display: none;
-    margin-top: var(--space-3);
-    padding: var(--space-5) var(--space-4);
+    margin-top: var(--size-3);
+    padding: var(--size-5) var(--size-4);
     position: absolute;
     top: 100%;
     width: 20rem;
@@ -64,7 +64,7 @@
       border-color: transparent transparent var(--_info-box-background) transparent;
       top: -12px;
       left: 0;
-      margin: 0 var(--space-2);
+      margin: 0 var(--size-2);
       z-index: 1;
     }
 
@@ -78,7 +78,7 @@
       border-color: transparent transparent var(--_info-box-border);
       top: -14px;
       left: -2px;
-      margin: 0 var(--space-2);
+      margin: 0 var(--size-2);
       z-index: 0;
     }
 

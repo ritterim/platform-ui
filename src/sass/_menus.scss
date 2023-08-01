@@ -69,7 +69,7 @@ $all-colors: () !default;
     color: var(--menu-text-color);
     display: flex;
     line-height: 1;
-    padding: var(--space-2) var(--space-3);
+    padding: var(--size-2) var(--size-3);
   }
 
   .dropdown__content-item {
@@ -119,22 +119,22 @@ $all-colors: () !default;
       @each $unit, $rem in variables.$sizes {
         &.p-#{$unit} {
           &:after {
-            left: var(--space-#{$unit});
-            right: var(--space-#{$unit});
+            left: var(--size-#{$unit});
+            right: var(--size-#{$unit});
           }
         }
 
         &.px-#{$unit} {
           &:after {
-            left: var(--space-#{$unit});
-            right: var(--space-#{$unit});
+            left: var(--size-#{$unit});
+            right: var(--size-#{$unit});
           }
         }
 
         @each $direction, $d in variables.$xy-border {
           &.p#{$d}-#{$unit} {
             &:after {
-              #{$direction}: var(--space-#{$unit});
+              #{$direction}: var(--size-#{$unit});
             }
           }
         }
@@ -499,7 +499,7 @@ $all-colors: () !default;
 
   &__action {
     color: hsl(var(--light-hue), var(--light-sat), calc(var(--light-light) + 10%));
-    @include mixins.square(calc(var(--space-3) * 1.5));
+    @include mixins.square(calc(var(--size-3) * 1.5));
     @extend %flex-center;
 
     &:hover {
@@ -514,7 +514,7 @@ $all-colors: () !default;
     #{$self}__item {
       border: 0;
       border-bottom: 1px solid var(--light);
-      padding: var(--space-1) 0;
+      padding: var(--size-1) 0;
       &:last-of-type {
         border-bottom: none;
       }

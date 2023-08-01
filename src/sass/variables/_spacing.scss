@@ -36,3 +36,9 @@ $spacerDirections: (
   x: "inline",
   y: "block",
 );
+
+@mixin root-sizes() {
+  @each $size, $sizeValue in $sizes {
+    --size-#{$size}: #{$sizeValue};
+  }
+}

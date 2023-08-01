@@ -1,7 +1,7 @@
 .carousel {
   --_nav-button-foreground: var(--_nav-button-foreground, var(--base));
   --_nav-button-background: var(--nav-button-background, var(--light-mid));
-  --_nav-spacing: var(--nav-spacing, var(--space-3));
+  --_nav-spacing: var(--nav-spacing, var(--size-3));
 
   position: relative;
   width: 100%;
