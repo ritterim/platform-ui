@@ -6,20 +6,25 @@
 @use "sass:math";
 
 .info-box {
-  $self: &;
+  --_info-box-background: var(--info-box-background, var(--white));
+  --_info-box-border: var(--info-box-border, var(--light-3));
+  --_info-box-shadow: var(--info-box-shadow, var(--black-a40));
+
   display: inline-block;
   position: relative;
 
+  
   &.active {
     .info-box__content {
       display: block !important;
     }
   }
 
+
   &__content {
-    background-color: var(--white);
-    border: 1px solid var(--light-3);
-    box-shadow: 0 1rem 2rem var(--black-a40);
+    background-color: var(--_info-box-background);
+    border: 1px solid var(--_info-box-border);
+    box-shadow: 0 1rem 2rem var(--_info-box-shadow);
     display: none;
     margin-top: var(--space-3);
     padding: var(--space-5) var(--space-4);
@@ -56,8 +61,7 @@
       height: 0;
       border-style: solid;
       border-width: 0 8px 12px 8px;
-      border-color: transparent transparent
-        map.get(variables.$greyscale, "white") transparent;
+      border-color: transparent transparent var(--_info-box-background) transparent;
       top: -12px;
       left: 0;
       margin: 0 var(--space-2);
@@ -71,18 +75,20 @@
       height: 0;
       border-style: solid;
       border-width: 0 10px 14px 10px;
-      border-color: transparent transparent var(--light-3);
+      border-color: transparent transparent var(--_info-box-border);
       top: -14px;
       left: -2px;
       margin: 0 var(--space-2);
       z-index: 0;
     }
+
     &.content--right {
       /* for use if the button is affixed to the right side of the screen with nothing to buffer it */
       &:before {
         left: auto;
         right: 1px;
       }
+
       &:after {
         left: auto;
         right: -1px;
@@ -90,11 +96,13 @@
     }
   }
 
+
   &__close {
     position: absolute;
     right: 0.5rem;
     top: 0.5rem;
   }
+
 
   // .info-box--left
   &--left {
