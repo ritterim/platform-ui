@@ -8,7 +8,12 @@
 @use "sass:meta";
 
 blockquote {
-  border-left: var(--space-2) solid var(--light);
+  --_blockquote-border: var(
+                          --blockquote-border,
+                          var(--light)
+                        );
+
+  border-left: var(--space-2) solid var(--_blockquote-border);
   margin-bottom: var(--space-3);
   padding: var(--space-3) 0 var(--space-3)
     calc(var(--space-3) * 1.5);

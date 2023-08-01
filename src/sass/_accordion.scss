@@ -8,11 +8,26 @@
 .accordion {
   $self: &;
 
-  --_accordion-primary-color: var(--accordion-primary-color, var(--navy));
-  --_accordion-primary-background: var(--accordion-primary-background, var(--white));
-  --_accordion-header-background: var(--accordion-header-background, var(--lighter));
-  --_accordion-primary-border-color: var(--accordion-primary-border-color, var(--light-3));
-  --_accordion-hover-border: var(--accordion-hover-border, var(--skyblue));
+  --_accordion-primary-color:         var(
+                                        --accordion-primary-color, 
+                                        var(--navy)
+                                      );
+  --_accordion-primary-background:    var(
+                                        --accordion-primary-background, 
+                                        var(--white)
+                                      );
+  --_accordion-header-background:     var(
+                                        --accordion-header-background, 
+                                        var(--lighter)
+                                      );
+  --_accordion-primary-border-color:  var(
+                                        --accordion-primary-border-color, 
+                                        var(--light-3)
+                                      );
+  --_accordion-hover-border:          var(
+                                        --accordion-hover-border, 
+                                        var(--skyblue)
+                                      );
 
   background-color: var(--_accordion-primary-background);
   border: 1px solid transparent;
