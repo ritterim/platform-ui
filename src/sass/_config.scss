@@ -53,6 +53,20 @@ $site-colors-vars: (
   $site-colors: map.merge($site-colors-vars, $site-colors);
 }
 
+@mixin site-color-vars() {
+  @each $name, $color in $site-colors-vars {
+    $hue: hue($color);
+    $sat: saturation($color);
+    $light: lightness($color);
+  
+    --site-color-#{$name}-hue: #{$hue};
+    --site-color-#{$name}-sat: #{$sat};
+    --site-color-#{$name}-light: #{$light};
+  
+    --site-color-#{$name}: hsl(#{$hue}, #{$sat}, #{$light});
+  }
+}
+
 
 // --------------------
 // Breakpoints
