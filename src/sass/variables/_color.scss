@@ -105,4 +105,5 @@ $message-colors: (
   @include tokens.color-tokens();
   @include error-tokens();
   @include message-tokens();
+  @include config.site-color-vars();
 }
