@@ -14,8 +14,14 @@
   }
 
   figcaption {
-    --_figcaption-color: var(--figcaption-color, var(--white));
-    --_figcaption-background: var(--figcaption-background, var(--light));
+    --_figcaption-color: var(
+      --figcaption-color, 
+      var(--white)
+    );
+    --_figcaption-background: var(
+      --figcaption-background, 
+      var(--light)
+    );
 
     color: var(--_figcaption-color);
     cursor: default;

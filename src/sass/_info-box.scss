@@ -6,9 +6,18 @@
 @use "sass:math";
 
 .info-box {
-  --_info-box-background: var(--info-box-background, var(--white));
-  --_info-box-border: var(--info-box-border, var(--light-3));
-  --_info-box-shadow: var(--info-box-shadow, var(--black-a40));
+  --_info-box-background: var(
+    --info-box-background, 
+    var(--white)
+  );
+  --_info-box-border: var(
+    --info-box-border, 
+    var(--light-3)
+  );
+  --_info-box-shadow: var(
+    --info-box-shadow, 
+    var(--black-a40)
+  );
 
   display: inline-block;
   position: relative;

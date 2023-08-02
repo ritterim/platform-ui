@@ -9,9 +9,9 @@
 
 blockquote {
   --_blockquote-border: var(
-                          --blockquote-border,
-                          var(--light)
-                        );
+    --blockquote-border,
+    var(--light)
+  );
 
   border-left: var(--size-2) solid var(--_blockquote-border);
   margin-bottom: var(--size-3);

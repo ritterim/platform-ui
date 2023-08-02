@@ -29,7 +29,10 @@ ol {
 
   
   &--bordered {
-    --_list-item-border: var(--list-item-border, var(--light-mid));
+    --_list-item-border: var(
+      --list-item-border, 
+      var(--light-mid)
+    );
 
     .list__item {
       padding-bottom: var(--size-2);

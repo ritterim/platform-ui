@@ -7,10 +7,18 @@
 @use "sass:meta";
 
 .card {
-  $self: &;
-  --_card-background: var(--card-background, var(--white));
-  --_card-border: var(--card-border, var(--light-3));
-  --_card-padding: var(--card-padding, var(--size-3));
+  --_card-background: var(
+    --card-background, 
+    var(--white)
+  );
+  --_card-border: var(
+    --card-border, 
+    var(--light-3)
+  );
+  --_card-padding: var(
+    --card-padding, 
+    var(--size-3)
+  );
 
   background-color: var(--_card-background);
   border: 1px solid var(--_card-border);
@@ -49,7 +57,7 @@
       }
     }
 
-    #{$self}__group {
+    .card__group {
       align-items: center;
     }
   }

@@ -8,18 +8,39 @@
 @use "sass:meta";
 
 .button {
-  $self: &;
+  --_button-border: var(
+    --button-border, 
+    var(--light-3)
+  );
+  --_button-border-radius: var(
+    --button-border-radius, 
+    5rem
+  );
+  --_button-background: var(
+    --button-background, 
+    var(--white)
+  );
+  --_button-color: var(
+    --button-color, 
+    var(--base)
+  );
+  --_button-padding: var(
+    --button-padding, 
+    .25rem 1rem
+  );
+  --_button-hover: var(
+    --button-hover, 
+    #C3552A
+  );
 
-  --_button-border: var(--button-border, var(--light-3));
-  --_button-border-radius: var(--button-border-radius, 5rem);
-
-  --_button-background: var(--button-background, var(--white));
-  --_button-color: var(--button-color, var(--base));
-  --_button-padding: var(--button-padding, .25rem 1rem);
-  --_button-hover: var(--button-hover, #C3552A);
-
-  --_button-secondary-background: var(--button-secondary-background, var(--salmon));
-  --_button-secondary-color: var(--button-secondary-color, var(--white));
+  --_button-secondary-background: var(
+    --button-secondary-background, 
+    var(--salmon)
+  );
+  --_button-secondary-color: var(
+    --button-secondary-color, 
+    var(--white)
+  );
 
   align-items: center;
   background-color: var(--_button-background);

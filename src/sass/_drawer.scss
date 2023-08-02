@@ -5,9 +5,14 @@
 @use "sass:map";
 
 .drawer {
-  $self: &;
-  --_drawer-background: var(--drawer-background, var(--white));
-  --_drawer-padding: var(--drawer-padding, var(-space-4));
+  --_drawer-background: var(
+    --drawer-background, 
+    var(--white)
+  );
+  --_drawer-padding: var(
+    --drawer-padding, 
+    var(-space-4)
+  );
 
   background-color: var(--_drawer-background);
   box-shadow: 0 -1rem 2rem var(--black-a40);
@@ -32,14 +37,14 @@
     overflow-y: visible;
     overflow-x: hidden;
 
-    #{$self}-bottom & {
+    .drawer-bottom & {
       max-height: 80vh;
     }
   }
 
   &--single-row {
     & {
-      #{$self}__inner {
+      .drawer__inner {
         min-height: 8rem !important;
       }
     }
@@ -54,7 +59,7 @@
       padding-top: var(--size-5);
     }
 
-    #{$self}__close {
+    .drawer__close {
       position: absolute;
       right: calc(var(--size-3) * (-1));
       top: 50%;

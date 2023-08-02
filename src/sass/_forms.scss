@@ -23,15 +23,42 @@ legend {
 
 
 .form {
-  --_form-color: var(--form-color, var(--base));
-  --_form-error-color: var(--form-error-color, hsl(var(--negative-hue), var(--negative-sat), calc(var(--negative-light) - 20%)));
-  --_form-error-background: var(--form-error-background, var(--error));
-  --_form-font-size: var(--form-font-size, var(--font-size-base));
-  --_form-focus-color: var(--form-focus-color, var(--med-blue));
-  --_input-background: var(--input-background, transparent);
-  --_input-border: var(--input-border, var(--light));
-  --_input-disabled-color: var(--input-disabled-color, hsl(var(--light-hue), var(--light-sat), calc(var(--light-light) + 10%)));
-  --_input-padding: var(--input-padding, var(--size-1) var(--size-2));
+  --_form-color: var(
+    --form-color, 
+    var(--base)
+  );
+  --_form-error-color: var(
+    --form-error-color, 
+    hsl(var(--negative-hue), var(--negative-sat), calc(var(--negative-light) - 20%))
+  );
+  --_form-error-background: var(
+    --form-error-background, 
+    var(--error)
+  );
+  --_form-font-size: var(
+    --form-font-size, 
+    var(--font-size-base)
+  );
+  --_form-focus-color: var(
+    --form-focus-color, 
+    var(--med-blue)
+  );
+  --_input-background: var(
+    --input-background, 
+    transparent
+  );
+  --_input-border: var(
+    --input-border, 
+    var(--light)
+  );
+  --_input-disabled-color: var(
+    --input-disabled-color, 
+    hsl(var(--light-hue), var(--light-sat), calc(var(--light-light) + 10%))
+  );
+  --_input-padding: var(
+    --input-padding, 
+    var(--size-1) var(--size-2)
+  );
 
   color: var(--_form-color);
 
