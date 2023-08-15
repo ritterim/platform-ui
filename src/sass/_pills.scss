@@ -6,6 +6,10 @@
 @use "sass:math";
 
 .pill {
+  --_pill-border-radius: var(
+    --pill-border-radius,
+    var(--radius-button)
+  );
   $border-radius: map.get(variables.$radius, "button");
   $primary-background: var(--white);
   $primary-color: var(--base);

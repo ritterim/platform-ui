@@ -356,7 +356,7 @@ legend {
     select {
       background-color: var(--_form-error-background);
       border-color: var(--_form-error-color) !important;
-      border-radius: var(--default);
+      border-radius: var(--radius-default);
       padding-left: var(--size-2);
     }
 
@@ -446,7 +446,7 @@ legend {
   textarea,
   select {
     border-color: var(--_input-border);
-    border-radius: var(--default);
+    border-radius: var(--radius-default);
   }
 }
 
@@ -711,7 +711,7 @@ legend {
   textarea,
   select {
     border-color: var(--_input-border);
-    border-radius: var(--button);
+    border-radius: var(--radius-button);
   }
 
   .has-icon {
@@ -738,10 +738,28 @@ legend {
 
 // Toggle 
 .toggle {
-  --_toggle-background: var(--toggle-background, var(--_form-focus-color, var(--med-blue)));
-  --_toggle-border: var(--toggle-border, var(--button));
-  --_toggle-border-color: var(--toggle-border-color, var(--_input-border, var(--light)));
-  --_toggle-color: var(--toggle-color, var(--_form-color));
+  --_toggle-background: var(
+    --toggle-background, 
+    var(
+      --_form-focus-color, 
+      var(--med-blue)
+    )
+  );
+  --_toggle-border: var(
+    --toggle-border, 
+    var(--radius-button)
+  );
+  --_toggle-border-color: var(
+    --toggle-border-color, 
+    var(
+      --_input-border, 
+      var(--light)
+    )
+  );
+  --_toggle-color: var(
+    --toggle-color, 
+    var(--_form-color)
+  );
 
   border: 1px solid var(--_toggle-border-color);
   border-radius: var(--_toggle-border);
@@ -924,7 +942,7 @@ input[type="checkbox"].pill-filter,
 input[type="radio"].pill-filter {
   + label {
     background-color: var(--white);
-    border-radius: var(--button);
+    border-radius: var(--radius-button);
     color: var(--_form-focus-color);
     border: 1px solid var(--_form-focus-color);
     height: auto;

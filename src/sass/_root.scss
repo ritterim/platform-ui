@@ -7,7 +7,7 @@
 :root {
 
   @each $type, $size in variables.$radius {
-    --#{$type}: #{$size};
+    --radius-#{$type}: #{$size};
   }
 
   --menu-height: #{config.$menu-height};

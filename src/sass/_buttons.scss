@@ -14,7 +14,7 @@
   );
   --_button-border-radius: var(
     --button-border-radius, 
-    5rem
+    var(--radius-button)
   );
   --_button-background: var(
     --button-background, 
