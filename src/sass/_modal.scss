@@ -4,7 +4,14 @@
 @use "sass:map";
 
 .modal {
-  $header-height: 6rem;
+  --_modal-header-height: var(
+    --modal-header-height,
+    6rem
+  );
+  --_modal-background-shadow: var(
+    --modal-background-shadow,
+    var(--black-a50)
+  );
 
   // print entire modal
   @media print {
@@ -12,8 +19,7 @@
     height: 100%;
   }
 
-  $self: &;
-  background: var(--black-a50);
+  background: var(--_modal-background-shadow);
   position: fixed;
   z-index: 500;
   overflow-x: hidden;
@@ -35,13 +41,13 @@
     visibility: visible;
     opacity: 1;
 
-    #{$self}__inner {
+    .modal__inner {
       transform: translate(0, 0);
     }
   }
 
   &--full {
-    > #{$self}__inner {
+    > .modal__inner {
       margin: auto;
       width: 100%;
       position: absolute;
@@ -50,43 +56,31 @@
       left: 0;
       right: 0;
 
-      #{$self}__content {
-        height: calc(100% - #{$header-height});
+      .modal__content {
+        height: calc(100% - #{var(--_modal-header-height)});
         overflow-x: hidden;
         overflow-y: auto;
       }
     }
   }
 
-  &--small {
-    > #{$self}__inner {
-      @include mixins.breakpoint(tablet, min) {
-        width: 40vw;
-      }
-      @include mixins.breakpoint(desktop, min) {
-        width: 20vw;
-      }
-    }
-  }
-
-  &--large {
-    > #{$self}__inner {
-      @include mixins.breakpoint(tablet, min) {
-        width: 80vw;
-      }
-    }
-  }
-
-  &--centered {
-    @extend %flex-center;
-  }
 
   &__open {
     cursor: pointer;
   }
 
+
   &__inner {
-    background: var(--white);
+    --_modal-inner-background: var(
+      --modal-inner-background,
+      var(--white)
+    );
+    --_modal-width: var(
+      --modal-width,
+      65vw
+    );
+
+    background: var(--_modal-inner-background);
     margin: var(--size-4) auto;
     transform: translate(0, 100%);
 
@@ -94,35 +88,48 @@
       transition: var(--transitions) ease-in-out;
     }
 
+    @include mixins.breakpoint(tablet, min) {
+      width: var(--_modal-width);
+    }
+    
     @include mixins.breakpoint(tablet, max) {
+      --_modal-width: 100%;
+
       height: auto;
       margin: auto;
-      width: 100%;
     }
 
-    @include mixins.breakpoint(tablet, min) {
-      width: 65vw;
-    }
     @include mixins.breakpoint(desktop, min) {
-      width: 45vw;
+      --_modal-width: 45vw;
     }
   }
 
+
   &__header {
+    --_modal-header-color: var(
+      --modal-header-color,
+      var(--base)
+    );
+    --_modal-header-background: var(
+      --modal-header-background,
+      var(--lighblue)
+    );
+
     background-color: var(--lightblue);
     color: var(--base);
-    height: $header-height;
+    height: var(--_modal-header-height);
     padding: 2rem;
     position: relative;
     width: 100%;
 
-    #{$self}__close {
+    .modal__close {
       position: absolute;
       right: -1rem;
       top: 50%;
       transform: translate(-50%, -50%);
     }
   }
+
 
   &__content {
     padding: 2rem;
@@ -136,6 +143,35 @@
       overflow: hidden;
       width: 100%;
     }
+  }
+
+
+  &--small {
+
+    > .modal__inner {
+      @include mixins.breakpoint(tablet, min) {
+        --_modal-width: 40vw;
+      }
+
+      @include mixins.breakpoint(desktop, min) {
+        --_modal-width: 20vw;
+      }
+    }
+  }
+
+
+  &--large {
+
+    > .modal__inner {
+      @include mixins.breakpoint(tablet, min) {
+        --_modal-width: 80vw;
+      }
+    }
+  }
+
+  
+  &--centered {
+    @extend %flex-center;
   }
 }
 
