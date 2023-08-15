@@ -7,13 +7,22 @@
 
 .message {
   $self: &;
-  --message-background: var(--lighter);
-  --message-border: var(--base);
-  --message-color: var(--dark);
+  --_message-background: var(
+    --message-background, 
+    var(--lighter)
+  );
+  --_message-border: var(
+    --message-border, 
+    var(--base)
+  );
+  --_message-color: var(
+    --message-color, 
+    var(--dark)
+  );
 
-  background-color: var(--message-background);
-  border-left: thick solid var(--message-border);
-  color: var(--message-color);
+  background-color: var(--_message-background);
+  border-left: thick solid var(--_message-border);
+  color: var(--_message-color);
   margin: var(--size-2) 0;
   padding: var(--size-2);
 
@@ -51,15 +60,17 @@
 
   @each $name, $color in variables.$message-colors {
     &--#{$name} {
-      --message-background: #{$color};
-      --message-border: #{color.adjust(
-          $color,
-          $lightness: math.percentage(-(config.$hue-threshold * 5))
-        )};
-      --message-color: #{color.adjust(
-          $color,
-          $lightness: math.percentage(-(config.$hue-threshold * 6))
-        )};
+      --_message-background: var(--#{$name});
+      --_message-border: hsl(
+        var(--#{$name}-hue), 
+        var(--#{$name}-sat), 
+        calc(var(--#{$name}-light) - 50%)
+      );
+      --_message-color: hsl(
+        var(--#{$name}-hue), 
+        var(--#{$name}-sat), 
+        calc(var(--#{$name}-light) - 60%)
+      );
 
       &::before {
         content: $name;
