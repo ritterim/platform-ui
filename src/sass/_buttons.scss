@@ -362,10 +362,11 @@ $button-colors: () !default;
 
       &.button--secondary {
         // lighten the box-shadow by 10% of background--color
-        --box-shadow: #{color.adjust(
-          $color,
-          $lightness: math.percentage(.1)
-        )};
+        --box-shadow: hsl(
+          var(--#{$name}-hue), 
+          var(--#{$name}-sat), 
+          calc(var(--#{$name}-light) + 10%)
+        );
 
         @if lightness($color) <= 50 {
           // For our darkest buttons we lighten the box-shadow by 30%
