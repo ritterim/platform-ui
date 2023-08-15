@@ -10,52 +10,26 @@
     --pill-border-radius,
     var(--radius-button)
   );
-  $border-radius: map.get(variables.$radius, "button");
-  $primary-background: var(--white);
-  $primary-color: var(--base);
+  --_pill-label-background: var(
+    --pill-background,
+    var(--white-a30)
+  );
+  --_pill-color: var(
+    --pill-color,
+    var(--base)
+  );
+  --_pill-font-size: var(
+    --pill-font-size,
+    var(--font-size-sm)
+  );
 
   border: 1px solid var(--light-3);
-  border-radius: $border-radius;
-  color: $primary-color;
+  border-radius: var(--_pill-border-radius);
+  color: var(--_pill-color);
   display: inline-flex;
-  font-size: map.get(variables.$font-scale, "sm");
+  font-size: var(--_pill-font-size);
   padding: var(--size-1) var(--size-2);
   line-height: 1.5;
-
-  &--split {
-    align-items: center;
-    display: inline-flex;
-    overflow: hidden;
-    padding: 0;
-    .pill__label {
-      background-color: rgba($primary-color, 0.3);
-      padding: var(--size-1) var(--size-2);
-    }
-  }
-
-  &--circle {
-    @extend %basic-circle;
-
-    &-empty {
-      @extend .pill--circle;
-      padding: 0;
-      &-dot {
-        padding: 0;
-        @include mixins.square(var(--size-2));
-      }
-      @include mixins.square(var(--size-3));
-    }
-
-    &-medium {
-      @extend .pill--circle;
-      @include mixins.square(var(--size-4));
-    }
-
-    &-large {
-      @extend .pill--circle;
-      @include mixins.square(var(--size-5));
-    }
-  }
 
   &__content {
     padding: var(--size-1) var(--size-2);
@@ -67,7 +41,45 @@
 
   &__label {
     @extend .pill__content;
-    background-color: rgba($primary-background, 0.3);
+    background-color: var(--_pill-label-background);
     font-weight: 400;
+  }
+
+  &--split {
+    align-items: center;
+    display: inline-flex;
+    overflow: hidden;
+    padding: 0;
+    
+    .pill__label {
+      --_pill-label-background: var(--base-a30);
+
+      padding: var(--size-1) var(--size-2);
+    }
+  }
+
+  &--circle {
+    @extend %basic-circle;
+
+    &-empty {
+      @extend .pill--circle;
+      @include mixins.square(var(--size-3));
+      padding: 0;
+
+      &-dot {
+        @include mixins.square(var(--size-2));
+        padding: 0;
+      }
+    }
+
+    &-medium {
+      @extend .pill--circle;
+      @include mixins.square(var(--size-4));
+    }
+
+    &-large {
+      @extend .pill--circle;
+      @include mixins.square(var(--size-5));
+    }
   }
 }
