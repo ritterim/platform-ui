@@ -29,7 +29,7 @@ $site-colors: () !default;
   @warn "$config-colors is not set or empty";
 }
 
-@mixin all-color-tokens() {
+@mixin all-color-tokens-hsl() {
   @each $name, $color in $all-colors {
   
     $hue: hue($color);
@@ -39,6 +39,15 @@ $site-colors: () !default;
     --#{$name}-hue: #{$hue};
     --#{$name}-sat: #{$sat};
     --#{$name}-light: #{$light};
+  }
+}
+
+@mixin all-color-tokens() {
+  @each $name, $color in $all-colors {
+  
+    $hue: hue($color);
+    $sat: saturation($color);
+    $light: lightness($color);
   
     --#{$name}: hsl(#{$hue}, #{$sat}, #{$light});
   
@@ -60,7 +69,7 @@ $error-colors: (
   "neutral": map.get($greyscale, "light"),
 );
 
-@mixin error-tokens() {
+@mixin error-tokens-hsl() {
   @each $name, $color in $error-colors {
     $hue: hue($color);
     $sat: saturation($color);
@@ -69,11 +78,18 @@ $error-colors: (
     --#{$name}-hue: #{$hue};
     --#{$name}-sat: #{$sat};
     --#{$name}-light: #{$light};
+  }
+}
+
+@mixin error-tokens() {
+  @each $name, $color in $error-colors {
+    $hue: hue($color);
+    $sat: saturation($color);
+    $light: lightness($color);
   
     --#{$name}: hsl(#{$hue}, #{$sat}, #{$light});
   }
 }
-
 
 
 // Message Colors
@@ -85,7 +101,7 @@ $message-colors: (
   "success": #d4edda,
 );
 
-@mixin message-tokens() {
+@mixin message-tokens-hsl() {
   @each $name, $color in $message-colors {
     $hue: hue($color);
     $sat: saturation($color);
@@ -94,6 +110,14 @@ $message-colors: (
     --#{$name}-hue: #{$hue};
     --#{$name}-sat: #{$sat};
     --#{$name}-light: #{$light};
+  }
+}
+
+@mixin message-tokens() {
+  @each $name, $color in $message-colors {
+    $hue: hue($color);
+    $sat: saturation($color);
+    $light: lightness($color);
   
     --#{$name}: hsl(#{$hue}, #{$sat}, #{$light});
   }
@@ -101,9 +125,16 @@ $message-colors: (
 
 
 :root {
+  @include all-color-tokens-hsl();
+  @include error-tokens-hsl();
+  @include message-tokens-hsl();
+  @include config.site-color-tokens-hsl();
+}
+
+:root {
   @include all-color-tokens();
   @include tokens.color-tokens();
   @include error-tokens();
   @include message-tokens();
-  @include config.site-color-vars();
+  @include config.site-color-tokens();
 }
