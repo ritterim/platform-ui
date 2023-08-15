@@ -509,7 +509,11 @@ $all-colors: () !default;
   }
 
   &__action {
-    color: hsl(var(--light-hue), var(--light-sat), calc(var(--light-light) + 10%));
+    color: hsl(
+      var(--light-hue), 
+      var(--light-sat), 
+      calc(var(--light-light) + 10%
+    ));
     @include mixins.square(calc(var(--size-3) * 1.5));
     @extend %flex-center;
 
