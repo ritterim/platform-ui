@@ -6,11 +6,13 @@
 @use "sass:map";
 @use "sass:math";
 
-$tab-height: 3rem;
-$tab-color: var(--base);
-$tab-border-color: var(--light-3);
 
 .tabs {
+  --_tab-height: var(--tab-height, 3rem);
+  --_tab-color: var(--tab-color, var(--base));
+  --_tab-background: var(--tab-background, var(--base));
+  --_tab-border-color: var(--tab-border-color, transparent);
+    
   @include mixins.breakpoint(tablet, min) {
     display: flex;
     flex-wrap: wrap;
@@ -20,51 +22,12 @@ $tab-border-color: var(--light-3);
     box-sizing: border-box;
   }
 
-  input[type="radio"] {
-    appearance: none;
-    opacity: 0;
-    position: absolute;
-
-    &:checked {
-      + .tab {
-        border: 1px solid $tab-border-color;
-        border-bottom-color: var(--white);
-        font-weight: 600;
-
-        @include mixins.breakpoint(tablet, max) {
-          border-bottom: none;
-        }
-
-        @include mixins.breakpoint(tablet, min) {
-          background-color: var(--white);
-          color: $tab-color;
-
-          &:before {
-            background-color: $tab-color;
-          }
-        }
-
-        + .tab-panel {
-          display: block;
-        }
-      }
-
-      &.un-checked {
-        + label {
-          font-weight: 300;
-
-          + .tab-panel {
-            display: none !important;
-          }
-        }
-      }
-    }
-  }
-
   .tab {
     align-items: center;
+    border: 1px solid var(--_tab-border-color);
+    color: var(--_tab-color);
     display: flex;
-    height: $tab-height;
+    height: var(--_tab-height);
     padding: var(--size-2) var(--size-3);
     position: relative;
     transition: ease-in-out var(--transitions);
@@ -72,9 +35,10 @@ $tab-border-color: var(--light-3);
       border-bottom-color;
 
     @include mixins.breakpoint(tablet, max) {
-      border: 1px solid $tab-color;
-      background: $tab-color;
-      color: var(--white);
+      --_tab-color: var(--white);
+      --_tab-border-color: var(--base);
+
+      background: var(--_tab-background);
       margin-top: var(--size-1);
 
       &:first-of-type {
@@ -85,8 +49,6 @@ $tab-border-color: var(--light-3);
     @include mixins.breakpoint(tablet, min) {
       flex: 1 1 auto;
       max-width: 16rem;
-      border: 1px solid transparent;
-      color: var(--base);
       cursor: pointer;
       justify-content: center;
       margin-bottom: -1px;
@@ -110,13 +72,56 @@ $tab-border-color: var(--light-3);
   }
 
   input[type="radio"] {
+    appearance: none;
+    opacity: 0;
+    position: absolute;
+
+    &:checked {
+      + .tab {
+        --_tab-border-color: var(--light-3);
+
+        border-bottom-color: var(--white);
+        font-weight: 600;
+
+        @include mixins.breakpoint(tablet, max) {
+          border-bottom: none;
+        }
+
+        @include mixins.breakpoint(tablet, min) {
+          background-color: var(--white);
+          color: var(--_tab-color);
+
+          &:before {
+            background-color: var(--_tab-color);
+          }
+        }
+
+        + .tab-panel {
+          display: block;
+        }
+      }
+
+      &.un-checked {
+        + label {
+          font-weight: 300;
+
+          + .tab-panel {
+            display: none !important;
+          }
+        }
+      }
+    }
+  }
+
+  input[type="radio"] {
     &:not(:checked) {
       + .tab {
         @media (pointer: fine) {
           &:hover {
+            --_tab-border-color: var(--light-3);
+            --_tab-color: var(--base-a70);
+
             background-color: var(--white);
-            border-color: $tab-border-color;
-            color: $tab-color;
             font-weight: 600;
 
             @include mixins.breakpoint(tablet, min) {
@@ -129,9 +134,28 @@ $tab-border-color: var(--light-3);
   }
 
   .tab-panel {
+    --_tab-panel-border-color: var(--tab-panel-border-color, var(--light-3));
+
     display: none;
+    background-color: var(--white);
+    border: 1px solid var(--_tab-panel-border-color);
+    padding: var(--size-2);
+    position: relative;
+    width: 100%;
+  
+    @include mixins.breakpoint(tablet, max) {
+      border-top: transparent;
+    }
+  
+    @include mixins.breakpoint(tablet, min) {
+      flex-grow: 1;
+      order: 99;
+      padding-top: calc(var(--size-2) + 1px);
+      z-index: 1;
+    }
   }
 }
+
 
 .tabs--flat {
   display: block;
@@ -142,49 +166,13 @@ $tab-border-color: var(--light-3);
     flex-wrap: wrap;
   }
 
-  input[type="radio"] {
-    &:not(:checked) {
-      + .tab {
-        @media (pointer: fine) {
-          &:hover {
-            background-color: var(--white);
-            color: rgba($tab-color, 0.7);
-            font-weight: 600;
-
-            &::before {
-              background-color: rgba($tab-color, 0.7);
-            }
-          }
-        }
-      }
-    }
-
-    &:checked {
-      + .tab {
-        border: 1px solid $tab-border-color;
-        border-bottom: none;
-        color: var(--white);
-        font-weight: 600;
-
-        @include mixins.breakpoint(tablet, min) {
-          border: none;
-          color: $tab-color;
-        }
-
-        &:before {
-          background-color: $tab-color;
-        }
-      }
-    }
-  }
-
   .tab {
+    --_tab-border-color: var(--base);
+
     align-items: center;
-    border: 1px solid $tab-color;
-    background: $tab-color;
-    color: var(--white);
+    background: var(--_tab-background);
     display: flex;
-    height: $tab-height;
+    height: var(--_tab-height);
     margin: var(--size-1) 0 0;
     padding: var(--size-2) var(--size-3);
     position: relative;
@@ -196,9 +184,9 @@ $tab-border-color: var(--light-3);
     }
 
     @include mixins.breakpoint(tablet, min) {
-      background: var(--white);
+      --_tab-background: var(--white);
+      
       border: none;
-      color: var(--base);
       flex: 0 0 auto;
       height: auto;
       margin: 0 1rem;
@@ -221,13 +209,47 @@ $tab-border-color: var(--light-3);
     }
   }
 
+
+  input[type="radio"] {
+    &:not(:checked) {
+      + .tab {
+        @media (pointer: fine) {
+          &:hover {
+
+            &::before {
+              background-color: var(--base-a70);
+            }
+          }
+        }
+      }
+    }
+
+    &:checked {
+      + .tab {
+        --_tab-border-color: var(--light-3);
+
+        border-bottom: none;
+        color: var(--white);
+        font-weight: 600;
+
+        @include mixins.breakpoint(tablet, min) {
+          border: none;
+          color: var(--_tab-color);
+        }
+
+        &:before {
+          background-color: var(--_tab-color);
+        }
+      }
+    }
+  }
+
+
   .tab-panel {
-    background-color: var(--white);
-    border: 1px solid $tab-border-color;
 
     @include mixins.breakpoint(tablet, min) {
       border: none;
-      border-top: 1px solid $tab-border-color;
+      border-top: 1px solid var(--_tab-panel-border-color);
       z-index: auto;
     }
   }
@@ -271,7 +293,7 @@ $tab-border-color: var(--light-3);
         + .tab {
           @include mixins.breakpoint(tablet, max) {
             border: none;
-            color: $tab-color;
+            color: var(--_tab-color);
           }
         }
       }
@@ -282,28 +304,9 @@ $tab-border-color: var(--light-3);
         flex-grow: 1;
         order: 99;
         border: none;
-        border-top: 1px solid $tab-border-color;
+        border-top: 1px solid var(--_tab-panel-border-color);
         z-index: auto;
       }
     }
-  }
-}
-
-.tab-panel {
-  background-color: var(--white);
-  border: 1px solid $tab-border-color;
-  padding: var(--size-2);
-  position: relative;
-  width: 100%;
-
-  @include mixins.breakpoint(tablet, max) {
-    border-top: transparent;
-  }
-
-  @include mixins.breakpoint(tablet, min) {
-    flex-grow: 1;
-    order: 99;
-    padding-top: calc(var(--size-2) + 1px);
-    z-index: 1;
   }
 }
