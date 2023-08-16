@@ -89,7 +89,7 @@
   // font size based on scale
   @each $name, $scale in variables.$font-scale {
     &--size-#{$name} {
-      font-size: var(--#{$name}) !important;
+      font-size: var(--font-size-#{$name}) !important;
     }
   }
 }
