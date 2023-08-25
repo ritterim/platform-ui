@@ -62,6 +62,31 @@ $site-colors: () !default;
 
 
 
+// loader colors
+@mixin loader-tokens-hsl() {
+  @each $name, $color in config.$loader-colors {
+    $hue: hue($color);
+    $sat: saturation($color);
+    $light: lightness($color);
+  
+    --loader-#{$name}-hue: #{$hue};
+    --loader-#{$name}-sat: #{$sat};
+    --loader-#{$name}-light: #{$light};
+  }
+}
+
+@mixin loader-tokens() {
+  @each $name, $color in config.$loader-colors {
+    $hue: hue($color);
+    $sat: saturation($color);
+    $light: lightness($color);
+  
+    --loader-#{$name}: hsl(#{$hue}, #{$sat}, #{$light});
+  }
+}
+
+
+
 // Error Colors
 $error-colors: (
   "positive": #b5cc18,
@@ -127,6 +152,7 @@ $message-colors: (
 :root {
   @include all-color-tokens-hsl();
   @include error-tokens-hsl();
+  @include loader-tokens-hsl();
   @include message-tokens-hsl();
   @include config.site-color-tokens-hsl();
 }
@@ -135,6 +161,7 @@ $message-colors: (
   @include all-color-tokens();
   @include tokens.color-tokens();
   @include error-tokens();
+  @include loader-tokens();
   @include message-tokens();
   @include config.site-color-tokens();
 }

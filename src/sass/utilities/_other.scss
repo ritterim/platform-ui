@@ -50,10 +50,14 @@
 %loader,
 .loader {
   // TODO: custom property this and fix where loader is extended = button.scss
+  --_loader-border: var(--loader-border, var(--loader-primary));
+  --_loader-radius: var(--loader-radius, var(--radius-round));
+  --_loader-border-rop: var(--loader-border-top, transparent);
+
   animation: rotation 1s infinite linear;
-  border: 2px solid map.get(config.$loader-colors, "primary");
-  border-radius: map.get(variables.$radius, "round");
-  border-top-color: map.get(config.$loader-colors, "primary-top");
+  border: 2px solid var(--_loader-border);
+  border-radius: var(--_loader-radius);
+  border-top-color: var(--_loader-border-rop);
   margin: 0;
   @include mixins.square(1.4rem);
   @include mixins.square(1.4rem, "min");
@@ -61,8 +65,7 @@
 
 .loader {
   &.inverted {
-    border-color: map.get(config.$loader-colors, "inverted");
-    border-top-color: map.get(config.$loader-colors, "inverted-top");
+    --_loader-border: var(--loader-inverted);
   }
 
   &--sm {

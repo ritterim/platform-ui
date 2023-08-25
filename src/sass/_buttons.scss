@@ -111,18 +111,20 @@
 
     &:not([data-button-text]):not(.has-text) {
       &:after {
+        --loader-border: var(--loader-inverted);
+
         @extend %loader;
         @include mixins.square(var(--size-3));
         @include mixins.square(var(--size-3), min);
         box-sizing: border-box;
+        white-space: inherit;
         content: "";
         display: block;
-        border-color: map.get(config.$loader-colors, "inverted");
-        border-top-color: map.get(config.$loader-colors, "inverted-top");
         left: 50%;
         position: absolute;
         top: 50%;
-        transform: translate(-50%, -50%);
+        margin-left: calc((var(--size-3) / 2) * (-1));
+        margin-top: calc((var(--size-3) / 2) * (-1));
       }
     }
   }
