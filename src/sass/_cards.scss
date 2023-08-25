@@ -29,7 +29,7 @@
   }
 
   &__image {
-    width: calc(100% + (#{var(--_card-padding)} * 2));
+    width: calc(100% + (var(--_card-padding) * 2));
     height: auto;
     margin-top: calc(var(--_card-padding) * (-1));
     margin-right: calc(var(--_card-padding) * (-1));
