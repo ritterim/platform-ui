@@ -50,6 +50,15 @@ $site-colors: () !default;
     $light: lightness($color);
   
     --#{$name}: hsl(#{$hue}, #{$sat}, #{$light});
+  }
+}
+
+@mixin all-color-alpha() {
+  @each $name, $color in $all-colors {
+  
+    $hue: hue($color);
+    $sat: saturation($color);
+    $light: lightness($color);
   
     @for $i from 1 through 9 {
       $hue: hue($color);
@@ -164,4 +173,8 @@ $message-colors: (
   @include loader-tokens();
   @include message-tokens();
   @include config.site-color-tokens();
+}
+
+:root {
+  @include all-color-alpha()
 }
