@@ -2,6 +2,18 @@
 @use "../variables" as variables;
 @use "sass:map";
 
+
+@mixin font-sizes() {
+  @each $name, $scale in variables.$font-scale {
+    --font-size-#{$name}: #{$scale};
+  }
+}
+
+
+:root {
+  @include font-sizes();
+}
+
 .text {
   &--underline {
     text-decoration: underline;
@@ -19,7 +31,7 @@
     position: relative;
 
     &:after {
-      background-color: map.get(config.$site-colors, "link");
+      background-color: var(--site-color-link);
       bottom: 0;
       content: "";
       height: 1px;
@@ -51,6 +63,7 @@
     }
   }
 
+
   // text-transform
   @each $key, $val in variables.$text-transform {
     &--#{$key} {
@@ -64,16 +77,19 @@
     }
   }
 
+
   // text shadow using $greyscale
   @each $name, $color in variables.$greyscale {
     &--shadow-#{$name} {
       text-shadow: 0.3rem 0.3rem 0.5rem $color;
     }
   }
+
+
   // font size based on scale
   @each $name, $scale in variables.$font-scale {
     &--size-#{$name} {
-      font-size: $scale !important;
+      font-size: var(--font-size-#{$name}) !important;
     }
   }
 }

@@ -53,28 +53,6 @@
   }
 }
 
-// Messages Variant
-@mixin message-variant($background, $color) {
-  background-color: $background;
-  border-color: color.adjust(
-    $background,
-    $lightness: math.percentage(-(config.$hue-threshold * 2))
-  );
-  color: $color;
-
-  * {
-    color: $color;
-  }
-
-  a {
-    color: color.scale(
-      $color,
-      $lightness: math.percentage(-(config.$hue-threshold))
-    );
-    font-weight: 700;
-  }
-}
-
 // Function the gets the next value in the map.
 @function nextKey($current-value, $mapped-list: config.$breakpoints) {
   // get current key from list

@@ -6,25 +6,33 @@
 @use "sass:math";
 
 .table {
-  --table-color-light: #{color.adjust(
-      map.get(variables.$greyscale, "light"),
-      $lightness: math.percentage(config.$hue-threshold * 2)
-    )};
-
-  $table-border: 1px solid var(--table-color-light);
-  $responsive-table-bottom-gap: map.get(variables.$sizes, 2);
-  $responsive-table-label-bg: var(--lighter);
+  --_table-border-color: var(
+    --table-border-color,
+    var(--light-3)
+  );
+  
   width: 100%;
   background-color: transparent;
   border-collapse: separate;
   border-spacing: 0;
+  
   @include mixins.breakpoint(tablet, max) {
     border: none;
   }
-
+  
+  
   thead {
-    background-color: var(--lighter);
-    border-bottom: 1px solid var(--light);
+    --_thead-background: var(
+      --thead-background,
+      var(--lighter)
+    );
+    --_thead-border-color: var(
+      --table-border-color,
+      var(--light)
+    );
+
+    background-color: var(--_thead-background);
+    border-bottom: 1px solid var(--_thead-border-color);
     color: var(--base);
     font-weight: bold;
     text-align: left;
@@ -33,14 +41,16 @@
     }
 
     th {
-      border: solid var(--table-color-light);
+      border: solid var(--_table-border-color);
       border-width: 1px 0;
     }
   }
 
+
   tr {
     background-color: transparent;
     transition: background-color var(--transitions) ease;
+
     @include mixins.breakpoint(tablet, min) {
       &:hover {
         background-color: var(--lighter);
@@ -52,16 +62,15 @@
       padding: 1rem;
     }
 
-    td {
-      border-bottom: 1px solid var(--table-color-light);
-    }
+    + tr {
 
-    &:last-child {
       td {
-        border-color: transparent;
+        border-top: 1px solid var(--_table-border-color);
       }
     }
   }
+  
+
   @include mixins.breakpoint(tablet, max) {
     &:not(.unresponsive) {
       thead tr {
@@ -86,20 +95,22 @@
             font-weight: bold;
             line-height: 1.5;
             min-width: 40%;
-            padding-right: map.get(variables.$sizes, 2);
+            padding-right: var(--size-2);
             text-align: left;
           }
         }
       }
 
       tr + tr {
-        border-top: 1px solid var(--table-color-light);
-        margin-top: $responsive-table-bottom-gap;
-        padding-top: $responsive-table-bottom-gap;
+        border-top: 1px solid var(--_table-border-color);
+        margin-top: var(--size-2);
+        padding-top: var(--size-2);
       }
       /* Get table cells to act like rows */
     }
   }
+
+
   &--no-hover {
     tr {
       @include mixins.breakpoint(tablet, min) {
@@ -109,6 +120,8 @@
       }
     }
   }
+
+
   &--bordered {
     // coming
   }

@@ -32,7 +32,7 @@ body {
     color: var(--base);
     font-weight: 500;
     line-height: 1.618;
-    margin-bottom: variables.$size;
+    margin-bottom: var(--size-3);
   }
 }
 
@@ -61,11 +61,11 @@ h6 {
 }
 
 p {
-  margin: 0 0 variables.$size 0;
+  margin: 0 0 var(--size-3) 0;
 }
 
 a {
-  color: map.get(config.$site-colors, "link");
+  color: var(--site-color-link);
   text-decoration: none;
   transition: color ease var(--transitions);
 }
@@ -82,5 +82,5 @@ hr {
   background-color: var(--base);
   border: none;
   height: 1px;
-  margin: variables.$size 0;
+  margin: var(--size-3) 0;
 }

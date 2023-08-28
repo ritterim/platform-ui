@@ -2,21 +2,14 @@
 @use "variables" as variables;
 @use "sass:map";
 
-@each $error in (positive, negative, neutral) {
-  .text-#{$error} {
-    color: map.get(variables.$error-colors, #{$error}) !important;
 
-    &--hover {
-      transition: color var(--transitions);
-      &:hover {
-        color: map.get(variables.$error-colors, #{$error}) !important;
-      }
-    }
-  }
+// I think this should be refactored and included in utilities/colors
+@each $error, $color in variables.$error-colors {
+
   // for pills
   .pill {
     &.#{$error} {
-      background: map.get(variables.$error-colors, #{$error}) !important;
+      background: var(--#{$error}) !important;
       border: none;
       color: white !important;
     }

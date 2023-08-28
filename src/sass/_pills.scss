@@ -6,59 +6,33 @@
 @use "sass:math";
 
 .pill {
-  $border-radius: map.get(variables.$radius, "button");
-  $primary-background: var(--white);
-  $primary-color: var(--base);
+  --_pill-border-radius: var(
+    --pill-border-radius,
+    var(--radius-button)
+  );
+  --_pill-label-background: var(
+    --pill-background,
+    var(--white-a30)
+  );
+  --_pill-color: var(
+    --pill-color,
+    var(--base)
+  );
+  --_pill-font-size: var(
+    --pill-font-size,
+    var(--font-size-sm)
+  );
 
-  border: 1px solid
-    color.adjust(
-      map.get(variables.$greyscale, "light"),
-      $lightness: math.percentage(config.$hue-threshold * 2)
-    );
-  border-radius: $border-radius;
-  color: $primary-color;
+  border: 1px solid var(--light-3);
+  border-radius: var(--_pill-border-radius);
+  color: var(--_pill-color);
   display: inline-flex;
-  font-size: map.get(variables.$font-scale, "sm");
-  padding: map.get(variables.$sizes, 1) map.get(variables.$sizes, 2);
+  font-size: var(--_pill-font-size);
+  padding: var(--size-1) var(--size-2);
   line-height: 1.5;
 
-  &--split {
-    align-items: center;
-    display: inline-flex;
-    overflow: hidden;
-    padding: 0;
-    .pill__label {
-      background-color: rgba($primary-color, 0.3);
-      padding: map.get(variables.$sizes, 1) map.get(variables.$sizes, 2);
-    }
-  }
-
-  &--circle {
-    @extend %basic-circle;
-
-    &-empty {
-      @extend .pill--circle;
-      padding: 0;
-      &-dot {
-        padding: 0;
-        @include mixins.square(map.get(variables.$sizes, 2));
-      }
-      @include mixins.square(variables.$size);
-    }
-
-    &-medium {
-      @extend .pill--circle;
-      @include mixins.square(map.get(variables.$sizes, 4));
-    }
-
-    &-large {
-      @extend .pill--circle;
-      @include mixins.square(map.get(variables.$sizes, 5));
-    }
-  }
-
   &__content {
-    padding: map.get(variables.$sizes, 1) map.get(variables.$sizes, 2);
+    padding: var(--size-1) var(--size-2);
     // if icon present - flex it
     i {
       display: flex;
@@ -67,7 +41,45 @@
 
   &__label {
     @extend .pill__content;
-    background-color: rgba($primary-background, 0.3);
+    background-color: var(--_pill-label-background);
     font-weight: 400;
+  }
+
+  &--split {
+    align-items: center;
+    display: inline-flex;
+    overflow: hidden;
+    padding: 0;
+    
+    .pill__label {
+      --_pill-label-background: var(--base-a30);
+
+      padding: var(--size-1) var(--size-2);
+    }
+  }
+
+  &--circle {
+    @extend %basic-circle;
+
+    &-empty {
+      @extend .pill--circle;
+      @include mixins.square(var(--size-3));
+      padding: 0;
+
+      &-dot {
+        @include mixins.square(var(--size-2));
+        padding: 0;
+      }
+    }
+
+    &-medium {
+      @extend .pill--circle;
+      @include mixins.square(var(--size-4));
+    }
+
+    &-large {
+      @extend .pill--circle;
+      @include mixins.square(var(--size-5));
+    }
   }
 }

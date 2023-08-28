@@ -7,32 +7,35 @@
 @use "sass:meta";
 
 .card {
-  $self: &;
+  --_card-background: var(
+    --card-background, 
+    var(--white)
+  );
+  --_card-border: var(
+    --card-border, 
+    var(--light-3)
+  );
+  --_card-padding: var(
+    --card-padding, 
+    var(--size-3)
+  );
 
-  background-color: var(--white);
-  border: 1px solid
-    color.adjust(
-      map.get(variables.$greyscale, "light"),
-      $lightness: math.percentage(config.$hue-threshold * 2)
-    );
-  padding: config.$card-padding;
+  background-color: var(--_card-background);
+  border: 1px solid var(--_card-border);
+  padding: var(--_card-padding);
 
   .cards & {
     height: 100%;
   }
 
   &__image {
-    width: calc(100% + (#{config.$card-padding} * 2));
+    width: calc(100% + (var(--_card-padding) * 2));
     height: auto;
-    margin-top: -#{config.$card-padding};
-    margin-right: -#{config.$card-padding};
-    margin-left: -#{config.$card-padding};
-    margin-bottom: config.$card-padding;
-    border-bottom: 1px solid
-      color.adjust(
-        map.get(variables.$greyscale, "light"),
-        $lightness: math.percentage(config.$hue-threshold * 2)
-      );
+    margin-top: calc(var(--_card-padding) * (-1));
+    margin-right: calc(var(--_card-padding) * (-1));
+    margin-left: calc(var(--_card-padding) * (-1));
+    margin-bottom: var(--_card-padding);
+    border-bottom: 1px solid var(--light-3);
   }
 
   &[class*="rounded-"] {
@@ -43,7 +46,7 @@
     color: var(--base);
     display: flex;
     justify-content: space-between;
-    margin-bottom: variables.$size;
+    margin-bottom: var(--size-3);
     position: relative;
 
     .icon {
@@ -54,24 +57,22 @@
       }
     }
 
-    #{$self}__group {
+    .card__group {
       align-items: center;
     }
   }
 
+  // I don't think this is a thing anymore
   &__header-actions {
     display: flex;
     position: absolute;
-    top: -#{map.get(variables.$sizes, 2)};
-    right: -#{map.get(variables.$sizes, 3)};
+    top: calc(var(--size-2) * (-1));
+    right: calc(var(--size-3) * (-1));
   }
 
   &-action {
     border-right: 1px solid var(--light);
-    color: color.adjust(
-      map.get(variables.$greyscale, "light"),
-      $lightness: math.percentage(config.$hue-threshold)
-    );
+    color: hsl(var(--light-hue), var(--light-sat), calc(var(--light-light) + 10%));
     height: 1.5rem;
     padding: 0 0.5rem;
     transition: color var(--transitions);
@@ -91,7 +92,7 @@
     display: flex;
 
     > * {
-      margin-right: variables.$size;
+      margin-right: var(--size-3);
     }
   }
 
@@ -125,6 +126,6 @@
     align-items: flex-end;
     display: flex;
     justify-content: space-between;
-    margin-top: config.$card-footer-top-margin;
+    margin-top: var(--size-3);
   }
 }

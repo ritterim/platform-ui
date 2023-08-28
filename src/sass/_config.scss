@@ -53,6 +53,28 @@ $site-colors-vars: (
   $site-colors: map.merge($site-colors-vars, $site-colors);
 }
 
+@mixin site-color-tokens-hsl() {
+  @each $name, $color in $site-colors-vars {
+    $hue: hue($color);
+    $sat: saturation($color);
+    $light: lightness($color);
+  
+    --site-color-#{$name}-hue: #{$hue};
+    --site-color-#{$name}-sat: #{$sat};
+    --site-color-#{$name}-light: #{$light};
+  }
+}
+
+@mixin site-color-tokens() {
+  @each $name, $color in $site-colors-vars {
+    $hue: hue($color);
+    $sat: saturation($color);
+    $light: lightness($color);
+  
+    --site-color-#{$name}: hsl(#{$hue}, #{$sat}, #{$light});
+  }
+}
+
 
 // --------------------
 // Breakpoints
@@ -111,43 +133,6 @@ $hue-threshold: .1;   // NOTE: Set to .1 to use with math.percentage
 $opacity: .9;
 
 
-// --------------------
-// Drawers
-// --------------------
-
-$drawer-background: #fff !default;
-
-$drawer-primary-padding: 2rem;
-
-$drawer-side-height: calc(100% - #{$menu-height});
-$drawer-side-width: 27rem;
-
-
-// --------------------
-// Button specific
-// --------------------
-
-$button-border-radius: 5rem !default;
-
-$button-primary-background: #FFFFFF !default;
-$button-primary-color: #666666 !default;
-$button-primary-hover: #C3552A !default;
-$button-secondary-background: map.get($config-colors, 'salmon') !default;
-$button-secondary-color: #FFFFFF !default;
-$button-filter-color: map.get($brand-colors, 'med-blue') !default;
-
-$button-primary-padding: .25rem 1rem;
-$button-large-padding: .5rem 1rem;
-$button-group-margin: 0 .25rem;
-
-
-// --------------------
-// Cards
-// --------------------
-
-$card-padding: 1rem;
-$card-footer-top-margin: 1rem;
-$card-min-height: 23rem;
 
 
 // --------------------
@@ -155,15 +140,11 @@ $card-min-height: 23rem;
 // --------------------
 
 $loader-color-primary: map.get($config-colors, "navy") !default;
-$loader-border-top-primary: transparent !default;
 $loader-color-inverted: #fff !default;
-$loader-border-top-inverted: transparent !default;
 
 $loader-colors: (
   'primary': $loader-color-primary,
-  'primary-top': $loader-border-top-primary,
   'inverted': $loader-color-inverted,
-  'inverted-top': $loader-border-top-inverted
 ) !default;
 
 

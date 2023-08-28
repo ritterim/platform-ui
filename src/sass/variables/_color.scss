@@ -1,21 +1,100 @@
-@forward "color-tokens";
+@use "color-tokens" as tokens;
 
 @use "../config";
 
 @use "sass:color";
 @use "sass:math";
 @use "sass:map";
+@use "sass:meta";
 
 // Colors
 $greyscale: (
   "white": white,
   "lighter": #efefef,
   "light-mid": #e2e3e5,
+  "light-3": #ccc,
   "light": #999,
   "base": #666666,
   "dark": #333,
   "black": #222,
 );
+
+$all-colors: () !default;
+$site-colors: () !default;
+
+@if meta.type-of(config.$config-colors) == "map" {
+  $all-colors: map.merge(config.$config-colors, $greyscale);
+} @else {
+  $all-colors: map.merge($greyscale, $all-colors);
+  @warn "$config-colors is not set or empty";
+}
+
+@mixin all-color-tokens-hsl() {
+  @each $name, $color in $all-colors {
+  
+    $hue: hue($color);
+    $sat: saturation($color);
+    $light: lightness($color);
+  
+    --#{$name}-hue: #{$hue};
+    --#{$name}-sat: #{$sat};
+    --#{$name}-light: #{$light};
+  }
+}
+
+@mixin all-color-tokens() {
+  @each $name, $color in $all-colors {
+  
+    $hue: hue($color);
+    $sat: saturation($color);
+    $light: lightness($color);
+  
+    --#{$name}: hsl(#{$hue}, #{$sat}, #{$light});
+  }
+}
+
+@mixin all-color-alpha() {
+  @each $name, $color in $all-colors {
+  
+    $hue: hue($color);
+    $sat: saturation($color);
+    $light: lightness($color);
+  
+    @for $i from 1 through 9 {
+      $hue: hue($color);
+      $sat: saturation($color);
+      $light: lightness($color);
+      --#{$name}-a#{$i}0: hsla(#{$hue}, #{$sat}, #{$light}, #{$i * 0.1});
+    }
+  }
+}
+
+
+
+// loader colors
+@mixin loader-tokens-hsl() {
+  @each $name, $color in config.$loader-colors {
+    $hue: hue($color);
+    $sat: saturation($color);
+    $light: lightness($color);
+  
+    --loader-#{$name}-hue: #{$hue};
+    --loader-#{$name}-sat: #{$sat};
+    --loader-#{$name}-light: #{$light};
+  }
+}
+
+@mixin loader-tokens() {
+  @each $name, $color in config.$loader-colors {
+    $hue: hue($color);
+    $sat: saturation($color);
+    $light: lightness($color);
+  
+    --loader-#{$name}: hsl(#{$hue}, #{$sat}, #{$light});
+  }
+}
+
+
 
 // Error Colors
 $error-colors: (
@@ -23,6 +102,29 @@ $error-colors: (
   "negative": tomato,
   "neutral": map.get($greyscale, "light"),
 );
+
+@mixin error-tokens-hsl() {
+  @each $name, $color in $error-colors {
+    $hue: hue($color);
+    $sat: saturation($color);
+    $light: lightness($color);
+  
+    --#{$name}-hue: #{$hue};
+    --#{$name}-sat: #{$sat};
+    --#{$name}-light: #{$light};
+  }
+}
+
+@mixin error-tokens() {
+  @each $name, $color in $error-colors {
+    $hue: hue($color);
+    $sat: saturation($color);
+    $light: lightness($color);
+  
+    --#{$name}: hsl(#{$hue}, #{$sat}, #{$light});
+  }
+}
+
 
 // Message Colors
 $message-colors: (
@@ -32,3 +134,47 @@ $message-colors: (
   "error": #ffe5e0,
   "success": #d4edda,
 );
+
+@mixin message-tokens-hsl() {
+  @each $name, $color in $message-colors {
+    $hue: hue($color);
+    $sat: saturation($color);
+    $light: lightness($color);
+  
+    --#{$name}-hue: #{$hue};
+    --#{$name}-sat: #{$sat};
+    --#{$name}-light: #{$light};
+  }
+}
+
+@mixin message-tokens() {
+  @each $name, $color in $message-colors {
+    $hue: hue($color);
+    $sat: saturation($color);
+    $light: lightness($color);
+  
+    --#{$name}: hsl(#{$hue}, #{$sat}, #{$light});
+  }
+}
+
+
+:root {
+  @include all-color-tokens-hsl();
+  @include error-tokens-hsl();
+  @include loader-tokens-hsl();
+  @include message-tokens-hsl();
+  @include config.site-color-tokens-hsl();
+}
+
+:root {
+  @include all-color-tokens();
+  @include tokens.color-tokens();
+  @include error-tokens();
+  @include loader-tokens();
+  @include message-tokens();
+  @include config.site-color-tokens();
+}
+
+:root {
+  @include all-color-alpha()
+}

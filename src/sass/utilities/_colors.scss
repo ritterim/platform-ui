@@ -31,52 +31,58 @@ $site-colors: () !default;
   }
 }
 
+
 @if meta.type-of($all-colors) == "map" {
   @each $name, $color in $all-colors {
     // text color
     .text {
       &--#{$name} {
-        color: var(--#{$name}) !important;
+        color: var(--#{$name}, #{$color}) !important;
+
         &.pill {
-          border-color: var(--#{$name}) !important;
+          border-color: var(--#{$name}, #{$color}) !important;
         }
       }
+
       &-hover--#{$name} {
         transition: background-color var(--transitions);
 
         &.text-underline--hover {
           &:after {
-            background-color: var(--#{$name}) !important;
+            background-color: var(--#{$name}, #{$color}) !important;
           }
         }
 
         &:hover {
-          color: var(--#{$name}) !important;
+          color: var(--#{$name}, #{$color}) !important;
         }
       }
     }
 
+
     // background color
     .background {
       &--#{$name} {
-        background-color: var(--#{$name}) !important;
+        background-color: var(--#{$name}, #{$color}) !important;
         &.button {
           &.loading {
             &:before {
-              background-color: var(--#{$name}) !important;
+              background-color: var(--#{$name}, #{$color}) !important;
             }
           }
         }
       }
 
+
       &-hover--#{$name} {
         transition: background-color var(--transitions);
 
         &:hover {
-          background-color: var(--#{$name}) !important;
+          background-color: var(--#{$name}, #{$color}) !important;
         }
       }
     }
+
 
     // Add alpha transparency
     @for $i from 1 through 9 {
@@ -86,19 +92,45 @@ $site-colors: () !default;
     }
   }
 }
+
 
 // error Colors
 @if meta.type-of(variables.$error-colors) == "map" {
   @each $name, $color in variables.$error-colors {
     // text color
     .text--#{$name} {
-      border-color: $color !important;
-      color: $color !important;
+      color: var(--#{$name}, #{$color}) !important;
+
+      &-hover--#{$name} {
+        transition: background-color var(--transitions);
+
+        &.text-underline--hover {
+          &:after {
+            background-color: var(--#{$name}, #{$color}) !important;
+          }
+        }
+
+        &:hover {
+          color: var(--#{$name}, #{$color}) !important;
+        }
+      }
     }
+
+
     // background color
     .background--#{$name} {
-      background-color: var(--#{$name}) !important;
+      background-color: var(--#{$name}, #{$color}) !important;
+
+      &-hover--#{$name} {
+        transition: background-color var(--transitions);
+
+        &:hover {
+          background-color: var(--#{$name}, #{$color}) !important;
+        }
+      }
     }
+
+
     // Add alpha transparency
     @for $i from 1 through 9 {
       .background--#{$name}-a#{$i}0 {
@@ -107,6 +139,7 @@ $site-colors: () !default;
     }
   }
 }
+
 
 // transparent color
 .background--transparent {

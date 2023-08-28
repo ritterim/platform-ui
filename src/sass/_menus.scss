@@ -11,11 +11,11 @@
     position: fixed;
     width: 100%;
     top: 0;
-    height: config.$menu-height;
+    height: var(--menu-height);
     z-index: 100;
 
     + .header-fixed {
-      margin-top: config.$menu-height;
+      margin-top: var(--menu-height);
     }
   }
 }
@@ -50,7 +50,10 @@ $all-colors: () !default;
 }
 
 .site-menu {
-  --menu-text-color: inherit;
+  --_menu-text-color: var(
+    --menu-text-color, 
+    inherit
+  );
 
   align-items: center;
   background-color: inherit;
@@ -66,10 +69,10 @@ $all-colors: () !default;
   .site-menu__item,
   .dropdown__content-item {
     align-items: center;
-    color: var(--menu-text-color);
+    color: var(--_menu-text-color);
     display: flex;
     line-height: 1;
-    padding: map.get(variables.$sizes, 2) map.get(variables.$sizes, 3);
+    padding: var(--size-2) var(--size-3);
   }
 
   .dropdown__content-item {
@@ -98,6 +101,7 @@ $all-colors: () !default;
     }
   }
 
+
   // site-menu underline on hover
   &.hover-underline {
     .site-menu__item,
@@ -119,22 +123,22 @@ $all-colors: () !default;
       @each $unit, $rem in variables.$sizes {
         &.p-#{$unit} {
           &:after {
-            left: $rem;
-            right: $rem;
+            left: var(--size-#{$unit});
+            right: var(--size-#{$unit});
           }
         }
 
         &.px-#{$unit} {
           &:after {
-            left: $rem;
-            right: $rem;
+            left: var(--size-#{$unit});
+            right: var(--size-#{$unit});
           }
         }
 
         @each $direction, $d in variables.$xy-border {
           &.p#{$d}-#{$unit} {
             &:after {
-              #{$direction}: #{$rem};
+              #{$direction}: var(--size-#{$unit});
             }
           }
         }
@@ -178,15 +182,19 @@ $all-colors: () !default;
     }
   }
 
+
   // Side border modifier
   &.site-menu--bordered {
-    --menu-border-color: var(--base, #666666);
+    --_menu-border-color: var(
+      --menu-border-color, 
+      var(--base)
+    );
 
     @media (min-width: (config.$show-mobile-menu)) {
       > .site-menu__item,
       > li > .site-menu__item,
       > .dropdown > .site-menu__item {
-        border-left: 1px solid var(--menu-border-color);
+        border-left: 1px solid var(--_menu-border-color);
       }
 
       > li:first-child .site-menu__item,
@@ -198,7 +206,7 @@ $all-colors: () !default;
       .dropdown__content {
         > li > .dropdown__content-item,
         > .dropdown__content-item {
-          border-top: 1px solid var(--menu-border-color);
+          border-top: 1px solid var(--_menu-border-color);
         }
 
         > li:first-child .dropdown__content-item,
@@ -235,41 +243,47 @@ $all-colors: () !default;
   // Color specific
   @each $name, $color in $all-colors {
     &.background--#{$name} {
-      --item-hover-color: #{color.adjust(
-          $color,
-          $lightness: math.percentage(-0.05)
-        )};
+      --_item-background: var(
+        --item-background,
+        var(--#{$name})
+      );
+      --_item-hover-color: var(
+        --item-hover-color,
+        hsl(
+          var(--#{$name}-hue), 
+          var(--#{$name}-sat), 
+          calc(var(--#{$name}-light) - 5%)
+        )
+      );
 
-      background-color: $color !important;
+      background-color: var(--_item-background) !important;
 
       .site-menu__item,
       .dropdown__content-item {
         @if lightness($color) > 50 {
-          --menu-text-color: var(
+          --_menu-text-color: var(
             --dark,
             #{map.get(variables.$greyscale, "dark")}
           );
         } @else {
-          --menu-text-color: var(
+          --_menu-text-color: var(
             --white,
             #{map.get(variables.$greyscale, "white")}
           );
         }
 
         &.active {
-          background-color: color.adjust(
-            $color,
-            $lightness: math.percentage(-0.1)
-          );
+          --_item-background: hsl(
+                                var(--#{$name}-hue), 
+                                var(--#{$name}-sat), 
+                                calc(var(--#{$name}-light) - 10%)
+                              );
         }
 
         @media (pointer: fine) {
           &:hover {
             &:not(.active) {
-              background-color: var(
-                --item-hover-color,
-                #{color.adjust($color, $lightness: math.percentage(-0.05))}
-              );
+              background-color: var(--_item-hover-color);
             }
           }
         }
@@ -277,10 +291,7 @@ $all-colors: () !default;
 
       .active {
         > .dropdown__trigger {
-          background-color: var(
-            --item-hover-color,
-            #{color.adjust($color, $lightness: math.percentage(-0.05))}
-          );
+          background-color: var(--_item-hover-color);
           text-shadow: none;
         }
       }
@@ -292,12 +303,12 @@ $all-colors: () !default;
       // Site menu border modifier
       &.site-menu--bordered {
         @if lightness($color) > 50 {
-          --menu-border-color: var(
+          --_menu-border-color: var(
             --dark,
             #{map.get(variables.$greyscale, "dark")}
           );
         } @else {
-          --menu-border-color: var(
+          --_menu-border-color: var(
             --white,
             #{map.get(variables.$greyscale, "white")}
           );
@@ -332,7 +343,7 @@ $all-colors: () !default;
         z-index: 6;
 
         .site-header--fixed & {
-          max-height: calc(100vh - #{config.$menu-height});
+          max-height: calc(100vh - #{var(--menu-height)});
         }
       }
     }
@@ -411,7 +422,7 @@ $all-colors: () !default;
         > .site-menu__item,
         > li > .site-menu__item,
         > .dropdown > .site-menu__item {
-          border-top: 1px solid var(--menu-border-color);
+          border-top: 1px solid var(--_menu-border-color);
         }
 
         > li:first-child .site-menu__item,
@@ -423,7 +434,7 @@ $all-colors: () !default;
         .dropdown__content {
           > li > .dropdown__content-item,
           > .dropdown__content-item {
-            border-top: 1px solid var(--menu-border-color);
+            border-top: 1px solid var(--_menu-border-color);
           }
 
           > li:first-child .dropdown__content-item,
@@ -473,7 +484,7 @@ $all-colors: () !default;
   &.site-menu-wrapper,
   .site-menu-wrapper {
     .site-menu.active {
-      max-height: calc(100vh - #{config.$menu-height});
+      max-height: calc(100vh - #{var(--menu-height)});
     }
   }
 }
@@ -498,11 +509,12 @@ $all-colors: () !default;
   }
 
   &__action {
-    color: color.adjust(
-      map.get(variables.$greyscale, "light"),
-      $lightness: math.percentage(config.$hue-threshold)
-    );
-    @include mixins.square(variables.$size * 1.5);
+    color: hsl(
+      var(--light-hue), 
+      var(--light-sat), 
+      calc(var(--light-light) + 10%
+    ));
+    @include mixins.square(calc(var(--size-3) * 1.5));
     @extend %flex-center;
 
     &:hover {
@@ -517,7 +529,7 @@ $all-colors: () !default;
     #{$self}__item {
       border: 0;
       border-bottom: 1px solid var(--light);
-      padding: map.get(variables.$sizes, 1) 0;
+      padding: var(--size-1) 0;
       &:last-of-type {
         border-bottom: none;
       }

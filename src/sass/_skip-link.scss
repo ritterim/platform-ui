@@ -1,9 +1,18 @@
 @use "./variables";
 
 .skip-link {
-  --outline-width: 1px;
-  --outline-style: solid;
-  --outline-color: currentColor;
+  --_outline-width: var(
+    --outline-width,
+    1px
+  );
+  --_outline-style: var(
+    --outline-style,
+    solid
+  );
+  --_outline-color: var(
+    --outline-color,
+    currentColor
+  );
 
   display: grid;
   place-content: center;
@@ -21,14 +30,14 @@
   }
 
   a {
-    padding: variables.$size;
+    padding: var(--size-3);
     text-decoration: underline;
 
     &:focus,
     &:focus-visible {
-      outline: var(--outline-width);
-      outline-style: var(--outline-style);
-      outline-color: var(--outline-color);
+      outline: var(--_outline-width);
+      outline-style: var(--_outline-style);
+      outline-color: var(--_outline-color);
     }
   }
 

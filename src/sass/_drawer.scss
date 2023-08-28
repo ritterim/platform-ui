@@ -5,8 +5,16 @@
 @use "sass:map";
 
 .drawer {
-  $self: &;
-  background-color: config.$drawer-background;
+  --_drawer-background: var(
+    --drawer-background, 
+    var(--white)
+  );
+  --_drawer-padding: var(
+    --drawer-padding, 
+    var(-space-4)
+  );
+
+  background-color: var(--_drawer-background);
   box-shadow: 0 -1rem 2rem var(--black-a40);
   flex-direction: column;
   width: 100%;
@@ -18,7 +26,7 @@
   visibility: hidden;
 
   @media (prefers-reduced-motion: no-preference) {
-    transition-duration: transform, visibility;
+    transition-property: transform, visibility;
     transition-timing-function: ease-in-out;
     transition-duration: var(--transitions);
   }
@@ -29,31 +37,31 @@
     overflow-y: visible;
     overflow-x: hidden;
 
-    #{$self}-bottom & {
+    .drawer-bottom & {
       max-height: 80vh;
     }
   }
 
   &--single-row {
     & {
-      #{$self}__inner {
+      .drawer__inner {
         min-height: 8rem !important;
       }
     }
   }
 
   &__header {
-    padding: config.$drawer-primary-padding;
+    padding: var(--_drawer-padding);
     position: relative;
     width: 100%;
 
     @include mixins.breakpoint(tablet, max) {
-      padding-top: map.get(variables.$sizes, 5);
+      padding-top: var(--size-5);
     }
 
-    #{$self}__close {
+    .drawer__close {
       position: absolute;
-      right: -#{variables.$size};
+      right: calc(var(--size-3) * (-1));
       top: 50%;
       transform: translate(-50%, -50%);
 
@@ -62,9 +70,10 @@
       }
     }
   }
+  
   &__content {
     overflow-y: auto;
-    padding: config.$drawer-primary-padding;
+    padding: var(--_drawer-padding);
     position: relative;
   }
 
@@ -79,6 +88,8 @@
   // Drawer animates from the side
   &-right,
   &-left {
+    --_drawer-side-width: var(--drawer-side-width, 27rem);
+
     bottom: 0;
     box-shadow: 0 -0.5rem 2rem var(--black-a50);
     flex-direction: column;
@@ -88,11 +99,11 @@
     z-index: 99;
 
     .header-fixed & {
-      height: calc(100% - #{config.$menu-height});
+      height: calc(100% - var(--menu-height));
     }
 
     @include mixins.breakpoint(tablet, min) {
-      width: config.$drawer-side-width;
+      width: var(--_drawer-side-width);
     }
 
     &[hidden] {
@@ -121,7 +132,7 @@
 
     // if header is fixed, account for header height.
     .header-fixed & {
-      top: config.$menu-height;
+      top: var(--menu-height);
       transform: translateY(calc((-1 * var(--menu-height)) + -100%));
     }
   }
@@ -129,14 +140,6 @@
   &.active {
     transform: translate(0%);
     visibility: visible;
-  }
-}
-
-#kss-node {
-  .drawer__open {
-    position: relative;
-    bottom: inherit;
-    right: inherit;
   }
 }
 

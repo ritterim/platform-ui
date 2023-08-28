@@ -7,45 +7,53 @@
 
 .accordion {
   $self: &;
-  $accordion-primary-color: var(--base);
-  $accordion-primary-background: var(--white);
-  $accordion-secondary-background: var(--lighter);
-  $accordion-primary-border-color: color.adjust(
-    map.get(variables.$greyscale, "light"),
-    $lightness: math.percentage(config.$hue-threshold * 2)
-  );
-  $accordion-secondary-border-color: color.adjust(
-    map.get(config.$brand-colors, "med-blue"),
-    $lightness: math.percentage(config.$hue-threshold)
-  );
-  $accordion-active-background: var(--med-blue);
-  $accordion-hover-border: var(--skyblue);
 
-  background-color: $accordion-primary-background;
+  --_accordion-primary-color: var(
+    --accordion-primary-color, 
+    var(--navy)
+  );
+  --_accordion-primary-background: var(
+    --accordion-primary-background, 
+    var(--white)
+  );
+  --_accordion-header-background: var(
+    --accordion-header-background, 
+    var(--lighter)
+  );
+  --_accordion-primary-border-color: var(
+    --accordion-primary-border-color, 
+    var(--light-3)
+  );
+  --_accordion-hover-border: var(
+    --accordion-hover-border, 
+    var(--skyblue)
+  );
+
+  background-color: var(--_accordion-primary-background);
   border: 1px solid transparent;
-  border-top-color: $accordion-primary-border-color;
-  color: $accordion-primary-color;
+  border-top-color: var(--_accordion-primary-border-color);
+  color: var(--_accordion-primary-color);
   font-size: 100%;
-  transition: border-color config.$transitions;
+  transition: border-color var(--transitions);
 
   &:last-of-type {
-    border-bottom-color: $accordion-primary-border-color;
+    border-bottom-color: var(--_accordion-primary-border-color);
   }
 
   &:not(.active):hover {
-    border-color: $accordion-hover-border;
+    border-color: var(--_accordion-hover-border);
 
     #{$self}__header {
-      background-color: $accordion-secondary-background;
+      background-color: var(--_accordion-header-background);
     }
   }
 
   &.active {
     border-color: transparent;
-    box-shadow: 0px 0px 0px 2px $accordion-hover-border;
+    box-shadow: 0px 0px 0px 2px var(--_accordion-hover-border);
 
     > #{$self}__header {
-      background-color: $accordion-secondary-background;
+      background-color: var(--_accordion-header-background);
 
       #{$self}__icon {
         @extend %rotate-180;
@@ -59,20 +67,25 @@
   &__header {
     display: flex;
     position: relative;
-    transition: background-color config.$transitions;
+    transition: background-color var(--transitions);
     z-index: 10;
   }
 
   &__icon {
-    transition: transform config.$transitions;
+    transition: transform var(--transitions);
   }
 
   &__content {
+    border-top: none;
+    display: none;
+    position: relative;
+    z-index: 0;
+    
     > #{$self} {
       border: none;
       &:not(.active):hover {
         #{$self}__header {
-          background-color: $accordion-primary-background;
+          background-color: var(--_accordion-primary-background);
         }
       }
       &.active {
@@ -81,14 +94,10 @@
       }
       > #{$self} {
         &__header {
-          background-color: $accordion-primary-background;
+          background-color: var(--_accordion-primary-background);
           font-weight: bold;
         }
       }
     }
-    border-top: none;
-    display: none;
-    position: relative;
-    z-index: 0;
   }
 }
