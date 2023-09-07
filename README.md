@@ -6,7 +6,9 @@ As we continue to improve Platform UI, we hope to create an easy to use framewor
 
 ## Publishing
 
-Platform UI is published privately on a regular basis to [MyGet](https://myget.org/). More infrequent but stable builds are published to [npm](https://www.npmjs.com/) as [@ritterim/platform-ui](https://www.npmjs.com/package/@ritterim/platform-ui).
+Platform UI is published privately on a regular basis to [MyGet](https://myget.org/) and GitHub Packages. Builds are also published to [npm](https://www.npmjs.com/) as [@ritterim/platform-ui](https://www.npmjs.com/package/@ritterim/platform-ui).
+
+The patch version value will be bumped on every merge to the trunk branch.
 
 ## Styleguide
 
