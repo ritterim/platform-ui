@@ -1,8 +1,13 @@
 # Version History
 
 ---
+
+# 1.8.2 to 1.8.4
+    - Conversion over to a new build process.
+
 # 1.8.1
     - Updates fantasticon config to only generate woff2 font file
+
 # 1.8.0
     - Adds `skip-link` component
     - Updates dependency packages
