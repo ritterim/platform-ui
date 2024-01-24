@@ -6,7 +6,7 @@
 {{# if selector }}
 {{ selector }}:before {
 {{ else }}
-{{ tag }}[class^="{{prefix}}-"]:before, {{ tag }}[class*=" {{prefix}}-"]:before {
+{{ tag }}[class^="{{prefix}}-"], {{ tag }}[class*=" {{prefix}}-"] {
 {{/ if }}
     display: inline-block;
     font-family: {{ name }} !important;
