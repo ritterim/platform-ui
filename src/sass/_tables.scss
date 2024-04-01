@@ -64,7 +64,7 @@
     }
 
     &:last-child {
-      td {
+      > td {
         border-color: transparent;
       }
     }
