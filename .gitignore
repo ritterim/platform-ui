@@ -22,9 +22,3 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-
-# Generated files
-src/icons/optimized/*.svg
-!src/icons/optimized/.gitkeep
-public/*
-!public/.gitkeep
