@@ -32,7 +32,7 @@ const components = [
     Component: PlatformTab
   },
   {
-    selector: '.tab',
+    selector: '.tooltip',
     Component: PlatformTooltip
   }
 ];
