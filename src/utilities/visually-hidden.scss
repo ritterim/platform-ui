@@ -1,0 +1,10 @@
+// visually-hidden replaces sr-only
+:where(.visually-hidden:not(:focus-within, :active)) {
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}

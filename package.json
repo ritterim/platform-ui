@@ -11,10 +11,10 @@
   "module": "./dist/platform-ui.es.js",
   "exports": {
     "import": "./dist/platform-ui.es.js",
-    "require": "./dist/platfomr-ui.umd.js"
+    "require": "./dist/platform-ui.umd.js"
   },
   "scripts": {
-    "dev": "vite",
+    "start": "node ./config-loader.js && vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
