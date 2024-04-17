@@ -14,7 +14,7 @@
     "require": "./dist/platform-ui.umd.js"
   },
   "scripts": {
-    "start": "node ./config-loader.js && vite",
+    "start": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
