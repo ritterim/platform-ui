@@ -1,0 +1,32 @@
+@use "sass:meta";
+@use "sass:map";
+@use "sass:list";
+@use "sass:string";
+@use "../tokens/tokens" as tokens;
+
+$COLORS_LIST: ();
+
+@each $name, $color in meta.module-variables("tokens") {
+  @if meta.type-of($color) == color {
+    $COLORS_LIST: map.merge(
+      $COLORS_LIST,
+      (
+        $name: $color,
+      )
+    );
+  }
+}
+
+@each $name, $color in $COLORS_LIST {
+  $types: (
+    "text": "color",
+    "background": "background-color",
+    "border": "border-color",
+  );
+
+  @each $type, $property in $types {
+    .#{$type}-#{$name} {
+      #{$property}: var(--#{$name});
+    }
+  }
+}

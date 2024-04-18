@@ -19,6 +19,7 @@
   }
   
   @layer themes {
+    @include meta.load-css("./tokens/_index.scss");
     @include meta.load-css("./themes/_index.scss");
   }
 }

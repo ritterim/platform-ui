@@ -14,9 +14,13 @@
     "require": "./dist/platform-ui.umd.js"
   },
   "scripts": {
-    "start": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "start": "launch && vite",
+    "build": "tsc && launch && vite build",
+    "preview": "vite preview",
+    "launch": "launch"
+  },
+  "bin": {
+    "launch": "./bin/build.js"
   },
   "devDependencies": {
     "@types/node": "^20.12.7",

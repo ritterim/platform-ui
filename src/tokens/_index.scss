@@ -1,0 +1,13 @@
+@use "sass:meta";
+@use "sass:map";
+@use "sass:list";
+@use "sass:string";
+@use "../tokens/tokens" as tokens;
+
+$TOKENS_LIST: ();
+
+:root {
+  @each $name, $token in meta.module-variables("tokens") {
+    --#{$name}: #{$token};
+  }
+}
