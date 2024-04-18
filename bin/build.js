@@ -3,8 +3,9 @@
 
 import fs from 'node:fs';
 import { cosmiconfig, defaultLoaders } from 'cosmiconfig';
+import { build } from 'vite';
 
-class Build {
+class Launch {
   constructor() {
     this.explorer;
     this.tokens;
@@ -27,6 +28,7 @@ class Build {
         if (this.tokens) {
           this.handleCreateTokens();
           this.handleCreateStylesheet();
+          this.handleBuild();
         }
       })
       .catch((error) => {
@@ -105,6 +107,11 @@ class Build {
       }
     );
   }
+
+  async handleBuild() {
+    // Runs the Vite build command
+    await build();
+  }
 }
 
-export const build = new Build();
+export const launch = new Launch();

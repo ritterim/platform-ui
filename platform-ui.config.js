@@ -1,6 +1,9 @@
 export default {
   name: 'Platform UI',
-  outputFormat: 'scss',
+  output: {
+    directory: './src/styles/',
+    filename: 'platform-ui.css',
+  },
   tokens: {
     color: [
       { name: 'Navy', value: '#003f70' },
@@ -18,7 +21,6 @@ export default {
       { name: 'Base', value: '#666' },
       { name: 'Dark', value: '#333' },
       { name: 'Black', value: '#222' },
-      
     ],
     space: [
       { name: 'xl', value: '4rem' },
@@ -32,7 +34,7 @@ export default {
       ],
       size: [
         { name: 'xl', value: '4rem' },
-        { name: 'lg', value: '2rem' },
+        { name: 'lg', value: '3rem' },
         { name: 'md', value: '1rem' },
       ],
     },
