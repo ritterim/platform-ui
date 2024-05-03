@@ -1,0 +1,7 @@
+@layer typography {
+  body {
+    color: var(--primary-font-color, -color-black);
+    font-size: var(--primary-font-size, --step-0);
+    font-family: var(--primary-font, var(--font-body));
+  }
+}

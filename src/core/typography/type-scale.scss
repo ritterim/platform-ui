@@ -1,0 +1,29 @@
+@use "sass:map";
+@use "../configuration" as config;
+@use "node_modules/utopia-core-scss/src/utopia" as utopia;
+
+@layer typography {
+  :root {
+    @include utopia.generateTypeScale(
+      (
+        "minWidth": map.get(config.$TYPE_SCALE, "minWidth"),
+        "maxWidth": map.get(config.$TYPE_SCALE, "maxWidth"),
+        "minFontSize": map.get(config.$TYPE_SCALE, "minFontSize"),
+        "maxFontSize": map.get(config.$TYPE_SCALE, "maxFontSize"),
+        "minTypeScale": map.get(config.$TYPE_SCALE, "minTypeScale"),
+        "maxTypeScale": map.get(config.$TYPE_SCALE, "maxTypeScale"),
+        "positiveSteps": map.get(config.$TYPE_SCALE, "positiveSteps"),
+        "negativeSteps": map.get(config.$TYPE_SCALE, "negativeSteps"),
+      )
+    );
+
+    $customClampValue: utopia.calculateClamp(
+      (
+        "minWidth": map.get(config.$TYPE_SCALE, "minWidth"),
+        "maxWidth": map.get(config.$TYPE_SCALE, "maxWidth"),
+        "minSize": map.get(config.$TYPE_SCALE, "minFontSize"),
+        "maxSize": map.get(config.$TYPE_SCALE, "maxFontSize"),
+      )
+    );
+  }
+}

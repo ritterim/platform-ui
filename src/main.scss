@@ -1,23 +1,21 @@
 @use "sass:meta";
 
-// Namespace layer?
 @layer platform-ui {
-
-  // 
   @layer core, components, utilities, themes;
-  
+
   @layer core {
+    @layer reset, typography, spacing, layout, elements;
     @include meta.load-css("./core/_index.scss");
   }
-  
+
   @layer components {
     @include meta.load-css("./components/_index.scss");
   }
-  
+
   @layer utilities {
     @include meta.load-css("./utilities/_index.scss");
   }
-  
+
   @layer themes {
     @include meta.load-css("./tokens/_index.scss");
     @include meta.load-css("./themes/_index.scss");

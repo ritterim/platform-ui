@@ -1,0 +1,12 @@
+@use "sass:map";
+@use "../configuration" as config;
+
+@layer layout {
+  .container {
+    width: min(
+      calc(100% - var(--container-gutter, var(--space-s))),
+      var(--container-max, map.get(config.$CONTAINER, "max"))
+    );
+    margin-inline: auto;
+  }
+}
