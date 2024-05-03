@@ -6,8 +6,10 @@ $CONTAINER: (
 
 // !NOTE: Generate via configuration file!
 $TYPE_SCALE: (
-  "minWidth": 320, // Should be the same as $CONTAINER_MIN
-  "maxWidth": 1240, // Should be the same as $CONTAINER_MAX
+  "minWidth": 320,
+  // Should be the same as $CONTAINER_MIN
+  "maxWidth": 1240,
+  // Should be the same as $CONTAINER_MAX
   "minFontSize": 18,
   "maxFontSize": 20,
   "minTypeScale": 1.2,
@@ -18,11 +20,47 @@ $TYPE_SCALE: (
 
 // !NOTE: Generate via configuration file!
 $FLOW: (
-  "sizes": ( // Should match the spacers
+  "sizes": (
+    // Should match the spacers
     "xs",
     "s",
     "m",
     "l",
     "xl",
+  ),
+);
+
+$TEXT: (
+  "sizes": (
+    "xs": --step--2,
+    "s": --step--1,
+    "m": --step-0,
+    "l": --step-1,
+    "xl": --step-2,
+    "2xl": --step-3,
+    "3xl": --step-4,
+    "4xl": --step-5,
+  ),
+  "alignments": (
+    "start",
+    "left",
+    "center",
+    "justified",
+    "end",
+    "right",
+  ),
+  "casings": (
+    "uppercase",
+    "lowercase",
+    "capitalize",
+  ),
+  "styles": (
+    "oblique",
+    "italic",
+    "normal",
+    "underline",
+  ),
+  "weights": (
+    "bold"
   ),
 );
