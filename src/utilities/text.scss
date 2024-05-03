@@ -1,0 +1,57 @@
+@use "sass:map";
+@use "../core/configuration" as config;
+
+// Text Size
+[class*="text-size"] {
+  font-size: var(--text-size, var(--step-0));
+}
+
+@each $size, $value in map.get(config.$TEXT, "sizes") {
+  .text-size-#{$size} {
+    --text-size: var(#{$value});
+  }
+}
+
+// Text Alignments
+[class*="text-align"] {
+  text-align: var(--text-align, start);
+}
+
+@each $alignment in map.get(config.$TEXT, "alignments") {
+  .text-align-#{$alignment} {
+    --text-align: #{$alignment};
+  }
+}
+
+// Text Casings
+[class*="text-case"] {
+  text-transform: var(--text-transform, none);
+}
+
+@each $casing in map.get(config.$TEXT, "casings") {
+  .text-case-#{$casing} {
+    --text-transform: #{$casing};
+  }
+}
+
+// Text Styles
+[class*="font-style"] {
+  font-style: var(--font-style, normal);
+}
+
+@each $style in map.get(config.$TEXT, "styles") {
+  .font-style-#{$style} {
+    --font-style: #{$style};
+  }
+}
+
+// Text Weights
+[class*="font-weight"] {
+  font-weight: var(--font-weight);
+}
+
+@each $weight in map.get(config.$TEXT, "weights") {
+  .font-weight-#{$weight} {
+    --font-weight: #{$weight};
+  }
+}
