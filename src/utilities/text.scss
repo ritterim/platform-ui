@@ -1,20 +1,9 @@
 @use "sass:map";
 @use "../core/configuration" as config;
 
-// Text Size
-[class*="text-size"] {
-  font-size: var(--text-size, var(--step-0));
-}
-
-@each $size, $value in map.get(config.$TEXT, "sizes") {
-  .text-size-#{$size} {
-    --text-size: var(#{$value});
-  }
-}
-
 // Text Alignments
 [class*="text-align"] {
-  text-align: var(--text-align, start);
+  text-align: var(--text-align, inherit);
 }
 
 @each $alignment in map.get(config.$TEXT, "alignments") {
@@ -25,7 +14,7 @@
 
 // Text Casings
 [class*="text-case"] {
-  text-transform: var(--text-transform, none);
+  text-transform: var(--text-transform, inherit);
 }
 
 @each $casing in map.get(config.$TEXT, "casings") {
@@ -36,7 +25,7 @@
 
 // Text Styles
 [class*="font-style"] {
-  font-style: var(--font-style, normal);
+  font-style: var(--font-style, inherit);
 }
 
 @each $style in map.get(config.$TEXT, "styles") {
@@ -45,13 +34,35 @@
   }
 }
 
+// Text Size
+[class*="text-size"] {
+  font-size: var(--text-size, inherit);
+}
+
+@each $size, $value in map.get(config.$TEXT, "sizes") {
+  .text-size-#{$size} {
+    --text-size: var(#{$value});
+  }
+}
+
 // Text Weights
 [class*="font-weight"] {
-  font-weight: var(--font-weight);
+  font-weight: var(--font-weight, inherit);
 }
 
 @each $weight in map.get(config.$TEXT, "weights") {
   .font-weight-#{$weight} {
     --font-weight: #{$weight};
+  }
+}
+
+// Text Wrap
+[class*="text-wrap"] {
+  text-wrap: var(--text-wrap, inherit);
+}
+
+@each $wrap in map.get(config.$TEXT, "wraps") {
+  .text-wrap-#{$wrap} {
+    --text-wrap: #{$wrap};
   }
 }

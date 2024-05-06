@@ -24,9 +24,21 @@ $COLORS_LIST: ();
     "border": "border-color",
   );
 
+  [class*="text-color"] {
+    color: var(--color, inherit);
+  }
+
+  [class*="background-color"] {
+    color: var(--background-color, inherit);
+  }
+
+  [class*="border-color"] {
+    border-color: var(--border-color, inherit);
+  }
+
   @each $type, $property in $types {
     .#{$type}-#{$name} {
-      #{$property}: var(--#{$name});
+      --#{$property}: var(--#{$name});
     }
   }
 }

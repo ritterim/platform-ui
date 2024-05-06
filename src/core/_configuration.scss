@@ -31,16 +31,6 @@ $FLOW: (
 );
 
 $TEXT: (
-  "sizes": (
-    "xs": --step--2,
-    "s": --step--1,
-    "m": --step-0,
-    "l": --step-1,
-    "xl": --step-2,
-    "2xl": --step-3,
-    "3xl": --step-4,
-    "4xl": --step-5,
-  ),
   "alignments": (
     "start",
     "left",
@@ -54,6 +44,16 @@ $TEXT: (
     "lowercase",
     "capitalize",
   ),
+  "sizes": (
+    "xs": --step--2,
+    "s": --step--1,
+    "m": --step-0,
+    "l": --step-1,
+    "xl": --step-2,
+    "2xl": --step-3,
+    "3xl": --step-4,
+    "4xl": --step-5,
+  ),
   "styles": (
     "oblique",
     "italic",
@@ -63,4 +63,10 @@ $TEXT: (
   "weights": (
     "bold"
   ),
+  "wraps": (
+    "balance",
+    "nowrap",
+    "pretty",
+    "wrap",
+  )
 );
