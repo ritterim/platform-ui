@@ -25,11 +25,11 @@ $COLORS_LIST: ();
   );
 
   [class*="text-color"] {
-    color: var(--color, inherit);
+    color: var(--text-color, inherit);
   }
 
   [class*="background-color"] {
-    color: var(--background-color, inherit);
+    background-color: var(--background-color, inherit);
   }
 
   [class*="border-color"] {
@@ -38,7 +38,7 @@ $COLORS_LIST: ();
 
   @each $type, $property in $types {
     .#{$type}-#{$name} {
-      --#{$property}: var(--#{$name});
+      --#{$type}-color: var(--#{$name});
     }
   }
 }
