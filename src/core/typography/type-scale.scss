@@ -1,5 +1,5 @@
 @use "sass:map";
-@use "../configuration" as config;
+@use "../../configuration" as config;
 @use "node_modules/utopia-core-scss/src/utopia" as utopia;
 
 @layer typography {

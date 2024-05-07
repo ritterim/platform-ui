@@ -1,5 +1,5 @@
 @use "sass:map";
-@use "../core/configuration" as config;
+@use "../configuration" as config;
 
 @each $spacer, $prefix in map.get(config.$SPACERS, "types") {
   @each $direction, $suffix in map.get(config.$SPACERS, "directions") {

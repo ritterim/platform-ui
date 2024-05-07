@@ -1,5 +1,5 @@
 @use "sass:map";
-@use "../core/configuration" as config;
+@use "../configuration" as config;
 
 [class*="flow"] > * {
   margin-block: 0;
