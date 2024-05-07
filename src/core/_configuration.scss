@@ -30,6 +30,32 @@ $FLOW: (
   ),
 );
 
+$SPACERS: (
+  "types": (
+    "margin": "m",
+    "padding": "p",
+  ),
+  "directions": (
+    "inline": "x",
+    "inline-start": "xs",
+    "inline-end": "xe",
+    "block": "y",
+    "block-start": "ys",
+    "block-end": "ye",
+    "top": "t",
+    "right": "r",
+    "bottom": "b",
+    "left": "l",
+  ),
+  "scale": (
+    "xs",
+    "s",
+    "m",
+    "l",
+    "xl",
+  ),
+);
+
 $TEXT: (
   "alignments": (
     "start",
@@ -61,12 +87,12 @@ $TEXT: (
     "underline",
   ),
   "weights": (
-    "bold"
+    "bold",
   ),
   "wraps": (
     "balance",
     "nowrap",
     "pretty",
     "wrap",
-  )
+  ),
 );

@@ -1,0 +1,12 @@
+@use "sass:map";
+@use "../core/configuration" as config;
+
+@each $spacer, $prefix in map.get(config.$SPACERS, "types") {
+  @each $direction, $suffix in map.get(config.$SPACERS, "directions") {
+    @each $scale in map.get(config.$SPACERS, "scale") {
+      .#{$prefix}#{$suffix}-#{$scale} {
+        #{$spacer}-#{$direction}: var(--space-#{$scale});
+      }
+    }
+  }
+}
