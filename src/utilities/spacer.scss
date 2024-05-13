@@ -2,6 +2,12 @@
 @use "../configuration" as config;
 
 @each $spacer, $prefix in map.get(config.$SPACERS, "types") {
+  @each $scale in map.get(config.$SPACERS, "scale") {
+    .#{$prefix}-#{$scale} {
+      #{$spacer}: var(--space-#{$scale});
+    }
+  }
+
   @each $direction, $suffix in map.get(config.$SPACERS, "directions") {
     @each $scale in map.get(config.$SPACERS, "scale") {
       .#{$prefix}#{$suffix}-#{$scale} {

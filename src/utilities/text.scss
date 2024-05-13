@@ -24,13 +24,13 @@
 }
 
 // Text Styles
-[class*="font-style"] {
-  font-style: var(--font-style, inherit);
+[class*="text-style"] {
+  font-style: var(--text-style, inherit);
 }
 
 @each $style in map.get(config.$TEXT, "styles") {
-  .font-style-#{$style} {
-    --font-style: #{$style};
+  .text-style-#{$style} {
+    --text-style: #{$style};
   }
 }
 
@@ -45,14 +45,24 @@
   }
 }
 
+[class*="text-decoration"] {
+  text-decoration: var(--text-decoration, inherit);
+}
+
+@each $decoration in map.get(config.$TEXT, "decorations"){
+  .text-decoration-#{$decoration} {
+    --text-decoration: $decoration;
+  }
+}
+
 // Text Weights
 [class*="font-weight"] {
-  font-weight: var(--font-weight, inherit);
+  font-weight: var(--text-weight, inherit);
 }
 
 @each $weight in map.get(config.$TEXT, "weights") {
-  .font-weight-#{$weight} {
-    --font-weight: #{$weight};
+  .text-weight-#{$weight} {
+    --text-weight: #{$weight};
   }
 }
 
