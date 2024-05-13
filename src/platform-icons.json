@@ -203,5 +203,9 @@
   "bookmark-solid": 61898,
   "bookmark": 61899,
   "heart-solid": 61900,
-  "heart": 61901
+  "heart": 61901,
+  "mastodon": 61902,
+  "shopping-bag": 61903,
+  "shopping-cart": 61904,
+  "x": 61905
 }
