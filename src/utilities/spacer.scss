@@ -1,6 +1,16 @@
 @use "sass:map";
 @use "../configuration" as config;
 
+.m-none {
+  margin: 0;
+}
+.p-none {
+  margin: 0;
+}
+.m-auto {
+  margin: auto;
+}
+
 @each $spacer, $prefix in map.get(config.$SPACERS, "types") {
   @each $scale in map.get(config.$SPACERS, "scale") {
     .#{$prefix}-#{$scale} {

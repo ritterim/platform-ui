@@ -49,14 +49,14 @@
   text-decoration: var(--text-decoration, inherit);
 }
 
-@each $decoration in map.get(config.$TEXT, "decorations"){
+@each $decoration in map.get(config.$TEXT, "decorations") {
   .text-decoration-#{$decoration} {
-    --text-decoration: $decoration;
+    --text-decoration: #{$decoration};
   }
 }
 
 // Text Weights
-[class*="font-weight"] {
+[class*="text-weight"] {
   font-weight: var(--text-weight, inherit);
 }
 
@@ -68,7 +68,7 @@
 
 // Text Wrap
 [class*="text-wrap"] {
-  text-wrap: var(--text-wrap, inherit);
+  text-wrap: var(--text-wrap, wrap);
 }
 
 @each $wrap in map.get(config.$TEXT, "wraps") {

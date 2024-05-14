@@ -8,46 +8,278 @@
         href="/vite.svg" />
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0" />
-  <title>Vite + TS</title>
+  <title>Platform UI 2.0</title>
 </head>
 
-<body>
-  <article class="container flow">
-    <h1 class="background-color-navy text-color-white py-xl px-l">
-      Typography H1
-    </h1>
-    <h2>Typography H2</h2>
-    <h3>Typography H3</h3>
-    <h4>Typography H4</h4>
-    <h5>Typography H5</h5>
-    <h6>Typography H6</h6>
+<body class="background-color-lighter my-xl">
+  <header class="container my-xl">
+    <h1 class="text-align-center text-color-navy">Submissions</h1>
+  </header>
 
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis, eligendi magni quas quisquam, commodi
-      tenetur aspernatur enim fuga voluptatem rerum ducimus repellendus distinctio neque quibusdam illum. Vero tempora
-      quas accusantium?</p>
-    <p>Lorem ipsum dolor sit, <a href="#">amet consectetur adipisicing elit</a>. Nesciunt voluptates velit distinctio
-      nihil quod, facilis consequuntur molestiae sequi ad natus iusto alias doloribus quis non fuga. Ad tempora ullam
-      ex!</p>
-    <ul>
-      <li>Item 1</li>
-      <li>Item 2</li>
-      <li>Item 3</li>
-    </ul>
-    <ol>
-      <li>
-        Item
-      </li>
-      <li>Item</li>
-      <li>Item</li>
-    </ol>
-    <blockquote>
-      Hello World
-      <cite>
-        - Some Guy
-      </cite>
-    </blockquote>
+  <main class="container">
+    <div class="tabs"
+         aria-labelledby="tab-example">
+      <section class="tab-list"
+               role="tablist">
+        <button type="button"
+                id="submissions"
+                class="tab active"
+                role="tab"
+                aria-controls="submissions-panel"
+                aria-selected="true">
+          Submissions
+        </button>
+        <button type="button"
+                class="tab"
+                id="downlines"
+                role="tab"
+                aria-selected="false"
+                aria-controls="downlines-panel">
+          Downlines
+        </button>
+        <button type="button"
+                class="tab"
+                id="enrollments"
+                role="tab"
+                aria-selected="false"
+                aria-controls="enrollments-panel">
+          Enrollments
+        </button>
+      </section>
+      <article class="tab-panel flow open"
+               id="submissions-panel"
+               role="tabpanel"
+               aria-labelledby="submissions"
+               tabindex="0">
+        <section class="auto-grid align-items-center gap-s my-m"
+                 style="--grid-column-min: 20ch; --grid-gap: var(--space-xs)">
+          <div class="flex align-items-center gap-xs">
+            <p class="m-none">
+              Showing <span class="text-weight-bold text-color-navy">100</span> out of <span
+                    class="text-weight-bold text-color-navy">119</span>
+              results.
+            </p>
+            <button>refresh</button>
+          </div>
+          <div class="flex align-items-center justify-content-end">
+            <button>Filters</button>
+            <button>Export</button>
+            <button>Add</button>
+          </div>
+        </section>
 
-  </article>
+        <details class="accordion">
+          <summary class="accordion-header flex gap-m justify-content-space-between">
+            <dl class="auto-grid gap-xs align-items-center w-100 m-none"
+                style="--grid-column-min: 10ch;">
+              <div>
+                <dt class="text-weight-bold text-color-navy">
+                  <a href="">Highmark</a>
+                </dt>
+                <!-- <dd class="m-none">Community Blue Medicare HMO Signature (HMO)</dd> -->
+                <dd class="m-none">06/01/2024</dd>
+              </div>
+              <div>
+                <dt class="text-weight-bold">Client</dt>
+                <dd class="m-none">Frankie Smith</dd>
+              </div>
+              <div>
+                <dt class="text-weight-bold">Scope</dt>
+                <dd class="m-none">N/A</dd>
+              </div>
+              <div>
+                <dt class="text-weight-bold">Agent</dt>
+                <dd class="m-none">QA Sue Testpass</dd>
+              </div>
+              <div>
+                <dt class="text-weight-bold">Processor</dt>
+                <dd class="m-none">Shop & Enroll</dd>
+              </div>
+              <div>
+                <dt class="text-weight-bold">Method</dt>
+                <dd class="m-none">ShopAndEnroll</dd>
+              </div>
+              <div>
+                <dt class="text-weight-bold">Status</dt>
+                <dd class="m-none">Initial</dd>
+              </div>
+            </dl>
+            <section id="actions"
+                     class="flex flex-direction-column">
+              <button>
+                Key
+              </button>
+              <button>
+                History
+              </button>
+              <button>
+                Delete
+              </button>
+            </section>
+          </summary>
+
+          <!-- Accordion Content Here! -->
+          <h3>Lorem Ipsum</h3>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error eaque ipsa quas veniam odit deserunt nihil,
+            eveniet dolorum iusto, vel consequatur, ex itaque molestias rerum eligendi mollitia necessitatibus possimus
+            doloribus?</p>
+        </details>
+        <details class="accordion">
+          <summary class="accordion-header flex gap-m justify-content-space-between">
+            <dl class="auto-grid gap-xs align-items-center w-100 m-none"
+                style="--grid-column-min: 10ch;">
+              <div>
+                <dt class="text-weight-bold text-color-navy">
+                  <a href="">Highmark</a>
+                </dt>
+                <!-- <dd class="m-none">Community Blue Medicare HMO Signature (HMO)</dd> -->
+                <dd class="m-none">06/01/2024</dd>
+              </div>
+              <div>
+                <dt class="text-weight-bold">Client</dt>
+                <dd class="m-none">Frankie Smith</dd>
+              </div>
+              <div>
+                <dt class="text-weight-bold">Scope</dt>
+                <dd class="m-none">N/A</dd>
+              </div>
+              <div>
+                <dt class="text-weight-bold">Agent</dt>
+                <dd class="m-none">QA Sue Testpass</dd>
+              </div>
+              <div>
+                <dt class="text-weight-bold">Processor</dt>
+                <dd class="m-none">Shop & Enroll</dd>
+              </div>
+              <div>
+                <dt class="text-weight-bold">Method</dt>
+                <dd class="m-none">ShopAndEnroll</dd>
+              </div>
+              <div>
+                <dt class="text-weight-bold">Status</dt>
+                <dd class="m-none">Initial</dd>
+              </div>
+            </dl>
+            <section id="actions"
+                     class="flex flex-direction-column">
+              <button>
+                Key
+              </button>
+              <button>
+                History
+              </button>
+              <button>
+                Delete
+              </button>
+            </section>
+          </summary>
+
+          <!-- Accordion Content Here! -->
+          <h3>Lorem Ipsum</h3>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error eaque ipsa quas veniam odit deserunt nihil,
+            eveniet dolorum iusto, vel consequatur, ex itaque molestias rerum eligendi mollitia necessitatibus possimus
+            doloribus?</p>
+        </details>
+        <details class="accordion">
+          <summary class="accordion-header flex gap-m justify-content-space-between">
+            <dl class="auto-grid gap-xs align-items-center w-100 m-none"
+                style="--grid-column-min: 10ch;">
+              <div>
+                <dt class="text-weight-bold text-color-navy">
+                  <a href="">Highmark</a>
+                </dt>
+                <!-- <dd class="m-none">Community Blue Medicare HMO Signature (HMO)</dd> -->
+                <dd class="m-none">06/01/2024</dd>
+              </div>
+              <div>
+                <dt class="text-weight-bold">Client</dt>
+                <dd class="m-none">Frankie Smith</dd>
+              </div>
+              <div>
+                <dt class="text-weight-bold">Scope</dt>
+                <dd class="m-none">N/A</dd>
+              </div>
+              <div>
+                <dt class="text-weight-bold">Agent</dt>
+                <dd class="m-none">QA Sue Testpass</dd>
+              </div>
+              <div>
+                <dt class="text-weight-bold">Processor</dt>
+                <dd class="m-none">Shop & Enroll</dd>
+              </div>
+              <div>
+                <dt class="text-weight-bold">Method</dt>
+                <dd class="m-none">ShopAndEnroll</dd>
+              </div>
+              <div>
+                <dt class="text-weight-bold">Status</dt>
+                <dd class="m-none">Initial</dd>
+              </div>
+            </dl>
+            <section id="actions"
+                     class="flex flex-direction-column">
+              <button>
+                Key
+              </button>
+              <button>
+                History
+              </button>
+              <button>
+                Delete
+              </button>
+            </section>
+          </summary>
+
+          <!-- Accordion Content Here! -->
+          <h3>Lorem Ipsum</h3>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error eaque ipsa quas veniam odit deserunt nihil,
+            eveniet dolorum iusto, vel consequatur, ex itaque molestias rerum eligendi mollitia necessitatibus possimus
+            doloribus?</p>
+        </details>
+
+      </article>
+      <article class="tab-panel flow"
+               role="tabpanel"
+               id="downlines-panel"
+               aria-labelledby="downlines"
+               tabindex="0">
+        <h2>Tab 2 Content</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium fugit pariatur inventore libero id.
+          Tempora
+          numquam eligendi, voluptates quibusdam similique mollitia accusamus facere quidem? Sit eum totam maxime
+          aliquid
+          mollitia!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium fugit pariatur inventore libero id.
+          Tempora
+          numquam eligendi, voluptates quibusdam similique mollitia accusamus facere quidem? Sit eum totam maxime
+          aliquid
+          mollitia!</p>
+      </article>
+      <article class="tab-panel flow"
+               id="enrollments-panel"
+               role="tabpanel"
+               aria-labelledby="enrollments"
+               tabindex="0">
+        <h2>Tab 3 Content</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium fugit pariatur inventore libero id.
+          Tempora
+          numquam eligendi, voluptates quibusdam similique mollitia accusamus facere quidem? Sit eum totam maxime
+          aliquid
+          mollitia!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium fugit pariatur inventore libero id.
+          Tempora
+          numquam eligendi, voluptates quibusdam similique mollitia accusamus facere quidem? Sit eum totam maxime
+          aliquid
+          mollitia!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium fugit pariatur inventore libero id.
+          Tempora
+          numquam eligendi, voluptates quibusdam similique mollitia accusamus facere quidem? Sit eum totam maxime
+          aliquid
+          mollitia!</p>
+      </article>
+    </div>
+  </main>
+
   <script type="module"
           src="/src/main.ts"></script>
 </body>

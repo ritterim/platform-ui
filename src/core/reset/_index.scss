@@ -76,7 +76,7 @@
     cursor: pointer;
   }
 
-  :where(ul, ol):is([class]) {
+  :where(ul, ol) {
     list-style-type: "";
   }
 
