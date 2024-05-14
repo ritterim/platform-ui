@@ -4,6 +4,28 @@ $CONTAINER: (
   "max": 1240px,
 );
 
+$FLEX: (
+  "align-items": (
+    "start",
+    "center",
+    "end",
+    "baseline",
+  ),
+  "align-self": (
+    "start",
+    "center",
+    "end",
+    "baseline",
+  ),
+  "justify-content": (
+    "start",
+    "center",
+    "end",
+    "space-around",
+    "space-between",
+  ),
+);
+
 $FLOW: (
   sizes: (
     // Should match the spacers
@@ -15,7 +37,22 @@ $FLOW: (
   ),
 );
 
-
+$GRID: (
+  max-columns: 12,
+  breakpoints: (
+    "mobile": "640px",
+    "tablet": "768px",
+    "lg-tablet": "1024px",
+    "laptop": "1240px",
+  ),
+  spacers: (
+    "xs": --space-xs,
+    "sm": --space-sm,
+    "md": --space-md,
+    "lg": --space-lg,
+    "xl": --space-xl,
+  ),
+);
 
 $SPACERS: (
   types: (
