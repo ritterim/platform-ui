@@ -1,3 +1,27 @@
-.accordion {
-  // styles here!
+details:is(.accordion) {
+  @layer rules {
+    background-color: var(--accordion-background-color, transparent);
+  }
+  
+  @layer states {
+    &[open]{
+      .accordion-header {
+        --accordion-header-background-color: var(--color-lighter);
+      }
+    }
+  }
+}
+
+summary:is(.accordion-header){
+  @layer rules {
+    background: var(--accordion-header-background-color, transparent);
+    padding-inline: var(--accordion-header-padding-x, var(--space-xs));
+    padding-block: var(--accordion-header-padding-y, var(--space-xs));
+  }
+
+  @layer states {
+    &:hover{
+      --accordion-header-background-color: var(--color-lighter);
+    }
+  }
 }

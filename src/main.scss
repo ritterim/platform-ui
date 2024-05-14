@@ -9,6 +9,7 @@
   }
 
   @layer components {
+    @layer rules, modifiers, states, themes;
     @include meta.load-css("./components/_index.scss");
   }
 
