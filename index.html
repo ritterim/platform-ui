@@ -11,16 +11,19 @@
   <title>Platform UI 2.0</title>
 </head>
 
-<body class="background-color-lighter my-xl">
-  <header class="container my-xl">
-    <h1 class="text-align-center text-color-navy">Submissions</h1>
-  </header>
-
+<body class="background-color-lighter">
   <main class="container">
-    <div class="tabs"
-         aria-labelledby="tab-example">
-      <section class="tab-list"
-               role="tablist">
+    <header class="container my-xl">
+      <h1 id="tab-example"
+          class="text-align-center text-color-navy">
+        Submissions
+      </h1>
+    </header>
+
+    <section class="tabs"
+             aria-labelledby="tab-example">
+      <div class="tab-list"
+           role="tablist">
         <button type="button"
                 id="submissions"
                 class="tab active"
@@ -45,13 +48,14 @@
                 aria-controls="enrollments-panel">
           Enrollments
         </button>
-      </section>
-      <article class="tab-panel flow open"
-               id="submissions-panel"
-               role="tabpanel"
-               aria-labelledby="submissions"
-               tabindex="0">
-        <section class="auto-grid align-items-center gap-s my-m"
+      </div>
+
+      <div class="tab-panel open"
+           id="submissions-panel"
+           role="tabpanel"
+           aria-labelledby="submissions"
+           tabindex="0">
+        <section class="auto-grid align-items-center gap-s my-s"
                  style="--grid-column-min: 20ch; --grid-gap: var(--space-xs)">
           <div class="flex align-items-center gap-xs">
             <p class="m-none">
@@ -59,18 +63,24 @@
                     class="text-weight-bold text-color-navy">119</span>
               results.
             </p>
-            <button>refresh</button>
+            <button type="button"
+                    class="button primary">refresh</button>
           </div>
           <div class="flex align-items-center justify-content-end">
-            <button>Filters</button>
-            <button>Export</button>
-            <button>Add</button>
+            <div class="button-group">
+              <button type="button"
+                      class="button">Filters</button>
+              <button type="button"
+                      class="button">Export</button>
+              <button type="button"
+                      class="button">Add</button>
+            </div>
           </div>
         </section>
 
         <details class="accordion">
           <summary class="accordion-header flex gap-m justify-content-space-between">
-            <dl class="auto-grid gap-xs align-items-center w-100 m-none"
+            <dl class="auto-grid gap-xs w-100 m-none gap-xs"
                 style="--grid-column-min: 10ch;">
               <div>
                 <dt class="text-weight-bold text-color-navy">
@@ -85,7 +95,10 @@
               </div>
               <div>
                 <dt class="text-weight-bold">Scope</dt>
-                <dd class="m-none">N/A</dd>
+                <dd class="m-none">
+                  <button class="button button-xs">Paper</button>
+                  <button class="button button-xs">Digital</button>
+                </dd>
               </div>
               <div>
                 <dt class="text-weight-bold">Agent</dt>
@@ -105,14 +118,17 @@
               </div>
             </dl>
             <section id="actions"
-                     class="flex flex-direction-column">
-              <button>
+                     class="flex flex-direction-column align-items-center">
+              <button type="button"
+                      class="button button-xs">
                 Key
               </button>
-              <button>
+              <button type="button"
+                      class="button button-xs">
                 History
               </button>
-              <button>
+              <button type="button"
+                      class="button button-xs">
                 Delete
               </button>
             </section>
@@ -126,7 +142,7 @@
         </details>
         <details class="accordion">
           <summary class="accordion-header flex gap-m justify-content-space-between">
-            <dl class="auto-grid gap-xs align-items-center w-100 m-none"
+            <dl class="auto-grid gap-xs w-100 m-none"
                 style="--grid-column-min: 10ch;">
               <div>
                 <dt class="text-weight-bold text-color-navy">
@@ -141,7 +157,10 @@
               </div>
               <div>
                 <dt class="text-weight-bold">Scope</dt>
-                <dd class="m-none">N/A</dd>
+                <dd class="m-none">
+                  <button class="button button-xs">Paper</button>
+                  <button class="button button-xs">Digital</button>
+                </dd>
               </div>
               <div>
                 <dt class="text-weight-bold">Agent</dt>
@@ -161,14 +180,17 @@
               </div>
             </dl>
             <section id="actions"
-                     class="flex flex-direction-column">
-              <button>
+                     class="flex flex-direction-column align-items-center">
+              <button type="button"
+                      class="button button-xs">
                 Key
               </button>
-              <button>
+              <button type="button"
+                      class="button button-xs">
                 History
               </button>
-              <button>
+              <button type="button"
+                      class="button button-xs">
                 Delete
               </button>
             </section>
@@ -182,7 +204,7 @@
         </details>
         <details class="accordion">
           <summary class="accordion-header flex gap-m justify-content-space-between">
-            <dl class="auto-grid gap-xs align-items-center w-100 m-none"
+            <dl class="auto-grid gap-xs w-100 m-none"
                 style="--grid-column-min: 10ch;">
               <div>
                 <dt class="text-weight-bold text-color-navy">
@@ -197,7 +219,10 @@
               </div>
               <div>
                 <dt class="text-weight-bold">Scope</dt>
-                <dd class="m-none">N/A</dd>
+                <dd class="m-none">
+                  <button class="button button-xs">Paper</button>
+                  <button class="button button-xs">Digital</button>
+                </dd>
               </div>
               <div>
                 <dt class="text-weight-bold">Agent</dt>
@@ -217,14 +242,17 @@
               </div>
             </dl>
             <section id="actions"
-                     class="flex flex-direction-column">
-              <button>
+                     class="flex flex-direction-column align-items-center">
+              <button type="button"
+                      class="button button-xs">
                 Key
               </button>
-              <button>
+              <button type="button"
+                      class="button button-xs">
                 History
               </button>
-              <button>
+              <button type="button"
+                      class="button button-xs">
                 Delete
               </button>
             </section>
@@ -236,13 +264,24 @@
             eveniet dolorum iusto, vel consequatur, ex itaque molestias rerum eligendi mollitia necessitatibus possimus
             doloribus?</p>
         </details>
-
-      </article>
-      <article class="tab-panel flow"
-               role="tabpanel"
-               id="downlines-panel"
-               aria-labelledby="downlines"
-               tabindex="0">
+        <section class="auto-grid align-items-center gap-s mys-s"
+                 style="--grid-column-min: 20ch; --grid-gap: var(--space-xs)">
+          <div class="flex align-items-center gap-xs">
+            <p class="m-none">
+              Showing <span class="text-weight-bold text-color-navy">100</span> out of <span
+                    class="text-weight-bold text-color-navy">119</span>
+              results.
+            </p>
+            <button type="button"
+                    class="button primary">refresh</button>
+          </div>
+        </section>
+      </div>
+      <div class="tab-panel flow"
+           role="tabpanel"
+           id="downlines-panel"
+           aria-labelledby="downlines"
+           tabindex="0">
         <h2>Tab 2 Content</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium fugit pariatur inventore libero id.
           Tempora
@@ -254,12 +293,12 @@
           numquam eligendi, voluptates quibusdam similique mollitia accusamus facere quidem? Sit eum totam maxime
           aliquid
           mollitia!</p>
-      </article>
-      <article class="tab-panel flow"
-               id="enrollments-panel"
-               role="tabpanel"
-               aria-labelledby="enrollments"
-               tabindex="0">
+      </div>
+      <div class="tab-panel flow"
+           id="enrollments-panel"
+           role="tabpanel"
+           aria-labelledby="enrollments"
+           tabindex="0">
         <h2>Tab 3 Content</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium fugit pariatur inventore libero id.
           Tempora
@@ -276,12 +315,10 @@
           numquam eligendi, voluptates quibusdam similique mollitia accusamus facere quidem? Sit eum totam maxime
           aliquid
           mollitia!</p>
-      </article>
-    </div>
+      </div>
+    </section>
   </main>
-
   <script type="module"
           src="/src/main.ts"></script>
 </body>
-
 </html>

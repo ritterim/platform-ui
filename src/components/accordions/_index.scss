@@ -1,26 +1,42 @@
 details:is(.accordion) {
   @layer rules {
     background-color: var(--accordion-background-color, transparent);
+    border-width: 0.5px;
+    border-style: solid;
+    border-color: var(--accordion-border-color, var(--color-light));
+    border-block-end: 0;
+
+    &:last-of-type {
+      border-block-end: 0.5px solid var(--color-light);
+    }
+
+    > *:not(.accordion-header) {
+      padding-inline: var(--space-xs);
+      padding-block-end: var(--space-xs);
+    }
   }
-  
+
   @layer states {
-    &[open]{
+    &[open] {
       .accordion-header {
         --accordion-header-background-color: var(--color-lighter);
+
+        border-block-end: 0.5px solid var(--color-light);
       }
     }
   }
 }
 
-summary:is(.accordion-header){
+summary:is(.accordion-header) {
   @layer rules {
     background: var(--accordion-header-background-color, transparent);
+    cursor: pointer;
     padding-inline: var(--accordion-header-padding-x, var(--space-xs));
     padding-block: var(--accordion-header-padding-y, var(--space-xs));
   }
 
   @layer states {
-    &:hover{
+    &:hover {
       --accordion-header-background-color: var(--color-lighter);
     }
   }
