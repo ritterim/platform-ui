@@ -1,3 +1,125 @@
 .tabs {
-  // styles here!
+  @layer rules {
+    --tab-primary-color: var(--color-white);
+    --tab-accent-color: var(--color-navy);
+
+    container-name: tabs;
+    container-type: inline-size;
+    display: grid;
+    gap: var(--tabs-gap, 0);
+
+    @container (max-width: 640px) {
+      --tabs-gap: var(--space-xs);
+    }
+  }
+
+  @layer modifiers {
+    // Horizontal Tab layout
+    &-horizontal {
+      @container (min-width: 640px) {
+        grid-template-columns: 1fr auto;
+        gap: var(--space-xs);
+      }
+
+      .tabs {
+        --tab-border-color: transparent;
+      }
+      .tab {
+        --tab-padding-x: var(--space-s);
+        --tab-content-align: start;
+      }
+      .tab:is(.active) {
+        --tab-border-color: transparent;
+        --tab-panel-border-color: transparent;
+      }
+    }
+  }
+}
+
+.tab-list {
+  @layer rules {
+    --tab-min-width: 15ch;
+    --tab-max-width: max-content;
+
+    align-items: start;
+    display: grid;
+    grid-template-columns: 1fr;
+    place-content: var(--tab-list-alignment, start);
+    width: 100%;
+
+    @container tabs (min-width: 640px) {
+      --tab-min-width: 20ch;
+
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(var(--tab-min-width), var(--tab-max-width))
+      );
+    }
+  }
+}
+
+.tab {
+  @layer rules {
+    background-color: var(--tab-background-color, transparent);
+    border-block-end: var(--tab-primary-color, transparent);
+    border-block-start: 5px solid var(--tab-border-color, transparent);
+    border-inline: 0.5px solid var(--tab-panel-border-color, transparent);
+    color: var(--tab-font-color, inherit);
+    display: grid;
+    font-weight: var(--tab-font-weight, normal);
+    height: 100%;
+    padding-block: var(--tab-padding-y, var(--space-xs));
+    padding-inline: var(--tab-padding-x, var(--space-l));
+    place-content: var(--tab-content-align, center);
+    transform: translateY(1px);
+    width: min(15ch, fit-content);
+
+    @container tabs (max-width: 640px) {
+      --tab-padding-x: var(--space-s);
+      --tab-border-color: transparent;
+      --tab-content-align: start;
+    }
+  }
+
+  @layer states {
+    &:is(.active) {
+      --tab-background-color: var(--tab-accent-color);
+      --tab-font-color: var(--tab-primary-color);
+      --tab-font-weight: bold;
+      --tab-panel-border-color: transparent;
+
+      @container tabs (min-width: 640px) {
+        --tab-background-color: var(--tab-primary-color);
+        --tab-font-color: var(--tab-accent-color);
+        --tab-border-color: var(--tab-accent-color);
+        --tab-panel-border-color: var(--color-light);
+      }
+    }
+    &:hover:not(.active) {
+      --tab-background-color: var(--color-light);
+      --tab-font-color: var(--color-white);
+    }
+  }
+}
+
+.tab-panel {
+  @layer rules {
+    display: var(--tab-display, none);
+    background-color: var(--tab-panel-background, var(--tab-primary-color));
+    padding-inline: var(--tab-panel-padding-x, var(--space-s));
+    padding-block: var(--tab-panel-padding-y, var(--space-s));
+    border: 0.5px solid var(--tab-panel-border-color, var(--color-light));
+    overflow-x: auto;
+
+    > * {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  @layer states {
+    &:is(.open) {
+      --tab-display: block;
+    }
+  }
 }
