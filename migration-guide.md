@@ -1,5 +1,3 @@
-# Migration Guide
-
 Describes changes from Platform UI `1.8.x` to `2.x`.  CSS class names from `1.8.x` that have been changed for `2.x` will be listed below, as well as new additional utilities.
 
 ## Layout
@@ -16,6 +14,25 @@ Describes changes from Platform UI `1.8.x` to `2.x`.  CSS class names from `1.8.
 	- `.background--color-{color}` => `.background-color-{color}`
 	- `.border--color-{color}` => `.border-color-{color}`
 
+### Flex
+- *Updates*:
+	- `.flex--align-start` => `.align-start`
+	- `.flex--align-center` => `.align-center`
+	- `.flex--align-end` => `.align-end`
+	- `.flex--align-baseline` => `.align-baseline`
+	- `.flex--align-self-start` => `.align-self-start`
+	- `.flex--align-self-center => .align-self-center`
+	- `.flex--align-self-end` => `.align-self-end`
+	- `.flex--align-self-baseline` => `.align-self-baseline`
+	- `.flex--justify-start` => `justify-start`
+	- `.flex--justify-center` => `justify-center`
+	- `.flex--justify-end` => `justify-end`
+	- `.flex--justify-between` => `justify-between`
+	- `.flex--row-reverse` => `.flex-row-reverse`
+	- `.flex--column-reverse` => `.flex-column-reverse`
+	- `.flex--column` => `.flex-direction-column`
+	- `.flex--nowrap` => `.flex-nowrap`
+	- `.flex--wrap` => `.flex-wrap`
 ### Spacing
 
 #### Margin
