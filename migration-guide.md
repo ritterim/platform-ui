@@ -2,11 +2,87 @@
 
 Describes changes from Platform UI `1.8.x` to `2.x`.  CSS class names from `1.8.x` that have been changed for `2.x` will be listed below, as well as new additional utilities.
 
-## Layout
+## Core
 
-### Container
+### Layout
+
+#### Container
 - *Updates*:
 	- `.max-container` => `.container`
+
+## Components
+
+### Accordion
+- *Updates:*
+	- `.accordion__header` => `.accordion-header`
+- HTML structure updated, now using the `<details>` and `<summary>` element
+```html
+<details class="accordion">
+	<summary class="accordion-header">
+		<!-- Accordion Header Here! -->
+	</summary>
+	
+<!-- Accordion Content Here! -->
+
+</details>
+```
+
+### Tabs
+- HTML Structure updated, uses buttons instead of radio elements
+```html
+<h2 id="tab-example">Tab Example</h2>
+
+<section class="tabs" 
+	 aria-labelledby="tab-example">
+	<div class="tab-list" role="tablist">
+		<button type="button" 
+				id="tab-1" 
+				class="tab active" 
+				role="tab"
+				aria-controls="tab-panel-1"
+				aria-selected="true">
+			Tab 1
+		</button>
+		<button type="button"
+				class="tab"
+				id="tab-2"
+				role="tab"
+				aria-selected="false"
+				aria-controls="tab-panel-2">
+			Tab 2
+		</button>
+		<button type="button"
+				class="tab"
+				id="tab-3"
+				role="tab"
+				aria-selected="false"
+				aria-controls="tab-panel-3">
+			Tab 3
+		</button>
+	</div>
+	<article class="tab-panel open"
+			 id="tab-panel-1"
+			 role="tabpanel"
+			 aria-labelledby="tab-1"
+			 tabindex="0">
+		Tab 1 Content
+	</article>
+	<article class="tab-panel"
+			 role="tabpanel"
+			 id="tab-panel-3"
+			 aria-labelledby="downlines"
+			 tabindex="0">
+		Tab 2 Content
+	</article>
+	<article class="tab-panel"
+			 role="tabpanel"
+			 id="tab-panel-3"
+			 aria-labelledby="tab-3"
+			 tabindex="0">
+		Tab 3 content
+	</article>
+</section>
+```
 
 ## Utilities
 
