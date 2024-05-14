@@ -1,0 +1,64 @@
+@use "sass:map";
+@use "../configuration" as config;
+
+$FLEX: (
+  "align-items": (
+    "start",
+    "center",
+    "end",
+    "baseline",
+  ),
+  "align-self": (
+    "start",
+    "center",
+    "end",
+    "baseline",
+  ),
+  "justify-content": (
+    "start",
+    "center",
+    "end",
+    "space-around",
+    "space-between",
+  ),
+);
+
+.flex {
+  display: flex;
+}
+
+.flex-inline {
+  display: inline-flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.flex-direction-row {
+  flex-direction: row;
+}
+
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.flex-direction-column {
+  flex-direction: column;
+}
+
+.flex-column-reverse {
+  flex-direction: column-reverse;
+}
+
+@each $property, $values in $FLEX {
+  @each $value in $values {
+    .#{$property}-#{$value} {
+      #{$property}: #{$value};
+    }
+  }
+}

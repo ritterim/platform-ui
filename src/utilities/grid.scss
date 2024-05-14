@@ -1,0 +1,58 @@
+@use "sass:map";
+@use "../configuration" as config;
+
+.grid {
+  container-name: grid-container;
+  container-type: inline-size;
+  display: block grid;
+  grid-template-columns: repeat(var(--grid-columns, 1), 1fr);
+  gap: var(--grid-gap, var(--grid-row-gap, 1) var(--grid-column-gap, 1));
+}
+
+// Unresponsive Columns
+@for $i from 1 through map.get(config.$GRID, "max-columns") {
+  .grid-#{$i} {
+    --grid-columns: #{$i};
+  }
+}
+
+@each $breakpoint, $value in map.get(config.$GRID, "breakpoints") {
+  @media (min-width: $value) {
+    @for $i from 1 through map.get(config.$GRID, "max-columns") {
+      .grid-#{$i}\:#{$breakpoint} {
+        --grid-columns: #{$i};
+      }
+    }
+  }
+}
+
+.auto-grid {
+  display: grid;
+  grid-gap: var(--grid-gap);
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, var(--grid-column-min, 15ch)), 1fr)
+  );
+}
+
+.grid-stack {
+  grid-template-areas: "stack";
+  > * {
+    grid-area: stack;
+  }
+}
+
+.grid-center {
+  display: grid;
+  place-content: center;
+}
+
+.grid-align-center {
+  display: grid;
+  align-items: center;
+}
+
+.grid-justify-center {
+  display: grid;
+  justify-content: center;
+}
