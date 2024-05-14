@@ -22,21 +22,11 @@ export default {
       { name: 'Dark', value: '#333' },
       { name: 'Black', value: '#222' },
     ],
-    space: [
-      { name: 'xl', value: '4rem' },
-      { name: 'lg', value: '3rem' },
-      { name: 'md', value: '2rem' },
-    ],
     typography: {
       font: [
         { name: 'body', value: 'system-ui' },
         { name: 'header', value: 'system-ui' },
-      ],
-      size: [
-        { name: 'xl', value: '4rem' },
-        { name: 'lg', value: '3rem' },
-        { name: 'md', value: '1rem' },
-      ],
+      ]
     },
   },
 };

@@ -1,0 +1,102 @@
+// !NOTE: Generate via configuration file!
+$CONTAINER: (
+  "min": 320px,
+  "max": 1240px,
+);
+
+$FLOW: (
+  sizes: (
+    // Should match the spacers
+    "xs",
+    "s",
+    "m",
+    "l",
+    "xl",
+  ),
+);
+
+
+
+$SPACERS: (
+  types: (
+    "margin": "m",
+    "padding": "p",
+  ),
+  directions: (
+    "inline": "x",
+    "inline-start": "xs",
+    "inline-end": "xe",
+    "block": "y",
+    "block-start": "ys",
+    "block-end": "ye",
+    "top": "t",
+    "right": "r",
+    "bottom": "b",
+    "left": "l",
+  ),
+  scale: (
+    "xs",
+    "s",
+    "m",
+    "l",
+    "xl",
+  ),
+);
+
+$TEXT: (
+  alignments: (
+    "start",
+    "left",
+    "center",
+    "justified",
+    "end",
+    "right",
+  ),
+  casings: (
+    "uppercase",
+    "lowercase",
+    "capitalize",
+  ),
+  sizes: (
+    "xs": --step--2,
+    "s": --step--1,
+    "m": --step-0,
+    "l": --step-1,
+    "xl": --step-2,
+    "2xl": --step-3,
+    "3xl": --step-4,
+    "4xl": --step-5,
+  ),
+  styles: (
+    "oblique",
+    "italic",
+    "normal",
+  ),
+  decorations: (
+    "none",
+    "underline",
+  ),
+  weights: (
+    "bold",
+  ),
+  wraps: (
+    "balance",
+    "nowrap",
+    "pretty",
+    "wrap",
+  ),
+);
+
+// !NOTE: Generate via configuration file!
+$TYPE_SCALE: (
+  "minWidth": 320,
+  // Should be the same as $CONTAINER_MIN
+  "maxWidth": 1240,
+  // Should be the same as $CONTAINER_MAX
+  "minFontSize": 18,
+  "maxFontSize": 20,
+  "minTypeScale": 1.2,
+  "maxTypeScale": 1.25,
+  "positiveSteps": 5,
+  "negativeSteps": 2,
+);

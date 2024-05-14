@@ -4,7 +4,7 @@ import autoprefixer from 'autoprefixer';
 
 export default defineConfig({
   build: {
-    minify: true,
+    cssMinify: 'lightningcss',
     css: {
       postcss: {
         plugins: [autoprefixer]

@@ -1,0 +1,14 @@
+@layer elements {
+  blockquote {
+    border-inline-start: 
+      var(--blockquote-width, 0.5rem)
+      var(--blockquote-style, solid) 
+      var(--blockquote-border-color, var(--color-light));
+    display: flex;
+    flex-flow: column;
+    margin: 0;
+    padding-inline: var(--blockquote-padding-x, var(--space-s));
+    padding-block: var(--blockquote-padding-y, var(--space-s));
+    position: relative;
+  }
+}

@@ -13,37 +13,37 @@ import PlatformTooltip from './components/tooltips';
 const components = [
   {
     selector: '.carousel',
-    Component: PlatformCarousel
+    Component: PlatformCarousel,
   },
   {
     selector: '.drawer',
-    Component: PlatformDrawer
+    Component: PlatformDrawer,
   },
   {
     selector: '.infobox',
-    Component: PlatformInfobox
+    Component: PlatformInfobox,
   },
   {
     selector: '.modal',
-    Component: PlatformModal
+    Component: PlatformModal,
   },
   {
-    selector: '.tab',
-    Component: PlatformTab
+    selector: '.tabs',
+    Component: PlatformTab,
   },
   {
     selector: '.tooltip',
-    Component: PlatformTooltip
-  }
+    Component: PlatformTooltip,
+  },
 ];
 
-// Once window is loaded, loop through all components, 
+// Once window is loaded, loop through all components,
 // only instantiating if selectors are found on the page
 window.addEventListener('load', () => {
   components.forEach((component) => {
     const { selector, Component } = component;
 
-    const componentGroup = [document.querySelector(selector)];
+    const componentGroup = [...document.querySelectorAll(selector)];
 
     if (componentGroup.length) {
       componentGroup.forEach((cmp) => new Component(cmp as HTMLElement));
