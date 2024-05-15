@@ -23,8 +23,8 @@
 
     li {
       display: grid;
+      border-block-start: 0.5px solid var(--color-light);
       place-content: center;
-      border-top: 0.5px solid var(--color-light);
 
       .button {
         border-radius: 0;

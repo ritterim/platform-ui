@@ -1,18 +1,18 @@
 details:is(.accordion) {
   @layer rules {
     background-color: var(--accordion-background-color, transparent);
-    border-width: 0.5px;
-    border-style: solid;
-    border-color: var(--accordion-border-color, var(--color-light));
     border-block-end: 0;
+    border-color: var(--accordion-border-color, var(--color-light));
+    border-style: solid;
+    border-width: 0.5px;
 
     &:last-of-type {
       border-block-end: 0.5px solid var(--color-light);
     }
 
     > *:not(.accordion-header) {
-      padding-inline: var(--space-s);
       padding-block-end: var(--space-s);
+      padding-inline: var(--space-s);
     }
   }
 
@@ -31,8 +31,8 @@ summary:is(.accordion-header) {
   @layer rules {
     background: var(--accordion-header-background-color, transparent);
     cursor: pointer;
-    padding-inline: var(--accordion-header-padding-x, var(--space-s));
     padding-block: var(--accordion-header-padding-y, var(--space-s));
+    padding-inline: var(--accordion-header-padding-x, var(--space-s));
   }
 
   @layer states {

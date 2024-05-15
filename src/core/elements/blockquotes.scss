@@ -7,8 +7,8 @@
     display: flex;
     flex-flow: column;
     margin: 0;
-    padding-inline: var(--blockquote-padding-x, var(--space-s));
     padding-block: var(--blockquote-padding-y, var(--space-s));
+    padding-inline: var(--blockquote-padding-x, var(--space-s));
     position: relative;
   }
 }
