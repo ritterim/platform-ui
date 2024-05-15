@@ -1,0 +1,56 @@
+@use "../buttons/" as buttons;
+
+.icon-menu {
+  @layer rules {
+    --icon-menu-button-size: 48px;
+
+    display: flex;
+    flex-direction: column;
+    list-style-type: "";
+    margin: 0;
+    padding: 0;
+    width: var(--icon-menu-button-size);
+
+    .button {
+      @extend .plain;
+
+      aspect-ratio: 1;
+      color: var(--icon-menu-color, var(--color-navy));
+      display: grid;
+      width: var(--icon-menu-button-size);
+      place-content: center;
+    }
+
+    li {
+      display: grid;
+      place-content: center;
+      border-top: 0.5px solid var(--color-light);
+
+      .button {
+        border-radius: 0;
+      }
+
+      &:first-of-type {
+        border: none;
+
+        .button {
+          border-top-left-radius: var(--button-border-radius, 0.35rem);
+          border-top-right-radius: var(--button-border-radius, 0.35rem);
+        }
+      }
+
+      &:last-of-type {
+        .button {
+          border-bottom-left-radius: var(--button-border-radius, 0.35rem);
+          border-bottom-right-radius: var(--button-border-radius, 0.35rem);
+        }
+      }
+    }
+  }
+
+  @layer modifiers {
+    &.icon-menu-horizontal {
+      flex-direction: row;
+    }
+  }
+}

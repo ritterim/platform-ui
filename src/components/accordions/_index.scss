@@ -11,8 +11,8 @@ details:is(.accordion) {
     }
 
     > *:not(.accordion-header) {
-      padding-inline: var(--space-xs);
-      padding-block-end: var(--space-xs);
+      padding-inline: var(--space-s);
+      padding-block-end: var(--space-s);
     }
   }
 
@@ -31,8 +31,8 @@ summary:is(.accordion-header) {
   @layer rules {
     background: var(--accordion-header-background-color, transparent);
     cursor: pointer;
-    padding-inline: var(--accordion-header-padding-x, var(--space-xs));
-    padding-block: var(--accordion-header-padding-y, var(--space-xs));
+    padding-inline: var(--accordion-header-padding-x, var(--space-s));
+    padding-block: var(--accordion-header-padding-y, var(--space-s));
   }
 
   @layer states {

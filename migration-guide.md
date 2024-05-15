@@ -111,6 +111,7 @@ Describes changes from Platform UI `1.8.x` to `2.x`.  CSS class names from `1.8.
 	- `.flex--column` => `.flex-direction-column`
 	- `.flex--nowrap` => `.flex-nowrap`
 	- `.flex--wrap` => `.flex-wrap`
+
 ### Spacing
 
 #### Margin

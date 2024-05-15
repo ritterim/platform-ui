@@ -9,18 +9,20 @@
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0" />
   <title>Platform UI 2.0</title>
+  <link rel="stylesheet"
+        href="https://unpkg.com/@ritterim/platform-icons/dist/platform-icons.css">
 </head>
 
 <body class="background-color-lighter">
   <main class="container">
-    <header class="container my-xl">
+    <header class="my-xl">
       <h1 id="tab-example"
           class="text-align-center text-color-navy">
         Submissions
       </h1>
     </header>
 
-    <section class="tabs"
+    <section class="tabs mye-xl"
              aria-labelledby="tab-example">
       <div class="tab-list"
            role="tablist">
@@ -64,16 +66,32 @@
               results.
             </p>
             <button type="button"
-                    class="button primary">refresh</button>
+                    class="button primary">
+              <i class="pi-sync text-size-xs"
+                 aria-hidden="true"></i>
+              <span class="visually-hidden">Load More</span>
+            </button>
           </div>
           <div class="flex align-items-center justify-content-end">
             <div class="button-group">
               <button type="button"
-                      class="button">Filters</button>
+                      class="button">
+                <i class="pi-filter text-size-xs"
+                   aria-hidden="true"></i>
+                Filters
+              </button>
               <button type="button"
-                      class="button">Export</button>
+                      class="button">
+                <i class="pi-download text-size-xs"
+                   aria-hidden="true"></i>
+                Export
+              </button>
               <button type="button"
-                      class="button">Add</button>
+                      class="button">
+                <i class="pi-plus text-size-xs"
+                   aria-hidden="true"></i>
+                Add
+              </button>
             </div>
           </div>
         </section>
@@ -81,12 +99,12 @@
         <details class="accordion">
           <summary class="accordion-header flex gap-m justify-content-space-between">
             <dl class="auto-grid gap-xs w-100 m-none gap-xs"
-                style="--grid-column-min: 10ch;">
+                style="--grid-column-min: 25ch;">
               <div>
                 <dt class="text-weight-bold text-color-navy">
                   <a href="">Highmark</a>
                 </dt>
-                <!-- <dd class="m-none">Community Blue Medicare HMO Signature (HMO)</dd> -->
+                <dd class="m-none">Community Blue Medicare HMO Signature (HMO)</dd>
                 <dd class="m-none">06/01/2024</dd>
               </div>
               <div>
@@ -95,9 +113,27 @@
               </div>
               <div>
                 <dt class="text-weight-bold">Scope</dt>
+                <dd class="m-none flex flex-wrap gap-xs">
+                  <button class="button button-xs">
+                    <i class="pi-file-text"
+                       aria-hidden="true"></i>
+                    Paper
+                  </button>
+                  <button class="button button-xs">
+                    <i class="pi-file-sign"
+                       aria-hidden="true"></i>
+                    Digital
+                  </button>
+                </dd>
+              </div>
+              <div>
+                <dt class="text-weight-bold">HRA</dt>
                 <dd class="m-none">
-                  <button class="button button-xs">Paper</button>
-                  <button class="button button-xs">Digital</button>
+                  <span class="pill pill-xs background-color-med-blue text-color-white">
+                    Instructions
+                    <i class="pi-help-solid"
+                       aria-hidden="true"></i>
+                  </span>
                 </dd>
               </div>
               <div>
@@ -117,21 +153,32 @@
                 <dd class="m-none">Initial</dd>
               </div>
             </dl>
-            <section id="actions"
-                     class="flex flex-direction-column align-items-center">
-              <button type="button"
-                      class="button button-xs">
-                Key
-              </button>
-              <button type="button"
-                      class="button button-xs">
-                History
-              </button>
-              <button type="button"
-                      class="button button-xs">
-                Delete
-              </button>
-            </section>
+            <menu class="icon-menu">
+              <li>
+                <button type="button"
+                        class="button">
+                  <i class="pi-keyboard"
+                     aria-hidden="true"></i>
+                  <span class="visually-hidden">Key</span>
+                </button>
+              </li>
+              <li>
+                <button type="button"
+                        class="button">
+                  <i class="pi-redo-clock"
+                     aria-hidden="true"></i>
+                  <span class="visually-hidden">History</span>
+                </button>
+              </li>
+              <li>
+                <button type="button"
+                        class="button">
+                  <i class="pi-trash"
+                     aria-hidden="true"></i>
+                  <span class="visually-hidden">Delete</span>
+                </button>
+              </li>
+            </menu>
           </summary>
 
           <!-- Accordion Content Here! -->
@@ -143,12 +190,12 @@
         <details class="accordion">
           <summary class="accordion-header flex gap-m justify-content-space-between">
             <dl class="auto-grid gap-xs w-100 m-none"
-                style="--grid-column-min: 10ch;">
+                style="--grid-column-min: 25ch;">
               <div>
                 <dt class="text-weight-bold text-color-navy">
                   <a href="">Highmark</a>
                 </dt>
-                <!-- <dd class="m-none">Community Blue Medicare HMO Signature (HMO)</dd> -->
+                <dd class="m-none">Community Blue Medicare HMO Signature (HMO)</dd>
                 <dd class="m-none">06/01/2024</dd>
               </div>
               <div>
@@ -157,9 +204,27 @@
               </div>
               <div>
                 <dt class="text-weight-bold">Scope</dt>
+                <dd class="m-none flex flex-wrap gap-xs">
+                  <button class="button button-xs">
+                    <i class="pi-file-text"
+                       aria-hidden="true"></i>
+                    Paper
+                  </button>
+                  <button class="button button-xs">
+                    <i class="pi-file-sign"
+                       aria-hidden="true"></i>
+                    Digital
+                  </button>
+                </dd>
+              </div>
+              <div>
+                <dt class="text-weight-bold">HRA</dt>
                 <dd class="m-none">
-                  <button class="button button-xs">Paper</button>
-                  <button class="button button-xs">Digital</button>
+                  <span class="pill pill-xs background-color-med-blue text-color-white">
+                    Instructions
+                    <i class="pi-help-solid"
+                       aria-hidden="true"></i>
+                  </span>
                 </dd>
               </div>
               <div>
@@ -179,21 +244,32 @@
                 <dd class="m-none">Initial</dd>
               </div>
             </dl>
-            <section id="actions"
-                     class="flex flex-direction-column align-items-center">
-              <button type="button"
-                      class="button button-xs">
-                Key
-              </button>
-              <button type="button"
-                      class="button button-xs">
-                History
-              </button>
-              <button type="button"
-                      class="button button-xs">
-                Delete
-              </button>
-            </section>
+            <menu class="icon-menu">
+              <li>
+                <button type="button"
+                        class="button">
+                  <i class="pi-keyboard"
+                     aria-hidden="true"></i>
+                  <span class="visually-hidden">Key</span>
+                </button>
+              </li>
+              <li>
+                <button type="button"
+                        class="button">
+                  <i class="pi-redo-clock"
+                     aria-hidden="true"></i>
+                  <span class="visually-hidden">History</span>
+                </button>
+              </li>
+              <li>
+                <button type="button"
+                        class="button">
+                  <i class="pi-trash"
+                     aria-hidden="true"></i>
+                  <span class="visually-hidden">Delete</span>
+                </button>
+              </li>
+            </menu>
           </summary>
 
           <!-- Accordion Content Here! -->
@@ -205,12 +281,12 @@
         <details class="accordion">
           <summary class="accordion-header flex gap-m justify-content-space-between">
             <dl class="auto-grid gap-xs w-100 m-none"
-                style="--grid-column-min: 10ch;">
+                style="--grid-column-min: 25ch;">
               <div>
                 <dt class="text-weight-bold text-color-navy">
                   <a href="">Highmark</a>
                 </dt>
-                <!-- <dd class="m-none">Community Blue Medicare HMO Signature (HMO)</dd> -->
+                <dd class="m-none">Community Blue Medicare HMO Signature (HMO)</dd>
                 <dd class="m-none">06/01/2024</dd>
               </div>
               <div>
@@ -219,9 +295,27 @@
               </div>
               <div>
                 <dt class="text-weight-bold">Scope</dt>
+                <dd class="m-none flex flex-wrap gap-xs">
+                  <button class="button button-xs">
+                    <i class="pi-file-text"
+                       aria-hidden="true"></i>
+                    Paper
+                  </button>
+                  <button class="button button-xs">
+                    <i class="pi-file-sign"
+                       aria-hidden="true"></i>
+                    Digital
+                  </button>
+                </dd>
+              </div>
+              <div>
+                <dt class="text-weight-bold">HRA</dt>
                 <dd class="m-none">
-                  <button class="button button-xs">Paper</button>
-                  <button class="button button-xs">Digital</button>
+                  <span class="pill pill-xs background-color-med-blue text-color-white">
+                    Instructions
+                    <i class="pi-help-solid"
+                       aria-hidden="true"></i>
+                  </span>
                 </dd>
               </div>
               <div>
@@ -241,21 +335,32 @@
                 <dd class="m-none">Initial</dd>
               </div>
             </dl>
-            <section id="actions"
-                     class="flex flex-direction-column align-items-center">
-              <button type="button"
-                      class="button button-xs">
-                Key
-              </button>
-              <button type="button"
-                      class="button button-xs">
-                History
-              </button>
-              <button type="button"
-                      class="button button-xs">
-                Delete
-              </button>
-            </section>
+            <menu class="icon-menu">
+              <li>
+                <button type="button"
+                        class="button">
+                  <i class="pi-keyboard"
+                     aria-hidden="true"></i>
+                  <span class="visually-hidden">Key</span>
+                </button>
+              </li>
+              <li>
+                <button type="button"
+                        class="button">
+                  <i class="pi-redo-clock"
+                     aria-hidden="true"></i>
+                  <span class="visually-hidden">History</span>
+                </button>
+              </li>
+              <li>
+                <button type="button"
+                        class="button">
+                  <i class="pi-trash"
+                     aria-hidden="true"></i>
+                  <span class="visually-hidden">Delete</span>
+                </button>
+              </li>
+            </menu>
           </summary>
 
           <!-- Accordion Content Here! -->
@@ -264,6 +369,7 @@
             eveniet dolorum iusto, vel consequatur, ex itaque molestias rerum eligendi mollitia necessitatibus possimus
             doloribus?</p>
         </details>
+
         <section class="auto-grid align-items-center gap-s mys-s"
                  style="--grid-column-min: 20ch; --grid-gap: var(--space-xs)">
           <div class="flex align-items-center gap-xs">
@@ -273,10 +379,17 @@
               results.
             </p>
             <button type="button"
-                    class="button primary">refresh</button>
+                    class="button primary">
+              <i class="pi-sync text-size-xs"
+                 aria-hidden="true"></i>
+              <span class="visually-hidden">
+                Load More
+              </span>
+            </button>
           </div>
         </section>
       </div>
+
       <div class="tab-panel flow"
            role="tabpanel"
            id="downlines-panel"
@@ -294,6 +407,7 @@
           aliquid
           mollitia!</p>
       </div>
+
       <div class="tab-panel flow"
            id="enrollments-panel"
            role="tabpanel"
@@ -316,9 +430,12 @@
           aliquid
           mollitia!</p>
       </div>
+
     </section>
   </main>
+
   <script type="module"
-          src="/src/main.ts"></script>
+          src="src/main.ts"></script>
 </body>
+
 </html>

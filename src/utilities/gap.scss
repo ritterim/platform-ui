@@ -1,6 +1,9 @@
 [class*="gap-"] {
   gap: var(--gap, inherit);
 }
+.gap-2xs {
+  --gap: var(--space-2xs);
+}
 .gap-xs {
   --gap: var(--space-xs);
 }

@@ -46,10 +46,11 @@ $GRID: (
     "laptop": "1240px",
   ),
   spacers: (
+    "2xs": --space-2xs,
     "xs": --space-xs,
-    "sm": --space-sm,
-    "md": --space-md,
-    "lg": --space-lg,
+    "s": --space-sm,
+    "m": --space-md,
+    "l": --space-lg,
     "xl": --space-xl,
   ),
 );
@@ -72,6 +73,7 @@ $SPACERS: (
     "left": "l",
   ),
   scale: (
+    "2xs",
     "xs",
     "s",
     "m",
@@ -95,6 +97,7 @@ $TEXT: (
     "capitalize",
   ),
   sizes: (
+    "2xs": --step--3,
     "xs": --step--2,
     "s": --step--1,
     "m": --step-0,

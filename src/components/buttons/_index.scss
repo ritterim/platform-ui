@@ -4,12 +4,12 @@
     border-width: var(--button-border-width, 0.5px);
     border-style: solid;
     border-color: var(--button-border-color, var(--color-light));
-    border-radius: var(--button-border-radius, 0.15rem);
+    border-radius: var(--button-border-radius, 0.35rem);
     color: var(--button-text-color, var(--color-black));
     font-size: var(--button-font-size, inherit);
     padding-inline: var(--button-padding-x, var(--space-xs));
     padding-block: var(--button-padding-y, 0.5rem);
-    width: fit-content;
+    min-width: fit-content;
   }
 
   @layer modifiers {
@@ -58,9 +58,6 @@
   }
 
   @layer states {
-    &:focus-visible {
-      z-index: 1;
-    }
     &:hover {
       --button-background-color: color-mix(
         in srgb,
@@ -87,6 +84,10 @@
 
     .button {
       border-radius: 0;
+
+      &:focus-visible {
+        z-index: 1;
+      }
     }
     .button:first-child {
       border-top-left-radius: var(--button-border-radius, 0.25rem);
