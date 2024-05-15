@@ -1,5 +1,3 @@
-# Migration Guide
-
 Describes changes from Platform UI `1.8.x` to `2.x`.  CSS class names from `1.8.x` that have been changed for `2.x` will be listed below, as well as new additional utilities.
 
 ## Core
@@ -25,6 +23,37 @@ Describes changes from Platform UI `1.8.x` to `2.x`.  CSS class names from `1.8.
 <!-- Accordion Content Here! -->
 
 </details>
+```
+
+
+### Buttons
+- *Updates:*
+	- `.button--primary` => `.button .primary`
+	- `.button--plain` => `.button .plain`
+	- `.button--ghost` => `.button .ghost`
+### Icon Menu
+- HTML Structure updated, uses `<menu>` element
+```html
+<menu class="icon-menu">
+	<li>
+		<button type="button" class="button">
+			<i class="pi-keyboard" aria-hidden="true"></i>
+			<span class="visually-hidden">Key</span>
+		</button>
+	</li>
+	<li>
+		<button type="button" class="button">
+			<i class="pi-redo-clock" aria-hidden="true"></i>
+			<span class="visually-hidden">History</span>
+		</button>
+	</li>
+	<li>
+		<button type="button" class="button">
+			<i class="pi-trash" aria-hidden="true"></i>
+			<span class="visually-hidden">Delete</span>
+		</button>
+	</li>
+</menu>
 ```
 
 ### Tabs
@@ -60,27 +89,27 @@ Describes changes from Platform UI `1.8.x` to `2.x`.  CSS class names from `1.8.
 			Tab 3
 		</button>
 	</div>
-	<article class="tab-panel open"
+	<div class="tab-panel open"
 			 id="tab-panel-1"
 			 role="tabpanel"
 			 aria-labelledby="tab-1"
 			 tabindex="0">
 		Tab 1 Content
-	</article>
-	<article class="tab-panel"
+	</div>
+	<div class="tab-panel"
 			 role="tabpanel"
 			 id="tab-panel-3"
 			 aria-labelledby="downlines"
 			 tabindex="0">
 		Tab 2 Content
-	</article>
-	<article class="tab-panel"
+	</div>
+	<div class="tab-panel"
 			 role="tabpanel"
 			 id="tab-panel-3"
 			 aria-labelledby="tab-3"
 			 tabindex="0">
 		Tab 3 content
-	</article>
+	</div>
 </section>
 ```
 
@@ -91,7 +120,6 @@ Describes changes from Platform UI `1.8.x` to `2.x`.  CSS class names from `1.8.
 	- `.text--{color}` => `.text-color-{color}`
 	- `.background--color-{color}` => `.background-color-{color}`
 	- `.border--color-{color}` => `.border-color-{color}`
-
 ### Flex
 - *Updates*:
 	- `.flex--align-start` => `.align-start`
@@ -111,7 +139,6 @@ Describes changes from Platform UI `1.8.x` to `2.x`.  CSS class names from `1.8.
 	- `.flex--column` => `.flex-direction-column`
 	- `.flex--nowrap` => `.flex-nowrap`
 	- `.flex--wrap` => `.flex-wrap`
-
 ### Spacing
 
 #### Margin
