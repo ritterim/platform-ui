@@ -1,3 +1,5 @@
+# Migration Document
+
 Describes changes from Platform UI `1.8.x` to `2.x`.  CSS class names from `1.8.x` that have been changed for `2.x` will be listed below, as well as new additional utilities.
 
 ## Core
