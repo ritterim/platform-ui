@@ -2,7 +2,7 @@
   "name": "@ritterim/platform-ui",
   "description": "A CSS framework used by Ritter Insurance Marketing (RIM) for our platform of agent tools.",
   "homepage": "https://platformui.com",
-  "version": "2.0.0",
+  "version": "2.0.0-alpha.0",
   "type": "module",
   "files": [
     "dist"
@@ -15,10 +15,10 @@
   },
   "scripts": {
     "start": "tsc && vite",
-    "build": "tsc && launch"
+    "build": "tsc && vite build"
   },
   "bin": {
-    "launch": "./bin/build.js"
+    "launch": "bin/build.js"
   },
   "dependencies": {
     "cosmiconfig": "^9.0.0",
