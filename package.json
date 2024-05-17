@@ -18,7 +18,7 @@
     "build": "tsc && vite build"
   },
   "bin": {
-    "launch": "./bin/build.js"
+    "launch": "bin/build.js"
   },
   "dependencies": {
     "cosmiconfig": "^9.0.0",
