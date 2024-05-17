@@ -1,3 +1,112 @@
 .button {
-  // styles here!
+  @layer rules {
+    background-color: var(--button-background-color, var(--color-white));
+    border-color: var(--button-border-color, var(--color-light));
+    border-radius: var(--button-border-radius, 0.35rem);
+    border-style: solid;
+    border-width: var(--button-border-width, 0.5px);
+    color: var(--button-text-color, var(--color-black));
+    font-size: var(--button-font-size, inherit);
+    padding-block: var(--button-padding-y, 0.5rem);
+    padding-inline: var(--button-padding-x, var(--space-xs));
+    min-width: fit-content;
+  }
+
+  @layer modifiers {
+    &:is(.primary) {
+      --button-background-color: var(--color-salmon);
+      --button-border-color: color-mix(
+        in srgb,
+        var(--color-salmon),
+        var(--color-black) 25%
+      );
+    }
+
+    &:is(.plain) {
+      --button-background-color: transparent;
+      --button-border-color: var(--transparent);
+      --button-border-width: 0;
+      --button-padding-x: 0;
+      --button-padding-y: 0;
+      --button-text-color: var(--color-black);
+    }
+
+    &:is(.ghost) {
+      --button-background-color: transparent;
+    }
+
+    &:is(.button-xs) {
+      --button-font-size: var(--step--2);
+    }
+
+    &:is(.button-s) {
+      --button-font-size: var(--step--1);
+    }
+
+    &:is(.button-m) {
+      --button-font-size: var(--step-0);
+    }
+
+    &:is(.button-l) {
+      --button-font-size: var(--step-1);
+    }
+
+    &:is(.button-xl) {
+      --button-font-size: var(--step-2);
+    }
+
+    &:is(.button-2xl) {
+      --button-font-size: var(--step-3);
+    }
+
+    &:is(.button-3xl) {
+      --button-font-size: var(--step-4);
+    }
+
+    &:is(.button-4xl) {
+      --button-font-size: var(--step-5);
+    }
+  }
+
+  @layer states {
+    &:hover {
+      --button-background-color: color-mix(
+        in srgb,
+        var(--color-white),
+        var(--color-light) 50%
+      );
+    }
+    &:is(.primary):hover {
+      --button-background-color: color-mix(
+        in srgb,
+        var(--color-salmon),
+        var(--color-orange) 50%
+      );
+    }
+    &:is(.plain):hover {
+      --button-background-color: transparent;
+    }
+  }
+}
+
+.button-group {
+  @layer rules {
+    display: flex;
+
+    .button {
+      border-radius: 0;
+
+      &:focus-visible {
+        z-index: 1;
+      }
+    }
+    .button:first-child {
+      border-top-left-radius: var(--button-border-radius, 0.25rem);
+      border-bottom-left-radius: var(--button-border-radius, 0.25rem);
+    }
+    .button:last-child {
+      border-top-right-radius: var(--button-border-radius, 0.25rem);
+      border-bottom-right-radius: var(--button-border-radius, 0.25rem);
+    }
+  }
 }

@@ -28,7 +28,6 @@
 
 .auto-grid {
   display: grid;
-  grid-gap: var(--grid-gap);
   grid-template-columns: repeat(
     auto-fit,
     minmax(min(100%, var(--grid-column-min, 15ch)), 1fr)

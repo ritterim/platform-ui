@@ -5,10 +5,10 @@
   .container {
     container-name: container;
     container-type: inline-size;
+    margin-inline: auto;
     width: min(
       calc(100% - var(--container-gutter, var(--space-s))),
       var(--container-max, map.get(config.$CONTAINER, "max"))
     );
-    margin-inline: auto;
   }
 }

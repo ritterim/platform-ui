@@ -68,11 +68,11 @@
     display: grid;
     font-weight: var(--tab-font-weight, normal);
     height: 100%;
-    padding-block: var(--tab-padding-y, var(--space-xs));
+    padding-block: var(--tab-padding-y, var(--space-s));
     padding-inline: var(--tab-padding-x, var(--space-l));
     place-content: var(--tab-content-align, center);
     transform: translateY(1px);
-    width: min(15ch, fit-content);
+    min-width: 15ch;
 
     @container tabs (max-width: 640px) {
       --tab-padding-x: var(--space-s);
