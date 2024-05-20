@@ -10,5 +10,13 @@
     padding-block: var(--blockquote-padding-y, var(--space-s));
     padding-inline: var(--blockquote-padding-x, var(--space-s));
     position: relative;
+    &:before {
+      content: "❝";
+      color: var(--blockquote-border-color, var(--color-light));
+      font-size: 6rem;
+      position: absolute;
+      opacity: var(--blockquote-opacity, 20%);
+      z-index: -1;
+    }
   }
 }

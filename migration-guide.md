@@ -27,6 +27,10 @@ Describes changes from Platform UI `1.8.x` to `2.x`.  CSS class names from `1.8.
 </details>
 ```
 
+### Blockquote
+- *Updates:*
+	- `.quote` modifier; adds a ❝ to the background of the blockquote
+	- allows color modification via inline style change of the `--blockquote-border-color` custom CSS property
 
 ### Buttons
 - *Updates:*
