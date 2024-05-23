@@ -21,12 +21,16 @@ export default {
       { name: 'Base', value: '#666' },
       { name: 'Dark', value: '#333' },
       { name: 'Black', value: '#222' },
+      { name: 'Info', value: '#006eb2' },
+      { name: 'Warning', value: '#876600' },
+      { name: 'Success', value: '#2a6538' },
+      { name: 'Error', value: '#ad1c00' },
     ],
     typography: {
       font: [
         { name: 'body', value: 'system-ui' },
         { name: 'header', value: 'system-ui' },
-      ]
+      ],
     },
   },
 };

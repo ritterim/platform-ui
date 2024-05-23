@@ -1,3 +1,65 @@
-.messages {
-  // styles here!
+.message {
+  @layer rules {
+    --message-padding: var(--space-xs);
+    --message-margin: var(--space-xs);
+
+    background-color: color-mix(
+      in srgb,
+      var(--message-color, var(--color-lighter)) 10%,
+      white 75%
+    );
+    border-color: var(--message-color, var(--color-black));
+    border-style: var(--message-border-style, solid);
+    border-width: var(--message-border-width, 5px);
+    color: var(--message-color, var(--color-black));
+    margin-block: var(--space-xs);
+
+    // Overrides
+    border-inline-end: none;
+    border-block: none;
+
+    > * {
+      margin: 0;
+      padding-inline: var(--message-padding);
+    }
+
+    > * + * {
+      margin-block-start: var(--message-margin);
+    }
+
+    > *:first-child {
+      padding-block-start: var(--message-padding);
+    }
+
+    > *:last-child {
+      padding-block-end: var(--message-padding);
+    }
+
+    &:not(:first-of-type) {
+      margin-block-start: var(--message-margin);
+    }
+
+    h2 {
+      margin: 0;
+      font-size: var(--step--1);
+    }
+  }
+
+  @layer modifiers {
+    &:is(.info) {
+      --message-color: var(--color-info);
+    }
+
+    &:is(.success) {
+      --message-color: var(--color-success);
+    }
+
+    &:is(.warning) {
+      --message-color: var(--color-warning);
+    }
+
+    &:is(.error) {
+      --message-color: var(--color-error);
+    }
+  }
 }
