@@ -1,0 +1,131 @@
+:is(textarea, input) {
+  @layer rules {
+    background-color: var(--input-background-color, var(--color-white));
+    border-color: var(--input-border-color, var(--color-light));
+    border-style: var(--input-border-style, solid);
+    border-width: var(--input-border-width, 0.5px);
+    border-radius: var(--input-border-radius, 0.25rem);
+    color: var(--input-text-color, inherit);
+    display: grid;
+    outline-color: var(--input-outline-color, transparent);
+    outline-style: var(--input-outline-style, solid);
+    outline-width: var(--input-outline-width, 3px);
+    padding-block: var(--input-padding-block, var(--space-xs));
+    padding-inline-start: var(--input-padding-inline-start, var(--space-xs));
+    padding-inline-end: var(--input-padding-inline-end, var(--space-xs));
+    outline-offset: 1px;
+  }
+
+  @layer states {
+    &:focus {
+      --input-outline-color: var(--color-navy);
+    }
+
+    &:disabled,
+    &[aria-disabled="true"] {
+      --input-background-color: var(--color-light);
+    }
+
+    &:read-only,
+    &[aria-readonly="true"] {
+      --input-background-color: var(--color-lighter);
+    }
+  }
+}
+
+input {
+  &:is([type="number"]) {
+    @layer rules {
+      justify-content: end;
+      align-items: center;
+      font-family: monospace;
+      font-variant-numeric: tabular-nums;
+      text-align: right;
+    }
+  }
+
+  &:is([type="date"]) {
+    @layer rules {
+      grid-template-columns: 1fr max-content;
+    }
+  }
+
+  &:is([type="radio"], [type="checkbox"]) {
+    @layer rules {
+      appearance: none;
+      aspect-ratio: 1;
+      background-color: var(--check-background-color, transparent);
+      border-style: var(--check-border-style, solid);
+      border-radius: var(--check-border-radius, 0.25rem);
+      border-width: var(--check-border-width, 0.5px);
+      content: "";
+      cursor: pointer;
+      display: grid;
+      height: var(--check-height, 1rem);
+      width: var(--check-height, 1rem);
+      margin-block-start: 0;
+      margin-inline-end: var(--space-xs);
+      opacity: 1;
+      overflow: clip;
+      padding-inline: 0;
+      padding-block: 0;
+      place-content: center;
+      position: relative;
+      // transform: translateY(var(--check-offset, var(--space-xs)));
+
+      &::before {
+        aspect-ratio: 1;
+        background-color: var(--check-color, var(--color-navy));
+        content: "";
+        cursor: pointer;
+        height: var(--check-height, 1rem);
+        width: var(--check-height, 1rem);
+        place-self: center;
+        transform: scale(0);
+      }
+    }
+  }
+
+  &:is([type="radio"]) {
+    --check-border-radius: 100%;
+
+    @layer states {
+      &:checked {
+        &::before {
+          border-radius: 100%;
+          transform: scale(0.7);
+        }
+      }
+
+      &:focus,
+      &:focus-visible {
+        box-shadow: none;
+        outline: none;
+      }
+    }
+  }
+
+  &:is([type="checkbox"]) {
+    @layer states {
+      &:checked {
+        &::before {
+          transform: scale(1);
+          clip-path: polygon(
+            28% 38%,
+            41% 53%,
+            75% 24%,
+            86% 38%,
+            40% 78%,
+            15% 50%
+          );
+        }
+      }
+    }
+  }
+}
+
+textarea {
+  @layer rules {
+    font-family: monospace;
+  }
+}

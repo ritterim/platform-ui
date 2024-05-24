@@ -9,8 +9,8 @@
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0" />
   <title>Platform UI 2.0</title>
-  <!-- <link rel="stylesheet"
-        href="https://unpkg.com/@ritterim/platform-icons/dist/platform-icons.css"> -->
+  <link rel="stylesheet"
+        href="https://unpkg.com/@ritterim/platform-icons/dist/platform-icons.css">
 </head>
 
 <body class="background-color-lighter">
@@ -58,7 +58,7 @@
            aria-labelledby="submissions"
            tabindex="0">
         <section class="auto-grid align-items-center gap-s my-s"
-                 style="--grid-column-min: 20ch; --grid-gap: var(--space-xs)">
+                 style="--grid-column-min: 20ch; --gap: var(--space-xs)">
           <div class="flex align-items-center gap-xs">
             <p class="m-none">
               Showing <span class="text-weight-bold text-color-navy">100</span> out of <span
@@ -75,7 +75,9 @@
           <div class="flex align-items-center justify-content-end">
             <div class="button-group">
               <button type="button"
-                      class="button">
+                      class="button"
+                      popovertarget="filter-drawer"
+                      popovertargetaction="toggle">
                 <i class="pi-filter text-size-xs"
                    aria-hidden="true"></i>
                 Filters
@@ -96,43 +98,7 @@
           </div>
         </section>
 
-        <section class="message info">
-          <h2>Info</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. A sit ducimus totam. Possimus earum sequi modi! Ea
-            aspernatur blanditiis incidunt, cupiditate commodi nemo dolorum officia veritatis repellat molestiae
-            possimus soluta.
-          </p>
-        </section>
-
-        <section class="message warning">
-          <h2>Warning</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. A sit ducimus totam. Possimus earum sequi modi! Ea
-            aspernatur blanditiis incidunt, cupiditate commodi nemo dolorum officia veritatis repellat molestiae
-            possimus soluta.
-          </p>
-        </section>
-
-        <section class="message success">
-          <h2>Success</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. A sit ducimus totam. Possimus earum sequi modi! Ea
-            aspernatur blanditiis incidunt, cupiditate commodi nemo dolorum officia veritatis repellat molestiae
-            possimus soluta.
-          </p>
-        </section>
-
-        <section class="message error">
-          <h2>Error</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. A sit ducimus totam. Possimus earum sequi modi! Ea
-            aspernatur blanditiis incidunt, cupiditate commodi nemo dolorum officia veritatis repellat molestiae
-            possimus soluta.
-          </p>
-        </section>
-
-        <details class="accordion mys-xs">
+        <details class="accordion">
           <summary class="accordion-header flex gap-m justify-content-space-between">
             <dl class="auto-grid gap-xs w-100 m-none gap-xs"
                 style="--grid-column-min: 25ch;">
@@ -313,6 +279,7 @@
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error eaque ipsa quas veniam odit deserunt nihil,
             eveniet dolorum iusto, vel consequatur, ex itaque molestias rerum eligendi mollitia necessitatibus possimus
             doloribus?</p>
+
         </details>
         <details class="accordion">
           <summary class="accordion-header flex gap-m justify-content-space-between">
@@ -407,7 +374,7 @@
         </details>
 
         <section class="auto-grid align-items-center gap-s mys-s"
-                 style="--grid-column-min: 20ch; --grid-gap: var(--space-xs)">
+                 style="--grid-column-min: 20ch; --gap: var(--space-xs)">
           <div class="flex align-items-center gap-xs">
             <p class="m-none">
               Showing <span class="text-weight-bold text-color-navy">100</span> out of <span
@@ -432,16 +399,42 @@
            aria-labelledby="downlines"
            tabindex="0">
         <h2>Tab 2 Content</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium fugit pariatur inventore libero id.
-          Tempora
-          numquam eligendi, voluptates quibusdam similique mollitia accusamus facere quidem? Sit eum totam maxime
-          aliquid
-          mollitia!</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium fugit pariatur inventore libero id.
-          Tempora
-          numquam eligendi, voluptates quibusdam similique mollitia accusamus facere quidem? Sit eum totam maxime
-          aliquid
-          mollitia!</p>
+        <section class="message info m-none">
+          <h2>Info</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. A sit ducimus totam. Possimus earum sequi modi! Ea
+            aspernatur blanditiis incidunt, cupiditate commodi nemo dolorum officia veritatis repellat molestiae
+            possimus soluta.
+          </p>
+        </section>
+        <section class="message success m-none">
+          <h2>Success</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. A sit ducimus totam. Possimus earum sequi modi!
+            Ea
+            aspernatur blanditiis incidunt, cupiditate commodi nemo dolorum officia veritatis repellat molestiae
+            possimus soluta.
+          </p>
+        </section>
+        <section class="message warning m-none">
+          <h2>Warning</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. A sit ducimus totam. Possimus earum sequi modi!
+            Ea
+            aspernatur blanditiis incidunt, cupiditate commodi nemo dolorum officia veritatis repellat molestiae
+            possimus soluta.
+          </p>
+        </section>
+        <section class="message error m-none">
+          <h2>Error</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. A sit ducimus totam. Possimus earum sequi modi!
+            Ea
+            aspernatur blanditiis incidunt, cupiditate commodi nemo dolorum officia veritatis repellat molestiae
+            possimus soluta.
+          </p>
+        </section>
+
       </div>
 
       <div class="tab-panel flow"
@@ -469,6 +462,180 @@
 
     </section>
   </main>
+  <div id="filter-drawer"
+       class="drawer right"
+       popover>
+    <header class="flex justify-content-space-between align-items-center py-s">
+      <h2 class="text-color-navy m-none">
+        Filters
+      </h2>
+      <button type="button"
+              class="button"
+              popovertarget="filter-drawer"
+              popovertargetaction="toggle">
+        Close
+      </button>
+    </header>
+    <section>
+      <div>
+        <form action="#"
+              class="auto-grid gap-l"
+              style="--grid-column-min: 20ch;">
+          <div class="label-group">
+            <label for="text-input-example">
+              Name
+              <input type="text"
+                     name="text-example"
+                     autocomplete="name"
+                     id="text-input-example">
+            </label>
+          </div>
+          <div class="label-group">
+            <label for="password-input-example">
+              Password
+              <div class="input-wrapper">
+                <input type="password"
+                       name="password-example"
+                       id="password-input-example">
+                <button class="suffix tooltip-toggle"
+                        id="show-password-toggle"
+                        data-target="show-password-tooltip"
+                        aria-describedby="show-password-tooltip"
+                        aria-pressed="false"
+                        type="button"
+                        tabindex="0">
+                  <span class="visually-hidden">
+                    Toggle password visibility.
+                  </span>
+                  <i class="pi-eye"></i>
+                </button>
+              </div>
+            </label>
+            <!-- <div class="tooltip"
+                 id="show-password-tooltip"
+                 role="tooltip">
+              Toggle
+            </div> -->
+          </div>
+          <div class="label-group">
+            <label for="email-input-example">
+              Email
+              <div class="input-wrapper">
+                <span class="prefix">
+                  <i class="pi-envelope"></i>
+                </span>
+                <input type="email"
+                       autocomplete="email"
+                       inputmode="email"
+                       name="email-input-example"
+                       id="email-input-example">
+              </div>
+            </label>
+          </div>
+          <div class="label-group">
+            <label for="number-input-example">
+              Enter Amount
+              <!-- <div class="hint">
+                <p>This field is required, please round up to nearest dollar.</p>
+              </div> -->
+
+              <div class="input-wrapper">
+                <span class="prefix">$</span>
+                <input type="number"
+                       id="number-input-example"
+                       name="number-input-example"
+                       inputmode="numeric"
+                       min="0"
+                       max="100"
+                       value="0"
+                       required>
+                <span class="suffix">.00</span>
+              </div>
+            </label>
+          </div>
+          <div class="label-group">
+            <label for="date-input-example">
+              Select Appointment Date
+              <input type="date"
+                     id="date-input-example"
+                     required>
+            </label>
+          </div>
+          <search class="label-group"
+                  role="search">
+            <label for="search-input-example">
+              Search
+              <div class="input-wrapper">
+                <div class="prefix">
+                  <i class="pi-search"></i>
+                </div>
+                <input type="search"
+                       id="search-input-example"
+                       placeholder="Search...">
+              </div>
+            </label>
+          </search>
+          <fieldset>
+            <legend>Choose Starter</legend>
+            <label for="starter-bulbasaur">
+              <input type="radio"
+                     name="starter"
+                     id="starter-bulbasaur"
+                     checked>
+              Bulbasaur
+            </label>
+            <label for="starter-squirtle">
+              <input type="radio"
+                     name="starter"
+                     id="starter-squirtle">
+              Squirtle
+            </label>
+            <label for="starter-charmander">
+              <input type="radio"
+                     name="starter"
+                     id="starter-charmander">
+              Charmander
+            </label>
+          </fieldset>
+          <fieldset>
+            <legend>Select Toppings</legend>
+            <label for="topping-pepperoni">
+              <input type="checkbox"
+                     name="topping"
+                     id="topping-pepperoni">
+              Pepperoni
+            </label>
+            <label for="topping-sausage">
+              <input type="checkbox"
+                     name="topping"
+                     id="topping-sausage">
+              Sausage
+            </label>
+            <label for="topping-onions">
+              <input type="checkbox"
+                     name="topping"
+                     id="topping-onions">
+              Onions</label>
+            <label for="topping-peppers">
+              <input type="checkbox"
+                     name="topping"
+                     id="topping-peppers">
+              Green Peppers
+            </label>
+          </fieldset>
+          <div class="label-group">
+            <label for="example-input-textarea">
+              Notes
+              <textarea name="example-input-textarea"
+                        id="example-input-textarea"
+                        rows="3"
+                        value="Text area content."></textarea>
+            </label>
+          </div>
+        </form>
+      </div>
+    </section>
+  </div>
 
   <script type="module"
           src="src/main.ts"></script>

@@ -1,0 +1,32 @@
+fieldset {
+  @layer rules {
+    border-color: transparent;
+    padding: 0;
+    margin: 0;
+
+    label {
+      grid-template-columns: max-content 1fr;
+      grid-template-rows: 1fr;
+      gap: var(--label-gap, var(--spacer-xs));
+      padding-inline: var(--spacer-2xs);
+      place-content: center;
+      width: fit-content;
+    }
+  }
+
+  @layer states {
+    label {
+      padding-inline: var(--space-xs);
+      padding-block: var(--space-xs);
+      &:has(input[type="radio"]:checked) {
+        border-radius: var(--space-xs);
+        background: color-mix(
+          in oklab,
+          var(--color-navy) 15%,
+          var(--color-white) 50%
+        );
+        outline: 2px solid var(--input-outline, transparent);
+      }
+    }
+  }
+}

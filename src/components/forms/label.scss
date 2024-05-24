@@ -1,0 +1,57 @@
+label {                              
+  @layer rules {
+    display: grid;
+    grid-template-rows: max-content max-content 1fr max-content;
+
+
+    & > * {
+      margin-block-start: var(--space-xs);
+    }
+
+    .hint {
+      --_font-size: var(--label-hint-font-size, var(--step--2));
+      font-size: var(--_font-size);
+    }
+  }
+
+  @layer states {
+    &.error {
+      .input-wrapper {
+        --input-wrapper-border-color: var(--color-error);
+        --input-wrapper-border-width: 2px;
+      }
+    }
+  }
+
+  @layer themes {
+    // &:has(input[required]) {
+    //   &::before {
+    //     --_color: var(--label-required-text-color, var(--text-color-error));
+    //     --_marker: var(--label-required-marker, "*");
+    //     --_marker-height: var(--label-required-marker-height, 1rem);
+    //     --_marker-offset-x: var(
+    //       --label-required-marker-offset-x,
+    //       var(--space-xs)
+    //     );
+    //     --_marker-offset-y: var(
+    //       --label-required-marker-offset-y,
+    //       var(--space-xs)
+    //     );
+    //     --_marker-padding-inline: var(
+    //       --label-required-marker-padding-inline,
+    //       var(--space-xs)
+    //     );
+
+    //     color: var(--_color);
+    //     content: var(--_marker);
+    //     display: grid;
+    //     height: var(--_marker-height);
+    //     padding-inline: var(--_marker-padding-inline);
+    //     place-content: center;
+    //     position: absolute;
+    //     transform: translateX(var(--_marker-offset-x))
+    //       translateY(var(--_marker-offset-y));
+    //   }
+    // }
+  }
+}

@@ -1,0 +1,89 @@
+@layer components {
+  .input-wrapper {
+    --_border-style: var(--input-wrapper-border-style, solid);
+    --_border-radius: var(--input-wrapper-border-radius, 0);
+    --_border-width: var(--input-wrapper-border-width, 0.5px);
+    --_padding: var(--input-padding, var(--space-xs));
+    --_text-color: var(--input-wrapper-text-color, var(--color-black));
+    --_outline: var(--input-wrapper-outline, transparent);
+
+    @layer rules {
+      color: var(--_text-color);
+      display: grid;
+      grid-template-columns: max-content 1fr max-content;
+      outline: var(--_outline);
+      outline-offset: 2px;
+
+      :is(.prefix, .suffix) {
+        --_background-color: var(--body-accent-color, var(--color-lighter));
+        --_max-characters: var(--input-accent-max-width, 5ch);
+
+        --body-accent-color: var(--color-lighter);
+
+        aspect-ratio: 1;
+        background: var(--_background-color);
+        display: grid;
+        width: var(--space-l);
+        max-width: var(--_max-characters);
+        order: 1;
+        place-content: center;
+        white-space: nowrap;
+        // outline: 0;
+
+        &:has(+ input[type='number']) {
+          font-variant-numeric: tabular-nums;
+        }
+      }
+
+      :is(.prefix) {
+        --input-border-radius: 0.25rem;
+
+        grid-area: 1/1/2/2;
+        border-color: var(--input-wrapper-border-color, var(--color-light));
+        border-style: var(--input-wrapper-border-style, solid);
+        border-width: var(--input-wrapper-border-width, 0.5px);
+        border-top-left-radius: var(--input-border-radius);
+        border-bottom-left-radius: var(--input-border-radius);
+      }
+
+      .prefix + input {
+        --input-padding-inline-start: var(--space-l);
+        padding-inline-start: calc(var(--input-padding-inline-start) + 1ch);
+      }
+
+      input {
+        grid-area: 1/1/2/4;
+        outline: none;
+      }
+
+      input:has(+ .suffix) {
+        --input-border-radius: 0.25rem;
+        --input-padding-inline-end: var(--space-l);
+
+        padding-inline-end: calc(var(--input-padding-inline-end) + 1ch);
+      }
+
+      :is(.suffix) {
+        --input-border-radius: 0.25rem;
+
+        grid-area: 1/3/2/4;
+        border: var(--_border-width) var(--_border-style) var(--input-wrapper-border-color, var(--color-light));
+        border-top-right-radius: var(--input-border-radius);
+        border-bottom-right-radius: var(--input-border-radius);
+      }
+
+      :is(button.suffix) {
+        --button-background-color: var(--color-light);
+        --button-border-color: var(--color-light);
+        --button-padding-block: 0;
+        --button-padding-inline: 0;
+
+        cursor: pointer;
+
+        &:focus {
+          outline: 3px solid var(--_accent-color);
+        }
+      }
+    }
+  }
+}

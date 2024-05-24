@@ -1,0 +1,28 @@
+.label-group {
+  --_container-name: var(--label-group-container-name, label-group);
+  --_width: var(--label-group-width, fit-content);
+  --_flow-space: var(--label-group-flow-space, var(--space-xs));
+
+  @layer rules {
+    container-name: var(--_container-name);
+    display: grid;
+    grid-template-rows: 1fr max-content;
+    width: min(100%, var(--_width));
+
+    & > * + * {
+      margin-block-start: var(--_flow-space);
+    }
+  }
+
+  @layer states {
+    &:has(> .error) {
+      .message {
+        --message-background-color: transparent;
+        --message-border-width: 0;
+        --message-padding-inline: 0;
+        --message-color: var(--color-error);
+        --message-padding-block: var(--space-xs);
+      }
+    }
+  }
+}
