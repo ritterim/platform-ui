@@ -1,9 +1,8 @@
 @layer elements {
   blockquote {
-    border-inline-start: 
-      var(--blockquote-width, 0.5rem)
-      var(--blockquote-style, solid) 
-      var(--blockquote-border-color, var(--color-light));
+    border-inline-start: var(--blockquote-width, 0.5rem)
+      var(--blockquote-style, solid)
+      var(--blockquote-border-color, var(--color-grayscale-300));
     display: flex;
     flex-flow: column;
     margin: 0;
@@ -12,7 +11,7 @@
     position: relative;
     &:is(.quote):before {
       content: "❝";
-      color: var(--blockquote-border-color, var(--color-light));
+      color: var(--blockquote-border-color, var(--color-grayscale-300));
       font-size: 6rem;
       position: absolute;
       opacity: var(--blockquote-opacity, 20%);

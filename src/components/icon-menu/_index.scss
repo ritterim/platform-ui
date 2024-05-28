@@ -15,7 +15,7 @@
       @extend .plain;
 
       aspect-ratio: 1;
-      color: var(--icon-menu-color, var(--color-navy));
+      color: var(--icon-menu-color, var(--color-blue-400));
       display: grid;
       width: var(--icon-menu-button-size);
       place-content: center;
@@ -23,7 +23,7 @@
 
     li {
       display: grid;
-      border-block-start: 0.5px solid var(--color-light);
+      border-block-start: 0.5px solid var(--color-grayscale-300);
       place-content: center;
 
       .button {
@@ -34,15 +34,15 @@
         border: none;
 
         .button {
-          border-top-left-radius: var(--button-border-radius, 0.35rem);
-          border-top-right-radius: var(--button-border-radius, 0.35rem);
+          border-top-left-radius: var(--button-border-radius, 1rem);
+          border-top-right-radius: var(--button-border-radius, 1rem);
         }
       }
 
       &:last-of-type {
         .button {
-          border-bottom-left-radius: var(--button-border-radius, 0.35rem);
-          border-bottom-right-radius: var(--button-border-radius, 0.35rem);
+          border-bottom-left-radius: var(--button-border-radius, 1rem);
+          border-bottom-right-radius: var(--button-border-radius, 1rem);
         }
       }
     }

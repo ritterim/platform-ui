@@ -1,6 +1,6 @@
 @layer typography {
   body {
-    color: var(--primary-font-color, var(--color-black));
+    color: var(--primary-font-color, var(--color-grayscale-600));
     font-family: var(--primary-font, var(--font-body));
     font-size: var(--primary-font-size, var(--step--1));
   }

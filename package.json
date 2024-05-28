@@ -15,7 +15,8 @@
   },
   "scripts": {
     "start": "tsc && vite",
-    "build": "tsc && vite build"
+    "build": "tsc && vite build",
+    "launch": "tsc && launch"
   },
   "bin": {
     "launch": "bin/build.js"

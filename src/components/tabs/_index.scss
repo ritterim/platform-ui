@@ -1,7 +1,7 @@
 .tabs {
   @layer rules {
-    --tab-primary-color: var(--color-white);
-    --tab-accent-color: var(--color-navy);
+    --tab-primary-color: var(--color-grayscale-100);
+    --tab-accent-color: var(--color-navy-400);
 
     container-name: tabs;
     container-type: inline-size;
@@ -63,6 +63,8 @@
     background-color: var(--tab-background-color, transparent);
     border-block-end: var(--tab-primary-color, transparent);
     border-block-start: 5px solid var(--tab-border-color, transparent);
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
     border-inline: 0.5px solid var(--tab-panel-border-color, transparent);
     color: var(--tab-font-color, inherit);
     display: grid;
@@ -91,13 +93,12 @@
       @container tabs (min-width: 640px) {
         --tab-background-color: var(--tab-primary-color);
         --tab-font-color: var(--tab-accent-color);
-        --tab-border-color: var(--tab-accent-color);
-        --tab-panel-border-color: var(--color-light);
+        // --tab-panel-border-color: var(--color-grayscale-300);
       }
     }
     &:hover:not(.active) {
-      --tab-background-color: var(--color-light);
-      --tab-font-color: var(--color-white);
+      --tab-background-color: var(--color-grayscale-300);
+      --tab-font-color: var(--color-grayscale-100);
     }
   }
 }
@@ -106,9 +107,14 @@
   @layer rules {
     display: var(--tab-display, none);
     background-color: var(--tab-panel-background, var(--tab-primary-color));
-    padding-inline: var(--tab-panel-padding-x, var(--space-s));
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    box-shadow: 0px 0px 80px rgba(0, 0, 0, 0.07);
+    // padding-inline: var(--tab-panel-padding-x, var(--space-s));
     padding-block: var(--tab-panel-padding-y, var(--space-s));
-    border: 0.5px solid var(--tab-panel-border-color, var(--color-light));
+    border-color: var(--tab-panel-border-color, transparent);
+    border-style: solid;
+    border-width: var(--tab-panel-border-width, 0);
     overflow-x: auto;
 
     > * {

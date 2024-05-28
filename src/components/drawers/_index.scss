@@ -1,3 +1,48 @@
-.drawers {
+.drawer {
   // styles here
+  @layer rules {
+    border-color: var(--drawer-border-color, transparent);
+    border-width: 0.5px;
+    box-shadow: -10px 0px 80px rgba(0, 0, 0, 0.07);
+    height: var(--drawer-max-height, 100%);
+    margin-inline-start: 0;
+    overflow: clip;
+    padding-block: var(--space-m);
+    width: min(100%, var(--drawer-max-width, 100%));
+
+    > * {
+      margin: 0;
+      padding-inline: var(--space-m);
+    }
+
+    > * + * {
+      margin-block-start: var(--space-xs);
+    }
+
+    @media (min-width: 640px) {
+      --drawer-max-width: 30vw;
+      --drawer-max-width: 30dvw;
+    }
+  }
+
+  @layer modifiers {
+    &:is(.left) {
+      margin-inline-end: auto;
+      margin-inline-start: 0;
+    }
+    &:is(.right) {
+      margin-inline-end: 0;
+      margin-inline-start: auto;
+    }
+    &:is(.bottom, .top) {
+      height: 25dvh;
+      width: 100%;
+    }
+    &:is(.bottom) {
+      margin-block-end: 0;
+    }
+    &:is(.top) {
+      margin-block-start: 0;
+    }
+  }
 }

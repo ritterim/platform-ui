@@ -5,13 +5,13 @@
 
     background-color: color-mix(
       in srgb,
-      var(--message-color, var(--color-lighter)) 10%,
+      var(--message-color, var(--color-grayscale-200)) 10%,
       white 75%
     );
-    border-color: var(--message-color, var(--color-black));
+    border-color: var(--message-color, var(--color-grayscale-600));
     border-style: var(--message-border-style, solid);
     border-width: var(--message-border-width, 5px);
-    color: var(--message-color, var(--color-black));
+    color: var(--message-color, var(--color-grayscale-600));
     margin-block: var(--space-xs);
 
     // Overrides
@@ -47,19 +47,19 @@
 
   @layer modifiers {
     &:is(.info) {
-      --message-color: var(--color-info);
+      --message-color: var(--color-blue-500);
     }
 
     &:is(.success) {
-      --message-color: var(--color-success);
+      --message-color: var(--color-green-500);
     }
 
     &:is(.warning) {
-      --message-color: var(--color-warning);
+      --message-color: var(--color-gold-500);
     }
 
     &:is(.error) {
-      --message-color: var(--color-error);
+      --message-color: var(--color-red-500);
     }
   }
 }
