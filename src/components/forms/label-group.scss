@@ -1,9 +1,9 @@
 .label-group {
-  --_container-name: var(--label-group-container-name, label-group);
-  --_width: var(--label-group-width, fit-content);
-  --_flow-space: var(--label-group-flow-space, var(--space-xs));
-
   @layer rules {
+    --_container-name: var(--label-group-container-name, label-group);
+    --_width: var(--label-group-width, fit-content);
+    --_flow-space: var(--label-group-flow-space, var(--space-xs));
+
     container-name: var(--_container-name);
     display: grid;
     grid-template-rows: 1fr max-content;

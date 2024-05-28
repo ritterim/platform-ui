@@ -9,8 +9,7 @@ label {
     }
 
     .hint {
-      --_font-size: var(--label-hint-font-size, var(--step--2));
-      font-size: var(--_font-size);
+      font-size: var(--label-hint-font-size, var(--step--2));
     }
   }
 

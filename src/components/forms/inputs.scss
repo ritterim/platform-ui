@@ -87,7 +87,9 @@ input {
   }
 
   &:is([type="radio"]) {
-    --check-border-radius: 100%;
+    @layer rules {
+      --check-border-radius: 100%;
+    }
 
     @layer states {
       &:checked {
