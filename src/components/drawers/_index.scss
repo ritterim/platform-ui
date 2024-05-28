@@ -1,7 +1,7 @@
 .drawer {
   // styles here
   @layer rules {
-    border-color: var(--drawer-border-color, var(--color-light));
+    border-color: var(--drawer-border-color, transparent);
     border-width: 0.5px;
     box-shadow: -10px 0px 80px rgba(0, 0, 0, 0.07);
     height: var(--drawer-max-height, 100%);

@@ -1,11 +1,14 @@
 .button {
   @layer rules {
-    background-color: var(--button-background-color, var(--color-white));
-    border-color: var(--button-border-color, var(--color-light));
-    border-radius: var(--button-border-radius, 0.35rem);
+    background-color: var(
+      --button-background-color,
+      var(--color-grayscale-100)
+    );
+    border-color: var(--button-border-color, var(--color-grayscale-300));
+    border-radius: var(--button-border-radius, 1rem);
     border-style: solid;
     border-width: var(--button-border-width, 0.5px);
-    color: var(--button-text-color, var(--color-black));
+    color: var(--button-text-color, var(--color-grayscale-600));
     font-size: var(--button-font-size, inherit);
     padding-block: var(--button-padding-y, 0.5rem);
     padding-inline: var(--button-padding-x, var(--space-xs));
@@ -14,21 +17,22 @@
 
   @layer modifiers {
     &:is(.primary) {
-      --button-background-color: var(--color-salmon);
+      --button-background-color: var(--color-blue-500);
       --button-border-color: color-mix(
         in srgb,
-        var(--color-salmon),
-        var(--color-black) 25%
+        var(--color-blue-500),
+        var(--color-grayscale-600) 25%
       );
+      --button-text-color: var(--color-grayscale-100)
     }
 
     &:is(.plain) {
       --button-background-color: transparent;
-      --button-border-color: var(--transparent);
+      --button-border-color: transparent;
       --button-border-width: 0;
       --button-padding-x: 0;
       --button-padding-y: 0;
-      --button-text-color: var(--color-black);
+      --button-text-color: var(--color-blue-500);
     }
 
     &:is(.ghost) {
@@ -72,15 +76,15 @@
     &:hover {
       --button-background-color: color-mix(
         in srgb,
-        var(--color-white),
-        var(--color-light) 50%
+        var(--color-grayscale-100),
+        var(--color-grayscale-300) 50%
       );
     }
     &:is(.primary):hover {
       --button-background-color: color-mix(
         in srgb,
-        var(--color-salmon),
-        var(--color-orange) 50%
+        var(--color-blue-400),
+        var(--color-grayscale-600) 50%
       );
     }
     &:is(.plain):hover {

@@ -10,8 +10,14 @@
       --input-border-radius: 0.25rem;
 
       aspect-ratio: 1;
-      background-color: var(--prefix-background-color, var(--color-lighter));
-      border-color: var(--input-wrapper-border-color, var(--color-light));
+      background-color: var(
+        --prefix-background-color,
+        var(--color-grayscale-200)
+      );
+      border-color: var(
+        --input-wrapper-border-color,
+        var(--color-grayscale-300)
+      );
       border-style: var(--input-wrapper-border-style, solid);
       border-width: var(--input-wrapper-border-width, 0.5px);
       display: grid;
@@ -59,8 +65,8 @@
     }
 
     :is(button.suffix) {
-      --button-background-color: var(--color-light);
-      --button-border-color: var(--color-light);
+      --button-background-color: var(--color-grayscale-300);
+      --button-border-color: var(--color-grayscale-300);
       --button-padding-block: 0;
       --button-padding-inline: 0;
 

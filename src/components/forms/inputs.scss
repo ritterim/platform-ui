@@ -1,15 +1,15 @@
 :is(textarea, input) {
   @layer rules {
-    background-color: var(--input-background-color, var(--color-white));
-    border-color: var(--input-border-color, var(--color-light));
+    background-color: var(--input-background-color, var(--color-grayscale-100));
+    border-color: var(--input-border-color, var(--color-grayscale-300));
     border-style: var(--input-border-style, solid);
     border-width: var(--input-border-width, 0.5px);
     border-radius: var(--input-border-radius, 0.25rem);
     color: var(--input-text-color, inherit);
     display: grid;
-    outline-color: var(--input-outline-color, transparent);
-    outline-style: var(--input-outline-style, solid);
-    outline-width: var(--input-outline-width, 3px);
+    outline-color: var(--input-outline-color, inherit);
+    outline-style: var(--input-outline-style, inherit);
+    outline-width: var(--input-outline-width, inherit);
     padding-block: var(--input-padding-block, var(--space-xs));
     padding-inline-start: var(--input-padding-inline-start, var(--space-xs));
     padding-inline-end: var(--input-padding-inline-end, var(--space-xs));
@@ -17,18 +17,18 @@
   }
 
   @layer states {
-    &:focus {
-      --input-outline-color: var(--color-navy);
-    }
+    // &:focus {
+    //   --input-outline-color: var(--color-blue-400);
+    // }
 
     &:disabled,
     &[aria-disabled="true"] {
-      --input-background-color: var(--color-light);
+      --input-background-color: var(--color--300);
     }
 
     &:read-only,
     &[aria-readonly="true"] {
-      --input-background-color: var(--color-lighter);
+      --input-background-color: var(--color-grayscale-200);
     }
   }
 }
@@ -54,10 +54,11 @@ input {
     @layer rules {
       appearance: none;
       aspect-ratio: 1;
-      background-color: var(--check-background-color, transparent);
+      background-color: var(--check-background-color, var);
       border-style: var(--check-border-style, solid);
       border-radius: var(--check-border-radius, 0.25rem);
       border-width: var(--check-border-width, 0.5px);
+      border-color: var(--check-border-color, var(--color-blue-400));
       content: "";
       cursor: pointer;
       display: grid;
@@ -75,7 +76,7 @@ input {
 
       &::before {
         aspect-ratio: 1;
-        background-color: var(--check-color, var(--color-navy));
+        background-color: var(--check-color, var(--color-blue-400));
         content: "";
         cursor: pointer;
         height: var(--check-height, 1rem);

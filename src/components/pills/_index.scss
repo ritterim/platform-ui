@@ -2,7 +2,7 @@
   @layer rules {
     background-color: var(--pill-background-color, inherit);
     border-style: solid;
-    border-color: var(--pill-border-color, var(--color-light));
+    border-color: var(--pill-border-color, var(--color-grayscale-300));
     border-radius: 1rem;
     border-width: var(--pill-border-width, 0.5px);
     display: grid;

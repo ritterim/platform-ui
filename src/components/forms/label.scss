@@ -1,8 +1,7 @@
-label {                              
+label {
   @layer rules {
     display: grid;
     grid-template-rows: max-content max-content 1fr max-content;
-
 
     & > * {
       margin-block-start: var(--space-xs);
@@ -16,7 +15,7 @@ label {
   @layer states {
     &.error {
       .input-wrapper {
-        --input-wrapper-border-color: var(--color-error);
+        --input-wrapper-border-color: var(--color-red-500);
         --input-wrapper-border-width: 2px;
       }
     }
@@ -25,7 +24,7 @@ label {
   @layer themes {
     // &:has(input[required]) {
     //   &::before {
-    //     --_color: var(--label-required-text-color, var(--text-color-error));
+    //     --_color: var(--label-required-text-color, var(--text-color-red-500));
     //     --_marker: var(--label-required-marker, "*");
     //     --_marker-height: var(--label-required-marker-height, 1rem);
     //     --_marker-offset-x: var(
